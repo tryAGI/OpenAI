@@ -14,6 +14,6 @@ Generated C# SDK based on official OpenAI OpenAPI specification using NSwag
 
 ## Support
 
-Priority place for bugs: https://github.com/tryAGI/LangChain/issues  
-Priority place for ideas and general questions: https://github.com/tryAGI/LangChain/discussions  
+Priority place for bugs: https://github.com/tryAGI/OpenAI.Sdk/issues  
+Priority place for ideas and general questions: https://github.com/tryAGI/OpenAI.Sdk/discussions  
 Discord: https://discord.gg/Ca2xhfBf3v  
