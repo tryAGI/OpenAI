@@ -1,4 +1,4 @@
-namespace OpenAI.Sdk.IntegrationTests;
+namespace tryAGI.OpenAI.IntegrationTests;
 
 [TestClass]
 public class GeneralTests

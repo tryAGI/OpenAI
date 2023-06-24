@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <PropertyGroup Label="Nuget">
+    <PackageId>tryAGI.OpenAI</PackageId>
     <Description>Generated C# SDK based on official OpenAI OpenAPI specification</Description>
     <PackageTags>api;client;sdk;dotnet;swagger;openapi;specification;openai;generated;nswag</PackageTags>
   </PropertyGroup>

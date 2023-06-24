@@ -1,6 +1,6 @@
 ﻿using System.Net.Http.Headers;
 
-namespace OpenAI.Sdk;
+namespace tryAGI.OpenAI;
 
 /// <summary>
 /// Class providing methods for API access.

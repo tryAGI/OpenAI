@@ -9,7 +9,7 @@
 
   <ItemGroup Label="CLSCompliant">
     <AssemblyAttribute Include="System.CLSCompliantAttribute">
-      <_Parameter1>true</_Parameter1>
+      <_Parameter1>false</_Parameter1>
     </AssemblyAttribute>
   </ItemGroup>
   
