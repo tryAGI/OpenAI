@@ -13,8 +13,7 @@ public static class TestHelper
         string source,
         CancellationToken cancellationToken = default)
     {
-        var referenceAssemblies = ReferenceAssemblies.Net.Net60
-            .AddPackages(ImmutableArray.Create(new PackageIdentity("tryAGI.OpenAI", "0.9.0")));
+        var referenceAssemblies = ReferenceAssemblies.Net.Net60;
         var references = await referenceAssemblies.ResolveAsync(null, cancellationToken);
         references = references
             .Add(MetadataReference.CreateFromFile(typeof(tryAGI.OpenAI.OpenAiFunctionsAttribute).Assembly.Location));

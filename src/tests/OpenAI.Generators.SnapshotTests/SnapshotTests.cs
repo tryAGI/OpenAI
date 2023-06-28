@@ -10,7 +10,7 @@ public class IpcGeneratorSnapshotTests : VerifyBase
     {
         return this.CheckSourceAsync(
 /* lang=csharp */ """
-using OpenAI.Functions;
+using tryAGI.OpenAI;
 using DescriptionAttribute = System.ComponentModel.DescriptionAttribute;
 using System.Threading;
 using System.Threading.Tasks;
@@ -80,7 +80,7 @@ public class WeatherService : IWeatherFunctions
 /* lang=csharp */ """
 using System;
 using System.Collections.Generic;
-using OpenAI.Functions;
+using tryAGI.OpenAI;
 using DescriptionAttribute = System.ComponentModel.DescriptionAttribute;
 
 namespace H.Ipc.Generator.IntegrationTests;
