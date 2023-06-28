@@ -10,8 +10,10 @@
 
   <PropertyGroup Label="Nuget">
     <PackageId>tryAGI.OpenAI</PackageId>
-    <Description>Generated C# SDK based on official OpenAI OpenAPI specification</Description>
-    <PackageTags>api;client;sdk;dotnet;swagger;openapi;specification;openai;generated;nswag</PackageTags>
+    <Description>
+      Generated C# SDK based on official OpenAI OpenAPI specification. 
+      Includes C# Source Generator which allows you to define functions natively through a C# interface, and also provides extensions that make it easier to call this interface later</Description>
+    <PackageTags>api;client;sdk;dotnet;swagger;openapi;specification;openai;generated;nswag;functions;gpt-3.5;gpt-4;chatgpt;generator;source generator</PackageTags>
   </PropertyGroup>
   
   <ItemGroup>
@@ -34,6 +36,10 @@
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
     <PackageReference Include="System.Text.Json" Version="7.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OpenAI.Generators\OpenAI.Generators.csproj" ReferenceOutputAssembly="false" PackAsAnalyzer="true" />
   </ItemGroup>
 
 </Project>

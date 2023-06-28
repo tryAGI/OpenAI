@@ -7,9 +7,76 @@
 
 Generated C# SDK based on official OpenAI OpenAPI specification using NSwag
 
+This package includes C# Source Generator which allows you to define functions natively through a C# interface,
+and also provides extensions that make it easier to call this interface later.  
+In addition to easy function implementation and readability,
+it generates Args classes, extension methods to easily pass a functions to API,
+and extension methods to simply call a function via json and return json.  
+Currently only System.Text.Json is supported.  
+
 ### Usage
 ```csharp
+using tryAGI.OpenAI;
 
+public enum Unit
+{
+    Celsius,
+    Fahrenheit,
+}
+
+public class Weather
+{
+    public string Location { get; set; } = string.Empty;
+    public double Temperature { get; set; }
+    public Unit Unit { get; set; }
+    public string Description { get; set; } = string.Empty;
+}
+
+[OpenAiFunctions]
+public interface IWeatherFunctions
+{
+    [Description("Get the current weather in a given location")]
+    public Task<Weather> GetCurrentWeatherAsync(
+        [Description("The city and state, e.g. San Francisco, CA")] string location,
+        Unit unit = Unit.Celsius,
+        CancellationToken cancellationToken = default);
+}
+
+public class WeatherService : IWeatherFunctions
+{
+    public Task<Weather> GetCurrentWeatherAsync(string location, Unit unit = Unit.Celsius, CancellationToken cancellationToken = default)
+    {
+        return Task.FromResult(new Weather
+        {
+            Location = location,
+            Temperature = 22.0,
+            Unit = unit,
+            Description = "Sunny",
+        });
+    }
+}
+
+
+var service = new WeatherService();
+using var httpClient = new HttpClient();
+var api = new OpenAiApi(apiKey, httpClient);
+var result = await api.CreateChatCompletionAsync(new CreateChatCompletionRequest
+{
+    Messages = new List<ChatCompletionRequestMessage>
+    {
+        "You are a helpful weather assistant.".AsSystemMessage(),
+        "What's the weather like today?".AsUserMessage(),
+    },
+    Functions = service.AsFunctions(),
+    Function_call = Function_call4.Auto,
+    Model = "gpt-3.5-turbo-0613",
+});
+// ...
+var resultMessage = result.GetFirstChoiceMessage();
+var functionArgumentsJson = resultMessage.Function_call?.Arguments ?? string.Empty;
+var json = await service.CallGetCurrentWeatherAsync(functionArgumentsJson);
+// or just get arguments
+var args = service.AsGetCurrentWeatherAsyncArgs(functionArgumentsJson);
 ```
 
 ## Support
