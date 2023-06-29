@@ -1,8 +1,6 @@
-﻿using System.Collections.Immutable;
-using Microsoft.CodeAnalysis;
+﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Testing;
-using VerifyMSTest;
 
 namespace H.Generators.IntegrationTests;
 

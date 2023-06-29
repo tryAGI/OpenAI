@@ -26,7 +26,7 @@ public class Tests
             Messages = messages,
             Functions = functions,
             Function_call = Function_call4.Auto,
-            Model = "gpt-3.5-turbo-0613",
+            Model = ModelIds.Gpt35Turbo_0613,
         });
         var resultMessage = result.GetFirstChoiceMessage();
         messages.Add(resultMessage.AsRequestMessage());
@@ -43,7 +43,7 @@ public class Tests
             Messages = messages,
             Functions = functions,
             Function_call = Function_call4.Auto,
-            Model = "gpt-3.5-turbo-0613",
+            Model = ModelIds.Gpt35Turbo_0613,
         });
         resultMessage = result.GetFirstChoiceMessage();
         messages.Add(resultMessage.AsRequestMessage());
@@ -65,7 +65,7 @@ public class Tests
                 Messages = messages,
                 Functions = functions,
                 Function_call = Function_call4.Auto,
-                Model = "gpt-3.5-turbo-0613",
+                Model = ModelIds.Gpt35Turbo_0613,
             });
             resultMessage = result.GetFirstChoiceMessage();
         }
@@ -244,7 +244,7 @@ namespace LegacyApp
             Messages = messages,
             Functions = service.AsFunctions(),
             Function_call = Function_call4.Auto,
-            Model = "gpt-3.5-turbo-0613",
+            Model = ModelIds.Gpt35Turbo_0613,
         });
         var json = result.Choices.First().Message?.Function_call?.Arguments ?? string.Empty;
         Console.WriteLine(json);
