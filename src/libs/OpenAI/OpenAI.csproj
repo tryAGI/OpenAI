@@ -41,6 +41,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\OpenAI.Generators\OpenAI.Generators.csproj" ReferenceOutputAssembly="false" PackAsAnalyzer="true" />
+    <None Include="..\OpenAI.Generators\bin\$(Configuration)\netstandard2.0\H.Generators.Extensions.dll" Pack="true" PackagePath="analyzers/dotnet" Visible="false" />
   </ItemGroup>
 
 </Project>
