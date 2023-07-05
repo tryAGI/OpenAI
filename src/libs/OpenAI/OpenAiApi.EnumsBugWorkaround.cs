@@ -28,19 +28,19 @@ public partial class OpenAiApi
         var json = await stringContent.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
         
         request.Content = new StringContent(json
-            .Replace(@"{""role"":""System"",""content"":", @"{""role"":""system"",""content"":", StringComparison.Ordinal)
-            .Replace(@"{""role"":""User"",""content"":", @"{""role"":""user"",""content"":", StringComparison.Ordinal)
-            .Replace(@"{""role"":""Assistant"",""content"":", @"{""role"":""assistant"",""content"":", StringComparison.Ordinal)
-            .Replace(@"{""role"":""Function"",""content"":", @"{""role"":""function"",""content"":", StringComparison.Ordinal)
+            .Replace(@"""role"":""System""", @"""role"":""system""", StringComparison.Ordinal)
+            .Replace(@"""role"":""User""", @"""role"":""user""", StringComparison.Ordinal)
+            .Replace(@"""role"":""Assistant""", @"""role"":""assistant""", StringComparison.Ordinal)
+            .Replace(@"""role"":""Function""", @"""role"":""function""", StringComparison.Ordinal)
             .Replace(@"""function_call"":""Auto""", @"""function_call"":""auto""", StringComparison.Ordinal));
 #else
         var json = await stringContent.ReadAsStringAsync().ConfigureAwait(false);
         
         request.Content = new StringContent(json
-            .Replace(@"{""role"":""System"",""content"":", @"{""role"":""system"",""content"":")
-            .Replace(@"{""role"":""User"",""content"":", @"{""role"":""user"",""content"":")
-            .Replace(@"{""role"":""Assistant"",""content"":", @"{""role"":""assistant"",""content"":")
-            .Replace(@"{""role"":""Function"",""content"":", @"{""role"":""function"",""content"":")
+            .Replace(@"""role"":""System""", @"""role"":""system""")
+            .Replace(@"""role"":""User""", @"""role"":""user""")
+            .Replace(@"""role"":""Assistant""", @"""role"":""assistant""")
+            .Replace(@"""role"":""Function""", @"""role"":""function""")
             .Replace(@"""function_call"":""Auto""", @"""function_call"":""auto"""));
 #endif
         request.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
