@@ -25,7 +25,14 @@ public static class ResponseMessageExtensions
                 ChatCompletionResponseMessageRole.Function => ChatCompletionRequestMessageRole.Function,
                 _ => throw new ArgumentOutOfRangeException(nameof(message), $"Unknown role: {message.Role}"),
             },
-            Content = message.Content,
+            Content = message.Content ?? string.Empty,
+            Function_call = message.Function_call != null ?
+                new Function_call
+                {
+                    Arguments = message.Function_call.Arguments,
+                    Name = message.Function_call.Name,
+                }
+                : null,
         };
     }
     
