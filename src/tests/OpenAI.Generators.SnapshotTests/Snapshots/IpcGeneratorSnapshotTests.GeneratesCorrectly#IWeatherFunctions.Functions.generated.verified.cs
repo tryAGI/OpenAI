@@ -141,6 +141,23 @@ namespace H.Ipc.Generator.IntegrationTests
             };
         }
 
+        public static global::System.Collections.Generic.IReadOnlyDictionary<string, global::System.Func<string, global::System.Threading.CancellationToken, global::System.Threading.Tasks.Task<string>>> AsCalls(this IWeatherFunctions service)
+        {
+            return new global::System.Collections.Generic.Dictionary<string, global::System.Func<string, global::System.Threading.CancellationToken, global::System.Threading.Tasks.Task<string>>>
+            {
+                ["GetCurrentWeather"] = (json, _) =>
+                {
+                    return global::System.Threading.Tasks.Task.FromResult(service.CallGetCurrentWeather(json));
+                },
+ 
+                ["GetCurrentWeatherAsync"] = async (json, cancellationToken) =>
+                {
+                    return await service.CallGetCurrentWeatherAsync(json, cancellationToken);
+                },
+ 
+            };
+        }
+
         public static object GetCurrentWeatherAsFunctionObject(this IWeatherFunctions functions)
         {
             var (name, description, parameters) = functions.GetCurrentWeatherAsParametersObject();
@@ -236,6 +253,20 @@ namespace H.Ipc.Generator.IntegrationTests
                 PropertyNamingPolicy = global::System.Text.Json.JsonNamingPolicy.CamelCase,
                 Converters = { new global::System.Text.Json.Serialization.JsonStringEnumConverter(global::System.Text.Json.JsonNamingPolicy.CamelCase) },
             });
+        }
+
+ 
+
+        public static async global::System.Threading.Tasks.Task<string> CallAsync(
+            this IWeatherFunctions service,
+            string functionName,
+            string argumentsAsJson,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var calls = service.AsCalls();
+            var func = calls[functionName];
+
+            return await func(argumentsAsJson, cancellationToken);
         }
     }
 }

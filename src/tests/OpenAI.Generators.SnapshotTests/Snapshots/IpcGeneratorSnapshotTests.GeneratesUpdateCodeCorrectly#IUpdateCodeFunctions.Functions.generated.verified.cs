@@ -135,6 +135,22 @@ namespace H.Ipc.Generator.IntegrationTests
             };
         }
 
+        public static global::System.Collections.Generic.IReadOnlyDictionary<string, global::System.Func<string, global::System.Threading.CancellationToken, global::System.Threading.Tasks.Task<string>>> AsCalls(this IUpdateCodeFunctions service)
+        {
+            return new global::System.Collections.Generic.Dictionary<string, global::System.Func<string, global::System.Threading.CancellationToken, global::System.Threading.Tasks.Task<string>>>
+            {
+ 
+                ["UpdateCode"] = (json, _) =>
+                {
+                    service.CallUpdateCode(json);
+
+                    return global::System.Threading.Tasks.Task.FromResult(string.Empty);
+                },
+ 
+ 
+            };
+        }
+
         public static object UpdateCodeAsFunctionObject(this IUpdateCodeFunctions functions)
         {
             var (name, description, parameters) = functions.UpdateCodeAsParametersObject();
@@ -178,5 +194,19 @@ namespace H.Ipc.Generator.IntegrationTests
         }
 
  
+
+ 
+
+        public static async global::System.Threading.Tasks.Task<string> CallAsync(
+            this IUpdateCodeFunctions service,
+            string functionName,
+            string argumentsAsJson,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var calls = service.AsCalls();
+            var func = calls[functionName];
+
+            return await func(argumentsAsJson, cancellationToken);
+        }
     }
 }

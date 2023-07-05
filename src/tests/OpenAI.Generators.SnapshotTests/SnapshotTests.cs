@@ -1,6 +1,4 @@
-﻿using VerifyMSTest;
-
-namespace H.Generators.IntegrationTests;
+﻿namespace H.Generators.IntegrationTests;
 
 [TestClass]
 public class IpcGeneratorSnapshotTests : VerifyBase
