@@ -29,8 +29,8 @@ public static class ResponseMessageExtensions
             Function_call = message.Function_call != null ?
                 new Function_call
                 {
-                    Arguments = message.Function_call.Arguments,
-                    Name = message.Function_call.Name,
+                    Arguments = message.Function_call.Arguments ?? string.Empty,
+                    Name = message.Function_call.Name ?? string.Empty,
                 }
                 : null,
         };

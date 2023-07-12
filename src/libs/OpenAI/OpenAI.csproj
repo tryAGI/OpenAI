@@ -21,7 +21,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="H.NSwag.Generator" Version="13.18.2.72">
+    <PackageReference Include="H.NSwag.Generator" Version="13.19.0.73">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
