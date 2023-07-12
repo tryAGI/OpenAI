@@ -50,7 +50,8 @@ internal static class SourceGenerationHelper
         
         return $@"new
 {indent}                    {{
-{indent}                        type = ""{parameter.SchemaType}"",
+{indent}                        type = ""{parameter.SchemaType}"",{(parameter.Format != null ? $@"
+{indent}                        format = ""{parameter.Format}""," : "")}
 {indent}                        description = ""{parameter.Description}"",
 {indent}                    }}";
     }

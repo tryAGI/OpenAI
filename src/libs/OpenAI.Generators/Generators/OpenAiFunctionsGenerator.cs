@@ -66,12 +66,63 @@ public class OpenAiFunctionsGenerator : IIncrementalGenerator
     private static ParameterData ToParameterData(ITypeSymbol typeSymbol, string? name = null, string? description = null, bool isRequired = true)
     {
         string schemaType;
+        string? format = null;
         var properties = Array.Empty<ParameterData>();
         ParameterData? arrayItem = null;
         switch (typeSymbol.TypeKind)
         {
             case TypeKind.Enum:
                 schemaType = "string";
+                break;
+            
+            case TypeKind.Structure:
+                switch (typeSymbol.SpecialType)
+                {
+                    case SpecialType.System_Int32:
+                        schemaType = "integer";
+                        format = "int32";
+                        break;
+                    
+                    case SpecialType.System_Int64:
+                        schemaType = "integer";
+                        format = "int64";
+                        break;
+                    
+                    case SpecialType.System_Single:
+                        schemaType = "number";
+                        format = "double";
+                        break;
+                    
+                    case SpecialType.System_Double:
+                        schemaType = "number";
+                        format = "float";
+                        break;
+                    
+                    case SpecialType.System_DateTime:
+                        schemaType = "string";
+                        format = "date-time";
+                        break;
+                    
+                    case SpecialType.System_Boolean:
+                        schemaType = "boolean";
+                        break;
+                    
+                    case SpecialType.None:
+                        switch (typeSymbol.Name)
+                        {
+                            case "DateOnly":
+                                schemaType = "string";
+                                format = "date";
+                                break;
+                            
+                            default:
+                                throw new NotImplementedException($"{typeSymbol.Name} is not implemented.");
+                        }
+                        break;
+                    
+                    default:
+                        throw new NotImplementedException($"{typeSymbol.SpecialType} is not implemented.");
+                }
                 break;
             
             case TypeKind.Class:
@@ -81,13 +132,6 @@ public class OpenAiFunctionsGenerator : IIncrementalGenerator
                         schemaType = "string";
                         break;
                     
-                    case SpecialType.System_Int32:
-                        schemaType = "integer";
-                        break;
-                    
-                    case SpecialType.System_Boolean:
-                        schemaType = "boolean";
-                        break;
                     
                     case SpecialType.None:
                         schemaType = "object";
@@ -127,6 +171,7 @@ public class OpenAiFunctionsGenerator : IIncrementalGenerator
             Type: typeSymbol.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat),
             DefaultValue: GetDefaultValue(typeSymbol),
             SchemaType: schemaType,
+            Format: format,
             Properties: properties,
             ArrayItem: arrayItem != null
                 ? new []{ arrayItem.Value }
@@ -145,6 +190,10 @@ public class OpenAiFunctionsGenerator : IIncrementalGenerator
     private static bool IsNullable(ITypeSymbol typeSymbol)
     {
         if (typeSymbol.TypeKind == TypeKind.Enum)
+        {
+            return false;
+        }
+        if (typeSymbol.TypeKind == TypeKind.Structure)
         {
             return false;
         }

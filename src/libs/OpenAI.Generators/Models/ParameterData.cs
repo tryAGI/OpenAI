@@ -5,6 +5,7 @@ public readonly record struct ParameterData(
     string Description,
     string Type,
     string SchemaType,
+    string? Format,
     IReadOnlyCollection<string> EnumValues,
     IReadOnlyCollection<ParameterData> Properties,
     IReadOnlyCollection<ParameterData> ArrayItem,
