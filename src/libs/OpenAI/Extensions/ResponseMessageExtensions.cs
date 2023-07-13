@@ -49,4 +49,18 @@ public static class ResponseMessageExtensions
         return response.Choices.First().Message ??
                throw new ArgumentException("No message in the first choice.");
     }
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="response"></param>
+    /// <returns></returns>
+    /// <exception cref="ArgumentException"></exception>
+    public static ChatCompletionStreamResponseDelta GetFirstChoiceDelta(this CreateChatCompletionStreamResponse response)
+    {
+        response = response ?? throw new ArgumentNullException(nameof(response));
+        
+        return response.Choices.First().Delta ??
+               throw new ArgumentException("No delta in the first choice.");
+    }
 }

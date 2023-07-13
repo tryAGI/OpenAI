@@ -3,7 +3,7 @@
 namespace H.Ipc.Generator.IntegrationTests;
 
 [TestClass]
-public class Tests
+public partial class Tests
 {
     [TestMethod]
     [Ignore]
