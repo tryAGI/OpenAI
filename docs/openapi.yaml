@@ -6,14 +6,14 @@ info:
 servers:
   - url: https://api.openai.com/v1
 tags:
-- name: OpenAI
-  description: The OpenAI REST API
+  - name: OpenAI
+    description: The OpenAI REST API
 paths:
   /chat/completions:
     post:
       operationId: createChatCompletion
       tags:
-      - OpenAI
+        - OpenAI
       summary: Creates a model response for the given chat conversation.
       requestBody:
         required: true
@@ -97,7 +97,7 @@ paths:
     post:
       operationId: createCompletion
       tags:
-      - OpenAI
+        - OpenAI
       summary: Creates a completion for the provided prompt and parameters.
       requestBody:
         required: true
@@ -263,7 +263,7 @@ paths:
     post:
       operationId: createImage
       tags:
-      - OpenAI
+        - OpenAI
       summary: Creates an image given a prompt.
       requestBody:
         required: true
@@ -335,7 +335,7 @@ paths:
     post:
       operationId: createImageEdit
       tags:
-      - OpenAI
+        - OpenAI
       summary: Creates an edited or extended image given an original image and a prompt.
       requestBody:
         required: true
@@ -382,8 +382,8 @@ paths:
             const openai = new OpenAIApi(configuration);
             const response = await openai.createImageEdit(
               fs.createReadStream("otter.png"),
-              fs.createReadStream("mask.png"),
               "A cute baby sea otter wearing a beret",
+              fs.createReadStream("mask.png"),
               2,
               "1024x1024"
             );
@@ -404,7 +404,7 @@ paths:
     post:
       operationId: createImageVariation
       tags:
-      - OpenAI
+        - OpenAI
       summary: Creates a variation of a given image.
       requestBody:
         required: true
@@ -656,7 +656,7 @@ paths:
     get:
       operationId: listFiles
       tags:
-      - OpenAI
+        - OpenAI
       summary: Returns a list of files that belong to the user's organization.
       responses:
         "200":
@@ -710,7 +710,7 @@ paths:
     post:
       operationId: createFile
       tags:
-      - OpenAI
+        - OpenAI
       summary: |
         Upload a file that contains document(s) to be used across various endpoints/features. Currently, the size of all the files uploaded by one organization can be up to 1 GB. Please contact us if you need to increase the storage limit.
 
@@ -770,7 +770,7 @@ paths:
     delete:
       operationId: deleteFile
       tags:
-      - OpenAI
+        - OpenAI
       summary: Delete a file.
       parameters:
         - in: path
@@ -816,7 +816,7 @@ paths:
     get:
       operationId: retrieveFile
       tags:
-      - OpenAI
+        - OpenAI
       summary: Returns information about a specific file.
       parameters:
         - in: path
@@ -866,7 +866,7 @@ paths:
     get:
       operationId: downloadFile
       tags:
-      - OpenAI
+        - OpenAI
       summary: Returns the contents of the specified file
       parameters:
         - in: path
@@ -907,7 +907,7 @@ paths:
     post:
       operationId: createFineTune
       tags:
-      - OpenAI
+        - OpenAI
       summary: |
         Creates a job that fine-tunes a specified model from a given dataset.
 
@@ -993,7 +993,7 @@ paths:
     get:
       operationId: listFineTunes
       tags:
-      - OpenAI
+        - OpenAI
       summary: |
         List your organization's fine-tuning jobs
       responses:
@@ -1050,7 +1050,7 @@ paths:
     get:
       operationId: retrieveFineTune
       tags:
-      - OpenAI
+        - OpenAI
       summary: |
         Gets info about the fine-tune job.
 
@@ -1167,7 +1167,7 @@ paths:
     post:
       operationId: cancelFineTune
       tags:
-      - OpenAI
+        - OpenAI
       summary: |
         Immediately cancel a fine-tune job.
       parameters:
@@ -1237,7 +1237,7 @@ paths:
     get:
       operationId: listFineTuneEvents
       tags:
-      - OpenAI
+        - OpenAI
       summary: |
         Get fine-grained status updates for a fine-tune job.
       parameters:
@@ -1441,7 +1441,7 @@ paths:
     delete:
       operationId: deleteModel
       tags:
-      - OpenAI
+        - OpenAI
       summary: Delete a fine-tuned model. You must have the Owner role in your organization.
       parameters:
         - in: path
@@ -1638,10 +1638,7 @@ components:
         model:
           description: &model_description |
             ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models/overview) for descriptions of them.
-          oneOf:
-            - type: string
-            - type: string
-              enum: ["text-davinci-003","text-davinci-002","text-davinci-001","code-davinci-002","text-curie-001","text-babbage-001","text-ada-001"]
+          type: string
           x-oaiTypeLabel: string
         prompt:
           description: &completions_prompt_description |
@@ -1874,11 +1871,11 @@ components:
               type: integer
             total_tokens:
               type: integer
-          required: 
+          required:
             - prompt_tokens
             - completion_tokens
             - total_tokens
-      required: 
+      required:
         - id
         - object
         - created
@@ -1957,7 +1954,7 @@ components:
             arguments:
               type: string
               description: The arguments to call the function with, as generated by the model in JSON format. Note that the model does not always generate valid JSON, and may hallucinate parameters not defined by your function schema. Validate the arguments in your code before calling your function.
-      required: 
+      required:
         - role
     
     ChatCompletionStreamResponseDelta:
@@ -1988,10 +1985,7 @@ components:
         model:
           description: ID of the model to use. See the [model endpoint compatibility](/docs/models/model-endpoint-compatibility) table for details on which models work with the Chat API.
           example: "gpt-3.5-turbo"
-          oneOf:
-            - type: string
-            - type: string
-              enum: ["gpt-4","gpt-4-0314","gpt-4-0613","gpt-4-32k","gpt-4-32k-0314","gpt-4-32k-0613","gpt-3.5-turbo","gpt-3.5-turbo-16k","gpt-3.5-turbo-0301","gpt-3.5-turbo-0613","gpt-3.5-turbo-16k-0613"]
+          type: string
           x-oaiTypeLabel: string
         messages:
           description: A list of messages comprising the conversation so far. [Example Python code](https://github.com/openai/openai-cookbook/blob/main/examples/How_to_format_inputs_to_ChatGPT_models.ipynb).
@@ -2015,7 +2009,7 @@ components:
                 name:
                   type: string
                   description: The name of the function to call.
-              required: 
+              required:
                 - name
         temperature:
           type: number
@@ -2112,6 +2106,10 @@ components:
           type: array
           items:
             type: object
+            required:
+              - index
+              - message
+              - finish_reason
             properties:
               index:
                 type: integer
@@ -2129,11 +2127,11 @@ components:
               type: integer
             total_tokens:
               type: integer
-          required: 
+          required:
             - prompt_tokens
             - completion_tokens
             - total_tokens
-      required: 
+      required:
         - id
         - object
         - created
@@ -2155,6 +2153,10 @@ components:
           type: array
           items:
             type: object
+            required:
+              - index
+              - delta
+              - finish_reason
             properties:
               index:
                 type: integer
@@ -2163,7 +2165,8 @@ components:
               finish_reason:
                 type: string
                 enum: ["stop", "length", "function_call"]
-      required: 
+                nullable: true
+      required:
         - id
         - object
         - created
@@ -2175,12 +2178,8 @@ components:
       properties:
         model:
           description: ID of the model to use. You can use the `text-davinci-edit-001` or `code-davinci-edit-001` model with this endpoint.
-          type: string
           example: "text-davinci-edit-001"
-          oneOf:
-            - type: string
-            - type: string
-              enum: ["text-davinci-edit-001","code-davinci-edit-001"]
+          type: string
           x-oaiTypeLabel: string
         input:
           description:
@@ -2234,33 +2233,15 @@ components:
           type: array
           items:
             type: object
+            required:
+              - text
+              - index
+              - finish_reason
             properties:
               text:
                 type: string
               index:
                 type: integer
-              logprobs:
-                type: object
-                nullable: true
-                properties:
-                  tokens:
-                    type: array
-                    items:
-                      type: string
-                  token_logprobs:
-                    type: array
-                    items:
-                      type: number
-                  top_logprobs:
-                    type: array
-                    items:
-                      type: object
-                      additionalProperties:
-                        type: integer
-                  text_offset:
-                    type: array
-                    items:
-                      type: integer
               finish_reason:
                 type: string
                 enum: ["stop", "length"]
@@ -2273,11 +2254,11 @@ components:
               type: integer
             total_tokens:
               type: integer
-          required: 
+          required:
             - prompt_tokens
             - completion_tokens
             - total_tokens
-      required: 
+      required:
         - object
         - created
         - choices
@@ -2392,10 +2373,7 @@ components:
           nullable: false
           default: "text-moderation-latest"
           example: "text-moderation-stable"
-          oneOf:
-            - type: string
-            - type: string
-              enum: ["text-moderation-latest","text-moderation-stable"]
+          type: string
           x-oaiTypeLabel: string
       required:
         - input
@@ -2431,7 +2409,7 @@ components:
                     type: boolean
                   violence/graphic:
                     type: boolean
-                required: 
+                required:
                   - hate
                   - hate/threatening
                   - self-harm
@@ -2456,7 +2434,7 @@ components:
                     type: number
                   violence/graphic:
                     type: number
-                required: 
+                required:
                   - hate
                   - hate/threatening
                   - self-harm
@@ -2464,11 +2442,11 @@ components:
                   - sexual/minors
                   - violence
                   - violence/graphic
-            required: 
+            required:
               - flagged
               - categories
               - category_scores
-      required: 
+      required:
         - id
         - model
         - results
@@ -2482,7 +2460,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/OpenAIFile'
-      required: 
+      required:
         - object
         - data
 
@@ -2517,7 +2495,7 @@ components:
           type: string
         deleted:
           type: boolean
-      required: 
+      required:
         - id
         - object
         - deleted
@@ -2564,10 +2542,7 @@ components:
           default: "curie"
           example: "curie"
           nullable: true
-          oneOf:
-            - type: string
-            - type: string
-              enum: ["ada","babbage","curie","davinci"]
+          type: string
           x-oaiTypeLabel: string
         n_epochs:
           description: |
@@ -2683,7 +2658,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/FineTune'
-      required: 
+      required:
         - object
         - data
 
@@ -2696,7 +2671,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/FineTuneEvent'
-      required: 
+      required:
         - object
         - data
 
@@ -2707,10 +2682,7 @@ components:
         model:
           description: *model_description
           example: "text-embedding-ada-002"
-          oneOf:
-            - type: string
-            - type: string
-              enum: ["text-embedding-ada-002"]
+          type: string
           x-oaiTypeLabel: string
         input:
           description: |
@@ -2763,7 +2735,7 @@ components:
                 type: array
                 items:
                   type: number
-            required: 
+            required:
               - index
               - object
               - embedding
@@ -2774,10 +2746,10 @@ components:
               type: integer
             total_tokens:
               type: integer
-          required: 
+          required:
             - prompt_tokens
             - total_tokens
-      required: 
+      required:
         - object
         - model
         - data
@@ -2787,20 +2759,17 @@ components:
       type: object
       additionalProperties: false
       properties:
-        file: 
+        file:
           description: |
             The audio file object (not file name) to transcribe, in one of these formats: mp3, mp4, mpeg, mpga, m4a, wav, or webm.
           type: string
           x-oaiTypeLabel: file
           format: binary
-        model: 
+        model:
           description: |
             ID of the model to use. Only `whisper-1` is currently available.
           example: whisper-1
-          oneOf:
-            - type: string
-            - type: string
-              enum: ["whisper-1"]
+          type: string
           x-oaiTypeLabel: string
         prompt:
           description: |
@@ -2810,6 +2779,12 @@ components:
           description: |
             The format of the transcript output, in one of these options: json, text, srt, verbose_json, or vtt.
           type: string
+          enum:
+            - json
+            - text
+            - srt
+            - verbose_json
+            - vtt
           default: json
         temperature:
           description: |
@@ -2830,27 +2805,24 @@ components:
       properties:
         text:
           type: string
-      required: 
+      required:
         - text
 
     CreateTranslationRequest:
       type: object
       additionalProperties: false
       properties:
-        file: 
+        file:
           description: |
             The audio file object (not file name) translate, in one of these formats: mp3, mp4, mpeg, mpga, m4a, wav, or webm.
           type: string
           x-oaiTypeLabel: file
           format: binary
-        model: 
+        model:
           description: |
             ID of the model to use. Only `whisper-1` is currently available.
           example: whisper-1
-          oneOf:
-            - type: string
-            - type: string
-              enum: ["whisper-1"]
+          type: string
           x-oaiTypeLabel: string
         prompt:
           description: |
@@ -2876,7 +2848,7 @@ components:
       properties:
         text:
           type: string
-      required: 
+      required:
         - text
 
     Model:
@@ -2890,7 +2862,7 @@ components:
           type: integer
         owned_by:
           type: string
-      required: 
+      required:
         - id
         - object
         - created
@@ -2916,7 +2888,7 @@ components:
         status_details:
           type: string
           nullable: true
-      required: 
+      required:
         - id
         - object
         - bytes
@@ -2982,7 +2954,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/FineTuneEvent'
-      required: 
+      required:
         - id
         - object
         - created_at
@@ -3007,7 +2979,7 @@ components:
           type: string
         message:
           type: string
-      required: 
+      required:
         - object
         - created_at
         - level
