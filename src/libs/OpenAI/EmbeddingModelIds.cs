@@ -1,8 +1,5 @@
 namespace tryAGI.OpenAI;
 
-// ReSharper disable InconsistentNaming
-#pragma warning disable CA1707
-
 /// <summary>
 /// According https://platform.openai.com/docs/guides/embeddings/embedding-models
 /// <remarks>
