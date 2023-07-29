@@ -38,7 +38,7 @@ public static class ApiHelpers
             ModelIds.Gpt35Turbo_16k_0613 => 0.003 * 0.001,
             
             // Embedding models
-            EmbeddingModelIds.Ada002 => 0.0004 * 0.001,
+            EmbeddingModelIds.Ada002 => 0.0001 * 0.001,
             
             _ => throw new NotImplementedException(),
         };
@@ -70,6 +70,45 @@ public static class ApiHelpers
                promptTokens * promptPricePerToken;
     }
 
+    /// <summary>
+    /// Build DALL·E directly into your apps to generate and edit novel images and art. <br/>
+    /// Our image models offer three tiers of resolution for flexibility. <br/>
+    /// According https://openai.com/pricing/ <br/>
+    /// </summary>
+    /// <param name="size"></param>
+    /// <returns></returns>
+    /// <exception cref="NotImplementedException"></exception>
+    public static double CalculatePriceInUsd(CreateImageRequestSize size)
+    {
+        return size switch
+        {
+            CreateImageRequestSize._256x256 => 0.020,
+            CreateImageRequestSize._512x512 => 0.018,
+            CreateImageRequestSize._1024x1024 => 0.016,
+            
+            _ => throw new NotImplementedException(),
+        };
+    }
+
+    /// <summary>
+    /// According https://openai.com/pricing/ <br/>
+    /// </summary>
+    /// <param name="modelId"></param>
+    /// <param name="minutes">rounded to the nearest second</param>
+    /// <returns></returns>
+    /// <exception cref="NotImplementedException"></exception>
+    public static double CalculatePriceInUsd(string modelId, int minutes)
+    {
+        var pricePerMinute = modelId switch
+        {
+            AudioModelIds.Whisper1 => 0.006,
+            
+            _ => throw new NotImplementedException(),
+        };
+        
+        return pricePerMinute * minutes;
+    }
+    
     /// <summary>
     /// Calculates the maximum number of tokens possible to generate for a model. <br/>
     /// Returns the maximum input number of tokens for a embedding model. <br/>

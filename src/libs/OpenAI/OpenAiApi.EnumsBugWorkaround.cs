@@ -32,7 +32,13 @@ public partial class OpenAiApi
             .Replace(@"""role"":""User""", @"""role"":""user""", StringComparison.Ordinal)
             .Replace(@"""role"":""Assistant""", @"""role"":""assistant""", StringComparison.Ordinal)
             .Replace(@"""role"":""Function""", @"""role"":""function""", StringComparison.Ordinal)
-            .Replace(@"""function_call"":""Auto""", @"""function_call"":""auto""", StringComparison.Ordinal));
+            .Replace(@"""function_call"":""Auto""", @"""function_call"":""auto""", StringComparison.Ordinal)
+            .Replace(@"""size"":""_256x256""", @"""size"":""256x256""")
+            .Replace(@"""size"":""_512x512""", @"""size"":""512x512""")
+            .Replace(@"""size"":""_1024x1024""", @"""size"":""1024x1024""")
+            .Replace(@"""response_format"":""Url""", @"""response_format"":""url""")
+            .Replace(@"""response_format"":""B64_json""", @"""response_format"":""b64_json""")
+            );
 #else
         var json = await stringContent.ReadAsStringAsync().ConfigureAwait(false);
         
@@ -41,7 +47,13 @@ public partial class OpenAiApi
             .Replace(@"""role"":""User""", @"""role"":""user""")
             .Replace(@"""role"":""Assistant""", @"""role"":""assistant""")
             .Replace(@"""role"":""Function""", @"""role"":""function""")
-            .Replace(@"""function_call"":""Auto""", @"""function_call"":""auto"""));
+            .Replace(@"""function_call"":""Auto""", @"""function_call"":""auto""")
+            .Replace(@"""size"":""_256x256""", @"""size"":""256x256""")
+            .Replace(@"""size"":""_512x512""", @"""size"":""512x512""")
+            .Replace(@"""size"":""_1024x1024""", @"""size"":""1024x1024""")
+            .Replace(@"""response_format"":""Url""", @"""response_format"":""url""")
+            .Replace(@"""response_format"":""B64_json""", @"""response_format"":""b64_json""")
+            );
 #endif
         request.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
     }
