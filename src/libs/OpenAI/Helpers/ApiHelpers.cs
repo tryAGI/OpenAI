@@ -8,7 +8,9 @@ namespace tryAGI.OpenAI;
 public static class ApiHelpers
 {
     /// <summary>
+    /// Supports embedding models and GPT models <br/>
     /// According https://openai.com/pricing/ <br/>
+    /// According https://platform.openai.com/docs/guides/embeddings/embedding-models <br/>
     /// </summary>
     /// <param name="modelId">The model id we want to know the context size for.</param>
     /// <param name="completionTokens"></param>
@@ -19,6 +21,7 @@ public static class ApiHelpers
     {
         var promptPricePerToken = modelId switch
         {
+            // GPT models
             ModelIds.Gpt4 => 0.03 * 0.001,
             ModelIds.Gpt4_0314 => 0.03 * 0.001,
             ModelIds.Gpt4_0613 => 0.03 * 0.001,
@@ -34,10 +37,14 @@ public static class ApiHelpers
             ModelIds.Gpt35Turbo_16k => 0.003 * 0.001,
             ModelIds.Gpt35Turbo_16k_0613 => 0.003 * 0.001,
             
+            // Embedding models
+            EmbeddingModelIds.Ada002 => 0.0004 * 0.001,
+            
             _ => throw new NotImplementedException(),
         };
         var completionPricePerToken = modelId switch
         {
+            // GPT models
             ModelIds.Gpt4 => 0.06 * 0.001,
             ModelIds.Gpt4_0314 => 0.06 * 0.001,
             ModelIds.Gpt4_0613 => 0.06 * 0.001,
@@ -53,6 +60,9 @@ public static class ApiHelpers
             ModelIds.Gpt35Turbo_16k => 0.004 * 0.001,
             ModelIds.Gpt35Turbo_16k_0613 => 0.004 * 0.001,
             
+            // Embedding models
+            EmbeddingModelIds.Ada002 => 0.0,
+            
             _ => throw new NotImplementedException(),
         };
         
@@ -62,6 +72,7 @@ public static class ApiHelpers
 
     /// <summary>
     /// Calculates the maximum number of tokens possible to generate for a model. <br/>
+    /// Returns the maximum input number of tokens for a embedding model. <br/>
     /// According https://platform.openai.com/docs/models/overview <br/>
     /// </summary>
     /// <param name="modelId"></param>
@@ -71,6 +82,7 @@ public static class ApiHelpers
     {
         return modelId switch
         {
+            // GPT models
             ModelIds.Gpt4 => 8_192,
             ModelIds.Gpt4_0314 => 8_192,
             ModelIds.Gpt4_0613 => 8_192,
@@ -85,6 +97,9 @@ public static class ApiHelpers
             
             ModelIds.Gpt35Turbo_16k => 16_384,
             ModelIds.Gpt35Turbo_16k_0613 => 16_384,
+            
+            // Embedding models
+            EmbeddingModelIds.Ada002 => 8_191,
             
             "ada" or "text-ada-001" => 2_049,
             "text-babbage-001" => 2_040,
