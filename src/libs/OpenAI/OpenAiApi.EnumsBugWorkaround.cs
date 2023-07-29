@@ -33,11 +33,11 @@ public partial class OpenAiApi
             .Replace(@"""role"":""Assistant""", @"""role"":""assistant""", StringComparison.Ordinal)
             .Replace(@"""role"":""Function""", @"""role"":""function""", StringComparison.Ordinal)
             .Replace(@"""function_call"":""Auto""", @"""function_call"":""auto""", StringComparison.Ordinal)
-            .Replace(@"""size"":""_256x256""", @"""size"":""256x256""")
-            .Replace(@"""size"":""_512x512""", @"""size"":""512x512""")
-            .Replace(@"""size"":""_1024x1024""", @"""size"":""1024x1024""")
-            .Replace(@"""response_format"":""Url""", @"""response_format"":""url""")
-            .Replace(@"""response_format"":""B64_json""", @"""response_format"":""b64_json""")
+            .Replace(@"""size"":""_256x256""", @"""size"":""256x256""", StringComparison.Ordinal)
+            .Replace(@"""size"":""_512x512""", @"""size"":""512x512""", StringComparison.Ordinal)
+            .Replace(@"""size"":""_1024x1024""", @"""size"":""1024x1024""", StringComparison.Ordinal)
+            .Replace(@"""response_format"":""Url""", @"""response_format"":""url""", StringComparison.Ordinal)
+            .Replace(@"""response_format"":""B64_json""", @"""response_format"":""b64_json""", StringComparison.Ordinal)
             );
 #else
         var json = await stringContent.ReadAsStringAsync().ConfigureAwait(false);
