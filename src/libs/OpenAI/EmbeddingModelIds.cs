@@ -13,11 +13,9 @@ namespace tryAGI.OpenAI;
 public static class EmbeddingModelIds
 { 
     /// <summary>
-    /// More capable than any GPT-3.5 model, able to do more complex tasks, and optimized for chat. <br/>
-    /// Will be updated with our latest model iteration 2 weeks after it is released. <br/>
-    /// Max tokens: 8,192 tokens <br/>
-    /// Training data: Up to Sep 2021 <br/>
-    /// <remarks>On June 27th, 2023, gpt-4 will be updated to point from gpt-4-0314 to gpt-4-0613, the latest model iteration.</remarks>
+    /// We recommend using text-embedding-ada-002 for nearly all use cases. It’s better, cheaper, and simpler to use. <br/>
+    /// Max input tokens: 8,191 tokens <br/>
+    /// Output dimensions: 1536 <br/>
     /// </summary>
     public const string Ada002 = "text-embedding-ada-002";
 }
