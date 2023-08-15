@@ -12,7 +12,7 @@ public partial class OpenAiApi
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
     /// <exception cref="ArgumentNullException"></exception>
-    public async Task<ReadOnlyMemory<float>> CreateEmbeddingAsync(
+    public async Task<float[]> CreateEmbeddingAsync(
         string input,
         string? model = null,
         string? user = null,
@@ -28,7 +28,7 @@ public partial class OpenAiApi
             User = user,
         }, cancellationToken).ConfigureAwait(false);
             
-        return response.Data.ElementAt(0).Embedding
+        return response.Data.ElementAt(0).Embedding1
             .Select(static x => (float)x)
             .ToArray();
     }

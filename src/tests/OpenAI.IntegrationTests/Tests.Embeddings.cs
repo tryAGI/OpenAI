@@ -12,9 +12,9 @@ public partial class Tests
             Model = EmbeddingModelIds.Ada002,
             User = "tryAGI.OpenAI.IntegrationTests.Tests.CreateEmbedding",
         });
-        response.Data.ElementAt(0).Embedding.Should().NotBeEmpty();
+        response.Data.ElementAt(0).Embedding1.Should().NotBeEmpty();
 
-        foreach (var data in response.Data.ElementAt(0).Embedding)
+        foreach (var data in response.Data.ElementAt(0).Embedding1)
         {
             Console.WriteLine($"{data}");
         }
