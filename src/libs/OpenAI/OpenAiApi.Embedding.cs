@@ -19,7 +19,7 @@ public partial class OpenAiApi
         CancellationToken cancellationToken = default)
     {
         input = input ?? throw new ArgumentNullException(nameof(input));
-        model ??= "text-embedding-ada-002";
+        model ??= EmbeddingModelIds.Ada002;
         
         var response = await CreateEmbeddingAsync(new CreateEmbeddingRequest
         {
