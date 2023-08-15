@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>false</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup Label="Base packages">
