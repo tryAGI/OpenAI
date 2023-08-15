@@ -157,6 +157,11 @@ public class OpenAiFunctionsGenerator : IIncrementalGenerator
                     .FirstOrDefault();
                 break;
             
+            case TypeKind.Array:
+                schemaType = "array";
+                arrayItem = ToParameterData((typeSymbol as IArrayTypeSymbol)?.ElementType!);
+                break;
+            
             default:
                 throw new NotImplementedException($"{typeSymbol.TypeKind} is not implemented.");
         }

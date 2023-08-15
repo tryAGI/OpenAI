@@ -20,4 +20,10 @@ public class IpcGeneratorSnapshotTests : VerifyBase
     {
         return this.CheckSourceAsync(Resources.VariousTypesFunctions_cs.AsString());
     }
+
+    [TestMethod]
+    public Task MaintenanceFunctionsTypes()
+    {
+        return this.CheckSourceAsync(Resources.MaintenanceFunctions_cs.AsString());
+    }
 }
