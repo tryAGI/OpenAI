@@ -69,7 +69,7 @@ var result = await api.CreateChatCompletionAsync(new CreateChatCompletionRequest
     },
     Functions = service.AsFunctions(),
     Function_call = Function_call4.Auto,
-    Model = "gpt-3.5-turbo-0613",
+    Model = ModelIds.Gpt35Turbo_0613,
 });
 // ...
 var resultMessage = result.GetFirstChoiceMessage();
