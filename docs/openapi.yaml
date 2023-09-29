@@ -1,8 +1,15 @@
 openapi: 3.0.0
 info:
   title: OpenAI API
-  description: APIs for sampling from and fine-tuning language models
+  description: The OpenAI REST API. Please see https://platform.openai.com/docs/api-reference for more details.
   version: "2.0.0"
+  termsOfService: https://openai.com/policies/terms-of-use
+  contact:
+    name: OpenAI Support
+    url: https://help.openai.com/
+  license:
+    name: MIT
+    url: https://github.com/openai/openai-openapi/blob/master/LICENSE
 servers:
   - url: https://api.openai.com/v1
 tags:
@@ -71,19 +78,21 @@ paths:
                 )
 
                 print(completion.choices[0].message)
-              node.js: |
-                const { Configuration, OpenAIApi } = require("openai");
+              node.js: |-
+                import OpenAI from "openai";
 
-                const configuration = new Configuration({
-                  apiKey: process.env.OPENAI_API_KEY,
-                });
-                const openai = new OpenAIApi(configuration);
+                const openai = new OpenAI();
 
-                const completion = await openai.createChatCompletion({
-                  model: "VAR_model_id",
-                  messages: [{"role": "system", "content": "You are a helpful assistant."}, {role: "user", content: "Hello world"}],
-                });
-                console.log(completion.data.choices[0].message);
+                async function main() {
+                  const completion = await openai.chat.completions.create({
+                    messages: [{ role: "system", content: "You are a helpful assistant." }],
+                    model: "VAR_model_id",
+                  });
+
+                  console.log(completion.choices[0]);
+                }
+
+                main();
             response: &chat_completion_example |
               {
                 "id": "chatcmpl-123",
@@ -141,25 +150,27 @@ paths:
                 for chunk in completion:
                   print(chunk.choices[0].delta)
 
-              node.js: |
-                const { Configuration, OpenAIApi } = require("openai");
+              node.js: |-
+                import OpenAI from "openai";
 
-                const configuration = new Configuration({
-                  apiKey: process.env.OPENAI_API_KEY,
-                });
-                const openai = new OpenAIApi(configuration);
+                const openai = new OpenAI();
 
-                const completion = await openai.createChatCompletion({
-                  model: "VAR_model_id",
-                  messages: [{"role": "system", "content": "You are a helpful assistant."}, {role: "user", content: "Hello world"}],
-                  stream: true
-                });
+                async function main() {
+                  const completion = await openai.chat.completions.create({
+                    model: "VAR_model_id",
+                    messages: [
+                      {"role": "system", "content": "You are a helpful assistant."},
+                      {"role": "user", "content": "Hello!"}
+                    ],
+                    stream: true,
+                  });
 
-                for await (const chunk of response) {
-                  // https://github.com/openai/openai-node/issues/18
-                  const parsed = parseChunk(chunk);
-                  console.log(parsed.choices[0].delta);
+                  for await (const chunk of completion) {
+                    console.log(chunk.choices[0].delta.content);
+                  }
                 }
+
+                main();
             response: &chat_completion_chunk_example |
               {
                 "id": "chatcmpl-123",
@@ -221,18 +232,22 @@ paths:
                   max_tokens=7,
                   temperature=0
                 )
-              node.js: |
-                const { Configuration, OpenAIApi } = require("openai");
-                const configuration = new Configuration({
-                  apiKey: process.env.OPENAI_API_KEY,
-                });
-                const openai = new OpenAIApi(configuration);
-                const response = await openai.createCompletion({
-                  model: "VAR_model_id",
-                  prompt: "Say this is a test",
-                  max_tokens: 7,
-                  temperature: 0,
-                });
+              node.js: |-
+                import OpenAI from "openai";
+
+                const openai = new OpenAI();
+
+                async function main() {
+                  const completion = await openai.completions.create({
+                    model: "VAR_model_id",
+                    prompt: "Say this is a test.",
+                    max_tokens: 7,
+                    temperature: 0,
+                  });
+
+                  console.log(completion);
+                }
+                main();
             response: |
               {
                 "id": "cmpl-uqkvlQyYK7bGYrRHQ0eXlWi7",
@@ -278,25 +293,23 @@ paths:
                   stream=True
                 ):
                   print(chunk['choices'][0]['text'])
-              node.js: |
-                const { Configuration, OpenAIApi } = require("openai");
-                const configuration = new Configuration({
-                  apiKey: process.env.OPENAI_API_KEY,
-                });
-                const openai = new OpenAIApi(configuration);
-                const response = await openai.createCompletion({
-                  model: "VAR_model_id",
-                  prompt: "Say this is a test",
-                  max_tokens: 7,
-                  temperature: 0,
-                  stream: true
-                });
+              node.js: |-
+                import OpenAI from "openai";
 
-                for await (const chunk of response) {
-                  // https://github.com/openai/openai-node/issues/18
-                  const parsed = parseChunk(chunk);
-                  console.log(parsed.choices[0].text);
+                const openai = new OpenAI();
+
+                async function main() {
+                  const stream = await openai.completions.create({
+                    model: "VAR_model_id",
+                    prompt: "Say this is a test.",
+                    stream: true,
+                  });
+
+                  for await (const chunk of stream) {
+                    console.log(chunk.choices[0].text)
+                  }
                 }
+                main();
             response: |
               {
                 "id": "cmpl-7iA7iJjj8V2zOkCGvWF2hAkDWBQZe",
@@ -310,7 +323,7 @@ paths:
                     "finish_reason": null
                   }
                 ],
-                "model": "text-davinci-003"
+                "model": "gpt-3.5-turbo-instruct"
               }
   /edits:
     post:
@@ -357,17 +370,22 @@ paths:
                 input="What day of the wek is it?",
                 instruction="Fix the spelling mistakes"
               )
-            node.js: |
-              const { Configuration, OpenAIApi } = require("openai");
-              const configuration = new Configuration({
-                apiKey: process.env.OPENAI_API_KEY,
-              });
-              const openai = new OpenAIApi(configuration);
-              const response = await openai.createEdit({
-                model: "VAR_model_id",
-                input: "What day of the wek is it?",
-                instruction: "Fix the spelling mistakes",
-              });
+            node.js: |-
+              import OpenAI from "openai";
+
+              const openai = new OpenAI();
+
+              async function main() {
+                const edit = await openai.edits.create({
+                  model: "VAR_model_id",
+                  input: "What day of the wek is it?",
+                  instruction: "Fix the spelling mistakes.",
+                });
+
+                console.log(edit);
+              }
+
+              main();
           response: &edit_example |
             {
               "object": "edit",
@@ -427,17 +445,17 @@ paths:
                 n=2,
                 size="1024x1024"
               )
-            node.js: |
-              const { Configuration, OpenAIApi } = require("openai");
-              const configuration = new Configuration({
-                apiKey: process.env.OPENAI_API_KEY,
-              });
-              const openai = new OpenAIApi(configuration);
-              const response = await openai.createImage({
-                prompt: "A cute baby sea otter",
-                n: 2,
-                size: "1024x1024",
-              });
+            node.js: |-
+              import OpenAI from "openai";
+
+              const openai = new OpenAI();
+
+              async function main() {
+                const image = await openai.images.generate({ prompt: "A cute baby sea otter" });
+
+                console.log(image.data);
+              }
+              main();
           response: |
             {
               "created": 1589478378,
@@ -494,19 +512,22 @@ paths:
                 n=2,
                 size="1024x1024"
               )
-            node.js: |
-              const { Configuration, OpenAIApi } = require("openai");
-              const configuration = new Configuration({
-                apiKey: process.env.OPENAI_API_KEY,
-              });
-              const openai = new OpenAIApi(configuration);
-              const response = await openai.createImageEdit(
-                fs.createReadStream("otter.png"),
-                "A cute baby sea otter wearing a beret",
-                fs.createReadStream("mask.png"),
-                2,
-                "1024x1024"
-              );
+            node.js: |-
+              import fs from "fs";
+              import OpenAI from "openai";
+
+              const openai = new OpenAI();
+
+              async function main() {
+                const image = await openai.images.edit({
+                  image: fs.createReadStream("otter.png"),
+                  mask: fs.createReadStream("mask.png"),
+                  prompt: "A cute baby sea otter wearing a beret",
+                });
+
+                console.log(image.data);
+              }
+              main();
           response: |
             {
               "created": 1589478378,
@@ -559,17 +580,20 @@ paths:
                 n=2,
                 size="1024x1024"
               )
-            node.js: |
-              const { Configuration, OpenAIApi } = require("openai");
-              const configuration = new Configuration({
-                apiKey: process.env.OPENAI_API_KEY,
-              });
-              const openai = new OpenAIApi(configuration);
-              const response = await openai.createImageVariation(
-                fs.createReadStream("otter.png"),
-                2,
-                "1024x1024"
-              );
+            node.js: |-
+              import fs from "fs";
+              import OpenAI from "openai";
+
+              const openai = new OpenAI();
+
+              async function main() {
+                const image = await openai.images.createVariation({
+                  image: fs.createReadStream("otter.png"),
+                });
+
+                console.log(image.data);
+              }
+              main();
           response: |
             {
               "created": 1589478378,
@@ -623,16 +647,21 @@ paths:
                 model="text-embedding-ada-002",
                 input="The food was delicious and the waiter..."
               )
-            node.js: |
-              const { Configuration, OpenAIApi } = require("openai");
-              const configuration = new Configuration({
-                apiKey: process.env.OPENAI_API_KEY,
-              });
-              const openai = new OpenAIApi(configuration);
-              const response = await openai.createEmbedding({
-                model: "text-embedding-ada-002",
-                input: "The food was delicious and the waiter...",
-              });
+            node.js: |-
+              import OpenAI from "openai";
+
+              const openai = new OpenAI();
+
+              async function main() {
+                const embedding = await openai.embeddings.create({
+                  model: "text-embedding-ada-002",
+                  input: "The quick brown fox jumped over the lazy dog",
+                });
+
+                console.log(embedding);
+              }
+
+              main();
           response: |
             {
               "object": "list",
@@ -691,16 +720,21 @@ paths:
               openai.api_key = os.getenv("OPENAI_API_KEY")
               audio_file = open("audio.mp3", "rb")
               transcript = openai.Audio.transcribe("whisper-1", audio_file)
-            node: |
-              const { Configuration, OpenAIApi } = require("openai");
-              const configuration = new Configuration({
-                apiKey: process.env.OPENAI_API_KEY,
-              });
-              const openai = new OpenAIApi(configuration);
-              const resp = await openai.createTranscription(
-                fs.createReadStream("audio.mp3"),
-                "whisper-1"
-              );
+            node: |-
+              import fs from "fs";
+              import OpenAI from "openai";
+
+              const openai = new OpenAI();
+
+              async function main() {
+                const transcription = await openai.audio.transcriptions.create({
+                  file: fs.createReadStream("audio.mp3"),
+                  model: "whisper-1",
+                });
+
+                console.log(transcription.text);
+              }
+              main();
           response: |
             {
               "text": "Imagine the wildest idea that you've ever had, and you're curious about how it might scale to something that's a 100, a 1,000 times bigger. This is a place where you can get to do that."
@@ -783,18 +817,25 @@ paths:
               import openai
               openai.api_key = os.getenv("OPENAI_API_KEY")
               openai.File.list()
-            node.js: |
-              const { Configuration, OpenAIApi } = require("openai");
-              const configuration = new Configuration({
-                apiKey: process.env.OPENAI_API_KEY,
-              });
-              const openai = new OpenAIApi(configuration);
-              const response = await openai.listFiles();
+            node.js: |-
+              import OpenAI from "openai";
+
+              const openai = new OpenAI();
+
+              async function main() {
+                const list = await openai.files.list();
+
+                for await (const file of list) {
+                  console.log(file);
+                }
+              }
+
+              main();
           response: |
             {
               "data": [
                 {
-                  "id": "file-ccdDZrC3iZVNiQVeEA6Z66wf",
+                  "id": "file-abc123",
                   "object": "file",
                   "bytes": 175,
                   "created_at": 1613677385,
@@ -802,7 +843,7 @@ paths:
                   "purpose": "search"
                 },
                 {
-                  "id": "file-XjGxS3KTG0uNmNOK362iJua3",
+                  "id": "file-abc123",
                   "object": "file",
                   "bytes": 140,
                   "created_at": 1613779121,
@@ -850,25 +891,31 @@ paths:
                 file=open("mydata.jsonl", "rb"),
                 purpose='fine-tune'
               )
-            node.js: |
-              const fs = require("fs");
-              const { Configuration, OpenAIApi } = require("openai");
-              const configuration = new Configuration({
-                apiKey: process.env.OPENAI_API_KEY,
-              });
-              const openai = new OpenAIApi(configuration);
-              const response = await openai.createFile(
-                fs.createReadStream("mydata.jsonl"),
-                "fine-tune"
-              );
+            node.js: |-
+              import fs from "fs";
+              import OpenAI from "openai";
+
+              const openai = new OpenAI();
+
+              async function main() {
+                const file = await openai.files.create({
+                  file: fs.createReadStream("mydata.jsonl"),
+                  purpose: "fine-tune",
+                });
+
+                console.log(file);
+              }
+
+              main();
           response: |
             {
-              "id": "file-XjGxS3KTG0uNmNOK362iJua3",
+              "id": "file-abc123",
               "object": "file",
               "bytes": 140,
               "created_at": 1613779121,
               "filename": "mydata.jsonl",
-              "purpose": "fine-tune"
+              "purpose": "fine-tune",
+              "status": "uploaded" | "processed" | "pending" | "error"
             }
 
   /files/{file_id}:
@@ -883,7 +930,7 @@ paths:
           required: true
           schema:
             type: string
-          description: The ID of the file to use for this request
+          description: The ID of the file to use for this request.
       responses:
         "200":
           description: OK
@@ -897,24 +944,29 @@ paths:
         examples:
           request:
             curl: |
-              curl https://api.openai.com/v1/files/file-XjGxS3KTG0uNmNOK362iJua3 \
+              curl https://api.openai.com/v1/files/file-abc123 \
                 -X DELETE \
                 -H "Authorization: Bearer $OPENAI_API_KEY"
             python: |
               import os
               import openai
               openai.api_key = os.getenv("OPENAI_API_KEY")
-              openai.File.delete("file-XjGxS3KTG0uNmNOK362iJua3")
-            node.js: |
-              const { Configuration, OpenAIApi } = require("openai");
-              const configuration = new Configuration({
-                apiKey: process.env.OPENAI_API_KEY,
-              });
-              const openai = new OpenAIApi(configuration);
-              const response = await openai.deleteFile("file-XjGxS3KTG0uNmNOK362iJua3");
+              openai.File.delete("file-abc123")
+            node.js: |-
+              import OpenAI from "openai";
+
+              const openai = new OpenAI();
+
+              async function main() {
+                const file = await openai.files.del("file-abc123");
+
+                console.log(file);
+              }
+
+              main();
           response: |
             {
-              "id": "file-XjGxS3KTG0uNmNOK362iJua3",
+              "id": "file-abc123",
               "object": "file",
               "deleted": true
             }
@@ -929,7 +981,7 @@ paths:
           required: true
           schema:
             type: string
-          description: The ID of the file to use for this request
+          description: The ID of the file to use for this request.
       responses:
         "200":
           description: OK
@@ -943,23 +995,28 @@ paths:
         examples:
           request:
             curl: |
-              curl https://api.openai.com/v1/files/file-XjGxS3KTG0uNmNOK362iJua3 \
+              curl https://api.openai.com/v1/files/file-abc123 \
                 -H "Authorization: Bearer $OPENAI_API_KEY"
             python: |
               import os
               import openai
               openai.api_key = os.getenv("OPENAI_API_KEY")
-              openai.File.retrieve("file-XjGxS3KTG0uNmNOK362iJua3")
-            node.js: |
-              const { Configuration, OpenAIApi } = require("openai");
-              const configuration = new Configuration({
-                apiKey: process.env.OPENAI_API_KEY,
-              });
-              const openai = new OpenAIApi(configuration);
-              const response = await openai.retrieveFile("file-XjGxS3KTG0uNmNOK362iJua3");
+              openai.File.retrieve("file-abc123")
+            node.js: |-
+              import OpenAI from "openai";
+
+              const openai = new OpenAI();
+
+              async function main() {
+                const file = await openai.files.retrieve("file-abc123");
+
+                console.log(file);
+              }
+
+              main();
           response: |
             {
-              "id": "file-XjGxS3KTG0uNmNOK362iJua3",
+              "id": "file-abc123",
               "object": "file",
               "bytes": 140,
               "created_at": 1613779657,
@@ -972,14 +1029,14 @@ paths:
       operationId: downloadFile
       tags:
         - OpenAI
-      summary: Returns the contents of the specified file
+      summary: Returns the contents of the specified file.
       parameters:
         - in: path
           name: file_id
           required: true
           schema:
             type: string
-          description: The ID of the file to use for this request
+          description: The ID of the file to use for this request.
       responses:
         "200":
           description: OK
@@ -993,24 +1050,29 @@ paths:
         examples:
           request:
             curl: |
-              curl https://api.openai.com/v1/files/file-XjGxS3KTG0uNmNOK362iJua3/content \
+              curl https://api.openai.com/v1/files/file-abc123/content \
                 -H "Authorization: Bearer $OPENAI_API_KEY" > file.jsonl
             python: |
               import os
               import openai
               openai.api_key = os.getenv("OPENAI_API_KEY")
-              content = openai.File.download("file-XjGxS3KTG0uNmNOK362iJua3")
+              content = openai.File.download("file-abc123")
             node.js: |
-              const { Configuration, OpenAIApi } = require("openai");
-              const configuration = new Configuration({
-                apiKey: process.env.OPENAI_API_KEY,
-              });
-              const openai = new OpenAIApi(configuration);
-              const response = await openai.downloadFile("file-XjGxS3KTG0uNmNOK362iJua3");
+              import OpenAI from "openai";
 
-  /fine-tunes:
+              const openai = new OpenAI();
+
+              async function main() {
+                const file = await openai.files.retrieveContent("file-abc123");
+
+                console.log(file);
+              }
+
+              main();
+
+  /fine_tuning/jobs:
     post:
-      operationId: createFineTune
+      operationId: createFineTuningJob
       tags:
         - OpenAI
       summary: |
@@ -1018,7 +1080,421 @@ paths:
 
         Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.
 
-        [Learn more about Fine-tuning](/docs/guides/fine-tuning)
+        [Learn more about fine-tuning](/docs/guides/fine-tuning)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateFineTuningJobRequest"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FineTuningJob"
+      x-oaiMeta:
+        name: Create fine-tuning job
+        returns: A [fine-tuning.job](/docs/api-reference/fine-tuning/object) object.
+        examples:
+          - title: No hyperparameters
+            request:
+              curl: |
+                curl https://api.openai.com/v1/fine_tuning/jobs \
+                  -H "Content-Type: application/json" \
+                  -H "Authorization: Bearer $OPENAI_API_KEY" \
+                  -d '{
+                    "training_file": "file-abc123"
+                    "model": "gpt-3.5-turbo",
+                  }'
+              python: |
+                import os
+                import openai
+                openai.api_key = os.getenv("OPENAI_API_KEY")
+                openai.FineTuningJob.create(training_file="file-abc123", model="gpt-3.5-turbo")
+              node.js: |
+                import OpenAI from "openai";
+
+                const openai = new OpenAI();
+
+                async function main() {
+                  const fineTune = await openai.fineTuning.jobs.create({
+                    training_file: "file-abc123"
+                  });
+
+                  console.log(fineTune);
+                }
+
+                main();
+            response: |
+              {
+                "object": "fine_tuning.job",
+                "id": "ft-AF1WoRqd3aJAHsqc9NY7iL8F",
+                "model": "gpt-3.5-turbo-0613",
+                "created_at": 1614807352,
+                "fine_tuned_model": null,
+                "organization_id": "org-123",
+                "result_files": [],
+                "status": "queued",
+                "validation_file": null,
+                "training_file": "file-abc123",
+              }
+          - title: Hyperparameters
+            request:
+              curl: |
+                curl https://api.openai.com/v1/fine_tuning/jobs \
+                  -H "Content-Type: application/json" \
+                  -H "Authorization: Bearer $OPENAI_API_KEY" \
+                  -d '{
+                    "training_file": "file-abc123"
+                    "model": "gpt-3.5-turbo",
+                    "hyperparameters": {
+                      "n_epochs": 2
+                    }
+                  }'
+              python: |
+                import os
+                import openai
+                openai.api_key = os.getenv("OPENAI_API_KEY")
+                openai.FineTuningJob.create(training_file="file-abc123", model="gpt-3.5-turbo", hyperparameters={"n_epochs":2})
+              node.js: |
+                import OpenAI from "openai";
+
+                const openai = new OpenAI();
+
+                async function main() {
+                  const fineTune = await openai.fineTuning.jobs.create({
+                    training_file: "file-abc123",
+                    model: "gpt-3.5-turbo",
+                    hyperparameters: { n_epochs: 2 },
+                  });
+
+                  console.log(fineTune);
+                }
+
+                main();
+            response: |
+              {
+                "object": "fine_tuning.job",
+                "id": "ft-AF1WoRqd3aJAHsqc9NY7iL8F",
+                "model": "gpt-3.5-turbo-0613",
+                "created_at": 1614807352,
+                "fine_tuned_model": null,
+                "organization_id": "org-123",
+                "result_files": [],
+                "status": "queued",
+                "validation_file": null,
+                "training_file": "file-abc123",
+                "hyperparameters":{"n_epochs":2},
+              }
+    get:
+      operationId: listPaginatedFineTuningJobs
+      tags:
+        - OpenAI
+      summary: |
+        List your organization's fine-tuning jobs
+      parameters:
+        - name: after
+          in: query
+          description: Identifier for the last job from the previous pagination request.
+          required: false
+          schema:
+            type: string
+        - name: limit
+          in: query
+          description: Number of fine-tuning jobs to retrieve.
+          required: false
+          schema:
+            type: integer
+            default: 20
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ListPaginatedFineTuningJobsResponse"
+      x-oaiMeta:
+        name: List fine-tuning jobs
+        returns: A list of paginated [fine-tuning job](/docs/api-reference/fine-tuning/object) objects.
+        examples:
+          request:
+            curl: |
+              curl https://api.openai.com/v1/fine_tuning/jobs?limit=2 \
+                -H "Authorization: Bearer $OPENAI_API_KEY"
+            python: |
+              import os
+              import openai
+              openai.api_key = os.getenv("OPENAI_API_KEY")
+              openai.FineTuningJob.list()
+            node.js: |-
+              import OpenAI from "openai";
+
+              const openai = new OpenAI();
+
+              async function main() {
+                const list = await openai.fineTuning.jobs.list();
+
+                for await (const fineTune of list) {
+                  console.log(fineTune);
+                }
+              }
+
+              main();
+          response: |
+            {
+              "object": "list",
+              "data": [
+                {
+                  "object": "fine_tuning.job.event",
+                  "id": "ft-event-TjX0lMfOniCZX64t9PUQT5hn",
+                  "created_at": 1689813489,
+                  "level": "warn",
+                  "message": "Fine tuning process stopping due to job cancellation",
+                  "data": null,
+                  "type": "message"
+                },
+                { ... },
+                { ... }
+              ], "has_more": true
+            }
+  /fine_tuning/jobs/{fine_tuning_job_id}:
+    get:
+      operationId: retrieveFineTuningJob
+      tags:
+        - OpenAI
+      summary: |
+        Get info about a fine-tuning job.
+
+        [Learn more about fine-tuning](/docs/guides/fine-tuning)
+      parameters:
+        - in: path
+          name: fine_tuning_job_id
+          required: true
+          schema:
+            type: string
+            example: ft-AF1WoRqd3aJAHsqc9NY7iL8F
+          description: |
+            The ID of the fine-tuning job.
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FineTuningJob"
+      x-oaiMeta:
+        name: Retrieve fine-tuning job
+        returns: The [fine-tuning](/docs/api-reference/fine-tunes/object) object with the given ID.
+        examples:
+          request:
+            curl: |
+              curl https://api.openai.com/v1/fine_tuning/jobs/ft-AF1WoRqd3aJAHsqc9NY7iL8F \
+                -H "Authorization: Bearer $OPENAI_API_KEY"
+            python: |
+              import os
+              import openai
+              openai.api_key = os.getenv("OPENAI_API_KEY")
+              openai.FineTuningJob.retrieve("ft-anaKUAgnnBkNGB3QcSr4pImR")
+            node.js: |
+              import OpenAI from "openai";
+
+              const openai = new OpenAI();
+
+              async function main() {
+                const fineTune = await openai.fineTuning.jobs.retrieve("ft-AF1WoRqd3aJAHsqc9NY7iL8F");
+                
+                console.log(fineTune);
+              }
+
+              main();
+          response: &fine_tuning_example |
+            {
+              "object": "fine_tuning.job",
+              "id": "ft-zRdUkP4QeZqeYjDcQL0wwam1",
+              "model": "davinci-002",
+              "created_at": 1692661014,
+              "finished_at": 1692661190,
+              "fine_tuned_model": "ft:davinci-002:my-org:custom_suffix:7q8mpxmy",
+              "organization_id": "org-123",
+              "result_files": [
+                  "file-abc123"
+              ],
+              "status": "succeeded",
+              "validation_file": null,
+              "training_file": "file-abc123",
+              "hyperparameters": {
+                  "n_epochs": 4,
+              },
+              "trained_tokens": 5768
+            }
+
+  /fine_tuning/jobs/{fine_tuning_job_id}/events:
+    get:
+      operationId: listFineTuningEvents
+      tags:
+        - OpenAI
+      summary: |
+        Get status updates for a fine-tuning job.
+      parameters:
+        - in: path
+          name: fine_tuning_job_id
+          required: true
+          schema:
+            type: string
+            example: ft-AF1WoRqd3aJAHsqc9NY7iL8F
+          description: |
+            The ID of the fine-tuning job to get events for.
+        - name: after
+          in: query
+          description: Identifier for the last event from the previous pagination request.
+          required: false
+          schema:
+            type: string
+        - name: limit
+          in: query
+          description: Number of events to retrieve.
+          required: false
+          schema:
+            type: integer
+            default: 20
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ListFineTuningJobEventsResponse"
+      x-oaiMeta:
+        name: List fine-tuning events
+        returns: A list of fine-tuning event objects.
+        examples:
+          request:
+            curl: |
+              curl https://api.openai.com/v1/fine_tuning/jobs/ft-AF1WoRqd3aJAHsqc9NY7iL8F/events \
+                -H "Authorization: Bearer $OPENAI_API_KEY"
+            python: |
+              import os
+              import openai
+              openai.api_key = os.getenv("OPENAI_API_KEY")
+              openai.FineTuningJob.list_events(id="ft-w9WJrnTe9vcVopaTy9LrlGQv", limit=2)
+            node.js: |-
+              import OpenAI from "openai";
+
+              const openai = new OpenAI();
+
+              async function main() {
+                const list = await openai.fineTuning.list_events(id="ft-w9WJrnTe9vcVopaTy9LrlGQv", limit=2);
+
+                for await (const fineTune of list) {
+                  console.log(fineTune);
+                }
+              }
+
+              main();
+          response: |
+            {
+              "object": "list",
+              "data": [
+                {
+                  "object": "fine_tuning.job.event",
+                  "id": "ft-event-ddTJfwuMVpfLXseO0Am0Gqjm",
+                  "created_at": 1692407401,
+                  "level": "info",
+                  "message": "Fine tuning job successfully completed",
+                  "data": null,
+                  "type": "message"
+                },
+                {
+                  "object": "fine_tuning.job.event",
+                  "id": "ft-event-tyiGuB72evQncpH87xe505Sv",
+                  "created_at": 1692407400,
+                  "level": "info",
+                  "message": "New fine-tuned model created: ft:gpt-3.5-turbo:openai::7p4lURel",
+                  "data": null,
+                  "type": "message"
+                }
+              ],
+              "has_more": true
+            }
+
+  /fine_tuning/jobs/{fine_tuning_job_id}/cancel:
+    post:
+      operationId: cancelFineTuningJob
+      tags:
+        - OpenAI
+      summary: |
+        Immediately cancel a fine-tune job.
+      parameters:
+        - in: path
+          name: fine_tuning_job_id
+          required: true
+          schema:
+            type: string
+            example: ft-AF1WoRqd3aJAHsqc9NY7iL8F
+          description: |
+            The ID of the fine-tuning job to cancel.
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FineTuningJob"
+      x-oaiMeta:
+        name: Cancel fine-tuning
+        returns: The cancelled [fine-tuning](/docs/api-reference/fine-tuning/object) object.
+        examples:
+          request:
+            curl: |
+              curl -X POST https://api.openai.com/v1/fine_tuning/jobs/ft-AF1WoRqd3aJAHsqc9NY7iL8F/cancel \
+                -H "Authorization: Bearer $OPENAI_API_KEY"
+            python: |
+              import os
+              import openai
+              openai.api_key = os.getenv("OPENAI_API_KEY")
+              openai.FineTuningJob.cancel("ft-anaKUAgnnBkNGB3QcSr4pImR")
+            node.js: |-
+              import OpenAI from "openai";
+
+              const openai = new OpenAI();
+
+              async function main() {
+                const fineTune = await openai.fineTuning.jobs.cancel("ft-AF1WoRqd3aJAHsqc9NY7iL8F");
+
+                console.log(fineTune);
+              }
+              main();
+          response: |
+            {
+              "object": "fine_tuning.job",
+              "id": "ft-gleYLJhWh1YFufiy29AahVpj",
+              "model": "gpt-3.5-turbo-0613",
+              "created_at": 1689376978,
+              "fine_tuned_model": null,
+              "organization_id": "org-123",
+              "result_files": [],
+              "hyperparameters": {
+                "n_epochs":  "auto"
+              },
+              "status": "cancelled",
+              "validation_file": "file-abc123",
+              "training_file": "file-abc123"
+            }
+
+  /fine-tunes:
+    post:
+      operationId: createFineTune
+      deprecated: true
+      tags:
+        - OpenAI
+      summary: |
+        Creates a job that fine-tunes a specified model from a given dataset.
+
+        Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.
+
+        [Learn more about fine-tuning](/docs/guides/legacy-fine-tuning)
       requestBody:
         required: true
         content:
@@ -1042,22 +1518,27 @@ paths:
                 -H "Content-Type: application/json" \
                 -H "Authorization: Bearer $OPENAI_API_KEY" \
                 -d '{
-                  "training_file": "file-XGinujblHPwGLSztz8cPS8XY"
+                  "training_file": "file-abc123"
                 }'
             python: |
               import os
               import openai
               openai.api_key = os.getenv("OPENAI_API_KEY")
-              openai.FineTune.create(training_file="file-XGinujblHPwGLSztz8cPS8XY")
+              openai.FineTune.create(training_file="file-abc123")
             node.js: |
-              const { Configuration, OpenAIApi } = require("openai");
-              const configuration = new Configuration({
-                apiKey: process.env.OPENAI_API_KEY,
-              });
-              const openai = new OpenAIApi(configuration);
-              const response = await openai.createFineTune({
-                training_file: "file-XGinujblHPwGLSztz8cPS8XY",
-              });
+              import OpenAI from "openai";
+
+              const openai = new OpenAI();
+
+              async function main() {
+                const fineTune = await openai.fineTunes.create({
+                  training_file: "file-abc123"
+                });
+
+                console.log(fineTune);
+              }
+
+              main();
           response: |
             {
               "id": "ft-AF1WoRqd3aJAHsqc9NY7iL8F",
@@ -1079,13 +1560,13 @@ paths:
                 "n_epochs": 4,
                 "prompt_loss_weight": 0.1,
               },
-              "organization_id": "org-...",
+              "organization_id": "org-123",
               "result_files": [],
               "status": "pending",
               "validation_files": [],
               "training_files": [
                 {
-                  "id": "file-XGinujblHPwGLSztz8cPS8XY",
+                  "id": "file-abc123",
                   "object": "file",
                   "bytes": 1547276,
                   "created_at": 1610062281,
@@ -1097,6 +1578,7 @@ paths:
             }
     get:
       operationId: listFineTunes
+      deprecated: true
       tags:
         - OpenAI
       summary: |
@@ -1121,13 +1603,20 @@ paths:
               import openai
               openai.api_key = os.getenv("OPENAI_API_KEY")
               openai.FineTune.list()
-            node.js: |
-              const { Configuration, OpenAIApi } = require("openai");
-              const configuration = new Configuration({
-                apiKey: process.env.OPENAI_API_KEY,
-              });
-              const openai = new OpenAIApi(configuration);
-              const response = await openai.listFineTunes();
+            node.js: |-
+              import OpenAI from "openai";
+
+              const openai = new OpenAI();
+
+              async function main() {
+                const list = await openai.fineTunes.list();
+
+                for await (const fineTune of list) {
+                  console.log(fineTune);
+                }
+              }
+
+              main();
           response: |
             {
               "object": "list",
@@ -1139,7 +1628,7 @@ paths:
                   "created_at": 1614807352,
                   "fine_tuned_model": null,
                   "hyperparams": { ... },
-                  "organization_id": "org-...",
+                  "organization_id": "org-123",
                   "result_files": [],
                   "status": "pending",
                   "validation_files": [],
@@ -1154,12 +1643,13 @@ paths:
   /fine-tunes/{fine_tune_id}:
     get:
       operationId: retrieveFineTune
+      deprecated: true
       tags:
         - OpenAI
       summary: |
         Gets info about the fine-tune job.
 
-        [Learn more about Fine-tuning](/docs/guides/fine-tuning)
+        [Learn more about fine-tuning](/docs/guides/legacy-fine-tuning)
       parameters:
         - in: path
           name: fine_tune_id
@@ -1189,13 +1679,18 @@ paths:
               import openai
               openai.api_key = os.getenv("OPENAI_API_KEY")
               openai.FineTune.retrieve(id="ft-AF1WoRqd3aJAHsqc9NY7iL8F")
-            node.js: |
-              const { Configuration, OpenAIApi } = require("openai");
-              const configuration = new Configuration({
-                apiKey: process.env.OPENAI_API_KEY,
-              });
-              const openai = new OpenAIApi(configuration);
-              const response = await openai.retrieveFineTune("ft-AF1WoRqd3aJAHsqc9NY7iL8F");
+            node.js: |-
+              import OpenAI from "openai";
+
+              const openai = new OpenAI();
+
+              async function main() {
+                const fineTune = await openai.fineTunes.retrieve("ft-AF1WoRqd3aJAHsqc9NY7iL8F");
+
+                console.log(fineTune);
+              }
+
+              main();
           response: &fine_tune_example |
             {
               "id": "ft-AF1WoRqd3aJAHsqc9NY7iL8F",
@@ -1225,7 +1720,7 @@ paths:
                   "object": "fine-tune-event",
                   "created_at": 1614807864,
                   "level": "info",
-                  "message": "Uploaded result files: file-QQm6ZpqdNwAaVC3aSz5sWwLT."
+                  "message": "Uploaded result files: file-abc123."
                 },
                 {
                   "object": "fine-tune-event",
@@ -1241,10 +1736,10 @@ paths:
                 "n_epochs": 4,
                 "prompt_loss_weight": 0.1,
               },
-              "organization_id": "org-...",
+              "organization_id": "org-123",
               "result_files": [
                 {
-                  "id": "file-QQm6ZpqdNwAaVC3aSz5sWwLT",
+                  "id": "file-abc123",
                   "object": "file",
                   "bytes": 81509,
                   "created_at": 1614807863,
@@ -1256,7 +1751,7 @@ paths:
               "validation_files": [],
               "training_files": [
                 {
-                  "id": "file-XGinujblHPwGLSztz8cPS8XY",
+                  "id": "file-abc123",
                   "object": "file",
                   "bytes": 1547276,
                   "created_at": 1610062281,
@@ -1270,6 +1765,7 @@ paths:
   /fine-tunes/{fine_tune_id}/cancel:
     post:
       operationId: cancelFineTune
+      deprecated: true
       tags:
         - OpenAI
       summary: |
@@ -1303,13 +1799,17 @@ paths:
               import openai
               openai.api_key = os.getenv("OPENAI_API_KEY")
               openai.FineTune.cancel(id="ft-AF1WoRqd3aJAHsqc9NY7iL8F")
-            node.js: |
-              const { Configuration, OpenAIApi } = require("openai");
-              const configuration = new Configuration({
-                apiKey: process.env.OPENAI_API_KEY,
-              });
-              const openai = new OpenAIApi(configuration);
-              const response = await openai.cancelFineTune("ft-AF1WoRqd3aJAHsqc9NY7iL8F");
+            node.js: |-
+              import OpenAI from "openai";
+
+              const openai = new OpenAI();
+
+              async function main() {
+                const fineTune = await openai.fineTunes.cancel("ft-AF1WoRqd3aJAHsqc9NY7iL8F");
+
+                console.log(fineTune);
+              }
+              main();
           response: |
             {
               "id": "ft-xhrpBbvVUzYGo8oUO1FY4nI7",
@@ -1319,13 +1819,13 @@ paths:
               "events": [ { ... } ],
               "fine_tuned_model": null,
               "hyperparams": { ... },
-              "organization_id": "org-...",
+              "organization_id": "org-123",
               "result_files": [],
               "status": "cancelled",
               "validation_files": [],
               "training_files": [
                 {
-                  "id": "file-XGinujblHPwGLSztz8cPS8XY",
+                  "id": "file-abc123",
                   "object": "file",
                   "bytes": 1547276,
                   "created_at": 1610062281,
@@ -1339,6 +1839,7 @@ paths:
   /fine-tunes/{fine_tune_id}/events:
     get:
       operationId: listFineTuneEvents
+      deprecated: true
       tags:
         - OpenAI
       summary: |
@@ -1387,13 +1888,17 @@ paths:
               import openai
               openai.api_key = os.getenv("OPENAI_API_KEY")
               openai.FineTune.list_events(id="ft-AF1WoRqd3aJAHsqc9NY7iL8F")
-            node.js: |
-              const { Configuration, OpenAIApi } = require("openai");
-              const configuration = new Configuration({
-                apiKey: process.env.OPENAI_API_KEY,
-              });
-              const openai = new OpenAIApi(configuration);
-              const response = await openai.listFineTuneEvents("ft-AF1WoRqd3aJAHsqc9NY7iL8F");
+            node.js: |-
+              import OpenAI from "openai";
+
+              const openai = new OpenAI();
+
+              async function main() {
+                const fineTune = await openai.fineTunes.listEvents("ft-AF1WoRqd3aJAHsqc9NY7iL8F");
+
+                console.log(fineTune);
+              }
+              main();
           response: |
             {
               "object": "list",
@@ -1420,7 +1925,7 @@ paths:
                   "object": "fine-tune-event",
                   "created_at": 1614807864,
                   "level": "info",
-                  "message": "Uploaded result files: file-QQm6ZpqdNwAaVC3aSz5sWwLT."
+                  "message": "Uploaded result files: file-abc123"
                 },
                 {
                   "object": "fine-tune-event",
@@ -1457,13 +1962,19 @@ paths:
               import openai
               openai.api_key = os.getenv("OPENAI_API_KEY")
               openai.Model.list()
-            node.js: |
-              const { Configuration, OpenAIApi } = require("openai");
-              const configuration = new Configuration({
-                apiKey: process.env.OPENAI_API_KEY,
-              });
-              const openai = new OpenAIApi(configuration);
-              const response = await openai.listModels();
+            node.js: |-
+              import OpenAI from "openai";
+
+              const openai = new OpenAI();
+
+              async function main() {
+                const list = await openai.models.list();
+
+                for await (const model of list) {
+                  console.log(model);
+                }
+              }
+              main();
           response: |
             {
               "object": "list",
@@ -1503,7 +2014,7 @@ paths:
           schema:
             type: string
             # ideally this will be an actual ID, so this will always work from browser
-            example: text-davinci-001
+            example: gpt-3.5-turbo
           description: The ID of the model to use for this request
       responses:
         "200":
@@ -1525,13 +2036,18 @@ paths:
               import openai
               openai.api_key = os.getenv("OPENAI_API_KEY")
               openai.Model.retrieve("VAR_model_id")
-            node.js: |
-              const { Configuration, OpenAIApi } = require("openai");
-              const configuration = new Configuration({
-                apiKey: process.env.OPENAI_API_KEY,
-              });
-              const openai = new OpenAIApi(configuration);
-              const response = await openai.retrieveModel("VAR_model_id");
+            node.js: |-
+              import OpenAI from "openai";
+
+              const openai = new OpenAI();
+
+              async function main() {
+                const model = await openai.models.retrieve("gpt-3.5-turbo");
+
+                console.log(model);
+              }
+
+              main();
           response: &retrieve_model_response |
             {
               "id": "VAR_model_id",
@@ -1543,14 +2059,14 @@ paths:
       operationId: deleteModel
       tags:
         - OpenAI
-      summary: Delete a fine-tuned model. You must have the Owner role in your organization.
+      summary: Delete a fine-tuned model. You must have the Owner role in your organization to delete a model.
       parameters:
         - in: path
           name: model
           required: true
           schema:
             type: string
-            example: curie:ft-acmeco-2021-03-03-21-44-20
+            example: ft:gpt-3.5-turbo:acemeco:suffix:abc123
           description: The model to delete
       responses:
         "200":
@@ -1565,24 +2081,28 @@ paths:
         examples:
           request:
             curl: |
-              curl https://api.openai.com/v1/models/curie:ft-acmeco-2021-03-03-21-44-20 \
+              curl https://api.openai.com/v1/models/ft:gpt-3.5-turbo:acemeco:suffix:abc123 \
                 -X DELETE \
                 -H "Authorization: Bearer $OPENAI_API_KEY"
             python: |
               import os
               import openai
               openai.api_key = os.getenv("OPENAI_API_KEY")
-              openai.Model.delete("curie:ft-acmeco-2021-03-03-21-44-20")
-            node.js: |
-              const { Configuration, OpenAIApi } = require("openai");
-              const configuration = new Configuration({
-                apiKey: process.env.OPENAI_API_KEY,
-              });
-              const openai = new OpenAIApi(configuration);
-              const response = await openai.deleteModel('curie:ft-acmeco-2021-03-03-21-44-20');
+              openai.Model.delete("ft:gpt-3.5-turbo:acemeco:suffix:abc123")
+            node.js: |-
+              import OpenAI from "openai";
+
+              const openai = new OpenAI();
+
+              async function main() {
+                const model = await openai.models.del("ft:gpt-3.5-turbo:acemeco:suffix:abc123");
+
+                console.log(model);
+              }
+              main();
           response: |
             {
-              "id": "curie:ft-acmeco-2021-03-03-21-44-20",
+              "id": "ft:gpt-3.5-turbo:acemeco:suffix:abc123",
               "object": "model",
               "deleted": true
             }
@@ -1626,14 +2146,16 @@ paths:
                 input="I want to kill them.",
               )
             node.js: |
-              const { Configuration, OpenAIApi } = require("openai");
-              const configuration = new Configuration({
-                apiKey: process.env.OPENAI_API_KEY,
-              });
-              const openai = new OpenAIApi(configuration);
-              const response = await openai.createModeration({
-                input: "I want to kill them.",
-              });
+              import OpenAI from "openai";
+
+              const openai = new OpenAI();
+
+              async function main() {
+                const moderation = await openai.moderations.create({ input: "I want to kill them." });
+
+                console.log(moderation);
+              }
+              main();
           response: &moderation_example |
             {
               "id": "modr-XXXXX",
@@ -1672,6 +2194,12 @@ paths:
             }
 
 components:
+
+  securitySchemes:
+    ApiKeyAuth:
+      type: http
+      scheme: 'bearer'
+
   schemas:
     Error:
       type: object
@@ -1863,7 +2391,7 @@ components:
           description: &completions_presence_penalty_description |
             Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.
 
-            [See more information about frequency and presence penalties.](/docs/api-reference/parameter-details)
+            [See more information about frequency and presence penalties.](/docs/guides/gpt/parameter-details)
         frequency_penalty:
           type: number
           default: 0
@@ -1873,7 +2401,7 @@ components:
           description: &completions_frequency_penalty_description |
             Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.
 
-            [See more information about frequency and presence penalties.](/docs/api-reference/parameter-details)
+            [See more information about frequency and presence penalties.](/docs/guides/gpt/parameter-details)
         best_of:
           type: integer
           default: 1
@@ -1921,7 +2449,7 @@ components:
           description: The object type, which is always "text_completion"
         created:
           type: integer
-          description: The Unix timestamp of when the completion was created.
+          description: The Unix timestamp (in seconds) of when the completion was created.
         model:
           type: string
           description: The model used for completion.
@@ -1966,8 +2494,9 @@ components:
                 type: string
                 description: &completion_finish_reason_description |
                   The reason the model stopped generating tokens. This will be `stop` if the model hit a natural stop point or a provided stop sequence,
-                  or `length` if the maximum number of tokens specified in the request was reached.
-                enum: ["stop", "length"]
+                  `length` if the maximum number of tokens specified in the request was reached,
+                  or `content_filter` if content was omitted due to a flag from our content filters.
+                enum: ["stop", "length", "content_filter"]
         usage:
           $ref: "#/components/schemas/CompletionUsage"
       required:
@@ -1978,6 +2507,7 @@ components:
         - choices
       x-oaiMeta:
         name: The completion object
+        legacy: true
         example: |
           {
             "id": "cmpl-uqkvlQyYK7bGYrRHQ0eXlWi7",
@@ -2050,6 +2580,15 @@ components:
         - name
         - parameters
 
+    ChatCompletionFunctionCallOption:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the function to call.
+      required:
+        - name
+
     ChatCompletionResponseMessage:
       type: object
       description: A chat completion message generated by the model.
@@ -2120,20 +2659,15 @@ components:
           description: A list of functions the model may generate JSON inputs for.
           type: array
           minItems: 1
+          maxItems: 128
           items:
             $ref: "#/components/schemas/ChatCompletionFunctions"
         function_call:
-          description: Controls how the model responds to function calls. "none" means the model does not call a function, and responds to the end-user. "auto" means the model can pick between an end-user or calling a function.  Specifying a particular function via `{"name":\ "my_function"}` forces the model to call that function. "none" is the default when no functions are present. "auto" is the default if functions are present.
+          description: "Controls how the model responds to function calls. `none` means the model does not call a function, and responds to the end-user. `auto` means the model can pick between an end-user or calling a function.  Specifying a particular function via `{\"name\": \"my_function\"}` forces the model to call that function. `none` is the default when no functions are present. `auto` is the default if functions are present."
           oneOf:
             - type: string
               enum: [none, auto]
-            - type: object
-              properties:
-                name:
-                  type: string
-                  description: The name of the function to call.
-              required:
-                - name
+            - $ref: "#/components/schemas/ChatCompletionFunctionCallOption"
         temperature:
           type: number
           minimum: 0
@@ -2184,6 +2718,7 @@ components:
             The total length of input tokens and generated tokens is limited by the model's context length. [Example Python code](https://github.com/openai/openai-cookbook/blob/main/examples/How_to_count_tokens_with_tiktoken.ipynb) for counting tokens.
           default: inf
           type: integer
+          nullable: true
         presence_penalty:
           type: number
           default: 0
@@ -2226,7 +2761,7 @@ components:
           description: The object type, which is always `chat.completion`.
         created:
           type: integer
-          description: A unix timestamp of when the chat completion was created.
+          description: The Unix timestamp (in seconds) of when the chat completion was created.
         model:
           type: string
           description: The model used for the chat completion.
@@ -2249,8 +2784,10 @@ components:
                 type: string
                 description: &chat_completion_finish_reason_description |
                   The reason the model stopped generating tokens. This will be `stop` if the model hit a natural stop point or a provided stop sequence,
-                  `length` if the maximum number of tokens specified in the request was reached, or `function_call` if the model called a function.
-                enum: ["stop", "length", "function_call"]
+                  `length` if the maximum number of tokens specified in the request was reached,
+                  `content_filter` if content was omitted due to a flag from our content filters,
+                  or `function_call` if the model called a function.
+                enum: ["stop", "length", "function_call", "content_filter"]
         usage:
           $ref: "#/components/schemas/CompletionUsage"
       required:
@@ -2264,6 +2801,22 @@ components:
         group: chat
         example: *chat_completion_example
 
+    ListPaginatedFineTuningJobsResponse:
+      type: object
+      properties:
+        object:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/FineTuningJob"
+        has_more:
+          type: boolean
+      required:
+        - object
+        - data
+        - has_more
+
     CreateChatCompletionStreamResponse:
       type: object
       description: Represents a streamed chunk of a chat completion response returned by model, based on the provided input.
@@ -2276,7 +2829,7 @@ components:
           description: The object type, which is always `chat.completion.chunk`.
         created:
           type: integer
-          description: A unix timestamp of when the chat completion chunk was created.
+          description: The Unix timestamp (in seconds) of when the chat completion chunk was created.
         model:
           type: string
           description: The model to generate the completion.
@@ -2298,7 +2851,7 @@ components:
               finish_reason:
                 type: string
                 description: *chat_completion_finish_reason_description
-                enum: ["stop", "length", "function_call"]
+                enum: ["stop", "length", "function_call", "content_filter"]
                 nullable: true
       required:
         - id
@@ -2360,13 +2913,14 @@ components:
     CreateEditResponse:
       type: object
       title: Edit
+      deprecated: true
       properties:
         object:
           type: string
           description: The object type, which is always `edit`.
         created:
           type: integer
-          description: A unix timestamp of when the edit was created.
+          description: The Unix timestamp (in seconds) of when the edit was created.
         choices:
           type: array
           description: A list of edit choices. Can be more than one if `n` is greater than 1.
@@ -2549,29 +3103,45 @@ components:
                 properties:
                   hate:
                     type: boolean
-                    description: Whether the content was flagged as 'hate'.
+                    description: Content that expresses, incites, or promotes hate based on race, gender, ethnicity, religion, nationality, sexual orientation, disability status, or caste. Hateful content aimed at non-protected groups (e.g., chess players) is harrassment.
                   hate/threatening:
                     type: boolean
-                    description: Whether the content was flagged as 'hate/threatening'.
+                    description: Hateful content that also includes violence or serious harm towards the targeted group based on race, gender, ethnicity, religion, nationality, sexual orientation, disability status, or caste.
+                  harassment:
+                    type: boolean
+                    description: Content that expresses, incites, or promotes harassing language towards any target.
+                  harassment/threatening:
+                    type: boolean
+                    description: Harassment content that also includes violence or serious harm towards any target.
                   self-harm:
                     type: boolean
-                    description: Whether the content was flagged as 'self-harm'.
+                    description: Content that promotes, encourages, or depicts acts of self-harm, such as suicide, cutting, and eating disorders.
+                  self-harm/intent:
+                    type: boolean
+                    description: Content where the speaker expresses that they are engaging or intend to engage in acts of self-harm, such as suicide, cutting, and eating disorders.
+                  self-harm/instructions:
+                    type: boolean
+                    description: Content that encourages performing acts of self-harm, such as suicide, cutting, and eating disorders, or that gives instructions or advice on how to commit such acts.
                   sexual:
                     type: boolean
-                    description: Whether the content was flagged as 'sexual'.
+                    description: Content meant to arouse sexual excitement, such as the description of sexual activity, or that promotes sexual services (excluding sex education and wellness).
                   sexual/minors:
                     type: boolean
-                    description: Whether the content was flagged as 'sexual/minors'.
+                    description: Sexual content that includes an individual who is under 18 years old.
                   violence:
                     type: boolean
-                    description: Whether the content was flagged as 'violence'.
+                    description: Content that depicts death, violence, or physical injury.
                   violence/graphic:
                     type: boolean
-                    description: Whether the content was flagged as 'violence/graphic'.
+                    description: Content that depicts death, violence, or physical injury in graphic detail.
                 required:
                   - hate
                   - hate/threatening
+                  - harassment
+                  - harassment/threatening
                   - self-harm
+                  - self-harm/intent
+                  - self-harm/instructions
                   - sexual
                   - sexual/minors
                   - violence
@@ -2586,9 +3156,21 @@ components:
                   hate/threatening:
                     type: number
                     description: The score for the category 'hate/threatening'.
+                  harassment:
+                    type: number
+                    description: The score for the category 'harassment'.
+                  harassment/threatening:
+                    type: number
+                    description: The score for the category 'harassment/threatening'.
                   self-harm:
                     type: number
                     description: The score for the category 'self-harm'.
+                  self-harm/intent:
+                    type: number
+                    description: The score for the category 'self-harm/intent'.
+                  self-harm/instructions:
+                    type: number
+                    description: The score for the category 'self-harm/instructions'.
                   sexual:
                     type: number
                     description: The score for the category 'sexual'.
@@ -2604,7 +3186,11 @@ components:
                 required:
                   - hate
                   - hate/threatening
+                  - harassment
+                  - harassment/threatening
                   - self-harm
+                  - self-harm/intent
+                  - self-harm/instructions
                   - sexual
                   - sexual/minors
                   - violence
@@ -2642,15 +3228,14 @@ components:
           description: |
             Name of the [JSON Lines](https://jsonlines.readthedocs.io/en/latest/) file to be uploaded.
 
-            If the `purpose` is set to "fine-tune", each line is a JSON record with "prompt" and "completion" fields representing your [training examples](/docs/guides/fine-tuning/prepare-training-data).
+            If the `purpose` is set to "fine-tune", the file will be used for fine-tuning.
           type: string
           format: binary
         purpose:
           description: |
             The intended purpose of the uploaded documents.
 
-            Use "fine-tune" for [Fine-tuning](/docs/api-reference/fine-tunes). This allows us to validate the format of the uploaded file.
-
+            Use "fine-tune" for [fine-tuning](/docs/api-reference/fine-tuning). This allows us to validate the format of the uploaded file.
           type: string
       required:
         - file
@@ -2670,6 +3255,84 @@ components:
         - object
         - deleted
 
+    CreateFineTuningJobRequest:
+      type: object
+      properties:
+        training_file:
+          description: |
+            The ID of an uploaded file that contains training data.
+
+            See [upload file](/docs/api-reference/files/upload) for how to upload a file.
+
+            Your dataset must be formatted as a JSONL file. Additionally, you must upload your file with the purpose `fine-tune`.
+
+            See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.
+          type: string
+          example: "file-abc123"
+        validation_file:
+          description: |
+            The ID of an uploaded file that contains validation data.
+
+            If you provide this file, the data is used to generate validation
+            metrics periodically during fine-tuning. These metrics can be viewed in
+            the fine-tuning results file.
+            The same data should not be present in both train and validation files.
+
+            Your dataset must be formatted as a JSONL file. You must upload your file with the purpose `fine-tune`.
+
+            See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.
+          type: string
+          nullable: true
+          example: "file-abc123"
+        model:
+          description: |
+            The name of the model to fine-tune. You can select one of the
+            [supported models](/docs/guides/fine-tuning/what-models-can-be-fine-tuned).
+          example: "gpt-3.5-turbo"
+          type: string
+          x-oaiTypeLabel: string
+        hyperparameters:
+          type: object
+          description: The hyperparameters used for the fine-tuning job.
+          properties:
+            n_epochs:
+              description: |
+                The number of epochs to train the model for. An epoch refers to one
+                full cycle through the training dataset.
+              oneOf:
+                - type: string
+                  enum: [auto]
+                - type: integer
+                  minimum: 1
+                  maximum: 50
+              default: auto
+        suffix:
+          description: |
+            A string of up to 18 characters that will be added to your fine-tuned model name.
+
+            For example, a `suffix` of "custom-model-name" would produce a model name like `ft:gpt-3.5-turbo:openai:custom-model-name:7p4lURel`.
+          type: string
+          minLength: 1
+          maxLength: 40
+          default: null
+          nullable: true
+      required:
+        - training_file
+        - model
+
+    ListFineTuningJobEventsResponse:
+      type: object
+      properties:
+        object:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/FineTuningJobEvent"
+      required:
+        - object
+        - data
+
     CreateFineTuneRequest:
       type: object
       properties:
@@ -2683,32 +3346,32 @@ components:
             example is a JSON object with the keys "prompt" and "completion".
             Additionally, you must upload your file with the purpose `fine-tune`.
 
-            See the [fine-tuning guide](/docs/guides/fine-tuning/creating-training-data) for more details.
+            See the [fine-tuning guide](/docs/guides/legacy-fine-tuning/creating-training-data) for more details.
           type: string
-          example: "file-ajSREls59WBbvgSzJSVWxMCB"
+          example: "file-abc123"
         validation_file:
           description: |
             The ID of an uploaded file that contains validation data.
 
             If you provide this file, the data is used to generate validation
             metrics periodically during fine-tuning. These metrics can be viewed in
-            the [fine-tuning results file](/docs/guides/fine-tuning/analyzing-your-fine-tuned-model).
+            the [fine-tuning results file](/docs/guides/legacy-fine-tuning/analyzing-your-fine-tuned-model).
             Your train and validation data should be mutually exclusive.
 
             Your dataset must be formatted as a JSONL file, where each validation
             example is a JSON object with the keys "prompt" and "completion".
             Additionally, you must upload your file with the purpose `fine-tune`.
 
-            See the [fine-tuning guide](/docs/guides/fine-tuning/creating-training-data) for more details.
+            See the [fine-tuning guide](/docs/guides/legacy-fine-tuning/creating-training-data) for more details.
           type: string
           nullable: true
-          example: "file-XjSREls59WBbvgSzJSVWxMCa"
+          example: "file-abc123"
         model:
           description: |
             The name of the base model to fine-tune. You can select one of "ada",
-            "babbage", "curie", "davinci", or a fine-tuned model created after 2022-04-21.
+            "babbage", "curie", "davinci", or a fine-tuned model created after 2022-04-21 and before 2023-08-22.
             To learn more about these models, see the
-            [Models](https://platform.openai.com/docs/models) documentation.
+            [Models](/docs/models) documentation.
           default: "curie"
           example: "curie"
           nullable: true
@@ -2764,7 +3427,7 @@ components:
           description: |
             If set, we calculate classification-specific metrics such as accuracy
             and F-1 score using the validation set at the end of every epoch.
-            These metrics can be viewed in the [results file](/docs/guides/fine-tuning/analyzing-your-fine-tuned-model).
+            These metrics can be viewed in the [results file](/docs/guides/legacy-fine-tuning/analyzing-your-fine-tuned-model).
 
             In order to compute classification metrics, you must provide a
             `validation_file`. Additionally, you must
@@ -2856,7 +3519,7 @@ components:
           x-oaiTypeLabel: string
         input:
           description: |
-            Input text to embed, encoded as a string or array of tokens. To embed multiple inputs in a single request, pass an array of strings or array of token arrays. Each input must not exceed the max input tokens for the model (8191 tokens for `text-embedding-ada-002`). [Example Python code](https://github.com/openai/openai-cookbook/blob/main/examples/How_to_count_tokens_with_tiktoken.ipynb) for counting tokens.
+            Input text to embed, encoded as a string or array of tokens. To embed multiple inputs in a single request, pass an array of strings or array of token arrays. Each input must not exceed the max input tokens for the model (8191 tokens for `text-embedding-ada-002`) and cannot be an empty string. [Example Python code](https://github.com/openai/openai-cookbook/blob/main/examples/How_to_count_tokens_with_tiktoken.ipynb) for counting tokens.
           example: "The quick brown fox jumped over the lazy dog"
           oneOf:
             - type: string
@@ -3026,7 +3689,7 @@ components:
           description: The object type, which is always "model".
         created:
           type: integer
-          description: The date and time when the model was created.
+          description: The Unix timestamp (in seconds) when the model was created.
         owned_by:
           type: string
           description: The organization that owns the model.
@@ -3055,7 +3718,7 @@ components:
           description: The size of the file in bytes.
         created_at:
           type: integer
-          description: The unix timestamp for when the file was created.
+          description: The Unix timestamp (in seconds) for when the file was created.
         filename:
           type: string
           description: The name of the file.
@@ -3077,11 +3740,12 @@ components:
         - created_at
         - filename
         - purpose
+        - format
       x-oaiMeta:
         name: The file object
         example: |
           {
-            "id": "file-ajSREls59WBbvgSzJSVWxMCB",
+            "id": "file-abc123",
             "object": "file",
             "bytes": 120000,
             "created_at": 1677610602,
@@ -3125,10 +3789,153 @@ components:
             "index": 0
           }
 
+    FineTuningJob:
+      title: FineTuningJob
+      description: |
+        The `fine_tuning.job` object represents a fine-tuning job that has been created through the API.
+      properties:
+        id:
+          type: string
+          description: The object identifier, which can be referenced in the API endpoints.
+        object:
+          type: string
+          description: The object type, which is always "fine_tuning.job".
+        created_at:
+          type: integer
+          description: The Unix timestamp (in seconds) for when the fine-tuning job was created.
+        finished_at:
+          type: integer
+          nullable: true
+          description: The Unix timestamp (in seconds) for when the fine-tuning job was finished. The value will be null if the fine-tuning job is still running.
+        model:
+          type: string
+          description: The base model that is being fine-tuned.
+        fine_tuned_model:
+          type: string
+          nullable: true
+          description: The name of the fine-tuned model that is being created. The value will be null if the fine-tuning job is still running.
+        organization_id:
+          type: string
+          description: The organization that owns the fine-tuning job.
+        status:
+          type: string
+          description: The current status of the fine-tuning job, which can be either `validating_files`, `queued`, `running`, `succeeded`, `failed`, or `cancelled`.
+        hyperparameters:
+          type: object
+          description: The hyperparameters used for the fine-tuning job. See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.
+          properties:
+            n_epochs:
+              oneOf:
+                - type: string
+                  enum: [auto]
+                - type: integer
+                  minimum: 1
+                  maximum: 50
+              default: auto
+              description:
+                The number of epochs to train the model for. An epoch refers to one full cycle through the training dataset.
+
+                "auto" decides the optimal number of epochs based on the size of the dataset. If setting the number manually, we support any number between 1 and 50 epochs.
+          required:
+            - n_epochs
+        training_file:
+          type: string
+          description: The file ID used for training. You can retrieve the training data with the [Files API](/docs/api-reference/files/retrieve-contents).
+        validation_file:
+          type: string
+          nullable: true
+          description: The file ID used for validation. You can retrieve the validation results with the [Files API](/docs/api-reference/files/retrieve-contents).
+        result_files:
+          type: array
+          description: The compiled results file ID(s) for the fine-tuning job. You can retrieve the results with the [Files API](/docs/api-reference/files/retrieve-contents).
+          items:
+            type: string
+            example: file-abc123
+        trained_tokens:
+          type: integer
+          nullable: true
+          description: The total number of billable tokens processed by this fine-tuning job. The value will be null if the fine-tuning job is still running.
+        error:
+          type: object
+          nullable: true
+          description: For fine-tuning jobs that have `failed`, this will contain more information on the cause of the failure.
+          properties:
+            message:
+              type: string
+              description: A human-readable error message.
+            code:
+              type: string
+              description: A machine-readable error code.
+            param:
+              type: string
+              description: The parameter that was invalid, usually `training_file` or `validation_file`. This field will be null if the failure was not parameter-specific.
+              nullable: true
+          required:
+            - message
+            - code
+            - param
+      required:
+        - id
+        - object
+        - created_at
+        - finished_at
+        - model
+        - fine_tuned_model
+        - organization_id
+        - status
+        - hyperparameters
+        - training_file
+        - validation_file
+        - result_files
+        - trained_tokens
+        - error
+      x-oaiMeta:
+        name: The fine-tuning job object
+        example: *fine_tuning_example
+
+    FineTuningEvent:
+      title: FineTuningEvent
+      properties:
+        object:
+          type: string
+        created_at:
+          type: integer
+        level:
+          type: string
+        message:
+          type: string
+        data:
+          oneOf:
+              - type: string
+                default: none
+                enum: [none, string]
+        type:
+          oneOf:
+              - type: string
+                default: none
+                enum: ["message", "metrics"]
+      required:
+        - object
+        - created_at
+        - level
+        - message
+      x-oiMeta:
+        name: The fine-tuning event object
+        example: |
+          {
+            "object": "fine_tuning.job.event",
+            "created_at": "1689376978",
+            "level": "info" | "warn" | "error",
+            "message": "<human-readable message>",
+            "data": null | JSON,
+            "type": "message"| "metrics"
+          }
+
     FineTune:
       title: FineTune
+      deprecated: true
       description: |
-        The `FineTune` object represents a fine-tuning job that has been created through the API.
+        The `FineTune` object represents a legacy fine-tune job that has been created through the API.
       properties:
         id:
           type: string
@@ -3138,10 +3945,10 @@ components:
           description: The object type, which is always "fine-tune".
         created_at:
           type: integer
-          description: The unix timestamp for when the fine-tuning job was created.
+          description: The Unix timestamp (in seconds) for when the fine-tuning job was created.
         updated_at:
           type: integer
-          description: The unix timestamp for when the fine-tuning job was last updated.
+          description: The Unix timestamp (in seconds) for when the fine-tuning job was last updated.
         model:
           type: string
           description: The base model that is being fine-tuned.
@@ -3154,10 +3961,10 @@ components:
           description: The organization that owns the fine-tuning job.
         status:
           type: string
-          description: The current status of the fine-tuning job, which can be either `created`, `pending`, `running`, `succeeded`, `failed`, or `cancelled`.
+          description: The current status of the fine-tuning job, which can be either `created`, `running`, `succeeded`, `failed`, or `cancelled`.
         hyperparams:
           type: object
-          description: The hyperparameters used for the fine-tuning job. See the [Fine-tuning Guide](/docs/guides/fine-tuning/hyperparameters) for more details.
+          description: The hyperparameters used for the fine-tuning job. See the [fine-tuning guide](/docs/guides/legacy-fine-tuning/hyperparameters) for more details.
           properties:
             n_epochs:
               type: integer
@@ -3231,6 +4038,37 @@ components:
         name: The fine-tune object
         example: *fine_tune_example
 
+    FineTuningJobEvent:
+      title: FineTuningJobEvent
+      properties:
+        id:
+          type: string
+        object:
+          type: string
+        created_at:
+          type: integer
+        level:
+          type: string
+          enum: ["info", "warn", "error"]
+        message:
+          type: string
+      required:
+        - id
+        - object
+        - created_at
+        - level
+        - message
+      x-oiMeta:
+        name: The fine-tuning job event object
+        example: |
+          {
+            "object": "event",
+            "id": "ftevent-abc123"
+            "created_at": 1677610602,
+            "level": "info",
+            "message": "Created fine-tuning job"
+          }
+
     FineTuneEvent:
       title: FineTuneEvent
       properties:
@@ -3274,6 +4112,9 @@ components:
         - completion_tokens
         - total_tokens
 
+security:
+  - ApiKeyAuth: []
+
 x-oaiMeta:
   groups:
     # > General Notes
@@ -3297,78 +4138,6 @@ x-oaiMeta:
     #                         chat completion and completion endpoints, with streamed and non-streamed examples.
     # - `x-oaiMeta.returns`: text describing what the endpoint returns.
     # - `summary`: The summary of the endpoint, which will be used to generate the section description
-    - id: models
-      title: Models
-      description: |
-        List and describe the various models available in the API. You can refer to the [Models](/docs/models) documentation to understand what models are available and the differences between them.
-      sections:
-        - type: object
-          key: Model
-          path: object
-        - type: endpoint
-          key: listModels
-          path: list
-        - type: endpoint
-          key: retrieveModel
-          path: retrieve
-    - id: chat
-      title: Chat
-      description: |
-        Given a list of messages comprising a conversation, the model will return a response.
-      sections:
-        - type: object
-          key: CreateChatCompletionResponse
-          path: object
-        - type: object
-          key: CreateChatCompletionStreamResponse
-          path: streaming
-        - type: endpoint
-          key: createChatCompletion
-          path: create
-    - id: completions
-      title: Completions
-      description: |
-        Given a prompt, the model will return one or more predicted completions, and can also return the probabilities of alternative tokens at each position.
-        Note: We recommend most users use our Chat Completions API. [Learn more](/docs/deprecations/2023-07-06-gpt-and-embeddings)
-      sections:
-        - type: object
-          key: CreateCompletionResponse
-          path: object
-        - type: endpoint
-          key: createCompletion
-          path: create
-    - id: images
-      title: Images
-      description: |
-        Given a prompt and/or an input image, the model will generate a new image.
-
-        Related guide: [Image generation](/docs/guides/images)
-      sections:
-        - type: object
-          key: Image
-          path: object
-        - type: endpoint
-          key: createImage
-          path: create
-        - type: endpoint
-          key: createImageEdit
-          path: createEdit
-        - type: endpoint
-          key: createImageVariation
-          path: createVariation
-    - id: embeddings
-      title: Embeddings
-      description: |
-        Get a vector representation of a given input that can be easily consumed by machine learning models and algorithms.
-
-        Related guide: [Embeddings](/docs/guides/embeddings)
-      sections:
-        - type: object
-          key: Embedding
-          path: object
-        - type: endpoint
-          key: createEmbedding
-          path: create
     - id: audio
       title: Audio
       description: |
@@ -3382,10 +4151,77 @@ x-oaiMeta:
         - type: endpoint
           key: createTranslation
           path: createTranslation
+    - id: chat
+      title: Chat
+      description: |
+        Given a list of messages comprising a conversation, the model will return a response.
+
+        Related guide: [Chat completions](/docs/guides/gpt)
+      sections:
+        - type: object
+          key: CreateChatCompletionResponse
+          path: object
+        - type: object
+          key: CreateChatCompletionStreamResponse
+          path: streaming
+        - type: endpoint
+          key: createChatCompletion
+          path: create
+    - id: completions
+      title: Completions
+      legacy: true
+      description: |
+        Given a prompt, the model will return one or more predicted completions, and can also return the probabilities of alternative tokens at each position. We recommend most users use our Chat completions API. [Learn more](/docs/deprecations/2023-07-06-gpt-and-embeddings)
+
+        Related guide: [Legacy Completions](/docs/guides/gpt/completions-api)
+      sections:
+        - type: object
+          key: CreateCompletionResponse
+          path: object
+        - type: endpoint
+          key: createCompletion
+          path: create
+    - id: embeddings
+      title: Embeddings
+      description: |
+        Get a vector representation of a given input that can be easily consumed by machine learning models and algorithms.
+
+        Related guide: [Embeddings](/docs/guides/embeddings)
+      sections:
+        - type: object
+          key: Embedding
+          path: object
+        - type: endpoint
+          key: createEmbedding
+          path: create
+    - id: fine-tuning
+      title: Fine-tuning
+      description: |
+        Manage fine-tuning jobs to tailor a model to your specific training data.
+
+        Related guide: [fine-tune models](/docs/guides/fine-tuning)
+      sections:
+        - type: object
+          path: object
+          key: FineTuningJob
+        - type: endpoint
+          key: createFineTuningJob
+          path: create
+        - type: endpoint
+          key: listPaginatedFineTuningJobs
+        - type: endpoint
+          key: retrieveFineTuningJob
+          path: retrieve
+        - type: endpoint
+          key: cancelFineTuningJob
+          path: cancel
+        - type: endpoint
+          key: listFineTuningEvents
+          path: list-events
     - id: files
       title: Files
       description: |
-        Files are used to upload documents that can be used with features like [Fine-tuning](/docs/api-reference/fine-tunes).
+        Files are used to upload documents that can be used with features like [fine-tuning](/docs/api-reference/fine-tuning).
       sections:
         - type: object
           key: OpenAIFile
@@ -3405,12 +4241,62 @@ x-oaiMeta:
         - type: endpoint
           key: downloadFile
           path: retrieve-contents
+    - id: images
+      title: Images
+      description: |
+        Given a prompt and/or an input image, the model will generate a new image.
+
+        Related guide: [Image generation](/docs/guides/images)
+      sections:
+        - type: object
+          key: Image
+          path: object
+        - type: endpoint
+          key: createImage
+          path: create
+        - type: endpoint
+          key: createImageEdit
+          path: createEdit
+        - type: endpoint
+          key: createImageVariation
+          path: createVariation
+    - id: models
+      title: Models
+      description: |
+        List and describe the various models available in the API. You can refer to the [Models](/docs/models) documentation to understand what models are available and the differences between them.
+      sections:
+        - type: object
+          key: Model
+          path: object
+        - type: endpoint
+          key: listModels
+          path: list
+        - type: endpoint
+          key: retrieveModel
+          path: retrieve
+        - type: endpoint
+          key: deleteModel
+          path: delete
+    - id: moderations
+      title: Moderations
+      description: |
+        Given a input text, outputs if the model classifies it as violating OpenAI's content policy.
+
+        Related guide: [Moderations](/docs/guides/moderation)
+      sections:
+        - type: object
+          key: CreateModerationResponse
+          path: object
+        - type: endpoint
+          key: createModeration
+          path: create
     - id: fine-tunes
       title: Fine-tunes
+      deprecated: true
       description: |
-        Manage fine-tuning jobs to tailor a model to your specific training data.
+        Manage legacy fine-tuning jobs to tailor a model to your specific training data.
 
-        Related guide: [Fine-tune models](/docs/guides/fine-tuning)
+        We recommend transitioning to the updating [fine-tuning API](/docs/guides/fine-tuning)
       sections:
         - type: object
           path: object
@@ -3430,21 +4316,9 @@ x-oaiMeta:
         - type: endpoint
           key: listFineTuneEvents
           path: list-events
-    - id: moderations
-      title: Moderations
-      description: |
-        Given a input text, outputs if the model classifies it as violating OpenAI's content policy.
-
-        Related guide: [Moderations](/docs/guides/moderation)
-      sections:
-        - type: object
-          key: CreateModerationResponse
-          path: object
-        - type: endpoint
-          key: createModeration
-          path: create
     - id: edits
       title: Edits
+      deprecated: true
       description: |
         Given a prompt and an instruction, the model will return an edited version of the prompt.
       sections:
