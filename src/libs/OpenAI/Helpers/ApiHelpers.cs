@@ -17,57 +17,45 @@ public static class ApiHelpers
     /// <param name="promptTokens"></param>
     /// <returns>The maximum context size</returns>
     /// <exception cref="NotImplementedException"></exception>
-    public static double CalculatePriceInUsd(string modelId, int completionTokens, int promptTokens)
+    public static double? TryCalculatePriceInUsd(string modelId, int completionTokens, int promptTokens)
     {
-        var promptPricePerToken = modelId switch
+        var (promptPricePerToken, completionPricePerToken) = modelId switch
         {
             // GPT models
-            ModelIds.Gpt4 => 0.03 * 0.001,
-            ModelIds.Gpt4_0314 => 0.03 * 0.001,
-            ModelIds.Gpt4_0613 => 0.03 * 0.001,
+            ModelIds.Gpt4 => (0.03 * 0.001, 0.06 * 0.001),
+            ModelIds.Gpt4_0314 => (0.03 * 0.001, 0.06 * 0.001),
+            ModelIds.Gpt4_0613 => (0.03 * 0.001, 0.06 * 0.001),
             
-            ModelIds.Gpt4_32k => 0.06 * 0.001,
-            ModelIds.Gpt4_32k_0314 => 0.06 * 0.001,
-            ModelIds.Gpt4_32k_0613 => 0.06 * 0.001,
+            ModelIds.Gpt4_32k => (0.06 * 0.001, 0.12 * 0.001),
+            ModelIds.Gpt4_32k_0314 => (0.06 * 0.001, 0.12 * 0.001),
+            ModelIds.Gpt4_32k_0613 => (0.06 * 0.001, 0.12 * 0.001),
             
-            ModelIds.Gpt35Turbo => 0.0015 * 0.001,
-            ModelIds.Gpt35Turbo_0301 => 0.0015 * 0.001,
-            ModelIds.Gpt35Turbo_0613 => 0.0015 * 0.001,
+            ModelIds.Gpt35Turbo => (0.0015 * 0.001, 0.002 * 0.001),
+            ModelIds.Gpt35Turbo_0301 => (0.0015 * 0.001, 0.002 * 0.001),
+            ModelIds.Gpt35Turbo_0613 => (0.0015 * 0.001, 0.002 * 0.001),
             
-            ModelIds.Gpt35Turbo_16k => 0.003 * 0.001,
-            ModelIds.Gpt35Turbo_16k_0613 => 0.003 * 0.001,
+            ModelIds.Gpt35Turbo_16k =>(0.003 * 0.001, 0.004 * 0.001),
+            ModelIds.Gpt35Turbo_16k_0613 => (0.003 * 0.001, 0.004 * 0.001),
             
             // Embedding models
-            EmbeddingModelIds.Ada002 => 0.0001 * 0.001,
+            EmbeddingModelIds.Ada002 => (0.0001 * 0.001, 0.0),
             
-            _ => throw new NotImplementedException(),
+            _ => (-1.0, -1.0)
         };
-        var completionPricePerToken = modelId switch
+        if (promptPricePerToken < 0.0)
         {
-            // GPT models
-            ModelIds.Gpt4 => 0.06 * 0.001,
-            ModelIds.Gpt4_0314 => 0.06 * 0.001,
-            ModelIds.Gpt4_0613 => 0.06 * 0.001,
-            
-            ModelIds.Gpt4_32k => 0.12 * 0.001,
-            ModelIds.Gpt4_32k_0314 => 0.12 * 0.001,
-            ModelIds.Gpt4_32k_0613 => 0.12 * 0.001,
-            
-            ModelIds.Gpt35Turbo => 0.002 * 0.001,
-            ModelIds.Gpt35Turbo_0301 => 0.002 * 0.001,
-            ModelIds.Gpt35Turbo_0613 => 0.002 * 0.001,
-            
-            ModelIds.Gpt35Turbo_16k => 0.004 * 0.001,
-            ModelIds.Gpt35Turbo_16k_0613 => 0.004 * 0.001,
-            
-            // Embedding models
-            EmbeddingModelIds.Ada002 => 0.0,
-            
-            _ => throw new NotImplementedException(),
-        };
+            return null;
+        }
         
         return completionTokens * completionPricePerToken +
                promptTokens * promptPricePerToken;
+    }
+    
+    /// <inheritdoc cref="TryCalculatePriceInUsd(string, int, int)"/>
+    public static double CalculatePriceInUsd(string modelId, int completionTokens, int promptTokens)
+    {
+        return TryCalculatePriceInUsd(modelId, completionTokens, promptTokens) ??
+               throw new NotImplementedException();
     }
 
     /// <summary>
@@ -78,7 +66,7 @@ public static class ApiHelpers
     /// <param name="size"></param>
     /// <returns></returns>
     /// <exception cref="NotImplementedException"></exception>
-    public static double CalculatePriceInUsd(CreateImageRequestSize size)
+    public static double? TryCalculatePriceInUsd(CreateImageRequestSize size)
     {
         return size switch
         {
@@ -86,8 +74,15 @@ public static class ApiHelpers
             CreateImageRequestSize._512x512 => 0.018,
             CreateImageRequestSize._1024x1024 => 0.016,
             
-            _ => throw new NotImplementedException(),
+            _ => null,
         };
+    }
+    
+    /// <inheritdoc cref="TryCalculatePriceInUsd(CreateImageRequestSize)"/>
+    public static double CalculatePriceInUsd(CreateImageRequestSize size)
+    {
+        return TryCalculatePriceInUsd(size) ??
+               throw new NotImplementedException();
     }
 
     /// <summary>
@@ -97,16 +92,27 @@ public static class ApiHelpers
     /// <param name="minutes">rounded to the nearest second</param>
     /// <returns></returns>
     /// <exception cref="NotImplementedException"></exception>
-    public static double CalculatePriceInUsd(string modelId, int minutes)
+    public static double? TryCalculatePriceInUsd(string modelId, int minutes)
     {
         var pricePerMinute = modelId switch
         {
             AudioModelIds.Whisper1 => 0.006,
             
-            _ => throw new NotImplementedException(),
+            _ => -1.0,
         };
+        if (pricePerMinute < 0.0)
+        {
+            return null;
+        }
         
         return pricePerMinute * minutes;
+    }
+    
+    /// <inheritdoc cref="TryCalculatePriceInUsd(string, int)"/>
+    public static double CalculatePriceInUsd(string modelId, int minutes)
+    {
+        return TryCalculatePriceInUsd(modelId, minutes) ??
+               throw new NotImplementedException();
     }
     
     /// <summary>
@@ -117,7 +123,7 @@ public static class ApiHelpers
     /// <param name="modelId"></param>
     /// <returns></returns>
     /// <exception cref="NotImplementedException"></exception>
-    public static int CalculateContextLength(string modelId)
+    public static int? TryCalculateContextLength(string modelId)
     {
         return modelId switch
         {
@@ -153,7 +159,14 @@ public static class ApiHelpers
             "code-cushman-002" => 2_048,
             "code-cushman-001" => 2_048,
             
-            _ => throw new NotImplementedException(),
+            _ => null,
         };
+    }
+    
+    /// <inheritdoc cref="TryCalculateContextLength"/>
+    public static int CalculateContextLength(string modelId)
+    {
+        return TryCalculateContextLength(modelId) ??
+               throw new NotImplementedException();
     }
 }
