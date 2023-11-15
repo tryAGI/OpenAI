@@ -92,11 +92,11 @@ namespace OpenAI.Extensions
 
         internal static async Task<string> ReadAsStringAsync(this HttpResponseMessage response, bool debugResponse = false, CancellationToken cancellationToken = default, [CallerMemberName] string methodName = null)
         {
-            var responseAsString = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+            var responseAsString = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             if (!response.IsSuccessStatusCode)
             {
-                throw new HttpRequestException(message: $"{methodName} Failed! HTTP status code: {response.StatusCode} | Response body: {responseAsString}", null, statusCode: response.StatusCode);
+                throw new HttpRequestException(message: $"{methodName} Failed! HTTP status code: {response.StatusCode} | Response body: {responseAsString}", null);
             }
 
             if (debugResponse)
@@ -111,8 +111,8 @@ namespace OpenAI.Extensions
         {
             if (!response.IsSuccessStatusCode)
             {
-                var responseAsString = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                throw new HttpRequestException(message: $"{methodName} Failed! HTTP status code: {response.StatusCode} | Response body: {responseAsString}", null, statusCode: response.StatusCode);
+                var responseAsString = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                throw new HttpRequestException(message: $"{methodName} Failed! HTTP status code: {response.StatusCode} | Response body: {responseAsString}", null);
             }
         }
 

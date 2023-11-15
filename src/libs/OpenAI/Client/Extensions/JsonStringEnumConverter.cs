@@ -23,7 +23,7 @@ namespace OpenAI.Extensions
             namingPolicy = new SnakeCaseNamingPolicy();
             var type = typeof(TEnum);
 
-            foreach (var value in Enum.GetValues<TEnum>())
+            foreach (var value in Enum.GetValues(typeof(TEnum)).Cast<TEnum>())
             {
                 var enumMember = type.GetMember(value.ToString())[0];
                 var attribute = enumMember.GetCustomAttributes(typeof(EnumMemberAttribute), false)

@@ -79,7 +79,7 @@ namespace OpenAI.Files
         {
             using var fileData = new MemoryStream();
             using var content = new MultipartFormDataContent();
-            await request.File.CopyToAsync(fileData, cancellationToken).ConfigureAwait(false);
+            await request.File.CopyToAsync(fileData).ConfigureAwait(false);
             content.Add(new StringContent(request.Purpose), "purpose");
             content.Add(new ByteArrayContent(fileData.ToArray()), "file", request.FileName);
             request.Dispose();
@@ -104,7 +104,7 @@ namespace OpenAI.Files
             {
                 var response = await Api.Client.DeleteAsync(GetUrl($"/{fileId}"), cancellationToken).ConfigureAwait(false);
                 // We specifically don't use the extension method here bc we need to check if it's still processing the file.
-                var responseAsString = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                var responseAsString = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
                 if (!response.IsSuccessStatusCode)
                 {
@@ -186,9 +186,9 @@ namespace OpenAI.Files
                 }
             }
 
-            await using var response = await Api.Client.GetStreamAsync(GetUrl($"/{fileData.Id}/content"), cancellationToken).ConfigureAwait(false);
-            await using var fileStream = new FileStream(filePath, FileMode.CreateNew);
-            await response.CopyToAsync(fileStream, cancellationToken).ConfigureAwait(false);
+            using var response = await Api.Client.GetStreamAsync(GetUrl($"/{fileData.Id}/content")).ConfigureAwait(false);
+            using var fileStream = new FileStream(filePath, FileMode.CreateNew);
+            await response.CopyToAsync(fileStream).ConfigureAwait(false);
             return filePath;
         }
     }

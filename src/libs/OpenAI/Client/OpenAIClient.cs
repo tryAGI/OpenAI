@@ -61,12 +61,9 @@ namespace OpenAI
             ModerationsEndpoint = new ModerationsEndpoint(this);
         }
 
-        private HttpClient SetupClient(HttpClient client = null)
+        private HttpClient SetupClient(HttpClient? client = null)
         {
-            client ??= new HttpClient(new SocketsHttpHandler
-            {
-                PooledConnectionLifetime = TimeSpan.FromMinutes(15)
-            });
+            client ??= new HttpClient();
             client.DefaultRequestHeaders.Add("User-Agent", "OpenAI-DotNet");
 
             if (!OpenAIClientSettings.BaseRequestUrlFormat.Contains(OpenAIClientSettings.AzureOpenAIDomain) &&

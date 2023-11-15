@@ -44,15 +44,15 @@ namespace OpenAI.Audio
             var jsonContent = JsonSerializer.Serialize(request, OpenAIClient.JsonSerializationOptions).ToJsonStringContent(EnableDebug);
             var response = await Api.Client.PostAsync(GetUrl("/speech"), jsonContent, cancellationToken).ConfigureAwait(false);
             await response.CheckResponseAsync(cancellationToken).ConfigureAwait(false);
-            await using var responseStream = await response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-            await using var memoryStream = new MemoryStream();
+            using var responseStream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false);
+            using var memoryStream = new MemoryStream();
             int bytesRead;
             var totalBytesRead = 0;
             var buffer = new byte[8192];
 
-            while ((bytesRead = await responseStream.ReadAsync(buffer, cancellationToken).ConfigureAwait(false)) > 0)
+            while ((bytesRead = await responseStream.ReadAsync(buffer, 0, 8192, cancellationToken).ConfigureAwait(false)) > 0)
             {
-                await memoryStream.WriteAsync(new ReadOnlyMemory<byte>(buffer, 0, bytesRead), cancellationToken).ConfigureAwait(false);
+                await memoryStream.WriteAsync(buffer, 0, bytesRead, cancellationToken).ConfigureAwait(false);
 
                 if (chunkCallback != null)
                 {
@@ -82,7 +82,7 @@ namespace OpenAI.Audio
         {
             using var content = new MultipartFormDataContent();
             using var audioData = new MemoryStream();
-            await request.Audio.CopyToAsync(audioData, cancellationToken).ConfigureAwait(false);
+            await request.Audio.CopyToAsync(audioData).ConfigureAwait(false);
             content.Add(new ByteArrayContent(audioData.ToArray()), "file", request.AudioName);
             content.Add(new StringContent(request.Model), "model");
 
@@ -124,7 +124,7 @@ namespace OpenAI.Audio
         {
             using var content = new MultipartFormDataContent();
             using var audioData = new MemoryStream();
-            await request.Audio.CopyToAsync(audioData, cancellationToken).ConfigureAwait(false);
+            await request.Audio.CopyToAsync(audioData).ConfigureAwait(false);
             content.Add(new ByteArrayContent(audioData.ToArray()), "file", request.AudioName);
             content.Add(new StringContent(request.Model), "model");
 

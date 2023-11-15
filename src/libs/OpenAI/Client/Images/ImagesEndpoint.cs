@@ -123,13 +123,13 @@ namespace OpenAI.Images
         {
             using var content = new MultipartFormDataContent();
             using var imageData = new MemoryStream();
-            await request.Image.CopyToAsync(imageData, cancellationToken).ConfigureAwait(false);
+            await request.Image.CopyToAsync(imageData).ConfigureAwait(false);
             content.Add(new ByteArrayContent(imageData.ToArray()), "image", request.ImageName);
 
             if (request.Mask != null)
             {
                 using var maskData = new MemoryStream();
-                await request.Mask.CopyToAsync(maskData, cancellationToken).ConfigureAwait(false);
+                await request.Mask.CopyToAsync(maskData).ConfigureAwait(false);
                 content.Add(new ByteArrayContent(maskData.ToArray()), "mask", request.MaskName);
             }
 
@@ -192,7 +192,7 @@ namespace OpenAI.Images
         {
             using var content = new MultipartFormDataContent();
             using var imageData = new MemoryStream();
-            await request.Image.CopyToAsync(imageData, cancellationToken).ConfigureAwait(false);
+            await request.Image.CopyToAsync(imageData).ConfigureAwait(false);
             content.Add(new ByteArrayContent(imageData.ToArray()), "image", request.ImageName);
             content.Add(new StringContent(request.Number.ToString()), "n");
             content.Add(new StringContent(request.Size), "size");
