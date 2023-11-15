@@ -1,3 +1,5 @@
+using OpenAI.Embeddings;
+
 namespace tryAGI.OpenAI.IntegrationTests;
 
 public partial class Tests
@@ -6,15 +8,13 @@ public partial class Tests
     public async Task CreateEmbedding()
     {
         var api = GetAuthorizedApi();
-        var response = await api.CreateEmbeddingAsync(new CreateEmbeddingRequest
-        {
-            Input = "Hello, world",
-            Model = EmbeddingModelIds.Ada002,
-            User = "tryAGI.OpenAI.IntegrationTests.Tests.CreateEmbedding",
-        });
-        response.Data.ElementAt(0).Embedding1.Should().NotBeEmpty();
+        var response = await api.EmbeddingsEndpoint.CreateEmbeddingAsync(new EmbeddingsRequest(
+            input: "Hello, world",
+            model: EmbeddingModelIds.Ada002,
+            user: "tryAGI.OpenAI.IntegrationTests.Tests.CreateEmbedding"));
+        response.Data.ElementAt(0).Embedding.Should().NotBeEmpty();
 
-        foreach (var data in response.Data.ElementAt(0).Embedding1)
+        foreach (var data in response.Data.ElementAt(0).Embedding)
         {
             Console.WriteLine($"{data}");
         }

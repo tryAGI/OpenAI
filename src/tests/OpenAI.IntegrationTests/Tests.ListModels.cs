@@ -6,10 +6,10 @@ public partial class Tests
     public async Task ListModels()
     {
         var api = GetAuthorizedApi();
-        var models = await api.ListModelsAsync();
-        models.Data.Should().NotBeEmpty();
+        var models = await api.ModelsEndpoint.GetModelsAsync();
+        models.Should().NotBeEmpty();
 
-        foreach (var model in models.Data)
+        foreach (var model in models)
         {
             Console.WriteLine($"{model.Id}");
         }

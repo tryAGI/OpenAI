@@ -1,4 +1,6 @@
-﻿namespace tryAGI.OpenAI;
+﻿using OpenAI.Chat;
+
+namespace tryAGI.OpenAI;
 
 /// <summary>
 /// 
@@ -11,29 +13,12 @@ public static class ResponseMessageExtensions
     /// <param name="message"></param>
     /// <returns></returns>
     /// <exception cref="ArgumentOutOfRangeException"></exception>
-    public static ChatCompletionRequestMessage AsRequestMessage(this ChatCompletionResponseMessage message)
+    public static ChatRequest AsRequestMessage(this Message message)
     {
         message = message ?? throw new ArgumentNullException(nameof(message));
         
-        return new ChatCompletionRequestMessage
-        {
-            Role = message.Role switch
-            {
-                ChatCompletionResponseMessageRole.System => ChatCompletionRequestMessageRole.System,
-                ChatCompletionResponseMessageRole.User => ChatCompletionRequestMessageRole.User,
-                ChatCompletionResponseMessageRole.Assistant => ChatCompletionRequestMessageRole.Assistant,
-                ChatCompletionResponseMessageRole.Function => ChatCompletionRequestMessageRole.Function,
-                _ => throw new ArgumentOutOfRangeException(nameof(message), $"Unknown role: {message.Role}"),
-            },
-            Content = message.Content ?? string.Empty,
-            Function_call = message.Function_call != null ?
-                new Function_call
-                {
-                    Arguments = message.Function_call.Arguments ?? string.Empty,
-                    Name = message.Function_call.Name ?? string.Empty,
-                }
-                : null,
-        };
+        return new ChatRequest(
+            messages: new []{ message });
     }
     
     /// <summary>
@@ -42,11 +27,11 @@ public static class ResponseMessageExtensions
     /// <param name="response"></param>
     /// <returns></returns>
     /// <exception cref="ArgumentException"></exception>
-    public static ChatCompletionResponseMessage GetFirstChoiceMessage(this CreateChatCompletionResponse response)
+    public static Message GetFirstChoiceMessage(this ChatResponse response)
     {
         response = response ?? throw new ArgumentNullException(nameof(response));
         
-        return response.Choices.First().Message ??
+        return response.Choices[0].Message ??
                throw new ArgumentException("No message in the first choice.");
     }
     
@@ -56,11 +41,11 @@ public static class ResponseMessageExtensions
     /// <param name="response"></param>
     /// <returns></returns>
     /// <exception cref="ArgumentException"></exception>
-    public static ChatCompletionStreamResponseDelta GetFirstChoiceDelta(this CreateChatCompletionStreamResponse response)
+    public static Delta GetFirstChoiceDelta(this ChatResponse response)
     {
         response = response ?? throw new ArgumentNullException(nameof(response));
         
-        return response.Choices.First().Delta ??
+        return response.Choices[0].Delta ??
                throw new ArgumentException("No delta in the first choice.");
     }
 }
