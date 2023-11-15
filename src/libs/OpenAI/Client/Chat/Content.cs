@@ -24,7 +24,7 @@ namespace OpenAI.Chat
 
         [JsonInclude]
         [JsonPropertyName("type")]
-        [JsonConverter(typeof(JsonStringEnumConverter<ContentType>))]
+        [JsonConverter(typeof(Extensions.JsonStringEnumConverter<ContentType>))]
         public ContentType Type { get; private set; }
 
         [JsonInclude]

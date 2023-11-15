@@ -11,7 +11,7 @@ namespace OpenAI.Chat
 
         [JsonInclude]
         [JsonPropertyName("type")]
-        [JsonConverter(typeof(JsonStringEnumConverter<ChatResponseFormat>))]
+        [JsonConverter(typeof(Extensions.JsonStringEnumConverter<ChatResponseFormat>))]
         public ChatResponseFormat Type { get; private set; }
 
         public static implicit operator ChatResponseFormat(ResponseFormat format) => format.Type;

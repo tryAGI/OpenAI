@@ -106,7 +106,7 @@ namespace OpenAI.Images
         /// <para/> Defaults to <see cref="ResponseFormat.Url"/>
         /// </summary>
         [JsonPropertyName("response_format")]
-        [JsonConverter(typeof(JsonStringEnumConverter<ResponseFormat>))]
+        [JsonConverter(typeof(Extensions.JsonStringEnumConverter<ResponseFormat>))]
         public ResponseFormat ResponseFormat { get; }
 
         /// <summary>
