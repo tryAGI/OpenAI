@@ -4,9 +4,9 @@ namespace OpenAI.Constants;
 /// All prices in USD. <br/>
 /// According https://openai.com/pricing/ <br/>
 /// </summary>
-public static class AudioPrices
+public static class SpeechToTextModelPrices
 {
-    /// <inheritdoc cref="AudioPrices"/>
+    /// <inheritdoc cref="SpeechToTextModelPrices"/>
     /// <param name="model"></param>
     /// <param name="seconds">rounded to the nearest second</param>
     /// <returns></returns>
