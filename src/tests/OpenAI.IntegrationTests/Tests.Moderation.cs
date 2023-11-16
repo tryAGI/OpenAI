@@ -1,3 +1,4 @@
+using OpenAI.Constants;
 using OpenAI.Moderations;
 
 namespace tryAGI.OpenAI.IntegrationTests;
@@ -10,7 +11,7 @@ public partial class Tests
         var api = GetAuthorizedApi();
         var response = await api.ModerationsEndpoint.CreateModerationAsync(new ModerationsRequest(
             input: "Hello, world",
-            model: ModerationModelIds.Latest));
+            model: ModerationModel.Latest));
         
         response.Results.First().Flagged.Should().BeFalse();
     }
@@ -21,7 +22,7 @@ public partial class Tests
         var api = GetAuthorizedApi();
         var response = await api.ModerationsEndpoint.CreateModerationAsync(new ModerationsRequest(
             input: "Fuck you",
-            model: ModerationModelIds.Latest));
+            model: ModerationModel.Latest));
         response.Results.First().Flagged.Should().BeTrue();
     }
 }

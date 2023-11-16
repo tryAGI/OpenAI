@@ -1,3 +1,4 @@
+using OpenAI.Constants;
 using OpenAI.Embeddings;
 
 namespace tryAGI.OpenAI.IntegrationTests;
@@ -10,7 +11,7 @@ public partial class Tests
         var api = GetAuthorizedApi();
         var response = await api.EmbeddingsEndpoint.CreateEmbeddingAsync(new EmbeddingsRequest(
             input: "Hello, world",
-            model: EmbeddingModelIds.Ada002,
+            model: EmbeddingModel.Ada002,
             user: "tryAGI.OpenAI.IntegrationTests.Tests.CreateEmbedding"));
         response.Data.ElementAt(0).Embedding.Should().NotBeEmpty();
 
