@@ -7,8 +7,11 @@
   <PropertyGroup Label="Nuget">
     <Description>Static classes that provide actual constants(models/context lengts/prices) for the OpenAI API.
       Available types in OpenAI.Constants namespace:
-      - AudioModel
-      - AudioPrices
+      - SpeechToTextModel
+      - SpeechToTextPrices
+      - TextToSpeechModel
+      - TextToSpeechPrices
+      - FineTuningPrices
       - ChatModel
       - ChatPrices
       - EmbeddingModel

@@ -13,39 +13,45 @@ namespace OpenAI.Constants;
 /// </summary>
 public readonly record struct ChatModel(string Value)
 {
-    /// <summary>
-    /// More capable than any GPT-3.5 model, able to do more complex tasks, and optimized for chat. <br/>
-    /// Will be updated with our latest model iteration 2 weeks after it is released. <br/>
-    /// Max tokens: 8,192 tokens <br/>
-    /// Training data: Up to Sep 2021 <br/>
-    /// <remarks>On June 27th, 2023, gpt-4 will be updated to point from gpt-4-0314 to gpt-4-0613, the latest model iteration.</remarks>
-    /// </summary>
+    /// <inheritdoc cref="Gpt4_0613Value"/>
+    /// <remarks>Currently points to gpt-4-0613.</remarks>
     internal const string Gpt4Value = "gpt-4";
     
     /// <summary>
-    /// Snapshot of gpt-4 from June 13th 2023 with function calling data. <br/>
-    /// Unlike gpt-4, this model will not receive updates, and will be deprecated 3 months after a new version is released. <br/>
+    /// Snapshot of gpt-4 from June 13th 2023 with improved function calling support. <br/>
+    /// According https://platform.openai.com/docs/models/gpt-4-and-gpt-4-turbo <br/>
     /// Max tokens: 8,192 tokens <br/>
     /// Training data: Up to Sep 2021 <br/>
     /// </summary>
     internal const string Gpt4_0613Value = "gpt-4-0613";
     
-    /// <summary>
-    /// Same capabilities as the base gpt-4 mode but with 4x the context length. <br/>
-    /// Will be updated with our latest model iteration. <br/>
-    /// Max tokens: 32,768 tokens <br/>
-    /// Training data: Up to Sep 2021 <br/>
-    /// <remarks>On June 27th, 2023, gpt-4 will be updated to point from gpt-4-0314 to gpt-4-0613, the latest model iteration.</remarks>
-    /// </summary>
+    /// <inheritdoc cref="Gpt4_32k_0613Value"/>
+    /// <remarks>Currently points to gpt-4-32k-0613</remarks>
     internal const string Gpt4_32kValue = "gpt-4-32";
     
     /// <summary>
-    /// Snapshot of gpt-4-32 from June 13th 2023. <br/>
-    /// Unlike gpt-4-32k, this model will not receive updates, and will be deprecated 3 months after a new version is released. <br/>
+    /// Snapshot of gpt-4-32k from June 13th 2023 with improved function calling support. <br/>
+    /// According https://platform.openai.com/docs/models/gpt-4-and-gpt-4-turbo <br/>
     /// Max tokens: 32,768 tokens <br/>
     /// Training data: Up to Sep 2021 <br/>
     /// </summary>
     internal const string Gpt4_32k_0613Value = "gpt-4-32k-0613";
+    
+    /// <summary>
+    /// The latest GPT-4 model with improved instruction following, JSON mode, reproducible outputs, parallel function calling, and more. Returns a maximum of 4,096 output tokens. This preview model is not yet suited for production traffic. <br/>
+    /// According https://platform.openai.com/docs/models/gpt-4-and-gpt-4-turbo <br/>
+    /// Max tokens: 128,000 tokens <br/>
+    /// Training data: Up to Apr 2023 <br/>
+    /// </summary>
+    internal const string Gpt4_1106_PreviewValue = "gpt-4-1106-preview";
+    
+    /// <summary>
+    /// Ability to understand images, in addition to all other GPT-4 Turbo capabilties. Returns a maximum of 4,096 output tokens. This is a preview model version and not suited yet for production traffic. <br/>
+    /// According https://platform.openai.com/docs/models/gpt-4-and-gpt-4-turbo <br/>
+    /// Max tokens: 128,000 tokens <br/>
+    /// Training data: Up to Apr 2023 <br/>
+    /// </summary>
+    internal const string Gpt4VisionPreviewValue = "gpt-4-vision-preview";
     
     /// <summary>
     /// Most capable GPT-3.5 model and optimized for chat at 1/10th the cost of text-davinci-003. <br/>
@@ -90,6 +96,12 @@ public readonly record struct ChatModel(string Value)
     
     /// <inheritdoc cref="Gpt4_32k_0613Value"/>
     public static ChatModel Gpt4_32k_0613 { get; } = new(Gpt4_32k_0613Value);
+    
+    /// <inheritdoc cref="Gpt4_1106_PreviewValue"/>
+    public static ChatModel Gpt4_1106_Preview { get; } = new(Gpt4_1106_PreviewValue);
+    
+    /// <inheritdoc cref="Gpt4VisionPreviewValue"/>
+    public static ChatModel Gpt4VisionPreview { get; } = new(Gpt4VisionPreviewValue);
     
     /// <inheritdoc cref="Gpt35TurboValue"/>
     public static ChatModel Gpt35Turbo { get; } = new(Gpt35TurboValue);

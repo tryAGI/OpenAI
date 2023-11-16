@@ -3,7 +3,7 @@ namespace OpenAI.Constants;
 /// <summary>
 /// According https://platform.openai.com/docs/guides/speech-to-text
 /// </summary>
-public readonly record struct AudioModel(string Value)
+public readonly record struct SpeechToTextModel(string Value)
 {
     /// <summary>
     /// Transcribe audio into whatever language the audio is in. <br/>
@@ -12,7 +12,7 @@ public readonly record struct AudioModel(string Value)
     internal const string Whisper1Value = "whisper-1";
     
     /// <inheritdoc cref="Whisper1Value"/>
-    public static AudioModel Whisper1 { get; } = new(Whisper1Value);
+    public static SpeechToTextModel Whisper1 { get; } = new(Whisper1Value);
 
     /// <inheritdoc/>
     public override string ToString()
@@ -21,11 +21,11 @@ public readonly record struct AudioModel(string Value)
     }
 
     /// <summary>
-    /// Implicitly converts <see cref="AudioModel"/> to <see cref="string"/>.
+    /// Implicitly converts <see cref="SpeechToTextModel"/> to <see cref="string"/>.
     /// </summary>
     /// <param name="model"></param>
     /// <returns></returns>
-    public static implicit operator string(AudioModel model)
+    public static implicit operator string(SpeechToTextModel model)
     {
         return model.Value;
     }

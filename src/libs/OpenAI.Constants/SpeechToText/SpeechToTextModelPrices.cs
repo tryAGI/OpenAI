@@ -12,12 +12,12 @@ public static class AudioPrices
     /// <returns></returns>
     /// <exception cref="NotImplementedException"></exception>
     public static double? TryGet(
-        AudioModel model,
+        SpeechToTextModel model,
         int seconds)
     {
         var pricePerMinute = model.Value switch
         {
-            AudioModel.Whisper1Value => 0.006,
+            SpeechToTextModel.Whisper1Value => 0.006,
             
             _ => -1.0,
         };
@@ -29,9 +29,9 @@ public static class AudioPrices
         return seconds * pricePerMinute / 60.0;
     }
     
-    /// <inheritdoc cref="TryGet(AudioModel, int)"/>
+    /// <inheritdoc cref="TryGet(SpeechToTextModel, int)"/>
     public static double Get(
-        AudioModel model,
+        SpeechToTextModel model,
         int seconds)
     {
         return TryGet(

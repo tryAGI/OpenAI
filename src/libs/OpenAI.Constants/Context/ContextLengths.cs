@@ -23,6 +23,9 @@ public static class ContextLengths
             ChatModel.Gpt4_32kValue => 32_768,
             ChatModel.Gpt4_32k_0613Value => 32_768,
             
+            ChatModel.Gpt4_1106_PreviewValue => 128_000,
+            ChatModel.Gpt4VisionPreviewValue => 128_000,
+            
             ChatModel.Gpt35TurboValue => 4_096,
             ChatModel.Gpt35Turbo_0613Value => 4_096,
             
