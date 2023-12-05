@@ -13,7 +13,7 @@ internal static class SourceGenerationHelper
     public static string GenerateOpenApiSchema(ParameterData parameter, int depth = 0)
     {
         var indent = new string(' ', depth * 4);
-        if (parameter.ArrayItem.Any())
+        if (parameter.ArrayItem.Count != 0)
         {
             return $@"new
 {indent}                    {{
@@ -22,7 +22,7 @@ internal static class SourceGenerationHelper
 {indent}                        items = {GenerateOpenApiSchema(parameter.ArrayItem.First(), depth: depth + 1)},
 {indent}                    }}";
         }
-        if (parameter.Properties.Any())
+        if (parameter.Properties.Count != 0)
         {
             return $@"new
 {indent}                    {{
@@ -38,7 +38,7 @@ internal static class SourceGenerationHelper
 {indent}                    }}";
         }
         
-        if (parameter.EnumValues.Any())
+        if (parameter.EnumValues.Count != 0)
         {
             return $@"new
 {indent}                    {{

@@ -15,9 +15,9 @@ public partial class Tests
             size: "256x256",
             responseFormat: ResponseFormat.Url,
             user: "tryAGI.OpenAI.IntegrationTests.Tests.CreateImage_Url"));
-        response.ElementAt(0).Should().NotBeEmpty();
+        response.ElementAt(0).Url.Should().NotBeEmpty();
 
-        Process.Start(new ProcessStartInfo(response.ElementAt(0))
+        Process.Start(new ProcessStartInfo(response.ElementAt(0).Url)
         {
             UseShellExecute = true,
         });

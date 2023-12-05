@@ -1,13 +1,15 @@
 ﻿using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
-namespace OpenAI.Chat
+namespace OpenAI
 {
     /// <summary>
-    /// <see href="https://platform.openai.com/docs/guides/gpt/function-calling"/>
+    /// <see href="https://platform.openai.com/docs/guides/function-calling"/>
     /// </summary>
     public class Function
     {
+        public Function() { }
+
         internal Function(Function other) => CopyFrom(other);
 
         /// <summary>
@@ -91,7 +93,7 @@ namespace OpenAI.Chat
                 if (arguments == null &&
                     !string.IsNullOrWhiteSpace(argumentsString))
                 {
-                    arguments = JsonNode.Parse(argumentsString);
+                    arguments = JsonValue.Create(argumentsString);
                 }
 
                 return arguments;

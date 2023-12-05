@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net;
 using System.Net.Http;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -19,17 +20,11 @@ namespace OpenAI.Files
         private class FilesList
         {
             [JsonPropertyName("data")]
-            public List<FileData> Data { get; set; }
-        }
-
-        private class FileDeleteResponse
-        {
-            [JsonPropertyName("deleted")]
-            public bool Deleted { get; set; }
+            public IReadOnlyList<FileResponse> Files { get; set; }
         }
 
         /// <inheritdoc />
-        public FilesEndpoint(OpenAIClient api) : base(api) { }
+        public FilesEndpoint(OpenAIClient client) : base(client) { }
 
         /// <inheritdoc />
         protected override string Root => "files";
@@ -37,14 +32,21 @@ namespace OpenAI.Files
         /// <summary>
         /// Returns a list of files that belong to the user's organization.
         /// </summary>
+        /// <param name="purpose">List files with a specific purpose.</param>
         /// <param name="cancellationToken">Optional, <see cref="CancellationToken"/>.</param>
-        /// <returns>List of <see cref="FileData"/>.</returns>
-        /// <exception cref="HttpRequestException"></exception>
-        public async Task<IReadOnlyList<FileData>> ListFilesAsync(CancellationToken cancellationToken = default)
+        /// <returns>List of <see cref="FileResponse"/>.</returns>
+        public async Task<IReadOnlyList<FileResponse>> ListFilesAsync(string purpose = null, CancellationToken cancellationToken = default)
         {
-            var response = await Api.Client.GetAsync(GetUrl(), cancellationToken).ConfigureAwait(false);
+            Dictionary<string, string> query = null;
+
+            if (!string.IsNullOrWhiteSpace(purpose))
+            {
+                query = new Dictionary<string, string> { { nameof(purpose), purpose } };
+            }
+
+            var response = await client.Client.GetAsync(GetUrl(queryParameters: query), cancellationToken).ConfigureAwait(false);
             var resultAsString = await response.ReadAsStringAsync(EnableDebug, cancellationToken).ConfigureAwait(false);
-            return JsonSerializer.Deserialize<FilesList>(resultAsString, OpenAIClient.JsonSerializationOptions)?.Data;
+            return JsonSerializer.Deserialize<FilesList>(resultAsString, OpenAIClient.JsonSerializationOptions)?.Files;
         }
 
         /// <summary>
@@ -61,9 +63,8 @@ namespace OpenAI.Files
         /// fields representing your training examples.
         /// </param>
         /// <param name="cancellationToken">Optional, <see cref="CancellationToken"/>.</param>
-        /// <returns><see cref="FileData"/>.</returns>
-        /// <exception cref="HttpRequestException"></exception>
-        public async Task<FileData> UploadFileAsync(string filePath, string purpose, CancellationToken cancellationToken = default)
+        /// <returns><see cref="FileResponse"/>.</returns>
+        public async Task<FileResponse> UploadFileAsync(string filePath, string purpose, CancellationToken cancellationToken = default)
             => await UploadFileAsync(new FileUploadRequest(filePath, purpose), cancellationToken).ConfigureAwait(false);
 
         /// <summary>
@@ -73,9 +74,8 @@ namespace OpenAI.Files
         /// </summary>
         /// <param name="request"><see cref="FileUploadRequest"/>.</param>
         /// <param name="cancellationToken">Optional, <see cref="CancellationToken"/>.</param>
-        /// <returns><see cref="FileData"/>.</returns>
-        /// <exception cref="HttpRequestException"></exception>
-        public async Task<FileData> UploadFileAsync(FileUploadRequest request, CancellationToken cancellationToken = default)
+        /// <returns><see cref="FileResponse"/>.</returns>
+        public async Task<FileResponse> UploadFileAsync(FileUploadRequest request, CancellationToken cancellationToken = default)
         {
             using var fileData = new MemoryStream();
             using var content = new MultipartFormDataContent();
@@ -83,10 +83,9 @@ namespace OpenAI.Files
             content.Add(new StringContent(request.Purpose), "purpose");
             content.Add(new ByteArrayContent(fileData.ToArray()), "file", request.FileName);
             request.Dispose();
-
-            var response = await Api.Client.PostAsync(GetUrl(), content, cancellationToken).ConfigureAwait(false);
+            var response = await client.Client.PostAsync(GetUrl(), content, cancellationToken).ConfigureAwait(false);
             var responseAsString = await response.ReadAsStringAsync(EnableDebug, cancellationToken).ConfigureAwait(false);
-            return JsonSerializer.Deserialize<FileData>(responseAsString, OpenAIClient.JsonSerializationOptions);
+            return JsonSerializer.Deserialize<FileResponse>(responseAsString, OpenAIClient.JsonSerializationOptions);
         }
 
         /// <summary>
@@ -95,30 +94,32 @@ namespace OpenAI.Files
         /// <param name="fileId">The ID of the file to use for this request</param>
         /// <param name="cancellationToken">Optional, <see cref="CancellationToken"/>.</param>
         /// <returns>True, if file was successfully deleted.</returns>
-        /// <exception cref="HttpRequestException"></exception>
         public async Task<bool> DeleteFileAsync(string fileId, CancellationToken cancellationToken = default)
         {
             return await InternalDeleteFileAsync(1).ConfigureAwait(false);
 
             async Task<bool> InternalDeleteFileAsync(int attempt)
             {
-                var response = await Api.Client.DeleteAsync(GetUrl($"/{fileId}"), cancellationToken).ConfigureAwait(false);
+                var response = await client.Client.DeleteAsync(GetUrl($"/{fileId}"), cancellationToken).ConfigureAwait(false);
                 // We specifically don't use the extension method here bc we need to check if it's still processing the file.
                 var responseAsString = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
                 if (!response.IsSuccessStatusCode)
                 {
-                    if (responseAsString.Contains("File is still processing. Check back later."))
+                    const string fileProcessing = "File is still processing. Check back later.";
+
+                    if (response.StatusCode == /* 409 */ HttpStatusCode.Conflict ||
+                        !string.IsNullOrWhiteSpace(responseAsString) &&
+                        responseAsString.Contains(fileProcessing))
                     {
                         // back off requests on each attempt
                         await Task.Delay(1000 * attempt++, cancellationToken).ConfigureAwait(false);
                         return await InternalDeleteFileAsync(attempt).ConfigureAwait(false);
                     }
-
-                    throw new HttpRequestException($"{nameof(DeleteFileAsync)} Failed!  HTTP status code: {response.StatusCode}. Response: {responseAsString}");
                 }
 
-                return JsonSerializer.Deserialize<FileDeleteResponse>(responseAsString, OpenAIClient.JsonSerializationOptions)?.Deleted ?? false;
+                await response.CheckResponseAsync(cancellationToken);
+                return JsonSerializer.Deserialize<DeletedResponse>(responseAsString, OpenAIClient.JsonSerializationOptions)?.Deleted ?? false;
             }
         }
 
@@ -127,13 +128,12 @@ namespace OpenAI.Files
         /// </summary>
         /// <param name="fileId">The ID of the file to use for this request.</param>
         /// <param name="cancellationToken">Optional, <see cref="CancellationToken"/>.</param>
-        /// <returns><see cref="FileData"/></returns>
-        /// <exception cref="HttpRequestException"></exception>
-        public async Task<FileData> GetFileInfoAsync(string fileId, CancellationToken cancellationToken = default)
+        /// <returns><see cref="FileResponse"/></returns>
+        public async Task<FileResponse> GetFileInfoAsync(string fileId, CancellationToken cancellationToken = default)
         {
-            var response = await Api.Client.GetAsync(GetUrl($"/{fileId}"), cancellationToken).ConfigureAwait(false);
+            var response = await client.Client.GetAsync(GetUrl($"/{fileId}"), cancellationToken).ConfigureAwait(false);
             var responseAsString = await response.ReadAsStringAsync(EnableDebug, cancellationToken).ConfigureAwait(false);
-            return JsonSerializer.Deserialize<FileData>(responseAsString, OpenAIClient.JsonSerializationOptions);
+            return JsonSerializer.Deserialize<FileResponse>(responseAsString, OpenAIClient.JsonSerializationOptions);
         }
 
         /// <summary>
@@ -144,7 +144,6 @@ namespace OpenAI.Files
         /// <param name="deleteCachedFile">Optional, delete cached file. Default is false.</param>
         /// <param name="cancellationToken">Optional, <see cref="CancellationToken"/></param>
         /// <returns>The full path of the downloaded file.</returns>
-        /// <exception cref="HttpRequestException"></exception>
         public async Task<string> DownloadFileAsync(string fileId, string directory, bool deleteCachedFile = false, CancellationToken cancellationToken = default)
         {
             var fileData = await GetFileInfoAsync(fileId, cancellationToken).ConfigureAwait(false);
@@ -154,13 +153,12 @@ namespace OpenAI.Files
         /// <summary>
         /// Downloads the specified file.
         /// </summary>
-        /// <param name="fileData"><see cref="FileData"/> to download.</param>
+        /// <param name="fileData"><see cref="FileResponse"/> to download.</param>
         /// <param name="directory">The directory to download the file into.</param>
         /// <param name="deleteCachedFile">Optional, delete cached file. Default is false.</param>
         /// <param name="cancellationToken">Optional, <see cref="CancellationToken"/></param>
         /// <returns>The full path of the downloaded file.</returns>
-        /// <exception cref="ArgumentNullException"></exception>
-        public async Task<string> DownloadFileAsync(FileData fileData, string directory, bool deleteCachedFile = false, CancellationToken cancellationToken = default)
+        public async Task<string> DownloadFileAsync(FileResponse fileData, string directory, bool deleteCachedFile = false, CancellationToken cancellationToken = default)
         {
             if (string.IsNullOrWhiteSpace(directory))
             {
@@ -186,7 +184,7 @@ namespace OpenAI.Files
                 }
             }
 
-            using var response = await Api.Client.GetStreamAsync(GetUrl($"/{fileData.Id}/content")).ConfigureAwait(false);
+            using var response = await client.Client.GetStreamAsync(GetUrl($"/{fileData.Id}/content")).ConfigureAwait(false);
             using var fileStream = new FileStream(filePath, FileMode.CreateNew);
             await response.CopyToAsync(fileStream).ConfigureAwait(false);
             return filePath;
