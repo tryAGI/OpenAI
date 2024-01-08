@@ -1,3 +1,5 @@
+// Licensed under the MIT License. See LICENSE in the project root for license information.
+
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -223,6 +225,16 @@ namespace OpenAI.Threads
         /// <returns><see cref="RunResponse"/>.</returns>
         public static async Task<RunResponse> UpdateAsync(this RunResponse run, CancellationToken cancellationToken = default)
             => await run.Client.ThreadsEndpoint.RetrieveRunAsync(run.ThreadId, run.Id, cancellationToken).ConfigureAwait(false);
+
+        /// <summary>
+        /// Retrieves a run.
+        /// </summary>
+        /// <param name="thread">The thread that was run.</param>
+        /// <param name="runId">The id of the run to retrieve.</param>
+        /// <param name="cancellationToken">Optional, <see cref="CancellationToken"/>.</param>
+        /// <returns><see cref="RunResponse"/>.</returns>
+        public static async Task<RunResponse> RetrieveRunAsync(this ThreadResponse thread, string runId, CancellationToken cancellationToken = default)
+            => await thread.Client.ThreadsEndpoint.RetrieveRunAsync(thread.Id, runId, cancellationToken).ConfigureAwait(false);
 
         /// <summary>
         /// Modifies a run.

@@ -1,3 +1,5 @@
+// Licensed under the MIT License. See LICENSE in the project root for license information.
+
 using System.Runtime.Serialization;
 
 namespace OpenAI
@@ -7,6 +9,8 @@ namespace OpenAI
         [EnumMember(Value = "text")]
         Text,
         [EnumMember(Value = "image_url")]
-        ImageUrl
+        ImageUrl,
+        [EnumMember(Value = "image_file")]
+        ImageFile
     }
 }

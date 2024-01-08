@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Licensed under the MIT License. See LICENSE in the project root for license information.
+
+using System;
 using System.Text.Json.Serialization;
 
 namespace OpenAI.Files
@@ -41,7 +43,7 @@ namespace OpenAI.Files
         /// </summary>
         [JsonInclude]
         [JsonPropertyName("bytes")]
-        public int Size { get; private set; }
+        public int? Size { get; private set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the file was created.

@@ -2,15 +2,13 @@
 
 using System.Text.Json.Serialization;
 
-namespace OpenAI.Threads
+namespace OpenAI
 {
-    public sealed class FilePath
+    public sealed class ImageFile
     {
-        /// <summary>
-        /// The ID of the file that was generated.
-        /// </summary>
         [JsonInclude]
         [JsonPropertyName("file_id")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public string FileId { get; private set; }
     }
 }

@@ -1,3 +1,5 @@
+// Licensed under the MIT License. See LICENSE in the project root for license information.
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -135,7 +137,7 @@ namespace OpenAI.Chat
                 Role = other.Role;
             }
 
-            if (!string.IsNullOrEmpty(other?.Content))
+            if (other?.Content != null)
             {
                 Content += other.Content;
             }
@@ -159,7 +161,7 @@ namespace OpenAI.Chat
                         {
                             toolCalls.Insert(otherToolCall.Index.Value, new Tool(otherToolCall));
                         }
-                        
+
                         toolCalls[otherToolCall.Index.Value].CopyFrom(otherToolCall);
                     }
                     else
