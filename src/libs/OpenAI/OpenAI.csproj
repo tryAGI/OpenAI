@@ -20,16 +20,17 @@
     <OpenApiGenerator_Namespace>OpenAI</OpenApiGenerator_Namespace>
     <OpenApiGenerator_ClassName>OpenAiApi</OpenApiGenerator_ClassName>
     <OpenApiGenerator_GenerateModels>true</OpenApiGenerator_GenerateModels>
+<!--    <OpenApiGenerator_IncludeModels>CreateModerationResponse</OpenApiGenerator_IncludeModels>-->
     <OpenApiGenerator_IncludeModels>Permission</OpenApiGenerator_IncludeModels>
     <OpenApiGenerator_GenerateSdk>false</OpenApiGenerator_GenerateSdk>
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="OpenApiGenerator" Version="0.1.0-dev.33">
+    <PackageReference Include="OpenApiGenerator" Version="0.1.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="PolySharp" Version="1.13.2">
+    <PackageReference Include="PolySharp" Version="1.14.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

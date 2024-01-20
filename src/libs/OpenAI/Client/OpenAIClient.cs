@@ -240,7 +240,7 @@ namespace OpenAI
                  (!OpenAIAuthentication.ApiKey.Contains(AuthInfo.SecretKeyPrefix) &&
                   !OpenAIAuthentication.ApiKey.Contains(AuthInfo.SessionKeyPrefix))))
             {
-                throw new InvalidCredentialException($"{OpenAIAuthentication.ApiKey} must start with '{AuthInfo.SecretKeyPrefix}'");
+                //throw new InvalidCredentialException($"{OpenAIAuthentication.ApiKey} must start with '{AuthInfo.SecretKeyPrefix}'");
             }
 
             if (OpenAIClientSettings.UseOAuthAuthentication)
