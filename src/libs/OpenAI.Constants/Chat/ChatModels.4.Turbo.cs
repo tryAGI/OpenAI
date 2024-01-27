@@ -13,6 +13,13 @@ namespace OpenAI.Constants;
 /// Setting temperature to 0 will make the outputs mostly deterministic, but a small amount of variability may remain.
 /// </remarks>
 /// </summary>
+/// <param name="Id">Id of the model.</param>
+/// <param name="ContextLength">The maximum number of input tokens.</param>
+/// <param name="PricePerInputTokenInUsd">Price per input token in USD.</param>
+/// <param name="PricePerOutputTokenInUsd">Price per output token in USD.</param>
+/// <param name="FineTuningPricePerTrainingTokenInUsd">Fine tuning price per training token in USD.</param>
+/// <param name="FineTuningPricePerInputTokenInUsd">Fine tuning price per input token in USD.</param>
+/// <param name="FineTuningPricePerOutputTokenInUsd">Fine tuning price per output token in USD.</param>
 public readonly partial record struct ChatModels
 {
     /// <summary>

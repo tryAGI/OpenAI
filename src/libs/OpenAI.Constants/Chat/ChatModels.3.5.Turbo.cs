@@ -61,5 +61,8 @@ public readonly partial record struct ChatModels
     public static ChatModels Gpt35Turbo { get; } = Gpt35Turbo_0613 with
     {
         Id = Gpt35TurboId,
+        FineTuningPricePerTrainingTokenInUsd = 0.0080 * 0.001,
+        FineTuningPricePerInputTokenInUsd = 0.0030 * 0.001,
+        FineTuningPricePerOutputTokenInUsd = 0.0060 * 0.001,
     };
 }
