@@ -10,5 +10,9 @@ public readonly partial record struct ChatModel
     internal const string Gpt35Turbo_16kValue = "gpt-3.5-turbo-16k";
     
     /// <inheritdoc cref="Gpt35Turbo_16kValue"/>
-    public static ChatModel Gpt35Turbo_16k { get; } = new(Gpt35Turbo_16kValue, ContextLength: 16_385);
+    public static ChatModel Gpt35Turbo_16k { get; } = new(
+        Gpt35Turbo_16kValue,
+        ContextLength: 16_385,
+        PricePerInputTokenInUsd: 0.0030 * 0.001,
+        PricePerOutputTokenInUsd: 0.0040 * 0.001);
 }

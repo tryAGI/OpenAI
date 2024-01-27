@@ -36,14 +36,30 @@ public readonly partial record struct ChatModel
     internal const string Gpt35TurboValue = "gpt-3.5-turbo";
     
     /// <inheritdoc cref="Gpt35Turbo_1106Value"/>
-    public static ChatModel Gpt35Turbo_1106 { get; } = new(Gpt35Turbo_1106Value, ContextLength: 16_385);
+    public static ChatModel Gpt35Turbo_1106 { get; } = new(
+        Value: Gpt35Turbo_1106Value,
+        ContextLength: 16_385,
+        PricePerInputTokenInUsd: 0.0010 * 0.001,
+        PricePerOutputTokenInUsd: 0.0020 * 0.001);
     
     /// <inheritdoc cref="Gpt35Turbo_0125Value"/>
-    public static ChatModel Gpt35Turbo_0125 { get; } = new(Gpt35Turbo_0125Value, ContextLength: 16_385);
+    public static ChatModel Gpt35Turbo_0125 { get; } = new(
+        Value: Gpt35Turbo_0125Value,
+        ContextLength: 16_385,
+        PricePerInputTokenInUsd: 0.0005 * 0.001,
+        PricePerOutputTokenInUsd: 0.0015 * 0.001);
     
     /// <inheritdoc cref="Gpt35TurboInstructValue"/>
-    public static ChatModel Gpt35TurboInstruct { get; } = new(Gpt35TurboInstructValue, ContextLength: 4_096);
+    public static ChatModel Gpt35TurboInstruct { get; } = new(
+        Value: Gpt35TurboInstructValue,
+        ContextLength: 4_096,
+        PricePerInputTokenInUsd: 0.0015 * 0.001,
+        PricePerOutputTokenInUsd: 0.0020 * 0.001);
     
     /// <inheritdoc cref="Gpt35TurboValue"/>
-    public static ChatModel Gpt35Turbo { get; } = new(Gpt35TurboValue, ContextLength: 4_096);
+    // ReSharper disable once StaticMemberInitializerReferesToMemberBelow
+    public static ChatModel Gpt35Turbo { get; } = Gpt35Turbo_0613 with
+    {
+        Value = Gpt35TurboValue,
+    };
 }

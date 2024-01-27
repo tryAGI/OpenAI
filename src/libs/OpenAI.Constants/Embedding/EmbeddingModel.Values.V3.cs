@@ -42,8 +42,14 @@ public readonly partial record struct EmbeddingModel
     internal const string Version3LargeValue = "text-embedding-3-large";
     
     /// <inheritdoc cref="Version3SmallValue"/>
-    public static EmbeddingModel Version3Small { get; } = new(Version3SmallValue, MaxInputTokens: 8_191);
+    public static EmbeddingModel Version3Small { get; } = new(
+        Value: Version3SmallValue,
+        MaxInputTokens: 8_191,
+        PricePerTokenInUsd: 0.00002 * 0.001);
     
     /// <inheritdoc cref="Version3LargeValue"/>
-    public static EmbeddingModel Version3Large { get; } = new(Version3LargeValue, MaxInputTokens: 8_191);
+    public static EmbeddingModel Version3Large { get; } = new(
+        Value: Version3LargeValue,
+        MaxInputTokens: 8_191,
+        PricePerTokenInUsd: 0.00013 * 0.001);
 }

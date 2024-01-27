@@ -16,5 +16,8 @@ public readonly partial record struct EmbeddingModel
     internal const string Ada002Value = "text-embedding-ada-002";
     
     /// <inheritdoc cref="Ada002Value"/>
-    public static EmbeddingModel Ada002 { get; } = new(Ada002Value, MaxInputTokens: 8_191);
+    public static EmbeddingModel Ada002 { get; } = new(
+        Value: Ada002Value,
+        MaxInputTokens: 8_191,
+        PricePerTokenInUsd: 0.00010 * 0.001);
 }

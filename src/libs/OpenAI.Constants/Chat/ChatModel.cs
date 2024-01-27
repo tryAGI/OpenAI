@@ -3,7 +3,9 @@ namespace OpenAI.Constants;
 
 public readonly partial record struct ChatModel(
     string Value,
-    int ContextLength)
+    int ContextLength,
+    double PricePerInputTokenInUsd,
+    double PricePerOutputTokenInUsd)
 {
     /// <inheritdoc/>
     public override string ToString()
@@ -19,5 +21,19 @@ public readonly partial record struct ChatModel(
     public static implicit operator string(ChatModel model)
     {
         return model.Value;
+    }
+    
+    /// <summary>
+    /// According https://openai.com/pricing/ <br/>
+    /// </summary>
+    /// <param name="inputTokens"></param>
+    /// <param name="outputTokens"></param>
+    /// <returns></returns>
+    public double GetPriceInUsd(
+        int inputTokens,
+        int outputTokens)
+    {
+        return inputTokens * PricePerInputTokenInUsd +
+               outputTokens * PricePerOutputTokenInUsd;
     }
 }

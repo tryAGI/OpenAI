@@ -19,8 +19,12 @@ public readonly partial record struct TextToSpeechModel
     internal const string Tts1HdValue = "tts-1-hd";
     
     /// <inheritdoc cref="Tts1Value"/>
-    public static TextToSpeechModel Tts1 { get; } = new(Tts1Value);
+    public static TextToSpeechModel Tts1 { get; } = new(
+        Value: Tts1Value,
+        PricePerCharacterInUsd: 0.015 * 0.001);
     
     /// <inheritdoc cref="Tts1HdValue"/>
-    public static TextToSpeechModel Tts1Hd { get; } = new(Tts1HdValue);
+    public static TextToSpeechModel Tts1Hd { get; } = new(
+        Value: Tts1HdValue,
+        PricePerCharacterInUsd: 0.030 * 0.001);
 }

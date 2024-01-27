@@ -18,8 +18,15 @@ public readonly partial record struct ChatModel
     internal const string Gpt4_32kValue = "gpt-4-32";
     
     /// <inheritdoc cref="Gpt4_32k_0613Value"/>
-    public static ChatModel Gpt4_32k_0613 { get; } = new(Gpt4_32k_0613Value, ContextLength: 32_768);
+    public static ChatModel Gpt4_32k_0613 { get; } = new(
+        Value: Gpt4_32k_0613Value,
+        ContextLength: 32_768,
+        PricePerInputTokenInUsd: 0.0600 * 0.001,
+        PricePerOutputTokenInUsd: 0.1200 * 0.001);
     
     /// <inheritdoc cref="Gpt4_32kValue"/>
-    public static ChatModel Gpt4_32k { get; } = new(Gpt4_32kValue, ContextLength: 32_768);
+    public static ChatModel Gpt4_32k { get; } = Gpt4_32k_0613 with
+    {
+        Value = Gpt4_32k_0613Value,
+    };
 }

@@ -3,7 +3,8 @@ namespace OpenAI.Constants;
 
 public readonly partial record struct EmbeddingModel(
     string Value,
-    int MaxInputTokens)
+    int MaxInputTokens,
+    double PricePerTokenInUsd)
 {
     /// <inheritdoc/>
     public override string ToString()
@@ -19,5 +20,16 @@ public readonly partial record struct EmbeddingModel(
     public static implicit operator string(EmbeddingModel model)
     {
         return model.Value;
+    }
+    
+    /// <summary>
+    /// According https://openai.com/pricing/ <br/>
+    /// </summary>
+    /// <param name="tokens"></param>
+    /// <returns></returns>
+    public double GetPriceInUsd(
+        int tokens)
+    {
+        return tokens * PricePerTokenInUsd;
     }
 }

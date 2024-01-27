@@ -20,8 +20,15 @@ public readonly partial record struct ChatModel
     internal const string Gpt4VisionPreviewValue = "gpt-4-vision-preview";
     
     /// <inheritdoc cref="Gpt4_1106_VisionPreviewValue"/>
-    public static ChatModel Gpt4_1106_VisionPreview { get; } = new(Gpt4_1106_VisionPreviewValue, ContextLength: 128_000);
+    public static ChatModel Gpt4_1106_VisionPreview { get; } = new(
+        Gpt4_1106_VisionPreviewValue,
+        ContextLength: 128_000,
+        PricePerInputTokenInUsd: 0.0100 * 0.001,
+        PricePerOutputTokenInUsd: 0.0300 * 0.001);
     
     /// <inheritdoc cref="Gpt4VisionPreviewValue"/>
-    public static ChatModel Gpt4VisionPreview { get; } = new(Gpt4VisionPreviewValue, ContextLength: 128_000);
+    public static ChatModel Gpt4VisionPreview { get; } = Gpt4_1106_VisionPreview with
+    {
+        Value = Gpt4VisionPreviewValue,
+    };
 }
