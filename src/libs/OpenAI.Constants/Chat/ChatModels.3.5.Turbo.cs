@@ -3,7 +3,7 @@ namespace OpenAI.Constants;
 
 // ReSharper disable InconsistentNaming
 
-public readonly partial record struct ChatModel
+public readonly partial record struct ChatModels
 {
     /// <summary>
     /// The latest GPT-3.5 Turbo model with improved instruction following, JSON mode, reproducible outputs,
@@ -36,21 +36,21 @@ public readonly partial record struct ChatModel
     internal const string Gpt35TurboId = "gpt-3.5-turbo";
     
     /// <inheritdoc cref="Gpt35Turbo_1106Id"/>
-    public static ChatModel Gpt35Turbo_1106 { get; } = new(
+    public static ChatModels Gpt35Turbo_1106 { get; } = new(
         Id: Gpt35Turbo_1106Id,
         ContextLength: 16_385,
         PricePerInputTokenInUsd: 0.0010 * 0.001,
         PricePerOutputTokenInUsd: 0.0020 * 0.001);
     
     /// <inheritdoc cref="Gpt35Turbo_0125Id"/>
-    public static ChatModel Gpt35Turbo_0125 { get; } = new(
+    public static ChatModels Gpt35Turbo_0125 { get; } = new(
         Id: Gpt35Turbo_0125Id,
         ContextLength: 16_385,
         PricePerInputTokenInUsd: 0.0005 * 0.001,
         PricePerOutputTokenInUsd: 0.0015 * 0.001);
     
     /// <inheritdoc cref="Gpt35TurboInstructId"/>
-    public static ChatModel Gpt35TurboInstruct { get; } = new(
+    public static ChatModels Gpt35TurboInstruct { get; } = new(
         Id: Gpt35TurboInstructId,
         ContextLength: 4_096,
         PricePerInputTokenInUsd: 0.0015 * 0.001,
@@ -58,7 +58,7 @@ public readonly partial record struct ChatModel
     
     /// <inheritdoc cref="Gpt35TurboId"/>
     // ReSharper disable once StaticMemberInitializerReferesToMemberBelow
-    public static ChatModel Gpt35Turbo { get; } = Gpt35Turbo_0613 with
+    public static ChatModels Gpt35Turbo { get; } = Gpt35Turbo_0613 with
     {
         Id = Gpt35TurboId,
     };

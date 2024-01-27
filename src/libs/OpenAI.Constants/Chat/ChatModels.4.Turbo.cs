@@ -13,7 +13,7 @@ namespace OpenAI.Constants;
 /// Setting temperature to 0 will make the outputs mostly deterministic, but a small amount of variability may remain.
 /// </remarks>
 /// </summary>
-public readonly partial record struct ChatModel
+public readonly partial record struct ChatModels
 {
     /// <summary>
     /// The GPT-4 model with improved instruction following, JSON mode, reproducible outputs,
@@ -41,21 +41,21 @@ public readonly partial record struct ChatModel
     internal const string Gpt4TurboPreviewId = "gpt-4-turbo-preview";
     
     /// <inheritdoc cref="Gpt4_1106_PreviewId"/>
-    public static ChatModel Gpt4_1106_Preview { get; } = new(
+    public static ChatModels Gpt4_1106_Preview { get; } = new(
         Id: Gpt4_1106_PreviewId,
         ContextLength: 128_000,
         PricePerInputTokenInUsd: 0.0100 * 0.001,
         PricePerOutputTokenInUsd: 0.0300 * 0.001);
     
     /// <inheritdoc cref="Gpt4_0125_PreviewId"/>
-    public static ChatModel Gpt4_0125_Preview { get; } = new(
+    public static ChatModels Gpt4_0125_Preview { get; } = new(
         Id: Gpt4_0125_PreviewId,
         ContextLength: 128_000,
         PricePerInputTokenInUsd: 0.0100 * 0.001,
         PricePerOutputTokenInUsd: 0.0300 * 0.001);
     
     /// <inheritdoc cref="Gpt4TurboPreviewId"/>
-    public static ChatModel Gpt4TurboPreview { get; } = Gpt4_0125_Preview with
+    public static ChatModels Gpt4TurboPreview { get; } = Gpt4_0125_Preview with
     {
         Id = Gpt4TurboPreviewId,
     };

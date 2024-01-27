@@ -1,7 +1,7 @@
 // ReSharper disable once CheckNamespace
 namespace OpenAI.Constants;
 
-public readonly partial record struct ChatModel(
+public readonly partial record struct ChatModels(
     string Id,
     int ContextLength,
     double PricePerInputTokenInUsd,
@@ -14,11 +14,11 @@ public readonly partial record struct ChatModel(
     }
 
     /// <summary>
-    /// Implicitly converts <see cref="ChatModel"/> to <see cref="string"/>.
+    /// Implicitly converts <see cref="ChatModels"/> to <see cref="string"/>.
     /// </summary>
     /// <param name="model"></param>
     /// <returns></returns>
-    public static implicit operator string(ChatModel model)
+    public static implicit operator string(ChatModels model)
     {
         return model.Id;
     }

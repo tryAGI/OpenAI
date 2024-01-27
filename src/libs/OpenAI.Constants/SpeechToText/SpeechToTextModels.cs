@@ -1,7 +1,7 @@
 // ReSharper disable once CheckNamespace
 namespace OpenAI.Constants;
 
-public readonly partial record struct SpeechToTextModel(
+public readonly partial record struct SpeechToTextModels(
     string Id,
     double PricePerMinuteInUsd)
 {
@@ -12,11 +12,11 @@ public readonly partial record struct SpeechToTextModel(
     }
 
     /// <summary>
-    /// Implicitly converts <see cref="SpeechToTextModel"/> to <see cref="string"/>.
+    /// Implicitly converts <see cref="SpeechToTextModels"/> to <see cref="string"/>.
     /// </summary>
     /// <param name="model"></param>
     /// <returns></returns>
-    public static implicit operator string(SpeechToTextModel model)
+    public static implicit operator string(SpeechToTextModels model)
     {
         return model.Id;
     }

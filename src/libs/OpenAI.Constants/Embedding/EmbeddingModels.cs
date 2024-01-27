@@ -1,9 +1,10 @@
 // ReSharper disable once CheckNamespace
 namespace OpenAI.Constants;
 
-public readonly partial record struct TextToSpeechModel(
+public readonly partial record struct EmbeddingModels(
     string Id,
-    double PricePerCharacterInUsd)
+    int MaxInputTokens,
+    double PricePerTokenInUsd)
 {
     /// <inheritdoc/>
     public override string ToString()
@@ -12,11 +13,11 @@ public readonly partial record struct TextToSpeechModel(
     }
 
     /// <summary>
-    /// Implicitly converts <see cref="TextToSpeechModel"/> to <see cref="string"/>.
+    /// Implicitly converts <see cref="EmbeddingModels"/> to <see cref="string"/>.
     /// </summary>
     /// <param name="model"></param>
     /// <returns></returns>
-    public static implicit operator string(TextToSpeechModel model)
+    public static implicit operator string(EmbeddingModels model)
     {
         return model.Id;
     }
@@ -24,11 +25,11 @@ public readonly partial record struct TextToSpeechModel(
     /// <summary>
     /// According https://openai.com/pricing/ <br/>
     /// </summary>
-    /// <param name="characters"></param>
+    /// <param name="tokens"></param>
     /// <returns></returns>
     public double GetPriceInUsd(
-        int characters)
+        int tokens)
     {
-        return characters * PricePerCharacterInUsd;
+        return tokens * PricePerTokenInUsd;
     }
 }

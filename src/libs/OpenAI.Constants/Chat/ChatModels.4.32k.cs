@@ -3,7 +3,7 @@ namespace OpenAI.Constants;
 
 // ReSharper disable InconsistentNaming
 
-public readonly partial record struct ChatModel
+public readonly partial record struct ChatModels
 {
     /// <summary>
     /// Snapshot of gpt-4-32k from June 13th 2023 with improved function calling support. <br/>
@@ -18,14 +18,14 @@ public readonly partial record struct ChatModel
     internal const string Gpt4_32kId = "gpt-4-32";
     
     /// <inheritdoc cref="Gpt4_32k_0613Id"/>
-    public static ChatModel Gpt4_32k_0613 { get; } = new(
+    public static ChatModels Gpt4_32k_0613 { get; } = new(
         Id: Gpt4_32k_0613Id,
         ContextLength: 32_768,
         PricePerInputTokenInUsd: 0.0600 * 0.001,
         PricePerOutputTokenInUsd: 0.1200 * 0.001);
     
     /// <inheritdoc cref="Gpt4_32kId"/>
-    public static ChatModel Gpt4_32k { get; } = Gpt4_32k_0613 with
+    public static ChatModels Gpt4_32k { get; } = Gpt4_32k_0613 with
     {
         Id = Gpt4_32k_0613Id,
     };

@@ -4,7 +4,7 @@ namespace OpenAI.Constants;
 /// <summary>
 /// According https://platform.openai.com/docs/guides/speech-to-text
 /// </summary>
-public readonly partial record struct SpeechToTextModel
+public readonly partial record struct SpeechToTextModels
 {
     /// <summary>
     /// Transcribe audio into whatever language the audio is in. <br/>
@@ -14,7 +14,7 @@ public readonly partial record struct SpeechToTextModel
     internal const string Whisper1Id = "whisper-1";
     
     /// <inheritdoc cref="Whisper1Id"/>
-    public static SpeechToTextModel Whisper1 { get; } = new(
+    public static SpeechToTextModels Whisper1 { get; } = new(
         Id: Whisper1Id,
         PricePerMinuteInUsd: 0.006);
 }

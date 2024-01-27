@@ -15,14 +15,14 @@ public static class FineTuningPrices
     /// <returns></returns>
     /// <exception cref="NotImplementedException"></exception>
     public static double? TryGet(
-        ChatModel model,
+        ChatModels model,
         int trainingTokens,
         int inputTokens,
         int outputTokens)
     {
         var (trainingPricePerToken, inputPricePerToken, outputPricePerToken) = model.Id switch
         {
-            ChatModel.Gpt35TurboId => (0.0080 * 0.001, 0.0030 * 0.001, 0.0060 * 0.001),
+            ChatModels.Gpt35TurboId => (0.0080 * 0.001, 0.0030 * 0.001, 0.0060 * 0.001),
             
             _ => (-1.0, -1.0, -1.0),
         };
@@ -36,9 +36,9 @@ public static class FineTuningPrices
                outputTokens * outputPricePerToken;
     }
     
-    /// <inheritdoc cref="TryGet(ChatModel, int, int, int)"/>
+    /// <inheritdoc cref="TryGet(ChatModels, int, int, int)"/>
     public static double Get(
-        ChatModel model,
+        ChatModels model,
         int trainingTokens,
         int inputTokens,
         int outputTokens)

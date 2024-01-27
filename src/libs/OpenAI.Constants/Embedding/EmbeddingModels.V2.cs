@@ -1,7 +1,7 @@
 // ReSharper disable once CheckNamespace
 namespace OpenAI.Constants;
 
-public readonly partial record struct EmbeddingModel
+public readonly partial record struct EmbeddingModels
 {
     /// <summary>
     /// We are not deprecating text-embedding-ada-002, so while we recommend the newer model,
@@ -16,7 +16,7 @@ public readonly partial record struct EmbeddingModel
     internal const string Ada002Id = "text-embedding-ada-002";
     
     /// <inheritdoc cref="Ada002Id"/>
-    public static EmbeddingModel Ada002 { get; } = new(
+    public static EmbeddingModels Ada002 { get; } = new(
         Id: Ada002Id,
         MaxInputTokens: 8_191,
         PricePerTokenInUsd: 0.00010 * 0.001);

@@ -14,35 +14,35 @@ public static class ImagePrices
     /// <returns></returns>
     /// <exception cref="NotImplementedException"></exception>
     public static double? TryGet(
-        ImageModel model,
-        ImageResolution resolution,
-        ImageQuality? quality = null)
+        ImageModels model,
+        ImageResolutions resolution,
+        ImageQualities? quality = null)
     {
-        quality ??= ImageQuality.Standard;
+        quality ??= ImageQualities.Standard;
         
         return (model.Id, quality.Value.Value, resolution.Value) switch
         {
-            (ImageModel.DallE3Id, ImageQuality.StandardValue, ImageResolution._1024x1024Value) => 0.040,
-            (ImageModel.DallE3Id, ImageQuality.StandardValue, ImageResolution._1024x1792Value) => 0.080,
-            (ImageModel.DallE3Id, ImageQuality.StandardValue, ImageResolution._1792x1024Value) => 0.080,
+            (ImageModels.DallE3Id, ImageQualities.StandardValue, ImageResolutions._1024x1024Value) => 0.040,
+            (ImageModels.DallE3Id, ImageQualities.StandardValue, ImageResolutions._1024x1792Value) => 0.080,
+            (ImageModels.DallE3Id, ImageQualities.StandardValue, ImageResolutions._1792x1024Value) => 0.080,
             
-            (ImageModel.DallE3Id, ImageQuality.HdValue, ImageResolution._1024x1024Value) => 0.080,
-            (ImageModel.DallE3Id, ImageQuality.HdValue, ImageResolution._1024x1792Value) => 0.120,
-            (ImageModel.DallE3Id, ImageQuality.HdValue, ImageResolution._1792x1024Value) => 0.120,
+            (ImageModels.DallE3Id, ImageQualities.HdValue, ImageResolutions._1024x1024Value) => 0.080,
+            (ImageModels.DallE3Id, ImageQualities.HdValue, ImageResolutions._1024x1792Value) => 0.120,
+            (ImageModels.DallE3Id, ImageQualities.HdValue, ImageResolutions._1792x1024Value) => 0.120,
             
-            (ImageModel.DallE2Id, _, ImageResolution._1024x1024Value) => 0.020,
-            (ImageModel.DallE2Id, _, ImageResolution._512x512Value) => 0.018,
-            (ImageModel.DallE2Id, _, ImageResolution._256x256Value) => 0.016,
+            (ImageModels.DallE2Id, _, ImageResolutions._1024x1024Value) => 0.020,
+            (ImageModels.DallE2Id, _, ImageResolutions._512x512Value) => 0.018,
+            (ImageModels.DallE2Id, _, ImageResolutions._256x256Value) => 0.016,
             
             _ => null,
         };
     }
     
-    /// <inheritdoc cref="TryGet(ImageModel, ImageResolution, ImageQuality?)"/>
+    /// <inheritdoc cref="TryGet(ImageModels, ImageResolutions, ImageQualities?)"/>
     public static double Get(
-        ImageModel model,
-        ImageResolution resolution,
-        ImageQuality? quality = null)
+        ImageModels model,
+        ImageResolutions resolution,
+        ImageQualities? quality = null)
     {
         return TryGet(
                    model: model,

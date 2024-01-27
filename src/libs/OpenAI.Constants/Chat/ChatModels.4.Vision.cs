@@ -3,7 +3,7 @@ namespace OpenAI.Constants;
 
 // ReSharper disable InconsistentNaming
 
-public readonly partial record struct ChatModel
+public readonly partial record struct ChatModels
 {
     /// <summary>
     /// Ability to understand images, in addition to all other GPT-4 Turbo capabilities.
@@ -20,14 +20,14 @@ public readonly partial record struct ChatModel
     internal const string Gpt4VisionPreviewId = "gpt-4-vision-preview";
     
     /// <inheritdoc cref="Gpt4_1106_VisionPreviewId"/>
-    public static ChatModel Gpt4_1106_VisionPreview { get; } = new(
+    public static ChatModels Gpt4_1106_VisionPreview { get; } = new(
         Gpt4_1106_VisionPreviewId,
         ContextLength: 128_000,
         PricePerInputTokenInUsd: 0.0100 * 0.001,
         PricePerOutputTokenInUsd: 0.0300 * 0.001);
     
     /// <inheritdoc cref="Gpt4VisionPreviewId"/>
-    public static ChatModel Gpt4VisionPreview { get; } = Gpt4_1106_VisionPreview with
+    public static ChatModels Gpt4VisionPreview { get; } = Gpt4_1106_VisionPreview with
     {
         Id = Gpt4VisionPreviewId,
     };

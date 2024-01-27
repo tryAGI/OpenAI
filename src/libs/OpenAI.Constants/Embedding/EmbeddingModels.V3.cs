@@ -11,7 +11,7 @@ namespace OpenAI.Constants;
 /// higher multilingual performance, and new parameters to control the overall size.
 /// </remarks>
 /// </summary>
-public readonly partial record struct EmbeddingModel
+public readonly partial record struct EmbeddingModels
 {
     /// <summary>
     /// <see cref="Version3Small"/> is our new highly efficient embedding model
@@ -42,13 +42,13 @@ public readonly partial record struct EmbeddingModel
     internal const string Version3LargeId = "text-embedding-3-large";
     
     /// <inheritdoc cref="Version3SmallId"/>
-    public static EmbeddingModel Version3Small { get; } = new(
+    public static EmbeddingModels Version3Small { get; } = new(
         Id: Version3SmallId,
         MaxInputTokens: 8_191,
         PricePerTokenInUsd: 0.00002 * 0.001);
     
     /// <inheritdoc cref="Version3LargeId"/>
-    public static EmbeddingModel Version3Large { get; } = new(
+    public static EmbeddingModels Version3Large { get; } = new(
         Id: Version3LargeId,
         MaxInputTokens: 8_191,
         PricePerTokenInUsd: 0.00013 * 0.001);

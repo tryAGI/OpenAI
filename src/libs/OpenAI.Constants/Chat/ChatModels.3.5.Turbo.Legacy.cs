@@ -3,7 +3,7 @@ namespace OpenAI.Constants;
 
 // ReSharper disable InconsistentNaming
 
-public readonly partial record struct ChatModel
+public readonly partial record struct ChatModels
 {
     /// <summary>
     /// Snapshot of gpt-3.5-turbo from June 13th 2023 with function calling data. <br/>
@@ -33,7 +33,7 @@ public readonly partial record struct ChatModel
     
     /// <inheritdoc cref="Gpt35Turbo_0613Id"/>
     [Obsolete("Marked as Legacy. Will be deprecated on June 13, 2024.")]
-    public static ChatModel Gpt35Turbo_0613 { get; } = new(
+    public static ChatModels Gpt35Turbo_0613 { get; } = new(
         Id: Gpt35Turbo_0613Id,
         ContextLength: 4_096,
         PricePerInputTokenInUsd: 0.0015 * 0.001,
@@ -41,7 +41,7 @@ public readonly partial record struct ChatModel
     
     /// <inheritdoc cref="Gpt35Turbo_16k_0613Id"/>
     [Obsolete("Marked as Legacy. Will be deprecated on June 13, 2024.")]
-    public static ChatModel Gpt35Turbo_16k_0613 { get; } = new(
+    public static ChatModels Gpt35Turbo_16k_0613 { get; } = new(
         Id: Gpt35Turbo_16k_0613Id,
         ContextLength: 16_385,
         PricePerInputTokenInUsd: 0.0030 * 0.001,
@@ -49,7 +49,7 @@ public readonly partial record struct ChatModel
     
     /// <inheritdoc cref="Gpt35Turbo_0301Id"/>
     [Obsolete("Marked as Legacy. Will be deprecated on June 13, 2024.")]
-    public static ChatModel Gpt35Turbo_0301 { get; } = new(
+    public static ChatModels Gpt35Turbo_0301 { get; } = new(
         Id: Gpt35Turbo_0301Id,
         ContextLength: 4_096,
         PricePerInputTokenInUsd: 0.0020 * 0.001,

@@ -5,7 +5,7 @@ namespace OpenAI.Constants;
 /// According https://platform.openai.com/docs/api-reference/moderations
 /// Two content moderation models are available: text-moderation-stable and text-moderation-latest.
 /// </summary>
-public readonly partial record struct ModerationModel
+public readonly partial record struct ModerationModels
 {
     /// <summary>
     /// If you use text-moderation-stable, we will provide advanced notice before updating the model. <br/>
@@ -20,8 +20,8 @@ public readonly partial record struct ModerationModel
     internal const string LatestId = "text-moderation-latest";
     
     /// <inheritdoc cref="StableId"/>
-    public static ModerationModel Stable { get; } = new(StableId);
+    public static ModerationModels Stable { get; } = new(StableId);
     
     /// <inheritdoc cref="LatestId"/>
-    public static ModerationModel Latest { get; } = new(LatestId);
+    public static ModerationModels Latest { get; } = new(LatestId);
 }
