@@ -11,7 +11,7 @@ public partial class Tests
         var api = GetAuthorizedApi();
         var response = await api.EmbeddingsEndpoint.CreateEmbeddingAsync(new EmbeddingsRequest(
             input: "Hello, world",
-            model: EmbeddingModel.Ada002,
+            model: EmbeddingModels.Version3Small,
             user: "tryAGI.OpenAI.IntegrationTests.Tests.CreateEmbedding"));
         response.Data.ElementAt(0).Embedding.Should().NotBeEmpty();
 

@@ -11,7 +11,7 @@ public partial class Tests
         var api = GetAuthorizedApi();
         var response = await api.ModerationsEndpoint.CreateModerationAsync(new ModerationsRequest(
             input: "Hello, world",
-            model: ModerationModel.Latest));
+            model: ModerationModels.Latest));
         
         response.Results.First().Flagged.Should().BeFalse();
     }
@@ -22,7 +22,7 @@ public partial class Tests
         var api = GetAuthorizedApi();
         var response = await api.ModerationsEndpoint.CreateModerationAsync(new ModerationsRequest(
             input: "Fuck you",
-            model: ModerationModel.Latest));
+            model: ModerationModels.Latest));
         response.Results.First().Flagged.Should().BeTrue();
     }
 }

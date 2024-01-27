@@ -15,7 +15,7 @@ public partial class Tests
                 "You are a helpful weather assistant.".AsSystemMessage(),
                 "What's the weather like today?".AsUserMessage(),
             },
-            model: ChatModel.Gpt35Turbo_0613,
+            model: ChatModels.Gpt35Turbo,
             user: "tryAGI.OpenAI.IntegrationTests.Tests.CreateChatCompletion"));
         response.Choices.ElementAt(0).Message.Content.Should().NotBeEmpty();
 
@@ -32,7 +32,7 @@ public partial class Tests
                 "You are a helpful weather assistant.".AsSystemMessage(),
                 "What's the weather like today?".AsUserMessage(),
             },
-            model: ChatModel.Gpt35Turbo_0613,
+            model: ChatModels.Gpt35Turbo,
             user: "tryAGI.OpenAI.IntegrationTests.Tests.CreateChatCompletion"));
         
         await foreach (var response in enumerable)
