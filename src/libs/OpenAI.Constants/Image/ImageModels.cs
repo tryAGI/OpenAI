@@ -54,4 +54,21 @@ public readonly partial record struct ImageModels(string Id)
             _ => throw new NotImplementedException(),
         };
     }
+
+    /// <summary>
+    /// Returns <see cref="ImageModels"/> by <paramref name="id"/>. <br/>
+    /// Returns <see langword="null"/> if <paramref name="id"/> is not found.
+    /// </summary>
+    /// <param name="id">Id of the model.</param>
+    /// <returns></returns>
+    public static ImageModels? ById(string id)
+    {
+        return id switch
+        {
+            DallE2Id => DallE2,
+            DallE3Id => DallE3,
+    
+            _ => null,
+        };
+    }
 }

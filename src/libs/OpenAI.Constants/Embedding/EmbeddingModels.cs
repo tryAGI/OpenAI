@@ -45,4 +45,23 @@ public readonly partial record struct EmbeddingModels(
     {
         return tokens * PricePerTokenInUsd;
     }
+
+    /// <summary>
+    /// Returns <see cref="EmbeddingModels"/> by <paramref name="id"/>. <br/>
+    /// Returns <see langword="null"/> if <paramref name="id"/> is not found.
+    /// </summary>
+    /// <param name="id">Id of the model.</param>
+    /// <returns></returns>
+    public static EmbeddingModels? ById(string id)
+    {
+        return id switch
+        {
+            Ada002Id => Ada002,
+            
+            Version3SmallId => Version3Small,
+            Version3LargeId => Version3Large,
+    
+            _ => null,
+        };
+    }
 }

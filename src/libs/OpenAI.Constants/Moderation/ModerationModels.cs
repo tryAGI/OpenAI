@@ -23,4 +23,21 @@ public readonly partial record struct ModerationModels(string Id)
     {
         return model.Id;
     }
+
+    /// <summary>
+    /// Returns <see cref="ModerationModels"/> by <paramref name="id"/>. <br/>
+    /// Returns <see langword="null"/> if <paramref name="id"/> is not found.
+    /// </summary>
+    /// <param name="id">Id of the model.</param>
+    /// <returns></returns>
+    public static ModerationModels? ById(string id)
+    {
+        return id switch
+        {
+            StableId => Stable,
+            LatestId => Latest,
+    
+            _ => null,
+        };
+    }
 }

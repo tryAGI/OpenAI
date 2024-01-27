@@ -82,4 +82,41 @@ public readonly partial record struct ChatModels(
                inputTokens * FineTuningPricePerInputTokenInUsd.Value +
                outputTokens * FineTuningPricePerOutputTokenInUsd.Value;
     }
+
+    /// <summary>
+    /// Returns <see cref="ChatModels"/> by <paramref name="id"/>. <br/>
+    /// Returns <see langword="null"/> if <paramref name="id"/> is not found.
+    /// </summary>
+    /// <param name="id">Id of the model.</param>
+    /// <returns></returns>
+    public static ChatModels? ById(string id)
+    {
+        return id switch
+        {
+            Gpt35Turbo_1106Id => Gpt35Turbo_1106,
+            Gpt35Turbo_0125Id => Gpt35Turbo_0125,
+            Gpt35TurboInstructId => Gpt35TurboInstruct,
+            Gpt35TurboId => Gpt35Turbo,
+
+            Gpt35Turbo_16kId => Gpt35Turbo_16k,
+            Gpt35Turbo_0613Id => Gpt35Turbo_0613,
+            Gpt35Turbo_16k_0613Id => Gpt35Turbo_16k_0613,
+            Gpt35Turbo_0301Id => Gpt35Turbo_0301,
+    
+            Gpt4Id => Gpt4,
+            Gpt4_0613Id => Gpt4_0613,
+            
+            Gpt4_32kId => Gpt4_32k,
+            Gpt4_32k_0613Id => Gpt4_32k_0613,
+            
+            Gpt4_1106_PreviewId => Gpt4_1106_Preview,
+            Gpt4_0125_PreviewId => Gpt4_0125_Preview,
+            Gpt4TurboPreviewId => Gpt4TurboPreview,
+            
+            Gpt4_1106_VisionPreviewId => Gpt4_1106_VisionPreview,
+            Gpt4VisionPreviewId => Gpt4VisionPreview,
+    
+            _ => null,
+        };
+    }
 }

@@ -36,4 +36,20 @@ public readonly partial record struct SpeechToTextModels(
     {
         return seconds * PricePerMinuteInUsd / 60.0;
     }
+
+    /// <summary>
+    /// Returns <see cref="SpeechToTextModels"/> by <paramref name="id"/>. <br/>
+    /// Returns <see langword="null"/> if <paramref name="id"/> is not found.
+    /// </summary>
+    /// <param name="id">Id of the model.</param>
+    /// <returns></returns>
+    public static SpeechToTextModels? ById(string id)
+    {
+        return id switch
+        {
+            Whisper1Id => Whisper1,
+    
+            _ => null,
+        };
+    }
 }

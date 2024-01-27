@@ -36,4 +36,21 @@ public readonly partial record struct TextToSpeechModels(
     {
         return characters * PricePerCharacterInUsd;
     }
+
+    /// <summary>
+    /// Returns <see cref="TextToSpeechModels"/> by <paramref name="id"/>. <br/>
+    /// Returns <see langword="null"/> if <paramref name="id"/> is not found.
+    /// </summary>
+    /// <param name="id">Id of the model.</param>
+    /// <returns></returns>
+    public static TextToSpeechModels? ById(string id)
+    {
+        return id switch
+        {
+            Tts1Id => Tts1,
+            Tts1HdId => Tts1Hd,
+    
+            _ => null,
+        };
+    }
 }
