@@ -33,13 +33,13 @@ public readonly partial record struct ChatModel
     
     /// <inheritdoc cref="Gpt35Turbo_0613Value"/>
     [Obsolete("Marked as Legacy. Will be deprecated on June 13, 2024.")]
-    public static ChatModel Gpt35Turbo_0613 { get; } = new(Gpt35Turbo_0613Value);
+    public static ChatModel Gpt35Turbo_0613 { get; } = new(Gpt35Turbo_0613Value, ContextLength: 4_096);
     
     /// <inheritdoc cref="Gpt35Turbo_16k_0613Value"/>
     [Obsolete("Marked as Legacy. Will be deprecated on June 13, 2024.")]
-    public static ChatModel Gpt35Turbo_16k_0613 { get; } = new(Gpt35Turbo_16k_0613Value);
+    public static ChatModel Gpt35Turbo_16k_0613 { get; } = new(Gpt35Turbo_16k_0613Value, ContextLength: 16_385);
     
     /// <inheritdoc cref="Gpt35Turbo_0301Value"/>
     [Obsolete("Marked as Legacy. Will be deprecated on June 13, 2024.")]
-    public static ChatModel Gpt35Turbo_0301 { get; } = new(Gpt35Turbo_0301Value);
+    public static ChatModel Gpt35Turbo_0301 { get; } = new(Gpt35Turbo_0301Value, ContextLength: 4_096);
 }

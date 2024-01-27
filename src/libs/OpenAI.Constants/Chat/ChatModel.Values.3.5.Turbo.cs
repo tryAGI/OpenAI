@@ -36,14 +36,14 @@ public readonly partial record struct ChatModel
     internal const string Gpt35TurboValue = "gpt-3.5-turbo";
     
     /// <inheritdoc cref="Gpt35Turbo_1106Value"/>
-    public static ChatModel Gpt35Turbo_1106 { get; } = new(Gpt35Turbo_1106Value);
+    public static ChatModel Gpt35Turbo_1106 { get; } = new(Gpt35Turbo_1106Value, ContextLength: 16_385);
     
     /// <inheritdoc cref="Gpt35Turbo_0125Value"/>
-    public static ChatModel Gpt35Turbo_0125 { get; } = new(Gpt35Turbo_0125Value);
+    public static ChatModel Gpt35Turbo_0125 { get; } = new(Gpt35Turbo_0125Value, ContextLength: 16_385);
     
     /// <inheritdoc cref="Gpt35TurboInstructValue"/>
-    public static ChatModel Gpt35TurboInstruct { get; } = new(Gpt35TurboInstructValue);
+    public static ChatModel Gpt35TurboInstruct { get; } = new(Gpt35TurboInstructValue, ContextLength: 4_096);
     
     /// <inheritdoc cref="Gpt35TurboValue"/>
-    public static ChatModel Gpt35Turbo { get; } = new(Gpt35TurboValue);
+    public static ChatModel Gpt35Turbo { get; } = new(Gpt35TurboValue, ContextLength: 4_096);
 }

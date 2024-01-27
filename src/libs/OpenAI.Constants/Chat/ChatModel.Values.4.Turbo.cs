@@ -41,11 +41,11 @@ public readonly partial record struct ChatModel
     internal const string Gpt4TurboPreviewValue = "gpt-4-turbo-preview";
     
     /// <inheritdoc cref="Gpt4_1106_PreviewValue"/>
-    public static ChatModel Gpt4_1106_Preview { get; } = new(Gpt4_1106_PreviewValue);
+    public static ChatModel Gpt4_1106_Preview { get; } = new(Gpt4_1106_PreviewValue, ContextLength: 128_000);
     
     /// <inheritdoc cref="Gpt4_0125_PreviewValue"/>
-    public static ChatModel Gpt4_0125_Preview { get; } = new(Gpt4_0125_PreviewValue);
+    public static ChatModel Gpt4_0125_Preview { get; } = new(Gpt4_0125_PreviewValue, ContextLength: 128_000);
     
     /// <inheritdoc cref="Gpt4TurboPreviewValue"/>
-    public static ChatModel Gpt4TurboPreview { get; } = new(Gpt4TurboPreviewValue);
+    public static ChatModel Gpt4TurboPreview { get; } = new(Gpt4TurboPreviewValue, ContextLength: 128_000);
 }

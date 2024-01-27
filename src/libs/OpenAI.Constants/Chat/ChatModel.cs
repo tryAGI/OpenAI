@@ -1,7 +1,9 @@
 // ReSharper disable once CheckNamespace
 namespace OpenAI.Constants;
 
-public readonly partial record struct ChatModel(string Value)
+public readonly partial record struct ChatModel(
+    string Value,
+    int ContextLength)
 {
     /// <inheritdoc/>
     public override string ToString()

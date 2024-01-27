@@ -18,8 +18,8 @@ public readonly partial record struct ChatModel
     internal const string Gpt4Value = "gpt-4";
     
     /// <inheritdoc cref="Gpt4_0613Value"/>
-    public static ChatModel Gpt4_0613 { get; } = new(Gpt4_0613Value);
+    public static ChatModel Gpt4_0613 { get; } = new(Gpt4_0613Value, ContextLength: 8_192);
     
     /// <inheritdoc cref="Gpt4Value"/>
-    public static ChatModel Gpt4 { get; } = new(Gpt4Value);
+    public static ChatModel Gpt4 { get; } = new(Gpt4Value, ContextLength: 8_192);
 }
