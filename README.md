@@ -85,7 +85,10 @@ for all OpenAI constants(models/prices/context length and other).
 ```cs
 using OpenAI.Constants;
 
-var priceInUsd = ChatPrices.Get(ChatModel.Gpt35Turbo, outputTokens: 4, inputTokens: 4);
+string id = EmbeddingModels.Version3Small; // implicit conversion to string
+double price = EmbeddingModels.Version3Small.GetPriceInUsd(tokens: 500); // 0.00001
+EmbeddingModels.Version3Small.MaxInputTokens // 8191
+EmbeddingModels.Version3Small.PricePerTokenInUsd // 0.00000002
 ```
 
 ## Support

@@ -8,20 +8,14 @@
   <PropertyGroup Label="Nuget">
     <Description>Static classes that provide actual constants(models/context lengts/prices) for the OpenAI API.
       Available types in OpenAI.Constants namespace:
-      - SpeechToTextModel
-      - SpeechToTextPrices
-      - TextToSpeechModel
-      - TextToSpeechPrices
-      - FineTuningPrices
-      - ChatModel
-      - ChatPrices
-      - EmbeddingModel
-      - EmbeddingPrices
-      - ImageModel
-      - ImagePrices
-      - ImageQuality
-      - ImageResolution
-      - ModerationModel
+      - ChatModels
+      - EmbeddingModels
+      - ImageModels
+      - ImageQualities
+      - ImageResolutions
+      - ModerationModels
+      - SpeechToTextModels
+      - TextToSpeechModels
     </Description>
     <PackageTags>openai;constants;prices;pricing;gpt-3.5;gpt-4;chatgpt;vision;audio;embedding;moderation;image;chat</PackageTags>
   </PropertyGroup>
