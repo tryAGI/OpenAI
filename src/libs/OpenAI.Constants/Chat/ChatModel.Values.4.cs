@@ -11,22 +11,22 @@ public readonly partial record struct ChatModel
     /// Max tokens: 8,192 tokens <br/>
     /// Training data: Up to Sep 2021 <br/>
     /// </summary>
-    internal const string Gpt4_0613Value = "gpt-4-0613";
+    internal const string Gpt4_0613Id = "gpt-4-0613";
     
-    /// <inheritdoc cref="Gpt4_0613Value"/>
+    /// <inheritdoc cref="Gpt4_0613Id"/>
     /// <remarks>Alias - Currently points to gpt-4-0613.</remarks>
-    internal const string Gpt4Value = "gpt-4";
+    internal const string Gpt4Id = "gpt-4";
     
-    /// <inheritdoc cref="Gpt4_0613Value"/>
+    /// <inheritdoc cref="Gpt4_0613Id"/>
     public static ChatModel Gpt4_0613 { get; } = new(
-        Value: Gpt4_0613Value,
+        Id: Gpt4_0613Id,
         ContextLength: 8_192,
         PricePerInputTokenInUsd: 0.0300 * 0.001,
         PricePerOutputTokenInUsd: 0.0600 * 0.001);
     
-    /// <inheritdoc cref="Gpt4Value"/>
+    /// <inheritdoc cref="Gpt4Id"/>
     public static ChatModel Gpt4 { get; } = Gpt4_0613 with
     {
-        Value = Gpt4Value,
+        Id = Gpt4Id,
     };
 }

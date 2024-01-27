@@ -1,12 +1,12 @@
 // ReSharper disable once CheckNamespace
 namespace OpenAI.Constants;
 
-public readonly partial record struct ModerationModel(string Value)
+public readonly partial record struct ModerationModel(string Id)
 {
     /// <inheritdoc/>
     public override string ToString()
     {
-        return Value;
+        return Id;
     }
 
     /// <summary>
@@ -16,6 +16,6 @@ public readonly partial record struct ModerationModel(string Value)
     /// <returns></returns>
     public static implicit operator string(ModerationModel model)
     {
-        return model.Value;
+        return model.Id;
     }
 }

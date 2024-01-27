@@ -13,11 +13,11 @@ public readonly partial record struct EmbeddingModel
     /// MIRACL average(1536): 31.4% <br/>
     /// MTEB average(1536): 61.0% <br/>
     /// </summary>
-    internal const string Ada002Value = "text-embedding-ada-002";
+    internal const string Ada002Id = "text-embedding-ada-002";
     
-    /// <inheritdoc cref="Ada002Value"/>
+    /// <inheritdoc cref="Ada002Id"/>
     public static EmbeddingModel Ada002 { get; } = new(
-        Value: Ada002Value,
+        Id: Ada002Id,
         MaxInputTokens: 8_191,
         PricePerTokenInUsd: 0.00010 * 0.001);
 }

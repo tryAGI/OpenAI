@@ -2,7 +2,7 @@
 namespace OpenAI.Constants;
 
 public readonly partial record struct ChatModel(
-    string Value,
+    string Id,
     int ContextLength,
     double PricePerInputTokenInUsd,
     double PricePerOutputTokenInUsd)
@@ -10,7 +10,7 @@ public readonly partial record struct ChatModel(
     /// <inheritdoc/>
     public override string ToString()
     {
-        return Value;
+        return Id;
     }
 
     /// <summary>
@@ -20,7 +20,7 @@ public readonly partial record struct ChatModel(
     /// <returns></returns>
     public static implicit operator string(ChatModel model)
     {
-        return model.Value;
+        return model.Id;
     }
     
     /// <summary>

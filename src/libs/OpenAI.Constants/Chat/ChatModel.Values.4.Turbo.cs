@@ -23,7 +23,7 @@ public readonly partial record struct ChatModel
     /// Max output tokens: 4,096 tokens <br/>
     /// Training data: Up to Apr 2023 <br/>
     /// </summary>
-    internal const string Gpt4_1106_PreviewValue = "gpt-4-1106-preview";
+    internal const string Gpt4_1106_PreviewId = "gpt-4-1106-preview";
     
     /// <summary>
     /// Today, we are releasing an updated GPT-4 Turbo preview model, gpt-4-0125-preview.
@@ -34,29 +34,29 @@ public readonly partial record struct ChatModel
     /// Max output tokens: 4,096 tokens <br/>
     /// Training data: Up to Apr 2023 <br/>
     /// </summary>
-    internal const string Gpt4_0125_PreviewValue = "gpt-4-0125-preview";
+    internal const string Gpt4_0125_PreviewId = "gpt-4-0125-preview";
 
-    /// <inheritdoc cref="Gpt4_0125_PreviewValue"/>
+    /// <inheritdoc cref="Gpt4_0125_PreviewId"/>
     /// <remarks>Alias - Currently points to gpt-4-0125-preview.</remarks>
-    internal const string Gpt4TurboPreviewValue = "gpt-4-turbo-preview";
+    internal const string Gpt4TurboPreviewId = "gpt-4-turbo-preview";
     
-    /// <inheritdoc cref="Gpt4_1106_PreviewValue"/>
+    /// <inheritdoc cref="Gpt4_1106_PreviewId"/>
     public static ChatModel Gpt4_1106_Preview { get; } = new(
-        Value: Gpt4_1106_PreviewValue,
+        Id: Gpt4_1106_PreviewId,
         ContextLength: 128_000,
         PricePerInputTokenInUsd: 0.0100 * 0.001,
         PricePerOutputTokenInUsd: 0.0300 * 0.001);
     
-    /// <inheritdoc cref="Gpt4_0125_PreviewValue"/>
+    /// <inheritdoc cref="Gpt4_0125_PreviewId"/>
     public static ChatModel Gpt4_0125_Preview { get; } = new(
-        Value: Gpt4_0125_PreviewValue,
+        Id: Gpt4_0125_PreviewId,
         ContextLength: 128_000,
         PricePerInputTokenInUsd: 0.0100 * 0.001,
         PricePerOutputTokenInUsd: 0.0300 * 0.001);
     
-    /// <inheritdoc cref="Gpt4TurboPreviewValue"/>
+    /// <inheritdoc cref="Gpt4TurboPreviewId"/>
     public static ChatModel Gpt4TurboPreview { get; } = Gpt4_0125_Preview with
     {
-        Value = Gpt4TurboPreviewValue,
+        Id = Gpt4TurboPreviewId,
     };
 }

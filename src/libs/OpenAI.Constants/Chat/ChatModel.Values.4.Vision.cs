@@ -13,22 +13,22 @@ public readonly partial record struct ChatModel
     /// Max output tokens: 4,096 tokens <br/>
     /// Training data: Up to Apr 2023 <br/>
     /// </summary>
-    internal const string Gpt4_1106_VisionPreviewValue = "gpt-4-1106-vision-preview";
+    internal const string Gpt4_1106_VisionPreviewId = "gpt-4-1106-vision-preview";
     
-    /// <inheritdoc cref="Gpt4_1106_VisionPreviewValue"/>
+    /// <inheritdoc cref="Gpt4_1106_VisionPreviewId"/>
     /// <remarks>Alias - Currently points to gpt-4-1106-vision-preview.</remarks>
-    internal const string Gpt4VisionPreviewValue = "gpt-4-vision-preview";
+    internal const string Gpt4VisionPreviewId = "gpt-4-vision-preview";
     
-    /// <inheritdoc cref="Gpt4_1106_VisionPreviewValue"/>
+    /// <inheritdoc cref="Gpt4_1106_VisionPreviewId"/>
     public static ChatModel Gpt4_1106_VisionPreview { get; } = new(
-        Gpt4_1106_VisionPreviewValue,
+        Gpt4_1106_VisionPreviewId,
         ContextLength: 128_000,
         PricePerInputTokenInUsd: 0.0100 * 0.001,
         PricePerOutputTokenInUsd: 0.0300 * 0.001);
     
-    /// <inheritdoc cref="Gpt4VisionPreviewValue"/>
+    /// <inheritdoc cref="Gpt4VisionPreviewId"/>
     public static ChatModel Gpt4VisionPreview { get; } = Gpt4_1106_VisionPreview with
     {
-        Value = Gpt4VisionPreviewValue,
+        Id = Gpt4VisionPreviewId,
     };
 }

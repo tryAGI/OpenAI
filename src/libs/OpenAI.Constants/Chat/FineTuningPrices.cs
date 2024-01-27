@@ -20,9 +20,9 @@ public static class FineTuningPrices
         int inputTokens,
         int outputTokens)
     {
-        var (trainingPricePerToken, inputPricePerToken, outputPricePerToken) = model.Value switch
+        var (trainingPricePerToken, inputPricePerToken, outputPricePerToken) = model.Id switch
         {
-            ChatModel.Gpt35TurboValue => (0.0080 * 0.001, 0.0030 * 0.001, 0.0060 * 0.001),
+            ChatModel.Gpt35TurboId => (0.0080 * 0.001, 0.0030 * 0.001, 0.0060 * 0.001),
             
             _ => (-1.0, -1.0, -1.0),
         };

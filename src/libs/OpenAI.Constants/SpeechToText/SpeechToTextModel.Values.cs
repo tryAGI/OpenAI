@@ -11,10 +11,10 @@ public readonly partial record struct SpeechToTextModel
     /// File uploads are currently limited to 25 MB and
     /// the following input file types are supported: mp3, mp4, mpeg, mpga, m4a, wav, and webm. <br/>
     /// </summary>
-    internal const string Whisper1Value = "whisper-1";
+    internal const string Whisper1Id = "whisper-1";
     
-    /// <inheritdoc cref="Whisper1Value"/>
+    /// <inheritdoc cref="Whisper1Id"/>
     public static SpeechToTextModel Whisper1 { get; } = new(
-        Value: Whisper1Value,
+        Id: Whisper1Id,
         PricePerMinuteInUsd: 0.006);
 }

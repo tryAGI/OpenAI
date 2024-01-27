@@ -12,14 +12,14 @@ public readonly partial record struct ChatModel
     /// Max output tokens: 4,096 tokens <br/>
     /// Training data: Up to Sep 2021 <br/>
     /// </summary>
-    internal const string Gpt35Turbo_1106Value = "gpt-3.5-turbo-1106";
+    internal const string Gpt35Turbo_1106Id = "gpt-3.5-turbo-1106";
     
     /// <summary>
     /// Similar capabilities as GPT-3 era models. Compatible with legacy Completions endpoint and not Chat Completions. <br/>
     /// Max tokens: 4,096 tokens <br/>
     /// Training data: Up to Sep 2021 <br/>
     /// </summary>
-    internal const string Gpt35TurboInstructValue = "gpt-3.5-turbo-instruct";
+    internal const string Gpt35TurboInstructId = "gpt-3.5-turbo-instruct";
     
     /// <summary>
     /// This model will also have various improvements including higher accuracy
@@ -29,37 +29,37 @@ public readonly partial record struct ChatModel
     /// Max output tokens: 4,096 tokens <br/>
     /// Training data: Up to Sep 2021 <br/>
     /// </summary>
-    internal const string Gpt35Turbo_0125Value = "gpt-3.5-turbo-0125";
+    internal const string Gpt35Turbo_0125Id = "gpt-3.5-turbo-0125";
     
-    /// <inheritdoc cref="Gpt35Turbo_0613Value"/>
+    /// <inheritdoc cref="Gpt35Turbo_0613Id"/>
     /// <remarks>Alias - Currently points to gpt-3.5-turbo-0613.</remarks>
-    internal const string Gpt35TurboValue = "gpt-3.5-turbo";
+    internal const string Gpt35TurboId = "gpt-3.5-turbo";
     
-    /// <inheritdoc cref="Gpt35Turbo_1106Value"/>
+    /// <inheritdoc cref="Gpt35Turbo_1106Id"/>
     public static ChatModel Gpt35Turbo_1106 { get; } = new(
-        Value: Gpt35Turbo_1106Value,
+        Id: Gpt35Turbo_1106Id,
         ContextLength: 16_385,
         PricePerInputTokenInUsd: 0.0010 * 0.001,
         PricePerOutputTokenInUsd: 0.0020 * 0.001);
     
-    /// <inheritdoc cref="Gpt35Turbo_0125Value"/>
+    /// <inheritdoc cref="Gpt35Turbo_0125Id"/>
     public static ChatModel Gpt35Turbo_0125 { get; } = new(
-        Value: Gpt35Turbo_0125Value,
+        Id: Gpt35Turbo_0125Id,
         ContextLength: 16_385,
         PricePerInputTokenInUsd: 0.0005 * 0.001,
         PricePerOutputTokenInUsd: 0.0015 * 0.001);
     
-    /// <inheritdoc cref="Gpt35TurboInstructValue"/>
+    /// <inheritdoc cref="Gpt35TurboInstructId"/>
     public static ChatModel Gpt35TurboInstruct { get; } = new(
-        Value: Gpt35TurboInstructValue,
+        Id: Gpt35TurboInstructId,
         ContextLength: 4_096,
         PricePerInputTokenInUsd: 0.0015 * 0.001,
         PricePerOutputTokenInUsd: 0.0020 * 0.001);
     
-    /// <inheritdoc cref="Gpt35TurboValue"/>
+    /// <inheritdoc cref="Gpt35TurboId"/>
     // ReSharper disable once StaticMemberInitializerReferesToMemberBelow
     public static ChatModel Gpt35Turbo { get; } = Gpt35Turbo_0613 with
     {
-        Value = Gpt35TurboValue,
+        Id = Gpt35TurboId,
     };
 }

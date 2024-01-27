@@ -11,17 +11,17 @@ public readonly partial record struct ModerationModel
     /// If you use text-moderation-stable, we will provide advanced notice before updating the model. <br/>
     /// Accuracy of text-moderation-stable may be slightly lower than for text-moderation-latest. <br/>
     /// </summary>
-    internal const string StableValue = "text-moderation-stable";
+    internal const string StableId = "text-moderation-stable";
     
     /// <summary>
     /// The default is text-moderation-latest which will be automatically upgraded over time. <br/>
     /// This ensures you are always using our most accurate model. <br/>
     /// </summary>
-    internal const string LatestValue = "text-moderation-latest";
+    internal const string LatestId = "text-moderation-latest";
     
-    /// <inheritdoc cref="StableValue"/>
-    public static ModerationModel Stable { get; } = new(StableValue);
+    /// <inheritdoc cref="StableId"/>
+    public static ModerationModel Stable { get; } = new(StableId);
     
-    /// <inheritdoc cref="LatestValue"/>
-    public static ModerationModel Latest { get; } = new(LatestValue);
+    /// <inheritdoc cref="LatestId"/>
+    public static ModerationModel Latest { get; } = new(LatestId);
 }

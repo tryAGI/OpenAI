@@ -2,13 +2,13 @@
 namespace OpenAI.Constants;
 
 public readonly partial record struct TextToSpeechModel(
-    string Value,
+    string Id,
     double PricePerCharacterInUsd)
 {
     /// <inheritdoc/>
     public override string ToString()
     {
-        return Value;
+        return Id;
     }
 
     /// <summary>
@@ -18,7 +18,7 @@ public readonly partial record struct TextToSpeechModel(
     /// <returns></returns>
     public static implicit operator string(TextToSpeechModel model)
     {
-        return model.Value;
+        return model.Id;
     }
     
     /// <summary>

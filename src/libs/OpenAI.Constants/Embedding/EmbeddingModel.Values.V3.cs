@@ -25,7 +25,7 @@ public readonly partial record struct EmbeddingModel
     /// MTEB average(512): 61.6% <br/>
     /// MTEB average(1536): 62.3% <br/>
     /// </summary>
-    internal const string Version3SmallValue = "text-embedding-3-small";
+    internal const string Version3SmallId = "text-embedding-3-small";
     
     /// <summary>
     /// <see cref="Version3Large"/> is our new next generation larger embedding model
@@ -39,17 +39,17 @@ public readonly partial record struct EmbeddingModel
     /// MTEB average(1024): 64.1% <br/>
     /// MTEB average(3072): 64.6% <br/>
     /// </summary>
-    internal const string Version3LargeValue = "text-embedding-3-large";
+    internal const string Version3LargeId = "text-embedding-3-large";
     
-    /// <inheritdoc cref="Version3SmallValue"/>
+    /// <inheritdoc cref="Version3SmallId"/>
     public static EmbeddingModel Version3Small { get; } = new(
-        Value: Version3SmallValue,
+        Id: Version3SmallId,
         MaxInputTokens: 8_191,
         PricePerTokenInUsd: 0.00002 * 0.001);
     
-    /// <inheritdoc cref="Version3LargeValue"/>
+    /// <inheritdoc cref="Version3LargeId"/>
     public static EmbeddingModel Version3Large { get; } = new(
-        Value: Version3LargeValue,
+        Id: Version3LargeId,
         MaxInputTokens: 8_191,
         PricePerTokenInUsd: 0.00013 * 0.001);
 }

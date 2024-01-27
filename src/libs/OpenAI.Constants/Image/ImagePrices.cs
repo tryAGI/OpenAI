@@ -20,19 +20,19 @@ public static class ImagePrices
     {
         quality ??= ImageQuality.Standard;
         
-        return (model.Value, quality.Value.Value, resolution.Value) switch
+        return (model.Id, quality.Value.Value, resolution.Value) switch
         {
-            (ImageModel.DallE3Value, ImageQuality.StandardValue, ImageResolution._1024x1024Value) => 0.040,
-            (ImageModel.DallE3Value, ImageQuality.StandardValue, ImageResolution._1024x1792Value) => 0.080,
-            (ImageModel.DallE3Value, ImageQuality.StandardValue, ImageResolution._1792x1024Value) => 0.080,
+            (ImageModel.DallE3Id, ImageQuality.StandardValue, ImageResolution._1024x1024Value) => 0.040,
+            (ImageModel.DallE3Id, ImageQuality.StandardValue, ImageResolution._1024x1792Value) => 0.080,
+            (ImageModel.DallE3Id, ImageQuality.StandardValue, ImageResolution._1792x1024Value) => 0.080,
             
-            (ImageModel.DallE3Value, ImageQuality.HdValue, ImageResolution._1024x1024Value) => 0.080,
-            (ImageModel.DallE3Value, ImageQuality.HdValue, ImageResolution._1024x1792Value) => 0.120,
-            (ImageModel.DallE3Value, ImageQuality.HdValue, ImageResolution._1792x1024Value) => 0.120,
+            (ImageModel.DallE3Id, ImageQuality.HdValue, ImageResolution._1024x1024Value) => 0.080,
+            (ImageModel.DallE3Id, ImageQuality.HdValue, ImageResolution._1024x1792Value) => 0.120,
+            (ImageModel.DallE3Id, ImageQuality.HdValue, ImageResolution._1792x1024Value) => 0.120,
             
-            (ImageModel.DallE2Value, _, ImageResolution._1024x1024Value) => 0.020,
-            (ImageModel.DallE2Value, _, ImageResolution._512x512Value) => 0.018,
-            (ImageModel.DallE2Value, _, ImageResolution._256x256Value) => 0.016,
+            (ImageModel.DallE2Id, _, ImageResolution._1024x1024Value) => 0.020,
+            (ImageModel.DallE2Id, _, ImageResolution._512x512Value) => 0.018,
+            (ImageModel.DallE2Id, _, ImageResolution._256x256Value) => 0.016,
             
             _ => null,
         };

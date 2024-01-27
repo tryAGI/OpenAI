@@ -2,14 +2,14 @@
 namespace OpenAI.Constants;
 
 public readonly partial record struct EmbeddingModel(
-    string Value,
+    string Id,
     int MaxInputTokens,
     double PricePerTokenInUsd)
 {
     /// <inheritdoc/>
     public override string ToString()
     {
-        return Value;
+        return Id;
     }
 
     /// <summary>
@@ -19,7 +19,7 @@ public readonly partial record struct EmbeddingModel(
     /// <returns></returns>
     public static implicit operator string(EmbeddingModel model)
     {
-        return model.Value;
+        return model.Id;
     }
     
     /// <summary>
