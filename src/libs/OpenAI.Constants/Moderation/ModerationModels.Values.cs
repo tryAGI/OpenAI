@@ -1,10 +1,6 @@
 // ReSharper disable once CheckNamespace
 namespace OpenAI.Constants;
 
-/// <summary>
-/// According https://platform.openai.com/docs/api-reference/moderations
-/// Two content moderation models are available: text-moderation-stable and text-moderation-latest.
-/// </summary>
 public readonly partial record struct ModerationModels
 {
     /// <summary>

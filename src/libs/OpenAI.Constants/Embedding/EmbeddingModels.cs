@@ -1,6 +1,19 @@
 // ReSharper disable once CheckNamespace
 namespace OpenAI.Constants;
 
+/// <summary>
+/// According: <br/>
+/// - https://platform.openai.com/docs/guides/embeddings/embedding-models <br/>
+/// - https://openai.com/blog/new-embedding-models-and-api-updates <br/>
+/// <remarks>
+/// <see cref="Version3Small"/> and <see cref="Version3Large"/>, our newest and
+/// most performant embedding models are now available, with lower costs,
+/// higher multilingual performance, and new parameters to control the overall size.
+/// </remarks>
+/// </summary>
+/// <param name="Id">Id of the model.</param>
+/// <param name="MaxInputTokens">Max input tokens.</param>
+/// <param name="PricePerTokenInUsd">Price per token in USD.</param>
 public readonly partial record struct EmbeddingModels(
     string Id,
     int MaxInputTokens,

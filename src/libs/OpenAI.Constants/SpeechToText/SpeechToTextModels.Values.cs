@@ -1,9 +1,6 @@
 // ReSharper disable once CheckNamespace
 namespace OpenAI.Constants;
 
-/// <summary>
-/// According https://platform.openai.com/docs/guides/speech-to-text
-/// </summary>
 public readonly partial record struct SpeechToTextModels
 {
     /// <summary>

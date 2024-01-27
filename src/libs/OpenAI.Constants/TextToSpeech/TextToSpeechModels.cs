@@ -1,6 +1,11 @@
 // ReSharper disable once CheckNamespace
 namespace OpenAI.Constants;
 
+/// <summary>
+/// According https://platform.openai.com/docs/guides/text-to-speech
+/// </summary>
+/// <param name="Id">Id of the model.</param>
+/// <param name="PricePerCharacterInUsd">Price per character in USD.</param>
 public readonly partial record struct TextToSpeechModels(
     string Id,
     double PricePerCharacterInUsd)

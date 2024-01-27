@@ -1,9 +1,6 @@
 // ReSharper disable once CheckNamespace
 namespace OpenAI.Constants;
 
-/// <summary>
-/// According https://platform.openai.com/docs/guides/images/introduction
-/// </summary>
 public readonly partial record struct ImageModels
 {
     /// <summary>
