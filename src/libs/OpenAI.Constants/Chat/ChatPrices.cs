@@ -1,3 +1,4 @@
+// ReSharper disable once CheckNamespace
 namespace OpenAI.Constants;
 
 /// <summary>
@@ -19,20 +20,28 @@ public static class ChatPrices
     {
         var (inputPricePerToken, outputPricePerToken) = model.Value switch
         {
-            ChatModel.Gpt4Value => (0.03 * 0.001, 0.06 * 0.001),
-            ChatModel.Gpt4_0613Value => (0.03 * 0.001, 0.06 * 0.001),
+            ChatModel.Gpt4Value => (0.0300 * 0.001, 0.0600 * 0.001),
+            ChatModel.Gpt4_0613Value => (0.0300 * 0.001, 0.0600 * 0.001),
             
-            ChatModel.Gpt4_32kValue => (0.06 * 0.001, 0.12 * 0.001),
-            ChatModel.Gpt4_32k_0613Value => (0.06 * 0.001, 0.12 * 0.001),
+            ChatModel.Gpt4_32kValue => (0.0600 * 0.001, 0.1200 * 0.001),
+            ChatModel.Gpt4_32k_0613Value => (0.0600 * 0.001, 0.1200 * 0.001),
             
-            ChatModel.Gpt4_1106_PreviewValue => (0.01 * 0.001, 0.03 * 0.001),
-            ChatModel.Gpt4VisionPreviewValue => (0.01 * 0.001, 0.03 * 0.001),
+            ChatModel.Gpt4_1106_PreviewValue => (0.0100 * 0.001, 0.0300 * 0.001),
+            ChatModel.Gpt4_0125_PreviewValue => (0.0100 * 0.001, 0.0300 * 0.001),
+            ChatModel.Gpt4TurboPreviewValue => (0.0100 * 0.001, 0.0300 * 0.001),
             
-            ChatModel.Gpt35TurboValue => (0.0015 * 0.001, 0.002 * 0.001),
-            ChatModel.Gpt35Turbo_0613Value => (0.0015 * 0.001, 0.002 * 0.001),
+            ChatModel.Gpt4_1106_VisionPreviewValue => (0.0100 * 0.001, 0.0300 * 0.001),
+            ChatModel.Gpt4VisionPreviewValue => (0.0100 * 0.001, 0.0300 * 0.001),
             
-            ChatModel.Gpt35Turbo_16kValue =>(0.003 * 0.001, 0.004 * 0.001),
-            ChatModel.Gpt35Turbo_16k_0613Value => (0.003 * 0.001, 0.004 * 0.001),
+            ChatModel.Gpt35TurboValue => (0.0015 * 0.001, 0.0020 * 0.001),
+            ChatModel.Gpt35Turbo_0613Value => (0.0015 * 0.001, 0.0020 * 0.001),
+            ChatModel.Gpt35Turbo_1106Value => (0.0010 * 0.001, 0.0020 * 0.001),
+            ChatModel.Gpt35Turbo_0125Value => (0.0005 * 0.001, 0.0015 * 0.001),
+            
+            ChatModel.Gpt35TurboInstructValue => (0.0015 * 0.001, 0.0020 * 0.001),
+            
+            ChatModel.Gpt35Turbo_16kValue =>(0.0030 * 0.001, 0.0040 * 0.001),
+            ChatModel.Gpt35Turbo_16k_0613Value => (0.0030 * 0.001, 0.0040 * 0.001),
             
             _ => (-1.0, -1.0)
         };

@@ -1,3 +1,4 @@
+// ReSharper disable once CheckNamespace
 namespace OpenAI.Constants;
 
 /// <summary>

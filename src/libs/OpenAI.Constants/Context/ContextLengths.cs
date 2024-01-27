@@ -1,6 +1,5 @@
-using OpenAI.Constants;
-
-namespace tryAGI.OpenAI;
+// ReSharper disable once CheckNamespace
+namespace OpenAI.Constants;
 
 /// <summary>
 /// Calculates the maximum number of tokens possible to generate for a model. <br/>

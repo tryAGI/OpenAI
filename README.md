@@ -79,6 +79,15 @@ var json = await service.CallGetCurrentWeatherAsync(functionArgumentsJson);
 var args = service.AsGetCurrentWeatherAsyncArgs(functionArgumentsJson);
 ```
 
+### Constants
+This repository contains the library with constants 
+for all OpenAI constants(models/prices/context length and other).
+```cs
+using OpenAI.Constants;
+
+var priceInUsd = ChatPrices.Get(ChatModel.Gpt35Turbo, outputTokens: 4, inputTokens: 4);
+```
+
 ## Support
 
 Priority place for bugs: https://github.com/tryAGI/OpenAI/issues  
