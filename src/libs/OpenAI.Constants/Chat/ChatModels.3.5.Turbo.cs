@@ -57,8 +57,7 @@ public readonly partial record struct ChatModels
         PricePerOutputTokenInUsd: 0.0020 * 0.001);
     
     /// <inheritdoc cref="Gpt35TurboId"/>
-    // ReSharper disable once StaticMemberInitializerReferesToMemberBelow
-    public static ChatModels Gpt35Turbo { get; } = Gpt35Turbo_0613 with
+    public static ChatModels Gpt35Turbo { get; } = Gpt35Turbo_0125 with
     {
         Id = Gpt35TurboId,
         FineTuningPricePerTrainingTokenInUsd = 0.0080 * 0.001,
