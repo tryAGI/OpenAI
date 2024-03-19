@@ -1,6 +1,6 @@
-﻿using Microsoft.CodeAnalysis;
+﻿using H.Generators.Tests.Extensions;
+using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.Testing;
 
 namespace H.Generators.IntegrationTests;
 
@@ -11,7 +11,7 @@ public static class TestHelper
         string source,
         CancellationToken cancellationToken = default)
     {
-        var referenceAssemblies = ReferenceAssemblies.Net.Net60;
+        var referenceAssemblies = LatestReferenceAssemblies.Net80;
         var references = await referenceAssemblies.ResolveAsync(null, cancellationToken);
         references = references
             .Add(MetadataReference.CreateFromFile(typeof(tryAGI.OpenAI.OpenAiFunctionsAttribute).Assembly.Location));

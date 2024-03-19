@@ -125,21 +125,16 @@ namespace H.Ipc.Generator.IntegrationTests
             });
         }
 
-        public static global::System.Collections.Generic.ICollection<global::tryAGI.OpenAI.ChatCompletionFunctions> AsFunctions(this IVariousTypesFunctions functions)
+        public static global::System.Collections.Generic.ICollection<global::OpenAI.Function> AsFunctions(this IVariousTypesFunctions functions)
         {
-            var function0 = functions.GetCurrentWeatherAsDictionary();
+            var (name0, description0, jsonNode0) = functions.GetCurrentWeatherAsParametersJsonNode();
 
-            return new global::System.Collections.Generic.List<global::tryAGI.OpenAI.ChatCompletionFunctions>
+            return new global::System.Collections.Generic.List<global::OpenAI.Function>
             {
-                new global::tryAGI.OpenAI.ChatCompletionFunctions()
-                {
-                    Name = function0.Name,
-                    Description = function0.Description,
-                    Parameters = new global::tryAGI.OpenAI.ChatCompletionFunctionParameters
-                    {
-                        AdditionalProperties = function0.Dictionary,
-                    },
-                },
+                new global::OpenAI.Function(
+                    name: name0,
+                    description: description0,
+                    parameters: jsonNode0),
             };
         }
 

@@ -110,23 +110,18 @@ namespace {@interface.Namespace}
         }}
 ").Inject()}
 
-        public static global::System.Collections.Generic.ICollection<global::tryAGI.OpenAI.ChatCompletionFunctions> AsFunctions(this {@interface.Name} functions)
+        public static global::System.Collections.Generic.ICollection<global::OpenAI.Function> AsFunctions(this {@interface.Name} functions)
         {{
 {@interface.Methods.Select((method, i) => $@"
-            var function{i} = functions.{method.Name}AsDictionary();").Inject()}
+            var (name{i}, description{i}, jsonNode{i}) = functions.{method.Name}AsParametersJsonNode();").Inject()}
 
-            return new global::System.Collections.Generic.List<global::tryAGI.OpenAI.ChatCompletionFunctions>
+            return new global::System.Collections.Generic.List<global::OpenAI.Function>
             {{
 {@interface.Methods.Select((_, i) => $@"
-                new global::tryAGI.OpenAI.ChatCompletionFunctions()
-                {{
-                    Name = function{i}.Name,
-                    Description = function{i}.Description,
-                    Parameters = new global::tryAGI.OpenAI.ChatCompletionFunctionParameters
-                    {{
-                        AdditionalProperties = function{i}.Dictionary,
-                    }},
-                }},
+                new global::OpenAI.Function(
+                    name: name{i},
+                    description: description{i},
+                    parameters: jsonNode{i}),
 ").Inject()}
             }};
         }}
