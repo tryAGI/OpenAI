@@ -138,6 +138,19 @@ namespace H.Ipc.Generator.IntegrationTests
             };
         }
 
+        public static global::System.Collections.Generic.ICollection<global::OpenAI.Tool> AsTools(this IVariousTypesFunctions functions)
+        {
+            var (name0, description0, jsonNode0) = functions.GetCurrentWeatherAsParametersJsonNode();
+
+            return new global::System.Collections.Generic.List<global::OpenAI.Tool>
+            {
+                new global::OpenAI.Tool(new global::OpenAI.Function(
+                    name: name0,
+                    description: description0,
+                    parameters: jsonNode0)),
+            };
+        }
+
         public static global::System.Collections.Generic.IReadOnlyDictionary<string, global::System.Func<string, global::System.Threading.CancellationToken, global::System.Threading.Tasks.Task<string>>> AsCalls(this IVariousTypesFunctions service)
         {
             return new global::System.Collections.Generic.Dictionary<string, global::System.Func<string, global::System.Threading.CancellationToken, global::System.Threading.Tasks.Task<string>>>

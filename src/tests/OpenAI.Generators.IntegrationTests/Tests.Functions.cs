@@ -31,7 +31,7 @@ public partial class Tests
                  throw new AssertInconclusiveException("OPENAI_API_KEY is not set.");
              var api = new OpenAIClient(apiKey);
              var service = new WeatherService();
-             var tools = service.AsFunctions().Select(static x => new Tool(x)).ToArray();
+             var tools = service.AsTools();
              var result = await api.ChatEndpoint.GetCompletionAsync(new ChatRequest(
                  new[]
                  {
@@ -63,7 +63,8 @@ public partial class Tests
                  messages.Add(resultMessage);
              }
 
-             if (resultMessage.ToolCalls.Count == 0)
+             if (resultMessage.ToolCalls == null ||
+                 resultMessage.ToolCalls.Count == 0)
              {
                  throw new InvalidOperationException("Expected a function call.");
              }
@@ -73,7 +74,7 @@ public partial class Tests
                  var json = await service.CallAsync(
                      functionName: call.Function.Name,
                      argumentsAsJson: call.Function.Arguments.ToString());
-                 messages.Add(json.AsFunctionMessage(call.Function.Name));
+                 messages.Add(json.AsFunctionMessage(call.Function.Name, call.Id));
              }
              
              result = await api.ChatEndpoint.GetCompletionAsync(new ChatRequest(

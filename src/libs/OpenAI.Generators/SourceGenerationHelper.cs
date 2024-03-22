@@ -126,6 +126,22 @@ namespace {@interface.Namespace}
             }};
         }}
 
+        public static global::System.Collections.Generic.ICollection<global::OpenAI.Tool> AsTools(this {@interface.Name} functions)
+        {{
+{@interface.Methods.Select((method, i) => $@"
+            var (name{i}, description{i}, jsonNode{i}) = functions.{method.Name}AsParametersJsonNode();").Inject()}
+
+            return new global::System.Collections.Generic.List<global::OpenAI.Tool>
+            {{
+{@interface.Methods.Select((_, i) => $@"
+                new global::OpenAI.Tool(new global::OpenAI.Function(
+                    name: name{i},
+                    description: description{i},
+                    parameters: jsonNode{i})),
+").Inject()}
+            }};
+        }}
+
         public static global::System.Collections.Generic.IReadOnlyDictionary<string, global::System.Func<string, global::System.Threading.CancellationToken, global::System.Threading.Tasks.Task<string>>> AsCalls(this {@interface.Name} service)
         {{
             return new global::System.Collections.Generic.Dictionary<string, global::System.Func<string, global::System.Threading.CancellationToken, global::System.Threading.Tasks.Task<string>>>

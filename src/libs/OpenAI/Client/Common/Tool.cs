@@ -24,7 +24,7 @@ namespace OpenAI
 
         [JsonInclude]
         [JsonPropertyName("id")]
-        public string Id { get; private set; }
+        public string Id { get; set; }
 
         [JsonInclude]
         [JsonPropertyName("index")]

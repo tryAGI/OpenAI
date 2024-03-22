@@ -44,8 +44,11 @@ public static class StringExtensions
     /// <param name="json"></param>
     /// <param name="name"></param>
     /// <returns></returns>
-    public static Message AsFunctionMessage(this string json, string name)
+    public static Message AsFunctionMessage(this string json, string name, string toolCallId)
     {
-        return new Message(new Tool(new Function(name)), json);
+        return new Message(new Tool(new Function(name))
+        {
+            Id = toolCallId,
+        }, json);
     }
 }
