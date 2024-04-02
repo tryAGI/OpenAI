@@ -212,6 +212,7 @@ namespace {@interface.Namespace}
                 global::System.Text.Json.JsonSerializer.Deserialize<{extensionsClassName}.{method.Name}Args>(json, new global::System.Text.Json.JsonSerializerOptions
                 {{
                     PropertyNamingPolicy = global::System.Text.Json.JsonNamingPolicy.CamelCase,
+                    Converters = {{{{ new global::System.Text.Json.Serialization.JsonStringEnumConverter(global::System.Text.Json.JsonNamingPolicy.CamelCase) }}}}
                 }}) ??
                 throw new global::System.InvalidOperationException(""Could not deserialize JSON."");
         }}
