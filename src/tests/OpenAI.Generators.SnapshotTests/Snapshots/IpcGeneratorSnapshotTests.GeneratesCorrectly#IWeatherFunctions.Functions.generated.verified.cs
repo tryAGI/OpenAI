@@ -219,6 +219,7 @@ namespace H.Ipc.Generator.IntegrationTests
                 global::System.Text.Json.JsonSerializer.Deserialize<WeatherFunctionsExtensions.GetCurrentWeatherArgs>(json, new global::System.Text.Json.JsonSerializerOptions
                 {
                     PropertyNamingPolicy = global::System.Text.Json.JsonNamingPolicy.CamelCase,
+                    Converters = {{ new global::System.Text.Json.Serialization.JsonStringEnumConverter(global::System.Text.Json.JsonNamingPolicy.CamelCase) }}
                 }) ??
                 throw new global::System.InvalidOperationException("Could not deserialize JSON.");
         }
@@ -231,6 +232,7 @@ namespace H.Ipc.Generator.IntegrationTests
                 global::System.Text.Json.JsonSerializer.Deserialize<WeatherFunctionsExtensions.GetCurrentWeatherAsyncArgs>(json, new global::System.Text.Json.JsonSerializerOptions
                 {
                     PropertyNamingPolicy = global::System.Text.Json.JsonNamingPolicy.CamelCase,
+                    Converters = {{ new global::System.Text.Json.Serialization.JsonStringEnumConverter(global::System.Text.Json.JsonNamingPolicy.CamelCase) }}
                 }) ??
                 throw new global::System.InvalidOperationException("Could not deserialize JSON.");
         }
