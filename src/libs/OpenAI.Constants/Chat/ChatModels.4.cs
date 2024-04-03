@@ -21,8 +21,8 @@ public readonly partial record struct ChatModels
     public static ChatModels Gpt4_0613 { get; } = new(
         Id: Gpt4_0613Id,
         ContextLength: 8_192,
-        PricePerInputTokenInUsd: 0.0300 * 0.001,
-        PricePerOutputTokenInUsd: 0.0600 * 0.001);
+        PricePerInputTokenInUsd: 30.0 * UsdPerMillionTokens,
+        PricePerOutputTokenInUsd: 60.0 * UsdPerMillionTokens);
     
     /// <inheritdoc cref="Gpt4Id"/>
     public static ChatModels Gpt4 { get; } = Gpt4_0613 with
