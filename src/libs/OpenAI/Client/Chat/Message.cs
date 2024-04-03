@@ -74,6 +74,17 @@ namespace OpenAI.Chat
         }
 
         /// <summary>
+        /// Creates a new message to insert into a chat conversation.
+        /// </summary>
+        /// <param name="role">The <see cref="OpenAI.Role"/> of the author of this message.</param>
+        /// <param name="content">The contents of the message.</param>
+        /// <param name="toolCalls"></param>
+        public Message(Role role, string content, IEnumerable<Tool> toolCalls) : this(role, content)
+        {
+            this.ToolCalls = [.. toolCalls];
+        }
+
+        /// <summary>
         /// The <see cref="OpenAI.Role"/> of the author of this message.
         /// </summary>
         [JsonInclude]
