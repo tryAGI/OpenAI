@@ -34,15 +34,15 @@ public readonly partial record struct ChatModels
     public static ChatModels Gpt4_1106_Preview { get; } = new(
         Id: Gpt4_1106_PreviewId,
         ContextLength: 128_000,
-        PricePerInputTokenInUsd: 0.0100 * 0.001,
-        PricePerOutputTokenInUsd: 0.0300 * 0.001);
+        PricePerInputTokenInUsd: 10.0 * UsdPerMillionTokens,
+        PricePerOutputTokenInUsd: 30.0 * UsdPerMillionTokens);
     
     /// <inheritdoc cref="Gpt4_0125_PreviewId"/>
     public static ChatModels Gpt4_0125_Preview { get; } = new(
         Id: Gpt4_0125_PreviewId,
         ContextLength: 128_000,
-        PricePerInputTokenInUsd: 0.0100 * 0.001,
-        PricePerOutputTokenInUsd: 0.0300 * 0.001);
+        PricePerInputTokenInUsd: 10.0 * UsdPerMillionTokens,
+        PricePerOutputTokenInUsd: 30.0 * UsdPerMillionTokens);
     
     /// <inheritdoc cref="Gpt4TurboPreviewId"/>
     public static ChatModels Gpt4TurboPreview { get; } = Gpt4_0125_Preview with

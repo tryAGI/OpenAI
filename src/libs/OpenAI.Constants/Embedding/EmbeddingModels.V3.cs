@@ -35,11 +35,11 @@ public readonly partial record struct EmbeddingModels
     public static EmbeddingModels Version3Small { get; } = new(
         Id: Version3SmallId,
         MaxInputTokens: 8_191,
-        PricePerTokenInUsd: 0.00002 * 0.001);
+        PricePerTokenInUsd: 0.02 * UsdPerMillionTokens);
     
     /// <inheritdoc cref="Version3LargeId"/>
     public static EmbeddingModels Version3Large { get; } = new(
         Id: Version3LargeId,
         MaxInputTokens: 8_191,
-        PricePerTokenInUsd: 0.00013 * 0.001);
+        PricePerTokenInUsd: 0.13 * UsdPerMillionTokens);
 }

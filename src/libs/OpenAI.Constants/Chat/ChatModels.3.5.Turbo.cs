@@ -39,29 +39,29 @@ public readonly partial record struct ChatModels
     public static ChatModels Gpt35Turbo_1106 { get; } = new(
         Id: Gpt35Turbo_1106Id,
         ContextLength: 16_385,
-        PricePerInputTokenInUsd: 0.0010 * 0.001,
-        PricePerOutputTokenInUsd: 0.0020 * 0.001);
+        PricePerInputTokenInUsd: 1.0 * UsdPerMillionTokens,
+        PricePerOutputTokenInUsd: 2.0 * UsdPerMillionTokens);
     
     /// <inheritdoc cref="Gpt35Turbo_0125Id"/>
     public static ChatModels Gpt35Turbo_0125 { get; } = new(
         Id: Gpt35Turbo_0125Id,
         ContextLength: 16_385,
-        PricePerInputTokenInUsd: 0.0005 * 0.001,
-        PricePerOutputTokenInUsd: 0.0015 * 0.001);
+        PricePerInputTokenInUsd: 0.5 * UsdPerMillionTokens,
+        PricePerOutputTokenInUsd: 1.5 * UsdPerMillionTokens);
     
     /// <inheritdoc cref="Gpt35TurboInstructId"/>
     public static ChatModels Gpt35TurboInstruct { get; } = new(
         Id: Gpt35TurboInstructId,
         ContextLength: 4_096,
-        PricePerInputTokenInUsd: 0.0015 * 0.001,
-        PricePerOutputTokenInUsd: 0.0020 * 0.001);
+        PricePerInputTokenInUsd: 1.5 * UsdPerMillionTokens,
+        PricePerOutputTokenInUsd: 2.0 * UsdPerMillionTokens);
     
     /// <inheritdoc cref="Gpt35TurboId"/>
     public static ChatModels Gpt35Turbo { get; } = Gpt35Turbo_0125 with
     {
         Id = Gpt35TurboId,
-        FineTuningPricePerTrainingTokenInUsd = 0.0080 * 0.001,
-        FineTuningPricePerInputTokenInUsd = 0.0030 * 0.001,
-        FineTuningPricePerOutputTokenInUsd = 0.0060 * 0.001,
+        FineTuningPricePerTrainingTokenInUsd = 8.0 * UsdPerMillionTokens,
+        FineTuningPricePerInputTokenInUsd = 3.0 * UsdPerMillionTokens,
+        FineTuningPricePerOutputTokenInUsd = 6.0 * UsdPerMillionTokens,
     };
 }

@@ -19,5 +19,5 @@ public readonly partial record struct EmbeddingModels
     public static EmbeddingModels Ada002 { get; } = new(
         Id: Ada002Id,
         MaxInputTokens: 8_191,
-        PricePerTokenInUsd: 0.00010 * 0.001);
+        PricePerTokenInUsd: 0.10 * UsdPerMillionTokens);
 }

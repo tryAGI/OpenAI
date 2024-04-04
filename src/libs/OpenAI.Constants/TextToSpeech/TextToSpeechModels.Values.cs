@@ -18,10 +18,10 @@ public readonly partial record struct TextToSpeechModels
     /// <inheritdoc cref="Tts1Id"/>
     public static TextToSpeechModels Tts1 { get; } = new(
         Id: Tts1Id,
-        PricePerCharacterInUsd: 0.015 * 0.001);
+        PricePerCharacterInUsd: 15.0 * UsdPerMillionTokens);
     
     /// <inheritdoc cref="Tts1HdId"/>
     public static TextToSpeechModels Tts1Hd { get; } = new(
         Id: Tts1HdId,
-        PricePerCharacterInUsd: 0.030 * 0.001);
+        PricePerCharacterInUsd: 30.0 * UsdPerMillionTokens);
 }
