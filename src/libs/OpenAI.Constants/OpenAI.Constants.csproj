@@ -19,6 +19,10 @@
     </Description>
     <PackageTags>openai;constants;prices;pricing;gpt-3.5;gpt-4;chatgpt;vision;audio;embedding;moderation;image;chat</PackageTags>
   </PropertyGroup>
+
+  <ItemGroup Label="Usings">
+    <Using Include="OpenAI.Constants.Helpers.InternalConstants" Static="true" />
+  </ItemGroup>
   
   <ItemGroup>
     <PackageReference Include="PolySharp" Version="1.13.2">

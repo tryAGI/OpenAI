@@ -41,24 +41,24 @@ public readonly partial record struct ChatModels
     public static ChatModels Gpt35Turbo_0613 { get; } = new(
         Id: Gpt35Turbo_0613Id,
         ContextLength: 4_096,
-        PricePerInputTokenInUsd: 0.0015 * 0.001,
-        PricePerOutputTokenInUsd: 0.0020 * 0.001);
+        PricePerInputTokenInUsd: 1.5 * UsdPerMillionTokens,
+        PricePerOutputTokenInUsd: 2.0 * UsdPerMillionTokens);
     
     /// <inheritdoc cref="Gpt35Turbo_0301Id"/>
     [Obsolete("Marked as Legacy. Will be deprecated on June 13, 2024.")]
     public static ChatModels Gpt35Turbo_0301 { get; } = new(
         Id: Gpt35Turbo_0301Id,
         ContextLength: 4_096,
-        PricePerInputTokenInUsd: 0.0020 * 0.001,
-        PricePerOutputTokenInUsd: 0.0020 * 0.001);
+        PricePerInputTokenInUsd: 2.0 * UsdPerMillionTokens,
+        PricePerOutputTokenInUsd: 2.0 * UsdPerMillionTokens);
     
     /// <inheritdoc cref="Gpt35Turbo_16k_0613Id"/>
     [Obsolete("Marked as Legacy. Will be deprecated on June 13, 2024.")]
     public static ChatModels Gpt35Turbo_16k_0613 { get; } = new(
         Id: Gpt35Turbo_16k_0613Id,
         ContextLength: 16_385,
-        PricePerInputTokenInUsd: 0.0030 * 0.001,
-        PricePerOutputTokenInUsd: 0.0040 * 0.001);
+        PricePerInputTokenInUsd: 3.0 * UsdPerMillionTokens,
+        PricePerOutputTokenInUsd: 4.0 * UsdPerMillionTokens);
     
     /// <inheritdoc cref="Gpt35Turbo_16kId"/>
     [Obsolete("Marked as Legacy. Will be deprecated on June 13, 2024.")]
