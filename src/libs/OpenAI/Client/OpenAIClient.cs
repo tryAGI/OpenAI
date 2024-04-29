@@ -29,9 +29,14 @@ namespace OpenAI
     public sealed class OpenAIClient : IDisposable
     {
         /// <summary>
-        /// 
+        /// Default encoding to use when making calls to the API.
         /// </summary>
         public static Encoding? DefaultEncoding { get; set; } = Encoding.UTF8;
+        
+        /// <summary>
+        /// Remove the charset from the content type.
+        /// </summary>
+        public static bool RemoveCharSetFromContentType { get; set; }
         
         /// <summary>
         /// Creates a new entry point to the OpenAPI API, handling auth and allowing access to the various API endpoints

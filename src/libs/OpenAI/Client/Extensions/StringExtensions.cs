@@ -39,7 +39,13 @@ namespace OpenAI.Extensions
                 Console.WriteLine(json);
             }
 
-            return new StringContent(json, OpenAIClient.DefaultEncoding, jsonContent);
+            var content = new StringContent(json, OpenAIClient.DefaultEncoding, jsonContent);
+            if (OpenAIClient.RemoveCharSetFromContentType)
+            {
+                content.Headers.ContentType.CharSet = string.Empty;
+            }
+            
+            return content;
         }
 
         public static string ToSnakeCase(string @string)
