@@ -39,7 +39,7 @@ namespace OpenAI.Extensions
                 Console.WriteLine(json);
             }
 
-            return new StringContent(json, Encoding.UTF8, jsonContent);
+            return new StringContent(json, OpenAIClient.DefaultEncoding, jsonContent);
         }
 
         public static string ToSnakeCase(string @string)

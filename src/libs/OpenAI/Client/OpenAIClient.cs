@@ -17,6 +17,7 @@ using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Security.Authentication;
+using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -27,6 +28,11 @@ namespace OpenAI
     /// </summary>
     public sealed class OpenAIClient : IDisposable
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Encoding? DefaultEncoding { get; set; } = Encoding.UTF8;
+        
         /// <summary>
         /// Creates a new entry point to the OpenAPI API, handling auth and allowing access to the various API endpoints
         /// </summary>
