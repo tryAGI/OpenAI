@@ -19,14 +19,13 @@
   <PropertyGroup Label="OpenApiGenerator">
     <OpenApiGenerator_Namespace>OpenAI</OpenApiGenerator_Namespace>
     <OpenApiGenerator_ClassName>OpenAiApi</OpenApiGenerator_ClassName>
+    <OpenApiGenerator_GenerateSdk>false</OpenApiGenerator_GenerateSdk>
     <OpenApiGenerator_GenerateModels>true</OpenApiGenerator_GenerateModels>
 <!--    <OpenApiGenerator_IncludeModels>CreateModerationResponse</OpenApiGenerator_IncludeModels>-->
-    <OpenApiGenerator_IncludeModels>Permission</OpenApiGenerator_IncludeModels>
-    <OpenApiGenerator_GenerateSdk>false</OpenApiGenerator_GenerateSdk>
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="OpenApiGenerator" Version="0.11.9">
+    <PackageReference Include="OpenApiGenerator" Version="0.7.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -38,16 +37,20 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net4.6.2'">
+    <PackageReference Include="System.Text.Json" Version="8.0.3" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <PackageReference Include="System.Text.Json" Version="8.0.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
-    <PackageReference Include="System.Text.Json" Version="8.0.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.Text.Json" Version="8.0.3" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+    <PackageReference Include="System.Text.Json" Version="8.0.3" />
   </ItemGroup>
 
   <ItemGroup>

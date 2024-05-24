@@ -102,7 +102,7 @@ namespace OpenAI.Audio
             }
 
             AudioName = audioName;
-            Model = string.IsNullOrWhiteSpace(model) ? Models.Model.Whisper1 : model;
+            Model = string.IsNullOrWhiteSpace(model) ? OpenAI.Model.Whisper1 : model;
             Prompt = prompt;
             ResponseFormat = responseFormat;
             Temperature = temperature;

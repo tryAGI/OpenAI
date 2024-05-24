@@ -58,7 +58,7 @@ namespace OpenAI.Embeddings
                 throw new ArgumentNullException(nameof(input), $"Missing required {nameof(input)} parameter");
             }
 
-            Model = string.IsNullOrWhiteSpace(model) ? Models.Model.Embedding_Ada_002 : model;
+            Model = string.IsNullOrWhiteSpace(model) ? OpenAI.Model.Embedding_Ada_002 : model;
             User = user;
         }
 

@@ -24,7 +24,7 @@ namespace OpenAI.Moderations
         public ModerationsRequest(string input, string model = null)
         {
             Input = input;
-            Model = string.IsNullOrWhiteSpace(model) ? Models.Model.Moderation_Latest : model;
+            Model = string.IsNullOrWhiteSpace(model) ? OpenAI.Model.Moderation_Latest : model;
         }
 
         [JsonPropertyName("input")]

@@ -38,8 +38,8 @@ namespace OpenAI.Assistants
         /// <param name="request">Optional, <see cref="CreateThreadRequest"/>.</param>
         /// <param name="cancellationToken">Optional, <see cref="CancellationToken"/>.</param>
         /// <returns><see cref="RunResponse"/>.</returns>
-        public static async Task<RunResponse> CreateThreadAndRunAsync(this AssistantResponse assistant, CreateThreadRequest request = null, CancellationToken cancellationToken = default)
-            => await assistant.Client.ThreadsEndpoint.CreateThreadAndRunAsync(new CreateThreadAndRunRequest(assistant.Id, createThreadRequest: request), cancellationToken).ConfigureAwait(false);
+        public static async Task<RunResponse> CreateThreadAndRunAsync(this AssistantResponse assistant, Threads.CreateThreadRequest request = null, CancellationToken cancellationToken = default)
+            => await assistant.Client.ThreadsEndpoint.CreateThreadAndRunAsync(new Threads.CreateThreadAndRunRequest(assistant.Id, createThreadRequest: request), cancellationToken).ConfigureAwait(false);
 
         #region Files
 

@@ -68,7 +68,7 @@ namespace OpenAI.Images
             string user = null)
         {
             Prompt = prompt;
-            Model = string.IsNullOrWhiteSpace(model?.Id) ? Models.Model.DallE_2 : model;
+            Model = string.IsNullOrWhiteSpace(model?.Id) ? OpenAI.Model.DallE_2 : model;
             Number = numberOfResults;
             Quality = quality;
             ResponseFormat = responseFormat;

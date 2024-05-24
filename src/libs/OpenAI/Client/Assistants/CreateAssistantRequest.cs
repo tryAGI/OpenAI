@@ -86,7 +86,7 @@ namespace OpenAI.Assistants
         /// </param>
         public CreateAssistantRequest(string model = null, string name = null, string description = null, string instructions = null, IEnumerable<Tool> tools = null, IEnumerable<string> files = null, IReadOnlyDictionary<string, string> metadata = null)
         {
-            Model = string.IsNullOrWhiteSpace(model) ? Models.Model.GPT3_5_Turbo : model;
+            Model = string.IsNullOrWhiteSpace(model) ? OpenAI.Model.GPT3_5_Turbo : model;
             Name = name;
             Description = description;
             Instructions = instructions;

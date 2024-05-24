@@ -154,7 +154,7 @@ namespace OpenAI.Chat
                 throw new ArgumentNullException(nameof(messages), $"Missing required {nameof(messages)} parameter");
             }
 
-            Model = string.IsNullOrWhiteSpace(model) ? Models.Model.GPT3_5_Turbo : model;
+            Model = string.IsNullOrWhiteSpace(model) ? OpenAI.Model.GPT3_5_Turbo : model;
             FrequencyPenalty = frequencyPenalty;
             LogitBias = logitBias;
             MaxTokens = maxTokens;

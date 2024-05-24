@@ -196,7 +196,7 @@ namespace OpenAI.Completions
         public CompletionRequest(CompletionRequest basedOn)
         {
             if (basedOn == null) { return; }
-            Model = basedOn.Model ?? DefaultCompletionRequestArgs?.Model ?? Models.Model.Davinci;
+            Model = basedOn.Model ?? DefaultCompletionRequestArgs?.Model ?? OpenAI.Model.Davinci;
             Prompts = basedOn.Prompts;
             Suffix = basedOn.Suffix ?? DefaultCompletionRequestArgs?.Suffix;
             MaxTokens = basedOn.MaxTokens ?? DefaultCompletionRequestArgs?.MaxTokens;
@@ -276,7 +276,7 @@ namespace OpenAI.Completions
 
             Model = string.IsNullOrWhiteSpace(model)
                     ? (string.IsNullOrWhiteSpace(DefaultCompletionRequestArgs?.Model)
-                        ? Models.Model.Davinci
+                        ? OpenAI.Model.Davinci
                         : DefaultCompletionRequestArgs.Model)
                     : model;
             Suffix = suffix ?? DefaultCompletionRequestArgs?.Suffix;

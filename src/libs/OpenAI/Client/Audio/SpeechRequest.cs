@@ -19,7 +19,7 @@ namespace OpenAI.Audio
         public SpeechRequest(string input, Model model = null, SpeechVoice voice = SpeechVoice.Alloy, SpeechResponseFormat responseFormat = SpeechResponseFormat.MP3, float? speed = null)
         {
             Input = input;
-            Model = string.IsNullOrWhiteSpace(model?.Id) ? Models.Model.TTS_1 : model;
+            Model = string.IsNullOrWhiteSpace(model?.Id) ? OpenAI.Model.TTS_1 : model;
             Voice = voice;
             ResponseFormat = responseFormat;
             Speed = speed;

@@ -32,7 +32,7 @@ namespace OpenAI.Edits
             double? topP = null,
             string model = null)
         {
-            Model = string.IsNullOrWhiteSpace(model) ? Models.Model.DavinciEdit : model;
+            Model = string.IsNullOrWhiteSpace(model) ? OpenAI.Model.DavinciEdit : model;
             Input = input;
             Instruction = instruction;
             EditCount = editCount;
