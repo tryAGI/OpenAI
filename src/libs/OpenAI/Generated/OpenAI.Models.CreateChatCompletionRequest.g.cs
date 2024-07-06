@@ -101,7 +101,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateChatCompletionRequestServiceTierJsonConverter))]
-        public global::OpenAI.CreateChatCompletionRequestServiceTier? ServiceTier { get; set; }
+        public global::OpenAI.CreateChatCompletionRequestServiceTier? ServiceTier { get; set; } = global::OpenAI.CreateChatCompletionRequestServiceTier.;
 
         /// <summary>
         /// Up to 4 sequences where the API will stop generating further tokens.
@@ -121,7 +121,7 @@ namespace OpenAI
         /// Options for streaming response. Only set this when you set `stream: true`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream_options")]
-        public global::OpenAI.ChatCompletionStreamOptions? StreamOptions { get; set; }
+        public global::OpenAI.ChatCompletionStreamOptions? StreamOptions { get; set; } = "";
 
         /// <summary>
         /// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.<br/>

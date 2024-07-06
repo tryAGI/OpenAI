@@ -65,7 +65,7 @@ namespace OpenAI
         /// The maximum value for `logprobs` is 5.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
-        public int? Logprobs { get; set; }
+        public int? Logprobs { get; set; } = "";
 
         /// <summary>
         /// The maximum number of [tokens](/tokenizer) that can be generated in the completion.<br/>
@@ -118,7 +118,7 @@ namespace OpenAI
         /// Options for streaming response. Only set this when you set `stream: true`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream_options")]
-        public global::OpenAI.ChatCompletionStreamOptions? StreamOptions { get; set; }
+        public global::OpenAI.ChatCompletionStreamOptions? StreamOptions { get; set; } = "";
 
         /// <summary>
         /// The suffix that comes after a completion of inserted text.<br/>
