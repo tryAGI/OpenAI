@@ -110,34 +110,48 @@ namespace {@interface.Namespace}
         }}
 ").Inject()}
 
-        public static global::System.Collections.Generic.ICollection<global::OpenAI.Function> AsFunctions(this {@interface.Name} functions)
+        public static global::System.Collections.Generic.IList<global::OpenAI.FunctionObject> AsFunctions(this {@interface.Name} functions)
         {{
 {@interface.Methods.Select((method, i) => $@"
             var (name{i}, description{i}, jsonNode{i}) = functions.{method.Name}AsParametersJsonNode();").Inject()}
 
-            return new global::System.Collections.Generic.List<global::OpenAI.Function>
+            return new global::System.Collections.Generic.List<global::OpenAI.FunctionObject>
             {{
 {@interface.Methods.Select((_, i) => $@"
-                new global::OpenAI.Function(
-                    name: name{i},
-                    description: description{i},
-                    parameters: jsonNode{i}),
+                new global::OpenAI.FunctionObject
+                {{
+                    Name = name{i},
+                    Description = description{i},
+                    Parameters = new global::OpenAI.FunctionParameters
+                    {{
+                        //AdditionalProperties = jsonNode{i},
+                    }},
+                }},
 ").Inject()}
             }};
         }}
 
-        public static global::System.Collections.Generic.ICollection<global::OpenAI.Tool> AsTools(this {@interface.Name} functions)
+        public static global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionTool> AsTools(this {@interface.Name} functions)
         {{
 {@interface.Methods.Select((method, i) => $@"
             var (name{i}, description{i}, jsonNode{i}) = functions.{method.Name}AsParametersJsonNode();").Inject()}
 
-            return new global::System.Collections.Generic.List<global::OpenAI.Tool>
+            return new global::System.Collections.Generic.List<global::OpenAI.ChatCompletionTool>
             {{
 {@interface.Methods.Select((_, i) => $@"
-                new global::OpenAI.Tool(new global::OpenAI.Function(
-                    name: name{i},
-                    description: description{i},
-                    parameters: jsonNode{i})),
+                new global::OpenAI.ChatCompletionTool
+                {{
+                    Function = new global::OpenAI.FunctionObject
+                    {{
+                        Name = name{i},
+                        Description = description{i},
+                        Parameters = new global::OpenAI.FunctionParameters
+                        {{
+                            //AdditionalProperties = jsonNode{i},
+                        }},
+                    }},
+                    Type = global::OpenAI.ChatCompletionToolType.Function,
+                }},
 ").Inject()}
             }};
         }}

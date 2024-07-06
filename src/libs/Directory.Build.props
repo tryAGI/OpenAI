@@ -16,7 +16,7 @@
   </ItemGroup>
   
   <PropertyGroup Label="Nuget">
-    <Version>3.0.0-alpha.1</Version>
+    <Version>3.0.0-alpha.2</Version>
     <GeneratePackageOnBuild Condition=" '$(Configuration)' == 'Release' ">true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Authors>tryAGI and contributors</Authors>
