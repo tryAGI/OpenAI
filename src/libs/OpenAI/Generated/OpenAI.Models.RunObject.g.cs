@@ -191,8 +191,7 @@ namespace OpenAI
         public required global::System.OneOf<global::OpenAI.RunObjectToolChoice, global::OpenAI.AssistantsNamedToolChoice?> ToolChoice { get; set; }
 
         /// <summary>
-        /// Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.<br/>
-        /// Default Value: true
+        /// Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parallel_tool_calls")]
         [global::System.Text.Json.Serialization.JsonRequired]

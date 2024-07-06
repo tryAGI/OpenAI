@@ -67,7 +67,7 @@ namespace OpenAI
             global::System.AnyOf<string, global::OpenAI.CreateFineTuningJobRequestModel> model,
             string trainingFile,
             global::OpenAI.CreateFineTuningJobRequestHyperparameters? hyperparameters = default,
-            string? suffix = "",
+            string? suffix = default,
             string? validationFile = default,
             global::System.Collections.Generic.IList<global::OpenAI.CreateFineTuningJobRequestIntegrations?>? integrations = default,
             int? seed = default,

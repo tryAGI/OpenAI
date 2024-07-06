@@ -85,15 +85,15 @@ namespace OpenAI
             double? presencePenalty = 0,
             global::OpenAI.CreateChatCompletionRequestResponseFormat? responseFormat = default,
             int? seed = default,
-            global::OpenAI.CreateChatCompletionRequestServiceTier? serviceTier = null,
+            global::OpenAI.CreateChatCompletionRequestServiceTier? serviceTier = default,
             global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>? stop = default,
             bool? stream = false,
-            global::OpenAI.ChatCompletionStreamOptions? streamOptions = null,
+            global::OpenAI.ChatCompletionStreamOptions? streamOptions = default,
             double? temperature = 1,
             double? topP = 1,
             global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionTool>? tools = default,
             global::System.OneOf<global::OpenAI.CreateChatCompletionRequestToolChoice?, global::OpenAI.ChatCompletionNamedToolChoice?>? toolChoice = default,
-            bool? parallelToolCalls = null,
+            bool? parallelToolCalls = default,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

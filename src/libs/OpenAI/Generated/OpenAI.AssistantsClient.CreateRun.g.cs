@@ -87,7 +87,7 @@ namespace OpenAI
             int? maxCompletionTokens = default,
             global::OpenAI.TruncationObject? truncationStrategy = default,
             global::System.OneOf<global::OpenAI.CreateRunRequestToolChoice?, global::OpenAI.AssistantsNamedToolChoice?>? toolChoice = default,
-            bool? parallelToolCalls = true,
+            bool? parallelToolCalls = default,
             global::System.OneOf<global::OpenAI.CreateRunRequestResponseFormat?, global::OpenAI.AssistantsApiResponseFormat?>? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

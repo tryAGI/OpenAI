@@ -12,6 +12,7 @@ text = text.Replace("description: *run_top_p_description", "description: empty")
 text = text.Replace("description: &run_top_p_description ", "description: ");
 
 var openApiDocument = new OpenApiStringReader().Read(text, out var diagnostics);
+openApiDocument.Components.Schemas["ParallelToolCalls"]!.Default = null;
 openApiDocument.Components.Schemas["ParallelToolCalls"]!.Nullable = true;
 
 text = openApiDocument.SerializeAsYaml(OpenApiSpecVersion.OpenApi3_0);
