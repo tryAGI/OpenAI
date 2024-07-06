@@ -5,18 +5,16 @@
 [![License: MIT](https://img.shields.io/github/license/tryAGI/OpenAI)](https://github.com/tryAGI/OpenAI/blob/main/LICENSE.txt)
 [![Discord](https://img.shields.io/discord/1115206893015662663?label=Discord&logo=discord&logoColor=white&color=d82679)](https://discord.gg/Ca2xhfBf3v)
 
-Generated C# SDK based on official OpenAI OpenAPI specification using NSwag
-
-This package includes C# Source Generator which allows you to define functions natively through a C# interface,
-and also provides extensions that make it easier to call this interface later.  
-In addition to easy function implementation and readability,
-it generates Args classes, extension methods to easily pass a functions to API,
-and extension methods to simply call a function via json and return json.  
-Currently only System.Text.Json is supported.  
+## Features 🔥
+- Fully generated C# SDK based on [official OpenAI OpenAPI specification](https://raw.githubusercontent.com/openai/openai-openapi/master/openapi.yaml) using [OpenApiGenerator](https://github.com/HavenDV/OpenApiGenerator)
+- Same day update to support new features
+- Updated and supported automatically if there are no breaking changes
+- Contains a supported list of constants such as current prices, models, and other
+- Source generator to define functions natively through C# interfaces
 
 ### Usage
 ```csharp
-using tryAGI.OpenAI;
+using OpenAI;
 
 public enum Unit
 {
