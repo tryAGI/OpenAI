@@ -1,7 +1,5 @@
-﻿using OpenAI;
-using OpenAI.Chat;
-
-namespace tryAGI.OpenAI;
+﻿// ReSharper disable once CheckNamespace
+namespace OpenAI;
 
 /// <summary>
 /// 
@@ -12,10 +10,15 @@ public static class StringExtensions
     /// 
     /// </summary>
     /// <param name="content"></param>
+    /// <param name="name"></param>
     /// <returns></returns>
-    public static Message AsSystemMessage(this string content)
+    public static ChatCompletionRequestMessage AsSystemMessage(this string content, string? name = null)
     {
-        return new Message(Role.System, content);
+        return new ChatCompletionRequestSystemMessage
+        {
+            Content = content,
+            Role = ChatCompletionRequestSystemMessageRole.System,
+        };
     }
     
     /// <summary>
@@ -23,9 +26,13 @@ public static class StringExtensions
     /// </summary>
     /// <param name="content"></param>
     /// <returns></returns>
-    public static Message AsUserMessage(this string content)
+    public static ChatCompletionRequestMessage AsUserMessage(this string content)
     {
-        return new Message(Role.User, content);
+        return new ChatCompletionRequestUserMessage
+        {
+            Content = content,
+            Role = ChatCompletionRequestUserMessageRole.User,
+        };
     }
     
     /// <summary>
@@ -33,22 +40,46 @@ public static class StringExtensions
     /// </summary>
     /// <param name="content"></param>
     /// <returns></returns>
-    public static Message AsAssistantMessage(this string content)
+    public static ChatCompletionRequestMessage AsAssistantMessage(this string content)
     {
-        return new Message(Role.Assistant, content);
+        return new ChatCompletionRequestAssistantMessage
+        {
+            Content = content,
+            Role = ChatCompletionRequestAssistantMessageRole.Assistant,
+        };
     }
     
     /// <summary>
     /// 
     /// </summary>
     /// <param name="json"></param>
-    /// <param name="name"></param>
+    /// <param name="toolCallId"></param>
     /// <returns></returns>
-    public static Message AsFunctionMessage(this string json, string name, string toolCallId)
+    public static ChatCompletionRequestMessage AsToolMessage(this string json, string toolCallId)
     {
-        return new Message(new Tool(new Function(name))
+        return new ChatCompletionRequestToolMessage
         {
-            Id = toolCallId,
-        }, json);
+            Content = json,
+            Role = ChatCompletionRequestToolMessageRole.Tool,
+            ToolCallId = toolCallId,
+        };
+    }
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="message"></param>
+    /// <returns></returns>
+    /// <exception cref="ArgumentNullException"></exception>
+    public static ChatCompletionRequestMessage AsRequestMessage(this ChatCompletionResponseMessage message)
+    {
+        message = message ?? throw new ArgumentNullException(nameof(message));
+        
+        return new ChatCompletionRequestAssistantMessage
+        {
+            Content = message.Content,
+            Role = ChatCompletionRequestAssistantMessageRole.Assistant,
+            ToolCalls = message.ToolCalls,
+        };
     }
 }
