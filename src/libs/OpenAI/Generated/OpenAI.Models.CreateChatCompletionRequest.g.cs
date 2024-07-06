@@ -101,14 +101,14 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateChatCompletionRequestServiceTierJsonConverter))]
-        public global::OpenAI.CreateChatCompletionRequestServiceTier? ServiceTier { get; set; } = null;
+        public global::OpenAI.CreateChatCompletionRequestServiceTier? ServiceTier { get; set; }
 
         /// <summary>
         /// Up to 4 sequences where the API will stop generating further tokens.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>? Stop { get; set; }
+        public global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>? Stop { get; set; } = "";
 
         /// <summary>
         /// If set, partial message deltas will be sent, like in ChatGPT. Tokens will be sent as data-only [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format) as they become available, with the stream terminated by a `data: [DONE]` message. [Example Python code](https://cookbook.openai.com/examples/how_to_stream_completions).<br/>
@@ -164,7 +164,7 @@ namespace OpenAI
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parallel_tool_calls")]
-        public bool ParallelToolCalls { get; set; } = true;
+        public bool? ParallelToolCalls { get; set; } = true;
 
         /// <summary>
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).<br/>

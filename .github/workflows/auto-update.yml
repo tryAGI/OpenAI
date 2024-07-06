@@ -35,8 +35,9 @@ jobs:
 
       - name: Generate code
         run: |
-          chmod +x src/libs/OpenAI/generate.sh
-          src/libs/OpenAI/generate.sh
+          cd src/libs/OpenAI
+          chmod +x ./generate.sh
+          ./generate.sh
 
       - name: Check for changes
         id: changes

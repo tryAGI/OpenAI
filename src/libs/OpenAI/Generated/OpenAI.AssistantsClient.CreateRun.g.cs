@@ -21,7 +21,7 @@ namespace OpenAI
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.GetLeftPart(global::System.UriPartial.Authority) + $"/threads/{threadId}/runs", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/threads/{threadId}/runs", global::System.UriKind.RelativeOrAbsolute));
             var __json = global::System.Text.Json.JsonSerializer.Serialize(request, global::OpenAI.SourceGenerationContext.Default.CreateRunRequest);
             httpRequest.Content = new global::System.Net.Http.StringContent(
                 content: __json,
@@ -87,7 +87,7 @@ namespace OpenAI
             int? maxCompletionTokens = default,
             global::OpenAI.TruncationObject? truncationStrategy = default,
             global::System.OneOf<global::OpenAI.CreateRunRequestToolChoice?, global::OpenAI.AssistantsNamedToolChoice?>? toolChoice = default,
-            bool parallelToolCalls = true,
+            bool? parallelToolCalls = true,
             global::System.OneOf<global::OpenAI.CreateRunRequestResponseFormat?, global::OpenAI.AssistantsApiResponseFormat?>? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

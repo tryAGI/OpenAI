@@ -43,7 +43,7 @@ namespace OpenAI
         /// For example, a `suffix` of "custom-model-name" would produce a model name like `ft:gpt-3.5-turbo:openai:custom-model-name:7p4lURel`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("suffix")]
-        public string? Suffix { get; set; }
+        public string? Suffix { get; set; } = "";
 
         /// <summary>
         /// The ID of an uploaded file that contains validation data.<br/>

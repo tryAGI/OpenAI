@@ -19,7 +19,7 @@ namespace OpenAI
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.GetLeftPart(global::System.UriPartial.Authority) + "/completions", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/completions", global::System.UriKind.RelativeOrAbsolute));
             var __json = global::System.Text.Json.JsonSerializer.Serialize(request, global::OpenAI.SourceGenerationContext.Default.CreateCompletionRequest);
             httpRequest.Content = new global::System.Net.Http.StringContent(
                 content: __json,
@@ -77,15 +77,15 @@ namespace OpenAI
             bool? echo = false,
             double? frequencyPenalty = 0,
             object? logitBias = default,
-            int? logprobs = default,
+            int? logprobs = null,
             int? maxTokens = 16,
             int? n = 1,
             double? presencePenalty = 0,
             int? seed = default,
             global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>? stop = default,
             bool? stream = false,
-            global::OpenAI.ChatCompletionStreamOptions? streamOptions = default,
-            string? suffix = default,
+            global::OpenAI.ChatCompletionStreamOptions? streamOptions = null,
+            string? suffix = "",
             double? temperature = 1,
             double? topP = 1,
             string? user = default,

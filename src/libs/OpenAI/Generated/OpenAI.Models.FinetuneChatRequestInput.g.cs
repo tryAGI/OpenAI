@@ -27,7 +27,7 @@ namespace OpenAI
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parallel_tool_calls")]
-        public bool ParallelToolCalls { get; set; } = true;
+        public bool? ParallelToolCalls { get; set; } = true;
 
         /// <summary>
         /// A list of functions the model may generate JSON inputs for.

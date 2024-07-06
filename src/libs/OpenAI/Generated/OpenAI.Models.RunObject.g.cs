@@ -125,8 +125,7 @@ namespace OpenAI
         public required string Instructions { get; set; }
 
         /// <summary>
-        /// The list of tools that the [assistant](/docs/api-reference/assistants) used for this run.<br/>
-        /// Default Value: []
+        /// The list of tools that the [assistant](/docs/api-reference/assistants) used for this run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -197,7 +196,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parallel_tool_calls")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool ParallelToolCalls { get; set; }
+        public required bool? ParallelToolCalls { get; set; }
 
         /// <summary>
         /// Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models/gpt-4o), [GPT-4 Turbo](/docs/models/gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.<br/>

@@ -1,3 +1,5 @@
+using Microsoft.OpenApi;
+using Microsoft.OpenApi.Extensions;
 using Microsoft.OpenApi.Readers;
 
 var path = args[0];
@@ -9,11 +11,11 @@ text = text.Replace("description: &run_temperature_description ", "description: 
 text = text.Replace("description: *run_top_p_description", "description: empty");
 text = text.Replace("description: &run_top_p_description ", "description: ");
 
-_ = new OpenApiStringReader().Read(text, out var diagnostics);
-// openApiDocument.Components.Schemas["CreateAssistantRequest"]!.Properties["temperature"]!.Description = string.Empty;
+var openApiDocument = new OpenApiStringReader().Read(text, out var diagnostics);
+openApiDocument.Components.Schemas["ParallelToolCalls"]!.Nullable = true;
 
-// text = openApiDocument.SerializeAsYaml(OpenApiSpecVersion.OpenApi3_0);
-// openApiDocument = new OpenApiStringReader().Read(text, out diagnostics);
+text = openApiDocument.SerializeAsYaml(OpenApiSpecVersion.OpenApi3_0);
+_ = new OpenApiStringReader().Read(text, out diagnostics);
 
 if (diagnostics.Errors.Count > 0)
 {

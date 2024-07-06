@@ -21,7 +21,7 @@ namespace OpenAI
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.GetLeftPart(global::System.UriPartial.Authority) + "/fine_tuning/jobs", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/fine_tuning/jobs", global::System.UriKind.RelativeOrAbsolute));
             var __json = global::System.Text.Json.JsonSerializer.Serialize(request, global::OpenAI.SourceGenerationContext.Default.CreateFineTuningJobRequest);
             httpRequest.Content = new global::System.Net.Http.StringContent(
                 content: __json,
@@ -67,7 +67,7 @@ namespace OpenAI
             global::System.AnyOf<string, global::OpenAI.CreateFineTuningJobRequestModel> model,
             string trainingFile,
             global::OpenAI.CreateFineTuningJobRequestHyperparameters? hyperparameters = default,
-            string? suffix = default,
+            string? suffix = "",
             string? validationFile = default,
             global::System.Collections.Generic.IList<global::OpenAI.CreateFineTuningJobRequestIntegrations?>? integrations = default,
             int? seed = default,

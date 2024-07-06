@@ -19,7 +19,7 @@ namespace OpenAI
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.GetLeftPart(global::System.UriPartial.Authority) + "/chat/completions", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/chat/completions", global::System.UriKind.RelativeOrAbsolute));
             var __json = global::System.Text.Json.JsonSerializer.Serialize(request, global::OpenAI.SourceGenerationContext.Default.CreateChatCompletionRequest);
             httpRequest.Content = new global::System.Net.Http.StringContent(
                 content: __json,
@@ -88,12 +88,12 @@ namespace OpenAI
             global::OpenAI.CreateChatCompletionRequestServiceTier? serviceTier = null,
             global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>? stop = default,
             bool? stream = false,
-            global::OpenAI.ChatCompletionStreamOptions? streamOptions = default,
+            global::OpenAI.ChatCompletionStreamOptions? streamOptions = null,
             double? temperature = 1,
             double? topP = 1,
             global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionTool>? tools = default,
             global::System.OneOf<global::OpenAI.CreateChatCompletionRequestToolChoice?, global::OpenAI.ChatCompletionNamedToolChoice?>? toolChoice = default,
-            bool parallelToolCalls = true,
+            bool? parallelToolCalls = null,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

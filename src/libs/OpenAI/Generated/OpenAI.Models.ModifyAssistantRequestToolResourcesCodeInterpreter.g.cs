@@ -9,8 +9,7 @@ namespace OpenAI
     public sealed partial class ModifyAssistantRequestToolResourcesCodeInterpreter
     {
         /// <summary>
-        /// Overrides the list of [file](/docs/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.<br/>
-        /// Default Value: []
+        /// Overrides the list of [file](/docs/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_ids")]
         public global::System.Collections.Generic.IList<string?>? FileIds { get; set; }
