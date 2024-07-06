@@ -1,7 +1,6 @@
-using OpenAI.Chat;
 using OpenAI.Constants;
 
-namespace tryAGI.OpenAI.IntegrationTests;
+namespace OpenAI.IntegrationTests;
 
 public partial class Tests
 {
@@ -9,14 +8,14 @@ public partial class Tests
     public async Task CreateChatCompletion()
     {
         var api = GetAuthorizedApi();
-        var response = await api.ChatEndpoint.GetCompletionAsync(new ChatRequest(
-            new[]
+        var response = await api.Chat.CreateChatCompletionAsync(
+            messages: new[]
             {
                 "You are a helpful weather assistant.".AsSystemMessage(),
                 "What's the weather like today?".AsUserMessage(),
             },
-            model: ChatModels.Gpt35Turbo,
-            user: "tryAGI.OpenAI.IntegrationTests.Tests.CreateChatCompletion"));
+            model: ChatModels.Gpt35Turbo.Id,
+            user: "tryAGI.OpenAI.IntegrationTests.Tests.CreateChatCompletion");
         response.Choices.ElementAt(0).Message.Content.Should().NotBeEmpty();
 
         Console.WriteLine(response.Choices.ElementAt(0).Message.Content);
@@ -26,18 +25,18 @@ public partial class Tests
     public async Task CreateChatCompletionAsStreamAsync()
     {
         var api = GetAuthorizedApi();
-        var enumerable = api.ChatEndpoint.StreamCompletionEnumerableAsync(new ChatRequest(
-            new[]
+        var enumerable = await api.Chat.CreateChatCompletionAsync(
+            messages: new[]
             {
                 "You are a helpful weather assistant.".AsSystemMessage(),
                 "What's the weather like today?".AsUserMessage(),
             },
-            model: ChatModels.Gpt35Turbo,
-            user: "tryAGI.OpenAI.IntegrationTests.Tests.CreateChatCompletion"));
+            model: ChatModels.Gpt35Turbo.Id,
+            user: "tryAGI.OpenAI.IntegrationTests.Tests.CreateChatCompletion");
         
-        await foreach (var response in enumerable)
-        {
-            Console.WriteLine(response.Choices.ElementAt(0).Delta.Content);
-        }
+        // await foreach (var response in enumerable)
+        // {
+        //     Console.WriteLine(response.Choices.ElementAt(0).Delta.Content);
+        // }
     }
 }

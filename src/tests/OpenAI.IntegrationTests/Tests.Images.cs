@@ -1,7 +1,6 @@
 using System.Diagnostics;
-using OpenAI.Images;
 
-namespace tryAGI.OpenAI.IntegrationTests;
+namespace OpenAI.IntegrationTests;
 
 public partial class Tests
 {
@@ -9,15 +8,15 @@ public partial class Tests
     public async Task CreateImage_Url()
     {
         var api = GetAuthorizedApi();
-        var response = await api.ImagesEndPoint.GenerateImageAsync(new ImageGenerationRequest(
+        var response = await api.Images.CreateImageAsync(
             prompt: "a white siamese cat",
-            numberOfResults: 1,
-            size: "256x256",
-            responseFormat: ResponseFormat.Url,
-            user: "tryAGI.OpenAI.IntegrationTests.Tests.CreateImage_Url"));
-        response.ElementAt(0).Url.Should().NotBeEmpty();
+            n: 1,
+            size: CreateImageRequestSize._256x256,
+            responseFormat: CreateImageRequestResponseFormat.Url,
+            user: "tryAGI.OpenAI.IntegrationTests.Tests.CreateImage_Url");
+        response.Data.ElementAt(0).Url.Should().NotBeNullOrEmpty();
 
-        Process.Start(new ProcessStartInfo(response.ElementAt(0).Url)
+        Process.Start(new ProcessStartInfo(response.Data.ElementAt(0).Url!)
         {
             UseShellExecute = true,
         });

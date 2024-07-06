@@ -1,4 +1,4 @@
-namespace tryAGI.OpenAI.IntegrationTests;
+namespace OpenAI.IntegrationTests;
 
 public partial class Tests
 {
@@ -6,10 +6,10 @@ public partial class Tests
     public async Task ListModels()
     {
         var api = GetAuthorizedApi();
-        var models = await api.ModelsEndpoint.GetModelsAsync();
-        models.Should().NotBeEmpty();
+        var models = await api.Models.ListModelsAsync();
+        models.Data.Should().NotBeEmpty();
 
-        foreach (var model in models)
+        foreach (var model in models.Data)
         {
             Console.WriteLine($"{model.Id}");
         }

@@ -1,129 +1,136 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
-using System.Text.Json;
 using System.Threading.Tasks;
 using OpenAI;
-using OpenAI.Chat;
 using OpenAI.Constants;
-using tryAGI.OpenAI;
 
 namespace H.Ipc.Generator.IntegrationTests;
 
 [TestClass]
 public partial class Tests
 {
-     [TestMethod]
-     //[Ignore]
-     public async Task SimpleMethod()
-     {
-         var messages = new List<Message>
-         {
-             "You are a helpful weather assistant.".AsSystemMessage(),
-             "What's the weather like today?".AsUserMessage(),
-         };
-         
-         try
-         {
-             var apiKey =
-                 Environment.GetEnvironmentVariable("OPENAI_API_KEY") ??
-                 throw new AssertInconclusiveException("OPENAI_API_KEY is not set.");
-             var api = new OpenAIClient(apiKey);
-             var service = new WeatherService();
-             var tools = service.AsTools();
-             var result = await api.ChatEndpoint.GetCompletionAsync(new ChatRequest(
-                 new[]
-                 {
-                     "You are a helpful weather assistant.".AsSystemMessage(),
-                     "What's the weather like today?".AsUserMessage(),
-                 },
-                 model: ChatModels.Gpt35Turbo,
-                 tools: tools));
-             var resultMessage = result.GetFirstChoiceMessage();
-             messages.Add(resultMessage);
-             
-             messages.Add("Dubai, UAE".AsUserMessage());
-             result = await api.ChatEndpoint.GetCompletionAsync(new ChatRequest(
-                 messages,
-                 model: ChatModels.Gpt35Turbo,
-                 tools: tools));
-             resultMessage = result.GetFirstChoiceMessage();
-             messages.Add(resultMessage);
+    [TestMethod]
+    //[Ignore]
+    public async Task SimpleMethod()
+    {
+        var messages = new List<ChatCompletionRequestMessage>
+        {
+            "You are a helpful weather assistant.".AsSystemMessage(),
+            "What's the weather like today?".AsUserMessage(),
+        };
 
-             // It's possible that the assistant will also ask you which units you want the temperature in.
-             if (!string.IsNullOrWhiteSpace(resultMessage.Content))
-             {
-                 messages.Add("celsius".AsUserMessage());
-                 result = await api.ChatEndpoint.GetCompletionAsync(new ChatRequest(
-                     messages,
-                     model: ChatModels.Gpt35Turbo,
-                     tools: tools));
-                 resultMessage = result.GetFirstChoiceMessage();
-                 messages.Add(resultMessage);
-             }
+        try
+        {
+            var apiKey =
+                Environment.GetEnvironmentVariable("OPENAI_API_KEY") ??
+                throw new AssertInconclusiveException("OPENAI_API_KEY is not set.");
+            using var api = new OpenAiApi();
+            api.AuthorizeUsingBearer(apiKey);
+            var service = new WeatherService();
+            var tools = service.AsTools();
+            var result = await api.Chat.CreateChatCompletionAsync(
+                new[]
+                {
+                    "You are a helpful weather assistant.".AsSystemMessage(),
+                    "What's the weather like today?".AsUserMessage(),
+                },
+                model: ChatModels.Gpt35Turbo.Id,
+                tools: tools);
+            var resultMessage = result.Choices.First().Message;
+            messages.Add(resultMessage.AsRequestMessage());
 
-             if (resultMessage.ToolCalls == null ||
-                 resultMessage.ToolCalls.Count == 0)
-             {
-                 throw new InvalidOperationException("Expected a function call.");
-             }
+            messages.Add("Dubai, UAE".AsUserMessage());
+            result = await api.Chat.CreateChatCompletionAsync(
+                messages,
+                model: ChatModels.Gpt35Turbo.Id,
+                tools: tools);
+            resultMessage = result.Choices.First().Message;
+            messages.Add(resultMessage.AsRequestMessage());
 
-             foreach (var call in resultMessage.ToolCalls)
-             {
-                 var json = await service.CallAsync(
-                     functionName: call.Function.Name,
-                     argumentsAsJson: call.Function.Arguments.ToString());
-                 messages.Add(json.AsFunctionMessage(call.Function.Name, call.Id));
-             }
-             
-             result = await api.ChatEndpoint.GetCompletionAsync(new ChatRequest(
-                 messages,
-                 model: ChatModels.Gpt35Turbo,
-                 tools: tools));
-             resultMessage = result.GetFirstChoiceMessage();
-             messages.Add(resultMessage);
-         }
-         finally
-         {
-             PrintMessages(messages);
-         }
-     }
+            // It's possible that the assistant will also ask you which units you want the temperature in.
+            if (!string.IsNullOrWhiteSpace(resultMessage.Content))
+            {
+                messages.Add("celsius".AsUserMessage());
+                result = await api.Chat.CreateChatCompletionAsync(
+                    messages,
+                    model: ChatModels.Gpt35Turbo.Id,
+                    tools: tools);
+                resultMessage = result.Choices.First().Message;
+                messages.Add(resultMessage.AsRequestMessage());
+            }
 
-     private static void PrintMessages(List<Message> messages)
-     {
-         foreach (var message in messages)
-         {
-             foreach (var tool in message.ToolCalls ?? Array.Empty<Tool>())
-             {
-                 Console.WriteLine($"{message.Role}(FunctionCall): {tool.Function.Name}");
-                 Console.WriteLine($"{tool.Function.Arguments}");
-             }
-             
-             Console.WriteLine($"{message.Role}: {message.Content}");
-         }
-     }
-     
-     [TestMethod]
-     public async Task Call()
-     {
-         var json = /* lang=json */ """
-                    {
-                        "location": "Dubai, UAE"
-                    }
-                    """;
-         var result = new WeatherService().CallGetCurrentWeather(json);
+            if (resultMessage.ToolCalls == null ||
+                resultMessage.ToolCalls.Count == 0)
+            {
+                throw new InvalidOperationException("Expected a function call.");
+            }
 
-         result.Should().Be(/* lang=json */ """
-             {"location":"Dubai, UAE","temperature":22,"unit":"celsius","description":"Sunny"}
-             """);
+            foreach (var call in resultMessage.ToolCalls)
+            {
+                var json = await service.CallAsync(
+                    functionName: call.Function.Name,
+                    argumentsAsJson: call.Function.Arguments);
+                messages.Add(json.AsToolMessage(call.Id));
+            }
 
-         var result2 = await new WeatherService().CallAsync("GetCurrentWeather", json);
-         result2.Should().Be(/* lang=json */ """
-             {"location":"Dubai, UAE","temperature":22,"unit":"celsius","description":"Sunny"}
-             """);
-     }
-     
+            result = await api.Chat.CreateChatCompletionAsync(
+                messages,
+                model: ChatModels.Gpt35Turbo.Id,
+                tools: tools);
+            resultMessage = result.Choices.First().Message;
+            messages.Add(resultMessage.AsRequestMessage());
+        }
+        finally
+        {
+            PrintMessages(messages);
+        }
+    }
+
+    private static void PrintMessages(List<ChatCompletionRequestMessage> messages)
+    {
+        foreach (var message in messages)
+        {
+            if (message.IsTool)
+            {
+                Console.WriteLine($"{message.Tool.Role}(FunctionCall): {message.Tool.ToolCallId}");
+                Console.WriteLine($"{message.Tool.Content}");
+            }
+            else if (message.IsSystem)
+            {
+                Console.WriteLine($"{message.System}: {message.System}");
+            }
+            else if (message.IsUser)
+            {
+                Console.WriteLine($"{message.User}: {message.User}");
+            }
+            else if (message.IsAssistant)
+            {
+                Console.WriteLine($"{message.Assistant}: {message.Assistant}");
+            }
+        }
+    }
+
+    [TestMethod]
+    public async Task Call()
+    {
+        var json = /* lang=json */ """
+                                   {
+                                       "location": "Dubai, UAE"
+                                   }
+                                   """;
+        var result = new WeatherService().CallGetCurrentWeather(json);
+
+        result.Should().Be( /* lang=json */ """
+                                            {"location":"Dubai, UAE","temperature":22,"unit":"celsius","description":"Sunny"}
+                                            """);
+
+        var result2 = await new WeatherService().CallAsync("GetCurrentWeather", json);
+        result2.Should().Be( /* lang=json */ """
+                                             {"location":"Dubai, UAE","temperature":22,"unit":"celsius","description":"Sunny"}
+                                             """);
+    }
+
 //     [TestMethod]
 //     [Ignore]
 //     public async Task UpdateCode()

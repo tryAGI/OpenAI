@@ -117,29 +117,43 @@ namespace H.Ipc.Generator.IntegrationTests
             });
         }
 
-        public static global::System.Collections.Generic.ICollection<global::OpenAI.Function> AsFunctions(this IUpdateCodeFunctions functions)
+        public static global::System.Collections.Generic.IList<global::OpenAI.FunctionObject> AsFunctions(this IUpdateCodeFunctions functions)
         {
             var (name0, description0, jsonNode0) = functions.UpdateCodeAsParametersJsonNode();
 
-            return new global::System.Collections.Generic.List<global::OpenAI.Function>
+            return new global::System.Collections.Generic.List<global::OpenAI.FunctionObject>
             {
-                new global::OpenAI.Function(
-                    name: name0,
-                    description: description0,
-                    parameters: jsonNode0),
+                new global::OpenAI.FunctionObject
+                {
+                    Name = name0,
+                    Description = description0,
+                    Parameters = new global::OpenAI.FunctionParameters
+                    {
+                        //AdditionalProperties = jsonNode0,
+                    },
+                },
             };
         }
 
-        public static global::System.Collections.Generic.ICollection<global::OpenAI.Tool> AsTools(this IUpdateCodeFunctions functions)
+        public static global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionTool> AsTools(this IUpdateCodeFunctions functions)
         {
             var (name0, description0, jsonNode0) = functions.UpdateCodeAsParametersJsonNode();
 
-            return new global::System.Collections.Generic.List<global::OpenAI.Tool>
+            return new global::System.Collections.Generic.List<global::OpenAI.ChatCompletionTool>
             {
-                new global::OpenAI.Tool(new global::OpenAI.Function(
-                    name: name0,
-                    description: description0,
-                    parameters: jsonNode0)),
+                new global::OpenAI.ChatCompletionTool
+                {
+                    Function = new global::OpenAI.FunctionObject
+                    {
+                        Name = name0,
+                        Description = description0,
+                        Parameters = new global::OpenAI.FunctionParameters
+                        {
+                            //AdditionalProperties = jsonNode0,
+                        },
+                    },
+                    Type = global::OpenAI.ChatCompletionToolType.Function,
+                },
             };
         }
 

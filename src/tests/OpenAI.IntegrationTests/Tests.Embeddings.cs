@@ -1,7 +1,6 @@
 using OpenAI.Constants;
-using OpenAI.Embeddings;
 
-namespace tryAGI.OpenAI.IntegrationTests;
+namespace OpenAI.IntegrationTests;
 
 public partial class Tests
 {
@@ -9,13 +8,13 @@ public partial class Tests
     public async Task CreateEmbedding()
     {
         var api = GetAuthorizedApi();
-        var response = await api.EmbeddingsEndpoint.CreateEmbeddingAsync(new EmbeddingsRequest(
+        var response = await api.Embeddings.CreateEmbeddingAsync(
             input: "Hello, world",
-            model: EmbeddingModels.Version3Small,
-            user: "tryAGI.OpenAI.IntegrationTests.Tests.CreateEmbedding"));
-        response.Data.ElementAt(0).Embedding.Should().NotBeEmpty();
+            model: EmbeddingModels.Version3Small.Id,
+            user: "tryAGI.OpenAI.IntegrationTests.Tests.CreateEmbedding");
+        response.Data.ElementAt(0).Embedding1.Should().NotBeEmpty();
 
-        foreach (var data in response.Data.ElementAt(0).Embedding)
+        foreach (var data in response.Data.ElementAt(0).Embedding1)
         {
             Console.WriteLine($"{data}");
         }
