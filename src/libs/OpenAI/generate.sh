@@ -6,4 +6,8 @@ if [ $? -ne 0 ]; then
   echo "Failed, exiting..."
   exit 1
 fi
-oag generate openapi.yaml --namespace OpenAI -c OpenAiApi -o Generated -t net8.0
+oag generate openapi.yaml \
+  --namespace OpenAI \
+  --clientClassName OpenAiApi \
+  --targetFramework net8.0 \
+  --output Generated
