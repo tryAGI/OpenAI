@@ -5,4 +5,4 @@ public readonly record struct MethodData(
     string Description,
     bool IsAsync,
     bool IsVoid,
-    IReadOnlyCollection<ParameterData> Parameters);
+    SchemaData Parameters);

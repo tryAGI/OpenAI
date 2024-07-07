@@ -93,20 +93,27 @@ public partial class Tests
         {
             if (message.IsTool)
             {
-                Console.WriteLine($"{message.Tool.Role}(FunctionCall): {message.Tool.ToolCallId}");
+                Console.WriteLine($"> {message.Tool.Role}(FunctionCall): {message.Tool.ToolCallId}");
                 Console.WriteLine($"{message.Tool.Content}");
+                Console.WriteLine("----");
             }
             else if (message.IsSystem)
             {
-                Console.WriteLine($"{message.System}: {message.System}");
+                Console.WriteLine($"> {message.System.Role}: {message.System.Name}");
+                Console.WriteLine($"{message.System.Content}");
+                Console.WriteLine("----");
             }
             else if (message.IsUser)
             {
-                Console.WriteLine($"{message.User}: {message.User}");
+                Console.WriteLine($"> {message.User.Role}: {message.User.Name}");
+                Console.WriteLine($"{message.User.Content.Object}");
+                Console.WriteLine("----");
             }
             else if (message.IsAssistant)
             {
-                Console.WriteLine($"{message.Assistant}: {message.Assistant}");
+                Console.WriteLine($"> {message.Assistant.Role}: {message.Assistant.Name}");
+                Console.WriteLine($"{message.Assistant.Content}");
+                Console.WriteLine("----");
             }
         }
     }

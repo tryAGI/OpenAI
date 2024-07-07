@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using tryAGI.OpenAI;
+using OpenAI;
 using DescriptionAttribute = System.ComponentModel.DescriptionAttribute;
 
 namespace H.Ipc.Generator.IntegrationTests;

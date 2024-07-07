@@ -19,11 +19,17 @@ public class OpenAiFunctionsGenerator : IIncrementalGenerator
 
     public void Initialize(IncrementalGeneratorInitializationContext context)
     {
-        context.SyntaxProvider
-            .ForAttributeWithMetadataName("tryAGI.OpenAI.OpenAiFunctionsAttribute")
-            .SelectManyAllAttributesOfCurrentInterfaceSyntax()
-            .SelectAndReportExceptions(PrepareData, context, Id)
-            .SelectAndReportExceptions(GetClientSourceCode, context, Id)
+        var attributes =
+            context.SyntaxProvider
+                .ForAttributeWithMetadataName("OpenAI.OpenAiFunctionsAttribute")
+                .SelectManyAllAttributesOfCurrentInterfaceSyntax()
+                .SelectAndReportExceptions(PrepareData, context, Id);
+        
+        attributes
+            .SelectAndReportExceptions(AsTools, context, Id)
+            .AddSource(context);
+        attributes
+            .SelectAndReportExceptions(AsCalls, context, Id)
             .AddSource(context);
     }
 
@@ -48,14 +54,26 @@ public class OpenAiFunctionsGenerator : IIncrementalGenerator
                 Description: GetDescription(x),
                 IsAsync: x.IsAsync || x.ReturnType.Name == "Task",
                 IsVoid: x.ReturnsVoid,
-                Parameters: x.Parameters
-                    .Where(static x => x.Type.MetadataName != "CancellationToken")
-                    .Select(static x => ToParameterData(
-                        typeSymbol: x.Type,
-                        name: x.Name,
-                        description: GetDescription(x),
-                        isRequired: !x.IsOptional))
-                    .ToArray()))
+                Parameters: new SchemaData(
+                    Name: x.Name,
+                    Description: GetDescription(x),
+                    Type: "object",
+                    SchemaType: "object",
+                    Properties:
+                        x.Parameters
+                            .Where(static x => x.Type.MetadataName != "CancellationToken")
+                            .Select(static x => ToParameterData(
+                                typeSymbol: x.Type,
+                                name: x.Name,
+                                description: GetDescription(x),
+                                isRequired: !x.IsOptional))
+                            .ToArray(),
+                    EnumValues: Array.Empty<string>(),
+                    IsNullable: false,
+                    IsRequired: true,
+                    Format: null,
+                    ArrayItem: Array.Empty<SchemaData>(),
+                    DefaultValue: string.Empty)))
             .ToArray();
 
         return new InterfaceData(
@@ -64,12 +82,12 @@ public class OpenAiFunctionsGenerator : IIncrementalGenerator
             Methods: methods);
     }
     
-    private static ParameterData ToParameterData(ITypeSymbol typeSymbol, string? name = null, string? description = null, bool isRequired = true)
+    private static SchemaData ToParameterData(ITypeSymbol typeSymbol, string? name = null, string? description = null, bool isRequired = true)
     {
         string schemaType;
         string? format = null;
-        var properties = Array.Empty<ParameterData>();
-        ParameterData? arrayItem = null;
+        var properties = Array.Empty<SchemaData>();
+        SchemaData? arrayItem = null;
         switch (typeSymbol.TypeKind)
         {
             case TypeKind.Enum:
@@ -167,7 +185,7 @@ public class OpenAiFunctionsGenerator : IIncrementalGenerator
                 throw new NotImplementedException($"{typeSymbol.TypeKind} is not implemented.");
         }
         
-        return new ParameterData(
+        return new SchemaData(
             Name: !string.IsNullOrWhiteSpace(name)
                 ? name!
                 : typeSymbol.Name,
@@ -179,9 +197,7 @@ public class OpenAiFunctionsGenerator : IIncrementalGenerator
             SchemaType: schemaType,
             Format: format,
             Properties: properties,
-            ArrayItem: arrayItem != null
-                ? new []{ arrayItem.Value }
-                : Array.Empty<ParameterData>(),
+            ArrayItem: arrayItem != null ? [arrayItem.Value] : Array.Empty<SchemaData>(),
             EnumValues: typeSymbol.TypeKind == TypeKind.Enum
                 ? typeSymbol
                     .GetMembers()
@@ -223,11 +239,18 @@ public class OpenAiFunctionsGenerator : IIncrementalGenerator
         }
     }
     
-    private static FileWithName GetClientSourceCode(InterfaceData @interface)
+    private static FileWithName AsTools(InterfaceData @interface)
     {
         return new FileWithName(
-            Name: $"{@interface.Name}.Functions.generated.cs",
-            Text: SourceGenerationHelper.GenerateClientImplementation(@interface));
+            Name: $"{@interface.Name}.Tools.generated.cs",
+            Text: Sources.GenerateClientImplementation(@interface));
+    }
+    
+    private static FileWithName AsCalls(InterfaceData @interface)
+    {
+        return new FileWithName(
+            Name: $"{@interface.Name}.Calls.generated.cs",
+            Text: Sources.GenerateCalls(@interface));
     }
 
     #endregion

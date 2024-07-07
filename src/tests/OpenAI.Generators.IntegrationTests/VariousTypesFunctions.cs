@@ -1,5 +1,5 @@
 ﻿using System;
-using tryAGI.OpenAI;
+using OpenAI;
 using DescriptionAttribute = System.ComponentModel.DescriptionAttribute;
 
 namespace H.Ipc.Generator.IntegrationTests;

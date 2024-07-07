@@ -1,6 +1,6 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using tryAGI.OpenAI;
+using OpenAI;
 using DescriptionAttribute = System.ComponentModel.DescriptionAttribute;
 
 namespace H.Ipc.Generator.IntegrationTests;
