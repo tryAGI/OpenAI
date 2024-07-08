@@ -9,7 +9,7 @@ permissions:
   actions: write
 
 jobs:
-  open-router:
+  check-openapi-updates:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
