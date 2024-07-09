@@ -5,6 +5,24 @@ namespace OpenAI
 {
     public partial class VectorStoresClient
     {
+        partial void PrepareCreateVectorStoreFileArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string vectorStoreId,
+            global::OpenAI.CreateVectorStoreFileRequest request);
+        partial void PrepareCreateVectorStoreFileRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string vectorStoreId,
+            global::OpenAI.CreateVectorStoreFileRequest request);
+        partial void ProcessCreateVectorStoreFileResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessCreateVectorStoreFileResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Create a vector store file by attaching a [File](/docs/api-reference/files) to a [vector store](/docs/api-reference/vector-stores/object).
         /// </summary>
@@ -19,6 +37,13 @@ namespace OpenAI
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
+            PrepareArguments(
+                client: _httpClient);
+            PrepareCreateVectorStoreFileArguments(
+                httpClient: _httpClient,
+                vectorStoreId: ref vectorStoreId,
+                request: request);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/vector_stores/{vectorStoreId}/files", global::System.UriKind.RelativeOrAbsolute));
@@ -28,12 +53,37 @@ namespace OpenAI
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
 
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareCreateVectorStoreFileRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                vectorStoreId: vectorStoreId,
+                request: request);
+
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessCreateVectorStoreFileResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessCreateVectorStoreFileResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {

@@ -5,6 +5,22 @@ namespace OpenAI
 {
     public partial class VectorStoresClient
     {
+        partial void PrepareGetVectorStoreArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string vectorStoreId);
+        partial void PrepareGetVectorStoreRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string vectorStoreId);
+        partial void ProcessGetVectorStoreResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessGetVectorStoreResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Retrieves a vector store.
         /// </summary>
@@ -15,16 +31,46 @@ namespace OpenAI
             string vectorStoreId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareGetVectorStoreArguments(
+                httpClient: _httpClient,
+                vectorStoreId: ref vectorStoreId);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/vector_stores/{vectorStoreId}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareGetVectorStoreRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                vectorStoreId: vectorStoreId);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessGetVectorStoreResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessGetVectorStoreResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {

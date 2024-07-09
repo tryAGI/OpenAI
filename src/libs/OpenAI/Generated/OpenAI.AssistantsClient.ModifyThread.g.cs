@@ -5,6 +5,24 @@ namespace OpenAI
 {
     public partial class AssistantsClient
     {
+        partial void PrepareModifyThreadArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string threadId,
+            global::OpenAI.ModifyThreadRequest request);
+        partial void PrepareModifyThreadRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string threadId,
+            global::OpenAI.ModifyThreadRequest request);
+        partial void ProcessModifyThreadResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessModifyThreadResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Modifies a thread.
         /// </summary>
@@ -19,6 +37,13 @@ namespace OpenAI
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
+            PrepareArguments(
+                client: _httpClient);
+            PrepareModifyThreadArguments(
+                httpClient: _httpClient,
+                threadId: ref threadId,
+                request: request);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/threads/{threadId}", global::System.UriKind.RelativeOrAbsolute));
@@ -28,12 +53,37 @@ namespace OpenAI
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
 
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareModifyThreadRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                threadId: threadId,
+                request: request);
+
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessModifyThreadResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessModifyThreadResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {
