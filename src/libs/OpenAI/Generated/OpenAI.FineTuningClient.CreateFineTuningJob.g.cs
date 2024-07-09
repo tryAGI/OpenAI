@@ -5,6 +5,22 @@ namespace OpenAI
 {
     public partial class FineTuningClient
     {
+        partial void PrepareCreateFineTuningJobArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::OpenAI.CreateFineTuningJobRequest request);
+        partial void PrepareCreateFineTuningJobRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::OpenAI.CreateFineTuningJobRequest request);
+        partial void ProcessCreateFineTuningJobResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessCreateFineTuningJobResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Creates a fine-tuning job which begins the process of creating a new model from a given dataset.<br/>
         /// Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.<br/>
@@ -19,6 +35,12 @@ namespace OpenAI
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
+            PrepareArguments(
+                client: _httpClient);
+            PrepareCreateFineTuningJobArguments(
+                httpClient: _httpClient,
+                request: request);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/fine_tuning/jobs", global::System.UriKind.RelativeOrAbsolute));
@@ -28,12 +50,36 @@ namespace OpenAI
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
 
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareCreateFineTuningJobRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                request: request);
+
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessCreateFineTuningJobResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessCreateFineTuningJobResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {

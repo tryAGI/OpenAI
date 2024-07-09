@@ -5,6 +5,24 @@ namespace OpenAI
 {
     public partial class VectorStoresClient
     {
+        partial void PrepareDeleteVectorStoreFileArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string vectorStoreId,
+            ref string fileId);
+        partial void PrepareDeleteVectorStoreFileRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string vectorStoreId,
+            string fileId);
+        partial void ProcessDeleteVectorStoreFileResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessDeleteVectorStoreFileResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Delete a vector store file. This will remove the file from the vector store but the file itself will not be deleted. To delete the file, use the [delete file](/docs/api-reference/files/delete) endpoint.
         /// </summary>
@@ -17,16 +35,48 @@ namespace OpenAI
             string fileId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            PrepareArguments(
+                client: _httpClient);
+            PrepareDeleteVectorStoreFileArguments(
+                httpClient: _httpClient,
+                vectorStoreId: ref vectorStoreId,
+                fileId: ref fileId);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/vector_stores/{vectorStoreId}/files/{fileId}", global::System.UriKind.RelativeOrAbsolute));
+
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareDeleteVectorStoreFileRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                vectorStoreId: vectorStoreId,
+                fileId: fileId);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessDeleteVectorStoreFileResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessDeleteVectorStoreFileResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {

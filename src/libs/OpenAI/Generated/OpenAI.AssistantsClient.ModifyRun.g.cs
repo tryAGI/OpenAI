@@ -5,6 +5,26 @@ namespace OpenAI
 {
     public partial class AssistantsClient
     {
+        partial void PrepareModifyRunArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string threadId,
+            ref string runId,
+            global::OpenAI.ModifyRunRequest request);
+        partial void PrepareModifyRunRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string threadId,
+            string runId,
+            global::OpenAI.ModifyRunRequest request);
+        partial void ProcessModifyRunResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessModifyRunResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Modifies a run.
         /// </summary>
@@ -21,6 +41,14 @@ namespace OpenAI
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
+            PrepareArguments(
+                client: _httpClient);
+            PrepareModifyRunArguments(
+                httpClient: _httpClient,
+                threadId: ref threadId,
+                runId: ref runId,
+                request: request);
+
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/threads/{threadId}/runs/{runId}", global::System.UriKind.RelativeOrAbsolute));
@@ -30,12 +58,38 @@ namespace OpenAI
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
 
+            PrepareRequest(
+                client: _httpClient,
+                request: httpRequest);
+            PrepareModifyRunRequest(
+                httpClient: _httpClient,
+                httpRequestMessage: httpRequest,
+                threadId: threadId,
+                runId: runId,
+                request: request);
+
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
+            ProcessResponse(
+                client: _httpClient,
+                response: response);
+            ProcessModifyRunResponse(
+                httpClient: _httpClient,
+                httpResponseMessage: response);
+
             var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessModifyRunResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
 
             try
             {
