@@ -107,7 +107,7 @@ namespace OpenAI
             global::System.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>> input,
             global::System.AnyOf<string, global::OpenAI.CreateEmbeddingRequestModel> model,
             global::OpenAI.CreateEmbeddingRequestEncodingFormat? encodingFormat = global::OpenAI.CreateEmbeddingRequestEncodingFormat.Float,
-            int dimensions = default,
+            int? dimensions = default,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
