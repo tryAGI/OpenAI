@@ -1,25 +1,16 @@
-﻿using System.ComponentModel;
+using System.ComponentModel;
+using H.Generators;
 using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace H.Generators;
+namespace OpenAI.Generators.Core.Conversion;
 
-public class OpenAiFunctionsGenerator
+public static class ToModels
 {
-    #region Methods
-
-    private static string GetDescription(ISymbol symbol)
+    public static InterfaceData PrepareData(
+        this INamedTypeSymbol interfaceSymbol)
     {
-        return symbol.GetAttributes()
-            .FirstOrDefault(static x => x.AttributeClass?.Name == nameof(DescriptionAttribute))?
-            .ConstructorArguments.First().Value?.ToString() ?? string.Empty;
-    }
-    
-    private static InterfaceData PrepareData(
-        (SemanticModel SemanticModel, AttributeData AttributeData, InterfaceDeclarationSyntax InterfaceSyntax, INamedTypeSymbol InterfaceSymbol) tuple)
-    {
-        var (_, _, _, interfaceSymbol) = tuple;
-
+        interfaceSymbol = interfaceSymbol ?? throw new ArgumentNullException(nameof(interfaceSymbol));
+        
         var methods = interfaceSymbol
             .GetMembers()
             .OfType<IMethodSymbol>()
@@ -29,14 +20,26 @@ public class OpenAiFunctionsGenerator
                 Description: GetDescription(x),
                 IsAsync: x.IsAsync || x.ReturnType.Name == "Task",
                 IsVoid: x.ReturnsVoid,
-                Parameters: x.Parameters
-                    .Where(static x => x.Type.MetadataName != "CancellationToken")
-                    .Select(static x => ToParameterData(
-                        typeSymbol: x.Type,
-                        name: x.Name,
-                        description: GetDescription(x),
-                        isRequired: !x.IsOptional))
-                    .ToArray()))
+                Parameters: new OpenApiSchema(
+                    Name: x.Name,
+                    Description: GetDescription(x),
+                    Type: "object",
+                    SchemaType: "object",
+                    Properties:
+                    x.Parameters
+                        .Where(static x => x.Type.MetadataName != "CancellationToken")
+                        .Select(static x => ToParameterData(
+                            typeSymbol: x.Type,
+                            name: x.Name,
+                            description: GetDescription(x),
+                            isRequired: !x.IsOptional))
+                        .ToArray(),
+                    EnumValues: Array.Empty<string>(),
+                    IsNullable: false,
+                    IsRequired: true,
+                    Format: null,
+                    ArrayItem: Array.Empty<OpenApiSchema>(),
+                    DefaultValue: string.Empty)))
             .ToArray();
 
         return new InterfaceData(
@@ -45,12 +48,12 @@ public class OpenAiFunctionsGenerator
             Methods: methods);
     }
     
-    private static ParameterData ToParameterData(ITypeSymbol typeSymbol, string? name = null, string? description = null, bool isRequired = true)
+    private static OpenApiSchema ToParameterData(ITypeSymbol typeSymbol, string? name = null, string? description = null, bool isRequired = true)
     {
         string schemaType;
         string? format = null;
-        var properties = Array.Empty<ParameterData>();
-        ParameterData? arrayItem = null;
+        var properties = Array.Empty<OpenApiSchema>();
+        OpenApiSchema? arrayItem = null;
         switch (typeSymbol.TypeKind)
         {
             case TypeKind.Enum:
@@ -148,7 +151,7 @@ public class OpenAiFunctionsGenerator
                 throw new NotImplementedException($"{typeSymbol.TypeKind} is not implemented.");
         }
         
-        return new ParameterData(
+        return new OpenApiSchema(
             Name: !string.IsNullOrWhiteSpace(name)
                 ? name!
                 : typeSymbol.Name,
@@ -160,16 +163,14 @@ public class OpenAiFunctionsGenerator
             SchemaType: schemaType,
             Format: format,
             Properties: properties,
-            ArrayItem: arrayItem != null
-                ? new []{ arrayItem.Value }
-                : Array.Empty<ParameterData>(),
+            ArrayItem: arrayItem != null ? [arrayItem.Value] : Array.Empty<OpenApiSchema>(),
             EnumValues: typeSymbol.TypeKind == TypeKind.Enum
                 ? typeSymbol
                     .GetMembers()
                     .OfType<IFieldSymbol>()
                     .Select(static x => x.Name.ToLowerInvariant())
                     .ToArray()
-                : Array.Empty<string>(),
+                : [],
             IsNullable: IsNullable(typeSymbol),
             IsRequired: isRequired);
     }
@@ -204,5 +205,10 @@ public class OpenAiFunctionsGenerator
         }
     }
 
-    #endregion
+    private static string GetDescription(ISymbol symbol)
+    {
+        return symbol.GetAttributes()
+            .FirstOrDefault(static x => x.AttributeClass?.Name == nameof(DescriptionAttribute))?
+            .ConstructorArguments.First().Value?.ToString() ?? string.Empty;
+    }
 }

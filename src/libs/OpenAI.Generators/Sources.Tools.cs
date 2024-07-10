@@ -1,4 +1,5 @@
 ﻿using H.Generators.Extensions;
+using OpenAI.Generators.Core;
 
 namespace H.Generators;
 
@@ -11,7 +12,7 @@ internal static partial class Sources
     /// <param name="depth"></param>
     /// <param name="schema"></param>
     /// <returns></returns>
-    public static string GenerateOpenApiSchema(SchemaData parameter, int depth = 0, bool schema = true)
+    public static string GenerateOpenApiSchema(OpenApiSchema parameter, int depth = 0, bool schema = true)
     {
         var indent = new string(' ', depth * 4);
         var name = schema ? "global::OpenAI.OpenApiSchema" : "global::OpenAI.FunctionParameters";

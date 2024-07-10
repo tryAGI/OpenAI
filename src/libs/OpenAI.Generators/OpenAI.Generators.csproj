@@ -18,4 +18,9 @@
     <PackageReference Include="H.Generators.Extensions" Version="1.22.0" PrivateAssets="all" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OpenAI.Generators.Core\OpenAI.Generators.Core.csproj"
+                      PrivateAssets="all" />
+  </ItemGroup>
+
 </Project>

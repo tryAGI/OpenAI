@@ -1,3 +1,5 @@
+using OpenAI.Generators.Core;
+
 namespace H.Generators;
 
 public readonly record struct MethodData(
@@ -5,4 +7,4 @@ public readonly record struct MethodData(
     string Description,
     bool IsAsync,
     bool IsVoid,
-    SchemaData Parameters);
+    OpenApiSchema Parameters);
