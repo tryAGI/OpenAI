@@ -54,27 +54,52 @@ public class WeatherService : IWeatherFunctions
     }
 }
 
+using var api = new OpenAiApi();
+api.AuthorizeUsingBearer(apiKey);
 
 var service = new WeatherService();
-using var httpClient = new HttpClient();
-var api = new OpenAiApi(apiKey, httpClient);
-var result = await api.CreateChatCompletionAsync(new CreateChatCompletionRequest
+var tools = service.AsTools();
+
+var messages = new List<ChatCompletionRequestMessage>
 {
-    Messages = new List<ChatCompletionRequestMessage>
-    {
-        "You are a helpful weather assistant.".AsSystemMessage(),
-        "What's the weather like today?".AsUserMessage(),
-    },
-    Functions = service.AsFunctions(),
-    Function_call = Function_call4.Auto,
-    Model = ModelIds.Gpt35Turbo_0613,
-});
-// ...
-var resultMessage = result.GetFirstChoiceMessage();
-var functionArgumentsJson = resultMessage.Function_call?.Arguments ?? string.Empty;
-var json = await service.CallGetCurrentWeatherAsync(functionArgumentsJson);
-// or just get arguments
-var args = service.AsGetCurrentWeatherAsyncArgs(functionArgumentsJson);
+    "You are a helpful weather assistant.".AsSystemMessage(),
+    "What is the current temperature in Dubai, UAE in Celsius?".AsUserMessage(),
+};
+var model = ChatModels.Gpt35Turbo.Id;
+var result = await api.Chat.CreateChatCompletionAsync(
+    messages,
+    model: model,
+    tools: tools);
+var resultMessage = result.Choices.First().Message;
+messages.Add(resultMessage.AsRequestMessage());
+
+foreach (var call in resultMessage.ToolCalls)
+{
+    var json = await service.CallAsync(
+        functionName: call.Function.Name,
+        argumentsAsJson: call.Function.Arguments);
+    messages.Add(json.AsToolMessage(call.Id));
+}
+
+var result = await api.Chat.CreateChatCompletionAsync(
+    messages,
+    model: model,
+    tools: tools);
+var resultMessage = result.Choices.First().Message;
+messages.Add(resultMessage.AsRequestMessage());
+```
+```
+> System: 
+You are a helpful weather assistant.
+> User: 
+What is the current temperature in Dubai, UAE in Celsius?
+> Assistant: 
+call_3sptsiHzKnaxF8bs8BWxPo0B:
+GetCurrentWeather({"location":"Dubai, UAE","unit":"celsius"})
+> Tool(call_3sptsiHzKnaxF8bs8BWxPo0B):
+{"location":"Dubai, UAE","temperature":22,"unit":"celsius","description":"Sunny"}
+> Assistant: 
+The current temperature in Dubai, UAE is 22°C with sunny weather.
 ```
 
 ### Constants
