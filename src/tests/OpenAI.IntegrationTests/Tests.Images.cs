@@ -22,28 +22,26 @@ public partial class Tests
         });
     }
     
-    // [TestMethod]
-    // public async Task CreateImage_Base64()
-    // {
-    //     var api = GetAuthorizedApi();
-    //     var response = await api.CreateImageAsync(new CreateImageRequest
-    //     {
-    //         Prompt = "a white siamese cat",
-    //         N = 1,
-    //         Size = CreateImageRequestSize._256x256,
-    //         Response_format = CreateImageRequestResponse_format.B64_json,
-    //         User = "tryAGI.OpenAI.IntegrationTests.Tests.CreateImage_Base64",
-    //     });
-    //     var base64 = response.Data.ElementAt(0).B64_json;
-    //     base64.Should().NotBeEmpty();
-    //
-    //     var bytes = Convert.FromBase64String(base64!);
-    //     var path = Path.Combine(Path.GetTempPath(), "cat.png");
-    //     await File.WriteAllBytesAsync(path, bytes);
-    //     
-    //     Process.Start(new ProcessStartInfo(path)
-    //     {
-    //         UseShellExecute = true,
-    //     });
-    // }
+    [TestMethod]
+    public async Task CreateImage_Base64()
+    {
+        var api = GetAuthorizedApi();
+        var response = await api.Images.CreateImageAsync(
+            prompt: "a white siamese cat",
+            n: 1,
+            size: CreateImageRequestSize._256x256,
+            responseFormat: CreateImageRequestResponseFormat.B64Json,
+            user: "tryAGI.OpenAI.IntegrationTests.Tests.CreateImage_Base64");
+        var base64 = response.Data.ElementAt(0).B64Json;
+        base64.Should().NotBeEmpty();
+
+        var bytes = Convert.FromBase64String(base64!);
+        var path = Path.Combine(Path.GetTempPath(), "cat.png");
+        await File.WriteAllBytesAsync(path, bytes);
+        
+        Process.Start(new ProcessStartInfo(path)
+        {
+            UseShellExecute = true,
+        });
+    }
 }
