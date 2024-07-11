@@ -25,7 +25,7 @@ public partial class Tests
     public async Task CreateChatCompletionAsStreamAsync()
     {
         var api = GetAuthorizedApi();
-        var enumerable = await api.Chat.CreateChatCompletionAsync(
+        var enumerable = api.Chat.CreateChatCompletionAsStreamAsync(
             messages: new[]
             {
                 "You are a helpful weather assistant.".AsSystemMessage(),
@@ -34,9 +34,9 @@ public partial class Tests
             model: ChatModels.Gpt35Turbo.Id,
             user: "tryAGI.OpenAI.IntegrationTests.Tests.CreateChatCompletion");
         
-        // await foreach (var response in enumerable)
-        // {
-        //     Console.WriteLine(response.Choices.ElementAt(0).Delta.Content);
-        // }
+        await foreach (var response in enumerable)
+        {
+            Console.WriteLine(response.Choices.ElementAt(0).Delta.Content);
+        }
     }
 }
