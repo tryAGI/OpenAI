@@ -1,9 +1,10 @@
-namespace OpenAI.Constants.Helpers;
+// ReSharper disable once CheckNamespace
+namespace OpenAI;
 
 /// <summary>
-/// Internal constants used by the OpenAI SDK.
+/// According https://openai.com/pricing/
 /// </summary>
-public static class InternalConstants
+public static partial class Prices
 {
     /// <summary>
     /// Just a constant for 1e-3.

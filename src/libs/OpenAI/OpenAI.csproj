@@ -13,7 +13,7 @@
     <Description>
       Generated C# SDK based on official OpenAI OpenAPI specification. 
       Includes C# Source Generator which allows you to define functions natively through a C# interface, and also provides extensions that make it easier to call this interface later</Description>
-    <PackageTags>api;client;sdk;dotnet;swagger;openapi;specification;openai;generated;nswag;functions;gpt-3.5;gpt-4;chatgpt;generator;source generator</PackageTags>
+    <PackageTags>api;client;sdk;dotnet;swagger;openapi;specification;openai;generated;nswag;functions;gpt-3.5;gpt-4;chatgpt;generator;source generator;constants;prices;pricing;vision;audio;embedding;moderation;image;chat</PackageTags>
   </PropertyGroup>
   
   <ItemGroup>
