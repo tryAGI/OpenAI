@@ -1,5 +1,3 @@
-using OpenAI.Constants;
-
 namespace OpenAI.IntegrationTests;
 
 public partial class Tests
@@ -10,7 +8,7 @@ public partial class Tests
         var api = GetAuthorizedApi();
         var response = await api.Embeddings.CreateEmbeddingAsync(
             input: "Hello, world",
-            model: EmbeddingModels.Version3Small.Id,
+            model: CreateEmbeddingRequestModel.TextEmbedding3Small,
             user: "tryAGI.OpenAI.IntegrationTests.Tests.CreateEmbedding");
         response.Data.ElementAt(0).Embedding1.Should().NotBeEmpty();
 

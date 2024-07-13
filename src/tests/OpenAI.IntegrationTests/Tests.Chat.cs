@@ -1,5 +1,3 @@
-using OpenAI.Constants;
-
 namespace OpenAI.IntegrationTests;
 
 public partial class Tests
@@ -14,7 +12,7 @@ public partial class Tests
                 "You are a helpful weather assistant.".AsSystemMessage(),
                 "What's the weather like today?".AsUserMessage(),
             },
-            model: ChatModels.Gpt35Turbo.Id,
+            model: CreateChatCompletionRequestModel.Gpt35Turbo,
             user: "tryAGI.OpenAI.IntegrationTests.Tests.CreateChatCompletion");
         response.Choices.ElementAt(0).Message.Content.Should().NotBeEmpty();
 
@@ -31,7 +29,7 @@ public partial class Tests
                 "You are a helpful weather assistant.".AsSystemMessage(),
                 "What's the weather like today?".AsUserMessage(),
             },
-            model: ChatModels.Gpt35Turbo.Id,
+            model: CreateChatCompletionRequestModel.Gpt35Turbo,
             user: "tryAGI.OpenAI.IntegrationTests.Tests.CreateChatCompletion");
         
         await foreach (var response in enumerable)

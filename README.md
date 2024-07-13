@@ -65,7 +65,7 @@ var messages = new List<ChatCompletionRequestMessage>
     "You are a helpful weather assistant.".AsSystemMessage(),
     "What is the current temperature in Dubai, UAE in Celsius?".AsUserMessage(),
 };
-var model = ChatModels.Gpt35Turbo.Id;
+var model = CreateChatCompletionRequestModel.Gpt35Turbo;
 var result = await api.Chat.CreateChatCompletionAsync(
     messages,
     model: model,
