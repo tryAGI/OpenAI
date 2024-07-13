@@ -39,6 +39,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "helpers", "helpers", "{1A00
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenAI.Generators.Core", "src\libs\OpenAI.Generators.Core\OpenAI.Generators.Core.csproj", "{FCBE699C-CCD3-4809-8128-78956BC3F2C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrimmingHelper", "src\helpers\TrimmingHelper\TrimmingHelper.csproj", "{9F7DC3A1-B113-4577-875D-73B2DDD6647A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,10 @@ Global
 		{FCBE699C-CCD3-4809-8128-78956BC3F2C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCBE699C-CCD3-4809-8128-78956BC3F2C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCBE699C-CCD3-4809-8128-78956BC3F2C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F7DC3A1-B113-4577-875D-73B2DDD6647A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F7DC3A1-B113-4577-875D-73B2DDD6647A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F7DC3A1-B113-4577-875D-73B2DDD6647A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F7DC3A1-B113-4577-875D-73B2DDD6647A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +91,7 @@ Global
 		{4F534836-40A3-4E75-8B71-C46CD4FBE137} = {AAA11B78-2764-4520-A97E-46AA7089A588}
 		{594DCFD8-E707-4232-B878-90FA3D880474} = {1A008ECD-2300-4BE4-A302-49DDF8BE0D54}
 		{FCBE699C-CCD3-4809-8128-78956BC3F2C3} = {61E7E11E-4558-434C-ACE8-06316A3097B3}
+		{9F7DC3A1-B113-4577-875D-73B2DDD6647A} = {1A008ECD-2300-4BE4-A302-49DDF8BE0D54}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CED9A020-DBA5-4BE6-8096-75E528648EC1}

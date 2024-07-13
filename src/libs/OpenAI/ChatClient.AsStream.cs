@@ -59,8 +59,12 @@ namespace OpenAI
             
             using var stream = await response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
             using var reader = new StreamReader(stream);
-
+            
+#if NET8_0_OR_GREATER
+            while (await reader.ReadLineAsync(cancellationToken).ConfigureAwait(false) is { } streamData)
+#else
             while (await reader.ReadLineAsync().ConfigureAwait(false) is { } streamData)
+#endif
             {
                 cancellationToken.ThrowIfCancellationRequested();
 

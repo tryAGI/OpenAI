@@ -21,24 +21,23 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Tiktoken" Version="2.0.2" />
+    <PackageReference Include="Tiktoken" Version="2.0.3" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net4.6.2'">
-    <PackageReference Include="System.Text.Json" Version="8.0.3" />
+    <PackageReference Include="System.Text.Json" Version="8.0.4" />
     <Reference Include="System.Net.Http" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
-    <PackageReference Include="System.Text.Json" Version="8.0.3" />
+    <PackageReference Include="System.Text.Json" Version="8.0.4" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
-    <PackageReference Include="System.Text.Json" Version="8.0.3" />
+    <PackageReference Include="System.Text.Json" Version="8.0.4" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OpenAI.Constants\OpenAI.Constants.csproj" />
     <ProjectReference Include="..\OpenAI.Generators\OpenAI.Generators.csproj" ReferenceOutputAssembly="false" PackAsAnalyzer="true" />
     <None Include="..\OpenAI.Generators\bin\$(Configuration)\netstandard2.0\H.Generators.Extensions.dll" Pack="true" PackagePath="analyzers/dotnet" Visible="false" />
     <None Include="..\OpenAI.Generators\bin\$(Configuration)\netstandard2.0\OpenAI.Generators.Core.dll" Pack="true" PackagePath="analyzers/dotnet" Visible="false" />
