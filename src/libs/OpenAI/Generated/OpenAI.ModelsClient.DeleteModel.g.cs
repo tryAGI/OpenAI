@@ -24,7 +24,9 @@ namespace OpenAI
         /// <summary>
         /// Delete a fine-tuned model. You must have the Owner role in your organization to delete a model.
         /// </summary>
-        /// <param name="model"></param>
+        /// <param name="model">
+        /// Example: ft:gpt-3.5-turbo:acemeco:suffix:abc123
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.DeleteModelResponse> DeleteModelAsync(
