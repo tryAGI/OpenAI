@@ -405,1286 +405,1322 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<string, global::OpenAI.CreateFineTuningJobRequestModel>? Type98 { get; set; }
+        public global::OpenAI.CreateUploadRequestPurpose? Type98 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateFineTuningJobRequestHyperparameters? Type99 { get; set; }
+        public global::System.Collections.Generic.IList<string>? Type99 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenAI.CreateFineTuningJobRequestIntegrations?>? Type100 { get; set; }
+        public global::System.AnyOf<string, global::OpenAI.CreateFineTuningJobRequestModel>? Type100 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.OneOf<global::OpenAI.CreateFineTuningJobRequestHyperparametersBatchSize?, int>? Type101 { get; set; }
+        public global::OpenAI.CreateFineTuningJobRequestHyperparameters? Type101 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.OneOf<global::OpenAI.CreateFineTuningJobRequestHyperparametersLearningRateMultiplier?, double>? Type102 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.CreateFineTuningJobRequestIntegrations?>? Type102 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.OneOf<global::OpenAI.CreateFineTuningJobRequestHyperparametersNEpochs?, int>? Type103 { get; set; }
+        public global::System.OneOf<global::OpenAI.CreateFineTuningJobRequestHyperparametersBatchSize?, int>? Type103 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.OneOf<global::OpenAI.CreateFineTuningJobRequestIntegrationsType>? Type104 { get; set; }
+        public global::System.OneOf<global::OpenAI.CreateFineTuningJobRequestHyperparametersLearningRateMultiplier?, double>? Type104 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateFineTuningJobRequestIntegrationsWandb? Type105 { get; set; }
+        public global::System.OneOf<global::OpenAI.CreateFineTuningJobRequestHyperparametersNEpochs?, int>? Type105 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenAI.FineTuningJobEvent>? Type106 { get; set; }
+        public global::System.OneOf<global::OpenAI.CreateFineTuningJobRequestIntegrationsType>? Type106 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ListFineTuningJobEventsResponseObject? Type107 { get; set; }
+        public global::OpenAI.CreateFineTuningJobRequestIntegrationsWandb? Type107 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenAI.FineTuningJobCheckpoint>? Type108 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.FineTuningJobEvent>? Type108 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ListFineTuningJobCheckpointsResponseObject? Type109 { get; set; }
+        public global::OpenAI.ListFineTuningJobEventsResponseObject? Type109 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<string, global::OpenAI.CreateEmbeddingRequestModel>? Type110 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.FineTuningJobCheckpoint>? Type110 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateEmbeddingRequestEncodingFormat? Type111 { get; set; }
+        public global::OpenAI.ListFineTuningJobCheckpointsResponseObject? Type111 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenAI.Embedding>? Type112 { get; set; }
+        public global::System.AnyOf<string, global::OpenAI.CreateEmbeddingRequestModel>? Type112 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateEmbeddingResponseObject? Type113 { get; set; }
+        public global::OpenAI.CreateEmbeddingRequestEncodingFormat? Type113 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateEmbeddingResponseUsage? Type114 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.Embedding>? Type114 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<string, global::OpenAI.CreateTranscriptionRequestModel>? Type115 { get; set; }
+        public global::OpenAI.CreateEmbeddingResponseObject? Type115 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateTranscriptionRequestResponseFormat? Type116 { get; set; }
+        public global::OpenAI.CreateEmbeddingResponseUsage? Type116 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenAI.CreateTranscriptionRequestTimestampGranularities?>? Type117 { get; set; }
+        public global::System.AnyOf<string, global::OpenAI.CreateTranscriptionRequestModel>? Type117 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public float? Type118 { get; set; }
+        public global::OpenAI.CreateTranscriptionRequestResponseFormat? Type118 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenAI.TranscriptionWord>? Type119 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.CreateTranscriptionRequestTimestampGranularities?>? Type119 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenAI.TranscriptionSegment>? Type120 { get; set; }
+        public float? Type120 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<string, global::OpenAI.CreateTranslationRequestModel>? Type121 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.TranscriptionWord>? Type121 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<string, global::OpenAI.CreateSpeechRequestModel>? Type122 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.TranscriptionSegment>? Type122 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateSpeechRequestVoice? Type123 { get; set; }
+        public global::System.AnyOf<string, global::OpenAI.CreateTranslationRequestModel>? Type123 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateSpeechRequestResponseFormat? Type124 { get; set; }
+        public global::System.AnyOf<string, global::OpenAI.CreateSpeechRequestModel>? Type124 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ModelObject? Type125 { get; set; }
+        public global::OpenAI.CreateSpeechRequestVoice? Type125 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.OpenAIFileObject? Type126 { get; set; }
+        public global::OpenAI.CreateSpeechRequestResponseFormat? Type126 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.OpenAIFilePurpose? Type127 { get; set; }
+        public global::OpenAI.ModelObject? Type127 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.OpenAIFileStatus? Type128 { get; set; }
+        public global::OpenAI.OpenAIFileObject? Type128 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.EmbeddingObject? Type129 { get; set; }
+        public global::OpenAI.OpenAIFilePurpose? Type129 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.FineTuningJobError? Type130 { get; set; }
+        public global::OpenAI.OpenAIFileStatus? Type130 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.FineTuningJobHyperparameters? Type131 { get; set; }
+        public global::OpenAI.UploadStatus? Type131 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.FineTuningJobObject? Type132 { get; set; }
+        public global::OpenAI.UploadObject? Type132 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string>? Type133 { get; set; }
+        public global::OpenAI.UploadPartObject? Type133 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.FineTuningJobStatus? Type134 { get; set; }
+        public global::OpenAI.EmbeddingObject? Type134 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.FineTuningIntegration?>?>? Type135 { get; set; }
+        public global::OpenAI.FineTuningJobError? Type135 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.OneOf<global::OpenAI.FineTuningJobHyperparametersNEpochs, int>? Type136 { get; set; }
+        public global::OpenAI.FineTuningJobHyperparameters? Type136 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.FineTuningIntegrationType? Type137 { get; set; }
+        public global::OpenAI.FineTuningJobObject? Type137 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.FineTuningIntegrationWandb? Type138 { get; set; }
+        public global::OpenAI.FineTuningJobStatus? Type138 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.FineTuningJobEventLevel? Type139 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.FineTuningIntegration?>?>? Type139 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.FineTuningJobEventObject? Type140 { get; set; }
+        public global::System.OneOf<global::OpenAI.FineTuningJobHyperparametersNEpochs, int>? Type140 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.FineTuningJobCheckpointMetrics? Type141 { get; set; }
+        public global::OpenAI.FineTuningIntegrationType? Type141 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.FineTuningJobCheckpointObject? Type142 { get; set; }
+        public global::OpenAI.FineTuningIntegrationWandb? Type142 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.ChatCompletionRequestSystemMessage?, global::OpenAI.ChatCompletionRequestUserMessage?, global::OpenAI.FineTuneChatCompletionRequestAssistantMessage?, global::OpenAI.ChatCompletionRequestToolMessage?, global::OpenAI.ChatCompletionRequestFunctionMessage?>?>? Type143 { get; set; }
+        public global::OpenAI.FineTuningJobEventLevel? Type143 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.AssistantsApiResponseFormatType? Type144 { get; set; }
+        public global::OpenAI.FineTuningJobEventObject? Type144 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.AssistantObjectObject? Type145 { get; set; }
+        public global::OpenAI.FineTuningJobCheckpointMetrics? Type145 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.AssistantToolsCode?, global::OpenAI.AssistantToolsFileSearch?, global::OpenAI.AssistantToolsFunction?>>? Type146 { get; set; }
+        public global::OpenAI.FineTuningJobCheckpointObject? Type146 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.AssistantObjectToolResources? Type147 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.ChatCompletionRequestSystemMessage?, global::OpenAI.ChatCompletionRequestUserMessage?, global::OpenAI.FineTuneChatCompletionRequestAssistantMessage?, global::OpenAI.ChatCompletionRequestToolMessage?, global::OpenAI.ChatCompletionRequestFunctionMessage?>?>? Type147 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.OneOf<global::OpenAI.AssistantObjectResponseFormat?, global::OpenAI.AssistantsApiResponseFormat?>? Type148 { get; set; }
+        public global::OpenAI.AssistantsApiResponseFormatType? Type148 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.AssistantObjectToolResourcesCodeInterpreter? Type149 { get; set; }
+        public global::OpenAI.AssistantObjectObject? Type149 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.AssistantObjectToolResourcesFileSearch? Type150 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.AssistantToolsCode?, global::OpenAI.AssistantToolsFileSearch?, global::OpenAI.AssistantToolsFunction?>>? Type150 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<string, global::OpenAI.CreateAssistantRequestModel>? Type151 { get; set; }
+        public global::OpenAI.AssistantObjectToolResources? Type151 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.AssistantToolsCode?, global::OpenAI.AssistantToolsFileSearch?, global::OpenAI.AssistantToolsFunction?>?>? Type152 { get; set; }
+        public global::System.OneOf<global::OpenAI.AssistantObjectResponseFormat?, global::OpenAI.AssistantsApiResponseFormat?>? Type152 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateAssistantRequestToolResources? Type153 { get; set; }
+        public global::OpenAI.AssistantObjectToolResourcesCodeInterpreter? Type153 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.OneOf<global::OpenAI.CreateAssistantRequestResponseFormat?, global::OpenAI.AssistantsApiResponseFormat?>? Type154 { get; set; }
+        public global::OpenAI.AssistantObjectToolResourcesFileSearch? Type154 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateAssistantRequestToolResourcesCodeInterpreter? Type155 { get; set; }
+        public global::System.AnyOf<string, global::OpenAI.CreateAssistantRequestModel>? Type155 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateAssistantRequestToolResourcesFileSearch? Type156 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.AssistantToolsCode?, global::OpenAI.AssistantToolsFileSearch?, global::OpenAI.AssistantToolsFunction?>?>? Type156 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenAI.CreateAssistantRequestToolResourcesFileSearchVectorStores?>? Type157 { get; set; }
+        public global::OpenAI.CreateAssistantRequestToolResources? Type157 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyType? Type158 { get; set; }
+        public global::System.OneOf<global::OpenAI.CreateAssistantRequestResponseFormat?, global::OpenAI.AssistantsApiResponseFormat?>? Type158 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<string?>? Type159 { get; set; }
+        public global::OpenAI.CreateAssistantRequestToolResourcesCodeInterpreter? Type159 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ModifyAssistantRequestToolResources? Type160 { get; set; }
+        public global::OpenAI.CreateAssistantRequestToolResourcesFileSearch? Type160 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.OneOf<global::OpenAI.ModifyAssistantRequestResponseFormat?, global::OpenAI.AssistantsApiResponseFormat?>? Type161 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.CreateAssistantRequestToolResourcesFileSearchVectorStores?>? Type161 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ModifyAssistantRequestToolResourcesCodeInterpreter? Type162 { get; set; }
+        public global::OpenAI.CreateAssistantRequestToolResourcesFileSearchVectorStoresChunkingStrategyType? Type162 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ModifyAssistantRequestToolResourcesFileSearch? Type163 { get; set; }
+        public global::System.AnyOf<string?>? Type163 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.DeleteAssistantResponseObject? Type164 { get; set; }
+        public global::OpenAI.ModifyAssistantRequestToolResources? Type164 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenAI.AssistantObject>? Type165 { get; set; }
+        public global::System.OneOf<global::OpenAI.ModifyAssistantRequestResponseFormat?, global::OpenAI.AssistantsApiResponseFormat?>? Type165 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.AssistantToolsCodeType? Type166 { get; set; }
+        public global::OpenAI.ModifyAssistantRequestToolResourcesCodeInterpreter? Type166 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.AssistantToolsFileSearchType? Type167 { get; set; }
+        public global::OpenAI.ModifyAssistantRequestToolResourcesFileSearch? Type167 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.AssistantToolsFileSearchFileSearch? Type168 { get; set; }
+        public global::OpenAI.DeleteAssistantResponseObject? Type168 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.AssistantToolsFileSearchTypeOnlyType? Type169 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.AssistantObject>? Type169 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.AssistantToolsFunctionType? Type170 { get; set; }
+        public global::OpenAI.AssistantToolsCodeType? Type170 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.TruncationObjectType? Type171 { get; set; }
+        public global::OpenAI.AssistantToolsFileSearchType? Type171 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.AssistantsNamedToolChoiceType? Type172 { get; set; }
+        public global::OpenAI.AssistantToolsFileSearchFileSearch? Type172 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.AssistantsNamedToolChoiceFunction? Type173 { get; set; }
+        public global::OpenAI.AssistantToolsFileSearchTypeOnlyType? Type173 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunObjectObject? Type174 { get; set; }
+        public global::OpenAI.AssistantToolsFunctionType? Type174 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunObjectStatus? Type175 { get; set; }
+        public global::OpenAI.TruncationObjectType? Type175 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunObjectRequiredAction? Type176 { get; set; }
+        public global::OpenAI.AssistantsNamedToolChoiceType? Type176 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunObjectLastError? Type177 { get; set; }
+        public global::OpenAI.AssistantsNamedToolChoiceFunction? Type177 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunObjectIncompleteDetails? Type178 { get; set; }
+        public global::OpenAI.RunObjectObject? Type178 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunCompletionUsage? Type179 { get; set; }
+        public global::OpenAI.RunObjectStatus? Type179 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.TruncationObject? Type180 { get; set; }
+        public global::OpenAI.RunObjectRequiredAction? Type180 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.OneOf<global::OpenAI.RunObjectToolChoice, global::OpenAI.AssistantsNamedToolChoice?>? Type181 { get; set; }
+        public global::OpenAI.RunObjectLastError? Type181 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.OneOf<global::OpenAI.RunObjectResponseFormat, global::OpenAI.AssistantsApiResponseFormat?>? Type182 { get; set; }
+        public global::OpenAI.RunObjectIncompleteDetails? Type182 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunObjectRequiredActionType? Type183 { get; set; }
+        public global::OpenAI.RunCompletionUsage? Type183 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunObjectRequiredActionSubmitToolOutputs? Type184 { get; set; }
+        public global::OpenAI.TruncationObject? Type184 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenAI.RunToolCallObject>? Type185 { get; set; }
+        public global::System.OneOf<global::OpenAI.RunObjectToolChoice, global::OpenAI.AssistantsNamedToolChoice?>? Type185 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunObjectLastErrorCode? Type186 { get; set; }
+        public global::System.OneOf<global::OpenAI.RunObjectResponseFormat, global::OpenAI.AssistantsApiResponseFormat?>? Type186 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunObjectIncompleteDetailsReason? Type187 { get; set; }
+        public global::OpenAI.RunObjectRequiredActionType? Type187 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<string?, global::OpenAI.CreateRunRequestModel?>? Type188 { get; set; }
+        public global::OpenAI.RunObjectRequiredActionSubmitToolOutputs? Type188 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenAI.CreateMessageRequest>? Type189 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.RunToolCallObject>? Type189 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.OneOf<global::OpenAI.CreateRunRequestToolChoice?, global::OpenAI.AssistantsNamedToolChoice?>? Type190 { get; set; }
+        public global::OpenAI.RunObjectLastErrorCode? Type190 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.OneOf<global::OpenAI.CreateRunRequestResponseFormat?, global::OpenAI.AssistantsApiResponseFormat?>? Type191 { get; set; }
+        public global::OpenAI.RunObjectIncompleteDetailsReason? Type191 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenAI.RunObject>? Type192 { get; set; }
+        public global::System.AnyOf<string?, global::OpenAI.CreateRunRequestModel?>? Type192 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenAI.SubmitToolOutputsRunRequestToolOutputs>? Type193 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.CreateMessageRequest>? Type193 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunToolCallObjectType? Type194 { get; set; }
+        public global::System.OneOf<global::OpenAI.CreateRunRequestToolChoice?, global::OpenAI.AssistantsNamedToolChoice?>? Type194 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunToolCallObjectFunction? Type195 { get; set; }
+        public global::System.OneOf<global::OpenAI.CreateRunRequestResponseFormat?, global::OpenAI.AssistantsApiResponseFormat?>? Type195 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateThreadRequest? Type196 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.RunObject>? Type196 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<string?, global::OpenAI.CreateThreadAndRunRequestModel?>? Type197 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.SubmitToolOutputsRunRequestToolOutputs>? Type197 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateThreadAndRunRequestToolResources? Type198 { get; set; }
+        public global::OpenAI.RunToolCallObjectType? Type198 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.OneOf<global::OpenAI.CreateThreadAndRunRequestToolChoice?, global::OpenAI.AssistantsNamedToolChoice?>? Type199 { get; set; }
+        public global::OpenAI.RunToolCallObjectFunction? Type199 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.OneOf<global::OpenAI.CreateThreadAndRunRequestResponseFormat?, global::OpenAI.AssistantsApiResponseFormat?>? Type200 { get; set; }
+        public global::OpenAI.CreateThreadRequest? Type200 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateThreadAndRunRequestToolResourcesCodeInterpreter? Type201 { get; set; }
+        public global::System.AnyOf<string?, global::OpenAI.CreateThreadAndRunRequestModel?>? Type201 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateThreadAndRunRequestToolResourcesFileSearch? Type202 { get; set; }
+        public global::OpenAI.CreateThreadAndRunRequestToolResources? Type202 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ThreadObjectObject? Type203 { get; set; }
+        public global::System.OneOf<global::OpenAI.CreateThreadAndRunRequestToolChoice?, global::OpenAI.AssistantsNamedToolChoice?>? Type203 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ThreadObjectToolResources? Type204 { get; set; }
+        public global::System.OneOf<global::OpenAI.CreateThreadAndRunRequestResponseFormat?, global::OpenAI.AssistantsApiResponseFormat?>? Type204 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ThreadObjectToolResourcesCodeInterpreter? Type205 { get; set; }
+        public global::OpenAI.CreateThreadAndRunRequestToolResourcesCodeInterpreter? Type205 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ThreadObjectToolResourcesFileSearch? Type206 { get; set; }
+        public global::OpenAI.CreateThreadAndRunRequestToolResourcesFileSearch? Type206 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateThreadRequestToolResources? Type207 { get; set; }
+        public global::OpenAI.ThreadObjectObject? Type207 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateThreadRequestToolResourcesCodeInterpreter? Type208 { get; set; }
+        public global::OpenAI.ThreadObjectToolResources? Type208 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateThreadRequestToolResourcesFileSearch? Type209 { get; set; }
+        public global::OpenAI.ThreadObjectToolResourcesCodeInterpreter? Type209 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenAI.CreateThreadRequestToolResourcesFileSearchVectorStores?>? Type210 { get; set; }
+        public global::OpenAI.ThreadObjectToolResourcesFileSearch? Type210 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyType? Type211 { get; set; }
+        public global::OpenAI.CreateThreadRequestToolResources? Type211 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ModifyThreadRequestToolResources? Type212 { get; set; }
+        public global::OpenAI.CreateThreadRequestToolResourcesCodeInterpreter? Type212 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ModifyThreadRequestToolResourcesCodeInterpreter? Type213 { get; set; }
+        public global::OpenAI.CreateThreadRequestToolResourcesFileSearch? Type213 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ModifyThreadRequestToolResourcesFileSearch? Type214 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.CreateThreadRequestToolResourcesFileSearchVectorStores?>? Type214 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.DeleteThreadResponseObject? Type215 { get; set; }
+        public global::OpenAI.CreateThreadRequestToolResourcesFileSearchVectorStoresChunkingStrategyType? Type215 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenAI.ThreadObject>? Type216 { get; set; }
+        public global::OpenAI.ModifyThreadRequestToolResources? Type216 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageObjectObject? Type217 { get; set; }
+        public global::OpenAI.ModifyThreadRequestToolResourcesCodeInterpreter? Type217 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageObjectStatus? Type218 { get; set; }
+        public global::OpenAI.ModifyThreadRequestToolResourcesFileSearch? Type218 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageObjectIncompleteDetails? Type219 { get; set; }
+        public global::OpenAI.DeleteThreadResponseObject? Type219 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageObjectRole? Type220 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.ThreadObject>? Type220 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.MessageContentImageFileObject?, global::OpenAI.MessageContentImageUrlObject?, global::OpenAI.MessageContentTextObject?>>? Type221 { get; set; }
+        public global::OpenAI.MessageObjectObject? Type221 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenAI.MessageObjectAttachments>? Type222 { get; set; }
+        public global::OpenAI.MessageObjectStatus? Type222 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageObjectIncompleteDetailsReason? Type223 { get; set; }
+        public global::OpenAI.MessageObjectIncompleteDetails? Type223 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.AssistantToolsCode?, global::OpenAI.AssistantToolsFileSearchTypeOnly?>?>? Type224 { get; set; }
+        public global::OpenAI.MessageObjectRole? Type224 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageDeltaObjectObject? Type225 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.MessageContentImageFileObject?, global::OpenAI.MessageContentImageUrlObject?, global::OpenAI.MessageContentTextObject?>>? Type225 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageDeltaObjectDelta? Type226 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.MessageObjectAttachments>? Type226 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageDeltaObjectDeltaRole? Type227 { get; set; }
+        public global::OpenAI.MessageObjectIncompleteDetailsReason? Type227 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.MessageDeltaContentImageFileObject?, global::OpenAI.MessageDeltaContentTextObject?, global::OpenAI.MessageDeltaContentImageUrlObject?>?>? Type228 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.AssistantToolsCode?, global::OpenAI.AssistantToolsFileSearchTypeOnly?>?>? Type228 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateMessageRequestRole? Type229 { get; set; }
+        public global::OpenAI.MessageDeltaObjectObject? Type229 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.MessageContentImageFileObject?, global::OpenAI.MessageContentImageUrlObject?, global::OpenAI.MessageRequestContentTextObject?>>>? Type230 { get; set; }
+        public global::OpenAI.MessageDeltaObjectDelta? Type230 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenAI.CreateMessageRequestAttachments?>? Type231 { get; set; }
+        public global::OpenAI.MessageDeltaObjectDeltaRole? Type231 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.DeleteMessageResponseObject? Type232 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.MessageDeltaContentImageFileObject?, global::OpenAI.MessageDeltaContentTextObject?, global::OpenAI.MessageDeltaContentImageUrlObject?>?>? Type232 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenAI.MessageObject>? Type233 { get; set; }
+        public global::OpenAI.CreateMessageRequestRole? Type233 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageContentImageFileObjectType? Type234 { get; set; }
+        public global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.MessageContentImageFileObject?, global::OpenAI.MessageContentImageUrlObject?, global::OpenAI.MessageRequestContentTextObject?>>>? Type234 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageContentImageFileObjectImageFile? Type235 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.CreateMessageRequestAttachments?>? Type235 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageContentImageFileObjectImageFileDetail? Type236 { get; set; }
+        public global::OpenAI.DeleteMessageResponseObject? Type236 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageDeltaContentImageFileObjectType? Type237 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.MessageObject>? Type237 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageDeltaContentImageFileObjectImageFile? Type238 { get; set; }
+        public global::OpenAI.MessageContentImageFileObjectType? Type238 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageDeltaContentImageFileObjectImageFileDetail? Type239 { get; set; }
+        public global::OpenAI.MessageContentImageFileObjectImageFile? Type239 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageContentImageUrlObjectType? Type240 { get; set; }
+        public global::OpenAI.MessageContentImageFileObjectImageFileDetail? Type240 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageContentImageUrlObjectImageUrl? Type241 { get; set; }
+        public global::OpenAI.MessageDeltaContentImageFileObjectType? Type241 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageContentImageUrlObjectImageUrlDetail? Type242 { get; set; }
+        public global::OpenAI.MessageDeltaContentImageFileObjectImageFile? Type242 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageDeltaContentImageUrlObjectType? Type243 { get; set; }
+        public global::OpenAI.MessageDeltaContentImageFileObjectImageFileDetail? Type243 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageDeltaContentImageUrlObjectImageUrl? Type244 { get; set; }
+        public global::OpenAI.MessageContentImageUrlObjectType? Type244 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageDeltaContentImageUrlObjectImageUrlDetail? Type245 { get; set; }
+        public global::OpenAI.MessageContentImageUrlObjectImageUrl? Type245 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageContentTextObjectType? Type246 { get; set; }
+        public global::OpenAI.MessageContentImageUrlObjectImageUrlDetail? Type246 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageContentTextObjectText? Type247 { get; set; }
+        public global::OpenAI.MessageDeltaContentImageUrlObjectType? Type247 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.MessageContentTextAnnotationsFileCitationObject?, global::OpenAI.MessageContentTextAnnotationsFilePathObject?>>? Type248 { get; set; }
+        public global::OpenAI.MessageDeltaContentImageUrlObjectImageUrl? Type248 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageRequestContentTextObjectType? Type249 { get; set; }
+        public global::OpenAI.MessageDeltaContentImageUrlObjectImageUrlDetail? Type249 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageContentTextAnnotationsFileCitationObjectType? Type250 { get; set; }
+        public global::OpenAI.MessageContentTextObjectType? Type250 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageContentTextAnnotationsFileCitationObjectFileCitation? Type251 { get; set; }
+        public global::OpenAI.MessageContentTextObjectText? Type251 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageContentTextAnnotationsFilePathObjectType? Type252 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.MessageContentTextAnnotationsFileCitationObject?, global::OpenAI.MessageContentTextAnnotationsFilePathObject?>>? Type252 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageContentTextAnnotationsFilePathObjectFilePath? Type253 { get; set; }
+        public global::OpenAI.MessageRequestContentTextObjectType? Type253 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageDeltaContentTextObjectType? Type254 { get; set; }
+        public global::OpenAI.MessageContentTextAnnotationsFileCitationObjectType? Type254 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageDeltaContentTextObjectText? Type255 { get; set; }
+        public global::OpenAI.MessageContentTextAnnotationsFileCitationObjectFileCitation? Type255 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject?, global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObject?>?>? Type256 { get; set; }
+        public global::OpenAI.MessageContentTextAnnotationsFilePathObjectType? Type256 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObjectType? Type257 { get; set; }
+        public global::OpenAI.MessageContentTextAnnotationsFilePathObjectFilePath? Type257 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation? Type258 { get; set; }
+        public global::OpenAI.MessageDeltaContentTextObjectType? Type258 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObjectType? Type259 { get; set; }
+        public global::OpenAI.MessageDeltaContentTextObjectText? Type259 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObjectFilePath? Type260 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject?, global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObject?>?>? Type260 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepObjectObject? Type261 { get; set; }
+        public global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObjectType? Type261 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepObjectType? Type262 { get; set; }
+        public global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation? Type262 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepObjectStatus? Type263 { get; set; }
+        public global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObjectType? Type263 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepObjectLastError? Type264 { get; set; }
+        public global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObjectFilePath? Type264 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepCompletionUsage? Type265 { get; set; }
+        public global::OpenAI.RunStepObjectObject? Type265 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepObjectLastErrorCode? Type266 { get; set; }
+        public global::OpenAI.RunStepObjectType? Type266 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepDeltaObjectObject? Type267 { get; set; }
+        public global::OpenAI.RunStepObjectStatus? Type267 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepDeltaObjectDelta? Type268 { get; set; }
+        public global::OpenAI.RunStepObjectLastError? Type268 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenAI.RunStepObject>? Type269 { get; set; }
+        public global::OpenAI.RunStepCompletionUsage? Type269 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepDetailsMessageCreationObjectType? Type270 { get; set; }
+        public global::OpenAI.RunStepObjectLastErrorCode? Type270 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepDetailsMessageCreationObjectMessageCreation? Type271 { get; set; }
+        public global::OpenAI.RunStepDeltaObjectObject? Type271 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepDeltaStepDetailsMessageCreationObjectType? Type272 { get; set; }
+        public global::OpenAI.RunStepDeltaObjectDelta? Type272 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepDeltaStepDetailsMessageCreationObjectMessageCreation? Type273 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.RunStepObject>? Type273 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepDetailsToolCallsObjectType? Type274 { get; set; }
+        public global::OpenAI.RunStepDetailsMessageCreationObjectType? Type274 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.RunStepDetailsToolCallsCodeObject?, global::OpenAI.RunStepDetailsToolCallsFileSearchObject?, global::OpenAI.RunStepDetailsToolCallsFunctionObject?>>? Type275 { get; set; }
+        public global::OpenAI.RunStepDetailsMessageCreationObjectMessageCreation? Type275 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepDeltaStepDetailsToolCallsObjectType? Type276 { get; set; }
+        public global::OpenAI.RunStepDeltaStepDetailsMessageCreationObjectType? Type276 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject?, global::OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject?, global::OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject?>?>? Type277 { get; set; }
+        public global::OpenAI.RunStepDeltaStepDetailsMessageCreationObjectMessageCreation? Type277 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepDetailsToolCallsCodeObjectType? Type278 { get; set; }
+        public global::OpenAI.RunStepDetailsToolCallsObjectType? Type278 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepDetailsToolCallsCodeObjectCodeInterpreter? Type279 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.RunStepDetailsToolCallsCodeObject?, global::OpenAI.RunStepDetailsToolCallsFileSearchObject?, global::OpenAI.RunStepDetailsToolCallsFunctionObject?>>? Type279 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<object>? Type280 { get; set; }
+        public global::OpenAI.RunStepDeltaStepDetailsToolCallsObjectType? Type280 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeObjectType? Type281 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject?, global::OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject?, global::OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject?>?>? Type281 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter? Type282 { get; set; }
+        public global::OpenAI.RunStepDetailsToolCallsCodeObjectType? Type282 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepDetailsToolCallsCodeOutputLogsObjectType? Type283 { get; set; }
+        public global::OpenAI.RunStepDetailsToolCallsCodeObjectCodeInterpreter? Type283 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType? Type284 { get; set; }
+        public global::System.Collections.Generic.IList<object>? Type284 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepDetailsToolCallsCodeOutputImageObjectType? Type285 { get; set; }
+        public global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeObjectType? Type285 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepDetailsToolCallsCodeOutputImageObjectImage? Type286 { get; set; }
+        public global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter? Type286 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType? Type287 { get; set; }
+        public global::OpenAI.RunStepDetailsToolCallsCodeOutputLogsObjectType? Type287 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage? Type288 { get; set; }
+        public global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType? Type288 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepDetailsToolCallsFileSearchObjectType? Type289 { get; set; }
+        public global::OpenAI.RunStepDetailsToolCallsCodeOutputImageObjectType? Type289 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObjectType? Type290 { get; set; }
+        public global::OpenAI.RunStepDetailsToolCallsCodeOutputImageObjectImage? Type290 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepDetailsToolCallsFunctionObjectType? Type291 { get; set; }
+        public global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType? Type291 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepDetailsToolCallsFunctionObjectFunction? Type292 { get; set; }
+        public global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage? Type292 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObjectType? Type293 { get; set; }
+        public global::OpenAI.RunStepDetailsToolCallsFileSearchObjectType? Type293 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObjectFunction? Type294 { get; set; }
+        public global::OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObjectType? Type294 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.VectorStoreExpirationAfterAnchor? Type295 { get; set; }
+        public global::OpenAI.RunStepDetailsToolCallsFunctionObjectType? Type295 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.VectorStoreObjectObject? Type296 { get; set; }
+        public global::OpenAI.RunStepDetailsToolCallsFunctionObjectFunction? Type296 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.VectorStoreObjectFileCounts? Type297 { get; set; }
+        public global::OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObjectType? Type297 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.VectorStoreObjectStatus? Type298 { get; set; }
+        public global::OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObjectFunction? Type298 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.VectorStoreExpirationAfter? Type299 { get; set; }
+        public global::OpenAI.VectorStoreExpirationAfterAnchor? Type299 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenAI.VectorStoreObject>? Type300 { get; set; }
+        public global::OpenAI.VectorStoreObjectObject? Type300 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.DeleteVectorStoreResponseObject? Type301 { get; set; }
+        public global::OpenAI.VectorStoreObjectFileCounts? Type301 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.VectorStoreFileObjectObject? Type302 { get; set; }
+        public global::OpenAI.VectorStoreObjectStatus? Type302 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.VectorStoreFileObjectStatus? Type303 { get; set; }
+        public global::OpenAI.VectorStoreExpirationAfter? Type303 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.VectorStoreFileObjectLastError? Type304 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.VectorStoreObject>? Type304 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.VectorStoreFileObjectLastErrorCode? Type305 { get; set; }
+        public global::OpenAI.DeleteVectorStoreResponseObject? Type305 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.OtherChunkingStrategyResponseParamType? Type306 { get; set; }
+        public global::OpenAI.VectorStoreFileObjectObject? Type306 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.StaticChunkingStrategyResponseParamType? Type307 { get; set; }
+        public global::OpenAI.VectorStoreFileObjectStatus? Type307 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.StaticChunkingStrategy? Type308 { get; set; }
+        public global::OpenAI.VectorStoreFileObjectLastError? Type308 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.AutoChunkingStrategyRequestParamType? Type309 { get; set; }
+        public global::OpenAI.VectorStoreFileObjectLastErrorCode? Type309 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.StaticChunkingStrategyRequestParamType? Type310 { get; set; }
+        public global::OpenAI.OtherChunkingStrategyResponseParamType? Type310 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ChunkingStrategyRequestParam? Type311 { get; set; }
+        public global::OpenAI.StaticChunkingStrategyResponseParamType? Type311 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenAI.VectorStoreFileObject>? Type312 { get; set; }
+        public global::OpenAI.StaticChunkingStrategy? Type312 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.DeleteVectorStoreFileResponseObject? Type313 { get; set; }
+        public global::OpenAI.AutoChunkingStrategyRequestParamType? Type313 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.VectorStoreFileBatchObjectObject? Type314 { get; set; }
+        public global::OpenAI.StaticChunkingStrategyRequestParamType? Type314 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.VectorStoreFileBatchObjectStatus? Type315 { get; set; }
+        public global::OpenAI.ChunkingStrategyRequestParam? Type315 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.VectorStoreFileBatchObjectFileCounts? Type316 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.VectorStoreFileObject>? Type316 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ThreadStreamEventVariant1Event? Type317 { get; set; }
+        public global::OpenAI.DeleteVectorStoreFileResponseObject? Type317 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ThreadObject? Type318 { get; set; }
+        public global::OpenAI.VectorStoreFileBatchObjectObject? Type318 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStreamEventVariant1Event? Type319 { get; set; }
+        public global::OpenAI.VectorStoreFileBatchObjectStatus? Type319 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunObject? Type320 { get; set; }
+        public global::OpenAI.VectorStoreFileBatchObjectFileCounts? Type320 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStreamEventVariant2Event? Type321 { get; set; }
+        public global::OpenAI.ThreadStreamEventVariant1Event? Type321 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStreamEventVariant3Event? Type322 { get; set; }
+        public global::OpenAI.ThreadObject? Type322 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStreamEventVariant4Event? Type323 { get; set; }
+        public global::OpenAI.RunStreamEventVariant1Event? Type323 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStreamEventVariant5Event? Type324 { get; set; }
+        public global::OpenAI.RunObject? Type324 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStreamEventVariant6Event? Type325 { get; set; }
+        public global::OpenAI.RunStreamEventVariant2Event? Type325 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStreamEventVariant7Event? Type326 { get; set; }
+        public global::OpenAI.RunStreamEventVariant3Event? Type326 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStreamEventVariant8Event? Type327 { get; set; }
+        public global::OpenAI.RunStreamEventVariant4Event? Type327 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStreamEventVariant9Event? Type328 { get; set; }
+        public global::OpenAI.RunStreamEventVariant5Event? Type328 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStreamEventVariant10Event? Type329 { get; set; }
+        public global::OpenAI.RunStreamEventVariant6Event? Type329 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepStreamEventVariant1Event? Type330 { get; set; }
+        public global::OpenAI.RunStreamEventVariant7Event? Type330 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepObject? Type331 { get; set; }
+        public global::OpenAI.RunStreamEventVariant8Event? Type331 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepStreamEventVariant2Event? Type332 { get; set; }
+        public global::OpenAI.RunStreamEventVariant9Event? Type332 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepStreamEventVariant3Event? Type333 { get; set; }
+        public global::OpenAI.RunStreamEventVariant10Event? Type333 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepDeltaObject? Type334 { get; set; }
+        public global::OpenAI.RunStepStreamEventVariant1Event? Type334 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepStreamEventVariant4Event? Type335 { get; set; }
+        public global::OpenAI.RunStepObject? Type335 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepStreamEventVariant5Event? Type336 { get; set; }
+        public global::OpenAI.RunStepStreamEventVariant2Event? Type336 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepStreamEventVariant6Event? Type337 { get; set; }
+        public global::OpenAI.RunStepStreamEventVariant3Event? Type337 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.RunStepStreamEventVariant7Event? Type338 { get; set; }
+        public global::OpenAI.RunStepDeltaObject? Type338 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageStreamEventVariant1Event? Type339 { get; set; }
+        public global::OpenAI.RunStepStreamEventVariant4Event? Type339 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageObject? Type340 { get; set; }
+        public global::OpenAI.RunStepStreamEventVariant5Event? Type340 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageStreamEventVariant2Event? Type341 { get; set; }
+        public global::OpenAI.RunStepStreamEventVariant6Event? Type341 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageStreamEventVariant3Event? Type342 { get; set; }
+        public global::OpenAI.RunStepStreamEventVariant7Event? Type342 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageDeltaObject? Type343 { get; set; }
+        public global::OpenAI.MessageStreamEventVariant1Event? Type343 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageStreamEventVariant4Event? Type344 { get; set; }
+        public global::OpenAI.MessageObject? Type344 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.MessageStreamEventVariant5Event? Type345 { get; set; }
+        public global::OpenAI.MessageStreamEventVariant2Event? Type345 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ErrorEventEvent? Type346 { get; set; }
+        public global::OpenAI.MessageStreamEventVariant3Event? Type346 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.DoneEventEvent? Type347 { get; set; }
+        public global::OpenAI.MessageDeltaObject? Type347 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.DoneEventData? Type348 { get; set; }
+        public global::OpenAI.MessageStreamEventVariant4Event? Type348 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.BatchObject? Type349 { get; set; }
+        public global::OpenAI.MessageStreamEventVariant5Event? Type349 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.BatchErrors? Type350 { get; set; }
+        public global::OpenAI.ErrorEventEvent? Type350 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.BatchStatus? Type351 { get; set; }
+        public global::OpenAI.DoneEventEvent? Type351 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.BatchRequestCounts? Type352 { get; set; }
+        public global::OpenAI.DoneEventData? Type352 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenAI.BatchErrorsData?>? Type353 { get; set; }
+        public global::OpenAI.BatchObject? Type353 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.BatchRequestInputMethod? Type354 { get; set; }
+        public global::OpenAI.BatchErrors? Type354 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.BatchRequestOutputResponse? Type355 { get; set; }
+        public global::OpenAI.BatchStatus? Type355 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.BatchRequestOutputError? Type356 { get; set; }
+        public global::OpenAI.BatchRequestCounts? Type356 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenAI.Batch>? Type357 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.BatchErrorsData?>? Type357 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ListBatchesResponseObject? Type358 { get; set; }
+        public global::OpenAI.BatchRequestInputMethod? Type358 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateChatCompletionRequest? Type359 { get; set; }
+        public global::OpenAI.BatchRequestOutputResponse? Type359 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateChatCompletionResponse? Type360 { get; set; }
+        public global::OpenAI.BatchRequestOutputError? Type360 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateCompletionRequest? Type361 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.Batch>? Type361 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateCompletionResponse? Type362 { get; set; }
+        public global::OpenAI.ListBatchesResponseObject? Type362 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateImageRequest? Type363 { get; set; }
+        public global::OpenAI.CreateChatCompletionRequest? Type363 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ImagesResponse? Type364 { get; set; }
+        public global::OpenAI.CreateChatCompletionResponse? Type364 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateImageEditRequest? Type365 { get; set; }
+        public global::OpenAI.CreateCompletionRequest? Type365 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateImageVariationRequest? Type366 { get; set; }
+        public global::OpenAI.CreateCompletionResponse? Type366 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateEmbeddingRequest? Type367 { get; set; }
+        public global::OpenAI.CreateImageRequest? Type367 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateEmbeddingResponse? Type368 { get; set; }
+        public global::OpenAI.ImagesResponse? Type368 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateSpeechRequest? Type369 { get; set; }
+        public global::OpenAI.CreateImageEditRequest? Type369 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateTranscriptionRequest? Type370 { get; set; }
+        public global::OpenAI.CreateImageVariationRequest? Type370 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.OneOf<global::OpenAI.CreateTranscriptionResponseJson, global::OpenAI.CreateTranscriptionResponseVerboseJson>? Type371 { get; set; }
+        public global::OpenAI.CreateEmbeddingRequest? Type371 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateTranslationRequest? Type372 { get; set; }
+        public global::OpenAI.CreateEmbeddingResponse? Type372 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.OneOf<global::OpenAI.CreateTranslationResponseJson, global::OpenAI.CreateTranslationResponseVerboseJson>? Type373 { get; set; }
+        public global::OpenAI.CreateSpeechRequest? Type373 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ListFilesResponse? Type374 { get; set; }
+        public global::OpenAI.CreateTranscriptionRequest? Type374 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateFileRequest? Type375 { get; set; }
+        public global::System.OneOf<global::OpenAI.CreateTranscriptionResponseJson, global::OpenAI.CreateTranscriptionResponseVerboseJson>? Type375 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.OpenAIFile? Type376 { get; set; }
+        public global::OpenAI.CreateTranslationRequest? Type376 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.DeleteFileResponse? Type377 { get; set; }
+        public global::System.OneOf<global::OpenAI.CreateTranslationResponseJson, global::OpenAI.CreateTranslationResponseVerboseJson>? Type377 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateFineTuningJobRequest? Type378 { get; set; }
+        public global::OpenAI.ListFilesResponse? Type378 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.FineTuningJob? Type379 { get; set; }
+        public global::OpenAI.CreateFileRequest? Type379 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ListPaginatedFineTuningJobsResponse? Type380 { get; set; }
+        public global::OpenAI.OpenAIFile? Type380 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ListFineTuningJobEventsResponse? Type381 { get; set; }
+        public global::OpenAI.DeleteFileResponse? Type381 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ListFineTuningJobCheckpointsResponse? Type382 { get; set; }
+        public global::OpenAI.CreateUploadRequest? Type382 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ListModelsResponse? Type383 { get; set; }
+        public global::OpenAI.Upload? Type383 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.Model? Type384 { get; set; }
+        public global::OpenAI.AddUploadPartRequest? Type384 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.DeleteModelResponse? Type385 { get; set; }
+        public global::OpenAI.UploadPart? Type385 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateModerationRequest? Type386 { get; set; }
+        public global::OpenAI.CompleteUploadRequest? Type386 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateModerationResponse? Type387 { get; set; }
+        public global::OpenAI.CreateFineTuningJobRequest? Type387 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ListAssistantsResponse? Type388 { get; set; }
+        public global::OpenAI.FineTuningJob? Type388 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateAssistantRequest? Type389 { get; set; }
+        public global::OpenAI.ListPaginatedFineTuningJobsResponse? Type389 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.AssistantObject? Type390 { get; set; }
+        public global::OpenAI.ListFineTuningJobEventsResponse? Type390 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ModifyAssistantRequest? Type391 { get; set; }
+        public global::OpenAI.ListFineTuningJobCheckpointsResponse? Type391 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.DeleteAssistantResponse? Type392 { get; set; }
+        public global::OpenAI.ListModelsResponse? Type392 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ModifyThreadRequest? Type393 { get; set; }
+        public global::OpenAI.Model? Type393 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.DeleteThreadResponse? Type394 { get; set; }
+        public global::OpenAI.DeleteModelResponse? Type394 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ListMessagesResponse? Type395 { get; set; }
+        public global::OpenAI.CreateModerationRequest? Type395 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateMessageRequest? Type396 { get; set; }
+        public global::OpenAI.CreateModerationResponse? Type396 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ModifyMessageRequest? Type397 { get; set; }
+        public global::OpenAI.ListAssistantsResponse? Type397 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.DeleteMessageResponse? Type398 { get; set; }
+        public global::OpenAI.CreateAssistantRequest? Type398 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateThreadAndRunRequest? Type399 { get; set; }
+        public global::OpenAI.AssistantObject? Type399 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ListRunsResponse? Type400 { get; set; }
+        public global::OpenAI.ModifyAssistantRequest? Type400 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateRunRequest? Type401 { get; set; }
+        public global::OpenAI.DeleteAssistantResponse? Type401 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ModifyRunRequest? Type402 { get; set; }
+        public global::OpenAI.ModifyThreadRequest? Type402 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.SubmitToolOutputsRunRequest? Type403 { get; set; }
+        public global::OpenAI.DeleteThreadResponse? Type403 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ListRunStepsResponse? Type404 { get; set; }
+        public global::OpenAI.ListMessagesResponse? Type404 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ListVectorStoresResponse? Type405 { get; set; }
+        public global::OpenAI.CreateMessageRequest? Type405 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateVectorStoreRequest? Type406 { get; set; }
+        public global::OpenAI.ModifyMessageRequest? Type406 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.VectorStoreObject? Type407 { get; set; }
+        public global::OpenAI.DeleteMessageResponse? Type407 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.UpdateVectorStoreRequest? Type408 { get; set; }
+        public global::OpenAI.CreateThreadAndRunRequest? Type408 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.DeleteVectorStoreResponse? Type409 { get; set; }
+        public global::OpenAI.ListRunsResponse? Type409 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ListVectorStoreFilesResponse? Type410 { get; set; }
+        public global::OpenAI.CreateRunRequest? Type410 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateVectorStoreFileRequest? Type411 { get; set; }
+        public global::OpenAI.ModifyRunRequest? Type411 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.VectorStoreFileObject? Type412 { get; set; }
+        public global::OpenAI.SubmitToolOutputsRunRequest? Type412 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.DeleteVectorStoreFileResponse? Type413 { get; set; }
+        public global::OpenAI.ListRunStepsResponse? Type413 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateVectorStoreFileBatchRequest? Type414 { get; set; }
+        public global::OpenAI.ListVectorStoresResponse? Type414 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.VectorStoreFileBatchObject? Type415 { get; set; }
+        public global::OpenAI.CreateVectorStoreRequest? Type415 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateBatchRequest? Type416 { get; set; }
+        public global::OpenAI.VectorStoreObject? Type416 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.Batch? Type417 { get; set; }
+        public global::OpenAI.UpdateVectorStoreRequest? Type417 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ListBatchesResponse? Type418 { get; set; }
+        public global::OpenAI.DeleteVectorStoreResponse? Type418 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenAI.ListVectorStoreFilesResponse? Type419 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenAI.CreateVectorStoreFileRequest? Type420 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenAI.VectorStoreFileObject? Type421 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenAI.DeleteVectorStoreFileResponse? Type422 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenAI.CreateVectorStoreFileBatchRequest? Type423 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenAI.VectorStoreFileBatchObject? Type424 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenAI.CreateBatchRequest? Type425 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenAI.Batch? Type426 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenAI.ListBatchesResponse? Type427 { get; set; }
     }
 }
