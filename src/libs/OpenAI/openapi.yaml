@@ -475,6 +475,108 @@ paths:
             curl: "curl https://api.openai.com/v1/files/file-abc123/content \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" > file.jsonl\n"
             python: "from openai import OpenAI\nclient = OpenAI()\n\ncontent = client.files.content(\"file-abc123\")\n"
             node.js: "import OpenAI from \"openai\";\n\nconst openai = new OpenAI();\n\nasync function main() {\n  const file = await openai.files.content(\"file-abc123\");\n\n  console.log(file);\n}\n\nmain();\n"
+  /uploads:
+    post:
+      tags:
+        - Uploads
+      summary: "Creates an intermediate [Upload](/docs/api-reference/uploads/object) object that you can add [Parts](/docs/api-reference/uploads/part-object) to. Currently, an Upload can accept at most 10 GB in total and expires after an hour after you create it.\n\nOnce you complete the Upload, we will create a [File](/docs/api-reference/files/object) object that contains all the parts you uploaded. This File is usable in the rest of our platform as a regular File object.\n\nFor certain `purpose`s, the correct `mime_type` must be specified. Please refer to documentation for the supported MIME types for your use case:\n- [Assistants](/docs/assistants/tools/file-search/supported-files)\n\nFor guidance on the proper filename extensions for each purpose, please follow the documentation on [creating a File](/docs/api-reference/files/create).\n"
+      operationId: createUpload
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUploadRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Upload'
+      x-oaiMeta:
+        name: Create upload
+        group: uploads
+        returns: 'The [Upload](/docs/api-reference/uploads/object) object with status `pending`.'
+        examples:
+          request:
+            curl: "curl https://api.openai.com/v1/uploads \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -d '{\n    \"purpose\": \"fine-tune\",\n    \"filename\": \"training_examples.jsonl\",\n    \"bytes\": 2147483648,\n    \"mime_type\": \"text/jsonl\"\n  }'\n"
+          response: "{\n  \"id\": \"upload_abc123\",\n  \"object\": \"upload\",\n  \"bytes\": 2147483648,\n  \"created_at\": 1719184911,\n  \"filename\": \"training_examples.jsonl\",\n  \"purpose\": \"fine-tune\",\n  \"status\": \"pending\",\n  \"expires_at\": 1719127296\n}\n"
+  '/uploads/{upload_id}/part':
+    post:
+      tags:
+        - Uploads
+      summary: "Adds a [Part](/docs/api-reference/uploads/part-object) to an [Upload](/docs/api-reference/uploads/object) object. A Part represents a chunk of bytes from the file you are trying to upload. \n\nEach Part can be at most 64 MB, and you can add Parts until you hit the Upload maximum of 10 GB.\n\nIt is possible to add multiple Parts in parallel. You can decide the intended order of the Parts when you [complete the Upload](/docs/api-reference/uploads/complete).\n"
+      operationId: addUploadPart
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AddUploadPartRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UploadPart'
+      x-oaiMeta:
+        name: Add upload part
+        group: uploads
+        returns: 'The upload [Part](/docs/api-reference/uploads/part-object) object.'
+        examples:
+          request:
+            curl: "curl https://api.openai.com/v1/uploads/upload_abc123/parts\n  -F data=\"aHR0cHM6Ly9hcGkub3BlbmFpLmNvbS92MS91cGxvYWRz...\"\n"
+          response: "{\n  \"id\": \"part_def456\",\n  \"object\": \"upload.part\",\n  \"created_at\": 1719185911,\n  \"upload_id\": \"upload_abc123\"\n}\n"
+  '/uploads/{upload_id}/complete':
+    post:
+      tags:
+        - Uploads
+      summary: "Completes the [Upload](/docs/api-reference/uploads/object) and returns a [File](/docs/api-reference/files/object) object that is ready to use in the rest of the platform.\n\nYou can specify the order of the Parts by passing in an ordered list of the Part IDs.\n\nThe number of bytes uploaded upon completion must match the number of bytes initially specified when creating the Upload object. No Parts may be added after an Upload is completed.\n"
+      operationId: completeUpload
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompleteUploadRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Upload'
+      x-oaiMeta:
+        name: Complete upload
+        group: uploads
+        returns: 'The [Upload](/docs/api-reference/uploads/object) object with status `completed` with an additional `file` property containing the created usable File object.'
+        examples:
+          request:
+            curl: "curl https://api.openai.com/v1/uploads/upload_abc123/complete\n  -d '{\n    \"part_ids\": [\"part_def456\", \"part_ghi789\"]\n  }'\n"
+          response: "{\n  \"id\": \"upload_abc123\",\n  \"object\": \"upload\",\n  \"bytes\": 2147483648,\n  \"created_at\": 1719184911,\n  \"filename\": \"training_examples.jsonl\",\n  \"purpose\": \"fine-tune\",\n  \"status\": \"completed\",\n  \"expires_at\": 1719127296,\n  \"file\": {\n    \"id\": \"file-xyz321\",\n    \"object\": \"file\",\n    \"bytes\": 2147483648,\n    \"created_at\": 1719186911,\n    \"filename\": \"training_examples.jsonl\",\n    \"purpose\": \"fine-tune\",\n  }\n}\n"
+  '/uploads/{upload_id}/cancel':
+    post:
+      tags:
+        - Uploads
+      summary: "Cancels the Upload. No Parts may be added after an Upload is cancelled.\n"
+      operationId: cancelUpload
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Upload'
+      x-oaiMeta:
+        name: Cancel upload
+        group: uploads
+        returns: 'The [Upload](/docs/api-reference/uploads/object) object with status `cancelled`.'
+        examples:
+          request:
+            curl: "curl https://api.openai.com/v1/uploads/upload_abc123/cancel\n"
+          response: "{\n  \"id\": \"upload_abc123\",\n  \"object\": \"upload\",\n  \"bytes\": 2147483648,\n  \"created_at\": 1719184911,\n  \"filename\": \"training_examples.jsonl\",\n  \"purpose\": \"fine-tune\",\n  \"status\": \"cancelled\",\n  \"expires_at\": 1719127296\n}\n"
   /fine_tuning/jobs:
     post:
       tags:
@@ -4036,6 +4138,59 @@ components:
           type: string
         deleted:
           type: boolean
+    CreateUploadRequest:
+      required:
+        - filename
+        - purpose
+        - bytes
+        - mime_type
+      type: object
+      properties:
+        filename:
+          type: string
+          description: "The name of the file to upload.\n"
+          format: binary
+        purpose:
+          enum:
+            - assistants
+            - batch
+            - fine-tune
+            - vision
+          type: string
+          description: "The intended purpose of the uploaded file.\n\nSee the [documentation on File purposes](/docs/api-reference/files/create#files-create-purpose).\n"
+        bytes:
+          type: integer
+          description: "The number of bytes in the file you are uploading.\n"
+        mime_type:
+          type: string
+          description: "The MIME type of the file.\n\nThis must fall within the supported MIME types for your file purpose. See the supported MIME types for assistants and vision.\n"
+      additionalProperties: false
+    AddUploadPartRequest:
+      required:
+        - data
+      type: object
+      properties:
+        data:
+          type: string
+          description: "The chunk of bytes for this Part.\n"
+      additionalProperties: false
+    CompleteUploadRequest:
+      required:
+        - part_ids
+      type: object
+      properties:
+        part_ids:
+          type: array
+          items:
+            type: string
+          description: "The ordered list of Part IDs.\n"
+        md5:
+          type: string
+          description: "The optional md5 checksum for the file contents to verify if the bytes uploaded matches what you expect.\n"
+      additionalProperties: false
+    CancelUploadRequest:
+      type: object
+      additionalProperties: false
     CreateFineTuningJobRequest:
       required:
         - model
@@ -4648,6 +4803,85 @@ components:
       x-oaiMeta:
         name: The file object
         example: "{\n  \"id\": \"file-abc123\",\n  \"object\": \"file\",\n  \"bytes\": 120000,\n  \"created_at\": 1677610602,\n  \"filename\": \"salesOverview.pdf\",\n  \"purpose\": \"assistants\",\n}\n"
+    Upload:
+      title: Upload
+      required:
+        - bytes
+        - created_at
+        - expires_at
+        - filename
+        - id
+        - purpose
+        - status
+        - step_number
+      type: object
+      properties:
+        id:
+          type: string
+          description: 'The Upload unique identifier, which can be referenced in API endpoints.'
+        created_at:
+          type: integer
+          description: The Unix timestamp (in seconds) for when the Upload was created.
+        filename:
+          type: string
+          description: The name of the file to be uploaded.
+        bytes:
+          type: integer
+          description: The intended number of bytes to be uploaded.
+        purpose:
+          type: string
+          description: 'The intended purpose of the file. [Please refer here](/docs/api-reference/files/object#files/object-purpose) for acceptable values.'
+        status:
+          enum:
+            - pending
+            - completed
+            - cancelled
+            - expired
+          type: string
+          description: The status of the Upload.
+        expires_at:
+          type: integer
+          description: The Unix timestamp (in seconds) for when the Upload was created.
+        object:
+          enum:
+            - upload
+          type: string
+          description: 'The object type, which is always "upload".'
+        file:
+          type: object
+          description: The ready File object after the Upload is completed.
+          nullable: true
+      description: "The Upload object can accept byte chunks in the form of Parts.\n"
+      x-oaiMeta:
+        name: The upload object
+        example: "{\n  \"id\": \"upload_abc123\",\n  \"object\": \"upload\",\n  \"bytes\": 2147483648,\n  \"created_at\": 1719184911,\n  \"filename\": \"training_examples.jsonl\",\n  \"purpose\": \"fine-tune\",\n  \"status\": \"completed\",\n  \"expires_at\": 1719127296,\n  \"file\": {\n    \"id\": \"file-xyz321\",\n    \"object\": \"file\",\n    \"bytes\": 2147483648,\n    \"created_at\": 1719186911,\n    \"filename\": \"training_examples.jsonl\",\n    \"purpose\": \"fine-tune\",\n  }\n}\n"
+    UploadPart:
+      title: UploadPart
+      required:
+        - created_at
+        - id
+        - object
+        - upload_id
+      type: object
+      properties:
+        id:
+          type: string
+          description: 'The upload Part unique identifier, which can be referenced in API endpoints.'
+        created_at:
+          type: integer
+          description: The Unix timestamp (in seconds) for when the Part was created.
+        upload_id:
+          type: string
+          description: The ID of the Upload object that this Part was added to.
+        object:
+          enum:
+            - upload.part
+          type: string
+          description: 'The object type, which is always `upload.part`.'
+      description: "The upload Part represents a chunk of bytes we can add to an Upload object.\n"
+      x-oaiMeta:
+        name: The upload part object
+        example: "{\n    \"id\": \"part_def456\",\n    \"object\": \"upload.part\",\n    \"created_at\": 1719186911,\n    \"upload_id\": \"upload_abc123\"\n}\n"
     Embedding:
       required:
         - index
@@ -8407,6 +8641,8 @@ tags:
     description: Create large batches of API requests to run asynchronously.
   - name: Files
     description: Files are used to upload documents that can be used with features like Assistants and Fine-tuning.
+  - name: Uploads
+    description: Use Uploads to upload large files in multiple parts.
   - name: Images
     description: 'Given a prompt and/or an input image, the model will generate a new image.'
   - name: Models
@@ -8554,6 +8790,29 @@ x-oaiMeta:
         - type: object
           key: OpenAIFile
           path: object
+    - id: uploads
+      title: Uploads
+      description: "Allows you to upload large files in multiple parts.\n"
+      navigationGroup: endpoints
+      sections:
+        - type: endpoint
+          key: createUpload
+          path: create
+        - type: endpoint
+          key: addUploadPart
+          path: add-part
+        - type: endpoint
+          key: completeUpload
+          path: complete
+        - type: endpoint
+          key: cancelUpload
+          path: cancel
+        - type: object
+          key: Upload
+          path: object
+        - type: object
+          key: UploadPart
+          path: part-object
     - id: images
       title: Images
       description: "Given a prompt and/or an input image, the model will generate a new image.\n\nRelated guide: [Image generation](/docs/guides/images)\n"
