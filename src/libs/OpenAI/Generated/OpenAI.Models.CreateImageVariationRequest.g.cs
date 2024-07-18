@@ -50,7 +50,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateImageVariationRequestSizeJsonConverter))]
-        public global::OpenAI.CreateImageVariationRequestSize? Size { get; set; } = global::OpenAI.CreateImageVariationRequestSize.x1024x1024;
+        public global::OpenAI.CreateImageVariationRequestSize? Size { get; set; } = global::OpenAI.CreateImageVariationRequestSize._1024x1024;
 
         /// <summary>
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).<br/>

@@ -11,7 +11,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        x24h,
+        _24h,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace OpenAI
         {
             return value switch
             {
-                CreateBatchRequestCompletionWindow.x24h => "24h",
+                CreateBatchRequestCompletionWindow._24h => "24h",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace OpenAI
         {
             return value switch
             {
-                "24h" => CreateBatchRequestCompletionWindow.x24h,
+                "24h" => CreateBatchRequestCompletionWindow._24h,
                 _ => null,
             };
         }

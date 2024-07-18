@@ -142,7 +142,7 @@ namespace OpenAI
             int? n = 1,
             global::OpenAI.CreateImageRequestQuality? quality = global::OpenAI.CreateImageRequestQuality.Standard,
             global::OpenAI.CreateImageRequestResponseFormat? responseFormat = global::OpenAI.CreateImageRequestResponseFormat.Url,
-            global::OpenAI.CreateImageRequestSize? size = global::OpenAI.CreateImageRequestSize.x1024x1024,
+            global::OpenAI.CreateImageRequestSize? size = global::OpenAI.CreateImageRequestSize._1024x1024,
             global::OpenAI.CreateImageRequestStyle? style = global::OpenAI.CreateImageRequestStyle.Vivid,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)
