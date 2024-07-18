@@ -13,7 +13,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required byte[] Filename { get; set; }
+        public required string Filename { get; set; }
 
         /// <summary>
         /// The intended purpose of the uploaded file.<br/>

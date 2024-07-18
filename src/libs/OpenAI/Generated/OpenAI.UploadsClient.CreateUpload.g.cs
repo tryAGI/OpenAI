@@ -121,7 +121,7 @@ namespace OpenAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.Upload> CreateUploadAsync(
-            byte[] filename,
+            string filename,
             global::OpenAI.CreateUploadRequestPurpose purpose,
             int bytes,
             string mimeType,

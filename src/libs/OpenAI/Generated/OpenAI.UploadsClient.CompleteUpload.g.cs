@@ -24,7 +24,8 @@ namespace OpenAI
             ref string content);
 
         /// <summary>
-        /// Completes the [Upload](/docs/api-reference/uploads/object) and returns a [File](/docs/api-reference/files/object) object that is ready to use in the rest of the platform.<br/>
+        /// Completes the [Upload](/docs/api-reference/uploads/object). <br/>
+        /// Within the returned Upload object, there is a nested [File](/docs/api-reference/files/object) object that is ready to use in the rest of the platform.<br/>
         /// You can specify the order of the Parts by passing in an ordered list of the Part IDs.<br/>
         /// The number of bytes uploaded upon completion must match the number of bytes initially specified when creating the Upload object. No Parts may be added after an Upload is completed.
         /// </summary>
@@ -104,7 +105,8 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// Completes the [Upload](/docs/api-reference/uploads/object) and returns a [File](/docs/api-reference/files/object) object that is ready to use in the rest of the platform.<br/>
+        /// Completes the [Upload](/docs/api-reference/uploads/object). <br/>
+        /// Within the returned Upload object, there is a nested [File](/docs/api-reference/files/object) object that is ready to use in the rest of the platform.<br/>
         /// You can specify the order of the Parts by passing in an ordered list of the Part IDs.<br/>
         /// The number of bytes uploaded upon completion must match the number of bytes initially specified when creating the Upload object. No Parts may be added after an Upload is completed.
         /// </summary>

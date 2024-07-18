@@ -66,10 +66,10 @@ namespace OpenAI
         public global::OpenAI.UploadObject? Object { get; set; }
 
         /// <summary>
-        /// The ready File object after the Upload is completed.
+        /// The `File` object represents a document that has been uploaded to OpenAI.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file")]
-        public object? File { get; set; }
+        public global::OpenAI.OpenAIFile? File { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -50,7 +50,7 @@ namespace OpenAI
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/uploads/{uploadId}/part", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/uploads/{uploadId}/parts", global::System.UriKind.RelativeOrAbsolute));
             var __json = global::System.Text.Json.JsonSerializer.Serialize(request, global::OpenAI.SourceGenerationContext.Default.AddUploadPartRequest);
             httpRequest.Content = new global::System.Net.Http.StringContent(
                 content: __json,
@@ -118,7 +118,7 @@ namespace OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.UploadPart> AddUploadPartAsync(
             string uploadId,
-            string data,
+            byte[] data,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::OpenAI.AddUploadPartRequest
