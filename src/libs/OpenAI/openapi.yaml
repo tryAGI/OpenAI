@@ -479,7 +479,7 @@ paths:
     post:
       tags:
         - Uploads
-      summary: "Creates an intermediate [Upload](/docs/api-reference/uploads/object) object that you can add [Parts](/docs/api-reference/uploads/part-object) to. Currently, an Upload can accept at most 10 GB in total and expires after an hour after you create it.\n\nOnce you complete the Upload, we will create a [File](/docs/api-reference/files/object) object that contains all the parts you uploaded. This File is usable in the rest of our platform as a regular File object.\n\nFor certain `purpose`s, the correct `mime_type` must be specified. Please refer to documentation for the supported MIME types for your use case:\n- [Assistants](/docs/assistants/tools/file-search/supported-files)\n\nFor guidance on the proper filename extensions for each purpose, please follow the documentation on [creating a File](/docs/api-reference/files/create).\n"
+      summary: "Creates an intermediate [Upload](/docs/api-reference/uploads/object) object that you can add [Parts](/docs/api-reference/uploads/part-object) to. Currently, an Upload can accept at most 8 GB in total and expires after an hour after you create it.\n\nOnce you complete the Upload, we will create a [File](/docs/api-reference/files/object) object that contains all the parts you uploaded. This File is usable in the rest of our platform as a regular File object.\n\nFor certain `purpose`s, the correct `mime_type` must be specified. Please refer to documentation for the supported MIME types for your use case:\n- [Assistants](/docs/assistants/tools/file-search/supported-files)\n\nFor guidance on the proper filename extensions for each purpose, please follow the documentation on [creating a File](/docs/api-reference/files/create).\n"
       operationId: createUpload
       requestBody:
         content:
@@ -506,8 +506,16 @@ paths:
     post:
       tags:
         - Uploads
-      summary: "Adds a [Part](/docs/api-reference/uploads/part-object) to an [Upload](/docs/api-reference/uploads/object) object. A Part represents a chunk of bytes from the file you are trying to upload. \n\nEach Part can be at most 64 MB, and you can add Parts until you hit the Upload maximum of 10 GB.\n\nIt is possible to add multiple Parts in parallel. You can decide the intended order of the Parts when you [complete the Upload](/docs/api-reference/uploads/complete).\n"
+      summary: "Adds a [Part](/docs/api-reference/uploads/part-object) to an [Upload](/docs/api-reference/uploads/object) object. A Part represents a chunk of bytes from the file you are trying to upload. \n\nEach Part can be at most 64 MB, and you can add Parts until you hit the Upload maximum of 8 GB.\n\nIt is possible to add multiple Parts in parallel. You can decide the intended order of the Parts when you [complete the Upload](/docs/api-reference/uploads/complete).\n"
       operationId: addUploadPart
+      parameters:
+        - name: upload_id
+          in: path
+          description: "The ID of the Upload.\n"
+          required: true
+          schema:
+            type: string
+            example: upload_abc123
       requestBody:
         content:
           multipart/form-data:
@@ -535,6 +543,14 @@ paths:
         - Uploads
       summary: "Completes the [Upload](/docs/api-reference/uploads/object) and returns a [File](/docs/api-reference/files/object) object that is ready to use in the rest of the platform.\n\nYou can specify the order of the Parts by passing in an ordered list of the Part IDs.\n\nThe number of bytes uploaded upon completion must match the number of bytes initially specified when creating the Upload object. No Parts may be added after an Upload is completed.\n"
       operationId: completeUpload
+      parameters:
+        - name: upload_id
+          in: path
+          description: "The ID of the Upload.\n"
+          required: true
+          schema:
+            type: string
+            example: upload_abc123
       requestBody:
         content:
           application/json:
@@ -562,6 +578,14 @@ paths:
         - Uploads
       summary: "Cancels the Upload. No Parts may be added after an Upload is cancelled.\n"
       operationId: cancelUpload
+      parameters:
+        - name: upload_id
+          in: path
+          description: "The ID of the Upload.\n"
+          required: true
+          schema:
+            type: string
+            example: upload_abc123
       responses:
         '200':
           description: OK
@@ -3268,6 +3292,8 @@ components:
             - enum:
                 - gpt-4o
                 - gpt-4o-2024-05-13
+                - gpt-4o-mini
+                - gpt-4o-mini-2024-07-18
                 - gpt-4-turbo
                 - gpt-4-turbo-2024-04-09
                 - gpt-4-0125-preview
@@ -5388,6 +5414,8 @@ components:
             - enum:
                 - gpt-4o
                 - gpt-4o-2024-05-13
+                - gpt-4o-mini
+                - gpt-4o-mini-2024-07-18
                 - gpt-4-turbo
                 - gpt-4-turbo-2024-04-09
                 - gpt-4-0125-preview
@@ -5979,6 +6007,8 @@ components:
             - enum:
                 - gpt-4o
                 - gpt-4o-2024-05-13
+                - gpt-4o-mini
+                - gpt-4o-mini-2024-07-18
                 - gpt-4-turbo
                 - gpt-4-turbo-2024-04-09
                 - gpt-4-0125-preview
@@ -6173,6 +6203,8 @@ components:
             - enum:
                 - gpt-4o
                 - gpt-4o-2024-05-13
+                - gpt-4o-mini
+                - gpt-4o-mini-2024-07-18
                 - gpt-4-turbo
                 - gpt-4-turbo-2024-04-09
                 - gpt-4-0125-preview
