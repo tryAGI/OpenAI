@@ -7,10 +7,12 @@ namespace OpenAI
     {
         partial void PrepareCompleteUploadArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string uploadId,
             global::OpenAI.CompleteUploadRequest request);
         partial void PrepareCompleteUploadRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string uploadId,
             global::OpenAI.CompleteUploadRequest request);
         partial void ProcessCompleteUploadResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -26,10 +28,14 @@ namespace OpenAI
         /// You can specify the order of the Parts by passing in an ordered list of the Part IDs.<br/>
         /// The number of bytes uploaded upon completion must match the number of bytes initially specified when creating the Upload object. No Parts may be added after an Upload is completed.
         /// </summary>
+        /// <param name="uploadId">
+        /// Example: upload_abc123
+        /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.Upload> CompleteUploadAsync(
+            string uploadId,
             global::OpenAI.CompleteUploadRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -39,11 +45,12 @@ namespace OpenAI
                 client: _httpClient);
             PrepareCompleteUploadArguments(
                 httpClient: _httpClient,
+                uploadId: ref uploadId,
                 request: request);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/uploads/{upload_id}/complete", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/uploads/{uploadId}/complete", global::System.UriKind.RelativeOrAbsolute));
             var __json = global::System.Text.Json.JsonSerializer.Serialize(request, global::OpenAI.SourceGenerationContext.Default.CompleteUploadRequest);
             httpRequest.Content = new global::System.Net.Http.StringContent(
                 content: __json,
@@ -56,6 +63,7 @@ namespace OpenAI
             PrepareCompleteUploadRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
+                uploadId: uploadId,
                 request: request);
 
             using var response = await _httpClient.SendAsync(
@@ -100,6 +108,9 @@ namespace OpenAI
         /// You can specify the order of the Parts by passing in an ordered list of the Part IDs.<br/>
         /// The number of bytes uploaded upon completion must match the number of bytes initially specified when creating the Upload object. No Parts may be added after an Upload is completed.
         /// </summary>
+        /// <param name="uploadId">
+        /// Example: upload_abc123
+        /// </param>
         /// <param name="partIds">
         /// The ordered list of Part IDs.
         /// </param>
@@ -109,6 +120,7 @@ namespace OpenAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.Upload> CompleteUploadAsync(
+            string uploadId,
             global::System.Collections.Generic.IList<string> partIds,
             string? md5 = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -120,6 +132,7 @@ namespace OpenAI
             };
 
             return await CompleteUploadAsync(
+                uploadId: uploadId,
                 request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }
