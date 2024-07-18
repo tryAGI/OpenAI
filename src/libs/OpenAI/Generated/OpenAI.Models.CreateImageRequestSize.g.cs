@@ -13,23 +13,23 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        _256x256,
+        x256x256,
         /// <summary>
         /// 
         /// </summary>
-        _512x512,
+        x512x512,
         /// <summary>
         /// 
         /// </summary>
-        _1024x1024,
+        x1024x1024,
         /// <summary>
         /// 
         /// </summary>
-        _1792x1024,
+        x1792x1024,
         /// <summary>
         /// 
         /// </summary>
-        _1024x1792,
+        x1024x1792,
     }
 
     /// <summary>
@@ -44,11 +44,11 @@ namespace OpenAI
         {
             return value switch
             {
-                CreateImageRequestSize._256x256 => "256x256",
-                CreateImageRequestSize._512x512 => "512x512",
-                CreateImageRequestSize._1024x1024 => "1024x1024",
-                CreateImageRequestSize._1792x1024 => "1792x1024",
-                CreateImageRequestSize._1024x1792 => "1024x1792",
+                CreateImageRequestSize.x256x256 => "256x256",
+                CreateImageRequestSize.x512x512 => "512x512",
+                CreateImageRequestSize.x1024x1024 => "1024x1024",
+                CreateImageRequestSize.x1792x1024 => "1792x1024",
+                CreateImageRequestSize.x1024x1792 => "1024x1792",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,11 +59,11 @@ namespace OpenAI
         {
             return value switch
             {
-                "256x256" => CreateImageRequestSize._256x256,
-                "512x512" => CreateImageRequestSize._512x512,
-                "1024x1024" => CreateImageRequestSize._1024x1024,
-                "1792x1024" => CreateImageRequestSize._1792x1024,
-                "1024x1792" => CreateImageRequestSize._1024x1792,
+                "256x256" => CreateImageRequestSize.x256x256,
+                "512x512" => CreateImageRequestSize.x512x512,
+                "1024x1024" => CreateImageRequestSize.x1024x1024,
+                "1792x1024" => CreateImageRequestSize.x1792x1024,
+                "1024x1792" => CreateImageRequestSize.x1024x1792,
                 _ => null,
             };
         }

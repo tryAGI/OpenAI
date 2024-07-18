@@ -21,17 +21,17 @@ public static partial class Prices
         
         return (model, quality.Value, size) switch
         {
-            (CreateImageRequestModel.DallE3, CreateImageRequestQuality.Standard, CreateImageRequestSize._1024x1024) => 0.040,
-            (CreateImageRequestModel.DallE3, CreateImageRequestQuality.Standard, CreateImageRequestSize._1024x1792) => 0.080,
-            (CreateImageRequestModel.DallE3, CreateImageRequestQuality.Standard, CreateImageRequestSize._1792x1024) => 0.080,
+            (CreateImageRequestModel.DallE3, CreateImageRequestQuality.Standard, CreateImageRequestSize.x1024x1024) => 0.040,
+            (CreateImageRequestModel.DallE3, CreateImageRequestQuality.Standard, CreateImageRequestSize.x1024x1792) => 0.080,
+            (CreateImageRequestModel.DallE3, CreateImageRequestQuality.Standard, CreateImageRequestSize.x1792x1024) => 0.080,
             
-            (CreateImageRequestModel.DallE3, CreateImageRequestQuality.Hd, CreateImageRequestSize._1024x1024) => 0.080,
-            (CreateImageRequestModel.DallE3, CreateImageRequestQuality.Hd, CreateImageRequestSize._1024x1792) => 0.120,
-            (CreateImageRequestModel.DallE3, CreateImageRequestQuality.Hd, CreateImageRequestSize._1792x1024) => 0.120,
+            (CreateImageRequestModel.DallE3, CreateImageRequestQuality.Hd, CreateImageRequestSize.x1024x1024) => 0.080,
+            (CreateImageRequestModel.DallE3, CreateImageRequestQuality.Hd, CreateImageRequestSize.x1024x1792) => 0.120,
+            (CreateImageRequestModel.DallE3, CreateImageRequestQuality.Hd, CreateImageRequestSize.x1792x1024) => 0.120,
             
-            (CreateImageRequestModel.DallE2, _, CreateImageRequestSize._1024x1024) => 0.020,
-            (CreateImageRequestModel.DallE2, _, CreateImageRequestSize._512x512) => 0.018,
-            (CreateImageRequestModel.DallE2, _, CreateImageRequestSize._256x256) => 0.016,
+            (CreateImageRequestModel.DallE2, _, CreateImageRequestSize.x1024x1024) => 0.020,
+            (CreateImageRequestModel.DallE2, _, CreateImageRequestSize.x512x512) => 0.018,
+            (CreateImageRequestModel.DallE2, _, CreateImageRequestSize.x256x256) => 0.016,
             
             _ => null,
         };

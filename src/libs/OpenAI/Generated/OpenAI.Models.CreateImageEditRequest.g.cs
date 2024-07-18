@@ -55,7 +55,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateImageEditRequestSizeJsonConverter))]
-        public global::OpenAI.CreateImageEditRequestSize? Size { get; set; } = global::OpenAI.CreateImageEditRequestSize._1024x1024;
+        public global::OpenAI.CreateImageEditRequestSize? Size { get; set; } = global::OpenAI.CreateImageEditRequestSize.x1024x1024;
 
         /// <summary>
         /// The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated.<br/>

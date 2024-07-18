@@ -130,7 +130,7 @@ namespace OpenAI
             global::System.AnyOf<string?, global::OpenAI.CreateImageVariationRequestModel?>? model = default,
             int? n = 1,
             global::OpenAI.CreateImageVariationRequestResponseFormat? responseFormat = global::OpenAI.CreateImageVariationRequestResponseFormat.Url,
-            global::OpenAI.CreateImageVariationRequestSize? size = global::OpenAI.CreateImageVariationRequestSize._1024x1024,
+            global::OpenAI.CreateImageVariationRequestSize? size = global::OpenAI.CreateImageVariationRequestSize.x1024x1024,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
