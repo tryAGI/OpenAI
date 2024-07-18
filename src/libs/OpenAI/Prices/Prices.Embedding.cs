@@ -9,7 +9,7 @@ public static partial class Prices
     /// <param name="model"></param>
     /// <param name="tokens"></param>
     /// <returns></returns>
-    public static double GetPriceInUsd(
+    public static double? TryGetPriceInUsd(
         this CreateEmbeddingRequestModel model,
         int tokens)
     {
@@ -19,10 +19,25 @@ public static partial class Prices
             CreateEmbeddingRequestModel.TextEmbedding3Small => 0.02 * UsdPerMillionTokens,
             CreateEmbeddingRequestModel.TextEmbedding3Large => 0.13 * UsdPerMillionTokens,
             
-            _ => throw new NotImplementedException(),
+            _ => double.NaN,
         };
+        if (double.IsNaN(pricePerTokenInUsd))
+        {
+            return null;
+        }
         
         return tokens * pricePerTokenInUsd;
+    }
+    
+    /// <inheritdoc cref="TryGetPriceInUsd(CreateEmbeddingRequestModel, int)"/>
+    /// <exception cref="InvalidOperationException"></exception>
+    public static double GetPriceInUsd(
+        this CreateEmbeddingRequestModel model,
+        int tokens)
+    {
+        return model.TryGetPriceInUsd(tokens) ??
+               throw new InvalidOperationException(
+                   $"Prices are not available for {model.ToValueString()}.");
     }
     
     /// <summary>
@@ -30,7 +45,7 @@ public static partial class Prices
     /// </summary>
     /// <param name="model"></param>
     /// <returns></returns>
-    public static double GetMaxInputTokens(
+    public static int? TryGetMaxInputTokens(
         this CreateEmbeddingRequestModel model)
     {
         return model switch
@@ -39,7 +54,17 @@ public static partial class Prices
             CreateEmbeddingRequestModel.TextEmbedding3Small => 8_191,
             CreateEmbeddingRequestModel.TextEmbedding3Large => 8_191,
             
-            _ => throw new NotImplementedException(),
+            _ => null,
         };
+    }
+    
+    /// <inheritdoc cref="TryGetMaxInputTokens"/>
+    /// <exception cref="InvalidOperationException"></exception>
+    public static double GetMaxInputTokens(
+        this CreateEmbeddingRequestModel model)
+    {
+        return model.TryGetMaxInputTokens() ??
+               throw new InvalidOperationException(
+                   $"Max input tokens are not available for {model.ToValueString()}.");
     }
 }

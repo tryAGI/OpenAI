@@ -20,6 +20,9 @@ public static partial class Prices
             CreateChatCompletionRequestModel.Gpt4o => (5.0 * UsdPerMillionTokens, 15.0 * UsdPerMillionTokens),
             CreateChatCompletionRequestModel.Gpt4o20240513 => (5.0 * UsdPerMillionTokens, 15.0 * UsdPerMillionTokens),
             
+            CreateChatCompletionRequestModel.Gpt4oMini => (0.15 * UsdPerMillionTokens, 0.60 * UsdPerMillionTokens),
+            CreateChatCompletionRequestModel.Gpt4oMini20240718 => (0.15 * UsdPerMillionTokens, 0.60 * UsdPerMillionTokens),
+            
             CreateChatCompletionRequestModel.Gpt4Turbo => (10.0 * UsdPerMillionTokens, 30.0 * UsdPerMillionTokens),
             CreateChatCompletionRequestModel.Gpt4Turbo20240409 => (10.0 * UsdPerMillionTokens, 30.0 * UsdPerMillionTokens),
             CreateChatCompletionRequestModel.Gpt40125Preview => (10.0 * UsdPerMillionTokens, 30.0 * UsdPerMillionTokens),
@@ -56,13 +59,7 @@ public static partial class Prices
             outputTokens * pricePerOutputTokenInUsd;
     }
 
-    /// <summary>
-    /// According https://openai.com/pricing/ <br/>
-    /// </summary>
-    /// <param name="model"></param>
-    /// <param name="inputTokens"></param>
-    /// <param name="outputTokens"></param>
-    /// <returns></returns>
+    /// <inheritdoc cref="TryGetPriceInUsd(CreateChatCompletionRequestModel, int, int)"/>
     /// <exception cref="InvalidOperationException"></exception>
     public static double GetPriceInUsd(
         this CreateChatCompletionRequestModel model,
@@ -108,15 +105,8 @@ public static partial class Prices
                outputTokens * pricePerOutputTokenInUsd;
     }
 
-    /// <summary>
-    /// According https://openai.com/pricing/ <br/>
-    /// </summary>
-    /// <param name="model"></param>
-    /// <param name="trainingTokens"></param>
-    /// <param name="inputTokens"></param>
-    /// <param name="outputTokens"></param>
+    /// <inheritdoc cref="TryGetFineTunePriceInUsd"/>
     /// <exception cref="InvalidOperationException"></exception>
-    /// <returns></returns>
     public static double GetFineTunePriceInUsd(
         this CreateChatCompletionRequestModel model,
         int trainingTokens,
@@ -133,13 +123,16 @@ public static partial class Prices
     /// </summary>
     /// <param name="model"></param>
     /// <returns></returns>
-    public static double? TryGetContextLength(
+    public static int? TryGetContextLength(
         this CreateChatCompletionRequestModel model)
     {
         return model switch
         {
             CreateChatCompletionRequestModel.Gpt4o => 128_000,
             CreateChatCompletionRequestModel.Gpt4o20240513 => 128_000,
+            
+            CreateChatCompletionRequestModel.Gpt4oMini => 128_000,
+            CreateChatCompletionRequestModel.Gpt4oMini20240718 => 128_000,
             
             CreateChatCompletionRequestModel.Gpt4Turbo => 128_000,
             CreateChatCompletionRequestModel.Gpt4Turbo20240409 => 128_000,
@@ -168,15 +161,39 @@ public static partial class Prices
         };
     }
     
+    /// <inheritdoc cref="TryGetContextLength"/>
+    /// <exception cref="InvalidOperationException"></exception>
+    public static int GetContextLength(
+        this CreateChatCompletionRequestModel model)
+    {
+        return model.TryGetContextLength() ??
+               throw new InvalidOperationException(
+                   $"Context length is not available for {model.ToValueString()}.");
+    }
+    
     /// <summary>
     /// According https://openai.com/pricing/ <br/>
     /// </summary>
     /// <param name="model"></param>
     /// <returns></returns>
-    public static double GetContextLength(
+    public static int? TryGetOutputLength(
         this CreateChatCompletionRequestModel model)
     {
-        return model.TryGetContextLength() ??
+        return model switch
+        {
+            CreateChatCompletionRequestModel.Gpt4oMini => 16_000,
+            CreateChatCompletionRequestModel.Gpt4oMini20240718 => 16_000,
+            
+            _ => null,
+        };
+    }
+    
+    /// <inheritdoc cref="TryGetOutputLength"/>
+    /// <exception cref="InvalidOperationException"></exception>
+    public static int GetOutputLength(
+        this CreateChatCompletionRequestModel model)
+    {
+        return model.TryGetOutputLength() ??
                throw new InvalidOperationException(
                    $"Context length is not available for {model.ToValueString()}.");
     }

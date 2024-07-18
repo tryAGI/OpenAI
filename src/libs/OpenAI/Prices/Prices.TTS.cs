@@ -9,7 +9,7 @@ public static partial class Prices
     /// <param name="model"></param>
     /// <param name="characters"></param>
     /// <returns></returns>
-    public static double GetPriceInUsd(
+    public static double? TryGetPriceInUsd(
         this CreateSpeechRequestModel model,
         int characters)
     {
@@ -18,9 +18,24 @@ public static partial class Prices
             CreateSpeechRequestModel.Tts1 =>   15.0 * UsdPerMillionTokens,
             CreateSpeechRequestModel.Tts1Hd => 30.0 * UsdPerMillionTokens,
             
-            _ => throw new NotImplementedException(),
+            _ => double.NaN,
         };
+        if (double.IsNaN(pricePerCharacterInUsd))
+        {
+            return null;
+        }
         
         return characters * pricePerCharacterInUsd;
+    }
+    
+    /// <inheritdoc cref="TryGetPriceInUsd(CreateSpeechRequestModel, int)"/>
+    /// <exception cref="InvalidOperationException"></exception>
+    public static double GetPriceInUsd(
+        this CreateSpeechRequestModel model,
+        int characters)
+    {
+        return model.TryGetPriceInUsd(characters) ??
+               throw new InvalidOperationException(
+                   $"Prices are not available for {model.ToValueString()}.");
     }
 }
