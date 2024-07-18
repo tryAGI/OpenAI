@@ -16,7 +16,6 @@
   </ItemGroup>
   
   <PropertyGroup Label="Nuget">
-    <Version>3.0.1</Version>
     <GeneratePackageOnBuild Condition=" '$(Configuration)' == 'Release' ">true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Authors>tryAGI and contributors</Authors>
@@ -30,10 +29,17 @@
     <None Include="$(MSBuildThisFileDirectory)../../README.md" Pack="true" PackagePath="\" Visible="false" />
   </ItemGroup>
 
-  <PropertyGroup Label="Local NuGet Packages">
-    <GeneratePackageOnBuild Condition="'$(CI)' != 'true'">true</GeneratePackageOnBuild>
-    <PackageOutputPath Condition="'$(CI)' != 'true'">$(MSBuildThisFileDirectory)../../../LocalPackages</PackageOutputPath>
+  <PropertyGroup Label="Versioning">
+    <MinVerTagPrefix>v</MinVerTagPrefix>
+    <MinVerDefaultPreReleaseIdentifiers>dev</MinVerDefaultPreReleaseIdentifiers>
   </PropertyGroup>
+
+  <ItemGroup Label="Versioning">
+    <PackageReference Include="MinVer" Version="5.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
 
   <ItemGroup Label="Source Link">
     <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.2.4">
