@@ -502,7 +502,7 @@ paths:
           request:
             curl: "curl https://api.openai.com/v1/uploads \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -d '{\n    \"purpose\": \"fine-tune\",\n    \"filename\": \"training_examples.jsonl\",\n    \"bytes\": 2147483648,\n    \"mime_type\": \"text/jsonl\"\n  }'\n"
           response: "{\n  \"id\": \"upload_abc123\",\n  \"object\": \"upload\",\n  \"bytes\": 2147483648,\n  \"created_at\": 1719184911,\n  \"filename\": \"training_examples.jsonl\",\n  \"purpose\": \"fine-tune\",\n  \"status\": \"pending\",\n  \"expires_at\": 1719127296\n}\n"
-  '/uploads/{upload_id}/part':
+  '/uploads/{upload_id}/parts':
     post:
       tags:
         - Uploads
@@ -541,7 +541,7 @@ paths:
     post:
       tags:
         - Uploads
-      summary: "Completes the [Upload](/docs/api-reference/uploads/object) and returns a [File](/docs/api-reference/files/object) object that is ready to use in the rest of the platform.\n\nYou can specify the order of the Parts by passing in an ordered list of the Part IDs.\n\nThe number of bytes uploaded upon completion must match the number of bytes initially specified when creating the Upload object. No Parts may be added after an Upload is completed.\n"
+      summary: "Completes the [Upload](/docs/api-reference/uploads/object). \n\nWithin the returned Upload object, there is a nested [File](/docs/api-reference/files/object) object that is ready to use in the rest of the platform.\n\nYou can specify the order of the Parts by passing in an ordered list of the Part IDs.\n\nThe number of bytes uploaded upon completion must match the number of bytes initially specified when creating the Upload object. No Parts may be added after an Upload is completed.\n"
       operationId: completeUpload
       parameters:
         - name: upload_id
@@ -4175,7 +4175,6 @@ components:
         filename:
           type: string
           description: "The name of the file to upload.\n"
-          format: binary
         purpose:
           enum:
             - assistants
@@ -4199,6 +4198,7 @@ components:
         data:
           type: string
           description: "The chunk of bytes for this Part.\n"
+          format: binary
       additionalProperties: false
     CompleteUploadRequest:
       required:
@@ -4874,9 +4874,7 @@ components:
           type: string
           description: 'The object type, which is always "upload".'
         file:
-          type: object
-          description: The ready File object after the Upload is completed.
-          nullable: true
+          $ref: '#/components/schemas/OpenAIFile'
       description: "The Upload object can accept byte chunks in the form of Parts.\n"
       x-oaiMeta:
         name: The upload object
