@@ -11,7 +11,7 @@ public partial class Tests
         var response = await api.Images.CreateImageAsync(
             prompt: "a white siamese cat",
             n: 1,
-            size: CreateImageRequestSize._256x256,
+            size: CreateImageRequestSize.x256x256,
             responseFormat: CreateImageRequestResponseFormat.Url,
             user: "tryAGI.OpenAI.IntegrationTests.Tests.CreateImage_Url");
         response.Data.ElementAt(0).Url.Should().NotBeNullOrEmpty();
@@ -29,7 +29,7 @@ public partial class Tests
         var response = await api.Images.CreateImageAsync(
             prompt: "a white siamese cat",
             n: 1,
-            size: CreateImageRequestSize._256x256,
+            size: CreateImageRequestSize.x256x256,
             responseFormat: CreateImageRequestResponseFormat.B64Json,
             user: "tryAGI.OpenAI.IntegrationTests.Tests.CreateImage_Base64");
         var base64 = response.Data.ElementAt(0).B64Json;
