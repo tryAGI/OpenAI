@@ -4832,6 +4832,7 @@ components:
     Upload:
       title: Upload
       required:
+        - object
         - bytes
         - created_at
         - expires_at
@@ -7846,10 +7847,9 @@ components:
           properties:
             code:
               enum:
-                - internal_error
-                - file_not_found
-                - parsing_error
-                - unhandled_mime_type
+                - server_error
+                - unsupported_file
+                - invalid_file
               type: string
               description: One of `server_error` or `rate_limit_exceeded`.
             message:
