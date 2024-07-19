@@ -63,7 +63,8 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UploadObjectJsonConverter))]
-        public global::OpenAI.UploadObject? Object { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::OpenAI.UploadObject Object { get; set; }
 
         /// <summary>
         /// The `File` object represents a document that has been uploaded to OpenAI.
