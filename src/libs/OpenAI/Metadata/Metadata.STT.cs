@@ -1,7 +1,7 @@
 // ReSharper disable once CheckNamespace
 namespace OpenAI;
 
-public static partial class Prices
+public static partial class Metadata
 {
     /// <summary>
     /// According https://openai.com/pricing/ <br/>

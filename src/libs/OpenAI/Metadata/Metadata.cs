@@ -4,7 +4,7 @@ namespace OpenAI;
 /// <summary>
 /// According https://openai.com/pricing/
 /// </summary>
-public static partial class Prices
+public static partial class Metadata
 {
     /// <summary>
     /// Just a constant for 1e-3.
