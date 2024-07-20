@@ -11,15 +11,19 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        ServerError,
+        InternalError,
         /// <summary>
         /// 
         /// </summary>
-        UnsupportedFile,
+        FileNotFound,
         /// <summary>
         /// 
         /// </summary>
-        InvalidFile,
+        ParsingError,
+        /// <summary>
+        /// 
+        /// </summary>
+        UnhandledMimeType,
     }
 
     /// <summary>
@@ -34,9 +38,10 @@ namespace OpenAI
         {
             return value switch
             {
-                VectorStoreFileObjectLastErrorCode.ServerError => "server_error",
-                VectorStoreFileObjectLastErrorCode.UnsupportedFile => "unsupported_file",
-                VectorStoreFileObjectLastErrorCode.InvalidFile => "invalid_file",
+                VectorStoreFileObjectLastErrorCode.InternalError => "internal_error",
+                VectorStoreFileObjectLastErrorCode.FileNotFound => "file_not_found",
+                VectorStoreFileObjectLastErrorCode.ParsingError => "parsing_error",
+                VectorStoreFileObjectLastErrorCode.UnhandledMimeType => "unhandled_mime_type",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +52,10 @@ namespace OpenAI
         {
             return value switch
             {
-                "server_error" => VectorStoreFileObjectLastErrorCode.ServerError,
-                "unsupported_file" => VectorStoreFileObjectLastErrorCode.UnsupportedFile,
-                "invalid_file" => VectorStoreFileObjectLastErrorCode.InvalidFile,
+                "internal_error" => VectorStoreFileObjectLastErrorCode.InternalError,
+                "file_not_found" => VectorStoreFileObjectLastErrorCode.FileNotFound,
+                "parsing_error" => VectorStoreFileObjectLastErrorCode.ParsingError,
+                "unhandled_mime_type" => VectorStoreFileObjectLastErrorCode.UnhandledMimeType,
                 _ => null,
             };
         }
