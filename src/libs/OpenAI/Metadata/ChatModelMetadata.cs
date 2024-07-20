@@ -8,6 +8,11 @@ public class ChatModelMetadata
     /// <summary>
     /// Price per training token in USD.
     /// </summary>
+    public string? Id { get; init; }
+    
+    /// <summary>
+    /// Price per training token in USD.
+    /// </summary>
     public double? PricePerInputTokenInUsd { get; init; }
     
     /// <summary>

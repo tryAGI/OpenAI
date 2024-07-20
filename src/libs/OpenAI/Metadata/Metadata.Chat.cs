@@ -16,6 +16,7 @@ public static partial class Metadata
             CreateChatCompletionRequestModel.Gpt4o or
             CreateChatCompletionRequestModel.Gpt4o20240513 => new ChatModelMetadata
             {
+                Id = model.ToValueString(),
                 PricePerInputTokenInUsd = 5.0 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 15.0 * UsdPerMillionTokens,
                 ContextLength = 128_000,
@@ -24,6 +25,7 @@ public static partial class Metadata
             CreateChatCompletionRequestModel.Gpt4oMini or
             CreateChatCompletionRequestModel.Gpt4oMini20240718 => new ChatModelMetadata
             {
+                Id = model.ToValueString(),
                 PricePerInputTokenInUsd = 0.15 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 0.60 * UsdPerMillionTokens,
                 ContextLength = 128_000,
@@ -37,6 +39,7 @@ public static partial class Metadata
             CreateChatCompletionRequestModel.Gpt41106Preview or
             CreateChatCompletionRequestModel.Gpt4VisionPreview => new ChatModelMetadata
             {
+                Id = model.ToValueString(),
                 PricePerInputTokenInUsd = 10.0 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 30.0 * UsdPerMillionTokens,
                 ContextLength = 128_000,
@@ -47,6 +50,7 @@ public static partial class Metadata
             CreateChatCompletionRequestModel.Gpt40314 or
             CreateChatCompletionRequestModel.Gpt40613 => new ChatModelMetadata
             {
+                Id = model.ToValueString(),
                 PricePerInputTokenInUsd = 30.0 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 60.0 * UsdPerMillionTokens,
                 ContextLength = 8_192,
@@ -57,6 +61,7 @@ public static partial class Metadata
             CreateChatCompletionRequestModel.Gpt432k0314 or
             CreateChatCompletionRequestModel.Gpt432k0613 => new ChatModelMetadata
             {
+                Id = model.ToValueString(),
                 PricePerInputTokenInUsd = 60.0 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 120.0 * UsdPerMillionTokens,
                 ContextLength = 32_768,
@@ -66,6 +71,7 @@ public static partial class Metadata
             CreateChatCompletionRequestModel.Gpt35Turbo or
             CreateChatCompletionRequestModel.Gpt35Turbo0125 => new ChatModelMetadata
             {
+                Id = model.ToValueString(),
                 PricePerInputTokenInUsd = 0.5 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 1.5 * UsdPerMillionTokens,
                 ContextLength = 16_385,
@@ -77,6 +83,7 @@ public static partial class Metadata
             },
             CreateChatCompletionRequestModel.Gpt35Turbo1106 => new ChatModelMetadata
             {
+                Id = model.ToValueString(),
                 PricePerInputTokenInUsd = 1.0 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 2.0 * UsdPerMillionTokens,
                 ContextLength = 16_385,
@@ -84,6 +91,7 @@ public static partial class Metadata
             },
             CreateChatCompletionRequestModel.Gpt35Turbo0613 => new ChatModelMetadata
             {
+                Id = model.ToValueString(),
                 PricePerInputTokenInUsd = 1.5 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 2.0 * UsdPerMillionTokens,
                 ContextLength = 4_096,
@@ -91,6 +99,7 @@ public static partial class Metadata
             },
             CreateChatCompletionRequestModel.Gpt35Turbo0301 => new ChatModelMetadata
             {
+                Id = model.ToValueString(),
                 PricePerInputTokenInUsd = 2.0 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 2.0 * UsdPerMillionTokens,
                 ContextLength = 4_096,
@@ -99,13 +108,17 @@ public static partial class Metadata
             CreateChatCompletionRequestModel.Gpt35Turbo16k or
             CreateChatCompletionRequestModel.Gpt35Turbo16k0613 => new ChatModelMetadata
             {
+                Id = model.ToValueString(),
                 PricePerInputTokenInUsd = 3.0 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 4.0 * UsdPerMillionTokens,
                 ContextLength = 16_385,
                 OutputLength = 16_000,
             },
             
-            _ => new ChatModelMetadata(),
+            _ => new ChatModelMetadata
+            {
+                Id = model.ToValueString(),
+            },
         };
     }
     
