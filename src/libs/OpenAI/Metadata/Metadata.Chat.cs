@@ -30,6 +30,10 @@ public static partial class Metadata
                 PricePerOutputTokenInUsd = 0.60 * UsdPerMillionTokens,
                 ContextLength = 128_000,
                 OutputLength = 16_000,
+                
+                FineTunePricePerTrainingTokenInUsd = 3.00 * UsdPerMillionTokens,
+                FineTunePricePerInputTokenInUsd = 0.30 * UsdPerMillionTokens,
+                FineTunePricePerOutputTokenInUsd = 1.20 * UsdPerMillionTokens,
             },
             
             CreateChatCompletionRequestModel.Gpt4Turbo or
