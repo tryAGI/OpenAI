@@ -102,6 +102,19 @@ GetCurrentWeather({"location":"Dubai, UAE","unit":"celsius"})
 The current temperature in Dubai, UAE is 22°C with sunny weather.
 ```
 
+### Custom providers
+```csharp
+using OpenAI;
+
+using var api = Providers.GitHubModels("GITHUB_TOKEN");
+using var api = Providers.Azure("API_KEY", "ENDPOINT");
+using var api = Providers.DeepInfra("API_KEY");
+using var api = Providers.DeepSeek("API_KEY");
+using var api = Providers.Fireworks("API_KEY");
+using var api = Providers.OpenRouter("API_KEY");
+using var api = Providers.Together("API_KEY");
+```
+
 ### Constants
 All `tryGetXXX` methods return `null` if the value is not found.  
 There also non-try methods that throw an exception if the value is not found.
