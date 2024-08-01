@@ -103,15 +103,40 @@ The current temperature in Dubai, UAE is 22°C with sunny weather.
 ```
 
 ### Constants
-This repository contains the library with constants 
-for all OpenAI constants(models/prices/context length and other).
+All `tryGetXXX` methods return `null` if the value is not found.  
+There also non-try methods that throw an exception if the value is not found.
 ```cs
-using OpenAI.Constants;
+using OpenAI;
 
-string id = EmbeddingModels.Version3Small; // implicit conversion to string
-double price = EmbeddingModels.Version3Small.GetPriceInUsd(tokens: 500); // 0.00001
-EmbeddingModels.Version3Small.MaxInputTokens // 8191
-EmbeddingModels.Version3Small.PricePerTokenInUsd // 0.00000002
+// Chat
+var model = CreateChatCompletionRequestModel.Gpt4oMini;
+double? priceInUsd = model.TryGetPriceInUsd(
+    inputTokens: 500,
+    outputTokens: 500)
+double? priceInUsd = model.TryGetFineTunePriceInUsd(
+    trainingTokens: 500,
+    inputTokens: 500,
+    outputTokens: 500)
+int contextLength = model.TryGetContextLength() // 128_000
+int outputLength = model.TryGetOutputLength() // 16_000
+
+// Embeddings
+var model = CreateEmbeddingRequestModel.TextEmbedding3Small;
+int? maxInputTokens = model.TryGetMaxInputTokens() // 8191
+double? priceInUsd = model.TryGetPriceInUsd(tokens: 500)
+
+// Images
+double? priceInUsd = CreateImageRequestModel.DallE3.TryGetPriceInUsd(
+    size: CreateImageRequestSize.x1024x1024,
+    quality: CreateImageRequestQuality.Hd)
+
+// Speech to Text
+double? priceInUsd = CreateTranscriptionRequestModel.Whisper1.TryGetPriceInUsd(
+    seconds: 60)
+
+// Text to Speech
+double? priceInUsd = CreateSpeechRequestModel.Tts1Hd.TryGetPriceInUsd(
+    characters: 1000)
 ```
 
 ## Support
