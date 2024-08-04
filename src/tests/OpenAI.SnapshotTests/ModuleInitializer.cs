@@ -1,7 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
 using VerifyTests;
 
-namespace H.Generators.IntegrationTests;
+namespace OpenAI.SnapshotTests;
 
 public static class ModuleInitializer
 {

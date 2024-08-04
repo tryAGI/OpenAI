@@ -1,26 +1,26 @@
-﻿//HintName: IWeatherFunctions.Calls.generated.cs
+﻿//HintName: IWeatherTools.Calls.generated.cs
 
 using System.Collections.Generic;
 
 #nullable enable
 
-namespace H.Ipc.Generator.IntegrationTests
+namespace OpenAI.IntegrationTests
 {
-    public static partial class WeatherFunctionsExtensions
+    public static partial class WeatherToolsExtensions
     {
         public class GetCurrentWeatherArgs
         {
             public string Location { get; set; } = string.Empty;
-            public global::H.Ipc.Generator.IntegrationTests.Unit Unit { get; set; }
+            public global::OpenAI.IntegrationTests.Unit Unit { get; set; }
         }
 
         public class GetCurrentWeatherAsyncArgs
         {
             public string Location { get; set; } = string.Empty;
-            public global::H.Ipc.Generator.IntegrationTests.Unit Unit { get; set; }
+            public global::OpenAI.IntegrationTests.Unit Unit { get; set; }
         }
 
-        public static global::System.Collections.Generic.IReadOnlyDictionary<string, global::System.Func<string, global::System.Threading.CancellationToken, global::System.Threading.Tasks.Task<string>>> AsCalls(this IWeatherFunctions service)
+        public static global::System.Collections.Generic.IReadOnlyDictionary<string, global::System.Func<string, global::System.Threading.CancellationToken, global::System.Threading.Tasks.Task<string>>> AsCalls(this IWeatherTools service)
         {
             return new global::System.Collections.Generic.Dictionary<string, global::System.Func<string, global::System.Threading.CancellationToken, global::System.Threading.Tasks.Task<string>>>
             {
@@ -37,12 +37,12 @@ namespace H.Ipc.Generator.IntegrationTests
             };
         }
 
-        public static WeatherFunctionsExtensions.GetCurrentWeatherArgs AsGetCurrentWeatherArgs(
-            this IWeatherFunctions functions,
+        public static WeatherToolsExtensions.GetCurrentWeatherArgs AsGetCurrentWeatherArgs(
+            this IWeatherTools functions,
             string json)
         {
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<WeatherFunctionsExtensions.GetCurrentWeatherArgs>(json, new global::System.Text.Json.JsonSerializerOptions
+                global::System.Text.Json.JsonSerializer.Deserialize<WeatherToolsExtensions.GetCurrentWeatherArgs>(json, new global::System.Text.Json.JsonSerializerOptions
                 {
                     PropertyNamingPolicy = global::System.Text.Json.JsonNamingPolicy.CamelCase,
                     Converters = {{ new global::System.Text.Json.Serialization.JsonStringEnumConverter(global::System.Text.Json.JsonNamingPolicy.CamelCase) }}
@@ -50,12 +50,12 @@ namespace H.Ipc.Generator.IntegrationTests
                 throw new global::System.InvalidOperationException("Could not deserialize JSON.");
         }
 
-        public static WeatherFunctionsExtensions.GetCurrentWeatherAsyncArgs AsGetCurrentWeatherAsyncArgs(
-            this IWeatherFunctions functions,
+        public static WeatherToolsExtensions.GetCurrentWeatherAsyncArgs AsGetCurrentWeatherAsyncArgs(
+            this IWeatherTools functions,
             string json)
         {
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<WeatherFunctionsExtensions.GetCurrentWeatherAsyncArgs>(json, new global::System.Text.Json.JsonSerializerOptions
+                global::System.Text.Json.JsonSerializer.Deserialize<WeatherToolsExtensions.GetCurrentWeatherAsyncArgs>(json, new global::System.Text.Json.JsonSerializerOptions
                 {
                     PropertyNamingPolicy = global::System.Text.Json.JsonNamingPolicy.CamelCase,
                     Converters = {{ new global::System.Text.Json.Serialization.JsonStringEnumConverter(global::System.Text.Json.JsonNamingPolicy.CamelCase) }}
@@ -63,7 +63,7 @@ namespace H.Ipc.Generator.IntegrationTests
                 throw new global::System.InvalidOperationException("Could not deserialize JSON.");
         }
 
-        public static string CallGetCurrentWeather(this IWeatherFunctions functions, string json)
+        public static string CallGetCurrentWeather(this IWeatherTools functions, string json)
         {
             var args = functions.AsGetCurrentWeatherArgs(json);
             var jsonResult = functions.GetCurrentWeather(args.Location, args.Unit);
@@ -78,7 +78,7 @@ namespace H.Ipc.Generator.IntegrationTests
  
 
         public static async global::System.Threading.Tasks.Task<string> CallGetCurrentWeatherAsync(
-            this IWeatherFunctions functions,
+            this IWeatherTools functions,
             string json,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -95,7 +95,7 @@ namespace H.Ipc.Generator.IntegrationTests
  
 
         public static async global::System.Threading.Tasks.Task<string> CallAsync(
-            this IWeatherFunctions service,
+            this IWeatherTools service,
             string functionName,
             string argumentsAsJson,
             global::System.Threading.CancellationToken cancellationToken = default)

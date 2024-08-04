@@ -1,17 +1,18 @@
-﻿using H.Generators.Extensions;
+﻿using H.Generators;
+using H.Generators.Extensions;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using OpenAI.Generators.Core.Conversion;
 
-namespace H.Generators;
+namespace OpenAI.Generators;
 
 [Generator]
-public class OpenAiFunctionsGenerator : IIncrementalGenerator
+public class OpenAiToolsGenerator : IIncrementalGenerator
 {
     #region Constants
 
-    public const string Name = nameof(OpenAiFunctionsGenerator);
-    public const string Id = "OAFG";
+    public const string Name = nameof(OpenAiToolsGenerator);
+    public const string Id = "OATG";
 
     #endregion
 
@@ -21,7 +22,7 @@ public class OpenAiFunctionsGenerator : IIncrementalGenerator
     {
         var attributes =
             context.SyntaxProvider
-                .ForAttributeWithMetadataName("OpenAI.OpenAiFunctionsAttribute")
+                .ForAttributeWithMetadataName("OpenAI.OpenAiToolsAttribute")
                 .SelectManyAllAttributesOfCurrentInterfaceSyntax()
                 .SelectAndReportExceptions(PrepareData, context, Id);
         

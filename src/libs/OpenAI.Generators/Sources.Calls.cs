@@ -1,6 +1,7 @@
-﻿using H.Generators.Extensions;
+﻿using H.Generators;
+using H.Generators.Extensions;
 
-namespace H.Generators;
+namespace OpenAI.Generators;
 
 internal static partial class Sources
 {

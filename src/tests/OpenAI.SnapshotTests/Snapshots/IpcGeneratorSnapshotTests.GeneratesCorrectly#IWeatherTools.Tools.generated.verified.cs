@@ -1,12 +1,12 @@
-﻿//HintName: IWeatherFunctions.Tools.generated.cs
+﻿//HintName: IWeatherTools.Tools.generated.cs
 
 #nullable enable
 
-namespace H.Ipc.Generator.IntegrationTests
+namespace OpenAI.IntegrationTests
 {
-    public static partial class WeatherFunctionsExtensions
+    public static partial class WeatherToolsExtensions
     {
-        public static global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionTool> AsTools(this IWeatherFunctions functions)
+        public static global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionTool> AsTools(this IWeatherTools functions)
         {
             return new global::System.Collections.Generic.List<global::OpenAI.ChatCompletionTool>
             {

@@ -1,9 +1,8 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using OpenAI;
 using DescriptionAttribute = System.ComponentModel.DescriptionAttribute;
 
-namespace H.Ipc.Generator.IntegrationTests;
+namespace OpenAI.IntegrationTests;
 
 public enum Unit
 {
@@ -19,8 +18,8 @@ public class Weather
     public string Description { get; set; } = string.Empty;
 }
 
-[OpenAiFunctions]
-public interface IWeatherFunctions
+[OpenAiTools]
+public interface IWeatherTools
 {
     [Description("Get the current weather in a given location")]
     public Weather GetCurrentWeather(
@@ -34,7 +33,7 @@ public interface IWeatherFunctions
         CancellationToken cancellationToken = default);
 }
 
-public class WeatherService : IWeatherFunctions
+public class WeatherService : IWeatherTools
 {
     public Weather GetCurrentWeather(string location, Unit unit = Unit.Celsius)
     {

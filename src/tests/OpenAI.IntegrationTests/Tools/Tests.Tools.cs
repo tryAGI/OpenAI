@@ -4,9 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using OpenAI;
 
-namespace H.Ipc.Generator.IntegrationTests;
+namespace OpenAI.IntegrationTests;
 
-[TestClass]
 public partial class Tests
 {
     [TestMethod]

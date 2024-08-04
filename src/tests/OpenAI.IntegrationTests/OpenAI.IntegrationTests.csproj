@@ -22,6 +22,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\libs\OpenAI\OpenAI.csproj" />
+    <ProjectReference Include="..\..\libs\OpenAI.Generators.Core\OpenAI.Generators.Core.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="..\..\libs\OpenAI.Generators\OpenAI.Generators.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
   </ItemGroup>
 
 </Project>

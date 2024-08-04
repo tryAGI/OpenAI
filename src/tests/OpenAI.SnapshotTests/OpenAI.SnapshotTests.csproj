@@ -21,8 +21,8 @@
   </ItemGroup>
   
   <ItemGroup Label="Resources">
-    <EmbeddedResource Include="../OpenAI.Generators.IntegrationTests/*.cs" Visible="false" />
-    <AdditionalFiles Include="../OpenAI.Generators.IntegrationTests/*.cs" Visible="false" />
+    <EmbeddedResource Include="../OpenAI.IntegrationTests/Tools/*Tools.cs" Visible="false" />
+    <AdditionalFiles Include="../OpenAI.IntegrationTests/Tools/*Tools.cs" Visible="false" />
   </ItemGroup>
   
   <ItemGroup>
@@ -40,6 +40,10 @@
   <ItemGroup>
     <ProjectReference Include="..\..\libs\OpenAI\OpenAI.csproj" />
     <ProjectReference Include="..\..\libs\OpenAI.Generators\OpenAI.Generators.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Snapshots\" />
   </ItemGroup>
 
 </Project>

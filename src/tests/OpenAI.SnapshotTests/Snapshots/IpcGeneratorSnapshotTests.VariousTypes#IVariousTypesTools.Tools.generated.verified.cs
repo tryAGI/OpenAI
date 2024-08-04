@@ -1,12 +1,12 @@
-﻿//HintName: IVariousTypesFunctions.Tools.generated.cs
+﻿//HintName: IVariousTypesTools.Tools.generated.cs
 
 #nullable enable
 
-namespace H.Ipc.Generator.IntegrationTests
+namespace OpenAI.IntegrationTests
 {
-    public static partial class VariousTypesFunctionsExtensions
+    public static partial class VariousTypesToolsExtensions
     {
-        public static global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionTool> AsTools(this IVariousTypesFunctions functions)
+        public static global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionTool> AsTools(this IVariousTypesTools functions)
         {
             return new global::System.Collections.Generic.List<global::OpenAI.ChatCompletionTool>
             {

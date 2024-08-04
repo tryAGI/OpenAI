@@ -1,7 +1,7 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace H.Generators;
+namespace OpenAI.Generators;
 
 public static class CommonSteps
 {

@@ -1,11 +1,10 @@
 ﻿using System;
-using OpenAI;
 using DescriptionAttribute = System.ComponentModel.DescriptionAttribute;
 
-namespace H.Ipc.Generator.IntegrationTests;
+namespace OpenAI.IntegrationTests;
 
-[OpenAiFunctions]
-public interface IVariousTypesFunctions
+[OpenAiTools]
+public interface IVariousTypesTools
 {
     [Description("Get the current weather in a given location")]
     public bool GetCurrentWeather(
@@ -18,7 +17,7 @@ public interface IVariousTypesFunctions
         DateOnly date);
 }
 
-public class VariousTypesService : IVariousTypesFunctions
+public class VariousTypesService : IVariousTypesTools
 {
     public bool GetCurrentWeather(
         long parameter1,

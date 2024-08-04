@@ -5,5 +5,5 @@ namespace OpenAI;
 /// 
 /// </summary>
 [AttributeUsage(AttributeTargets.Interface)]
-[System.Diagnostics.Conditional("OPENAI_FUNCTIONS_ATTRIBUTES")]
-public sealed class OpenAiFunctionsAttribute : Attribute;
+[System.Diagnostics.Conditional("OPENAI_TOOLS_ATTRIBUTES")]
+public sealed class OpenAiToolsAttribute : Attribute;
