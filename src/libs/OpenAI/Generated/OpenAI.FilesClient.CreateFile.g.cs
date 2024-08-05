@@ -46,11 +46,21 @@ namespace OpenAI
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/files", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, global::OpenAI.SourceGenerationContext.Default.CreateFileRequest);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
-                encoding: global::System.Text.Encoding.UTF8,
-                mediaType: "application/json");
+            using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>())
+                {
+                    Headers =
+                    {
+                        ContentType = global::System.Net.Http.Headers.MediaTypeHeaderValue.Parse("multipart/form-data"),
+                    },
+                },
+                name: "file",
+                fileName: request.Filename ?? string.Empty);
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.Purpose}"),
+                name: "purpose");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -107,6 +117,9 @@ namespace OpenAI
         /// <param name="file">
         /// The File object (not file name) to be uploaded.
         /// </param>
+        /// <param name="filename">
+        /// The File object (not file name) to be uploaded.
+        /// </param>
         /// <param name="purpose">
         /// The intended purpose of the uploaded file.<br/>
         /// Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](/docs/api-reference/messages) files, "vision" for Assistants image file inputs, "batch" for [Batch API](/docs/guides/batch), and "fine-tune" for [Fine-tuning](/docs/api-reference/fine-tuning).
@@ -115,12 +128,14 @@ namespace OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.OpenAIFile> CreateFileAsync(
             byte[] file,
+            string filename,
             global::OpenAI.CreateFileRequestPurpose purpose,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::OpenAI.CreateFileRequest
             {
                 File = file,
+                Filename = filename,
                 Purpose = purpose,
             };
 

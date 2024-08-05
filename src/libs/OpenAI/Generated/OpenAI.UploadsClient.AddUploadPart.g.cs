@@ -51,11 +51,21 @@ namespace OpenAI
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/uploads/{uploadId}/parts", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, global::OpenAI.SourceGenerationContext.Default.AddUploadPartRequest);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
-                encoding: global::System.Text.Encoding.UTF8,
-                mediaType: "application/json");
+            using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.UploadId}"),
+                name: "upload_id");
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.ByteArrayContent(request.Data ?? global::System.Array.Empty<byte>())
+                {
+                    Headers =
+                    {
+                        ContentType = global::System.Net.Http.Headers.MediaTypeHeaderValue.Parse("multipart/form-data"),
+                    },
+                },
+                name: "data",
+                fileName: request.Dataname ?? string.Empty);
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -114,16 +124,21 @@ namespace OpenAI
         /// <param name="data">
         /// The chunk of bytes for this Part.
         /// </param>
+        /// <param name="dataname">
+        /// The chunk of bytes for this Part.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.UploadPart> AddUploadPartAsync(
             string uploadId,
             byte[] data,
+            string dataname,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::OpenAI.AddUploadPartRequest
             {
                 Data = data,
+                Dataname = dataname,
             };
 
             return await AddUploadPartAsync(
