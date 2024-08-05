@@ -11,6 +11,9 @@
 - Updated and supported automatically if there are no breaking changes
 - Contains a supported list of constants such as current prices, models, and other
 - Source generator to define functions natively through C# interfaces
+- All modern .NET features - nullability, trimming, NativeAOT, etc.
+- Support .Net Framework/.Net Standard 2.0
+- Support all OpenAI API endpoints including completions, chat, embeddings, images, assistants and more.
 
 ### Usage
 ```csharp
