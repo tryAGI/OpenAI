@@ -53,7 +53,7 @@ namespace OpenAI
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/uploads/{uploadId}/parts", global::System.UriKind.RelativeOrAbsolute));
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.UploadId}"),
+                content: new global::System.Net.Http.StringContent($"{uploadId}"),
                 name: "upload_id");
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.ByteArrayContent(request.Data ?? global::System.Array.Empty<byte>())

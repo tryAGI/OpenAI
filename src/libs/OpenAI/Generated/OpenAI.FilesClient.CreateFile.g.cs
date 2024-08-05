@@ -58,7 +58,7 @@ namespace OpenAI
                 name: "file",
                 fileName: request.Filename ?? string.Empty);
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.Purpose}"),
+                content: new global::System.Net.Http.StringContent($"{request.Purpose.ToValueString()}"),
                 name: "purpose");
             httpRequest.Content = __httpRequestContent;
 
