@@ -42,11 +42,46 @@ namespace OpenAI
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/images/edits", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, global::OpenAI.SourceGenerationContext.Default.CreateImageEditRequest);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
-                encoding: global::System.Text.Encoding.UTF8,
-                mediaType: "application/json");
+            using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>())
+                {
+                    Headers =
+                    {
+                        ContentType = global::System.Net.Http.Headers.MediaTypeHeaderValue.Parse("multipart/form-data"),
+                    },
+                },
+                name: "image",
+                fileName: request.Imagename ?? string.Empty);
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
+                name: "prompt");
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.ByteArrayContent(request.Mask ?? global::System.Array.Empty<byte>())
+                {
+                    Headers =
+                    {
+                        ContentType = global::System.Net.Http.Headers.MediaTypeHeaderValue.Parse("multipart/form-data"),
+                    },
+                },
+                name: "mask",
+                fileName: request.Maskname ?? string.Empty);
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.Model}"),
+                name: "model");
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.N}"),
+                name: "n");
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.Size}"),
+                name: "size");
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.ResponseFormat}"),
+                name: "response_format");
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.User}"),
+                name: "user");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -99,11 +134,17 @@ namespace OpenAI
         /// <param name="image">
         /// The image to edit. Must be a valid PNG file, less than 4MB, and square. If mask is not provided, image must have transparency, which will be used as the mask.
         /// </param>
+        /// <param name="imagename">
+        /// The image to edit. Must be a valid PNG file, less than 4MB, and square. If mask is not provided, image must have transparency, which will be used as the mask.
+        /// </param>
         /// <param name="prompt">
         /// A text description of the desired image(s). The maximum length is 1000 characters.<br/>
         /// Example: A cute baby sea otter wearing a beret
         /// </param>
         /// <param name="mask">
+        /// An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.
+        /// </param>
+        /// <param name="maskname">
         /// An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.
         /// </param>
         /// <param name="model">
@@ -134,8 +175,10 @@ namespace OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.ImagesResponse> CreateImageEditAsync(
             byte[] image,
+            string imagename,
             string prompt,
             byte[]? mask = default,
+            string? maskname = default,
             global::System.AnyOf<string?, global::OpenAI.CreateImageEditRequestModel?>? model = default,
             int? n = 1,
             global::OpenAI.CreateImageEditRequestSize? size = global::OpenAI.CreateImageEditRequestSize.x1024x1024,
@@ -146,8 +189,10 @@ namespace OpenAI
             var request = new global::OpenAI.CreateImageEditRequest
             {
                 Image = image,
+                Imagename = imagename,
                 Prompt = prompt,
                 Mask = mask,
+                Maskname = maskname,
                 Model = model,
                 N = n,
                 Size = size,

@@ -42,11 +42,33 @@ namespace OpenAI
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/images/variations", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, global::OpenAI.SourceGenerationContext.Default.CreateImageVariationRequest);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
-                encoding: global::System.Text.Encoding.UTF8,
-                mediaType: "application/json");
+            using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>())
+                {
+                    Headers =
+                    {
+                        ContentType = global::System.Net.Http.Headers.MediaTypeHeaderValue.Parse("multipart/form-data"),
+                    },
+                },
+                name: "image",
+                fileName: request.Imagename ?? string.Empty);
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.Model}"),
+                name: "model");
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.N}"),
+                name: "n");
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.ResponseFormat}"),
+                name: "response_format");
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.Size}"),
+                name: "size");
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.User}"),
+                name: "user");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -99,6 +121,9 @@ namespace OpenAI
         /// <param name="image">
         /// The image to use as the basis for the variation(s). Must be a valid PNG file, less than 4MB, and square.
         /// </param>
+        /// <param name="imagename">
+        /// The image to use as the basis for the variation(s). Must be a valid PNG file, less than 4MB, and square.
+        /// </param>
         /// <param name="model">
         /// The model to use for image generation. Only `dall-e-2` is supported at this time.<br/>
         /// Default Value: dall-e-2<br/>
@@ -127,6 +152,7 @@ namespace OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.ImagesResponse> CreateImageVariationAsync(
             byte[] image,
+            string imagename,
             global::System.AnyOf<string?, global::OpenAI.CreateImageVariationRequestModel?>? model = default,
             int? n = 1,
             global::OpenAI.CreateImageVariationRequestResponseFormat? responseFormat = global::OpenAI.CreateImageVariationRequestResponseFormat.Url,
@@ -137,6 +163,7 @@ namespace OpenAI
             var request = new global::OpenAI.CreateImageVariationRequest
             {
                 Image = image,
+                Imagename = imagename,
                 Model = model,
                 N = n,
                 ResponseFormat = responseFormat,

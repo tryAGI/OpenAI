@@ -16,6 +16,13 @@ namespace OpenAI
         public required byte[] Data { get; set; }
 
         /// <summary>
+        /// The chunk of bytes for this Part.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("dataname")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Dataname { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

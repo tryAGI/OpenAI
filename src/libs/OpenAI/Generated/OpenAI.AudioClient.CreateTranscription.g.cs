@@ -42,11 +42,36 @@ namespace OpenAI
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/audio/transcriptions", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, global::OpenAI.SourceGenerationContext.Default.CreateTranscriptionRequest);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
-                encoding: global::System.Text.Encoding.UTF8,
-                mediaType: "application/json");
+            using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>())
+                {
+                    Headers =
+                    {
+                        ContentType = global::System.Net.Http.Headers.MediaTypeHeaderValue.Parse("multipart/form-data"),
+                    },
+                },
+                name: "file",
+                fileName: request.Filename ?? string.Empty);
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.Model}"),
+                name: "model");
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.Language}"),
+                name: "language");
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
+                name: "prompt");
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.ResponseFormat}"),
+                name: "response_format");
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.Temperature}"),
+                name: "temperature");
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.TimestampGranularities}"),
+                name: "timestamp_granularities[]");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
@@ -99,6 +124,9 @@ namespace OpenAI
         /// <param name="file">
         /// The audio file object (not file name) to transcribe, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
         /// </param>
+        /// <param name="filename">
+        /// The audio file object (not file name) to transcribe, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
+        /// </param>
         /// <param name="model">
         /// ID of the model to use. Only `whisper-1` (which is powered by our open source Whisper V2 model) is currently available.<br/>
         /// Example: whisper-1
@@ -125,6 +153,7 @@ namespace OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.OneOf<global::OpenAI.CreateTranscriptionResponseJson, global::OpenAI.CreateTranscriptionResponseVerboseJson>> CreateTranscriptionAsync(
             byte[] file,
+            string filename,
             global::System.AnyOf<string, global::OpenAI.CreateTranscriptionRequestModel> model,
             string? language = default,
             string? prompt = default,
@@ -136,6 +165,7 @@ namespace OpenAI
             var request = new global::OpenAI.CreateTranscriptionRequest
             {
                 File = file,
+                Filename = filename,
                 Model = model,
                 Language = language,
                 Prompt = prompt,
