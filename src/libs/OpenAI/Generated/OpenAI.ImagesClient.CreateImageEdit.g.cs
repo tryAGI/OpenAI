@@ -67,7 +67,7 @@ namespace OpenAI
                 name: "mask",
                 fileName: request.Maskname ?? string.Empty);
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.Model}"),
+                content: new global::System.Net.Http.StringContent(request.Model?.Value1?.ToString() ?? request.Model?.Value2?.ToValueString() ?? string.Empty),
                 name: "model");
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{request.N}"),
