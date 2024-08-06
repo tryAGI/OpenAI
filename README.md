@@ -109,13 +109,13 @@ The current temperature in Dubai, UAE is 22°C with sunny weather.
 ```csharp
 using OpenAI;
 
-using var api = Providers.GitHubModels("GITHUB_TOKEN");
-using var api = Providers.Azure("API_KEY", "ENDPOINT");
-using var api = Providers.DeepInfra("API_KEY");
-using var api = Providers.DeepSeek("API_KEY");
-using var api = Providers.Fireworks("API_KEY");
-using var api = Providers.OpenRouter("API_KEY");
-using var api = Providers.Together("API_KEY");
+using var api = CustomProviders.GitHubModels("GITHUB_TOKEN");
+using var api = CustomProviders.Azure("API_KEY", "ENDPOINT");
+using var api = CustomProviders.DeepInfra("API_KEY");
+using var api = CustomProviders.DeepSeek("API_KEY");
+using var api = CustomProviders.Fireworks("API_KEY");
+using var api = CustomProviders.OpenRouter("API_KEY");
+using var api = CustomProviders.Together("API_KEY");
 ```
 
 ### Constants
