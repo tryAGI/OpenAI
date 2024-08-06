@@ -8,7 +8,7 @@ namespace OpenAI
     /// <summary>
     /// 
     /// </summary>
-    public readonly struct MessageStreamEvent : global::System.IEquatable<MessageStreamEvent>
+    public readonly partial struct MessageStreamEvent : global::System.IEquatable<MessageStreamEvent>
     {
         /// <summary>
         /// 

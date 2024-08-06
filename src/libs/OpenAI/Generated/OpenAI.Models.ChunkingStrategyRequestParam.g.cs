@@ -8,7 +8,7 @@ namespace OpenAI
     /// <summary>
     /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
     /// </summary>
-    public readonly struct ChunkingStrategyRequestParam : global::System.IEquatable<ChunkingStrategyRequestParam>
+    public readonly partial struct ChunkingStrategyRequestParam : global::System.IEquatable<ChunkingStrategyRequestParam>
     {
         /// <summary>
         /// 
