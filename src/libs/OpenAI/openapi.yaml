@@ -3475,7 +3475,6 @@ components:
               - finish_reason
               - index
               - message
-              - logprobs
             type: object
             properties:
               finish_reason:
