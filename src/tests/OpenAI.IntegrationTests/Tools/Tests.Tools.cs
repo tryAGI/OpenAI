@@ -1,36 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using OpenAI;
-
-namespace OpenAI.IntegrationTests;
+﻿namespace OpenAI.IntegrationTests;
 
 public partial class Tests
 {
-    [TestMethod]
-    //[Ignore]
-    public async Task SimpleMethod()
+    [DataTestMethod]
+    [DataRow(CustomProvider.OpenAi)]
+    // [DataRow(CustomProvider.Fireworks)]
+    // [DataRow(CustomProvider.DeepInfra)]
+    // [DataRow(CustomProvider.DeepSeek)]
+    // [DataRow(CustomProvider.OpenRouter)]
+    // [DataRow(CustomProvider.Together)]
+    public async Task WeatherTools(CustomProvider customProvider)
     {
+        var pair = GetAuthorizedChatApi(customProvider);
+        using var api = pair.Api;
+        
         var messages = new List<ChatCompletionRequestMessage>
         {
             "You are a helpful weather assistant.".AsSystemMessage(),
             "What is the current temperature in Dubai, UAE in Celsius?".AsUserMessage(),
         };
-        var model = CreateChatCompletionRequestModel.Gpt35Turbo;
 
         try
         {
-            var apiKey =
-                Environment.GetEnvironmentVariable("OPENAI_API_KEY") ??
-                throw new AssertInconclusiveException("OPENAI_API_KEY is not set.");
-            using var api = new OpenAiApi();
-            api.AuthorizeUsingBearer(apiKey);
             var service = new WeatherService();
             var tools = service.AsTools();
             var result = await api.Chat.CreateChatCompletionAsync(
                 messages,
-                model: model,
+                model: pair.Model,
                 tools: tools);
             var resultMessage = result.Choices.First().Message;
             messages.Add(resultMessage.AsRequestMessage());
@@ -51,7 +47,7 @@ public partial class Tests
 
             result = await api.Chat.CreateChatCompletionAsync(
                 messages,
-                model: model,
+                model: pair.Model,
                 tools: tools);
             resultMessage = result.Choices.First().Message;
             messages.Add(resultMessage.AsRequestMessage());
