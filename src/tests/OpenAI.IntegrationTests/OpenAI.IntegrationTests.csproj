@@ -18,6 +18,8 @@
   <ItemGroup Label="GlobalUsings">
     <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
     <Using Include="FluentAssertions" />
+    <Compile Remove="Extended\**\*.*" />
+    <None Include="Extended\**\*.*" />
   </ItemGroup>
 
   <ItemGroup>
