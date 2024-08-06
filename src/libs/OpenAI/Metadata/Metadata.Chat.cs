@@ -8,7 +8,7 @@ public static partial class Metadata
     /// </summary>
     /// <param name="model"></param>
     /// <returns></returns>
-    public static ChatModelMetadata GetChatModelMetadata(
+    public static ChatModelMetadata? TryGetChatModelMetadata(
         this CreateChatCompletionRequestModel model)
     {
         return model switch
@@ -119,27 +119,19 @@ public static partial class Metadata
                 OutputLength = 16_000,
             },
             
-            _ => new ChatModelMetadata
-            {
-                Id = model.ToValueString(),
-            },
+            _ => null,
         };
     }
     
-    /// <summary>
-    /// According https://openai.com/pricing/ <br/>
-    /// </summary>
-    /// <param name="model"></param>
-    /// <param name="inputTokens"></param>
-    /// <param name="outputTokens"></param>
-    /// <returns></returns>
+    /// <inheritdoc cref="TryGetFineTunePriceInUsd"/>
     public static double? TryGetPriceInUsd(
         this CreateChatCompletionRequestModel model,
         int inputTokens,
         int outputTokens)
     {
-        var metadata = model.GetChatModelMetadata();
-        if (metadata.PricePerInputTokenInUsd == null ||
+        var metadata = model.TryGetChatModelMetadata();
+        if (metadata == null ||
+            metadata.PricePerInputTokenInUsd == null ||
             metadata.PricePerOutputTokenInUsd == null)
         {
             return null;
@@ -162,23 +154,16 @@ public static partial class Metadata
                    $"Prices are not available for {model.ToValueString()}.");
     }
 
-    /// <summary>
-    /// According https://openai.com/pricing/ <br/>
-    /// </summary>
-    /// <param name="model"></param>
-    /// <param name="trainingTokens"></param>
-    /// <param name="inputTokens"></param>
-    /// <param name="outputTokens"></param>
-    /// <exception cref="InvalidOperationException"></exception>
-    /// <returns></returns>
+    /// <inheritdoc cref="TryGetFineTunePriceInUsd"/>
     public static double? TryGetFineTunePriceInUsd(
         this CreateChatCompletionRequestModel model,
         int trainingTokens,
         int inputTokens,
         int outputTokens)
     {
-        var metadata = model.GetChatModelMetadata();
-        if (metadata.FineTunePricePerTrainingTokenInUsd == null ||
+        var metadata = model.TryGetChatModelMetadata();
+        if (metadata == null ||
+            metadata.FineTunePricePerTrainingTokenInUsd == null ||
             metadata.FineTunePricePerInputTokenInUsd == null ||
             metadata.FineTunePricePerOutputTokenInUsd == null)
         {
@@ -203,22 +188,38 @@ public static partial class Metadata
                    $"Fine tuning prices are not available for {model.ToValueString()}.");
     }
     
-    /// <inheritdoc cref="GetOutputLength"/>
+    /// <inheritdoc cref="TryGetChatModelMetadata"/>
+    /// <exception cref="InvalidOperationException"></exception>
+    public static int? TryGetContextLength(
+        this CreateChatCompletionRequestModel model)
+    {
+        return model.TryGetChatModelMetadata()?.ContextLength;
+    }
+    
+    /// <inheritdoc cref="TryGetChatModelMetadata"/>
+    /// <exception cref="InvalidOperationException"></exception>
+    public static int? TryGetOutputLength(
+        this CreateChatCompletionRequestModel model)
+    {
+        return model.TryGetChatModelMetadata()?.OutputLength;
+    }
+    
+    /// <inheritdoc cref="TryGetContextLength"/>
     /// <exception cref="InvalidOperationException"></exception>
     public static int GetContextLength(
         this CreateChatCompletionRequestModel model)
     {
-        return model.GetChatModelMetadata().ContextLength ??
+        return model.TryGetContextLength() ??
                throw new InvalidOperationException(
                    $"Context length is not available for {model.ToValueString()}.");
     }
     
-    /// <inheritdoc cref="GetChatModelMetadata"/>
+    /// <inheritdoc cref="TryGetOutputLength"/>
     /// <exception cref="InvalidOperationException"></exception>
     public static int GetOutputLength(
         this CreateChatCompletionRequestModel model)
     {
-        return model.GetChatModelMetadata().OutputLength ??
+        return model.TryGetOutputLength() ??
                throw new InvalidOperationException(
                    $"Output length is not available for {model.ToValueString()}.");
     }
