@@ -14,6 +14,7 @@
 - All modern .NET features - nullability, trimming, NativeAOT, etc.
 - Support .Net Framework/.Net Standard 2.0
 - Support all OpenAI API endpoints including completions, chat, embeddings, images, assistants and more.
+- Regularly tested for compatibility with popular custom providers like OpenRouter/DeepSeek
 
 ## Usage
 ```csharp
