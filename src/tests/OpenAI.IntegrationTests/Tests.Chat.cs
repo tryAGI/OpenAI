@@ -2,39 +2,47 @@ namespace OpenAI.IntegrationTests;
 
 public partial class Tests
 {
-    [TestMethod]
-    public async Task CreateChatCompletion()
+    [DataTestMethod]
+    [DataRow(CustomProvider.OpenAi)]
+    [DataRow(CustomProvider.Fireworks)]
+    [DataRow(CustomProvider.DeepInfra)]
+    [DataRow(CustomProvider.DeepSeek)]
+    [DataRow(CustomProvider.OpenRouter)]
+    [DataRow(CustomProvider.Together)]
+    public async Task GenerateFiveRandomWords(CustomProvider customProvider)
     {
-        var api = GetAuthorizedApi();
-        var response = await api.Chat.CreateChatCompletionAsync(
-            messages: new[]
-            {
-                "You are a helpful weather assistant.".AsSystemMessage(),
-                "What's the weather like today?".AsUserMessage(),
-            },
-            model: CreateChatCompletionRequestModel.Gpt35Turbo,
+        var pair = GetAuthorizedChatApi(customProvider);
+        using var api = pair.Api;
+        
+        string response = await api.Chat.CreateChatCompletionAsync(
+            messages: ["Generate five random words."],
+            model: pair.Model,
             user: "tryAGI.OpenAI.IntegrationTests.Tests.CreateChatCompletion");
-        response.Choices.ElementAt(0).Message.Content.Should().NotBeEmpty();
+        response.Should().NotBeEmpty();
 
-        Console.WriteLine(response.Choices.ElementAt(0).Message.Content);
+        Console.WriteLine(response);
     }
     
-    [TestMethod]
-    public async Task CreateChatCompletionAsStreamAsync()
+    [DataTestMethod]
+    [DataRow(CustomProvider.OpenAi)]
+    [DataRow(CustomProvider.Fireworks)]
+    [DataRow(CustomProvider.DeepInfra)]
+    [DataRow(CustomProvider.DeepSeek)]
+    [DataRow(CustomProvider.OpenRouter)]
+    [DataRow(CustomProvider.Together)]
+    public async Task GenerateFiveRandomWordsAsStream(CustomProvider customProvider)
     {
-        var api = GetAuthorizedApi();
+        var pair = GetAuthorizedChatApi(customProvider);
+        using var api = pair.Api;
+        
         var enumerable = api.Chat.CreateChatCompletionAsStreamAsync(
-            messages: new[]
-            {
-                "You are a helpful weather assistant.".AsSystemMessage(),
-                "What's the weather like today?".AsUserMessage(),
-            },
-            model: CreateChatCompletionRequestModel.Gpt35Turbo,
+            messages: ["Generate five random words."],
+            model: pair.Model,
             user: "tryAGI.OpenAI.IntegrationTests.Tests.CreateChatCompletion");
         
-        await foreach (var response in enumerable)
+        await foreach (string response in enumerable)
         {
-            Console.WriteLine(response.Choices.ElementAt(0).Delta.Content);
+            Console.WriteLine(response);
         }
     }
 }
