@@ -14,7 +14,7 @@ public static class CustomProviders
     /// <summary>
     /// 
     /// </summary>
-    public const string DeepInfraBaseUrl = "https://api.deepinfra.com/";
+    public const string DeepInfraBaseUrl = "https://api.deepinfra.com/v1/openai";
     
     /// <summary>
     /// 
@@ -42,10 +42,7 @@ public static class CustomProviders
     /// <returns></returns>
     public static OpenAiApi GitHubModels(string githubToken)
     {
-        var api = new OpenAiApi(baseUri: new Uri(GitHubModelsBaseUrl));
-        api.AuthorizeUsingBearer(githubToken);
-        
-        return api;
+        return new OpenAiApi(githubToken, baseUri: new Uri(GitHubModelsBaseUrl));
     }
     
     /// <summary>
@@ -54,10 +51,7 @@ public static class CustomProviders
     /// <returns></returns>
     public static OpenAiApi Azure(string apiKey, string endpoint)
     {
-        var api = new OpenAiApi(baseUri: new Uri(endpoint));
-        api.AuthorizeUsingBearer(apiKey);
-        
-        return api;
+        return new OpenAiApi(apiKey, baseUri: new Uri(endpoint));
     }
     
     /// <summary>
@@ -66,10 +60,7 @@ public static class CustomProviders
     /// <returns></returns>
     public static OpenAiApi DeepInfra(string apiKey)
     {
-        var api = new OpenAiApi(baseUri: new Uri(DeepInfraBaseUrl));
-        api.AuthorizeUsingBearer(apiKey);
-        
-        return api;
+        return new OpenAiApi(apiKey, baseUri: new Uri(DeepInfraBaseUrl));
     }
     
     /// <summary>
@@ -78,10 +69,7 @@ public static class CustomProviders
     /// <returns></returns>
     public static OpenAiApi DeepSeek(string apiKey)
     {
-        var api = new OpenAiApi(baseUri: new Uri(DeepSeekBaseUrl));
-        api.AuthorizeUsingBearer(apiKey);
-        
-        return api;
+        return new OpenAiApi(apiKey, baseUri: new Uri(DeepSeekBaseUrl));
     }
     
     /// <summary>
@@ -90,10 +78,7 @@ public static class CustomProviders
     /// <returns></returns>
     public static OpenAiApi Fireworks(string apiKey)
     {
-        var api = new OpenAiApi(baseUri: new Uri(FireworksBaseUrl));
-        api.AuthorizeUsingBearer(apiKey);
-        
-        return api;
+        return new OpenAiApi(apiKey, baseUri: new Uri(FireworksBaseUrl));
     }
     
     /// <summary>
@@ -102,10 +87,7 @@ public static class CustomProviders
     /// <returns></returns>
     public static OpenAiApi OpenRouter(string apiKey)
     {
-        var api = new OpenAiApi(baseUri: new Uri(OpenRouterBaseUrl));
-        api.AuthorizeUsingBearer(apiKey);
-        
-        return api;
+        return new OpenAiApi(apiKey, baseUri: new Uri(OpenRouterBaseUrl));
     }
     
     /// <summary>
@@ -114,9 +96,6 @@ public static class CustomProviders
     /// <returns></returns>
     public static OpenAiApi Together(string apiKey)
     {
-        var api = new OpenAiApi(baseUri: new Uri(TogetherBaseUrl));
-        api.AuthorizeUsingBearer(apiKey);
-        
-        return api;
+        return new OpenAiApi(apiKey, baseUri: new Uri(TogetherBaseUrl));
     }
 }
