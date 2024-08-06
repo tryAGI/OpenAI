@@ -15,7 +15,31 @@
 - Support .Net Framework/.Net Standard 2.0
 - Support all OpenAI API endpoints including completions, chat, embeddings, images, assistants and more.
 
-### Usage
+## Usage
+```csharp
+using var api = new OpenAiApi("API_KEY");
+string response = await api.Chat.CreateChatCompletionAsync(
+    messages: ["Generate five random words."],
+    model: CreateChatCompletionRequestModel.Gpt4oMini);
+Console.WriteLine(response); // "apple, banana, cherry, date, elderberry"
+
+var enumerable = api.Chat.CreateChatCompletionAsStreamAsync(
+    messages: ["Generate five random words."],
+    model: CreateChatCompletionRequestModel.Gpt4oMini);
+
+await foreach (string response in enumerable)
+{
+    Console.WriteLine(response);
+}
+```
+It uses three implicit conversions:
+- from `string` to `ChatCompletionRequestUserMessage`. It will always be converted to the user message.
+- from `ChatCompletionResponseMessage` to `string` . It will always contain the first choice message content.
+- from `CreateChatCompletionStreamResponse` to `string` . It will always contain the first delta content.
+
+You still can use the full response objects if you need more information, just replace `string response` to `var response`.
+
+### Tools
 ```csharp
 using OpenAI;
 
@@ -33,7 +57,7 @@ public class Weather
     public string Description { get; set; } = string.Empty;
 }
 
-[OpenAiFunctions]
+[OpenAiTools]
 public interface IWeatherFunctions
 {
     [Description("Get the current weather in a given location")]
@@ -57,8 +81,7 @@ public class WeatherService : IWeatherFunctions
     }
 }
 
-using var api = new OpenAiApi();
-api.AuthorizeUsingBearer(apiKey);
+using var api = new OpenAiApi("API_KEY");
 
 var service = new WeatherService();
 var tools = service.AsTools();
@@ -123,6 +146,9 @@ All `tryGetXXX` methods return `null` if the value is not found.
 There also non-try methods that throw an exception if the value is not found.
 ```cs
 using OpenAI;
+
+// You can try to get the enum from string using:
+var model = CreateChatCompletionRequestModelExtensions.ToEnum("gpt-4o") ?? throw new Exception("Invalid model");
 
 // Chat
 var model = CreateChatCompletionRequestModel.Gpt4oMini;
