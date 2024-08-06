@@ -165,12 +165,4 @@ namespace OpenAI
             }
         }
     }
-
-    public sealed partial class JsonSerializerContextTypes
-    {
-        /// <summary>
-        /// 
-        /// </summary>
-        public CreateChatCompletionStreamResponse? CreateChatCompletionStreamResponse { get; set; }
-    }
 }

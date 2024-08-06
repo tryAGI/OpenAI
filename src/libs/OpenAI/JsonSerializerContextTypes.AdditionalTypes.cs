@@ -6,4 +6,9 @@ public sealed partial class JsonSerializerContextTypes
     /// To fix issue with LogitBias.
     /// </summary>
     public Dictionary<string, double>? StringDoubleDictionary { get; set; }
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    public CreateChatCompletionStreamResponse? CreateChatCompletionStreamResponse { get; set; }
 }
