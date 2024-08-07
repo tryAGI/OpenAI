@@ -14,6 +14,14 @@ public static partial class Metadata
         return model switch
         {
             CreateChatCompletionRequestModel.Gpt4o or
+            CreateChatCompletionRequestModel.Gpt4o20240806 => new ChatModelMetadata
+            {
+                Id = model.ToValueString(),
+                PricePerInputTokenInUsd = 2.5 * UsdPerMillionTokens,
+                PricePerOutputTokenInUsd = 10.0 * UsdPerMillionTokens,
+                ContextLength = 128_000,
+                OutputLength = 16_000,
+            },
             CreateChatCompletionRequestModel.Gpt4o20240513 => new ChatModelMetadata
             {
                 Id = model.ToValueString(),

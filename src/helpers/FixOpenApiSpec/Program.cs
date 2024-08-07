@@ -1,4 +1,5 @@
 using Microsoft.OpenApi;
+using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Extensions;
 using Microsoft.OpenApi.Readers;
 
@@ -18,6 +19,23 @@ openApiDocument.Components.Schemas["ParallelToolCalls"]!.Nullable = true;
 openApiDocument.Components.Schemas["CreateEmbeddingRequest"]!.Properties["dimensions"].Nullable = true;
 
 openApiDocument.Components.Schemas["CreateChatCompletionResponse"]!.Properties["choices"].Items.Required.Remove("logprobs");
+
+openApiDocument.Components.Schemas["CreateChatCompletionRequest"]!.Properties["model"].AnyOf[1].Enum =
+    openApiDocument.Components.Schemas["CreateChatCompletionRequest"]!.Properties["model"].AnyOf[1].Enum
+        .DistinctBy(x => (x as OpenApiString)?.Value)
+        .ToList();
+openApiDocument.Components.Schemas["CreateAssistantRequest"]!.Properties["model"].AnyOf[1].Enum =
+    openApiDocument.Components.Schemas["CreateAssistantRequest"]!.Properties["model"].AnyOf[1].Enum
+        .DistinctBy(x => (x as OpenApiString)?.Value)
+        .ToList();
+openApiDocument.Components.Schemas["CreateRunRequest"]!.Properties["model"].AnyOf[1].Enum =
+    openApiDocument.Components.Schemas["CreateRunRequest"]!.Properties["model"].AnyOf[1].Enum
+        .DistinctBy(x => (x as OpenApiString)?.Value)
+        .ToList();
+openApiDocument.Components.Schemas["CreateThreadAndRunRequest"]!.Properties["model"].AnyOf[1].Enum =
+    openApiDocument.Components.Schemas["CreateThreadAndRunRequest"]!.Properties["model"].AnyOf[1].Enum
+        .DistinctBy(x => (x as OpenApiString)?.Value)
+        .ToList();
     
 text = openApiDocument.SerializeAsYaml(OpenApiSpecVersion.OpenApi3_0);
 _ = new OpenApiStringReader().Read(text, out diagnostics);

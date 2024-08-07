@@ -19,10 +19,6 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Gpt4o20240806,
-        /// <summary>
-        /// 
-        /// </summary>
         Gpt4oMini,
         /// <summary>
         /// 
@@ -120,7 +116,6 @@ namespace OpenAI
             {
                 CreateChatCompletionRequestModel.Gpt4o => "gpt-4o",
                 CreateChatCompletionRequestModel.Gpt4o20240513 => "gpt-4o-2024-05-13",
-                CreateChatCompletionRequestModel.Gpt4o20240806 => "gpt-4o-2024-08-06",
                 CreateChatCompletionRequestModel.Gpt4oMini => "gpt-4o-mini",
                 CreateChatCompletionRequestModel.Gpt4oMini20240718 => "gpt-4o-mini-2024-07-18",
                 CreateChatCompletionRequestModel.Gpt4Turbo => "gpt-4-turbo",
@@ -154,7 +149,6 @@ namespace OpenAI
             {
                 "gpt-4o" => CreateChatCompletionRequestModel.Gpt4o,
                 "gpt-4o-2024-05-13" => CreateChatCompletionRequestModel.Gpt4o20240513,
-                "gpt-4o-2024-08-06" => CreateChatCompletionRequestModel.Gpt4o20240806,
                 "gpt-4o-mini" => CreateChatCompletionRequestModel.Gpt4oMini,
                 "gpt-4o-mini-2024-07-18" => CreateChatCompletionRequestModel.Gpt4oMini20240718,
                 "gpt-4-turbo" => CreateChatCompletionRequestModel.Gpt4Turbo,
