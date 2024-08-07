@@ -7,6 +7,7 @@ namespace OpenAI
 {
     /// <summary>
     /// Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models/gpt-4o), [GPT-4 Turbo](/docs/models/gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.<br/>
+    /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which guarantees the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).<br/>
     /// Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.<br/>
     /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
     /// </summary>
@@ -51,9 +52,9 @@ namespace OpenAI
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenAI.AssistantsApiResponseFormat? Value2 { get; init; }
+        public global::OpenAI.ResponseFormatText? Value2 { get; init; }
 #else
-        public global::OpenAI.AssistantsApiResponseFormat? Value2 { get; }
+        public global::OpenAI.ResponseFormatText? Value2 { get; }
 #endif
 
         /// <summary>
@@ -67,17 +68,17 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AssistantsApiResponseFormatOption(global::OpenAI.AssistantsApiResponseFormat value) => new AssistantsApiResponseFormatOption(value);
+        public static implicit operator AssistantsApiResponseFormatOption(global::OpenAI.ResponseFormatText value) => new AssistantsApiResponseFormatOption(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenAI.AssistantsApiResponseFormat?(AssistantsApiResponseFormatOption @this) => @this.Value2;
+        public static implicit operator global::OpenAI.ResponseFormatText?(AssistantsApiResponseFormatOption @this) => @this.Value2;
 
         /// <summary>
         /// 
         /// </summary>
-        public AssistantsApiResponseFormatOption(global::OpenAI.AssistantsApiResponseFormat? value)
+        public AssistantsApiResponseFormatOption(global::OpenAI.ResponseFormatText? value)
         {
             Value2 = value;
         }
@@ -85,19 +86,95 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenAI.ResponseFormatJsonObject? Value3 { get; init; }
+#else
+        public global::OpenAI.ResponseFormatJsonObject? Value3 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+#endif
+        public bool IsValue3 => Value3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator AssistantsApiResponseFormatOption(global::OpenAI.ResponseFormatJsonObject value) => new AssistantsApiResponseFormatOption(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenAI.ResponseFormatJsonObject?(AssistantsApiResponseFormatOption @this) => @this.Value3;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public AssistantsApiResponseFormatOption(global::OpenAI.ResponseFormatJsonObject? value)
+        {
+            Value3 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenAI.ResponseFormatJsonSchema? Value4 { get; init; }
+#else
+        public global::OpenAI.ResponseFormatJsonSchema? Value4 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+#endif
+        public bool IsValue4 => Value4 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator AssistantsApiResponseFormatOption(global::OpenAI.ResponseFormatJsonSchema value) => new AssistantsApiResponseFormatOption(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenAI.ResponseFormatJsonSchema?(AssistantsApiResponseFormatOption @this) => @this.Value4;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public AssistantsApiResponseFormatOption(global::OpenAI.ResponseFormatJsonSchema? value)
+        {
+            Value4 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public AssistantsApiResponseFormatOption(
             global::OpenAI.AssistantsApiResponseFormatOptionVariant1? value1,
-            global::OpenAI.AssistantsApiResponseFormat? value2
+            global::OpenAI.ResponseFormatText? value2,
+            global::OpenAI.ResponseFormatJsonObject? value3,
+            global::OpenAI.ResponseFormatJsonSchema? value4
             )
         {
             Value1 = value1;
             Value2 = value2;
+            Value3 = value3;
+            Value4 = value4;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            Value4 as object ??
+            Value3 as object ??
             Value2 as object ??
             Value1 as object 
             ;
@@ -107,7 +184,7 @@ namespace OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4;
         }
 
         /// <summary>
@@ -120,7 +197,11 @@ namespace OpenAI
                 Value1,
                 typeof(global::OpenAI.AssistantsApiResponseFormatOptionVariant1),
                 Value2,
-                typeof(global::OpenAI.AssistantsApiResponseFormat),
+                typeof(global::OpenAI.ResponseFormatText),
+                Value3,
+                typeof(global::OpenAI.ResponseFormatJsonObject),
+                Value4,
+                typeof(global::OpenAI.ResponseFormatJsonSchema),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -137,7 +218,9 @@ namespace OpenAI
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenAI.AssistantsApiResponseFormatOptionVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenAI.AssistantsApiResponseFormat?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.ResponseFormatText?>.Default.Equals(Value2, other.Value2) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.ResponseFormatJsonObject?>.Default.Equals(Value3, other.Value3) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.ResponseFormatJsonSchema?>.Default.Equals(Value4, other.Value4) 
                 ;
         }
 
