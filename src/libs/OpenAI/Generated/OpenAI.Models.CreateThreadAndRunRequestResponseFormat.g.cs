@@ -11,10 +11,6 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        None,
-        /// <summary>
-        /// 
-        /// </summary>
         Auto,
     }
 
@@ -30,7 +26,6 @@ namespace OpenAI
         {
             return value switch
             {
-                CreateThreadAndRunRequestResponseFormat.None => "none",
                 CreateThreadAndRunRequestResponseFormat.Auto => "auto",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -42,7 +37,6 @@ namespace OpenAI
         {
             return value switch
             {
-                "none" => CreateThreadAndRunRequestResponseFormat.None,
                 "auto" => CreateThreadAndRunRequestResponseFormat.Auto,
                 _ => null,
             };

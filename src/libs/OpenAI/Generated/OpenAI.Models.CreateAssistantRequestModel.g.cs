@@ -15,7 +15,15 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Gpt4o20240806,
+        /// <summary>
+        /// 
+        /// </summary>
         Gpt4o20240513,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt4o20240806,
         /// <summary>
         /// 
         /// </summary>
@@ -111,7 +119,9 @@ namespace OpenAI
             return value switch
             {
                 CreateAssistantRequestModel.Gpt4o => "gpt-4o",
+                CreateAssistantRequestModel.Gpt4o20240806 => "gpt-4o-2024-08-06",
                 CreateAssistantRequestModel.Gpt4o20240513 => "gpt-4o-2024-05-13",
+                CreateAssistantRequestModel.Gpt4o20240806 => "gpt-4o-2024-08-06",
                 CreateAssistantRequestModel.Gpt4oMini => "gpt-4o-mini",
                 CreateAssistantRequestModel.Gpt4oMini20240718 => "gpt-4o-mini-2024-07-18",
                 CreateAssistantRequestModel.Gpt4Turbo => "gpt-4-turbo",
@@ -143,7 +153,9 @@ namespace OpenAI
             return value switch
             {
                 "gpt-4o" => CreateAssistantRequestModel.Gpt4o,
+                "gpt-4o-2024-08-06" => CreateAssistantRequestModel.Gpt4o20240806,
                 "gpt-4o-2024-05-13" => CreateAssistantRequestModel.Gpt4o20240513,
+                "gpt-4o-2024-08-06" => CreateAssistantRequestModel.Gpt4o20240806,
                 "gpt-4o-mini" => CreateAssistantRequestModel.Gpt4oMini,
                 "gpt-4o-mini-2024-07-18" => CreateAssistantRequestModel.Gpt4oMini20240718,
                 "gpt-4-turbo" => CreateAssistantRequestModel.Gpt4Turbo,

@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace OpenAI
@@ -12,8 +14,9 @@ namespace OpenAI
         /// The contents of the system message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Content { get; set; }
+        public required global::System.OneOf<string, global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionRequestSystemMessageContentPart>> Content { get; set; }
 
         /// <summary>
         /// The role of the messages author, in this case `system`.

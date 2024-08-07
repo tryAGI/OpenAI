@@ -79,9 +79,29 @@ namespace OpenAI
         public ModerationsClient Moderations => new ModerationsClient(_httpClient);
 
         /// <summary>
+        /// List user actions and configuration changes within this organization.
+        /// </summary>
+        public AuditLogsClient AuditLogs => new AuditLogsClient(_httpClient);
+
+        /// <summary>
         /// 
         /// </summary>
         public VectorStoresClient VectorStores => new VectorStoresClient(_httpClient);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InvitesClient Invites => new InvitesClient(_httpClient);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public UsersClient Users => new UsersClient(_httpClient);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ProjectsClient Projects => new ProjectsClient(_httpClient);
 
         /// <summary>
         /// Creates a new instance of the OpenAiApi.

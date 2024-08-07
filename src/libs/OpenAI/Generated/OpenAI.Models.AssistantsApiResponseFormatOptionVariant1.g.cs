@@ -11,10 +11,6 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        None,
-        /// <summary>
-        /// 
-        /// </summary>
         Auto,
     }
 
@@ -30,7 +26,6 @@ namespace OpenAI
         {
             return value switch
             {
-                AssistantsApiResponseFormatOptionVariant1.None => "none",
                 AssistantsApiResponseFormatOptionVariant1.Auto => "auto",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -42,7 +37,6 @@ namespace OpenAI
         {
             return value switch
             {
-                "none" => AssistantsApiResponseFormatOptionVariant1.None,
                 "auto" => AssistantsApiResponseFormatOptionVariant1.Auto,
                 _ => null,
             };
