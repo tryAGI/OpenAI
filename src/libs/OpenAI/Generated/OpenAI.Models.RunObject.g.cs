@@ -136,7 +136,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? Metadata { get; set; }
+        public required global::OpenAI.RunObjectMetadata? Metadata { get; set; }
 
         /// <summary>
         /// Usage statistics related to the run. This value will be `null` if the run is not in a terminal state (i.e. `in_progress`, `queued`, etc.).
@@ -186,9 +186,9 @@ namespace OpenAI
         /// Specifying a particular tool like `{"type": "file_search"}` or `{"type": "function", "function": {"name": "my_function"}}` forces the model to call that tool.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AssistantsApiToolChoiceOptionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.OneOf<global::OpenAI.RunObjectToolChoice, global::OpenAI.AssistantsNamedToolChoice?> ToolChoice { get; set; }
+        public required global::OpenAI.AssistantsApiToolChoiceOption ToolChoice { get; set; }
 
         /// <summary>
         /// Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.
@@ -204,9 +204,9 @@ namespace OpenAI
         /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory4))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AssistantsApiResponseFormatOptionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.OneOf<global::OpenAI.RunObjectResponseFormat, global::OpenAI.ResponseFormatText?, global::OpenAI.ResponseFormatJsonObject?, global::OpenAI.ResponseFormatJsonSchema?> ResponseFormat { get; set; }
+        public required global::OpenAI.AssistantsApiResponseFormatOption ResponseFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -10,18 +10,18 @@ namespace OpenAI
             ref string threadId,
             ref string runId,
             ref int limit,
-            ref global::OpenAI.ListRunStepsOrder order,
-            ref string after,
-            ref string before);
+            ref global::OpenAI.ListRunStepsOrder? order,
+            ref string? after,
+            ref string? before);
         partial void PrepareListRunStepsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string threadId,
             string runId,
             int limit,
-            global::OpenAI.ListRunStepsOrder order,
-            string after,
-            string before);
+            global::OpenAI.ListRunStepsOrder? order,
+            string? after,
+            string? before);
         partial void ProcessListRunStepsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -50,9 +50,9 @@ namespace OpenAI
             string threadId,
             string runId,
             int limit,
-            global::OpenAI.ListRunStepsOrder order,
-            string after,
-            string before,
+            global::OpenAI.ListRunStepsOrder? order,
+            string? after,
+            string? before,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

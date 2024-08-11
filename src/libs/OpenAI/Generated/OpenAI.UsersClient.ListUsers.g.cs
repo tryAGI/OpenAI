@@ -8,12 +8,12 @@ namespace OpenAI
         partial void PrepareListUsersArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int limit,
-            ref string after);
+            ref string? after);
         partial void PrepareListUsersRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int limit,
-            string after);
+            string? after);
         partial void ProcessListUsersResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -34,7 +34,7 @@ namespace OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.UserListResponse> ListUsersAsync(
             int limit,
-            string after,
+            string? after,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

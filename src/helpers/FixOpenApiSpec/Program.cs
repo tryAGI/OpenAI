@@ -20,6 +20,8 @@ openApiDocument.Components.Schemas["CreateEmbeddingRequest"]!.Properties["dimens
 
 openApiDocument.Components.Schemas["CreateChatCompletionResponse"]!.Properties["choices"].Items.Required.Remove("logprobs");
 
+openApiDocument.Components.Schemas["ChatCompletionResponseMessage"]!.Required.Remove("refusal");
+
 openApiDocument.Components.Schemas["CreateChatCompletionRequest"]!.Properties["model"].AnyOf[1].Enum =
     openApiDocument.Components.Schemas["CreateChatCompletionRequest"]!.Properties["model"].AnyOf[1].Enum
         .DistinctBy(x => (x as OpenApiString)?.Value)

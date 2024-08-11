@@ -9,19 +9,19 @@ namespace OpenAI
             global::System.Net.Http.HttpClient httpClient,
             ref string vectorStoreId,
             ref int limit,
-            ref global::OpenAI.ListVectorStoreFilesOrder order,
-            ref string after,
-            ref string before,
-            ref global::OpenAI.ListVectorStoreFilesFilter filter);
+            ref global::OpenAI.ListVectorStoreFilesOrder? order,
+            ref string? after,
+            ref string? before,
+            ref global::OpenAI.ListVectorStoreFilesFilter? filter);
         partial void PrepareListVectorStoreFilesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string vectorStoreId,
             int limit,
-            global::OpenAI.ListVectorStoreFilesOrder order,
-            string after,
-            string before,
-            global::OpenAI.ListVectorStoreFilesFilter filter);
+            global::OpenAI.ListVectorStoreFilesOrder? order,
+            string? after,
+            string? before,
+            global::OpenAI.ListVectorStoreFilesFilter? filter);
         partial void ProcessListVectorStoreFilesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -49,10 +49,10 @@ namespace OpenAI
         public async global::System.Threading.Tasks.Task<global::OpenAI.ListVectorStoreFilesResponse> ListVectorStoreFilesAsync(
             string vectorStoreId,
             int limit,
-            global::OpenAI.ListVectorStoreFilesOrder order,
-            string after,
-            string before,
-            global::OpenAI.ListVectorStoreFilesFilter filter,
+            global::OpenAI.ListVectorStoreFilesOrder? order,
+            string? after,
+            string? before,
+            global::OpenAI.ListVectorStoreFilesFilter? filter,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

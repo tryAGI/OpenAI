@@ -13,7 +13,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_outputs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenAI.SubmitToolOutputsRunRequestToolOutputs> ToolOutputs { get; set; }
+        public required global::System.Collections.Generic.IList<global::OpenAI.SubmitToolOutputsRunRequestToolOutput> ToolOutputs { get; set; }
 
         /// <summary>
         /// If `true`, returns a stream of events that happen during the Run as server-sent events, terminating when the Run enters a terminal state with a `data: [DONE]` message.

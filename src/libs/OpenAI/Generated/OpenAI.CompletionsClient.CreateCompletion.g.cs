@@ -183,18 +183,18 @@ namespace OpenAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.CreateCompletionResponse> CreateCompletionAsync(
-            global::System.AnyOf<string, global::OpenAI.CreateCompletionRequestModel> model,
-            global::System.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>? prompt,
+            global::System.AnyOf<string?, global::OpenAI.CreateCompletionRequestModel?> model,
+            global::System.OneOf<string?, global::System.Collections.Generic.IList<string>?, global::System.Collections.Generic.IList<int>?, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>?>? prompt,
             int? bestOf = 1,
             bool? echo = false,
             double? frequencyPenalty = 0,
-            object? logitBias = default,
+            global::OpenAI.CreateCompletionRequestLogitBias? logitBias = default,
             int? logprobs = default,
             int? maxTokens = 16,
             int? n = 1,
             double? presencePenalty = 0,
             int? seed = default,
-            global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>? stop = default,
+            global::System.OneOf<string?, global::System.Collections.Generic.IList<string>?>? stop = default,
             bool? stream = false,
             global::OpenAI.ChatCompletionStreamOptions? streamOptions = default,
             string? suffix = default,

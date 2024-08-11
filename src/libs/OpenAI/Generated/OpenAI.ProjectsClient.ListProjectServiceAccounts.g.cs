@@ -9,13 +9,13 @@ namespace OpenAI
             global::System.Net.Http.HttpClient httpClient,
             ref string projectId,
             ref int limit,
-            ref string after);
+            ref string? after);
         partial void PrepareListProjectServiceAccountsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string projectId,
             int limit,
-            string after);
+            string? after);
         partial void ProcessListProjectServiceAccountsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -38,7 +38,7 @@ namespace OpenAI
         public async global::System.Threading.Tasks.Task<global::OpenAI.ProjectServiceAccountListResponse> ListProjectServiceAccountsAsync(
             string projectId,
             int limit,
-            string after,
+            string? after,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

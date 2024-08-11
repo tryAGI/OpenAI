@@ -78,7 +78,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? Metadata { get; set; }
+        public required global::OpenAI.AssistantObjectMetadata? Metadata { get; set; }
 
         /// <summary>
         /// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.<br/>
@@ -104,8 +104,8 @@ namespace OpenAI
         /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory4))]
-        public global::System.OneOf<global::OpenAI.AssistantObjectResponseFormat?, global::OpenAI.ResponseFormatText?, global::OpenAI.ResponseFormatJsonObject?, global::OpenAI.ResponseFormatJsonSchema?>? ResponseFormat { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AssistantsApiResponseFormatOptionJsonConverter))]
+        public global::OpenAI.AssistantsApiResponseFormatOption? ResponseFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -28,7 +28,7 @@ namespace OpenAI
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.OneOf<global::OpenAI.CreateTranscriptionResponseJson, global::OpenAI.CreateTranscriptionResponseVerboseJson>> CreateTranscriptionAsync(
+        public async global::System.Threading.Tasks.Task<global::System.OneOf<global::OpenAI.CreateTranscriptionResponseJson?, global::OpenAI.CreateTranscriptionResponseVerboseJson?>> CreateTranscriptionAsync(
             global::OpenAI.CreateTranscriptionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -55,7 +55,7 @@ namespace OpenAI
                 name: "file",
                 fileName: request.Filename ?? string.Empty);
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent(request.Model.Value1?.ToString() ?? request.Model.Value2.ToValueString() ?? string.Empty),
+                content: new global::System.Net.Http.StringContent(request.Model.Value1?.ToString() ?? request.Model.Value2?.ToValueString() ?? string.Empty),
                 name: "model");
             if (request.Language != default)
             {
@@ -84,7 +84,7 @@ namespace OpenAI
             if (request.TimestampGranularities != default)
             {
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", request.TimestampGranularities?.Select(x => x?.ToValueString()) ?? global::System.Array.Empty<string>())}]"),
+                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", request.TimestampGranularities.Select(x => x.ToValueString()))}]"),
                     name: "timestamp_granularities[]");
             }
             httpRequest.Content = __httpRequestContent;
@@ -167,15 +167,15 @@ namespace OpenAI
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.OneOf<global::OpenAI.CreateTranscriptionResponseJson, global::OpenAI.CreateTranscriptionResponseVerboseJson>> CreateTranscriptionAsync(
+        public async global::System.Threading.Tasks.Task<global::System.OneOf<global::OpenAI.CreateTranscriptionResponseJson?, global::OpenAI.CreateTranscriptionResponseVerboseJson?>> CreateTranscriptionAsync(
             byte[] file,
             string filename,
-            global::System.AnyOf<string, global::OpenAI.CreateTranscriptionRequestModel> model,
+            global::System.AnyOf<string?, global::OpenAI.CreateTranscriptionRequestModel?> model,
             string? language = default,
             string? prompt = default,
             global::OpenAI.CreateTranscriptionRequestResponseFormat? responseFormat = global::OpenAI.CreateTranscriptionRequestResponseFormat.Json,
             double temperature = 0,
-            global::System.Collections.Generic.IList<global::OpenAI.CreateTranscriptionRequestTimestampGranularities?>? timestampGranularities = default,
+            global::System.Collections.Generic.IList<global::OpenAI.CreateTranscriptionRequestTimestampGranularitie>? timestampGranularities = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::OpenAI.CreateTranscriptionRequest

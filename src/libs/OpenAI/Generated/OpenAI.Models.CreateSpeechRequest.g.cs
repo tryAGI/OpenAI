@@ -16,7 +16,7 @@ namespace OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AnyOf<string, global::OpenAI.CreateSpeechRequestModel> Model { get; set; }
+        public required global::System.AnyOf<string?, global::OpenAI.CreateSpeechRequestModel?> Model { get; set; }
 
         /// <summary>
         /// The text to generate audio for. The maximum length is 4096 characters.
