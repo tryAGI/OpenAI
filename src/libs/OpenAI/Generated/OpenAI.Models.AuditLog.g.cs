@@ -47,109 +47,109 @@ namespace OpenAI
         /// The details for events with this `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("api_key.created")]
-        public global::OpenAI.AuditLogApiKey.created? ApiKey_created { get; set; }
+        public global::OpenAI.AuditLogApiKeyCreated? ApiKeyCreated { get; set; }
 
         /// <summary>
         /// The details for events with this `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("api_key.updated")]
-        public global::OpenAI.AuditLogApiKey.updated? ApiKey_updated { get; set; }
+        public global::OpenAI.AuditLogApiKeyUpdated? ApiKeyUpdated { get; set; }
 
         /// <summary>
         /// The details for events with this `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("api_key.deleted")]
-        public global::OpenAI.AuditLogApiKey.deleted? ApiKey_deleted { get; set; }
+        public global::OpenAI.AuditLogApiKeyDeleted? ApiKeyDeleted { get; set; }
 
         /// <summary>
         /// The details for events with this `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("invite.sent")]
-        public global::OpenAI.AuditLogInvite.sent? Invite_sent { get; set; }
+        public global::OpenAI.AuditLogInviteSent? InviteSent { get; set; }
 
         /// <summary>
         /// The details for events with this `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("invite.accepted")]
-        public global::OpenAI.AuditLogInvite.accepted? Invite_accepted { get; set; }
+        public global::OpenAI.AuditLogInviteAccepted? InviteAccepted { get; set; }
 
         /// <summary>
         /// The details for events with this `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("invite.deleted")]
-        public global::OpenAI.AuditLogInvite.deleted? Invite_deleted { get; set; }
+        public global::OpenAI.AuditLogInviteDeleted? InviteDeleted { get; set; }
 
         /// <summary>
         /// The details for events with this `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("login.failed")]
-        public global::OpenAI.AuditLogLogin.failed? Login_failed { get; set; }
+        public global::OpenAI.AuditLogLoginFailed? LoginFailed { get; set; }
 
         /// <summary>
         /// The details for events with this `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logout.failed")]
-        public global::OpenAI.AuditLogLogout.failed? Logout_failed { get; set; }
+        public global::OpenAI.AuditLogLogoutFailed? LogoutFailed { get; set; }
 
         /// <summary>
         /// The details for events with this `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization.updated")]
-        public global::OpenAI.AuditLogOrganization.updated? Organization_updated { get; set; }
+        public global::OpenAI.AuditLogOrganizationUpdated? OrganizationUpdated { get; set; }
 
         /// <summary>
         /// The details for events with this `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project.created")]
-        public global::OpenAI.AuditLogProject.created? Project_created { get; set; }
+        public global::OpenAI.AuditLogProjectCreated? ProjectCreated { get; set; }
 
         /// <summary>
         /// The details for events with this `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project.updated")]
-        public global::OpenAI.AuditLogProject.updated? Project_updated { get; set; }
+        public global::OpenAI.AuditLogProjectUpdated? ProjectUpdated { get; set; }
 
         /// <summary>
         /// The details for events with this `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project.archived")]
-        public global::OpenAI.AuditLogProject.archived? Project_archived { get; set; }
+        public global::OpenAI.AuditLogProjectArchived? ProjectArchived { get; set; }
 
         /// <summary>
         /// The details for events with this `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_account.created")]
-        public global::OpenAI.AuditLogServiceAccount.created? ServiceAccount_created { get; set; }
+        public global::OpenAI.AuditLogServiceAccountCreated? ServiceAccountCreated { get; set; }
 
         /// <summary>
         /// The details for events with this `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_account.updated")]
-        public global::OpenAI.AuditLogServiceAccount.updated? ServiceAccount_updated { get; set; }
+        public global::OpenAI.AuditLogServiceAccountUpdated? ServiceAccountUpdated { get; set; }
 
         /// <summary>
         /// The details for events with this `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_account.deleted")]
-        public global::OpenAI.AuditLogServiceAccount.deleted? ServiceAccount_deleted { get; set; }
+        public global::OpenAI.AuditLogServiceAccountDeleted? ServiceAccountDeleted { get; set; }
 
         /// <summary>
         /// The details for events with this `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user.added")]
-        public global::OpenAI.AuditLogUser.added? User_added { get; set; }
+        public global::OpenAI.AuditLogUserAdded? UserAdded { get; set; }
 
         /// <summary>
         /// The details for events with this `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user.updated")]
-        public global::OpenAI.AuditLogUser.updated? User_updated { get; set; }
+        public global::OpenAI.AuditLogUserUpdated? UserUpdated { get; set; }
 
         /// <summary>
         /// The details for events with this `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user.deleted")]
-        public global::OpenAI.AuditLogUser.deleted? User_deleted { get; set; }
+        public global::OpenAI.AuditLogUserDeleted? UserDeleted { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

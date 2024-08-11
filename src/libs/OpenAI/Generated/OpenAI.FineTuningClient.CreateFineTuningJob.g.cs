@@ -141,12 +141,12 @@ namespace OpenAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.FineTuningJob> CreateFineTuningJobAsync(
-            global::System.AnyOf<string, global::OpenAI.CreateFineTuningJobRequestModel> model,
+            global::System.AnyOf<string?, global::OpenAI.CreateFineTuningJobRequestModel?> model,
             string trainingFile,
             global::OpenAI.CreateFineTuningJobRequestHyperparameters? hyperparameters = default,
             string? suffix = default,
             string? validationFile = default,
-            global::System.Collections.Generic.IList<global::OpenAI.CreateFineTuningJobRequestIntegrations?>? integrations = default,
+            global::System.Collections.Generic.IList<global::OpenAI.CreateFineTuningJobRequestIntegration>? integrations = default,
             int? seed = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

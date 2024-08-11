@@ -161,18 +161,18 @@ namespace OpenAI
             global::OpenAI.CreateThreadRequest? thread = default,
             global::System.AnyOf<string?, global::OpenAI.CreateThreadAndRunRequestModel?>? model = default,
             string? instructions = default,
-            global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.AssistantToolsCode?, global::OpenAI.AssistantToolsFileSearch?, global::OpenAI.AssistantToolsFunction?>?>? tools = default,
+            global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.AssistantToolsCode?, global::OpenAI.AssistantToolsFileSearch?, global::OpenAI.AssistantToolsFunction?>>? tools = default,
             global::OpenAI.CreateThreadAndRunRequestToolResources? toolResources = default,
-            object? metadata = default,
+            global::OpenAI.CreateThreadAndRunRequestMetadata? metadata = default,
             double? temperature = 1,
             double? topP = 1,
             bool? stream = default,
             int? maxPromptTokens = default,
             int? maxCompletionTokens = default,
             global::OpenAI.TruncationObject? truncationStrategy = default,
-            global::System.OneOf<global::OpenAI.CreateThreadAndRunRequestToolChoice?, global::OpenAI.AssistantsNamedToolChoice?>? toolChoice = default,
+            global::OpenAI.AssistantsApiToolChoiceOption? toolChoice = default,
             bool? parallelToolCalls = default,
-            global::System.OneOf<global::OpenAI.CreateThreadAndRunRequestResponseFormat?, global::OpenAI.ResponseFormatText?, global::OpenAI.ResponseFormatJsonObject?, global::OpenAI.ResponseFormatJsonSchema?>? responseFormat = default,
+            global::OpenAI.AssistantsApiResponseFormatOption? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::OpenAI.CreateThreadAndRunRequest

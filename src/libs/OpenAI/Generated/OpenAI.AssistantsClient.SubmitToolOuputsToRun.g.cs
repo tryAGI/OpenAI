@@ -121,7 +121,7 @@ namespace OpenAI
         public async global::System.Threading.Tasks.Task<global::OpenAI.RunObject> SubmitToolOuputsToRunAsync(
             string threadId,
             string runId,
-            global::System.Collections.Generic.IList<global::OpenAI.SubmitToolOutputsRunRequestToolOutputs> toolOutputs,
+            global::System.Collections.Generic.IList<global::OpenAI.SubmitToolOutputsRunRequestToolOutput> toolOutputs,
             bool? stream = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

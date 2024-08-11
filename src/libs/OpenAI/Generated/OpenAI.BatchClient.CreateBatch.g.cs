@@ -116,7 +116,7 @@ namespace OpenAI
             string inputFileId,
             global::OpenAI.CreateBatchRequestEndpoint endpoint,
             global::OpenAI.CreateBatchRequestCompletionWindow completionWindow,
-            object? metadata = default,
+            global::OpenAI.CreateBatchRequestMetadata? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::OpenAI.CreateBatchRequest

@@ -148,12 +148,12 @@ namespace OpenAI
             string? name = default,
             string? description = default,
             string? instructions = default,
-            global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.AssistantToolsCode?, global::OpenAI.AssistantToolsFileSearch?, global::OpenAI.AssistantToolsFunction?>?>? tools = default,
+            global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.AssistantToolsCode?, global::OpenAI.AssistantToolsFileSearch?, global::OpenAI.AssistantToolsFunction?>>? tools = default,
             global::OpenAI.ModifyAssistantRequestToolResources? toolResources = default,
-            object? metadata = default,
+            global::OpenAI.ModifyAssistantRequestMetadata? metadata = default,
             double? temperature = 1,
             double? topP = 1,
-            global::System.OneOf<global::OpenAI.ModifyAssistantRequestResponseFormat?, global::OpenAI.ResponseFormatText?, global::OpenAI.ResponseFormatJsonObject?, global::OpenAI.ResponseFormatJsonSchema?>? responseFormat = default,
+            global::OpenAI.AssistantsApiResponseFormatOption? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::OpenAI.ModifyAssistantRequest

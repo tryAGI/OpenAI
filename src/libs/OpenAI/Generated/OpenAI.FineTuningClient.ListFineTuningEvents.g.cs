@@ -8,13 +8,13 @@ namespace OpenAI
         partial void PrepareListFineTuningEventsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string fineTuningJobId,
-            ref string after,
+            ref string? after,
             ref int limit);
         partial void PrepareListFineTuningEventsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string fineTuningJobId,
-            string after,
+            string? after,
             int limit);
         partial void ProcessListFineTuningEventsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -39,7 +39,7 @@ namespace OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.ListFineTuningJobEventsResponse> ListFineTuningEventsAsync(
             string fineTuningJobId,
-            string after,
+            string? after,
             int limit,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

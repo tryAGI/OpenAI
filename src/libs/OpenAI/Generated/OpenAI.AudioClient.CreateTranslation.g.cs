@@ -27,7 +27,7 @@ namespace OpenAI
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.OneOf<global::OpenAI.CreateTranslationResponseJson, global::OpenAI.CreateTranslationResponseVerboseJson>> CreateTranslationAsync(
+        public async global::System.Threading.Tasks.Task<global::System.OneOf<global::OpenAI.CreateTranslationResponseJson?, global::OpenAI.CreateTranslationResponseVerboseJson?>> CreateTranslationAsync(
             global::OpenAI.CreateTranslationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -54,7 +54,7 @@ namespace OpenAI
                 name: "file",
                 fileName: request.Filename ?? string.Empty);
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent(request.Model.Value1?.ToString() ?? request.Model.Value2.ToValueString() ?? string.Empty),
+                content: new global::System.Net.Http.StringContent(request.Model.Value1?.ToString() ?? request.Model.Value2?.ToValueString() ?? string.Empty),
                 name: "model");
             if (request.Prompt != default)
             {
@@ -147,10 +147,10 @@ namespace OpenAI
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.OneOf<global::OpenAI.CreateTranslationResponseJson, global::OpenAI.CreateTranslationResponseVerboseJson>> CreateTranslationAsync(
+        public async global::System.Threading.Tasks.Task<global::System.OneOf<global::OpenAI.CreateTranslationResponseJson?, global::OpenAI.CreateTranslationResponseVerboseJson?>> CreateTranslationAsync(
             byte[] file,
             string filename,
-            global::System.AnyOf<string, global::OpenAI.CreateTranslationRequestModel> model,
+            global::System.AnyOf<string?, global::OpenAI.CreateTranslationRequestModel?> model,
             string? prompt = default,
             string? responseFormat = "json",
             double temperature = 0,

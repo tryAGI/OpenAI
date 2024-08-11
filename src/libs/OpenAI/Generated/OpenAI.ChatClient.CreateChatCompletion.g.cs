@@ -195,9 +195,9 @@ namespace OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.CreateChatCompletionResponse> CreateChatCompletionAsync(
             global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionRequestMessage> messages,
-            global::System.AnyOf<string, global::OpenAI.CreateChatCompletionRequestModel> model,
+            global::System.AnyOf<string?, global::OpenAI.CreateChatCompletionRequestModel?> model,
             double? frequencyPenalty = 0,
-            object? logitBias = default,
+            global::OpenAI.CreateChatCompletionRequestLogitBias? logitBias = default,
             bool? logprobs = false,
             int? topLogprobs = default,
             int? maxTokens = default,
@@ -206,13 +206,13 @@ namespace OpenAI
             global::System.OneOf<global::OpenAI.ResponseFormatText?, global::OpenAI.ResponseFormatJsonObject?, global::OpenAI.ResponseFormatJsonSchema?>? responseFormat = default,
             int? seed = default,
             global::OpenAI.CreateChatCompletionRequestServiceTier? serviceTier = default,
-            global::System.OneOf<string?, global::System.Collections.Generic.IList<string?>?>? stop = default,
+            global::System.OneOf<string?, global::System.Collections.Generic.IList<string>?>? stop = default,
             bool? stream = false,
             global::OpenAI.ChatCompletionStreamOptions? streamOptions = default,
             double? temperature = 1,
             double? topP = 1,
             global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionTool>? tools = default,
-            global::System.OneOf<global::OpenAI.CreateChatCompletionRequestToolChoice?, global::OpenAI.ChatCompletionNamedToolChoice?>? toolChoice = default,
+            global::OpenAI.ChatCompletionToolChoiceOption? toolChoice = default,
             bool? parallelToolCalls = default,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)

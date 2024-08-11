@@ -9,17 +9,17 @@ namespace OpenAI
             global::System.Net.Http.HttpClient httpClient,
             ref string threadId,
             ref int limit,
-            ref global::OpenAI.ListRunsOrder order,
-            ref string after,
-            ref string before);
+            ref global::OpenAI.ListRunsOrder? order,
+            ref string? after,
+            ref string? before);
         partial void PrepareListRunsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string threadId,
             int limit,
-            global::OpenAI.ListRunsOrder order,
-            string after,
-            string before);
+            global::OpenAI.ListRunsOrder? order,
+            string? after,
+            string? before);
         partial void ProcessListRunsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -46,9 +46,9 @@ namespace OpenAI
         public async global::System.Threading.Tasks.Task<global::OpenAI.ListRunsResponse> ListRunsAsync(
             string threadId,
             int limit,
-            global::OpenAI.ListRunsOrder order,
-            string after,
-            string before,
+            global::OpenAI.ListRunsOrder? order,
+            string? after,
+            string? before,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

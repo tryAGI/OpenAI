@@ -118,7 +118,7 @@ namespace OpenAI
             string vectorStoreId,
             string? name = default,
             global::OpenAI.VectorStoreExpirationAfter? expiresAfter = default,
-            object? metadata = default,
+            global::OpenAI.UpdateVectorStoreRequestMetadata? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::OpenAI.UpdateVectorStoreRequest

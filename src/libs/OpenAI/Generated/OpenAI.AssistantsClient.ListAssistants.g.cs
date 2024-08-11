@@ -8,16 +8,16 @@ namespace OpenAI
         partial void PrepareListAssistantsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int limit,
-            ref global::OpenAI.ListAssistantsOrder order,
-            ref string after,
-            ref string before);
+            ref global::OpenAI.ListAssistantsOrder? order,
+            ref string? after,
+            ref string? before);
         partial void PrepareListAssistantsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int limit,
-            global::OpenAI.ListAssistantsOrder order,
-            string after,
-            string before);
+            global::OpenAI.ListAssistantsOrder? order,
+            string? after,
+            string? before);
         partial void ProcessListAssistantsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -42,9 +42,9 @@ namespace OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.ListAssistantsResponse> ListAssistantsAsync(
             int limit,
-            global::OpenAI.ListAssistantsOrder order,
-            string after,
-            string before,
+            global::OpenAI.ListAssistantsOrder? order,
+            string? after,
+            string? before,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

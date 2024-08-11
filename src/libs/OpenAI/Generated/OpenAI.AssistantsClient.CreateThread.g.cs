@@ -110,7 +110,7 @@ namespace OpenAI
         public async global::System.Threading.Tasks.Task<global::OpenAI.ThreadObject> CreateThreadAsync(
             global::System.Collections.Generic.IList<global::OpenAI.CreateMessageRequest>? messages = default,
             global::OpenAI.CreateThreadRequestToolResources? toolResources = default,
-            object? metadata = default,
+            global::OpenAI.CreateThreadRequestMetadata? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::OpenAI.CreateThreadRequest

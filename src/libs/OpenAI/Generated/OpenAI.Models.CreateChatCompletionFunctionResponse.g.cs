@@ -20,7 +20,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("choices")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenAI.CreateChatCompletionFunctionResponseChoices> Choices { get; set; }
+        public required global::System.Collections.Generic.IList<global::OpenAI.CreateChatCompletionFunctionResponseChoice> Choices { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the chat completion was created.

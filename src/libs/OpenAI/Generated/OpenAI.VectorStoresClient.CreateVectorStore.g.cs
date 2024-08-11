@@ -114,11 +114,11 @@ namespace OpenAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.VectorStoreObject> CreateVectorStoreAsync(
-            global::System.Collections.Generic.IList<string?>? fileIds = default,
+            global::System.Collections.Generic.IList<string>? fileIds = default,
             string? name = default,
             global::OpenAI.VectorStoreExpirationAfter? expiresAfter = default,
-            object? chunkingStrategy = default,
-            object? metadata = default,
+            global::System.OneOf<global::OpenAI.AutoChunkingStrategyRequestParam?, global::OpenAI.StaticChunkingStrategyRequestParam?>? chunkingStrategy = default,
+            global::OpenAI.CreateVectorStoreRequestMetadata? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::OpenAI.CreateVectorStoreRequest
