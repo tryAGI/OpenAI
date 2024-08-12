@@ -75,7 +75,7 @@ namespace OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("step_details")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.OneOf<global::OpenAI.RunStepDetailsMessageCreationObject?, global::OpenAI.RunStepDetailsToolCallsObject?> StepDetails { get; set; }
+        public required global::System.OneOf<global::OpenAI.RunStepDetailsMessageCreationObject, global::OpenAI.RunStepDetailsToolCallsObject> StepDetails { get; set; }
 
         /// <summary>
         /// The last error associated with this run step. Will be `null` if there are no errors.

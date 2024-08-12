@@ -161,7 +161,7 @@ namespace OpenAI
             global::OpenAI.CreateThreadRequest? thread = default,
             global::System.AnyOf<string?, global::OpenAI.CreateThreadAndRunRequestModel?>? model = default,
             string? instructions = default,
-            global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.AssistantToolsCode?, global::OpenAI.AssistantToolsFileSearch?, global::OpenAI.AssistantToolsFunction?>>? tools = default,
+            global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.AssistantToolsCode, global::OpenAI.AssistantToolsFileSearch, global::OpenAI.AssistantToolsFunction>>? tools = default,
             global::OpenAI.CreateThreadAndRunRequestToolResources? toolResources = default,
             global::OpenAI.CreateThreadAndRunRequestMetadata? metadata = default,
             double? temperature = 1,

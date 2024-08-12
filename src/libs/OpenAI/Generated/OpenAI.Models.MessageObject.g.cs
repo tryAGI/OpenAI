@@ -81,7 +81,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.MessageContentImageFileObject?, global::OpenAI.MessageContentImageUrlObject?, global::OpenAI.MessageContentTextObject?, global::OpenAI.MessageContentRefusalObject?>> Content { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.MessageContentImageFileObject, global::OpenAI.MessageContentImageUrlObject, global::OpenAI.MessageContentTextObject, global::OpenAI.MessageContentRefusalObject>> Content { get; set; }
 
         /// <summary>
         /// If applicable, the ID of the [assistant](/docs/api-reference/assistants) that authored this message.

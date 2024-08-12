@@ -22,7 +22,7 @@ namespace OpenAI
         /// An array of tool calls the run step was involved in. These can be associated with one of three types of tools: `code_interpreter`, `file_search`, or `function`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_calls")]
-        public global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject?, global::OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject?, global::OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject?>>? ToolCalls { get; set; }
+        public global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject, global::OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject, global::OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject>>? ToolCalls { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

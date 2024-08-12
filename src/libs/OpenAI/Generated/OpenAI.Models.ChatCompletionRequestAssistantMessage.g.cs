@@ -15,7 +15,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<string?, global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionRequestAssistantMessageContentPart>?>? Content { get; set; }
+        public global::System.OneOf<string?, global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionRequestAssistantMessageContentPart>>? Content { get; set; }
 
         /// <summary>
         /// The refusal message by the assistant.
