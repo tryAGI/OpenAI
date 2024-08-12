@@ -27,7 +27,7 @@ namespace OpenAI
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.OneOf<global::OpenAI.CreateTranslationResponseJson?, global::OpenAI.CreateTranslationResponseVerboseJson?>> CreateTranslationAsync(
+        public async global::System.Threading.Tasks.Task<global::System.OneOf<global::OpenAI.CreateTranslationResponseJson, global::OpenAI.CreateTranslationResponseVerboseJson>> CreateTranslationAsync(
             global::OpenAI.CreateTranslationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -147,7 +147,7 @@ namespace OpenAI
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.OneOf<global::OpenAI.CreateTranslationResponseJson?, global::OpenAI.CreateTranslationResponseVerboseJson?>> CreateTranslationAsync(
+        public async global::System.Threading.Tasks.Task<global::System.OneOf<global::OpenAI.CreateTranslationResponseJson, global::OpenAI.CreateTranslationResponseVerboseJson>> CreateTranslationAsync(
             byte[] file,
             string filename,
             global::System.AnyOf<string?, global::OpenAI.CreateTranslationRequestModel?> model,

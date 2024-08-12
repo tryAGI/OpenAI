@@ -117,7 +117,7 @@ namespace OpenAI
             global::System.Collections.Generic.IList<string>? fileIds = default,
             string? name = default,
             global::OpenAI.VectorStoreExpirationAfter? expiresAfter = default,
-            global::System.OneOf<global::OpenAI.AutoChunkingStrategyRequestParam?, global::OpenAI.StaticChunkingStrategyRequestParam?>? chunkingStrategy = default,
+            global::System.OneOf<global::OpenAI.AutoChunkingStrategyRequestParam, global::OpenAI.StaticChunkingStrategyRequestParam>? chunkingStrategy = default,
             global::OpenAI.CreateVectorStoreRequestMetadata? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
