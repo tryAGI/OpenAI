@@ -353,7 +353,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ChatCompletionToolChoiceOptionVariant1? Type85 { get; set; }
+        public global::OpenAI.ChatCompletionToolChoiceOptionEnum? Type85 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1085,7 +1085,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.AssistantsApiResponseFormatOptionVariant1? Type268 { get; set; }
+        public global::OpenAI.AssistantsApiResponseFormatOptionEnum? Type268 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1281,7 +1281,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.AssistantsApiToolChoiceOptionVariant1? Type317 { get; set; }
+        public global::OpenAI.AssistantsApiToolChoiceOptionEnum? Type317 { get; set; }
         /// <summary>
         /// 
         /// </summary>

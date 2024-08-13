@@ -3,10 +3,10 @@
 namespace OpenApiGenerator.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class AssistantsApiResponseFormatOptionVariant1NullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenAI.AssistantsApiResponseFormatOptionVariant1?>
+    public sealed class AssistantsApiResponseFormatOptionEnumNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenAI.AssistantsApiResponseFormatOptionEnum?>
     {
         /// <inheritdoc />
-        public override global::OpenAI.AssistantsApiResponseFormatOptionVariant1? Read(
+        public override global::OpenAI.AssistantsApiResponseFormatOptionEnum? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace OpenApiGenerator.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::OpenAI.AssistantsApiResponseFormatOptionVariant1Extensions.ToEnum(stringValue);
+                        return global::OpenAI.AssistantsApiResponseFormatOptionEnumExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,7 +26,7 @@ namespace OpenApiGenerator.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::OpenAI.AssistantsApiResponseFormatOptionVariant1)numValue;
+                    return (global::OpenAI.AssistantsApiResponseFormatOptionEnum)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -38,7 +38,7 @@ namespace OpenApiGenerator.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::OpenAI.AssistantsApiResponseFormatOptionVariant1? value,
+            global::OpenAI.AssistantsApiResponseFormatOptionEnum? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
@@ -49,7 +49,7 @@ namespace OpenApiGenerator.JsonConverters
             }
             else
             {
-                writer.WriteStringValue(global::OpenAI.AssistantsApiResponseFormatOptionVariant1Extensions.ToValueString(value.Value));
+                writer.WriteStringValue(global::OpenAI.AssistantsApiResponseFormatOptionEnumExtensions.ToValueString(value.Value));
             }
         }
     }

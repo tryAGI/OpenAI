@@ -3,10 +3,10 @@
 namespace OpenApiGenerator.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class AssistantsApiToolChoiceOptionVariant1JsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenAI.AssistantsApiToolChoiceOptionVariant1>
+    public sealed class ChatCompletionToolChoiceOptionEnumJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenAI.ChatCompletionToolChoiceOptionEnum>
     {
         /// <inheritdoc />
-        public override global::OpenAI.AssistantsApiToolChoiceOptionVariant1 Read(
+        public override global::OpenAI.ChatCompletionToolChoiceOptionEnum Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace OpenApiGenerator.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::OpenAI.AssistantsApiToolChoiceOptionVariant1Extensions.ToEnum(stringValue) ?? default;
+                        return global::OpenAI.ChatCompletionToolChoiceOptionEnumExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,7 +26,7 @@ namespace OpenApiGenerator.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::OpenAI.AssistantsApiToolChoiceOptionVariant1)numValue;
+                    return (global::OpenAI.ChatCompletionToolChoiceOptionEnum)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -38,12 +38,12 @@ namespace OpenApiGenerator.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::OpenAI.AssistantsApiToolChoiceOptionVariant1 value,
+            global::OpenAI.ChatCompletionToolChoiceOptionEnum value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::OpenAI.AssistantsApiToolChoiceOptionVariant1Extensions.ToValueString(value));
+            writer.WriteStringValue(global::OpenAI.ChatCompletionToolChoiceOptionEnumExtensions.ToValueString(value));
         }
     }
 }

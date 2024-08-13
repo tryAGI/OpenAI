@@ -6,7 +6,7 @@ namespace OpenAI
     /// <summary>
     /// `none` means the model will not call any tools and instead generates a message. `auto` means the model can pick between generating a message or calling one or more tools. `required` means the model must call one or more tools before responding to the user.
     /// </summary>
-    public enum AssistantsApiToolChoiceOptionVariant1
+    public enum AssistantsApiToolChoiceOptionEnum
     {
         /// <summary>
         /// 
@@ -25,31 +25,31 @@ namespace OpenAI
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class AssistantsApiToolChoiceOptionVariant1Extensions
+    public static class AssistantsApiToolChoiceOptionEnumExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this AssistantsApiToolChoiceOptionVariant1 value)
+        public static string ToValueString(this AssistantsApiToolChoiceOptionEnum value)
         {
             return value switch
             {
-                AssistantsApiToolChoiceOptionVariant1.None => "none",
-                AssistantsApiToolChoiceOptionVariant1.Auto => "auto",
-                AssistantsApiToolChoiceOptionVariant1.Required => "required",
+                AssistantsApiToolChoiceOptionEnum.None => "none",
+                AssistantsApiToolChoiceOptionEnum.Auto => "auto",
+                AssistantsApiToolChoiceOptionEnum.Required => "required",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static AssistantsApiToolChoiceOptionVariant1? ToEnum(string value)
+        public static AssistantsApiToolChoiceOptionEnum? ToEnum(string value)
         {
             return value switch
             {
-                "none" => AssistantsApiToolChoiceOptionVariant1.None,
-                "auto" => AssistantsApiToolChoiceOptionVariant1.Auto,
-                "required" => AssistantsApiToolChoiceOptionVariant1.Required,
+                "none" => AssistantsApiToolChoiceOptionEnum.None,
+                "auto" => AssistantsApiToolChoiceOptionEnum.Auto,
+                "required" => AssistantsApiToolChoiceOptionEnum.Required,
                 _ => null,
             };
         }

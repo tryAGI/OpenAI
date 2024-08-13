@@ -19,9 +19,9 @@ namespace OpenAI
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenAI.ChatCompletionToolChoiceOptionVariant1? Value1 { get; init; }
+        public global::OpenAI.ChatCompletionToolChoiceOptionEnum? Value1 { get; init; }
 #else
-        public global::OpenAI.ChatCompletionToolChoiceOptionVariant1? Value1 { get; }
+        public global::OpenAI.ChatCompletionToolChoiceOptionEnum? Value1 { get; }
 #endif
 
         /// <summary>
@@ -35,17 +35,17 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionToolChoiceOption(global::OpenAI.ChatCompletionToolChoiceOptionVariant1 value) => new ChatCompletionToolChoiceOption(value);
+        public static implicit operator ChatCompletionToolChoiceOption(global::OpenAI.ChatCompletionToolChoiceOptionEnum value) => new ChatCompletionToolChoiceOption(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenAI.ChatCompletionToolChoiceOptionVariant1?(ChatCompletionToolChoiceOption @this) => @this.Value1;
+        public static implicit operator global::OpenAI.ChatCompletionToolChoiceOptionEnum?(ChatCompletionToolChoiceOption @this) => @this.Value1;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatCompletionToolChoiceOption(global::OpenAI.ChatCompletionToolChoiceOptionVariant1? value)
+        public ChatCompletionToolChoiceOption(global::OpenAI.ChatCompletionToolChoiceOptionEnum? value)
         {
             Value1 = value;
         }
@@ -89,7 +89,7 @@ namespace OpenAI
         /// 
         /// </summary>
         public ChatCompletionToolChoiceOption(
-            global::OpenAI.ChatCompletionToolChoiceOptionVariant1? value1,
+            global::OpenAI.ChatCompletionToolChoiceOptionEnum? value1,
             global::OpenAI.ChatCompletionNamedToolChoice? value2
             )
         {
@@ -121,7 +121,7 @@ namespace OpenAI
             var fields = new object?[]
             {
                 Value1,
-                typeof(global::OpenAI.ChatCompletionToolChoiceOptionVariant1),
+                typeof(global::OpenAI.ChatCompletionToolChoiceOptionEnum),
                 Value2,
                 typeof(global::OpenAI.ChatCompletionNamedToolChoice),
             };
@@ -139,7 +139,7 @@ namespace OpenAI
         public bool Equals(ChatCompletionToolChoiceOption other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenAI.ChatCompletionToolChoiceOptionVariant1?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.ChatCompletionToolChoiceOptionEnum?>.Default.Equals(Value1, other.Value1) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenAI.ChatCompletionNamedToolChoice?>.Default.Equals(Value2, other.Value2) 
                 ;
         }
