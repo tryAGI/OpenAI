@@ -4,6 +4,7 @@ public partial class Tests
 {
     [DataTestMethod]
     [DataRow(CustomProvider.OpenAi)]
+    // [DataRow(CustomProvider.GitHub)]
     // [DataRow(CustomProvider.Fireworks)]
     // [DataRow(CustomProvider.DeepInfra)]
     // [DataRow(CustomProvider.DeepSeek)]

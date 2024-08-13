@@ -9,4 +9,5 @@ public enum CustomProvider
     DeepInfra,
     DeepSeek,
     OpenRouter,
+    GitHub,
 }

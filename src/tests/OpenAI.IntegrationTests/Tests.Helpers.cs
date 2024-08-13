@@ -52,6 +52,13 @@ public partial class Tests
                 throw new AssertInconclusiveException("TOGETHER_API_KEY environment variable is not found.")),
                 "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo");
         }
+        if (customProvider == CustomProvider.GitHub)
+        {
+            return (CustomProviders.GitHubModels(githubToken:
+                Environment.GetEnvironmentVariable("TOKEN_FOR_GITHUB_MODELS") ??
+                throw new AssertInconclusiveException("TOKEN_FOR_GITHUB_MODELS environment variable is not found.")),
+                "gpt-4o");
+        }
         
         var apiKey =
             Environment.GetEnvironmentVariable("OPENAI_API_KEY") ??
