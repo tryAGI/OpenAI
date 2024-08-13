@@ -17,9 +17,9 @@ namespace OpenAI
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenAI.AssistantsApiResponseFormatOptionVariant1? Value1 { get; init; }
+        public global::OpenAI.AssistantsApiResponseFormatOptionEnum? Value1 { get; init; }
 #else
-        public global::OpenAI.AssistantsApiResponseFormatOptionVariant1? Value1 { get; }
+        public global::OpenAI.AssistantsApiResponseFormatOptionEnum? Value1 { get; }
 #endif
 
         /// <summary>
@@ -33,17 +33,17 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AssistantsApiResponseFormatOption(global::OpenAI.AssistantsApiResponseFormatOptionVariant1 value) => new AssistantsApiResponseFormatOption(value);
+        public static implicit operator AssistantsApiResponseFormatOption(global::OpenAI.AssistantsApiResponseFormatOptionEnum value) => new AssistantsApiResponseFormatOption(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenAI.AssistantsApiResponseFormatOptionVariant1?(AssistantsApiResponseFormatOption @this) => @this.Value1;
+        public static implicit operator global::OpenAI.AssistantsApiResponseFormatOptionEnum?(AssistantsApiResponseFormatOption @this) => @this.Value1;
 
         /// <summary>
         /// 
         /// </summary>
-        public AssistantsApiResponseFormatOption(global::OpenAI.AssistantsApiResponseFormatOptionVariant1? value)
+        public AssistantsApiResponseFormatOption(global::OpenAI.AssistantsApiResponseFormatOptionEnum? value)
         {
             Value1 = value;
         }
@@ -157,7 +157,7 @@ namespace OpenAI
         /// 
         /// </summary>
         public AssistantsApiResponseFormatOption(
-            global::OpenAI.AssistantsApiResponseFormatOptionVariant1? value1,
+            global::OpenAI.AssistantsApiResponseFormatOptionEnum? value1,
             global::OpenAI.ResponseFormatText? value2,
             global::OpenAI.ResponseFormatJsonObject? value3,
             global::OpenAI.ResponseFormatJsonSchema? value4
@@ -195,7 +195,7 @@ namespace OpenAI
             var fields = new object?[]
             {
                 Value1,
-                typeof(global::OpenAI.AssistantsApiResponseFormatOptionVariant1),
+                typeof(global::OpenAI.AssistantsApiResponseFormatOptionEnum),
                 Value2,
                 typeof(global::OpenAI.ResponseFormatText),
                 Value3,
@@ -217,7 +217,7 @@ namespace OpenAI
         public bool Equals(AssistantsApiResponseFormatOption other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenAI.AssistantsApiResponseFormatOptionVariant1?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.AssistantsApiResponseFormatOptionEnum?>.Default.Equals(Value1, other.Value1) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenAI.ResponseFormatText?>.Default.Equals(Value2, other.Value2) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenAI.ResponseFormatJsonObject?>.Default.Equals(Value3, other.Value3) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenAI.ResponseFormatJsonSchema?>.Default.Equals(Value4, other.Value4) 

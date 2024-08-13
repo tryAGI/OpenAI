@@ -18,9 +18,9 @@ namespace OpenAI
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenAI.AssistantsApiToolChoiceOptionVariant1? Value1 { get; init; }
+        public global::OpenAI.AssistantsApiToolChoiceOptionEnum? Value1 { get; init; }
 #else
-        public global::OpenAI.AssistantsApiToolChoiceOptionVariant1? Value1 { get; }
+        public global::OpenAI.AssistantsApiToolChoiceOptionEnum? Value1 { get; }
 #endif
 
         /// <summary>
@@ -34,17 +34,17 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AssistantsApiToolChoiceOption(global::OpenAI.AssistantsApiToolChoiceOptionVariant1 value) => new AssistantsApiToolChoiceOption(value);
+        public static implicit operator AssistantsApiToolChoiceOption(global::OpenAI.AssistantsApiToolChoiceOptionEnum value) => new AssistantsApiToolChoiceOption(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenAI.AssistantsApiToolChoiceOptionVariant1?(AssistantsApiToolChoiceOption @this) => @this.Value1;
+        public static implicit operator global::OpenAI.AssistantsApiToolChoiceOptionEnum?(AssistantsApiToolChoiceOption @this) => @this.Value1;
 
         /// <summary>
         /// 
         /// </summary>
-        public AssistantsApiToolChoiceOption(global::OpenAI.AssistantsApiToolChoiceOptionVariant1? value)
+        public AssistantsApiToolChoiceOption(global::OpenAI.AssistantsApiToolChoiceOptionEnum? value)
         {
             Value1 = value;
         }
@@ -88,7 +88,7 @@ namespace OpenAI
         /// 
         /// </summary>
         public AssistantsApiToolChoiceOption(
-            global::OpenAI.AssistantsApiToolChoiceOptionVariant1? value1,
+            global::OpenAI.AssistantsApiToolChoiceOptionEnum? value1,
             global::OpenAI.AssistantsNamedToolChoice? value2
             )
         {
@@ -120,7 +120,7 @@ namespace OpenAI
             var fields = new object?[]
             {
                 Value1,
-                typeof(global::OpenAI.AssistantsApiToolChoiceOptionVariant1),
+                typeof(global::OpenAI.AssistantsApiToolChoiceOptionEnum),
                 Value2,
                 typeof(global::OpenAI.AssistantsNamedToolChoice),
             };
@@ -138,7 +138,7 @@ namespace OpenAI
         public bool Equals(AssistantsApiToolChoiceOption other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenAI.AssistantsApiToolChoiceOptionVariant1?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.AssistantsApiToolChoiceOptionEnum?>.Default.Equals(Value1, other.Value1) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenAI.AssistantsNamedToolChoice?>.Default.Equals(Value2, other.Value2) 
                 ;
         }

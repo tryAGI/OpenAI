@@ -17,11 +17,11 @@ namespace OpenApiGenerator.JsonConverters
 
             var
             readerCopy = reader;
-            global::OpenAI.ChatCompletionToolChoiceOptionVariant1? value1 = default;
+            global::OpenAI.ChatCompletionToolChoiceOptionEnum? value1 = default;
             try
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.ChatCompletionToolChoiceOptionVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.ChatCompletionToolChoiceOptionVariant1> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.ChatCompletionToolChoiceOptionVariant1).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.ChatCompletionToolChoiceOptionEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.ChatCompletionToolChoiceOptionEnum> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.ChatCompletionToolChoiceOptionEnum).Name}");
                 value1 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
@@ -46,13 +46,13 @@ namespace OpenApiGenerator.JsonConverters
                 );
             if (!result.Validate())
             {
-                throw new global::System.Text.Json.JsonException($"Invalid JSON format for OneOf<{typeof(global::OpenAI.ChatCompletionToolChoiceOptionVariant1).Name}, {typeof(global::OpenAI.ChatCompletionNamedToolChoice).Name}>");
+                throw new global::System.Text.Json.JsonException($"Invalid JSON format for OneOf<{typeof(global::OpenAI.ChatCompletionToolChoiceOptionEnum).Name}, {typeof(global::OpenAI.ChatCompletionNamedToolChoice).Name}>");
             }
 
             if (value1 != null)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.ChatCompletionToolChoiceOptionVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.ChatCompletionToolChoiceOptionVariant1> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.ChatCompletionToolChoiceOptionVariant1).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.ChatCompletionToolChoiceOptionEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.ChatCompletionToolChoiceOptionEnum> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.ChatCompletionToolChoiceOptionEnum).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -76,13 +76,13 @@ namespace OpenApiGenerator.JsonConverters
 
             if (!value.Validate())
             {
-                throw new global::System.Text.Json.JsonException($"Invalid OneOf<{typeof(global::OpenAI.ChatCompletionToolChoiceOptionVariant1).Name}, {typeof(global::OpenAI.ChatCompletionNamedToolChoice).Name}> object.");
+                throw new global::System.Text.Json.JsonException($"Invalid OneOf<{typeof(global::OpenAI.ChatCompletionToolChoiceOptionEnum).Name}, {typeof(global::OpenAI.ChatCompletionNamedToolChoice).Name}> object.");
             }
 
             if (value.IsValue1)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.ChatCompletionToolChoiceOptionVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.ChatCompletionToolChoiceOptionVariant1?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.ChatCompletionToolChoiceOptionVariant1).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.ChatCompletionToolChoiceOptionEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.ChatCompletionToolChoiceOptionEnum?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.ChatCompletionToolChoiceOptionEnum).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeInfo);
             }
 
