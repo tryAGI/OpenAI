@@ -7,13 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		src\Directory.Build.props = src\Directory.Build.props
-		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
 		LICENSE = LICENSE
 		README.md = README.md
-		.github\dependabot.yml = .github\dependabot.yml
-		.github\workflows\auto-merge.yml = .github\workflows\auto-merge.yml
-		.github\workflows\auto-update.yml = .github\workflows\auto-update.yml
-		.github\workflows\pull-request.yml = .github\workflows\pull-request.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{61E7E11E-4558-434C-ACE8-06316A3097B3}"
@@ -38,6 +33,16 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenAI.IntegrationTests", "src\tests\OpenAI.IntegrationTests\OpenAI.IntegrationTests.csproj", "{A3F06E45-DFA8-4236-BFF5-425091762548}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenAI.SnapshotTests", "src\tests\OpenAI.SnapshotTests\OpenAI.SnapshotTests.csproj", "{F1A9D4C9-0075-4AB0-95A2-095B7DF31FB1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{2D8B78DE-7269-417B-9D0B-8981FA513ACB}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\auto-merge.yml = .github\workflows\auto-merge.yml
+		.github\workflows\auto-update.yml = .github\workflows\auto-update.yml
+		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
+		.github\workflows\pull-request.yml = .github\workflows\pull-request.yml
+		.github\dependabot.yml = .github\dependabot.yml
+		.github\workflows\auto-remove-branches.yml = .github\workflows\auto-remove-branches.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,6 +90,7 @@ Global
 		{9F7DC3A1-B113-4577-875D-73B2DDD6647A} = {1A008ECD-2300-4BE4-A302-49DDF8BE0D54}
 		{A3F06E45-DFA8-4236-BFF5-425091762548} = {AAA11B78-2764-4520-A97E-46AA7089A588}
 		{F1A9D4C9-0075-4AB0-95A2-095B7DF31FB1} = {AAA11B78-2764-4520-A97E-46AA7089A588}
+		{2D8B78DE-7269-417B-9D0B-8981FA513ACB} = {E793AF18-4371-4EBD-96FC-195EB1798855}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CED9A020-DBA5-4BE6-8096-75E528648EC1}

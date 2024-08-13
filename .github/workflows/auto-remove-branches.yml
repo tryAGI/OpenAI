@@ -1,0 +1,25 @@
+name: Delete Branch After Merge
+on:
+  pull_request:
+    types: [closed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  delete_branch:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+    steps:
+      - name: Delete branch
+        run: |
+          BRANCH_NAME=${{ github.event.pull_request.head.ref }}
+          if [ "$BRANCH_NAME" != "main" ] && [ "$BRANCH_NAME" != "master" ]; then
+            gh auth login --with-token < $GITHUB_TOKEN
+            gh api \
+              -X DELETE \
+              repos/${{ github.repository }}/git/refs/heads/$BRANCH_NAME
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
