@@ -39,15 +39,11 @@ namespace OpenApiGenerator.JsonConverters
             catch (global::System.Text.Json.JsonException)
             {
             }
+
             var result = new global::OpenAI.ChatCompletionRequestUserMessageContentPart(
                 text,
-
                 image
                 );
-            if (!result.Validate())
-            {
-                throw new global::System.Text.Json.JsonException($"Invalid JSON format for OneOf<{typeof(global::OpenAI.ChatCompletionRequestMessageContentPartText).Name}, {typeof(global::OpenAI.ChatCompletionRequestMessageContentPartImage).Name}>");
-            }
 
             if (text != null)
             {
@@ -55,13 +51,13 @@ namespace OpenApiGenerator.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.ChatCompletionRequestMessageContentPartText).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-
             else if (image != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.ChatCompletionRequestMessageContentPartImage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.ChatCompletionRequestMessageContentPartImage> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.ChatCompletionRequestMessageContentPartImage).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+
             return result;
         }
 
@@ -74,18 +70,12 @@ namespace OpenApiGenerator.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (!value.Validate())
-            {
-                throw new global::System.Text.Json.JsonException($"Invalid OneOf<{typeof(global::OpenAI.ChatCompletionRequestMessageContentPartText).Name}, {typeof(global::OpenAI.ChatCompletionRequestMessageContentPartImage).Name}> object.");
-            }
-
             if (value.IsText)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.ChatCompletionRequestMessageContentPartText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.ChatCompletionRequestMessageContentPartText?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.ChatCompletionRequestMessageContentPartText).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeInfo);
             }
-
             else if (value.IsImage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.ChatCompletionRequestMessageContentPartImage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.ChatCompletionRequestMessageContentPartImage?> ??

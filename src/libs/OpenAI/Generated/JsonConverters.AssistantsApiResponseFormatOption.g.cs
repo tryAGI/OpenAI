@@ -63,19 +63,13 @@ namespace OpenApiGenerator.JsonConverters
             catch (global::System.Text.Json.JsonException)
             {
             }
+
             var result = new global::OpenAI.AssistantsApiResponseFormatOption(
                 value1,
-
                 value2,
-
                 value3,
-
                 value4
                 );
-            if (!result.Validate())
-            {
-                throw new global::System.Text.Json.JsonException($"Invalid JSON format for OneOf<{typeof(global::OpenAI.AssistantsApiResponseFormatOptionEnum).Name}, {typeof(global::OpenAI.ResponseFormatText).Name}, {typeof(global::OpenAI.ResponseFormatJsonObject).Name}, {typeof(global::OpenAI.ResponseFormatJsonSchema).Name}>");
-            }
 
             if (value1 != null)
             {
@@ -83,27 +77,25 @@ namespace OpenApiGenerator.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.AssistantsApiResponseFormatOptionEnum).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-
             else if (value2 != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.ResponseFormatText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.ResponseFormatText> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.ResponseFormatText).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-
             else if (value3 != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.ResponseFormatJsonObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.ResponseFormatJsonObject> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.ResponseFormatJsonObject).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-
             else if (value4 != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.ResponseFormatJsonSchema), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.ResponseFormatJsonSchema> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.ResponseFormatJsonSchema).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+
             return result;
         }
 
@@ -116,32 +108,24 @@ namespace OpenApiGenerator.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (!value.Validate())
-            {
-                throw new global::System.Text.Json.JsonException($"Invalid OneOf<{typeof(global::OpenAI.AssistantsApiResponseFormatOptionEnum).Name}, {typeof(global::OpenAI.ResponseFormatText).Name}, {typeof(global::OpenAI.ResponseFormatJsonObject).Name}, {typeof(global::OpenAI.ResponseFormatJsonSchema).Name}> object.");
-            }
-
             if (value.IsValue1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.AssistantsApiResponseFormatOptionEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.AssistantsApiResponseFormatOptionEnum?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.AssistantsApiResponseFormatOptionEnum).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeInfo);
             }
-
             else if (value.IsValue2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.ResponseFormatText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.ResponseFormatText?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.ResponseFormatText).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeInfo);
             }
-
             else if (value.IsValue3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.ResponseFormatJsonObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.ResponseFormatJsonObject?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.ResponseFormatJsonObject).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3, typeInfo);
             }
-
             else if (value.IsValue4)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.ResponseFormatJsonSchema), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.ResponseFormatJsonSchema?> ??

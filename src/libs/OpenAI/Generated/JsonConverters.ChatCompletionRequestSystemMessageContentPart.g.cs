@@ -27,13 +27,10 @@ namespace OpenApiGenerator.JsonConverters
             catch (global::System.Text.Json.JsonException)
             {
             }
+
             var result = new global::OpenAI.ChatCompletionRequestSystemMessageContentPart(
                 text
                 );
-            if (!result.Validate())
-            {
-                throw new global::System.Text.Json.JsonException($"Invalid JSON format for OneOf<{typeof(global::OpenAI.ChatCompletionRequestMessageContentPartText).Name}>");
-            }
 
             if (text != null)
             {
@@ -41,6 +38,7 @@ namespace OpenApiGenerator.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.ChatCompletionRequestMessageContentPartText).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+
             return result;
         }
 
@@ -52,11 +50,6 @@ namespace OpenApiGenerator.JsonConverters
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
-
-            if (!value.Validate())
-            {
-                throw new global::System.Text.Json.JsonException($"Invalid OneOf<{typeof(global::OpenAI.ChatCompletionRequestMessageContentPartText).Name}> object.");
-            }
 
             if (value.IsText)
             {

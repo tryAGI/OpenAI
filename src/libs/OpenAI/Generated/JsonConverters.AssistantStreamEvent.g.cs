@@ -87,23 +87,15 @@ namespace OpenApiGenerator.JsonConverters
             catch (global::System.Text.Json.JsonException)
             {
             }
+
             var result = new global::OpenAI.AssistantStreamEvent(
                 thread,
-
                 run,
-
                 runStep,
-
                 message,
-
                 error,
-
                 done
                 );
-            if (!result.Validate())
-            {
-                throw new global::System.Text.Json.JsonException($"Invalid JSON format for OneOf<{typeof(global::OpenAI.ThreadStreamEvent).Name}, {typeof(global::OpenAI.RunStreamEvent).Name}, {typeof(global::OpenAI.RunStepStreamEvent).Name}, {typeof(global::OpenAI.MessageStreamEvent).Name}, {typeof(global::OpenAI.ErrorEvent).Name}, {typeof(global::OpenAI.DoneEvent).Name}>");
-            }
 
             if (thread != null)
             {
@@ -111,41 +103,37 @@ namespace OpenApiGenerator.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.ThreadStreamEvent).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-
             else if (run != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RunStreamEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RunStreamEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.RunStreamEvent).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-
             else if (runStep != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RunStepStreamEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RunStepStreamEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.RunStepStreamEvent).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-
             else if (message != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.MessageStreamEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.MessageStreamEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.MessageStreamEvent).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-
             else if (error != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.ErrorEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.ErrorEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.ErrorEvent).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-
             else if (done != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.DoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.DoneEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.DoneEvent).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+
             return result;
         }
 
@@ -158,46 +146,36 @@ namespace OpenApiGenerator.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (!value.Validate())
-            {
-                throw new global::System.Text.Json.JsonException($"Invalid OneOf<{typeof(global::OpenAI.ThreadStreamEvent).Name}, {typeof(global::OpenAI.RunStreamEvent).Name}, {typeof(global::OpenAI.RunStepStreamEvent).Name}, {typeof(global::OpenAI.MessageStreamEvent).Name}, {typeof(global::OpenAI.ErrorEvent).Name}, {typeof(global::OpenAI.DoneEvent).Name}> object.");
-            }
-
             if (value.IsThread)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.ThreadStreamEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.ThreadStreamEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.ThreadStreamEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Thread, typeInfo);
             }
-
             else if (value.IsRun)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RunStreamEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RunStreamEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.RunStreamEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Run, typeInfo);
             }
-
             else if (value.IsRunStep)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RunStepStreamEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RunStepStreamEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.RunStepStreamEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.RunStep, typeInfo);
             }
-
             else if (value.IsMessage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.MessageStreamEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.MessageStreamEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.MessageStreamEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Message, typeInfo);
             }
-
             else if (value.IsError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.ErrorEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.ErrorEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.ErrorEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Error, typeInfo);
             }
-
             else if (value.IsDone)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.DoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.DoneEvent?> ??
