@@ -12,7 +12,7 @@ public partial class Tests
     // [DataRow(CustomProvider.Together)]
     public async Task WeatherTools(CustomProvider customProvider)
     {
-        var pair = GetAuthorizedChatApi(customProvider);
+        var pair = GetAuthorizedChatApi(customProvider, CreateChatCompletionRequestModel.Gpt4o20240806.ToValueString());
         using var api = pair.Api;
         
         var messages = new List<ChatCompletionRequestMessage>
