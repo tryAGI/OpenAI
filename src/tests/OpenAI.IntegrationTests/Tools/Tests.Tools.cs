@@ -4,7 +4,7 @@ public partial class Tests
 {
     [DataTestMethod]
     [DataRow(CustomProvider.OpenAi)]
-    // [DataRow(CustomProvider.GitHub)]
+    [DataRow(CustomProvider.GitHub)]
     // [DataRow(CustomProvider.Fireworks)]
     // [DataRow(CustomProvider.DeepInfra)]
     // [DataRow(CustomProvider.DeepSeek)]
@@ -12,7 +12,7 @@ public partial class Tests
     // [DataRow(CustomProvider.Together)]
     public async Task WeatherTools(CustomProvider customProvider)
     {
-        var pair = GetAuthorizedChatApi(customProvider, CreateChatCompletionRequestModel.Gpt4o20240806.ToValueString());
+        var pair = GetAuthorizedChatApi(customProvider);
         using var api = pair.Api;
         
         var messages = new List<ChatCompletionRequestMessage>
@@ -61,7 +61,7 @@ public partial class Tests
 
     [DataTestMethod]
     [DataRow(CustomProvider.OpenAi)]
-    // [DataRow(CustomProvider.GitHub)]
+    //[DataRow(CustomProvider.GitHub)]
     // [DataRow(CustomProvider.Fireworks)]
     // [DataRow(CustomProvider.DeepInfra)]
     // [DataRow(CustomProvider.DeepSeek)]
@@ -69,7 +69,7 @@ public partial class Tests
     // [DataRow(CustomProvider.Together)]
     public async Task WeatherToolsStrict(CustomProvider customProvider)
     {
-        var pair = GetAuthorizedChatApi(customProvider, CreateChatCompletionRequestModel.Gpt4o20240806.ToValueString());
+        var pair = GetAuthorizedChatApi(customProvider);
         using var api = pair.Api;
         
         var messages = new List<ChatCompletionRequestMessage>
