@@ -66,12 +66,12 @@ public partial class Tests
             if (message.IsTool)
             {
                 Console.WriteLine($"> {message.Tool.Role}({message.Tool.ToolCallId}):");
-                Console.WriteLine($"{message.Tool.Content}");
+                Console.WriteLine($"{message.Tool.Content.Value1}");
             }
             else if (message.IsSystem)
             {
                 Console.WriteLine($"> {message.System.Role}: {message.System.Name}");
-                Console.WriteLine($"{message.System.Content}");
+                Console.WriteLine($"{message.System.Content.Value1}");
             }
             else if (message.IsUser)
             {
@@ -88,7 +88,7 @@ public partial class Tests
                 }
                 if (!string.IsNullOrWhiteSpace(message.Assistant.Content))
                 {
-                    Console.WriteLine($"{message.Assistant.Content}");
+                    Console.WriteLine($"{message.Assistant.Content.Value.Value1}");
                 }
             }
         }

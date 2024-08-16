@@ -77,7 +77,9 @@ public static class StringExtensions
         
         return new ChatCompletionRequestAssistantMessage
         {
-            Content = message.Content,
+            Content = message.Content == null
+                ? (OneOf<string?, IList<ChatCompletionRequestAssistantMessageContentPart>>?)null
+                : new OneOf<string?, IList<ChatCompletionRequestAssistantMessageContentPart>>(message.Content),
             Role = ChatCompletionRequestAssistantMessageRole.Assistant,
             ToolCalls = message.ToolCalls,
         };
