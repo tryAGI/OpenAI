@@ -37,9 +37,9 @@ public class OpenAiToolsGenerator : IIncrementalGenerator
     private static InterfaceData PrepareData(
         (SemanticModel SemanticModel, AttributeData AttributeData, InterfaceDeclarationSyntax InterfaceSyntax, INamedTypeSymbol InterfaceSymbol) tuple)
     {
-        var (_, _, _, interfaceSymbol) = tuple;
+        var (_, attributeData, _, interfaceSymbol) = tuple;
 
-        return interfaceSymbol.PrepareData();
+        return interfaceSymbol.PrepareData(attributeData);
     }
     
     private static FileWithName AsTools(InterfaceData @interface)

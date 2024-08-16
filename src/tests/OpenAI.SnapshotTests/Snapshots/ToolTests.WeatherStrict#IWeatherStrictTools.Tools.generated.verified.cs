@@ -1,12 +1,12 @@
-﻿//HintName: IWeatherTools.Tools.generated.cs
+﻿//HintName: IWeatherStrictTools.Tools.generated.cs
 
 #nullable enable
 
 namespace OpenAI.IntegrationTests
 {
-    public static partial class WeatherToolsExtensions
+    public static partial class WeatherStrictToolsExtensions
     {
-        public static global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionTool> AsTools(this IWeatherTools functions)
+        public static global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionTool> AsTools(this IWeatherStrictTools functions)
         {
             return new global::System.Collections.Generic.List<global::OpenAI.ChatCompletionTool>
             {
@@ -16,6 +16,7 @@ namespace OpenAI.IntegrationTests
                     {
                         Name = "GetCurrentWeather",
                         Description = "Get the current weather in a given location",
+                        Strict = true,
                         Parameters = new global::OpenAI.FunctionParameters
                     {
                         Type = "object",
@@ -34,7 +35,7 @@ namespace OpenAI.IntegrationTests
                                 Enum = new string[] { "celsius", "fahrenheit" },
                             }
                         },
-                        Required = new string[] { "location" },
+                        Required = new string[] { "location", "unit" },
                     },
                     },
                     Type = global::OpenAI.ChatCompletionToolType.Function,
@@ -46,6 +47,7 @@ namespace OpenAI.IntegrationTests
                     {
                         Name = "GetCurrentWeatherAsync",
                         Description = "Get the current weather in a given location",
+                        Strict = true,
                         Parameters = new global::OpenAI.FunctionParameters
                     {
                         Type = "object",
@@ -64,7 +66,7 @@ namespace OpenAI.IntegrationTests
                                 Enum = new string[] { "celsius", "fahrenheit" },
                             }
                         },
-                        Required = new string[] { "location" },
+                        Required = new string[] { "location", "unit" },
                     },
                     },
                     Type = global::OpenAI.ChatCompletionToolType.Function,

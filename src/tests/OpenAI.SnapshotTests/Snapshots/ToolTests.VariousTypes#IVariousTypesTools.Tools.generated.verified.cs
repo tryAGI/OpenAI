@@ -16,6 +16,7 @@ namespace OpenAI.IntegrationTests
                     {
                         Name = "GetCurrentWeather",
                         Description = "Get the current weather in a given location",
+                        Strict = false,
                         Parameters = new global::OpenAI.FunctionParameters
                     {
                         Type = "object",

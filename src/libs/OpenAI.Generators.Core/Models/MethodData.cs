@@ -7,4 +7,5 @@ public readonly record struct MethodData(
     string Description,
     bool IsAsync,
     bool IsVoid,
+    bool IsStrict,
     OpenApiSchema Parameters);

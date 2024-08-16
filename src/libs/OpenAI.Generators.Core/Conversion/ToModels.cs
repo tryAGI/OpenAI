@@ -7,19 +7,22 @@ namespace OpenAI.Generators.Core.Conversion;
 public static class ToModels
 {
     public static InterfaceData PrepareData(
-        this INamedTypeSymbol interfaceSymbol)
+        this INamedTypeSymbol interfaceSymbol,
+        AttributeData attributeData)
     {
         interfaceSymbol = interfaceSymbol ?? throw new ArgumentNullException(nameof(interfaceSymbol));
+        attributeData = attributeData ?? throw new ArgumentNullException(nameof(attributeData));
         
         var methods = interfaceSymbol
             .GetMembers()
             .OfType<IMethodSymbol>()
             .Where(static x => x.MethodKind == MethodKind.Ordinary)
-            .Select(static x => new MethodData(
+            .Select(x => new MethodData(
                 Name: x.Name,
                 Description: GetDescription(x),
                 IsAsync: x.IsAsync || x.ReturnType.Name == "Task",
                 IsVoid: x.ReturnsVoid,
+                IsStrict: attributeData.NamedArguments.FirstOrDefault(x => x.Key == "Strict").Value.Value is bool strict && strict,
                 Parameters: new OpenApiSchema(
                     Name: x.Name,
                     Description: GetDescription(x),

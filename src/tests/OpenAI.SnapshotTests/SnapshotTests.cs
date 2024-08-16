@@ -1,12 +1,18 @@
 ﻿namespace OpenAI.SnapshotTests;
 
 [TestClass]
-public class IpcGeneratorSnapshotTests : VerifyBase
+public class ToolTests : VerifyBase
 {
     [TestMethod]
-    public Task GeneratesCorrectly()
+    public Task Weather()
     {
         return this.CheckSourceAsync(H.Resources.WeatherTools_cs.AsString());
+    }
+    
+    [TestMethod]
+    public Task WeatherStrict()
+    {
+        return this.CheckSourceAsync(H.Resources.WeatherStrictTools_cs.AsString());
     }
     
     [TestMethod]

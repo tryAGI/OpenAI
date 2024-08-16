@@ -82,6 +82,7 @@ namespace {@interface.Namespace}
                     {{
                         Name = ""{method.Name}"",
                         Description = ""{method.Description}"",
+                        Strict = {(method.IsStrict ? "true" : "false")},
                         Parameters = {GenerateOpenApiSchema(method.Parameters, schema: false)},
                     }},
                     Type = global::OpenAI.ChatCompletionToolType.Function,
