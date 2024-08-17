@@ -11,8 +11,8 @@ public class UnitTests : VerifyBase
     [DataRow(typeof(Weather))]
     public async Task TypeAsJsonSchema(Type type)
     {
-        var strictSchema = TypeToSchemaHelpers.AsJsonSchema(type, strict: true);
-        var nonStrictSchema = TypeToSchemaHelpers.AsJsonSchema(type, strict: false);
+        var strictSchema = TypeToSchemaHelpers.AsResponseFormat(type, strict: true);
+        var nonStrictSchema = TypeToSchemaHelpers.AsResponseFormat(type, strict: false);
 
         var options = new JsonSerializerOptions
         {
@@ -24,10 +24,10 @@ public class UnitTests : VerifyBase
         
         var typeInfo = SourceGeneratedContext.Default.GetTypeInfo(type);
         typeInfo.Should().NotBeNull();
-        var strictSchemaTrimmable = TypeToSchemaHelpers.AsJsonSchema(typeInfo!, strict: true);
-        var nonStrictSchemaTrimmable = TypeToSchemaHelpers.AsJsonSchema(typeInfo!, strict: false);
-        var strictJsonTrimmable = JsonSerializer.Serialize(strictSchemaTrimmable, SourceGeneratedContext.Default.ResponseFormatJsonSchemaSchema);
-        var nonStrictJsonTrimmable = JsonSerializer.Serialize(nonStrictSchemaTrimmable, SourceGeneratedContext.Default.ResponseFormatJsonSchemaSchema);
+        var strictSchemaTrimmable = TypeToSchemaHelpers.AsResponseFormat(type, strict: true);
+        var nonStrictSchemaTrimmable = TypeToSchemaHelpers.AsResponseFormat(type, strict: false);
+        var strictJsonTrimmable = JsonSerializer.Serialize(strictSchemaTrimmable, SourceGeneratedContext.Default.ResponseFormatJsonSchemaJsonSchema);
+        var nonStrictJsonTrimmable = JsonSerializer.Serialize(nonStrictSchemaTrimmable, SourceGeneratedContext.Default.ResponseFormatJsonSchemaJsonSchema);
 
         strictJson.Should().Be(strictJsonTrimmable);
         nonStrictJson.Should().Be(nonStrictJsonTrimmable);
@@ -60,7 +60,7 @@ public class WordsResponse
     Converters = [typeof(JsonStringEnumConverter<Unit>)])]
 [JsonSerializable(typeof(WordsResponse))]
 [JsonSerializable(typeof(Weather))]
-[JsonSerializable(typeof(ResponseFormatJsonSchemaSchema))]
+[JsonSerializable(typeof(ResponseFormatJsonSchemaJsonSchema))]
 public partial class SourceGeneratedContext : JsonSerializerContext;
 
 

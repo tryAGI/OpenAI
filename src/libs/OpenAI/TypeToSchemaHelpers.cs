@@ -11,32 +11,75 @@ public static class TypeToSchemaHelpers
     /// <summary>
     /// 
     /// </summary>
-    /// <param name="type"></param>
+    /// <param name="typeInfo"></param>
     /// <param name="strict"></param>
     /// <returns></returns>
+    /// <exception cref="ArgumentNullException"></exception>
+    /// <exception cref="InvalidOperationException"></exception>
+    public static ResponseFormatJsonSchemaSchema AsJsonSchema(
+        JsonTypeInfo typeInfo,
+        bool strict)
+    {
+        typeInfo = typeInfo ?? throw new ArgumentNullException(nameof(typeInfo));
+        var resolver = typeInfo.OriginatingResolver ?? throw new InvalidOperationException("OriginatingResolver is required.");
+        
+#pragma warning disable IL2026
+        return AsJsonSchema(typeInfo.Type, strict, resolver, typeInfo.Options);
+#pragma warning restore IL2026
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="type"></param>
+    /// <param name="strict"></param>
+    /// <param name="jsonTypeInfoResolver"></param>
+    /// <param name="options"></param>
+    /// <returns></returns>
 #if NET6_0_OR_GREATER
-    [RequiresUnreferencedCode("This method uses reflection to generate a JSON schema. Use overload with JsonTypeInfo parameter to avoid this")]
+    [RequiresUnreferencedCode("This method uses reflection to generate a JSON schema. Use overload with IJsonTypeInfoResolver parameter to avoid this")]
 #endif
-    public static ResponseFormatJsonSchemaSchema AsJsonSchema(Type type, bool strict)
+    public static ResponseFormatJsonSchemaSchema AsJsonSchema(
+        Type type,
+        bool strict,
+        IJsonTypeInfoResolver? jsonTypeInfoResolver = null,
+        JsonSerializerOptions? options = null)
     {
         type = type ?? throw new ArgumentNullException(nameof(type));
             
         var schema = Create(type, strict);
-        if (type is { IsArray: false, IsClass: true, FullName: not "System.String" })
+        if (schema.Type == "object")
         {
             var properties = new Dictionary<string, OpenApiSchema>();
-            foreach (var property in type.GetProperties())
+            if (jsonTypeInfoResolver is not null)
             {
-                properties.Add(property.Name, AsJsonSchema(property.PropertyType, strict));
+                var jsonTypeInfo = jsonTypeInfoResolver.GetTypeInfo(
+                    type,
+                    options ?? throw new InvalidOperationException("options is required.")) ??
+                    throw new InvalidOperationException($"JsonTypeInfo for {type.FullName} is not found.");
+                
+                foreach (var property in jsonTypeInfo.Properties)
+                {
+                    properties.Add(property.Name, AsJsonSchema(property.PropertyType, strict, jsonTypeInfoResolver, options));
+                }
+            }
+            else
+            {
+                foreach (var property in type.GetProperties())
+                {
+                    properties.Add(property.Name, AsJsonSchema(property.PropertyType, strict));
+                }
             }
             schema.Properties = properties;
             schema.Required = properties.Keys.ToArray();
         }
-        else if (type.IsArray)
+        else if (schema.Type == "array")
         {
             schema.Items = AsJsonSchema(
                 type.GetElementType() ?? throw new InvalidOperationException("Array type must have an element type."),
-                strict: strict);
+                strict: strict,
+                jsonTypeInfoResolver,
+                options);
         }
             
         return schema;
@@ -112,43 +155,6 @@ public static class TypeToSchemaHelpers
     /// <summary>
     /// 
     /// </summary>
-    /// <param name="typeInfo"></param>
-    /// <param name="strict"></param>
-    /// <returns></returns>
-    public static ResponseFormatJsonSchemaSchema AsJsonSchema(JsonTypeInfo typeInfo, bool strict)
-    {
-        typeInfo = typeInfo ?? throw new ArgumentNullException(nameof(typeInfo));
-            
-        var schema = Create(typeInfo.Type, strict);
-        if (typeInfo.Type is { IsArray: false, IsClass: true, FullName: not "System.String" })
-        {
-            var properties = new Dictionary<string, OpenApiSchema>();
-            foreach (var property in typeInfo.Properties)
-            {
-                var jsonTypeInfo =
-                    typeInfo.OriginatingResolver?.GetTypeInfo(property.PropertyType, typeInfo.Options) ??
-                    throw new InvalidOperationException($"JsonTypeInfo for {property.PropertyType.FullName} is not found.");
-                properties.Add(property.Name, AsJsonSchema(jsonTypeInfo, strict));
-            }
-            schema.Properties = properties;
-            schema.Required = properties.Keys.ToArray();
-        }
-        else if (typeInfo.Kind is JsonTypeInfoKind.Enumerable)
-        {
-            var elementTypeInfo =
-                typeInfo.OriginatingResolver?.GetTypeInfo(
-                    typeInfo.Type.GetElementType() ??
-                    throw new InvalidOperationException("Array type must have an element type."), typeInfo.Options) ??
-                throw new InvalidOperationException($"JsonTypeInfo for {typeInfo.Type.GetElementType()?.FullName} is not found.");
-            schema.Items = AsJsonSchema(elementTypeInfo, strict);
-        }
-            
-        return schema;
-    }
-    
-    /// <summary>
-    /// 
-    /// </summary>
     /// <param name="type"></param>
     /// <param name="strict"></param>
     /// <returns></returns>
@@ -179,13 +185,16 @@ public static class TypeToSchemaHelpers
     public static ResponseFormatJsonSchemaJsonSchema AsResponseFormat(JsonTypeInfo typeInfo, bool strict)
     {
         typeInfo = typeInfo ?? throw new ArgumentNullException(nameof(typeInfo));
-            
+        var resolver = typeInfo.OriginatingResolver ?? throw new InvalidOperationException("OriginatingResolver is required.");
+        
         return new ResponseFormatJsonSchemaJsonSchema
         {
             Description = string.Empty,
             Name = typeInfo.Type.Name,
             Strict = strict,
-            Schema = AsJsonSchema(typeInfo, strict),
+#pragma warning disable IL2026
+            Schema = AsJsonSchema(typeInfo.Type, strict, resolver, typeInfo.Options),
+#pragma warning restore IL2026
         };
     }
 }

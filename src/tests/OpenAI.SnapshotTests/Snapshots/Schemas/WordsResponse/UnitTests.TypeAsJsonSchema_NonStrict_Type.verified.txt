@@ -1,17 +1,22 @@
 ﻿{
-  "type": "object",
-  "required": [
-    "Words"
-  ],
-  "properties": {
-    "Words": {
-      "type": "array",
-      "items": {
-        "type": "string",
+  "description": "",
+  "name": "WordsResponse",
+  "schema": {
+    "type": "object",
+    "required": [
+      "Words"
+    ],
+    "properties": {
+      "Words": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "additionalProperties": false
+        },
         "additionalProperties": false
-      },
-      "additionalProperties": false
-    }
+      }
+    },
+    "additionalProperties": false
   },
-  "additionalProperties": false
+  "strict": false
 }
