@@ -92,7 +92,7 @@ var messages = new List<ChatCompletionRequestMessage>
     "You are a helpful weather assistant.".AsSystemMessage(),
     "What is the current temperature in Dubai, UAE in Celsius?".AsUserMessage(),
 };
-var model = CreateChatCompletionRequestModel.Gpt35Turbo;
+var model = CreateChatCompletionRequestModel.Gpt4oMini;
 var result = await api.Chat.CreateChatCompletionAsync(
     messages,
     model: model,
@@ -127,6 +127,44 @@ GetCurrentWeather({"location":"Dubai, UAE","unit":"celsius"})
 {"location":"Dubai, UAE","temperature":22,"unit":"celsius","description":"Sunny"}
 > Assistant: 
 The current temperature in Dubai, UAE is 22°C with sunny weather.
+```
+
+### Structured Outputs
+```csharp
+using OpenAI;
+
+using var api = new OpenAiApi("API_KEY");
+
+var response = await api.Chat.CreateChatCompletionAsAsync<Weather>(
+    messages: ["Generate random weather."],
+    model: CreateChatCompletionRequestModel.Gpt4oMini,
+    jsonSerializerOptions: new JsonSerializerOptions
+    {
+        Converters = {new JsonStringEnumConverter()},
+    });
+// or (if you need trimmable/NativeAOT version)
+var response = await api.Chat.CreateChatCompletionAsAsync(
+    jsonTypeInfo: SourceGeneratedContext.Default.Weather,
+    messages: ["Generate random weather."],
+    model: CreateChatCompletionRequestModel.Gpt4oMini);
+
+// response.Value1 contains the structured output
+// response.Value2 contains the CreateChatCompletionResponse object
+```
+```
+Weather:
+Location: San Francisco, CA
+Temperature: 65
+Unit: Fahrenheit
+Description: Partly cloudy with a light breeze and occasional sunshine.
+Raw Response:
+{"Location":"San Francisco, CA","Temperature":65,"Unit":"Fahrenheit","Description":"Partly cloudy with a light breeze and occasional sunshine."}
+```
+Additional code for trimmable/NativeAOT version:
+```csharp
+[JsonSourceGenerationOptions(Converters = [typeof(JsonStringEnumConverter<Unit>)])]
+[JsonSerializable(typeof(Weather))]
+public partial class SourceGeneratedContext : JsonSerializerContext;
 ```
 
 ### Custom providers
