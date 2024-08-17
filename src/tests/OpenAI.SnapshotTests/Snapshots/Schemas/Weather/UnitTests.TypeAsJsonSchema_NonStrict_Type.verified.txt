@@ -1,0 +1,33 @@
+﻿{
+  "type": "object",
+  "required": [
+    "Location",
+    "Temperature",
+    "Unit",
+    "Description"
+  ],
+  "properties": {
+    "Location": {
+      "type": "string",
+      "additionalProperties": false
+    },
+    "Temperature": {
+      "type": "number",
+      "format": "double",
+      "additionalProperties": false
+    },
+    "Unit": {
+      "type": "string",
+      "enum": [
+        "Celsius",
+        "Fahrenheit"
+      ],
+      "additionalProperties": false
+    },
+    "Description": {
+      "type": "string",
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

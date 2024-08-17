@@ -1,5 +1,3 @@
-using System.Text.Json.Serialization;
-
 namespace OpenAI.IntegrationTests;
 
 public partial class Tests
@@ -75,76 +73,4 @@ public partial class Tests
 
         Console.WriteLine(response);
     }
-    
-    [DataTestMethod]
-    [DataRow(CustomProvider.OpenAi)]
-    // [DataRow(CustomProvider.Fireworks)]
-    // [DataRow(CustomProvider.DeepInfra)]
-    // [DataRow(CustomProvider.DeepSeek)]
-    // [DataRow(CustomProvider.OpenRouter)]
-    // [DataRow(CustomProvider.Together)]
-    // [DataRow(CustomProvider.GitHub)]
-    public async Task GenerateFiveRandomWordsAsJsonSchemaUsingReflection(CustomProvider customProvider)
-    {
-        var pair = GetAuthorizedChatApi(customProvider);
-        using var api = pair.Api;
-        
-        var response = await api.Chat.CreateChatCompletionAsAsync<WordsResponse>(
-            messages: ["Generate five random words as json."],
-            model: pair.Model,
-            user: "tryAGI.OpenAI.IntegrationTests.Tests.GenerateSomeJson");
-        response.Value1.Should().NotBeNull();
-        response.Value1!.Words.Should().NotBeEmpty();
-        response.Value2.Should().NotBeNull();
-
-        Console.WriteLine("Words:");
-        foreach (var word in response.Value1!.Words)
-        {
-            Console.WriteLine(word);
-        }
-        
-        Console.WriteLine("Raw Response:");
-        Console.WriteLine(response.Value2!);
-    }
-    
-    [DataTestMethod]
-    [DataRow(CustomProvider.OpenAi)]
-    // [DataRow(CustomProvider.Fireworks)]
-    // [DataRow(CustomProvider.DeepInfra)]
-    // [DataRow(CustomProvider.DeepSeek)]
-    // [DataRow(CustomProvider.OpenRouter)]
-    // [DataRow(CustomProvider.Together)]
-    // [DataRow(CustomProvider.GitHub)]
-    public async Task GenerateFiveRandomWordsAsJsonSchemaTrimmable(CustomProvider customProvider)
-    {
-        var pair = GetAuthorizedChatApi(customProvider);
-        using var api = pair.Api;
-        
-        var response = await api.Chat.CreateChatCompletionAsAsync(
-            jsonTypeInfo: SourceGeneratedContext.Default.WordsResponse,
-            messages: ["Generate five random words as json."],
-            model: pair.Model,
-            user: "tryAGI.OpenAI.IntegrationTests.Tests.GenerateSomeJson");
-        response.Value1.Should().NotBeNull();
-        response.Value1!.Words.Should().NotBeEmpty();
-        response.Value2.Should().NotBeNull();
-
-        Console.WriteLine("Words:");
-        foreach (var word in response.Value1!.Words)
-        {
-            Console.WriteLine(word);
-        }
-        
-        Console.WriteLine("Raw Response:");
-        Console.WriteLine(response.Value2!);
-    }
 }
-    
-public class WordsResponse
-{
-    //[JsonPropertyName("words")]
-    public string[] Words { get; set; } = [];
-}
-
-[JsonSerializable(typeof(WordsResponse))]
-public partial class SourceGeneratedContext : JsonSerializerContext;

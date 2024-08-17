@@ -42,8 +42,4 @@
     <ProjectReference Include="..\..\libs\OpenAI.Generators\OpenAI.Generators.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Snapshots\" />
-  </ItemGroup>
-
 </Project>
