@@ -1,5 +1,4 @@
 using System.Diagnostics.CodeAnalysis;
-using System.Reflection;
 using System.Text.Json.Serialization.Metadata;
 
 namespace OpenAI;
@@ -127,8 +126,8 @@ public static class TypeToSchemaHelpers
             foreach (var property in typeInfo.Properties)
             {
                 var jsonTypeInfo =
-                    typeof(JsonPropertyInfo).GetProperty("JsonTypeInfo", BindingFlags.NonPublic | BindingFlags.Instance)?.GetValue(property) as JsonTypeInfo ??
-                    throw new InvalidOperationException("JsonPropertyInfo.JsonTypeInfo is not found.");
+                    typeInfo.OriginatingResolver?.GetTypeInfo(property.PropertyType, typeInfo.Options) ??
+                    throw new InvalidOperationException($"JsonTypeInfo for {property.PropertyType.FullName} is not found.");
                 properties.Add(property.Name, AsJsonSchema(jsonTypeInfo, strict));
             }
             schema.Properties = properties;
@@ -137,8 +136,10 @@ public static class TypeToSchemaHelpers
         else if (typeInfo.Kind is JsonTypeInfoKind.Enumerable)
         {
             var elementTypeInfo =
-                typeof(JsonTypeInfo).GetField("_elementTypeInfo", BindingFlags.NonPublic | BindingFlags.Instance)?.GetValue(typeInfo) as JsonTypeInfo ??
-                throw new InvalidOperationException("ElementTypeInfo is not found.");
+                typeInfo.OriginatingResolver?.GetTypeInfo(
+                    typeInfo.Type.GetElementType() ??
+                    throw new InvalidOperationException("Array type must have an element type."), typeInfo.Options) ??
+                throw new InvalidOperationException($"JsonTypeInfo for {typeInfo.Type.GetElementType()?.FullName} is not found.");
             schema.Items = AsJsonSchema(elementTypeInfo, strict);
         }
             
