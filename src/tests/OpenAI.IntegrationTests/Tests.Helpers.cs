@@ -15,7 +15,7 @@ public partial class Tests
         return client;
     }
     
-    private static (OpenAiApi Api, string Model) GetAuthorizedChatApi(CustomProvider customProvider, string? model = null)
+    internal static (OpenAiApi Api, string Model) GetAuthorizedChatApi(CustomProvider customProvider, string? model = null)
     {
         if (customProvider == CustomProvider.Fireworks)
         {
