@@ -2,7 +2,7 @@
 
 namespace OpenAI.Examples.Miscellaneous;
 
-public class CombinationExamples
+public partial class CombinationExamples
 {
     [Test]
     [Explicit]
