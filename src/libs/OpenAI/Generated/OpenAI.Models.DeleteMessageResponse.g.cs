@@ -27,8 +27,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DeleteMessageResponseObjectJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.DeleteMessageResponseObject Object { get; set; }
+        public global::OpenAI.DeleteMessageResponseObject Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,8 +13,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.InviteListResponseObjectJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.InviteListResponseObject Object { get; set; }
+        public global::OpenAI.InviteListResponseObject Object { get; set; }
 
         /// <summary>
         /// 

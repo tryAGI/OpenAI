@@ -20,8 +20,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepDeltaObjectObjectJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.RunStepDeltaObjectObject Object { get; set; }
+        public global::OpenAI.RunStepDeltaObjectObject Object { get; set; }
 
         /// <summary>
         /// The delta containing the fields that have changed on the run step.

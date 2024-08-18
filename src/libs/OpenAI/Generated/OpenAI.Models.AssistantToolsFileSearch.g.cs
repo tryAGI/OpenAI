@@ -13,8 +13,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AssistantToolsFileSearchTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.AssistantToolsFileSearchType Type { get; set; }
+        public global::OpenAI.AssistantToolsFileSearchType Type { get; set; }
 
         /// <summary>
         /// Overrides for the file search tool.

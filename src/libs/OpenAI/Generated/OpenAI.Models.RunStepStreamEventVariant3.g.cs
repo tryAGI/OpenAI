@@ -13,8 +13,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant3EventJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.RunStepStreamEventVariant3Event Event { get; set; }
+        public global::OpenAI.RunStepStreamEventVariant3Event Event { get; set; }
 
         /// <summary>
         /// Represents a run step delta i.e. any changed fields on a run step during streaming.

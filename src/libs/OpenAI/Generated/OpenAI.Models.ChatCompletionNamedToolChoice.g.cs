@@ -13,8 +13,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatCompletionNamedToolChoiceTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.ChatCompletionNamedToolChoiceType Type { get; set; }
+        public global::OpenAI.ChatCompletionNamedToolChoiceType Type { get; set; }
 
         /// <summary>
         /// 

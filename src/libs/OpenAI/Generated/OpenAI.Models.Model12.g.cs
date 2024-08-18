@@ -27,8 +27,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ModelObjectJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.ModelObject Object { get; set; }
+        public global::OpenAI.ModelObject Object { get; set; }
 
         /// <summary>
         /// The organization that owns the model.

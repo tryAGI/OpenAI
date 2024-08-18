@@ -13,8 +13,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ProjectServiceAccountCreateResponseObjectJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.ProjectServiceAccountCreateResponseObject Object { get; set; }
+        public global::OpenAI.ProjectServiceAccountCreateResponseObject Object { get; set; }
 
         /// <summary>
         /// 
@@ -35,8 +34,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ProjectServiceAccountCreateResponseRoleJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.ProjectServiceAccountCreateResponseRole Role { get; set; }
+        public global::OpenAI.ProjectServiceAccountCreateResponseRole Role { get; set; }
 
         /// <summary>
         /// 

@@ -116,7 +116,7 @@ namespace OpenAI
         public async global::System.Threading.Tasks.Task<global::OpenAI.Batch> CreateBatchAsync(
             string inputFileId,
             global::OpenAI.CreateBatchRequestEndpoint endpoint,
-            global::OpenAI.CreateBatchRequestCompletionWindow completionWindow,
+            global::OpenAI.CreateBatchRequestCompletionWindow completionWindow = default,
             global::OpenAI.CreateBatchRequestMetadata? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

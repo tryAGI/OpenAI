@@ -13,8 +13,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageContentTextAnnotationsFilePathObjectTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.MessageContentTextAnnotationsFilePathObjectType Type { get; set; }
+        public global::OpenAI.MessageContentTextAnnotationsFilePathObjectType Type { get; set; }
 
         /// <summary>
         /// The text in the message content that needs to be replaced.

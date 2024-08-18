@@ -20,8 +20,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatCompletionMessageToolCallTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.ChatCompletionMessageToolCallType Type { get; set; }
+        public global::OpenAI.ChatCompletionMessageToolCallType Type { get; set; }
 
         /// <summary>
         /// The function that the model called.

@@ -13,8 +13,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AssistantToolsFileSearchTypeOnlyTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.AssistantToolsFileSearchTypeOnlyType Type { get; set; }
+        public global::OpenAI.AssistantToolsFileSearchTypeOnlyType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

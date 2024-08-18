@@ -13,8 +13,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageContentImageUrlObjectTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.MessageContentImageUrlObjectType Type { get; set; }
+        public global::OpenAI.MessageContentImageUrlObjectType Type { get; set; }
 
         /// <summary>
         /// 

@@ -20,8 +20,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ThreadObjectObjectJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.ThreadObjectObject Object { get; set; }
+        public global::OpenAI.ThreadObjectObject Object { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the thread was created.

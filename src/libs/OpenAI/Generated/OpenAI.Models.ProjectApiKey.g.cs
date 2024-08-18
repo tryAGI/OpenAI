@@ -13,8 +13,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ProjectApiKeyObjectJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.ProjectApiKeyObject Object { get; set; }
+        public global::OpenAI.ProjectApiKeyObject Object { get; set; }
 
         /// <summary>
         /// The redacted value of the API key

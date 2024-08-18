@@ -20,8 +20,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DeleteFileResponseObjectJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.DeleteFileResponseObject Object { get; set; }
+        public global::OpenAI.DeleteFileResponseObject Object { get; set; }
 
         /// <summary>
         /// 

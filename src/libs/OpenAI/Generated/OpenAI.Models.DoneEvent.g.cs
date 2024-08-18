@@ -13,16 +13,14 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DoneEventEventJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.DoneEventEvent Event { get; set; }
+        public global::OpenAI.DoneEventEvent Event { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.DoneEventDataJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.DoneEventData Data { get; set; }
+        public global::OpenAI.DoneEventData Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
