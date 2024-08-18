@@ -13,8 +13,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ResponseFormatJsonSchemaTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.ResponseFormatJsonSchemaType Type { get; set; }
+        public global::OpenAI.ResponseFormatJsonSchemaType Type { get; set; }
 
         /// <summary>
         /// 

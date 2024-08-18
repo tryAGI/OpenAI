@@ -27,8 +27,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateEmbeddingResponseObjectJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.CreateEmbeddingResponseObject Object { get; set; }
+        public global::OpenAI.CreateEmbeddingResponseObject Object { get; set; }
 
         /// <summary>
         /// The usage information for the request.

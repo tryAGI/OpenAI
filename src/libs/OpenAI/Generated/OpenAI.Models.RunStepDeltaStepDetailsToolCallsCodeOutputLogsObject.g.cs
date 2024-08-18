@@ -20,8 +20,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType Type { get; set; }
+        public global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType Type { get; set; }
 
         /// <summary>
         /// The text output from the Code Interpreter tool call.

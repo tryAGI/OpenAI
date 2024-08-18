@@ -56,8 +56,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateChatCompletionResponseObjectJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.CreateChatCompletionResponseObject Object { get; set; }
+        public global::OpenAI.CreateChatCompletionResponseObject Object { get; set; }
 
         /// <summary>
         /// Usage statistics for the completion request.

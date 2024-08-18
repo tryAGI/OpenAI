@@ -13,8 +13,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepStreamEventVariant1EventJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.RunStepStreamEventVariant1Event Event { get; set; }
+        public global::OpenAI.RunStepStreamEventVariant1Event Event { get; set; }
 
         /// <summary>
         /// Represents a step in execution of a run.

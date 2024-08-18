@@ -26,8 +26,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepDeltaStepDetailsToolCallsFunctionObjectTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObjectType Type { get; set; }
+        public global::OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObjectType Type { get; set; }
 
         /// <summary>
         /// The definition of the function that was called.

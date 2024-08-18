@@ -20,8 +20,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepDetailsToolCallsCodeObjectTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.RunStepDetailsToolCallsCodeObjectType Type { get; set; }
+        public global::OpenAI.RunStepDetailsToolCallsCodeObjectType Type { get; set; }
 
         /// <summary>
         /// The Code Interpreter tool call definition.

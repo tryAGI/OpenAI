@@ -30,8 +30,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_window")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateBatchRequestCompletionWindowJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.CreateBatchRequestCompletionWindow CompletionWindow { get; set; }
+        public global::OpenAI.CreateBatchRequestCompletionWindow CompletionWindow { get; set; }
 
         /// <summary>
         /// Optional custom metadata for the batch.

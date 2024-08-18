@@ -57,8 +57,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateChatCompletionStreamResponseObjectJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.CreateChatCompletionStreamResponseObject Object { get; set; }
+        public global::OpenAI.CreateChatCompletionStreamResponseObject Object { get; set; }
 
         /// <summary>
         /// An optional field that will only be present when you set `stream_options: {"include_usage": true}` in your request.<br/>

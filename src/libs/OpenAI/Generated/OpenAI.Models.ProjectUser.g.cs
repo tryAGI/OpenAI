@@ -13,8 +13,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ProjectUserObjectJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.ProjectUserObject Object { get; set; }
+        public global::OpenAI.ProjectUserObject Object { get; set; }
 
         /// <summary>
         /// The identifier, which can be referenced in API endpoints

@@ -22,8 +22,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageObjectObjectJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.MessageObjectObject Object { get; set; }
+        public global::OpenAI.MessageObjectObject Object { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the message was created.

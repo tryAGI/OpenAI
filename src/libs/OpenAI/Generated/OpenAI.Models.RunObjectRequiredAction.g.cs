@@ -13,8 +13,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunObjectRequiredActionTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.RunObjectRequiredActionType Type { get; set; }
+        public global::OpenAI.RunObjectRequiredActionType Type { get; set; }
 
         /// <summary>
         /// Details on the tool outputs needed for this run to continue.

@@ -13,8 +13,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageStreamEventVariant4EventJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.MessageStreamEventVariant4Event Event { get; set; }
+        public global::OpenAI.MessageStreamEventVariant4Event Event { get; set; }
 
         /// <summary>
         /// Represents a message within a [thread](/docs/api-reference/threads).

@@ -20,8 +20,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageDeltaContentRefusalObjectTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.MessageDeltaContentRefusalObjectType Type { get; set; }
+        public global::OpenAI.MessageDeltaContentRefusalObjectType Type { get; set; }
 
         /// <summary>
         /// 
