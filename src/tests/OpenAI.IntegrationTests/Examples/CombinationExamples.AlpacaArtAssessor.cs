@@ -1,15 +1,16 @@
 ﻿using NUnit.Framework;
-using OpenAI.IntegrationTests;
 
 namespace OpenAI.Examples.Miscellaneous;
 
 public class CombinationExamples
 {
     [Test]
+    [Explicit]
     public async Task AlpacaArtAssessor()
     {
-        var pair = Tests.GetAuthorizedChatApi(CustomProvider.OpenAi);
-        using var api = pair.Api;
+        using var api = new OpenAiApi(apiKey:
+            Environment.GetEnvironmentVariable("OPENAI_API_KEY") ??
+            throw new AssertInconclusiveException("OPENAI_API_KEY environment variable is not found."));
         
         // First, we create an image using dall-e-3:
         ImagesResponse imageResult = await api.Images.CreateImageAsync(
@@ -18,7 +19,7 @@ public class CombinationExamples
             style: CreateImageRequestStyle.Vivid,
             quality: CreateImageRequestQuality.Hd,
             size: CreateImageRequestSize.x1792x1024);
-        Image imageGeneration = imageResult.Data.First();
+        Image imageGeneration = imageResult.Data[0];
         Console.WriteLine($"Majestic alpaca available at:\n{imageGeneration.Url}");
 
         // Now, we'll ask a cranky art critic to evaluate the image using gpt vision:

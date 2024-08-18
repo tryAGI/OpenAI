@@ -46,6 +46,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 		.github\workflows\mkdocs.yml = .github\workflows\mkdocs.yml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerateDocs", "src\helpers\GenerateDocs\GenerateDocs.csproj", "{ECC219F0-209A-412B-ADEC-6D97AB379E7C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -80,6 +82,10 @@ Global
 		{F1A9D4C9-0075-4AB0-95A2-095B7DF31FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1A9D4C9-0075-4AB0-95A2-095B7DF31FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1A9D4C9-0075-4AB0-95A2-095B7DF31FB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECC219F0-209A-412B-ADEC-6D97AB379E7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECC219F0-209A-412B-ADEC-6D97AB379E7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECC219F0-209A-412B-ADEC-6D97AB379E7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECC219F0-209A-412B-ADEC-6D97AB379E7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,6 +99,7 @@ Global
 		{A3F06E45-DFA8-4236-BFF5-425091762548} = {AAA11B78-2764-4520-A97E-46AA7089A588}
 		{F1A9D4C9-0075-4AB0-95A2-095B7DF31FB1} = {AAA11B78-2764-4520-A97E-46AA7089A588}
 		{2D8B78DE-7269-417B-9D0B-8981FA513ACB} = {E793AF18-4371-4EBD-96FC-195EB1798855}
+		{ECC219F0-209A-412B-ADEC-6D97AB379E7C} = {1A008ECD-2300-4BE4-A302-49DDF8BE0D54}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CED9A020-DBA5-4BE6-8096-75E528648EC1}
