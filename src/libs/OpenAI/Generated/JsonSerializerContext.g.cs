@@ -7,7 +7,7 @@
 namespace OpenAI
 {
     /// <summary>
-    ///
+    /// 
     /// </summary>
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
@@ -520,6 +520,7 @@ namespace OpenAI
             typeof(global::OpenApiGenerator.JsonConverters.RunStepStreamEventJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.MessageStreamEventJsonConverter),
         })]
+
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenAI.JsonSerializerContextTypes))]
     public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {
