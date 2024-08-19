@@ -2,14 +2,18 @@
 var sampleDirectory = Path.Combine(solutionDirectory, "src", "tests", "OpenAI.IntegrationTests", "Examples");
 var mkDocsPath = Path.Combine(solutionDirectory, "mkdocs.yml");
 
+var newDir = Path.Combine(solutionDirectory, "docs", "samples");
+Directory.CreateDirectory(newDir);
+
+File.Copy(
+    Path.Combine(solutionDirectory, "README.md"),
+    Path.Combine(solutionDirectory, "docs", "index.md"));
+
 Console.WriteLine($"Generating samples from {sampleDirectory}...");
 foreach (var path in Directory.EnumerateFiles(sampleDirectory, "*.cs", SearchOption.AllDirectories))
 {
     var code = await File.ReadAllTextAsync(path);
 
-    var newDir = Path.Combine(solutionDirectory, "docs", "samples");
-    Directory.CreateDirectory(newDir);
-    
     var start = code.IndexOf("\n    {", StringComparison.Ordinal);
     var end = code.IndexOf("\n    }", StringComparison.Ordinal);
     code = code.Substring(start + 4, end - start + 4);
