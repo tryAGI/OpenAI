@@ -10,4 +10,5 @@ oag generate openapi.yaml \
   --namespace OpenAI \
   --clientClassName OpenAiApi \
   --targetFramework net8.0 \
-  --output Generated
+  --output Generated \
+  --exclude-deprecated-operations
