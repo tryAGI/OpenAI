@@ -1,3 +1,4 @@
+using System.Linq;
 
 #nullable enable
 
@@ -8,11 +9,13 @@ namespace OpenAI
         partial void PrepareCreateRunArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string threadId,
+            global::System.Collections.Generic.IList<global::OpenAI.CreateRunIncludeItem>? include,
             global::OpenAI.CreateRunRequest request);
         partial void PrepareCreateRunRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string threadId,
+            global::System.Collections.Generic.IList<global::OpenAI.CreateRunIncludeItem>? include,
             global::OpenAI.CreateRunRequest request);
         partial void ProcessCreateRunResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -27,11 +30,13 @@ namespace OpenAI
         /// Create a run.
         /// </summary>
         /// <param name="threadId"></param>
+        /// <param name="include"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.RunObject> CreateRunAsync(
             string threadId,
+            global::System.Collections.Generic.IList<global::OpenAI.CreateRunIncludeItem>? include,
             global::OpenAI.CreateRunRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -42,11 +47,12 @@ namespace OpenAI
             PrepareCreateRunArguments(
                 httpClient: _httpClient,
                 threadId: ref threadId,
+                include: include,
                 request: request);
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/threads/{threadId}/runs", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/threads/{threadId}/runs?{string.Join("&", include?.Select(static x => $"include={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
             var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, global::OpenAI.SourceGenerationContext.Default.CreateRunRequest);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
@@ -61,6 +67,7 @@ namespace OpenAI
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
                 threadId: threadId,
+                include: include,
                 request: request);
 
             using var response = await _httpClient.SendAsync(
@@ -104,6 +111,7 @@ namespace OpenAI
         /// Create a run.
         /// </summary>
         /// <param name="threadId"></param>
+        /// <param name="include"></param>
         /// <param name="assistantId">
         /// The ID of the [assistant](/docs/api-reference/assistants) to use to execute this run.
         /// </param>
@@ -169,6 +177,7 @@ namespace OpenAI
         public async global::System.Threading.Tasks.Task<global::OpenAI.RunObject> CreateRunAsync(
             string threadId,
             string assistantId,
+            global::System.Collections.Generic.IList<global::OpenAI.CreateRunIncludeItem>? include = default,
             global::System.AnyOf<string?, global::OpenAI.CreateRunRequestModel?>? model = default,
             string? instructions = default,
             string? additionalInstructions = default,
@@ -208,6 +217,7 @@ namespace OpenAI
 
             return await CreateRunAsync(
                 threadId: threadId,
+                include: include,
                 request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }
