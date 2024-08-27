@@ -1577,6 +1577,15 @@ paths:
           required: true
           schema:
             type: string
+        - name: include
+          in: query
+          description: "A list of additional fields to include in the response. Currently the only supported value is `step_details.tool_calls[*].file_search.results[*].content` to fetch the file search result content.\n\nSee the [file search tool documentation](/docs/assistants/tools/file-search/customizing-file-search-settings) for more information.\n"
+          schema:
+            type: array
+            items:
+              enum:
+                - 'step_details.tool_calls[*].file_search.results[*].content'
+              type: string
       requestBody:
         content:
           application/json:
@@ -1824,6 +1833,15 @@ paths:
           description: "A cursor for use in pagination. `before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include before=obj_foo in order to fetch the previous page of the list.\n"
           schema:
             type: string
+        - name: include
+          in: query
+          description: "A list of additional fields to include in the response. Currently the only supported value is `step_details.tool_calls[*].file_search.results[*].content` to fetch the file search result content.\n\nSee the [file search tool documentation](/docs/assistants/tools/file-search/customizing-file-search-settings) for more information.\n"
+          schema:
+            type: array
+            items:
+              enum:
+                - 'step_details.tool_calls[*].file_search.results[*].content'
+              type: string
       responses:
         '200':
           description: OK
@@ -1835,7 +1853,7 @@ paths:
         name: List run steps
         group: threads
         beta: true
-        returns: 'A list of [run step](/docs/api-reference/runs/step-object) objects.'
+        returns: 'A list of [run step](/docs/api-reference/run-steps/step-object) objects.'
         examples:
           request:
             curl: "curl https://api.openai.com/v1/threads/thread_abc123/runs/run_abc123/steps \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"OpenAI-Beta: assistants=v2\"\n"
@@ -1867,6 +1885,15 @@ paths:
           required: true
           schema:
             type: string
+        - name: include
+          in: query
+          description: "A list of additional fields to include in the response. Currently the only supported value is `step_details.tool_calls[*].file_search.results[*].content` to fetch the file search result content.\n\nSee the [file search tool documentation](/docs/assistants/tools/file-search/customizing-file-search-settings) for more information.\n"
+          schema:
+            type: array
+            items:
+              enum:
+                - 'step_details.tool_calls[*].file_search.results[*].content'
+              type: string
       responses:
         '200':
           description: OK
@@ -1878,7 +1905,7 @@ paths:
         name: Retrieve run step
         group: threads
         beta: true
-        returns: 'The [run step](/docs/api-reference/runs/step-object) object matching the specified ID.'
+        returns: 'The [run step](/docs/api-reference/run-steps/step-object) object matching the specified ID.'
         examples:
           request:
             curl: "curl https://api.openai.com/v1/threads/thread_abc123/runs/run_abc123/steps/step_abc123 \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"OpenAI-Beta: assistants=v2\"\n"
@@ -6815,8 +6842,26 @@ components:
               maximum: 50
               minimum: 1
               type: integer
-              description: "The maximum number of results the file search tool should output. The default is 20 for `gpt-4*` models and 5 for `gpt-3.5-turbo`. This number should be between 1 and 50 inclusive.\n\nNote that the file search tool may output fewer than `max_num_results` results. See the [file search tool documentation](/docs/assistants/tools/file-search/number-of-chunks-returned) for more information.\n"
+              description: "The maximum number of results the file search tool should output. The default is 20 for `gpt-4*` models and 5 for `gpt-3.5-turbo`. This number should be between 1 and 50 inclusive.\n\nNote that the file search tool may output fewer than `max_num_results` results. See the [file search tool documentation](/docs/assistants/tools/file-search/customizing-file-search-settings) for more information.\n"
+            ranking_options:
+              $ref: '#/components/schemas/FileSearchRankingOptions'
           description: Overrides for the file search tool.
+    FileSearchRankingOptions:
+      title: File search tool call ranking options
+      type: object
+      properties:
+        ranker:
+          enum:
+            - auto
+            - default_2024_08_21
+          type: string
+          description: The ranker to use for the file search. If not specified will use the `auto` ranker.
+        score_threshold:
+          maximum: 1
+          minimum: 0
+          type: number
+          description: The score threshold for the file search. All values must be a floating point number between 0 and 1.
+      description: "The ranking options for the file search.\n\nSee the [file search tool documentation](/docs/assistants/tools/file-search/customizing-file-search-settings) for more information.\n"
     AssistantToolsFileSearchTypeOnly:
       title: FileSearch tool
       required:
@@ -8655,8 +8700,69 @@ components:
           description: The type of tool call. This is always going to be `file_search` for this type of tool call.
         file_search:
           type: object
+          properties:
+            ranking_options:
+              $ref: '#/components/schemas/RunStepDetailsToolCallsFileSearchRankingOptionsObject'
+            results:
+              type: array
+              items:
+                $ref: '#/components/schemas/RunStepDetailsToolCallsFileSearchResultObject'
+              description: The results of the file search.
           description: 'For now, this is always going to be an empty object.'
           x-oaiTypeLabel: map
+    RunStepDetailsToolCallsFileSearchRankingOptionsObject:
+      title: File search tool call ranking options
+      required:
+        - ranker
+        - score_threshold
+      type: object
+      properties:
+        ranker:
+          enum:
+            - default_2024_08_21
+          type: string
+          description: The ranker used for the file search.
+        score_threshold:
+          maximum: 1
+          minimum: 0
+          type: number
+          description: The score threshold for the file search. All values must be a floating point number between 0 and 1.
+      description: The ranking options for the file search.
+    RunStepDetailsToolCallsFileSearchResultObject:
+      title: File search tool call result
+      required:
+        - file_id
+        - file_name
+        - score
+      type: object
+      properties:
+        file_id:
+          type: string
+          description: The ID of the file that result was found in.
+        file_name:
+          type: string
+          description: The name of the file that result was found in.
+        score:
+          maximum: 1
+          minimum: 0
+          type: number
+          description: The score of the result. All values must be a floating point number between 0 and 1.
+        content:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                enum:
+                  - text
+                type: string
+                description: The type of the content.
+              text:
+                type: string
+                description: The text content of the file.
+          description: The content of the result that was found. The content is only included if requested via the include query parameter.
+      description: A result instance of the file search.
+      x-oaiTypeLabel: map
     RunStepDeltaStepDetailsToolCallsFileSearchObject:
       title: File search tool call
       required:
@@ -9382,9 +9488,9 @@ components:
               type: string
             data:
               $ref: '#/components/schemas/RunStepObject'
-          description: 'Occurs when a [run step](/docs/api-reference/runs/step-object) is created.'
+          description: 'Occurs when a [run step](/docs/api-reference/run-steps/step-object) is created.'
           x-oaiMeta:
-            dataDescription: '`data` is a [run step](/docs/api-reference/runs/step-object)'
+            dataDescription: '`data` is a [run step](/docs/api-reference/run-steps/step-object)'
         - required:
             - event
             - data
@@ -9396,9 +9502,9 @@ components:
               type: string
             data:
               $ref: '#/components/schemas/RunStepObject'
-          description: 'Occurs when a [run step](/docs/api-reference/runs/step-object) moves to an `in_progress` state.'
+          description: 'Occurs when a [run step](/docs/api-reference/run-steps/step-object) moves to an `in_progress` state.'
           x-oaiMeta:
-            dataDescription: '`data` is a [run step](/docs/api-reference/runs/step-object)'
+            dataDescription: '`data` is a [run step](/docs/api-reference/run-steps/step-object)'
         - required:
             - event
             - data
@@ -9410,7 +9516,7 @@ components:
               type: string
             data:
               $ref: '#/components/schemas/RunStepDeltaObject'
-          description: 'Occurs when parts of a [run step](/docs/api-reference/runs/step-object) are being streamed.'
+          description: 'Occurs when parts of a [run step](/docs/api-reference/run-steps/step-object) are being streamed.'
           x-oaiMeta:
             dataDescription: '`data` is a [run step delta](/docs/api-reference/assistants-streaming/run-step-delta-object)'
         - required:
@@ -9424,9 +9530,9 @@ components:
               type: string
             data:
               $ref: '#/components/schemas/RunStepObject'
-          description: 'Occurs when a [run step](/docs/api-reference/runs/step-object) is completed.'
+          description: 'Occurs when a [run step](/docs/api-reference/run-steps/step-object) is completed.'
           x-oaiMeta:
-            dataDescription: '`data` is a [run step](/docs/api-reference/runs/step-object)'
+            dataDescription: '`data` is a [run step](/docs/api-reference/run-steps/step-object)'
         - required:
             - event
             - data
@@ -9438,9 +9544,9 @@ components:
               type: string
             data:
               $ref: '#/components/schemas/RunStepObject'
-          description: 'Occurs when a [run step](/docs/api-reference/runs/step-object) fails.'
+          description: 'Occurs when a [run step](/docs/api-reference/run-steps/step-object) fails.'
           x-oaiMeta:
-            dataDescription: '`data` is a [run step](/docs/api-reference/runs/step-object)'
+            dataDescription: '`data` is a [run step](/docs/api-reference/run-steps/step-object)'
         - required:
             - event
             - data
@@ -9452,9 +9558,9 @@ components:
               type: string
             data:
               $ref: '#/components/schemas/RunStepObject'
-          description: 'Occurs when a [run step](/docs/api-reference/runs/step-object) is cancelled.'
+          description: 'Occurs when a [run step](/docs/api-reference/run-steps/step-object) is cancelled.'
           x-oaiMeta:
-            dataDescription: '`data` is a [run step](/docs/api-reference/runs/step-object)'
+            dataDescription: '`data` is a [run step](/docs/api-reference/run-steps/step-object)'
         - required:
             - event
             - data
@@ -9466,9 +9572,9 @@ components:
               type: string
             data:
               $ref: '#/components/schemas/RunStepObject'
-          description: 'Occurs when a [run step](/docs/api-reference/runs/step-object) expires.'
+          description: 'Occurs when a [run step](/docs/api-reference/run-steps/step-object) expires.'
           x-oaiMeta:
-            dataDescription: '`data` is a [run step](/docs/api-reference/runs/step-object)'
+            dataDescription: '`data` is a [run step](/docs/api-reference/run-steps/step-object)'
     MessageStreamEvent:
       oneOf:
         - required:
