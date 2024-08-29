@@ -18,7 +18,7 @@ namespace OpenAI
         public async global::System.Threading.Tasks.Task<System.AnyOf<T, global::OpenAI.CreateChatCompletionResponse>>
             CreateChatCompletionAsAsync<T>(
                 global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionRequestMessage> messages,
-                global::System.AnyOf<string?, global::OpenAI.CreateChatCompletionRequestModel?> model,
+                global::System.AnyOf<string, global::OpenAI.CreateChatCompletionRequestModel?> model,
                 double? frequencyPenalty = 0,
                 global::OpenAI.CreateChatCompletionRequestLogitBias? logitBias = default,
                 bool? logprobs = false,
@@ -28,7 +28,7 @@ namespace OpenAI
                 double? presencePenalty = 0,
                 int? seed = default,
                 global::OpenAI.CreateChatCompletionRequestServiceTier? serviceTier = default,
-                global::System.OneOf<string?, global::System.Collections.Generic.IList<string>>? stop = default,
+                global::System.OneOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
                 bool? stream = false,
                 bool? strict = true,
                 global::OpenAI.ChatCompletionStreamOptions? streamOptions = default,
@@ -87,7 +87,7 @@ namespace OpenAI
             CreateChatCompletionAsAsync<T>(
                 JsonTypeInfo<T> jsonTypeInfo,
                 global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionRequestMessage> messages,
-                global::System.AnyOf<string?, global::OpenAI.CreateChatCompletionRequestModel?> model,
+                global::System.AnyOf<string, global::OpenAI.CreateChatCompletionRequestModel?> model,
                 double? frequencyPenalty = 0,
                 global::OpenAI.CreateChatCompletionRequestLogitBias? logitBias = default,
                 bool? logprobs = false,
@@ -97,7 +97,7 @@ namespace OpenAI
                 double? presencePenalty = 0,
                 int? seed = default,
                 global::OpenAI.CreateChatCompletionRequestServiceTier? serviceTier = default,
-                global::System.OneOf<string?, global::System.Collections.Generic.IList<string>>? stop = default,
+                global::System.OneOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
                 bool? stream = false,
                 bool? strict = true,
                 global::OpenAI.ChatCompletionStreamOptions? streamOptions = default,

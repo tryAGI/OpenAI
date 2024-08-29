@@ -26,7 +26,7 @@ namespace OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.OneOf<string?, global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.MessageContentImageFileObject, global::OpenAI.MessageContentImageUrlObject, global::OpenAI.MessageRequestContentTextObject>>> Content { get; set; }
+        public required global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.MessageContentImageFileObject, global::OpenAI.MessageContentImageUrlObject, global::OpenAI.MessageRequestContentTextObject>>> Content { get; set; }
 
         /// <summary>
         /// A list of files attached to the message, and the tools they should be added to.

@@ -138,7 +138,7 @@ namespace OpenAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.AssistantObject> CreateAssistantAsync(
-            global::System.AnyOf<string?, global::OpenAI.CreateAssistantRequestModel?> model,
+            global::System.AnyOf<string, global::OpenAI.CreateAssistantRequestModel?> model,
             string? name = default,
             string? description = default,
             string? instructions = default,

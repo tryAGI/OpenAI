@@ -120,8 +120,8 @@ namespace OpenAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.CreateEmbeddingResponse> CreateEmbeddingAsync(
-            global::System.OneOf<string?, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>> input,
-            global::System.AnyOf<string?, global::OpenAI.CreateEmbeddingRequestModel?> model,
+            global::System.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>> input,
+            global::System.AnyOf<string, global::OpenAI.CreateEmbeddingRequestModel?> model,
             global::OpenAI.CreateEmbeddingRequestEncodingFormat? encodingFormat = global::OpenAI.CreateEmbeddingRequestEncodingFormat.Float,
             int? dimensions = default,
             string? user = default,

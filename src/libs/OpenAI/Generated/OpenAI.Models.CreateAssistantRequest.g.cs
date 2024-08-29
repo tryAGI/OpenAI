@@ -17,7 +17,7 @@ namespace OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AnyOf<string?, global::OpenAI.CreateAssistantRequestModel?> Model { get; set; }
+        public required global::System.AnyOf<string, global::OpenAI.CreateAssistantRequestModel?> Model { get; set; }
 
         /// <summary>
         /// The name of the assistant. The maximum length is 256 characters.

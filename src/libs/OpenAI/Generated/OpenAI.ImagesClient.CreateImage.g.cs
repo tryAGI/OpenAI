@@ -139,7 +139,7 @@ namespace OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.ImagesResponse> CreateImageAsync(
             string prompt,
-            global::System.AnyOf<string?, global::OpenAI.CreateImageRequestModel?>? model = default,
+            global::System.AnyOf<string, global::OpenAI.CreateImageRequestModel?>? model = default,
             int? n = 1,
             global::OpenAI.CreateImageRequestQuality? quality = global::OpenAI.CreateImageRequestQuality.Standard,
             global::OpenAI.CreateImageRequestResponseFormat? responseFormat = global::OpenAI.CreateImageRequestResponseFormat.Url,

@@ -160,7 +160,7 @@ namespace OpenAI
         public async global::System.Threading.Tasks.Task<global::OpenAI.RunObject> CreateThreadAndRunAsync(
             string assistantId,
             global::OpenAI.CreateThreadRequest? thread = default,
-            global::System.AnyOf<string?, global::OpenAI.CreateThreadAndRunRequestModel?>? model = default,
+            global::System.AnyOf<string, global::OpenAI.CreateThreadAndRunRequestModel?>? model = default,
             string? instructions = default,
             global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.AssistantToolsCode, global::OpenAI.AssistantToolsFileSearch, global::OpenAI.AssistantToolsFunction>>? tools = default,
             global::OpenAI.CreateThreadAndRunRequestToolResources? toolResources = default,

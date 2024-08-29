@@ -112,7 +112,7 @@ namespace OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async IAsyncEnumerable<global::OpenAI.CreateChatCompletionStreamResponse> CreateChatCompletionAsStreamAsync(
             global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionRequestMessage> messages,
-            global::System.AnyOf<string?, global::OpenAI.CreateChatCompletionRequestModel?> model,
+            global::System.AnyOf<string, global::OpenAI.CreateChatCompletionRequestModel?> model,
             double? frequencyPenalty = 0,
             global::OpenAI.CreateChatCompletionRequestLogitBias? logitBias = default,
             bool? logprobs = false,
@@ -123,7 +123,7 @@ namespace OpenAI
             global::System.OneOf<global::OpenAI.ResponseFormatText, global::OpenAI.ResponseFormatJsonObject, global::OpenAI.ResponseFormatJsonSchema>? responseFormat = default,
             int? seed = default,
             global::OpenAI.CreateChatCompletionRequestServiceTier? serviceTier = default,
-            global::System.OneOf<string?, global::System.Collections.Generic.IList<string>>? stop = default,
+            global::System.OneOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
             bool? stream = false,
             global::OpenAI.ChatCompletionStreamOptions? streamOptions = default,
             double? temperature = 1,

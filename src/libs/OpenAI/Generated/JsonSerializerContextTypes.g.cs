@@ -61,7 +61,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<string?, global::OpenAI.CreateCompletionRequestModel?>? Type12 { get; set; }
+        public global::System.AnyOf<string, global::OpenAI.CreateCompletionRequestModel?>? Type12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -69,7 +69,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::System.OneOf<string?, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>? Type14 { get; set; }
+        public global::System.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>? Type14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -93,7 +93,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::System.OneOf<string?, global::System.Collections.Generic.IList<string>>? Type20 { get; set; }
+        public global::System.OneOf<string, global::System.Collections.Generic.IList<string>>? Type20 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -181,7 +181,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::System.OneOf<string?, global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionRequestSystemMessageContentPart>>? Type42 { get; set; }
+        public global::System.OneOf<string, global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionRequestSystemMessageContentPart>>? Type42 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -201,7 +201,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::System.OneOf<string?, global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionRequestUserMessageContentPart>>? Type47 { get; set; }
+        public global::System.OneOf<string, global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionRequestUserMessageContentPart>>? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -221,7 +221,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::System.OneOf<string?, global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionRequestAssistantMessageContentPart>>? Type52 { get; set; }
+        public global::System.OneOf<string, global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionRequestAssistantMessageContentPart>>? Type52 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -265,7 +265,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::System.OneOf<string?, global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionRequestToolMessageContentPart>>? Type63 { get; set; }
+        public global::System.OneOf<string, global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionRequestToolMessageContentPart>>? Type63 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -421,7 +421,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<string?, global::OpenAI.CreateChatCompletionRequestModel?>? Type102 { get; set; }
+        public global::System.AnyOf<string, global::OpenAI.CreateChatCompletionRequestModel?>? Type102 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -621,7 +621,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<string?, global::OpenAI.CreateImageRequestModel?>? Type152 { get; set; }
+        public global::System.AnyOf<string, global::OpenAI.CreateImageRequestModel?>? Type152 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -665,7 +665,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<string?, global::OpenAI.CreateImageEditRequestModel?>? Type163 { get; set; }
+        public global::System.AnyOf<string, global::OpenAI.CreateImageEditRequestModel?>? Type163 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -685,7 +685,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<string?, global::OpenAI.CreateImageVariationRequestModel?>? Type168 { get; set; }
+        public global::System.AnyOf<string, global::OpenAI.CreateImageVariationRequestModel?>? Type168 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -705,7 +705,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<string?, global::OpenAI.CreateModerationRequestModel?>? Type173 { get; set; }
+        public global::System.AnyOf<string, global::OpenAI.CreateModerationRequestModel?>? Type173 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -801,7 +801,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<string?, global::OpenAI.CreateFineTuningJobRequestModel?>? Type197 { get; set; }
+        public global::System.AnyOf<string, global::OpenAI.CreateFineTuningJobRequestModel?>? Type197 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -909,7 +909,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<string?, global::OpenAI.CreateEmbeddingRequestModel?>? Type224 { get; set; }
+        public global::System.AnyOf<string, global::OpenAI.CreateEmbeddingRequestModel?>? Type224 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -949,7 +949,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<string?, global::OpenAI.CreateTranscriptionRequestModel?>? Type234 { get; set; }
+        public global::System.AnyOf<string, global::OpenAI.CreateTranscriptionRequestModel?>? Type234 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1001,7 +1001,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<string?, global::OpenAI.CreateTranslationRequestModel?>? Type247 { get; set; }
+        public global::System.AnyOf<string, global::OpenAI.CreateTranslationRequestModel?>? Type247 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1021,7 +1021,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<string?, global::OpenAI.CreateSpeechRequestModel?>? Type252 { get; set; }
+        public global::System.AnyOf<string, global::OpenAI.CreateSpeechRequestModel?>? Type252 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1161,7 +1161,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<string?, global::OpenAI.CreateAssistantRequestModel?>? Type287 { get; set; }
+        public global::System.AnyOf<string, global::OpenAI.CreateAssistantRequestModel?>? Type287 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1233,7 +1233,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<string?>? Type305 { get; set; }
+        public global::System.AnyOf<string>? Type305 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1369,7 +1369,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<string?, global::OpenAI.CreateRunRequestModel?>? Type339 { get; set; }
+        public global::System.AnyOf<string, global::OpenAI.CreateRunRequestModel?>? Type339 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1389,7 +1389,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::System.OneOf<string?, global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.MessageContentImageFileObject, global::OpenAI.MessageContentImageUrlObject, global::OpenAI.MessageRequestContentTextObject>>>? Type344 { get; set; }
+        public global::System.OneOf<string, global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.MessageContentImageFileObject, global::OpenAI.MessageContentImageUrlObject, global::OpenAI.MessageRequestContentTextObject>>>? Type344 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1561,7 +1561,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<string?, global::OpenAI.CreateThreadAndRunRequestModel?>? Type387 { get; set; }
+        public global::System.AnyOf<string, global::OpenAI.CreateThreadAndRunRequestModel?>? Type387 { get; set; }
         /// <summary>
         /// 
         /// </summary>

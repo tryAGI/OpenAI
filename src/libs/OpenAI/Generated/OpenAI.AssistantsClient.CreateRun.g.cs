@@ -178,7 +178,7 @@ namespace OpenAI
             string threadId,
             string assistantId,
             global::System.Collections.Generic.IList<global::OpenAI.CreateRunIncludeItem>? include = default,
-            global::System.AnyOf<string?, global::OpenAI.CreateRunRequestModel?>? model = default,
+            global::System.AnyOf<string, global::OpenAI.CreateRunRequestModel?>? model = default,
             string? instructions = default,
             string? additionalInstructions = default,
             global::System.Collections.Generic.IList<global::OpenAI.CreateMessageRequest>? additionalMessages = default,

@@ -31,7 +31,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string?, global::OpenAI.CreateImageVariationRequestModel?>? Model { get; set; } = global::OpenAI.CreateImageVariationRequestModel.DallE2;
+        public global::System.AnyOf<string, global::OpenAI.CreateImageVariationRequestModel?>? Model { get; set; } = global::OpenAI.CreateImageVariationRequestModel.DallE2;
 
         /// <summary>
         /// The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only `n=1` is supported.<br/>

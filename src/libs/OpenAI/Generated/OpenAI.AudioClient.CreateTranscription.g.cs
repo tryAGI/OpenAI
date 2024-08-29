@@ -170,7 +170,7 @@ namespace OpenAI
         public async global::System.Threading.Tasks.Task<global::System.OneOf<global::OpenAI.CreateTranscriptionResponseJson, global::OpenAI.CreateTranscriptionResponseVerboseJson>> CreateTranscriptionAsync(
             byte[] file,
             string filename,
-            global::System.AnyOf<string?, global::OpenAI.CreateTranscriptionRequestModel?> model,
+            global::System.AnyOf<string, global::OpenAI.CreateTranscriptionRequestModel?> model,
             string? language = default,
             string? prompt = default,
             global::OpenAI.CreateTranscriptionRequestResponseFormat? responseFormat = global::OpenAI.CreateTranscriptionRequestResponseFormat.Json,

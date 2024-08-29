@@ -197,7 +197,7 @@ namespace OpenAI
             string prompt,
             byte[]? mask = default,
             string? maskname = default,
-            global::System.AnyOf<string?, global::OpenAI.CreateImageEditRequestModel?>? model = default,
+            global::System.AnyOf<string, global::OpenAI.CreateImageEditRequestModel?>? model = default,
             int? n = 1,
             global::OpenAI.CreateImageEditRequestSize? size = global::OpenAI.CreateImageEditRequestSize.x1024x1024,
             global::OpenAI.CreateImageEditRequestResponseFormat? responseFormat = global::OpenAI.CreateImageEditRequestResponseFormat.Url,

@@ -105,7 +105,7 @@ namespace OpenAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<byte[]> CreateSpeechAsync(
-            global::System.AnyOf<string?, global::OpenAI.CreateSpeechRequestModel?> model,
+            global::System.AnyOf<string, global::OpenAI.CreateSpeechRequestModel?> model,
             string input,
             global::OpenAI.CreateSpeechRequestVoice voice,
             global::OpenAI.CreateSpeechRequestResponseFormat? responseFormat = global::OpenAI.CreateSpeechRequestResponseFormat.Mp3,
