@@ -31,6 +31,8 @@ namespace OpenAI
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
+
+            Initialized(_httpClient);
         }
 
         /// <inheritdoc/>
@@ -39,6 +41,8 @@ namespace OpenAI
             _httpClient.Dispose();
         }
 
+        partial void Initialized(
+            global::System.Net.Http.HttpClient client);
         partial void PrepareArguments(
             global::System.Net.Http.HttpClient client);
         partial void PrepareRequest(
