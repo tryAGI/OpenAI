@@ -27,8 +27,9 @@ namespace OpenAI
         /// The Unix timestamp (in seconds) of the event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("effective_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int EffectiveAt { get; set; }
+        public required global::System.DateTimeOffset EffectiveAt { get; set; }
 
         /// <summary>
         /// The project that the action was scoped to. Absent for actions not scoped to projects.
