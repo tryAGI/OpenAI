@@ -84,4 +84,31 @@ public static class StringExtensions
             ToolCalls = message.ToolCalls,
         };
     }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="bytes"></param>
+    /// <param name="mimeType"></param>
+    /// <returns></returns>
+    /// <exception cref="ArgumentNullException"></exception>
+    public static ChatCompletionRequestMessage AsUserMessage(this byte[] bytes, string mimeType)
+    {
+        bytes = bytes ?? throw new ArgumentNullException(nameof(bytes));
+        
+        return new ChatCompletionRequestUserMessage
+        {
+            Content = new ChatCompletionRequestUserMessageContentPart[] {
+                new ChatCompletionRequestMessageContentPartImage
+                {
+                    ImageUrl = new ChatCompletionRequestMessageContentPartImageImageUrl
+                    {
+                        Url = $"data:{mimeType};base64,{Convert.ToBase64String(bytes)}",
+                        Detail = ChatCompletionRequestMessageContentPartImageImageUrlDetail.Auto,
+                    },
+                    Type = ChatCompletionRequestMessageContentPartImageType.ImageUrl,
+                },
+            },
+        };
+    }
 }
