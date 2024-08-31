@@ -55,15 +55,15 @@ namespace OpenAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.ListAuditLogsResponse> ListAuditLogsAsync(
-            global::OpenAI.ListAuditLogsEffectiveAt? effectiveAt,
-            global::System.Collections.Generic.IList<string>? projectIds,
-            global::System.Collections.Generic.IList<global::OpenAI.AuditLogEventType>? eventTypes,
-            global::System.Collections.Generic.IList<string>? actorIds,
-            global::System.Collections.Generic.IList<string>? actorEmails,
-            global::System.Collections.Generic.IList<string>? resourceIds,
-            int limit,
-            string? after,
-            string? before,
+            global::OpenAI.ListAuditLogsEffectiveAt? effectiveAt = default,
+            global::System.Collections.Generic.IList<string>? projectIds = default,
+            global::System.Collections.Generic.IList<global::OpenAI.AuditLogEventType>? eventTypes = default,
+            global::System.Collections.Generic.IList<string>? actorIds = default,
+            global::System.Collections.Generic.IList<string>? actorEmails = default,
+            global::System.Collections.Generic.IList<string>? resourceIds = default,
+            int limit = 20,
+            string? after = default,
+            string? before = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

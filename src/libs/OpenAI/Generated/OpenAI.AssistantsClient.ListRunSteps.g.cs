@@ -53,11 +53,11 @@ namespace OpenAI
         public async global::System.Threading.Tasks.Task<global::OpenAI.ListRunStepsResponse> ListRunStepsAsync(
             string threadId,
             string runId,
-            int limit,
-            global::OpenAI.ListRunStepsOrder? order,
-            string? after,
-            string? before,
-            global::System.Collections.Generic.IList<global::OpenAI.ListRunStepsIncludeItem>? include,
+            int limit = 20,
+            global::OpenAI.ListRunStepsOrder? order = global::OpenAI.ListRunStepsOrder.Desc,
+            string? after = default,
+            string? before = default,
+            global::System.Collections.Generic.IList<global::OpenAI.ListRunStepsIncludeItem>? include = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -74,7 +74,7 @@ namespace OpenAI
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/threads/{threadId}/runs/{runId}/steps?limit={limit}&order={order}&after={after}&before={before}&{string.Join("&", include?.Select(static x => $"include={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/threads/{threadId}/runs/{runId}/steps?limit={limit}&order={(global::System.Uri.EscapeDataString(order?.ToValueString() ?? string.Empty))}&after={after}&before={before}&{string.Join("&", include?.Select(static x => $"include={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
