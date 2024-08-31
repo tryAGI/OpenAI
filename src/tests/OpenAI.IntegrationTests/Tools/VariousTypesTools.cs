@@ -1,4 +1,6 @@
-﻿using DescriptionAttribute = System.ComponentModel.DescriptionAttribute;
+﻿// ReSharper disable RedundantUsingDirective
+using System;
+using DescriptionAttribute = System.ComponentModel.DescriptionAttribute;
 
 namespace OpenAI.IntegrationTests;
 
