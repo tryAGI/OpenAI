@@ -19,7 +19,7 @@ namespace OpenAI
         partial void ProcessDownloadFileResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
+            ref byte[] content);
 
         /// <summary>
         /// Returns the contents of the specified file.
@@ -27,7 +27,7 @@ namespace OpenAI
         /// <param name="fileId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> DownloadFileAsync(
+        public async global::System.Threading.Tasks.Task<byte[]> DownloadFileAsync(
             string fileId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -61,29 +61,17 @@ namespace OpenAI
                 httpClient: _httpClient,
                 httpResponseMessage: response);
 
-            var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+            var __content = await response.Content.ReadAsByteArrayAsync(cancellationToken).ConfigureAwait(false);
 
-            ProcessResponseContent(
-                client: _httpClient,
-                response: response,
-                content: ref __content);
             ProcessDownloadFileResponseContent(
                 httpClient: _httpClient,
                 httpResponseMessage: response,
                 content: ref __content);
 
-            try
-            {
-                response.EnsureSuccessStatusCode();
-            }
-            catch (global::System.Net.Http.HttpRequestException ex)
-            {
-                throw new global::System.InvalidOperationException(__content, ex);
-            }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::OpenAI.SourceGenerationContext.Default.String) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            response.EnsureSuccessStatusCode();
+
+            return __content;
         }
     }
 }

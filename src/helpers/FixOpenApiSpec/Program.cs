@@ -1,6 +1,7 @@
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Extensions;
+using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Readers;
 
 var path = args[0];
@@ -26,6 +27,18 @@ openApiDocument.Components.Schemas["MessageObject"]!.Required.Remove("status");
 openApiDocument.Components.Schemas["MessageObject"]!.Required.Remove("incomplete_details");
 openApiDocument.Components.Schemas["MessageObject"]!.Required.Remove("completed_at");
 openApiDocument.Components.Schemas["MessageObject"]!.Required.Remove("incomplete_at");
+
+openApiDocument.Paths["/files/{file_id}/content"]!.Operations[OperationType.Get].Responses["200"]!.Content.Remove("application/json");
+openApiDocument.Paths["/files/{file_id}/content"]!.Operations[OperationType.Get].Responses["200"]!.Content.Add(
+    "application/octet-stream",
+    new OpenApiMediaType
+    {
+        Schema = new OpenApiSchema
+        {
+            Type = "string",
+            Format = "binary",
+        }
+    });
 
 openApiDocument.Components.Schemas["CreateChatCompletionRequest"]!.Properties["model"].AnyOf[1].Enum =
     openApiDocument.Components.Schemas["CreateChatCompletionRequest"]!.Properties["model"].AnyOf[1].Enum
