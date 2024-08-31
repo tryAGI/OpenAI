@@ -7,7 +7,8 @@ Directory.CreateDirectory(newDir);
 
 File.Copy(
     Path.Combine(solutionDirectory, "README.md"),
-    Path.Combine(solutionDirectory, "docs", "index.md"));
+    Path.Combine(solutionDirectory, "docs", "index.md"),
+    overwrite: true);
 
 Console.WriteLine($"Generating samples from {sampleDirectory}...");
 foreach (var path in Directory.EnumerateFiles(sampleDirectory, "Examples.*.cs", SearchOption.AllDirectories))
@@ -28,10 +29,17 @@ foreach (var path in Directory.EnumerateFiles(sampleDirectory, "Examples.*.cs", 
 }
 
 var mkDocs = await File.ReadAllTextAsync(mkDocsPath);
-var newMkDocs = mkDocs.Replace(
-    "# EXAMPLES #",
-    $"- Examples:{string.Concat(Directory.EnumerateFiles(Path.Combine(solutionDirectory, "docs", "samples"), "*.md")
-    .Select(x => $@"
-  - {Path.GetFileNameWithoutExtension(x)}: samples/{Path.GetFileNameWithoutExtension(x)}.md"))}");
+var startIndex = mkDocs.IndexOf("# START EXAMPLES #", StringComparison.Ordinal) + "# START EXAMPLES #".Length;
+var endIndex = mkDocs.IndexOf("# END EXAMPLES #", StringComparison.Ordinal);
+mkDocs = mkDocs.Remove(startIndex, endIndex - startIndex);
+var newMkDocs = mkDocs.Insert(
+    startIndex,
+    $@"
+- Examples:{string.Concat(Directory.EnumerateFiles(Path.Combine(solutionDirectory, "docs", "samples"), "*.md")
+        .GroupBy(x => Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(x)))
+        .Select(x => $@"
+  - {x.Key}:{string.Concat(x.Select(y => $@"
+    - {Path.GetExtension(Path.GetFileNameWithoutExtension(y)).TrimStart('.')}: samples/{Path.GetFileName(y)}"))}"))}
+");
 await File.WriteAllTextAsync(mkDocsPath, newMkDocs);
 

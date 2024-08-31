@@ -1,7 +1,34 @@
 site_name: OpenAI .NET Documentation
 nav:
 - Overview: index.md
-# EXAMPLES #
+# START EXAMPLES #
+- Examples:
+  - Chat:
+    - SimpleChat: samples/Chat.SimpleChat.md
+    - SimpleChatStreaming: samples/Chat.SimpleChatStreaming.md
+    - ChatWithVision: samples/Chat.ChatWithVision.md
+  - Assistants:
+    - AssistantsWithVision: samples/Assistants.AssistantsWithVision.md
+    - ListFiles: samples/Assistants.ListFiles.md
+    - ListAssistantsWithPagination: samples/Assistants.ListAssistantsWithPagination.md
+    - RetrievalAugmentedGeneration: samples/Assistants.RetrievalAugmentedGeneration.md
+  - Images:
+    - SimpleImageEdit: samples/Images.SimpleImageEdit.md
+    - SimpleImageVariation: samples/Images.SimpleImageVariation.md
+    - SimpleImageGeneration: samples/Images.SimpleImageGeneration.md
+  - Embeddings:
+    - MultipleEmbeddings: samples/Embeddings.MultipleEmbeddings.md
+    - SimpleEmbedding: samples/Embeddings.SimpleEmbedding.md
+    - EmbeddingWithOptions: samples/Embeddings.EmbeddingWithOptions.md
+  - Audio:
+    - SimpleTranscription: samples/Audio.SimpleTranscription.md
+    - SimpleTranslation: samples/Audio.SimpleTranslation.md
+    - VerboseTranscription: samples/Audio.VerboseTranscription.md
+    - SimpleTextToSpeech: samples/Audio.SimpleTextToSpeech.md
+  - Combination:
+    - CuriousCreatureCreator: samples/Combination.CuriousCreatureCreator.md
+    - AlpacaArtAssessor: samples/Combination.AlpacaArtAssessor.md
+# END EXAMPLES #
 
 #  - Quick Start: QuickStart.md
 #  - Architecture: Architecture.md
