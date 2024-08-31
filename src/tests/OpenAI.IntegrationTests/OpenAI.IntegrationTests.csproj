@@ -9,6 +9,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="H.Resources.Generator" Version="1.6.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="3.5.2" />
     <PackageReference Include="MSTest.TestFramework" Version="3.5.2" />
@@ -20,6 +24,7 @@
   <ItemGroup Label="GlobalUsings">
     <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
     <Using Include="FluentAssertions" />
+    <Using Include="NUnit.Framework" />
     <Compile Remove="Extended\**\*.*" />
     <None Include="Extended\**\*.*" />
   </ItemGroup>

@@ -10,7 +10,7 @@ File.Copy(
     Path.Combine(solutionDirectory, "docs", "index.md"));
 
 Console.WriteLine($"Generating samples from {sampleDirectory}...");
-foreach (var path in Directory.EnumerateFiles(sampleDirectory, "*.cs", SearchOption.AllDirectories))
+foreach (var path in Directory.EnumerateFiles(sampleDirectory, "Examples.*.cs", SearchOption.AllDirectories))
 {
     var code = await File.ReadAllTextAsync(path);
 
@@ -21,7 +21,7 @@ foreach (var path in Directory.EnumerateFiles(sampleDirectory, "*.cs", SearchOpt
     var lines = code.Split('\n')[1..^2];
     code = string.Join('\n', lines.Select(x => x.Length > 8 ? x[8..] : string.Empty));
     
-    var newPath = Path.Combine(newDir, $"{Path.GetExtension(Path.GetFileNameWithoutExtension(path)).TrimStart('.')}.md");
+    var newPath = Path.Combine(newDir, $"{Path.GetFileNameWithoutExtension(path).Replace("Examples.", string.Empty)}.md");
     await File.WriteAllTextAsync(newPath, $@"```csharp
 {code}
 ```");

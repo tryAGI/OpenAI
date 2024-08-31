@@ -1,6 +1,4 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
-using DescriptionAttribute = System.ComponentModel.DescriptionAttribute;
+﻿using DescriptionAttribute = System.ComponentModel.DescriptionAttribute;
 
 namespace OpenAI.IntegrationTests;
 

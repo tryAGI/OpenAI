@@ -1,5 +1,4 @@
-﻿using System;
-using DescriptionAttribute = System.ComponentModel.DescriptionAttribute;
+﻿using DescriptionAttribute = System.ComponentModel.DescriptionAttribute;
 
 namespace OpenAI.IntegrationTests;
 

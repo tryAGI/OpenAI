@@ -1,16 +1,12 @@
-﻿using NUnit.Framework;
+﻿namespace OpenAI.IntegrationTests.Examples;
 
-namespace OpenAI.Examples.Miscellaneous;
-
-public partial class CombinationExamples
+public partial class Examples
 {
     [Test]
     [Explicit]
     public async Task CuriousCreatureCreator()
     {
-        using var api = new OpenAiApi(apiKey:
-            Environment.GetEnvironmentVariable("OPENAI_API_KEY") ??
-            throw new AssertInconclusiveException("OPENAI_API_KEY environment variable is not found."));
+        using var api = GetAuthenticatedClient();
 
         // First, we'll use gpt-4o to have a creative helper imagine a twist on a household pet
         CreateChatCompletionResponse creativeWriterResult = await api.Chat.CreateChatCompletionAsync(

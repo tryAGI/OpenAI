@@ -1,16 +1,12 @@
-﻿using NUnit.Framework;
+﻿namespace OpenAI.IntegrationTests.Examples;
 
-namespace OpenAI.Examples.Miscellaneous;
-
-public partial class CombinationExamples
+public partial class Examples
 {
     [Test]
     [Explicit]
     public async Task AlpacaArtAssessor()
     {
-        using var api = new OpenAiApi(apiKey:
-            Environment.GetEnvironmentVariable("OPENAI_API_KEY") ??
-            throw new AssertInconclusiveException("OPENAI_API_KEY environment variable is not found."));
+        using var api = GetAuthenticatedClient();
         
         // First, we create an image using dall-e-3:
         ImagesResponse imageResult = await api.Images.CreateImageAsync(
