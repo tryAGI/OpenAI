@@ -44,31 +44,27 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageObjectStatusJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.MessageObjectStatus Status { get; set; }
+        public global::OpenAI.MessageObjectStatus? Status { get; set; }
 
         /// <summary>
         /// On an incomplete message, details about why the message is incomplete.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("incomplete_details")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.MessageObjectIncompleteDetails? IncompleteDetails { get; set; }
+        public global::OpenAI.MessageObjectIncompleteDetails? IncompleteDetails { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the message was completed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset? CompletedAt { get; set; }
+        public global::System.DateTimeOffset? CompletedAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the message was marked as incomplete.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("incomplete_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset? IncompleteAt { get; set; }
+        public global::System.DateTimeOffset? IncompleteAt { get; set; }
 
         /// <summary>
         /// The entity that produced the message. One of `user` or `assistant`.

@@ -22,6 +22,11 @@ openApiDocument.Components.Schemas["CreateChatCompletionResponse"]!.Properties["
 
 openApiDocument.Components.Schemas["ChatCompletionResponseMessage"]!.Required.Remove("refusal");
 
+openApiDocument.Components.Schemas["MessageObject"]!.Required.Remove("status");
+openApiDocument.Components.Schemas["MessageObject"]!.Required.Remove("incomplete_details");
+openApiDocument.Components.Schemas["MessageObject"]!.Required.Remove("completed_at");
+openApiDocument.Components.Schemas["MessageObject"]!.Required.Remove("incomplete_at");
+
 openApiDocument.Components.Schemas["CreateChatCompletionRequest"]!.Properties["model"].AnyOf[1].Enum =
     openApiDocument.Components.Schemas["CreateChatCompletionRequest"]!.Properties["model"].AnyOf[1].Enum
         .DistinctBy(x => (x as OpenApiString)?.Value)
