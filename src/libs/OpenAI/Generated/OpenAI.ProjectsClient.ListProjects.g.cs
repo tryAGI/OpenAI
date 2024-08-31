@@ -38,9 +38,9 @@ namespace OpenAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.ProjectListResponse> ListProjectsAsync(
-            int limit,
-            string? after,
-            bool includeArchived,
+            int limit = 20,
+            string? after = default,
+            bool includeArchived = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

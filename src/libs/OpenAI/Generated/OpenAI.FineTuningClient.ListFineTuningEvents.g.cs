@@ -39,8 +39,8 @@ namespace OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.ListFineTuningJobEventsResponse> ListFineTuningEventsAsync(
             string fineTuningJobId,
-            string? after,
-            int limit,
+            string? after = default,
+            int limit = 20,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

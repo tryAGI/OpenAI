@@ -41,7 +41,7 @@ namespace OpenAI
             string threadId,
             string runId,
             string stepId,
-            global::System.Collections.Generic.IList<global::OpenAI.GetRunStepIncludeItem>? include,
+            global::System.Collections.Generic.IList<global::OpenAI.GetRunStepIncludeItem>? include = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

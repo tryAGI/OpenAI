@@ -48,11 +48,11 @@ namespace OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.ListVectorStoreFilesResponse> ListVectorStoreFilesAsync(
             string vectorStoreId,
-            int limit,
-            global::OpenAI.ListVectorStoreFilesOrder? order,
-            string? after,
-            string? before,
-            global::OpenAI.ListVectorStoreFilesFilter? filter,
+            int limit = 20,
+            global::OpenAI.ListVectorStoreFilesOrder? order = global::OpenAI.ListVectorStoreFilesOrder.Desc,
+            string? after = default,
+            string? before = default,
+            global::OpenAI.ListVectorStoreFilesFilter? filter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -68,7 +68,7 @@ namespace OpenAI
 
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/vector_stores/{vectorStoreId}/files?limit={limit}&order={order}&after={after}&before={before}&filter={filter}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/vector_stores/{vectorStoreId}/files?limit={limit}&order={(global::System.Uri.EscapeDataString(order?.ToValueString() ?? string.Empty))}&after={after}&before={before}&filter={(global::System.Uri.EscapeDataString(filter?.ToValueString() ?? string.Empty))}", global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,

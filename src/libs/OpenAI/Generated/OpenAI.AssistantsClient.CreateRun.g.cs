@@ -36,8 +36,8 @@ namespace OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.RunObject> CreateRunAsync(
             string threadId,
-            global::System.Collections.Generic.IList<global::OpenAI.CreateRunIncludeItem>? include,
             global::OpenAI.CreateRunRequest request,
+            global::System.Collections.Generic.IList<global::OpenAI.CreateRunIncludeItem>? include = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));

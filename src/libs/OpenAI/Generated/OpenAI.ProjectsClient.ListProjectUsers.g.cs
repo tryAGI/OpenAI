@@ -37,8 +37,8 @@ namespace OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.ProjectUserListResponse> ListProjectUsersAsync(
             string projectId,
-            int limit,
-            string? after,
+            int limit = 20,
+            string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
