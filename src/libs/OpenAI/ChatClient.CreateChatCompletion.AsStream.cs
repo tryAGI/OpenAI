@@ -71,11 +71,6 @@ namespace OpenAI
                 if (!streamData.TryGetEventStreamData(out var eventData)) { continue; }
                 if (string.IsNullOrWhiteSpace(eventData)) { continue; }
 
-                ProcessCreateChatCompletionResponseContent(
-                    httpClient: _httpClient,
-                    httpResponseMessage: response,
-                    content: ref eventData);
-
                 var partialResponse = 
                     global::System.Text.Json.JsonSerializer.Deserialize(eventData, global::OpenAI.SourceGenerationContext.Default.CreateChatCompletionStreamResponse) ??
                     throw new global::System.InvalidOperationException($"Response deserialization failed for \"{eventData}\" ");
