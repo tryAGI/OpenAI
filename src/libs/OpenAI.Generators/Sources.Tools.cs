@@ -26,7 +26,7 @@ internal static partial class Sources
 {indent}                        Items = {GenerateOpenApiSchema(parameter.ArrayItem.First(), depth: depth + 1)},
 {indent}                    }}";
         }
-        if (parameter.Properties.Count != 0)
+        if (parameter.SchemaType == "object")
         {
             return $@"new {name}
 {indent}                    {{
@@ -63,7 +63,7 @@ internal static partial class Sources
     public static string GenerateClientImplementation(InterfaceData @interface)
     {
         var extensionsClassName = @interface.Name.Substring(startIndex: 1) + "Extensions";
-        
+
         return @$"
 #nullable enable
 

@@ -12,37 +12,44 @@ public static class ToModels
     {
         interfaceSymbol = interfaceSymbol ?? throw new ArgumentNullException(nameof(interfaceSymbol));
         attributeData = attributeData ?? throw new ArgumentNullException(nameof(attributeData));
-        
+
+        var isStrict = attributeData.NamedArguments.FirstOrDefault(x => x.Key == "Strict").Value.Value is bool strict &&
+                       strict;
         var methods = interfaceSymbol
             .GetMembers()
             .OfType<IMethodSymbol>()
             .Where(static x => x.MethodKind == MethodKind.Ordinary)
-            .Select(x => new MethodData(
-                Name: x.Name,
-                Description: GetDescription(x),
-                IsAsync: x.IsAsync || x.ReturnType.Name == "Task",
-                IsVoid: x.ReturnsVoid,
-                IsStrict: attributeData.NamedArguments.FirstOrDefault(x => x.Key == "Strict").Value.Value is bool strict && strict,
-                Parameters: new OpenApiSchema(
+            .Select(x =>
+            {
+                var parameters = x.Parameters
+                    .Where(static x => x.Type.MetadataName != "CancellationToken")
+                    .ToArray();
+                
+                return new MethodData(
                     Name: x.Name,
                     Description: GetDescription(x),
-                    Type: "object",
-                    SchemaType: "object",
-                    Properties:
-                    x.Parameters
-                        .Where(static x => x.Type.MetadataName != "CancellationToken")
-                        .Select(static x => ToParameterData(
-                            typeSymbol: x.Type,
-                            name: x.Name,
-                            description: GetDescription(x),
-                            isRequired: !x.IsOptional))
-                        .ToArray(),
-                    EnumValues: Array.Empty<string>(),
-                    IsNullable: false,
-                    IsRequired: true,
-                    Format: null,
-                    ArrayItem: Array.Empty<OpenApiSchema>(),
-                    DefaultValue: string.Empty)))
+                    IsAsync: x.IsAsync || x.ReturnType.Name == "Task",
+                    IsVoid: x.ReturnsVoid,
+                    IsStrict: isStrict,
+                    Parameters: new OpenApiSchema(
+                        Name: x.Name,
+                        Description: GetDescription(x),
+                        Type: "object",
+                        SchemaType: "object",
+                        Properties: parameters
+                            .Select(y => ToParameterData(
+                                typeSymbol: y.Type,
+                                name: y.Name,
+                                description: GetDescription(y),
+                                isRequired: isStrict || !y.IsOptional))
+                            .ToArray(),
+                        EnumValues: Array.Empty<string>(),
+                        IsNullable: false,
+                        IsRequired: true,
+                        Format: null,
+                        ArrayItem: Array.Empty<OpenApiSchema>(),
+                        DefaultValue: string.Empty));
+            })
             .ToArray();
 
         return new InterfaceData(

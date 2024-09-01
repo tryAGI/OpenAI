@@ -104,7 +104,8 @@ namespace {@interface.Namespace}
             global::System.Threading.CancellationToken cancellationToken = default)
         {{
             var args = functions.As{method.Name}Args(json);
-            var jsonResult = await functions.{method.Name}({string.Join(", ", method.Parameters.Properties.Select(static parameter => $@"args.{parameter.Name.ToPropertyName()}"))}, cancellationToken);
+            var jsonResult = await functions.{method.Name}({string.Join(", ", method.Parameters.Properties
+                .Select(static parameter => $@"args.{parameter.Name.ToPropertyName()}").Append("cancellationToken"))});
 
             return global::System.Text.Json.JsonSerializer.Serialize(jsonResult, new global::System.Text.Json.JsonSerializerOptions
             {{
