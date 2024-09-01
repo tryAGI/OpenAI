@@ -18,7 +18,7 @@ public partial class Tests
         var messages = new List<ChatCompletionRequestMessage>
         {
             "You are a helpful weather assistant.".AsSystemMessage(),
-            "What is the current temperature in Dubai, UAE in Celsius?".AsUserMessage(),
+            "What is the current temperature in Dubai, UAE in Celsius?",
         };
 
         try

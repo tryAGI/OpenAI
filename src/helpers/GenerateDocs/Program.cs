@@ -15,12 +15,20 @@ foreach (var path in Directory.EnumerateFiles(sampleDirectory, "Examples.*.cs", 
 {
     var code = await File.ReadAllTextAsync(path);
 
-    var start = code.IndexOf("\n    {", StringComparison.Ordinal);
-    var end = code.IndexOf("\n    }", StringComparison.Ordinal);
-    code = code.Substring(start + 4, end - start + 4);
-    
-    var lines = code.Split('\n')[1..^2];
-    code = string.Join('\n', lines.Select(x => x.Length > 8 ? x[8..] : string.Empty));
+    var startExample = code.IndexOf("// # START EXAMPLE #", StringComparison.Ordinal);
+    if (startExample == -1)
+    {
+        var start = code.IndexOf("\n    {", StringComparison.Ordinal);
+        var end = code.IndexOf("\n    }", StringComparison.Ordinal);
+        code = code.Substring(start + 4, end - start + 4);
+        
+        var lines = code.Split('\n')[1..^2];
+        code = string.Join('\n', lines.Select(x => x.Length > 8 ? x[8..] : string.Empty));
+    }
+    else
+    {
+        code = code[(startExample + "// # START EXAMPLE #".Length)..].Trim();
+    }
     
     var newPath = Path.Combine(newDir, $"{Path.GetFileNameWithoutExtension(path).Replace("Examples.", string.Empty)}.md");
     await File.WriteAllTextAsync(newPath, $@"```csharp

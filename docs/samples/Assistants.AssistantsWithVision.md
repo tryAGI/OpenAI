@@ -46,32 +46,44 @@ ThreadObject thread = await api.Assistants.CreateThreadAsync(new CreateThreadReq
     ]
 });
 
-// AsyncResultCollection<StreamingUpdate> streamingUpdates = api.Assistants.CreateRunStreamingAsync(
-//     thread,
-//     assistant,
-//     new RunCreationOptions()
-//     {
-//         AdditionalInstructions = "When possible, try to sneak in puns if you're asked to compare things.",
-//     });
-//
-// await foreach (StreamingUpdate streamingUpdate in streamingUpdates)
-// {
-//     if (streamingUpdate.UpdateKind == StreamingUpdateReason.RunCreated)
-//     {
-//         Console.WriteLine($"--- Run started! ---");
-//     }
-//     if (streamingUpdate is MessageContentUpdate contentUpdate)
-//     {
-//         Console.Write(contentUpdate.Text);
-//     }
-// }
-
-RunObject response = await api.Assistants.CreateRunAsync(
+var streamingUpdates = api.Assistants.CreateRunAsStreamAsync(
     threadId: thread.Id,
     assistantId: assistant.Id,
     instructions: "When possible, try to sneak in puns if you're asked to compare things.");
 
-Console.WriteLine(response[0].Content);
+await foreach (AssistantStreamEvent streamingUpdate in streamingUpdates)
+{
+    if (streamingUpdate.IsRun && streamingUpdate.Run.Value.IsValue1) // RunCreated
+    {
+        Console.WriteLine("--- Run started! ---");
+    }
+    if (streamingUpdate is { IsMessage: true, Message: var messageStreamEvent } &&
+        messageStreamEvent.Value is { IsValue3: true, Value3: var delta })
+    {
+        foreach (var deltaVariation in delta.Data.Delta.Content ?? [])
+        {
+            if (deltaVariation.IsValue1)
+            {
+                Console.WriteLine();
+                Console.WriteLine(deltaVariation.Value1.ImageFile?.FileId);
+            }
+            if (deltaVariation.IsValue2)
+            {
+                Console.Write(deltaVariation.Value2.Text?.Value);
+            }
+            if (deltaVariation.IsValue3)
+            {
+                Console.WriteLine();
+                Console.WriteLine(deltaVariation.Value3.Refusal);
+            }
+            if (deltaVariation.IsValue4)
+            {
+                Console.WriteLine();
+                Console.WriteLine(deltaVariation.Value4.ImageUrl?.Url);
+            }
+        }
+    }
+}
 
 _ = await api.Files.DeleteFileAsync(pictureOfAppleFile.Id);
 _ = await api.Assistants.DeleteThreadAsync(thread.Id);

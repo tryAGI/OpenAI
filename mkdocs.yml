@@ -7,6 +7,8 @@ nav:
     - SimpleChat: samples/Chat.SimpleChat.md
     - SimpleChatStreaming: samples/Chat.SimpleChatStreaming.md
     - ChatWithVision: samples/Chat.ChatWithVision.md
+    - FunctionCalling: samples/Chat.FunctionCalling.md
+    - FunctionCallingService: samples/Chat.FunctionCallingService.md
   - Assistants:
     - AssistantsWithVision: samples/Assistants.AssistantsWithVision.md
     - ListFiles: samples/Assistants.ListFiles.md
