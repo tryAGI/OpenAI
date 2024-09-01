@@ -22,7 +22,7 @@ public partial class Examples
             requiresAction = false;
             CreateChatCompletionResponse chatCompletion = await api.Chat.CreateChatCompletionAsync(
                 messages,
-                model: CreateChatCompletionRequestModel.Gpt4o,
+                model: CreateChatCompletionRequestModel.Gpt4o20240806,
                 tools: tools);
 
             switch (chatCompletion.Choices[0].FinishReason)
@@ -73,7 +73,6 @@ public partial class Examples
                 Console.WriteLine($"[SYSTEM]:");
                 Console.WriteLine($"{systemMessage.Content.Value1}");
                 Console.WriteLine();
-                break;
             }
             else if (requestMessage.User is { } userMessage)
             {
@@ -90,8 +89,6 @@ public partial class Examples
             else if (requestMessage.Tool is { } toolMessage)
             {
                 // Do not print any tool messages; let the assistant summarize the tool results instead.
-                break;
-
             }
         }
     }
