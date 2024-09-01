@@ -15,7 +15,7 @@ do
     requiresAction = false;
     CreateChatCompletionResponse chatCompletion = await api.Chat.CreateChatCompletionAsync(
         messages,
-        model: CreateChatCompletionRequestModel.Gpt4o,
+        model: CreateChatCompletionRequestModel.Gpt4o20240806,
         tools: tools);
 
     switch (chatCompletion.Choices[0].FinishReason)
@@ -66,7 +66,6 @@ foreach (ChatCompletionRequestMessage requestMessage in messages)
         Console.WriteLine($"[SYSTEM]:");
         Console.WriteLine($"{systemMessage.Content.Value1}");
         Console.WriteLine();
-        break;
     }
     else if (requestMessage.User is { } userMessage)
     {
@@ -80,11 +79,9 @@ foreach (ChatCompletionRequestMessage requestMessage in messages)
         Console.WriteLine($"{assistantMessage.Content?.Value1}");
         Console.WriteLine();
     }
-    else if (requestMessage.Tool is { } toolMessage)
+    else if (requestMessage.Tool is not null)
     {
         // Do not print any tool messages; let the assistant summarize the tool results instead.
-        break;
-
     }
 }
 ```

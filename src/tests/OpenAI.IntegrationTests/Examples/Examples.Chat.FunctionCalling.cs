@@ -86,7 +86,7 @@ public partial class Examples
                 Console.WriteLine($"{assistantMessage.Content?.Value1}");
                 Console.WriteLine();
             }
-            else if (requestMessage.Tool is { } toolMessage)
+            else if (requestMessage.Tool is not null)
             {
                 // Do not print any tool messages; let the assistant summarize the tool results instead.
             }

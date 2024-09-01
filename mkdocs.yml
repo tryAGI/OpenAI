@@ -4,6 +4,7 @@ nav:
 # START EXAMPLES #
 - Examples:
   - Chat:
+    - FunctionCallingStreaming: samples/Chat.FunctionCallingStreaming.md
     - SimpleChat: samples/Chat.SimpleChat.md
     - SimpleChatStreaming: samples/Chat.SimpleChatStreaming.md
     - ChatWithVision: samples/Chat.ChatWithVision.md
