@@ -89,8 +89,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expired_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset? ExpiredAt { get; set; }
+        public global::System.DateTimeOffset? ExpiredAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run step was cancelled.
@@ -120,8 +119,7 @@ namespace OpenAI
         /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.RunStepObjectMetadata? Metadata { get; set; }
+        public global::OpenAI.RunStepObjectMetadata? Metadata { get; set; }
 
         /// <summary>
         /// Usage statistics related to the run step. This value will be `null` while the run step's status is `in_progress`.

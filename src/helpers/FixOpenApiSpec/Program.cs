@@ -28,6 +28,9 @@ openApiDocument.Components.Schemas["MessageObject"]!.Required.Remove("incomplete
 openApiDocument.Components.Schemas["MessageObject"]!.Required.Remove("completed_at");
 openApiDocument.Components.Schemas["MessageObject"]!.Required.Remove("incomplete_at");
 
+openApiDocument.Components.Schemas["RunStepObject"]!.Required.Remove("expired_at");
+openApiDocument.Components.Schemas["RunStepObject"]!.Required.Remove("metadata");
+
 openApiDocument.Paths["/files/{file_id}/content"]!.Operations[OperationType.Get].Responses["200"]!.Content.Remove("application/json");
 openApiDocument.Paths["/files/{file_id}/content"]!.Operations[OperationType.Get].Responses["200"]!.Content.Add(
     "application/octet-stream",
