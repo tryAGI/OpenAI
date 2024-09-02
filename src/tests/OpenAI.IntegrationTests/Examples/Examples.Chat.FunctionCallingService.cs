@@ -9,7 +9,7 @@ public enum WeatherUnit
     Fahrenheit,
 }
 
-[OpenAiTools(Strict = true)]
+[OpenAiTools(Strict = false)]
 public interface IFunctionCallingService
 {
     [Description("Get the user's current location")]

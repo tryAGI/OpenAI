@@ -60,33 +60,41 @@ public partial class Examples
         
         await foreach (AssistantStreamEvent streamingUpdate in streamingUpdates)
         {
-            if (streamingUpdate.IsRun && streamingUpdate.Run.Value.IsValue1) // RunCreated
+            if (streamingUpdate.Run is {} run)
             {
-                Console.WriteLine("--- Run started! ---");
-            }
-            if (streamingUpdate is { IsMessage: true, Message: var messageStreamEvent } &&
-                messageStreamEvent.Value is { IsValue3: true, Value3: var delta })
-            {
-                foreach (var deltaVariation in delta.Data.Delta.Content ?? [])
+                if (run.Value1 is { Event: RunStreamEventVariant1Event.ThreadRunCreated })
                 {
-                    if (deltaVariation.IsValue1)
+                    Console.WriteLine("--- Run created! ---");
+                }
+            }
+            if (streamingUpdate.Message is {} message)
+            {
+                if (message.Value3 is
                     {
-                        Console.WriteLine();
-                        Console.WriteLine(deltaVariation.Value1.ImageFile?.FileId);
-                    }
-                    if (deltaVariation.IsValue2)
+                        Event: MessageStreamEventVariant3Event.ThreadMessageDelta
+                    } delta)
+                {
+                    foreach (var deltaVariation in delta.Data.Delta.Content ?? [])
                     {
-                        Console.Write(deltaVariation.Value2.Text?.Value);
-                    }
-                    if (deltaVariation.IsValue3)
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine(deltaVariation.Value3.Refusal);
-                    }
-                    if (deltaVariation.IsValue4)
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine(deltaVariation.Value4.ImageUrl?.Url);
+                        if (deltaVariation.Value1 is {} imageFile)
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine(imageFile.ImageFile?.FileId);
+                        }
+                        if (deltaVariation.Value2 is {} text)
+                        {
+                            Console.Write(text.Text?.Value);
+                        }
+                        if (deltaVariation.Value3 is {} refusal)
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine(refusal.Refusal);
+                        }
+                        if (deltaVariation.Value4 is {} imageUrl)
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine(imageUrl.ImageUrl?.Url);
+                        }
                     }
                 }
             }
