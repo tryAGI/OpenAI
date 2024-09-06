@@ -11,7 +11,7 @@ namespace OpenAI
     public readonly partial struct MessageStreamEvent : global::System.IEquatable<MessageStreamEvent>
     {
         /// <summary>
-        /// 
+        /// Occurs when a [message](/docs/api-reference/messages/object) is created.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.MessageStreamEventVariant1? Value1 { get; init; }
@@ -46,7 +46,7 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [message](/docs/api-reference/messages/object) moves to an `in_progress` state.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.MessageStreamEventVariant2? Value2 { get; init; }
@@ -81,7 +81,7 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// 
+        /// Occurs when parts of a [Message](/docs/api-reference/messages/object) are being streamed.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.MessageStreamEventVariant3? Value3 { get; init; }
@@ -116,7 +116,7 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [message](/docs/api-reference/messages/object) is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.MessageStreamEventVariant4? Value4 { get; init; }
@@ -151,7 +151,7 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [message](/docs/api-reference/messages/object) ends before it is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.MessageStreamEventVariant5? Value5 { get; init; }

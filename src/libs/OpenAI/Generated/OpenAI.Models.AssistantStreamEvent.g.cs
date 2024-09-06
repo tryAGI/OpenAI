@@ -165,7 +165,7 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// 
+        /// Occurs when an [error](/docs/guides/error-codes/api-errors) occurs. This can happen due to an internal server error or a timeout.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.ErrorEvent? Error { get; init; }
@@ -200,7 +200,7 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a stream ends.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.DoneEvent? Done { get; init; }

@@ -11,7 +11,7 @@ namespace OpenAI
     public readonly partial struct RunStepStreamEvent : global::System.IEquatable<RunStepStreamEvent>
     {
         /// <summary>
-        /// 
+        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is created.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.RunStepStreamEventVariant1? Value1 { get; init; }
@@ -46,7 +46,7 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) moves to an `in_progress` state.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.RunStepStreamEventVariant2? Value2 { get; init; }
@@ -81,7 +81,7 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// 
+        /// Occurs when parts of a [run step](/docs/api-reference/run-steps/step-object) are being streamed.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.RunStepStreamEventVariant3? Value3 { get; init; }
@@ -116,7 +116,7 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.RunStepStreamEventVariant4? Value4 { get; init; }
@@ -151,7 +151,7 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) fails.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.RunStepStreamEventVariant5? Value5 { get; init; }
@@ -186,7 +186,7 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is cancelled.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.RunStepStreamEventVariant6? Value6 { get; init; }
@@ -221,7 +221,7 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) expires.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.RunStepStreamEventVariant7? Value7 { get; init; }

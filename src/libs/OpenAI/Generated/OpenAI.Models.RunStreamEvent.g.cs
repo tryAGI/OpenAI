@@ -11,7 +11,7 @@ namespace OpenAI
     public readonly partial struct RunStreamEvent : global::System.IEquatable<RunStreamEvent>
     {
         /// <summary>
-        /// 
+        /// Occurs when a new [run](/docs/api-reference/runs/object) is created.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.RunStreamEventVariant1? Value1 { get; init; }
@@ -46,7 +46,7 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `queued` status.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.RunStreamEventVariant2? Value2 { get; init; }
@@ -81,7 +81,7 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [run](/docs/api-reference/runs/object) moves to an `in_progress` status.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.RunStreamEventVariant3? Value3 { get; init; }
@@ -116,7 +116,7 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `requires_action` status.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.RunStreamEventVariant4? Value4 { get; init; }
@@ -151,7 +151,7 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [run](/docs/api-reference/runs/object) is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.RunStreamEventVariant5? Value5 { get; init; }
@@ -186,7 +186,7 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [run](/docs/api-reference/runs/object) ends with status `incomplete`.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.RunStreamEventVariant6? Value6 { get; init; }
@@ -221,7 +221,7 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [run](/docs/api-reference/runs/object) fails.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.RunStreamEventVariant7? Value7 { get; init; }
@@ -256,7 +256,7 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `cancelling` status.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.RunStreamEventVariant8? Value8 { get; init; }
@@ -291,7 +291,7 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [run](/docs/api-reference/runs/object) is cancelled.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.RunStreamEventVariant9? Value9 { get; init; }
@@ -326,7 +326,7 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// 
+        /// Occurs when a [run](/docs/api-reference/runs/object) expires.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.RunStreamEventVariant10? Value10 { get; init; }
