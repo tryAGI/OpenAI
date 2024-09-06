@@ -15,7 +15,7 @@ namespace OpenAI
     public readonly partial struct AssistantsApiToolChoiceOption : global::System.IEquatable<AssistantsApiToolChoiceOption>
     {
         /// <summary>
-        /// 
+        /// `none` means the model will not call any tools and instead generates a message. `auto` means the model can pick between generating a message or calling one or more tools. `required` means the model must call one or more tools before responding to the user.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.AssistantsApiToolChoiceOptionEnum? Value1 { get; init; }
@@ -50,7 +50,7 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// 
+        /// Specifies a tool the model should use. Use to force the model to call a specific tool.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.AssistantsNamedToolChoice? Value2 { get; init; }
