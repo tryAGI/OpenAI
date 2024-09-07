@@ -1,3 +1,5 @@
+using System.Diagnostics.CodeAnalysis;
+
 namespace OpenAI;
 
 public partial class CreateChatCompletionStreamResponse
@@ -13,10 +15,10 @@ public partial class CreateChatCompletionStreamResponse
     /// </summary>
     /// <param name="response"></param>
     /// <returns></returns>
+    [SuppressMessage("Design", "CA1062:Validate arguments of public methods",
+        Justification = "This is a conversion operator.")]
     public static implicit operator string(CreateChatCompletionStreamResponse response)
     {
-#pragma warning disable CA1062
         return response.ToString();
-#pragma warning restore CA1062
     }
 }

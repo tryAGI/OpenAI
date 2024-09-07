@@ -33,21 +33,4 @@ public partial class MessageContentImageFileObject
             },
         };
     }
-    
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="uri"></param>
-    /// <returns></returns>
-    public static ChatCompletionRequestMessage ToCreateMessageRequest(Uri uri)
-    {
-        return new ChatCompletionRequestUserMessage
-        {
-            Role = ChatCompletionRequestUserMessageRole.User,
-            Content = new ChatCompletionRequestUserMessageContentPart[]
-            {
-                uri,
-            },
-        };
-    }
 }

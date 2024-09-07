@@ -9,7 +9,7 @@ public partial struct ChatCompletionRequestMessage
     /// <returns></returns>
     public static implicit operator ChatCompletionRequestMessage(string content)
     {
-        return ToChatCompletionRequestMessage(content);
+        return FromString(content);
     }
     
     /// <summary>
@@ -19,7 +19,7 @@ public partial struct ChatCompletionRequestMessage
     /// <returns></returns>
     public static implicit operator ChatCompletionRequestMessage(Uri uri)
     {
-        return ToChatCompletionRequestMessage(uri);
+        return FromUri(uri);
     }
     
     /// <summary>
@@ -27,7 +27,7 @@ public partial struct ChatCompletionRequestMessage
     /// </summary>
     /// <param name="content"></param>
     /// <returns></returns>
-    public static ChatCompletionRequestMessage ToChatCompletionRequestMessage(string content)
+    public static ChatCompletionRequestMessage FromString(string content)
     {
         return new ChatCompletionRequestUserMessage
         {
@@ -41,7 +41,7 @@ public partial struct ChatCompletionRequestMessage
     /// </summary>
     /// <param name="uri"></param>
     /// <returns></returns>
-    public static ChatCompletionRequestMessage ToChatCompletionRequestMessage(Uri uri)
+    public static ChatCompletionRequestMessage FromUri(Uri uri)
     {
         return new ChatCompletionRequestUserMessage
         {

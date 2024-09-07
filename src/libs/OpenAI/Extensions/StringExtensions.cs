@@ -1,4 +1,7 @@
 ﻿// ReSharper disable once CheckNamespace
+
+using System.Diagnostics.CodeAnalysis;
+
 namespace OpenAI;
 
 /// <summary>
@@ -12,40 +15,51 @@ public static class StringExtensions
     /// <param name="content"></param>
     /// <param name="name"></param>
     /// <returns></returns>
-    public static ChatCompletionRequestMessage AsSystemMessage(this string content, string? name = null)
+    public static ChatCompletionRequestMessage AsSystemMessage(
+        this string content,
+        string? name = null)
     {
         return new ChatCompletionRequestSystemMessage
         {
             Content = content,
             Role = ChatCompletionRequestSystemMessageRole.System,
+            Name = name,
         };
     }
-    
+
     /// <summary>
     /// 
     /// </summary>
     /// <param name="content"></param>
+    /// <param name="name"></param>
     /// <returns></returns>
-    public static ChatCompletionRequestMessage AsUserMessage(this string content)
+    public static ChatCompletionRequestMessage AsUserMessage(
+        this string content,
+        string? name = null)
     {
         return new ChatCompletionRequestUserMessage
         {
             Content = content,
             Role = ChatCompletionRequestUserMessageRole.User,
+            Name = name,
         };
     }
-    
+
     /// <summary>
     /// 
     /// </summary>
     /// <param name="content"></param>
+    /// <param name="name"></param>
     /// <returns></returns>
-    public static ChatCompletionRequestMessage AsAssistantMessage(this string content)
+    public static ChatCompletionRequestMessage AsAssistantMessage(
+        this string content,
+        string? name = null)
     {
         return new ChatCompletionRequestAssistantMessage
         {
             Content = content,
             Role = ChatCompletionRequestAssistantMessageRole.Assistant,
+            Name = name,
         };
     }
     
@@ -92,6 +106,22 @@ public static class StringExtensions
     /// <param name="mimeType"></param>
     /// <returns></returns>
     /// <exception cref="ArgumentNullException"></exception>
+    [SuppressMessage("Design", "CA1055:URI-like return values should not be strings",
+        Justification = "System.Uri doesn't support data URLs.")]
+    public static string AsDataUrl(this byte[] bytes, string mimeType)
+    {
+        bytes = bytes ?? throw new ArgumentNullException(nameof(bytes));
+        
+        return $"data:{mimeType};base64,{Convert.ToBase64String(bytes)}";
+    }
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="bytes"></param>
+    /// <param name="mimeType"></param>
+    /// <returns></returns>
+    /// <exception cref="ArgumentNullException"></exception>
     public static ChatCompletionRequestMessage AsUserMessage(this byte[] bytes, string mimeType)
     {
         bytes = bytes ?? throw new ArgumentNullException(nameof(bytes));
@@ -103,7 +133,7 @@ public static class StringExtensions
                 {
                     ImageUrl = new ChatCompletionRequestMessageContentPartImageImageUrl
                     {
-                        Url = $"data:{mimeType};base64,{Convert.ToBase64String(bytes)}",
+                        Url = bytes.AsDataUrl(mimeType),
                         Detail = ChatCompletionRequestMessageContentPartImageImageUrlDetail.Auto,
                     },
                     Type = ChatCompletionRequestMessageContentPartImageType.ImageUrl,

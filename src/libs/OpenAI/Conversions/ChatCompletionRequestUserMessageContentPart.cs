@@ -31,7 +31,7 @@ public partial struct ChatCompletionRequestUserMessageContentPart
     /// <returns></returns>
     public static implicit operator ChatCompletionRequestUserMessageContentPart(string content)
     {
-        return ToChatCompletionRequestUserMessageContentPart(content);
+        return FromString(content);
     }
     
     
@@ -42,7 +42,7 @@ public partial struct ChatCompletionRequestUserMessageContentPart
     /// <returns></returns>
     public static implicit operator ChatCompletionRequestUserMessageContentPart(Uri uri)
     {
-        return ToChatCompletionRequestUserMessageContentPart(uri);
+        return FromUri(uri);
     }
     
     /// <summary>
@@ -50,7 +50,7 @@ public partial struct ChatCompletionRequestUserMessageContentPart
     /// </summary>
     /// <param name="content"></param>
     /// <returns></returns>
-    public static ChatCompletionRequestUserMessageContentPart ToChatCompletionRequestUserMessageContentPart(string content)
+    public static ChatCompletionRequestUserMessageContentPart FromString(string content)
     {
         return new ChatCompletionRequestUserMessageContentPart(new ChatCompletionRequestMessageContentPartText
         {
@@ -64,7 +64,7 @@ public partial struct ChatCompletionRequestUserMessageContentPart
     /// </summary>
     /// <param name="uri"></param>
     /// <returns></returns>
-    public static ChatCompletionRequestUserMessageContentPart ToChatCompletionRequestUserMessageContentPart(Uri uri)
+    public static ChatCompletionRequestUserMessageContentPart FromUri(Uri uri)
     {
         uri = uri ?? throw new ArgumentNullException(nameof(uri));
         
