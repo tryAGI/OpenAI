@@ -10,4 +10,5 @@ public enum CustomProvider
     DeepSeek,
     OpenRouter,
     GitHub,
+    Perplexity,
 }

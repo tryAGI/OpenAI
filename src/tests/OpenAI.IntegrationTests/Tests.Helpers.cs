@@ -59,6 +59,13 @@ public partial class Tests
                 throw new AssertInconclusiveException("TOKEN_FOR_GITHUB_MODELS environment variable is not found.")),
                 model ?? "gpt-4o");
         }
+        if (customProvider == CustomProvider.Perplexity)
+        {
+            return (CustomProviders.Perplexity(apiKey:
+                    Environment.GetEnvironmentVariable("PERPLEXITY_API_KEY") ??
+                    throw new AssertInconclusiveException("PERPLEXITY_API_KEY environment variable is not found.")),
+                model ?? "llama-3.1-sonar-small-128k-online");
+        }
         
         var apiKey =
             Environment.GetEnvironmentVariable("OPENAI_API_KEY") ??

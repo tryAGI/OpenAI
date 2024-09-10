@@ -37,6 +37,11 @@ public static class CustomProviders
     public const string TogetherBaseUrl = "https://api.together.xyz/";
     
     /// <summary>
+    /// 
+    /// </summary>
+    public const string PerplexityBaseUrl = "https://api.perplexity.ai/";
+    
+    /// <summary>
     /// Creates an API to use for GitHub Models: https://github.com/marketplace/models
     /// </summary>
     /// <returns></returns>
@@ -97,5 +102,14 @@ public static class CustomProviders
     public static OpenAiApi Together(string apiKey)
     {
         return new OpenAiApi(apiKey, baseUri: new Uri(TogetherBaseUrl));
+    }
+    
+    /// <summary>
+    /// Create an API to use for Perplexity AI.
+    /// </summary>
+    /// <returns></returns>
+    public static OpenAiApi Perplexity(string apiKey)
+    {
+        return new OpenAiApi(apiKey, baseUri: new Uri(PerplexityBaseUrl));
     }
 }
