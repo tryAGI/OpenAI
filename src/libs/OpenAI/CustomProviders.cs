@@ -42,6 +42,11 @@ public static class CustomProviders
     public const string PerplexityBaseUrl = "https://api.perplexity.ai/";
     
     /// <summary>
+    /// 
+    /// </summary>
+    public const string SambaNovaBaseUrl = "https://api.sambanova.ai/v1";
+    
+    /// <summary>
     /// Creates an API to use for GitHub Models: https://github.com/marketplace/models
     /// </summary>
     /// <returns></returns>
@@ -111,5 +116,14 @@ public static class CustomProviders
     public static OpenAiApi Perplexity(string apiKey)
     {
         return new OpenAiApi(apiKey, baseUri: new Uri(PerplexityBaseUrl));
+    }
+    
+    /// <summary>
+    /// Create an API to use for SambaNova AI.
+    /// </summary>
+    /// <returns></returns>
+    public static OpenAiApi SambaNova(string apiKey)
+    {
+        return new OpenAiApi(apiKey, baseUri: new Uri(SambaNovaBaseUrl));
     }
 }

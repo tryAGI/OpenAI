@@ -11,6 +11,7 @@ public partial class Tests
     [DataRow(CustomProvider.Together)]
     [DataRow(CustomProvider.GitHub)]
     [DataRow(CustomProvider.Perplexity)]
+    [DataRow(CustomProvider.SambaNova)]
     public async Task GenerateFiveRandomWords(CustomProvider customProvider)
     {
         var pair = GetAuthorizedChatApi(customProvider);
@@ -39,6 +40,7 @@ public partial class Tests
     [DataRow(CustomProvider.OpenRouter)]
     [DataRow(CustomProvider.Together)]
     [DataRow(CustomProvider.GitHub)]
+    [DataRow(CustomProvider.SambaNova)]
     public async Task GenerateFiveRandomWordsAsStream(CustomProvider customProvider)
     {
         var pair = GetAuthorizedChatApi(customProvider);

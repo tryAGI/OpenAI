@@ -66,6 +66,13 @@ public partial class Tests
                     throw new AssertInconclusiveException("PERPLEXITY_API_KEY environment variable is not found.")),
                 model ?? "llama-3.1-sonar-small-128k-online");
         }
+        if (customProvider == CustomProvider.SambaNova)
+        {
+            return (CustomProviders.SambaNova(apiKey:
+                    Environment.GetEnvironmentVariable("SAMBANOVA_API_KEY") ??
+                    throw new AssertInconclusiveException("SAMBANOVA_API_KEY environment variable is not found.")),
+                model ?? "Meta-Llama-3.1-8B-Instruct");
+        }
         
         var apiKey =
             Environment.GetEnvironmentVariable("OPENAI_API_KEY") ??

@@ -11,4 +11,5 @@ public enum CustomProvider
     OpenRouter,
     GitHub,
     Perplexity,
+    SambaNova,
 }
