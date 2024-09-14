@@ -27,7 +27,7 @@ public partial class Examples
                 new Uri(imageGeneration.Url ?? string.Empty),
             ],
             model: ChatClient.LatestSmartModel,
-            maxTokens: 2048);
+            maxCompletionTokens: 2048);
 
         string chatResponseText = chatCompletion.Choices[0].Message.Content ?? string.Empty;
         Console.WriteLine($"Art critique of majestic alpaca:\n{chatResponseText}");
