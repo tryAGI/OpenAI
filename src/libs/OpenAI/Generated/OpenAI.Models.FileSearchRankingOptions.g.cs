@@ -4,7 +4,7 @@
 namespace OpenAI
 {
     /// <summary>
-    /// The ranking options for the file search.<br/>
+    /// The ranking options for the file search. If not specified, the file search tool will use the `auto` ranker and a score_threshold of 0.<br/>
     /// See the [file search tool documentation](/docs/assistants/tools/file-search/customizing-file-search-settings) for more information.
     /// </summary>
     public sealed partial class FileSearchRankingOptions
@@ -20,7 +20,8 @@ namespace OpenAI
         /// The score threshold for the file search. All values must be a floating point number between 0 and 1.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("score_threshold")]
-        public double ScoreThreshold { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double ScoreThreshold { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
