@@ -39,7 +39,7 @@ namespace OpenAI
         public global::OpenAI.CreateFineTuningJobRequestHyperparameters? Hyperparameters { get; set; }
 
         /// <summary>
-        /// A string of up to 18 characters that will be added to your fine-tuned model name.<br/>
+        /// A string of up to 64 characters that will be added to your fine-tuned model name.<br/>
         /// For example, a `suffix` of "custom-model-name" would produce a model name like `ft:gpt-4o-mini:openai:custom-model-name:7p4lURel`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("suffix")]

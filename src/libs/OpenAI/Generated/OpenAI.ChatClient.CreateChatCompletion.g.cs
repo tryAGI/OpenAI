@@ -120,9 +120,8 @@ namespace OpenAI
         /// <param name="topLogprobs">
         /// An integer between 0 and 20 specifying the number of most likely tokens to return at each token position, each with an associated log probability. `logprobs` must be set to `true` if this parameter is used.
         /// </param>
-        /// <param name="maxTokens">
-        /// The maximum number of [tokens](/tokenizer) that can be generated in the chat completion.<br/>
-        /// The total length of input tokens and generated tokens is limited by the model's context length. [Example Python code](https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken) for counting tokens.
+        /// <param name="maxCompletionTokens">
+        /// An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and [reasoning tokens](/docs/guides/reasoning).
         /// </param>
         /// <param name="n">
         /// How many chat completion choices to generate for each input message. Note that you will be charged based on the number of generated tokens across all of the choices. Keep `n` as `1` to minimize costs.<br/>
@@ -136,8 +135,8 @@ namespace OpenAI
         /// </param>
         /// <param name="responseFormat">
         /// An object specifying the format that the model must output. Compatible with [GPT-4o](/docs/models/gpt-4o), [GPT-4o mini](/docs/models/gpt-4o-mini), [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models newer than `gpt-3.5-turbo-1106`.<br/>
-        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which guarantees the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).<br/>
-        /// Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.<br/>
+        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).<br/>
+        /// Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.<br/>
         /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
         /// </param>
         /// <param name="seed">
@@ -147,7 +146,8 @@ namespace OpenAI
         /// </param>
         /// <param name="serviceTier">
         /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
-        ///   - If set to 'auto', the system will utilize scale tier credits until they are exhausted.<br/>
+        ///   - If set to 'auto', and the Project is Scale tier enabled, the system will utilize scale tier credits until they are exhausted. <br/>
+        ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
         ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
         ///   - When not set, the default behavior is 'auto'.<br/>
         ///   When this parameter is set, the response body will include the `service_tier` utilized.
@@ -201,7 +201,7 @@ namespace OpenAI
             global::OpenAI.CreateChatCompletionRequestLogitBias? logitBias = default,
             bool? logprobs = false,
             int? topLogprobs = default,
-            int? maxTokens = default,
+            int? maxCompletionTokens = default,
             int? n = 1,
             double? presencePenalty = 0,
             global::System.OneOf<global::OpenAI.ResponseFormatText, global::OpenAI.ResponseFormatJsonObject, global::OpenAI.ResponseFormatJsonSchema>? responseFormat = default,
@@ -226,7 +226,7 @@ namespace OpenAI
                 LogitBias = logitBias,
                 Logprobs = logprobs,
                 TopLogprobs = topLogprobs,
-                MaxTokens = maxTokens,
+                MaxCompletionTokens = maxCompletionTokens,
                 N = n,
                 PresencePenalty = presencePenalty,
                 ResponseFormat = responseFormat,
