@@ -13,6 +13,26 @@ public static partial class Metadata
     {
         return model switch
         {
+            CreateChatCompletionRequestModel.O1Preview or 
+            CreateChatCompletionRequestModel.O1Preview20240912 => new ChatModelMetadata
+            {
+                Id = model.ToValueString(),
+                PricePerInputTokenInUsd = 15.00 * UsdPerMillionTokens,
+                PricePerOutputTokenInUsd = 60.00 * UsdPerMillionTokens,
+                ContextLength = 128_000,
+                OutputLength = 16_000,
+            },
+            
+            CreateChatCompletionRequestModel.O1Mini or 
+            CreateChatCompletionRequestModel.O1Mini20240912 => new ChatModelMetadata
+            {
+                Id = model.ToValueString(),
+                PricePerInputTokenInUsd = 3.00 * UsdPerMillionTokens,
+                PricePerOutputTokenInUsd = 12.00 * UsdPerMillionTokens,
+                ContextLength = 128_000,
+                OutputLength = 16_000,
+            },
+            
             CreateChatCompletionRequestModel.Gpt4o or
             CreateChatCompletionRequestModel.Gpt4o20240806 => new ChatModelMetadata
             {
