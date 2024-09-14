@@ -20,6 +20,9 @@ jobs:
       additional-test-arguments: '--logger GitHubActions'
     secrets:
       nuget-key: ${{ secrets.NUGET_KEY }}
+      dynamic-secrets: '{
+        "OPENAI_API_KEY": "${{ secrets.OPENAI_API_KEY }}"
+      }'
   
   release:
     name: Release
