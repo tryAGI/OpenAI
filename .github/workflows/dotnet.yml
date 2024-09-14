@@ -12,17 +12,46 @@ permissions:
 jobs:
   publish:
     name: Publish
-    uses: HavenDV/workflows/.github/workflows/dotnet_build-test-publish.yml@main
-    with:
-      generate-build-number: false
-      conventional-commits-publish-conditions: false
-      enable-caching: false
-      additional-test-arguments: '--logger GitHubActions'
-    secrets:
-      nuget-key: ${{ secrets.NUGET_KEY }}
-      dynamic-secrets: '{
-        "OPENAI_API_KEY": "${{ secrets.OPENAI_API_KEY }}"
-      }'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore
+        run: dotnet restore
+          
+      - name: Build
+        run: dotnet build
+          --configuration Release
+          --no-restore
+        
+      - name: Test
+        run: dotnet test
+          --configuration Release
+          --logger GitHubActions
+          --no-build
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          FIREWORKS_API_KEY: ${{ secrets.FIREWORKS_API_KEY }}
+          DEEPINFRA_API_KEY: ${{ secrets.DEEPINFRA_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY }}
+          TOKEN_FOR_GITHUB_MODELS: ${{ secrets.GITHUB_TOKEN }}
+          PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+          SAMBANOVA_API_KEY: ${{ secrets.SAMBANOVA_API_KEY }}
+          
+      - name: Publish to NuGet
+        run: dotnet nuget push
+          **.nupkg
+          --skip-duplicate
+          --source https://api.nuget.org/v3/index.json
+          --api-key ${{ secrets.NUGET_KEY }}
   
   release:
     name: Release
