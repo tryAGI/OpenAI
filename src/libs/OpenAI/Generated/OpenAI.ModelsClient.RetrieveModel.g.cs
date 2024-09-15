@@ -84,7 +84,7 @@ namespace OpenAI
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::OpenAI.SourceGenerationContext.Default.Model12) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::OpenAI.Model12), JsonSerializerContext) as global::OpenAI.Model12 ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

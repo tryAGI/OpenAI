@@ -31,7 +31,7 @@ namespace OpenAI
         /// The role of the author of this message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatCompletionResponseMessageRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.ChatCompletionResponseMessageRoleJsonConverter))]
         public global::OpenAI.ChatCompletionResponseMessageRole Role { get; set; }
 
         /// <summary>

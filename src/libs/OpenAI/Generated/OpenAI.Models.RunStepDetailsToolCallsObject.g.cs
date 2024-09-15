@@ -14,7 +14,7 @@ namespace OpenAI
         /// Always `tool_calls`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepDetailsToolCallsObjectTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RunStepDetailsToolCallsObjectTypeJsonConverter))]
         public global::OpenAI.RunStepDetailsToolCallsObjectType Type { get; set; }
 
         /// <summary>
@@ -22,7 +22,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_calls")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.RunStepDetailsToolCallsCodeObject, global::OpenAI.RunStepDetailsToolCallsFileSearchObject, global::OpenAI.RunStepDetailsToolCallsFunctionObject>> ToolCalls { get; set; }
+        public required global::System.Collections.Generic.IList<global::OpenAI.OneOf<global::OpenAI.RunStepDetailsToolCallsCodeObject, global::OpenAI.RunStepDetailsToolCallsFileSearchObject, global::OpenAI.RunStepDetailsToolCallsFunctionObject>> ToolCalls { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

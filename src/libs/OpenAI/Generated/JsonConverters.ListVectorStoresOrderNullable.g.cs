@@ -1,6 +1,6 @@
 #nullable enable
 
-namespace OpenApiGenerator.JsonConverters
+namespace OpenAI.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ListVectorStoresOrderNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenAI.ListVectorStoresOrder?>

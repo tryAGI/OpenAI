@@ -12,7 +12,7 @@ namespace OpenAI
         /// The object type, which is always `organization.user`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UserObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.UserObjectJsonConverter))]
         public global::OpenAI.UserObject Object { get; set; }
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace OpenAI
         /// `owner` or `reader`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UserRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.UserRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenAI.UserRole Role { get; set; }
 
@@ -48,7 +48,7 @@ namespace OpenAI
         /// The Unix timestamp (in seconds) of when the user was added.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("added_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset AddedAt { get; set; }
 

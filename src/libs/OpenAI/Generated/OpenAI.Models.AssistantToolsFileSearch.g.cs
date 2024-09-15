@@ -12,7 +12,7 @@ namespace OpenAI
         /// The type of tool being defined: `file_search`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AssistantToolsFileSearchTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AssistantToolsFileSearchTypeJsonConverter))]
         public global::OpenAI.AssistantToolsFileSearchType Type { get; set; }
 
         /// <summary>

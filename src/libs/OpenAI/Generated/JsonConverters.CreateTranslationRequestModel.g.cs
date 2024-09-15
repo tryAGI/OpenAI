@@ -1,6 +1,6 @@
 #nullable enable
 
-namespace OpenApiGenerator.JsonConverters
+namespace OpenAI.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CreateTranslationRequestModelJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenAI.CreateTranslationRequestModel>

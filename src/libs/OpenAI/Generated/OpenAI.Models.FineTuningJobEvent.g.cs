@@ -26,7 +26,7 @@ namespace OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("level")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.FineTuningJobEventLevelJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.FineTuningJobEventLevelJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenAI.FineTuningJobEventLevel Level { get; set; }
 
@@ -41,7 +41,7 @@ namespace OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.FineTuningJobEventObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.FineTuningJobEventObjectJsonConverter))]
         public global::OpenAI.FineTuningJobEventObject Object { get; set; }
 
         /// <summary>

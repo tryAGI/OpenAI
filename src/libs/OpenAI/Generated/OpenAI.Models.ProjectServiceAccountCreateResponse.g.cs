@@ -12,7 +12,7 @@ namespace OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ProjectServiceAccountCreateResponseObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.ProjectServiceAccountCreateResponseObjectJsonConverter))]
         public global::OpenAI.ProjectServiceAccountCreateResponseObject Object { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace OpenAI
         /// Service accounts can only have one role of type `member`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ProjectServiceAccountCreateResponseRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.ProjectServiceAccountCreateResponseRoleJsonConverter))]
         public global::OpenAI.ProjectServiceAccountCreateResponseRole Role { get; set; }
 
         /// <summary>

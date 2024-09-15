@@ -12,7 +12,7 @@ namespace OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UserListResponseObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.UserListResponseObjectJsonConverter))]
         public global::OpenAI.UserListResponseObject Object { get; set; }
 
         /// <summary>

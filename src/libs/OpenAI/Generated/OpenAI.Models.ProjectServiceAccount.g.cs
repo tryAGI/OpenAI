@@ -12,7 +12,7 @@ namespace OpenAI
         /// The object type, which is always `organization.project.service_account`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ProjectServiceAccountObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.ProjectServiceAccountObjectJsonConverter))]
         public global::OpenAI.ProjectServiceAccountObject Object { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace OpenAI
         /// `owner` or `member`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ProjectServiceAccountRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.ProjectServiceAccountRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenAI.ProjectServiceAccountRole Role { get; set; }
 
@@ -41,7 +41,7 @@ namespace OpenAI
         /// The Unix timestamp (in seconds) of when the service account was created
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset CreatedAt { get; set; }
 

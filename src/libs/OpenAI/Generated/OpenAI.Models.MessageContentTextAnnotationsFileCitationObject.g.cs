@@ -12,7 +12,7 @@ namespace OpenAI
         /// Always `file_citation`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageContentTextAnnotationsFileCitationObjectTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.MessageContentTextAnnotationsFileCitationObjectTypeJsonConverter))]
         public global::OpenAI.MessageContentTextAnnotationsFileCitationObjectType Type { get; set; }
 
         /// <summary>

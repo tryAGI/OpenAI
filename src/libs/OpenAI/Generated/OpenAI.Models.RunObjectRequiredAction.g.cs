@@ -12,7 +12,7 @@ namespace OpenAI
         /// For now, this is always `submit_tool_outputs`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunObjectRequiredActionTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RunObjectRequiredActionTypeJsonConverter))]
         public global::OpenAI.RunObjectRequiredActionType Type { get; set; }
 
         /// <summary>

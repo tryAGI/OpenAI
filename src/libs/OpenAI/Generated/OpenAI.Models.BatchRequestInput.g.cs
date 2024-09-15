@@ -18,7 +18,7 @@ namespace OpenAI
         /// The HTTP method to be used for the request. Currently only `POST` is supported.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("method")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.BatchRequestInputMethodJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.BatchRequestInputMethodJsonConverter))]
         public global::OpenAI.BatchRequestInputMethod? Method { get; set; }
 
         /// <summary>

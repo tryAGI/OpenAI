@@ -25,7 +25,7 @@ namespace OpenAI
         /// The type of tool call. This is always going to be `function` for this type of tool call.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepDeltaStepDetailsToolCallsFunctionObjectTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RunStepDeltaStepDetailsToolCallsFunctionObjectTypeJsonConverter))]
         public global::OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObjectType Type { get; set; }
 
         /// <summary>

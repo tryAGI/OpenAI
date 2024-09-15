@@ -12,7 +12,7 @@ namespace OpenAI
         /// The object type, which is always `organization.invite.deleted`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.InviteDeleteResponseObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.InviteDeleteResponseObjectJsonConverter))]
         public global::OpenAI.InviteDeleteResponseObject Object { get; set; }
 
         /// <summary>

@@ -26,7 +26,7 @@ namespace OpenAI
         /// The object type, which is always "embedding".
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.EmbeddingObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.EmbeddingObjectJsonConverter))]
         public global::OpenAI.EmbeddingObject Object { get; set; }
 
         /// <summary>

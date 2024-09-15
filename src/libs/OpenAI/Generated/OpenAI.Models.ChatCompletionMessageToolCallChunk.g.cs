@@ -25,7 +25,7 @@ namespace OpenAI
         /// The type of the tool. Currently, only `function` is supported.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatCompletionMessageToolCallChunkTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.ChatCompletionMessageToolCallChunkTypeJsonConverter))]
         public global::OpenAI.ChatCompletionMessageToolCallChunkType? Type { get; set; }
 
         /// <summary>

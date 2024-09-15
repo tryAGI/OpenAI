@@ -19,7 +19,7 @@ namespace OpenAI
         /// The Unix timestamp (in seconds) for when the checkpoint was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset CreatedAt { get; set; }
 
@@ -55,7 +55,7 @@ namespace OpenAI
         /// The object type, which is always "fine_tuning.job.checkpoint".
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.FineTuningJobCheckpointObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.FineTuningJobCheckpointObjectJsonConverter))]
         public global::OpenAI.FineTuningJobCheckpointObject Object { get; set; }
 
         /// <summary>

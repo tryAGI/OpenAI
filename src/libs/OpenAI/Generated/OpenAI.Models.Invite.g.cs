@@ -12,7 +12,7 @@ namespace OpenAI
         /// The object type, which is always `organization.invite`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.InviteObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.InviteObjectJsonConverter))]
         public global::OpenAI.InviteObject Object { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace OpenAI
         /// `owner` or `reader`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.InviteRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.InviteRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenAI.InviteRole Role { get; set; }
 
@@ -41,7 +41,7 @@ namespace OpenAI
         /// `accepted`,`expired`, or `pending`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.InviteStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.InviteStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenAI.InviteStatus Status { get; set; }
 
@@ -49,7 +49,7 @@ namespace OpenAI
         /// The Unix timestamp (in seconds) of when the invite was sent.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("invited_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset InvitedAt { get; set; }
 
@@ -57,7 +57,7 @@ namespace OpenAI
         /// The Unix timestamp (in seconds) of when the invite expires.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset ExpiresAt { get; set; }
 
@@ -65,7 +65,7 @@ namespace OpenAI
         /// The Unix timestamp (in seconds) of when the invite was accepted.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("accepted_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset AcceptedAt { get; set; }
 
         /// <summary>

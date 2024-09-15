@@ -42,7 +42,7 @@ namespace OpenAI
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/completions", global::System.UriKind.RelativeOrAbsolute));
-            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, global::OpenAI.SourceGenerationContext.Default.CreateCompletionRequest);
+            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, request.GetType(), JsonSerializerContext);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -90,7 +90,7 @@ namespace OpenAI
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::OpenAI.SourceGenerationContext.Default.CreateCompletionResponse) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::OpenAI.CreateCompletionResponse), JsonSerializerContext) as global::OpenAI.CreateCompletionResponse ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -184,8 +184,8 @@ namespace OpenAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.CreateCompletionResponse> CreateCompletionAsync(
-            global::System.AnyOf<string, global::OpenAI.CreateCompletionRequestModel?> model,
-            global::System.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>? prompt,
+            global::OpenAI.AnyOf<string, global::OpenAI.CreateCompletionRequestModel?> model,
+            global::OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>? prompt,
             int? bestOf = 1,
             bool? echo = false,
             double? frequencyPenalty = 0,
@@ -195,7 +195,7 @@ namespace OpenAI
             int? n = 1,
             double? presencePenalty = 0,
             int? seed = default,
-            global::System.OneOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
+            global::OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
             bool? stream = false,
             global::OpenAI.ChatCompletionStreamOptions? streamOptions = default,
             string? suffix = default,

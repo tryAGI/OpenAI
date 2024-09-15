@@ -12,7 +12,7 @@ namespace OpenAI
         /// Anchor timestamp after which the expiration policy applies. Supported anchors: `last_active_at`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("anchor")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.VectorStoreExpirationAfterAnchorJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.VectorStoreExpirationAfterAnchorJsonConverter))]
         public global::OpenAI.VectorStoreExpirationAfterAnchor Anchor { get; set; }
 
         /// <summary>

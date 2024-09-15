@@ -24,8 +24,8 @@ namespace OpenAI
         /// Example: dall-e-3
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, global::OpenAI.CreateImageRequestModel?>? Model { get; set; } = global::OpenAI.CreateImageRequestModel.DallE2;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::OpenAI.AnyOf<string, global::OpenAI.CreateImageRequestModel?>? Model { get; set; } = global::OpenAI.CreateImageRequestModel.DallE2;
 
         /// <summary>
         /// The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only `n=1` is supported.<br/>
@@ -41,7 +41,7 @@ namespace OpenAI
         /// Example: standard
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("quality")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateImageRequestQualityJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.CreateImageRequestQualityJsonConverter))]
         public global::OpenAI.CreateImageRequestQuality? Quality { get; set; } = global::OpenAI.CreateImageRequestQuality.Standard;
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace OpenAI
         /// Example: url
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateImageRequestResponseFormatJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.CreateImageRequestResponseFormatJsonConverter))]
         public global::OpenAI.CreateImageRequestResponseFormat? ResponseFormat { get; set; } = global::OpenAI.CreateImageRequestResponseFormat.Url;
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace OpenAI
         /// Example: 1024x1024
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateImageRequestSizeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.CreateImageRequestSizeJsonConverter))]
         public global::OpenAI.CreateImageRequestSize? Size { get; set; } = global::OpenAI.CreateImageRequestSize.x1024x1024;
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace OpenAI
         /// Example: vivid
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("style")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateImageRequestStyleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.CreateImageRequestStyleJsonConverter))]
         public global::OpenAI.CreateImageRequestStyle? Style { get; set; } = global::OpenAI.CreateImageRequestStyle.Vivid;
 
         /// <summary>

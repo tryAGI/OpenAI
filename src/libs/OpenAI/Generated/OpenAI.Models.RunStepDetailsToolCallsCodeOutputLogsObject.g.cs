@@ -12,7 +12,7 @@ namespace OpenAI
         /// Always `logs`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepDetailsToolCallsCodeOutputLogsObjectTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RunStepDetailsToolCallsCodeOutputLogsObjectTypeJsonConverter))]
         public global::OpenAI.RunStepDetailsToolCallsCodeOutputLogsObjectType Type { get; set; }
 
         /// <summary>

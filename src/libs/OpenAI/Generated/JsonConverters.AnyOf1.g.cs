@@ -1,12 +1,12 @@
 #nullable enable
 
-namespace OpenApiGenerator.JsonConverters
+namespace OpenAI.JsonConverters
 {
     /// <inheritdoc />
-    public class AnyOfJsonConverter<T1> : global::System.Text.Json.Serialization.JsonConverter<global::System.AnyOf<T1>>
+    public class AnyOfJsonConverter<T1> : global::System.Text.Json.Serialization.JsonConverter<global::OpenAI.AnyOf<T1>>
     {
         /// <inheritdoc />
-        public override global::System.AnyOf<T1> Read(
+        public override global::OpenAI.AnyOf<T1> Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -27,7 +27,7 @@ namespace OpenApiGenerator.JsonConverters
             {
             }
 
-            var result = new global::System.AnyOf<T1>(
+            var result = new global::OpenAI.AnyOf<T1>(
                 value1
                 );
 
@@ -44,7 +44,7 @@ namespace OpenApiGenerator.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::System.AnyOf<T1> value,
+            global::OpenAI.AnyOf<T1> value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));

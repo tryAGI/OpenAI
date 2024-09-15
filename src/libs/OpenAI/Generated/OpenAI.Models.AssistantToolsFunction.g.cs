@@ -12,7 +12,7 @@ namespace OpenAI
         /// The type of tool being defined: `function`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AssistantToolsFunctionTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AssistantToolsFunctionTypeJsonConverter))]
         public global::OpenAI.AssistantToolsFunctionType Type { get; set; }
 
         /// <summary>

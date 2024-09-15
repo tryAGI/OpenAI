@@ -20,7 +20,7 @@ namespace OpenAI
         /// See the [documentation on File purposes](/docs/api-reference/files/create#files-create-purpose).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("purpose")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateUploadRequestPurposeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.CreateUploadRequestPurposeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenAI.CreateUploadRequestPurpose Purpose { get; set; }
 

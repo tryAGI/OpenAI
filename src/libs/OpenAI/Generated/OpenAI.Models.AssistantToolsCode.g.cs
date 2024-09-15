@@ -12,7 +12,7 @@ namespace OpenAI
         /// The type of tool being defined: `code_interpreter`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AssistantToolsCodeTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AssistantToolsCodeTypeJsonConverter))]
         public global::OpenAI.AssistantToolsCodeType Type { get; set; }
 
         /// <summary>

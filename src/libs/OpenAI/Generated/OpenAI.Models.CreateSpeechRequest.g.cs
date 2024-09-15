@@ -14,9 +14,9 @@ namespace OpenAI
         /// One of the available [TTS models](/docs/models/tts): `tts-1` or `tts-1-hd`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AnyOf<string, global::OpenAI.CreateSpeechRequestModel?> Model { get; set; }
+        public required global::OpenAI.AnyOf<string, global::OpenAI.CreateSpeechRequestModel?> Model { get; set; }
 
         /// <summary>
         /// The text to generate audio for. The maximum length is 4096 characters.
@@ -29,7 +29,7 @@ namespace OpenAI
         /// The voice to use when generating the audio. Supported voices are `alloy`, `echo`, `fable`, `onyx`, `nova`, and `shimmer`. Previews of the voices are available in the [Text to speech guide](/docs/guides/text-to-speech/voice-options).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateSpeechRequestVoiceJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.CreateSpeechRequestVoiceJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenAI.CreateSpeechRequestVoice Voice { get; set; }
 
@@ -38,7 +38,7 @@ namespace OpenAI
         /// Default Value: mp3
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateSpeechRequestResponseFormatJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.CreateSpeechRequestResponseFormatJsonConverter))]
         public global::OpenAI.CreateSpeechRequestResponseFormat? ResponseFormat { get; set; } = global::OpenAI.CreateSpeechRequestResponseFormat.Mp3;
 
         /// <summary>

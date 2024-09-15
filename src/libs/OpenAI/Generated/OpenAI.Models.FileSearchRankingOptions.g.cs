@@ -13,7 +13,7 @@ namespace OpenAI
         /// The ranker to use for the file search. If not specified will use the `auto` ranker.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ranker")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.FileSearchRankingOptionsRankerJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.FileSearchRankingOptionsRankerJsonConverter))]
         public global::OpenAI.FileSearchRankingOptionsRanker? Ranker { get; set; }
 
         /// <summary>

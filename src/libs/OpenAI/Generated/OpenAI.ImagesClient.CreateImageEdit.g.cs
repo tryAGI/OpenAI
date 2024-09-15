@@ -142,7 +142,7 @@ namespace OpenAI
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::OpenAI.SourceGenerationContext.Default.ImagesResponse) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::OpenAI.ImagesResponse), JsonSerializerContext) as global::OpenAI.ImagesResponse ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -197,7 +197,7 @@ namespace OpenAI
             string prompt,
             byte[]? mask = default,
             string? maskname = default,
-            global::System.AnyOf<string, global::OpenAI.CreateImageEditRequestModel?>? model = default,
+            global::OpenAI.AnyOf<string, global::OpenAI.CreateImageEditRequestModel?>? model = default,
             int? n = 1,
             global::OpenAI.CreateImageEditRequestSize? size = global::OpenAI.CreateImageEditRequestSize.x1024x1024,
             global::OpenAI.CreateImageEditRequestResponseFormat? responseFormat = global::OpenAI.CreateImageEditRequestResponseFormat.Url,

@@ -1,6 +1,6 @@
 #nullable enable
 
-namespace OpenApiGenerator.JsonConverters
+namespace OpenAI.JsonConverters
 {
     /// <inheritdoc />
     public sealed class MessageContentTextAnnotationsFileCitationObjectTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenAI.MessageContentTextAnnotationsFileCitationObjectType?>

@@ -50,8 +50,8 @@ namespace OpenAI
         /// Example: dall-e-2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, global::OpenAI.CreateImageEditRequestModel?>? Model { get; set; } = global::OpenAI.CreateImageEditRequestModel.DallE2;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::OpenAI.AnyOf<string, global::OpenAI.CreateImageEditRequestModel?>? Model { get; set; } = global::OpenAI.CreateImageEditRequestModel.DallE2;
 
         /// <summary>
         /// The number of images to generate. Must be between 1 and 10.<br/>
@@ -67,7 +67,7 @@ namespace OpenAI
         /// Example: 1024x1024
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateImageEditRequestSizeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.CreateImageEditRequestSizeJsonConverter))]
         public global::OpenAI.CreateImageEditRequestSize? Size { get; set; } = global::OpenAI.CreateImageEditRequestSize.x1024x1024;
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace OpenAI
         /// Example: url
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateImageEditRequestResponseFormatJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.CreateImageEditRequestResponseFormatJsonConverter))]
         public global::OpenAI.CreateImageEditRequestResponseFormat? ResponseFormat { get; set; } = global::OpenAI.CreateImageEditRequestResponseFormat.Url;
 
         /// <summary>

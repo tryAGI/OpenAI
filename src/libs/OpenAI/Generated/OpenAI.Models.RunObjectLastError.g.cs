@@ -12,7 +12,7 @@ namespace OpenAI
         /// One of `server_error`, `rate_limit_exceeded`, or `invalid_prompt`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunObjectLastErrorCodeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RunObjectLastErrorCodeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenAI.RunObjectLastErrorCode Code { get; set; }
 

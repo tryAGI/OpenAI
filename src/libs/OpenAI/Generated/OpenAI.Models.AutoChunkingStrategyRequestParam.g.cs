@@ -12,7 +12,7 @@ namespace OpenAI
         /// Always `auto`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AutoChunkingStrategyRequestParamTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AutoChunkingStrategyRequestParamTypeJsonConverter))]
         public global::OpenAI.AutoChunkingStrategyRequestParamType Type { get; set; }
 
         /// <summary>

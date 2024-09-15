@@ -20,7 +20,7 @@ namespace OpenAI
         /// The outputs from the Code Interpreter tool call. Code Interpreter can output one or more items, including text (`logs`) or images (`image`). Each of these are represented by a different object type.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
-        public global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject, global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputImageObject>>? Outputs { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.OneOf<global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject, global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputImageObject>>? Outputs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

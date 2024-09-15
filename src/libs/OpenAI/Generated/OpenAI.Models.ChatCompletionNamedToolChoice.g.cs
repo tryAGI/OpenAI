@@ -12,7 +12,7 @@ namespace OpenAI
         /// The type of the tool. Currently, only `function` is supported.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatCompletionNamedToolChoiceTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.ChatCompletionNamedToolChoiceTypeJsonConverter))]
         public global::OpenAI.ChatCompletionNamedToolChoiceType Type { get; set; }
 
         /// <summary>

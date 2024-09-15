@@ -1,6 +1,6 @@
 #nullable enable
 
-namespace OpenApiGenerator.JsonConverters
+namespace OpenAI.JsonConverters
 {
     /// <inheritdoc />
     public sealed class OneOfJsonConverterFactory3 : global::System.Text.Json.Serialization.JsonConverterFactory
@@ -8,7 +8,7 @@ namespace OpenApiGenerator.JsonConverters
         /// <inheritdoc />
         public override bool CanConvert(global::System.Type? typeToConvert)
         {
-            return typeToConvert is { IsGenericType: true } && typeToConvert.GetGenericTypeDefinition() == typeof(global::System.OneOf<,,>);
+            return typeToConvert is { IsGenericType: true } && typeToConvert.GetGenericTypeDefinition() == typeof(global::OpenAI.OneOf<,,>);
         }
 
         /// <inheritdoc />

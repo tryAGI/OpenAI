@@ -14,7 +14,7 @@ namespace OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
-        public global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.ChatCompletionRequestSystemMessage, global::OpenAI.ChatCompletionRequestUserMessage, global::OpenAI.FineTuneChatCompletionRequestAssistantMessage?, global::OpenAI.ChatCompletionRequestToolMessage, global::OpenAI.ChatCompletionRequestFunctionMessage>>? Messages { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.OneOf<global::OpenAI.ChatCompletionRequestSystemMessage, global::OpenAI.ChatCompletionRequestUserMessage, global::OpenAI.FineTuneChatCompletionRequestAssistantMessage?, global::OpenAI.ChatCompletionRequestToolMessage, global::OpenAI.ChatCompletionRequestFunctionMessage>>? Messages { get; set; }
 
         /// <summary>
         /// A list of tools the model may generate JSON inputs for.

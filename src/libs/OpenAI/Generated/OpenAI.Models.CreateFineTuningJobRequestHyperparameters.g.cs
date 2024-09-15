@@ -16,8 +16,8 @@ namespace OpenAI
         /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("batch_size")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<global::OpenAI.CreateFineTuningJobRequestHyperparametersBatchSize?, int?>? BatchSize { get; set; } = global::OpenAI.CreateFineTuningJobRequestHyperparametersBatchSize.Auto;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.OneOfJsonConverterFactory2))]
+        public global::OpenAI.OneOf<global::OpenAI.CreateFineTuningJobRequestHyperparametersBatchSize?, int?>? BatchSize { get; set; } = global::OpenAI.CreateFineTuningJobRequestHyperparametersBatchSize.Auto;
 
         /// <summary>
         /// Scaling factor for the learning rate. A smaller learning rate may be useful to avoid<br/>
@@ -25,8 +25,8 @@ namespace OpenAI
         /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("learning_rate_multiplier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<global::OpenAI.CreateFineTuningJobRequestHyperparametersLearningRateMultiplier?, double?>? LearningRateMultiplier { get; set; } = global::OpenAI.CreateFineTuningJobRequestHyperparametersLearningRateMultiplier.Auto;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.OneOfJsonConverterFactory2))]
+        public global::OpenAI.OneOf<global::OpenAI.CreateFineTuningJobRequestHyperparametersLearningRateMultiplier?, double?>? LearningRateMultiplier { get; set; } = global::OpenAI.CreateFineTuningJobRequestHyperparametersLearningRateMultiplier.Auto;
 
         /// <summary>
         /// The number of epochs to train the model for. An epoch refers to one full cycle<br/>
@@ -34,8 +34,8 @@ namespace OpenAI
         /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("n_epochs")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<global::OpenAI.CreateFineTuningJobRequestHyperparametersNEpochs?, int?>? NEpochs { get; set; } = global::OpenAI.CreateFineTuningJobRequestHyperparametersNEpochs.Auto;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.OneOfJsonConverterFactory2))]
+        public global::OpenAI.OneOf<global::OpenAI.CreateFineTuningJobRequestHyperparametersNEpochs?, int?>? NEpochs { get; set; } = global::OpenAI.CreateFineTuningJobRequestHyperparametersNEpochs.Auto;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

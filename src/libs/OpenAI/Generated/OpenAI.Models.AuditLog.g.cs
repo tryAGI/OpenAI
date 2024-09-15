@@ -19,7 +19,7 @@ namespace OpenAI
         /// The event type.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AuditLogEventTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AuditLogEventTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenAI.AuditLogEventType Type { get; set; }
 
@@ -27,7 +27,7 @@ namespace OpenAI
         /// The Unix timestamp (in seconds) of the event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("effective_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset EffectiveAt { get; set; }
 

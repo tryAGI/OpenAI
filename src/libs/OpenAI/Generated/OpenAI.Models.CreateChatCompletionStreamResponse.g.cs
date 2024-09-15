@@ -27,7 +27,7 @@ namespace OpenAI
         /// The Unix timestamp (in seconds) of when the chat completion was created. Each chunk has the same timestamp.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset Created { get; set; }
 
@@ -43,7 +43,7 @@ namespace OpenAI
         /// Example: scale
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateChatCompletionStreamResponseServiceTierJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.CreateChatCompletionStreamResponseServiceTierJsonConverter))]
         public global::OpenAI.CreateChatCompletionStreamResponseServiceTier? ServiceTier { get; set; }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace OpenAI
         /// The object type, which is always `chat.completion.chunk`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateChatCompletionStreamResponseObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.CreateChatCompletionStreamResponseObjectJsonConverter))]
         public global::OpenAI.CreateChatCompletionStreamResponseObject Object { get; set; }
 
         /// <summary>

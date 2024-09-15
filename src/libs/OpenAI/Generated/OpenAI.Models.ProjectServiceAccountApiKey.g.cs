@@ -12,7 +12,7 @@ namespace OpenAI
         /// The object type, which is always `organization.project.service_account.api_key`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ProjectServiceAccountApiKeyObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.ProjectServiceAccountApiKeyObjectJsonConverter))]
         public global::OpenAI.ProjectServiceAccountApiKeyObject Object { get; set; }
 
         /// <summary>

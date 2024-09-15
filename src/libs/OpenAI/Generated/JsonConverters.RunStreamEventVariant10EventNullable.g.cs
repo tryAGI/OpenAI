@@ -1,6 +1,6 @@
 #nullable enable
 
-namespace OpenApiGenerator.JsonConverters
+namespace OpenAI.JsonConverters
 {
     /// <inheritdoc />
     public sealed class RunStreamEventVariant10EventNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenAI.RunStreamEventVariant10Event?>

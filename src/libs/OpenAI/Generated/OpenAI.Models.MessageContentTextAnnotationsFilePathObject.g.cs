@@ -12,7 +12,7 @@ namespace OpenAI
         /// Always `file_path`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageContentTextAnnotationsFilePathObjectTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.MessageContentTextAnnotationsFilePathObjectTypeJsonConverter))]
         public global::OpenAI.MessageContentTextAnnotationsFilePathObjectType Type { get; set; }
 
         /// <summary>

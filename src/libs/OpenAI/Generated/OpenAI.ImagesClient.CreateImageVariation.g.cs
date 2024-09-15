@@ -126,7 +126,7 @@ namespace OpenAI
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::OpenAI.SourceGenerationContext.Default.ImagesResponse) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::OpenAI.ImagesResponse), JsonSerializerContext) as global::OpenAI.ImagesResponse ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -168,7 +168,7 @@ namespace OpenAI
         public async global::System.Threading.Tasks.Task<global::OpenAI.ImagesResponse> CreateImageVariationAsync(
             byte[] image,
             string imagename,
-            global::System.AnyOf<string, global::OpenAI.CreateImageVariationRequestModel?>? model = default,
+            global::OpenAI.AnyOf<string, global::OpenAI.CreateImageVariationRequestModel?>? model = default,
             int? n = 1,
             global::OpenAI.CreateImageVariationRequestResponseFormat? responseFormat = global::OpenAI.CreateImageVariationRequestResponseFormat.Url,
             global::OpenAI.CreateImageVariationRequestSize? size = global::OpenAI.CreateImageVariationRequestSize.x1024x1024,

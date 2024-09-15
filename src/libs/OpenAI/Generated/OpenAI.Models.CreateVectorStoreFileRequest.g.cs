@@ -19,7 +19,7 @@ namespace OpenAI
         /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chunking_strategy")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChunkingStrategyRequestParamJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.ChunkingStrategyRequestParamJsonConverter))]
         public global::OpenAI.ChunkingStrategyRequestParam? ChunkingStrategy { get; set; }
 
         /// <summary>

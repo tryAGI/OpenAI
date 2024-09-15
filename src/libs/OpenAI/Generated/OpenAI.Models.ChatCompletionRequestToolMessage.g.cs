@@ -14,16 +14,16 @@ namespace OpenAI
         /// The role of the messages author, in this case `tool`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatCompletionRequestToolMessageRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.ChatCompletionRequestToolMessageRoleJsonConverter))]
         public global::OpenAI.ChatCompletionRequestToolMessageRole Role { get; set; }
 
         /// <summary>
         /// The contents of the tool message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.OneOf<string, global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionRequestToolMessageContentPart>> Content { get; set; }
+        public required global::OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionRequestToolMessageContentPart>> Content { get; set; }
 
         /// <summary>
         /// Tool call that this message is responding to.

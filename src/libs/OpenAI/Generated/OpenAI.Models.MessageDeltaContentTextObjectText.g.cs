@@ -20,7 +20,7 @@ namespace OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("annotations")]
-        public global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject, global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObject>>? Annotations { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.OneOf<global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject, global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObject>>? Annotations { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

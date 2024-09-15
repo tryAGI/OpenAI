@@ -19,7 +19,7 @@ namespace OpenAI
         /// The object type, which is always `thread.run.step.delta`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepDeltaObjectObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RunStepDeltaObjectObjectJsonConverter))]
         public global::OpenAI.RunStepDeltaObjectObject Object { get; set; }
 
         /// <summary>

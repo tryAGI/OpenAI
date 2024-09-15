@@ -21,7 +21,7 @@ namespace OpenAI
         /// The object type, which is always `vector_store.file`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.VectorStoreFileObjectObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.VectorStoreFileObjectObjectJsonConverter))]
         public global::OpenAI.VectorStoreFileObjectObject Object { get; set; }
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace OpenAI
         /// The Unix timestamp (in seconds) for when the vector store file was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset CreatedAt { get; set; }
 
@@ -50,7 +50,7 @@ namespace OpenAI
         /// The status of the vector store file, which can be either `in_progress`, `completed`, `cancelled`, or `failed`. The status `completed` indicates that the vector store file is ready for use.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.VectorStoreFileObjectStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.VectorStoreFileObjectStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenAI.VectorStoreFileObjectStatus Status { get; set; }
 
@@ -65,8 +65,8 @@ namespace OpenAI
         /// The strategy used to chunk the file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chunking_strategy")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<global::OpenAI.StaticChunkingStrategyResponseParam, global::OpenAI.OtherChunkingStrategyResponseParam>? ChunkingStrategy { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.OneOfJsonConverterFactory2))]
+        public global::OpenAI.OneOf<global::OpenAI.StaticChunkingStrategyResponseParam, global::OpenAI.OtherChunkingStrategyResponseParam>? ChunkingStrategy { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

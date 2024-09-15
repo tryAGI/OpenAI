@@ -12,7 +12,7 @@ namespace OpenAI
         /// The type of the integration being enabled for the fine-tuning job
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.FineTuningIntegrationTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.FineTuningIntegrationTypeJsonConverter))]
         public global::OpenAI.FineTuningIntegrationType Type { get; set; }
 
         /// <summary>

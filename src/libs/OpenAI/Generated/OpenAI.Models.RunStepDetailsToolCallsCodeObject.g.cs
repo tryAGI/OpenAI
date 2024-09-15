@@ -19,7 +19,7 @@ namespace OpenAI
         /// The type of tool call. This is always going to be `code_interpreter` for this type of tool call.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepDetailsToolCallsCodeObjectTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RunStepDetailsToolCallsCodeObjectTypeJsonConverter))]
         public global::OpenAI.RunStepDetailsToolCallsCodeObjectType Type { get; set; }
 
         /// <summary>

@@ -12,7 +12,7 @@ namespace OpenAI
         /// The type of actor. Is either `session` or `api_key`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AuditLogActorTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AuditLogActorTypeJsonConverter))]
         public global::OpenAI.AuditLogActorType? Type { get; set; }
 
         /// <summary>

@@ -42,7 +42,7 @@ namespace OpenAI
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/images/generations", global::System.UriKind.RelativeOrAbsolute));
-            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, global::OpenAI.SourceGenerationContext.Default.CreateImageRequest);
+            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, request.GetType(), JsonSerializerContext);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -90,7 +90,7 @@ namespace OpenAI
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::OpenAI.SourceGenerationContext.Default.ImagesResponse) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::OpenAI.ImagesResponse), JsonSerializerContext) as global::OpenAI.ImagesResponse ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -139,7 +139,7 @@ namespace OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.ImagesResponse> CreateImageAsync(
             string prompt,
-            global::System.AnyOf<string, global::OpenAI.CreateImageRequestModel?>? model = default,
+            global::OpenAI.AnyOf<string, global::OpenAI.CreateImageRequestModel?>? model = default,
             int? n = 1,
             global::OpenAI.CreateImageRequestQuality? quality = global::OpenAI.CreateImageRequestQuality.Standard,
             global::OpenAI.CreateImageRequestResponseFormat? responseFormat = global::OpenAI.CreateImageRequestResponseFormat.Url,

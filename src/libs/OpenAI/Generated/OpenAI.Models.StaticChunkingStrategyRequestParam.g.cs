@@ -12,7 +12,7 @@ namespace OpenAI
         /// Always `static`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.StaticChunkingStrategyRequestParamTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.StaticChunkingStrategyRequestParamTypeJsonConverter))]
         public global::OpenAI.StaticChunkingStrategyRequestParamType Type { get; set; }
 
         /// <summary>

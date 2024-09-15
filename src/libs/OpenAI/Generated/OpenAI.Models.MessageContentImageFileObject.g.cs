@@ -12,7 +12,7 @@ namespace OpenAI
         /// Always `image_file`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageContentImageFileObjectTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.MessageContentImageFileObjectTypeJsonConverter))]
         public global::OpenAI.MessageContentImageFileObjectType Type { get; set; }
 
         /// <summary>

@@ -12,7 +12,7 @@ namespace OpenAI
         /// `user` or `service_account`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ProjectApiKeyOwnerTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.ProjectApiKeyOwnerTypeJsonConverter))]
         public global::OpenAI.ProjectApiKeyOwnerType? Type { get; set; }
 
         /// <summary>

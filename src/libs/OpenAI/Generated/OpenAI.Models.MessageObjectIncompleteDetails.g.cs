@@ -12,7 +12,7 @@ namespace OpenAI
         /// The reason the message is incomplete.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageObjectIncompleteDetailsReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.MessageObjectIncompleteDetailsReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenAI.MessageObjectIncompleteDetailsReason Reason { get; set; }
 

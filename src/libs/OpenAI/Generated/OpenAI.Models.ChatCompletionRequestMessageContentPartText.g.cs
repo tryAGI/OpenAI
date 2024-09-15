@@ -12,7 +12,7 @@ namespace OpenAI
         /// The type of the content part.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatCompletionRequestMessageContentPartTextTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.ChatCompletionRequestMessageContentPartTextTypeJsonConverter))]
         public global::OpenAI.ChatCompletionRequestMessageContentPartTextType Type { get; set; }
 
         /// <summary>

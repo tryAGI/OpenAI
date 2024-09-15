@@ -12,7 +12,7 @@ namespace OpenAI
         /// Always `text`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageRequestContentTextObjectTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.MessageRequestContentTextObjectTypeJsonConverter))]
         public global::OpenAI.MessageRequestContentTextObjectType Type { get; set; }
 
         /// <summary>

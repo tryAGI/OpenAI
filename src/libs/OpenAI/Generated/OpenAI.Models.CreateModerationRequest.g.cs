@@ -14,9 +14,9 @@ namespace OpenAI
         /// The input text to classify
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.OneOf<string, global::System.Collections.Generic.IList<string>> Input { get; set; }
+        public required global::OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>> Input { get; set; }
 
         /// <summary>
         /// Two content moderations models are available: `text-moderation-stable` and `text-moderation-latest`.<br/>
@@ -25,8 +25,8 @@ namespace OpenAI
         /// Example: text-moderation-stable
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, global::OpenAI.CreateModerationRequestModel?>? Model { get; set; } = global::OpenAI.CreateModerationRequestModel.TextModerationLatest;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::OpenAI.AnyOf<string, global::OpenAI.CreateModerationRequestModel?>? Model { get; set; } = global::OpenAI.CreateModerationRequestModel.TextModerationLatest;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

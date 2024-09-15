@@ -19,7 +19,7 @@ namespace OpenAI
         /// The object type, which is always `batch`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.BatchObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.BatchObjectJsonConverter))]
         public global::OpenAI.BatchObject Object { get; set; }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace OpenAI
         /// The current status of the batch.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.BatchStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.BatchStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenAI.BatchStatus Status { get; set; }
 
@@ -73,7 +73,7 @@ namespace OpenAI
         /// The Unix timestamp (in seconds) for when the batch was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset CreatedAt { get; set; }
 
@@ -81,56 +81,56 @@ namespace OpenAI
         /// The Unix timestamp (in seconds) for when the batch started processing.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("in_progress_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset InProgressAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the batch will expire.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset ExpiresAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the batch started finalizing.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finalizing_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset FinalizingAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the batch was completed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset CompletedAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the batch failed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("failed_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset FailedAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the batch expired.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expired_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset ExpiredAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the batch started cancelling.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cancelling_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset CancellingAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the batch was cancelled.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cancelled_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset CancelledAt { get; set; }
 
         /// <summary>

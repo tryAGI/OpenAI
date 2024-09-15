@@ -14,14 +14,14 @@ namespace OpenAI
         /// The entity that produced the message. One of `user` or `assistant`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageDeltaObjectDeltaRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.MessageDeltaObjectDeltaRoleJsonConverter))]
         public global::OpenAI.MessageDeltaObjectDeltaRole? Role { get; set; }
 
         /// <summary>
         /// The content of the message in array of text and/or images.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        public global::System.Collections.Generic.IList<global::System.OneOf<global::OpenAI.MessageDeltaContentImageFileObject, global::OpenAI.MessageDeltaContentTextObject, global::OpenAI.MessageDeltaContentRefusalObject, global::OpenAI.MessageDeltaContentImageUrlObject>>? Content { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.OneOf<global::OpenAI.MessageDeltaContentImageFileObject, global::OpenAI.MessageDeltaContentTextObject, global::OpenAI.MessageDeltaContentRefusalObject, global::OpenAI.MessageDeltaContentImageUrlObject>>? Content { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

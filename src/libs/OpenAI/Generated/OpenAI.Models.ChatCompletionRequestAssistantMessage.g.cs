@@ -14,8 +14,8 @@ namespace OpenAI
         /// The contents of the assistant message. Required unless `tool_calls` or `function_call` is specified.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::System.OneOf<string, global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionRequestAssistantMessageContentPart>>? Content { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.OneOfJsonConverterFactory2))]
+        public global::OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionRequestAssistantMessageContentPart>>? Content { get; set; }
 
         /// <summary>
         /// The refusal message by the assistant.
@@ -27,7 +27,7 @@ namespace OpenAI
         /// The role of the messages author, in this case `assistant`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatCompletionRequestAssistantMessageRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.ChatCompletionRequestAssistantMessageRoleJsonConverter))]
         public global::OpenAI.ChatCompletionRequestAssistantMessageRole Role { get; set; }
 
         /// <summary>

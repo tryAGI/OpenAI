@@ -12,7 +12,7 @@ namespace OpenAI
         /// The object type, which is always `list`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.InviteListResponseObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.InviteListResponseObjectJsonConverter))]
         public global::OpenAI.InviteListResponseObject Object { get; set; }
 
         /// <summary>

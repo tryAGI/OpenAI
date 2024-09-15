@@ -20,7 +20,7 @@ namespace OpenAI
         /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageContentImageUrlObjectImageUrlDetailJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.MessageContentImageUrlObjectImageUrlDetailJsonConverter))]
         public global::OpenAI.MessageContentImageUrlObjectImageUrlDetail? Detail { get; set; } = global::OpenAI.MessageContentImageUrlObjectImageUrlDetail.Auto;
 
         /// <summary>

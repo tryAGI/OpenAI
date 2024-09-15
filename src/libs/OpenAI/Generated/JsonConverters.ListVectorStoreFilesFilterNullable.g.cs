@@ -1,6 +1,6 @@
 #nullable enable
 
-namespace OpenApiGenerator.JsonConverters
+namespace OpenAI.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ListVectorStoreFilesFilterNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenAI.ListVectorStoreFilesFilter?>

@@ -1,6 +1,6 @@
 #nullable enable
 
-namespace OpenApiGenerator.JsonConverters
+namespace OpenAI.JsonConverters
 {
     /// <inheritdoc />
     public sealed class UserDeleteResponseObjectJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenAI.UserDeleteResponseObject>

@@ -12,7 +12,7 @@ namespace OpenAI
         /// Always `message_creation`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunStepDeltaStepDetailsMessageCreationObjectTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RunStepDeltaStepDetailsMessageCreationObjectTypeJsonConverter))]
         public global::OpenAI.RunStepDeltaStepDetailsMessageCreationObjectType Type { get; set; }
 
         /// <summary>

@@ -30,8 +30,8 @@ namespace OpenAI
         /// Example: dall-e-2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::System.AnyOf<string, global::OpenAI.CreateImageVariationRequestModel?>? Model { get; set; } = global::OpenAI.CreateImageVariationRequestModel.DallE2;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::OpenAI.AnyOf<string, global::OpenAI.CreateImageVariationRequestModel?>? Model { get; set; } = global::OpenAI.CreateImageVariationRequestModel.DallE2;
 
         /// <summary>
         /// The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only `n=1` is supported.<br/>
@@ -47,7 +47,7 @@ namespace OpenAI
         /// Example: url
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateImageVariationRequestResponseFormatJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.CreateImageVariationRequestResponseFormatJsonConverter))]
         public global::OpenAI.CreateImageVariationRequestResponseFormat? ResponseFormat { get; set; } = global::OpenAI.CreateImageVariationRequestResponseFormat.Url;
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace OpenAI
         /// Example: 1024x1024
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateImageVariationRequestSizeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.CreateImageVariationRequestSizeJsonConverter))]
         public global::OpenAI.CreateImageVariationRequestSize? Size { get; set; } = global::OpenAI.CreateImageVariationRequestSize.x1024x1024;
 
         /// <summary>

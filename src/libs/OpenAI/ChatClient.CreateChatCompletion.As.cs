@@ -7,7 +7,7 @@ namespace OpenAI
 {
     public partial class ChatClient
     {
-        /// <inheritdoc cref="CreateChatCompletionAsync(System.Collections.Generic.IList{ChatCompletionRequestMessage},System.AnyOf{string?,CreateChatCompletionRequestModel?},double?,CreateChatCompletionRequestLogitBias?,bool?,int?,int?,int?,double?,System.OneOf{ResponseFormatText,ResponseFormatJsonObject,ResponseFormatJsonSchema}?,int?,CreateChatCompletionRequestServiceTier?,System.OneOf{string?,System.Collections.Generic.IList{string}}?,bool?,ChatCompletionStreamOptions?,double?,double?,System.Collections.Generic.IList{ChatCompletionTool}?,ChatCompletionToolChoiceOption?,bool?,string?,System.Threading.CancellationToken)"/>
+        /// <inheritdoc cref="CreateChatCompletionAsync(System.Collections.Generic.IList{ChatCompletionRequestMessage},OpenAI.AnyOf{string?,CreateChatCompletionRequestModel?},double?,CreateChatCompletionRequestLogitBias?,bool?,int?,int?,int?,double?,OpenAI.OneOf{ResponseFormatText,ResponseFormatJsonObject,ResponseFormatJsonSchema}?,int?,CreateChatCompletionRequestServiceTier?,OpenAI.OneOf{string?,System.Collections.Generic.IList{string}}?,bool?,ChatCompletionStreamOptions?,double?,double?,System.Collections.Generic.IList{ChatCompletionTool}?,ChatCompletionToolChoiceOption?,bool?,string?,System.Threading.CancellationToken)"/>
 #if NET6_0_OR_GREATER
         [RequiresUnreferencedCode(
             "This method uses reflection to generate a JSON schema. Use overload with JsonTypeInfo parameter to avoid this.")]
@@ -15,10 +15,10 @@ namespace OpenAI
 #if NET8_0_OR_GREATER
         [RequiresDynamicCode("This method uses reflection to generate a JSON schema. Use overload with JsonTypeInfo parameter to avoid this.")]
 #endif
-        public async global::System.Threading.Tasks.Task<System.AnyOf<T, global::OpenAI.CreateChatCompletionResponse>>
+        public async global::System.Threading.Tasks.Task<OpenAI.AnyOf<T, global::OpenAI.CreateChatCompletionResponse>>
             CreateChatCompletionAsAsync<T>(
                 global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionRequestMessage> messages,
-                global::System.AnyOf<string, global::OpenAI.CreateChatCompletionRequestModel?> model,
+                global::OpenAI.AnyOf<string, global::OpenAI.CreateChatCompletionRequestModel?> model,
                 double? frequencyPenalty = 0,
                 global::OpenAI.CreateChatCompletionRequestLogitBias? logitBias = default,
                 bool? logprobs = false,
@@ -28,7 +28,7 @@ namespace OpenAI
                 double? presencePenalty = 0,
                 int? seed = default,
                 global::OpenAI.CreateChatCompletionRequestServiceTier? serviceTier = default,
-                global::System.OneOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
+                global::OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
                 bool? stream = false,
                 bool? strict = true,
                 global::OpenAI.ChatCompletionStreamOptions? streamOptions = default,
@@ -82,12 +82,12 @@ namespace OpenAI
                 response);
         }
 
-        /// <inheritdoc cref="CreateChatCompletionAsync(System.Collections.Generic.IList{ChatCompletionRequestMessage},System.AnyOf{string?,CreateChatCompletionRequestModel?},double?,CreateChatCompletionRequestLogitBias?,bool?,int?,int?,int?,double?,System.OneOf{ResponseFormatText,ResponseFormatJsonObject,ResponseFormatJsonSchema}?,int?,CreateChatCompletionRequestServiceTier?,System.OneOf{string?,System.Collections.Generic.IList{string}}?,bool?,ChatCompletionStreamOptions?,double?,double?,System.Collections.Generic.IList{ChatCompletionTool}?,ChatCompletionToolChoiceOption?,bool?,string?,System.Threading.CancellationToken)"/>
-        public async global::System.Threading.Tasks.Task<System.AnyOf<T, global::OpenAI.CreateChatCompletionResponse>>
+        /// <inheritdoc cref="CreateChatCompletionAsync(System.Collections.Generic.IList{ChatCompletionRequestMessage},OpenAI.AnyOf{string?,CreateChatCompletionRequestModel?},double?,CreateChatCompletionRequestLogitBias?,bool?,int?,int?,int?,double?,OpenAI.OneOf{ResponseFormatText,ResponseFormatJsonObject,ResponseFormatJsonSchema}?,int?,CreateChatCompletionRequestServiceTier?,OpenAI.OneOf{string?,System.Collections.Generic.IList{string}}?,bool?,ChatCompletionStreamOptions?,double?,double?,System.Collections.Generic.IList{ChatCompletionTool}?,ChatCompletionToolChoiceOption?,bool?,string?,System.Threading.CancellationToken)"/>
+        public async global::System.Threading.Tasks.Task<OpenAI.AnyOf<T, global::OpenAI.CreateChatCompletionResponse>>
             CreateChatCompletionAsAsync<T>(
                 JsonTypeInfo<T> jsonTypeInfo,
                 global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionRequestMessage> messages,
-                global::System.AnyOf<string, global::OpenAI.CreateChatCompletionRequestModel?> model,
+                global::OpenAI.AnyOf<string, global::OpenAI.CreateChatCompletionRequestModel?> model,
                 double? frequencyPenalty = 0,
                 global::OpenAI.CreateChatCompletionRequestLogitBias? logitBias = default,
                 bool? logprobs = false,
@@ -97,7 +97,7 @@ namespace OpenAI
                 double? presencePenalty = 0,
                 int? seed = default,
                 global::OpenAI.CreateChatCompletionRequestServiceTier? serviceTier = default,
-                global::System.OneOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
+                global::OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
                 bool? stream = false,
                 bool? strict = true,
                 global::OpenAI.ChatCompletionStreamOptions? streamOptions = default,

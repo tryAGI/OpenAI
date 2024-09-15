@@ -18,7 +18,7 @@ namespace OpenAI
         /// The type of API key. Can be either `user` or `service_account`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AuditLogActorApiKeyTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AuditLogActorApiKeyTypeJsonConverter))]
         public global::OpenAI.AuditLogActorApiKeyType? Type { get; set; }
 
         /// <summary>

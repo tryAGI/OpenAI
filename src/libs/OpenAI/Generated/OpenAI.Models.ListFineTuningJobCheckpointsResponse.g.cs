@@ -19,7 +19,7 @@ namespace OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ListFineTuningJobCheckpointsResponseObjectJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.ListFineTuningJobCheckpointsResponseObjectJsonConverter))]
         public global::OpenAI.ListFineTuningJobCheckpointsResponseObject Object { get; set; }
 
         /// <summary>

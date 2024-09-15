@@ -12,7 +12,7 @@ namespace OpenAI
         /// The type of response format being defined: `json_object`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ResponseFormatJsonObjectTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.ResponseFormatJsonObjectTypeJsonConverter))]
         public global::OpenAI.ResponseFormatJsonObjectType Type { get; set; }
 
         /// <summary>

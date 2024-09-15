@@ -29,9 +29,9 @@ namespace OpenAI
         /// Example: whisper-1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AnyOf<string, global::OpenAI.CreateTranscriptionRequestModel?> Model { get; set; }
+        public required global::OpenAI.AnyOf<string, global::OpenAI.CreateTranscriptionRequestModel?> Model { get; set; }
 
         /// <summary>
         /// The language of the input audio. Supplying the input language in [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) format will improve accuracy and latency.
@@ -50,7 +50,7 @@ namespace OpenAI
         /// Default Value: json
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateTranscriptionRequestResponseFormatJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.CreateTranscriptionRequestResponseFormatJsonConverter))]
         public global::OpenAI.CreateTranscriptionRequestResponseFormat? ResponseFormat { get; set; } = global::OpenAI.CreateTranscriptionRequestResponseFormat.Json;
 
         /// <summary>

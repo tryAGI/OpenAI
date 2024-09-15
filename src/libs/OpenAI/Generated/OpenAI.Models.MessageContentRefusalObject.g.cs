@@ -12,7 +12,7 @@ namespace OpenAI
         /// Always `refusal`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageContentRefusalObjectTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.MessageContentRefusalObjectTypeJsonConverter))]
         public global::OpenAI.MessageContentRefusalObjectType Type { get; set; }
 
         /// <summary>

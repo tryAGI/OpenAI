@@ -12,7 +12,7 @@ namespace OpenAI
         /// The reason why the run is incomplete. This will point to which specific token limit was reached over the course of the run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.RunObjectIncompleteDetailsReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RunObjectIncompleteDetailsReasonJsonConverter))]
         public global::OpenAI.RunObjectIncompleteDetailsReason? Reason { get; set; }
 
         /// <summary>

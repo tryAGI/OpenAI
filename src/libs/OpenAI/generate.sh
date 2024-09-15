@@ -1,4 +1,4 @@
-dotnet tool install --global openapigenerator.cli --prerelease
+dotnet tool install --global autosdk.cli --prerelease
 curl -O https://raw.githubusercontent.com/openai/openai-openapi/master/openapi.yaml
 dotnet run --project ../../helpers/FixOpenApiSpec openapi.yaml
 if [ $? -ne 0 ]; then
@@ -6,7 +6,7 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 rm -rf Generated
-oag generate openapi.yaml \
+autosdk generate openapi.yaml \
   --namespace OpenAI \
   --clientClassName OpenAiApi \
   --targetFramework net8.0 \

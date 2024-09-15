@@ -1,6 +1,6 @@
 #nullable enable
 
-namespace OpenApiGenerator.JsonConverters
+namespace OpenAI.JsonConverters
 {
     /// <inheritdoc />
     public sealed class UploadPartObjectNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenAI.UploadPartObject?>

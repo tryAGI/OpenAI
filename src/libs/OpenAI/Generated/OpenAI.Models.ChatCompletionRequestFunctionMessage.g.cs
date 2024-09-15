@@ -13,7 +13,7 @@ namespace OpenAI
         /// The role of the messages author, in this case `function`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ChatCompletionRequestFunctionMessageRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.ChatCompletionRequestFunctionMessageRoleJsonConverter))]
         [global::System.Obsolete("This property marked as deprecated.")]
         public global::OpenAI.ChatCompletionRequestFunctionMessageRole Role { get; set; }
 

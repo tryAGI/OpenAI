@@ -19,7 +19,7 @@ namespace OpenAI
         /// Always `image_url`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageDeltaContentImageUrlObjectTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.MessageDeltaContentImageUrlObjectTypeJsonConverter))]
         public global::OpenAI.MessageDeltaContentImageUrlObjectType Type { get; set; }
 
         /// <summary>

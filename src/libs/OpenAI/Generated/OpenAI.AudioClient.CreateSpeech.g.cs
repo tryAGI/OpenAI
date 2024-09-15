@@ -42,7 +42,7 @@ namespace OpenAI
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/audio/speech", global::System.UriKind.RelativeOrAbsolute));
-            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, global::OpenAI.SourceGenerationContext.Default.CreateSpeechRequest);
+            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, request.GetType(), JsonSerializerContext);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -105,7 +105,7 @@ namespace OpenAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<byte[]> CreateSpeechAsync(
-            global::System.AnyOf<string, global::OpenAI.CreateSpeechRequestModel?> model,
+            global::OpenAI.AnyOf<string, global::OpenAI.CreateSpeechRequestModel?> model,
             string input,
             global::OpenAI.CreateSpeechRequestVoice voice,
             global::OpenAI.CreateSpeechRequestResponseFormat? responseFormat = global::OpenAI.CreateSpeechRequestResponseFormat.Mp3,
