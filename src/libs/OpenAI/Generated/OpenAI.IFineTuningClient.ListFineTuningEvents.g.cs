@@ -19,7 +19,7 @@ namespace OpenAI
         global::System.Threading.Tasks.Task<global::OpenAI.ListFineTuningJobEventsResponse> ListFineTuningEventsAsync(
             string fineTuningJobId,
             string? after = default,
-            int limit = 20,
+            int? limit = 20,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

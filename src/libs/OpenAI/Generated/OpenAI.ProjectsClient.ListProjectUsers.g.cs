@@ -8,13 +8,13 @@ namespace OpenAI
         partial void PrepareListProjectUsersArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string projectId,
-            ref int limit,
+            ref int? limit,
             ref string? after);
         partial void PrepareListProjectUsersRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string projectId,
-            int limit,
+            int? limit,
             string? after);
         partial void ProcessListProjectUsersResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -37,7 +37,7 @@ namespace OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.ProjectUserListResponse> ListProjectUsersAsync(
             string projectId,
-            int limit = 20,
+            int? limit = 20,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

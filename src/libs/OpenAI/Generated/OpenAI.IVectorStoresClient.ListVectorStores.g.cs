@@ -18,7 +18,7 @@ namespace OpenAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::OpenAI.ListVectorStoresResponse> ListVectorStoresAsync(
-            int limit = 20,
+            int? limit = 20,
             global::OpenAI.ListVectorStoresOrder? order = global::OpenAI.ListVectorStoresOrder.Desc,
             string? after = default,
             string? before = default,

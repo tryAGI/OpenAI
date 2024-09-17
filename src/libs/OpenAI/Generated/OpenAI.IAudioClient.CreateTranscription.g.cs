@@ -54,7 +54,7 @@ namespace OpenAI
             string? language = default,
             string? prompt = default,
             global::OpenAI.CreateTranscriptionRequestResponseFormat? responseFormat = global::OpenAI.CreateTranscriptionRequestResponseFormat.Json,
-            double temperature = 0,
+            double? temperature = 0,
             global::System.Collections.Generic.IList<global::OpenAI.CreateTranscriptionRequestTimestampGranularitie>? timestampGranularities = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

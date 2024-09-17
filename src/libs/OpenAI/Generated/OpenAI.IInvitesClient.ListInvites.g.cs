@@ -14,7 +14,7 @@ namespace OpenAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::OpenAI.InviteListResponse> ListInvitesAsync(
-            int limit = 20,
+            int? limit = 20,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

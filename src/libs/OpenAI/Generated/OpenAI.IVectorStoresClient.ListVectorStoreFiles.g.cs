@@ -21,7 +21,7 @@ namespace OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::OpenAI.ListVectorStoreFilesResponse> ListVectorStoreFilesAsync(
             string vectorStoreId,
-            int limit = 20,
+            int? limit = 20,
             global::OpenAI.ListVectorStoreFilesOrder? order = global::OpenAI.ListVectorStoreFilesOrder.Desc,
             string? after = default,
             string? before = default,
