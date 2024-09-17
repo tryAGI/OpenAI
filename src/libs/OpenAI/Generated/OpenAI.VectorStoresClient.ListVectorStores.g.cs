@@ -7,14 +7,14 @@ namespace OpenAI
     {
         partial void PrepareListVectorStoresArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int limit,
+            ref int? limit,
             ref global::OpenAI.ListVectorStoresOrder? order,
             ref string? after,
             ref string? before);
         partial void PrepareListVectorStoresRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int limit,
+            int? limit,
             global::OpenAI.ListVectorStoresOrder? order,
             string? after,
             string? before);
@@ -41,7 +41,7 @@ namespace OpenAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.ListVectorStoresResponse> ListVectorStoresAsync(
-            int limit = 20,
+            int? limit = 20,
             global::OpenAI.ListVectorStoresOrder? order = global::OpenAI.ListVectorStoresOrder.Desc,
             string? after = default,
             string? before = default,

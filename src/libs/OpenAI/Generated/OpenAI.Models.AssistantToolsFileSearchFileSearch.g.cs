@@ -13,7 +13,7 @@ namespace OpenAI
         /// Note that the file search tool may output fewer than `max_num_results` results. See the [file search tool documentation](/docs/assistants/tools/file-search/customizing-file-search-settings) for more information.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_num_results")]
-        public int MaxNumResults { get; set; }
+        public int? MaxNumResults { get; set; }
 
         /// <summary>
         /// The ranking options for the file search. If not specified, the file search tool will use the `auto` ranker and a score_threshold of 0.<br/>

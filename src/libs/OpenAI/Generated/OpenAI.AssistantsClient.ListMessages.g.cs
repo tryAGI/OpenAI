@@ -8,7 +8,7 @@ namespace OpenAI
         partial void PrepareListMessagesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string threadId,
-            ref int limit,
+            ref int? limit,
             ref global::OpenAI.ListMessagesOrder? order,
             ref string? after,
             ref string? before,
@@ -17,7 +17,7 @@ namespace OpenAI
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string threadId,
-            int limit,
+            int? limit,
             global::OpenAI.ListMessagesOrder? order,
             string? after,
             string? before,
@@ -48,7 +48,7 @@ namespace OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.ListMessagesResponse> ListMessagesAsync(
             string threadId,
-            int limit = 20,
+            int? limit = 20,
             global::OpenAI.ListMessagesOrder? order = global::OpenAI.ListMessagesOrder.Desc,
             string? after = default,
             string? before = default,

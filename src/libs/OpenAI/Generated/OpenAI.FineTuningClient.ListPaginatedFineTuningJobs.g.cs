@@ -8,12 +8,12 @@ namespace OpenAI
         partial void PrepareListPaginatedFineTuningJobsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? after,
-            ref int limit);
+            ref int? limit);
         partial void PrepareListPaginatedFineTuningJobsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? after,
-            int limit);
+            int? limit);
         partial void ProcessListPaginatedFineTuningJobsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -34,7 +34,7 @@ namespace OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.ListPaginatedFineTuningJobsResponse> ListPaginatedFineTuningJobsAsync(
             string? after = default,
-            int limit = 20,
+            int? limit = 20,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

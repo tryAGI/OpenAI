@@ -109,7 +109,7 @@ namespace OpenAI
             string input,
             global::OpenAI.CreateSpeechRequestVoice voice,
             global::OpenAI.CreateSpeechRequestResponseFormat? responseFormat = global::OpenAI.CreateSpeechRequestResponseFormat.Mp3,
-            double speed = 1,
+            double? speed = 1,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::OpenAI.CreateSpeechRequest

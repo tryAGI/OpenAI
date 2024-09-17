@@ -8,7 +8,7 @@ namespace OpenAI
         partial void PrepareListRunsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string threadId,
-            ref int limit,
+            ref int? limit,
             ref global::OpenAI.ListRunsOrder? order,
             ref string? after,
             ref string? before);
@@ -16,7 +16,7 @@ namespace OpenAI
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string threadId,
-            int limit,
+            int? limit,
             global::OpenAI.ListRunsOrder? order,
             string? after,
             string? before);
@@ -45,7 +45,7 @@ namespace OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.ListRunsResponse> ListRunsAsync(
             string threadId,
-            int limit = 20,
+            int? limit = 20,
             global::OpenAI.ListRunsOrder? order = global::OpenAI.ListRunsOrder.Desc,
             string? after = default,
             string? before = default,

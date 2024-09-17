@@ -12,7 +12,7 @@ namespace OpenAI
         /// Controls whether the assistant message is trained against (0 or 1)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("weight")]
-        public int Weight { get; set; }
+        public int? Weight { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

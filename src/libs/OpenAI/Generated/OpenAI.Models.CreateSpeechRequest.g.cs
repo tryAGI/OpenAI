@@ -46,7 +46,7 @@ namespace OpenAI
         /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
-        public double Speed { get; set; } = 1;
+        public double? Speed { get; set; } = 1;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

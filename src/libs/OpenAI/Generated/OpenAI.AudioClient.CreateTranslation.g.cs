@@ -153,7 +153,7 @@ namespace OpenAI
             global::OpenAI.AnyOf<string, global::OpenAI.CreateTranslationRequestModel?> model,
             string? prompt = default,
             string? responseFormat = "json",
-            double temperature = 0,
+            double? temperature = 0,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::OpenAI.CreateTranslationRequest

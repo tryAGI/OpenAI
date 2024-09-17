@@ -7,15 +7,15 @@ namespace OpenAI
     {
         partial void PrepareListProjectsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int limit,
+            ref int? limit,
             ref string? after,
-            ref bool includeArchived);
+            ref bool? includeArchived);
         partial void PrepareListProjectsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int limit,
+            int? limit,
             string? after,
-            bool includeArchived);
+            bool? includeArchived);
         partial void ProcessListProjectsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -38,9 +38,9 @@ namespace OpenAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.ProjectListResponse> ListProjectsAsync(
-            int limit = 20,
+            int? limit = 20,
             string? after = default,
-            bool includeArchived = false,
+            bool? includeArchived = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

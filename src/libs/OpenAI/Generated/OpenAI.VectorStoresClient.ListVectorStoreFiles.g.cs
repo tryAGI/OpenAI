@@ -8,7 +8,7 @@ namespace OpenAI
         partial void PrepareListVectorStoreFilesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string vectorStoreId,
-            ref int limit,
+            ref int? limit,
             ref global::OpenAI.ListVectorStoreFilesOrder? order,
             ref string? after,
             ref string? before,
@@ -17,7 +17,7 @@ namespace OpenAI
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string vectorStoreId,
-            int limit,
+            int? limit,
             global::OpenAI.ListVectorStoreFilesOrder? order,
             string? after,
             string? before,
@@ -48,7 +48,7 @@ namespace OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.ListVectorStoreFilesResponse> ListVectorStoreFilesAsync(
             string vectorStoreId,
-            int limit = 20,
+            int? limit = 20,
             global::OpenAI.ListVectorStoreFilesOrder? order = global::OpenAI.ListVectorStoreFilesOrder.Desc,
             string? after = default,
             string? before = default,
