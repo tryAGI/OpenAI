@@ -1,4 +1,3 @@
-using System.Linq;
 
 #nullable enable
 
@@ -72,9 +71,19 @@ namespace OpenAI
                 before: ref before,
                 include: include);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/threads/{threadId}/runs/{runId}/steps",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("limit", limit?.ToString()) 
+                .AddOptionalParameter("order", order?.ToValueString()) 
+                .AddOptionalParameter("after", after) 
+                .AddOptionalParameter("before", before) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/threads/{threadId}/runs/{runId}/steps?limit={limit}&order={(global::System.Uri.EscapeDataString(order?.ToValueString() ?? string.Empty))}&after={after}&before={before}&{string.Join("&", include?.Select(static x => $"include={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
