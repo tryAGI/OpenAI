@@ -523,7 +523,6 @@ namespace OpenAI
             typeof(global::OpenAI.JsonConverters.OneOfJsonConverterFactory1),
             typeof(global::OpenAI.JsonConverters.OneOfJsonConverterFactory5),
             typeof(global::OpenAI.JsonConverters.AssistantsApiResponseFormatOptionJsonConverter),
-            typeof(global::OpenAI.JsonConverters.AnyOfJsonConverterFactory1),
             typeof(global::OpenAI.JsonConverters.AssistantsApiToolChoiceOptionJsonConverter),
             typeof(global::OpenAI.JsonConverters.ChunkingStrategyRequestParamJsonConverter),
             typeof(global::OpenAI.JsonConverters.AssistantStreamEventJsonConverter),
