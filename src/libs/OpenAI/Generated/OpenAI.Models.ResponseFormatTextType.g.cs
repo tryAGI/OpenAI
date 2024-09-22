@@ -9,7 +9,7 @@ namespace OpenAI
     public enum ResponseFormatTextType
     {
         /// <summary>
-        /// 
+        /// `text`
         /// </summary>
         Text,
     }

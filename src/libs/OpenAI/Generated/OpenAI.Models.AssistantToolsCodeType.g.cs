@@ -9,7 +9,7 @@ namespace OpenAI
     public enum AssistantToolsCodeType
     {
         /// <summary>
-        /// 
+        /// `code_interpreter`
         /// </summary>
         CodeInterpreter,
     }

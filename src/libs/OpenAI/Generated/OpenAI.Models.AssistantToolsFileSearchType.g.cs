@@ -9,7 +9,7 @@ namespace OpenAI
     public enum AssistantToolsFileSearchType
     {
         /// <summary>
-        /// 
+        /// `file_search`
         /// </summary>
         FileSearch,
     }

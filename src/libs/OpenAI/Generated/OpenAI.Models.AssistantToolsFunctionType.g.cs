@@ -9,7 +9,7 @@ namespace OpenAI
     public enum AssistantToolsFunctionType
     {
         /// <summary>
-        /// 
+        /// `function`
         /// </summary>
         Function,
     }
