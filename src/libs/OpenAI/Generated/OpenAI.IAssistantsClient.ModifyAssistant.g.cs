@@ -61,7 +61,7 @@ namespace OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::OpenAI.AssistantObject> ModifyAssistantAsync(
             string assistantId,
-            global::OpenAI.AnyOf<string>? model = default,
+            string? model = default,
             string? name = default,
             string? description = default,
             string? instructions = default,

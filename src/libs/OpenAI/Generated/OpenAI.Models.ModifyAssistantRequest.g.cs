@@ -14,8 +14,7 @@ namespace OpenAI
         /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models/overview) for descriptions of them.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AnyOfJsonConverterFactory1))]
-        public global::OpenAI.AnyOf<string>? Model { get; set; }
+        public string? Model { get; set; }
 
         /// <summary>
         /// The name of the assistant. The maximum length is 256 characters.
