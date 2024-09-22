@@ -9,7 +9,7 @@ namespace OpenAI
     public enum ResponseFormatJsonSchemaType
     {
         /// <summary>
-        /// 
+        /// `json_schema`
         /// </summary>
         JsonSchema,
     }

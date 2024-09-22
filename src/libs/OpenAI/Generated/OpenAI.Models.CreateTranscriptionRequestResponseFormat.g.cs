@@ -10,23 +10,23 @@ namespace OpenAI
     public enum CreateTranscriptionRequestResponseFormat
     {
         /// <summary>
-        /// 
+        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`.
         /// </summary>
         Json,
         /// <summary>
-        /// 
+        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`.
         /// </summary>
         Text,
         /// <summary>
-        /// 
+        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`.
         /// </summary>
         Srt,
         /// <summary>
-        /// 
+        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`.
         /// </summary>
         VerboseJson,
         /// <summary>
-        /// 
+        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`.
         /// </summary>
         Vtt,
     }
