@@ -31,7 +31,7 @@ namespace OpenAI
         /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text/prompting) should be in English.
         /// </param>
         /// <param name="responseFormat">
-        /// The format of the transcript output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.<br/>
+        /// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.<br/>
         /// Default Value: json
         /// </param>
         /// <param name="temperature">
@@ -45,7 +45,7 @@ namespace OpenAI
             string filename,
             global::OpenAI.AnyOf<string, global::OpenAI.CreateTranslationRequestModel?> model,
             string? prompt = default,
-            string? responseFormat = "json",
+            global::OpenAI.AudioResponseFormat? responseFormat = global::OpenAI.AudioResponseFormat.Json,
             double? temperature = 0,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

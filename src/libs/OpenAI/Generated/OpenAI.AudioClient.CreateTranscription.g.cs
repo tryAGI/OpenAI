@@ -72,7 +72,7 @@ namespace OpenAI
                     content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
                     name: "prompt");
             } 
-            if (request.ResponseFormat != global::OpenAI.CreateTranscriptionRequestResponseFormat.Json)
+            if (request.ResponseFormat != global::OpenAI.AudioResponseFormat.Json)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
@@ -157,7 +157,7 @@ namespace OpenAI
         /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text/prompting) should match the audio language.
         /// </param>
         /// <param name="responseFormat">
-        /// The format of the transcript output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.<br/>
+        /// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.<br/>
         /// Default Value: json
         /// </param>
         /// <param name="temperature">
@@ -176,7 +176,7 @@ namespace OpenAI
             global::OpenAI.AnyOf<string, global::OpenAI.CreateTranscriptionRequestModel?> model,
             string? language = default,
             string? prompt = default,
-            global::OpenAI.CreateTranscriptionRequestResponseFormat? responseFormat = global::OpenAI.CreateTranscriptionRequestResponseFormat.Json,
+            global::OpenAI.AudioResponseFormat? responseFormat = global::OpenAI.AudioResponseFormat.Json,
             double? temperature = 0,
             global::System.Collections.Generic.IList<global::OpenAI.CreateTranscriptionRequestTimestampGranularitie>? timestampGranularities = default,
             global::System.Threading.CancellationToken cancellationToken = default)
