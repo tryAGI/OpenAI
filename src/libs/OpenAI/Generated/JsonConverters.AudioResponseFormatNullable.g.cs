@@ -3,10 +3,10 @@
 namespace OpenAI.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class CreateTranscriptionRequestResponseFormatNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenAI.CreateTranscriptionRequestResponseFormat?>
+    public sealed class AudioResponseFormatNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenAI.AudioResponseFormat?>
     {
         /// <inheritdoc />
-        public override global::OpenAI.CreateTranscriptionRequestResponseFormat? Read(
+        public override global::OpenAI.AudioResponseFormat? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace OpenAI.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::OpenAI.CreateTranscriptionRequestResponseFormatExtensions.ToEnum(stringValue);
+                        return global::OpenAI.AudioResponseFormatExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,7 +26,7 @@ namespace OpenAI.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::OpenAI.CreateTranscriptionRequestResponseFormat)numValue;
+                    return (global::OpenAI.AudioResponseFormat)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -38,7 +38,7 @@ namespace OpenAI.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::OpenAI.CreateTranscriptionRequestResponseFormat? value,
+            global::OpenAI.AudioResponseFormat? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
@@ -49,7 +49,7 @@ namespace OpenAI.JsonConverters
             }
             else
             {
-                writer.WriteStringValue(global::OpenAI.CreateTranscriptionRequestResponseFormatExtensions.ToValueString(value.Value));
+                writer.WriteStringValue(global::OpenAI.AudioResponseFormatExtensions.ToValueString(value.Value));
             }
         }
     }
