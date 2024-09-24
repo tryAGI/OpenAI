@@ -4,10 +4,10 @@
 namespace OpenAI
 {
     /// <summary>
-    /// The format of the transcript output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.<br/>
+    /// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.<br/>
     /// Default Value: json
     /// </summary>
-    public enum CreateTranscriptionRequestResponseFormat
+    public enum AudioResponseFormat
     {
         /// <summary>
         /// `json`, `text`, `srt`, `verbose_json`, or `vtt`.
@@ -34,35 +34,35 @@ namespace OpenAI
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class CreateTranscriptionRequestResponseFormatExtensions
+    public static class AudioResponseFormatExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this CreateTranscriptionRequestResponseFormat value)
+        public static string ToValueString(this AudioResponseFormat value)
         {
             return value switch
             {
-                CreateTranscriptionRequestResponseFormat.Json => "json",
-                CreateTranscriptionRequestResponseFormat.Text => "text",
-                CreateTranscriptionRequestResponseFormat.Srt => "srt",
-                CreateTranscriptionRequestResponseFormat.VerboseJson => "verbose_json",
-                CreateTranscriptionRequestResponseFormat.Vtt => "vtt",
+                AudioResponseFormat.Json => "json",
+                AudioResponseFormat.Text => "text",
+                AudioResponseFormat.Srt => "srt",
+                AudioResponseFormat.VerboseJson => "verbose_json",
+                AudioResponseFormat.Vtt => "vtt",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateTranscriptionRequestResponseFormat? ToEnum(string value)
+        public static AudioResponseFormat? ToEnum(string value)
         {
             return value switch
             {
-                "json" => CreateTranscriptionRequestResponseFormat.Json,
-                "text" => CreateTranscriptionRequestResponseFormat.Text,
-                "srt" => CreateTranscriptionRequestResponseFormat.Srt,
-                "verbose_json" => CreateTranscriptionRequestResponseFormat.VerboseJson,
-                "vtt" => CreateTranscriptionRequestResponseFormat.Vtt,
+                "json" => AudioResponseFormat.Json,
+                "text" => AudioResponseFormat.Text,
+                "srt" => AudioResponseFormat.Srt,
+                "verbose_json" => AudioResponseFormat.VerboseJson,
+                "vtt" => AudioResponseFormat.Vtt,
                 _ => null,
             };
         }

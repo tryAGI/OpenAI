@@ -961,7 +961,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateTranscriptionRequestResponseFormat? Type237 { get; set; }
+        public global::OpenAI.AudioResponseFormat? Type237 { get; set; }
         /// <summary>
         /// 
         /// </summary>
