@@ -29,7 +29,7 @@ public partial class Tests
             filename: "mp3.mp3",
             model: CreateTranslationRequestModel.Whisper1,
             prompt: null,
-            responseFormat: "json",
+            responseFormat: AudioResponseFormat.Json,
             temperature: 0.0);
         response2.Should().NotBeNull();
         response2.Object.Should().BeOfType<CreateTranslationResponseJson>();
@@ -43,7 +43,7 @@ public partial class Tests
             model: CreateTranscriptionRequestModel.Whisper1,
             language: "en",   
             prompt: null,
-            responseFormat: CreateTranscriptionRequestResponseFormat.Json,
+            responseFormat: AudioResponseFormat.Json,
             temperature: 0.0);
         response3.Should().NotBeNull();
         response3.Object.Should().BeOfType<CreateTranscriptionResponseJson>();
