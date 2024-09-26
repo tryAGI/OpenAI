@@ -12,4 +12,6 @@ public enum CustomProvider
     GitHub,
     Perplexity,
     SambaNova,
+    Ollama,
+    LmStudio,
 }

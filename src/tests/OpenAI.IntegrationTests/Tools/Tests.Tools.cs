@@ -5,6 +5,8 @@ public partial class Tests
     [DataTestMethod]
     [DataRow(CustomProvider.OpenAi)]
     [DataRow(CustomProvider.GitHub)]
+    [DataRow(CustomProvider.Ollama)]
+    //[DataRow(CustomProvider.LmStudio)]
     // [DataRow(CustomProvider.Fireworks)]
     // [DataRow(CustomProvider.DeepInfra)]
     // [DataRow(CustomProvider.DeepSeek)]
@@ -61,6 +63,8 @@ public partial class Tests
 
     [DataTestMethod]
     [DataRow(CustomProvider.OpenAi)]
+    [DataRow(CustomProvider.Ollama)]
+    //[DataRow(CustomProvider.LmStudio)]
     //[DataRow(CustomProvider.GitHub)]
     // [DataRow(CustomProvider.Fireworks)]
     // [DataRow(CustomProvider.DeepInfra)]

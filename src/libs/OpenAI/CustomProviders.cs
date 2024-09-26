@@ -47,6 +47,16 @@ public static class CustomProviders
     public const string SambaNovaBaseUrl = "https://api.sambanova.ai/v1";
     
     /// <summary>
+    /// 
+    /// </summary>
+    public const string OllamaBaseUrl = "http://localhost:11434/v1";
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    public const string LmStudioBaseUrl = "http://localhost:1234/v1";
+    
+    /// <summary>
     /// Creates an API to use for GitHub Models: https://github.com/marketplace/models
     /// </summary>
     /// <returns></returns>
@@ -125,5 +135,23 @@ public static class CustomProviders
     public static OpenAiApi SambaNova(string apiKey)
     {
         return new OpenAiApi(apiKey, baseUri: new Uri(SambaNovaBaseUrl));
+    }
+    
+    /// <summary>
+    /// Create an API to use for Ollama.
+    /// </summary>
+    /// <returns></returns>
+    public static OpenAiApi Ollama(Uri? baseUri = null)
+    {
+        return new OpenAiApi(baseUri: baseUri ?? new Uri(OllamaBaseUrl));
+    }
+    
+    /// <summary>
+    /// Create an API to use for LM Studio.
+    /// </summary>
+    /// <returns></returns>
+    public static OpenAiApi LmStudio(Uri? baseUri = null)
+    {
+        return new OpenAiApi(baseUri: baseUri ?? new Uri(LmStudioBaseUrl));
     }
 }

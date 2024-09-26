@@ -17,6 +17,13 @@ public partial class Tests
     
     internal static (OpenAiApi Api, string Model) GetAuthorizedChatApi(CustomProvider customProvider, string? model = null)
     {
+        const string localIpAddress = "10.10.5.85";
+        if (customProvider is CustomProvider.Ollama or CustomProvider.LmStudio &&
+            Environment.GetEnvironmentVariable("LOCAL_TESTS") is null)
+        {
+            throw new AssertInconclusiveException("This test only runs on local environment.");
+        }
+
         if (customProvider == CustomProvider.Fireworks)
         {
             return (CustomProviders.Fireworks(apiKey:
@@ -72,6 +79,17 @@ public partial class Tests
                     Environment.GetEnvironmentVariable("SAMBANOVA_API_KEY") ??
                     throw new AssertInconclusiveException("SAMBANOVA_API_KEY environment variable is not found.")),
                 model ?? "Meta-Llama-3.1-8B-Instruct");
+        }
+
+        if (customProvider == CustomProvider.Ollama)
+        {
+            return (CustomProviders.Ollama(new Uri($"http://{localIpAddress}:11434/v1")),
+                model ?? "llama3.2");
+        }
+        if (customProvider == CustomProvider.LmStudio)
+        {
+            return (CustomProviders.LmStudio(new Uri($"http://{localIpAddress}:1234/v1")),
+                model ?? "lmstudio-community/Llama-3.2-3B-Instruct-GGUF");
         }
         
         var apiKey =
