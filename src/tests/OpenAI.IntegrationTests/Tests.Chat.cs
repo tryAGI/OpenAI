@@ -88,4 +88,28 @@ public partial class Tests
 
         Console.WriteLine(response);
     }
+    
+    [DataTestMethod]
+    [DataRow(CustomProvider.OpenAi)]
+    [DataRow(CustomProvider.Ollama)]
+    //[DataRow(CustomProvider.Together)]
+    public async Task ChatWithVision(CustomProvider customProvider)
+    {
+        var pair = GetAuthorizedChatApi(customProvider, model: customProvider switch
+        {
+            CustomProvider.Together => "meta-llama/Llama-Vision-Free",
+            _ => null,
+        });
+        using var api = pair.Api;
+        
+        CreateChatCompletionResponse response = await api.Chat.CreateChatCompletionAsync(
+            messages: [
+                "Please describe the following image.",
+                H.Resources.images_dog_and_cat_png.AsBytes().AsUserMessage(mimeType: "image/png"),
+            ],
+            model: pair.Model);
+
+        Console.WriteLine("[ASSISTANT]:");
+        Console.WriteLine($"{response.Choices[0].Message.Content}");
+    }
 }
