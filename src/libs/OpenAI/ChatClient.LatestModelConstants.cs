@@ -11,4 +11,14 @@ public partial class ChatClient
     /// Always points to the latest fast model.
     /// </summary>
     public const CreateChatCompletionRequestModel LatestFastModel = CreateChatCompletionRequestModel.Gpt4oMini;
+    
+    /// <summary>
+    /// Always points to the latest smart reasoning model.
+    /// </summary>
+    public const CreateChatCompletionRequestModel LatestSmartReasoningModel = CreateChatCompletionRequestModel.O1Preview;
+    
+    /// <summary>
+    /// Always points to the latest fast reasoning model.
+    /// </summary>
+    public const CreateChatCompletionRequestModel LatestFastReasoningModel = CreateChatCompletionRequestModel.O1Mini;
 }
