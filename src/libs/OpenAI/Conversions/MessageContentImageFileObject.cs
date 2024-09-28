@@ -20,7 +20,7 @@ public partial class MessageContentImageFileObject
     /// <returns></returns>
     public static MessageContentImageFileObject FromOpenAIFile(
         OpenAIFile file,
-        MessageContentImageFileObjectImageFileDetail? detail = null)
+        MessageContentImageFileObjectImageFileDetail detail = MessageContentImageFileObjectImageFileDetail.Auto)
     {
         file = file ?? throw new ArgumentNullException(nameof(file));
         

@@ -19,24 +19,11 @@ public partial class Examples
         
         Console.WriteLine($"Apple image available at:\n{new Uri(appleFileInfo.FullName).AbsoluteUri}");
         
-        ImagesResponse orangeImage = await api.Images.CreateImageAsync(
-            prompt: "picture of orange",
-            responseFormat: CreateImageRequestResponseFormat.B64Json);
-        byte[] orangeBytes = orangeImage.Data[0].Bytes;
-
-        FileInfo orangeFileInfo = new($"{Guid.NewGuid()}.png");
-        
-        await File.WriteAllBytesAsync(orangeFileInfo.FullName, orangeBytes);
-        
-        Console.WriteLine($"Orange image available at:\n{new Uri(orangeFileInfo.FullName).AbsoluteUri}");
+        Console.WriteLine($"Orange image available at:\n{new Uri("https://raw.githubusercontent.com/tryAGI/OpenAI/d237b700b03fe9913a6ff53fa623041e87705f2f/assets/orange.png")}");
         
         OpenAIFile pictureOfAppleFile = await api.Files.CreateFileAsync(
             file: appleBytes,
             filename: appleFileInfo.Name,
-            purpose: CreateFileRequestPurpose.Vision);
-        OpenAIFile pictureOfOrangeFile = await api.Files.CreateFileAsync(
-            file: orangeBytes,
-            filename: orangeFileInfo.Name,
             purpose: CreateFileRequestPurpose.Vision);
 
         AssistantObject assistant = await api.Assistants.CreateAssistantAsync(
@@ -49,7 +36,7 @@ public partial class Examples
             Messages = [
                 "Hello, assistant! Please compare these two images for me:",
                 pictureOfAppleFile,
-                pictureOfOrangeFile,
+                new Uri("https://raw.githubusercontent.com/tryAGI/OpenAI/d237b700b03fe9913a6ff53fa623041e87705f2f/assets/orange.png"),
             ]
         });
         
@@ -60,6 +47,13 @@ public partial class Examples
         
         await foreach (AssistantStreamEvent streamingUpdate in streamingUpdates)
         {
+            if (streamingUpdate.Error is {} error)
+            {
+                Console.WriteLine("--- Error ---");
+                Console.WriteLine($"Message: {error.Data.Message}");
+                Console.WriteLine($"Code: {error.Data.Code}");
+                Console.WriteLine($"Type: {error.Data.Type}");
+            }
             if (streamingUpdate.Run is {} run)
             {
                 if (run.Value1 is { Event: RunStreamEventVariant1Event.ThreadRunCreated })
