@@ -37,6 +37,20 @@ namespace OpenAI
         public required bool HarassmentThreatening { get; set; }
 
         /// <summary>
+        /// Content that includes instructions or advice that facilitate the planning or execution of wrongdoing, or that gives advice or instruction on how to commit illicit acts. For example, "how to shoplift" would fit this category.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("illicit")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool Illicit { get; set; }
+
+        /// <summary>
+        /// Content that includes instructions or advice that facilitate the planning or execution of wrongdoing that also includes violence, or that gives advice or instruction on the procurement of any weapon.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("illicit/violent")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool IllicitViolent { get; set; }
+
+        /// <summary>
         /// Content that promotes, encourages, or depicts acts of self-harm, such as suicide, cutting, and eating disorders.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("self-harm")]

@@ -13,6 +13,9 @@ text = text.Replace("description: &run_temperature_description ", "description: 
 text = text.Replace("description: *run_top_p_description", "description: empty");
 text = text.Replace("description: &run_top_p_description ", "description: ");
 
+text = text.Replace("example: *moderation_example", "example: empty");
+text = text.Replace("response: &moderation_example |", "response: |");
+
 var openApiDocument = new OpenApiStringReader().Read(text, out var diagnostics);
 openApiDocument.Components.Schemas["ParallelToolCalls"]!.Default = null;
 openApiDocument.Components.Schemas["ParallelToolCalls"]!.Nullable = true;

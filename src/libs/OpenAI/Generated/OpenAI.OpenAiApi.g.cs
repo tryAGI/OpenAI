@@ -112,7 +112,7 @@ namespace OpenAI
         };
 
         /// <summary>
-        /// Given a input text, outputs if the model classifies it as potentially harmful.
+        /// Given text and/or image inputs, classifies if those inputs are potentially harmful.
         /// </summary>
         public ModerationsClient Moderations => new ModerationsClient(_httpClient)
         {

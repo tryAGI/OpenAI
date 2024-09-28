@@ -37,6 +37,20 @@ namespace OpenAI
         public required double HarassmentThreatening { get; set; }
 
         /// <summary>
+        /// The score for the category 'illicit'.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("illicit")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double Illicit { get; set; }
+
+        /// <summary>
+        /// The score for the category 'illicit/violent'.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("illicit/violent")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double IllicitViolent { get; set; }
+
+        /// <summary>
         /// The score for the category 'self-harm'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("self-harm")]

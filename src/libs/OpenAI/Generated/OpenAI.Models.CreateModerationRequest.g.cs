@@ -11,22 +11,24 @@ namespace OpenAI
     public sealed partial class CreateModerationRequest
     {
         /// <summary>
-        /// The input text to classify
+        /// Input (or inputs) to classify. Can be a single string, an array of strings, or<br/>
+        /// an array of multi-modal input objects similar to other models.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.OneOfJsonConverterFactory3))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>> Input { get; set; }
+        public required global::OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::OpenAI.OneOf<global::OpenAI.CreateModerationRequestInputVariant3ItemVariant1, global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2>>> Input { get; set; }
 
         /// <summary>
-        /// Two content moderations models are available: `text-moderation-stable` and `text-moderation-latest`.<br/>
-        /// The default is `text-moderation-latest` which will be automatically upgraded over time. This ensures you are always using our most accurate model. If you use `text-moderation-stable`, we will provide advanced notice before updating the model. Accuracy of `text-moderation-stable` may be slightly lower than for `text-moderation-latest`.<br/>
-        /// Default Value: text-moderation-latest<br/>
-        /// Example: text-moderation-stable
+        /// The content moderation model you would like to use. Learn more in<br/>
+        /// [the moderation guide](/docs/guides/moderation), and learn about<br/>
+        /// available models [here](/docs/models/moderation).<br/>
+        /// Default Value: omni-moderation-latest<br/>
+        /// Example: omni-moderation-2024-09-26
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::OpenAI.AnyOf<string, global::OpenAI.CreateModerationRequestModel?>? Model { get; set; } = global::OpenAI.CreateModerationRequestModel.TextModerationLatest;
+        public global::OpenAI.AnyOf<string, global::OpenAI.CreateModerationRequestModel?>? Model { get; set; } = global::OpenAI.CreateModerationRequestModel.OmniModerationLatest;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
