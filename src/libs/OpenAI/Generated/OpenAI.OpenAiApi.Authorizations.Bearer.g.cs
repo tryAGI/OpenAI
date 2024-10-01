@@ -14,9 +14,11 @@ namespace OpenAI
         {
             apiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
 
-            _httpClient.DefaultRequestHeaders.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                scheme: "Bearer",
-                parameter: apiKey);
+            _authorization = new global::OpenAI.EndPointAuthorization
+            {
+                Name = "Bearer",
+                Value = apiKey,
+            };
         }
     }
 }
