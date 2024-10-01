@@ -225,6 +225,84 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::OpenAI.ChatCompletionRequestSystemMessage?, TResult>? system = null,
+            global::System.Func<global::OpenAI.ChatCompletionRequestUserMessage?, TResult>? user = null,
+            global::System.Func<global::OpenAI.ChatCompletionRequestAssistantMessage?, TResult>? assistant = null,
+            global::System.Func<global::OpenAI.ChatCompletionRequestToolMessage?, TResult>? tool = null,
+            global::System.Func<global::OpenAI.ChatCompletionRequestFunctionMessage?, TResult>? function = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSystem && system != null)
+            {
+                return system(System!);
+            }
+            else if (IsUser && user != null)
+            {
+                return user(User!);
+            }
+            else if (IsAssistant && assistant != null)
+            {
+                return assistant(Assistant!);
+            }
+            else if (IsTool && tool != null)
+            {
+                return tool(Tool!);
+            }
+            else if (IsFunction && function != null)
+            {
+                return function(Function!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::OpenAI.ChatCompletionRequestSystemMessage?>? system = null,
+            global::System.Action<global::OpenAI.ChatCompletionRequestUserMessage?>? user = null,
+            global::System.Action<global::OpenAI.ChatCompletionRequestAssistantMessage?>? assistant = null,
+            global::System.Action<global::OpenAI.ChatCompletionRequestToolMessage?>? tool = null,
+            global::System.Action<global::OpenAI.ChatCompletionRequestFunctionMessage?>? function = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSystem)
+            {
+                system?.Invoke(System!);
+            }
+            else if (IsUser)
+            {
+                user?.Invoke(User!);
+            }
+            else if (IsAssistant)
+            {
+                assistant?.Invoke(Assistant!);
+            }
+            else if (IsTool)
+            {
+                tool?.Invoke(Tool!);
+            }
+            else if (IsFunction)
+            {
+                function?.Invoke(Function!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public override int GetHashCode()
         {
             var fields = new object?[]

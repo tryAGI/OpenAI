@@ -415,6 +415,134 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::OpenAI.RunStreamEventVariant1?, TResult>? value1 = null,
+            global::System.Func<global::OpenAI.RunStreamEventVariant2?, TResult>? value2 = null,
+            global::System.Func<global::OpenAI.RunStreamEventVariant3?, TResult>? value3 = null,
+            global::System.Func<global::OpenAI.RunStreamEventVariant4?, TResult>? value4 = null,
+            global::System.Func<global::OpenAI.RunStreamEventVariant5?, TResult>? value5 = null,
+            global::System.Func<global::OpenAI.RunStreamEventVariant6?, TResult>? value6 = null,
+            global::System.Func<global::OpenAI.RunStreamEventVariant7?, TResult>? value7 = null,
+            global::System.Func<global::OpenAI.RunStreamEventVariant8?, TResult>? value8 = null,
+            global::System.Func<global::OpenAI.RunStreamEventVariant9?, TResult>? value9 = null,
+            global::System.Func<global::OpenAI.RunStreamEventVariant10?, TResult>? value10 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsValue1 && value1 != null)
+            {
+                return value1(Value1!);
+            }
+            else if (IsValue2 && value2 != null)
+            {
+                return value2(Value2!);
+            }
+            else if (IsValue3 && value3 != null)
+            {
+                return value3(Value3!);
+            }
+            else if (IsValue4 && value4 != null)
+            {
+                return value4(Value4!);
+            }
+            else if (IsValue5 && value5 != null)
+            {
+                return value5(Value5!);
+            }
+            else if (IsValue6 && value6 != null)
+            {
+                return value6(Value6!);
+            }
+            else if (IsValue7 && value7 != null)
+            {
+                return value7(Value7!);
+            }
+            else if (IsValue8 && value8 != null)
+            {
+                return value8(Value8!);
+            }
+            else if (IsValue9 && value9 != null)
+            {
+                return value9(Value9!);
+            }
+            else if (IsValue10 && value10 != null)
+            {
+                return value10(Value10!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::OpenAI.RunStreamEventVariant1?>? value1 = null,
+            global::System.Action<global::OpenAI.RunStreamEventVariant2?>? value2 = null,
+            global::System.Action<global::OpenAI.RunStreamEventVariant3?>? value3 = null,
+            global::System.Action<global::OpenAI.RunStreamEventVariant4?>? value4 = null,
+            global::System.Action<global::OpenAI.RunStreamEventVariant5?>? value5 = null,
+            global::System.Action<global::OpenAI.RunStreamEventVariant6?>? value6 = null,
+            global::System.Action<global::OpenAI.RunStreamEventVariant7?>? value7 = null,
+            global::System.Action<global::OpenAI.RunStreamEventVariant8?>? value8 = null,
+            global::System.Action<global::OpenAI.RunStreamEventVariant9?>? value9 = null,
+            global::System.Action<global::OpenAI.RunStreamEventVariant10?>? value10 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsValue1)
+            {
+                value1?.Invoke(Value1!);
+            }
+            else if (IsValue2)
+            {
+                value2?.Invoke(Value2!);
+            }
+            else if (IsValue3)
+            {
+                value3?.Invoke(Value3!);
+            }
+            else if (IsValue4)
+            {
+                value4?.Invoke(Value4!);
+            }
+            else if (IsValue5)
+            {
+                value5?.Invoke(Value5!);
+            }
+            else if (IsValue6)
+            {
+                value6?.Invoke(Value6!);
+            }
+            else if (IsValue7)
+            {
+                value7?.Invoke(Value7!);
+            }
+            else if (IsValue8)
+            {
+                value8?.Invoke(Value8!);
+            }
+            else if (IsValue9)
+            {
+                value9?.Invoke(Value9!);
+            }
+            else if (IsValue10)
+            {
+                value10?.Invoke(Value10!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public override int GetHashCode()
         {
             var fields = new object?[]

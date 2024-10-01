@@ -111,6 +111,54 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::OpenAI.AutoChunkingStrategyRequestParam?, TResult>? auto = null,
+            global::System.Func<global::OpenAI.StaticChunkingStrategyRequestParam?, TResult>? @static = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAuto && auto != null)
+            {
+                return auto(Auto!);
+            }
+            else if (IsStatic && @static != null)
+            {
+                return @static(Static!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::OpenAI.AutoChunkingStrategyRequestParam?>? auto = null,
+            global::System.Action<global::OpenAI.StaticChunkingStrategyRequestParam?>? @static = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAuto)
+            {
+                auto?.Invoke(Auto!);
+            }
+            else if (IsStatic)
+            {
+                @static?.Invoke(Static!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public override int GetHashCode()
         {
             var fields = new object?[]

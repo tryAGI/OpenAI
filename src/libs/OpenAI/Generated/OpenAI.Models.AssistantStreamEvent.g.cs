@@ -277,6 +277,94 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::OpenAI.ThreadStreamEvent?, TResult>? thread = null,
+            global::System.Func<global::OpenAI.RunStreamEvent?, TResult>? run = null,
+            global::System.Func<global::OpenAI.RunStepStreamEvent?, TResult>? runStep = null,
+            global::System.Func<global::OpenAI.MessageStreamEvent?, TResult>? message = null,
+            global::System.Func<global::OpenAI.ErrorEvent?, TResult>? error = null,
+            global::System.Func<global::OpenAI.DoneEvent?, TResult>? done = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsThread && thread != null)
+            {
+                return thread(Thread!);
+            }
+            else if (IsRun && run != null)
+            {
+                return run(Run!);
+            }
+            else if (IsRunStep && runStep != null)
+            {
+                return runStep(RunStep!);
+            }
+            else if (IsMessage && message != null)
+            {
+                return message(Message!);
+            }
+            else if (IsError && error != null)
+            {
+                return error(Error!);
+            }
+            else if (IsDone && done != null)
+            {
+                return done(Done!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::OpenAI.ThreadStreamEvent?>? thread = null,
+            global::System.Action<global::OpenAI.RunStreamEvent?>? run = null,
+            global::System.Action<global::OpenAI.RunStepStreamEvent?>? runStep = null,
+            global::System.Action<global::OpenAI.MessageStreamEvent?>? message = null,
+            global::System.Action<global::OpenAI.ErrorEvent?>? error = null,
+            global::System.Action<global::OpenAI.DoneEvent?>? done = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsThread)
+            {
+                thread?.Invoke(Thread!);
+            }
+            else if (IsRun)
+            {
+                run?.Invoke(Run!);
+            }
+            else if (IsRunStep)
+            {
+                runStep?.Invoke(RunStep!);
+            }
+            else if (IsMessage)
+            {
+                message?.Invoke(Message!);
+            }
+            else if (IsError)
+            {
+                error?.Invoke(Error!);
+            }
+            else if (IsDone)
+            {
+                done?.Invoke(Done!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public override int GetHashCode()
         {
             var fields = new object?[]
