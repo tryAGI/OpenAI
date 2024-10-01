@@ -16,6 +16,7 @@ namespace OpenAI
         public const string BaseUrl = "https://api.openai.com/v1";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
+        private global::OpenAI.EndPointAuthorization? _authorization;
 
         /// <summary>
         /// 
@@ -26,7 +27,7 @@ namespace OpenAI
         /// <summary>
         /// Build Assistants that can call models and use tools.
         /// </summary>
-        public AssistantsClient Assistants => new AssistantsClient(_httpClient)
+        public AssistantsClient Assistants => new AssistantsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -34,7 +35,7 @@ namespace OpenAI
         /// <summary>
         /// Turn audio into text or text into audio.
         /// </summary>
-        public AudioClient Audio => new AudioClient(_httpClient)
+        public AudioClient Audio => new AudioClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -42,7 +43,7 @@ namespace OpenAI
         /// <summary>
         /// Given a list of messages comprising a conversation, the model will return a response.
         /// </summary>
-        public ChatClient Chat => new ChatClient(_httpClient)
+        public ChatClient Chat => new ChatClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -50,7 +51,7 @@ namespace OpenAI
         /// <summary>
         /// Given a prompt, the model will return one or more predicted completions, and can also return the probabilities of alternative tokens at each position.
         /// </summary>
-        public CompletionsClient Completions => new CompletionsClient(_httpClient)
+        public CompletionsClient Completions => new CompletionsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -58,7 +59,7 @@ namespace OpenAI
         /// <summary>
         /// Get a vector representation of a given input that can be easily consumed by machine learning models and algorithms.
         /// </summary>
-        public EmbeddingsClient Embeddings => new EmbeddingsClient(_httpClient)
+        public EmbeddingsClient Embeddings => new EmbeddingsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -66,7 +67,7 @@ namespace OpenAI
         /// <summary>
         /// Manage fine-tuning jobs to tailor a model to your specific training data.
         /// </summary>
-        public FineTuningClient FineTuning => new FineTuningClient(_httpClient)
+        public FineTuningClient FineTuning => new FineTuningClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -74,7 +75,7 @@ namespace OpenAI
         /// <summary>
         /// Create large batches of API requests to run asynchronously.
         /// </summary>
-        public BatchClient Batch => new BatchClient(_httpClient)
+        public BatchClient Batch => new BatchClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -82,7 +83,7 @@ namespace OpenAI
         /// <summary>
         /// Files are used to upload documents that can be used with features like Assistants and Fine-tuning.
         /// </summary>
-        public FilesClient Files => new FilesClient(_httpClient)
+        public FilesClient Files => new FilesClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -90,7 +91,7 @@ namespace OpenAI
         /// <summary>
         /// Use Uploads to upload large files in multiple parts.
         /// </summary>
-        public UploadsClient Uploads => new UploadsClient(_httpClient)
+        public UploadsClient Uploads => new UploadsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -98,7 +99,7 @@ namespace OpenAI
         /// <summary>
         /// Given a prompt and/or an input image, the model will generate a new image.
         /// </summary>
-        public ImagesClient Images => new ImagesClient(_httpClient)
+        public ImagesClient Images => new ImagesClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -106,7 +107,7 @@ namespace OpenAI
         /// <summary>
         /// List and describe the various models available in the API.
         /// </summary>
-        public ModelsClient Models => new ModelsClient(_httpClient)
+        public ModelsClient Models => new ModelsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -114,7 +115,7 @@ namespace OpenAI
         /// <summary>
         /// Given text and/or image inputs, classifies if those inputs are potentially harmful.
         /// </summary>
-        public ModerationsClient Moderations => new ModerationsClient(_httpClient)
+        public ModerationsClient Moderations => new ModerationsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -122,7 +123,7 @@ namespace OpenAI
         /// <summary>
         /// List user actions and configuration changes within this organization.
         /// </summary>
-        public AuditLogsClient AuditLogs => new AuditLogsClient(_httpClient)
+        public AuditLogsClient AuditLogs => new AuditLogsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -130,7 +131,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public VectorStoresClient VectorStores => new VectorStoresClient(_httpClient)
+        public VectorStoresClient VectorStores => new VectorStoresClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -138,7 +139,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public InvitesClient Invites => new InvitesClient(_httpClient)
+        public InvitesClient Invites => new InvitesClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -146,7 +147,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public UsersClient Users => new UsersClient(_httpClient)
+        public UsersClient Users => new UsersClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -154,7 +155,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public ProjectsClient Projects => new ProjectsClient(_httpClient)
+        public ProjectsClient Projects => new ProjectsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -165,13 +166,16 @@ namespace OpenAI
         /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
         /// </summary>
         /// <param name="httpClient"></param>
-        /// <param name="baseUri"></param> 
+        /// <param name="baseUri"></param>
+        /// <param name="authorization"></param>
         public OpenAiApi(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null)
+            global::System.Uri? baseUri = null,
+            global::OpenAI.EndPointAuthorization? authorization = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
+            _authorization = authorization;
 
             Initialized(_httpClient);
         }
