@@ -13,6 +13,11 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.Dictionary<string, string>? StringStringDictionary { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public global::OpenAI.Error? Type0 { get; set; }
         /// <summary>
         /// 
