@@ -15,7 +15,7 @@ namespace OpenAI
         public const string BaseUrl = "https://api.openai.com/v1";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
-        private global::OpenAI.EndPointAuthorization? _authorization;
+        private global::System.Collections.Generic.List<global::OpenAI.EndPointAuthorization> _authorizations;
 
         /// <summary>
         /// 
@@ -30,15 +30,15 @@ namespace OpenAI
         /// </summary>
         /// <param name="httpClient"></param>
         /// <param name="baseUri"></param>
-        /// <param name="authorization"></param>
+        /// <param name="authorizations"></param>
         public UsersClient(
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
-            global::OpenAI.EndPointAuthorization? authorization = null)
+            global::System.Collections.Generic.List<global::OpenAI.EndPointAuthorization>? authorizations = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
-            _authorization = authorization;
+            _authorizations = authorizations ?? new global::System.Collections.Generic.List<global::OpenAI.EndPointAuthorization>();
 
             Initialized(_httpClient);
         }
