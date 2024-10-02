@@ -54,6 +54,16 @@ public static class CustomProviders
     /// <summary>
     /// 
     /// </summary>
+    public const string MistralBaseUrl = "https://api.mistral.ai/v1";
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    public const string CodestralBaseUrl = "https://codestral.mistral.ai/v1";
+    
+    /// <summary>
+    /// 
+    /// </summary>
     public const string OllamaBaseUrl = "http://localhost:11434/v1";
     
     /// <summary>
@@ -149,6 +159,24 @@ public static class CustomProviders
     public static OpenAiApi SambaNova(string apiKey)
     {
         return new OpenAiApi(apiKey, baseUri: new Uri(SambaNovaBaseUrl));
+    }
+    
+    /// <summary>
+    /// Create an API to use for Mistral.
+    /// </summary>
+    /// <returns></returns>
+    public static OpenAiApi Mistral(string apiKey)
+    {
+        return new OpenAiApi(apiKey, baseUri: new Uri(MistralBaseUrl));
+    }
+    
+    /// <summary>
+    /// Create an API to use for Codestral.
+    /// </summary>
+    /// <returns></returns>
+    public static OpenAiApi Codestral(string apiKey)
+    {
+        return new OpenAiApi(apiKey, baseUri: new Uri(CodestralBaseUrl));
     }
     
     /// <summary>

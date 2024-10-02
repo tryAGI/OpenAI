@@ -87,6 +87,20 @@ public partial class Tests
                     throw new AssertInconclusiveException("SAMBANOVA_API_KEY environment variable is not found.")),
                 model ?? "Meta-Llama-3.1-8B-Instruct");
         }
+        if (customProvider == CustomProvider.Mistral)
+        {
+            return (CustomProviders.Mistral(apiKey:
+                    Environment.GetEnvironmentVariable("MISTRAL_API_KEY") ??
+                    throw new AssertInconclusiveException("MISTRAL_API_KEY environment variable is not found.")),
+                model ?? "mistral-large-latest");
+        }
+        if (customProvider == CustomProvider.Codestral)
+        {
+            return (CustomProviders.Codestral(apiKey:
+                    Environment.GetEnvironmentVariable("CODESTRAL_API_KEY") ??
+                    throw new AssertInconclusiveException("CODESTRAL_API_KEY environment variable is not found.")),
+                model ?? "codestral-latest");
+        }
 
         if (customProvider == CustomProvider.Ollama)
         {

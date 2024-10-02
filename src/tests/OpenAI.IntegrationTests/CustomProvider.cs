@@ -15,4 +15,6 @@ public enum CustomProvider
     Ollama,
     LmStudio,
     Groq,
+    Mistral,
+    Codestral,
 }

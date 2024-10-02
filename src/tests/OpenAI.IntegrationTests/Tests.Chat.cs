@@ -15,6 +15,8 @@ public partial class Tests
     [DataRow(CustomProvider.Ollama)]
     [DataRow(CustomProvider.LmStudio)]
     [DataRow(CustomProvider.Groq)]
+    [DataRow(CustomProvider.Mistral)]
+    [DataRow(CustomProvider.Codestral)]
     public async Task GenerateFiveRandomWords(CustomProvider customProvider)
     {
         var pair = GetAuthorizedChatApi(customProvider);
@@ -23,12 +25,17 @@ public partial class Tests
         string response = await api.Chat.CreateChatCompletionAsync(
             messages: ["Generate five random words."],
             model: pair.Model,
-            user: "tryAGI.OpenAI.IntegrationTests.Tests.CreateChatCompletion",
+            user: customProvider switch
+            {
+                CustomProvider.Mistral or CustomProvider.Codestral => null,
+                _ => "tryAGI.OpenAI.Tests.GenerateFiveRandomWords",
+            },
             frequencyPenalty: customProvider switch
             {
                 CustomProvider.Perplexity => 0.5,
                 _ => null,
             },
+            presencePenalty: null,
             logprobs: null);
         response.Should().NotBeEmpty();
 
@@ -47,6 +54,8 @@ public partial class Tests
     [DataRow(CustomProvider.Ollama)]
     [DataRow(CustomProvider.LmStudio)]
     [DataRow(CustomProvider.Groq)]
+    [DataRow(CustomProvider.Mistral)]
+    //[DataRow(CustomProvider.Codestral)]
     public async Task GenerateFiveRandomWordsAsStream(CustomProvider customProvider)
     {
         var pair = GetAuthorizedChatApi(customProvider);
@@ -55,7 +64,12 @@ public partial class Tests
         var enumerable = api.Chat.CreateChatCompletionAsStreamAsync(
             messages: ["Generate five random words."],
             model: pair.Model,
-            user: "tryAGI.OpenAI.IntegrationTests.Tests.CreateChatCompletion");
+            presencePenalty: null,
+            user: customProvider switch
+            {
+                CustomProvider.Mistral or CustomProvider.Codestral => null,
+                _ => "tryAGI.OpenAI.Tests.GenerateFiveRandomWordsAsStream",
+            });
         
         await foreach (string response in enumerable)
         {
