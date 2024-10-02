@@ -38,6 +38,13 @@ public partial class Tests
                 throw new AssertInconclusiveException("DEEPINFRA_API_KEY environment variable is not found.")),
                 model ?? "meta-llama/Meta-Llama-3.1-8B-Instruct");
         }
+        if (customProvider == CustomProvider.Groq)
+        {
+            return (CustomProviders.Groq(apiKey:
+                    Environment.GetEnvironmentVariable("GROQ_API_KEY") ??
+                    throw new AssertInconclusiveException("GROQ_API_KEY environment variable is not found.")),
+                model ?? "llama3-8b-8192");
+        }
         if (customProvider == CustomProvider.DeepSeek)
         {
             return (CustomProviders.DeepSeek(apiKey:

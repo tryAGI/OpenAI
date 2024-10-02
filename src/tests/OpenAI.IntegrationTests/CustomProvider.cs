@@ -14,4 +14,5 @@ public enum CustomProvider
     SambaNova,
     Ollama,
     LmStudio,
+    Groq,
 }

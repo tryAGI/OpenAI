@@ -14,6 +14,7 @@ public partial class Tests
     [DataRow(CustomProvider.SambaNova)]
     [DataRow(CustomProvider.Ollama)]
     [DataRow(CustomProvider.LmStudio)]
+    [DataRow(CustomProvider.Groq)]
     public async Task GenerateFiveRandomWords(CustomProvider customProvider)
     {
         var pair = GetAuthorizedChatApi(customProvider);
@@ -45,6 +46,7 @@ public partial class Tests
     [DataRow(CustomProvider.SambaNova)]
     [DataRow(CustomProvider.Ollama)]
     [DataRow(CustomProvider.LmStudio)]
+    [DataRow(CustomProvider.Groq)]
     public async Task GenerateFiveRandomWordsAsStream(CustomProvider customProvider)
     {
         var pair = GetAuthorizedChatApi(customProvider);
@@ -71,6 +73,7 @@ public partial class Tests
     [DataRow(CustomProvider.GitHub)]
     [DataRow(CustomProvider.Ollama)]
     [DataRow(CustomProvider.LmStudio)]
+    [DataRow(CustomProvider.Groq)]
     public async Task GenerateFiveRandomWordsAsJsonObject(CustomProvider customProvider)
     {
         var pair = GetAuthorizedChatApi(customProvider);
@@ -92,12 +95,14 @@ public partial class Tests
     [DataTestMethod]
     [DataRow(CustomProvider.OpenAi)]
     [DataRow(CustomProvider.Ollama)]
+    [DataRow(CustomProvider.Groq)]
     //[DataRow(CustomProvider.Together)]
     public async Task ChatWithVision(CustomProvider customProvider)
     {
         var pair = GetAuthorizedChatApi(customProvider, model: customProvider switch
         {
             CustomProvider.Together => "meta-llama/Llama-Vision-Free",
+            CustomProvider.Groq => "llama-3.2-11b-vision-preview",
             _ => null,
         });
         using var api = pair.Api;

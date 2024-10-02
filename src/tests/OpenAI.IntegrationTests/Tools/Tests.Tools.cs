@@ -6,6 +6,7 @@ public partial class Tests
     [DataRow(CustomProvider.OpenAi)]
     [DataRow(CustomProvider.GitHub)]
     [DataRow(CustomProvider.Ollama)]
+    [DataRow(CustomProvider.Groq)]
     //[DataRow(CustomProvider.LmStudio)]
     // [DataRow(CustomProvider.Fireworks)]
     // [DataRow(CustomProvider.DeepInfra)]
@@ -14,7 +15,11 @@ public partial class Tests
     // [DataRow(CustomProvider.Together)]
     public async Task WeatherTools(CustomProvider customProvider)
     {
-        var pair = GetAuthorizedChatApi(customProvider);
+        var pair = GetAuthorizedChatApi(customProvider, model: customProvider switch
+        {
+            CustomProvider.Groq => "llama-3.1-8b-instant",
+            _ => null,
+        });
         using var api = pair.Api;
         
         var messages = new List<ChatCompletionRequestMessage>
@@ -64,6 +69,7 @@ public partial class Tests
     [DataTestMethod]
     [DataRow(CustomProvider.OpenAi)]
     [DataRow(CustomProvider.Ollama)]
+    [DataRow(CustomProvider.Groq)]
     //[DataRow(CustomProvider.LmStudio)]
     //[DataRow(CustomProvider.GitHub)]
     // [DataRow(CustomProvider.Fireworks)]
@@ -73,7 +79,11 @@ public partial class Tests
     // [DataRow(CustomProvider.Together)]
     public async Task WeatherToolsStrict(CustomProvider customProvider)
     {
-        var pair = GetAuthorizedChatApi(customProvider);
+        var pair = GetAuthorizedChatApi(customProvider, model: customProvider switch
+        {
+            CustomProvider.Groq => "llama-3.1-8b-instant",
+            _ => null,
+        });
         using var api = pair.Api;
         
         var messages = new List<ChatCompletionRequestMessage>
