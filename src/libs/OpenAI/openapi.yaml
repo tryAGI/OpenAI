@@ -4329,7 +4329,6 @@ components:
     ChatCompletionResponseMessage:
       required:
         - role
-        - content
       type: object
       properties:
         content:

@@ -26,14 +26,35 @@ namespace OpenAI
                 httpClient: _httpClient,
                 request: request);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/chat/completions",
+                baseUri: _httpClient.BaseAddress); 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/chat/completions", global::System.UriKind.RelativeOrAbsolute));
-            var __json = global::System.Text.Json.JsonSerializer.Serialize(request, global::OpenAI.SourceGenerationContext.Default.CreateChatCompletionRequest);
-            httpRequest.Content = new global::System.Net.Http.StringContent(
-                content: __json,
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+
+            foreach (var _authorization in _authorizations)
+            {
+                if (_authorization.Type == "Http" ||
+                    _authorization.Type == "OAuth2")
+                {
+                    httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: _authorization.Name,
+                        parameter: _authorization.Value);
+                }
+                else if (_authorization.Type == "ApiKey" &&
+                         _authorization.Location == "Header")
+                {
+                    httpRequest.Headers.Add(_authorization.Name, _authorization.Value);
+                }
+            }
+            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, request.GetType(), JsonSerializerContext);
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,

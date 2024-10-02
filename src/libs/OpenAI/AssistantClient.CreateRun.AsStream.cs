@@ -33,10 +33,30 @@ namespace OpenAI
                 include: include,
                 request: request);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/threads/{threadId}/runs",
+                baseUri: _httpClient.BaseAddress); 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/threads/{threadId}/runs?{string.Join("&", include?.Select(static x => $"include={x}") ?? global::System.Array.Empty<string>())}", global::System.UriKind.RelativeOrAbsolute));
-            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, global::OpenAI.SourceGenerationContext.Default.CreateRunRequest);
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+
+            foreach (var _authorization in _authorizations)
+            {
+                if (_authorization.Type == "Http" ||
+                    _authorization.Type == "OAuth2")
+                {
+                    httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: _authorization.Name,
+                        parameter: _authorization.Value);
+                }
+                else if (_authorization.Type == "ApiKey" &&
+                         _authorization.Location == "Header")
+                {
+                    httpRequest.Headers.Add(_authorization.Name, _authorization.Value);
+                }
+            }
+            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, request.GetType(), JsonSerializerContext);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
