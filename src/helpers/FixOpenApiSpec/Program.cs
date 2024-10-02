@@ -24,6 +24,7 @@ openApiDocument.Components.Schemas["CreateEmbeddingRequest"]!.Properties["dimens
 
 openApiDocument.Components.Schemas["CreateChatCompletionResponse"]!.Properties["choices"].Items.Required.Remove("logprobs");
 
+openApiDocument.Components.Schemas["ChatCompletionResponseMessage"]!.Required.Remove("content");
 openApiDocument.Components.Schemas["ChatCompletionResponseMessage"]!.Required.Remove("refusal");
 
 openApiDocument.Components.Schemas["MessageObject"]!.Required.Remove("status");
