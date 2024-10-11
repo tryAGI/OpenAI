@@ -30,7 +30,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public global::OpenAI.FunctionParameters? Parameters { get; set; }
+        public object? Parameters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
