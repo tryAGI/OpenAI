@@ -31,7 +31,7 @@ namespace OpenAI
         global::System.Threading.Tasks.Task<global::OpenAI.ThreadObject> CreateThreadAsync(
             global::System.Collections.Generic.IList<global::OpenAI.CreateMessageRequest>? messages = default,
             global::OpenAI.CreateThreadRequestToolResources? toolResources = default,
-            global::OpenAI.CreateThreadRequestMetadata? metadata = default,
+            object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

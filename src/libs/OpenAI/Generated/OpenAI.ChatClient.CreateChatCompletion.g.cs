@@ -218,7 +218,7 @@ namespace OpenAI
             global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionRequestMessage> messages,
             global::OpenAI.AnyOf<string, global::OpenAI.CreateChatCompletionRequestModel?> model,
             double? frequencyPenalty = 0,
-            global::OpenAI.CreateChatCompletionRequestLogitBias? logitBias = default,
+            global::System.Collections.Generic.Dictionary<string, int>? logitBias = default,
             bool? logprobs = false,
             int? topLogprobs = default,
             int? maxCompletionTokens = default,

@@ -39,7 +39,7 @@ namespace OpenAI
             string? name = default,
             global::OpenAI.VectorStoreExpirationAfter? expiresAfter = default,
             global::OpenAI.OneOf<global::OpenAI.AutoChunkingStrategyRequestParam, global::OpenAI.StaticChunkingStrategyRequestParam>? chunkingStrategy = default,
-            global::OpenAI.CreateVectorStoreRequestMetadata? metadata = default,
+            object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

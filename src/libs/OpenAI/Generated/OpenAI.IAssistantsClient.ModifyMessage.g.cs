@@ -31,7 +31,7 @@ namespace OpenAI
         global::System.Threading.Tasks.Task<global::OpenAI.MessageObject> ModifyMessageAsync(
             string threadId,
             string messageId,
-            global::OpenAI.ModifyMessageRequestMetadata? metadata = default,
+            object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

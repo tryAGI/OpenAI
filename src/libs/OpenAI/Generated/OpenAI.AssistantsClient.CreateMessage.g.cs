@@ -143,7 +143,7 @@ namespace OpenAI
             global::OpenAI.CreateMessageRequestRole role,
             global::OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::OpenAI.OneOf<global::OpenAI.MessageContentImageFileObject, global::OpenAI.MessageContentImageUrlObject, global::OpenAI.MessageRequestContentTextObject>>> content,
             global::System.Collections.Generic.IList<global::OpenAI.CreateMessageRequestAttachment>? attachments = default,
-            global::OpenAI.CreateMessageRequestMetadata? metadata = default,
+            object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::OpenAI.CreateMessageRequest
