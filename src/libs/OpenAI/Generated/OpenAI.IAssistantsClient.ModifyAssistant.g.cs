@@ -67,7 +67,7 @@ namespace OpenAI
             string? instructions = default,
             global::System.Collections.Generic.IList<global::OpenAI.OneOf<global::OpenAI.AssistantToolsCode, global::OpenAI.AssistantToolsFileSearch, global::OpenAI.AssistantToolsFunction>>? tools = default,
             global::OpenAI.ModifyAssistantRequestToolResources? toolResources = default,
-            global::OpenAI.ModifyAssistantRequestMetadata? metadata = default,
+            object? metadata = default,
             double? temperature = 1,
             double? topP = 1,
             global::OpenAI.AssistantsApiResponseFormatOption? responseFormat = default,

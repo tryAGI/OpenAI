@@ -24,7 +24,7 @@ namespace OpenAI
         /// The JSON body of the response
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
-        public global::OpenAI.BatchRequestOutputResponseBody? Body { get; set; }
+        public object? Body { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

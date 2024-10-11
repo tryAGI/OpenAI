@@ -139,7 +139,7 @@ namespace OpenAI
         public async global::System.Threading.Tasks.Task<global::OpenAI.RunObject> ModifyRunAsync(
             string threadId,
             string runId,
-            global::OpenAI.ModifyRunRequestMetadata? metadata = default,
+            object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::OpenAI.ModifyRunRequest
