@@ -27,7 +27,7 @@ namespace OpenAI
         public string? Description { get; set; }
 
         /// <summary>
-        /// 
+        /// Parameters of the function in JSON Schema.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
         public object? Parameters { get; set; }

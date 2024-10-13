@@ -1,0 +1,1646 @@
+openapi: 3.0.1
+info:
+  title: OpenAI API
+  description: The OpenAI REST API. Please see https://platform.openai.com/docs/api-reference for more details.
+  termsOfService: https://openai.com/policies/terms-of-use
+  contact:
+    name: OpenAI Support
+    url: https://help.openai.com/
+  license:
+    name: MIT
+    url: https://github.com/openai/openai-openapi/blob/master/LICENSE
+  version: '2.3.0'
+servers:
+  - url: https://api.openai.com/v1
+paths:
+  /chat/completions:
+    post:
+      tags:
+        - Chat
+      summary: Creates a model response for the given chat conversation.
+      operationId: createChatCompletion
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    RealtimeServerEventType:
+      type: string
+      enum:
+        - error
+        - session.created
+        - session.updated
+        - conversation.created
+        - input_audio_buffer.committed
+        - input_audio_buffer.cleared
+        - input_audio_buffer.speech_started
+        - input_audio_buffer.speech_stopped
+        - conversation.item.created
+        - conversation.item.input_audio_transcription.completed
+        - conversation.item.input_audio_transcription.failed
+        - conversation.item.truncated
+        - conversation.item.deleted
+        - response.created
+        - response.done
+        - response.output_item.added
+        - response.output_item.done
+        - response.content_part.added
+        - response.content_part.done
+        - response.text.delta
+        - response.text.done
+        - response.audio_transcript.delta
+        - response.audio_transcript.done
+        - response.audio.delta
+        - response.audio.done
+        - response.function_call_arguments.delta
+        - response.function_call_arguments.done
+        - rate_limits.updated
+    RealtimeServerEventBase:
+      type: object
+      properties:
+        event_id:
+          type: string
+        type:
+          $ref: '#/components/schemas/RealtimeServerEventType'
+      required:
+        - type
+        - event_id
+    RealtimeAudioFormat:
+      type: string
+      description: The format of input/output audio.
+      enum:
+        - pcm16
+        - g711_ulaw
+        - g711_alaw
+    RealtimeSession:
+      type: object
+      description: |
+        A session refers to a single WebSocket connection between a client and the server.
+
+        Once a client creates a session, it then sends JSON-formatted events containing text and audio chunks.
+        The server will respond in kind with audio containing voice output, a text transcript of that voice output,
+        and function calls (if functions are provided by the client).
+
+        A realtime Session represents the overall client-server interaction, and contains default configuration.
+
+        It has a set of default values which can be updated at any time (via session.update) or on a per-response level (via response.create).
+      properties:
+        id:
+          type: string
+          description: The unique ID of the session.
+          example: sess_001
+        object:
+          type: string
+          enum:
+            - realtime.session
+          description: The object type, must be "realtime.session".
+          example: realtime.session
+        model:
+          type: string
+          description: The default model used for this session.
+          example: gpt-4o-realtime-preview-2024-10-01
+        modalities:
+          type: array
+          description: The set of modalities the model can respond with. To disable audio, set this to ["text"].
+          items:
+            type: string
+          example:
+            - text
+            - audio
+        instructions:
+          type: string
+          description: The default system instructions prepended to model calls.
+          example: Your knowledge cutoff is 2023-10. You are a helpful assistant.
+        voice:
+          type: string
+          enum:
+            - alloy
+            - echo
+            - shimmer
+          description: The voice the model uses to respond. Cannot be changed once the model has responded with audio at least once.
+          example: alloy
+        input_audio_format:
+          $ref: '#/components/schemas/RealtimeAudioFormat'
+        output_audio_format:
+          $ref: '#/components/schemas/RealtimeAudioFormat'
+        input_audio_transcription:
+          type: object
+          description: Configuration for input audio transcription. Can be set to null to turn off.
+          properties:
+            enabled:
+              type: boolean
+              description: Whether transcription is enabled.
+              example: true
+            model:
+              type: string
+              description: The model to use for transcription.
+              example: whisper-1
+        turn_detection:
+          type: object
+          description: Configuration for turn detection. Can be set to null to turn off.
+          properties:
+            type:
+              type: string
+              enum:
+                - server_vad
+                - none
+              description: The type of turn detection.
+              example: server_vad
+            threshold:
+              type: number
+              description: Activation threshold for VAD (0.0 to 1.0).
+              example: 0.5
+            prefix_padding_ms:
+              type: integer
+              description: Amount of audio to include before speech starts (in milliseconds).
+              example: 300
+            silence_duration_ms:
+              type: integer
+              description: Duration of silence to detect speech stop (in milliseconds).
+              example: 200
+        tools:
+          type: array
+          description: Tools (functions) available to the model.
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+                description: The type of the tool, e.g., "function".
+                example: function
+              name:
+                type: string
+                description: The name of the function.
+                example: get_weather
+              description:
+                type: string
+                description: The description of the function.
+                example: Get the current weather for a location.
+              parameters:
+                type: object
+                description: Parameters of the function in JSON Schema.
+        tool_choice:
+          type: string
+          enum:
+            - auto
+            - none
+            - required
+          description: How the model chooses tools.
+          example: auto
+        temperature:
+          type: number
+          description: Sampling temperature for the model.
+          example: 0.8
+        max_output_tokens:
+          oneOf:
+            - type: integer
+            - type: string
+              enum: [ inf ]
+          default: inf
+          description: Maximum number of output tokens for a single assistant response, inclusive of tool calls. Provide an integer between 1 and 4096 to limit output tokens, or "inf" for the maximum available tokens for a given model. Defaults to "inf".
+    RealtimeConversation:
+      type: object
+      description: |
+        A realtime Conversation consists of a list of Items.
+        By default, there is only one Conversation, and it gets created at the beginning of the Session.
+        In the future, we may add support for additional conversations.
+      properties:
+        id:
+          type: string
+          description: The unique ID of the conversation.
+          example: conv_001
+        object:
+          type: string
+          enum:
+            - realtime.conversation
+          description: The object type, must be "realtime.conversation".
+          example: realtime.conversation
+      example:
+        id: conv_001
+        object: realtime.conversation
+    RealtimeConversationItem:
+      type: object
+      description: |
+        A realtime Item is of three types: message, function_call, or function_call_output.
+
+        A message item can contain text or audio.
+        A function_call item indicates a model's desire to call a function, which is the only tool supported for now
+        A function_call_output item indicates a function response.
+        The client may add and remove message and function_call_output Items using conversation.item.create and conversation.item.delete.
+      properties:
+        id:
+          type: string
+          description: The unique ID of the item.
+          example: msg_003
+        object:
+          type: string
+          enum:
+            - realtime.item
+          description: The object type, must be "realtime.item".
+          example: realtime.item
+        type:
+          type: string
+          enum:
+            - message
+            - function_call
+            - function_call_output
+          description: The type of the item.
+          example: message
+        status:
+          type: string
+          enum:
+            - completed
+            - in_progress
+            - incomplete
+          description: The status of the item.
+          example: completed
+        role:
+          type: string
+          enum:
+            - user
+            - assistant
+            - system
+          description: The role of the message sender.
+          example: user
+        content:
+          type: array
+          description: The content of the message.
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                  - input_text
+                  - input_audio
+                  - text
+                  - audio
+                description: The content type.
+                example: input_text
+              text:
+                type: string
+                description: The text content (for text or input_text items).
+                example: Hello, how are you?
+              audio:
+                type: string
+                description: Base64-encoded audio bytes (for audio or input_audio items).
+              transcript:
+                type: string
+                description: The transcript of the audio (for audio items).
+              call_id:
+                type: string
+                description: The ID of the function call (for function_call items).
+              name:
+                type: string
+                description: The name of the function being called (for function_call items).
+              arguments:
+                type: string
+                description: The arguments of the function call (for function_call items).
+              output:
+                type: string
+                description: The output of the function call (for function_call_output items).
+    RealtimeContentPart:
+      type: object
+      description: The content part that was added.
+      properties:
+        type:
+          type: string
+          enum:
+            - text
+            - audio
+          description: The content type.
+          example: text
+        text:
+          type: string
+          description: The text content (if type is "text").
+          example: Sure, I can help with that.
+        audio:
+          type: string
+          description: Base64-encoded audio data (if type is "audio").
+        transcript:
+          type: string
+          description: The transcript of the audio (if type is "audio").
+    RealtimeErrorDetails:
+      type: object
+      description: Details of the error.
+      properties:
+        type:
+          type: string
+          description: The type of error (e.g., "invalid_request_error", "server_error").
+          example: invalid_request_error
+        code:
+          type: string
+          description: Error code, if any.
+          example: invalid_event
+        message:
+          type: string
+          description: A human-readable error message.
+          example: The 'type' field is missing.
+        param:
+          type: string
+          description: Parameter related to the error, if any.
+          example: null
+        event_id:
+          type: string
+          description: The event_id of the client event that caused the error, if applicable.
+          example: event_567
+      example:
+        type: invalid_request_error
+        code: invalid_event
+        message: The 'type' field is missing.
+        param: null
+        event_id: event_567
+    RealtimeResponse:
+      type: object
+      description: The response resource.
+      properties:
+        id:
+          type: string
+          description: The unique ID of the response.
+          example: resp_001
+        object:
+          type: string
+          enum:
+            - realtime.response
+          description: The object type, must be "realtime.response".
+          example: realtime.response
+        status:
+          type: string
+          enum:
+            - completed
+            - in_progress
+            - cancelled
+            - failed
+            - incomplete
+          description: The status of the response.
+          example: in_progress
+        status_details:
+          type: object
+          description: Additional details about the status.
+          example: null
+        output:
+          type: array
+          description: The list of output items generated by the response.
+          items:
+            $ref: '#/components/schemas/RealtimeConversationItem'
+        usage:
+          type: object
+          description: Usage statistics for the response.
+          properties:
+            total_tokens:
+              type: integer
+              description: The total number of tokens used.
+              example: 50
+            input_tokens:
+              type: integer
+              description: The number of input tokens used.
+              example: 20
+            output_tokens:
+              type: integer
+              description: The number of output tokens used.
+              example: 30
+    # Client events
+    RealtimeSessionUpdate:
+      type: object
+      description: Send this event to update the session’s default configuration.
+      properties:
+        event_id:
+          type: string
+          description: Optional client-generated ID used to identify this event.
+          example: event_123
+        type:
+          type: string
+          enum:
+            - session.update
+          description: The event type, must be "session.update".
+          example: session.update
+        session:
+          $ref: '#/components/schemas/RealtimeSession'
+      example:
+        event_id: event_123
+        type: session.update
+        session:
+          modalities:
+            - text
+            - audio
+          instructions: Your knowledge cutoff is 2023-10. You are a helpful assistant.
+          voice: alloy
+          input_audio_format: pcm16
+          output_audio_format: pcm16
+          input_audio_transcription:
+            enabled: true
+            model: whisper-1
+          turn_detection:
+            type: server_vad
+            threshold: 0.5
+            prefix_padding_ms: 300
+            silence_duration_ms: 200
+          tools:
+            - type: function
+              name: get_weather
+              description: Get the current weather for a location.
+              parameters:
+                type: object
+                properties:
+                  location:
+                    type: string
+                required:
+                  - location
+          tool_choice: auto
+          temperature: 0.8
+          max_output_tokens: null
+    RealtimeInputAudioBufferAppend:
+      type: object
+      description: Send this event to append audio bytes to the input audio buffer.
+      properties:
+        event_id:
+          type: string
+          description: Optional client-generated ID used to identify this event.
+          example: event_456
+        type:
+          type: string
+          enum:
+            - input_audio_buffer.append
+          description: The event type, must be "input_audio_buffer.append".
+          example: input_audio_buffer.append
+        audio:
+          type: string
+          description: Base64-encoded audio bytes.
+          example: Base64EncodedAudioData
+      example:
+        event_id: event_456
+        type: input_audio_buffer.append
+        audio: Base64EncodedAudioData
+    RealtimeInputAudioBufferCommit:
+      type: object
+      description: Send this event to commit audio bytes to a user message.
+      properties:
+        event_id:
+          type: string
+          description: Optional client-generated ID used to identify this event.
+          example: event_789
+        type:
+          type: string
+          enum:
+            - input_audio_buffer.commit
+          description: The event type, must be "input_audio_buffer.commit".
+          example: input_audio_buffer.commit
+      example:
+        event_id: event_789
+        type: input_audio_buffer.commit
+    RealtimeInputAudioBufferClear:
+      type: object
+      description: Send this event to clear the audio bytes in the buffer.
+      properties:
+        event_id:
+          type: string
+          description: Optional client-generated ID used to identify this event.
+          example: event_012
+        type:
+          type: string
+          enum:
+            - input_audio_buffer.clear
+          description: The event type, must be "input_audio_buffer.clear".
+          example: input_audio_buffer.clear
+      example:
+        event_id: event_012
+        type: input_audio_buffer.clear
+    RealtimeConversationItemCreate:
+      type: object
+      description: Send this event when adding an item to the conversation.
+      properties:
+        event_id:
+          type: string
+          description: Optional client-generated ID used to identify this event.
+          example: event_345
+        type:
+          type: string
+          enum:
+            - conversation.item.create
+          description: The event type, must be "conversation.item.create".
+          example: conversation.item.create
+        previous_item_id:
+          type: string
+          description: The ID of the preceding item after which the new item will be inserted.
+          example: null
+        item:
+          $ref: '#/components/schemas/RealtimeConversationItem'
+      example:
+        event_id: event_345
+        type: conversation.item.create
+        previous_item_id: null
+        item:
+          id: msg_001
+          type: message
+          status: completed
+          role: user
+          content:
+            - type: input_text
+              text: Hello, how are you?
+    RealtimeConversationItemTruncate:
+      type: object
+      description: Send this event when you want to truncate a previous assistant message’s audio.
+      properties:
+        event_id:
+          type: string
+          description: Optional client-generated ID used to identify this event.
+          example: event_678
+        type:
+          type: string
+          enum:
+            - conversation.item.truncate
+          description: The event type, must be "conversation.item.truncate".
+          example: conversation.item.truncate
+        item_id:
+          type: string
+          description: The ID of the assistant message item to truncate.
+          example: msg_002
+        content_index:
+          type: integer
+          description: The index of the content part to truncate.
+          example: 0
+        audio_end_ms:
+          type: integer
+          description: Inclusive duration up to which audio is truncated, in milliseconds.
+          example: 1500
+      example:
+        event_id: event_678
+        type: conversation.item.truncate
+        item_id: msg_002
+        content_index: 0
+        audio_end_ms: 1500
+    RealtimeConversationItemDelete:
+      type: object
+      description: Send this event when you want to remove any item from the conversation history.
+      properties:
+        event_id:
+          type: string
+          description: Optional client-generated ID used to identify this event.
+          example: event_901
+        type:
+          type: string
+          enum:
+            - conversation.item.delete
+          description: The event type, must be "conversation.item.delete".
+          example: conversation.item.delete
+        item_id:
+          type: string
+          description: The ID of the item to delete.
+          example: msg_003
+      example:
+        event_id: event_901
+        type: conversation.item.delete
+        item_id: msg_003
+    RealtimeResponseCreate:
+      type: object
+      description: Send this event to trigger a response generation.
+      properties:
+        event_id:
+          type: string
+          description: Optional client-generated ID used to identify this event.
+        type:
+          type: string
+          enum:
+            - response.create
+          description: The event type, must be 'response.create'.
+        response:
+          type: object
+          description: Configuration for the response.
+          properties:
+            modalities:
+              type: array
+              items:
+                type: string
+                enum:
+                  - text
+                  - audio
+              description: The modalities for the response.
+            instructions:
+              type: string
+              description: Instructions for the model.
+            voice:
+              type: string
+              enum: [alloy, echo, shimmer]
+              description: The voice the model uses to respond.
+            output_audio_format:
+              $ref: '#/components/schemas/RealtimeAudioFormat'
+            tools:
+              type: array
+              description: Tools (functions) available to the model.
+              items:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    description: The type of the tool.
+                  name:
+                    type: string
+                    description: The name of the function.
+                  description:
+                    type: string
+                    description: The description of the function.
+                  parameters:
+                    type: object
+                    description: Parameters of the function in JSON Schema.
+            tool_choice:
+              oneOf:
+                - type: string
+                  enum: [auto, none, required]
+                - type: string
+              description: |
+                How the model chooses tools. 
+                Options are "auto", "none", "required", or specify a function.
+            temperature:
+              type: number
+              description: Sampling temperature.
+            max_output_tokens:
+              oneOf:
+                - type: integer
+                - type: string
+                  enum: [inf]
+              default: inf
+              description: Maximum number of output tokens for a single assistant response, inclusive of tool calls. Provide an integer between 1 and 4096 to limit output tokens, or "inf" for the maximum available tokens for a given model. Defaults to "inf".
+    RealtimeResponseCancel:
+      type: object
+      description: Send this event to cancel an in-progress response.
+      properties:
+        event_id:
+          type: string
+          description: Optional client-generated ID used to identify this event.
+          example: event_567
+        type:
+          type: string
+          enum:
+            - response.cancel
+          description: The event type, must be "response.cancel".
+          example: response.cancel
+      example:
+        event_id: event_567
+        type: response.cancel
+    # Server events
+    RealtimeError:
+      type: object
+      description: Returned when an error occurs.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+          example: event_890
+        type:
+          type: string
+          enum:
+            - error
+          description: The event type, must be "error".
+          example: error
+        error:
+          $ref: '#/components/schemas/RealtimeErrorDetails'
+      example:
+        event_id: event_890
+        type: error
+        error:
+          type: invalid_request_error
+          code: invalid_event
+          message: The 'type' field is missing.
+          param: null
+          event_id: event_567
+    RealtimeSessionCreated:
+      type: object
+      description: Returned when a session is created. Emitted automatically when a new connection is established.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+          example: event_1234
+        type:
+          type: string
+          enum:
+            - session.created
+          description: The event type, must be "session.created".
+          example: session.created
+        session:
+          $ref: '#/components/schemas/RealtimeSession'
+          
+    RealtimeSessionUpdated:
+      type: object
+      description: Returned when a session is updated.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+          example: event_5678
+        type:
+          type: string
+          enum:
+            - session.updated
+          description: The event type, must be "session.updated".
+          example: session.updated
+        session:
+          $ref: '#/components/schemas/RealtimeSession'
+    RealtimeConversationCreated:
+      type: object
+      description: Returned when a conversation is created. Emitted right after session creation.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+          example: event_9101
+        type:
+          type: string
+          enum:
+            - conversation.created
+          description: The event type, must be "conversation.created".
+          example: conversation.created
+        conversation:
+          $ref: '#/components/schemas/RealtimeConversation'
+      example:
+        event_id: event_9101
+        type: conversation.created
+        conversation:
+          id: conv_001
+          object: realtime.conversation
+    RealtimeConversationItemCreated:
+      type: object
+      description: Returned when a conversation item is created.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+          example: event_1920
+        type:
+          type: string
+          enum:
+            - conversation.item.created
+          description: The event type, must be "conversation.item.created".
+          example: conversation.item.created
+        previous_item_id:
+          type: string
+          description: The ID of the preceding item.
+          example: msg_002
+        item:
+          $ref: '#/components/schemas/RealtimeConversationItem'
+      example:
+        event_id: event_1920
+        type: conversation.item.created
+        previous_item_id: msg_002
+        item:
+          id: msg_003
+          object: realtime.item
+          type: message
+          status: completed
+          role: user
+          content:
+            - type: input_audio
+              transcript: null
+    RealtimeConversationItemInputAudioTranscriptionCompleted:
+      type: object
+      description: Returned when input audio transcription is enabled and a transcription succeeds.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+          example: event_2122
+        type:
+          type: string
+          enum:
+            - conversation.item.input_audio_transcription.completed
+          description: The event type, must be "conversation.item.input_audio_transcription.completed".
+          example: conversation.item.input_audio_transcription.completed
+        item_id:
+          type: string
+          description: The ID of the user message item.
+          example: msg_003
+        content_index:
+          type: integer
+          description: The index of the content part containing the audio.
+          example: 0
+        transcript:
+          type: string
+          description: The transcribed text.
+          example: Hello, how are you?
+      example:
+        event_id: event_2122
+        type: conversation.item.input_audio_transcription.completed
+        item_id: msg_003
+        content_index: 0
+        transcript: Hello, how are you?
+    RealtimeConversationItemInputAudioTranscriptionFailed:
+      type: object
+      description: Returned when input audio transcription is configured, and a transcription request for a user message failed.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+          example: event_2324
+        type:
+          type: string
+          enum:
+            - conversation.item.input_audio_transcription.failed
+          description: The event type, must be "conversation.item.input_audio_transcription.failed".
+          example: conversation.item.input_audio_transcription.failed
+        item_id:
+          type: string
+          description: The ID of the user message item.
+          example: msg_003
+        content_index:
+          type: integer
+          description: The index of the content part containing the audio.
+          example: 0
+        error:
+          $ref: '#/components/schemas/RealtimeErrorDetails'
+      example:
+        event_id: event_2324
+        type: conversation.item.input_audio_transcription.failed
+        item_id: msg_003
+        content_index: 0
+        error:
+          type: transcription_error
+          code: audio_unintelligible
+          message: The audio could not be transcribed.
+          param: null
+    RealtimeConversationItemTruncated:
+      type: object
+      description: Returned when an earlier assistant audio message item is truncated by the client.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+          example: event_2526
+        type:
+          type: string
+          enum:
+            - conversation.item.truncated
+          description: The event type, must be "conversation.item.truncated".
+          example: conversation.item.truncated
+        item_id:
+          type: string
+          description: The ID of the assistant message item that was truncated.
+          example: msg_004
+        content_index:
+          type: integer
+          description: The index of the content part that was truncated.
+          example: 0
+        audio_end_ms:
+          type: integer
+          description: The duration up to which the audio was truncated, in milliseconds.
+          example: 1500
+      example:
+        event_id: event_2526
+        type: conversation.item.truncated
+        item_id: msg_004
+        content_index: 0
+        audio_end_ms: 1500
+    RealtimeConversationItemDeleted:
+      type: object
+      description: Returned when an item in the conversation is deleted.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+          example: event_2728
+        type:
+          type: string
+          enum:
+            - conversation.item.deleted
+          description: The event type, must be "conversation.item.deleted".
+          example: conversation.item.deleted
+        item_id:
+          type: string
+          description: The ID of the item that was deleted.
+          example: msg_005
+      example:
+        event_id: event_2728
+        type: conversation.item.deleted
+        item_id: msg_005
+    RealtimeInputAudioBufferCommitted:
+      type: object
+      description: Returned when an input audio buffer is committed, either by the client or automatically in server VAD mode.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+          example: event_1121
+        type:
+          type: string
+          enum:
+            - input_audio_buffer.committed
+          description: The event type, must be "input_audio_buffer.committed".
+          example: input_audio_buffer.committed
+        previous_item_id:
+          type: string
+          description: The ID of the preceding item after which the new item will be inserted.
+          example: msg_001
+        item_id:
+          type: string
+          description: The ID of the user message item that will be created.
+          example: msg_002
+      example:
+        event_id: event_1121
+        type: input_audio_buffer.committed
+        previous_item_id: msg_001
+        item_id: msg_002
+    RealtimeInputAudioBufferCleared:
+      type: object
+      description: Returned when the input audio buffer is cleared by the client.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+          example: event_1314
+        type:
+          type: string
+          enum:
+            - input_audio_buffer.cleared
+          description: The event type, must be "input_audio_buffer.cleared".
+          example: input_audio_buffer.cleared
+      example:
+        event_id: event_1314
+        type: input_audio_buffer.cleared
+    RealtimeInputAudioBufferSpeechStarted:
+      type: object
+      description: Returned in server turn detection mode when speech is detected.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+          example: event_1516
+        type:
+          type: string
+          enum:
+            - input_audio_buffer.speech_started
+          description: The event type, must be "input_audio_buffer.speech_started".
+          example: input_audio_buffer.speech_started
+        audio_start_ms:
+          type: integer
+          description: Milliseconds since the session started when speech was detected.
+          example: 1000
+        item_id:
+          type: string
+          description: The ID of the user message item that will be created when speech stops.
+          example: msg_003
+      example:
+        event_id: event_1516
+        type: input_audio_buffer.speech_started
+        audio_start_ms: 1000
+        item_id: msg_003
+    RealtimeInputAudioBufferSpeechStopped:
+      type: object
+      description: Returned in server turn detection mode when speech stops.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+          example: event_1718
+        type:
+          type: string
+          enum:
+            - input_audio_buffer.speech_stopped
+          description: The event type, must be "input_audio_buffer.speech_stopped".
+          example: input_audio_buffer.speech_stopped
+        audio_end_ms:
+          type: integer
+          description: Milliseconds since the session started when speech stopped.
+          example: 2000
+        item_id:
+          type: string
+          description: The ID of the user message item that will be created.
+          example: msg_003
+      example:
+        event_id: event_1718
+        type: input_audio_buffer.speech_stopped
+        audio_end_ms: 2000
+        item_id: msg_003
+    RealtimeResponseCreated:
+      type: object
+      description: Returned when a new Response is created. The first event of response creation, where the response is in an initial state of "in_progress".
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+          example: event_2930
+        type:
+          type: string
+          enum:
+            - response.created
+          description: The event type, must be "response.created".
+          example: response.created
+        response:
+          $ref: '#/components/schemas/RealtimeResponse'
+      example:
+        event_id: event_2930
+        type: response.created
+        response:
+          id: resp_001
+          object: realtime.response
+          status: in_progress
+          status_details: null
+          output: [ ]
+          usage: null
+    RealtimeResponseDone:
+      type: object
+      description: Returned when a Response is done streaming. Always emitted, no matter the final state.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+          example: event_3132
+        type:
+          type: string
+          enum:
+            - response.done
+          description: The event type, must be "response.done".
+          example: response.done
+        response:
+          $ref: '#/components/schemas/RealtimeResponse'
+      example:
+        event_id: event_3132
+        type: response.done
+        response:
+          id: resp_001
+          object: realtime.response
+          status: completed
+          status_details: null
+          output:
+            - id: msg_006
+              object: realtime.item
+              type: message
+              status: completed
+              role: assistant
+              content:
+                - type: text
+                  text: Sure, how can I assist you today?
+          usage:
+            total_tokens: 50
+            input_tokens: 20
+            output_tokens: 30
+    RealtimeResponseOutputItemAdded:
+      type: object
+      description: Returned when a new Item is created during response generation.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+          example: event_3334
+        type:
+          type: string
+          enum:
+            - response.output_item.added
+          description: The event type, must be "response.output_item.added".
+          example: response.output_item.added
+        response_id:
+          type: string
+          description: The ID of the response to which the item belongs.
+          example: resp_001
+        output_index:
+          type: integer
+          description: The index of the output item in the response.
+          example: 0
+        item:
+          $ref: '#/components/schemas/RealtimeConversationItem'
+      example:
+        event_id: event_3334
+        type: response.output_item.added
+        response_id: resp_001
+        output_index: 0
+        item:
+          id: msg_007
+          object: realtime.item
+          type: message
+          status: in_progress
+          role: assistant
+          content: [ ]
+    RealtimeResponseOutputItemDone:
+      type: object
+      description: Returned when an Item is done streaming. Also emitted when a Response is interrupted, incomplete, or cancelled.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+          example: event_3536
+        type:
+          type: string
+          enum:
+            - response.output_item.done
+          description: The event type, must be "response.output_item.done".
+          example: response.output_item.done
+        response_id:
+          type: string
+          description: The ID of the response to which the item belongs.
+          example: resp_001
+        output_index:
+          type: integer
+          description: The index of the output item in the response.
+          example: 0
+        item:
+          $ref: '#/components/schemas/RealtimeConversationItem'
+      example:
+        event_id: event_3536
+        type: response.output_item.done
+        response_id: resp_001
+        output_index: 0
+        item:
+          id: msg_007
+          object: realtime.item
+          type: message
+          status: completed
+          role: assistant
+          content:
+            - type: text
+              text: Sure, I can help with that.
+    RealtimeResponseContentPartAdded:
+      type: object
+      description: Returned when a new content part is added to an assistant message item during response generation.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+          example: event_3738
+        type:
+          type: string
+          enum:
+            - response.content_part.added
+          description: The event type, must be "response.content_part.added".
+          example: response.content_part.added
+        response_id:
+          type: string
+          description: The ID of the response.
+          example: resp_001
+        item_id:
+          type: string
+          description: The ID of the item to which the content part was added.
+          example: msg_007
+        output_index:
+          type: integer
+          description: The index of the output item in the response.
+          example: 0
+        content_index:
+          type: integer
+          description: The index of the content part in the item's content array.
+          example: 0
+        part:
+          $ref: '#/components/schemas/RealtimeContentPart'
+      example:
+        event_id: event_3738
+        type: response.content_part.added
+        response_id: resp_001
+        item_id: msg_007
+        output_index: 0
+        content_index: 0
+        part:
+          type: text
+          text: ""
+    RealtimeResponseContentPartDone:
+      type: object
+      description: Returned when a content part is done streaming in an assistant message item. Also emitted when a Response is interrupted, incomplete, or cancelled.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+          example: event_3940
+        type:
+          type: string
+          enum:
+            - response.content_part.done
+          description: The event type, must be "response.content_part.done".
+          example: response.content_part.done
+        response_id:
+          type: string
+          description: The ID of the response.
+          example: resp_001
+        item_id:
+          type: string
+          description: The ID of the item.
+          example: msg_007
+        output_index:
+          type: integer
+          description: The index of the output item in the response.
+          example: 0
+        content_index:
+          type: integer
+          description: The index of the content part in the item's content array.
+          example: 0
+        part:
+          $ref: '#/components/schemas/RealtimeContentPart'
+      example:
+        event_id: event_3940
+        type: response.content_part.done
+        response_id: resp_001
+        item_id: msg_007
+        output_index: 0
+        content_index: 0
+        part:
+          type: text
+          text: Sure, I can help with that.
+    RealtimeResponseTextDelta:
+      type: object
+      description: Returned when the text value of a "text" content part is updated.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+          example: event_4142
+        type:
+          type: string
+          enum:
+            - response.text.delta
+          description: The event type, must be "response.text.delta".
+          example: response.text.delta
+        response_id:
+          type: string
+          description: The ID of the response.
+          example: resp_001
+        item_id:
+          type: string
+          description: The ID of the item.
+          example: msg_007
+        output_index:
+          type: integer
+          description: The index of the output item in the response.
+          example: 0
+        content_index:
+          type: integer
+          description: The index of the content part in the item's content array.
+          example: 0
+        delta:
+          type: string
+          description: The text delta.
+          example: Sure, I can h
+      example:
+        event_id: event_4142
+        type: response.text.delta
+        response_id: resp_001
+        item_id: msg_007
+        output_index: 0
+        content_index: 0
+        delta: Sure, I can h
+    RealtimeResponseTextDone:
+      type: object
+      description: Returned when the text value of a "text" content part is done streaming. Also emitted when a Response is interrupted, incomplete, or cancelled.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+          example: event_4344
+        type:
+          type: string
+          enum:
+            - response.text.done
+          description: The event type, must be "response.text.done".
+          example: response.text.done
+        response_id:
+          type: string
+          description: The ID of the response.
+          example: resp_001
+        item_id:
+          type: string
+          description: The ID of the item.
+          example: msg_007
+        output_index:
+          type: integer
+          description: The index of the output item in the response.
+          example: 0
+        content_index:
+          type: integer
+          description: The index of the content part in the item's content array.
+          example: 0
+        text:
+          type: string
+          description: The final text content.
+          example: Sure, I can help with that.
+      example:
+        event_id: event_4344
+        type: response.text.done
+        response_id: resp_001
+        item_id: msg_007
+        output_index: 0
+        content_index: 0
+        text: Sure, I can help with that.
+    RealtimeResponseAudioTranscriptDelta:
+      type: object
+      description: Returned when the model-generated transcription of audio output is updated.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+          example: event_4546
+        type:
+          type: string
+          enum:
+            - response.audio_transcript.delta
+          description: The event type, must be "response.audio_transcript.delta".
+          example: response.audio_transcript.delta
+        response_id:
+          type: string
+          description: The ID of the response.
+          example: resp_001
+        item_id:
+          type: string
+          description: The ID of the item.
+          example: msg_008
+        output_index:
+          type: integer
+          description: The index of the output item in the response.
+          example: 0
+        content_index:
+          type: integer
+          description: The index of the content part in the item's content array.
+          example: 0
+        delta:
+          type: string
+          description: The transcript delta.
+          example: Hello, how can I a
+      example:
+        event_id: event_4546
+        type: response.audio_transcript.delta
+        response_id: resp_001
+        item_id: msg_008
+        output_index: 0
+        content_index: 0
+        delta: Hello, how can I a
+    RealtimeResponseAudioTranscriptDone:
+      type: object
+      description: Returned when the model-generated transcription of audio output is done streaming. Also emitted when a Response is interrupted, incomplete, or cancelled.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+          example: event_4748
+        type:
+          type: string
+          enum:
+            - response.audio_transcript.done
+          description: The event type, must be "response.audio_transcript.done".
+          example: response.audio_transcript.done
+        response_id:
+          type: string
+          description: The ID of the response.
+          example: resp_001
+        item_id:
+          type: string
+          description: The ID of the item.
+          example: msg_008
+        output_index:
+          type: integer
+          description: The index of the output item in the response.
+          example: 0
+        content_index:
+          type: integer
+          description: The index of the content part in the item's content array.
+          example: 0
+        transcript:
+          type: string
+          description: The final transcript of the audio.
+          example: Hello, how can I assist you today?
+      example:
+        event_id: event_4748
+        type: response.audio_transcript.done
+        response_id: resp_001
+        item_id: msg_008
+        output_index: 0
+        content_index: 0
+        transcript: Hello, how can I assist you today?
+    RealtimeResponseAudioDelta:
+      type: object
+      description: Returned when the model-generated audio is updated.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+          example: event_4950
+        type:
+          type: string
+          enum:
+            - response.audio.delta
+          description: The event type, must be "response.audio.delta".
+          example: response.audio.delta
+        response_id:
+          type: string
+          description: The ID of the response.
+          example: resp_001
+        item_id:
+          type: string
+          description: The ID of the item.
+          example: msg_008
+        output_index:
+          type: integer
+          description: The index of the output item in the response.
+          example: 0
+        content_index:
+          type: integer
+          description: The index of the content part in the item's content array.
+          example: 0
+        delta:
+          type: string
+          description: Base64-encoded audio data delta.
+          example: Base64EncodedAudioDelta
+      example:
+        event_id: event_4950
+        type: response.audio.delta
+        response_id: resp_001
+        item_id: msg_008
+        output_index: 0
+        content_index: 0
+        delta: Base64EncodedAudioDelta
+    RealtimeResponseAudioDone:
+      type: object
+      description: Returned when the model-generated audio is done. Also emitted when a Response is interrupted, incomplete, or cancelled.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+          example: event_5152
+        type:
+          type: string
+          enum:
+            - response.audio.done
+          description: The event type, must be "response.audio.done".
+          example: response.audio.done
+        response_id:
+          type: string
+          description: The ID of the response.
+          example: resp_001
+        item_id:
+          type: string
+          description: The ID of the item.
+          example: msg_008
+        output_index:
+          type: integer
+          description: The index of the output item in the response.
+          example: 0
+        content_index:
+          type: integer
+          description: The index of the content part in the item's content array.
+          example: 0
+      example:
+        event_id: event_5152
+        type: response.audio.done
+        response_id: resp_001
+        item_id: msg_008
+        output_index: 0
+        content_index: 0
+    RealtimeResponseFunctionCallArgumentsDelta:
+      type: object
+      description: Returned when the model-generated function call arguments are updated.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+          example: event_5354
+        type:
+          type: string
+          enum:
+            - response.function_call_arguments.delta
+          description: The event type, must be "response.function_call_arguments.delta".
+          example: response.function_call_arguments.delta
+        response_id:
+          type: string
+          description: The ID of the response.
+          example: resp_002
+        item_id:
+          type: string
+          description: The ID of the function call item.
+          example: fc_001
+        output_index:
+          type: integer
+          description: The index of the output item in the response.
+          example: 0
+        call_id:
+          type: string
+          description: The ID of the function call.
+          example: call_001
+        delta:
+          type: string
+          description: The arguments delta as a JSON string.
+          example: "{\"location\": \"San\""
+      example:
+        event_id: event_5354
+        type: response.function_call_arguments.delta
+        response_id: resp_002
+        item_id: fc_001
+        output_index: 0
+        call_id: call_001
+        delta: "{\"location\": \"San\""
+    RealtimeResponseFunctionCallArgumentsDone:
+      type: object
+      description: Returned when the model-generated function call arguments are done streaming. Also emitted when a Response is interrupted, incomplete, or cancelled.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+          example: event_5556
+        type:
+          type: string
+          enum:
+            - response.function_call_arguments.done
+          description: The event type, must be "response.function_call_arguments.done".
+          example: response.function_call_arguments.done
+        response_id:
+          type: string
+          description: The ID of the response.
+          example: resp_002
+        item_id:
+          type: string
+          description: The ID of the function call item.
+          example: fc_001
+        output_index:
+          type: integer
+          description: The index of the output item in the response.
+          example: 0
+        call_id:
+          type: string
+          description: The ID of the function call.
+          example: call_001
+        arguments:
+          type: string
+          description: The final arguments as a JSON string.
+          example: "{\"location\": \"San Francisco\"}"
+      example:
+        event_id: event_5556
+        type: response.function_call_arguments.done
+        response_id: resp_002
+        item_id: fc_001
+        output_index: 0
+        call_id: call_001
+        arguments: "{\"location\": \"San Francisco\"}"
+    RealtimeRateLimitsUpdated:
+      type: object
+      description: Emitted after every "response.done" event to indicate the updated rate limits.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+          example: event_5758
+        type:
+          type: string
+          enum:
+            - rate_limits.updated
+          description: The event type, must be "rate_limits.updated".
+          example: rate_limits.updated
+        rate_limits:
+          type: array
+          description: List of rate limit information.
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                enum:
+                  - requests
+                  - tokens
+                  - input_tokens
+                  - output_tokens
+                description: The name of the rate limit.
+                example: requests
+              limit:
+                type: integer
+                description: The maximum allowed value for the rate limit.
+                example: 1000
+              remaining:
+                type: integer
+                description: The remaining value before the limit is reached.
+                example: 999
+              reset_seconds:
+                type: number
+                description: Seconds until the rate limit resets.
+                example: 60
+      example:
+        event_id: event_5758
+        type: rate_limits.updated
+        rate_limits:
+          - name: requests
+            limit: 1000
+            remaining: 999
+            reset_seconds: 60
+          - name: tokens
+            limit: 50000
+            remaining: 49950
+            reset_seconds: 60
+    RealtimeServerEvent:
+      oneOf:
+        - $ref: '#/components/schemas/RealtimeError'
+        - $ref: '#/components/schemas/RealtimeSessionCreated'
+        - $ref: '#/components/schemas/RealtimeSessionUpdated'
+        - $ref: '#/components/schemas/RealtimeConversationCreated'
+        - $ref: '#/components/schemas/RealtimeConversationItemCreated'
+        - $ref: '#/components/schemas/RealtimeConversationItemInputAudioTranscriptionCompleted'
+        - $ref: '#/components/schemas/RealtimeConversationItemInputAudioTranscriptionFailed'
+        - $ref: '#/components/schemas/RealtimeConversationItemTruncated'
+        - $ref: '#/components/schemas/RealtimeConversationItemDeleted'
+        - $ref: '#/components/schemas/RealtimeInputAudioBufferCommitted'
+        - $ref: '#/components/schemas/RealtimeInputAudioBufferCleared'
+        - $ref: '#/components/schemas/RealtimeInputAudioBufferSpeechStarted'
+        - $ref: '#/components/schemas/RealtimeInputAudioBufferSpeechStopped'
+        - $ref: '#/components/schemas/RealtimeResponseCreated'
+        - $ref: '#/components/schemas/RealtimeResponseDone'
+        - $ref: '#/components/schemas/RealtimeResponseOutputItemAdded'
+        - $ref: '#/components/schemas/RealtimeResponseOutputItemDone'
+        - $ref: '#/components/schemas/RealtimeResponseContentPartAdded'
+        - $ref: '#/components/schemas/RealtimeResponseContentPartDone'
+        - $ref: '#/components/schemas/RealtimeResponseTextDelta'
+        - $ref: '#/components/schemas/RealtimeResponseTextDone'
+        - $ref: '#/components/schemas/RealtimeResponseAudioTranscriptDelta'
+        - $ref: '#/components/schemas/RealtimeResponseAudioTranscriptDone'
+        - $ref: '#/components/schemas/RealtimeResponseAudioDelta'
+        - $ref: '#/components/schemas/RealtimeResponseAudioDone'
+        - $ref: '#/components/schemas/RealtimeResponseFunctionCallArgumentsDelta'
+        - $ref: '#/components/schemas/RealtimeResponseFunctionCallArgumentsDone'
+        - $ref: '#/components/schemas/RealtimeRateLimitsUpdated'

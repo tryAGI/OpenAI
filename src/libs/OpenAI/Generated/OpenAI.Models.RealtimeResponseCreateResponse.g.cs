@@ -6,7 +6,7 @@
 namespace OpenAI
 {
     /// <summary>
-    /// 
+    /// Configuration for the response.
     /// </summary>
     public sealed partial class RealtimeResponseCreateResponse
     {
@@ -30,14 +30,14 @@ namespace OpenAI
         public global::OpenAI.RealtimeResponseCreateResponseVoice? Voice { get; set; }
 
         /// <summary>
-        /// 
+        /// The format of input/output audio.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_audio_format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeAudioFormatJsonConverter))]
         public global::OpenAI.RealtimeAudioFormat? OutputAudioFormat { get; set; }
 
         /// <summary>
-        /// 
+        /// Tools (functions) available to the model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         public global::System.Collections.Generic.IList<global::OpenAI.RealtimeResponseCreateResponseTool>? Tools { get; set; }
@@ -57,11 +57,12 @@ namespace OpenAI
         public double? Temperature { get; set; }
 
         /// <summary>
-        /// Maximum number of output tokens, or "inf" for unlimited. Defaults to "inf".
+        /// Maximum number of output tokens for a single assistant response, inclusive of tool calls. Provide an integer between 1 and 4096 to limit output tokens, or "inf" for the maximum available tokens for a given model. Defaults to "inf".<br/>
+        /// Default Value: inf
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_output_tokens")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::OpenAI.OneOf<int?, global::OpenAI.RealtimeResponseCreateResponseMaxOutputTokens?>? MaxOutputTokens { get; set; }
+        public global::OpenAI.OneOf<int?, global::OpenAI.RealtimeResponseCreateResponseMaxOutputTokens?>? MaxOutputTokens { get; set; } = global::OpenAI.RealtimeResponseCreateResponseMaxOutputTokens.Inf;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -4,7 +4,7 @@
 namespace OpenAI
 {
     /// <summary>
-    /// 
+    /// Send this event to trigger a response generation.
     /// </summary>
     public sealed partial class RealtimeResponseCreate
     {
@@ -22,7 +22,7 @@ namespace OpenAI
         public global::OpenAI.RealtimeResponseCreateType? Type { get; set; }
 
         /// <summary>
-        /// 
+        /// Configuration for the response.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response")]
         public global::OpenAI.RealtimeResponseCreateResponse? Response { get; set; }

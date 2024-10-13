@@ -21,7 +21,7 @@ public partial class Tests
             }
         }.ToJson(realtimeConversationClient.JsonSerializerContext), cancellationToken);
 
-        await foreach (RealtimeServerEvent receivedMessage in realtimeConversationClient.ReceiveUpdatesAsync(cancellationToken))
+        await foreach (RealtimeServerEventBase receivedMessage in realtimeConversationClient.ReceiveUpdatesAsync(cancellationToken))
         {
             Console.WriteLine(value: "Message received. Type:" + receivedMessage.Type);
         }

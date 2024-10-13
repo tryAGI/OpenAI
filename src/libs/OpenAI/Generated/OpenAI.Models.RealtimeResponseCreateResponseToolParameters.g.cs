@@ -4,7 +4,7 @@
 namespace OpenAI
 {
     /// <summary>
-    /// 
+    /// Parameters of the function in JSON Schema.
     /// </summary>
     public sealed partial class RealtimeResponseCreateResponseToolParameters
     {

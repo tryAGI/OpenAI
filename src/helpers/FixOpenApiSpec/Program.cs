@@ -6,7 +6,7 @@ using Microsoft.OpenApi.Readers;
 
 var path = args[0];
 var text = await File.ReadAllTextAsync(path);
-var extendedText = await File.ReadAllTextAsync(path.Replace(".yaml", ".extended.yaml"));
+var realtimeText = await File.ReadAllTextAsync(path.Replace(".yaml", ".realtime.yaml"));
 
 text = text.Replace("description: *run_temperature_description", "description: empty");
 text = text.Replace("description: &run_temperature_description ", "description: ");
@@ -18,8 +18,8 @@ text = text.Replace("example: *moderation_example", "example: empty");
 text = text.Replace("response: &moderation_example |", "response: |");
 
 var openApiDocument = new OpenApiStringReader().Read(text, out var diagnostics);
-var extendedOpenApiDocument = new OpenApiStringReader().Read(extendedText, out var extendedDiagnostics);
-foreach (var schema in extendedOpenApiDocument.Components.Schemas)
+var realtimeOpenApiDocument = new OpenApiStringReader().Read(realtimeText, out var realtimeDiagnostics);
+foreach (var schema in realtimeOpenApiDocument.Components.Schemas)
 {
     openApiDocument.Components.Schemas[schema.Key] = schema.Value;
 }

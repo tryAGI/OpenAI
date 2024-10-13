@@ -4,7 +4,7 @@
 namespace OpenAI
 {
     /// <summary>
-    /// 
+    /// The format of input/output audio.
     /// </summary>
     public enum RealtimeAudioFormat
     {
