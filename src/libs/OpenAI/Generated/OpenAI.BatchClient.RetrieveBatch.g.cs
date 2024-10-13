@@ -102,7 +102,7 @@ namespace OpenAI
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::OpenAI.Batch), JsonSerializerContext) as global::OpenAI.Batch ??
+                global::OpenAI.Batch.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

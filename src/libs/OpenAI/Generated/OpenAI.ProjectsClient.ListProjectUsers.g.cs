@@ -120,7 +120,7 @@ namespace OpenAI
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::OpenAI.ProjectUserListResponse), JsonSerializerContext) as global::OpenAI.ProjectUserListResponse ??
+                global::OpenAI.ProjectUserListResponse.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
