@@ -3,6 +3,7 @@ namespace OpenAI.IntegrationTests;
 public partial class Tests
 {
     [TestMethod]
+    [Explicit]
     public async Task Realtime()
     {
         using var realtimeConversationClient = GetAuthenticatedRealtimeClient();
