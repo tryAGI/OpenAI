@@ -102,7 +102,7 @@ namespace OpenAI
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::OpenAI.InviteDeleteResponse), JsonSerializerContext) as global::OpenAI.InviteDeleteResponse ??
+                global::OpenAI.InviteDeleteResponse.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -122,7 +122,7 @@ namespace OpenAI
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::OpenAI.ListFineTuningJobEventsResponse), JsonSerializerContext) as global::OpenAI.ListFineTuningJobEventsResponse ??
+                global::OpenAI.ListFineTuningJobEventsResponse.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

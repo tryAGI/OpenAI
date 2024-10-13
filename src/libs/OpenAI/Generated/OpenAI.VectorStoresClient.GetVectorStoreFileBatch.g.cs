@@ -112,7 +112,7 @@ namespace OpenAI
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::OpenAI.VectorStoreFileBatchObject), JsonSerializerContext) as global::OpenAI.VectorStoreFileBatchObject ??
+                global::OpenAI.VectorStoreFileBatchObject.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -108,7 +108,7 @@ namespace OpenAI
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::OpenAI.ProjectServiceAccountDeleteResponse), JsonSerializerContext) as global::OpenAI.ProjectServiceAccountDeleteResponse ??
+                global::OpenAI.ProjectServiceAccountDeleteResponse.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
