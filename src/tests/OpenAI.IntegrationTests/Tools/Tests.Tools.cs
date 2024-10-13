@@ -31,7 +31,7 @@ public partial class Tests
         try
         {
             var service = new WeatherService();
-            var tools = service.AsTools();
+            var tools = service.AsTools().AsOpenAiTools();
             var result = await api.Chat.CreateChatCompletionAsync(
                 messages,
                 model: pair.Model,
@@ -95,7 +95,7 @@ public partial class Tests
         try
         {
             var service = new WeatherStrictService();
-            var tools = service.AsTools();
+            var tools = service.AsTools().AsOpenAiTools();
             var result = await api.Chat.CreateChatCompletionAsync(
                 messages,
                 model: pair.Model,

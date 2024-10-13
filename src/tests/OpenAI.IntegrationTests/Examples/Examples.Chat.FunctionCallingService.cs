@@ -1,3 +1,4 @@
+using CSharpToJsonSchema;
 using DescriptionAttribute = System.ComponentModel.DescriptionAttribute;
 
 namespace OpenAI.IntegrationTests.Examples;
@@ -9,7 +10,7 @@ public enum WeatherUnit
     Fahrenheit,
 }
 
-[OpenAiTools(Strict = false)]
+[GenerateJsonSchema(Strict = false)]
 public interface IFunctionCallingService
 {
     [Description("Get the user's current location")]

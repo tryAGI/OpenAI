@@ -10,7 +10,6 @@
   </ItemGroup>
 
   <PropertyGroup Label="Nuget">
-    <PackageId>tryAGI.OpenAI</PackageId>
     <Description>
       Generated C# SDK based on official OpenAI OpenAPI specification. 
       Includes C# Source Generator which allows you to define functions natively through a C# interface, and also provides extensions that make it easier to call this interface later</Description>
@@ -18,20 +17,10 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="PolySharp" Version="1.14.1">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Tiktoken" Version="2.0.3" />
     <PackageReference Include="System.Text.Json" Version="9.0.0-rc.1.24431.7" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net4.6.2'">
-    <Reference Include="System.Net.Http" />
-  </ItemGroup>
-
   <ItemGroup>
-    <ProjectReference Include="..\CSharpToJsonSchema\CSharpToJsonSchema.csproj" />
     <ProjectReference Include="..\CSharpToJsonSchema.Generators\CSharpToJsonSchema.Generators.csproj" ReferenceOutputAssembly="false" PackAsAnalyzer="true" />
     <None Include="..\CSharpToJsonSchema.Generators\bin\$(Configuration)\netstandard2.0\H.Generators.Extensions.dll" Pack="true" PackagePath="analyzers/dotnet" Visible="false" />
     <None Include="..\CSharpToJsonSchema.Generators\bin\$(Configuration)\netstandard2.0\System.Collections.Immutable.dll" Pack="true" PackagePath="analyzers/dotnet" Visible="false" />

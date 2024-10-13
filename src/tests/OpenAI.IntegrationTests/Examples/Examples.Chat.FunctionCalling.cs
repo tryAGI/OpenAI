@@ -13,7 +13,7 @@ public partial class Examples
         ];
 
         var service = new FunctionCallingService();
-        IList<ChatCompletionTool> tools = service.AsTools();
+        IList<ChatCompletionTool> tools = service.AsTools().AsOpenAiTools();
 
         bool requiresAction;
 

@@ -1,10 +1,11 @@
+using CSharpToJsonSchema;
 using DescriptionAttribute = System.ComponentModel.DescriptionAttribute;
 
 namespace OpenAI.IntegrationTests.Examples;
 
 // # START EXAMPLE #
 
-[OpenAiTools(Strict = false)]
+[GenerateJsonSchema(Strict = false)]
 public interface IAllToolsService
 {
     [Description("Provided a family relation type like 'father' or 'mother', "

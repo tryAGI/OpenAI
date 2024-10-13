@@ -141,4 +141,27 @@ public static class StringExtensions
             },
         };
     }
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="tools"></param>
+    /// <returns></returns>
+    public static IList<ChatCompletionTool> AsOpenAiTools(
+        this IList<CSharpToJsonSchema.Tool> tools)
+    {
+        return tools
+            .Select(x => new ChatCompletionTool
+            {
+                Type = ChatCompletionToolType.Function,
+                Function = new FunctionObject
+                {
+                    Name = x.Name!,
+                    Description = x.Description,
+                    Strict = x.Strict,
+                    Parameters = x.Parameters,
+                },
+            })
+            .ToList();
+    }
 }

@@ -1,10 +1,11 @@
 ﻿// ReSharper disable RedundantUsingDirective
 using System;
+using CSharpToJsonSchema;
 using DescriptionAttribute = System.ComponentModel.DescriptionAttribute;
 
 namespace OpenAI.IntegrationTests;
 
-[OpenAiTools]
+[GenerateJsonSchema]
 public interface IVariousTypesTools
 {
     [Description("Get the current weather in a given location")]

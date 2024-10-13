@@ -20,7 +20,7 @@ public partial class Examples
             purpose: CreateFileRequestPurpose.Assistants);
         
         var service = new AllToolsService();
-        IList<ChatCompletionTool> tools = service.AsTools();
+        IList<ChatCompletionTool> tools = service.AsTools().AsOpenAiTools();
         
         AssistantObject assistant = await api.Assistants.CreateAssistantAsync(
             model: CreateAssistantRequestModel.Gpt4o,

@@ -9,7 +9,7 @@ public partial class Examples
         using var api = GetAuthenticatedClient();
         
         var service = new FunctionCallingService();
-        IList<ChatCompletionTool> tools = service.AsTools();
+        IList<ChatCompletionTool> tools = service.AsTools().AsOpenAiTools();
         
         AssistantObject assistant = await api.Assistants.CreateAssistantAsync(
             model: CreateAssistantRequestModel.Gpt4o,
