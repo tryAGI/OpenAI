@@ -106,6 +106,11 @@ namespace OpenAI
             bool endOfMessage,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            if (!IsConnected)
+            {
+                await ConnectAsync(cancellationToken: cancellationToken).ConfigureAwait(false);
+            }
+
             await _clientWebSocket.SendAsync(
                 bytes,
                 messageType,
@@ -118,6 +123,11 @@ namespace OpenAI
             string text,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            if (!IsConnected)
+            {
+                await ConnectAsync(cancellationToken: cancellationToken).ConfigureAwait(false);
+            }
+
             await _clientWebSocket.SendAsync(
                 buffer: new global::System.ArraySegment<byte>(global::System.Text.Encoding.UTF8.GetBytes(text)),
                 messageType: global::System.Net.WebSockets.WebSocketMessageType.Text,

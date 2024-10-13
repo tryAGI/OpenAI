@@ -14,30 +14,6 @@ public partial class RealtimeConversationClient
     /// <summary>
     /// 
     /// </summary>
-    /// <param name="request"></param>
-    /// <param name="cancellationToken"></param>
-    public async Task CreateResponseAsync(RealtimeResponseCreate request, CancellationToken cancellationToken = default)
-    {
-        if (!IsConnected)
-        {
-            await ConnectAsync(cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        var json = global::System.Text.Json.JsonSerializer.Serialize(
-             request,
-             typeof(global::OpenAI.RealtimeResponseCreate),
-             JsonSerializerContext);
-        
-        await _clientWebSocket.SendAsync(
-            buffer: new ArraySegment<byte>(global::System.Text.Encoding.UTF8.GetBytes(json)),
-            messageType: WebSocketMessageType.Text,
-            endOfMessage: true,
-            cancellationToken: cancellationToken).ConfigureAwait(false);
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
     public async IAsyncEnumerable<RealtimeServerEvent> ReceiveUpdatesAsync(
@@ -53,6 +29,11 @@ public partial class RealtimeConversationClient
 
         while (_clientWebSocket.State == WebSocketState.Open)
         {
+            if (cancellationToken.IsCancellationRequested)
+            {
+                yield break;
+            }
+            
             WebSocketReceiveResult result;
 
             try
@@ -62,6 +43,10 @@ public partial class RealtimeConversationClient
             catch (WebSocketException wex)
             {
                 Console.WriteLine($"WebSocket error: {wex.Message}");
+                yield break;
+            }
+            catch (OperationCanceledException)
+            {
                 yield break;
             }
 

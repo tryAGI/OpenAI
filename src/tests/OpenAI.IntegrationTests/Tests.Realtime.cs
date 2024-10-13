@@ -11,7 +11,7 @@ public partial class Tests
         var cancellationToken = cancellationTokenSource.Token;
         
         // await realtimeConversationClient.SendAsync("Hello, WebSocket!");
-        await realtimeConversationClient.CreateResponseAsync(new RealtimeResponseCreate
+        await realtimeConversationClient.SendAsync(new RealtimeResponseCreate
         {
             Type = RealtimeResponseCreateType.ResponseCreate,
             Response = new RealtimeResponseCreateResponse
@@ -19,7 +19,7 @@ public partial class Tests
                 Modalities = [RealtimeResponseCreateResponseModalitie.Text],
                 Instructions = "Please assist the user.",
             }
-        }, cancellationToken);
+        }.ToJson(realtimeConversationClient.JsonSerializerContext), cancellationToken);
 
         await foreach (RealtimeServerEvent receivedMessage in realtimeConversationClient.ReceiveUpdatesAsync(cancellationToken))
         {
