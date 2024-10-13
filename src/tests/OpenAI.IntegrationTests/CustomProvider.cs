@@ -17,4 +17,5 @@ public enum CustomProvider
     Groq,
     Mistral,
     Codestral,
+    Hyperbolic,
 }

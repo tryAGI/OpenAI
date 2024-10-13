@@ -13,6 +13,7 @@ public partial class Tests
     // [DataRow(CustomProvider.DeepSeek)]
     // [DataRow(CustomProvider.OpenRouter)]
     // [DataRow(CustomProvider.Together)]
+    // [DataRow(CustomProvider.Hyperbolic)]
     public async Task WeatherTools(CustomProvider customProvider)
     {
         var pair = GetAuthorizedChatApi(customProvider, model: customProvider switch

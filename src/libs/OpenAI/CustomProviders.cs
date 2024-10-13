@@ -64,6 +64,11 @@ public static class CustomProviders
     /// <summary>
     /// 
     /// </summary>
+    public const string HyperbolicBaseUrl = "https://api.hyperbolic.xyz/v1";
+    
+    /// <summary>
+    /// 
+    /// </summary>
     public const string OllamaBaseUrl = "http://localhost:11434/v1";
     
     /// <summary>
@@ -177,6 +182,15 @@ public static class CustomProviders
     public static OpenAiApi Codestral(string apiKey)
     {
         return new OpenAiApi(apiKey, baseUri: new Uri(CodestralBaseUrl));
+    }
+    
+    /// <summary>
+    /// Create an API to use for Hyperbolic.
+    /// </summary>
+    /// <returns></returns>
+    public static OpenAiApi Hyperbolic(string apiKey)
+    {
+        return new OpenAiApi(apiKey, baseUri: new Uri(HyperbolicBaseUrl));
     }
     
     /// <summary>

@@ -28,8 +28,8 @@ public partial class Tests
     internal static (OpenAiApi Api, string Model) GetAuthorizedChatApi(CustomProvider customProvider, string? model = null)
     {
         const string localIpAddress = "10.10.5.85";
-        if (customProvider is CustomProvider.Ollama or CustomProvider.LmStudio &&
-            Environment.GetEnvironmentVariable("LOCAL_TESTS") is null)
+        if (customProvider is CustomProvider.Ollama or CustomProvider.LmStudio)// &&
+            //Environment.GetEnvironmentVariable("LOCAL_TESTS") is null)
         {
             throw new AssertInconclusiveException("This test only runs on local environment.");
         }
@@ -111,16 +111,29 @@ public partial class Tests
                     throw new AssertInconclusiveException("CODESTRAL_API_KEY environment variable is not found.")),
                 model ?? "codestral-latest");
         }
+        if (customProvider == CustomProvider.Hyperbolic)
+        {
+            return (CustomProviders.Hyperbolic(apiKey:
+                    Environment.GetEnvironmentVariable("HYPERBOLIC_API_KEY") ??
+                    throw new AssertInconclusiveException("HYPERBOLIC_API_KEY environment variable is not found.")),
+                model ?? "meta-llama/Llama-3.2-90B-Vision-Instruct");
+        }
 
         if (customProvider == CustomProvider.Ollama)
         {
-            return (CustomProviders.Ollama(new Uri($"http://{localIpAddress}:11434/v1")),
+            var pair = (CustomProviders.Ollama(new Uri($"http://{localIpAddress}:11434/v1")),
                 model ?? "llama3.2");
+            //pair.Item1.HttpClient.Timeout = TimeSpan.FromSeconds(15);
+            
+            return pair;
         }
         if (customProvider == CustomProvider.LmStudio)
         {
-            return (CustomProviders.LmStudio(new Uri($"http://{localIpAddress}:1234/v1")),
+            var pair = (CustomProviders.LmStudio(new Uri($"http://{localIpAddress}:1234/v1")),
                 model ?? "lmstudio-community/Llama-3.2-3B-Instruct-GGUF");
+            //pair.Item1.HttpClient.Timeout = TimeSpan.FromSeconds(15);
+            
+            return pair;
         }
         
         var apiKey =
