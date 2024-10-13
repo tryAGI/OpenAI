@@ -521,6 +521,8 @@ namespace OpenAI
             typeof(global::OpenAI.JsonConverters.RealtimeResponseCreateResponseModalitieNullableJsonConverter),
             typeof(global::OpenAI.JsonConverters.RealtimeResponseCreateResponseVoiceJsonConverter),
             typeof(global::OpenAI.JsonConverters.RealtimeResponseCreateResponseVoiceNullableJsonConverter),
+            typeof(global::OpenAI.JsonConverters.RealtimeResponseCreateResponseToolChoiceJsonConverter),
+            typeof(global::OpenAI.JsonConverters.RealtimeResponseCreateResponseToolChoiceNullableJsonConverter),
             typeof(global::OpenAI.JsonConverters.RealtimeResponseCreateResponseMaxOutputTokensJsonConverter),
             typeof(global::OpenAI.JsonConverters.RealtimeResponseCreateResponseMaxOutputTokensNullableJsonConverter),
             typeof(global::OpenAI.JsonConverters.CreateBatchRequestEndpointJsonConverter),

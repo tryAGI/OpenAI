@@ -102,25 +102,30 @@ components:
               description: The voice the model uses to respond.
             output_audio_format:
               $ref: '#/components/schemas/RealtimeAudioFormat'
-#            tools:
-#              type: array
-#              items:
-#                type: object
-#                properties:
-#                  type:
-#                    type: string
-#                    description: The type of the tool.
-#                  name:
-#                    type: string
-#                    description: The name of the function.
-#                  description:
-#                    type: string
-#                    description: The description of the function.
-#                  parameters:
-#                    type: object
-#            tool_choice:
-#              type: string
-#              description: How the model chooses tools.
+            tools:
+              type: array
+              items:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    description: The type of the tool.
+                  name:
+                    type: string
+                    description: The name of the function.
+                  description:
+                    type: string
+                    description: The description of the function.
+                  parameters:
+                    type: object
+            tool_choice:
+              oneOf:
+                - type: string
+                  enum: [auto, none, required]
+                - type: string
+              description: |
+                How the model chooses tools. 
+                Options are "auto", "none", "required", or specify a function.
             temperature:
               type: number
               description: Sampling temperature.
