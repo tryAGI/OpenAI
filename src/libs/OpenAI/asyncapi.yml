@@ -1,0 +1,20 @@
+asyncapi: '3.0.0'
+info:
+  title: an AsyncAPI document for OpenAI
+  version: '1.0.0'
+
+servers:
+  production:
+    host: api.openai.com
+    pathname: v1/realtime?model=gpt-4o-realtime-preview-2024-10-01
+    protocol: wss
+    description: Slack's server in Socket Mode for real-time communication
+    security:
+      - $ref: '#/components/securitySchemes/bearer'
+    
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

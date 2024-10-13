@@ -11,4 +11,9 @@ public sealed partial class JsonSerializerContextTypes
     /// 
     /// </summary>
     public CreateChatCompletionStreamResponse? CreateChatCompletionStreamResponse { get; set; }
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    public CSharpToJsonSchema.OpenApiSchema? OpenApiSchema { get; set; }
 }

@@ -1,0 +1,132 @@
+openapi: 3.0.1
+info:
+  title: OpenAI API
+  description: The OpenAI REST API. Please see https://platform.openai.com/docs/api-reference for more details.
+  termsOfService: https://openai.com/policies/terms-of-use
+  contact:
+    name: OpenAI Support
+    url: https://help.openai.com/
+  license:
+    name: MIT
+    url: https://github.com/openai/openai-openapi/blob/master/LICENSE
+  version: '2.3.0'
+servers:
+  - url: https://api.openai.com/v1
+paths:
+  /chat/completions:
+    post:
+      tags:
+        - Chat
+      summary: Creates a model response for the given chat conversation.
+      operationId: createChatCompletion
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    RealtimeServerEvent:
+      type: object
+      properties:
+        event_id:
+          type: string
+        type:
+          $ref: '#/components/schemas/RealtimeServerEventType'
+      required:
+        - type
+        - event_id
+    RealtimeServerEventType:
+      type: string
+      enum:
+        - error
+        - session.created
+        - session.updated
+        - conversation.created
+        - input_audio_buffer.committed
+        - input_audio_buffer.cleared
+        - input_audio_buffer.speech_started
+        - input_audio_buffer.speech_stopped
+        - conversation.item.created
+        - conversation.item.input_audio_transcription.completed
+        - conversation.item.input_audio_transcription.failed
+        - conversation.item.truncated
+        - conversation.item.deleted
+        - response.created
+        - response.done
+        - response.output_item.added
+        - response.output_item.done
+        - response.content_part.added
+        - response.content_part.done
+        - response.text.delta
+        - response.text.done
+        - response.audio_transcript.delta
+        - response.audio_transcript.done
+        - response.audio.delta
+        - response.audio.done
+        - response.function_call_arguments.delta
+        - response.function_call_arguments.done
+        - rate_limits.updated
+    RealtimeAudioFormat:
+      type: string
+      enum:
+        - pcm16
+        - g711_ulaw
+        - g711_alaw
+    RealtimeResponseCreate:
+      type: object
+      properties:
+        event_id:
+          type: string
+          description: Optional client-generated ID used to identify this event.
+        type:
+          type: string
+          enum:
+            - response.create
+          description: The event type, must be 'response.create'.
+        response:
+          type: object
+          properties:
+            modalities:
+              type: array
+              items:
+                type: string
+                enum:
+                  - text
+                  - audio
+              description: The modalities for the response.
+            instructions:
+              type: string
+              description: Instructions for the model.
+            voice:
+              type: string
+              enum: [alloy, echo, shimmer]
+              description: The voice the model uses to respond.
+            output_audio_format:
+              $ref: '#/components/schemas/RealtimeAudioFormat'
+#            tools:
+#              type: array
+#              items:
+#                type: object
+#                properties:
+#                  type:
+#                    type: string
+#                    description: The type of the tool.
+#                  name:
+#                    type: string
+#                    description: The name of the function.
+#                  description:
+#                    type: string
+#                    description: The description of the function.
+#                  parameters:
+#                    type: object
+#            tool_choice:
+#              type: string
+#              description: How the model chooses tools.
+            temperature:
+              type: number
+              description: Sampling temperature.
+            max_output_tokens:
+              oneOf:
+                - type: integer
+                - type: string
+                  enum: ["inf"]
+              description: Maximum number of output tokens, or "inf" for unlimited. Defaults to "inf".

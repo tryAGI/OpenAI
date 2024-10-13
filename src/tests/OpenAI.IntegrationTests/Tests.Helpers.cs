@@ -9,8 +9,18 @@ public partial class Tests
             Environment.GetEnvironmentVariable("OPENAI_API_KEY") ??
             throw new AssertInconclusiveException("OPENAI_API_KEY environment variable is not found.");
 
-        var client = new OpenAiApi();
-        client.AuthorizeUsingBearer(apiKey);
+        var client = new OpenAiApi(apiKey);
+
+        return client;
+    }
+    
+    private static RealtimeConversationClient GetAuthenticatedRealtimeClient()
+    {
+        var apiKey =
+            Environment.GetEnvironmentVariable("OPENAI_API_KEY") ??
+            throw new AssertInconclusiveException("OPENAI_API_KEY environment variable is not found.");
+
+        var client = new RealtimeConversationClient(apiKey);
 
         return client;
     }

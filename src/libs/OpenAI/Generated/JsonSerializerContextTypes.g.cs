@@ -3054,94 +3054,138 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateBatchRequest? Type759 { get; set; }
+        public global::OpenAI.RealtimeServerEvent? Type759 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateBatchRequestEndpoint? Type760 { get; set; }
+        public global::OpenAI.RealtimeServerEventType? Type760 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateBatchRequestCompletionWindow? Type761 { get; set; }
+        public global::OpenAI.RealtimeAudioFormat? Type761 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, string>? Type762 { get; set; }
+        public global::OpenAI.RealtimeResponseCreate? Type762 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ListAssistantsOrder? Type763 { get; set; }
+        public global::OpenAI.RealtimeResponseCreateType? Type763 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ListMessagesOrder? Type764 { get; set; }
+        public global::OpenAI.RealtimeResponseCreateResponse? Type764 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ListRunsOrder? Type765 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.RealtimeResponseCreateResponseModalitie>? Type765 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenAI.CreateRunIncludeItem>? Type766 { get; set; }
+        public global::OpenAI.RealtimeResponseCreateResponseModalitie? Type766 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.CreateRunIncludeItem? Type767 { get; set; }
+        public global::OpenAI.RealtimeResponseCreateResponseVoice? Type767 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ListRunStepsOrder? Type768 { get; set; }
+        public global::OpenAI.OneOf<int?, global::OpenAI.RealtimeResponseCreateResponseMaxOutputTokens?>? Type768 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenAI.ListRunStepsIncludeItem>? Type769 { get; set; }
+        public global::OpenAI.RealtimeResponseCreateResponseMaxOutputTokens? Type769 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ListRunStepsIncludeItem? Type770 { get; set; }
+        public global::OpenAI.CreateBatchRequest? Type770 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenAI.GetRunStepIncludeItem>? Type771 { get; set; }
+        public global::OpenAI.CreateBatchRequestEndpoint? Type771 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.GetRunStepIncludeItem? Type772 { get; set; }
+        public global::OpenAI.CreateBatchRequestCompletionWindow? Type772 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ListVectorStoresOrder? Type773 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Type773 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ListVectorStoreFilesOrder? Type774 { get; set; }
+        public global::OpenAI.ListAssistantsOrder? Type774 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ListVectorStoreFilesFilter? Type775 { get; set; }
+        public global::OpenAI.ListMessagesOrder? Type775 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ListFilesInVectorStoreBatchOrder? Type776 { get; set; }
+        public global::OpenAI.ListRunsOrder? Type776 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ListFilesInVectorStoreBatchFilter? Type777 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.CreateRunIncludeItem>? Type777 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.ListAuditLogsEffectiveAt? Type778 { get; set; }
+        public global::OpenAI.CreateRunIncludeItem? Type778 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::OpenAI.AuditLogEventType>? Type779 { get; set; }
+        public global::OpenAI.ListRunStepsOrder? Type779 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.OneOf<global::OpenAI.CreateTranscriptionResponseJson, global::OpenAI.CreateTranscriptionResponseVerboseJson>? Type780 { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.ListRunStepsIncludeItem>? Type780 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::OpenAI.OneOf<global::OpenAI.CreateTranslationResponseJson, global::OpenAI.CreateTranslationResponseVerboseJson>? Type781 { get; set; }
+        public global::OpenAI.ListRunStepsIncludeItem? Type781 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::OpenAI.GetRunStepIncludeItem>? Type782 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenAI.GetRunStepIncludeItem? Type783 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenAI.ListVectorStoresOrder? Type784 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenAI.ListVectorStoreFilesOrder? Type785 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenAI.ListVectorStoreFilesFilter? Type786 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenAI.ListFilesInVectorStoreBatchOrder? Type787 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenAI.ListFilesInVectorStoreBatchFilter? Type788 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenAI.ListAuditLogsEffectiveAt? Type789 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::OpenAI.AuditLogEventType>? Type790 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenAI.OneOf<global::OpenAI.CreateTranscriptionResponseJson, global::OpenAI.CreateTranscriptionResponseVerboseJson>? Type791 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenAI.OneOf<global::OpenAI.CreateTranslationResponseJson, global::OpenAI.CreateTranslationResponseVerboseJson>? Type792 { get; set; }
     }
 }
