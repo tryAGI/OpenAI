@@ -2,7 +2,7 @@ namespace OpenAI.IntegrationTests;
 
 public partial class Tests
 {
-    [TestMethod]
+    [Test]
     [Explicit]
     public async Task Realtime()
     {
