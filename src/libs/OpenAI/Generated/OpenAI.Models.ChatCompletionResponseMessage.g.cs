@@ -41,6 +41,13 @@ namespace OpenAI
         public global::OpenAI.ChatCompletionResponseMessageFunctionCall? FunctionCall { get; set; }
 
         /// <summary>
+        /// If the audio output modality is requested, this object contains data<br/>
+        /// about the audio response from the model. [Learn more](/docs/guides/audio).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("audio")]
+        public global::OpenAI.ChatCompletionResponseMessageAudio? Audio { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

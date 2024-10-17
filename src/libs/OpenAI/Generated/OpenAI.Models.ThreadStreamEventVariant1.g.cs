@@ -9,6 +9,12 @@ namespace OpenAI
     public sealed partial class ThreadStreamEventVariant1
     {
         /// <summary>
+        /// Whether to enable input audio transcription.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enabled")]
+        public bool? Enabled { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]

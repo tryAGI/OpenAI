@@ -20,7 +20,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("duration")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Duration { get; set; }
+        public required string Duration { get; set; }
 
         /// <summary>
         /// The transcribed text.

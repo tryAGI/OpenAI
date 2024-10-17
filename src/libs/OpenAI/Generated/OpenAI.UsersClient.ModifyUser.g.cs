@@ -7,10 +7,12 @@ namespace OpenAI
     {
         partial void PrepareModifyUserArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string userId,
             global::OpenAI.UserRoleUpdateRequest request);
         partial void PrepareModifyUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string userId,
             global::OpenAI.UserRoleUpdateRequest request);
         partial void ProcessModifyUserResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -24,10 +26,12 @@ namespace OpenAI
         /// <summary>
         /// Modifies a user's role in the organization.
         /// </summary>
+        /// <param name="userId"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.User> ModifyUserAsync(
+            string userId,
             global::OpenAI.UserRoleUpdateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -37,10 +41,11 @@ namespace OpenAI
                 client: _httpClient);
             PrepareModifyUserArguments(
                 httpClient: _httpClient,
+                userId: ref userId,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
-                path: "/organization/users/{user_id}",
+                path: $"/organization/users/{userId}",
                 baseUri: _httpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -75,6 +80,7 @@ namespace OpenAI
             PrepareModifyUserRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
+                userId: userId,
                 request: request);
 
             using var response = await _httpClient.SendAsync(
@@ -117,12 +123,14 @@ namespace OpenAI
         /// <summary>
         /// Modifies a user's role in the organization.
         /// </summary>
+        /// <param name="userId"></param>
         /// <param name="role">
         /// `owner` or `reader`
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.User> ModifyUserAsync(
+            string userId,
             global::OpenAI.UserRoleUpdateRequestRole role,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -132,6 +140,7 @@ namespace OpenAI
             };
 
             return await ModifyUserAsync(
+                userId: userId,
                 request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

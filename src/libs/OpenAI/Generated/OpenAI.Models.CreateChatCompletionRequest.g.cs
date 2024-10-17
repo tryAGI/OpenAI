@@ -11,7 +11,10 @@ namespace OpenAI
     public sealed partial class CreateChatCompletionRequest
     {
         /// <summary>
-        /// A list of messages comprising the conversation so far. [Example Python code](https://cookbook.openai.com/examples/how_to_format_inputs_to_chatgpt_models).
+        /// A list of messages comprising the conversation so far. Depending on the<br/>
+        /// [model](/docs/models) you use, different message types (modalities) are<br/>
+        /// supported, like [text](/docs/guides/text-generation),<br/>
+        /// [images](/docs/guides/vision), and [audio](/docs/guides/audio).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -25,6 +28,21 @@ namespace OpenAI
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenAI.AnyOf<string, global::OpenAI.CreateChatCompletionRequestModel?> Model { get; set; }
+
+        /// <summary>
+        /// Whether or not to store the output of this chat completion request<br/>
+        /// for use in our [model distillation](/docs/guides/distillation) or [evals](/docs/guides/evals) products.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("store")]
+        public bool? Store { get; set; } = false;
+
+        /// <summary>
+        /// Developer-defined tags and values used for filtering completions<br/>
+        /// in the [dashboard](https://platform.openai.com/chat-completions).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
         /// Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.<br/>
@@ -77,6 +95,25 @@ namespace OpenAI
         public int? N { get; set; } = 1;
 
         /// <summary>
+        /// Output types that you would like the model to generate for this request.<br/>
+        /// Most models are capable of generating text, which is the default:<br/>
+        /// `["text"]`<br/>
+        /// The `gpt-4o-audio-preview` model can also be used to [generate audio](/docs/guides/audio). To<br/>
+        /// request that this model generate both text and audio responses, you can<br/>
+        /// use:<br/>
+        /// `["text", "audio"]`
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("modalities")]
+        public global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionModalitie>? Modalities { get; set; }
+
+        /// <summary>
+        /// Parameters for audio output. Required when audio output is requested with<br/>
+        /// `modalities: ["audio"]`. [Learn more](/docs/guides/audio).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("audio")]
+        public global::OpenAI.CreateChatCompletionRequestAudio? Audio { get; set; }
+
+        /// <summary>
         /// Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.<br/>
         /// [See more information about frequency and presence penalties.](/docs/guides/text-generation/parameter-details)<br/>
         /// Default Value: 0
@@ -108,11 +145,12 @@ namespace OpenAI
         ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
         ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
         ///   - When not set, the default behavior is 'auto'.<br/>
-        ///   When this parameter is set, the response body will include the `service_tier` utilized.
+        ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
+        /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.CreateChatCompletionRequestServiceTierJsonConverter))]
-        public global::OpenAI.CreateChatCompletionRequestServiceTier? ServiceTier { get; set; }
+        public global::OpenAI.CreateChatCompletionRequestServiceTier? ServiceTier { get; set; } = global::OpenAI.CreateChatCompletionRequestServiceTier.Auto;
 
         /// <summary>
         /// Up to 4 sequences where the API will stop generating further tokens.

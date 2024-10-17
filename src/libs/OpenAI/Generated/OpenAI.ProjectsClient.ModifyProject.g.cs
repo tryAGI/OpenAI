@@ -7,10 +7,12 @@ namespace OpenAI
     {
         partial void PrepareModifyProjectArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string projectId,
             global::OpenAI.ProjectUpdateRequest request);
         partial void PrepareModifyProjectRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string projectId,
             global::OpenAI.ProjectUpdateRequest request);
         partial void ProcessModifyProjectResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -24,10 +26,12 @@ namespace OpenAI
         /// <summary>
         /// Modifies a project in the organization.
         /// </summary>
+        /// <param name="projectId"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.Project> ModifyProjectAsync(
+            string projectId,
             global::OpenAI.ProjectUpdateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -37,10 +41,11 @@ namespace OpenAI
                 client: _httpClient);
             PrepareModifyProjectArguments(
                 httpClient: _httpClient,
+                projectId: ref projectId,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
-                path: "/organization/projects/{project_id}",
+                path: $"/organization/projects/{projectId}",
                 baseUri: _httpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -75,6 +80,7 @@ namespace OpenAI
             PrepareModifyProjectRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
+                projectId: projectId,
                 request: request);
 
             using var response = await _httpClient.SendAsync(
@@ -117,12 +123,14 @@ namespace OpenAI
         /// <summary>
         /// Modifies a project in the organization.
         /// </summary>
+        /// <param name="projectId"></param>
         /// <param name="name">
         /// The updated name of the project, this name appears in reports.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.Project> ModifyProjectAsync(
+            string projectId,
             string name,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -132,6 +140,7 @@ namespace OpenAI
             };
 
             return await ModifyProjectAsync(
+                projectId: projectId,
                 request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

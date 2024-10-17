@@ -11,7 +11,7 @@ namespace OpenAI
     public readonly partial struct ChatCompletionRequestUserMessageContentPart : global::System.IEquatable<ChatCompletionRequestUserMessageContentPart>
     {
         /// <summary>
-        /// 
+        /// Learn about [text inputs](/docs/guides/text-generation).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.ChatCompletionRequestMessageContentPartText? Text { get; init; }
@@ -46,7 +46,7 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// 
+        /// Learn about [image inputs](/docs/guides/vision).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.ChatCompletionRequestMessageContentPartImage? Image { get; init; }
@@ -81,21 +81,59 @@ namespace OpenAI
         }
 
         /// <summary>
+        /// Learn about [audio inputs](/docs/guides/audio).
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenAI.ChatCompletionRequestMessageContentPartAudio? Audio { get; init; }
+#else
+        public global::OpenAI.ChatCompletionRequestMessageContentPartAudio? Audio { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Audio))]
+#endif
+        public bool IsAudio => Audio != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ChatCompletionRequestUserMessageContentPart(global::OpenAI.ChatCompletionRequestMessageContentPartAudio value) => new ChatCompletionRequestUserMessageContentPart(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenAI.ChatCompletionRequestMessageContentPartAudio?(ChatCompletionRequestUserMessageContentPart @this) => @this.Audio;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChatCompletionRequestUserMessageContentPart(global::OpenAI.ChatCompletionRequestMessageContentPartAudio? value)
+        {
+            Audio = value;
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         public ChatCompletionRequestUserMessageContentPart(
             global::OpenAI.ChatCompletionRequestMessageContentPartText? text,
-            global::OpenAI.ChatCompletionRequestMessageContentPartImage? image
+            global::OpenAI.ChatCompletionRequestMessageContentPartImage? image,
+            global::OpenAI.ChatCompletionRequestMessageContentPartAudio? audio
             )
         {
             Text = text;
             Image = image;
+            Audio = audio;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            Audio as object ??
             Image as object ??
             Text as object 
             ;
@@ -105,7 +143,7 @@ namespace OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsImage || !IsText && IsImage;
+            return IsText && !IsImage && !IsAudio || !IsText && IsImage && !IsAudio || !IsText && !IsImage && IsAudio;
         }
 
         /// <summary>
@@ -114,6 +152,7 @@ namespace OpenAI
         public TResult? Match<TResult>(
             global::System.Func<global::OpenAI.ChatCompletionRequestMessageContentPartText?, TResult>? text = null,
             global::System.Func<global::OpenAI.ChatCompletionRequestMessageContentPartImage?, TResult>? image = null,
+            global::System.Func<global::OpenAI.ChatCompletionRequestMessageContentPartAudio?, TResult>? audio = null,
             bool validate = true)
         {
             if (validate)
@@ -129,6 +168,10 @@ namespace OpenAI
             {
                 return image(Image!);
             }
+            else if (IsAudio && audio != null)
+            {
+                return audio(Audio!);
+            }
 
             return default(TResult);
         }
@@ -139,6 +182,7 @@ namespace OpenAI
         public void Match(
             global::System.Action<global::OpenAI.ChatCompletionRequestMessageContentPartText?>? text = null,
             global::System.Action<global::OpenAI.ChatCompletionRequestMessageContentPartImage?>? image = null,
+            global::System.Action<global::OpenAI.ChatCompletionRequestMessageContentPartAudio?>? audio = null,
             bool validate = true)
         {
             if (validate)
@@ -154,6 +198,10 @@ namespace OpenAI
             {
                 image?.Invoke(Image!);
             }
+            else if (IsAudio)
+            {
+                audio?.Invoke(Audio!);
+            }
         }
 
         /// <summary>
@@ -167,6 +215,8 @@ namespace OpenAI
                 typeof(global::OpenAI.ChatCompletionRequestMessageContentPartText),
                 Image,
                 typeof(global::OpenAI.ChatCompletionRequestMessageContentPartImage),
+                Audio,
+                typeof(global::OpenAI.ChatCompletionRequestMessageContentPartAudio),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -183,7 +233,8 @@ namespace OpenAI
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::OpenAI.ChatCompletionRequestMessageContentPartText?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenAI.ChatCompletionRequestMessageContentPartImage?>.Default.Equals(Image, other.Image) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.ChatCompletionRequestMessageContentPartImage?>.Default.Equals(Image, other.Image) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.ChatCompletionRequestMessageContentPartAudio?>.Default.Equals(Audio, other.Audio) 
                 ;
         }
 
