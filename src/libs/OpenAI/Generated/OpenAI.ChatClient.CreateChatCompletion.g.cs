@@ -22,7 +22,9 @@ namespace OpenAI
             ref string content);
 
         /// <summary>
-        /// Creates a model response for the given chat conversation.
+        /// Creates a model response for the given chat conversation. Learn more in the<br/>
+        /// [text generation](/docs/guides/text-generation), [vision](/docs/guides/vision),<br/>
+        /// and [audio](/docs/guides/audio) guides.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -115,14 +117,28 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// Creates a model response for the given chat conversation.
+        /// Creates a model response for the given chat conversation. Learn more in the<br/>
+        /// [text generation](/docs/guides/text-generation), [vision](/docs/guides/vision),<br/>
+        /// and [audio](/docs/guides/audio) guides.
         /// </summary>
         /// <param name="messages">
-        /// A list of messages comprising the conversation so far. [Example Python code](https://cookbook.openai.com/examples/how_to_format_inputs_to_chatgpt_models).
+        /// A list of messages comprising the conversation so far. Depending on the<br/>
+        /// [model](/docs/models) you use, different message types (modalities) are<br/>
+        /// supported, like [text](/docs/guides/text-generation),<br/>
+        /// [images](/docs/guides/vision), and [audio](/docs/guides/audio).
         /// </param>
         /// <param name="model">
         /// ID of the model to use. See the [model endpoint compatibility](/docs/models/model-endpoint-compatibility) table for details on which models work with the Chat API.<br/>
         /// Example: gpt-4o
+        /// </param>
+        /// <param name="store">
+        /// Whether or not to store the output of this chat completion request<br/>
+        /// for use in our [model distillation](/docs/guides/distillation) or [evals](/docs/guides/evals) products.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="metadata">
+        /// Developer-defined tags and values used for filtering completions<br/>
+        /// in the [dashboard](https://platform.openai.com/chat-completions).
         /// </param>
         /// <param name="frequencyPenalty">
         /// Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.<br/>
@@ -148,6 +164,19 @@ namespace OpenAI
         /// Default Value: 1<br/>
         /// Example: 1
         /// </param>
+        /// <param name="modalities">
+        /// Output types that you would like the model to generate for this request.<br/>
+        /// Most models are capable of generating text, which is the default:<br/>
+        /// `["text"]`<br/>
+        /// The `gpt-4o-audio-preview` model can also be used to [generate audio](/docs/guides/audio). To<br/>
+        /// request that this model generate both text and audio responses, you can<br/>
+        /// use:<br/>
+        /// `["text", "audio"]`
+        /// </param>
+        /// <param name="audio">
+        /// Parameters for audio output. Required when audio output is requested with<br/>
+        /// `modalities: ["audio"]`. [Learn more](/docs/guides/audio).
+        /// </param>
         /// <param name="presencePenalty">
         /// Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.<br/>
         /// [See more information about frequency and presence penalties.](/docs/guides/text-generation/parameter-details)<br/>
@@ -170,7 +199,8 @@ namespace OpenAI
         ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
         ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
         ///   - When not set, the default behavior is 'auto'.<br/>
-        ///   When this parameter is set, the response body will include the `service_tier` utilized.
+        ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
+        /// Default Value: auto
         /// </param>
         /// <param name="stop">
         /// Up to 4 sequences where the API will stop generating further tokens.
@@ -217,16 +247,20 @@ namespace OpenAI
         public async global::System.Threading.Tasks.Task<global::OpenAI.CreateChatCompletionResponse> CreateChatCompletionAsync(
             global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionRequestMessage> messages,
             global::OpenAI.AnyOf<string, global::OpenAI.CreateChatCompletionRequestModel?> model,
+            bool? store = false,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             double? frequencyPenalty = 0,
             global::System.Collections.Generic.Dictionary<string, int>? logitBias = default,
             bool? logprobs = false,
             int? topLogprobs = default,
             int? maxCompletionTokens = default,
             int? n = 1,
+            global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionModalitie>? modalities = default,
+            global::OpenAI.CreateChatCompletionRequestAudio? audio = default,
             double? presencePenalty = 0,
             global::OpenAI.OneOf<global::OpenAI.ResponseFormatText, global::OpenAI.ResponseFormatJsonObject, global::OpenAI.ResponseFormatJsonSchema>? responseFormat = default,
             int? seed = default,
-            global::OpenAI.CreateChatCompletionRequestServiceTier? serviceTier = default,
+            global::OpenAI.CreateChatCompletionRequestServiceTier? serviceTier = global::OpenAI.CreateChatCompletionRequestServiceTier.Auto,
             global::OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
             bool? stream = false,
             global::OpenAI.ChatCompletionStreamOptions? streamOptions = default,
@@ -242,12 +276,16 @@ namespace OpenAI
             {
                 Messages = messages,
                 Model = model,
+                Store = store,
+                Metadata = metadata,
                 FrequencyPenalty = frequencyPenalty,
                 LogitBias = logitBias,
                 Logprobs = logprobs,
                 TopLogprobs = topLogprobs,
                 MaxCompletionTokens = maxCompletionTokens,
                 N = n,
+                Modalities = modalities,
+                Audio = audio,
                 PresencePenalty = presencePenalty,
                 ResponseFormat = responseFormat,
                 Seed = seed,

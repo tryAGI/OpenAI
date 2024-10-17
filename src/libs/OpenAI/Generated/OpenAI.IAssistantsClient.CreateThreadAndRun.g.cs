@@ -38,12 +38,13 @@ namespace OpenAI
         /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.
         /// </param>
         /// <param name="temperature">
-        /// empty<br/>
+        /// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.<br/>
         /// Default Value: 1<br/>
         /// Example: 1
         /// </param>
         /// <param name="topP">
-        /// empty<br/>
+        /// An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.<br/>
+        /// We generally recommend altering this or temperature but not both.<br/>
         /// Default Value: 1<br/>
         /// Example: 1
         /// </param>

@@ -11,7 +11,7 @@ namespace OpenAI
     public readonly partial struct ChatCompletionRequestToolMessageContentPart : global::System.IEquatable<ChatCompletionRequestToolMessageContentPart>
     {
         /// <summary>
-        /// 
+        /// Learn about [text inputs](/docs/guides/text-generation).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.ChatCompletionRequestMessageContentPartText? Text { get; init; }

@@ -84,12 +84,12 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public VectorStoresClient VectorStores { get; }
+        public InvitesClient Invites { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public InvitesClient Invites { get; }
+        public ProjectsClient Projects { get; }
 
         /// <summary>
         /// 
@@ -99,7 +99,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public ProjectsClient Projects { get; }
+        public VectorStoresClient VectorStores { get; }
 
     }
 }

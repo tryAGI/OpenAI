@@ -4,7 +4,7 @@
 namespace OpenAI
 {
     /// <summary>
-    /// 
+    /// Learn about [text inputs](/docs/guides/text-generation).
     /// </summary>
     public sealed partial class ChatCompletionRequestMessageContentPartText
     {

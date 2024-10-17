@@ -36,6 +36,12 @@ namespace OpenAI
         public global::OpenAI.CompletionUsageCompletionTokensDetails? CompletionTokensDetails { get; set; }
 
         /// <summary>
+        /// Breakdown of tokens used in the prompt.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens_details")]
+        public global::OpenAI.CompletionUsagePromptTokensDetails? PromptTokensDetails { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

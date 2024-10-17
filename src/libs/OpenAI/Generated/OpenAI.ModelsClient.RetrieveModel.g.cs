@@ -29,7 +29,7 @@ namespace OpenAI
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenAI.Model12> RetrieveModelAsync(
+        public async global::System.Threading.Tasks.Task<global::OpenAI.Model15> RetrieveModelAsync(
             string model,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -104,7 +104,7 @@ namespace OpenAI
             }
 
             return
-                global::OpenAI.Model12.FromJson(__content, JsonSerializerContext) ??
+                global::OpenAI.Model15.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

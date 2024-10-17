@@ -7,10 +7,14 @@ namespace OpenAI
     {
         partial void PrepareModifyProjectUserArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string projectId,
+            ref string userId,
             global::OpenAI.ProjectUserUpdateRequest request);
         partial void PrepareModifyProjectUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string projectId,
+            string userId,
             global::OpenAI.ProjectUserUpdateRequest request);
         partial void ProcessModifyProjectUserResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -24,10 +28,14 @@ namespace OpenAI
         /// <summary>
         /// Modifies a user's role in the project.
         /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="userId"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.ProjectUser> ModifyProjectUserAsync(
+            string projectId,
+            string userId,
             global::OpenAI.ProjectUserUpdateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -37,10 +45,12 @@ namespace OpenAI
                 client: _httpClient);
             PrepareModifyProjectUserArguments(
                 httpClient: _httpClient,
+                projectId: ref projectId,
+                userId: ref userId,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
-                path: "/organization/projects/{project_id}/users/{user_id}",
+                path: $"/organization/projects/{projectId}/users/{userId}",
                 baseUri: _httpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -75,6 +85,8 @@ namespace OpenAI
             PrepareModifyProjectUserRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
+                projectId: projectId,
+                userId: userId,
                 request: request);
 
             using var response = await _httpClient.SendAsync(
@@ -117,12 +129,16 @@ namespace OpenAI
         /// <summary>
         /// Modifies a user's role in the project.
         /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="userId"></param>
         /// <param name="role">
         /// `owner` or `member`
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.ProjectUser> ModifyProjectUserAsync(
+            string projectId,
+            string userId,
             global::OpenAI.ProjectUserUpdateRequestRole role,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -132,6 +148,8 @@ namespace OpenAI
             };
 
             return await ModifyProjectUserAsync(
+                projectId: projectId,
+                userId: userId,
                 request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

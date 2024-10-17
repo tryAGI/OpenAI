@@ -131,7 +131,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public VectorStoresClient VectorStores => new VectorStoresClient(_httpClient, authorizations: _authorizations)
+        public InvitesClient Invites => new InvitesClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -139,7 +139,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public InvitesClient Invites => new InvitesClient(_httpClient, authorizations: _authorizations)
+        public ProjectsClient Projects => new ProjectsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -155,7 +155,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public ProjectsClient Projects => new ProjectsClient(_httpClient, authorizations: _authorizations)
+        public VectorStoresClient VectorStores => new VectorStoresClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
