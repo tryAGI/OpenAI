@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace OpenAI
@@ -22,7 +20,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_calls")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenAI.OneOf<global::OpenAI.RunStepDetailsToolCallsCodeObject, global::OpenAI.RunStepDetailsToolCallsFileSearchObject, global::OpenAI.RunStepDetailsToolCallsFunctionObject>> ToolCalls { get; set; }
+        public required global::System.Collections.Generic.IList<global::OpenAI.ToolCallsItem2> ToolCalls { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

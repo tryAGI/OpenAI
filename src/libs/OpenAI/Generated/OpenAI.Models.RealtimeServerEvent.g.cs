@@ -11,6 +11,11 @@ namespace OpenAI
     public readonly partial struct RealtimeServerEvent : global::System.IEquatable<RealtimeServerEvent>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenAI.RealtimeServerEventDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Returned when an error occurs.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -994,6 +999,7 @@ namespace OpenAI
         /// 
         /// </summary>
         public RealtimeServerEvent(
+            global::OpenAI.RealtimeServerEventDiscriminatorType? type,
             global::OpenAI.RealtimeError? error,
             global::OpenAI.RealtimeSessionCreated? sessionCreated,
             global::OpenAI.RealtimeSessionUpdated? sessionUpdated,
@@ -1024,6 +1030,8 @@ namespace OpenAI
             global::OpenAI.RealtimeRateLimitsUpdated? rateLimitsUpdated
             )
         {
+            Type = type;
+
             Error = error;
             SessionCreated = sessionCreated;
             SessionUpdated = sessionUpdated;

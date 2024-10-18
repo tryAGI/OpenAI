@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace OpenAI
@@ -14,8 +12,8 @@ namespace OpenAI
         /// The details of the run step.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("step_details")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::OpenAI.OneOf<global::OpenAI.RunStepDeltaStepDetailsMessageCreationObject, global::OpenAI.RunStepDeltaStepDetailsToolCallsObject>? StepDetails { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RunStepDeltaObjectDeltaStepDetailsJsonConverter))]
+        public global::OpenAI.RunStepDeltaObjectDeltaStepDetails? StepDetails { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

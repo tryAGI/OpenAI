@@ -11,6 +11,11 @@ namespace OpenAI
     public readonly partial struct ChunkingStrategyRequestParam : global::System.IEquatable<ChunkingStrategyRequestParam>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenAI.ChunkingStrategyRequestParamDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// The default strategy. This strategy currently uses a `max_chunk_size_tokens` of `800` and `chunk_overlap_tokens` of `400`.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -84,10 +89,13 @@ namespace OpenAI
         /// 
         /// </summary>
         public ChunkingStrategyRequestParam(
+            global::OpenAI.ChunkingStrategyRequestParamDiscriminatorType? type,
             global::OpenAI.AutoChunkingStrategyRequestParam? auto,
             global::OpenAI.StaticChunkingStrategyRequestParam? @static
             )
         {
+            Type = type;
+
             Auto = auto;
             Static = @static;
         }

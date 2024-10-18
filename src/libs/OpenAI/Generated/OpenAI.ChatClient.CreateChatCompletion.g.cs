@@ -258,7 +258,7 @@ namespace OpenAI
             global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionModalitie>? modalities = default,
             global::OpenAI.CreateChatCompletionRequestAudio? audio = default,
             double? presencePenalty = 0,
-            global::OpenAI.OneOf<global::OpenAI.ResponseFormatText, global::OpenAI.ResponseFormatJsonObject, global::OpenAI.ResponseFormatJsonSchema>? responseFormat = default,
+            global::OpenAI.ResponseFormat? responseFormat = default,
             int? seed = default,
             global::OpenAI.CreateChatCompletionRequestServiceTier? serviceTier = global::OpenAI.CreateChatCompletionRequestServiceTier.Auto,
             global::OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>>? stop = default,

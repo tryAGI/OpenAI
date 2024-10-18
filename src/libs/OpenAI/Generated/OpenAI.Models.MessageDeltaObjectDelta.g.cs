@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace OpenAI
@@ -21,7 +19,7 @@ namespace OpenAI
         /// The content of the message in array of text and/or images.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        public global::System.Collections.Generic.IList<global::OpenAI.OneOf<global::OpenAI.MessageDeltaContentImageFileObject, global::OpenAI.MessageDeltaContentTextObject, global::OpenAI.MessageDeltaContentRefusalObject, global::OpenAI.MessageDeltaContentImageUrlObject>>? Content { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.ContentItem>? Content { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

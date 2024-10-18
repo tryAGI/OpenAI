@@ -202,7 +202,7 @@ namespace OpenAI
             string? instructions = default,
             string? additionalInstructions = default,
             global::System.Collections.Generic.IList<global::OpenAI.CreateMessageRequest>? additionalMessages = default,
-            global::System.Collections.Generic.IList<global::OpenAI.OneOf<global::OpenAI.AssistantToolsCode, global::OpenAI.AssistantToolsFileSearch, global::OpenAI.AssistantToolsFunction>>? tools = default,
+            global::System.Collections.Generic.IList<global::OpenAI.ToolsItem4>? tools = default,
             object? metadata = default,
             double? temperature = 1,
             double? topP = 1,

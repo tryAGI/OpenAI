@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace OpenAI
@@ -65,8 +63,8 @@ namespace OpenAI
         /// The strategy used to chunk the file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chunking_strategy")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::OpenAI.OneOf<global::OpenAI.StaticChunkingStrategyResponseParam, global::OpenAI.OtherChunkingStrategyResponseParam>? ChunkingStrategy { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.VectorStoreFileObjectChunkingStrategyJsonConverter))]
+        public global::OpenAI.VectorStoreFileObjectChunkingStrategy? ChunkingStrategy { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

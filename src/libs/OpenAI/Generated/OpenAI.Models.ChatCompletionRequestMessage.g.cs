@@ -13,6 +13,11 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public global::OpenAI.ChatCompletionRequestMessageDiscriminatorRole? Role { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.ChatCompletionRequestSystemMessage? System { get; init; }
 #else
@@ -189,6 +194,7 @@ namespace OpenAI
         /// 
         /// </summary>
         public ChatCompletionRequestMessage(
+            global::OpenAI.ChatCompletionRequestMessageDiscriminatorRole? role,
             global::OpenAI.ChatCompletionRequestSystemMessage? system,
             global::OpenAI.ChatCompletionRequestUserMessage? user,
             global::OpenAI.ChatCompletionRequestAssistantMessage? assistant,
@@ -196,6 +202,8 @@ namespace OpenAI
             global::OpenAI.ChatCompletionRequestFunctionMessage? function
             )
         {
+            Role = role;
+
             System = system;
             User = user;
             Assistant = assistant;
