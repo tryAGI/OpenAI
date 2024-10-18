@@ -17,7 +17,7 @@ namespace OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.OneOfJsonConverterFactory3))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::OpenAI.OneOf<global::OpenAI.CreateModerationRequestInputVariant3ItemVariant1, global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2>>> Input { get; set; }
+        public required global::OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::OpenAI.InputVariant3Item>> Input { get; set; }
 
         /// <summary>
         /// The content moderation model you would like to use. Learn more in<br/>

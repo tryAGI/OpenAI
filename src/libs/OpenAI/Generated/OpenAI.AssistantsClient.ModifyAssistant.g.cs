@@ -170,7 +170,7 @@ namespace OpenAI
             string? name = default,
             string? description = default,
             string? instructions = default,
-            global::System.Collections.Generic.IList<global::OpenAI.OneOf<global::OpenAI.AssistantToolsCode, global::OpenAI.AssistantToolsFileSearch, global::OpenAI.AssistantToolsFunction>>? tools = default,
+            global::System.Collections.Generic.IList<global::OpenAI.ToolsItem7>? tools = default,
             global::OpenAI.ModifyAssistantRequestToolResources? toolResources = default,
             object? metadata = default,
             double? temperature = 1,

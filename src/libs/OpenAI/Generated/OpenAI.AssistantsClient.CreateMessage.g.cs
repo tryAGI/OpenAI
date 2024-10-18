@@ -141,7 +141,7 @@ namespace OpenAI
         public async global::System.Threading.Tasks.Task<global::OpenAI.MessageObject> CreateMessageAsync(
             string threadId,
             global::OpenAI.CreateMessageRequestRole role,
-            global::OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::OpenAI.OneOf<global::OpenAI.MessageContentImageFileObject, global::OpenAI.MessageContentImageUrlObject, global::OpenAI.MessageRequestContentTextObject>>> content,
+            global::OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::OpenAI.ContentVariant2Item>> content,
             global::System.Collections.Generic.IList<global::OpenAI.CreateMessageRequestAttachment>? attachments = default,
             object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)

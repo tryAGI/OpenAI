@@ -128,8 +128,8 @@ namespace OpenAI
         /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.OneOfJsonConverterFactory3))]
-        public global::OpenAI.OneOf<global::OpenAI.ResponseFormatText, global::OpenAI.ResponseFormatJsonObject, global::OpenAI.ResponseFormatJsonSchema>? ResponseFormat { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.ResponseFormatJsonConverter))]
+        public global::OpenAI.ResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
         /// This feature is in Beta.<br/>

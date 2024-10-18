@@ -38,7 +38,7 @@ namespace OpenAI
             global::System.Collections.Generic.IList<string>? fileIds = default,
             string? name = default,
             global::OpenAI.VectorStoreExpirationAfter? expiresAfter = default,
-            global::OpenAI.OneOf<global::OpenAI.AutoChunkingStrategyRequestParam, global::OpenAI.StaticChunkingStrategyRequestParam>? chunkingStrategy = default,
+            global::OpenAI.CreateVectorStoreRequestChunkingStrategy? chunkingStrategy = default,
             object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

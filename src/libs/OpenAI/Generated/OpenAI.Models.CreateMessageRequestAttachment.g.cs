@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace OpenAI
@@ -20,7 +18,7 @@ namespace OpenAI
         /// The tools to add this file to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        public global::System.Collections.Generic.IList<global::OpenAI.OneOf<global::OpenAI.AssistantToolsCode, global::OpenAI.AssistantToolsFileSearchTypeOnly>>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.ToolsItem3>? Tools { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

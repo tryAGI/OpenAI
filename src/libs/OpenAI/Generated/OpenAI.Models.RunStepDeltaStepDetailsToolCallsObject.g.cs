@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace OpenAI
@@ -21,7 +19,7 @@ namespace OpenAI
         /// An array of tool calls the run step was involved in. These can be associated with one of three types of tools: `code_interpreter`, `file_search`, or `function`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_calls")]
-        public global::System.Collections.Generic.IList<global::OpenAI.OneOf<global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject, global::OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject, global::OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject>>? ToolCalls { get; set; }
+        public global::System.Collections.Generic.IList<global::OpenAI.ToolCallsItem>? ToolCalls { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

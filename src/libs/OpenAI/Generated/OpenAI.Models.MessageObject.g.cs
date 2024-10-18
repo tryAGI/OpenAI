@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace OpenAI
@@ -79,7 +77,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::OpenAI.OneOf<global::OpenAI.MessageContentImageFileObject, global::OpenAI.MessageContentImageUrlObject, global::OpenAI.MessageContentTextObject, global::OpenAI.MessageContentRefusalObject>> Content { get; set; }
+        public required global::System.Collections.Generic.IList<global::OpenAI.ContentItem2> Content { get; set; }
 
         /// <summary>
         /// If applicable, the ID of the [assistant](/docs/api-reference/assistants) that authored this message.

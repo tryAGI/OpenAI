@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace OpenAI
@@ -73,9 +71,9 @@ namespace OpenAI
         /// The details of the run step.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("step_details")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RunStepObjectStepDetailsJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.OneOf<global::OpenAI.RunStepDetailsMessageCreationObject, global::OpenAI.RunStepDetailsToolCallsObject> StepDetails { get; set; }
+        public required global::OpenAI.RunStepObjectStepDetails StepDetails { get; set; }
 
         /// <summary>
         /// The last error associated with this run step. Will be `null` if there are no errors.

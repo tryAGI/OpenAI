@@ -11,6 +11,11 @@ namespace OpenAI
     public readonly partial struct ChatCompletionRequestUserMessageContentPart : global::System.IEquatable<ChatCompletionRequestUserMessageContentPart>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::OpenAI.ChatCompletionRequestUserMessageContentPartDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Learn about [text inputs](/docs/guides/text-generation).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -119,11 +124,14 @@ namespace OpenAI
         /// 
         /// </summary>
         public ChatCompletionRequestUserMessageContentPart(
+            global::OpenAI.ChatCompletionRequestUserMessageContentPartDiscriminatorType? type,
             global::OpenAI.ChatCompletionRequestMessageContentPartText? text,
             global::OpenAI.ChatCompletionRequestMessageContentPartImage? image,
             global::OpenAI.ChatCompletionRequestMessageContentPartAudio? audio
             )
         {
+            Type = type;
+
             Text = text;
             Image = image;
             Audio = audio;
