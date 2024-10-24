@@ -26,22 +26,22 @@ namespace OpenAI
             request.Stream = true;
 
             PrepareArguments(
-                client: _httpClient);
+                client: HttpClient);
             PrepareCreateRunArguments(
-                httpClient: _httpClient,
+                httpClient: HttpClient,
                 threadId: ref threadId,
                 include: include,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/threads/{threadId}/runs",
-                baseUri: _httpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
-            foreach (var _authorization in _authorizations)
+            foreach (var _authorization in Authorizations)
             {
                 if (_authorization.Type == "Http" ||
                     _authorization.Type == "OAuth2")
@@ -64,25 +64,25 @@ namespace OpenAI
             httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
-                client: _httpClient,
+                client: HttpClient,
                 request: httpRequest);
             PrepareCreateRunRequest(
-                httpClient: _httpClient,
+                httpClient: HttpClient,
                 httpRequestMessage: httpRequest,
                 threadId: threadId,
                 include: include,
                 request: request);
 
-            using var response = await _httpClient.SendAsync(
+            using var response = await HttpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseHeadersRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
             ProcessResponse(
-                client: _httpClient,
+                client: HttpClient,
                 response: response);
             ProcessCreateRunResponse(
-                httpClient: _httpClient,
+                httpClient: HttpClient,
                 httpResponseMessage: response);
 
             response.EnsureSuccessStatusCode();
@@ -184,7 +184,7 @@ namespace OpenAI
             string? instructions = default,
             string? additionalInstructions = default,
             global::System.Collections.Generic.IList<global::OpenAI.CreateMessageRequest>? additionalMessages = default,
-            global::System.Collections.Generic.IList<global::OpenAI.OneOf<global::OpenAI.AssistantToolsCode, global::OpenAI.AssistantToolsFileSearch, global::OpenAI.AssistantToolsFunction>>? tools = default,
+            global::System.Collections.Generic.IList<global::OpenAI.ToolsItem4>? tools = default,
             global::OpenAI.CreateRunRequestMetadata? metadata = default,
             double? temperature = 1,
             double? topP = 1,

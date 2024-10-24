@@ -16,7 +16,7 @@ public partial class Examples
             name: "Example: Function Calling",
             instructions: "Don't make assumptions about what values to plug into functions."
                           + " Ask for clarification if a user request is ambiguous.",
-            tools: tools.Select(x => new OneOf<AssistantToolsCode, AssistantToolsFileSearch, AssistantToolsFunction>(new AssistantToolsFunction
+            tools: tools.Select(x => new ToolsItem2(new AssistantToolsFunction
             {
                 Function = x.Function,
             })).ToArray());
@@ -68,21 +68,17 @@ public partial class Examples
             foreach (MessageObject message in messages.Data)
             {
                 Console.WriteLine($"[{message.Role.ToString().ToUpper()}]: ");
-                foreach (OneOf<
-                             MessageContentImageFileObject,
-                             MessageContentImageUrlObject,
-                             MessageContentTextObject,
-                             MessageContentRefusalObject> contentItem in message.Content)
+                foreach (ContentItem2 contentItem in message.Content)
                 {
-                    if (contentItem.Value1 is {} imageFile)
+                    if (contentItem.MessageImageFileObject is {} imageFile)
                     {
                         Console.WriteLine($" <Image File ID> {imageFile.ImageFile.FileId}");
                     }
-                    if (contentItem.Value2 is {} imageUrl)
+                    if (contentItem.MessageImageUrlObject is {} imageUrl)
                     {
                         Console.WriteLine($" <Image URL> {imageUrl.ImageUrl.Url}");
                     }
-                    if (contentItem.Value3 is {} text)
+                    if (contentItem.MessageTextObject is {} text)
                     {
                         Console.WriteLine($"{text.Text.Value}");
                         
@@ -90,17 +86,15 @@ public partial class Examples
                         if (text.Text.Annotations.Count > 0)
                         {
                             Console.WriteLine();
-                            foreach (OneOf<
-                                         MessageContentTextAnnotationsFileCitationObject,
-                                         MessageContentTextAnnotationsFilePathObject> annotation in text.Text.Annotations)
+                            foreach (AnnotationsItem annotation in text.Text.Annotations)
                             {
-                                if (annotation.Value1 is {} fileCitation)
+                                if (annotation.MessageContentTextFileCitationObject is {} fileCitation)
                                 {
                                     Console.WriteLine($"* File citation, file ID: {fileCitation.FileCitation.FileId}");
                                     Console.WriteLine($"* Text to replace: {fileCitation.Text}");
                                     Console.WriteLine($"* Message content index range: {fileCitation.StartIndex}-{fileCitation.EndIndex}");
                                 }
-                                if (annotation.Value2 is {} filePath)
+                                if (annotation.MessageContentTextFilePathObject is {} filePath)
                                 {
                                     Console.WriteLine($"* File output, new file ID: {filePath.FilePath.FileId}");
                                     Console.WriteLine($"* Text to replace: {filePath.Text}");
@@ -109,7 +103,7 @@ public partial class Examples
                             }
                         }
                     }
-                    if (contentItem.Value4 is {} refusal)
+                    if (contentItem.MessageRefusalObject is {} refusal)
                     {
                         Console.WriteLine($"Refusal: {refusal.Refusal}");
                     }

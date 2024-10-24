@@ -21,20 +21,20 @@ namespace OpenAI
             request.Stream = true;
 
             PrepareArguments(
-                client: _httpClient);
+                client: HttpClient);
             PrepareCreateChatCompletionArguments(
-                httpClient: _httpClient,
+                httpClient: HttpClient,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
                 path: "/chat/completions",
-                baseUri: _httpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
-            foreach (var _authorization in _authorizations)
+            foreach (var _authorization in Authorizations)
             {
                 if (_authorization.Type == "Http" ||
                     _authorization.Type == "OAuth2")
@@ -57,23 +57,23 @@ namespace OpenAI
             httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
-                client: _httpClient,
+                client: HttpClient,
                 request: httpRequest);
             PrepareCreateChatCompletionRequest(
-                httpClient: _httpClient,
+                httpClient: HttpClient,
                 httpRequestMessage: httpRequest,
                 request: request);
 
-            using var response = await _httpClient.SendAsync(
+            using var response = await HttpClient.SendAsync(
                 request: httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseHeadersRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
             ProcessResponse(
-                client: _httpClient,
+                client: HttpClient,
                 response: response);
             ProcessCreateChatCompletionResponse(
-                httpClient: _httpClient,
+                httpClient: HttpClient,
                 httpResponseMessage: response);
 
             response.EnsureSuccessStatusCode();
@@ -210,7 +210,7 @@ namespace OpenAI
             int? maxCompletionTokens = default,
             int? n = 1,
             double? presencePenalty = 0,
-            global::OpenAI.OneOf<global::OpenAI.ResponseFormatText, global::OpenAI.ResponseFormatJsonObject, global::OpenAI.ResponseFormatJsonSchema>? responseFormat = default,
+            global::OpenAI.ResponseFormat? responseFormat = default,
             int? seed = default,
             global::OpenAI.CreateChatCompletionRequestServiceTier? serviceTier = default,
             global::OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>>? stop = default,

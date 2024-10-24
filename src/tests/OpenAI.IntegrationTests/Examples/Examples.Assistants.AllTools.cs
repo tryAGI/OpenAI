@@ -27,7 +27,7 @@ public partial class Examples
             instructions: "Use functions to resolve family relations into the names of people. Use file search to "
                           + " look up the favorite numbers of people. Use code interpreter to create graphs of lines.",
             tools: tools
-                .Select(x => new OneOf<AssistantToolsCode, AssistantToolsFileSearch, AssistantToolsFunction>(new AssistantToolsFunction
+                .Select(x => new ToolsItem2(new AssistantToolsFunction
                 {
                     Function = x.Function,
                 }))
@@ -101,13 +101,9 @@ public partial class Examples
             foreach (MessageObject message in messages.Data)
             {
                 Console.WriteLine($"[{message.Role.ToString().ToUpper()}]: ");
-                foreach (OneOf<
-                             MessageContentImageFileObject,
-                             MessageContentImageUrlObject,
-                             MessageContentTextObject,
-                             MessageContentRefusalObject> contentItem in message.Content)
+                foreach (ContentItem2 contentItem in message.Content)
                 {
-                    if (contentItem.Value1 is {} imageFile)
+                    if (contentItem.MessageImageFileObject is {} imageFile)
                     {
                         OpenAIFile imageInfo = await api.Files.RetrieveFileAsync(imageFile.ImageFile.FileId);
                         byte[] imageBytes = await api.Files.DownloadFileAsync(imageFile.ImageFile.FileId);
@@ -118,11 +114,11 @@ public partial class Examples
         
                         Console.WriteLine($"<image: {new Uri(fileInfo.FullName).AbsoluteUri}>");
                     }
-                    if (contentItem.Value2 is {} imageUrl)
+                    if (contentItem.MessageImageUrlObject is {} imageUrl)
                     {
                         Console.WriteLine($" <Image URL> {imageUrl.ImageUrl.Url}");
                     }
-                    if (contentItem.Value3 is {} text)
+                    if (contentItem.MessageTextObject is {} text)
                     {
                         Console.WriteLine($"{text.Text.Value}");
                         
@@ -130,17 +126,15 @@ public partial class Examples
                         if (text.Text.Annotations.Count > 0)
                         {
                             Console.WriteLine();
-                            foreach (OneOf<
-                                         MessageContentTextAnnotationsFileCitationObject,
-                                         MessageContentTextAnnotationsFilePathObject> annotation in text.Text.Annotations)
+                            foreach (AnnotationsItem annotation in text.Text.Annotations)
                             {
-                                if (annotation.Value1 is {} fileCitation)
+                                if (annotation.MessageContentTextFileCitationObject is {} fileCitation)
                                 {
                                     Console.WriteLine($"* File citation, file ID: {fileCitation.FileCitation.FileId}");
                                     Console.WriteLine($"* Text to replace: {fileCitation.Text}");
                                     Console.WriteLine($"* Message content index range: {fileCitation.StartIndex}-{fileCitation.EndIndex}");
                                 }
-                                if (annotation.Value2 is {} filePath)
+                                if (annotation.MessageContentTextFilePathObject is {} filePath)
                                 {
                                     Console.WriteLine($"* File output, new file ID: {filePath.FilePath.FileId}");
                                     Console.WriteLine($"* Text to replace: {filePath.Text}");
@@ -149,7 +143,7 @@ public partial class Examples
                             }
                         }
                     }
-                    if (contentItem.Value4 is {} refusal)
+                    if (contentItem.MessageRefusalObject is {} refusal)
                     {
                         Console.WriteLine($"Refusal: {refusal.Refusal}");
                     }
@@ -166,24 +160,24 @@ public partial class Examples
             foreach (RunStepObject step in runSteps.Data)
             {
                 Console.WriteLine($"Run step: {step.Status}");
-                foreach (var toolCall in step.StepDetails.Value2?.ToolCalls ?? [])
+                foreach (var toolCall in step.StepDetails.ToolCalls?.ToolCalls ?? [])
                 {
-                    if (toolCall.Value1 is {} codeInterpreter)
+                    if (toolCall.RunStepDetailsCodeObject is {} codeInterpreter)
                     {
                         Console.WriteLine($" --> Tool call: {codeInterpreter.Type}");
                         foreach (var output in codeInterpreter.CodeInterpreter.Outputs)
                         {
-                            if (output.Value1 is {} logs)
+                            if (output.Logs is {} logs)
                             {
                                 Console.WriteLine($"    --> Output: {logs.Logs}");
                             }
-                            if (output.Value2 is {} image)
+                            if (output.Image is {} image)
                             {
                                 Console.WriteLine($"    --> Output: {image.Image.FileId}");
                             }
                         }
                     }
-                    if (toolCall.Value2 is {} fileSearch)
+                    if (toolCall.RunStepDetailsFileSearchObject is {} fileSearch)
                     {
                         Console.WriteLine($" --> Tool call: {fileSearch.Type}");
                         foreach (var output in fileSearch.FileSearch.Results ?? [])
@@ -191,7 +185,7 @@ public partial class Examples
                             Console.WriteLine($"    --> Output: {output.FileId}");
                         }
                     }
-                    if (toolCall.Value3 is {} tool)
+                    if (toolCall.RunStepDetailsFunctionObject is {} tool)
                     {
                         Console.WriteLine($" --> Tool call: {tool.Type}");
                     }

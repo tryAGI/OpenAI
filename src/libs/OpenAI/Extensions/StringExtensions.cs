@@ -114,32 +114,23 @@ public static class StringExtensions
         
         return $"data:{mimeType};base64,{Convert.ToBase64String(bytes)}";
     }
-    
+
     /// <summary>
     /// 
     /// </summary>
     /// <param name="bytes"></param>
     /// <param name="mimeType"></param>
+    /// <param name="detail"></param>
     /// <returns></returns>
     /// <exception cref="ArgumentNullException"></exception>
-    public static ChatCompletionRequestMessage AsUserMessage(this byte[] bytes, string mimeType)
+    public static ChatCompletionRequestMessage AsUserMessage(
+        this byte[] bytes,
+        string mimeType,
+        ChatCompletionRequestMessageContentPartImageImageUrlDetail detail = ChatCompletionRequestMessageContentPartImageImageUrlDetail.Auto)
     {
         bytes = bytes ?? throw new ArgumentNullException(nameof(bytes));
         
-        return new ChatCompletionRequestUserMessage
-        {
-            Content = new ChatCompletionRequestUserMessageContentPart[] {
-                new ChatCompletionRequestMessageContentPartImage
-                {
-                    ImageUrl = new ChatCompletionRequestMessageContentPartImageImageUrl
-                    {
-                        Url = bytes.AsDataUrl(mimeType),
-                        Detail = ChatCompletionRequestMessageContentPartImageImageUrlDetail.Auto,
-                    },
-                    Type = ChatCompletionRequestMessageContentPartImageType.ImageUrl,
-                },
-            },
-        };
+        return ChatCompletionRequestMessage.FromDataUri(bytes, mimeType, detail);
     }
     
     /// <summary>

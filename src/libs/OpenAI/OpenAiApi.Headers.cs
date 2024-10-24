@@ -6,6 +6,6 @@ public partial class OpenAiApi
 {
     partial void Initialized(HttpClient client)
     {
-        _httpClient.DefaultRequestHeaders.Add("OpenAI-Beta", "assistants=v2");
+        client.DefaultRequestHeaders.Add("OpenAI-Beta", "assistants=v2");
     }
 }

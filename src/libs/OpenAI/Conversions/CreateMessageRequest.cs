@@ -49,8 +49,7 @@ public partial class CreateMessageRequest
         return new CreateMessageRequest
         {
             Role = role,
-            Content = new List<OneOf<MessageContentImageFileObject, MessageContentImageUrlObject,
-                    MessageRequestContentTextObject>>
+            Content = new List<ContentVariant2Item>
                 {
                     MessageContentImageFileObject.FromOpenAIFile(file, detail),
                 },
@@ -91,8 +90,7 @@ public partial class CreateMessageRequest
         return new CreateMessageRequest
         {
             Role = role,
-            Content = new List<OneOf<MessageContentImageFileObject, MessageContentImageUrlObject,
-                MessageRequestContentTextObject>>
+            Content = new List<ContentVariant2Item>
             {
                 MessageContentImageUrlObject.FromUri(uri, detail),
             },

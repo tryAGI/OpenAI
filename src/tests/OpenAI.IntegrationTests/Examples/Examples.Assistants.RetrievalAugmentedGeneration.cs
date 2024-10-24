@@ -105,40 +105,36 @@ public partial class Examples
         foreach (MessageObject message in messages.Data)
         {
             Console.Write($"[{message.Role.ToString().ToUpper()}]: ");
-            foreach (OneOf<
-                MessageContentImageFileObject, 
-                MessageContentImageUrlObject, 
-                MessageContentTextObject, 
-                MessageContentRefusalObject> contentItem in message.Content)
+            foreach (ContentItem2 contentItem in message.Content)
             {
-                if (contentItem.IsValue3)
+                if (contentItem.MessageTextObject is {} text)
                 {
-                    Console.WriteLine($"{contentItem.Value3.Text.Value}");
+                    Console.WriteLine($"{text.Text.Value}");
         
-                    if (contentItem.Value3.Text.Annotations.Count > 0)
+                    if (text.Text.Annotations.Count > 0)
                     {
                         Console.WriteLine();
                     }
         
                     // Include annotations, if any.
-                    foreach (OneOf<
-                        MessageContentTextAnnotationsFileCitationObject,
-                        MessageContentTextAnnotationsFilePathObject> annotation in contentItem.Value3.Text.Annotations)
+                    foreach (AnnotationsItem annotation in text.Text.Annotations)
                     {
-                        if (annotation.IsValue1 && !string.IsNullOrEmpty(annotation.Value1.FileCitation.FileId))
+                        if (annotation.MessageContentTextFileCitationObject is {} citation &&
+                            !string.IsNullOrEmpty(citation.FileCitation.FileId))
                         {
-                            Console.WriteLine($"* File citation, file ID: {annotation.Value1.FileCitation.FileId}");
+                            Console.WriteLine($"* File citation, file ID: {citation.FileCitation.FileId}");
                         }
-                        if (annotation.IsValue2 && !string.IsNullOrEmpty(annotation.Value2.FilePath.FileId))
+                        if (annotation.MessageContentTextFilePathObject is {} path &&
+                            !string.IsNullOrEmpty(path.FilePath.FileId))
                         {
-                            Console.WriteLine($"* File output, new file ID: {annotation.Value2.FilePath.FileId}");
+                            Console.WriteLine($"* File output, new file ID: {path.FilePath.FileId}");
                         }
                     }
                 }
-                if (contentItem.IsValue1)
+                if (contentItem.MessageImageFileObject is {} imageFile)
                 {
-                    OpenAIFile imageInfo = await api.Files.RetrieveFileAsync(contentItem.Value1.ImageFile.FileId);
-                    byte[] imageBytes = await api.Files.DownloadFileAsync(contentItem.Value1.ImageFile.FileId);
+                    OpenAIFile imageInfo = await api.Files.RetrieveFileAsync(imageFile.ImageFile.FileId);
+                    byte[] imageBytes = await api.Files.DownloadFileAsync(imageFile.ImageFile.FileId);
         
                     FileInfo fileInfo = new($"{imageInfo.Filename}.png");
         

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net4.6.2;net6.0;net8.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net4.6.2;net8.0</TargetFrameworks>
     <NoWarn>$(NoWarn);CA1724;CA2227;CA1819;CA1822</NoWarn>
   </PropertyGroup>
 	
@@ -18,37 +18,17 @@
   </PropertyGroup>
   
   <ItemGroup>
+    <PackageReference Include="CSharpToJsonSchema" Version="3.9.0" />
     <PackageReference Include="PolySharp" Version="1.14.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Tiktoken" Version="2.0.3" />
-    <PackageReference Include="System.Text.Json" Version="9.0.0-rc.1.24431.7" />
+    <PackageReference Include="System.Text.Json" Version="9.0.0-rc.2.24473.5" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net4.6.2'">
     <Reference Include="System.Net.Http" />
   </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\CSharpToJsonSchema\CSharpToJsonSchema.csproj" />
-    <ProjectReference Include="..\CSharpToJsonSchema.Generators\CSharpToJsonSchema.Generators.csproj" ReferenceOutputAssembly="false" PackAsAnalyzer="true" />
-    <None Include="..\CSharpToJsonSchema.Generators\bin\$(Configuration)\netstandard2.0\H.Generators.Extensions.dll" Pack="true" PackagePath="analyzers/dotnet" Visible="false" />
-    <None Include="..\CSharpToJsonSchema.Generators\bin\$(Configuration)\netstandard2.0\System.Collections.Immutable.dll" Pack="true" PackagePath="analyzers/dotnet" Visible="false" />
-  </ItemGroup>
-
-  <ItemGroup Label="CLSCompliant">
-    <AssemblyAttribute Include="System.CLSCompliantAttribute">
-      <_Parameter1>true</_Parameter1>
-    </AssemblyAttribute>
-  </ItemGroup>
-
-  <PropertyGroup Label="Trimmable" Condition="$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net6.0'))">
-    <IsAotCompatible>true</IsAotCompatible>
-    <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
-    <IsTrimmable>true</IsTrimmable>
-    <SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
-    <TrimmerSingleWarn>false</TrimmerSingleWarn>
-  </PropertyGroup>
 
 </Project>

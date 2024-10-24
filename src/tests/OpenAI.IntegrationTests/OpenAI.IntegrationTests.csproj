@@ -31,7 +31,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\libs\OpenAI\OpenAI.csproj" />
-    <ProjectReference Include="..\..\libs\CSharpToJsonSchema.Generators\CSharpToJsonSchema.Generators.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
   </ItemGroup>
 
 </Project>
