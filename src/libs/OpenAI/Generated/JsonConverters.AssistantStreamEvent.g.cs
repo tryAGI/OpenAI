@@ -26,175 +26,175 @@ namespace OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.ErrorEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.ErrorEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.ErrorEvent)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                value1 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.DoneEvent? value2 = default;
             if (discriminator?.Event == global::OpenAI.AssistantStreamEventDiscriminatorEvent.Done)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.DoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.DoneEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.DoneEvent)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                value2 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.AssistantStreamEventVariant3? value3 = default;
             if (discriminator?.Event == global::OpenAI.AssistantStreamEventDiscriminatorEvent.ThreadCreated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.AssistantStreamEventVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.AssistantStreamEventVariant3> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.AssistantStreamEventVariant3)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                value3 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.AssistantStreamEventVariant4? value4 = default;
             if (discriminator?.Event == global::OpenAI.AssistantStreamEventDiscriminatorEvent.ThreadRunCreated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.AssistantStreamEventVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.AssistantStreamEventVariant4> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.AssistantStreamEventVariant4)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                value4 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.AssistantStreamEventVariant5? value5 = default;
             if (discriminator?.Event == global::OpenAI.AssistantStreamEventDiscriminatorEvent.ThreadRunQueued)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.AssistantStreamEventVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.AssistantStreamEventVariant5> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.AssistantStreamEventVariant5)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                value5 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.AssistantStreamEventVariant6? value6 = default;
             if (discriminator?.Event == global::OpenAI.AssistantStreamEventDiscriminatorEvent.ThreadRunInProgress)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.AssistantStreamEventVariant6), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.AssistantStreamEventVariant6> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.AssistantStreamEventVariant6)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                value6 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.AssistantStreamEventVariant7? value7 = default;
             if (discriminator?.Event == global::OpenAI.AssistantStreamEventDiscriminatorEvent.ThreadRunRequiresAction)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.AssistantStreamEventVariant7), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.AssistantStreamEventVariant7> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.AssistantStreamEventVariant7)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                value7 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.AssistantStreamEventVariant8? value8 = default;
             if (discriminator?.Event == global::OpenAI.AssistantStreamEventDiscriminatorEvent.ThreadRunCompleted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.AssistantStreamEventVariant8), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.AssistantStreamEventVariant8> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.AssistantStreamEventVariant8)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                value8 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.AssistantStreamEventVariant9? value9 = default;
             if (discriminator?.Event == global::OpenAI.AssistantStreamEventDiscriminatorEvent.ThreadRunIncomplete)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.AssistantStreamEventVariant9), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.AssistantStreamEventVariant9> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.AssistantStreamEventVariant9)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                value9 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.AssistantStreamEventVariant10? value10 = default;
             if (discriminator?.Event == global::OpenAI.AssistantStreamEventDiscriminatorEvent.ThreadRunFailed)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.AssistantStreamEventVariant10), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.AssistantStreamEventVariant10> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.AssistantStreamEventVariant10)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                value10 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.AssistantStreamEventVariant11? value11 = default;
             if (discriminator?.Event == global::OpenAI.AssistantStreamEventDiscriminatorEvent.ThreadRunCancelling)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.AssistantStreamEventVariant11), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.AssistantStreamEventVariant11> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.AssistantStreamEventVariant11)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                value11 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.AssistantStreamEventVariant12? value12 = default;
             if (discriminator?.Event == global::OpenAI.AssistantStreamEventDiscriminatorEvent.ThreadRunCancelled)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.AssistantStreamEventVariant12), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.AssistantStreamEventVariant12> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.AssistantStreamEventVariant12)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                value12 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.AssistantStreamEventVariant13? value13 = default;
             if (discriminator?.Event == global::OpenAI.AssistantStreamEventDiscriminatorEvent.ThreadRunExpired)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.AssistantStreamEventVariant13), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.AssistantStreamEventVariant13> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.AssistantStreamEventVariant13)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                value13 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.AssistantStreamEventVariant14? value14 = default;
             if (discriminator?.Event == global::OpenAI.AssistantStreamEventDiscriminatorEvent.ThreadRunStepCreated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.AssistantStreamEventVariant14), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.AssistantStreamEventVariant14> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.AssistantStreamEventVariant14)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                value14 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.AssistantStreamEventVariant15? value15 = default;
             if (discriminator?.Event == global::OpenAI.AssistantStreamEventDiscriminatorEvent.ThreadRunStepInProgress)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.AssistantStreamEventVariant15), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.AssistantStreamEventVariant15> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.AssistantStreamEventVariant15)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                value15 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.AssistantStreamEventVariant16? value16 = default;
             if (discriminator?.Event == global::OpenAI.AssistantStreamEventDiscriminatorEvent.ThreadRunStepDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.AssistantStreamEventVariant16), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.AssistantStreamEventVariant16> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.AssistantStreamEventVariant16)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                value16 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.AssistantStreamEventVariant17? value17 = default;
             if (discriminator?.Event == global::OpenAI.AssistantStreamEventDiscriminatorEvent.ThreadRunStepCompleted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.AssistantStreamEventVariant17), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.AssistantStreamEventVariant17> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.AssistantStreamEventVariant17)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                value17 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.AssistantStreamEventVariant18? value18 = default;
             if (discriminator?.Event == global::OpenAI.AssistantStreamEventDiscriminatorEvent.ThreadRunStepFailed)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.AssistantStreamEventVariant18), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.AssistantStreamEventVariant18> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.AssistantStreamEventVariant18)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                value18 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.AssistantStreamEventVariant19? value19 = default;
             if (discriminator?.Event == global::OpenAI.AssistantStreamEventDiscriminatorEvent.ThreadRunStepCancelled)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.AssistantStreamEventVariant19), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.AssistantStreamEventVariant19> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.AssistantStreamEventVariant19)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                value19 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.AssistantStreamEventVariant20? value20 = default;
             if (discriminator?.Event == global::OpenAI.AssistantStreamEventDiscriminatorEvent.ThreadRunStepExpired)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.AssistantStreamEventVariant20), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.AssistantStreamEventVariant20> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.AssistantStreamEventVariant20)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                value20 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.AssistantStreamEventVariant21? value21 = default;
             if (discriminator?.Event == global::OpenAI.AssistantStreamEventDiscriminatorEvent.ThreadMessageCreated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.AssistantStreamEventVariant21), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.AssistantStreamEventVariant21> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.AssistantStreamEventVariant21)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                value21 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.AssistantStreamEventVariant22? value22 = default;
             if (discriminator?.Event == global::OpenAI.AssistantStreamEventDiscriminatorEvent.ThreadMessageInProgress)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.AssistantStreamEventVariant22), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.AssistantStreamEventVariant22> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.AssistantStreamEventVariant22)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                value22 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.AssistantStreamEventVariant23? value23 = default;
             if (discriminator?.Event == global::OpenAI.AssistantStreamEventDiscriminatorEvent.ThreadMessageDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.AssistantStreamEventVariant23), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.AssistantStreamEventVariant23> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.AssistantStreamEventVariant23)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                value23 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.AssistantStreamEventVariant24? value24 = default;
             if (discriminator?.Event == global::OpenAI.AssistantStreamEventDiscriminatorEvent.ThreadMessageCompleted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.AssistantStreamEventVariant24), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.AssistantStreamEventVariant24> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.AssistantStreamEventVariant24)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                value24 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.AssistantStreamEventVariant25? value25 = default;
             if (discriminator?.Event == global::OpenAI.AssistantStreamEventDiscriminatorEvent.ThreadMessageIncomplete)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.AssistantStreamEventVariant25), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.AssistantStreamEventVariant25> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.AssistantStreamEventVariant25)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                value25 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::OpenAI.AssistantStreamEvent(

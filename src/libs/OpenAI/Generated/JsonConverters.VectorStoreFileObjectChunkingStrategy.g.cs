@@ -26,14 +26,14 @@ namespace OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.StaticChunkingStrategyResponseParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.StaticChunkingStrategyResponseParam> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.StaticChunkingStrategyResponseParam)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                staticResponseParam = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.OtherChunkingStrategyResponseParam? otherResponseParam = default;
             if (discriminator?.Type == global::OpenAI.VectorStoreFileObjectChunkingStrategyDiscriminatorType.Other)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.OtherChunkingStrategyResponseParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.OtherChunkingStrategyResponseParam> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.OtherChunkingStrategyResponseParam)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                otherResponseParam = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::OpenAI.VectorStoreFileObjectChunkingStrategy(

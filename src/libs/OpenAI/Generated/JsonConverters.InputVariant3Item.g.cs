@@ -26,14 +26,14 @@ namespace OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.CreateModerationRequestInputVariant3ItemVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.CreateModerationRequestInputVariant3ItemVariant1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.CreateModerationRequestInputVariant3ItemVariant1)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                value1 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2? value2 = default;
             if (discriminator?.Type == global::OpenAI.CreateModerationRequestInputVariant3ItemDiscriminatorType.Text)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                value2 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::OpenAI.InputVariant3Item(
