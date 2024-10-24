@@ -15,7 +15,7 @@ namespace OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::OpenAI.ListPaginatedFineTuningJobsResponse> ListPaginatedFineTuningJobsAsync(
             string? after = default,
-            int? limit = 20,
+            int? limit = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

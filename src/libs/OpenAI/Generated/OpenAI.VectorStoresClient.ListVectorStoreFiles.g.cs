@@ -48,8 +48,8 @@ namespace OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.ListVectorStoreFilesResponse> ListVectorStoreFilesAsync(
             string vectorStoreId,
-            int? limit = 20,
-            global::OpenAI.ListVectorStoreFilesOrder? order = global::OpenAI.ListVectorStoreFilesOrder.Desc,
+            int? limit = default,
+            global::OpenAI.ListVectorStoreFilesOrder? order = default,
             string? after = default,
             string? before = default,
             global::OpenAI.ListVectorStoreFilesFilter? filter = default,

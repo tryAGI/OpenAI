@@ -79,19 +79,19 @@ namespace OpenAI
                     content: new global::System.Net.Http.StringContent(request.Model?.Value1?.ToString() ?? request.Model?.Value2?.ToValueString() ?? string.Empty),
                     name: "model");
             } 
-            if (request.N != 1)
+            if (request.N != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.N}"),
                     name: "n");
             } 
-            if (request.ResponseFormat != global::OpenAI.CreateImageVariationRequestResponseFormat.Url)
+            if (request.ResponseFormat != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
                     name: "response_format");
             } 
-            if (request.Size != global::OpenAI.CreateImageVariationRequestSize.x1024x1024)
+            if (request.Size != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Size?.ToValueString()}"),
@@ -189,9 +189,9 @@ namespace OpenAI
             byte[] image,
             string imagename,
             global::OpenAI.AnyOf<string, global::OpenAI.CreateImageVariationRequestModel?>? model = default,
-            int? n = 1,
-            global::OpenAI.CreateImageVariationRequestResponseFormat? responseFormat = global::OpenAI.CreateImageVariationRequestResponseFormat.Url,
-            global::OpenAI.CreateImageVariationRequestSize? size = global::OpenAI.CreateImageVariationRequestSize.x1024x1024,
+            int? n = default,
+            global::OpenAI.CreateImageVariationRequestResponseFormat? responseFormat = default,
+            global::OpenAI.CreateImageVariationRequestSize? size = default,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

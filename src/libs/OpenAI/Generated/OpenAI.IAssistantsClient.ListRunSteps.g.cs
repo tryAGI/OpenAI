@@ -23,8 +23,8 @@ namespace OpenAI
         global::System.Threading.Tasks.Task<global::OpenAI.ListRunStepsResponse> ListRunStepsAsync(
             string threadId,
             string runId,
-            int? limit = 20,
-            global::OpenAI.ListRunStepsOrder? order = global::OpenAI.ListRunStepsOrder.Desc,
+            int? limit = default,
+            global::OpenAI.ListRunStepsOrder? order = default,
             string? after = default,
             string? before = default,
             global::System.Collections.Generic.IList<global::OpenAI.ListRunStepsIncludeItem>? include = default,

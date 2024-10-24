@@ -95,19 +95,19 @@ namespace OpenAI
                     content: new global::System.Net.Http.StringContent(request.Model?.Value1?.ToString() ?? request.Model?.Value2?.ToValueString() ?? string.Empty),
                     name: "model");
             } 
-            if (request.N != 1)
+            if (request.N != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.N}"),
                     name: "n");
             } 
-            if (request.Size != global::OpenAI.CreateImageEditRequestSize.x1024x1024)
+            if (request.Size != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Size?.ToValueString()}"),
                     name: "size");
             } 
-            if (request.ResponseFormat != global::OpenAI.CreateImageEditRequestResponseFormat.Url)
+            if (request.ResponseFormat != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
@@ -218,9 +218,9 @@ namespace OpenAI
             byte[]? mask = default,
             string? maskname = default,
             global::OpenAI.AnyOf<string, global::OpenAI.CreateImageEditRequestModel?>? model = default,
-            int? n = 1,
-            global::OpenAI.CreateImageEditRequestSize? size = global::OpenAI.CreateImageEditRequestSize.x1024x1024,
-            global::OpenAI.CreateImageEditRequestResponseFormat? responseFormat = global::OpenAI.CreateImageEditRequestResponseFormat.Url,
+            int? n = default,
+            global::OpenAI.CreateImageEditRequestSize? size = default,
+            global::OpenAI.CreateImageEditRequestResponseFormat? responseFormat = default,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -53,9 +53,9 @@ namespace OpenAI
             byte[] image,
             string imagename,
             global::OpenAI.AnyOf<string, global::OpenAI.CreateImageVariationRequestModel?>? model = default,
-            int? n = 1,
-            global::OpenAI.CreateImageVariationRequestResponseFormat? responseFormat = global::OpenAI.CreateImageVariationRequestResponseFormat.Url,
-            global::OpenAI.CreateImageVariationRequestSize? size = global::OpenAI.CreateImageVariationRequestSize.x1024x1024,
+            int? n = default,
+            global::OpenAI.CreateImageVariationRequestResponseFormat? responseFormat = default,
+            global::OpenAI.CreateImageVariationRequestSize? size = default,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

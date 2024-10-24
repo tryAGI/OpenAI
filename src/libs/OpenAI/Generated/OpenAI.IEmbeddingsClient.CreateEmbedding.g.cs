@@ -42,7 +42,7 @@ namespace OpenAI
         global::System.Threading.Tasks.Task<global::OpenAI.CreateEmbeddingResponse> CreateEmbeddingAsync(
             global::OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>> input,
             global::OpenAI.AnyOf<string, global::OpenAI.CreateEmbeddingRequestModel?> model,
-            global::OpenAI.CreateEmbeddingRequestEncodingFormat? encodingFormat = global::OpenAI.CreateEmbeddingRequestEncodingFormat.Float,
+            global::OpenAI.CreateEmbeddingRequestEncodingFormat? encodingFormat = default,
             int? dimensions = default,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default);

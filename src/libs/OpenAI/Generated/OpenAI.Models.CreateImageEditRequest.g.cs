@@ -51,7 +51,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::OpenAI.AnyOf<string, global::OpenAI.CreateImageEditRequestModel?>? Model { get; set; } = global::OpenAI.CreateImageEditRequestModel.DallE2;
+        public global::OpenAI.AnyOf<string, global::OpenAI.CreateImageEditRequestModel?>? Model { get; set; }
 
         /// <summary>
         /// The number of images to generate. Must be between 1 and 10.<br/>
@@ -59,7 +59,7 @@ namespace OpenAI
         /// Example: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("n")]
-        public int? N { get; set; } = 1;
+        public int? N { get; set; }
 
         /// <summary>
         /// The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.<br/>
@@ -68,7 +68,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.CreateImageEditRequestSizeJsonConverter))]
-        public global::OpenAI.CreateImageEditRequestSize? Size { get; set; } = global::OpenAI.CreateImageEditRequestSize.x1024x1024;
+        public global::OpenAI.CreateImageEditRequestSize? Size { get; set; }
 
         /// <summary>
         /// The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated.<br/>
@@ -77,7 +77,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.CreateImageEditRequestResponseFormatJsonConverter))]
-        public global::OpenAI.CreateImageEditRequestResponseFormat? ResponseFormat { get; set; } = global::OpenAI.CreateImageEditRequestResponseFormat.Url;
+        public global::OpenAI.CreateImageEditRequestResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).<br/>

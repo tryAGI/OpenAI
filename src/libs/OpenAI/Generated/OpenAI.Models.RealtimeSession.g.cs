@@ -112,7 +112,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_output_tokens")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::OpenAI.OneOf<int?, global::OpenAI.RealtimeSessionMaxOutputTokens?>? MaxOutputTokens { get; set; } = global::OpenAI.RealtimeSessionMaxOutputTokens.Inf;
+        public global::OpenAI.OneOf<int?, global::OpenAI.RealtimeSessionMaxOutputTokens?>? MaxOutputTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

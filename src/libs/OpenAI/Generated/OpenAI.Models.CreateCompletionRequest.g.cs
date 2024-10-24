@@ -35,14 +35,14 @@ namespace OpenAI
         /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("best_of")]
-        public int? BestOf { get; set; } = 1;
+        public int? BestOf { get; set; }
 
         /// <summary>
         /// Echo back the prompt in addition to the completion<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("echo")]
-        public bool? Echo { get; set; } = false;
+        public bool? Echo { get; set; }
 
         /// <summary>
         /// Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.<br/>
@@ -50,7 +50,7 @@ namespace OpenAI
         /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("frequency_penalty")]
-        public double? FrequencyPenalty { get; set; } = 0;
+        public double? FrequencyPenalty { get; set; }
 
         /// <summary>
         /// Modify the likelihood of specified tokens appearing in the completion.<br/>
@@ -74,7 +74,7 @@ namespace OpenAI
         /// Example: 16
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_tokens")]
-        public int? MaxTokens { get; set; } = 16;
+        public int? MaxTokens { get; set; }
 
         /// <summary>
         /// How many completions to generate for each prompt.<br/>
@@ -83,7 +83,7 @@ namespace OpenAI
         /// Example: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("n")]
-        public int? N { get; set; } = 1;
+        public int? N { get; set; }
 
         /// <summary>
         /// Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.<br/>
@@ -91,7 +91,7 @@ namespace OpenAI
         /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("presence_penalty")]
-        public double? PresencePenalty { get; set; } = 0;
+        public double? PresencePenalty { get; set; }
 
         /// <summary>
         /// If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same `seed` and parameters should return the same result.<br/>
@@ -112,7 +112,7 @@ namespace OpenAI
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream")]
-        public bool? Stream { get; set; } = false;
+        public bool? Stream { get; set; }
 
         /// <summary>
         /// Options for streaming response. Only set this when you set `stream: true`.
@@ -135,7 +135,7 @@ namespace OpenAI
         /// Example: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
-        public double? Temperature { get; set; } = 1;
+        public double? Temperature { get; set; }
 
         /// <summary>
         /// An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.<br/>
@@ -144,7 +144,7 @@ namespace OpenAI
         /// Example: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_p")]
-        public double? TopP { get; set; } = 1;
+        public double? TopP { get; set; }
 
         /// <summary>
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).<br/>

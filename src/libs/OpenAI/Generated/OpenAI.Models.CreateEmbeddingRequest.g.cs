@@ -35,7 +35,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("encoding_format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.CreateEmbeddingRequestEncodingFormatJsonConverter))]
-        public global::OpenAI.CreateEmbeddingRequestEncodingFormat? EncodingFormat { get; set; } = global::OpenAI.CreateEmbeddingRequestEncodingFormat.Float;
+        public global::OpenAI.CreateEmbeddingRequestEncodingFormat? EncodingFormat { get; set; }
 
         /// <summary>
         /// The number of dimensions the resulting output embeddings should have. Only supported in `text-embedding-3` and later models.

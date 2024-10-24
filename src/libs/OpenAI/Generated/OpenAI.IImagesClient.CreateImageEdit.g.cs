@@ -66,9 +66,9 @@ namespace OpenAI
             byte[]? mask = default,
             string? maskname = default,
             global::OpenAI.AnyOf<string, global::OpenAI.CreateImageEditRequestModel?>? model = default,
-            int? n = 1,
-            global::OpenAI.CreateImageEditRequestSize? size = global::OpenAI.CreateImageEditRequestSize.x1024x1024,
-            global::OpenAI.CreateImageEditRequestResponseFormat? responseFormat = global::OpenAI.CreateImageEditRequestResponseFormat.Url,
+            int? n = default,
+            global::OpenAI.CreateImageEditRequestSize? size = default,
+            global::OpenAI.CreateImageEditRequestResponseFormat? responseFormat = default,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

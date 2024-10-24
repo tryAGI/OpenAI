@@ -53,8 +53,8 @@ namespace OpenAI
             global::OpenAI.AnyOf<string, global::OpenAI.CreateTranscriptionRequestModel?> model,
             string? language = default,
             string? prompt = default,
-            global::OpenAI.AudioResponseFormat? responseFormat = global::OpenAI.AudioResponseFormat.Json,
-            double? temperature = 0,
+            global::OpenAI.AudioResponseFormat? responseFormat = default,
+            double? temperature = default,
             global::System.Collections.Generic.IList<global::OpenAI.CreateTranscriptionRequestTimestampGranularitie>? timestampGranularities = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

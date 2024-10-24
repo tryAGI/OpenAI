@@ -18,7 +18,7 @@ namespace OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("n_epochs")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.OneOf<global::OpenAI.FineTuningJobHyperparametersNEpochs?, int?> NEpochs { get; set; }
+        public required global::OpenAI.OneOf<global::OpenAI.FineTuningJobHyperparametersNEpochs?, int?> NEpochs { get; set; } = global::OpenAI.FineTuningJobHyperparametersNEpochs.Auto;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

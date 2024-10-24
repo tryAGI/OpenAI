@@ -82,13 +82,13 @@ namespace OpenAI
                     content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
                     name: "prompt");
             } 
-            if (request.ResponseFormat != global::OpenAI.AudioResponseFormat.Json)
+            if (request.ResponseFormat != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
                     name: "response_format");
             } 
-            if (request.Temperature != 0)
+            if (request.Temperature != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Temperature}"),
@@ -172,8 +172,8 @@ namespace OpenAI
             string filename,
             global::OpenAI.AnyOf<string, global::OpenAI.CreateTranslationRequestModel?> model,
             string? prompt = default,
-            global::OpenAI.AudioResponseFormat? responseFormat = global::OpenAI.AudioResponseFormat.Json,
-            double? temperature = 0,
+            global::OpenAI.AudioResponseFormat? responseFormat = default,
+            double? temperature = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::OpenAI.CreateTranslationRequest

@@ -37,7 +37,7 @@ namespace OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.ProjectApiKeyListResponse> ListProjectApiKeysAsync(
             string projectId,
-            int? limit = 20,
+            int? limit = default,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

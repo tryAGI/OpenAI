@@ -52,8 +52,8 @@ namespace OpenAI
         public async global::System.Threading.Tasks.Task<global::OpenAI.ListVectorStoreFilesResponse> ListFilesInVectorStoreBatchAsync(
             string vectorStoreId,
             string batchId,
-            int? limit = 20,
-            global::OpenAI.ListFilesInVectorStoreBatchOrder? order = global::OpenAI.ListFilesInVectorStoreBatchOrder.Desc,
+            int? limit = default,
+            global::OpenAI.ListFilesInVectorStoreBatchOrder? order = default,
             string? after = default,
             string? before = default,
             global::OpenAI.ListFilesInVectorStoreBatchFilter? filter = default,

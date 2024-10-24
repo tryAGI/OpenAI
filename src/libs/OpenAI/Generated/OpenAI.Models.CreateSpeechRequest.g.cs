@@ -39,14 +39,14 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.CreateSpeechRequestResponseFormatJsonConverter))]
-        public global::OpenAI.CreateSpeechRequestResponseFormat? ResponseFormat { get; set; } = global::OpenAI.CreateSpeechRequestResponseFormat.Mp3;
+        public global::OpenAI.CreateSpeechRequestResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
         /// The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is the default.<br/>
         /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
-        public double? Speed { get; set; } = 1;
+        public double? Speed { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

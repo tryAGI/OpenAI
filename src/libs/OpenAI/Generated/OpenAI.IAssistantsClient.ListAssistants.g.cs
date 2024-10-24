@@ -18,8 +18,8 @@ namespace OpenAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::OpenAI.ListAssistantsResponse> ListAssistantsAsync(
-            int? limit = 20,
-            global::OpenAI.ListAssistantsOrder? order = global::OpenAI.ListAssistantsOrder.Desc,
+            int? limit = default,
+            global::OpenAI.ListAssistantsOrder? order = default,
             string? after = default,
             string? before = default,
             global::System.Threading.CancellationToken cancellationToken = default);

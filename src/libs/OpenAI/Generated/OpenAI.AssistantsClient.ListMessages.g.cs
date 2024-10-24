@@ -48,8 +48,8 @@ namespace OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::OpenAI.ListMessagesResponse> ListMessagesAsync(
             string threadId,
-            int? limit = 20,
-            global::OpenAI.ListMessagesOrder? order = global::OpenAI.ListMessagesOrder.Desc,
+            int? limit = default,
+            global::OpenAI.ListMessagesOrder? order = default,
             string? after = default,
             string? before = default,
             string? runId = default,

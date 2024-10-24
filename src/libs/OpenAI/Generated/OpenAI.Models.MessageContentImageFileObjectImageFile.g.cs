@@ -21,7 +21,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.MessageContentImageFileObjectImageFileDetailJsonConverter))]
-        public global::OpenAI.MessageContentImageFileObjectImageFileDetail? Detail { get; set; } = global::OpenAI.MessageContentImageFileObjectImageFileDetail.Auto;
+        public global::OpenAI.MessageContentImageFileObjectImageFileDetail? Detail { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

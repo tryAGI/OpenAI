@@ -31,7 +31,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::OpenAI.AnyOf<string, global::OpenAI.CreateImageVariationRequestModel?>? Model { get; set; } = global::OpenAI.CreateImageVariationRequestModel.DallE2;
+        public global::OpenAI.AnyOf<string, global::OpenAI.CreateImageVariationRequestModel?>? Model { get; set; }
 
         /// <summary>
         /// The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only `n=1` is supported.<br/>
@@ -39,7 +39,7 @@ namespace OpenAI
         /// Example: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("n")]
-        public int? N { get; set; } = 1;
+        public int? N { get; set; }
 
         /// <summary>
         /// The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated.<br/>
@@ -48,7 +48,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.CreateImageVariationRequestResponseFormatJsonConverter))]
-        public global::OpenAI.CreateImageVariationRequestResponseFormat? ResponseFormat { get; set; } = global::OpenAI.CreateImageVariationRequestResponseFormat.Url;
+        public global::OpenAI.CreateImageVariationRequestResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
         /// The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.<br/>
@@ -57,7 +57,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.CreateImageVariationRequestSizeJsonConverter))]
-        public global::OpenAI.CreateImageVariationRequestSize? Size { get; set; } = global::OpenAI.CreateImageVariationRequestSize.x1024x1024;
+        public global::OpenAI.CreateImageVariationRequestSize? Size { get; set; }
 
         /// <summary>
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).<br/>

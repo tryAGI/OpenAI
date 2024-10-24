@@ -66,8 +66,8 @@ namespace OpenAI
             global::System.Collections.Generic.IList<global::OpenAI.ToolsItem2>? tools = default,
             global::OpenAI.CreateAssistantRequestToolResources? toolResources = default,
             object? metadata = default,
-            double? temperature = 1,
-            double? topP = 1,
+            double? temperature = default,
+            double? topP = default,
             global::OpenAI.AssistantsApiResponseFormatOption? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
