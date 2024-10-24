@@ -16,7 +16,7 @@ public partial class RealtimeConversationClient
     /// </summary>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    public async IAsyncEnumerable<RealtimeServerEventBase> ReceiveUpdatesAsync(
+    public async IAsyncEnumerable<RealtimeServerEvent> ReceiveUpdatesAsync(
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
         if (!IsConnected)
@@ -53,7 +53,7 @@ public partial class RealtimeConversationClient
             if (result.MessageType == WebSocketMessageType.Text)
             {
                 string json = global::System.Text.Encoding.UTF8.GetString(buffer, 0, result.Count);
-                var @event = global::OpenAI.RealtimeServerEventBase.FromJson(json, JsonSerializerContext) ??
+                var @event = global::OpenAI.RealtimeServerEvent.FromJson(json, JsonSerializerContext) ??
                              throw new global::System.InvalidOperationException($"Response deserialization failed for \"{json}\" ");
 
                 yield return @event;
