@@ -50,7 +50,7 @@ namespace OpenAI
             _clientWebSocket.Options.SetRequestHeader("Authorization", $"Bearer {apiKey}");
         }
 
-        /// <inheritdoc cref="OpenAiApi(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::OpenAI.EndPointAuthorization}?)"/>
+        /// <inheritdoc cref="OpenAiApi(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::OpenAI.EndPointAuthorization}?, bool)"/>
         public RealtimeConversationClient(
             string apiKey,
             global::System.Net.WebSockets.ClientWebSocket? clientWebSocket = null) : this(clientWebSocket)

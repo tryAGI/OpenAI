@@ -46,6 +46,7 @@ You still can use the full response objects if you need more information, just r
 ### Tools
 ```csharp
 using OpenAI;
+using CSharpToJsonSchema;
 
 public enum Unit
 {
@@ -61,7 +62,7 @@ public class Weather
     public string Description { get; set; } = string.Empty;
 }
 
-[OpenAiTools(Strict = true)] // false by default. You can't use parameters with default values in Strict mode.
+[GenerateJsonSchema(Strict = true)] // false by default. You can't use parameters with default values in Strict mode.
 public interface IWeatherFunctions
 {
     [Description("Get the current weather in a given location")]
@@ -88,7 +89,7 @@ public class WeatherService : IWeatherFunctions
 using var api = new OpenAiApi("API_KEY");
 
 var service = new WeatherService();
-var tools = service.AsTools();
+var tools = service.AsTools().AsOpenAiTools();
 
 var messages = new List<ChatCompletionRequestMessage>
 {
