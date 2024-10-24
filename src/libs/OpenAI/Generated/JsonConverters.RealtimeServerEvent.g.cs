@@ -26,196 +26,196 @@ namespace OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RealtimeError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RealtimeError> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RealtimeError)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                error = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.RealtimeSessionCreated? sessionCreated = default;
             if (discriminator?.Type == global::OpenAI.RealtimeServerEventDiscriminatorType.SessionCreated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RealtimeSessionCreated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RealtimeSessionCreated> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RealtimeSessionCreated)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                sessionCreated = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.RealtimeSessionUpdated? sessionUpdated = default;
             if (discriminator?.Type == global::OpenAI.RealtimeServerEventDiscriminatorType.SessionUpdated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RealtimeSessionUpdated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RealtimeSessionUpdated> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RealtimeSessionUpdated)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                sessionUpdated = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.RealtimeConversationCreated? conversationCreated = default;
             if (discriminator?.Type == global::OpenAI.RealtimeServerEventDiscriminatorType.ConversationCreated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RealtimeConversationCreated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RealtimeConversationCreated> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RealtimeConversationCreated)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                conversationCreated = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.RealtimeConversationItemCreated? conversationItemCreated = default;
             if (discriminator?.Type == global::OpenAI.RealtimeServerEventDiscriminatorType.ConversationItemCreated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RealtimeConversationItemCreated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RealtimeConversationItemCreated> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RealtimeConversationItemCreated)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                conversationItemCreated = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.RealtimeConversationItemInputAudioTranscriptionCompleted? conversationItemInputAudioTranscriptionCompleted = default;
             if (discriminator?.Type == global::OpenAI.RealtimeServerEventDiscriminatorType.ConversationItemInputAudioTranscriptionCompleted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RealtimeConversationItemInputAudioTranscriptionCompleted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RealtimeConversationItemInputAudioTranscriptionCompleted> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RealtimeConversationItemInputAudioTranscriptionCompleted)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                conversationItemInputAudioTranscriptionCompleted = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.RealtimeConversationItemInputAudioTranscriptionFailed? conversationItemInputAudioTranscriptionFailed = default;
             if (discriminator?.Type == global::OpenAI.RealtimeServerEventDiscriminatorType.ConversationItemInputAudioTranscriptionFailed)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RealtimeConversationItemInputAudioTranscriptionFailed), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RealtimeConversationItemInputAudioTranscriptionFailed> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RealtimeConversationItemInputAudioTranscriptionFailed)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                conversationItemInputAudioTranscriptionFailed = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.RealtimeConversationItemTruncated? conversationItemTruncated = default;
             if (discriminator?.Type == global::OpenAI.RealtimeServerEventDiscriminatorType.ConversationItemTruncated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RealtimeConversationItemTruncated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RealtimeConversationItemTruncated> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RealtimeConversationItemTruncated)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                conversationItemTruncated = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.RealtimeConversationItemDeleted? conversationItemDeleted = default;
             if (discriminator?.Type == global::OpenAI.RealtimeServerEventDiscriminatorType.ConversationItemDeleted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RealtimeConversationItemDeleted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RealtimeConversationItemDeleted> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RealtimeConversationItemDeleted)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                conversationItemDeleted = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.RealtimeInputAudioBufferCommitted? inputAudioBufferCommitted = default;
             if (discriminator?.Type == global::OpenAI.RealtimeServerEventDiscriminatorType.InputAudioBufferCommitted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RealtimeInputAudioBufferCommitted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RealtimeInputAudioBufferCommitted> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RealtimeInputAudioBufferCommitted)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                inputAudioBufferCommitted = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.RealtimeInputAudioBufferCleared? inputAudioBufferCleared = default;
             if (discriminator?.Type == global::OpenAI.RealtimeServerEventDiscriminatorType.InputAudioBufferCleared)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RealtimeInputAudioBufferCleared), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RealtimeInputAudioBufferCleared> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RealtimeInputAudioBufferCleared)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                inputAudioBufferCleared = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.RealtimeInputAudioBufferSpeechStarted? inputAudioBufferSpeechStarted = default;
             if (discriminator?.Type == global::OpenAI.RealtimeServerEventDiscriminatorType.InputAudioBufferSpeechStarted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RealtimeInputAudioBufferSpeechStarted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RealtimeInputAudioBufferSpeechStarted> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RealtimeInputAudioBufferSpeechStarted)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                inputAudioBufferSpeechStarted = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.RealtimeInputAudioBufferSpeechStopped? inputAudioBufferSpeechStopped = default;
             if (discriminator?.Type == global::OpenAI.RealtimeServerEventDiscriminatorType.InputAudioBufferSpeechStopped)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RealtimeInputAudioBufferSpeechStopped), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RealtimeInputAudioBufferSpeechStopped> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RealtimeInputAudioBufferSpeechStopped)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                inputAudioBufferSpeechStopped = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.RealtimeResponseCreated? responseCreated = default;
             if (discriminator?.Type == global::OpenAI.RealtimeServerEventDiscriminatorType.ResponseCreated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RealtimeResponseCreated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RealtimeResponseCreated> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RealtimeResponseCreated)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                responseCreated = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.RealtimeResponseDone? responseDone = default;
             if (discriminator?.Type == global::OpenAI.RealtimeServerEventDiscriminatorType.ResponseDone)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RealtimeResponseDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RealtimeResponseDone> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RealtimeResponseDone)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                responseDone = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.RealtimeResponseOutputItemAdded? responseOutputItemAdded = default;
             if (discriminator?.Type == global::OpenAI.RealtimeServerEventDiscriminatorType.ResponseOutputItemAdded)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RealtimeResponseOutputItemAdded), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RealtimeResponseOutputItemAdded> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RealtimeResponseOutputItemAdded)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                responseOutputItemAdded = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.RealtimeResponseOutputItemDone? responseOutputItemDone = default;
             if (discriminator?.Type == global::OpenAI.RealtimeServerEventDiscriminatorType.ResponseOutputItemDone)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RealtimeResponseOutputItemDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RealtimeResponseOutputItemDone> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RealtimeResponseOutputItemDone)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                responseOutputItemDone = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.RealtimeResponseContentPartAdded? responseContentPartAdded = default;
             if (discriminator?.Type == global::OpenAI.RealtimeServerEventDiscriminatorType.ResponseContentPartAdded)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RealtimeResponseContentPartAdded), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RealtimeResponseContentPartAdded> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RealtimeResponseContentPartAdded)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                responseContentPartAdded = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.RealtimeResponseContentPartDone? responseContentPartDone = default;
             if (discriminator?.Type == global::OpenAI.RealtimeServerEventDiscriminatorType.ResponseContentPartDone)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RealtimeResponseContentPartDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RealtimeResponseContentPartDone> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RealtimeResponseContentPartDone)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                responseContentPartDone = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.RealtimeResponseTextDelta? responseTextDelta = default;
             if (discriminator?.Type == global::OpenAI.RealtimeServerEventDiscriminatorType.ResponseTextDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RealtimeResponseTextDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RealtimeResponseTextDelta> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RealtimeResponseTextDelta)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                responseTextDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.RealtimeResponseTextDone? responseTextDone = default;
             if (discriminator?.Type == global::OpenAI.RealtimeServerEventDiscriminatorType.ResponseTextDone)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RealtimeResponseTextDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RealtimeResponseTextDone> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RealtimeResponseTextDone)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                responseTextDone = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.RealtimeResponseAudioTranscriptDelta? responseAudioTranscriptDelta = default;
             if (discriminator?.Type == global::OpenAI.RealtimeServerEventDiscriminatorType.ResponseAudioTranscriptDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RealtimeResponseAudioTranscriptDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RealtimeResponseAudioTranscriptDelta> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RealtimeResponseAudioTranscriptDelta)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                responseAudioTranscriptDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.RealtimeResponseAudioTranscriptDone? responseAudioTranscriptDone = default;
             if (discriminator?.Type == global::OpenAI.RealtimeServerEventDiscriminatorType.ResponseAudioTranscriptDone)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RealtimeResponseAudioTranscriptDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RealtimeResponseAudioTranscriptDone> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RealtimeResponseAudioTranscriptDone)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                responseAudioTranscriptDone = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.RealtimeResponseAudioDelta? responseAudioDelta = default;
             if (discriminator?.Type == global::OpenAI.RealtimeServerEventDiscriminatorType.ResponseAudioDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RealtimeResponseAudioDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RealtimeResponseAudioDelta> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RealtimeResponseAudioDelta)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                responseAudioDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.RealtimeResponseAudioDone? responseAudioDone = default;
             if (discriminator?.Type == global::OpenAI.RealtimeServerEventDiscriminatorType.ResponseAudioDone)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RealtimeResponseAudioDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RealtimeResponseAudioDone> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RealtimeResponseAudioDone)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                responseAudioDone = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.RealtimeResponseFunctionCallArgumentsDelta? responseFunctionCallArgumentsDelta = default;
             if (discriminator?.Type == global::OpenAI.RealtimeServerEventDiscriminatorType.ResponseFunctionCallArgumentsDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RealtimeResponseFunctionCallArgumentsDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RealtimeResponseFunctionCallArgumentsDelta> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RealtimeResponseFunctionCallArgumentsDelta)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                responseFunctionCallArgumentsDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.RealtimeResponseFunctionCallArgumentsDone? responseFunctionCallArgumentsDone = default;
             if (discriminator?.Type == global::OpenAI.RealtimeServerEventDiscriminatorType.ResponseFunctionCallArgumentsDone)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RealtimeResponseFunctionCallArgumentsDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RealtimeResponseFunctionCallArgumentsDone> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RealtimeResponseFunctionCallArgumentsDone)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                responseFunctionCallArgumentsDone = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::OpenAI.RealtimeRateLimitsUpdated? rateLimitsUpdated = default;
             if (discriminator?.Type == global::OpenAI.RealtimeServerEventDiscriminatorType.RateLimitsUpdated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RealtimeRateLimitsUpdated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RealtimeRateLimitsUpdated> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RealtimeRateLimitsUpdated)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                rateLimitsUpdated = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::OpenAI.RealtimeServerEvent(
