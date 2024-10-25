@@ -1,9 +1,12 @@
+// using System.Diagnostics.CodeAnalysis;
+//
 // namespace OpenAI.IntegrationTests.Examples;
 //
 // public partial class Examples
 // {
 //     [Test]
 //     [Explicit]
+//     [Experimental("OPENAI_BETA_001")]
 //     public async Task AssistantsWithVision()
 //     {
 //         using var api = GetAuthenticatedClient();
