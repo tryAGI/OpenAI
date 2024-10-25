@@ -27,6 +27,7 @@ namespace OpenAI
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "OPENAI_BETA_001")]
         public async global::System.Threading.Tasks.Task<global::OpenAI.AssistantObject> CreateAssistantAsync(
             global::OpenAI.CreateAssistantRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -158,6 +159,7 @@ namespace OpenAI
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "OPENAI_BETA_001")]
         public async global::System.Threading.Tasks.Task<global::OpenAI.AssistantObject> CreateAssistantAsync(
             global::OpenAI.AnyOf<string, global::OpenAI.CreateAssistantRequestModel?> model,
             string? name = default,
