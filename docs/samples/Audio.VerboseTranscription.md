@@ -5,7 +5,7 @@ OneOf<CreateTranscriptionResponseJson, CreateTranscriptionResponseVerboseJson> r
     file: H.Resources.audio_houseplant_care_mp3.AsBytes(),
     filename: H.Resources.audio_houseplant_care_mp3.FileName,
     model: CreateTranscriptionRequestModel.Whisper1,
-    responseFormat: CreateTranscriptionRequestResponseFormat.VerboseJson,
+    responseFormat: AudioResponseFormat.VerboseJson,
     timestampGranularities: [
         CreateTranscriptionRequestTimestampGranularitie.Word,
         CreateTranscriptionRequestTimestampGranularitie.Segment

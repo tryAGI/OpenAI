@@ -6,7 +6,7 @@
 [![Discord](https://img.shields.io/discord/1115206893015662663?label=Discord&logo=discord&logoColor=white&color=d82679)](https://discord.gg/Ca2xhfBf3v)
 
 ## Features 🔥
-- Fully generated C# SDK based on [official OpenAI OpenAPI specification](https://raw.githubusercontent.com/openai/openai-openapi/master/openapi.yaml) using [OpenApiGenerator](https://github.com/HavenDV/OpenApiGenerator)
+- Fully generated C# SDK based on [official OpenAI OpenAPI specification](https://raw.githubusercontent.com/openai/openai-openapi/master/openapi.yaml) using [AutoSDK](https://github.com/tryAGI/AutoSDK)
 - Same day update to support new features
 - Updated and supported automatically if there are no breaking changes
 - Contains a supported list of constants such as current prices, models, and other
@@ -14,7 +14,7 @@
 - All modern .NET features - nullability, trimming, NativeAOT, etc.
 - Support .Net Framework/.Net Standard 2.0
 - Support all OpenAI API endpoints including completions, chat, embeddings, images, assistants and more.
-- Regularly tested for compatibility with popular custom providers like OpenRouter/DeepSeek
+- Regularly tested for compatibility with popular custom providers like OpenRouter/DeepSeek/Ollama/LM Studio and many others
 
 ## Documentation
 Examples and documentation can be found here: https://tryagi.github.io/OpenAI/
@@ -46,6 +46,7 @@ You still can use the full response objects if you need more information, just r
 ### Tools
 ```csharp
 using OpenAI;
+using CSharpToJsonSchema;
 
 public enum Unit
 {
@@ -61,7 +62,7 @@ public class Weather
     public string Description { get; set; } = string.Empty;
 }
 
-[OpenAiTools(Strict = true)] // false by default. You can't use parameters with default values in Strict mode.
+[GenerateJsonSchema(Strict = true)] // false by default. You can't use parameters with default values in Strict mode.
 public interface IWeatherFunctions
 {
     [Description("Get the current weather in a given location")]
@@ -88,7 +89,7 @@ public class WeatherService : IWeatherFunctions
 using var api = new OpenAiApi("API_KEY");
 
 var service = new WeatherService();
-var tools = service.AsTools();
+var tools = service.AsTools().AsOpenAiTools();
 
 var messages = new List<ChatCompletionRequestMessage>
 {
@@ -177,10 +178,17 @@ using OpenAI;
 using var api = CustomProviders.GitHubModels("GITHUB_TOKEN");
 using var api = CustomProviders.Azure("API_KEY", "ENDPOINT");
 using var api = CustomProviders.DeepInfra("API_KEY");
+using var api = CustomProviders.Groq("API_KEY");
 using var api = CustomProviders.DeepSeek("API_KEY");
 using var api = CustomProviders.Fireworks("API_KEY");
 using var api = CustomProviders.OpenRouter("API_KEY");
 using var api = CustomProviders.Together("API_KEY");
+using var api = CustomProviders.Perplexity("API_KEY");
+using var api = CustomProviders.SambaNova("API_KEY");
+using var api = CustomProviders.Mistral("API_KEY");
+using var api = CustomProviders.Codestral("API_KEY");
+using var api = CustomProviders.Ollama();
+using var api = CustomProviders.LmStudio();
 ```
 
 ### Constants

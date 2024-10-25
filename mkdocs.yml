@@ -6,15 +6,21 @@ nav:
   - Chat:
     - FunctionCallingStreaming: samples/Chat.FunctionCallingStreaming.md
     - SimpleChat: samples/Chat.SimpleChat.md
+    - StructuredOutputsClasses: samples/Chat.StructuredOutputsClasses.md
     - SimpleChatStreaming: samples/Chat.SimpleChatStreaming.md
     - ChatWithVision: samples/Chat.ChatWithVision.md
     - FunctionCalling: samples/Chat.FunctionCalling.md
     - FunctionCallingService: samples/Chat.FunctionCallingService.md
+    - StructuredOutputs: samples/Chat.StructuredOutputs.md
   - Assistants:
     - AssistantsWithVision: samples/Assistants.AssistantsWithVision.md
+    - FunctionCalling: samples/Assistants.FunctionCalling.md
+    - AllToolsService: samples/Assistants.AllToolsService.md
     - ListFiles: samples/Assistants.ListFiles.md
     - ListAssistantsWithPagination: samples/Assistants.ListAssistantsWithPagination.md
     - RetrievalAugmentedGeneration: samples/Assistants.RetrievalAugmentedGeneration.md
+    - AllTools: samples/Assistants.AllTools.md
+    - FunctionCallingStreaming: samples/Assistants.FunctionCallingStreaming.md
   - Images:
     - SimpleImageEdit: samples/Images.SimpleImageEdit.md
     - SimpleImageVariation: samples/Images.SimpleImageVariation.md

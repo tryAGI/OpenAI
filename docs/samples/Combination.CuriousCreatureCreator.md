@@ -9,7 +9,7 @@ CreateChatCompletionResponse creativeWriterResult = await api.Chat.CreateChatCom
         "You're a creative helper that specializes in brainstorming designs for concepts that fuse ordinary, mundane items with a fantastical touch. In particular, you can provide good one-paragraph descriptions of concept images.".AsSystemMessage(),
         "Imagine a household pet. Now add in a subtle touch of magic or 'different'. What do you imagine? Provide a one-paragraph description of a picture of this new creature, focusing on the details of the imagery such that it'd be suitable for creating a picture.",
     ],
-    maxTokens: 2048);
+    maxCompletionTokens: 2048);
 string description = creativeWriterResult.Choices[0].Message.Content ?? string.Empty;
 Console.WriteLine($"Creative helper's creature description:\n{description}");
 
@@ -43,7 +43,7 @@ CreateChatCompletionResponse criticalAppraisalResult = await api.Chat.CreateChat
         imageLocation,
     ],
     model: ChatClient.LatestSmartModel,
-    maxTokens: 2048);
+    maxCompletionTokens: 2048);
 string appraisal = criticalAppraisalResult.Choices[0].Message.Content ?? string.Empty;
 Console.WriteLine($"Critic's appraisal:\n{appraisal}");
 

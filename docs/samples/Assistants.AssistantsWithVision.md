@@ -12,24 +12,11 @@ await File.WriteAllBytesAsync(appleFileInfo.FullName, appleBytes);
 
 Console.WriteLine($"Apple image available at:\n{new Uri(appleFileInfo.FullName).AbsoluteUri}");
 
-ImagesResponse orangeImage = await api.Images.CreateImageAsync(
-    prompt: "picture of orange",
-    responseFormat: CreateImageRequestResponseFormat.B64Json);
-byte[] orangeBytes = orangeImage.Data[0].Bytes;
-
-FileInfo orangeFileInfo = new($"{Guid.NewGuid()}.png");
-
-await File.WriteAllBytesAsync(orangeFileInfo.FullName, orangeBytes);
-
-Console.WriteLine($"Orange image available at:\n{new Uri(orangeFileInfo.FullName).AbsoluteUri}");
+Console.WriteLine($"Orange image available at:\n{new Uri("https://raw.githubusercontent.com/tryAGI/OpenAI/d237b700b03fe9913a6ff53fa623041e87705f2f/assets/orange.png")}");
 
 OpenAIFile pictureOfAppleFile = await api.Files.CreateFileAsync(
     file: appleBytes,
     filename: appleFileInfo.Name,
-    purpose: CreateFileRequestPurpose.Vision);
-OpenAIFile pictureOfOrangeFile = await api.Files.CreateFileAsync(
-    file: orangeBytes,
-    filename: orangeFileInfo.Name,
     purpose: CreateFileRequestPurpose.Vision);
 
 AssistantObject assistant = await api.Assistants.CreateAssistantAsync(
@@ -42,7 +29,7 @@ ThreadObject thread = await api.Assistants.CreateThreadAsync(new CreateThreadReq
     Messages = [
         "Hello, assistant! Please compare these two images for me:",
         pictureOfAppleFile,
-        pictureOfOrangeFile,
+        new Uri("https://raw.githubusercontent.com/tryAGI/OpenAI/d237b700b03fe9913a6ff53fa623041e87705f2f/assets/orange.png"),
     ]
 });
 
@@ -53,33 +40,48 @@ var streamingUpdates = api.Assistants.CreateRunAsStreamAsync(
 
 await foreach (AssistantStreamEvent streamingUpdate in streamingUpdates)
 {
-    if (streamingUpdate.IsRun && streamingUpdate.Run.Value.IsValue1) // RunCreated
+    if (streamingUpdate.Error is {} error)
     {
-        Console.WriteLine("--- Run started! ---");
+        Console.WriteLine("--- Error ---");
+        Console.WriteLine($"Message: {error.Data.Message}");
+        Console.WriteLine($"Code: {error.Data.Code}");
+        Console.WriteLine($"Type: {error.Data.Type}");
     }
-    if (streamingUpdate is { IsMessage: true, Message: var messageStreamEvent } &&
-        messageStreamEvent.Value is { IsValue3: true, Value3: var delta })
+    if (streamingUpdate.Run is {} run)
     {
-        foreach (var deltaVariation in delta.Data.Delta.Content ?? [])
+        if (run.Value1 is { Event: RunStreamEventVariant1Event.ThreadRunCreated })
         {
-            if (deltaVariation.IsValue1)
+            Console.WriteLine("--- Run created! ---");
+        }
+    }
+    if (streamingUpdate.Message is {} message)
+    {
+        if (message.Value3 is
             {
-                Console.WriteLine();
-                Console.WriteLine(deltaVariation.Value1.ImageFile?.FileId);
-            }
-            if (deltaVariation.IsValue2)
+                Event: MessageStreamEventVariant3Event.ThreadMessageDelta
+            } delta)
+        {
+            foreach (var deltaVariation in delta.Data.Delta.Content ?? [])
             {
-                Console.Write(deltaVariation.Value2.Text?.Value);
-            }
-            if (deltaVariation.IsValue3)
-            {
-                Console.WriteLine();
-                Console.WriteLine(deltaVariation.Value3.Refusal);
-            }
-            if (deltaVariation.IsValue4)
-            {
-                Console.WriteLine();
-                Console.WriteLine(deltaVariation.Value4.ImageUrl?.Url);
+                if (deltaVariation.Value1 is {} imageFile)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine(imageFile.ImageFile?.FileId);
+                }
+                if (deltaVariation.Value2 is {} text)
+                {
+                    Console.Write(text.Text?.Value);
+                }
+                if (deltaVariation.Value3 is {} refusal)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine(refusal.Refusal);
+                }
+                if (deltaVariation.Value4 is {} imageUrl)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine(imageUrl.ImageUrl?.Url);
+                }
             }
         }
     }
