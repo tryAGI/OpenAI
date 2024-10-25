@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace OpenAI.IntegrationTests.Examples;
@@ -6,6 +7,7 @@ public partial class Examples
 {
     [Test]
     [Explicit]
+    [Experimental("OPENAI_BETA_001")]
     public async Task RetrievalAugmentedGeneration()
     {
         using var api = GetAuthenticatedClient();
