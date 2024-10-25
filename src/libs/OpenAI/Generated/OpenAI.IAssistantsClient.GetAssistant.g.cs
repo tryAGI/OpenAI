@@ -10,6 +10,7 @@ namespace OpenAI
         /// <param name="assistantId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "OPENAI_BETA_001")]
         global::System.Threading.Tasks.Task<global::OpenAI.AssistantObject> GetAssistantAsync(
             string assistantId,
             global::System.Threading.CancellationToken cancellationToken = default);
