@@ -11,6 +11,7 @@ namespace OpenAI
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "OPENAI_BETA_001")]
         global::System.Threading.Tasks.Task<global::OpenAI.ThreadObject> ModifyThreadAsync(
             string threadId,
             global::OpenAI.ModifyThreadRequest request,
@@ -28,6 +29,7 @@ namespace OpenAI
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "OPENAI_BETA_001")]
         global::System.Threading.Tasks.Task<global::OpenAI.ThreadObject> ModifyThreadAsync(
             string threadId,
             global::OpenAI.ModifyThreadRequestToolResources? toolResources = default,
