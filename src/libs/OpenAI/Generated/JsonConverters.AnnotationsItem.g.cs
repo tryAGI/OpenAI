@@ -21,25 +21,25 @@ namespace OpenAI.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.MessageContentTextObjectTextAnnotationDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::OpenAI.MessageContentTextAnnotationsFileCitationObject? messageContentTextFileCitationObject = default;
+            global::OpenAI.MessageContentTextAnnotationsFileCitationObject? fileCitation = default;
             if (discriminator?.Type == global::OpenAI.MessageContentTextObjectTextAnnotationDiscriminatorType.FileCitation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.MessageContentTextAnnotationsFileCitationObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.MessageContentTextAnnotationsFileCitationObject> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.MessageContentTextAnnotationsFileCitationObject)}");
-                messageContentTextFileCitationObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                fileCitation = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::OpenAI.MessageContentTextAnnotationsFilePathObject? messageContentTextFilePathObject = default;
+            global::OpenAI.MessageContentTextAnnotationsFilePathObject? filePath = default;
             if (discriminator?.Type == global::OpenAI.MessageContentTextObjectTextAnnotationDiscriminatorType.FilePath)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.MessageContentTextAnnotationsFilePathObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.MessageContentTextAnnotationsFilePathObject> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.MessageContentTextAnnotationsFilePathObject)}");
-                messageContentTextFilePathObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                filePath = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::OpenAI.AnnotationsItem(
                 discriminator?.Type,
-                messageContentTextFileCitationObject,
-                messageContentTextFilePathObject
+                fileCitation,
+                filePath
                 );
 
             return result;
@@ -54,17 +54,17 @@ namespace OpenAI.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsMessageContentTextFileCitationObject)
+            if (value.IsFileCitation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.MessageContentTextAnnotationsFileCitationObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.MessageContentTextAnnotationsFileCitationObject?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.MessageContentTextAnnotationsFileCitationObject).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessageContentTextFileCitationObject, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileCitation, typeInfo);
             }
-            else if (value.IsMessageContentTextFilePathObject)
+            else if (value.IsFilePath)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.MessageContentTextAnnotationsFilePathObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.MessageContentTextAnnotationsFilePathObject?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.MessageContentTextAnnotationsFilePathObject).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessageContentTextFilePathObject, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FilePath, typeInfo);
             }
         }
     }

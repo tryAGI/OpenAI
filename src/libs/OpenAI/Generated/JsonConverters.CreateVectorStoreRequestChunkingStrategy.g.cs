@@ -21,25 +21,25 @@ namespace OpenAI.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.CreateVectorStoreRequestChunkingStrategyDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::OpenAI.AutoChunkingStrategyRequestParam? autoParam = default;
+            global::OpenAI.AutoChunkingStrategyRequestParam? auto = default;
             if (discriminator?.Type == global::OpenAI.CreateVectorStoreRequestChunkingStrategyDiscriminatorType.Auto)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.AutoChunkingStrategyRequestParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.AutoChunkingStrategyRequestParam> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.AutoChunkingStrategyRequestParam)}");
-                autoParam = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                auto = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::OpenAI.StaticChunkingStrategyRequestParam? staticParam = default;
+            global::OpenAI.StaticChunkingStrategyRequestParam? @static = default;
             if (discriminator?.Type == global::OpenAI.CreateVectorStoreRequestChunkingStrategyDiscriminatorType.Static)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.StaticChunkingStrategyRequestParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.StaticChunkingStrategyRequestParam> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.StaticChunkingStrategyRequestParam)}");
-                staticParam = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                @static = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::OpenAI.CreateVectorStoreRequestChunkingStrategy(
                 discriminator?.Type,
-                autoParam,
-                staticParam
+                auto,
+                @static
                 );
 
             return result;
@@ -54,17 +54,17 @@ namespace OpenAI.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsAutoParam)
+            if (value.IsAuto)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.AutoChunkingStrategyRequestParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.AutoChunkingStrategyRequestParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.AutoChunkingStrategyRequestParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AutoParam, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Auto, typeInfo);
             }
-            else if (value.IsStaticParam)
+            else if (value.IsStatic)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.StaticChunkingStrategyRequestParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.StaticChunkingStrategyRequestParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.StaticChunkingStrategyRequestParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StaticParam, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Static, typeInfo);
             }
         }
     }

@@ -19,18 +19,18 @@ namespace OpenAI
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenAI.AssistantToolsCode? AssistantCode { get; init; }
+        public global::OpenAI.AssistantToolsCode? CodeInterpreter { get; init; }
 #else
-        public global::OpenAI.AssistantToolsCode? AssistantCode { get; }
+        public global::OpenAI.AssistantToolsCode? CodeInterpreter { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AssistantCode))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreter))]
 #endif
-        public bool IsAssistantCode => AssistantCode != null;
+        public bool IsCodeInterpreter => CodeInterpreter != null;
 
         /// <summary>
         /// 
@@ -40,32 +40,32 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenAI.AssistantToolsCode?(ToolsItem8 @this) => @this.AssistantCode;
+        public static implicit operator global::OpenAI.AssistantToolsCode?(ToolsItem8 @this) => @this.CodeInterpreter;
 
         /// <summary>
         /// 
         /// </summary>
         public ToolsItem8(global::OpenAI.AssistantToolsCode? value)
         {
-            AssistantCode = value;
+            CodeInterpreter = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenAI.AssistantToolsFileSearch? AssistantFileSearch { get; init; }
+        public global::OpenAI.AssistantToolsFileSearch? FileSearch { get; init; }
 #else
-        public global::OpenAI.AssistantToolsFileSearch? AssistantFileSearch { get; }
+        public global::OpenAI.AssistantToolsFileSearch? FileSearch { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AssistantFileSearch))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearch))]
 #endif
-        public bool IsAssistantFileSearch => AssistantFileSearch != null;
+        public bool IsFileSearch => FileSearch != null;
 
         /// <summary>
         /// 
@@ -75,32 +75,32 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenAI.AssistantToolsFileSearch?(ToolsItem8 @this) => @this.AssistantFileSearch;
+        public static implicit operator global::OpenAI.AssistantToolsFileSearch?(ToolsItem8 @this) => @this.FileSearch;
 
         /// <summary>
         /// 
         /// </summary>
         public ToolsItem8(global::OpenAI.AssistantToolsFileSearch? value)
         {
-            AssistantFileSearch = value;
+            FileSearch = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenAI.AssistantToolsFunction? AssistantFunction { get; init; }
+        public global::OpenAI.AssistantToolsFunction? Function { get; init; }
 #else
-        public global::OpenAI.AssistantToolsFunction? AssistantFunction { get; }
+        public global::OpenAI.AssistantToolsFunction? Function { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AssistantFunction))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Function))]
 #endif
-        public bool IsAssistantFunction => AssistantFunction != null;
+        public bool IsFunction => Function != null;
 
         /// <summary>
         /// 
@@ -110,14 +110,14 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenAI.AssistantToolsFunction?(ToolsItem8 @this) => @this.AssistantFunction;
+        public static implicit operator global::OpenAI.AssistantToolsFunction?(ToolsItem8 @this) => @this.Function;
 
         /// <summary>
         /// 
         /// </summary>
         public ToolsItem8(global::OpenAI.AssistantToolsFunction? value)
         {
-            AssistantFunction = value;
+            Function = value;
         }
 
         /// <summary>
@@ -125,25 +125,25 @@ namespace OpenAI
         /// </summary>
         public ToolsItem8(
             global::OpenAI.RunObjectToolDiscriminatorType? type,
-            global::OpenAI.AssistantToolsCode? assistantCode,
-            global::OpenAI.AssistantToolsFileSearch? assistantFileSearch,
-            global::OpenAI.AssistantToolsFunction? assistantFunction
+            global::OpenAI.AssistantToolsCode? codeInterpreter,
+            global::OpenAI.AssistantToolsFileSearch? fileSearch,
+            global::OpenAI.AssistantToolsFunction? function
             )
         {
             Type = type;
 
-            AssistantCode = assistantCode;
-            AssistantFileSearch = assistantFileSearch;
-            AssistantFunction = assistantFunction;
+            CodeInterpreter = codeInterpreter;
+            FileSearch = fileSearch;
+            Function = function;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            AssistantFunction as object ??
-            AssistantFileSearch as object ??
-            AssistantCode as object 
+            Function as object ??
+            FileSearch as object ??
+            CodeInterpreter as object 
             ;
 
         /// <summary>
@@ -151,16 +151,16 @@ namespace OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsAssistantCode && !IsAssistantFileSearch && !IsAssistantFunction || !IsAssistantCode && IsAssistantFileSearch && !IsAssistantFunction || !IsAssistantCode && !IsAssistantFileSearch && IsAssistantFunction;
+            return IsCodeInterpreter && !IsFileSearch && !IsFunction || !IsCodeInterpreter && IsFileSearch && !IsFunction || !IsCodeInterpreter && !IsFileSearch && IsFunction;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenAI.AssistantToolsCode?, TResult>? assistantCode = null,
-            global::System.Func<global::OpenAI.AssistantToolsFileSearch?, TResult>? assistantFileSearch = null,
-            global::System.Func<global::OpenAI.AssistantToolsFunction?, TResult>? assistantFunction = null,
+            global::System.Func<global::OpenAI.AssistantToolsCode?, TResult>? codeInterpreter = null,
+            global::System.Func<global::OpenAI.AssistantToolsFileSearch?, TResult>? fileSearch = null,
+            global::System.Func<global::OpenAI.AssistantToolsFunction?, TResult>? function = null,
             bool validate = true)
         {
             if (validate)
@@ -168,17 +168,17 @@ namespace OpenAI
                 Validate();
             }
 
-            if (IsAssistantCode && assistantCode != null)
+            if (IsCodeInterpreter && codeInterpreter != null)
             {
-                return assistantCode(AssistantCode!);
+                return codeInterpreter(CodeInterpreter!);
             }
-            else if (IsAssistantFileSearch && assistantFileSearch != null)
+            else if (IsFileSearch && fileSearch != null)
             {
-                return assistantFileSearch(AssistantFileSearch!);
+                return fileSearch(FileSearch!);
             }
-            else if (IsAssistantFunction && assistantFunction != null)
+            else if (IsFunction && function != null)
             {
-                return assistantFunction(AssistantFunction!);
+                return function(Function!);
             }
 
             return default(TResult);
@@ -188,9 +188,9 @@ namespace OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenAI.AssistantToolsCode?>? assistantCode = null,
-            global::System.Action<global::OpenAI.AssistantToolsFileSearch?>? assistantFileSearch = null,
-            global::System.Action<global::OpenAI.AssistantToolsFunction?>? assistantFunction = null,
+            global::System.Action<global::OpenAI.AssistantToolsCode?>? codeInterpreter = null,
+            global::System.Action<global::OpenAI.AssistantToolsFileSearch?>? fileSearch = null,
+            global::System.Action<global::OpenAI.AssistantToolsFunction?>? function = null,
             bool validate = true)
         {
             if (validate)
@@ -198,17 +198,17 @@ namespace OpenAI
                 Validate();
             }
 
-            if (IsAssistantCode)
+            if (IsCodeInterpreter)
             {
-                assistantCode?.Invoke(AssistantCode!);
+                codeInterpreter?.Invoke(CodeInterpreter!);
             }
-            else if (IsAssistantFileSearch)
+            else if (IsFileSearch)
             {
-                assistantFileSearch?.Invoke(AssistantFileSearch!);
+                fileSearch?.Invoke(FileSearch!);
             }
-            else if (IsAssistantFunction)
+            else if (IsFunction)
             {
-                assistantFunction?.Invoke(AssistantFunction!);
+                function?.Invoke(Function!);
             }
         }
 
@@ -219,11 +219,11 @@ namespace OpenAI
         {
             var fields = new object?[]
             {
-                AssistantCode,
+                CodeInterpreter,
                 typeof(global::OpenAI.AssistantToolsCode),
-                AssistantFileSearch,
+                FileSearch,
                 typeof(global::OpenAI.AssistantToolsFileSearch),
-                AssistantFunction,
+                Function,
                 typeof(global::OpenAI.AssistantToolsFunction),
             };
             const int offset = unchecked((int)2166136261);
@@ -240,9 +240,9 @@ namespace OpenAI
         public bool Equals(ToolsItem8 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenAI.AssistantToolsCode?>.Default.Equals(AssistantCode, other.AssistantCode) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenAI.AssistantToolsFileSearch?>.Default.Equals(AssistantFileSearch, other.AssistantFileSearch) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenAI.AssistantToolsFunction?>.Default.Equals(AssistantFunction, other.AssistantFunction) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.AssistantToolsCode?>.Default.Equals(CodeInterpreter, other.CodeInterpreter) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.AssistantToolsFileSearch?>.Default.Equals(FileSearch, other.FileSearch) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.AssistantToolsFunction?>.Default.Equals(Function, other.Function) 
                 ;
         }
 

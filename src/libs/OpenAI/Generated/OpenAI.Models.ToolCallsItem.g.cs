@@ -19,18 +19,18 @@ namespace OpenAI
         /// Details of the Code Interpreter tool call the run step was involved in.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject? RunStepDeltaDetailsCodeObject { get; init; }
+        public global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject? CodeInterpreter { get; init; }
 #else
-        public global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject? RunStepDeltaDetailsCodeObject { get; }
+        public global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject? CodeInterpreter { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStepDeltaDetailsCodeObject))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreter))]
 #endif
-        public bool IsRunStepDeltaDetailsCodeObject => RunStepDeltaDetailsCodeObject != null;
+        public bool IsCodeInterpreter => CodeInterpreter != null;
 
         /// <summary>
         /// 
@@ -40,32 +40,32 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject?(ToolCallsItem @this) => @this.RunStepDeltaDetailsCodeObject;
+        public static implicit operator global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject?(ToolCallsItem @this) => @this.CodeInterpreter;
 
         /// <summary>
         /// 
         /// </summary>
         public ToolCallsItem(global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject? value)
         {
-            RunStepDeltaDetailsCodeObject = value;
+            CodeInterpreter = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject? RunStepDeltaDetailsFileSearchObject { get; init; }
+        public global::OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject? FileSearch { get; init; }
 #else
-        public global::OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject? RunStepDeltaDetailsFileSearchObject { get; }
+        public global::OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject? FileSearch { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStepDeltaDetailsFileSearchObject))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearch))]
 #endif
-        public bool IsRunStepDeltaDetailsFileSearchObject => RunStepDeltaDetailsFileSearchObject != null;
+        public bool IsFileSearch => FileSearch != null;
 
         /// <summary>
         /// 
@@ -75,32 +75,32 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject?(ToolCallsItem @this) => @this.RunStepDeltaDetailsFileSearchObject;
+        public static implicit operator global::OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject?(ToolCallsItem @this) => @this.FileSearch;
 
         /// <summary>
         /// 
         /// </summary>
         public ToolCallsItem(global::OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject? value)
         {
-            RunStepDeltaDetailsFileSearchObject = value;
+            FileSearch = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject? RunStepDeltaDetailsFunctionObject { get; init; }
+        public global::OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject? Function { get; init; }
 #else
-        public global::OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject? RunStepDeltaDetailsFunctionObject { get; }
+        public global::OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject? Function { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStepDeltaDetailsFunctionObject))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Function))]
 #endif
-        public bool IsRunStepDeltaDetailsFunctionObject => RunStepDeltaDetailsFunctionObject != null;
+        public bool IsFunction => Function != null;
 
         /// <summary>
         /// 
@@ -110,14 +110,14 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject?(ToolCallsItem @this) => @this.RunStepDeltaDetailsFunctionObject;
+        public static implicit operator global::OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject?(ToolCallsItem @this) => @this.Function;
 
         /// <summary>
         /// 
         /// </summary>
         public ToolCallsItem(global::OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject? value)
         {
-            RunStepDeltaDetailsFunctionObject = value;
+            Function = value;
         }
 
         /// <summary>
@@ -125,25 +125,25 @@ namespace OpenAI
         /// </summary>
         public ToolCallsItem(
             global::OpenAI.RunStepDeltaStepDetailsToolCallsObjectToolCallDiscriminatorType? type,
-            global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject? runStepDeltaDetailsCodeObject,
-            global::OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject? runStepDeltaDetailsFileSearchObject,
-            global::OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject? runStepDeltaDetailsFunctionObject
+            global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject? codeInterpreter,
+            global::OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject? fileSearch,
+            global::OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject? function
             )
         {
             Type = type;
 
-            RunStepDeltaDetailsCodeObject = runStepDeltaDetailsCodeObject;
-            RunStepDeltaDetailsFileSearchObject = runStepDeltaDetailsFileSearchObject;
-            RunStepDeltaDetailsFunctionObject = runStepDeltaDetailsFunctionObject;
+            CodeInterpreter = codeInterpreter;
+            FileSearch = fileSearch;
+            Function = function;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            RunStepDeltaDetailsFunctionObject as object ??
-            RunStepDeltaDetailsFileSearchObject as object ??
-            RunStepDeltaDetailsCodeObject as object 
+            Function as object ??
+            FileSearch as object ??
+            CodeInterpreter as object 
             ;
 
         /// <summary>
@@ -151,16 +151,16 @@ namespace OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsRunStepDeltaDetailsCodeObject && !IsRunStepDeltaDetailsFileSearchObject && !IsRunStepDeltaDetailsFunctionObject || !IsRunStepDeltaDetailsCodeObject && IsRunStepDeltaDetailsFileSearchObject && !IsRunStepDeltaDetailsFunctionObject || !IsRunStepDeltaDetailsCodeObject && !IsRunStepDeltaDetailsFileSearchObject && IsRunStepDeltaDetailsFunctionObject;
+            return IsCodeInterpreter && !IsFileSearch && !IsFunction || !IsCodeInterpreter && IsFileSearch && !IsFunction || !IsCodeInterpreter && !IsFileSearch && IsFunction;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject?, TResult>? runStepDeltaDetailsCodeObject = null,
-            global::System.Func<global::OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject?, TResult>? runStepDeltaDetailsFileSearchObject = null,
-            global::System.Func<global::OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject?, TResult>? runStepDeltaDetailsFunctionObject = null,
+            global::System.Func<global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject?, TResult>? codeInterpreter = null,
+            global::System.Func<global::OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject?, TResult>? fileSearch = null,
+            global::System.Func<global::OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject?, TResult>? function = null,
             bool validate = true)
         {
             if (validate)
@@ -168,17 +168,17 @@ namespace OpenAI
                 Validate();
             }
 
-            if (IsRunStepDeltaDetailsCodeObject && runStepDeltaDetailsCodeObject != null)
+            if (IsCodeInterpreter && codeInterpreter != null)
             {
-                return runStepDeltaDetailsCodeObject(RunStepDeltaDetailsCodeObject!);
+                return codeInterpreter(CodeInterpreter!);
             }
-            else if (IsRunStepDeltaDetailsFileSearchObject && runStepDeltaDetailsFileSearchObject != null)
+            else if (IsFileSearch && fileSearch != null)
             {
-                return runStepDeltaDetailsFileSearchObject(RunStepDeltaDetailsFileSearchObject!);
+                return fileSearch(FileSearch!);
             }
-            else if (IsRunStepDeltaDetailsFunctionObject && runStepDeltaDetailsFunctionObject != null)
+            else if (IsFunction && function != null)
             {
-                return runStepDeltaDetailsFunctionObject(RunStepDeltaDetailsFunctionObject!);
+                return function(Function!);
             }
 
             return default(TResult);
@@ -188,9 +188,9 @@ namespace OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject?>? runStepDeltaDetailsCodeObject = null,
-            global::System.Action<global::OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject?>? runStepDeltaDetailsFileSearchObject = null,
-            global::System.Action<global::OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject?>? runStepDeltaDetailsFunctionObject = null,
+            global::System.Action<global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject?>? codeInterpreter = null,
+            global::System.Action<global::OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject?>? fileSearch = null,
+            global::System.Action<global::OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject?>? function = null,
             bool validate = true)
         {
             if (validate)
@@ -198,17 +198,17 @@ namespace OpenAI
                 Validate();
             }
 
-            if (IsRunStepDeltaDetailsCodeObject)
+            if (IsCodeInterpreter)
             {
-                runStepDeltaDetailsCodeObject?.Invoke(RunStepDeltaDetailsCodeObject!);
+                codeInterpreter?.Invoke(CodeInterpreter!);
             }
-            else if (IsRunStepDeltaDetailsFileSearchObject)
+            else if (IsFileSearch)
             {
-                runStepDeltaDetailsFileSearchObject?.Invoke(RunStepDeltaDetailsFileSearchObject!);
+                fileSearch?.Invoke(FileSearch!);
             }
-            else if (IsRunStepDeltaDetailsFunctionObject)
+            else if (IsFunction)
             {
-                runStepDeltaDetailsFunctionObject?.Invoke(RunStepDeltaDetailsFunctionObject!);
+                function?.Invoke(Function!);
             }
         }
 
@@ -219,11 +219,11 @@ namespace OpenAI
         {
             var fields = new object?[]
             {
-                RunStepDeltaDetailsCodeObject,
+                CodeInterpreter,
                 typeof(global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject),
-                RunStepDeltaDetailsFileSearchObject,
+                FileSearch,
                 typeof(global::OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject),
-                RunStepDeltaDetailsFunctionObject,
+                Function,
                 typeof(global::OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject),
             };
             const int offset = unchecked((int)2166136261);
@@ -240,9 +240,9 @@ namespace OpenAI
         public bool Equals(ToolCallsItem other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject?>.Default.Equals(RunStepDeltaDetailsCodeObject, other.RunStepDeltaDetailsCodeObject) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject?>.Default.Equals(RunStepDeltaDetailsFileSearchObject, other.RunStepDeltaDetailsFileSearchObject) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject?>.Default.Equals(RunStepDeltaDetailsFunctionObject, other.RunStepDeltaDetailsFunctionObject) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject?>.Default.Equals(CodeInterpreter, other.CodeInterpreter) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject?>.Default.Equals(FileSearch, other.FileSearch) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject?>.Default.Equals(Function, other.Function) 
                 ;
         }
 

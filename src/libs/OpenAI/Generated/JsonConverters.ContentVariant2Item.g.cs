@@ -21,33 +21,33 @@ namespace OpenAI.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.CreateMessageRequestContentVariant2ItemDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::OpenAI.MessageContentImageFileObject? messageImageFileObject = default;
+            global::OpenAI.MessageContentImageFileObject? imageFile = default;
             if (discriminator?.Type == global::OpenAI.CreateMessageRequestContentVariant2ItemDiscriminatorType.ImageFile)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.MessageContentImageFileObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.MessageContentImageFileObject> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.MessageContentImageFileObject)}");
-                messageImageFileObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                imageFile = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::OpenAI.MessageContentImageUrlObject? messageImageUrlObject = default;
+            global::OpenAI.MessageContentImageUrlObject? imageUrl = default;
             if (discriminator?.Type == global::OpenAI.CreateMessageRequestContentVariant2ItemDiscriminatorType.ImageUrl)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.MessageContentImageUrlObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.MessageContentImageUrlObject> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.MessageContentImageUrlObject)}");
-                messageImageUrlObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                imageUrl = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::OpenAI.MessageRequestContentTextObject? messageRequestTextObject = default;
+            global::OpenAI.MessageRequestContentTextObject? text = default;
             if (discriminator?.Type == global::OpenAI.CreateMessageRequestContentVariant2ItemDiscriminatorType.Text)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.MessageRequestContentTextObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.MessageRequestContentTextObject> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.MessageRequestContentTextObject)}");
-                messageRequestTextObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::OpenAI.ContentVariant2Item(
                 discriminator?.Type,
-                messageImageFileObject,
-                messageImageUrlObject,
-                messageRequestTextObject
+                imageFile,
+                imageUrl,
+                text
                 );
 
             return result;
@@ -62,23 +62,23 @@ namespace OpenAI.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsMessageImageFileObject)
+            if (value.IsImageFile)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.MessageContentImageFileObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.MessageContentImageFileObject?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.MessageContentImageFileObject).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessageImageFileObject, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageFile, typeInfo);
             }
-            else if (value.IsMessageImageUrlObject)
+            else if (value.IsImageUrl)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.MessageContentImageUrlObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.MessageContentImageUrlObject?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.MessageContentImageUrlObject).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessageImageUrlObject, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageUrl, typeInfo);
             }
-            else if (value.IsMessageRequestTextObject)
+            else if (value.IsText)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.MessageRequestContentTextObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.MessageRequestContentTextObject?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.MessageRequestContentTextObject).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessageRequestTextObject, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeInfo);
             }
         }
     }

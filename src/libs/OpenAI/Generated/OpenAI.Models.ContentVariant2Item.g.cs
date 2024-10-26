@@ -19,18 +19,18 @@ namespace OpenAI
         /// References an image [File](/docs/api-reference/files) in the content of a message.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenAI.MessageContentImageFileObject? MessageImageFileObject { get; init; }
+        public global::OpenAI.MessageContentImageFileObject? ImageFile { get; init; }
 #else
-        public global::OpenAI.MessageContentImageFileObject? MessageImageFileObject { get; }
+        public global::OpenAI.MessageContentImageFileObject? ImageFile { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageImageFileObject))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageFile))]
 #endif
-        public bool IsMessageImageFileObject => MessageImageFileObject != null;
+        public bool IsImageFile => ImageFile != null;
 
         /// <summary>
         /// 
@@ -40,32 +40,32 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenAI.MessageContentImageFileObject?(ContentVariant2Item @this) => @this.MessageImageFileObject;
+        public static implicit operator global::OpenAI.MessageContentImageFileObject?(ContentVariant2Item @this) => @this.ImageFile;
 
         /// <summary>
         /// 
         /// </summary>
         public ContentVariant2Item(global::OpenAI.MessageContentImageFileObject? value)
         {
-            MessageImageFileObject = value;
+            ImageFile = value;
         }
 
         /// <summary>
         /// References an image URL in the content of a message.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenAI.MessageContentImageUrlObject? MessageImageUrlObject { get; init; }
+        public global::OpenAI.MessageContentImageUrlObject? ImageUrl { get; init; }
 #else
-        public global::OpenAI.MessageContentImageUrlObject? MessageImageUrlObject { get; }
+        public global::OpenAI.MessageContentImageUrlObject? ImageUrl { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageImageUrlObject))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageUrl))]
 #endif
-        public bool IsMessageImageUrlObject => MessageImageUrlObject != null;
+        public bool IsImageUrl => ImageUrl != null;
 
         /// <summary>
         /// 
@@ -75,32 +75,32 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenAI.MessageContentImageUrlObject?(ContentVariant2Item @this) => @this.MessageImageUrlObject;
+        public static implicit operator global::OpenAI.MessageContentImageUrlObject?(ContentVariant2Item @this) => @this.ImageUrl;
 
         /// <summary>
         /// 
         /// </summary>
         public ContentVariant2Item(global::OpenAI.MessageContentImageUrlObject? value)
         {
-            MessageImageUrlObject = value;
+            ImageUrl = value;
         }
 
         /// <summary>
         /// The text content that is part of a message.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenAI.MessageRequestContentTextObject? MessageRequestTextObject { get; init; }
+        public global::OpenAI.MessageRequestContentTextObject? Text { get; init; }
 #else
-        public global::OpenAI.MessageRequestContentTextObject? MessageRequestTextObject { get; }
+        public global::OpenAI.MessageRequestContentTextObject? Text { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageRequestTextObject))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
-        public bool IsMessageRequestTextObject => MessageRequestTextObject != null;
+        public bool IsText => Text != null;
 
         /// <summary>
         /// 
@@ -110,14 +110,14 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenAI.MessageRequestContentTextObject?(ContentVariant2Item @this) => @this.MessageRequestTextObject;
+        public static implicit operator global::OpenAI.MessageRequestContentTextObject?(ContentVariant2Item @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
         public ContentVariant2Item(global::OpenAI.MessageRequestContentTextObject? value)
         {
-            MessageRequestTextObject = value;
+            Text = value;
         }
 
         /// <summary>
@@ -125,25 +125,25 @@ namespace OpenAI
         /// </summary>
         public ContentVariant2Item(
             global::OpenAI.CreateMessageRequestContentVariant2ItemDiscriminatorType? type,
-            global::OpenAI.MessageContentImageFileObject? messageImageFileObject,
-            global::OpenAI.MessageContentImageUrlObject? messageImageUrlObject,
-            global::OpenAI.MessageRequestContentTextObject? messageRequestTextObject
+            global::OpenAI.MessageContentImageFileObject? imageFile,
+            global::OpenAI.MessageContentImageUrlObject? imageUrl,
+            global::OpenAI.MessageRequestContentTextObject? text
             )
         {
             Type = type;
 
-            MessageImageFileObject = messageImageFileObject;
-            MessageImageUrlObject = messageImageUrlObject;
-            MessageRequestTextObject = messageRequestTextObject;
+            ImageFile = imageFile;
+            ImageUrl = imageUrl;
+            Text = text;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            MessageRequestTextObject as object ??
-            MessageImageUrlObject as object ??
-            MessageImageFileObject as object 
+            Text as object ??
+            ImageUrl as object ??
+            ImageFile as object 
             ;
 
         /// <summary>
@@ -151,16 +151,16 @@ namespace OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsMessageImageFileObject && !IsMessageImageUrlObject && !IsMessageRequestTextObject || !IsMessageImageFileObject && IsMessageImageUrlObject && !IsMessageRequestTextObject || !IsMessageImageFileObject && !IsMessageImageUrlObject && IsMessageRequestTextObject;
+            return IsImageFile && !IsImageUrl && !IsText || !IsImageFile && IsImageUrl && !IsText || !IsImageFile && !IsImageUrl && IsText;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenAI.MessageContentImageFileObject?, TResult>? messageImageFileObject = null,
-            global::System.Func<global::OpenAI.MessageContentImageUrlObject?, TResult>? messageImageUrlObject = null,
-            global::System.Func<global::OpenAI.MessageRequestContentTextObject?, TResult>? messageRequestTextObject = null,
+            global::System.Func<global::OpenAI.MessageContentImageFileObject?, TResult>? imageFile = null,
+            global::System.Func<global::OpenAI.MessageContentImageUrlObject?, TResult>? imageUrl = null,
+            global::System.Func<global::OpenAI.MessageRequestContentTextObject?, TResult>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -168,17 +168,17 @@ namespace OpenAI
                 Validate();
             }
 
-            if (IsMessageImageFileObject && messageImageFileObject != null)
+            if (IsImageFile && imageFile != null)
             {
-                return messageImageFileObject(MessageImageFileObject!);
+                return imageFile(ImageFile!);
             }
-            else if (IsMessageImageUrlObject && messageImageUrlObject != null)
+            else if (IsImageUrl && imageUrl != null)
             {
-                return messageImageUrlObject(MessageImageUrlObject!);
+                return imageUrl(ImageUrl!);
             }
-            else if (IsMessageRequestTextObject && messageRequestTextObject != null)
+            else if (IsText && text != null)
             {
-                return messageRequestTextObject(MessageRequestTextObject!);
+                return text(Text!);
             }
 
             return default(TResult);
@@ -188,9 +188,9 @@ namespace OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenAI.MessageContentImageFileObject?>? messageImageFileObject = null,
-            global::System.Action<global::OpenAI.MessageContentImageUrlObject?>? messageImageUrlObject = null,
-            global::System.Action<global::OpenAI.MessageRequestContentTextObject?>? messageRequestTextObject = null,
+            global::System.Action<global::OpenAI.MessageContentImageFileObject?>? imageFile = null,
+            global::System.Action<global::OpenAI.MessageContentImageUrlObject?>? imageUrl = null,
+            global::System.Action<global::OpenAI.MessageRequestContentTextObject?>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -198,17 +198,17 @@ namespace OpenAI
                 Validate();
             }
 
-            if (IsMessageImageFileObject)
+            if (IsImageFile)
             {
-                messageImageFileObject?.Invoke(MessageImageFileObject!);
+                imageFile?.Invoke(ImageFile!);
             }
-            else if (IsMessageImageUrlObject)
+            else if (IsImageUrl)
             {
-                messageImageUrlObject?.Invoke(MessageImageUrlObject!);
+                imageUrl?.Invoke(ImageUrl!);
             }
-            else if (IsMessageRequestTextObject)
+            else if (IsText)
             {
-                messageRequestTextObject?.Invoke(MessageRequestTextObject!);
+                text?.Invoke(Text!);
             }
         }
 
@@ -219,11 +219,11 @@ namespace OpenAI
         {
             var fields = new object?[]
             {
-                MessageImageFileObject,
+                ImageFile,
                 typeof(global::OpenAI.MessageContentImageFileObject),
-                MessageImageUrlObject,
+                ImageUrl,
                 typeof(global::OpenAI.MessageContentImageUrlObject),
-                MessageRequestTextObject,
+                Text,
                 typeof(global::OpenAI.MessageRequestContentTextObject),
             };
             const int offset = unchecked((int)2166136261);
@@ -240,9 +240,9 @@ namespace OpenAI
         public bool Equals(ContentVariant2Item other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenAI.MessageContentImageFileObject?>.Default.Equals(MessageImageFileObject, other.MessageImageFileObject) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenAI.MessageContentImageUrlObject?>.Default.Equals(MessageImageUrlObject, other.MessageImageUrlObject) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenAI.MessageRequestContentTextObject?>.Default.Equals(MessageRequestTextObject, other.MessageRequestTextObject) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.MessageContentImageFileObject?>.Default.Equals(ImageFile, other.ImageFile) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.MessageContentImageUrlObject?>.Default.Equals(ImageUrl, other.ImageUrl) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.MessageRequestContentTextObject?>.Default.Equals(Text, other.Text) 
                 ;
         }
 

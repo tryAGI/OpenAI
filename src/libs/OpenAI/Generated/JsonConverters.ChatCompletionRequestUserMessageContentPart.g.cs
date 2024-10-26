@@ -28,26 +28,26 @@ namespace OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.ChatCompletionRequestMessageContentPartText)}");
                 text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::OpenAI.ChatCompletionRequestMessageContentPartImage? image = default;
+            global::OpenAI.ChatCompletionRequestMessageContentPartImage? imageUrl = default;
             if (discriminator?.Type == global::OpenAI.ChatCompletionRequestUserMessageContentPartDiscriminatorType.ImageUrl)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.ChatCompletionRequestMessageContentPartImage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.ChatCompletionRequestMessageContentPartImage> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.ChatCompletionRequestMessageContentPartImage)}");
-                image = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                imageUrl = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::OpenAI.ChatCompletionRequestMessageContentPartAudio? audio = default;
+            global::OpenAI.ChatCompletionRequestMessageContentPartAudio? inputAudio = default;
             if (discriminator?.Type == global::OpenAI.ChatCompletionRequestUserMessageContentPartDiscriminatorType.InputAudio)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.ChatCompletionRequestMessageContentPartAudio), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.ChatCompletionRequestMessageContentPartAudio> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.ChatCompletionRequestMessageContentPartAudio)}");
-                audio = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                inputAudio = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::OpenAI.ChatCompletionRequestUserMessageContentPart(
                 discriminator?.Type,
                 text,
-                image,
-                audio
+                imageUrl,
+                inputAudio
                 );
 
             return result;
@@ -68,17 +68,17 @@ namespace OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.ChatCompletionRequestMessageContentPartText).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeInfo);
             }
-            else if (value.IsImage)
+            else if (value.IsImageUrl)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.ChatCompletionRequestMessageContentPartImage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.ChatCompletionRequestMessageContentPartImage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.ChatCompletionRequestMessageContentPartImage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Image, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageUrl, typeInfo);
             }
-            else if (value.IsAudio)
+            else if (value.IsInputAudio)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.ChatCompletionRequestMessageContentPartAudio), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.ChatCompletionRequestMessageContentPartAudio?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.ChatCompletionRequestMessageContentPartAudio).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Audio, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudio, typeInfo);
             }
         }
     }

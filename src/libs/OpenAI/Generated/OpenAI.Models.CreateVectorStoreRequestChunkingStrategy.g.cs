@@ -19,18 +19,18 @@ namespace OpenAI
         /// The default strategy. This strategy currently uses a `max_chunk_size_tokens` of `800` and `chunk_overlap_tokens` of `400`.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenAI.AutoChunkingStrategyRequestParam? AutoParam { get; init; }
+        public global::OpenAI.AutoChunkingStrategyRequestParam? Auto { get; init; }
 #else
-        public global::OpenAI.AutoChunkingStrategyRequestParam? AutoParam { get; }
+        public global::OpenAI.AutoChunkingStrategyRequestParam? Auto { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AutoParam))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Auto))]
 #endif
-        public bool IsAutoParam => AutoParam != null;
+        public bool IsAuto => Auto != null;
 
         /// <summary>
         /// 
@@ -40,32 +40,32 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenAI.AutoChunkingStrategyRequestParam?(CreateVectorStoreRequestChunkingStrategy @this) => @this.AutoParam;
+        public static implicit operator global::OpenAI.AutoChunkingStrategyRequestParam?(CreateVectorStoreRequestChunkingStrategy @this) => @this.Auto;
 
         /// <summary>
         /// 
         /// </summary>
         public CreateVectorStoreRequestChunkingStrategy(global::OpenAI.AutoChunkingStrategyRequestParam? value)
         {
-            AutoParam = value;
+            Auto = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenAI.StaticChunkingStrategyRequestParam? StaticParam { get; init; }
+        public global::OpenAI.StaticChunkingStrategyRequestParam? Static { get; init; }
 #else
-        public global::OpenAI.StaticChunkingStrategyRequestParam? StaticParam { get; }
+        public global::OpenAI.StaticChunkingStrategyRequestParam? Static { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StaticParam))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Static))]
 #endif
-        public bool IsStaticParam => StaticParam != null;
+        public bool IsStatic => Static != null;
 
         /// <summary>
         /// 
@@ -75,14 +75,14 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenAI.StaticChunkingStrategyRequestParam?(CreateVectorStoreRequestChunkingStrategy @this) => @this.StaticParam;
+        public static implicit operator global::OpenAI.StaticChunkingStrategyRequestParam?(CreateVectorStoreRequestChunkingStrategy @this) => @this.Static;
 
         /// <summary>
         /// 
         /// </summary>
         public CreateVectorStoreRequestChunkingStrategy(global::OpenAI.StaticChunkingStrategyRequestParam? value)
         {
-            StaticParam = value;
+            Static = value;
         }
 
         /// <summary>
@@ -90,22 +90,22 @@ namespace OpenAI
         /// </summary>
         public CreateVectorStoreRequestChunkingStrategy(
             global::OpenAI.CreateVectorStoreRequestChunkingStrategyDiscriminatorType? type,
-            global::OpenAI.AutoChunkingStrategyRequestParam? autoParam,
-            global::OpenAI.StaticChunkingStrategyRequestParam? staticParam
+            global::OpenAI.AutoChunkingStrategyRequestParam? auto,
+            global::OpenAI.StaticChunkingStrategyRequestParam? @static
             )
         {
             Type = type;
 
-            AutoParam = autoParam;
-            StaticParam = staticParam;
+            Auto = auto;
+            Static = @static;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            StaticParam as object ??
-            AutoParam as object 
+            Static as object ??
+            Auto as object 
             ;
 
         /// <summary>
@@ -113,15 +113,15 @@ namespace OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsAutoParam && !IsStaticParam || !IsAutoParam && IsStaticParam;
+            return IsAuto && !IsStatic || !IsAuto && IsStatic;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenAI.AutoChunkingStrategyRequestParam?, TResult>? autoParam = null,
-            global::System.Func<global::OpenAI.StaticChunkingStrategyRequestParam?, TResult>? staticParam = null,
+            global::System.Func<global::OpenAI.AutoChunkingStrategyRequestParam?, TResult>? auto = null,
+            global::System.Func<global::OpenAI.StaticChunkingStrategyRequestParam?, TResult>? @static = null,
             bool validate = true)
         {
             if (validate)
@@ -129,13 +129,13 @@ namespace OpenAI
                 Validate();
             }
 
-            if (IsAutoParam && autoParam != null)
+            if (IsAuto && auto != null)
             {
-                return autoParam(AutoParam!);
+                return auto(Auto!);
             }
-            else if (IsStaticParam && staticParam != null)
+            else if (IsStatic && @static != null)
             {
-                return staticParam(StaticParam!);
+                return @static(Static!);
             }
 
             return default(TResult);
@@ -145,8 +145,8 @@ namespace OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenAI.AutoChunkingStrategyRequestParam?>? autoParam = null,
-            global::System.Action<global::OpenAI.StaticChunkingStrategyRequestParam?>? staticParam = null,
+            global::System.Action<global::OpenAI.AutoChunkingStrategyRequestParam?>? auto = null,
+            global::System.Action<global::OpenAI.StaticChunkingStrategyRequestParam?>? @static = null,
             bool validate = true)
         {
             if (validate)
@@ -154,13 +154,13 @@ namespace OpenAI
                 Validate();
             }
 
-            if (IsAutoParam)
+            if (IsAuto)
             {
-                autoParam?.Invoke(AutoParam!);
+                auto?.Invoke(Auto!);
             }
-            else if (IsStaticParam)
+            else if (IsStatic)
             {
-                staticParam?.Invoke(StaticParam!);
+                @static?.Invoke(Static!);
             }
         }
 
@@ -171,9 +171,9 @@ namespace OpenAI
         {
             var fields = new object?[]
             {
-                AutoParam,
+                Auto,
                 typeof(global::OpenAI.AutoChunkingStrategyRequestParam),
-                StaticParam,
+                Static,
                 typeof(global::OpenAI.StaticChunkingStrategyRequestParam),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace OpenAI
         public bool Equals(CreateVectorStoreRequestChunkingStrategy other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenAI.AutoChunkingStrategyRequestParam?>.Default.Equals(AutoParam, other.AutoParam) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenAI.StaticChunkingStrategyRequestParam?>.Default.Equals(StaticParam, other.StaticParam) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.AutoChunkingStrategyRequestParam?>.Default.Equals(Auto, other.Auto) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.StaticChunkingStrategyRequestParam?>.Default.Equals(Static, other.Static) 
                 ;
         }
 
