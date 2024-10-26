@@ -73,15 +73,15 @@ public partial class Examples
                 Console.WriteLine($"[{message.Role.ToString().ToUpper()}]: ");
                 foreach (ContentItem2 contentItem in message.Content)
                 {
-                    if (contentItem.MessageImageFileObject is {} imageFile)
+                    if (contentItem.ImageFile is {} imageFile)
                     {
                         Console.WriteLine($" <Image File ID> {imageFile.ImageFile.FileId}");
                     }
-                    if (contentItem.MessageImageUrlObject is {} imageUrl)
+                    if (contentItem.ImageUrl is {} imageUrl)
                     {
                         Console.WriteLine($" <Image URL> {imageUrl.ImageUrl.Url}");
                     }
-                    if (contentItem.MessageTextObject is {} text)
+                    if (contentItem.Text is {} text)
                     {
                         Console.WriteLine($"{text.Text.Value}");
                         
@@ -91,13 +91,13 @@ public partial class Examples
                             Console.WriteLine();
                             foreach (AnnotationsItem annotation in text.Text.Annotations)
                             {
-                                if (annotation.MessageContentTextFileCitationObject is {} fileCitation)
+                                if (annotation.FileCitation is {} fileCitation)
                                 {
                                     Console.WriteLine($"* File citation, file ID: {fileCitation.FileCitation.FileId}");
                                     Console.WriteLine($"* Text to replace: {fileCitation.Text}");
                                     Console.WriteLine($"* Message content index range: {fileCitation.StartIndex}-{fileCitation.EndIndex}");
                                 }
-                                if (annotation.MessageContentTextFilePathObject is {} filePath)
+                                if (annotation.FilePath is {} filePath)
                                 {
                                     Console.WriteLine($"* File output, new file ID: {filePath.FilePath.FileId}");
                                     Console.WriteLine($"* Text to replace: {filePath.Text}");
@@ -106,7 +106,7 @@ public partial class Examples
                             }
                         }
                     }
-                    if (contentItem.MessageRefusalObject is {} refusal)
+                    if (contentItem.Refusal is {} refusal)
                     {
                         Console.WriteLine($"Refusal: {refusal.Refusal}");
                     }

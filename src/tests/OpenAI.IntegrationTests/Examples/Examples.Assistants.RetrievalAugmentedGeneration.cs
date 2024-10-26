@@ -109,7 +109,7 @@ public partial class Examples
             Console.Write($"[{message.Role.ToString().ToUpper()}]: ");
             foreach (ContentItem2 contentItem in message.Content)
             {
-                if (contentItem.MessageTextObject is {} text)
+                if (contentItem.Text is {} text)
                 {
                     Console.WriteLine($"{text.Text.Value}");
         
@@ -121,19 +121,19 @@ public partial class Examples
                     // Include annotations, if any.
                     foreach (AnnotationsItem annotation in text.Text.Annotations)
                     {
-                        if (annotation.MessageContentTextFileCitationObject is {} citation &&
+                        if (annotation.FileCitation is {} citation &&
                             !string.IsNullOrEmpty(citation.FileCitation.FileId))
                         {
                             Console.WriteLine($"* File citation, file ID: {citation.FileCitation.FileId}");
                         }
-                        if (annotation.MessageContentTextFilePathObject is {} path &&
+                        if (annotation.FilePath is {} path &&
                             !string.IsNullOrEmpty(path.FilePath.FileId))
                         {
                             Console.WriteLine($"* File output, new file ID: {path.FilePath.FileId}");
                         }
                     }
                 }
-                if (contentItem.MessageImageFileObject is {} imageFile)
+                if (contentItem.ImageFile is {} imageFile)
                 {
                     OpenAIFile imageInfo = await api.Files.RetrieveFileAsync(imageFile.ImageFile.FileId);
                     byte[] imageBytes = await api.Files.DownloadFileAsync(imageFile.ImageFile.FileId);
