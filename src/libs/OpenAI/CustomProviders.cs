@@ -75,7 +75,12 @@ public static class CustomProviders
     /// 
     /// </summary>
     public const string LmStudioBaseUrl = "http://localhost:1234/v1";
-    
+
+    /// <summary>
+    /// https://inference-docs.cerebras.ai/openai
+    /// </summary>
+    public const string CerebrasBaseUrl = "https://api.cerebras.ai/v1";
+
     /// <summary>
     /// Creates an API to use for GitHub Models: https://github.com/marketplace/models
     /// </summary>
@@ -209,5 +214,14 @@ public static class CustomProviders
     public static OpenAiApi LmStudio(Uri? baseUri = null)
     {
         return new OpenAiApi(baseUri: baseUri ?? new Uri(LmStudioBaseUrl));
+    }
+
+    /// <summary>
+    /// Create an API to use for Cerebras.
+    /// </summary>
+    /// <returns></returns>
+    public static OpenAiApi Cerebras(string apiKey)
+    {
+        return new OpenAiApi(apiKey, baseUri: new Uri(CerebrasBaseUrl));
     }
 }

@@ -18,4 +18,5 @@ public enum CustomProvider
     Mistral,
     Codestral,
     Hyperbolic,
+    Cerebras
 }

@@ -135,7 +135,14 @@ public partial class Tests
             
             return pair;
         }
-        
+        if (customProvider == CustomProvider.Cerebras)
+        {
+            return (CustomProviders.Cerebras(apiKey:
+                Environment.GetEnvironmentVariable("CEREBRAS_API_KEY") ??
+                throw new AssertInconclusiveException("CEREBRAS_API_KEY environment variable is not found.")),
+                model ?? "llama3.1-70b");
+        }
+
         var apiKey =
             Environment.GetEnvironmentVariable("OPENAI_API_KEY") ??
             throw new AssertInconclusiveException("OPENAI_API_KEY environment variable is not found.");

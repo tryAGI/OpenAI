@@ -187,6 +187,7 @@ using var api = CustomProviders.Perplexity("API_KEY");
 using var api = CustomProviders.SambaNova("API_KEY");
 using var api = CustomProviders.Mistral("API_KEY");
 using var api = CustomProviders.Codestral("API_KEY");
+using var api = CustomProviders.Cerebras("API_KEY");
 using var api = CustomProviders.Ollama();
 using var api = CustomProviders.LmStudio();
 ```
