@@ -21,25 +21,25 @@ namespace OpenAI.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.MessageDeltaContentTextObjectTextAnnotationDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject? messageDeltaContentTextFileCitationObject = default;
+            global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject? fileCitation = default;
             if (discriminator?.Type == global::OpenAI.MessageDeltaContentTextObjectTextAnnotationDiscriminatorType.FileCitation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject)}");
-                messageDeltaContentTextFileCitationObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                fileCitation = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObject? messageDeltaContentTextFilePathObject = default;
+            global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObject? filePath = default;
             if (discriminator?.Type == global::OpenAI.MessageDeltaContentTextObjectTextAnnotationDiscriminatorType.FilePath)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObject> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObject)}");
-                messageDeltaContentTextFilePathObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                filePath = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::OpenAI.AnnotationsItem2(
                 discriminator?.Type,
-                messageDeltaContentTextFileCitationObject,
-                messageDeltaContentTextFilePathObject
+                fileCitation,
+                filePath
                 );
 
             return result;
@@ -54,17 +54,17 @@ namespace OpenAI.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsMessageDeltaContentTextFileCitationObject)
+            if (value.IsFileCitation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessageDeltaContentTextFileCitationObject, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileCitation, typeInfo);
             }
-            else if (value.IsMessageDeltaContentTextFilePathObject)
+            else if (value.IsFilePath)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObject?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObject).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessageDeltaContentTextFilePathObject, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FilePath, typeInfo);
             }
         }
     }

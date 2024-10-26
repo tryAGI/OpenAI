@@ -19,18 +19,18 @@ namespace OpenAI
         /// An object describing an image to classify.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenAI.CreateModerationRequestInputVariant3ItemVariant1? Value1 { get; init; }
+        public global::OpenAI.CreateModerationRequestInputVariant3ItemVariant1? ImageUrl { get; init; }
 #else
-        public global::OpenAI.CreateModerationRequestInputVariant3ItemVariant1? Value1 { get; }
+        public global::OpenAI.CreateModerationRequestInputVariant3ItemVariant1? ImageUrl { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageUrl))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsImageUrl => ImageUrl != null;
 
         /// <summary>
         /// 
@@ -40,32 +40,32 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenAI.CreateModerationRequestInputVariant3ItemVariant1?(InputVariant3Item @this) => @this.Value1;
+        public static implicit operator global::OpenAI.CreateModerationRequestInputVariant3ItemVariant1?(InputVariant3Item @this) => @this.ImageUrl;
 
         /// <summary>
         /// 
         /// </summary>
         public InputVariant3Item(global::OpenAI.CreateModerationRequestInputVariant3ItemVariant1? value)
         {
-            Value1 = value;
+            ImageUrl = value;
         }
 
         /// <summary>
         /// An object describing text to classify.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2? Value2 { get; init; }
+        public global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2? Text { get; init; }
 #else
-        public global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2? Value2 { get; }
+        public global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2? Text { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsText => Text != null;
 
         /// <summary>
         /// 
@@ -75,14 +75,14 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2?(InputVariant3Item @this) => @this.Value2;
+        public static implicit operator global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2?(InputVariant3Item @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
         public InputVariant3Item(global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2? value)
         {
-            Value2 = value;
+            Text = value;
         }
 
         /// <summary>
@@ -90,22 +90,22 @@ namespace OpenAI
         /// </summary>
         public InputVariant3Item(
             global::OpenAI.CreateModerationRequestInputVariant3ItemDiscriminatorType? type,
-            global::OpenAI.CreateModerationRequestInputVariant3ItemVariant1? value1,
-            global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2? value2
+            global::OpenAI.CreateModerationRequestInputVariant3ItemVariant1? imageUrl,
+            global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2? text
             )
         {
             Type = type;
 
-            Value1 = value1;
-            Value2 = value2;
+            ImageUrl = imageUrl;
+            Text = text;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            Text as object ??
+            ImageUrl as object 
             ;
 
         /// <summary>
@@ -113,15 +113,15 @@ namespace OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsImageUrl && !IsText || !IsImageUrl && IsText;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenAI.CreateModerationRequestInputVariant3ItemVariant1?, TResult>? value1 = null,
-            global::System.Func<global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2?, TResult>? value2 = null,
+            global::System.Func<global::OpenAI.CreateModerationRequestInputVariant3ItemVariant1?, TResult>? imageUrl = null,
+            global::System.Func<global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2?, TResult>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -129,13 +129,13 @@ namespace OpenAI
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsImageUrl && imageUrl != null)
             {
-                return value1(Value1!);
+                return imageUrl(ImageUrl!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsText && text != null)
             {
-                return value2(Value2!);
+                return text(Text!);
             }
 
             return default(TResult);
@@ -145,8 +145,8 @@ namespace OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenAI.CreateModerationRequestInputVariant3ItemVariant1?>? value1 = null,
-            global::System.Action<global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2?>? value2 = null,
+            global::System.Action<global::OpenAI.CreateModerationRequestInputVariant3ItemVariant1?>? imageUrl = null,
+            global::System.Action<global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2?>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -154,13 +154,13 @@ namespace OpenAI
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsImageUrl)
             {
-                value1?.Invoke(Value1!);
+                imageUrl?.Invoke(ImageUrl!);
             }
-            else if (IsValue2)
+            else if (IsText)
             {
-                value2?.Invoke(Value2!);
+                text?.Invoke(Text!);
             }
         }
 
@@ -171,9 +171,9 @@ namespace OpenAI
         {
             var fields = new object?[]
             {
-                Value1,
+                ImageUrl,
                 typeof(global::OpenAI.CreateModerationRequestInputVariant3ItemVariant1),
-                Value2,
+                Text,
                 typeof(global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace OpenAI
         public bool Equals(InputVariant3Item other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenAI.CreateModerationRequestInputVariant3ItemVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.CreateModerationRequestInputVariant3ItemVariant1?>.Default.Equals(ImageUrl, other.ImageUrl) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2?>.Default.Equals(Text, other.Text) 
                 ;
         }
 

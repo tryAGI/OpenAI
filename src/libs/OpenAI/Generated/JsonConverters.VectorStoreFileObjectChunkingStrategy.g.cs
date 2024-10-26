@@ -21,25 +21,25 @@ namespace OpenAI.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.VectorStoreFileObjectChunkingStrategyDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::OpenAI.StaticChunkingStrategyResponseParam? staticResponseParam = default;
+            global::OpenAI.StaticChunkingStrategyResponseParam? @static = default;
             if (discriminator?.Type == global::OpenAI.VectorStoreFileObjectChunkingStrategyDiscriminatorType.Static)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.StaticChunkingStrategyResponseParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.StaticChunkingStrategyResponseParam> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.StaticChunkingStrategyResponseParam)}");
-                staticResponseParam = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                @static = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::OpenAI.OtherChunkingStrategyResponseParam? otherResponseParam = default;
+            global::OpenAI.OtherChunkingStrategyResponseParam? other = default;
             if (discriminator?.Type == global::OpenAI.VectorStoreFileObjectChunkingStrategyDiscriminatorType.Other)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.OtherChunkingStrategyResponseParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.OtherChunkingStrategyResponseParam> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.OtherChunkingStrategyResponseParam)}");
-                otherResponseParam = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                other = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::OpenAI.VectorStoreFileObjectChunkingStrategy(
                 discriminator?.Type,
-                staticResponseParam,
-                otherResponseParam
+                @static,
+                other
                 );
 
             return result;
@@ -54,17 +54,17 @@ namespace OpenAI.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsStaticResponseParam)
+            if (value.IsStatic)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.StaticChunkingStrategyResponseParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.StaticChunkingStrategyResponseParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.StaticChunkingStrategyResponseParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StaticResponseParam, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Static, typeInfo);
             }
-            else if (value.IsOtherResponseParam)
+            else if (value.IsOther)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.OtherChunkingStrategyResponseParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.OtherChunkingStrategyResponseParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.OtherChunkingStrategyResponseParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OtherResponseParam, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Other, typeInfo);
             }
         }
     }

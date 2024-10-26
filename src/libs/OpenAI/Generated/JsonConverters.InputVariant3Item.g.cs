@@ -21,25 +21,25 @@ namespace OpenAI.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.CreateModerationRequestInputVariant3ItemDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::OpenAI.CreateModerationRequestInputVariant3ItemVariant1? value1 = default;
+            global::OpenAI.CreateModerationRequestInputVariant3ItemVariant1? imageUrl = default;
             if (discriminator?.Type == global::OpenAI.CreateModerationRequestInputVariant3ItemDiscriminatorType.ImageUrl)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.CreateModerationRequestInputVariant3ItemVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.CreateModerationRequestInputVariant3ItemVariant1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.CreateModerationRequestInputVariant3ItemVariant1)}");
-                value1 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                imageUrl = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2? value2 = default;
+            global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2? text = default;
             if (discriminator?.Type == global::OpenAI.CreateModerationRequestInputVariant3ItemDiscriminatorType.Text)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2)}");
-                value2 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::OpenAI.InputVariant3Item(
                 discriminator?.Type,
-                value1,
-                value2
+                imageUrl,
+                text
                 );
 
             return result;
@@ -54,17 +54,17 @@ namespace OpenAI.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsImageUrl)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.CreateModerationRequestInputVariant3ItemVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.CreateModerationRequestInputVariant3ItemVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.CreateModerationRequestInputVariant3ItemVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageUrl, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsText)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.CreateModerationRequestInputVariant3ItemVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeInfo);
             }
         }
     }

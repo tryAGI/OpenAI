@@ -19,18 +19,18 @@ namespace OpenAI
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenAI.StaticChunkingStrategyResponseParam? StaticResponseParam { get; init; }
+        public global::OpenAI.StaticChunkingStrategyResponseParam? Static { get; init; }
 #else
-        public global::OpenAI.StaticChunkingStrategyResponseParam? StaticResponseParam { get; }
+        public global::OpenAI.StaticChunkingStrategyResponseParam? Static { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StaticResponseParam))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Static))]
 #endif
-        public bool IsStaticResponseParam => StaticResponseParam != null;
+        public bool IsStatic => Static != null;
 
         /// <summary>
         /// 
@@ -40,32 +40,32 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenAI.StaticChunkingStrategyResponseParam?(VectorStoreFileObjectChunkingStrategy @this) => @this.StaticResponseParam;
+        public static implicit operator global::OpenAI.StaticChunkingStrategyResponseParam?(VectorStoreFileObjectChunkingStrategy @this) => @this.Static;
 
         /// <summary>
         /// 
         /// </summary>
         public VectorStoreFileObjectChunkingStrategy(global::OpenAI.StaticChunkingStrategyResponseParam? value)
         {
-            StaticResponseParam = value;
+            Static = value;
         }
 
         /// <summary>
         /// This is returned when the chunking strategy is unknown. Typically, this is because the file was indexed before the `chunking_strategy` concept was introduced in the API.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenAI.OtherChunkingStrategyResponseParam? OtherResponseParam { get; init; }
+        public global::OpenAI.OtherChunkingStrategyResponseParam? Other { get; init; }
 #else
-        public global::OpenAI.OtherChunkingStrategyResponseParam? OtherResponseParam { get; }
+        public global::OpenAI.OtherChunkingStrategyResponseParam? Other { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OtherResponseParam))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Other))]
 #endif
-        public bool IsOtherResponseParam => OtherResponseParam != null;
+        public bool IsOther => Other != null;
 
         /// <summary>
         /// 
@@ -75,14 +75,14 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenAI.OtherChunkingStrategyResponseParam?(VectorStoreFileObjectChunkingStrategy @this) => @this.OtherResponseParam;
+        public static implicit operator global::OpenAI.OtherChunkingStrategyResponseParam?(VectorStoreFileObjectChunkingStrategy @this) => @this.Other;
 
         /// <summary>
         /// 
         /// </summary>
         public VectorStoreFileObjectChunkingStrategy(global::OpenAI.OtherChunkingStrategyResponseParam? value)
         {
-            OtherResponseParam = value;
+            Other = value;
         }
 
         /// <summary>
@@ -90,22 +90,22 @@ namespace OpenAI
         /// </summary>
         public VectorStoreFileObjectChunkingStrategy(
             global::OpenAI.VectorStoreFileObjectChunkingStrategyDiscriminatorType? type,
-            global::OpenAI.StaticChunkingStrategyResponseParam? staticResponseParam,
-            global::OpenAI.OtherChunkingStrategyResponseParam? otherResponseParam
+            global::OpenAI.StaticChunkingStrategyResponseParam? @static,
+            global::OpenAI.OtherChunkingStrategyResponseParam? other
             )
         {
             Type = type;
 
-            StaticResponseParam = staticResponseParam;
-            OtherResponseParam = otherResponseParam;
+            Static = @static;
+            Other = other;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            OtherResponseParam as object ??
-            StaticResponseParam as object 
+            Other as object ??
+            Static as object 
             ;
 
         /// <summary>
@@ -113,15 +113,15 @@ namespace OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsStaticResponseParam && !IsOtherResponseParam || !IsStaticResponseParam && IsOtherResponseParam;
+            return IsStatic && !IsOther || !IsStatic && IsOther;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenAI.StaticChunkingStrategyResponseParam?, TResult>? staticResponseParam = null,
-            global::System.Func<global::OpenAI.OtherChunkingStrategyResponseParam?, TResult>? otherResponseParam = null,
+            global::System.Func<global::OpenAI.StaticChunkingStrategyResponseParam?, TResult>? @static = null,
+            global::System.Func<global::OpenAI.OtherChunkingStrategyResponseParam?, TResult>? other = null,
             bool validate = true)
         {
             if (validate)
@@ -129,13 +129,13 @@ namespace OpenAI
                 Validate();
             }
 
-            if (IsStaticResponseParam && staticResponseParam != null)
+            if (IsStatic && @static != null)
             {
-                return staticResponseParam(StaticResponseParam!);
+                return @static(Static!);
             }
-            else if (IsOtherResponseParam && otherResponseParam != null)
+            else if (IsOther && other != null)
             {
-                return otherResponseParam(OtherResponseParam!);
+                return other(Other!);
             }
 
             return default(TResult);
@@ -145,8 +145,8 @@ namespace OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenAI.StaticChunkingStrategyResponseParam?>? staticResponseParam = null,
-            global::System.Action<global::OpenAI.OtherChunkingStrategyResponseParam?>? otherResponseParam = null,
+            global::System.Action<global::OpenAI.StaticChunkingStrategyResponseParam?>? @static = null,
+            global::System.Action<global::OpenAI.OtherChunkingStrategyResponseParam?>? other = null,
             bool validate = true)
         {
             if (validate)
@@ -154,13 +154,13 @@ namespace OpenAI
                 Validate();
             }
 
-            if (IsStaticResponseParam)
+            if (IsStatic)
             {
-                staticResponseParam?.Invoke(StaticResponseParam!);
+                @static?.Invoke(Static!);
             }
-            else if (IsOtherResponseParam)
+            else if (IsOther)
             {
-                otherResponseParam?.Invoke(OtherResponseParam!);
+                other?.Invoke(Other!);
             }
         }
 
@@ -171,9 +171,9 @@ namespace OpenAI
         {
             var fields = new object?[]
             {
-                StaticResponseParam,
+                Static,
                 typeof(global::OpenAI.StaticChunkingStrategyResponseParam),
-                OtherResponseParam,
+                Other,
                 typeof(global::OpenAI.OtherChunkingStrategyResponseParam),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace OpenAI
         public bool Equals(VectorStoreFileObjectChunkingStrategy other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenAI.StaticChunkingStrategyResponseParam?>.Default.Equals(StaticResponseParam, other.StaticResponseParam) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenAI.OtherChunkingStrategyResponseParam?>.Default.Equals(OtherResponseParam, other.OtherResponseParam) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.StaticChunkingStrategyResponseParam?>.Default.Equals(Static, other.Static) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.OtherChunkingStrategyResponseParam?>.Default.Equals(Other, other.Other) 
                 ;
         }
 

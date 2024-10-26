@@ -19,18 +19,18 @@ namespace OpenAI
         /// A citation within the message that points to a specific quote from a specific File associated with the assistant or the message. Generated when the assistant uses the "file_search" tool to search files.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject? MessageDeltaContentTextFileCitationObject { get; init; }
+        public global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject? FileCitation { get; init; }
 #else
-        public global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject? MessageDeltaContentTextFileCitationObject { get; }
+        public global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject? FileCitation { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageDeltaContentTextFileCitationObject))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileCitation))]
 #endif
-        public bool IsMessageDeltaContentTextFileCitationObject => MessageDeltaContentTextFileCitationObject != null;
+        public bool IsFileCitation => FileCitation != null;
 
         /// <summary>
         /// 
@@ -40,32 +40,32 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject?(AnnotationsItem2 @this) => @this.MessageDeltaContentTextFileCitationObject;
+        public static implicit operator global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject?(AnnotationsItem2 @this) => @this.FileCitation;
 
         /// <summary>
         /// 
         /// </summary>
         public AnnotationsItem2(global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject? value)
         {
-            MessageDeltaContentTextFileCitationObject = value;
+            FileCitation = value;
         }
 
         /// <summary>
         /// A URL for the file that's generated when the assistant used the `code_interpreter` tool to generate a file.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObject? MessageDeltaContentTextFilePathObject { get; init; }
+        public global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObject? FilePath { get; init; }
 #else
-        public global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObject? MessageDeltaContentTextFilePathObject { get; }
+        public global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObject? FilePath { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageDeltaContentTextFilePathObject))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilePath))]
 #endif
-        public bool IsMessageDeltaContentTextFilePathObject => MessageDeltaContentTextFilePathObject != null;
+        public bool IsFilePath => FilePath != null;
 
         /// <summary>
         /// 
@@ -75,14 +75,14 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObject?(AnnotationsItem2 @this) => @this.MessageDeltaContentTextFilePathObject;
+        public static implicit operator global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObject?(AnnotationsItem2 @this) => @this.FilePath;
 
         /// <summary>
         /// 
         /// </summary>
         public AnnotationsItem2(global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObject? value)
         {
-            MessageDeltaContentTextFilePathObject = value;
+            FilePath = value;
         }
 
         /// <summary>
@@ -90,22 +90,22 @@ namespace OpenAI
         /// </summary>
         public AnnotationsItem2(
             global::OpenAI.MessageDeltaContentTextObjectTextAnnotationDiscriminatorType? type,
-            global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject? messageDeltaContentTextFileCitationObject,
-            global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObject? messageDeltaContentTextFilePathObject
+            global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject? fileCitation,
+            global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObject? filePath
             )
         {
             Type = type;
 
-            MessageDeltaContentTextFileCitationObject = messageDeltaContentTextFileCitationObject;
-            MessageDeltaContentTextFilePathObject = messageDeltaContentTextFilePathObject;
+            FileCitation = fileCitation;
+            FilePath = filePath;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            MessageDeltaContentTextFilePathObject as object ??
-            MessageDeltaContentTextFileCitationObject as object 
+            FilePath as object ??
+            FileCitation as object 
             ;
 
         /// <summary>
@@ -113,15 +113,15 @@ namespace OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsMessageDeltaContentTextFileCitationObject && !IsMessageDeltaContentTextFilePathObject || !IsMessageDeltaContentTextFileCitationObject && IsMessageDeltaContentTextFilePathObject;
+            return IsFileCitation && !IsFilePath || !IsFileCitation && IsFilePath;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject?, TResult>? messageDeltaContentTextFileCitationObject = null,
-            global::System.Func<global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObject?, TResult>? messageDeltaContentTextFilePathObject = null,
+            global::System.Func<global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject?, TResult>? fileCitation = null,
+            global::System.Func<global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObject?, TResult>? filePath = null,
             bool validate = true)
         {
             if (validate)
@@ -129,13 +129,13 @@ namespace OpenAI
                 Validate();
             }
 
-            if (IsMessageDeltaContentTextFileCitationObject && messageDeltaContentTextFileCitationObject != null)
+            if (IsFileCitation && fileCitation != null)
             {
-                return messageDeltaContentTextFileCitationObject(MessageDeltaContentTextFileCitationObject!);
+                return fileCitation(FileCitation!);
             }
-            else if (IsMessageDeltaContentTextFilePathObject && messageDeltaContentTextFilePathObject != null)
+            else if (IsFilePath && filePath != null)
             {
-                return messageDeltaContentTextFilePathObject(MessageDeltaContentTextFilePathObject!);
+                return filePath(FilePath!);
             }
 
             return default(TResult);
@@ -145,8 +145,8 @@ namespace OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject?>? messageDeltaContentTextFileCitationObject = null,
-            global::System.Action<global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObject?>? messageDeltaContentTextFilePathObject = null,
+            global::System.Action<global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject?>? fileCitation = null,
+            global::System.Action<global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObject?>? filePath = null,
             bool validate = true)
         {
             if (validate)
@@ -154,13 +154,13 @@ namespace OpenAI
                 Validate();
             }
 
-            if (IsMessageDeltaContentTextFileCitationObject)
+            if (IsFileCitation)
             {
-                messageDeltaContentTextFileCitationObject?.Invoke(MessageDeltaContentTextFileCitationObject!);
+                fileCitation?.Invoke(FileCitation!);
             }
-            else if (IsMessageDeltaContentTextFilePathObject)
+            else if (IsFilePath)
             {
-                messageDeltaContentTextFilePathObject?.Invoke(MessageDeltaContentTextFilePathObject!);
+                filePath?.Invoke(FilePath!);
             }
         }
 
@@ -171,9 +171,9 @@ namespace OpenAI
         {
             var fields = new object?[]
             {
-                MessageDeltaContentTextFileCitationObject,
+                FileCitation,
                 typeof(global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject),
-                MessageDeltaContentTextFilePathObject,
+                FilePath,
                 typeof(global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObject),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace OpenAI
         public bool Equals(AnnotationsItem2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject?>.Default.Equals(MessageDeltaContentTextFileCitationObject, other.MessageDeltaContentTextFileCitationObject) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObject?>.Default.Equals(MessageDeltaContentTextFilePathObject, other.MessageDeltaContentTextFilePathObject) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject?>.Default.Equals(FileCitation, other.FileCitation) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.MessageDeltaContentTextAnnotationsFilePathObject?>.Default.Equals(FilePath, other.FilePath) 
                 ;
         }
 

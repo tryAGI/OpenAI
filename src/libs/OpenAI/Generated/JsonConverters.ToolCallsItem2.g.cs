@@ -21,33 +21,33 @@ namespace OpenAI.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RunStepDetailsToolCallsObjectToolCallDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::OpenAI.RunStepDetailsToolCallsCodeObject? runStepDetailsCodeObject = default;
+            global::OpenAI.RunStepDetailsToolCallsCodeObject? codeInterpreter = default;
             if (discriminator?.Type == global::OpenAI.RunStepDetailsToolCallsObjectToolCallDiscriminatorType.CodeInterpreter)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RunStepDetailsToolCallsCodeObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RunStepDetailsToolCallsCodeObject> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RunStepDetailsToolCallsCodeObject)}");
-                runStepDetailsCodeObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                codeInterpreter = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::OpenAI.RunStepDetailsToolCallsFileSearchObject? runStepDetailsFileSearchObject = default;
+            global::OpenAI.RunStepDetailsToolCallsFileSearchObject? fileSearch = default;
             if (discriminator?.Type == global::OpenAI.RunStepDetailsToolCallsObjectToolCallDiscriminatorType.FileSearch)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RunStepDetailsToolCallsFileSearchObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RunStepDetailsToolCallsFileSearchObject> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RunStepDetailsToolCallsFileSearchObject)}");
-                runStepDetailsFileSearchObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                fileSearch = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::OpenAI.RunStepDetailsToolCallsFunctionObject? runStepDetailsFunctionObject = default;
+            global::OpenAI.RunStepDetailsToolCallsFunctionObject? function = default;
             if (discriminator?.Type == global::OpenAI.RunStepDetailsToolCallsObjectToolCallDiscriminatorType.Function)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RunStepDetailsToolCallsFunctionObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RunStepDetailsToolCallsFunctionObject> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.RunStepDetailsToolCallsFunctionObject)}");
-                runStepDetailsFunctionObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                function = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::OpenAI.ToolCallsItem2(
                 discriminator?.Type,
-                runStepDetailsCodeObject,
-                runStepDetailsFileSearchObject,
-                runStepDetailsFunctionObject
+                codeInterpreter,
+                fileSearch,
+                function
                 );
 
             return result;
@@ -62,23 +62,23 @@ namespace OpenAI.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsRunStepDetailsCodeObject)
+            if (value.IsCodeInterpreter)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RunStepDetailsToolCallsCodeObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RunStepDetailsToolCallsCodeObject?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.RunStepDetailsToolCallsCodeObject).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RunStepDetailsCodeObject, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CodeInterpreter, typeInfo);
             }
-            else if (value.IsRunStepDetailsFileSearchObject)
+            else if (value.IsFileSearch)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RunStepDetailsToolCallsFileSearchObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RunStepDetailsToolCallsFileSearchObject?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.RunStepDetailsToolCallsFileSearchObject).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RunStepDetailsFileSearchObject, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileSearch, typeInfo);
             }
-            else if (value.IsRunStepDetailsFunctionObject)
+            else if (value.IsFunction)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.RunStepDetailsToolCallsFunctionObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.RunStepDetailsToolCallsFunctionObject?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.RunStepDetailsToolCallsFunctionObject).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RunStepDetailsFunctionObject, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Function, typeInfo);
             }
         }
     }

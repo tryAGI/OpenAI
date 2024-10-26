@@ -19,18 +19,18 @@ namespace OpenAI
         /// A citation within the message that points to a specific quote from a specific File associated with the assistant or the message. Generated when the assistant uses the "file_search" tool to search files.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenAI.MessageContentTextAnnotationsFileCitationObject? MessageContentTextFileCitationObject { get; init; }
+        public global::OpenAI.MessageContentTextAnnotationsFileCitationObject? FileCitation { get; init; }
 #else
-        public global::OpenAI.MessageContentTextAnnotationsFileCitationObject? MessageContentTextFileCitationObject { get; }
+        public global::OpenAI.MessageContentTextAnnotationsFileCitationObject? FileCitation { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageContentTextFileCitationObject))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileCitation))]
 #endif
-        public bool IsMessageContentTextFileCitationObject => MessageContentTextFileCitationObject != null;
+        public bool IsFileCitation => FileCitation != null;
 
         /// <summary>
         /// 
@@ -40,32 +40,32 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenAI.MessageContentTextAnnotationsFileCitationObject?(AnnotationsItem @this) => @this.MessageContentTextFileCitationObject;
+        public static implicit operator global::OpenAI.MessageContentTextAnnotationsFileCitationObject?(AnnotationsItem @this) => @this.FileCitation;
 
         /// <summary>
         /// 
         /// </summary>
         public AnnotationsItem(global::OpenAI.MessageContentTextAnnotationsFileCitationObject? value)
         {
-            MessageContentTextFileCitationObject = value;
+            FileCitation = value;
         }
 
         /// <summary>
         /// A URL for the file that's generated when the assistant used the `code_interpreter` tool to generate a file.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenAI.MessageContentTextAnnotationsFilePathObject? MessageContentTextFilePathObject { get; init; }
+        public global::OpenAI.MessageContentTextAnnotationsFilePathObject? FilePath { get; init; }
 #else
-        public global::OpenAI.MessageContentTextAnnotationsFilePathObject? MessageContentTextFilePathObject { get; }
+        public global::OpenAI.MessageContentTextAnnotationsFilePathObject? FilePath { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageContentTextFilePathObject))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilePath))]
 #endif
-        public bool IsMessageContentTextFilePathObject => MessageContentTextFilePathObject != null;
+        public bool IsFilePath => FilePath != null;
 
         /// <summary>
         /// 
@@ -75,14 +75,14 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenAI.MessageContentTextAnnotationsFilePathObject?(AnnotationsItem @this) => @this.MessageContentTextFilePathObject;
+        public static implicit operator global::OpenAI.MessageContentTextAnnotationsFilePathObject?(AnnotationsItem @this) => @this.FilePath;
 
         /// <summary>
         /// 
         /// </summary>
         public AnnotationsItem(global::OpenAI.MessageContentTextAnnotationsFilePathObject? value)
         {
-            MessageContentTextFilePathObject = value;
+            FilePath = value;
         }
 
         /// <summary>
@@ -90,22 +90,22 @@ namespace OpenAI
         /// </summary>
         public AnnotationsItem(
             global::OpenAI.MessageContentTextObjectTextAnnotationDiscriminatorType? type,
-            global::OpenAI.MessageContentTextAnnotationsFileCitationObject? messageContentTextFileCitationObject,
-            global::OpenAI.MessageContentTextAnnotationsFilePathObject? messageContentTextFilePathObject
+            global::OpenAI.MessageContentTextAnnotationsFileCitationObject? fileCitation,
+            global::OpenAI.MessageContentTextAnnotationsFilePathObject? filePath
             )
         {
             Type = type;
 
-            MessageContentTextFileCitationObject = messageContentTextFileCitationObject;
-            MessageContentTextFilePathObject = messageContentTextFilePathObject;
+            FileCitation = fileCitation;
+            FilePath = filePath;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            MessageContentTextFilePathObject as object ??
-            MessageContentTextFileCitationObject as object 
+            FilePath as object ??
+            FileCitation as object 
             ;
 
         /// <summary>
@@ -113,15 +113,15 @@ namespace OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsMessageContentTextFileCitationObject && !IsMessageContentTextFilePathObject || !IsMessageContentTextFileCitationObject && IsMessageContentTextFilePathObject;
+            return IsFileCitation && !IsFilePath || !IsFileCitation && IsFilePath;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenAI.MessageContentTextAnnotationsFileCitationObject?, TResult>? messageContentTextFileCitationObject = null,
-            global::System.Func<global::OpenAI.MessageContentTextAnnotationsFilePathObject?, TResult>? messageContentTextFilePathObject = null,
+            global::System.Func<global::OpenAI.MessageContentTextAnnotationsFileCitationObject?, TResult>? fileCitation = null,
+            global::System.Func<global::OpenAI.MessageContentTextAnnotationsFilePathObject?, TResult>? filePath = null,
             bool validate = true)
         {
             if (validate)
@@ -129,13 +129,13 @@ namespace OpenAI
                 Validate();
             }
 
-            if (IsMessageContentTextFileCitationObject && messageContentTextFileCitationObject != null)
+            if (IsFileCitation && fileCitation != null)
             {
-                return messageContentTextFileCitationObject(MessageContentTextFileCitationObject!);
+                return fileCitation(FileCitation!);
             }
-            else if (IsMessageContentTextFilePathObject && messageContentTextFilePathObject != null)
+            else if (IsFilePath && filePath != null)
             {
-                return messageContentTextFilePathObject(MessageContentTextFilePathObject!);
+                return filePath(FilePath!);
             }
 
             return default(TResult);
@@ -145,8 +145,8 @@ namespace OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenAI.MessageContentTextAnnotationsFileCitationObject?>? messageContentTextFileCitationObject = null,
-            global::System.Action<global::OpenAI.MessageContentTextAnnotationsFilePathObject?>? messageContentTextFilePathObject = null,
+            global::System.Action<global::OpenAI.MessageContentTextAnnotationsFileCitationObject?>? fileCitation = null,
+            global::System.Action<global::OpenAI.MessageContentTextAnnotationsFilePathObject?>? filePath = null,
             bool validate = true)
         {
             if (validate)
@@ -154,13 +154,13 @@ namespace OpenAI
                 Validate();
             }
 
-            if (IsMessageContentTextFileCitationObject)
+            if (IsFileCitation)
             {
-                messageContentTextFileCitationObject?.Invoke(MessageContentTextFileCitationObject!);
+                fileCitation?.Invoke(FileCitation!);
             }
-            else if (IsMessageContentTextFilePathObject)
+            else if (IsFilePath)
             {
-                messageContentTextFilePathObject?.Invoke(MessageContentTextFilePathObject!);
+                filePath?.Invoke(FilePath!);
             }
         }
 
@@ -171,9 +171,9 @@ namespace OpenAI
         {
             var fields = new object?[]
             {
-                MessageContentTextFileCitationObject,
+                FileCitation,
                 typeof(global::OpenAI.MessageContentTextAnnotationsFileCitationObject),
-                MessageContentTextFilePathObject,
+                FilePath,
                 typeof(global::OpenAI.MessageContentTextAnnotationsFilePathObject),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace OpenAI
         public bool Equals(AnnotationsItem other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenAI.MessageContentTextAnnotationsFileCitationObject?>.Default.Equals(MessageContentTextFileCitationObject, other.MessageContentTextFileCitationObject) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenAI.MessageContentTextAnnotationsFilePathObject?>.Default.Equals(MessageContentTextFilePathObject, other.MessageContentTextFilePathObject) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.MessageContentTextAnnotationsFileCitationObject?>.Default.Equals(FileCitation, other.FileCitation) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.MessageContentTextAnnotationsFilePathObject?>.Default.Equals(FilePath, other.FilePath) 
                 ;
         }
 

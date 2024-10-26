@@ -19,18 +19,18 @@ namespace OpenAI
         /// References an image [File](/docs/api-reference/files) in the content of a message.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenAI.MessageDeltaContentImageFileObject? MessageDeltaImageFileObject { get; init; }
+        public global::OpenAI.MessageDeltaContentImageFileObject? ImageFile { get; init; }
 #else
-        public global::OpenAI.MessageDeltaContentImageFileObject? MessageDeltaImageFileObject { get; }
+        public global::OpenAI.MessageDeltaContentImageFileObject? ImageFile { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageDeltaImageFileObject))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageFile))]
 #endif
-        public bool IsMessageDeltaImageFileObject => MessageDeltaImageFileObject != null;
+        public bool IsImageFile => ImageFile != null;
 
         /// <summary>
         /// 
@@ -40,32 +40,32 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenAI.MessageDeltaContentImageFileObject?(ContentItem @this) => @this.MessageDeltaImageFileObject;
+        public static implicit operator global::OpenAI.MessageDeltaContentImageFileObject?(ContentItem @this) => @this.ImageFile;
 
         /// <summary>
         /// 
         /// </summary>
         public ContentItem(global::OpenAI.MessageDeltaContentImageFileObject? value)
         {
-            MessageDeltaImageFileObject = value;
+            ImageFile = value;
         }
 
         /// <summary>
         /// The text content that is part of a message.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenAI.MessageDeltaContentTextObject? MessageDeltaTextObject { get; init; }
+        public global::OpenAI.MessageDeltaContentTextObject? Text { get; init; }
 #else
-        public global::OpenAI.MessageDeltaContentTextObject? MessageDeltaTextObject { get; }
+        public global::OpenAI.MessageDeltaContentTextObject? Text { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageDeltaTextObject))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
-        public bool IsMessageDeltaTextObject => MessageDeltaTextObject != null;
+        public bool IsText => Text != null;
 
         /// <summary>
         /// 
@@ -75,32 +75,32 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenAI.MessageDeltaContentTextObject?(ContentItem @this) => @this.MessageDeltaTextObject;
+        public static implicit operator global::OpenAI.MessageDeltaContentTextObject?(ContentItem @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
         public ContentItem(global::OpenAI.MessageDeltaContentTextObject? value)
         {
-            MessageDeltaTextObject = value;
+            Text = value;
         }
 
         /// <summary>
         /// The refusal content that is part of a message.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenAI.MessageDeltaContentRefusalObject? MessageDeltaRefusalObject { get; init; }
+        public global::OpenAI.MessageDeltaContentRefusalObject? Refusal { get; init; }
 #else
-        public global::OpenAI.MessageDeltaContentRefusalObject? MessageDeltaRefusalObject { get; }
+        public global::OpenAI.MessageDeltaContentRefusalObject? Refusal { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageDeltaRefusalObject))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Refusal))]
 #endif
-        public bool IsMessageDeltaRefusalObject => MessageDeltaRefusalObject != null;
+        public bool IsRefusal => Refusal != null;
 
         /// <summary>
         /// 
@@ -110,32 +110,32 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenAI.MessageDeltaContentRefusalObject?(ContentItem @this) => @this.MessageDeltaRefusalObject;
+        public static implicit operator global::OpenAI.MessageDeltaContentRefusalObject?(ContentItem @this) => @this.Refusal;
 
         /// <summary>
         /// 
         /// </summary>
         public ContentItem(global::OpenAI.MessageDeltaContentRefusalObject? value)
         {
-            MessageDeltaRefusalObject = value;
+            Refusal = value;
         }
 
         /// <summary>
         /// References an image URL in the content of a message.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::OpenAI.MessageDeltaContentImageUrlObject? MessageDeltaImageUrlObject { get; init; }
+        public global::OpenAI.MessageDeltaContentImageUrlObject? ImageUrl { get; init; }
 #else
-        public global::OpenAI.MessageDeltaContentImageUrlObject? MessageDeltaImageUrlObject { get; }
+        public global::OpenAI.MessageDeltaContentImageUrlObject? ImageUrl { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageDeltaImageUrlObject))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageUrl))]
 #endif
-        public bool IsMessageDeltaImageUrlObject => MessageDeltaImageUrlObject != null;
+        public bool IsImageUrl => ImageUrl != null;
 
         /// <summary>
         /// 
@@ -145,14 +145,14 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::OpenAI.MessageDeltaContentImageUrlObject?(ContentItem @this) => @this.MessageDeltaImageUrlObject;
+        public static implicit operator global::OpenAI.MessageDeltaContentImageUrlObject?(ContentItem @this) => @this.ImageUrl;
 
         /// <summary>
         /// 
         /// </summary>
         public ContentItem(global::OpenAI.MessageDeltaContentImageUrlObject? value)
         {
-            MessageDeltaImageUrlObject = value;
+            ImageUrl = value;
         }
 
         /// <summary>
@@ -160,28 +160,28 @@ namespace OpenAI
         /// </summary>
         public ContentItem(
             global::OpenAI.MessageDeltaObjectDeltaContentItemDiscriminatorType? type,
-            global::OpenAI.MessageDeltaContentImageFileObject? messageDeltaImageFileObject,
-            global::OpenAI.MessageDeltaContentTextObject? messageDeltaTextObject,
-            global::OpenAI.MessageDeltaContentRefusalObject? messageDeltaRefusalObject,
-            global::OpenAI.MessageDeltaContentImageUrlObject? messageDeltaImageUrlObject
+            global::OpenAI.MessageDeltaContentImageFileObject? imageFile,
+            global::OpenAI.MessageDeltaContentTextObject? text,
+            global::OpenAI.MessageDeltaContentRefusalObject? refusal,
+            global::OpenAI.MessageDeltaContentImageUrlObject? imageUrl
             )
         {
             Type = type;
 
-            MessageDeltaImageFileObject = messageDeltaImageFileObject;
-            MessageDeltaTextObject = messageDeltaTextObject;
-            MessageDeltaRefusalObject = messageDeltaRefusalObject;
-            MessageDeltaImageUrlObject = messageDeltaImageUrlObject;
+            ImageFile = imageFile;
+            Text = text;
+            Refusal = refusal;
+            ImageUrl = imageUrl;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            MessageDeltaImageUrlObject as object ??
-            MessageDeltaRefusalObject as object ??
-            MessageDeltaTextObject as object ??
-            MessageDeltaImageFileObject as object 
+            ImageUrl as object ??
+            Refusal as object ??
+            Text as object ??
+            ImageFile as object 
             ;
 
         /// <summary>
@@ -189,17 +189,17 @@ namespace OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsMessageDeltaImageFileObject && !IsMessageDeltaTextObject && !IsMessageDeltaRefusalObject && !IsMessageDeltaImageUrlObject || !IsMessageDeltaImageFileObject && IsMessageDeltaTextObject && !IsMessageDeltaRefusalObject && !IsMessageDeltaImageUrlObject || !IsMessageDeltaImageFileObject && !IsMessageDeltaTextObject && IsMessageDeltaRefusalObject && !IsMessageDeltaImageUrlObject || !IsMessageDeltaImageFileObject && !IsMessageDeltaTextObject && !IsMessageDeltaRefusalObject && IsMessageDeltaImageUrlObject;
+            return IsImageFile && !IsText && !IsRefusal && !IsImageUrl || !IsImageFile && IsText && !IsRefusal && !IsImageUrl || !IsImageFile && !IsText && IsRefusal && !IsImageUrl || !IsImageFile && !IsText && !IsRefusal && IsImageUrl;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::OpenAI.MessageDeltaContentImageFileObject?, TResult>? messageDeltaImageFileObject = null,
-            global::System.Func<global::OpenAI.MessageDeltaContentTextObject?, TResult>? messageDeltaTextObject = null,
-            global::System.Func<global::OpenAI.MessageDeltaContentRefusalObject?, TResult>? messageDeltaRefusalObject = null,
-            global::System.Func<global::OpenAI.MessageDeltaContentImageUrlObject?, TResult>? messageDeltaImageUrlObject = null,
+            global::System.Func<global::OpenAI.MessageDeltaContentImageFileObject?, TResult>? imageFile = null,
+            global::System.Func<global::OpenAI.MessageDeltaContentTextObject?, TResult>? text = null,
+            global::System.Func<global::OpenAI.MessageDeltaContentRefusalObject?, TResult>? refusal = null,
+            global::System.Func<global::OpenAI.MessageDeltaContentImageUrlObject?, TResult>? imageUrl = null,
             bool validate = true)
         {
             if (validate)
@@ -207,21 +207,21 @@ namespace OpenAI
                 Validate();
             }
 
-            if (IsMessageDeltaImageFileObject && messageDeltaImageFileObject != null)
+            if (IsImageFile && imageFile != null)
             {
-                return messageDeltaImageFileObject(MessageDeltaImageFileObject!);
+                return imageFile(ImageFile!);
             }
-            else if (IsMessageDeltaTextObject && messageDeltaTextObject != null)
+            else if (IsText && text != null)
             {
-                return messageDeltaTextObject(MessageDeltaTextObject!);
+                return text(Text!);
             }
-            else if (IsMessageDeltaRefusalObject && messageDeltaRefusalObject != null)
+            else if (IsRefusal && refusal != null)
             {
-                return messageDeltaRefusalObject(MessageDeltaRefusalObject!);
+                return refusal(Refusal!);
             }
-            else if (IsMessageDeltaImageUrlObject && messageDeltaImageUrlObject != null)
+            else if (IsImageUrl && imageUrl != null)
             {
-                return messageDeltaImageUrlObject(MessageDeltaImageUrlObject!);
+                return imageUrl(ImageUrl!);
             }
 
             return default(TResult);
@@ -231,10 +231,10 @@ namespace OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::OpenAI.MessageDeltaContentImageFileObject?>? messageDeltaImageFileObject = null,
-            global::System.Action<global::OpenAI.MessageDeltaContentTextObject?>? messageDeltaTextObject = null,
-            global::System.Action<global::OpenAI.MessageDeltaContentRefusalObject?>? messageDeltaRefusalObject = null,
-            global::System.Action<global::OpenAI.MessageDeltaContentImageUrlObject?>? messageDeltaImageUrlObject = null,
+            global::System.Action<global::OpenAI.MessageDeltaContentImageFileObject?>? imageFile = null,
+            global::System.Action<global::OpenAI.MessageDeltaContentTextObject?>? text = null,
+            global::System.Action<global::OpenAI.MessageDeltaContentRefusalObject?>? refusal = null,
+            global::System.Action<global::OpenAI.MessageDeltaContentImageUrlObject?>? imageUrl = null,
             bool validate = true)
         {
             if (validate)
@@ -242,21 +242,21 @@ namespace OpenAI
                 Validate();
             }
 
-            if (IsMessageDeltaImageFileObject)
+            if (IsImageFile)
             {
-                messageDeltaImageFileObject?.Invoke(MessageDeltaImageFileObject!);
+                imageFile?.Invoke(ImageFile!);
             }
-            else if (IsMessageDeltaTextObject)
+            else if (IsText)
             {
-                messageDeltaTextObject?.Invoke(MessageDeltaTextObject!);
+                text?.Invoke(Text!);
             }
-            else if (IsMessageDeltaRefusalObject)
+            else if (IsRefusal)
             {
-                messageDeltaRefusalObject?.Invoke(MessageDeltaRefusalObject!);
+                refusal?.Invoke(Refusal!);
             }
-            else if (IsMessageDeltaImageUrlObject)
+            else if (IsImageUrl)
             {
-                messageDeltaImageUrlObject?.Invoke(MessageDeltaImageUrlObject!);
+                imageUrl?.Invoke(ImageUrl!);
             }
         }
 
@@ -267,13 +267,13 @@ namespace OpenAI
         {
             var fields = new object?[]
             {
-                MessageDeltaImageFileObject,
+                ImageFile,
                 typeof(global::OpenAI.MessageDeltaContentImageFileObject),
-                MessageDeltaTextObject,
+                Text,
                 typeof(global::OpenAI.MessageDeltaContentTextObject),
-                MessageDeltaRefusalObject,
+                Refusal,
                 typeof(global::OpenAI.MessageDeltaContentRefusalObject),
-                MessageDeltaImageUrlObject,
+                ImageUrl,
                 typeof(global::OpenAI.MessageDeltaContentImageUrlObject),
             };
             const int offset = unchecked((int)2166136261);
@@ -290,10 +290,10 @@ namespace OpenAI
         public bool Equals(ContentItem other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::OpenAI.MessageDeltaContentImageFileObject?>.Default.Equals(MessageDeltaImageFileObject, other.MessageDeltaImageFileObject) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenAI.MessageDeltaContentTextObject?>.Default.Equals(MessageDeltaTextObject, other.MessageDeltaTextObject) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenAI.MessageDeltaContentRefusalObject?>.Default.Equals(MessageDeltaRefusalObject, other.MessageDeltaRefusalObject) &&
-                global::System.Collections.Generic.EqualityComparer<global::OpenAI.MessageDeltaContentImageUrlObject?>.Default.Equals(MessageDeltaImageUrlObject, other.MessageDeltaImageUrlObject) 
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.MessageDeltaContentImageFileObject?>.Default.Equals(ImageFile, other.ImageFile) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.MessageDeltaContentTextObject?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.MessageDeltaContentRefusalObject?>.Default.Equals(Refusal, other.Refusal) &&
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.MessageDeltaContentImageUrlObject?>.Default.Equals(ImageUrl, other.ImageUrl) 
                 ;
         }
 
