@@ -64,13 +64,7 @@ namespace OpenAI
             }
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>())
-                {
-                    Headers =
-                    {
-                        ContentType = global::System.Net.Http.Headers.MediaTypeHeaderValue.Parse("multipart/form-data"),
-                    },
-                },
+                content: new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>()),
                 name: "image",
                 fileName: request.Imagename ?? string.Empty);
             __httpRequestContent.Add(
@@ -79,13 +73,7 @@ namespace OpenAI
             if (request.Mask != default)
             {
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.ByteArrayContent(request.Mask ?? global::System.Array.Empty<byte>())
-                    {
-                        Headers =
-                        {
-                            ContentType = global::System.Net.Http.Headers.MediaTypeHeaderValue.Parse("multipart/form-data"),
-                        },
-                    },
+                    content: new global::System.Net.Http.ByteArrayContent(request.Mask ?? global::System.Array.Empty<byte>()),
                     name: "mask",
                     fileName: request.Maskname ?? string.Empty);
             } 
