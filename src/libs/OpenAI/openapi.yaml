@@ -42,7 +42,7 @@ paths:
             type: string
         - name: before
           in: query
-          description: "A cursor for use in pagination. `before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include before=obj_foo in order to fetch the previous page of the list.\n"
+          description: "A cursor for use in pagination. `before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with obj_foo, your subsequent call can include before=obj_foo in order to fetch the previous page of the list.\n"
           schema:
             type: string
       responses:
@@ -484,13 +484,13 @@ paths:
               curl: "curl https://api.openai.com/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -d '{\n    \"model\": \"VAR_model_id\",\n    \"messages\": [\n      {\n        \"role\": \"system\",\n        \"content\": \"You are a helpful assistant.\"\n      },\n      {\n        \"role\": \"user\",\n        \"content\": \"Hello!\"\n      }\n    ]\n  }'\n"
               python: "from openai import OpenAI\nclient = OpenAI()\n\ncompletion = client.chat.completions.create(\n  model=\"VAR_model_id\",\n  messages=[\n    {\"role\": \"system\", \"content\": \"You are a helpful assistant.\"},\n    {\"role\": \"user\", \"content\": \"Hello!\"}\n  ]\n)\n\nprint(completion.choices[0].message)\n"
               node.js: "import OpenAI from \"openai\";\n\nconst openai = new OpenAI();\n\nasync function main() {\n  const completion = await openai.chat.completions.create({\n    messages: [{ role: \"system\", content: \"You are a helpful assistant.\" }],\n    model: \"VAR_model_id\",\n  });\n\n  console.log(completion.choices[0]);\n}\n\nmain();"
-            response: "{\n  \"id\": \"chatcmpl-123\",\n  \"object\": \"chat.completion\",\n  \"created\": 1677652288,\n  \"model\": \"gpt-4o-mini\",\n  \"system_fingerprint\": \"fp_44709d6fcb\",\n  \"choices\": [{\n    \"index\": 0,\n    \"message\": {\n      \"role\": \"assistant\",\n      \"content\": \"\\n\\nHello there, how may I assist you today?\",\n    },\n    \"logprobs\": null,\n    \"finish_reason\": \"stop\"\n  }],\n  \"usage\": {\n    \"prompt_tokens\": 9,\n    \"completion_tokens\": 12,\n    \"total_tokens\": 21,\n    \"completion_tokens_details\": {\n      \"reasoning_tokens\": 0\n    }\n  }\n}\n"
+            response: "{\n  \"id\": \"chatcmpl-123\",\n  \"object\": \"chat.completion\",\n  \"created\": 1677652288,\n  \"model\": \"gpt-4o-mini\",\n  \"system_fingerprint\": \"fp_44709d6fcb\",\n  \"choices\": [{\n    \"index\": 0,\n    \"message\": {\n      \"role\": \"assistant\",\n      \"content\": \"\\n\\nHello there, how may I assist you today?\",\n    },\n    \"logprobs\": null,\n    \"finish_reason\": \"stop\"\n  }],\n  \"usage\": {\n    \"prompt_tokens\": 9,\n    \"completion_tokens\": 12,\n    \"total_tokens\": 21,\n    \"completion_tokens_details\": {\n      \"reasoning_tokens\": 0,\n      \"accepted_prediction_tokens\": 0,\n      \"rejected_prediction_tokens\": 0\n    }\n  }\n}\n"
           - title: Image input
             request:
               curl: "curl https://api.openai.com/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -d '{\n    \"model\": \"gpt-4o\",\n    \"messages\": [\n      {\n        \"role\": \"user\",\n        \"content\": [\n          {\n            \"type\": \"text\",\n            \"text\": \"What'\\''s in this image?\"\n          },\n          {\n            \"type\": \"image_url\",\n            \"image_url\": {\n              \"url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Gfp-wisconsin-madison-the-nature-boardwalk.jpg/2560px-Gfp-wisconsin-madison-the-nature-boardwalk.jpg\"\n            }\n          }\n        ]\n      }\n    ],\n    \"max_tokens\": 300\n  }'\n"
               python: "from openai import OpenAI\n\nclient = OpenAI()\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",\n    messages=[\n        {\n            \"role\": \"user\",\n            \"content\": [\n                {\"type\": \"text\", \"text\": \"What's in this image?\"},\n                {\n                    \"type\": \"image_url\",\n                    \"image_url\": {\n                        \"url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Gfp-wisconsin-madison-the-nature-boardwalk.jpg/2560px-Gfp-wisconsin-madison-the-nature-boardwalk.jpg\",\n                    }\n                },\n            ],\n        }\n    ],\n    max_tokens=300,\n)\n\nprint(response.choices[0])\n"
               node.js: "import OpenAI from \"openai\";\n\nconst openai = new OpenAI();\n\nasync function main() {\n  const response = await openai.chat.completions.create({\n    model: \"gpt-4o\",\n    messages: [\n      {\n        role: \"user\",\n        content: [\n          { type: \"text\", text: \"What's in this image?\" },\n          {\n            type: \"image_url\",\n            image_url: {\n              \"url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Gfp-wisconsin-madison-the-nature-boardwalk.jpg/2560px-Gfp-wisconsin-madison-the-nature-boardwalk.jpg\",\n            },\n          }\n        ],\n      },\n    ],\n  });\n  console.log(response.choices[0]);\n}\nmain();"
-            response: "{\n  \"id\": \"chatcmpl-123\",\n  \"object\": \"chat.completion\",\n  \"created\": 1677652288,\n  \"model\": \"gpt-4o-mini\",\n  \"system_fingerprint\": \"fp_44709d6fcb\",\n  \"choices\": [{\n    \"index\": 0,\n    \"message\": {\n      \"role\": \"assistant\",\n      \"content\": \"\\n\\nThis image shows a wooden boardwalk extending through a lush green marshland.\",\n    },\n    \"logprobs\": null,\n    \"finish_reason\": \"stop\"\n  }],\n  \"usage\": {\n    \"prompt_tokens\": 9,\n    \"completion_tokens\": 12,\n    \"total_tokens\": 21,\n    \"completion_tokens_details\": {\n      \"reasoning_tokens\": 0\n    }\n  }\n}\n"
+            response: "{\n  \"id\": \"chatcmpl-123\",\n  \"object\": \"chat.completion\",\n  \"created\": 1677652288,\n  \"model\": \"gpt-4o-mini\",\n  \"system_fingerprint\": \"fp_44709d6fcb\",\n  \"choices\": [{\n    \"index\": 0,\n    \"message\": {\n      \"role\": \"assistant\",\n      \"content\": \"\\n\\nThis image shows a wooden boardwalk extending through a lush green marshland.\",\n    },\n    \"logprobs\": null,\n    \"finish_reason\": \"stop\"\n  }],\n  \"usage\": {\n    \"prompt_tokens\": 9,\n    \"completion_tokens\": 12,\n    \"total_tokens\": 21,\n    \"completion_tokens_details\": {\n      \"reasoning_tokens\": 0,\n      \"accepted_prediction_tokens\": 0,\n      \"rejected_prediction_tokens\": 0\n    }\n  }\n}\n"
           - title: Streaming
             request:
               curl: "curl https://api.openai.com/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -d '{\n    \"model\": \"VAR_model_id\",\n    \"messages\": [\n      {\n        \"role\": \"system\",\n        \"content\": \"You are a helpful assistant.\"\n      },\n      {\n        \"role\": \"user\",\n        \"content\": \"Hello!\"\n      }\n    ],\n    \"stream\": true\n  }'\n"
@@ -502,13 +502,13 @@ paths:
               curl: "curl https://api.openai.com/v1/chat/completions \\\n-H \"Content-Type: application/json\" \\\n-H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n-d '{\n  \"model\": \"gpt-4o\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"What'\\''s the weather like in Boston today?\"\n    }\n  ],\n  \"tools\": [\n    {\n      \"type\": \"function\",\n      \"function\": {\n        \"name\": \"get_current_weather\",\n        \"description\": \"Get the current weather in a given location\",\n        \"parameters\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"location\": {\n              \"type\": \"string\",\n              \"description\": \"The city and state, e.g. San Francisco, CA\"\n            },\n            \"unit\": {\n              \"type\": \"string\",\n              \"enum\": [\"celsius\", \"fahrenheit\"]\n            }\n          },\n          \"required\": [\"location\"]\n        }\n      }\n    }\n  ],\n  \"tool_choice\": \"auto\"\n}'\n"
               python: "from openai import OpenAI\nclient = OpenAI()\n\ntools = [\n  {\n    \"type\": \"function\",\n    \"function\": {\n      \"name\": \"get_current_weather\",\n      \"description\": \"Get the current weather in a given location\",\n      \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"location\": {\n            \"type\": \"string\",\n            \"description\": \"The city and state, e.g. San Francisco, CA\",\n          },\n          \"unit\": {\"type\": \"string\", \"enum\": [\"celsius\", \"fahrenheit\"]},\n        },\n        \"required\": [\"location\"],\n      },\n    }\n  }\n]\nmessages = [{\"role\": \"user\", \"content\": \"What's the weather like in Boston today?\"}]\ncompletion = client.chat.completions.create(\n  model=\"VAR_model_id\",\n  messages=messages,\n  tools=tools,\n  tool_choice=\"auto\"\n)\n\nprint(completion)\n"
               node.js: "import OpenAI from \"openai\";\n\nconst openai = new OpenAI();\n\nasync function main() {\n  const messages = [{\"role\": \"user\", \"content\": \"What's the weather like in Boston today?\"}];\n  const tools = [\n      {\n        \"type\": \"function\",\n        \"function\": {\n          \"name\": \"get_current_weather\",\n          \"description\": \"Get the current weather in a given location\",\n          \"parameters\": {\n            \"type\": \"object\",\n            \"properties\": {\n              \"location\": {\n                \"type\": \"string\",\n                \"description\": \"The city and state, e.g. San Francisco, CA\",\n              },\n              \"unit\": {\"type\": \"string\", \"enum\": [\"celsius\", \"fahrenheit\"]},\n            },\n            \"required\": [\"location\"],\n          },\n        }\n      }\n  ];\n\n  const response = await openai.chat.completions.create({\n    model: \"gpt-4o\",\n    messages: messages,\n    tools: tools,\n    tool_choice: \"auto\",\n  });\n\n  console.log(response);\n}\n\nmain();"
-            response: "{\n  \"id\": \"chatcmpl-abc123\",\n  \"object\": \"chat.completion\",\n  \"created\": 1699896916,\n  \"model\": \"gpt-4o-mini\",\n  \"choices\": [\n    {\n      \"index\": 0,\n      \"message\": {\n        \"role\": \"assistant\",\n        \"content\": null,\n        \"tool_calls\": [\n          {\n            \"id\": \"call_abc123\",\n            \"type\": \"function\",\n            \"function\": {\n              \"name\": \"get_current_weather\",\n              \"arguments\": \"{\\n\\\"location\\\": \\\"Boston, MA\\\"\\n}\"\n            }\n          }\n        ]\n      },\n      \"logprobs\": null,\n      \"finish_reason\": \"tool_calls\"\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\": 82,\n    \"completion_tokens\": 17,\n    \"total_tokens\": 99,\n    \"completion_tokens_details\": {\n      \"reasoning_tokens\": 0\n    }\n  }\n}\n"
+            response: "{\n  \"id\": \"chatcmpl-abc123\",\n  \"object\": \"chat.completion\",\n  \"created\": 1699896916,\n  \"model\": \"gpt-4o-mini\",\n  \"choices\": [\n    {\n      \"index\": 0,\n      \"message\": {\n        \"role\": \"assistant\",\n        \"content\": null,\n        \"tool_calls\": [\n          {\n            \"id\": \"call_abc123\",\n            \"type\": \"function\",\n            \"function\": {\n              \"name\": \"get_current_weather\",\n              \"arguments\": \"{\\n\\\"location\\\": \\\"Boston, MA\\\"\\n}\"\n            }\n          }\n        ]\n      },\n      \"logprobs\": null,\n      \"finish_reason\": \"tool_calls\"\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\": 82,\n    \"completion_tokens\": 17,\n    \"total_tokens\": 99,\n    \"completion_tokens_details\": {\n      \"reasoning_tokens\": 0,\n      \"accepted_prediction_tokens\": 0,\n      \"rejected_prediction_tokens\": 0\n    }\n  }\n}\n"
           - title: Logprobs
             request:
               curl: "curl https://api.openai.com/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -d '{\n    \"model\": \"VAR_model_id\",\n    \"messages\": [\n      {\n        \"role\": \"user\",\n        \"content\": \"Hello!\"\n      }\n    ],\n    \"logprobs\": true,\n    \"top_logprobs\": 2\n  }'\n"
               python: "from openai import OpenAI\nclient = OpenAI()\n\ncompletion = client.chat.completions.create(\n  model=\"VAR_model_id\",\n  messages=[\n    {\"role\": \"user\", \"content\": \"Hello!\"}\n  ],\n  logprobs=True,\n  top_logprobs=2\n)\n\nprint(completion.choices[0].message)\nprint(completion.choices[0].logprobs)\n"
               node.js: "import OpenAI from \"openai\";\n\nconst openai = new OpenAI();\n\nasync function main() {\n  const completion = await openai.chat.completions.create({\n    messages: [{ role: \"user\", content: \"Hello!\" }],\n    model: \"VAR_model_id\",\n    logprobs: true,\n    top_logprobs: 2,\n  });\n\n  console.log(completion.choices[0]);\n}\n\nmain();"
-            response: "{\n  \"id\": \"chatcmpl-123\",\n  \"object\": \"chat.completion\",\n  \"created\": 1702685778,\n  \"model\": \"gpt-4o-mini\",\n  \"choices\": [\n    {\n      \"index\": 0,\n      \"message\": {\n        \"role\": \"assistant\",\n        \"content\": \"Hello! How can I assist you today?\"\n      },\n      \"logprobs\": {\n        \"content\": [\n          {\n            \"token\": \"Hello\",\n            \"logprob\": -0.31725305,\n            \"bytes\": [72, 101, 108, 108, 111],\n            \"top_logprobs\": [\n              {\n                \"token\": \"Hello\",\n                \"logprob\": -0.31725305,\n                \"bytes\": [72, 101, 108, 108, 111]\n              },\n              {\n                \"token\": \"Hi\",\n                \"logprob\": -1.3190403,\n                \"bytes\": [72, 105]\n              }\n            ]\n          },\n          {\n            \"token\": \"!\",\n            \"logprob\": -0.02380986,\n            \"bytes\": [\n              33\n            ],\n            \"top_logprobs\": [\n              {\n                \"token\": \"!\",\n                \"logprob\": -0.02380986,\n                \"bytes\": [33]\n              },\n              {\n                \"token\": \" there\",\n                \"logprob\": -3.787621,\n                \"bytes\": [32, 116, 104, 101, 114, 101]\n              }\n            ]\n          },\n          {\n            \"token\": \" How\",\n            \"logprob\": -0.000054669687,\n            \"bytes\": [32, 72, 111, 119],\n            \"top_logprobs\": [\n              {\n                \"token\": \" How\",\n                \"logprob\": -0.000054669687,\n                \"bytes\": [32, 72, 111, 119]\n              },\n              {\n                \"token\": \"<|end|>\",\n                \"logprob\": -10.953937,\n                \"bytes\": null\n              }\n            ]\n          },\n          {\n            \"token\": \" can\",\n            \"logprob\": -0.015801601,\n            \"bytes\": [32, 99, 97, 110],\n            \"top_logprobs\": [\n              {\n                \"token\": \" can\",\n                \"logprob\": -0.015801601,\n                \"bytes\": [32, 99, 97, 110]\n              },\n              {\n                \"token\": \" may\",\n                \"logprob\": -4.161023,\n                \"bytes\": [32, 109, 97, 121]\n              }\n            ]\n          },\n          {\n            \"token\": \" I\",\n            \"logprob\": -3.7697225e-6,\n            \"bytes\": [\n              32,\n              73\n            ],\n            \"top_logprobs\": [\n              {\n                \"token\": \" I\",\n                \"logprob\": -3.7697225e-6,\n                \"bytes\": [32, 73]\n              },\n              {\n                \"token\": \" assist\",\n                \"logprob\": -13.596657,\n                \"bytes\": [32, 97, 115, 115, 105, 115, 116]\n              }\n            ]\n          },\n          {\n            \"token\": \" assist\",\n            \"logprob\": -0.04571125,\n            \"bytes\": [32, 97, 115, 115, 105, 115, 116],\n            \"top_logprobs\": [\n              {\n                \"token\": \" assist\",\n                \"logprob\": -0.04571125,\n                \"bytes\": [32, 97, 115, 115, 105, 115, 116]\n              },\n              {\n                \"token\": \" help\",\n                \"logprob\": -3.1089056,\n                \"bytes\": [32, 104, 101, 108, 112]\n              }\n            ]\n          },\n          {\n            \"token\": \" you\",\n            \"logprob\": -5.4385737e-6,\n            \"bytes\": [32, 121, 111, 117],\n            \"top_logprobs\": [\n              {\n                \"token\": \" you\",\n                \"logprob\": -5.4385737e-6,\n                \"bytes\": [32, 121, 111, 117]\n              },\n              {\n                \"token\": \" today\",\n                \"logprob\": -12.807695,\n                \"bytes\": [32, 116, 111, 100, 97, 121]\n              }\n            ]\n          },\n          {\n            \"token\": \" today\",\n            \"logprob\": -0.0040071653,\n            \"bytes\": [32, 116, 111, 100, 97, 121],\n            \"top_logprobs\": [\n              {\n                \"token\": \" today\",\n                \"logprob\": -0.0040071653,\n                \"bytes\": [32, 116, 111, 100, 97, 121]\n              },\n              {\n                \"token\": \"?\",\n                \"logprob\": -5.5247097,\n                \"bytes\": [63]\n              }\n            ]\n          },\n          {\n            \"token\": \"?\",\n            \"logprob\": -0.0008108172,\n            \"bytes\": [63],\n            \"top_logprobs\": [\n              {\n                \"token\": \"?\",\n                \"logprob\": -0.0008108172,\n                \"bytes\": [63]\n              },\n              {\n                \"token\": \"?\\n\",\n                \"logprob\": -7.184561,\n                \"bytes\": [63, 10]\n              }\n            ]\n          }\n        ]\n      },\n      \"finish_reason\": \"stop\"\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\": 9,\n    \"completion_tokens\": 9,\n    \"total_tokens\": 18,\n    \"completion_tokens_details\": {\n      \"reasoning_tokens\": 0\n    }\n  },\n  \"system_fingerprint\": null\n}\n"
+            response: "{\n  \"id\": \"chatcmpl-123\",\n  \"object\": \"chat.completion\",\n  \"created\": 1702685778,\n  \"model\": \"gpt-4o-mini\",\n  \"choices\": [\n    {\n      \"index\": 0,\n      \"message\": {\n        \"role\": \"assistant\",\n        \"content\": \"Hello! How can I assist you today?\"\n      },\n      \"logprobs\": {\n        \"content\": [\n          {\n            \"token\": \"Hello\",\n            \"logprob\": -0.31725305,\n            \"bytes\": [72, 101, 108, 108, 111],\n            \"top_logprobs\": [\n              {\n                \"token\": \"Hello\",\n                \"logprob\": -0.31725305,\n                \"bytes\": [72, 101, 108, 108, 111]\n              },\n              {\n                \"token\": \"Hi\",\n                \"logprob\": -1.3190403,\n                \"bytes\": [72, 105]\n              }\n            ]\n          },\n          {\n            \"token\": \"!\",\n            \"logprob\": -0.02380986,\n            \"bytes\": [\n              33\n            ],\n            \"top_logprobs\": [\n              {\n                \"token\": \"!\",\n                \"logprob\": -0.02380986,\n                \"bytes\": [33]\n              },\n              {\n                \"token\": \" there\",\n                \"logprob\": -3.787621,\n                \"bytes\": [32, 116, 104, 101, 114, 101]\n              }\n            ]\n          },\n          {\n            \"token\": \" How\",\n            \"logprob\": -0.000054669687,\n            \"bytes\": [32, 72, 111, 119],\n            \"top_logprobs\": [\n              {\n                \"token\": \" How\",\n                \"logprob\": -0.000054669687,\n                \"bytes\": [32, 72, 111, 119]\n              },\n              {\n                \"token\": \"<|end|>\",\n                \"logprob\": -10.953937,\n                \"bytes\": null\n              }\n            ]\n          },\n          {\n            \"token\": \" can\",\n            \"logprob\": -0.015801601,\n            \"bytes\": [32, 99, 97, 110],\n            \"top_logprobs\": [\n              {\n                \"token\": \" can\",\n                \"logprob\": -0.015801601,\n                \"bytes\": [32, 99, 97, 110]\n              },\n              {\n                \"token\": \" may\",\n                \"logprob\": -4.161023,\n                \"bytes\": [32, 109, 97, 121]\n              }\n            ]\n          },\n          {\n            \"token\": \" I\",\n            \"logprob\": -3.7697225e-6,\n            \"bytes\": [\n              32,\n              73\n            ],\n            \"top_logprobs\": [\n              {\n                \"token\": \" I\",\n                \"logprob\": -3.7697225e-6,\n                \"bytes\": [32, 73]\n              },\n              {\n                \"token\": \" assist\",\n                \"logprob\": -13.596657,\n                \"bytes\": [32, 97, 115, 115, 105, 115, 116]\n              }\n            ]\n          },\n          {\n            \"token\": \" assist\",\n            \"logprob\": -0.04571125,\n            \"bytes\": [32, 97, 115, 115, 105, 115, 116],\n            \"top_logprobs\": [\n              {\n                \"token\": \" assist\",\n                \"logprob\": -0.04571125,\n                \"bytes\": [32, 97, 115, 115, 105, 115, 116]\n              },\n              {\n                \"token\": \" help\",\n                \"logprob\": -3.1089056,\n                \"bytes\": [32, 104, 101, 108, 112]\n              }\n            ]\n          },\n          {\n            \"token\": \" you\",\n            \"logprob\": -5.4385737e-6,\n            \"bytes\": [32, 121, 111, 117],\n            \"top_logprobs\": [\n              {\n                \"token\": \" you\",\n                \"logprob\": -5.4385737e-6,\n                \"bytes\": [32, 121, 111, 117]\n              },\n              {\n                \"token\": \" today\",\n                \"logprob\": -12.807695,\n                \"bytes\": [32, 116, 111, 100, 97, 121]\n              }\n            ]\n          },\n          {\n            \"token\": \" today\",\n            \"logprob\": -0.0040071653,\n            \"bytes\": [32, 116, 111, 100, 97, 121],\n            \"top_logprobs\": [\n              {\n                \"token\": \" today\",\n                \"logprob\": -0.0040071653,\n                \"bytes\": [32, 116, 111, 100, 97, 121]\n              },\n              {\n                \"token\": \"?\",\n                \"logprob\": -5.5247097,\n                \"bytes\": [63]\n              }\n            ]\n          },\n          {\n            \"token\": \"?\",\n            \"logprob\": -0.0008108172,\n            \"bytes\": [63],\n            \"top_logprobs\": [\n              {\n                \"token\": \"?\",\n                \"logprob\": -0.0008108172,\n                \"bytes\": [63]\n              },\n              {\n                \"token\": \"?\\n\",\n                \"logprob\": -7.184561,\n                \"bytes\": [63, 10]\n              }\n            ]\n          }\n        ]\n      },\n      \"finish_reason\": \"stop\"\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\": 9,\n    \"completion_tokens\": 9,\n    \"total_tokens\": 18,\n    \"completion_tokens_details\": {\n      \"reasoning_tokens\": 0,\n      \"accepted_prediction_tokens\": 0,\n      \"rejected_prediction_tokens\": 0\n    }\n  },\n  \"system_fingerprint\": null\n}\n"
   /completions:
     post:
       tags:
@@ -579,12 +579,32 @@ paths:
     get:
       tags:
         - Files
-      summary: Returns a list of files that belong to the user's organization.
+      summary: Returns a list of files.
       operationId: listFiles
       parameters:
         - name: purpose
           in: query
           description: Only return files with the given purpose.
+          schema:
+            type: string
+        - name: limit
+          in: query
+          description: "A limit on the number of objects to be returned. Limit can range between 1 and 10,000, and the default is 10,000.\n"
+          schema:
+            type: integer
+            default: 10000
+        - name: order
+          in: query
+          description: "Sort order by the `created_at` timestamp of the objects. `asc` for ascending order and `desc` for descending order.\n"
+          schema:
+            enum:
+              - asc
+              - desc
+            type: string
+            default: desc
+        - name: after
+          in: query
+          description: "A cursor for use in pagination. `after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include after=obj_foo in order to fetch the next page of the list.\n"
           schema:
             type: string
       responses:
@@ -1225,7 +1245,7 @@ paths:
             type: string
         - name: before
           in: query
-          description: "A cursor for use in pagination. `before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include before=obj_foo in order to fetch the previous page of the list.\n"
+          description: "A cursor for use in pagination. `before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with obj_foo, your subsequent call can include before=obj_foo in order to fetch the previous page of the list.\n"
           schema:
             type: string
       responses:
@@ -2353,7 +2373,7 @@ paths:
             type: string
         - name: before
           in: query
-          description: "A cursor for use in pagination. `before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include before=obj_foo in order to fetch the previous page of the list.\n"
+          description: "A cursor for use in pagination. `before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with obj_foo, your subsequent call can include before=obj_foo in order to fetch the previous page of the list.\n"
           schema:
             type: string
         - name: run_id
@@ -2565,7 +2585,7 @@ paths:
             type: string
         - name: before
           in: query
-          description: "A cursor for use in pagination. `before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include before=obj_foo in order to fetch the previous page of the list.\n"
+          description: "A cursor for use in pagination. `before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with obj_foo, your subsequent call can include before=obj_foo in order to fetch the previous page of the list.\n"
           schema:
             type: string
       responses:
@@ -2600,7 +2620,7 @@ paths:
             type: string
         - name: 'include[]'
           in: query
-          description: "A list of additional fields to include in the response. Currently the only supported value is `step_details.tool_calls[*].file_search.results[*].content` to fetch the file search result content.\n\nSee the [file search tool documentation](/docs/assistants/tools/file-search/customizing-file-search-settings) for more information.\n"
+          description: "A list of additional fields to include in the response. Currently the only supported value is `step_details.tool_calls[*].file_search.results[*].content` to fetch the file search result content.\n\nSee the [file search tool documentation](/docs/assistants/tools/file-search#customizing-file-search-settings) for more information.\n"
           schema:
             type: array
             items:
@@ -2801,12 +2821,12 @@ paths:
             type: string
         - name: before
           in: query
-          description: "A cursor for use in pagination. `before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include before=obj_foo in order to fetch the previous page of the list.\n"
+          description: "A cursor for use in pagination. `before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with obj_foo, your subsequent call can include before=obj_foo in order to fetch the previous page of the list.\n"
           schema:
             type: string
         - name: 'include[]'
           in: query
-          description: "A list of additional fields to include in the response. Currently the only supported value is `step_details.tool_calls[*].file_search.results[*].content` to fetch the file search result content.\n\nSee the [file search tool documentation](/docs/assistants/tools/file-search/customizing-file-search-settings) for more information.\n"
+          description: "A list of additional fields to include in the response. Currently the only supported value is `step_details.tool_calls[*].file_search.results[*].content` to fetch the file search result content.\n\nSee the [file search tool documentation](/docs/assistants/tools/file-search#customizing-file-search-settings) for more information.\n"
           schema:
             type: array
             items:
@@ -2858,7 +2878,7 @@ paths:
             type: string
         - name: 'include[]'
           in: query
-          description: "A list of additional fields to include in the response. Currently the only supported value is `step_details.tool_calls[*].file_search.results[*].content` to fetch the file search result content.\n\nSee the [file search tool documentation](/docs/assistants/tools/file-search/customizing-file-search-settings) for more information.\n"
+          description: "A list of additional fields to include in the response. Currently the only supported value is `step_details.tool_calls[*].file_search.results[*].content` to fetch the file search result content.\n\nSee the [file search tool documentation](/docs/assistants/tools/file-search#customizing-file-search-settings) for more information.\n"
           schema:
             type: array
             items:
@@ -2937,7 +2957,7 @@ paths:
     post:
       tags:
         - Uploads
-      summary: "Creates an intermediate [Upload](/docs/api-reference/uploads/object) object that you can add [Parts](/docs/api-reference/uploads/part-object) to. Currently, an Upload can accept at most 8 GB in total and expires after an hour after you create it.\n\nOnce you complete the Upload, we will create a [File](/docs/api-reference/files/object) object that contains all the parts you uploaded. This File is usable in the rest of our platform as a regular File object.\n\nFor certain `purpose`s, the correct `mime_type` must be specified. Please refer to documentation for the supported MIME types for your use case:\n- [Assistants](/docs/assistants/tools/file-search/supported-files)\n\nFor guidance on the proper filename extensions for each purpose, please follow the documentation on [creating a File](/docs/api-reference/files/create).\n"
+      summary: "Creates an intermediate [Upload](/docs/api-reference/uploads/object) object that you can add [Parts](/docs/api-reference/uploads/part-object) to. Currently, an Upload can accept at most 8 GB in total and expires after an hour after you create it.\n\nOnce you complete the Upload, we will create a [File](/docs/api-reference/files/object) object that contains all the parts you uploaded. This File is usable in the rest of our platform as a regular File object.\n\nFor certain `purpose`s, the correct `mime_type` must be specified. Please refer to documentation for the supported MIME types for your use case:\n- [Assistants](/docs/assistants/tools/file-search#supported-files)\n\nFor guidance on the proper filename extensions for each purpose, please follow the documentation on [creating a File](/docs/api-reference/files/create).\n"
       operationId: createUpload
       requestBody:
         content:
@@ -3088,7 +3108,7 @@ paths:
             type: string
         - name: before
           in: query
-          description: "A cursor for use in pagination. `before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include before=obj_foo in order to fetch the previous page of the list.\n"
+          description: "A cursor for use in pagination. `before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with obj_foo, your subsequent call can include before=obj_foo in order to fetch the previous page of the list.\n"
           schema:
             type: string
       responses:
@@ -3390,7 +3410,7 @@ paths:
             type: string
         - name: before
           in: query
-          description: "A cursor for use in pagination. `before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include before=obj_foo in order to fetch the previous page of the list.\n"
+          description: "A cursor for use in pagination. `before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with obj_foo, your subsequent call can include before=obj_foo in order to fetch the previous page of the list.\n"
           schema:
             type: string
         - name: filter
@@ -3456,7 +3476,7 @@ paths:
             type: string
         - name: before
           in: query
-          description: "A cursor for use in pagination. `before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include before=obj_foo in order to fetch the previous page of the list.\n"
+          description: "A cursor for use in pagination. `before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with obj_foo, your subsequent call can include before=obj_foo in order to fetch the previous page of the list.\n"
           schema:
             type: string
         - name: filter
@@ -3648,7 +3668,7 @@ components:
           nullable: true
         model:
           type: string
-          description: "ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models/overview) for descriptions of them.\n"
+          description: "ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.\n"
         instructions:
           maxLength: 256000
           type: string
@@ -3756,7 +3776,7 @@ components:
               maximum: 50
               minimum: 1
               type: integer
-              description: "The maximum number of results the file search tool should output. The default is 20 for `gpt-4*` models and 5 for `gpt-3.5-turbo`. This number should be between 1 and 50 inclusive.\n\nNote that the file search tool may output fewer than `max_num_results` results. See the [file search tool documentation](/docs/assistants/tools/file-search/customizing-file-search-settings) for more information.\n"
+              description: "The maximum number of results the file search tool should output. The default is 20 for `gpt-4*` models and 5 for `gpt-3.5-turbo`. This number should be between 1 and 50 inclusive.\n\nNote that the file search tool may output fewer than `max_num_results` results. See the [file search tool documentation](/docs/assistants/tools/file-search#customizing-file-search-settings) for more information.\n"
             ranking_options:
               $ref: '#/components/schemas/FileSearchRankingOptions'
           description: Overrides for the file search tool.
@@ -3794,7 +3814,7 @@ components:
         - $ref: '#/components/schemas/ResponseFormatText'
         - $ref: '#/components/schemas/ResponseFormatJsonObject'
         - $ref: '#/components/schemas/ResponseFormatJsonSchema'
-      description: "Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models/gpt-4o), [GPT-4 Turbo](/docs/models/gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.\n\nSetting to `{ \"type\": \"json_schema\", \"json_schema\": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).\n\nSetting to `{ \"type\": \"json_object\" }` enables JSON mode, which ensures the message the model generates is valid JSON.\n\n**Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly \"stuck\" request. Also note that the message content may be partially cut off if `finish_reason=\"length\"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.\n"
+      description: "Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models#gpt-4o), [GPT-4 Turbo](/docs/models#gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.\n\nSetting to `{ \"type\": \"json_schema\", \"json_schema\": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).\n\nSetting to `{ \"type\": \"json_object\" }` enables JSON mode, which ensures the message the model generates is valid JSON.\n\n**Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly \"stuck\" request. Also note that the message content may be partially cut off if `finish_reason=\"length\"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.\n"
       x-oaiExpandable: true
     AssistantsApiToolChoiceOption:
       oneOf:
@@ -4630,7 +4650,7 @@ components:
                 - low
                 - high
               type: string
-              description: 'Specifies the detail level of the image. Learn more in the [Vision guide](/docs/guides/vision/low-or-high-fidelity-image-understanding).'
+              description: 'Specifies the detail level of the image. Learn more in the [Vision guide](/docs/guides/vision#low-or-high-fidelity-image-understanding).'
               default: auto
       description: "Learn about [image inputs](/docs/guides/vision).\n"
     ChatCompletionRequestMessageContentPartRefusal:
@@ -4978,12 +4998,18 @@ components:
         completion_tokens_details:
           type: object
           properties:
+            accepted_prediction_tokens:
+              type: integer
+              description: "When using Predicted Outputs, the number of tokens in the\nprediction that appeared in the completion.\n"
             audio_tokens:
               type: integer
               description: Audio input tokens generated by the model.
             reasoning_tokens:
               type: integer
               description: Tokens generated by the model for reasoning.
+            rejected_prediction_tokens:
+              type: integer
+              description: "When using Predicted Outputs, the number of tokens in the\nprediction that did not appear in the completion. However, like\nreasoning tokens, these tokens are still counted in the total\ncompletion tokens for purposes of billing, output, and context window\nlimits.\n"
           description: Breakdown of tokens used in a completion.
         prompt_tokens_details:
           type: object
@@ -5029,7 +5055,7 @@ components:
                 - gpt-3.5-turbo-0125
                 - gpt-3.5-turbo-16k-0613
               type: string
-          description: "ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models/overview) for descriptions of them.\n"
+          description: "ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.\n"
           example: gpt-4o
           x-oaiTypeLabel: string
         name:
@@ -5226,14 +5252,14 @@ components:
       x-oaiMeta:
         name: The chat completion object
         group: chat
-        example: "{\n  \"id\": \"chatcmpl-abc123\",\n  \"object\": \"chat.completion\",\n  \"created\": 1699896916,\n  \"model\": \"gpt-4o-mini\",\n  \"choices\": [\n    {\n      \"index\": 0,\n      \"message\": {\n        \"role\": \"assistant\",\n        \"content\": null,\n        \"tool_calls\": [\n          {\n            \"id\": \"call_abc123\",\n            \"type\": \"function\",\n            \"function\": {\n              \"name\": \"get_current_weather\",\n              \"arguments\": \"{\\n\\\"location\\\": \\\"Boston, MA\\\"\\n}\"\n            }\n          }\n        ]\n      },\n      \"logprobs\": null,\n      \"finish_reason\": \"tool_calls\"\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\": 82,\n    \"completion_tokens\": 17,\n    \"total_tokens\": 99,\n    \"completion_tokens_details\": {\n      \"reasoning_tokens\": 0\n    }\n  }\n}\n"
+        example: "{\n  \"id\": \"chatcmpl-abc123\",\n  \"object\": \"chat.completion\",\n  \"created\": 1699896916,\n  \"model\": \"gpt-4o-mini\",\n  \"choices\": [\n    {\n      \"index\": 0,\n      \"message\": {\n        \"role\": \"assistant\",\n        \"content\": null,\n        \"tool_calls\": [\n          {\n            \"id\": \"call_abc123\",\n            \"type\": \"function\",\n            \"function\": {\n              \"name\": \"get_current_weather\",\n              \"arguments\": \"{\\n\\\"location\\\": \\\"Boston, MA\\\"\\n}\"\n            }\n          }\n        ]\n      },\n      \"logprobs\": null,\n      \"finish_reason\": \"tool_calls\"\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\": 82,\n    \"completion_tokens\": 17,\n    \"total_tokens\": 99,\n    \"completion_tokens_details\": {\n      \"reasoning_tokens\": 0,\n      \"accepted_prediction_tokens\": 0,\n      \"rejected_prediction_tokens\": 0\n    }\n  }\n}\n"
     CreateChatCompletionImageResponse:
       type: object
       description: 'Represents a streamed chunk of a chat completion response returned by model, based on the provided input.'
       x-oaiMeta:
         name: The chat completion chunk object
         group: chat
-        example: "{\n  \"id\": \"chatcmpl-123\",\n  \"object\": \"chat.completion\",\n  \"created\": 1677652288,\n  \"model\": \"gpt-4o-mini\",\n  \"system_fingerprint\": \"fp_44709d6fcb\",\n  \"choices\": [{\n    \"index\": 0,\n    \"message\": {\n      \"role\": \"assistant\",\n      \"content\": \"\\n\\nThis image shows a wooden boardwalk extending through a lush green marshland.\",\n    },\n    \"logprobs\": null,\n    \"finish_reason\": \"stop\"\n  }],\n  \"usage\": {\n    \"prompt_tokens\": 9,\n    \"completion_tokens\": 12,\n    \"total_tokens\": 21,\n    \"completion_tokens_details\": {\n      \"reasoning_tokens\": 0\n    }\n  }\n}\n"
+        example: "{\n  \"id\": \"chatcmpl-123\",\n  \"object\": \"chat.completion\",\n  \"created\": 1677652288,\n  \"model\": \"gpt-4o-mini\",\n  \"system_fingerprint\": \"fp_44709d6fcb\",\n  \"choices\": [{\n    \"index\": 0,\n    \"message\": {\n      \"role\": \"assistant\",\n      \"content\": \"\\n\\nThis image shows a wooden boardwalk extending through a lush green marshland.\",\n    },\n    \"logprobs\": null,\n    \"finish_reason\": \"stop\"\n  }],\n  \"usage\": {\n    \"prompt_tokens\": 9,\n    \"completion_tokens\": 12,\n    \"total_tokens\": 21,\n    \"completion_tokens_details\": {\n      \"reasoning_tokens\": 0,\n      \"accepted_prediction_tokens\": 0,\n      \"rejected_prediction_tokens\": 0\n    }\n  }\n}\n"
     CreateChatCompletionRequest:
       required:
         - model
@@ -5284,7 +5310,7 @@ components:
                 - gpt-3.5-turbo-0125
                 - gpt-3.5-turbo-16k-0613
               type: string
-          description: 'ID of the model to use. See the [model endpoint compatibility](/docs/models/model-endpoint-compatibility) table for details on which models work with the Chat API.'
+          description: 'ID of the model to use. See the [model endpoint compatibility](/docs/models#model-endpoint-compatibility) table for details on which models work with the Chat API.'
           example: gpt-4o
           x-oaiTypeLabel: string
         store:
@@ -5302,7 +5328,7 @@ components:
           maximum: 2
           minimum: -2
           type: number
-          description: "Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.\n\n[See more information about frequency and presence penalties.](/docs/guides/text-generation/parameter-details)\n"
+          description: "Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.\n\n[See more information about frequency and presence penalties.](/docs/guides/text-generation)\n"
           default: 0
           nullable: true
         logit_bias:
@@ -5343,6 +5369,12 @@ components:
           example: 1
         modalities:
           $ref: '#/components/schemas/ChatCompletionModalities'
+        prediction:
+          oneOf:
+            - $ref: '#/components/schemas/PredictionContent'
+          description: "Configuration for a [Predicted Output](/docs/guides/latency-optimization#use-predicted-outputs),\nwhich can greatly improve response times when large parts of the model\nresponse are known ahead of time. This is most common when you are\nregenerating a file with only minor changes to most of the content.\n"
+          nullable: true
+          x-oaiExpandable: true
         audio:
           required:
             - voice
@@ -5352,13 +5384,15 @@ components:
             voice:
               enum:
                 - alloy
+                - ash
+                - ballad
+                - coral
                 - echo
-                - fable
-                - onyx
-                - nova
+                - sage
                 - shimmer
+                - verse
               type: string
-              description: "Specifies the voice type. Supported voices are `alloy`, `echo`, \n`fable`, `onyx`, `nova`, and `shimmer`.\n"
+              description: "The voice the model uses to respond. Supported voices are `alloy`,\n`ash`, `ballad`, `coral`, `echo`, `sage`, `shimmer`, and `verse`.\n"
             format:
               enum:
                 - wav
@@ -5367,7 +5401,7 @@ components:
                 - opus
                 - pcm16
               type: string
-              description: "Specifies the output audio format. Must be one of `wav`, `mp3`, `flac`,\n`opus`, or `pcm16`. \n"
+              description: "Specifies the output audio format. Must be one of `wav`, `mp3`, `flac`,\n`opus`, or `pcm16`.\n"
           description: "Parameters for audio output. Required when audio output is requested with\n`modalities: [\"audio\"]`. [Learn more](/docs/guides/audio).\n"
           nullable: true
           x-oaiExpandable: true
@@ -5375,7 +5409,7 @@ components:
           maximum: 2
           minimum: -2
           type: number
-          description: "Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.\n\n[See more information about frequency and presence penalties.](/docs/guides/text-generation/parameter-details)\n"
+          description: "Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.\n\n[See more information about frequency and presence penalties.](/docs/guides/text-generation)\n"
           default: 0
           nullable: true
         response_format:
@@ -5383,7 +5417,7 @@ components:
             - $ref: '#/components/schemas/ResponseFormatText'
             - $ref: '#/components/schemas/ResponseFormatJsonObject'
             - $ref: '#/components/schemas/ResponseFormatJsonSchema'
-          description: "An object specifying the format that the model must output. Compatible with [GPT-4o](/docs/models/gpt-4o), [GPT-4o mini](/docs/models/gpt-4o-mini), [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models newer than `gpt-3.5-turbo-1106`.\n\nSetting to `{ \"type\": \"json_schema\", \"json_schema\": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).\n\nSetting to `{ \"type\": \"json_object\" }` enables JSON mode, which ensures the message the model generates is valid JSON.\n\n**Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly \"stuck\" request. Also note that the message content may be partially cut off if `finish_reason=\"length\"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.\n"
+          description: "An object specifying the format that the model must output. Compatible with [GPT-4o](/docs/models#gpt-4o), [GPT-4o mini](/docs/models#gpt-4o-mini), [GPT-4 Turbo](/docs/models#gpt-4-turbo-and-gpt-4) and all GPT-3.5 Turbo models newer than `gpt-3.5-turbo-1106`.\n\nSetting to `{ \"type\": \"json_schema\", \"json_schema\": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).\n\nSetting to `{ \"type\": \"json_object\" }` enables JSON mode, which ensures the message the model generates is valid JSON.\n\n**Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly \"stuck\" request. Also note that the message content may be partially cut off if `finish_reason=\"length\"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.\n"
           x-oaiExpandable: true
         seed:
           maximum: 9223372036854776000
@@ -5398,7 +5432,7 @@ components:
             - auto
             - default
           type: string
-          description: "Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:\n  - If set to 'auto', and the Project is Scale tier enabled, the system will utilize scale tier credits until they are exhausted. \n  - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.\n  - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.\n  - When not set, the default behavior is 'auto'.\n\n  When this parameter is set, the response body will include the `service_tier` utilized.\n"
+          description: "Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:\n  - If set to 'auto', and the Project is Scale tier enabled, the system will utilize scale tier credits until they are exhausted.\n  - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.\n  - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.\n  - When not set, the default behavior is 'auto'.\n\n  When this parameter is set, the response body will include the `service_tier` utilized.\n"
           default: auto
           nullable: true
         stop:
@@ -5446,7 +5480,7 @@ components:
           $ref: '#/components/schemas/ParallelToolCalls'
         user:
           type: string
-          description: "A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).\n"
+          description: "A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).\n"
           example: user-1234
         function_call:
           oneOf:
@@ -5551,7 +5585,7 @@ components:
       x-oaiMeta:
         name: The chat completion object
         group: chat
-        example: "{\n  \"id\": \"chatcmpl-123456\",\n  \"object\": \"chat.completion\",\n  \"created\": 1728933352,\n  \"model\": \"gpt-4o-2024-08-06\",\n  \"choices\": [\n    {\n      \"index\": 0,\n      \"message\": {\n        \"role\": \"assistant\",\n        \"content\": \"Hi there! How can I assist you today?\",\n        \"refusal\": null\n      },\n      \"logprobs\": null,\n      \"finish_reason\": \"stop\"\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\": 19,\n    \"completion_tokens\": 10,\n    \"total_tokens\": 29,\n    \"prompt_tokens_details\": {\n      \"cached_tokens\": 0\n    },\n    \"completion_tokens_details\": {\n      \"reasoning_tokens\": 0\n    }\n  },\n  \"system_fingerprint\": \"fp_6b68a8204b\"\n}\n"
+        example: "{\n  \"id\": \"chatcmpl-123456\",\n  \"object\": \"chat.completion\",\n  \"created\": 1728933352,\n  \"model\": \"gpt-4o-2024-08-06\",\n  \"choices\": [\n    {\n      \"index\": 0,\n      \"message\": {\n        \"role\": \"assistant\",\n        \"content\": \"Hi there! How can I assist you today?\",\n        \"refusal\": null\n      },\n      \"logprobs\": null,\n      \"finish_reason\": \"stop\"\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\": 19,\n    \"completion_tokens\": 10,\n    \"total_tokens\": 29,\n    \"prompt_tokens_details\": {\n      \"cached_tokens\": 0\n    },\n    \"completion_tokens_details\": {\n      \"reasoning_tokens\": 0,\n      \"accepted_prediction_tokens\": 0,\n      \"rejected_prediction_tokens\": 0\n    }\n  },\n  \"system_fingerprint\": \"fp_6b68a8204b\"\n}\n"
     CreateChatCompletionStreamResponse:
       required:
         - choices
@@ -5648,6 +5682,7 @@ components:
               type: integer
               description: Total number of tokens used in the request (prompt + completion).
           description: "An optional field that will only be present when you set `stream_options: {\"include_usage\": true}` in your request.\nWhen present, it contains a null value except for the last chunk which contains the token usage statistics for the entire request.\n"
+          nullable: true
       description: 'Represents a streamed chunk of a chat completion response returned by model, based on the provided input.'
       x-oaiMeta:
         name: The chat completion chunk object
@@ -5667,7 +5702,7 @@ components:
                 - davinci-002
                 - babbage-002
               type: string
-          description: "ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models/overview) for descriptions of them.\n"
+          description: "ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.\n"
           x-oaiTypeLabel: string
         prompt:
           oneOf:
@@ -5711,7 +5746,7 @@ components:
           maximum: 2
           minimum: -2
           type: number
-          description: "Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.\n\n[See more information about frequency and presence penalties.](/docs/guides/text-generation/parameter-details)\n"
+          description: "Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.\n\n[See more information about frequency and presence penalties.](/docs/guides/text-generation)\n"
           default: 0
           nullable: true
         logit_bias:
@@ -5748,7 +5783,7 @@ components:
           maximum: 2
           minimum: -2
           type: number
-          description: "Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.\n\n[See more information about frequency and presence penalties.](/docs/guides/text-generation/parameter-details)\n"
+          description: "Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.\n\n[See more information about frequency and presence penalties.](/docs/guides/text-generation)\n"
           default: 0
           nullable: true
         seed:
@@ -5803,7 +5838,7 @@ components:
           example: 1
         user:
           type: string
-          description: "A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).\n"
+          description: "A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).\n"
           example: user-1234
     CreateCompletionResponse:
       required:
@@ -5934,7 +5969,7 @@ components:
                 - text-embedding-3-small
                 - text-embedding-3-large
               type: string
-          description: "ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models/overview) for descriptions of them.\n"
+          description: "ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.\n"
           example: text-embedding-3-small
           x-oaiTypeLabel: string
         encoding_format:
@@ -5952,7 +5987,7 @@ components:
           nullable: true
         user:
           type: string
-          description: "A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).\n"
+          description: "A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).\n"
           example: user-1234
       additionalProperties: false
     CreateEmbeddingResponse:
@@ -6023,7 +6058,7 @@ components:
                 - gpt-3.5-turbo
                 - gpt-4o-mini
               type: string
-          description: "The name of the model to fine-tune. You can select one of the\n[supported models](/docs/guides/fine-tuning/which-models-can-be-fine-tuned).\n"
+          description: "The name of the model to fine-tune. You can select one of the\n[supported models](/docs/guides/fine-tuning#which-models-can-be-fine-tuned).\n"
           example: gpt-4o-mini
           x-oaiTypeLabel: string
         training_file:
@@ -6181,7 +6216,7 @@ components:
           example: url
         user:
           type: string
-          description: "A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).\n"
+          description: "A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).\n"
           example: user-1234
     CreateImageRequest:
       required:
@@ -6252,7 +6287,7 @@ components:
           example: vivid
         user:
           type: string
-          description: "A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).\n"
+          description: "A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).\n"
           example: user-1234
     CreateImageVariationRequest:
       required:
@@ -6303,7 +6338,7 @@ components:
           example: 1024x1024
         user:
           type: string
-          description: "A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).\n"
+          description: "A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).\n"
           example: user-1234
     CreateMessageRequest:
       required:
@@ -6331,7 +6366,7 @@ components:
                   - $ref: '#/components/schemas/MessageContentImageUrlObject'
                   - $ref: '#/components/schemas/MessageRequestContentTextObject'
                 x-oaiExpandable: true
-              description: 'An array of content parts with a defined type, each can be of type `text` or images can be passed with `image_url` or `image_file`. Image types are only supported on [Vision-compatible models](/docs/models/overview).'
+              description: 'An array of content parts with a defined type, each can be of type `text` or images can be passed with `image_url` or `image_file`. Image types are only supported on [Vision-compatible models](/docs/models).'
           x-oaiExpandable: true
         attachments:
           required:
@@ -6430,7 +6465,7 @@ components:
                 - text-moderation-latest
                 - text-moderation-stable
               type: string
-          description: "The content moderation model you would like to use. Learn more in\n[the moderation guide](/docs/guides/moderation), and learn about\navailable models [here](/docs/models/moderation).\n"
+          description: "The content moderation model you would like to use. Learn more in\n[the moderation guide](/docs/guides/moderation), and learn about\navailable models [here](/docs/models#moderation).\n"
           default: omni-moderation-latest
           example: omni-moderation-2024-09-26
           x-oaiTypeLabel: string
@@ -6817,7 +6852,7 @@ components:
                 - tts-1
                 - tts-1-hd
               type: string
-          description: "One of the available [TTS models](/docs/models/tts): `tts-1` or `tts-1-hd`\n"
+          description: "One of the available [TTS models](/docs/models#tts): `tts-1` or `tts-1-hd`\n"
           x-oaiTypeLabel: string
         input:
           maxLength: 4096
@@ -6832,7 +6867,7 @@ components:
             - nova
             - shimmer
           type: string
-          description: 'The voice to use when generating the audio. Supported voices are `alloy`, `echo`, `fable`, `onyx`, `nova`, and `shimmer`. Previews of the voices are available in the [Text to speech guide](/docs/guides/text-to-speech/voice-options).'
+          description: 'The voice to use when generating the audio. Supported voices are `alloy`, `echo`, `fable`, `onyx`, `nova`, and `shimmer`. Previews of the voices are available in the [Text to speech guide](/docs/guides/text-to-speech#voice-options).'
         response_format:
           enum:
             - mp3
@@ -7103,7 +7138,7 @@ components:
           description: "The language of the input audio. Supplying the input language in [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) format will improve accuracy and latency.\n"
         prompt:
           type: string
-          description: "An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text/prompting) should match the audio language.\n"
+          description: "An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text#prompting) should match the audio language.\n"
         response_format:
           $ref: '#/components/schemas/AudioResponseFormat'
         temperature:
@@ -7187,7 +7222,7 @@ components:
           x-oaiTypeLabel: string
         prompt:
           type: string
-          description: "An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text/prompting) should be in English.\n"
+          description: "An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text#prompting) should be in English.\n"
         response_format:
           $ref: '#/components/schemas/AudioResponseFormat'
         temperature:
@@ -7486,9 +7521,9 @@ components:
           type: string
         data:
           $ref: '#/components/schemas/Error'
-      description: 'Occurs when an [error](/docs/guides/error-codes/api-errors) occurs. This can happen due to an internal server error or a timeout.'
+      description: 'Occurs when an [error](/docs/guides/error-codes#api-errors) occurs. This can happen due to an internal server error or a timeout.'
       x-oaiMeta:
-        dataDescription: '`data` is an [error](/docs/guides/error-codes/api-errors)'
+        dataDescription: '`data` is an [error](/docs/guides/error-codes#api-errors)'
     ErrorResponse:
       required:
         - error
@@ -7513,7 +7548,7 @@ components:
           minimum: 0
           type: number
           description: The score threshold for the file search. All values must be a floating point number between 0 and 1.
-      description: "The ranking options for the file search. If not specified, the file search tool will use the `auto` ranker and a score_threshold of 0.\n\nSee the [file search tool documentation](/docs/assistants/tools/file-search/customizing-file-search-settings) for more information.\n"
+      description: "The ranking options for the file search. If not specified, the file search tool will use the `auto` ranker and a score_threshold of 0.\n\nSee the [file search tool documentation](/docs/assistants/tools/file-search#customizing-file-search-settings) for more information.\n"
     FineTuneChatCompletionRequestAssistantMessage:
       required:
         - role
@@ -8052,16 +8087,27 @@ components:
       required:
         - object
         - data
+        - first_id
+        - last_id
+        - has_more
       type: object
       properties:
+        object:
+          type: string
+          example: list
         data:
           type: array
           items:
             $ref: '#/components/schemas/OpenAIFile'
-        object:
-          enum:
-            - list
+        first_id:
           type: string
+          example: file-abc123
+        last_id:
+          type: string
+          example: file-abc456
+        has_more:
+          type: boolean
+          example: false
     ListFineTuningJobCheckpointsResponse:
       required:
         - object
@@ -8889,7 +8935,7 @@ components:
         model:
           anyOf:
             - type: string
-          description: "ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models/overview) for descriptions of them.\n"
+          description: "ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.\n"
         name:
           maxLength: 256
           type: string
@@ -9082,8 +9128,34 @@ components:
       description: 'This is returned when the chunking strategy is unknown. Typically, this is because the file was indexed before the `chunking_strategy` concept was introduced in the API.'
     ParallelToolCalls:
       type: boolean
-      description: 'Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.'
+      description: 'Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.'
       nullable: true
+    PredictionContent:
+      title: Static Content
+      required:
+        - type
+        - content
+      type: object
+      properties:
+        type:
+          enum:
+            - content
+          type: string
+          description: "The type of the predicted content you want to provide. This type is\ncurrently always `content`.\n"
+        content:
+          oneOf:
+            - title: Text content
+              type: string
+              description: "The content used for a Predicted Output. This is often the\ntext of a file you are regenerating with minor changes.\n"
+            - title: Array of content parts
+              minItems: 1
+              type: array
+              items:
+                $ref: '#/components/schemas/ChatCompletionRequestMessageContentPartText'
+              description: 'An array of content parts with a defined type. Supported options differ based on the [model](/docs/models) being used to generate the response. Can contain text inputs.'
+          description: "The content that should be matched when generating a model response.\nIf generated tokens would match this content, the entire model response\ncan be returned much more quickly.\n"
+          x-oaiExpandable: true
+      description: "Static predicted output content, such as the content of a text file that is\nbeing regenerated.\n"
     Project:
       required:
         - id
@@ -9480,61 +9552,17 @@ components:
           description: Optional client-generated ID used to identify this event.
         type:
           type: string
-          description: 'The event type, must be "conversation.item.create".'
+          description: 'The event type, must be `conversation.item.create`.'
         previous_item_id:
           type: string
-          description: The ID of the preceding item after which the new item will be inserted.
+          description: 'The ID of the preceding item after which the new item will be inserted. If not set, the new item will be appended to the end of the conversation. If set, it allows an item to be inserted mid-conversation. If the ID cannot be found, an error will be returned and the item will not be added.'
         item:
-          type: object
-          properties:
-            id:
-              type: string
-              description: The unique ID of the item.
-            type:
-              type: string
-              description: 'The type of the item ("message", "function_call", "function_call_output").'
-            status:
-              type: string
-              description: 'The status of the item ("completed", "in_progress", "incomplete").'
-            role:
-              type: string
-              description: 'The role of the message sender ("user", "assistant", "system").'
-            content:
-              type: array
-              items:
-                type: object
-                properties:
-                  type:
-                    type: string
-                    description: 'The content type ("input_text", "input_audio", "text", "audio").'
-                  text:
-                    type: string
-                    description: The text content.
-                  audio:
-                    type: string
-                    description: Base64-encoded audio bytes.
-                  transcript:
-                    type: string
-                    description: The transcript of the audio.
-              description: The content of the message.
-            call_id:
-              type: string
-              description: The ID of the function call (for "function_call" items).
-            name:
-              type: string
-              description: The name of the function being called (for "function_call" items).
-            arguments:
-              type: string
-              description: The arguments of the function call (for "function_call" items).
-            output:
-              type: string
-              description: The output of the function call (for "function_call_output" items).
-          description: The item to add to the conversation.
-      description: Send this event when adding an item to the conversation.
+          $ref: '#/components/schemas/RealtimeConversationItem'
+      description: "Add a new Item to the Conversation's context, including messages, function calls, and function call responses. This event can be used both to populate a \"history\" of the conversation and to add new items mid-stream, but has the current limitation that it cannot populate assistant audio messages.\nIf successful, the server will respond with a `conversation.item.created` event, otherwise an `error` event will be sent."
       x-oaiMeta:
         name: conversation.item.create
         group: realtime
-        example: "{\n    \"event_id\": \"event_345\",\n    \"type\": \"conversation.item.create\",\n    \"previous_item_id\": null,\n    \"item\": {\n        \"id\": \"msg_001\",\n        \"type\": \"message\",\n        \"status\": \"completed\",\n        \"role\": \"user\",\n        \"content\": [\n            {\n                \"type\": \"input_text\",\n                \"text\": \"Hello, how are you?\"\n            }\n        ]\n    }\n}\n"
+        example: "{\n    \"event_id\": \"event_345\",\n    \"type\": \"conversation.item.create\",\n    \"previous_item_id\": null,\n    \"item\": {\n        \"id\": \"msg_001\",\n        \"type\": \"message\",\n        \"role\": \"user\",\n        \"content\": [\n            {\n                \"type\": \"input_text\",\n                \"text\": \"Hello, how are you?\"\n            }\n        ]\n    }\n}\n"
     RealtimeClientEventConversationItemDelete:
       required:
         - type
@@ -9550,7 +9578,7 @@ components:
         item_id:
           type: string
           description: The ID of the item to delete.
-      description: Send this event when you want to remove any item from the conversation history.
+      description: 'Send this event when you want to remove any item from the conversation history. The server will respond with a `conversation.item.deleted` event, unless the item does not exist in the conversation history, in which case the server will respond with an error.'
       x-oaiMeta:
         name: conversation.item.delete
         group: realtime
@@ -9571,14 +9599,14 @@ components:
           description: 'The event type, must be "conversation.item.truncate".'
         item_id:
           type: string
-          description: The ID of the assistant message item to truncate.
+          description: The ID of the assistant message item to truncate. Only assistant message items can be truncated.
         content_index:
           type: integer
-          description: The index of the content part to truncate.
+          description: The index of the content part to truncate. Set this to 0.
         audio_end_ms:
           type: integer
-          description: 'Inclusive duration up to which audio is truncated, in milliseconds.'
-      description: Send this event when you want to truncate a previous assistant message’s audio.
+          description: 'Inclusive duration up to which audio is truncated, in milliseconds. If the audio_end_ms is greater than the actual audio duration, the server will respond with an error.'
+      description: "Send this event to truncate a previous assistant message’s audio. The server will produce audio faster than realtime, so this event is useful when the user interrupts to truncate audio that has already been sent to the client but not yet played. This will synchronize the server's understanding of the audio with the client's playback.\nTruncating audio will delete the server-side text transcript to ensure there is not text in the context that hasn't been heard by the user.\nIf successful, the server will respond with a `conversation.item.truncated` event. "
       x-oaiMeta:
         name: conversation.item.truncate
         group: realtime
@@ -9597,8 +9625,8 @@ components:
           description: 'The event type, must be "input_audio_buffer.append".'
         audio:
           type: string
-          description: Base64-encoded audio bytes.
-      description: Send this event to append audio bytes to the input audio buffer.
+          description: Base64-encoded audio bytes. This must be in the format specified by the `input_audio_format` field in the session configuration.
+      description: "Send this event to append audio bytes to the input audio buffer. The audio buffer is temporary storage you can write to and later commit. In Server VAD mode, the audio buffer is used to detect speech and the server will decide when to commit. When Server VAD is disabled, you must commit the audio buffer manually.\nThe client may choose how much audio to place in each event up to a maximum of 15 MiB, for example streaming smaller chunks from the client may allow the VAD to be more responsive. Unlike made other client events, the server will not send a confirmation response to this event."
       x-oaiMeta:
         name: input_audio_buffer.append
         group: realtime
@@ -9614,7 +9642,7 @@ components:
         type:
           type: string
           description: 'The event type, must be "input_audio_buffer.clear".'
-      description: Send this event to clear the audio bytes in the buffer.
+      description: Send this event to clear the audio bytes in the buffer. The server will respond with an `input_audio_buffer.cleared` event.
       x-oaiMeta:
         name: input_audio_buffer.clear
         group: realtime
@@ -9630,7 +9658,7 @@ components:
         type:
           type: string
           description: 'The event type, must be "input_audio_buffer.commit".'
-      description: Send this event to commit audio bytes to a user message.
+      description: "Send this event to commit the user input audio buffer, which will create a new user message item in the conversation. This event will produce an error if the input audio buffer is empty. When in Server VAD mode, the client does not need to send this event, the server will commit the audio buffer automatically.\nCommitting the input audio buffer will trigger input audio transcription (if enabled in session configuration), but it will not create a response from the model. The server will respond with an `input_audio_buffer.committed` event."
       x-oaiMeta:
         name: input_audio_buffer.commit
         group: realtime
@@ -9645,8 +9673,8 @@ components:
           description: Optional client-generated ID used to identify this event.
         type:
           type: string
-          description: 'The event type, must be "response.cancel".'
-      description: Send this event to cancel an in-progress response.
+          description: 'The event type, must be `response.cancel`.'
+      description: Send this event to cancel an in-progress response. The server will respond with a `response.cancelled` event or an error if there is no response to cancel.
       x-oaiMeta:
         name: response.cancel
         group: realtime
@@ -9662,57 +9690,10 @@ components:
           description: Optional client-generated ID used to identify this event.
         type:
           type: string
-          description: 'The event type, must be "response.create".'
+          description: 'The event type, must be `response.create`.'
         response:
-          type: object
-          properties:
-            modalities:
-              type: array
-              items:
-                type: string
-              description: The modalities for the response.
-            instructions:
-              type: string
-              description: Instructions for the model.
-            voice:
-              type: string
-              description: 'The voice the model uses to respond - one of `alloy`, `echo`, or `shimmer`.'
-            output_audio_format:
-              type: string
-              description: The format of output audio.
-            tools:
-              type: array
-              items:
-                type: object
-                properties:
-                  type:
-                    type: string
-                    description: The type of the tool.
-                  name:
-                    type: string
-                    description: The name of the function.
-                  description:
-                    type: string
-                    description: The description of the function.
-                  parameters:
-                    type: object
-                    description: Parameters of the function in JSON Schema.
-              description: Tools (functions) available to the model.
-            tool_choice:
-              type: string
-              description: How the model chooses tools.
-            temperature:
-              type: number
-              description: Sampling temperature.
-            max_output_tokens:
-              oneOf:
-                - type: integer
-                - enum:
-                    - inf
-                  type: string
-              description: 'Maximum number of output tokens for a single assistant response, inclusive of tool calls. Provide an integer between 1 and 4096 to limit output tokens, or "inf" for the maximum available tokens for a given model. Defaults to "inf".'
-          description: Configuration for the response.
-      description: Send this event to trigger a response generation.
+          $ref: '#/components/schemas/RealtimeResponse'
+      description: "This event instructs the server to create a Response, which means triggering model inference. When in Server VAD mode, the server will create Responses automatically.\nA Response will include at least one Item, and may have two, in which case the second will be a function call. These Items will be appended to the conversation history.\nThe server will respond with a `response.created` event, events for Items and content created, and finally a `response.done` event to indicate the Response is complete.\nThe `response.create` event includes inference configuration like `instructions`, and `temperature`. These fields will override the Session's configuration for this Response only."
       x-oaiMeta:
         name: response.create
         group: realtime
@@ -9730,85 +9711,136 @@ components:
           type: string
           description: 'The event type, must be "session.update".'
         session:
-          type: object
-          properties:
-            modalities:
-              type: array
-              items:
-                type: string
-              description: 'The set of modalities the model can respond with. To disable audio, set this to ["text"].'
-            instructions:
-              type: string
-              description: The default system instructions prepended to model calls.
-            voice:
-              type: string
-              description: 'The voice the model uses to respond - one of `alloy`, `echo`, or  `shimmer`. Cannot be changed once the model has responded with audio  at least once.'
-            input_audio_format:
-              type: string
-              description: 'The format of input audio. Options are "pcm16", "g711_ulaw", or "g711_alaw".'
-            output_audio_format:
-              type: string
-              description: 'The format of output audio. Options are "pcm16", "g711_ulaw", or "g711_alaw".'
-            input_audio_transcription:
-              type: object
-              properties:
-                model:
-                  type: string
-                  description: 'The model to use for transcription (e.g., "whisper-1").'
-              description: Configuration for input audio transcription. Can be set to `null` to turn off.
-            turn_detection:
-              type: object
-              properties:
-                type:
-                  type: string
-                  description: 'Type of turn detection, only "server_vad" is currently supported.'
-                threshold:
-                  type: number
-                  description: Activation threshold for VAD (0.0 to 1.0).
-                prefix_padding_ms:
-                  type: integer
-                  description: Amount of audio to include before speech starts (in milliseconds).
-                silence_duration_ms:
-                  type: integer
-                  description: Duration of silence to detect speech stop (in milliseconds).
-              description: Configuration for turn detection. Can be set to `null` to turn off.
-            tools:
-              type: array
-              items:
-                type: object
-                properties:
-                  type:
-                    type: string
-                    description: 'The type of the tool, e.g., "function".'
-                  name:
-                    type: string
-                    description: The name of the function.
-                  description:
-                    type: string
-                    description: The description of the function.
-                  parameters:
-                    type: object
-                    description: Parameters of the function in JSON Schema.
-              description: Tools (functions) available to the model.
-            tool_choice:
-              type: string
-              description: 'How the model chooses tools. Options are "auto", "none", "required", or specify a function.'
-            temperature:
-              type: number
-              description: Sampling temperature for the model.
-            max_output_tokens:
-              oneOf:
-                - type: integer
-                - enum:
-                    - inf
-                  type: string
-              description: 'Maximum number of output tokens for a single assistant response, inclusive of tool calls. Provide an integer between 1 and 4096 to limit output tokens, or "inf" for the maximum available tokens for a given model. Defaults to "inf".'
-          description: Session configuration to update.
-      description: Send this event to update the session’s default configuration.
+          $ref: '#/components/schemas/RealtimeSession'
+      description: 'Send this event to update the session’s default configuration. The client may send this event at any time to update the session configuration, and any field may be updated at any time, except for "voice". The server will respond with a `session.updated` event that shows the full effective configuration. Only fields that are present are updated, thus the correct way to clear a field like "instructions" is to pass an empty string.'
       x-oaiMeta:
         name: session.update
         group: realtime
-        example: "{\n    \"event_id\": \"event_123\",\n    \"type\": \"session.update\",\n    \"session\": {\n        \"modalities\": [\"text\", \"audio\"],\n        \"instructions\": \"Your knowledge cutoff is 2023-10. You are a helpful assistant.\",\n        \"voice\": \"alloy\",\n        \"input_audio_format\": \"pcm16\",\n        \"output_audio_format\": \"pcm16\",\n        \"input_audio_transcription\": {\n            \"model\": \"whisper-1\"\n        },\n        \"turn_detection\": {\n            \"type\": \"server_vad\",\n            \"threshold\": 0.5,\n            \"prefix_padding_ms\": 300,\n            \"silence_duration_ms\": 200\n        },\n        \"tools\": [\n            {\n                \"type\": \"function\",\n                \"name\": \"get_weather\",\n                \"description\": \"Get the current weather for a location.\",\n                \"parameters\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"location\": { \"type\": \"string\" }\n                    },\n                    \"required\": [\"location\"]\n                }\n            }\n        ],\n        \"tool_choice\": \"auto\",\n        \"temperature\": 0.8,\n        \"max_output_tokens\": null\n    }\n}\n"
+        example: "{\n    \"event_id\": \"event_123\",\n    \"type\": \"session.update\",\n    \"session\": {\n        \"modalities\": [\"text\", \"audio\"],\n        \"instructions\": \"Your knowledge cutoff is 2023-10. You are a helpful assistant.\",\n        \"voice\": \"alloy\",\n        \"input_audio_format\": \"pcm16\",\n        \"output_audio_format\": \"pcm16\",\n        \"input_audio_transcription\": {\n            \"model\": \"whisper-1\"\n        },\n        \"turn_detection\": {\n            \"type\": \"server_vad\",\n            \"threshold\": 0.5,\n            \"prefix_padding_ms\": 300,\n            \"silence_duration_ms\": 500\n        },\n        \"tools\": [\n            {\n                \"type\": \"function\",\n                \"name\": \"get_weather\",\n                \"description\": \"Get the current weather for a location, tell the user you are fetching the weather.\",\n                \"parameters\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"location\": { \"type\": \"string\" }\n                    },\n                    \"required\": [\"location\"]\n                }\n            }\n        ],\n        \"tool_choice\": \"auto\",\n        \"temperature\": 0.8,\n        \"max_response_output_tokens\": \"inf\"\n    }\n}\n"
+    RealtimeConversationItem:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique ID of the item.
+          example: msg_003
+        object:
+          enum:
+            - realtime.item
+          type: string
+          description: 'The object type, must be "realtime.item".'
+          example: realtime.item
+        type:
+          enum:
+            - message
+            - function_call
+            - function_call_output
+          type: string
+          description: The type of the item.
+          example: message
+        status:
+          enum:
+            - completed
+            - in_progress
+            - incomplete
+          type: string
+          description: The status of the item.
+          example: completed
+        role:
+          enum:
+            - user
+            - assistant
+            - system
+          type: string
+          description: The role of the message sender.
+          example: user
+        content:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                enum:
+                  - input_text
+                  - input_audio
+                  - text
+                  - audio
+                type: string
+                description: The content type.
+                example: input_text
+              text:
+                type: string
+                description: The text content (for text or input_text items).
+                example: 'Hello, how are you?'
+              audio:
+                type: string
+                description: Base64-encoded audio bytes (for audio or input_audio items).
+              transcript:
+                type: string
+                description: The transcript of the audio (for audio items).
+              call_id:
+                type: string
+                description: The ID of the function call (for function_call items).
+              name:
+                type: string
+                description: The name of the function being called (for function_call items).
+              arguments:
+                type: string
+                description: The arguments of the function call (for function_call items).
+              output:
+                type: string
+                description: The output of the function call (for function_call_output items).
+          description: The content of the message.
+      description: "A realtime Item is of three types: message, function_call, or function_call_output.\n\nA message item can contain text or audio.\nA function_call item indicates a model's desire to call a function, which is the only tool supported for now\nA function_call_output item indicates a function response.\nThe client may add and remove message and function_call_output Items using conversation.item.create and conversation.item.delete.\n"
+    RealtimeResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique ID of the response.
+          example: resp_001
+        object:
+          enum:
+            - realtime.response
+          type: string
+          description: 'The object type, must be "realtime.response".'
+          example: realtime.response
+        status:
+          enum:
+            - completed
+            - in_progress
+            - cancelled
+            - failed
+            - incomplete
+          type: string
+          description: The status of the response.
+          example: in_progress
+        status_details:
+          type: object
+          description: Additional details about the status.
+          example: 
+        output:
+          type: array
+          items:
+            $ref: '#/components/schemas/RealtimeConversationItem'
+          description: The list of output items generated by the response.
+        usage:
+          type: object
+          properties:
+            total_tokens:
+              type: integer
+              description: The total number of tokens used.
+              example: 50
+            input_tokens:
+              type: integer
+              description: The number of input tokens used.
+              example: 20
+            output_tokens:
+              type: integer
+              description: The number of output tokens used.
+              example: 30
+          description: Usage statistics for the response.
+      description: The response resource.
     RealtimeServerEventConversationCreated:
       required:
         - event_id
@@ -9850,64 +9882,17 @@ components:
           description: The unique ID of the server event.
         type:
           type: string
-          description: 'The event type, must be "conversation.item.created".'
+          description: 'The event type, must be `conversation.item.created`.'
         previous_item_id:
           type: string
-          description: The ID of the preceding item.
+          description: 'The ID of the preceding item in the Conversation context, allows the client to understand the order of the conversation.'
         item:
-          type: object
-          properties:
-            id:
-              type: string
-              description: The unique ID of the item.
-            object:
-              type: string
-              description: 'The object type, must be "realtime.item".'
-            type:
-              type: string
-              description: 'The type of the item ("message", "function_call", "function_call_output").'
-            status:
-              type: string
-              description: 'The status of the item ("completed", "in_progress", "incomplete").'
-            role:
-              type: string
-              description: 'The role associated with the item ("user", "assistant", "system").'
-            content:
-              type: array
-              items:
-                type: object
-                properties:
-                  type:
-                    type: string
-                    description: 'The content type ("text", "audio", "input_text", "input_audio").'
-                  text:
-                    type: string
-                    description: The text content.
-                  audio:
-                    type: string
-                    description: Base64-encoded audio data.
-                  transcript:
-                    type: string
-                    description: The transcript of the audio.
-              description: The content of the item.
-            call_id:
-              type: string
-              description: The ID of the function call (for "function_call" items).
-            name:
-              type: string
-              description: The name of the function being called.
-            arguments:
-              type: string
-              description: The arguments of the function call.
-            output:
-              type: string
-              description: The output of the function call (for "function_call_output" items).
-          description: The item that was created.
-      description: Returned when a conversation item is created.
+          $ref: '#/components/schemas/RealtimeConversationItem'
+      description: "Returned when a conversation item is created. There are several scenarios that produce this event:\n  - The server is generating a Response, which if successful will produce either one or two Items, which will be of type `message` (role `assistant`) or type `function_call`.\n  - The input audio buffer has been committed, either by the client or the server (in `server_vad` mode). The server will take the content of the input audio buffer and add it to a new user message Item.\n  - The client has sent a `conversation.item.create` event to add a new Item to the Conversation."
       x-oaiMeta:
         name: conversation.item.created
         group: realtime
-        example: "{\n    \"event_id\": \"event_1920\",\n    \"type\": \"conversation.item.created\",\n    \"previous_item_id\": \"msg_002\",\n    \"item\": {\n        \"id\": \"msg_003\",\n        \"object\": \"realtime.item\",\n        \"type\": \"message\",\n        \"status\": \"completed\",\n        \"role\": \"user\",\n        \"content\": [\n            {\n                \"type\": \"input_audio\",\n                \"transcript\": null\n            }\n        ]\n    }\n}\n"
+        example: "{\n    \"event_id\": \"event_1920\",\n    \"type\": \"conversation.item.created\",\n    \"previous_item_id\": \"msg_002\",\n    \"item\": {\n        \"id\": \"msg_003\",\n        \"object\": \"realtime.item\",\n        \"type\": \"message\",\n        \"status\": \"completed\",\n        \"role\": \"user\",\n        \"content\": [\n            {\n                \"type\": \"input_audio\",\n                \"transcript\": \"hello how are you\",\n                \"audio\": \"base64encodedaudio==\"\n            }\n        ]\n    }\n}\n"
     RealtimeServerEventConversationItemDeleted:
       required:
         - event_id
@@ -9920,11 +9905,11 @@ components:
           description: The unique ID of the server event.
         type:
           type: string
-          description: 'The event type, must be "conversation.item.deleted".'
+          description: 'The event type, must be `conversation.item.deleted`.'
         item_id:
           type: string
           description: The ID of the item that was deleted.
-      description: Returned when an item in the conversation is deleted.
+      description: Returned when an item in the conversation is deleted by the client with a `conversation.item.delete` event. This event is used to synchronize the server's understanding of the conversation history with the client's view.
       x-oaiMeta:
         name: conversation.item.deleted
         group: realtime
@@ -9943,17 +9928,17 @@ components:
           description: The unique ID of the server event.
         type:
           type: string
-          description: 'The event type, must be "conversation.item.input_audio_transcription.completed".'
+          description: 'The event type, must be `conversation.item.input_audio_transcription.completed`.'
         item_id:
           type: string
-          description: The ID of the user message item.
+          description: The ID of the user message item containing the audio.
         content_index:
           type: integer
           description: The index of the content part containing the audio.
         transcript:
           type: string
           description: The transcribed text.
-      description: Returned when input audio transcription is enabled and a transcription succeeds.
+      description: "This event is the output of audio transcription for user audio written to the user audio buffer. Transcription begins when the input audio buffer is committed by the client or server (in `server_vad` mode). Transcription runs asynchronously with Response creation, so this event may come before or after the Response events.\nRealtime API models accept audio natively, and thus input transcription is a separate process run on a separate ASR (Automatic Speech Recognition) model, currently always `whisper-1`. Thus the transcript may diverge somewhat from the model's interpretation, and should be treated as a rough guide."
       x-oaiMeta:
         name: conversation.item.input_audio_transcription.completed
         group: realtime
@@ -9972,7 +9957,7 @@ components:
           description: The unique ID of the server event.
         type:
           type: string
-          description: 'The event type, must be "conversation.item.input_audio_transcription.failed".'
+          description: 'The event type, must be `conversation.item.input_audio_transcription.failed`.'
         item_id:
           type: string
           description: The ID of the user message item.
@@ -9995,7 +9980,7 @@ components:
               type: string
               description: 'Parameter related to the error, if any.'
           description: Details of the transcription error.
-      description: 'Returned when input audio transcription is configured, and a transcription request for a user message failed.'
+      description: 'Returned when input audio transcription is configured, and a transcription request for a user message failed. These events are separate from other `error` events so that the client can identify the related Item.'
       x-oaiMeta:
         name: conversation.item.input_audio_transcription.failed
         group: realtime
@@ -10014,7 +9999,7 @@ components:
           description: The unique ID of the server event.
         type:
           type: string
-          description: 'The event type, must be "conversation.item.truncated".'
+          description: 'The event type, must be `conversation.item.truncated`.'
         item_id:
           type: string
           description: The ID of the assistant message item that was truncated.
@@ -10024,7 +10009,7 @@ components:
         audio_end_ms:
           type: integer
           description: 'The duration up to which the audio was truncated, in milliseconds.'
-      description: Returned when an earlier assistant audio message item is truncated by the client.
+      description: "Returned when an earlier assistant audio message item is truncated by the client with a `conversation.item.truncate` event. This event is used to synchronize the server's understanding of the audio with the client's playback.\nThis action will truncate the audio and remove the server-side text transcript to ensure there is no text in the context that hasn't been heard by the user."
       x-oaiMeta:
         name: conversation.item.truncated
         group: realtime
@@ -10061,7 +10046,7 @@ components:
               type: string
               description: 'The event_id of the client event that caused the error, if applicable.'
           description: Details of the error.
-      description: Returned when an error occurs.
+      description: 'Returned when an error occurs, which could be a client problem or a server problem. Most errors are recoverable and the session will stay open, we recommend to implementors to monitor and log error messages by default.'
       x-oaiMeta:
         name: error
         group: realtime
@@ -10077,8 +10062,8 @@ components:
           description: The unique ID of the server event.
         type:
           type: string
-          description: 'The event type, must be "input_audio_buffer.cleared".'
-      description: Returned when the input audio buffer is cleared by the client.
+          description: 'The event type, must be `input_audio_buffer.cleared`.'
+      description: Returned when the input audio buffer is cleared by the client with a `input_audio_buffer.clear` event.
       x-oaiMeta:
         name: input_audio_buffer.cleared
         group: realtime
@@ -10096,14 +10081,14 @@ components:
           description: The unique ID of the server event.
         type:
           type: string
-          description: 'The event type, must be "input_audio_buffer.committed".'
+          description: 'The event type, must be `input_audio_buffer.committed`.'
         previous_item_id:
           type: string
           description: The ID of the preceding item after which the new item will be inserted.
         item_id:
           type: string
           description: The ID of the user message item that will be created.
-      description: 'Returned when an input audio buffer is committed, either by the client or automatically in server VAD mode.'
+      description: 'Returned when an input audio buffer is committed, either by the client or automatically in server VAD mode. The `item_id` property is the ID of the user message item that will be created, thus a `conversation.item.created` event will also be sent to the client.'
       x-oaiMeta:
         name: input_audio_buffer.committed
         group: realtime
@@ -10121,14 +10106,14 @@ components:
           description: The unique ID of the server event.
         type:
           type: string
-          description: 'The event type, must be "input_audio_buffer.speech_started".'
+          description: 'The event type, must be `input_audio_buffer.speech_started`.'
         audio_start_ms:
           type: integer
-          description: Milliseconds since the session started when speech was detected.
+          description: 'Milliseconds from the start of all audio written to the buffer during the session when speech was first detected. This will correspond to the beginning of audio sent to the model, and thus includes the `prefix_padding_ms` configured in the Session.'
         item_id:
           type: string
           description: The ID of the user message item that will be created when speech stops.
-      description: Returned in server turn detection mode when speech is detected.
+      description: Sent by the server when in `server_vad` mode to indicate that speech has been detected in the audio buffer. This can happen any time audio is added to the buffer (unless speech is already detected). The client may want to use this event to interrupt audio playback or provide visual feedback to the user. The client should expect to receive a `input_audio_buffer.speech_stopped` event when speech stops. The `item_id` property is the ID of the user message item that will be created when speech stops and will also be included in the `input_audio_buffer.speech_stopped` event (unless the client manually commits the audio buffer during VAD activation).
       x-oaiMeta:
         name: input_audio_buffer.speech_started
         group: realtime
@@ -10146,14 +10131,14 @@ components:
           description: The unique ID of the server event.
         type:
           type: string
-          description: 'The event type, must be "input_audio_buffer.speech_stopped".'
+          description: 'The event type, must be `input_audio_buffer.speech_stopped`.'
         audio_end_ms:
           type: integer
-          description: Milliseconds since the session started when speech stopped.
+          description: 'Milliseconds since the session started when speech stopped. This will correspond to the end of audio sent to the model, and thus includes the `min_silence_duration_ms` configured in the Session.'
         item_id:
           type: string
           description: The ID of the user message item that will be created.
-      description: Returned in server turn detection mode when speech stops.
+      description: Returned in `server_vad` mode when the server detects the end of speech in the audio buffer. The server will also send an `conversation.item.created` event with the user message item that is created from the audio buffer.
       x-oaiMeta:
         name: input_audio_buffer.speech_stopped
         group: realtime
@@ -10170,7 +10155,7 @@ components:
           description: The unique ID of the server event.
         type:
           type: string
-          description: 'The event type, must be "rate_limits.updated".'
+          description: 'The event type, must be `rate_limits.updated`.'
         rate_limits:
           type: array
           items:
@@ -10178,7 +10163,7 @@ components:
             properties:
               name:
                 type: string
-                description: 'The name of the rate limit ("requests", "tokens", "input_tokens", "output_tokens").'
+                description: 'The name of the rate limit (`requests`, `tokens`).'
               limit:
                 type: integer
                 description: The maximum allowed value for the rate limit.
@@ -10189,7 +10174,7 @@ components:
                 type: number
                 description: Seconds until the rate limit resets.
           description: List of rate limit information.
-      description: Emitted after every "response.done" event to indicate the updated rate limits.
+      description: 'Emitted at the beginning of a Response to indicate the updated rate limits. When a Response is created some tokens will be "reserved" for the output tokens, the rate limits shown here reflect that reservation, which is then adjusted accordingly once the Response is completed.'
       x-oaiMeta:
         name: rate_limits.updated
         group: realtime
@@ -10450,33 +10435,10 @@ components:
           description: The unique ID of the server event.
         type:
           type: string
-          description: 'The event type, must be "response.created".'
+          description: 'The event type, must be `response.created`.'
         response:
-          type: object
-          properties:
-            id:
-              type: string
-              description: The unique ID of the response.
-            object:
-              type: string
-              description: 'The object type, must be "realtime.response".'
-            status:
-              type: string
-              description: The status of the response ("in_progress").
-            status_details:
-              type: object
-              description: Additional details about the status.
-            output:
-              type: array
-              items:
-                type: object
-                description: An item in the response output.
-              description: The list of output items generated by the response.
-            usage:
-              type: object
-              description: Usage statistics for the response.
-          description: The response resource.
-      description: 'Returned when a new Response is created. The first event of response creation, where the response is in an initial state of "in_progress".'
+          $ref: '#/components/schemas/RealtimeResponse'
+      description: 'Returned when a new Response is created. The first event of response creation, where the response is in an initial state of `in_progress`.'
       x-oaiMeta:
         name: response.created
         group: realtime
@@ -10495,35 +10457,12 @@ components:
           type: string
           description: 'The event type, must be "response.done".'
         response:
-          type: object
-          properties:
-            id:
-              type: string
-              description: The unique ID of the response.
-            object:
-              type: string
-              description: 'The object type, must be "realtime.response".'
-            status:
-              type: string
-              description: 'The final status of the response ("completed", "cancelled", "failed", "incomplete").'
-            status_details:
-              type: object
-              description: Additional details about the status.
-            output:
-              type: array
-              items:
-                type: object
-                description: An item in the response output.
-              description: The list of output items generated by the response.
-            usage:
-              type: object
-              description: Usage statistics for the response.
-          description: The response resource.
-      description: 'Returned when a Response is done streaming. Always emitted, no matter the final state.'
+          $ref: '#/components/schemas/RealtimeResponse'
+      description: 'Returned when a Response is done streaming. Always emitted, no matter the final state. The Response object included in the `response.done` event will include all output Items in the Response but will omit the raw audio data.'
       x-oaiMeta:
         name: response.done
         group: realtime
-        example: "{\n    \"event_id\": \"event_3132\",\n    \"type\": \"response.done\",\n    \"response\": {\n        \"id\": \"resp_001\",\n        \"object\": \"realtime.response\",\n        \"status\": \"completed\",\n        \"status_details\": null,\n        \"output\": [\n            {\n                \"id\": \"msg_006\",\n                \"object\": \"realtime.item\",\n                \"type\": \"message\",\n                \"status\": \"completed\",\n                \"role\": \"assistant\",\n                \"content\": [\n                    {\n                        \"type\": \"text\",\n                        \"text\": \"Sure, how can I assist you today?\"\n                    }\n                ]\n            }\n        ],\n        \"usage\": {\n            \"total_tokens\": 50,\n            \"input_tokens\": 20,\n            \"output_tokens\": 30\n        }\n    }\n}\n"
+        example: "{\n    \"event_id\": \"event_3132\",\n    \"type\": \"response.done\",\n    \"response\": {\n        \"id\": \"resp_001\",\n        \"object\": \"realtime.response\",\n        \"status\": \"completed\",\n        \"status_details\": null,\n        \"output\": [\n            {\n                \"id\": \"msg_006\",\n                \"object\": \"realtime.item\",\n                \"type\": \"message\",\n                \"status\": \"completed\",\n                \"role\": \"assistant\",\n                \"content\": [\n                    {\n                        \"type\": \"text\",\n                        \"text\": \"Sure, how can I assist you today?\"\n                    }\n                ]\n            }\n        ],\n        \"usage\": {\n            \"total_tokens\":275,\n            \"input_tokens\":127,\n            \"output_tokens\":148,\n            \"input_token_details\": {\n                \"cached_tokens\":0,\n                \"text_tokens\":119,\n                \"audio_tokens\":8\n            },\n            \"output_token_details\": {\n              \"text_tokens\":36,\n              \"audio_tokens\":112\n            }\n        }\n    }\n}\n"
     RealtimeServerEventResponseFunctionCallArgumentsDelta:
       required:
         - event_id
@@ -10612,51 +10551,16 @@ components:
           description: The unique ID of the server event.
         type:
           type: string
-          description: 'The event type, must be "response.output_item.added".'
+          description: 'The event type, must be `response.output_item.added`.'
         response_id:
           type: string
-          description: The ID of the response to which the item belongs.
+          description: The ID of the Response to which the item belongs.
         output_index:
           type: integer
-          description: The index of the output item in the response.
+          description: The index of the output item in the Response.
         item:
-          type: object
-          properties:
-            id:
-              type: string
-              description: The unique ID of the item.
-            object:
-              type: string
-              description: 'The object type, must be "realtime.item".'
-            type:
-              type: string
-              description: 'The type of the item ("message", "function_call", "function_call_output").'
-            status:
-              type: string
-              description: 'The status of the item ("in_progress", "completed").'
-            role:
-              type: string
-              description: The role associated with the item ("assistant").
-            content:
-              type: array
-              items:
-                type: object
-                properties:
-                  type:
-                    type: string
-                    description: 'The content type ("text", "audio").'
-                  text:
-                    type: string
-                    description: The text content.
-                  audio:
-                    type: string
-                    description: Base64-encoded audio data.
-                  transcript:
-                    type: string
-                    description: The transcript of the audio.
-              description: The content of the item.
-          description: The item that was added.
-      description: Returned when a new Item is created during response generation.
+          $ref: '#/components/schemas/RealtimeConversationItem'
+      description: Returned when a new Item is created during Response generation.
       x-oaiMeta:
         name: response.output_item.added
         group: realtime
@@ -10675,50 +10579,15 @@ components:
           description: The unique ID of the server event.
         type:
           type: string
-          description: 'The event type, must be "response.output_item.done".'
+          description: 'The event type, must be `response.output_item.done`.'
         response_id:
           type: string
-          description: The ID of the response to which the item belongs.
+          description: The ID of the Response to which the item belongs.
         output_index:
           type: integer
-          description: The index of the output item in the response.
+          description: The index of the output item in the Response.
         item:
-          type: object
-          properties:
-            id:
-              type: string
-              description: The unique ID of the item.
-            object:
-              type: string
-              description: 'The object type, must be "realtime.item".'
-            type:
-              type: string
-              description: 'The type of the item ("message", "function_call", "function_call_output").'
-            status:
-              type: string
-              description: 'The final status of the item ("completed", "incomplete").'
-            role:
-              type: string
-              description: The role associated with the item ("assistant").
-            content:
-              type: array
-              items:
-                type: object
-                properties:
-                  type:
-                    type: string
-                    description: 'The content type ("text", "audio").'
-                  text:
-                    type: string
-                    description: The text content.
-                  audio:
-                    type: string
-                    description: Base64-encoded audio data.
-                  transcript:
-                    type: string
-                    description: The transcript of the audio.
-              description: The content of the item.
-          description: The completed item.
+          $ref: '#/components/schemas/RealtimeConversationItem'
       description: 'Returned when an Item is done streaming. Also emitted when a Response is interrupted, incomplete, or cancelled.'
       x-oaiMeta:
         name: response.output_item.done
@@ -10810,99 +10679,14 @@ components:
           description: The unique ID of the server event.
         type:
           type: string
-          description: 'The event type, must be "session.created".'
+          description: 'The event type, must be `session.created`.'
         session:
-          type: object
-          properties:
-            id:
-              type: string
-              description: The unique ID of the session.
-            object:
-              type: string
-              description: 'The object type, must be "realtime.session".'
-            model:
-              type: string
-              description: The default model used for this session.
-            modalities:
-              type: array
-              items:
-                type: string
-              description: The set of modalities the model can respond with.
-            instructions:
-              type: string
-              description: The default system instructions.
-            voice:
-              type: string
-              description: 'The voice the model uses to respond - one of `alloy`, `echo`, or `shimmer`.'
-            input_audio_format:
-              type: string
-              description: The format of input audio.
-            output_audio_format:
-              type: string
-              description: The format of output audio.
-            input_audio_transcription:
-              type: object
-              properties:
-                enabled:
-                  type: boolean
-                  description: Whether input audio transcription is enabled.
-                model:
-                  type: string
-                  description: The model used for transcription.
-              description: Configuration for input audio transcription.
-            turn_detection:
-              type: object
-              properties:
-                type:
-                  type: string
-                  description: The type of turn detection ("server_vad" or "none").
-                threshold:
-                  type: number
-                  description: Activation threshold for VAD.
-                prefix_padding_ms:
-                  type: integer
-                  description: Audio included before speech starts (in milliseconds).
-                silence_duration_ms:
-                  type: integer
-                  description: Duration of silence to detect speech stop (in milliseconds).
-              description: Configuration for turn detection.
-            tools:
-              type: array
-              items:
-                type: object
-                properties:
-                  type:
-                    type: string
-                    description: The type of the tool.
-                  name:
-                    type: string
-                    description: The name of the function.
-                  description:
-                    type: string
-                    description: The description of the function.
-                  parameters:
-                    type: object
-                    description: Parameters of the function in JSON Schema.
-              description: Tools (functions) available to the model.
-            tool_choice:
-              type: string
-              description: How the model chooses tools.
-            temperature:
-              type: number
-              description: Sampling temperature.
-            max_output_tokens:
-              oneOf:
-                - type: integer
-                - enum:
-                    - inf
-                  type: string
-              description: Maximum number of output tokens.
-          description: The session resource.
-      description: Returned when a session is created. Emitted automatically when a new connection is established.
+          $ref: '#/components/schemas/RealtimeSession'
+      description: Returned when a Session is created. Emitted automatically when a new connection is established as the first server event. This event will contain the default Session configuration.
       x-oaiMeta:
         name: session.created
         group: realtime
-        example: "{\n    \"event_id\": \"event_1234\",\n    \"type\": \"session.created\",\n    \"session\": {\n        \"id\": \"sess_001\",\n        \"object\": \"realtime.session\",\n        \"model\": \"gpt-4o-realtime-preview-2024-10-01\",\n        \"modalities\": [\"text\", \"audio\"],\n        \"instructions\": \"\",\n        \"voice\": \"alloy\",\n        \"input_audio_format\": \"pcm16\",\n        \"output_audio_format\": \"pcm16\",\n        \"input_audio_transcription\": null,\n        \"turn_detection\": {\n            \"type\": \"server_vad\",\n            \"threshold\": 0.5,\n            \"prefix_padding_ms\": 300,\n            \"silence_duration_ms\": 200\n        },\n        \"tools\": [],\n        \"tool_choice\": \"auto\",\n        \"temperature\": 0.8,\n        \"max_output_tokens\": null\n    }\n}\n"
+        example: "{\n    \"event_id\": \"event_1234\",\n    \"type\": \"session.created\",\n    \"session\": {\n        \"id\": \"sess_001\",\n        \"object\": \"realtime.session\",\n        \"model\": \"gpt-4o-realtime-preview-2024-10-01\",\n        \"modalities\": [\"text\", \"audio\"],\n        \"instructions\": \"\",\n        \"voice\": \"alloy\",\n        \"input_audio_format\": \"pcm16\",\n        \"output_audio_format\": \"pcm16\",\n        \"input_audio_transcription\": null,\n        \"turn_detection\": {\n            \"type\": \"server_vad\",\n            \"threshold\": 0.5,\n            \"prefix_padding_ms\": 300,\n            \"silence_duration_ms\": 200\n        },\n        \"tools\": [],\n        \"tool_choice\": \"auto\",\n        \"temperature\": 0.8,\n        \"max_response_output_tokens\": null\n    }\n}\n"
     RealtimeServerEventSessionUpdated:
       required:
         - event_id
@@ -10917,97 +10701,130 @@ components:
           type: string
           description: 'The event type, must be "session.updated".'
         session:
-          type: object
-          properties:
-            id:
-              type: string
-              description: The unique ID of the session.
-            object:
-              type: string
-              description: 'The object type, must be "realtime.session".'
-            model:
-              type: string
-              description: The default model used for this session.
-            modalities:
-              type: array
-              items:
-                type: string
-              description: The set of modalities the model can respond with.
-            instructions:
-              type: string
-              description: The default system instructions.
-            voice:
-              type: string
-              description: 'The voice the model uses to respond - one of `alloy`, `echo`, or `shimmer`.'
-            input_audio_format:
-              type: string
-              description: The format of input audio.
-            output_audio_format:
-              type: string
-              description: The format of output audio.
-            input_audio_transcription:
-              type: object
-              properties:
-                enabled:
-                  type: boolean
-                  description: Whether input audio transcription is enabled.
-                model:
-                  type: string
-                  description: The model used for transcription.
-              description: Configuration for input audio transcription.
-            turn_detection:
-              type: object
-              properties:
-                type:
-                  type: string
-                  description: The type of turn detection ("server_vad" or "none").
-                threshold:
-                  type: number
-                  description: Activation threshold for VAD.
-                prefix_padding_ms:
-                  type: integer
-                  description: Audio included before speech starts (in milliseconds).
-                silence_duration_ms:
-                  type: integer
-                  description: Duration of silence to detect speech stop (in milliseconds).
-              description: Configuration for turn detection.
-            tools:
-              type: array
-              items:
-                type: object
-                properties:
-                  type:
-                    type: string
-                    description: The type of the tool.
-                  name:
-                    type: string
-                    description: The name of the function.
-                  description:
-                    type: string
-                    description: The description of the function.
-                  parameters:
-                    type: object
-                    description: Parameters of the function in JSON Schema.
-              description: Tools (functions) available to the model.
-            tool_choice:
-              type: string
-              description: How the model chooses tools.
-            temperature:
-              type: number
-              description: Sampling temperature.
-            max_output_tokens:
-              oneOf:
-                - type: integer
-                - enum:
-                    - inf
-                  type: string
-              description: Maximum number of output tokens.
-          description: The updated session resource.
-      description: Returned when a session is updated.
+          $ref: '#/components/schemas/RealtimeSession'
+      description: 'Returned when a session is updated with a `session.update` event, unless there is an error.'
       x-oaiMeta:
         name: session.updated
         group: realtime
-        example: "{\n    \"event_id\": \"event_5678\",\n    \"type\": \"session.updated\",\n    \"session\": {\n        \"id\": \"sess_001\",\n        \"object\": \"realtime.session\",\n        \"model\": \"gpt-4o-realtime-preview-2024-10-01\",\n        \"modalities\": [\"text\"],\n        \"instructions\": \"New instructions\",\n        \"voice\": \"alloy\",\n        \"input_audio_format\": \"pcm16\",\n        \"output_audio_format\": \"pcm16\",\n        \"input_audio_transcription\": {\n            \"enabled\": true,\n            \"model\": \"whisper-1\"\n        },\n        \"turn_detection\": {\n            \"type\": \"none\"\n        },\n        \"tools\": [],\n        \"tool_choice\": \"none\",\n        \"temperature\": 0.7,\n        \"max_output_tokens\": 200\n    }\n}\n"
+        example: "{\n    \"event_id\": \"event_5678\",\n    \"type\": \"session.updated\",\n    \"session\": {\n        \"id\": \"sess_001\",\n        \"object\": \"realtime.session\",\n        \"model\": \"gpt-4o-realtime-preview-2024-10-01\",\n        \"modalities\": [\"text\"],\n        \"instructions\": \"New instructions\",\n        \"voice\": \"alloy\",\n        \"input_audio_format\": \"pcm16\",\n        \"output_audio_format\": \"pcm16\",\n        \"input_audio_transcription\": {\n            \"model\": \"whisper-1\"\n        },\n        \"turn_detection\": null,\n        \"tools\": [],\n        \"tool_choice\": \"none\",\n        \"temperature\": 0.7,\n        \"max_response_output_tokens\": 200\n    }\n}\n"
+    RealtimeSession:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique ID of the session.
+          example: sess_001
+        object:
+          enum:
+            - realtime.session
+          type: string
+          description: 'The object type, must be "realtime.session".'
+          example: realtime.session
+        model:
+          type: string
+          description: The default model used for this session.
+          example: gpt-4o-realtime-preview-2024-10-01
+        modalities:
+          type: array
+          items:
+            type: string
+          description: 'The set of modalities the model can respond with. To disable audio, set this to ["text"].'
+          example:
+            - text
+            - audio
+        instructions:
+          type: string
+          description: The default system instructions prepended to model calls.
+          example: Your knowledge cutoff is 2023-10. You are a helpful assistant.
+        voice:
+          enum:
+            - alloy
+            - echo
+            - shimmer
+          type: string
+          description: The voice the model uses to respond. Cannot be changed once the model has responded with audio at least once.
+          example: alloy
+        input_audio_format:
+          $ref: '#/components/schemas/RealtimeAudioFormat'
+        output_audio_format:
+          $ref: '#/components/schemas/RealtimeAudioFormat'
+        input_audio_transcription:
+          type: object
+          properties:
+            enabled:
+              type: boolean
+              description: Whether transcription is enabled.
+              example: true
+            model:
+              type: string
+              description: The model to use for transcription.
+              example: whisper-1
+          description: Configuration for input audio transcription. Can be set to null to turn off.
+        turn_detection:
+          type: object
+          properties:
+            type:
+              enum:
+                - server_vad
+                - none
+              type: string
+              description: The type of turn detection.
+              example: server_vad
+            threshold:
+              type: number
+              description: Activation threshold for VAD (0.0 to 1.0).
+              example: 0.5
+            prefix_padding_ms:
+              type: integer
+              description: Amount of audio to include before speech starts (in milliseconds).
+              example: 300
+            silence_duration_ms:
+              type: integer
+              description: Duration of silence to detect speech stop (in milliseconds).
+              example: 200
+          description: Configuration for turn detection. Can be set to null to turn off.
+        tools:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+                description: 'The type of the tool, e.g., "function".'
+                example: function
+              name:
+                type: string
+                description: The name of the function.
+                example: get_weather
+              description:
+                type: string
+                description: The description of the function.
+                example: Get the current weather for a location.
+              parameters:
+                type: object
+                description: Parameters of the function in JSON Schema.
+          description: Tools (functions) available to the model.
+        tool_choice:
+          enum:
+            - auto
+            - none
+            - required
+          type: string
+          description: How the model chooses tools.
+          example: auto
+        temperature:
+          type: number
+          description: Sampling temperature for the model.
+          example: 0.8
+        max_output_tokens:
+          oneOf:
+            - type: integer
+            - enum:
+                - inf
+              type: string
+          description: 'Maximum number of output tokens for a single assistant response, inclusive of tool calls. Provide an integer between 1 and 4096 to limit output tokens, or "inf" for the maximum available tokens for a given model. Defaults to "inf".'
+          default: inf
+      description: "A session refers to a single WebSocket connection between a client and the server.\n\nOnce a client creates a session, it then sends JSON-formatted events containing text and audio chunks.\nThe server will respond in kind with audio containing voice output, a text transcript of that voice output,\nand function calls (if functions are provided by the client).\n\nA realtime Session represents the overall client-server interaction, and contains default configuration.\n\nIt has a set of default values which can be updated at any time (via session.update) or on a per-response level (via response.create).\n"
     ResponseFormatJsonObject:
       required:
         - type
@@ -12774,124 +12591,6 @@ components:
         - g711_alaw
       type: string
       description: The format of input/output audio.
-    RealtimeSession:
-      type: object
-      properties:
-        id:
-          type: string
-          description: The unique ID of the session.
-          example: sess_001
-        object:
-          enum:
-            - realtime.session
-          type: string
-          description: 'The object type, must be "realtime.session".'
-          example: realtime.session
-        model:
-          type: string
-          description: The default model used for this session.
-          example: gpt-4o-realtime-preview-2024-10-01
-        modalities:
-          type: array
-          items:
-            type: string
-          description: 'The set of modalities the model can respond with. To disable audio, set this to ["text"].'
-          example:
-            - text
-            - audio
-        instructions:
-          type: string
-          description: The default system instructions prepended to model calls.
-          example: Your knowledge cutoff is 2023-10. You are a helpful assistant.
-        voice:
-          enum:
-            - alloy
-            - echo
-            - shimmer
-          type: string
-          description: The voice the model uses to respond. Cannot be changed once the model has responded with audio at least once.
-          example: alloy
-        input_audio_format:
-          $ref: '#/components/schemas/RealtimeAudioFormat'
-        output_audio_format:
-          $ref: '#/components/schemas/RealtimeAudioFormat'
-        input_audio_transcription:
-          type: object
-          properties:
-            enabled:
-              type: boolean
-              description: Whether transcription is enabled.
-              example: true
-            model:
-              type: string
-              description: The model to use for transcription.
-              example: whisper-1
-          description: Configuration for input audio transcription. Can be set to null to turn off.
-        turn_detection:
-          type: object
-          properties:
-            type:
-              enum:
-                - server_vad
-                - none
-              type: string
-              description: The type of turn detection.
-              example: server_vad
-            threshold:
-              type: number
-              description: Activation threshold for VAD (0.0 to 1.0).
-              example: 0.5
-            prefix_padding_ms:
-              type: integer
-              description: Amount of audio to include before speech starts (in milliseconds).
-              example: 300
-            silence_duration_ms:
-              type: integer
-              description: Duration of silence to detect speech stop (in milliseconds).
-              example: 200
-          description: Configuration for turn detection. Can be set to null to turn off.
-        tools:
-          type: array
-          items:
-            type: object
-            properties:
-              type:
-                type: string
-                description: 'The type of the tool, e.g., "function".'
-                example: function
-              name:
-                type: string
-                description: The name of the function.
-                example: get_weather
-              description:
-                type: string
-                description: The description of the function.
-                example: Get the current weather for a location.
-              parameters:
-                type: object
-                description: Parameters of the function in JSON Schema.
-          description: Tools (functions) available to the model.
-        tool_choice:
-          enum:
-            - auto
-            - none
-            - required
-          type: string
-          description: How the model chooses tools.
-          example: auto
-        temperature:
-          type: number
-          description: Sampling temperature for the model.
-          example: 0.8
-        max_output_tokens:
-          oneOf:
-            - type: integer
-            - enum:
-                - inf
-              type: string
-          description: 'Maximum number of output tokens for a single assistant response, inclusive of tool calls. Provide an integer between 1 and 4096 to limit output tokens, or "inf" for the maximum available tokens for a given model. Defaults to "inf".'
-          default: inf
-      description: "A session refers to a single WebSocket connection between a client and the server.\n\nOnce a client creates a session, it then sends JSON-formatted events containing text and audio chunks.\nThe server will respond in kind with audio containing voice output, a text transcript of that voice output,\nand function calls (if functions are provided by the client).\n\nA realtime Session represents the overall client-server interaction, and contains default configuration.\n\nIt has a set of default values which can be updated at any time (via session.update) or on a per-response level (via response.create).\n"
     RealtimeConversation:
       type: object
       properties:
@@ -12909,81 +12608,6 @@ components:
       example:
         id: conv_001
         object: realtime.conversation
-    RealtimeConversationItem:
-      type: object
-      properties:
-        id:
-          type: string
-          description: The unique ID of the item.
-          example: msg_003
-        object:
-          enum:
-            - realtime.item
-          type: string
-          description: 'The object type, must be "realtime.item".'
-          example: realtime.item
-        type:
-          enum:
-            - message
-            - function_call
-            - function_call_output
-          type: string
-          description: The type of the item.
-          example: message
-        status:
-          enum:
-            - completed
-            - in_progress
-            - incomplete
-          type: string
-          description: The status of the item.
-          example: completed
-        role:
-          enum:
-            - user
-            - assistant
-            - system
-          type: string
-          description: The role of the message sender.
-          example: user
-        content:
-          type: array
-          items:
-            type: object
-            properties:
-              type:
-                enum:
-                  - input_text
-                  - input_audio
-                  - text
-                  - audio
-                type: string
-                description: The content type.
-                example: input_text
-              text:
-                type: string
-                description: The text content (for text or input_text items).
-                example: 'Hello, how are you?'
-              audio:
-                type: string
-                description: Base64-encoded audio bytes (for audio or input_audio items).
-              transcript:
-                type: string
-                description: The transcript of the audio (for audio items).
-              call_id:
-                type: string
-                description: The ID of the function call (for function_call items).
-              name:
-                type: string
-                description: The name of the function being called (for function_call items).
-              arguments:
-                type: string
-                description: The arguments of the function call (for function_call items).
-              output:
-                type: string
-                description: The output of the function call (for function_call_output items).
-          description: The content of the message.
-      description: "A realtime Item is of three types: message, function_call, or function_call_output.\n\nA message item can contain text or audio.\nA function_call item indicates a model's desire to call a function, which is the only tool supported for now\nA function_call_output item indicates a function response.\nThe client may add and remove message and function_call_output Items using conversation.item.create and conversation.item.delete.\n"
     RealtimeContentPart:
       type: object
       properties:
@@ -13035,55 +12659,6 @@ components:
         message: The 'type' field is missing.
         param: 
         event_id: event_567
-    RealtimeResponse:
-      type: object
-      properties:
-        id:
-          type: string
-          description: The unique ID of the response.
-          example: resp_001
-        object:
-          enum:
-            - realtime.response
-          type: string
-          description: 'The object type, must be "realtime.response".'
-          example: realtime.response
-        status:
-          enum:
-            - completed
-            - in_progress
-            - cancelled
-            - failed
-            - incomplete
-          type: string
-          description: The status of the response.
-          example: in_progress
-        status_details:
-          type: object
-          description: Additional details about the status.
-          example: 
-        output:
-          type: array
-          items:
-            $ref: '#/components/schemas/RealtimeConversationItem'
-          description: The list of output items generated by the response.
-        usage:
-          type: object
-          properties:
-            total_tokens:
-              type: integer
-              description: The total number of tokens used.
-              example: 50
-            input_tokens:
-              type: integer
-              description: The number of input tokens used.
-              example: 20
-            output_tokens:
-              type: integer
-              description: The number of output tokens used.
-              example: 30
-          description: Usage statistics for the response.
-      description: The response resource.
     RealtimeSessionUpdate:
       type: object
       properties:
@@ -14776,7 +14351,7 @@ x-oaiMeta:
           path: events
     - id: administration
       title: Administration
-      description: "Programmatically manage your organization. \nThe Audit Logs endpoint provides a log of all actions taken in the  organization for security and monitoring purposes.\nTo access these endpoints please generate an Admin API Key through the [API Platform Organization overview](/organization/admin-keys). Admin API keys cannot be used for non-administration endpoints.\nFor best practices on setting up your organization, please refer to this [guide](/docs/guides/production-best-practices/setting-up-your-organization)\n"
+      description: "Programmatically manage your organization. \nThe Audit Logs endpoint provides a log of all actions taken in the  organization for security and monitoring purposes.\nTo access these endpoints please generate an Admin API Key through the [API Platform Organization overview](/organization/admin-keys). Admin API keys cannot be used for non-administration endpoints.\nFor best practices on setting up your organization, please refer to this [guide](/docs/guides/production-best-practices#setting-up-your-organization)\n"
       navigationGroup: administration
     - id: invite
       title: Invites
@@ -15042,7 +14617,7 @@ x-oaiMeta:
       title: Completions
       legacy: true
       navigationGroup: legacy
-      description: "Given a prompt, the model will return one or more predicted completions along with the probabilities of alternative tokens at each position. Most developer should use our [Chat Completions API](/docs/guides/text-generation/text-generation-models) to leverage our best and newest models.\n"
+      description: "Given a prompt, the model will return one or more predicted completions along with the probabilities of alternative tokens at each position. Most developer should use our [Chat Completions API](/docs/guides/text-generation#text-generation-models) to leverage our best and newest models.\n"
       sections:
         - type: endpoint
           key: createCompletion

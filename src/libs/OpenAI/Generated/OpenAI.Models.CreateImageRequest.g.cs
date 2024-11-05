@@ -72,7 +72,7 @@ namespace OpenAI
         public global::OpenAI.CreateImageRequestStyle? Style { get; set; }
 
         /// <summary>
-        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).<br/>
+        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
         /// Example: user-1234
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]

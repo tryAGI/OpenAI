@@ -3,10 +3,10 @@
 namespace OpenAI.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class RealtimeServerEventSessionUpdatedSessionMaxOutputTokensJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenAI.RealtimeServerEventSessionUpdatedSessionMaxOutputTokens>
+    public sealed class ListFilesOrderNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenAI.ListFilesOrder?>
     {
         /// <inheritdoc />
-        public override global::OpenAI.RealtimeServerEventSessionUpdatedSessionMaxOutputTokens Read(
+        public override global::OpenAI.ListFilesOrder? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace OpenAI.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::OpenAI.RealtimeServerEventSessionUpdatedSessionMaxOutputTokensExtensions.ToEnum(stringValue) ?? default;
+                        return global::OpenAI.ListFilesOrderExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,7 +26,7 @@ namespace OpenAI.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::OpenAI.RealtimeServerEventSessionUpdatedSessionMaxOutputTokens)numValue;
+                    return (global::OpenAI.ListFilesOrder)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -38,12 +38,19 @@ namespace OpenAI.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::OpenAI.RealtimeServerEventSessionUpdatedSessionMaxOutputTokens value,
+            global::OpenAI.ListFilesOrder? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::OpenAI.RealtimeServerEventSessionUpdatedSessionMaxOutputTokensExtensions.ToValueString(value));
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::OpenAI.ListFilesOrderExtensions.ToValueString(value.Value));
+            }
         }
     }
 }

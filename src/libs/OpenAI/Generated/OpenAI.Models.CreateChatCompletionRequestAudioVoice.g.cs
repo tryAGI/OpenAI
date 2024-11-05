@@ -4,8 +4,8 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Specifies the voice type. Supported voices are `alloy`, `echo`, <br/>
-    /// `fable`, `onyx`, `nova`, and `shimmer`.
+    /// The voice the model uses to respond. Supported voices are `alloy`,<br/>
+    /// `ash`, `ballad`, `coral`, `echo`, `sage`, `shimmer`, and `verse`.
     /// </summary>
     public enum CreateChatCompletionRequestAudioVoice
     {
@@ -16,23 +16,31 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Ash,
+        /// <summary>
+        /// 
+        /// </summary>
+        Ballad,
+        /// <summary>
+        /// 
+        /// </summary>
+        Coral,
+        /// <summary>
+        /// 
+        /// </summary>
         Echo,
         /// <summary>
         /// 
         /// </summary>
-        Fable,
-        /// <summary>
-        /// 
-        /// </summary>
-        Onyx,
-        /// <summary>
-        /// 
-        /// </summary>
-        Nova,
+        Sage,
         /// <summary>
         /// 
         /// </summary>
         Shimmer,
+        /// <summary>
+        /// 
+        /// </summary>
+        Verse,
     }
 
     /// <summary>
@@ -48,11 +56,13 @@ namespace OpenAI
             return value switch
             {
                 CreateChatCompletionRequestAudioVoice.Alloy => "alloy",
+                CreateChatCompletionRequestAudioVoice.Ash => "ash",
+                CreateChatCompletionRequestAudioVoice.Ballad => "ballad",
+                CreateChatCompletionRequestAudioVoice.Coral => "coral",
                 CreateChatCompletionRequestAudioVoice.Echo => "echo",
-                CreateChatCompletionRequestAudioVoice.Fable => "fable",
-                CreateChatCompletionRequestAudioVoice.Onyx => "onyx",
-                CreateChatCompletionRequestAudioVoice.Nova => "nova",
+                CreateChatCompletionRequestAudioVoice.Sage => "sage",
                 CreateChatCompletionRequestAudioVoice.Shimmer => "shimmer",
+                CreateChatCompletionRequestAudioVoice.Verse => "verse",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +74,13 @@ namespace OpenAI
             return value switch
             {
                 "alloy" => CreateChatCompletionRequestAudioVoice.Alloy,
+                "ash" => CreateChatCompletionRequestAudioVoice.Ash,
+                "ballad" => CreateChatCompletionRequestAudioVoice.Ballad,
+                "coral" => CreateChatCompletionRequestAudioVoice.Coral,
                 "echo" => CreateChatCompletionRequestAudioVoice.Echo,
-                "fable" => CreateChatCompletionRequestAudioVoice.Fable,
-                "onyx" => CreateChatCompletionRequestAudioVoice.Onyx,
-                "nova" => CreateChatCompletionRequestAudioVoice.Nova,
+                "sage" => CreateChatCompletionRequestAudioVoice.Sage,
                 "shimmer" => CreateChatCompletionRequestAudioVoice.Shimmer,
+                "verse" => CreateChatCompletionRequestAudioVoice.Verse,
                 _ => null,
             };
         }

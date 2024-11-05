@@ -30,7 +30,7 @@ namespace OpenAI
         public global::OpenAI.AssistantStreamEventDiscriminatorEvent? Event { get; }
 
         /// <summary>
-        /// Occurs when an [error](/docs/guides/error-codes/api-errors) occurs. This can happen due to an internal server error or a timeout.
+        /// Occurs when an [error](/docs/guides/error-codes#api-errors) occurs. This can happen due to an internal server error or a timeout.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.ErrorEvent? Error { get; init; }

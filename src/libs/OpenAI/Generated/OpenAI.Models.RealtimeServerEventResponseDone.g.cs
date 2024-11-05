@@ -4,7 +4,7 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Returned when a Response is done streaming. Always emitted, no matter the final state.
+    /// Returned when a Response is done streaming. Always emitted, no matter the final state. The Response object included in the `response.done` event will include all output Items in the Response but will omit the raw audio data.
     /// </summary>
     public sealed partial class RealtimeServerEventResponseDone
     {
@@ -27,7 +27,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.RealtimeServerEventResponseDoneResponse Response { get; set; }
+        public required global::OpenAI.RealtimeResponse Response { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

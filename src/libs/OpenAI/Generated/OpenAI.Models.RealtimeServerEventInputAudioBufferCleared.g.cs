@@ -4,7 +4,7 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Returned when the input audio buffer is cleared by the client.
+    /// Returned when the input audio buffer is cleared by the client with a `input_audio_buffer.clear` event.
     /// </summary>
     public sealed partial class RealtimeServerEventInputAudioBufferCleared
     {
@@ -16,7 +16,7 @@ namespace OpenAI
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be "input_audio_buffer.cleared".
+        /// The event type, must be `input_audio_buffer.cleared`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]

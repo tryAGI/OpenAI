@@ -4,7 +4,10 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Send this event to trigger a response generation.
+    /// This event instructs the server to create a Response, which means triggering model inference. When in Server VAD mode, the server will create Responses automatically.<br/>
+    /// A Response will include at least one Item, and may have two, in which case the second will be a function call. These Items will be appended to the conversation history.<br/>
+    /// The server will respond with a `response.created` event, events for Items and content created, and finally a `response.done` event to indicate the Response is complete.<br/>
+    /// The `response.create` event includes inference configuration like `instructions`, and `temperature`. These fields will override the Session's configuration for this Response only.
     /// </summary>
     public sealed partial class RealtimeClientEventResponseCreate
     {
@@ -15,18 +18,18 @@ namespace OpenAI
         public string? EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be "response.create".
+        /// The event type, must be `response.create`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Type { get; set; }
 
         /// <summary>
-        /// Configuration for the response.
+        /// The response resource.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.RealtimeClientEventResponseCreateResponse Response { get; set; }
+        public required global::OpenAI.RealtimeResponse Response { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

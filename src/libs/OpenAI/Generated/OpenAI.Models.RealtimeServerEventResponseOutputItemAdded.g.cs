@@ -4,7 +4,7 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Returned when a new Item is created during response generation.
+    /// Returned when a new Item is created during Response generation.
     /// </summary>
     public sealed partial class RealtimeServerEventResponseOutputItemAdded
     {
@@ -16,32 +16,36 @@ namespace OpenAI
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be "response.output_item.added".
+        /// The event type, must be `response.output_item.added`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Type { get; set; }
 
         /// <summary>
-        /// The ID of the response to which the item belongs.
+        /// The ID of the Response to which the item belongs.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ResponseId { get; set; }
 
         /// <summary>
-        /// The index of the output item in the response.
+        /// The index of the output item in the Response.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int OutputIndex { get; set; }
 
         /// <summary>
-        /// The item that was added.
+        /// A realtime Item is of three types: message, function_call, or function_call_output.<br/>
+        /// A message item can contain text or audio.<br/>
+        /// A function_call item indicates a model's desire to call a function, which is the only tool supported for now<br/>
+        /// A function_call_output item indicates a function response.<br/>
+        /// The client may add and remove message and function_call_output Items using conversation.item.create and conversation.item.delete.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.RealtimeServerEventResponseOutputItemAddedItem Item { get; set; }
+        public required global::OpenAI.RealtimeConversationItem Item { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

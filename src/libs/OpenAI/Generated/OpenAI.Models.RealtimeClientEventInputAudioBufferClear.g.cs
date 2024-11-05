@@ -4,7 +4,7 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Send this event to clear the audio bytes in the buffer.
+    /// Send this event to clear the audio bytes in the buffer. The server will respond with an `input_audio_buffer.cleared` event.
     /// </summary>
     public sealed partial class RealtimeClientEventInputAudioBufferClear
     {

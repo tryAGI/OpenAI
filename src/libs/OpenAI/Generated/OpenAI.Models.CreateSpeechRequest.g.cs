@@ -11,7 +11,7 @@ namespace OpenAI
     public sealed partial class CreateSpeechRequest
     {
         /// <summary>
-        /// One of the available [TTS models](/docs/models/tts): `tts-1` or `tts-1-hd`
+        /// One of the available [TTS models](/docs/models#tts): `tts-1` or `tts-1-hd`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AnyOfJsonConverterFactory2))]
@@ -26,7 +26,7 @@ namespace OpenAI
         public required string Input { get; set; }
 
         /// <summary>
-        /// The voice to use when generating the audio. Supported voices are `alloy`, `echo`, `fable`, `onyx`, `nova`, and `shimmer`. Previews of the voices are available in the [Text to speech guide](/docs/guides/text-to-speech/voice-options).
+        /// The voice to use when generating the audio. Supported voices are `alloy`, `echo`, `fable`, `onyx`, `nova`, and `shimmer`. Previews of the voices are available in the [Text to speech guide](/docs/guides/text-to-speech#voice-options).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.CreateSpeechRequestVoiceJsonConverter))]

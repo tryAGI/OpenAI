@@ -4,7 +4,7 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Returned when an item in the conversation is deleted.
+    /// Returned when an item in the conversation is deleted by the client with a `conversation.item.delete` event. This event is used to synchronize the server's understanding of the conversation history with the client's view.
     /// </summary>
     public sealed partial class RealtimeServerEventConversationItemDeleted
     {
@@ -16,7 +16,7 @@ namespace OpenAI
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be "conversation.item.deleted".
+        /// The event type, must be `conversation.item.deleted`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]

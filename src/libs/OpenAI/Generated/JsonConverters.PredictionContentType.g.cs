@@ -3,10 +3,10 @@
 namespace OpenAI.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class RealtimeClientEventResponseCreateResponseMaxOutputTokensNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenAI.RealtimeClientEventResponseCreateResponseMaxOutputTokens?>
+    public sealed class PredictionContentTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenAI.PredictionContentType>
     {
         /// <inheritdoc />
-        public override global::OpenAI.RealtimeClientEventResponseCreateResponseMaxOutputTokens? Read(
+        public override global::OpenAI.PredictionContentType Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace OpenAI.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::OpenAI.RealtimeClientEventResponseCreateResponseMaxOutputTokensExtensions.ToEnum(stringValue);
+                        return global::OpenAI.PredictionContentTypeExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,7 +26,7 @@ namespace OpenAI.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::OpenAI.RealtimeClientEventResponseCreateResponseMaxOutputTokens)numValue;
+                    return (global::OpenAI.PredictionContentType)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -38,19 +38,12 @@ namespace OpenAI.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::OpenAI.RealtimeClientEventResponseCreateResponseMaxOutputTokens? value,
+            global::OpenAI.PredictionContentType value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            if (value == null)
-            {
-                writer.WriteNullValue();
-            }
-            else
-            {
-                writer.WriteStringValue(global::OpenAI.RealtimeClientEventResponseCreateResponseMaxOutputTokensExtensions.ToValueString(value.Value));
-            }
+            writer.WriteStringValue(global::OpenAI.PredictionContentTypeExtensions.ToValueString(value));
         }
     }
 }

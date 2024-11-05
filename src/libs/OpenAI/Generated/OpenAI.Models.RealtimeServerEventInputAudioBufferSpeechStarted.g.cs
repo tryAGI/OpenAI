@@ -4,7 +4,7 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Returned in server turn detection mode when speech is detected.
+    /// Sent by the server when in `server_vad` mode to indicate that speech has been detected in the audio buffer. This can happen any time audio is added to the buffer (unless speech is already detected). The client may want to use this event to interrupt audio playback or provide visual feedback to the user. The client should expect to receive a `input_audio_buffer.speech_stopped` event when speech stops. The `item_id` property is the ID of the user message item that will be created when speech stops and will also be included in the `input_audio_buffer.speech_stopped` event (unless the client manually commits the audio buffer during VAD activation).
     /// </summary>
     public sealed partial class RealtimeServerEventInputAudioBufferSpeechStarted
     {
@@ -16,14 +16,14 @@ namespace OpenAI
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be "input_audio_buffer.speech_started".
+        /// The event type, must be `input_audio_buffer.speech_started`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Type { get; set; }
 
         /// <summary>
-        /// Milliseconds since the session started when speech was detected.
+        /// Milliseconds from the start of all audio written to the buffer during the session when speech was first detected. This will correspond to the beginning of audio sent to the model, and thus includes the `prefix_padding_ms` configured in the Session.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio_start_ms")]
         [global::System.Text.Json.Serialization.JsonRequired]

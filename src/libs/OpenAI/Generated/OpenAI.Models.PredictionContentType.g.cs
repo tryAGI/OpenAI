@@ -4,40 +4,41 @@
 namespace OpenAI
 {
     /// <summary>
-    /// 
+    /// The type of the predicted content you want to provide. This type is<br/>
+    /// currently always `content`.
     /// </summary>
-    public enum RealtimeClientEventSessionUpdateSessionMaxOutputTokens
+    public enum PredictionContentType
     {
         /// <summary>
         /// 
         /// </summary>
-        Inf,
+        Content,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class RealtimeClientEventSessionUpdateSessionMaxOutputTokensExtensions
+    public static class PredictionContentTypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this RealtimeClientEventSessionUpdateSessionMaxOutputTokens value)
+        public static string ToValueString(this PredictionContentType value)
         {
             return value switch
             {
-                RealtimeClientEventSessionUpdateSessionMaxOutputTokens.Inf => "inf",
+                PredictionContentType.Content => "content",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RealtimeClientEventSessionUpdateSessionMaxOutputTokens? ToEnum(string value)
+        public static PredictionContentType? ToEnum(string value)
         {
             return value switch
             {
-                "inf" => RealtimeClientEventSessionUpdateSessionMaxOutputTokens.Inf,
+                "content" => PredictionContentType.Content,
                 _ => null,
             };
         }

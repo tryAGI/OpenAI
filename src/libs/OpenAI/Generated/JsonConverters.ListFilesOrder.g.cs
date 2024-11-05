@@ -3,10 +3,10 @@
 namespace OpenAI.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class ListFilesResponseObjectNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenAI.ListFilesResponseObject?>
+    public sealed class ListFilesOrderJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::OpenAI.ListFilesOrder>
     {
         /// <inheritdoc />
-        public override global::OpenAI.ListFilesResponseObject? Read(
+        public override global::OpenAI.ListFilesOrder Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace OpenAI.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::OpenAI.ListFilesResponseObjectExtensions.ToEnum(stringValue);
+                        return global::OpenAI.ListFilesOrderExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,7 +26,7 @@ namespace OpenAI.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::OpenAI.ListFilesResponseObject)numValue;
+                    return (global::OpenAI.ListFilesOrder)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -38,19 +38,12 @@ namespace OpenAI.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::OpenAI.ListFilesResponseObject? value,
+            global::OpenAI.ListFilesOrder value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            if (value == null)
-            {
-                writer.WriteNullValue();
-            }
-            else
-            {
-                writer.WriteStringValue(global::OpenAI.ListFilesResponseObjectExtensions.ToValueString(value.Value));
-            }
+            writer.WriteStringValue(global::OpenAI.ListFilesOrderExtensions.ToValueString(value));
         }
     }
 }

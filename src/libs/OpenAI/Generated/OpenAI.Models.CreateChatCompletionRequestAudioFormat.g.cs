@@ -5,7 +5,7 @@ namespace OpenAI
 {
     /// <summary>
     /// Specifies the output audio format. Must be one of `wav`, `mp3`, `flac`,<br/>
-    /// `opus`, or `pcm16`. 
+    /// `opus`, or `pcm16`.
     /// </summary>
     public enum CreateChatCompletionRequestAudioFormat
     {

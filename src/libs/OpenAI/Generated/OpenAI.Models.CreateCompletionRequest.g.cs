@@ -11,7 +11,7 @@ namespace OpenAI
     public sealed partial class CreateCompletionRequest
     {
         /// <summary>
-        /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models/overview) for descriptions of them.
+        /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AnyOfJsonConverterFactory2))]
@@ -46,7 +46,7 @@ namespace OpenAI
 
         /// <summary>
         /// Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.<br/>
-        /// [See more information about frequency and presence penalties.](/docs/guides/text-generation/parameter-details)<br/>
+        /// [See more information about frequency and presence penalties.](/docs/guides/text-generation)<br/>
         /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("frequency_penalty")]
@@ -87,7 +87,7 @@ namespace OpenAI
 
         /// <summary>
         /// Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.<br/>
-        /// [See more information about frequency and presence penalties.](/docs/guides/text-generation/parameter-details)<br/>
+        /// [See more information about frequency and presence penalties.](/docs/guides/text-generation)<br/>
         /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("presence_penalty")]
@@ -147,7 +147,7 @@ namespace OpenAI
         public double? TopP { get; set; }
 
         /// <summary>
-        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).<br/>
+        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
         /// Example: user-1234
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]

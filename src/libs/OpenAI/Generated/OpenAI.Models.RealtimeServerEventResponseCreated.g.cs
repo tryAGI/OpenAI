@@ -4,7 +4,7 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Returned when a new Response is created. The first event of response creation, where the response is in an initial state of "in_progress".
+    /// Returned when a new Response is created. The first event of response creation, where the response is in an initial state of `in_progress`.
     /// </summary>
     public sealed partial class RealtimeServerEventResponseCreated
     {
@@ -16,7 +16,7 @@ namespace OpenAI
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be "response.created".
+        /// The event type, must be `response.created`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -27,7 +27,7 @@ namespace OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.RealtimeServerEventResponseCreatedResponse Response { get; set; }
+        public required global::OpenAI.RealtimeResponse Response { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

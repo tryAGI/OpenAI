@@ -4,7 +4,7 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Send this event to cancel an in-progress response.
+    /// Send this event to cancel an in-progress response. The server will respond with a `response.cancelled` event or an error if there is no response to cancel.
     /// </summary>
     public sealed partial class RealtimeClientEventResponseCancel
     {
@@ -15,7 +15,7 @@ namespace OpenAI
         public string? EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be "response.cancel".
+        /// The event type, must be `response.cancel`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]

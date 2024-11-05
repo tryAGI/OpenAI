@@ -23,7 +23,7 @@ namespace OpenAI
         public global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionTool>? Tools { get; set; }
 
         /// <summary>
-        /// Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.
+        /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parallel_tool_calls")]
         public bool? ParallelToolCalls { get; set; }

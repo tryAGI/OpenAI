@@ -4,7 +4,7 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Returned when input audio transcription is configured, and a transcription request for a user message failed.
+    /// Returned when input audio transcription is configured, and a transcription request for a user message failed. These events are separate from other `error` events so that the client can identify the related Item.
     /// </summary>
     public sealed partial class RealtimeServerEventConversationItemInputAudioTranscriptionFailed
     {
@@ -16,7 +16,7 @@ namespace OpenAI
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be "conversation.item.input_audio_transcription.failed".
+        /// The event type, must be `conversation.item.input_audio_transcription.failed`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
