@@ -9,7 +9,7 @@ namespace OpenAI
     public sealed partial class RealtimeServerEventRateLimitsUpdatedRateLimit
     {
         /// <summary>
-        /// The name of the rate limit ("requests", "tokens", "input_tokens", "output_tokens").
+        /// The name of the rate limit (`requests`, `tokens`).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }

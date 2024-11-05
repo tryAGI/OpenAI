@@ -34,7 +34,7 @@ namespace OpenAI
         public required global::OpenAI.AnyOf<string, global::OpenAI.CreateTranslationRequestModel?> Model { get; set; }
 
         /// <summary>
-        /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text/prompting) should be in English.
+        /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text#prompting) should be in English.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         public string? Prompt { get; set; }

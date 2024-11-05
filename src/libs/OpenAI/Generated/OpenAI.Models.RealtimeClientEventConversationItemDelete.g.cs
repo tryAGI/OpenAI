@@ -4,7 +4,7 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Send this event when you want to remove any item from the conversation history.
+    /// Send this event when you want to remove any item from the conversation history. The server will respond with a `conversation.item.deleted` event, unless the item does not exist in the conversation history, in which case the server will respond with an error.
     /// </summary>
     public sealed partial class RealtimeClientEventConversationItemDelete
     {

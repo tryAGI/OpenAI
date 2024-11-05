@@ -4,7 +4,7 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Returned in server turn detection mode when speech stops.
+    /// Returned in `server_vad` mode when the server detects the end of speech in the audio buffer. The server will also send an `conversation.item.created` event with the user message item that is created from the audio buffer.
     /// </summary>
     public sealed partial class RealtimeServerEventInputAudioBufferSpeechStopped
     {
@@ -16,14 +16,14 @@ namespace OpenAI
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be "input_audio_buffer.speech_stopped".
+        /// The event type, must be `input_audio_buffer.speech_stopped`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Type { get; set; }
 
         /// <summary>
-        /// Milliseconds since the session started when speech stopped.
+        /// Milliseconds since the session started when speech stopped. This will correspond to the end of audio sent to the model, and thus includes the `min_silence_duration_ms` configured in the Session.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio_end_ms")]
         [global::System.Text.Json.Serialization.JsonRequired]

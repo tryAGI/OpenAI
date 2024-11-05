@@ -4,7 +4,7 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Emitted after every "response.done" event to indicate the updated rate limits.
+    /// Emitted at the beginning of a Response to indicate the updated rate limits. When a Response is created some tokens will be "reserved" for the output tokens, the rate limits shown here reflect that reservation, which is then adjusted accordingly once the Response is completed.
     /// </summary>
     public sealed partial class RealtimeServerEventRateLimitsUpdated
     {
@@ -16,7 +16,7 @@ namespace OpenAI
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be "rate_limits.updated".
+        /// The event type, must be `rate_limits.updated`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]

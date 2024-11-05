@@ -20,7 +20,7 @@ namespace OpenAI
         public required global::OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>> Input { get; set; }
 
         /// <summary>
-        /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models/overview) for descriptions of them.<br/>
+        /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.<br/>
         /// Example: text-embedding-3-small
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
@@ -44,7 +44,7 @@ namespace OpenAI
         public int? Dimensions { get; set; }
 
         /// <summary>
-        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).<br/>
+        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
         /// Example: user-1234
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]

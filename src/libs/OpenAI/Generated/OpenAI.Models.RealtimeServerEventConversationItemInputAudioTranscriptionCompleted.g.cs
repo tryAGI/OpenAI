@@ -4,7 +4,8 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Returned when input audio transcription is enabled and a transcription succeeds.
+    /// This event is the output of audio transcription for user audio written to the user audio buffer. Transcription begins when the input audio buffer is committed by the client or server (in `server_vad` mode). Transcription runs asynchronously with Response creation, so this event may come before or after the Response events.<br/>
+    /// Realtime API models accept audio natively, and thus input transcription is a separate process run on a separate ASR (Automatic Speech Recognition) model, currently always `whisper-1`. Thus the transcript may diverge somewhat from the model's interpretation, and should be treated as a rough guide.
     /// </summary>
     public sealed partial class RealtimeServerEventConversationItemInputAudioTranscriptionCompleted
     {
@@ -16,14 +17,14 @@ namespace OpenAI
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be "conversation.item.input_audio_transcription.completed".
+        /// The event type, must be `conversation.item.input_audio_transcription.completed`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Type { get; set; }
 
         /// <summary>
-        /// The ID of the user message item.
+        /// The ID of the user message item containing the audio.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
         [global::System.Text.Json.Serialization.JsonRequired]

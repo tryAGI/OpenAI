@@ -28,7 +28,7 @@ namespace OpenAI
         /// [images](/docs/guides/vision), and [audio](/docs/guides/audio).
         /// </param>
         /// <param name="model">
-        /// ID of the model to use. See the [model endpoint compatibility](/docs/models/model-endpoint-compatibility) table for details on which models work with the Chat API.<br/>
+        /// ID of the model to use. See the [model endpoint compatibility](/docs/models#model-endpoint-compatibility) table for details on which models work with the Chat API.<br/>
         /// Example: gpt-4o
         /// </param>
         /// <param name="store">
@@ -42,7 +42,7 @@ namespace OpenAI
         /// </param>
         /// <param name="frequencyPenalty">
         /// Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.<br/>
-        /// [See more information about frequency and presence penalties.](/docs/guides/text-generation/parameter-details)<br/>
+        /// [See more information about frequency and presence penalties.](/docs/guides/text-generation)<br/>
         /// Default Value: 0
         /// </param>
         /// <param name="logitBias">
@@ -73,17 +73,23 @@ namespace OpenAI
         /// use:<br/>
         /// `["text", "audio"]`
         /// </param>
+        /// <param name="prediction">
+        /// Configuration for a [Predicted Output](/docs/guides/latency-optimization#use-predicted-outputs),<br/>
+        /// which can greatly improve response times when large parts of the model<br/>
+        /// response are known ahead of time. This is most common when you are<br/>
+        /// regenerating a file with only minor changes to most of the content.
+        /// </param>
         /// <param name="audio">
         /// Parameters for audio output. Required when audio output is requested with<br/>
         /// `modalities: ["audio"]`. [Learn more](/docs/guides/audio).
         /// </param>
         /// <param name="presencePenalty">
         /// Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.<br/>
-        /// [See more information about frequency and presence penalties.](/docs/guides/text-generation/parameter-details)<br/>
+        /// [See more information about frequency and presence penalties.](/docs/guides/text-generation)<br/>
         /// Default Value: 0
         /// </param>
         /// <param name="responseFormat">
-        /// An object specifying the format that the model must output. Compatible with [GPT-4o](/docs/models/gpt-4o), [GPT-4o mini](/docs/models/gpt-4o-mini), [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models newer than `gpt-3.5-turbo-1106`.<br/>
+        /// An object specifying the format that the model must output. Compatible with [GPT-4o](/docs/models#gpt-4o), [GPT-4o mini](/docs/models#gpt-4o-mini), [GPT-4 Turbo](/docs/models#gpt-4-turbo-and-gpt-4) and all GPT-3.5 Turbo models newer than `gpt-3.5-turbo-1106`.<br/>
         /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).<br/>
         /// Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.<br/>
         /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
@@ -95,7 +101,7 @@ namespace OpenAI
         /// </param>
         /// <param name="serviceTier">
         /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
-        ///   - If set to 'auto', and the Project is Scale tier enabled, the system will utilize scale tier credits until they are exhausted. <br/>
+        ///   - If set to 'auto', and the Project is Scale tier enabled, the system will utilize scale tier credits until they are exhausted.<br/>
         ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
         ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
         ///   - When not set, the default behavior is 'auto'.<br/>
@@ -136,10 +142,10 @@ namespace OpenAI
         /// `none` is the default when no tools are present. `auto` is the default if tools are present.
         /// </param>
         /// <param name="parallelToolCalls">
-        /// Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.
+        /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.
         /// </param>
         /// <param name="user">
-        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).<br/>
+        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
         /// Example: user-1234
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -156,6 +162,7 @@ namespace OpenAI
             int? maxCompletionTokens = default,
             int? n = default,
             global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionModalitie>? modalities = default,
+            global::OpenAI.PredictionContent? prediction = default,
             global::OpenAI.CreateChatCompletionRequestAudio? audio = default,
             double? presencePenalty = default,
             global::OpenAI.ResponseFormat? responseFormat = default,

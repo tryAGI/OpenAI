@@ -12,7 +12,7 @@ namespace OpenAI
     {
         /// <summary>
         /// The name of the model to fine-tune. You can select one of the<br/>
-        /// [supported models](/docs/guides/fine-tuning/which-models-can-be-fine-tuned).<br/>
+        /// [supported models](/docs/guides/fine-tuning#which-models-can-be-fine-tuned).<br/>
         /// Example: gpt-4o-mini
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]

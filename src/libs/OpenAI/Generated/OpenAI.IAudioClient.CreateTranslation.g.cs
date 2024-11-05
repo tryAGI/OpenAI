@@ -28,7 +28,7 @@ namespace OpenAI
         /// Example: whisper-1
         /// </param>
         /// <param name="prompt">
-        /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text/prompting) should be in English.
+        /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text#prompting) should be in English.
         /// </param>
         /// <param name="responseFormat">
         /// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.<br/>

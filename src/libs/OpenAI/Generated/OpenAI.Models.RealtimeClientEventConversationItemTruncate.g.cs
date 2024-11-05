@@ -4,7 +4,9 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Send this event when you want to truncate a previous assistant message’s audio.
+    /// Send this event to truncate a previous assistant message’s audio. The server will produce audio faster than realtime, so this event is useful when the user interrupts to truncate audio that has already been sent to the client but not yet played. This will synchronize the server's understanding of the audio with the client's playback.<br/>
+    /// Truncating audio will delete the server-side text transcript to ensure there is not text in the context that hasn't been heard by the user.<br/>
+    /// If successful, the server will respond with a `conversation.item.truncated` event. 
     /// </summary>
     public sealed partial class RealtimeClientEventConversationItemTruncate
     {
@@ -22,21 +24,21 @@ namespace OpenAI
         public required string Type { get; set; }
 
         /// <summary>
-        /// The ID of the assistant message item to truncate.
+        /// The ID of the assistant message item to truncate. Only assistant message items can be truncated.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ItemId { get; set; }
 
         /// <summary>
-        /// The index of the content part to truncate.
+        /// The index of the content part to truncate. Set this to 0.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int ContentIndex { get; set; }
 
         /// <summary>
-        /// Inclusive duration up to which audio is truncated, in milliseconds.
+        /// Inclusive duration up to which audio is truncated, in milliseconds. If the audio_end_ms is greater than the actual audio duration, the server will respond with an error.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio_end_ms")]
         [global::System.Text.Json.Serialization.JsonRequired]

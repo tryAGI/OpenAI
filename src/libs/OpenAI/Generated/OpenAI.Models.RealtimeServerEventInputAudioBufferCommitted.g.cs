@@ -4,7 +4,7 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Returned when an input audio buffer is committed, either by the client or automatically in server VAD mode.
+    /// Returned when an input audio buffer is committed, either by the client or automatically in server VAD mode. The `item_id` property is the ID of the user message item that will be created, thus a `conversation.item.created` event will also be sent to the client.
     /// </summary>
     public sealed partial class RealtimeServerEventInputAudioBufferCommitted
     {
@@ -16,7 +16,7 @@ namespace OpenAI
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be "input_audio_buffer.committed".
+        /// The event type, must be `input_audio_buffer.committed`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -4,7 +4,8 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Send this event when adding an item to the conversation.
+    /// Add a new Item to the Conversation's context, including messages, function calls, and function call responses. This event can be used both to populate a "history" of the conversation and to add new items mid-stream, but has the current limitation that it cannot populate assistant audio messages.<br/>
+    /// If successful, the server will respond with a `conversation.item.created` event, otherwise an `error` event will be sent.
     /// </summary>
     public sealed partial class RealtimeClientEventConversationItemCreate
     {
@@ -15,24 +16,28 @@ namespace OpenAI
         public string? EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be "conversation.item.create".
+        /// The event type, must be `conversation.item.create`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Type { get; set; }
 
         /// <summary>
-        /// The ID of the preceding item after which the new item will be inserted.
+        /// The ID of the preceding item after which the new item will be inserted. If not set, the new item will be appended to the end of the conversation. If set, it allows an item to be inserted mid-conversation. If the ID cannot be found, an error will be returned and the item will not be added.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("previous_item_id")]
         public string? PreviousItemId { get; set; }
 
         /// <summary>
-        /// The item to add to the conversation.
+        /// A realtime Item is of three types: message, function_call, or function_call_output.<br/>
+        /// A message item can contain text or audio.<br/>
+        /// A function_call item indicates a model's desire to call a function, which is the only tool supported for now<br/>
+        /// A function_call_output item indicates a function response.<br/>
+        /// The client may add and remove message and function_call_output Items using conversation.item.create and conversation.item.delete.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.RealtimeClientEventConversationItemCreateItem Item { get; set; }
+        public required global::OpenAI.RealtimeConversationItem Item { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

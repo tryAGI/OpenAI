@@ -22,7 +22,7 @@ namespace OpenAI
         /// <summary>
         /// The content moderation model you would like to use. Learn more in<br/>
         /// [the moderation guide](/docs/guides/moderation), and learn about<br/>
-        /// available models [here](/docs/models/moderation).<br/>
+        /// available models [here](/docs/models#moderation).<br/>
         /// Default Value: omni-moderation-latest<br/>
         /// Example: omni-moderation-2024-09-26
         /// </summary>
