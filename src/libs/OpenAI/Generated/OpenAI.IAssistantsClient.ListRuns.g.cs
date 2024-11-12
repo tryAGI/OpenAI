@@ -17,7 +17,7 @@ namespace OpenAI
         /// <param name="after"></param>
         /// <param name="before"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::OpenAI.ApiException"></exception>
         [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "OPENAI_BETA_001")]
         global::System.Threading.Tasks.Task<global::OpenAI.ListRunsResponse> ListRunsAsync(
             string threadId,

@@ -26,7 +26,7 @@ namespace OpenAI
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<byte[]> CreateSpeechAsync(
             global::OpenAI.CreateSpeechRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -89,17 +89,63 @@ namespace OpenAI
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
 
-            var __content = await __response.Content.ReadAsByteArrayAsync(cancellationToken).ConfigureAwait(false);
+            if (ReadResponseAsString)
+            {
+                var __content = await __response.Content.ReadAsByteArrayAsync(cancellationToken).ConfigureAwait(false);
 
-            ProcessCreateSpeechResponseContent(
-                httpClient: HttpClient,
-                httpResponseMessage: __response,
-                content: ref __content);
+                ProcessCreateSpeechResponseContent(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response,
+                    content: ref __content);
 
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+                }
+                catch (global::System.Net.Http.HttpRequestException __ex)
+                {
+                    throw new global::OpenAI.ApiException(
+                        message: __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
 
-            __response.EnsureSuccessStatusCode();
+                    return __content;
+            }
+            else
+            {
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+                }
+                catch (global::System.Net.Http.HttpRequestException __ex)
+                {
+                    throw new global::OpenAI.ApiException(
+                        message: __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
 
-            return __content;
+                using var __responseStream = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+
+                var __responseValue = await global::System.Text.Json.JsonSerializer.DeserializeAsync(__responseStream, typeof(byte[]), JsonSerializerContext).ConfigureAwait(false) as byte[];
+
+                return
+                    __responseValue ??
+                    throw new global::System.InvalidOperationException("Response deserialization failed.");
+            }
         }
 
         /// <summary>

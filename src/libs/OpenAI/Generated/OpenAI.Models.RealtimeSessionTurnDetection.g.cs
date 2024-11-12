@@ -12,6 +12,7 @@ namespace OpenAI
         /// The type of turn detection.<br/>
         /// Example: server_vad
         /// </summary>
+        /// <example>server_vad</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeSessionTurnDetectionTypeJsonConverter))]
         public global::OpenAI.RealtimeSessionTurnDetectionType? Type { get; set; }
@@ -20,6 +21,7 @@ namespace OpenAI
         /// Activation threshold for VAD (0.0 to 1.0).<br/>
         /// Example: 0.5
         /// </summary>
+        /// <example>0.5</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("threshold")]
         public double? Threshold { get; set; }
 
@@ -27,6 +29,7 @@ namespace OpenAI
         /// Amount of audio to include before speech starts (in milliseconds).<br/>
         /// Example: 300
         /// </summary>
+        /// <example>300</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("prefix_padding_ms")]
         public int? PrefixPaddingMs { get; set; }
 
@@ -34,6 +37,7 @@ namespace OpenAI
         /// Duration of silence to detect speech stop (in milliseconds).<br/>
         /// Example: 200
         /// </summary>
+        /// <example>200</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("silence_duration_ms")]
         public int? SilenceDurationMs { get; set; }
 
@@ -43,91 +47,43 @@ namespace OpenAI
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="RealtimeSessionTurnDetection" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="type">
+        /// The type of turn detection.<br/>
+        /// Example: server_vad
+        /// </param>
+        /// <param name="threshold">
+        /// Activation threshold for VAD (0.0 to 1.0).<br/>
+        /// Example: 0.5
+        /// </param>
+        /// <param name="prefixPaddingMs">
+        /// Amount of audio to include before speech starts (in milliseconds).<br/>
+        /// Example: 300
+        /// </param>
+        /// <param name="silenceDurationMs">
+        /// Duration of silence to detect speech stop (in milliseconds).<br/>
+        /// Example: 200
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RealtimeSessionTurnDetection(
+            global::OpenAI.RealtimeSessionTurnDetectionType? type,
+            double? threshold,
+            int? prefixPaddingMs,
+            int? silenceDurationMs)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.Type = type;
+            this.Threshold = threshold;
+            this.PrefixPaddingMs = prefixPaddingMs;
+            this.SilenceDurationMs = silenceDurationMs;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="RealtimeSessionTurnDetection" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public RealtimeSessionTurnDetection()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::OpenAI.RealtimeSessionTurnDetection? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::OpenAI.RealtimeSessionTurnDetection),
-                jsonSerializerContext) as global::OpenAI.RealtimeSessionTurnDetection;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::OpenAI.RealtimeSessionTurnDetection? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::OpenAI.RealtimeSessionTurnDetection>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::OpenAI.RealtimeSessionTurnDetection?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::OpenAI.RealtimeSessionTurnDetection),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenAI.RealtimeSessionTurnDetection;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::OpenAI.RealtimeSessionTurnDetection?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::OpenAI.RealtimeSessionTurnDetection?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

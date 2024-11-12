@@ -11,7 +11,7 @@ namespace OpenAI
         /// Example: ft:gpt-4o-mini:acemeco:suffix:abc123
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::OpenAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::OpenAI.DeleteModelResponse> DeleteModelAsync(
             string model,
             global::System.Threading.CancellationToken cancellationToken = default);

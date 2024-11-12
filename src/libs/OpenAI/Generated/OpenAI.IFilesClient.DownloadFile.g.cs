@@ -9,7 +9,7 @@ namespace OpenAI
         /// </summary>
         /// <param name="fileId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::OpenAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<byte[]> DownloadFileAsync(
             string fileId,
             global::System.Threading.CancellationToken cancellationToken = default);

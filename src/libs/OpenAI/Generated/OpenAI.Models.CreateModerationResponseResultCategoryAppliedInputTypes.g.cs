@@ -105,91 +105,84 @@ namespace OpenAI
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="CreateModerationResponseResultCategoryAppliedInputTypes" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="hate">
+        /// The applied input type(s) for the category 'hate'.
+        /// </param>
+        /// <param name="hateThreatening">
+        /// The applied input type(s) for the category 'hate/threatening'.
+        /// </param>
+        /// <param name="harassment">
+        /// The applied input type(s) for the category 'harassment'.
+        /// </param>
+        /// <param name="harassmentThreatening">
+        /// The applied input type(s) for the category 'harassment/threatening'.
+        /// </param>
+        /// <param name="illicit">
+        /// The applied input type(s) for the category 'illicit'.
+        /// </param>
+        /// <param name="illicitViolent">
+        /// The applied input type(s) for the category 'illicit/violent'.
+        /// </param>
+        /// <param name="selfHarm">
+        /// The applied input type(s) for the category 'self-harm'.
+        /// </param>
+        /// <param name="selfHarmIntent">
+        /// The applied input type(s) for the category 'self-harm/intent'.
+        /// </param>
+        /// <param name="selfHarmInstructions">
+        /// The applied input type(s) for the category 'self-harm/instructions'.
+        /// </param>
+        /// <param name="sexual">
+        /// The applied input type(s) for the category 'sexual'.
+        /// </param>
+        /// <param name="sexualMinors">
+        /// The applied input type(s) for the category 'sexual/minors'.
+        /// </param>
+        /// <param name="violence">
+        /// The applied input type(s) for the category 'violence'.
+        /// </param>
+        /// <param name="violenceGraphic">
+        /// The applied input type(s) for the category 'violence/graphic'.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateModerationResponseResultCategoryAppliedInputTypes(
+            global::System.Collections.Generic.IList<global::OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesHateItem> hate,
+            global::System.Collections.Generic.IList<global::OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesHateThreateningItem> hateThreatening,
+            global::System.Collections.Generic.IList<global::OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesHarassmentItem> harassment,
+            global::System.Collections.Generic.IList<global::OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesHarassmentThreateningItem> harassmentThreatening,
+            global::System.Collections.Generic.IList<global::OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesIllicitItem> illicit,
+            global::System.Collections.Generic.IList<global::OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesIllicitViolentItem> illicitViolent,
+            global::System.Collections.Generic.IList<global::OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSelfHarmItem> selfHarm,
+            global::System.Collections.Generic.IList<global::OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSelfHarmIntentItem> selfHarmIntent,
+            global::System.Collections.Generic.IList<global::OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSelfHarmInstruction> selfHarmInstructions,
+            global::System.Collections.Generic.IList<global::OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSexualItem> sexual,
+            global::System.Collections.Generic.IList<global::OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSexualMinor> sexualMinors,
+            global::System.Collections.Generic.IList<global::OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesViolenceItem> violence,
+            global::System.Collections.Generic.IList<global::OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesViolenceGraphicItem> violenceGraphic)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.Hate = hate ?? throw new global::System.ArgumentNullException(nameof(hate));
+            this.HateThreatening = hateThreatening ?? throw new global::System.ArgumentNullException(nameof(hateThreatening));
+            this.Harassment = harassment ?? throw new global::System.ArgumentNullException(nameof(harassment));
+            this.HarassmentThreatening = harassmentThreatening ?? throw new global::System.ArgumentNullException(nameof(harassmentThreatening));
+            this.Illicit = illicit ?? throw new global::System.ArgumentNullException(nameof(illicit));
+            this.IllicitViolent = illicitViolent ?? throw new global::System.ArgumentNullException(nameof(illicitViolent));
+            this.SelfHarm = selfHarm ?? throw new global::System.ArgumentNullException(nameof(selfHarm));
+            this.SelfHarmIntent = selfHarmIntent ?? throw new global::System.ArgumentNullException(nameof(selfHarmIntent));
+            this.SelfHarmInstructions = selfHarmInstructions ?? throw new global::System.ArgumentNullException(nameof(selfHarmInstructions));
+            this.Sexual = sexual ?? throw new global::System.ArgumentNullException(nameof(sexual));
+            this.SexualMinors = sexualMinors ?? throw new global::System.ArgumentNullException(nameof(sexualMinors));
+            this.Violence = violence ?? throw new global::System.ArgumentNullException(nameof(violence));
+            this.ViolenceGraphic = violenceGraphic ?? throw new global::System.ArgumentNullException(nameof(violenceGraphic));
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="CreateModerationResponseResultCategoryAppliedInputTypes" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public CreateModerationResponseResultCategoryAppliedInputTypes()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::OpenAI.CreateModerationResponseResultCategoryAppliedInputTypes? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::OpenAI.CreateModerationResponseResultCategoryAppliedInputTypes),
-                jsonSerializerContext) as global::OpenAI.CreateModerationResponseResultCategoryAppliedInputTypes;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::OpenAI.CreateModerationResponseResultCategoryAppliedInputTypes? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::OpenAI.CreateModerationResponseResultCategoryAppliedInputTypes>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::OpenAI.CreateModerationResponseResultCategoryAppliedInputTypes?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::OpenAI.CreateModerationResponseResultCategoryAppliedInputTypes),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenAI.CreateModerationResponseResultCategoryAppliedInputTypes;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::OpenAI.CreateModerationResponseResultCategoryAppliedInputTypes?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::OpenAI.CreateModerationResponseResultCategoryAppliedInputTypes?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

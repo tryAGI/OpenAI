@@ -12,6 +12,7 @@ namespace OpenAI
         /// The unique ID of the server event.<br/>
         /// Example: event_2324
         /// </summary>
+        /// <example>event_2324</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("event_id")]
         public string? EventId { get; set; }
 
@@ -19,6 +20,7 @@ namespace OpenAI
         /// The event type, must be "conversation.item.input_audio_transcription.failed".<br/>
         /// Example: conversation.item.input_audio_transcription.failed
         /// </summary>
+        /// <example>conversation.item.input_audio_transcription.failed</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeConversationItemInputAudioTranscriptionFailedTypeJsonConverter))]
         public global::OpenAI.RealtimeConversationItemInputAudioTranscriptionFailedType? Type { get; set; }
@@ -27,6 +29,7 @@ namespace OpenAI
         /// The ID of the user message item.<br/>
         /// Example: msg_003
         /// </summary>
+        /// <example>msg_003</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
         public string? ItemId { get; set; }
 
@@ -34,6 +37,7 @@ namespace OpenAI
         /// The index of the content part containing the audio.<br/>
         /// Example: 0
         /// </summary>
+        /// <example>0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_index")]
         public int? ContentIndex { get; set; }
 
@@ -49,91 +53,48 @@ namespace OpenAI
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="RealtimeConversationItemInputAudioTranscriptionFailed" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="eventId">
+        /// The unique ID of the server event.<br/>
+        /// Example: event_2324
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be "conversation.item.input_audio_transcription.failed".<br/>
+        /// Example: conversation.item.input_audio_transcription.failed
+        /// </param>
+        /// <param name="itemId">
+        /// The ID of the user message item.<br/>
+        /// Example: msg_003
+        /// </param>
+        /// <param name="contentIndex">
+        /// The index of the content part containing the audio.<br/>
+        /// Example: 0
+        /// </param>
+        /// <param name="error">
+        /// Details of the error.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RealtimeConversationItemInputAudioTranscriptionFailed(
+            string? eventId,
+            global::OpenAI.RealtimeConversationItemInputAudioTranscriptionFailedType? type,
+            string? itemId,
+            int? contentIndex,
+            global::OpenAI.RealtimeErrorDetails? error)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.EventId = eventId;
+            this.Type = type;
+            this.ItemId = itemId;
+            this.ContentIndex = contentIndex;
+            this.Error = error;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="RealtimeConversationItemInputAudioTranscriptionFailed" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public RealtimeConversationItemInputAudioTranscriptionFailed()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::OpenAI.RealtimeConversationItemInputAudioTranscriptionFailed? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::OpenAI.RealtimeConversationItemInputAudioTranscriptionFailed),
-                jsonSerializerContext) as global::OpenAI.RealtimeConversationItemInputAudioTranscriptionFailed;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::OpenAI.RealtimeConversationItemInputAudioTranscriptionFailed? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::OpenAI.RealtimeConversationItemInputAudioTranscriptionFailed>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::OpenAI.RealtimeConversationItemInputAudioTranscriptionFailed?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::OpenAI.RealtimeConversationItemInputAudioTranscriptionFailed),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenAI.RealtimeConversationItemInputAudioTranscriptionFailed;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::OpenAI.RealtimeConversationItemInputAudioTranscriptionFailed?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::OpenAI.RealtimeConversationItemInputAudioTranscriptionFailed?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

@@ -16,6 +16,7 @@ namespace OpenAI
         /// The unique ID of the item.<br/>
         /// Example: msg_003
         /// </summary>
+        /// <example>msg_003</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
 
@@ -23,6 +24,7 @@ namespace OpenAI
         /// The object type, must be "realtime.item".<br/>
         /// Example: realtime.item
         /// </summary>
+        /// <example>realtime.item</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeConversationItemObjectJsonConverter))]
         public global::OpenAI.RealtimeConversationItemObject? Object { get; set; }
@@ -31,6 +33,7 @@ namespace OpenAI
         /// The type of the item.<br/>
         /// Example: message
         /// </summary>
+        /// <example>message</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeConversationItemTypeJsonConverter))]
         public global::OpenAI.RealtimeConversationItemType? Type { get; set; }
@@ -39,6 +42,7 @@ namespace OpenAI
         /// The status of the item.<br/>
         /// Example: completed
         /// </summary>
+        /// <example>completed</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeConversationItemStatusJsonConverter))]
         public global::OpenAI.RealtimeConversationItemStatus? Status { get; set; }
@@ -47,6 +51,7 @@ namespace OpenAI
         /// The role of the message sender.<br/>
         /// Example: user
         /// </summary>
+        /// <example>user</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeConversationItemRoleJsonConverter))]
         public global::OpenAI.RealtimeConversationItemRole? Role { get; set; }
@@ -63,91 +68,54 @@ namespace OpenAI
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="RealtimeConversationItem" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="id">
+        /// The unique ID of the item.<br/>
+        /// Example: msg_003
+        /// </param>
+        /// <param name="object">
+        /// The object type, must be "realtime.item".<br/>
+        /// Example: realtime.item
+        /// </param>
+        /// <param name="type">
+        /// The type of the item.<br/>
+        /// Example: message
+        /// </param>
+        /// <param name="status">
+        /// The status of the item.<br/>
+        /// Example: completed
+        /// </param>
+        /// <param name="role">
+        /// The role of the message sender.<br/>
+        /// Example: user
+        /// </param>
+        /// <param name="content">
+        /// The content of the message.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RealtimeConversationItem(
+            string? id,
+            global::OpenAI.RealtimeConversationItemObject? @object,
+            global::OpenAI.RealtimeConversationItemType? type,
+            global::OpenAI.RealtimeConversationItemStatus? status,
+            global::OpenAI.RealtimeConversationItemRole? role,
+            global::System.Collections.Generic.IList<global::OpenAI.RealtimeConversationItemContentItem>? content)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.Id = id;
+            this.Object = @object;
+            this.Type = type;
+            this.Status = status;
+            this.Role = role;
+            this.Content = content;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="RealtimeConversationItem" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public RealtimeConversationItem()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::OpenAI.RealtimeConversationItem? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::OpenAI.RealtimeConversationItem),
-                jsonSerializerContext) as global::OpenAI.RealtimeConversationItem;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::OpenAI.RealtimeConversationItem? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::OpenAI.RealtimeConversationItem>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::OpenAI.RealtimeConversationItem?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::OpenAI.RealtimeConversationItem),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenAI.RealtimeConversationItem;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::OpenAI.RealtimeConversationItem?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::OpenAI.RealtimeConversationItem?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

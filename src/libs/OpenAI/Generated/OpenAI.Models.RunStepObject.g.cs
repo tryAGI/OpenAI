@@ -132,91 +132,99 @@ namespace OpenAI
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="RunStepObject" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="id">
+        /// The identifier of the run step, which can be referenced in API endpoints.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `thread.run.step`.
+        /// </param>
+        /// <param name="createdAt">
+        /// The Unix timestamp (in seconds) for when the run step was created.
+        /// </param>
+        /// <param name="assistantId">
+        /// The ID of the [assistant](/docs/api-reference/assistants) associated with the run step.
+        /// </param>
+        /// <param name="threadId">
+        /// The ID of the [thread](/docs/api-reference/threads) that was run.
+        /// </param>
+        /// <param name="runId">
+        /// The ID of the [run](/docs/api-reference/runs) that this run step is a part of.
+        /// </param>
+        /// <param name="type">
+        /// The type of run step, which can be either `message_creation` or `tool_calls`.
+        /// </param>
+        /// <param name="status">
+        /// The status of the run step, which can be either `in_progress`, `cancelled`, `failed`, `completed`, or `expired`.
+        /// </param>
+        /// <param name="stepDetails">
+        /// The details of the run step.
+        /// </param>
+        /// <param name="lastError">
+        /// The last error associated with this run step. Will be `null` if there are no errors.
+        /// </param>
+        /// <param name="expiredAt">
+        /// The Unix timestamp (in seconds) for when the run step expired. A step is considered expired if the parent run is expired.
+        /// </param>
+        /// <param name="cancelledAt">
+        /// The Unix timestamp (in seconds) for when the run step was cancelled.
+        /// </param>
+        /// <param name="failedAt">
+        /// The Unix timestamp (in seconds) for when the run step failed.
+        /// </param>
+        /// <param name="completedAt">
+        /// The Unix timestamp (in seconds) for when the run step completed.
+        /// </param>
+        /// <param name="metadata">
+        /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.
+        /// </param>
+        /// <param name="usage">
+        /// Usage statistics related to the run step. This value will be `null` while the run step's status is `in_progress`.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RunStepObject(
+            string id,
+            global::System.DateTimeOffset createdAt,
+            string assistantId,
+            string threadId,
+            string runId,
+            global::OpenAI.RunStepObjectType type,
+            global::OpenAI.RunStepObjectStatus status,
+            global::OpenAI.RunStepObjectStepDetails stepDetails,
+            global::OpenAI.RunStepObjectLastError? lastError,
+            global::System.DateTimeOffset? cancelledAt,
+            global::System.DateTimeOffset? failedAt,
+            global::System.DateTimeOffset? completedAt,
+            global::OpenAI.RunStepCompletionUsage? usage,
+            global::OpenAI.RunStepObjectObject @object,
+            global::System.DateTimeOffset? expiredAt,
+            object? metadata)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
+            this.AssistantId = assistantId ?? throw new global::System.ArgumentNullException(nameof(assistantId));
+            this.ThreadId = threadId ?? throw new global::System.ArgumentNullException(nameof(threadId));
+            this.RunId = runId ?? throw new global::System.ArgumentNullException(nameof(runId));
+            this.Type = type;
+            this.Status = status;
+            this.StepDetails = stepDetails;
+            this.LastError = lastError ?? throw new global::System.ArgumentNullException(nameof(lastError));
+            this.CancelledAt = cancelledAt;
+            this.FailedAt = failedAt;
+            this.CompletedAt = completedAt;
+            this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
+            this.Object = @object;
+            this.ExpiredAt = expiredAt;
+            this.Metadata = metadata;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="RunStepObject" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public RunStepObject()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::OpenAI.RunStepObject? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::OpenAI.RunStepObject),
-                jsonSerializerContext) as global::OpenAI.RunStepObject;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::OpenAI.RunStepObject? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::OpenAI.RunStepObject>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::OpenAI.RunStepObject?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::OpenAI.RunStepObject),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenAI.RunStepObject;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::OpenAI.RunStepObject?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::OpenAI.RunStepObject?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

@@ -151,91 +151,115 @@ namespace OpenAI
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="Batch" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="id"></param>
+        /// <param name="object">
+        /// The object type, which is always `batch`.
+        /// </param>
+        /// <param name="endpoint">
+        /// The OpenAI API endpoint used by the batch.
+        /// </param>
+        /// <param name="errors"></param>
+        /// <param name="inputFileId">
+        /// The ID of the input file for the batch.
+        /// </param>
+        /// <param name="completionWindow">
+        /// The time frame within which the batch should be processed.
+        /// </param>
+        /// <param name="status">
+        /// The current status of the batch.
+        /// </param>
+        /// <param name="outputFileId">
+        /// The ID of the file containing the outputs of successfully executed requests.
+        /// </param>
+        /// <param name="errorFileId">
+        /// The ID of the file containing the outputs of requests with errors.
+        /// </param>
+        /// <param name="createdAt">
+        /// The Unix timestamp (in seconds) for when the batch was created.
+        /// </param>
+        /// <param name="inProgressAt">
+        /// The Unix timestamp (in seconds) for when the batch started processing.
+        /// </param>
+        /// <param name="expiresAt">
+        /// The Unix timestamp (in seconds) for when the batch will expire.
+        /// </param>
+        /// <param name="finalizingAt">
+        /// The Unix timestamp (in seconds) for when the batch started finalizing.
+        /// </param>
+        /// <param name="completedAt">
+        /// The Unix timestamp (in seconds) for when the batch was completed.
+        /// </param>
+        /// <param name="failedAt">
+        /// The Unix timestamp (in seconds) for when the batch failed.
+        /// </param>
+        /// <param name="expiredAt">
+        /// The Unix timestamp (in seconds) for when the batch expired.
+        /// </param>
+        /// <param name="cancellingAt">
+        /// The Unix timestamp (in seconds) for when the batch started cancelling.
+        /// </param>
+        /// <param name="cancelledAt">
+        /// The Unix timestamp (in seconds) for when the batch was cancelled.
+        /// </param>
+        /// <param name="requestCounts">
+        /// The request counts for different statuses within the batch.
+        /// </param>
+        /// <param name="metadata">
+        /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Batch(
+            string id,
+            string endpoint,
+            string inputFileId,
+            string completionWindow,
+            global::OpenAI.BatchStatus status,
+            global::System.DateTimeOffset createdAt,
+            global::OpenAI.BatchObject @object,
+            global::OpenAI.BatchErrors? errors,
+            string? outputFileId,
+            string? errorFileId,
+            global::System.DateTimeOffset? inProgressAt,
+            global::System.DateTimeOffset? expiresAt,
+            global::System.DateTimeOffset? finalizingAt,
+            global::System.DateTimeOffset? completedAt,
+            global::System.DateTimeOffset? failedAt,
+            global::System.DateTimeOffset? expiredAt,
+            global::System.DateTimeOffset? cancellingAt,
+            global::System.DateTimeOffset? cancelledAt,
+            global::OpenAI.BatchRequestCounts? requestCounts,
+            object? metadata)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Endpoint = endpoint ?? throw new global::System.ArgumentNullException(nameof(endpoint));
+            this.InputFileId = inputFileId ?? throw new global::System.ArgumentNullException(nameof(inputFileId));
+            this.CompletionWindow = completionWindow ?? throw new global::System.ArgumentNullException(nameof(completionWindow));
+            this.Status = status;
+            this.CreatedAt = createdAt;
+            this.Object = @object;
+            this.Errors = errors;
+            this.OutputFileId = outputFileId;
+            this.ErrorFileId = errorFileId;
+            this.InProgressAt = inProgressAt;
+            this.ExpiresAt = expiresAt;
+            this.FinalizingAt = finalizingAt;
+            this.CompletedAt = completedAt;
+            this.FailedAt = failedAt;
+            this.ExpiredAt = expiredAt;
+            this.CancellingAt = cancellingAt;
+            this.CancelledAt = cancelledAt;
+            this.RequestCounts = requestCounts;
+            this.Metadata = metadata;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="Batch" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public Batch()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::OpenAI.Batch? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::OpenAI.Batch),
-                jsonSerializerContext) as global::OpenAI.Batch;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::OpenAI.Batch? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::OpenAI.Batch>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::OpenAI.Batch?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::OpenAI.Batch),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenAI.Batch;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::OpenAI.Batch?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::OpenAI.Batch?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

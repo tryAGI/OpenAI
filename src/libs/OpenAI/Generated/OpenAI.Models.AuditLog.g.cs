@@ -158,91 +158,134 @@ namespace OpenAI
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="AuditLog" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="id">
+        /// The ID of this log.
+        /// </param>
+        /// <param name="type">
+        /// The event type.
+        /// </param>
+        /// <param name="effectiveAt">
+        /// The Unix timestamp (in seconds) of the event.
+        /// </param>
+        /// <param name="project">
+        /// The project that the action was scoped to. Absent for actions not scoped to projects.
+        /// </param>
+        /// <param name="actor">
+        /// The actor who performed the audit logged action.
+        /// </param>
+        /// <param name="apiKeyCreated">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="apiKeyUpdated">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="apiKeyDeleted">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="inviteSent">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="inviteAccepted">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="inviteDeleted">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="loginFailed">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="logoutFailed">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="organizationUpdated">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="projectCreated">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="projectUpdated">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="projectArchived">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="serviceAccountCreated">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="serviceAccountUpdated">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="serviceAccountDeleted">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="userAdded">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="userUpdated">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="userDeleted">
+        /// The details for events with this `type`.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public AuditLog(
+            string id,
+            global::OpenAI.AuditLogEventType type,
+            global::System.DateTimeOffset effectiveAt,
+            global::OpenAI.AuditLogActor actor,
+            global::OpenAI.AuditLogProject? project,
+            global::OpenAI.AuditLogApiKeyCreated? apiKeyCreated,
+            global::OpenAI.AuditLogApiKeyUpdated? apiKeyUpdated,
+            global::OpenAI.AuditLogApiKeyDeleted? apiKeyDeleted,
+            global::OpenAI.AuditLogInviteSent? inviteSent,
+            global::OpenAI.AuditLogInviteAccepted? inviteAccepted,
+            global::OpenAI.AuditLogInviteDeleted? inviteDeleted,
+            global::OpenAI.AuditLogLoginFailed? loginFailed,
+            global::OpenAI.AuditLogLogoutFailed? logoutFailed,
+            global::OpenAI.AuditLogOrganizationUpdated? organizationUpdated,
+            global::OpenAI.AuditLogProjectCreated? projectCreated,
+            global::OpenAI.AuditLogProjectUpdated? projectUpdated,
+            global::OpenAI.AuditLogProjectArchived? projectArchived,
+            global::OpenAI.AuditLogServiceAccountCreated? serviceAccountCreated,
+            global::OpenAI.AuditLogServiceAccountUpdated? serviceAccountUpdated,
+            global::OpenAI.AuditLogServiceAccountDeleted? serviceAccountDeleted,
+            global::OpenAI.AuditLogUserAdded? userAdded,
+            global::OpenAI.AuditLogUserUpdated? userUpdated,
+            global::OpenAI.AuditLogUserDeleted? userDeleted)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Type = type;
+            this.EffectiveAt = effectiveAt;
+            this.Actor = actor ?? throw new global::System.ArgumentNullException(nameof(actor));
+            this.Project = project;
+            this.ApiKeyCreated = apiKeyCreated;
+            this.ApiKeyUpdated = apiKeyUpdated;
+            this.ApiKeyDeleted = apiKeyDeleted;
+            this.InviteSent = inviteSent;
+            this.InviteAccepted = inviteAccepted;
+            this.InviteDeleted = inviteDeleted;
+            this.LoginFailed = loginFailed;
+            this.LogoutFailed = logoutFailed;
+            this.OrganizationUpdated = organizationUpdated;
+            this.ProjectCreated = projectCreated;
+            this.ProjectUpdated = projectUpdated;
+            this.ProjectArchived = projectArchived;
+            this.ServiceAccountCreated = serviceAccountCreated;
+            this.ServiceAccountUpdated = serviceAccountUpdated;
+            this.ServiceAccountDeleted = serviceAccountDeleted;
+            this.UserAdded = userAdded;
+            this.UserUpdated = userUpdated;
+            this.UserDeleted = userDeleted;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="AuditLog" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public AuditLog()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::OpenAI.AuditLog? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::OpenAI.AuditLog),
-                jsonSerializerContext) as global::OpenAI.AuditLog;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::OpenAI.AuditLog? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::OpenAI.AuditLog>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::OpenAI.AuditLog?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::OpenAI.AuditLog),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenAI.AuditLog;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::OpenAI.AuditLog?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::OpenAI.AuditLog?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }
