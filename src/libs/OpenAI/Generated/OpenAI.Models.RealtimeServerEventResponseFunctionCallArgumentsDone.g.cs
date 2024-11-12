@@ -63,91 +63,54 @@ namespace OpenAI
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="RealtimeServerEventResponseFunctionCallArgumentsDone" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="eventId">
+        /// The unique ID of the server event.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be "response.function_call_arguments.done".
+        /// </param>
+        /// <param name="responseId">
+        /// The ID of the response.
+        /// </param>
+        /// <param name="itemId">
+        /// The ID of the function call item.
+        /// </param>
+        /// <param name="outputIndex">
+        /// The index of the output item in the response.
+        /// </param>
+        /// <param name="callId">
+        /// The ID of the function call.
+        /// </param>
+        /// <param name="arguments">
+        /// The final arguments as a JSON string.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RealtimeServerEventResponseFunctionCallArgumentsDone(
+            string eventId,
+            string type,
+            string responseId,
+            string itemId,
+            int outputIndex,
+            string callId,
+            string arguments)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.ResponseId = responseId ?? throw new global::System.ArgumentNullException(nameof(responseId));
+            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
+            this.OutputIndex = outputIndex;
+            this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
+            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="RealtimeServerEventResponseFunctionCallArgumentsDone" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public RealtimeServerEventResponseFunctionCallArgumentsDone()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDone? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDone),
-                jsonSerializerContext) as global::OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDone;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDone? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDone>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDone?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDone),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDone;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDone?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDone?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

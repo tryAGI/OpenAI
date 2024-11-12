@@ -105,91 +105,84 @@ namespace OpenAI
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="CreateModerationResponseResultCategories" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="hate">
+        /// Content that expresses, incites, or promotes hate based on race, gender, ethnicity, religion, nationality, sexual orientation, disability status, or caste. Hateful content aimed at non-protected groups (e.g., chess players) is harassment.
+        /// </param>
+        /// <param name="hateThreatening">
+        /// Hateful content that also includes violence or serious harm towards the targeted group based on race, gender, ethnicity, religion, nationality, sexual orientation, disability status, or caste.
+        /// </param>
+        /// <param name="harassment">
+        /// Content that expresses, incites, or promotes harassing language towards any target.
+        /// </param>
+        /// <param name="harassmentThreatening">
+        /// Harassment content that also includes violence or serious harm towards any target.
+        /// </param>
+        /// <param name="illicit">
+        /// Content that includes instructions or advice that facilitate the planning or execution of wrongdoing, or that gives advice or instruction on how to commit illicit acts. For example, "how to shoplift" would fit this category.
+        /// </param>
+        /// <param name="illicitViolent">
+        /// Content that includes instructions or advice that facilitate the planning or execution of wrongdoing that also includes violence, or that gives advice or instruction on the procurement of any weapon.
+        /// </param>
+        /// <param name="selfHarm">
+        /// Content that promotes, encourages, or depicts acts of self-harm, such as suicide, cutting, and eating disorders.
+        /// </param>
+        /// <param name="selfHarmIntent">
+        /// Content where the speaker expresses that they are engaging or intend to engage in acts of self-harm, such as suicide, cutting, and eating disorders.
+        /// </param>
+        /// <param name="selfHarmInstructions">
+        /// Content that encourages performing acts of self-harm, such as suicide, cutting, and eating disorders, or that gives instructions or advice on how to commit such acts.
+        /// </param>
+        /// <param name="sexual">
+        /// Content meant to arouse sexual excitement, such as the description of sexual activity, or that promotes sexual services (excluding sex education and wellness).
+        /// </param>
+        /// <param name="sexualMinors">
+        /// Sexual content that includes an individual who is under 18 years old.
+        /// </param>
+        /// <param name="violence">
+        /// Content that depicts death, violence, or physical injury.
+        /// </param>
+        /// <param name="violenceGraphic">
+        /// Content that depicts death, violence, or physical injury in graphic detail.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateModerationResponseResultCategories(
+            bool hate,
+            bool hateThreatening,
+            bool harassment,
+            bool harassmentThreatening,
+            bool illicit,
+            bool illicitViolent,
+            bool selfHarm,
+            bool selfHarmIntent,
+            bool selfHarmInstructions,
+            bool sexual,
+            bool sexualMinors,
+            bool violence,
+            bool violenceGraphic)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.Hate = hate;
+            this.HateThreatening = hateThreatening;
+            this.Harassment = harassment;
+            this.HarassmentThreatening = harassmentThreatening;
+            this.Illicit = illicit;
+            this.IllicitViolent = illicitViolent;
+            this.SelfHarm = selfHarm;
+            this.SelfHarmIntent = selfHarmIntent;
+            this.SelfHarmInstructions = selfHarmInstructions;
+            this.Sexual = sexual;
+            this.SexualMinors = sexualMinors;
+            this.Violence = violence;
+            this.ViolenceGraphic = violenceGraphic;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="CreateModerationResponseResultCategories" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public CreateModerationResponseResultCategories()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::OpenAI.CreateModerationResponseResultCategories? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::OpenAI.CreateModerationResponseResultCategories),
-                jsonSerializerContext) as global::OpenAI.CreateModerationResponseResultCategories;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::OpenAI.CreateModerationResponseResultCategories? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::OpenAI.CreateModerationResponseResultCategories>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::OpenAI.CreateModerationResponseResultCategories?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::OpenAI.CreateModerationResponseResultCategories),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenAI.CreateModerationResponseResultCategories;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::OpenAI.CreateModerationResponseResultCategories?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::OpenAI.CreateModerationResponseResultCategories?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

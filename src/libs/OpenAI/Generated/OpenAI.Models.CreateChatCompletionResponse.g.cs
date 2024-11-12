@@ -41,6 +41,7 @@ namespace OpenAI
         /// The service tier used for processing the request. This field is only included if the `service_tier` parameter is specified in the request.<br/>
         /// Example: scale
         /// </summary>
+        /// <example>scale</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.CreateChatCompletionResponseServiceTierJsonConverter))]
         public global::OpenAI.CreateChatCompletionResponseServiceTier? ServiceTier { get; set; }
@@ -71,91 +72,61 @@ namespace OpenAI
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="CreateChatCompletionResponse" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="id">
+        /// A unique identifier for the chat completion.
+        /// </param>
+        /// <param name="choices">
+        /// A list of chat completion choices. Can be more than one if `n` is greater than 1.
+        /// </param>
+        /// <param name="created">
+        /// The Unix timestamp (in seconds) of when the chat completion was created.
+        /// </param>
+        /// <param name="model">
+        /// The model used for the chat completion.
+        /// </param>
+        /// <param name="serviceTier">
+        /// The service tier used for processing the request. This field is only included if the `service_tier` parameter is specified in the request.<br/>
+        /// Example: scale
+        /// </param>
+        /// <param name="systemFingerprint">
+        /// This fingerprint represents the backend configuration that the model runs with.<br/>
+        /// Can be used in conjunction with the `seed` request parameter to understand when backend changes have been made that might impact determinism.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `chat.completion`.
+        /// </param>
+        /// <param name="usage">
+        /// Usage statistics for the completion request.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateChatCompletionResponse(
+            string id,
+            global::System.Collections.Generic.IList<global::OpenAI.CreateChatCompletionResponseChoice> choices,
+            global::System.DateTimeOffset created,
+            string model,
+            global::OpenAI.CreateChatCompletionResponseServiceTier? serviceTier,
+            string? systemFingerprint,
+            global::OpenAI.CreateChatCompletionResponseObject @object,
+            global::OpenAI.CompletionUsage? usage)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Choices = choices ?? throw new global::System.ArgumentNullException(nameof(choices));
+            this.Created = created;
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.ServiceTier = serviceTier;
+            this.SystemFingerprint = systemFingerprint;
+            this.Object = @object;
+            this.Usage = usage;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="CreateChatCompletionResponse" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public CreateChatCompletionResponse()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::OpenAI.CreateChatCompletionResponse? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::OpenAI.CreateChatCompletionResponse),
-                jsonSerializerContext) as global::OpenAI.CreateChatCompletionResponse;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::OpenAI.CreateChatCompletionResponse? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::OpenAI.CreateChatCompletionResponse>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::OpenAI.CreateChatCompletionResponse?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::OpenAI.CreateChatCompletionResponse),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenAI.CreateChatCompletionResponse;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::OpenAI.CreateChatCompletionResponse?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::OpenAI.CreateChatCompletionResponse?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

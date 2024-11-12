@@ -12,6 +12,7 @@ namespace OpenAI
         /// The unique ID of the server event.<br/>
         /// Example: event_3940
         /// </summary>
+        /// <example>event_3940</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("event_id")]
         public string? EventId { get; set; }
 
@@ -19,6 +20,7 @@ namespace OpenAI
         /// The event type, must be "response.content_part.done".<br/>
         /// Example: response.content_part.done
         /// </summary>
+        /// <example>response.content_part.done</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeResponseContentPartDoneTypeJsonConverter))]
         public global::OpenAI.RealtimeResponseContentPartDoneType? Type { get; set; }
@@ -27,6 +29,7 @@ namespace OpenAI
         /// The ID of the response.<br/>
         /// Example: resp_001
         /// </summary>
+        /// <example>resp_001</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_id")]
         public string? ResponseId { get; set; }
 
@@ -34,6 +37,7 @@ namespace OpenAI
         /// The ID of the item.<br/>
         /// Example: msg_007
         /// </summary>
+        /// <example>msg_007</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
         public string? ItemId { get; set; }
 
@@ -41,6 +45,7 @@ namespace OpenAI
         /// The index of the output item in the response.<br/>
         /// Example: 0
         /// </summary>
+        /// <example>0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_index")]
         public int? OutputIndex { get; set; }
 
@@ -48,6 +53,7 @@ namespace OpenAI
         /// The index of the content part in the item's content array.<br/>
         /// Example: 0
         /// </summary>
+        /// <example>0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_index")]
         public int? ContentIndex { get; set; }
 
@@ -63,91 +69,60 @@ namespace OpenAI
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="RealtimeResponseContentPartDone" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="eventId">
+        /// The unique ID of the server event.<br/>
+        /// Example: event_3940
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be "response.content_part.done".<br/>
+        /// Example: response.content_part.done
+        /// </param>
+        /// <param name="responseId">
+        /// The ID of the response.<br/>
+        /// Example: resp_001
+        /// </param>
+        /// <param name="itemId">
+        /// The ID of the item.<br/>
+        /// Example: msg_007
+        /// </param>
+        /// <param name="outputIndex">
+        /// The index of the output item in the response.<br/>
+        /// Example: 0
+        /// </param>
+        /// <param name="contentIndex">
+        /// The index of the content part in the item's content array.<br/>
+        /// Example: 0
+        /// </param>
+        /// <param name="part">
+        /// The content part that was added.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RealtimeResponseContentPartDone(
+            string? eventId,
+            global::OpenAI.RealtimeResponseContentPartDoneType? type,
+            string? responseId,
+            string? itemId,
+            int? outputIndex,
+            int? contentIndex,
+            global::OpenAI.RealtimeContentPart? part)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.EventId = eventId;
+            this.Type = type;
+            this.ResponseId = responseId;
+            this.ItemId = itemId;
+            this.OutputIndex = outputIndex;
+            this.ContentIndex = contentIndex;
+            this.Part = part;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="RealtimeResponseContentPartDone" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public RealtimeResponseContentPartDone()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::OpenAI.RealtimeResponseContentPartDone? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::OpenAI.RealtimeResponseContentPartDone),
-                jsonSerializerContext) as global::OpenAI.RealtimeResponseContentPartDone;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::OpenAI.RealtimeResponseContentPartDone? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::OpenAI.RealtimeResponseContentPartDone>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::OpenAI.RealtimeResponseContentPartDone?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::OpenAI.RealtimeResponseContentPartDone),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenAI.RealtimeResponseContentPartDone;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::OpenAI.RealtimeResponseContentPartDone?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::OpenAI.RealtimeResponseContentPartDone?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

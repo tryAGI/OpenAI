@@ -12,6 +12,7 @@ namespace OpenAI
         /// The name of the rate limit.<br/>
         /// Example: requests
         /// </summary>
+        /// <example>requests</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeRateLimitsUpdatedRateLimitNameJsonConverter))]
         public global::OpenAI.RealtimeRateLimitsUpdatedRateLimitName? Name { get; set; }
@@ -20,6 +21,7 @@ namespace OpenAI
         /// The maximum allowed value for the rate limit.<br/>
         /// Example: 1000
         /// </summary>
+        /// <example>1000</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
         public int? Limit { get; set; }
 
@@ -27,6 +29,7 @@ namespace OpenAI
         /// The remaining value before the limit is reached.<br/>
         /// Example: 999
         /// </summary>
+        /// <example>999</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("remaining")]
         public int? Remaining { get; set; }
 
@@ -34,6 +37,7 @@ namespace OpenAI
         /// Seconds until the rate limit resets.<br/>
         /// Example: 60
         /// </summary>
+        /// <example>60</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("reset_seconds")]
         public double? ResetSeconds { get; set; }
 
@@ -43,91 +47,43 @@ namespace OpenAI
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="RealtimeRateLimitsUpdatedRateLimit" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="name">
+        /// The name of the rate limit.<br/>
+        /// Example: requests
+        /// </param>
+        /// <param name="limit">
+        /// The maximum allowed value for the rate limit.<br/>
+        /// Example: 1000
+        /// </param>
+        /// <param name="remaining">
+        /// The remaining value before the limit is reached.<br/>
+        /// Example: 999
+        /// </param>
+        /// <param name="resetSeconds">
+        /// Seconds until the rate limit resets.<br/>
+        /// Example: 60
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RealtimeRateLimitsUpdatedRateLimit(
+            global::OpenAI.RealtimeRateLimitsUpdatedRateLimitName? name,
+            int? limit,
+            int? remaining,
+            double? resetSeconds)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.Name = name;
+            this.Limit = limit;
+            this.Remaining = remaining;
+            this.ResetSeconds = resetSeconds;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="RealtimeRateLimitsUpdatedRateLimit" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public RealtimeRateLimitsUpdatedRateLimit()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::OpenAI.RealtimeRateLimitsUpdatedRateLimit? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::OpenAI.RealtimeRateLimitsUpdatedRateLimit),
-                jsonSerializerContext) as global::OpenAI.RealtimeRateLimitsUpdatedRateLimit;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::OpenAI.RealtimeRateLimitsUpdatedRateLimit? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::OpenAI.RealtimeRateLimitsUpdatedRateLimit>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::OpenAI.RealtimeRateLimitsUpdatedRateLimit?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::OpenAI.RealtimeRateLimitsUpdatedRateLimit),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenAI.RealtimeRateLimitsUpdatedRateLimit;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::OpenAI.RealtimeRateLimitsUpdatedRateLimit?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::OpenAI.RealtimeRateLimitsUpdatedRateLimit?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

@@ -28,6 +28,7 @@ namespace OpenAI
         /// A text description of the desired image(s). The maximum length is 1000 characters.<br/>
         /// Example: A cute baby sea otter wearing a beret
         /// </summary>
+        /// <example>A cute baby sea otter wearing a beret</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Prompt { get; set; }
@@ -49,6 +50,7 @@ namespace OpenAI
         /// Default Value: dall-e-2<br/>
         /// Example: dall-e-2
         /// </summary>
+        /// <example>dall-e-2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AnyOfJsonConverterFactory2))]
         public global::OpenAI.AnyOf<string, global::OpenAI.CreateImageEditRequestModel?>? Model { get; set; }
@@ -58,6 +60,7 @@ namespace OpenAI
         /// Default Value: 1<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("n")]
         public int? N { get; set; }
 
@@ -66,6 +69,7 @@ namespace OpenAI
         /// Default Value: 1024x1024<br/>
         /// Example: 1024x1024
         /// </summary>
+        /// <example>1024x1024</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.CreateImageEditRequestSizeJsonConverter))]
         public global::OpenAI.CreateImageEditRequestSize? Size { get; set; }
@@ -75,6 +79,7 @@ namespace OpenAI
         /// Default Value: url<br/>
         /// Example: url
         /// </summary>
+        /// <example>url</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.CreateImageEditRequestResponseFormatJsonConverter))]
         public global::OpenAI.CreateImageEditRequestResponseFormat? ResponseFormat { get; set; }
@@ -83,6 +88,7 @@ namespace OpenAI
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
         /// Example: user-1234
         /// </summary>
+        /// <example>user-1234</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         public string? User { get; set; }
 
@@ -92,91 +98,79 @@ namespace OpenAI
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="CreateImageEditRequest" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="image">
+        /// The image to edit. Must be a valid PNG file, less than 4MB, and square. If mask is not provided, image must have transparency, which will be used as the mask.
+        /// </param>
+        /// <param name="imagename">
+        /// The image to edit. Must be a valid PNG file, less than 4MB, and square. If mask is not provided, image must have transparency, which will be used as the mask.
+        /// </param>
+        /// <param name="prompt">
+        /// A text description of the desired image(s). The maximum length is 1000 characters.<br/>
+        /// Example: A cute baby sea otter wearing a beret
+        /// </param>
+        /// <param name="mask">
+        /// An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.
+        /// </param>
+        /// <param name="maskname">
+        /// An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.
+        /// </param>
+        /// <param name="model">
+        /// The model to use for image generation. Only `dall-e-2` is supported at this time.<br/>
+        /// Default Value: dall-e-2<br/>
+        /// Example: dall-e-2
+        /// </param>
+        /// <param name="n">
+        /// The number of images to generate. Must be between 1 and 10.<br/>
+        /// Default Value: 1<br/>
+        /// Example: 1
+        /// </param>
+        /// <param name="size">
+        /// The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.<br/>
+        /// Default Value: 1024x1024<br/>
+        /// Example: 1024x1024
+        /// </param>
+        /// <param name="responseFormat">
+        /// The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated.<br/>
+        /// Default Value: url<br/>
+        /// Example: url
+        /// </param>
+        /// <param name="user">
+        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
+        /// Example: user-1234
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateImageEditRequest(
+            byte[] image,
+            string imagename,
+            string prompt,
+            byte[]? mask,
+            string? maskname,
+            global::OpenAI.AnyOf<string, global::OpenAI.CreateImageEditRequestModel?>? model,
+            int? n,
+            global::OpenAI.CreateImageEditRequestSize? size,
+            global::OpenAI.CreateImageEditRequestResponseFormat? responseFormat,
+            string? user)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
+            this.Imagename = imagename ?? throw new global::System.ArgumentNullException(nameof(imagename));
+            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
+            this.Mask = mask;
+            this.Maskname = maskname;
+            this.Model = model;
+            this.N = n;
+            this.Size = size;
+            this.ResponseFormat = responseFormat;
+            this.User = user;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="CreateImageEditRequest" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public CreateImageEditRequest()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::OpenAI.CreateImageEditRequest? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::OpenAI.CreateImageEditRequest),
-                jsonSerializerContext) as global::OpenAI.CreateImageEditRequest;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::OpenAI.CreateImageEditRequest? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::OpenAI.CreateImageEditRequest>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::OpenAI.CreateImageEditRequest?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::OpenAI.CreateImageEditRequest),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenAI.CreateImageEditRequest;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::OpenAI.CreateImageEditRequest?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::OpenAI.CreateImageEditRequest?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

@@ -93,91 +93,72 @@ namespace OpenAI
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="VectorStoreObject" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="id">
+        /// The identifier, which can be referenced in API endpoints.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `vector_store`.
+        /// </param>
+        /// <param name="createdAt">
+        /// The Unix timestamp (in seconds) for when the vector store was created.
+        /// </param>
+        /// <param name="name">
+        /// The name of the vector store.
+        /// </param>
+        /// <param name="usageBytes">
+        /// The total number of bytes used by the files in the vector store.
+        /// </param>
+        /// <param name="fileCounts"></param>
+        /// <param name="status">
+        /// The status of the vector store, which can be either `expired`, `in_progress`, or `completed`. A status of `completed` indicates that the vector store is ready for use.
+        /// </param>
+        /// <param name="expiresAfter">
+        /// The expiration policy for a vector store.
+        /// </param>
+        /// <param name="expiresAt">
+        /// The Unix timestamp (in seconds) for when the vector store will expire.
+        /// </param>
+        /// <param name="lastActiveAt">
+        /// The Unix timestamp (in seconds) for when the vector store was last active.
+        /// </param>
+        /// <param name="metadata">
+        /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public VectorStoreObject(
+            string id,
+            global::System.DateTimeOffset createdAt,
+            string name,
+            int usageBytes,
+            global::OpenAI.VectorStoreObjectFileCounts fileCounts,
+            global::OpenAI.VectorStoreObjectStatus status,
+            global::System.DateTimeOffset? lastActiveAt,
+            object? metadata,
+            global::OpenAI.VectorStoreObjectObject @object,
+            global::OpenAI.VectorStoreExpirationAfter? expiresAfter,
+            global::System.DateTimeOffset? expiresAt)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.UsageBytes = usageBytes;
+            this.FileCounts = fileCounts ?? throw new global::System.ArgumentNullException(nameof(fileCounts));
+            this.Status = status;
+            this.LastActiveAt = lastActiveAt;
+            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
+            this.Object = @object;
+            this.ExpiresAfter = expiresAfter;
+            this.ExpiresAt = expiresAt;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="VectorStoreObject" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public VectorStoreObject()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::OpenAI.VectorStoreObject? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::OpenAI.VectorStoreObject),
-                jsonSerializerContext) as global::OpenAI.VectorStoreObject;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::OpenAI.VectorStoreObject? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::OpenAI.VectorStoreObject>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::OpenAI.VectorStoreObject?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::OpenAI.VectorStoreObject),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenAI.VectorStoreObject;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::OpenAI.VectorStoreObject?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::OpenAI.VectorStoreObject?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

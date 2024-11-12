@@ -105,91 +105,84 @@ namespace OpenAI
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="CreateModerationResponseResultCategoryScores" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="hate">
+        /// The score for the category 'hate'.
+        /// </param>
+        /// <param name="hateThreatening">
+        /// The score for the category 'hate/threatening'.
+        /// </param>
+        /// <param name="harassment">
+        /// The score for the category 'harassment'.
+        /// </param>
+        /// <param name="harassmentThreatening">
+        /// The score for the category 'harassment/threatening'.
+        /// </param>
+        /// <param name="illicit">
+        /// The score for the category 'illicit'.
+        /// </param>
+        /// <param name="illicitViolent">
+        /// The score for the category 'illicit/violent'.
+        /// </param>
+        /// <param name="selfHarm">
+        /// The score for the category 'self-harm'.
+        /// </param>
+        /// <param name="selfHarmIntent">
+        /// The score for the category 'self-harm/intent'.
+        /// </param>
+        /// <param name="selfHarmInstructions">
+        /// The score for the category 'self-harm/instructions'.
+        /// </param>
+        /// <param name="sexual">
+        /// The score for the category 'sexual'.
+        /// </param>
+        /// <param name="sexualMinors">
+        /// The score for the category 'sexual/minors'.
+        /// </param>
+        /// <param name="violence">
+        /// The score for the category 'violence'.
+        /// </param>
+        /// <param name="violenceGraphic">
+        /// The score for the category 'violence/graphic'.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateModerationResponseResultCategoryScores(
+            double hate,
+            double hateThreatening,
+            double harassment,
+            double harassmentThreatening,
+            double illicit,
+            double illicitViolent,
+            double selfHarm,
+            double selfHarmIntent,
+            double selfHarmInstructions,
+            double sexual,
+            double sexualMinors,
+            double violence,
+            double violenceGraphic)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.Hate = hate;
+            this.HateThreatening = hateThreatening;
+            this.Harassment = harassment;
+            this.HarassmentThreatening = harassmentThreatening;
+            this.Illicit = illicit;
+            this.IllicitViolent = illicitViolent;
+            this.SelfHarm = selfHarm;
+            this.SelfHarmIntent = selfHarmIntent;
+            this.SelfHarmInstructions = selfHarmInstructions;
+            this.Sexual = sexual;
+            this.SexualMinors = sexualMinors;
+            this.Violence = violence;
+            this.ViolenceGraphic = violenceGraphic;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="CreateModerationResponseResultCategoryScores" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public CreateModerationResponseResultCategoryScores()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::OpenAI.CreateModerationResponseResultCategoryScores? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::OpenAI.CreateModerationResponseResultCategoryScores),
-                jsonSerializerContext) as global::OpenAI.CreateModerationResponseResultCategoryScores;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::OpenAI.CreateModerationResponseResultCategoryScores? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::OpenAI.CreateModerationResponseResultCategoryScores>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::OpenAI.CreateModerationResponseResultCategoryScores?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::OpenAI.CreateModerationResponseResultCategoryScores),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenAI.CreateModerationResponseResultCategoryScores;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::OpenAI.CreateModerationResponseResultCategoryScores?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::OpenAI.CreateModerationResponseResultCategoryScores?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

@@ -19,6 +19,7 @@ namespace OpenAI
         /// The unique ID of the session.<br/>
         /// Example: sess_001
         /// </summary>
+        /// <example>sess_001</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
 
@@ -26,6 +27,7 @@ namespace OpenAI
         /// The object type, must be "realtime.session".<br/>
         /// Example: realtime.session
         /// </summary>
+        /// <example>realtime.session</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeSessionObjectJsonConverter))]
         public global::OpenAI.RealtimeSessionObject? Object { get; set; }
@@ -34,6 +36,7 @@ namespace OpenAI
         /// The default model used for this session.<br/>
         /// Example: gpt-4o-realtime-preview-2024-10-01
         /// </summary>
+        /// <example>gpt-4o-realtime-preview-2024-10-01</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         public string? Model { get; set; }
 
@@ -41,6 +44,7 @@ namespace OpenAI
         /// The set of modalities the model can respond with. To disable audio, set this to ["text"].<br/>
         /// Example: [text, audio]
         /// </summary>
+        /// <example>[text, audio]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("modalities")]
         public global::System.Collections.Generic.IList<string>? Modalities { get; set; }
 
@@ -48,6 +52,7 @@ namespace OpenAI
         /// The default system instructions prepended to model calls.<br/>
         /// Example: Your knowledge cutoff is 2023-10. You are a helpful assistant.
         /// </summary>
+        /// <example>Your knowledge cutoff is 2023-10. You are a helpful assistant.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
         public string? Instructions { get; set; }
 
@@ -55,6 +60,7 @@ namespace OpenAI
         /// The voice the model uses to respond. Cannot be changed once the model has responded with audio at least once.<br/>
         /// Example: alloy
         /// </summary>
+        /// <example>alloy</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeSessionVoiceJsonConverter))]
         public global::OpenAI.RealtimeSessionVoice? Voice { get; set; }
@@ -95,6 +101,7 @@ namespace OpenAI
         /// How the model chooses tools.<br/>
         /// Example: auto
         /// </summary>
+        /// <example>auto</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeSessionToolChoiceJsonConverter))]
         public global::OpenAI.RealtimeSessionToolChoice? ToolChoice { get; set; }
@@ -103,6 +110,7 @@ namespace OpenAI
         /// Sampling temperature for the model.<br/>
         /// Example: 0.8
         /// </summary>
+        /// <example>0.8</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
         public double? Temperature { get; set; }
 
@@ -120,91 +128,98 @@ namespace OpenAI
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="RealtimeSession" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="id">
+        /// The unique ID of the session.<br/>
+        /// Example: sess_001
+        /// </param>
+        /// <param name="object">
+        /// The object type, must be "realtime.session".<br/>
+        /// Example: realtime.session
+        /// </param>
+        /// <param name="model">
+        /// The default model used for this session.<br/>
+        /// Example: gpt-4o-realtime-preview-2024-10-01
+        /// </param>
+        /// <param name="modalities">
+        /// The set of modalities the model can respond with. To disable audio, set this to ["text"].<br/>
+        /// Example: [text, audio]
+        /// </param>
+        /// <param name="instructions">
+        /// The default system instructions prepended to model calls.<br/>
+        /// Example: Your knowledge cutoff is 2023-10. You are a helpful assistant.
+        /// </param>
+        /// <param name="voice">
+        /// The voice the model uses to respond. Cannot be changed once the model has responded with audio at least once.<br/>
+        /// Example: alloy
+        /// </param>
+        /// <param name="inputAudioFormat">
+        /// The format of input/output audio.
+        /// </param>
+        /// <param name="outputAudioFormat">
+        /// The format of input/output audio.
+        /// </param>
+        /// <param name="inputAudioTranscription">
+        /// Configuration for input audio transcription. Can be set to null to turn off.
+        /// </param>
+        /// <param name="turnDetection">
+        /// Configuration for turn detection. Can be set to null to turn off.
+        /// </param>
+        /// <param name="tools">
+        /// Tools (functions) available to the model.
+        /// </param>
+        /// <param name="toolChoice">
+        /// How the model chooses tools.<br/>
+        /// Example: auto
+        /// </param>
+        /// <param name="temperature">
+        /// Sampling temperature for the model.<br/>
+        /// Example: 0.8
+        /// </param>
+        /// <param name="maxOutputTokens">
+        /// Maximum number of output tokens for a single assistant response, inclusive of tool calls. Provide an integer between 1 and 4096 to limit output tokens, or "inf" for the maximum available tokens for a given model. Defaults to "inf".<br/>
+        /// Default Value: inf
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RealtimeSession(
+            string? id,
+            global::OpenAI.RealtimeSessionObject? @object,
+            string? model,
+            global::System.Collections.Generic.IList<string>? modalities,
+            string? instructions,
+            global::OpenAI.RealtimeSessionVoice? voice,
+            global::OpenAI.RealtimeAudioFormat? inputAudioFormat,
+            global::OpenAI.RealtimeAudioFormat? outputAudioFormat,
+            global::OpenAI.RealtimeSessionInputAudioTranscription? inputAudioTranscription,
+            global::OpenAI.RealtimeSessionTurnDetection? turnDetection,
+            global::System.Collections.Generic.IList<global::OpenAI.RealtimeSessionTool>? tools,
+            global::OpenAI.RealtimeSessionToolChoice? toolChoice,
+            double? temperature,
+            global::OpenAI.OneOf<int?, global::OpenAI.RealtimeSessionMaxOutputTokens?>? maxOutputTokens)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.Id = id;
+            this.Object = @object;
+            this.Model = model;
+            this.Modalities = modalities;
+            this.Instructions = instructions;
+            this.Voice = voice;
+            this.InputAudioFormat = inputAudioFormat;
+            this.OutputAudioFormat = outputAudioFormat;
+            this.InputAudioTranscription = inputAudioTranscription;
+            this.TurnDetection = turnDetection;
+            this.Tools = tools;
+            this.ToolChoice = toolChoice;
+            this.Temperature = temperature;
+            this.MaxOutputTokens = maxOutputTokens;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="RealtimeSession" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public RealtimeSession()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::OpenAI.RealtimeSession? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::OpenAI.RealtimeSession),
-                jsonSerializerContext) as global::OpenAI.RealtimeSession;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::OpenAI.RealtimeSession? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::OpenAI.RealtimeSession>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::OpenAI.RealtimeSession?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::OpenAI.RealtimeSession),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenAI.RealtimeSession;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::OpenAI.RealtimeSession?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::OpenAI.RealtimeSession?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

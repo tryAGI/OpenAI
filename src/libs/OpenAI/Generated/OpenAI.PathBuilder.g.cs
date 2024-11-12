@@ -1,5 +1,3 @@
-using System.Linq;
-
 #nullable enable
 
 namespace OpenAI
@@ -103,7 +101,11 @@ namespace OpenAI
             string delimiter = ",",
             bool explode = false)
         {
-            AddRequiredParameter(name, value.Select(selector).ToArray(), delimiter, explode);
+            AddRequiredParameter(
+                name,
+                global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(value, selector)),
+                delimiter,
+                explode);
 
             return this;
         }
@@ -167,7 +169,11 @@ namespace OpenAI
         {
             if (value is not null)
             {
-                AddRequiredParameter(name, value.Select(selector).ToArray(), delimiter, explode);
+                AddRequiredParameter(
+                    name,
+                    global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(value, selector)),
+                    delimiter,
+                    explode);
             }
 
             return this;
