@@ -23,7 +23,7 @@ namespace OpenAI
         /// </summary>
         /// <example>gpt-4o</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AnyOfJsonConverter<string, global::OpenAI.CreateRunRequestModel?>))]
         public global::OpenAI.AnyOf<string, global::OpenAI.CreateRunRequestModel?>? Model { get; set; }
 
         /// <summary>

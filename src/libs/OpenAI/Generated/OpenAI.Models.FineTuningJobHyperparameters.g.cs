@@ -17,7 +17,7 @@ namespace OpenAI
         /// </summary>
         /// <default>global::OpenAI.FineTuningJobHyperparametersNEpochs.Auto</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("n_epochs")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.OneOfJsonConverter<global::OpenAI.FineTuningJobHyperparametersNEpochs?, int?>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenAI.OneOf<global::OpenAI.FineTuningJobHyperparametersNEpochs?, int?> NEpochs { get; set; } = global::OpenAI.FineTuningJobHyperparametersNEpochs.Auto;
 

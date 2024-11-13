@@ -249,7 +249,7 @@ namespace OpenAI
                 User = user,
             };
 
-            await foreach (var response in CreateChatCompletionAsStreamAsync(request, cancellationToken))
+            await foreach (var response in CreateChatCompletionAsStreamAsync(request, cancellationToken).ConfigureAwait(false))
             {
                 yield return response;
             }

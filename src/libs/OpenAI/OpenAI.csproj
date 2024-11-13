@@ -24,12 +24,12 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="CSharpToJsonSchema" Version="3.9.0" />
+    <PackageReference Include="CSharpToJsonSchema" Version="3.10.1" />
     <PackageReference Include="PolySharp" Version="1.14.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Tiktoken" Version="2.0.3" />
+    <PackageReference Include="Tiktoken" Version="2.1.1" />
     <PackageReference Include="System.Text.Json" Version="9.0.0" />
   </ItemGroup>
 
