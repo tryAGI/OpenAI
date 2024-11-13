@@ -26,7 +26,7 @@ namespace OpenAI
         /// </summary>
         /// <example>dall-e-3</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AnyOfJsonConverter<string, global::OpenAI.CreateImageRequestModel?>))]
         public global::OpenAI.AnyOf<string, global::OpenAI.CreateImageRequestModel?>? Model { get; set; }
 
         /// <summary>

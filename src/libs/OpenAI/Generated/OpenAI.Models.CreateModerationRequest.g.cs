@@ -15,7 +15,7 @@ namespace OpenAI
         /// an array of multi-modal input objects similar to other models.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.OneOfJsonConverterFactory3))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::OpenAI.InputVariant3Item>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::OpenAI.InputVariant3Item>> Input { get; set; }
 
@@ -28,7 +28,7 @@ namespace OpenAI
         /// </summary>
         /// <example>omni-moderation-2024-09-26</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AnyOfJsonConverter<string, global::OpenAI.CreateModerationRequestModel?>))]
         public global::OpenAI.AnyOf<string, global::OpenAI.CreateModerationRequestModel?>? Model { get; set; }
 
         /// <summary>

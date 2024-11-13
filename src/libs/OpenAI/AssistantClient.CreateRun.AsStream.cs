@@ -221,7 +221,7 @@ namespace OpenAI
                threadId: threadId,
                include: include,
                request: request,
-               cancellationToken: cancellationToken))
+               cancellationToken: cancellationToken).ConfigureAwait(false))
             {
                 yield return response;
             }

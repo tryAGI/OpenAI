@@ -14,7 +14,7 @@ namespace OpenAI
         /// One of the available [TTS models](/docs/models#tts): `tts-1` or `tts-1-hd`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AnyOfJsonConverter<string, global::OpenAI.CreateSpeechRequestModel?>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenAI.AnyOf<string, global::OpenAI.CreateSpeechRequestModel?> Model { get; set; }
 

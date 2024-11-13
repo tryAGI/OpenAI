@@ -14,7 +14,7 @@ namespace OpenAI
         /// The contents of the assistant message. Required unless `tool_calls` or `function_call` is specified.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionRequestAssistantMessageContentPart>>))]
         public global::OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionRequestAssistantMessageContentPart>>? Content { get; set; }
 
         /// <summary>

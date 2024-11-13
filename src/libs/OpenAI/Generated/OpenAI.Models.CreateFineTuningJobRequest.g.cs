@@ -17,7 +17,7 @@ namespace OpenAI
         /// </summary>
         /// <example>gpt-4o-mini</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AnyOfJsonConverter<string, global::OpenAI.CreateFineTuningJobRequestModel?>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenAI.AnyOf<string, global::OpenAI.CreateFineTuningJobRequestModel?> Model { get; set; }
 

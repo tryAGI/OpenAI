@@ -16,7 +16,7 @@ namespace OpenAI
         /// </summary>
         /// <example>The quick brown fox jumped over the lazy dog</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.OneOfJsonConverterFactory4))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>> Input { get; set; }
 
@@ -26,7 +26,7 @@ namespace OpenAI
         /// </summary>
         /// <example>text-embedding-3-small</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.AnyOfJsonConverter<string, global::OpenAI.CreateEmbeddingRequestModel?>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::OpenAI.AnyOf<string, global::OpenAI.CreateEmbeddingRequestModel?> Model { get; set; }
 
