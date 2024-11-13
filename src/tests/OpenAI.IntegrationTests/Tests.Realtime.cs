@@ -10,7 +10,6 @@ public partial class Tests
         using var cancellationTokenSource = new CancellationTokenSource(TimeSpan.FromSeconds(15));
         var cancellationToken = cancellationTokenSource.Token;
         
-        // await realtimeConversationClient.SendAsync("Hello, WebSocket!");
         await realtimeConversationClient.SendAsync(new RealtimeResponseCreate
         {
             Type = RealtimeResponseCreateType.ResponseCreate,
