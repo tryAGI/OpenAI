@@ -108,7 +108,7 @@ namespace OpenAI
                     };
                 }
 
-                    return __content;
+                return __content;
             }
             else
             {
@@ -130,13 +130,9 @@ namespace OpenAI
                     };
                 }
 
-                using var __responseStream = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                var __content = await __response.Content.ReadAsByteArrayAsync(cancellationToken).ConfigureAwait(false);
 
-                var __responseValue = await global::System.Text.Json.JsonSerializer.DeserializeAsync(__responseStream, typeof(byte[]), JsonSerializerContext).ConfigureAwait(false) as byte[];
-
-                return
-                    __responseValue ??
-                    throw new global::System.InvalidOperationException("Response deserialization failed.");
+                return __content;
             }
         }
     }
