@@ -116,7 +116,7 @@ public partial class Tests
             return (CustomProviders.Hyperbolic(apiKey:
                     Environment.GetEnvironmentVariable("HYPERBOLIC_API_KEY") ??
                     throw new AssertInconclusiveException("HYPERBOLIC_API_KEY environment variable is not found.")),
-                model ?? "meta-llama/Llama-3.2-90B-Vision-Instruct");
+                model ?? "meta-llama/Llama-3.2-3B-Instruct");
         }
 
         if (customProvider == CustomProvider.Ollama)

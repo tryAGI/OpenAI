@@ -15,8 +15,9 @@ public enum CustomProvider
     Ollama,
     LmStudio,
     Groq,
+    XAi,
     Mistral,
     Codestral,
     Hyperbolic,
-    Cerebras
+    Cerebras,
 }

@@ -15,6 +15,7 @@ public partial class Tests
     [DataRow(CustomProvider.Ollama)]
     [DataRow(CustomProvider.LmStudio)]
     [DataRow(CustomProvider.Groq)]
+    [DataRow(CustomProvider.XAi)]
     [DataRow(CustomProvider.Mistral)]
     [DataRow(CustomProvider.Codestral)]
     [DataRow(CustomProvider.Hyperbolic)]
@@ -55,6 +56,7 @@ public partial class Tests
     [DataRow(CustomProvider.Ollama)]
     [DataRow(CustomProvider.LmStudio)]
     [DataRow(CustomProvider.Groq)]
+    [DataRow(CustomProvider.XAi)]
     [DataRow(CustomProvider.Mistral)]
     //[DataRow(CustomProvider.Codestral)]
     [DataRow(CustomProvider.Hyperbolic)]
@@ -90,6 +92,7 @@ public partial class Tests
     [DataRow(CustomProvider.Ollama)]
     [DataRow(CustomProvider.LmStudio)]
     [DataRow(CustomProvider.Groq)]
+    [DataRow(CustomProvider.XAi)]
     [DataRow(CustomProvider.Hyperbolic)]
     public async Task GenerateFiveRandomWordsAsJsonObject(CustomProvider customProvider)
     {
@@ -113,8 +116,9 @@ public partial class Tests
     [DataRow(CustomProvider.OpenAi)]
     [DataRow(CustomProvider.Ollama)]
     [DataRow(CustomProvider.Groq)]
+    [DataRow(CustomProvider.XAi)]
     //[DataRow(CustomProvider.Together)]
-    [DataRow(CustomProvider.Hyperbolic)]
+    //[DataRow(CustomProvider.Hyperbolic)]
     public async Task ChatWithVision(CustomProvider customProvider)
     {
         var pair = GetAuthorizedChatApi(customProvider, model: customProvider switch

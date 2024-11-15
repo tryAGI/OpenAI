@@ -179,6 +179,7 @@ using var api = CustomProviders.GitHubModels("GITHUB_TOKEN");
 using var api = CustomProviders.Azure("API_KEY", "ENDPOINT");
 using var api = CustomProviders.DeepInfra("API_KEY");
 using var api = CustomProviders.Groq("API_KEY");
+using var api = CustomProviders.XAi("API_KEY");
 using var api = CustomProviders.DeepSeek("API_KEY");
 using var api = CustomProviders.Fireworks("API_KEY");
 using var api = CustomProviders.OpenRouter("API_KEY");

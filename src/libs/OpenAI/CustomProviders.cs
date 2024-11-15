@@ -24,6 +24,11 @@ public static class CustomProviders
     /// <summary>
     /// 
     /// </summary>
+    public const string XAiBaseUrl = "https://api.x.ai/v1/";
+    
+    /// <summary>
+    /// 
+    /// </summary>
     public const string DeepSeekBaseUrl = "https://api.deepseek.com/v1";
     
     /// <summary>
@@ -115,6 +120,15 @@ public static class CustomProviders
     public static OpenAiApi Groq(string apiKey)
     {
         return new OpenAiApi(apiKey, baseUri: new Uri(GroqBaseUrl));
+    }
+    
+    /// <summary>
+    /// Create an API to use for xAI.
+    /// </summary>
+    /// <returns></returns>
+    public static OpenAiApi XAi(string apiKey)
+    {
+        return new OpenAiApi(apiKey, baseUri: new Uri(XAiBaseUrl));
     }
     
     /// <summary>
