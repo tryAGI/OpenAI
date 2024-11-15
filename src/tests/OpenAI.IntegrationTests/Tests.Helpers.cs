@@ -142,6 +142,13 @@ public partial class Tests
                 throw new AssertInconclusiveException("CEREBRAS_API_KEY environment variable is not found.")),
                 model ?? "llama3.1-70b");
         }
+        if (customProvider == CustomProvider.XAi)
+        {
+            return (CustomProviders.XAi(apiKey:
+                Environment.GetEnvironmentVariable("XAI_API_KEY") ??
+                throw new AssertInconclusiveException("XAI_API_KEY environment variable is not found.")),
+                model ?? "grok-beta");
+        }
 
         var apiKey =
             Environment.GetEnvironmentVariable("OPENAI_API_KEY") ??
