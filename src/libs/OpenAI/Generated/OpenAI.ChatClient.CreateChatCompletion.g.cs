@@ -213,7 +213,7 @@ namespace OpenAI
         /// `["text", "audio"]`
         /// </param>
         /// <param name="prediction">
-        /// Configuration for a [Predicted Output](/docs/guides/latency-optimization#use-predicted-outputs),<br/>
+        /// Configuration for a [Predicted Output](/docs/guides/predicted-outputs),<br/>
         /// which can greatly improve response times when large parts of the model<br/>
         /// response are known ahead of time. This is most common when you are<br/>
         /// regenerating a file with only minor changes to most of the content.

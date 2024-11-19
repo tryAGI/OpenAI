@@ -119,6 +119,18 @@ namespace OpenAI
         /// <summary>
         /// The details for events with this `type`.
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("rate_limit.updated")]
+        public global::OpenAI.AuditLogRateLimitUpdated? RateLimitUpdated { get; set; }
+
+        /// <summary>
+        /// The details for events with this `type`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("rate_limit.deleted")]
+        public global::OpenAI.AuditLogRateLimitDeleted? RateLimitDeleted { get; set; }
+
+        /// <summary>
+        /// The details for events with this `type`.
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_account.created")]
         public global::OpenAI.AuditLogServiceAccountCreated? ServiceAccountCreated { get; set; }
 
@@ -212,6 +224,12 @@ namespace OpenAI
         /// <param name="projectArchived">
         /// The details for events with this `type`.
         /// </param>
+        /// <param name="rateLimitUpdated">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="rateLimitDeleted">
+        /// The details for events with this `type`.
+        /// </param>
         /// <param name="serviceAccountCreated">
         /// The details for events with this `type`.
         /// </param>
@@ -249,6 +267,8 @@ namespace OpenAI
             global::OpenAI.AuditLogProjectCreated? projectCreated,
             global::OpenAI.AuditLogProjectUpdated? projectUpdated,
             global::OpenAI.AuditLogProjectArchived? projectArchived,
+            global::OpenAI.AuditLogRateLimitUpdated? rateLimitUpdated,
+            global::OpenAI.AuditLogRateLimitDeleted? rateLimitDeleted,
             global::OpenAI.AuditLogServiceAccountCreated? serviceAccountCreated,
             global::OpenAI.AuditLogServiceAccountUpdated? serviceAccountUpdated,
             global::OpenAI.AuditLogServiceAccountDeleted? serviceAccountDeleted,
@@ -273,6 +293,8 @@ namespace OpenAI
             this.ProjectCreated = projectCreated;
             this.ProjectUpdated = projectUpdated;
             this.ProjectArchived = projectArchived;
+            this.RateLimitUpdated = rateLimitUpdated;
+            this.RateLimitDeleted = rateLimitDeleted;
             this.ServiceAccountCreated = serviceAccountCreated;
             this.ServiceAccountUpdated = serviceAccountUpdated;
             this.ServiceAccountDeleted = serviceAccountDeleted;

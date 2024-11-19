@@ -3,48 +3,68 @@
 
 namespace OpenAI
 {
-    public partial class BatchClient
+    public partial class ProjectsClient
     {
-        partial void PrepareCreateBatchArguments(
+        partial void PrepareListProjectRateLimitsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::OpenAI.CreateBatchRequest request);
-        partial void PrepareCreateBatchRequest(
+            ref string projectId,
+            ref int? limit,
+            ref string? after,
+            ref string? before);
+        partial void PrepareListProjectRateLimitsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::OpenAI.CreateBatchRequest request);
-        partial void ProcessCreateBatchResponse(
+            string projectId,
+            int? limit,
+            string? after,
+            string? before);
+        partial void ProcessListProjectRateLimitsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateBatchResponseContent(
+        partial void ProcessListProjectRateLimitsResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Creates and executes a batch from an uploaded file of requests
+        /// Returns the rate limits per model for a project.
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="projectId"></param>
+        /// <param name="limit">
+        /// Default Value: 100
+        /// </param>
+        /// <param name="after"></param>
+        /// <param name="before"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenAI.Batch> CreateBatchAsync(
-            global::OpenAI.CreateBatchRequest request,
+        public async global::System.Threading.Tasks.Task<global::OpenAI.ProjectRateLimitListResponse> ListProjectRateLimitsAsync(
+            string projectId,
+            int? limit = default,
+            string? after = default,
+            string? before = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateBatchArguments(
+            PrepareListProjectRateLimitsArguments(
                 httpClient: HttpClient,
-                request: request);
+                projectId: ref projectId,
+                limit: ref limit,
+                after: ref after,
+                before: ref before);
 
             var __pathBuilder = new PathBuilder(
-                path: "/batches",
+                path: $"/organization/projects/{projectId}/rate_limits",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("limit", limit?.ToString()) 
+                .AddOptionalParameter("after", after) 
+                .AddOptionalParameter("before", before) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Post,
+                method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             foreach (var __authorization in Authorizations)
@@ -62,20 +82,17 @@ namespace OpenAI
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                content: __httpRequestContentBody,
-                encoding: global::System.Text.Encoding.UTF8,
-                mediaType: "application/json");
-            __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareCreateBatchRequest(
+            PrepareListProjectRateLimitsRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                request: request);
+                projectId: projectId,
+                limit: limit,
+                after: after,
+                before: before);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -85,7 +102,7 @@ namespace OpenAI
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessCreateBatchResponse(
+            ProcessListProjectRateLimitsResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
 
@@ -97,7 +114,7 @@ namespace OpenAI
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessCreateBatchResponseContent(
+                ProcessListProjectRateLimitsResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -122,7 +139,7 @@ namespace OpenAI
                 }
 
                 return
-                    global::OpenAI.Batch.FromJson(__content, JsonSerializerContext) ??
+                    global::OpenAI.ProjectRateLimitListResponse.FromJson(__content, JsonSerializerContext) ??
                     throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
@@ -148,48 +165,9 @@ namespace OpenAI
                 using var __content = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
 
                 return
-                    await global::OpenAI.Batch.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                    await global::OpenAI.ProjectRateLimitListResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
-        }
-
-        /// <summary>
-        /// Creates and executes a batch from an uploaded file of requests
-        /// </summary>
-        /// <param name="inputFileId">
-        /// The ID of an uploaded file that contains requests for the new batch.<br/>
-        /// See [upload file](/docs/api-reference/files/create) for how to upload a file.<br/>
-        /// Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/request-input), and must be uploaded with the purpose `batch`. The file can contain up to 50,000 requests, and can be up to 200 MB in size.
-        /// </param>
-        /// <param name="endpoint">
-        /// The endpoint to be used for all requests in the batch. Currently `/v1/chat/completions`, `/v1/embeddings`, and `/v1/completions` are supported. Note that `/v1/embeddings` batches are also restricted to a maximum of 50,000 embedding inputs across all requests in the batch.
-        /// </param>
-        /// <param name="completionWindow">
-        /// The time frame within which the batch should be processed. Currently only `24h` is supported.
-        /// </param>
-        /// <param name="metadata">
-        /// Optional custom metadata for the batch.
-        /// </param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenAI.Batch> CreateBatchAsync(
-            string inputFileId,
-            global::OpenAI.CreateBatchRequestEndpoint endpoint,
-            global::OpenAI.CreateBatchRequestCompletionWindow completionWindow = default,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::OpenAI.CreateBatchRequest
-            {
-                InputFileId = inputFileId,
-                Endpoint = endpoint,
-                CompletionWindow = completionWindow,
-                Metadata = metadata,
-            };
-
-            return await CreateBatchAsync(
-                request: __request,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }
