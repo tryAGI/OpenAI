@@ -807,6 +807,7 @@ namespace OpenAI
             typeof(global::OpenAI.JsonConverters.OneOfJsonConverter<int?, global::OpenAI.RealtimeResponseCreateResponseMaxOutputTokens?>),
             typeof(global::OpenAI.JsonConverters.OneOfJsonConverter<global::OpenAI.CreateTranscriptionResponseJson, global::OpenAI.CreateTranscriptionResponseVerboseJson>),
             typeof(global::OpenAI.JsonConverters.OneOfJsonConverter<global::OpenAI.CreateTranslationResponseJson, global::OpenAI.CreateTranslationResponseVerboseJson>),
+            typeof(global::OpenAI.JsonConverters.UnixTimestampJsonConverter),
         })]
 
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::OpenAI.JsonSerializerContextTypes))]
