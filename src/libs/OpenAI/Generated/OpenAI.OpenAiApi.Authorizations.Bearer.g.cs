@@ -5,10 +5,7 @@ namespace OpenAI
 {
     public sealed partial class OpenAiApi
     {
-        /// <summary>
-        /// Authorize using bearer authentication.
-        /// </summary>
-        /// <param name="apiKey"></param>
+        /// <inheritdoc/>
         public void AuthorizeUsingBearer(
             string apiKey)
         {
