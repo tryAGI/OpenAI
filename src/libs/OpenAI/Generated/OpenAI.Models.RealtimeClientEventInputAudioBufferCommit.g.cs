@@ -4,8 +4,15 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Send this event to commit the user input audio buffer, which will create a new user message item in the conversation. This event will produce an error if the input audio buffer is empty. When in Server VAD mode, the client does not need to send this event, the server will commit the audio buffer automatically.<br/>
-    /// Committing the input audio buffer will trigger input audio transcription (if enabled in session configuration), but it will not create a response from the model. The server will respond with an `input_audio_buffer.committed` event.
+    /// Send this event to commit the user input audio buffer, which will create a <br/>
+    /// new user message item in the conversation. This event will produce an error <br/>
+    /// if the input audio buffer is empty. When in Server VAD mode, the client does <br/>
+    /// not need to send this event, the server will commit the audio buffer <br/>
+    /// automatically.<br/>
+    /// Committing the input audio buffer will trigger input audio transcription <br/>
+    /// (if enabled in session configuration), but it will not create a response <br/>
+    /// from the model. The server will respond with an `input_audio_buffer.committed` <br/>
+    /// event.
     /// </summary>
     public sealed partial class RealtimeClientEventInputAudioBufferCommit
     {
@@ -16,11 +23,11 @@ namespace OpenAI
         public string? EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be "input_audio_buffer.commit".
+        /// The event type, must be `input_audio_buffer.commit`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeClientEventInputAudioBufferCommitTypeJsonConverter))]
+        public global::OpenAI.RealtimeClientEventInputAudioBufferCommitType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -35,15 +42,15 @@ namespace OpenAI
         /// Optional client-generated ID used to identify this event.
         /// </param>
         /// <param name="type">
-        /// The event type, must be "input_audio_buffer.commit".
+        /// The event type, must be `input_audio_buffer.commit`.
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeClientEventInputAudioBufferCommit(
-            string type,
-            string? eventId)
+            string? eventId,
+            global::OpenAI.RealtimeClientEventInputAudioBufferCommitType type)
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.EventId = eventId;
+            this.Type = type;
         }
 
         /// <summary>

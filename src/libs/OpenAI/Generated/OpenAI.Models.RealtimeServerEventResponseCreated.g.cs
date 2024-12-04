@@ -4,7 +4,8 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Returned when a new Response is created. The first event of response creation, where the response is in an initial state of `in_progress`.
+    /// Returned when a new Response is created. The first event of response creation,<br/>
+    /// where the response is in an initial state of `in_progress`.
     /// </summary>
     public sealed partial class RealtimeServerEventResponseCreated
     {
@@ -19,8 +20,8 @@ namespace OpenAI
         /// The event type, must be `response.created`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeServerEventResponseCreatedTypeJsonConverter))]
+        public global::OpenAI.RealtimeServerEventResponseCreatedType Type { get; set; }
 
         /// <summary>
         /// The response resource.
@@ -50,12 +51,12 @@ namespace OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeServerEventResponseCreated(
             string eventId,
-            string type,
-            global::OpenAI.RealtimeResponse response)
+            global::OpenAI.RealtimeResponse response,
+            global::OpenAI.RealtimeServerEventResponseCreatedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Response = response ?? throw new global::System.ArgumentNullException(nameof(response));
+            this.Type = type;
         }
 
         /// <summary>

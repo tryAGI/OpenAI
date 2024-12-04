@@ -4,7 +4,9 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Returned when an error occurs, which could be a client problem or a server problem. Most errors are recoverable and the session will stay open, we recommend to implementors to monitor and log error messages by default.
+    /// Returned when an error occurs, which could be a client problem or a server <br/>
+    /// problem. Most errors are recoverable and the session will stay open, we <br/>
+    /// recommend to implementors to monitor and log error messages by default.
     /// </summary>
     public sealed partial class RealtimeServerEventError
     {
@@ -16,11 +18,11 @@ namespace OpenAI
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be "error".
+        /// The event type, must be `error`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeServerEventErrorTypeJsonConverter))]
+        public global::OpenAI.RealtimeServerEventErrorType Type { get; set; }
 
         /// <summary>
         /// Details of the error.
@@ -42,7 +44,7 @@ namespace OpenAI
         /// The unique ID of the server event.
         /// </param>
         /// <param name="type">
-        /// The event type, must be "error".
+        /// The event type, must be `error`.
         /// </param>
         /// <param name="error">
         /// Details of the error.
@@ -50,12 +52,12 @@ namespace OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeServerEventError(
             string eventId,
-            string type,
-            global::OpenAI.RealtimeServerEventErrorError error)
+            global::OpenAI.RealtimeServerEventErrorError error,
+            global::OpenAI.RealtimeServerEventErrorType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
+            this.Type = type;
         }
 
         /// <summary>

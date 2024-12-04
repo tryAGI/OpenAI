@@ -4,7 +4,9 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Returned when the model-generated transcription of audio output is done streaming. Also emitted when a Response is interrupted, incomplete, or cancelled.
+    /// Returned when the model-generated transcription of audio output is done<br/>
+    /// streaming. Also emitted when a Response is interrupted, incomplete, or<br/>
+    /// cancelled.
     /// </summary>
     public sealed partial class RealtimeServerEventResponseAudioTranscriptDone
     {
@@ -16,11 +18,11 @@ namespace OpenAI
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be "response.audio_transcript.done".
+        /// The event type, must be `response.audio_transcript.done`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeServerEventResponseAudioTranscriptDoneTypeJsonConverter))]
+        public global::OpenAI.RealtimeServerEventResponseAudioTranscriptDoneType Type { get; set; }
 
         /// <summary>
         /// The ID of the response.
@@ -70,7 +72,7 @@ namespace OpenAI
         /// The unique ID of the server event.
         /// </param>
         /// <param name="type">
-        /// The event type, must be "response.audio_transcript.done".
+        /// The event type, must be `response.audio_transcript.done`.
         /// </param>
         /// <param name="responseId">
         /// The ID of the response.
@@ -90,20 +92,20 @@ namespace OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeServerEventResponseAudioTranscriptDone(
             string eventId,
-            string type,
             string responseId,
             string itemId,
             int outputIndex,
             int contentIndex,
-            string transcript)
+            string transcript,
+            global::OpenAI.RealtimeServerEventResponseAudioTranscriptDoneType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.ResponseId = responseId ?? throw new global::System.ArgumentNullException(nameof(responseId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.ContentIndex = contentIndex;
             this.Transcript = transcript ?? throw new global::System.ArgumentNullException(nameof(transcript));
+            this.Type = type;
         }
 
         /// <summary>

@@ -4,7 +4,8 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Returned when a content part is done streaming in an assistant message item. Also emitted when a Response is interrupted, incomplete, or cancelled.
+    /// Returned when a content part is done streaming in an assistant message item.<br/>
+    /// Also emitted when a Response is interrupted, incomplete, or cancelled.
     /// </summary>
     public sealed partial class RealtimeServerEventResponseContentPartDone
     {
@@ -16,11 +17,11 @@ namespace OpenAI
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be "response.content_part.done".
+        /// The event type, must be `response.content_part.done`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeServerEventResponseContentPartDoneTypeJsonConverter))]
+        public global::OpenAI.RealtimeServerEventResponseContentPartDoneType Type { get; set; }
 
         /// <summary>
         /// The ID of the response.
@@ -70,7 +71,7 @@ namespace OpenAI
         /// The unique ID of the server event.
         /// </param>
         /// <param name="type">
-        /// The event type, must be "response.content_part.done".
+        /// The event type, must be `response.content_part.done`.
         /// </param>
         /// <param name="responseId">
         /// The ID of the response.
@@ -90,20 +91,20 @@ namespace OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeServerEventResponseContentPartDone(
             string eventId,
-            string type,
             string responseId,
             string itemId,
             int outputIndex,
             int contentIndex,
-            global::OpenAI.RealtimeServerEventResponseContentPartDonePart part)
+            global::OpenAI.RealtimeServerEventResponseContentPartDonePart part,
+            global::OpenAI.RealtimeServerEventResponseContentPartDoneType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.ResponseId = responseId ?? throw new global::System.ArgumentNullException(nameof(responseId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.ContentIndex = contentIndex;
             this.Part = part ?? throw new global::System.ArgumentNullException(nameof(part));
+            this.Type = type;
         }
 
         /// <summary>

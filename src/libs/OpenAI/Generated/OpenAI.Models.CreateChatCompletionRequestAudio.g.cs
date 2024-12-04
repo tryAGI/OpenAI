@@ -10,8 +10,7 @@ namespace OpenAI
     public sealed partial class CreateChatCompletionRequestAudio
     {
         /// <summary>
-        /// The voice the model uses to respond. Supported voices are `alloy`,<br/>
-        /// `ash`, `ballad`, `coral`, `echo`, `sage`, `shimmer`, and `verse`.
+        /// The voice the model uses to respond. Supported voices are `ash`, `ballad`, `coral`, `sage`, and `verse` (also supported but not recommended are `alloy`, `echo`, and `shimmer`; these voices are less expressive).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.CreateChatCompletionRequestAudioVoiceJsonConverter))]
@@ -37,8 +36,7 @@ namespace OpenAI
         /// Initializes a new instance of the <see cref="CreateChatCompletionRequestAudio" /> class.
         /// </summary>
         /// <param name="voice">
-        /// The voice the model uses to respond. Supported voices are `alloy`,<br/>
-        /// `ash`, `ballad`, `coral`, `echo`, `sage`, `shimmer`, and `verse`.
+        /// The voice the model uses to respond. Supported voices are `ash`, `ballad`, `coral`, `sage`, and `verse` (also supported but not recommended are `alloy`, `echo`, and `shimmer`; these voices are less expressive).
         /// </param>
         /// <param name="format">
         /// Specifies the output audio format. Must be one of `wav`, `mp3`, `flac`,<br/>

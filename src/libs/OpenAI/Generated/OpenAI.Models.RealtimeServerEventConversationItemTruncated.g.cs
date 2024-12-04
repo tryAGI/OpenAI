@@ -4,8 +4,11 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Returned when an earlier assistant audio message item is truncated by the client with a `conversation.item.truncate` event. This event is used to synchronize the server's understanding of the audio with the client's playback.<br/>
-    /// This action will truncate the audio and remove the server-side text transcript to ensure there is no text in the context that hasn't been heard by the user.
+    /// Returned when an earlier assistant audio message item is truncated by the <br/>
+    /// client with a `conversation.item.truncate` event. This event is used to <br/>
+    /// synchronize the server's understanding of the audio with the client's playback.<br/>
+    /// This action will truncate the audio and remove the server-side text transcript <br/>
+    /// to ensure there is no text in the context that hasn't been heard by the user.
     /// </summary>
     public sealed partial class RealtimeServerEventConversationItemTruncated
     {
@@ -20,8 +23,8 @@ namespace OpenAI
         /// The event type, must be `conversation.item.truncated`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeServerEventConversationItemTruncatedTypeJsonConverter))]
+        public global::OpenAI.RealtimeServerEventConversationItemTruncatedType Type { get; set; }
 
         /// <summary>
         /// The ID of the assistant message item that was truncated.
@@ -71,16 +74,16 @@ namespace OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeServerEventConversationItemTruncated(
             string eventId,
-            string type,
             string itemId,
             int contentIndex,
-            int audioEndMs)
+            int audioEndMs,
+            global::OpenAI.RealtimeServerEventConversationItemTruncatedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.ContentIndex = contentIndex;
             this.AudioEndMs = audioEndMs;
+            this.Type = type;
         }
 
         /// <summary>

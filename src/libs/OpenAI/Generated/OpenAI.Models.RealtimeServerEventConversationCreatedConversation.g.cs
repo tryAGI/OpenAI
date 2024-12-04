@@ -15,7 +15,7 @@ namespace OpenAI
         public string? Id { get; set; }
 
         /// <summary>
-        /// The object type, must be "realtime.conversation".
+        /// The object type, must be `realtime.conversation`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         public string? Object { get; set; }
@@ -33,7 +33,7 @@ namespace OpenAI
         /// The unique ID of the conversation.
         /// </param>
         /// <param name="object">
-        /// The object type, must be "realtime.conversation".
+        /// The object type, must be `realtime.conversation`.
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeServerEventConversationCreatedConversation(

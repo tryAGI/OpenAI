@@ -4,7 +4,10 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Send this event when you want to remove any item from the conversation history. The server will respond with a `conversation.item.deleted` event, unless the item does not exist in the conversation history, in which case the server will respond with an error.
+    /// Send this event when you want to remove any item from the conversation <br/>
+    /// history. The server will respond with a `conversation.item.deleted` event, <br/>
+    /// unless the item does not exist in the conversation history, in which case the <br/>
+    /// server will respond with an error.
     /// </summary>
     public sealed partial class RealtimeClientEventConversationItemDelete
     {
@@ -15,11 +18,11 @@ namespace OpenAI
         public string? EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be "conversation.item.delete".
+        /// The event type, must be `conversation.item.delete`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeClientEventConversationItemDeleteTypeJsonConverter))]
+        public global::OpenAI.RealtimeClientEventConversationItemDeleteType Type { get; set; }
 
         /// <summary>
         /// The ID of the item to delete.
@@ -41,20 +44,20 @@ namespace OpenAI
         /// Optional client-generated ID used to identify this event.
         /// </param>
         /// <param name="type">
-        /// The event type, must be "conversation.item.delete".
+        /// The event type, must be `conversation.item.delete`.
         /// </param>
         /// <param name="itemId">
         /// The ID of the item to delete.
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeClientEventConversationItemDelete(
-            string type,
             string itemId,
-            string? eventId)
+            string? eventId,
+            global::OpenAI.RealtimeClientEventConversationItemDeleteType type)
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.EventId = eventId;
+            this.Type = type;
         }
 
         /// <summary>

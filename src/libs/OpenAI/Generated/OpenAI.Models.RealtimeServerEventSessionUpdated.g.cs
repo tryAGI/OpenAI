@@ -4,7 +4,8 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Returned when a session is updated with a `session.update` event, unless there is an error.
+    /// Returned when a session is updated with a `session.update` event, unless <br/>
+    /// there is an error.
     /// </summary>
     public sealed partial class RealtimeServerEventSessionUpdated
     {
@@ -16,11 +17,11 @@ namespace OpenAI
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be "session.updated".
+        /// The event type, must be `session.updated`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeServerEventSessionUpdatedTypeJsonConverter))]
+        public global::OpenAI.RealtimeServerEventSessionUpdatedType Type { get; set; }
 
         /// <summary>
         /// A session refers to a single WebSocket connection between a client and the server.<br/>
@@ -47,7 +48,7 @@ namespace OpenAI
         /// The unique ID of the server event.
         /// </param>
         /// <param name="type">
-        /// The event type, must be "session.updated".
+        /// The event type, must be `session.updated`.
         /// </param>
         /// <param name="session">
         /// A session refers to a single WebSocket connection between a client and the server.<br/>
@@ -60,12 +61,12 @@ namespace OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeServerEventSessionUpdated(
             string eventId,
-            string type,
-            global::OpenAI.RealtimeSession session)
+            global::OpenAI.RealtimeSession session,
+            global::OpenAI.RealtimeServerEventSessionUpdatedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Session = session ?? throw new global::System.ArgumentNullException(nameof(session));
+            this.Type = type;
         }
 
         /// <summary>

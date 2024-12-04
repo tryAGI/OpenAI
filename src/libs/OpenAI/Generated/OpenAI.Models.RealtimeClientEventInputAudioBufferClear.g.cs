@@ -4,7 +4,8 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Send this event to clear the audio bytes in the buffer. The server will respond with an `input_audio_buffer.cleared` event.
+    /// Send this event to clear the audio bytes in the buffer. The server will <br/>
+    /// respond with an `input_audio_buffer.cleared` event.
     /// </summary>
     public sealed partial class RealtimeClientEventInputAudioBufferClear
     {
@@ -15,11 +16,11 @@ namespace OpenAI
         public string? EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be "input_audio_buffer.clear".
+        /// The event type, must be `input_audio_buffer.clear`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeClientEventInputAudioBufferClearTypeJsonConverter))]
+        public global::OpenAI.RealtimeClientEventInputAudioBufferClearType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -34,15 +35,15 @@ namespace OpenAI
         /// Optional client-generated ID used to identify this event.
         /// </param>
         /// <param name="type">
-        /// The event type, must be "input_audio_buffer.clear".
+        /// The event type, must be `input_audio_buffer.clear`.
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeClientEventInputAudioBufferClear(
-            string type,
-            string? eventId)
+            string? eventId,
+            global::OpenAI.RealtimeClientEventInputAudioBufferClearType type)
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.EventId = eventId;
+            this.Type = type;
         }
 
         /// <summary>

@@ -4,8 +4,12 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Add a new Item to the Conversation's context, including messages, function calls, and function call responses. This event can be used both to populate a "history" of the conversation and to add new items mid-stream, but has the current limitation that it cannot populate assistant audio messages.<br/>
-    /// If successful, the server will respond with a `conversation.item.created` event, otherwise an `error` event will be sent.
+    /// Add a new Item to the Conversation's context, including messages, function <br/>
+    /// calls, and function call responses. This event can be used both to populate a <br/>
+    /// "history" of the conversation and to add new items mid-stream, but has the <br/>
+    /// current limitation that it cannot populate assistant audio messages.<br/>
+    /// If successful, the server will respond with a `conversation.item.created` <br/>
+    /// event, otherwise an `error` event will be sent.
     /// </summary>
     public sealed partial class RealtimeClientEventConversationItemCreate
     {
@@ -19,11 +23,14 @@ namespace OpenAI
         /// The event type, must be `conversation.item.create`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeClientEventConversationItemCreateTypeJsonConverter))]
+        public global::OpenAI.RealtimeClientEventConversationItemCreateType Type { get; set; }
 
         /// <summary>
-        /// The ID of the preceding item after which the new item will be inserted. If not set, the new item will be appended to the end of the conversation. If set, it allows an item to be inserted mid-conversation. If the ID cannot be found, an error will be returned and the item will not be added.
+        /// The ID of the preceding item after which the new item will be inserted. <br/>
+        /// If not set, the new item will be appended to the end of the conversation. <br/>
+        /// If set, it allows an item to be inserted mid-conversation. If the ID <br/>
+        /// cannot be found, an error will be returned and the item will not be added.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("previous_item_id")]
         public string? PreviousItemId { get; set; }
@@ -55,7 +62,10 @@ namespace OpenAI
         /// The event type, must be `conversation.item.create`.
         /// </param>
         /// <param name="previousItemId">
-        /// The ID of the preceding item after which the new item will be inserted. If not set, the new item will be appended to the end of the conversation. If set, it allows an item to be inserted mid-conversation. If the ID cannot be found, an error will be returned and the item will not be added.
+        /// The ID of the preceding item after which the new item will be inserted. <br/>
+        /// If not set, the new item will be appended to the end of the conversation. <br/>
+        /// If set, it allows an item to be inserted mid-conversation. If the ID <br/>
+        /// cannot be found, an error will be returned and the item will not be added.
         /// </param>
         /// <param name="item">
         /// A realtime Item is of three types: message, function_call, or function_call_output.<br/>
@@ -66,14 +76,14 @@ namespace OpenAI
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeClientEventConversationItemCreate(
-            string type,
             global::OpenAI.RealtimeConversationItem item,
             string? eventId,
+            global::OpenAI.RealtimeClientEventConversationItemCreateType type,
             string? previousItemId)
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Item = item ?? throw new global::System.ArgumentNullException(nameof(item));
             this.EventId = eventId;
+            this.Type = type;
             this.PreviousItemId = previousItemId;
         }
 

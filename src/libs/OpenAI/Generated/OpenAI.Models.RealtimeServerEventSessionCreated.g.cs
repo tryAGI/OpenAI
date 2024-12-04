@@ -4,7 +4,9 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Returned when a Session is created. Emitted automatically when a new connection is established as the first server event. This event will contain the default Session configuration.
+    /// Returned when a Session is created. Emitted automatically when a new <br/>
+    /// connection is established as the first server event. This event will contain <br/>
+    /// the default Session configuration.
     /// </summary>
     public sealed partial class RealtimeServerEventSessionCreated
     {
@@ -19,8 +21,8 @@ namespace OpenAI
         /// The event type, must be `session.created`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeServerEventSessionCreatedTypeJsonConverter))]
+        public global::OpenAI.RealtimeServerEventSessionCreatedType Type { get; set; }
 
         /// <summary>
         /// A session refers to a single WebSocket connection between a client and the server.<br/>
@@ -60,12 +62,12 @@ namespace OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeServerEventSessionCreated(
             string eventId,
-            string type,
-            global::OpenAI.RealtimeSession session)
+            global::OpenAI.RealtimeSession session,
+            global::OpenAI.RealtimeServerEventSessionCreatedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Session = session ?? throw new global::System.ArgumentNullException(nameof(session));
+            this.Type = type;
         }
 
         /// <summary>

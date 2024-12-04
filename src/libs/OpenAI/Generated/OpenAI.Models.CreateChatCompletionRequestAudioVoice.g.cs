@@ -4,8 +4,7 @@
 namespace OpenAI
 {
     /// <summary>
-    /// The voice the model uses to respond. Supported voices are `alloy`,<br/>
-    /// `ash`, `ballad`, `coral`, `echo`, `sage`, `shimmer`, and `verse`.
+    /// The voice the model uses to respond. Supported voices are `ash`, `ballad`, `coral`, `sage`, and `verse` (also supported but not recommended are `alloy`, `echo`, and `shimmer`; these voices are less expressive).
     /// </summary>
     public enum CreateChatCompletionRequestAudioVoice
     {

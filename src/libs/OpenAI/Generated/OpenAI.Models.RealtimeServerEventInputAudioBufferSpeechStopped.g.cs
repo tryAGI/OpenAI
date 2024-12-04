@@ -4,7 +4,9 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Returned in `server_vad` mode when the server detects the end of speech in the audio buffer. The server will also send an `conversation.item.created` event with the user message item that is created from the audio buffer.
+    /// Returned in `server_vad` mode when the server detects the end of speech in <br/>
+    /// the audio buffer. The server will also send an `conversation.item.created` <br/>
+    /// event with the user message item that is created from the audio buffer.
     /// </summary>
     public sealed partial class RealtimeServerEventInputAudioBufferSpeechStopped
     {
@@ -19,11 +21,13 @@ namespace OpenAI
         /// The event type, must be `input_audio_buffer.speech_stopped`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeServerEventInputAudioBufferSpeechStoppedTypeJsonConverter))]
+        public global::OpenAI.RealtimeServerEventInputAudioBufferSpeechStoppedType Type { get; set; }
 
         /// <summary>
-        /// Milliseconds since the session started when speech stopped. This will correspond to the end of audio sent to the model, and thus includes the `min_silence_duration_ms` configured in the Session.
+        /// Milliseconds since the session started when speech stopped. This will <br/>
+        /// correspond to the end of audio sent to the model, and thus includes the <br/>
+        /// `min_silence_duration_ms` configured in the Session.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio_end_ms")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -52,7 +56,9 @@ namespace OpenAI
         /// The event type, must be `input_audio_buffer.speech_stopped`.
         /// </param>
         /// <param name="audioEndMs">
-        /// Milliseconds since the session started when speech stopped. This will correspond to the end of audio sent to the model, and thus includes the `min_silence_duration_ms` configured in the Session.
+        /// Milliseconds since the session started when speech stopped. This will <br/>
+        /// correspond to the end of audio sent to the model, and thus includes the <br/>
+        /// `min_silence_duration_ms` configured in the Session.
         /// </param>
         /// <param name="itemId">
         /// The ID of the user message item that will be created.
@@ -60,14 +66,14 @@ namespace OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeServerEventInputAudioBufferSpeechStopped(
             string eventId,
-            string type,
             int audioEndMs,
-            string itemId)
+            string itemId,
+            global::OpenAI.RealtimeServerEventInputAudioBufferSpeechStoppedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.AudioEndMs = audioEndMs;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
+            this.Type = type;
         }
 
         /// <summary>

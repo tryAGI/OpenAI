@@ -4,7 +4,8 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Returned when the text value of a "text" content part is done streaming. Also emitted when a Response is interrupted, incomplete, or cancelled.
+    /// Returned when the text value of a "text" content part is done streaming. Also<br/>
+    /// emitted when a Response is interrupted, incomplete, or cancelled.
     /// </summary>
     public sealed partial class RealtimeServerEventResponseTextDone
     {
@@ -16,11 +17,11 @@ namespace OpenAI
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be "response.text.done".
+        /// The event type, must be `response.text.done`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeServerEventResponseTextDoneTypeJsonConverter))]
+        public global::OpenAI.RealtimeServerEventResponseTextDoneType Type { get; set; }
 
         /// <summary>
         /// The ID of the response.
@@ -70,7 +71,7 @@ namespace OpenAI
         /// The unique ID of the server event.
         /// </param>
         /// <param name="type">
-        /// The event type, must be "response.text.done".
+        /// The event type, must be `response.text.done`.
         /// </param>
         /// <param name="responseId">
         /// The ID of the response.
@@ -90,20 +91,20 @@ namespace OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeServerEventResponseTextDone(
             string eventId,
-            string type,
             string responseId,
             string itemId,
             int outputIndex,
             int contentIndex,
-            string text)
+            string text,
+            global::OpenAI.RealtimeServerEventResponseTextDoneType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.ResponseId = responseId ?? throw new global::System.ArgumentNullException(nameof(responseId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.ContentIndex = contentIndex;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Type = type;
         }
 
         /// <summary>
