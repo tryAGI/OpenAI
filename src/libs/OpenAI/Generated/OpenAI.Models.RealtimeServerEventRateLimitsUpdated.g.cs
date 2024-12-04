@@ -4,7 +4,10 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Emitted at the beginning of a Response to indicate the updated rate limits. When a Response is created some tokens will be "reserved" for the output tokens, the rate limits shown here reflect that reservation, which is then adjusted accordingly once the Response is completed.
+    /// Emitted at the beginning of a Response to indicate the updated rate limits. <br/>
+    /// When a Response is created some tokens will be "reserved" for the output <br/>
+    /// tokens, the rate limits shown here reflect that reservation, which is then <br/>
+    /// adjusted accordingly once the Response is completed.
     /// </summary>
     public sealed partial class RealtimeServerEventRateLimitsUpdated
     {
@@ -19,8 +22,8 @@ namespace OpenAI
         /// The event type, must be `rate_limits.updated`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeServerEventRateLimitsUpdatedTypeJsonConverter))]
+        public global::OpenAI.RealtimeServerEventRateLimitsUpdatedType Type { get; set; }
 
         /// <summary>
         /// List of rate limit information.
@@ -50,12 +53,12 @@ namespace OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeServerEventRateLimitsUpdated(
             string eventId,
-            string type,
-            global::System.Collections.Generic.IList<global::OpenAI.RealtimeServerEventRateLimitsUpdatedRateLimit> rateLimits)
+            global::System.Collections.Generic.IList<global::OpenAI.RealtimeServerEventRateLimitsUpdatedRateLimit> rateLimits,
+            global::OpenAI.RealtimeServerEventRateLimitsUpdatedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.RateLimits = rateLimits ?? throw new global::System.ArgumentNullException(nameof(rateLimits));
+            this.Type = type;
         }
 
         /// <summary>

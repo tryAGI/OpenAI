@@ -4,7 +4,9 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Returned when an item in the conversation is deleted by the client with a `conversation.item.delete` event. This event is used to synchronize the server's understanding of the conversation history with the client's view.
+    /// Returned when an item in the conversation is deleted by the client with a <br/>
+    /// `conversation.item.delete` event. This event is used to synchronize the <br/>
+    /// server's understanding of the conversation history with the client's view.
     /// </summary>
     public sealed partial class RealtimeServerEventConversationItemDeleted
     {
@@ -19,8 +21,8 @@ namespace OpenAI
         /// The event type, must be `conversation.item.deleted`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeServerEventConversationItemDeletedTypeJsonConverter))]
+        public global::OpenAI.RealtimeServerEventConversationItemDeletedType Type { get; set; }
 
         /// <summary>
         /// The ID of the item that was deleted.
@@ -50,12 +52,12 @@ namespace OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeServerEventConversationItemDeleted(
             string eventId,
-            string type,
-            string itemId)
+            string itemId,
+            global::OpenAI.RealtimeServerEventConversationItemDeletedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
+            this.Type = type;
         }
 
         /// <summary>

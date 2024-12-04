@@ -4,7 +4,15 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Sent by the server when in `server_vad` mode to indicate that speech has been detected in the audio buffer. This can happen any time audio is added to the buffer (unless speech is already detected). The client may want to use this event to interrupt audio playback or provide visual feedback to the user. The client should expect to receive a `input_audio_buffer.speech_stopped` event when speech stops. The `item_id` property is the ID of the user message item that will be created when speech stops and will also be included in the `input_audio_buffer.speech_stopped` event (unless the client manually commits the audio buffer during VAD activation).
+    /// Sent by the server when in `server_vad` mode to indicate that speech has been <br/>
+    /// detected in the audio buffer. This can happen any time audio is added to the <br/>
+    /// buffer (unless speech is already detected). The client may want to use this <br/>
+    /// event to interrupt audio playback or provide visual feedback to the user. <br/>
+    /// The client should expect to receive a `input_audio_buffer.speech_stopped` event <br/>
+    /// when speech stops. The `item_id` property is the ID of the user message item <br/>
+    /// that will be created when speech stops and will also be included in the <br/>
+    /// `input_audio_buffer.speech_stopped` event (unless the client manually commits <br/>
+    /// the audio buffer during VAD activation).
     /// </summary>
     public sealed partial class RealtimeServerEventInputAudioBufferSpeechStarted
     {
@@ -19,11 +27,14 @@ namespace OpenAI
         /// The event type, must be `input_audio_buffer.speech_started`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeServerEventInputAudioBufferSpeechStartedTypeJsonConverter))]
+        public global::OpenAI.RealtimeServerEventInputAudioBufferSpeechStartedType Type { get; set; }
 
         /// <summary>
-        /// Milliseconds from the start of all audio written to the buffer during the session when speech was first detected. This will correspond to the beginning of audio sent to the model, and thus includes the `prefix_padding_ms` configured in the Session.
+        /// Milliseconds from the start of all audio written to the buffer during the <br/>
+        /// session when speech was first detected. This will correspond to the <br/>
+        /// beginning of audio sent to the model, and thus includes the <br/>
+        /// `prefix_padding_ms` configured in the Session.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio_start_ms")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -52,7 +63,10 @@ namespace OpenAI
         /// The event type, must be `input_audio_buffer.speech_started`.
         /// </param>
         /// <param name="audioStartMs">
-        /// Milliseconds from the start of all audio written to the buffer during the session when speech was first detected. This will correspond to the beginning of audio sent to the model, and thus includes the `prefix_padding_ms` configured in the Session.
+        /// Milliseconds from the start of all audio written to the buffer during the <br/>
+        /// session when speech was first detected. This will correspond to the <br/>
+        /// beginning of audio sent to the model, and thus includes the <br/>
+        /// `prefix_padding_ms` configured in the Session.
         /// </param>
         /// <param name="itemId">
         /// The ID of the user message item that will be created when speech stops.
@@ -60,14 +74,14 @@ namespace OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeServerEventInputAudioBufferSpeechStarted(
             string eventId,
-            string type,
             int audioStartMs,
-            string itemId)
+            string itemId,
+            global::OpenAI.RealtimeServerEventInputAudioBufferSpeechStartedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.AudioStartMs = audioStartMs;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
+            this.Type = type;
         }
 
         /// <summary>

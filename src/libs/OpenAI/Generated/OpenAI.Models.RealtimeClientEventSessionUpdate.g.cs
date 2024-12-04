@@ -4,7 +4,12 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Send this event to update the session’s default configuration. The client may send this event at any time to update the session configuration, and any field may be updated at any time, except for "voice". The server will respond with a `session.updated` event that shows the full effective configuration. Only fields that are present are updated, thus the correct way to clear a field like "instructions" is to pass an empty string.
+    /// Send this event to update the session’s default configuration. The client may <br/>
+    /// send this event at any time to update the session configuration, and any <br/>
+    /// field may be updated at any time, except for "voice". The server will respond <br/>
+    /// with a `session.updated` event that shows the full effective configuration. <br/>
+    /// Only fields that are present are updated, thus the correct way to clear a <br/>
+    /// field like "instructions" is to pass an empty string.
     /// </summary>
     public sealed partial class RealtimeClientEventSessionUpdate
     {
@@ -15,11 +20,11 @@ namespace OpenAI
         public string? EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be "session.update".
+        /// The event type, must be `session.update`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeClientEventSessionUpdateTypeJsonConverter))]
+        public global::OpenAI.RealtimeClientEventSessionUpdateType Type { get; set; }
 
         /// <summary>
         /// A session refers to a single WebSocket connection between a client and the server.<br/>
@@ -46,7 +51,7 @@ namespace OpenAI
         /// Optional client-generated ID used to identify this event.
         /// </param>
         /// <param name="type">
-        /// The event type, must be "session.update".
+        /// The event type, must be `session.update`.
         /// </param>
         /// <param name="session">
         /// A session refers to a single WebSocket connection between a client and the server.<br/>
@@ -58,13 +63,13 @@ namespace OpenAI
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeClientEventSessionUpdate(
-            string type,
             global::OpenAI.RealtimeSession session,
-            string? eventId)
+            string? eventId,
+            global::OpenAI.RealtimeClientEventSessionUpdateType type)
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Session = session ?? throw new global::System.ArgumentNullException(nameof(session));
             this.EventId = eventId;
+            this.Type = type;
         }
 
         /// <summary>

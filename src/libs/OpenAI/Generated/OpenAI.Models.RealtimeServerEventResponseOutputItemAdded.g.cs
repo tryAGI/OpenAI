@@ -19,8 +19,8 @@ namespace OpenAI
         /// The event type, must be `response.output_item.added`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeServerEventResponseOutputItemAddedTypeJsonConverter))]
+        public global::OpenAI.RealtimeServerEventResponseOutputItemAddedType Type { get; set; }
 
         /// <summary>
         /// The ID of the Response to which the item belongs.
@@ -78,16 +78,16 @@ namespace OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeServerEventResponseOutputItemAdded(
             string eventId,
-            string type,
             string responseId,
             int outputIndex,
-            global::OpenAI.RealtimeConversationItem item)
+            global::OpenAI.RealtimeConversationItem item,
+            global::OpenAI.RealtimeServerEventResponseOutputItemAddedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.ResponseId = responseId ?? throw new global::System.ArgumentNullException(nameof(responseId));
             this.OutputIndex = outputIndex;
             this.Item = item ?? throw new global::System.ArgumentNullException(nameof(item));
+            this.Type = type;
         }
 
         /// <summary>

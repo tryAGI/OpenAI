@@ -4,7 +4,10 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Returned when an input audio buffer is committed, either by the client or automatically in server VAD mode. The `item_id` property is the ID of the user message item that will be created, thus a `conversation.item.created` event will also be sent to the client.
+    /// Returned when an input audio buffer is committed, either by the client or <br/>
+    /// automatically in server VAD mode. The `item_id` property is the ID of the user<br/>
+    /// message item that will be created, thus a `conversation.item.created` event <br/>
+    /// will also be sent to the client.
     /// </summary>
     public sealed partial class RealtimeServerEventInputAudioBufferCommitted
     {
@@ -19,8 +22,8 @@ namespace OpenAI
         /// The event type, must be `input_audio_buffer.committed`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeServerEventInputAudioBufferCommittedTypeJsonConverter))]
+        public global::OpenAI.RealtimeServerEventInputAudioBufferCommittedType Type { get; set; }
 
         /// <summary>
         /// The ID of the preceding item after which the new item will be inserted.
@@ -60,14 +63,14 @@ namespace OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeServerEventInputAudioBufferCommitted(
             string eventId,
-            string type,
             string previousItemId,
-            string itemId)
+            string itemId,
+            global::OpenAI.RealtimeServerEventInputAudioBufferCommittedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.PreviousItemId = previousItemId ?? throw new global::System.ArgumentNullException(nameof(previousItemId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
+            this.Type = type;
         }
 
         /// <summary>

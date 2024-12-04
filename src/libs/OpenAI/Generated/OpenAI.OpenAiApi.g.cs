@@ -157,6 +157,15 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public UsageClient Usage => new UsageClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public InvitesClient Invites => new InvitesClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,

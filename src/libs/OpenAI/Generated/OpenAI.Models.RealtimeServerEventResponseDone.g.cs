@@ -4,7 +4,9 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Returned when a Response is done streaming. Always emitted, no matter the final state. The Response object included in the `response.done` event will include all output Items in the Response but will omit the raw audio data.
+    /// Returned when a Response is done streaming. Always emitted, no matter the <br/>
+    /// final state. The Response object included in the `response.done` event will <br/>
+    /// include all output Items in the Response but will omit the raw audio data.
     /// </summary>
     public sealed partial class RealtimeServerEventResponseDone
     {
@@ -16,11 +18,11 @@ namespace OpenAI
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be "response.done".
+        /// The event type, must be `response.done`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeServerEventResponseDoneTypeJsonConverter))]
+        public global::OpenAI.RealtimeServerEventResponseDoneType Type { get; set; }
 
         /// <summary>
         /// The response resource.
@@ -42,7 +44,7 @@ namespace OpenAI
         /// The unique ID of the server event.
         /// </param>
         /// <param name="type">
-        /// The event type, must be "response.done".
+        /// The event type, must be `response.done`.
         /// </param>
         /// <param name="response">
         /// The response resource.
@@ -50,12 +52,12 @@ namespace OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeServerEventResponseDone(
             string eventId,
-            string type,
-            global::OpenAI.RealtimeResponse response)
+            global::OpenAI.RealtimeResponse response,
+            global::OpenAI.RealtimeServerEventResponseDoneType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Response = response ?? throw new global::System.ArgumentNullException(nameof(response));
+            this.Type = type;
         }
 
         /// <summary>

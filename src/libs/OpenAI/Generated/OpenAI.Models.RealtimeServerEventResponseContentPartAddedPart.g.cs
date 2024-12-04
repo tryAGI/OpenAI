@@ -12,7 +12,8 @@ namespace OpenAI
         /// The content type ("text", "audio").
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeServerEventResponseContentPartAddedPartTypeJsonConverter))]
+        public global::OpenAI.RealtimeServerEventResponseContentPartAddedPartType? Type { get; set; }
 
         /// <summary>
         /// The text content (if type is "text").
@@ -55,7 +56,7 @@ namespace OpenAI
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeServerEventResponseContentPartAddedPart(
-            string? type,
+            global::OpenAI.RealtimeServerEventResponseContentPartAddedPartType? type,
             string? text,
             string? audio,
             string? transcript)

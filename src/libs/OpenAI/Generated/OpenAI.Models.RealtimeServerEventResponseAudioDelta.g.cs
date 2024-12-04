@@ -16,11 +16,11 @@ namespace OpenAI
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be "response.audio.delta".
+        /// The event type, must be `response.audio.delta`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeServerEventResponseAudioDeltaTypeJsonConverter))]
+        public global::OpenAI.RealtimeServerEventResponseAudioDeltaType Type { get; set; }
 
         /// <summary>
         /// The ID of the response.
@@ -70,7 +70,7 @@ namespace OpenAI
         /// The unique ID of the server event.
         /// </param>
         /// <param name="type">
-        /// The event type, must be "response.audio.delta".
+        /// The event type, must be `response.audio.delta`.
         /// </param>
         /// <param name="responseId">
         /// The ID of the response.
@@ -90,20 +90,20 @@ namespace OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeServerEventResponseAudioDelta(
             string eventId,
-            string type,
             string responseId,
             string itemId,
             int outputIndex,
             int contentIndex,
-            string delta)
+            string delta,
+            global::OpenAI.RealtimeServerEventResponseAudioDeltaType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.ResponseId = responseId ?? throw new global::System.ArgumentNullException(nameof(responseId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.ContentIndex = contentIndex;
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
+            this.Type = type;
         }
 
         /// <summary>

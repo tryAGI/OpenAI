@@ -16,11 +16,11 @@ namespace OpenAI
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be "conversation.created".
+        /// The event type, must be `conversation.created`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeServerEventConversationCreatedTypeJsonConverter))]
+        public global::OpenAI.RealtimeServerEventConversationCreatedType Type { get; set; }
 
         /// <summary>
         /// The conversation resource.
@@ -42,7 +42,7 @@ namespace OpenAI
         /// The unique ID of the server event.
         /// </param>
         /// <param name="type">
-        /// The event type, must be "conversation.created".
+        /// The event type, must be `conversation.created`.
         /// </param>
         /// <param name="conversation">
         /// The conversation resource.
@@ -50,12 +50,12 @@ namespace OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeServerEventConversationCreated(
             string eventId,
-            string type,
-            global::OpenAI.RealtimeServerEventConversationCreatedConversation conversation)
+            global::OpenAI.RealtimeServerEventConversationCreatedConversation conversation,
+            global::OpenAI.RealtimeServerEventConversationCreatedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Conversation = conversation ?? throw new global::System.ArgumentNullException(nameof(conversation));
+            this.Type = type;
         }
 
         /// <summary>

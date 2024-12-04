@@ -4,7 +4,8 @@
 namespace OpenAI
 {
     /// <summary>
-    /// Returned when an Item is done streaming. Also emitted when a Response is interrupted, incomplete, or cancelled.
+    /// Returned when an Item is done streaming. Also emitted when a Response is <br/>
+    /// interrupted, incomplete, or cancelled.
     /// </summary>
     public sealed partial class RealtimeServerEventResponseOutputItemDone
     {
@@ -19,8 +20,8 @@ namespace OpenAI
         /// The event type, must be `response.output_item.done`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeServerEventResponseOutputItemDoneTypeJsonConverter))]
+        public global::OpenAI.RealtimeServerEventResponseOutputItemDoneType Type { get; set; }
 
         /// <summary>
         /// The ID of the Response to which the item belongs.
@@ -78,16 +79,16 @@ namespace OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeServerEventResponseOutputItemDone(
             string eventId,
-            string type,
             string responseId,
             int outputIndex,
-            global::OpenAI.RealtimeConversationItem item)
+            global::OpenAI.RealtimeConversationItem item,
+            global::OpenAI.RealtimeServerEventResponseOutputItemDoneType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.ResponseId = responseId ?? throw new global::System.ArgumentNullException(nameof(responseId));
             this.OutputIndex = outputIndex;
             this.Item = item ?? throw new global::System.ArgumentNullException(nameof(item));
+            this.Type = type;
         }
 
         /// <summary>

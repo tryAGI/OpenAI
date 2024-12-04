@@ -105,6 +105,11 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public UsageClient Usage { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public InvitesClient Invites { get; }
 
         /// <summary>
