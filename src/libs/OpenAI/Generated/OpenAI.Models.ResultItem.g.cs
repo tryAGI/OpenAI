@@ -333,7 +333,7 @@ namespace OpenAI
         /// 
         /// </summary>
         public ResultItem(
-            global::OpenAI.UsageTimeBucketResultItemDiscriminatorObject? object,
+            global::OpenAI.UsageTimeBucketResultItemDiscriminatorObject? @object,
             global::OpenAI.UsageCompletionsResult? organizationUsageCompletionsResult,
             global::OpenAI.UsageEmbeddingsResult? organizationUsageEmbeddingsResult,
             global::OpenAI.UsageModerationsResult? organizationUsageModerationsResult,
@@ -345,7 +345,7 @@ namespace OpenAI
             global::OpenAI.CostsResult? organizationCostsResult
             )
         {
-            Object = object;
+            Object = @object;
 
             OrganizationUsageCompletionsResult = organizationUsageCompletionsResult;
             OrganizationUsageEmbeddingsResult = organizationUsageEmbeddingsResult;
@@ -361,7 +361,7 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public object? Object =>
+        public object? Object1 =>
             OrganizationCostsResult as object ??
             OrganizationUsageCodeInterpreterSessionsResult as object ??
             OrganizationUsageVectorStoresResult as object ??
