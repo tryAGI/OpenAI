@@ -16,7 +16,7 @@ namespace OpenAI
         public global::OpenAI.UsageEmbeddingsResultObject Object { get; set; }
 
         /// <summary>
-        /// The number of input tokens used.
+        /// The aggregated number of input tokens used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -64,7 +64,7 @@ namespace OpenAI
         /// </summary>
         /// <param name="object"></param>
         /// <param name="inputTokens">
-        /// The number of input tokens used.
+        /// The aggregated number of input tokens used.
         /// </param>
         /// <param name="numModelRequests">
         /// The count of requests made to the model.

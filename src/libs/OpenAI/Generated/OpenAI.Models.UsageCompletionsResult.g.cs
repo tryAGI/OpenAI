@@ -16,20 +16,20 @@ namespace OpenAI
         public global::OpenAI.UsageCompletionsResultObject Object { get; set; }
 
         /// <summary>
-        /// The number of input tokens used.
+        /// The aggregated number of input tokens used. For customers subscribe to scale tier, this includes scale tier tokens.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int InputTokens { get; set; }
 
         /// <summary>
-        /// The number of input tokens that has been cached from previous requests.
+        /// The aggregated number of input tokens that has been cached from previous requests. For customers subscribe to scale tier, this includes scale tier tokens.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_cached_tokens")]
         public int? InputCachedTokens { get; set; }
 
         /// <summary>
-        /// The number of output tokens used.
+        /// The aggregated number of output tokens used. For customers subscribe to scale tier, this includes scale tier tokens.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -83,13 +83,13 @@ namespace OpenAI
         /// </summary>
         /// <param name="object"></param>
         /// <param name="inputTokens">
-        /// The number of input tokens used.
+        /// The aggregated number of input tokens used. For customers subscribe to scale tier, this includes scale tier tokens.
         /// </param>
         /// <param name="inputCachedTokens">
-        /// The number of input tokens that has been cached from previous requests.
+        /// The aggregated number of input tokens that has been cached from previous requests. For customers subscribe to scale tier, this includes scale tier tokens.
         /// </param>
         /// <param name="outputTokens">
-        /// The number of output tokens used.
+        /// The aggregated number of output tokens used. For customers subscribe to scale tier, this includes scale tier tokens.
         /// </param>
         /// <param name="numModelRequests">
         /// The count of requests made to the model.
