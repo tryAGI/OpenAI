@@ -72,7 +72,7 @@ namespace OpenAI.JsonConverters
 
             if (value.IsValue1)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.AssistantsApiToolChoiceOptionEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.AssistantsApiToolChoiceOptionEnum?> ??
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.AssistantsApiToolChoiceOptionEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.AssistantsApiToolChoiceOptionEnum> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.AssistantsApiToolChoiceOptionEnum).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeInfo);
             }
