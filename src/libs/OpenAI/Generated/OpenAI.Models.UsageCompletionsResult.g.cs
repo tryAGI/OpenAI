@@ -16,24 +16,36 @@ namespace OpenAI
         public global::OpenAI.UsageCompletionsResultObject Object { get; set; }
 
         /// <summary>
-        /// The aggregated number of input tokens used. For customers subscribe to scale tier, this includes scale tier tokens.
+        /// The aggregated number of text input tokens used, including cached tokens. For customers subscribe to scale tier, this includes scale tier tokens.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int InputTokens { get; set; }
 
         /// <summary>
-        /// The aggregated number of input tokens that has been cached from previous requests. For customers subscribe to scale tier, this includes scale tier tokens.
+        /// The aggregated number of text input tokens that has been cached from previous requests. For customers subscribe to scale tier, this includes scale tier tokens.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_cached_tokens")]
         public int? InputCachedTokens { get; set; }
 
         /// <summary>
-        /// The aggregated number of output tokens used. For customers subscribe to scale tier, this includes scale tier tokens.
+        /// The aggregated number of text output tokens used. For customers subscribe to scale tier, this includes scale tier tokens.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int OutputTokens { get; set; }
+
+        /// <summary>
+        /// The aggregated number of audio input tokens used, including cached tokens.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("input_audio_tokens")]
+        public int? InputAudioTokens { get; set; }
+
+        /// <summary>
+        /// The aggregated number of audio output tokens used.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_audio_tokens")]
+        public int? OutputAudioTokens { get; set; }
 
         /// <summary>
         /// The count of requests made to the model.
@@ -83,13 +95,19 @@ namespace OpenAI
         /// </summary>
         /// <param name="object"></param>
         /// <param name="inputTokens">
-        /// The aggregated number of input tokens used. For customers subscribe to scale tier, this includes scale tier tokens.
+        /// The aggregated number of text input tokens used, including cached tokens. For customers subscribe to scale tier, this includes scale tier tokens.
         /// </param>
         /// <param name="inputCachedTokens">
-        /// The aggregated number of input tokens that has been cached from previous requests. For customers subscribe to scale tier, this includes scale tier tokens.
+        /// The aggregated number of text input tokens that has been cached from previous requests. For customers subscribe to scale tier, this includes scale tier tokens.
         /// </param>
         /// <param name="outputTokens">
-        /// The aggregated number of output tokens used. For customers subscribe to scale tier, this includes scale tier tokens.
+        /// The aggregated number of text output tokens used. For customers subscribe to scale tier, this includes scale tier tokens.
+        /// </param>
+        /// <param name="inputAudioTokens">
+        /// The aggregated number of audio input tokens used, including cached tokens.
+        /// </param>
+        /// <param name="outputAudioTokens">
+        /// The aggregated number of audio output tokens used.
         /// </param>
         /// <param name="numModelRequests">
         /// The count of requests made to the model.
@@ -116,6 +134,8 @@ namespace OpenAI
             int numModelRequests,
             global::OpenAI.UsageCompletionsResultObject @object,
             int? inputCachedTokens,
+            int? inputAudioTokens,
+            int? outputAudioTokens,
             string? projectId,
             string? userId,
             string? apiKeyId,
@@ -127,6 +147,8 @@ namespace OpenAI
             this.NumModelRequests = numModelRequests;
             this.Object = @object;
             this.InputCachedTokens = inputCachedTokens;
+            this.InputAudioTokens = inputAudioTokens;
+            this.OutputAudioTokens = outputAudioTokens;
             this.ProjectId = projectId;
             this.UserId = userId;
             this.ApiKeyId = apiKeyId;
