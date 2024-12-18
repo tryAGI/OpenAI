@@ -6,9 +6,9 @@
 namespace OpenAI
 {
     /// <summary>
-    /// The per-line training example of a fine-tuning input file for chat models
+    /// 
     /// </summary>
-    public sealed partial class FinetuneChatRequestInput
+    public sealed partial class FineTunePreferenceRequestInputInput
     {
         /// <summary>
         /// 
@@ -29,20 +29,13 @@ namespace OpenAI
         public bool? ParallelToolCalls { get; set; }
 
         /// <summary>
-        /// A list of functions the model may generate JSON inputs for.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("functions")]
-        [global::System.Obsolete("This property marked as deprecated.")]
-        public global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionFunctions>? Functions { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="FinetuneChatRequestInput" /> class.
+        /// Initializes a new instance of the <see cref="FineTunePreferenceRequestInputInput" /> class.
         /// </summary>
         /// <param name="messages"></param>
         /// <param name="tools">
@@ -52,7 +45,7 @@ namespace OpenAI
         /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
-        public FinetuneChatRequestInput(
+        public FineTunePreferenceRequestInputInput(
             global::System.Collections.Generic.IList<global::OpenAI.OneOf<global::OpenAI.ChatCompletionRequestSystemMessage, global::OpenAI.ChatCompletionRequestUserMessage, global::OpenAI.FineTuneChatCompletionRequestAssistantMessage?, global::OpenAI.ChatCompletionRequestToolMessage, global::OpenAI.ChatCompletionRequestFunctionMessage>>? messages,
             global::System.Collections.Generic.IList<global::OpenAI.ChatCompletionTool>? tools,
             bool? parallelToolCalls)
@@ -63,9 +56,9 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="FinetuneChatRequestInput" /> class.
+        /// Initializes a new instance of the <see cref="FineTunePreferenceRequestInputInput" /> class.
         /// </summary>
-        public FinetuneChatRequestInput()
+        public FineTunePreferenceRequestInputInput()
         {
         }
     }

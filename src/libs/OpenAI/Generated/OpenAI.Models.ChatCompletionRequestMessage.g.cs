@@ -15,7 +15,46 @@ namespace OpenAI
         public global::OpenAI.ChatCompletionRequestMessageDiscriminatorRole? Role { get; }
 
         /// <summary>
+        /// Developer-provided instructions that the model should follow, regardless of<br/>
+        /// messages sent by the user. With o1 models and newer, `developer` messages<br/>
+        /// replace the previous `system` messages.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::OpenAI.ChatCompletionRequestDeveloperMessage? Developer { get; init; }
+#else
+        public global::OpenAI.ChatCompletionRequestDeveloperMessage? Developer { get; }
+#endif
+
+        /// <summary>
         /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Developer))]
+#endif
+        public bool IsDeveloper => Developer != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ChatCompletionRequestMessage(global::OpenAI.ChatCompletionRequestDeveloperMessage value) => new ChatCompletionRequestMessage(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::OpenAI.ChatCompletionRequestDeveloperMessage?(ChatCompletionRequestMessage @this) => @this.Developer;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChatCompletionRequestMessage(global::OpenAI.ChatCompletionRequestDeveloperMessage? value)
+        {
+            Developer = value;
+        }
+
+        /// <summary>
+        /// Developer-provided instructions that the model should follow, regardless of<br/>
+        /// messages sent by the user. With o1 models and newer, use `developer` messages<br/>
+        /// for this purpose instead.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.ChatCompletionRequestSystemMessage? System { get; init; }
@@ -50,7 +89,8 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// 
+        /// Messages sent by an end user, containing prompts or additional context<br/>
+        /// information.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.ChatCompletionRequestUserMessage? User { get; init; }
@@ -85,7 +125,7 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// 
+        /// Messages sent by the model in response to user messages.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.ChatCompletionRequestAssistantMessage? Assistant { get; init; }
@@ -194,6 +234,7 @@ namespace OpenAI
         /// </summary>
         public ChatCompletionRequestMessage(
             global::OpenAI.ChatCompletionRequestMessageDiscriminatorRole? role,
+            global::OpenAI.ChatCompletionRequestDeveloperMessage? developer,
             global::OpenAI.ChatCompletionRequestSystemMessage? system,
             global::OpenAI.ChatCompletionRequestUserMessage? user,
             global::OpenAI.ChatCompletionRequestAssistantMessage? assistant,
@@ -203,6 +244,7 @@ namespace OpenAI
         {
             Role = role;
 
+            Developer = developer;
             System = system;
             User = user;
             Assistant = assistant;
@@ -218,7 +260,8 @@ namespace OpenAI
             Tool as object ??
             Assistant as object ??
             User as object ??
-            System as object 
+            System as object ??
+            Developer as object 
             ;
 
         /// <summary>
@@ -226,13 +269,14 @@ namespace OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsSystem && !IsUser && !IsAssistant && !IsTool && !IsFunction || !IsSystem && IsUser && !IsAssistant && !IsTool && !IsFunction || !IsSystem && !IsUser && IsAssistant && !IsTool && !IsFunction || !IsSystem && !IsUser && !IsAssistant && IsTool && !IsFunction || !IsSystem && !IsUser && !IsAssistant && !IsTool && IsFunction;
+            return IsDeveloper && !IsSystem && !IsUser && !IsAssistant && !IsTool && !IsFunction || !IsDeveloper && IsSystem && !IsUser && !IsAssistant && !IsTool && !IsFunction || !IsDeveloper && !IsSystem && IsUser && !IsAssistant && !IsTool && !IsFunction || !IsDeveloper && !IsSystem && !IsUser && IsAssistant && !IsTool && !IsFunction || !IsDeveloper && !IsSystem && !IsUser && !IsAssistant && IsTool && !IsFunction || !IsDeveloper && !IsSystem && !IsUser && !IsAssistant && !IsTool && IsFunction;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
+            global::System.Func<global::OpenAI.ChatCompletionRequestDeveloperMessage?, TResult>? developer = null,
             global::System.Func<global::OpenAI.ChatCompletionRequestSystemMessage?, TResult>? system = null,
             global::System.Func<global::OpenAI.ChatCompletionRequestUserMessage?, TResult>? user = null,
             global::System.Func<global::OpenAI.ChatCompletionRequestAssistantMessage?, TResult>? assistant = null,
@@ -245,7 +289,11 @@ namespace OpenAI
                 Validate();
             }
 
-            if (IsSystem && system != null)
+            if (IsDeveloper && developer != null)
+            {
+                return developer(Developer!);
+            }
+            else if (IsSystem && system != null)
             {
                 return system(System!);
             }
@@ -273,6 +321,7 @@ namespace OpenAI
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::OpenAI.ChatCompletionRequestDeveloperMessage?>? developer = null,
             global::System.Action<global::OpenAI.ChatCompletionRequestSystemMessage?>? system = null,
             global::System.Action<global::OpenAI.ChatCompletionRequestUserMessage?>? user = null,
             global::System.Action<global::OpenAI.ChatCompletionRequestAssistantMessage?>? assistant = null,
@@ -285,7 +334,11 @@ namespace OpenAI
                 Validate();
             }
 
-            if (IsSystem)
+            if (IsDeveloper)
+            {
+                developer?.Invoke(Developer!);
+            }
+            else if (IsSystem)
             {
                 system?.Invoke(System!);
             }
@@ -314,6 +367,8 @@ namespace OpenAI
         {
             var fields = new object?[]
             {
+                Developer,
+                typeof(global::OpenAI.ChatCompletionRequestDeveloperMessage),
                 System,
                 typeof(global::OpenAI.ChatCompletionRequestSystemMessage),
                 User,
@@ -340,6 +395,7 @@ namespace OpenAI
         public bool Equals(ChatCompletionRequestMessage other)
         {
             return
+                global::System.Collections.Generic.EqualityComparer<global::OpenAI.ChatCompletionRequestDeveloperMessage?>.Default.Equals(Developer, other.Developer) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenAI.ChatCompletionRequestSystemMessage?>.Default.Equals(System, other.System) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenAI.ChatCompletionRequestUserMessage?>.Default.Equals(User, other.User) &&
                 global::System.Collections.Generic.EqualityComparer<global::OpenAI.ChatCompletionRequestAssistantMessage?>.Default.Equals(Assistant, other.Assistant) &&

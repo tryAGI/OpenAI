@@ -125,6 +125,11 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public RealtimeClient Realtime { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public VectorStoresClient VectorStores { get; }
 
     }

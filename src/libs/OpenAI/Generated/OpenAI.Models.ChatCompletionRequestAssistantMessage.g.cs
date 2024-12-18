@@ -6,7 +6,7 @@
 namespace OpenAI
 {
     /// <summary>
-    /// 
+    /// Messages sent by the model in response to user messages.
     /// </summary>
     public sealed partial class ChatCompletionRequestAssistantMessage
     {

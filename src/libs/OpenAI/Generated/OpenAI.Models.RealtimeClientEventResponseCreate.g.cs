@@ -33,16 +33,10 @@ namespace OpenAI
         public global::OpenAI.RealtimeClientEventResponseCreateType Type { get; set; }
 
         /// <summary>
-        /// A session refers to a single WebSocket connection between a client and the server.<br/>
-        /// Once a client creates a session, it then sends JSON-formatted events containing text and audio chunks.<br/>
-        /// The server will respond in kind with audio containing voice output, a text transcript of that voice output,<br/>
-        /// and function calls (if functions are provided by the client).<br/>
-        /// A realtime Session represents the overall client-server interaction, and contains default configuration.<br/>
-        /// It has a set of default values which can be updated at any time (via session.update) or on a per-response level (via response.create).
+        /// Create a new Realtime response with these parameters
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::OpenAI.RealtimeSession Response { get; set; }
+        public global::OpenAI.RealtimeResponseCreateParams? Response { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -60,22 +54,17 @@ namespace OpenAI
         /// The event type, must be `response.create`.
         /// </param>
         /// <param name="response">
-        /// A session refers to a single WebSocket connection between a client and the server.<br/>
-        /// Once a client creates a session, it then sends JSON-formatted events containing text and audio chunks.<br/>
-        /// The server will respond in kind with audio containing voice output, a text transcript of that voice output,<br/>
-        /// and function calls (if functions are provided by the client).<br/>
-        /// A realtime Session represents the overall client-server interaction, and contains default configuration.<br/>
-        /// It has a set of default values which can be updated at any time (via session.update) or on a per-response level (via response.create).
+        /// Create a new Realtime response with these parameters
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeClientEventResponseCreate(
-            global::OpenAI.RealtimeSession response,
             string? eventId,
-            global::OpenAI.RealtimeClientEventResponseCreateType type)
+            global::OpenAI.RealtimeClientEventResponseCreateType type,
+            global::OpenAI.RealtimeResponseCreateParams? response)
         {
-            this.Response = response ?? throw new global::System.ArgumentNullException(nameof(response));
             this.EventId = eventId;
             this.Type = type;
+            this.Response = response;
         }
 
         /// <summary>

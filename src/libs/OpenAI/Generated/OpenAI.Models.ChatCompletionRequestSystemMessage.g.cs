@@ -6,7 +6,9 @@
 namespace OpenAI
 {
     /// <summary>
-    /// 
+    /// Developer-provided instructions that the model should follow, regardless of<br/>
+    /// messages sent by the user. With o1 models and newer, use `developer` messages<br/>
+    /// for this purpose instead.
     /// </summary>
     public sealed partial class ChatCompletionRequestSystemMessage
     {

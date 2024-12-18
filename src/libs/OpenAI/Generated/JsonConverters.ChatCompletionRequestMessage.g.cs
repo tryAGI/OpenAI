@@ -21,6 +21,13 @@ namespace OpenAI.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.ChatCompletionRequestMessageDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
+            global::OpenAI.ChatCompletionRequestDeveloperMessage? developer = default;
+            if (discriminator?.Role == global::OpenAI.ChatCompletionRequestMessageDiscriminatorRole.Developer)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.ChatCompletionRequestDeveloperMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.ChatCompletionRequestDeveloperMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::OpenAI.ChatCompletionRequestDeveloperMessage)}");
+                developer = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::OpenAI.ChatCompletionRequestSystemMessage? system = default;
             if (discriminator?.Role == global::OpenAI.ChatCompletionRequestMessageDiscriminatorRole.System)
             {
@@ -59,6 +66,7 @@ namespace OpenAI.JsonConverters
 
             var result = new global::OpenAI.ChatCompletionRequestMessage(
                 discriminator?.Role,
+                developer,
                 system,
                 user,
                 assistant,
@@ -78,7 +86,13 @@ namespace OpenAI.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsSystem)
+            if (value.IsDeveloper)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.ChatCompletionRequestDeveloperMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.ChatCompletionRequestDeveloperMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.ChatCompletionRequestDeveloperMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Developer, typeInfo);
+            }
+            else if (value.IsSystem)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::OpenAI.ChatCompletionRequestSystemMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::OpenAI.ChatCompletionRequestSystemMessage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::OpenAI.ChatCompletionRequestSystemMessage).Name}");

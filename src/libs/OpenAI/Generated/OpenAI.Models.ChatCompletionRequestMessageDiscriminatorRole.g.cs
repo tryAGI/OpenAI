@@ -11,6 +11,10 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Developer,
+        /// <summary>
+        /// 
+        /// </summary>
         System,
         /// <summary>
         /// 
@@ -42,6 +46,7 @@ namespace OpenAI
         {
             return value switch
             {
+                ChatCompletionRequestMessageDiscriminatorRole.Developer => "developer",
                 ChatCompletionRequestMessageDiscriminatorRole.System => "system",
                 ChatCompletionRequestMessageDiscriminatorRole.User => "user",
                 ChatCompletionRequestMessageDiscriminatorRole.Assistant => "assistant",
@@ -57,6 +62,7 @@ namespace OpenAI
         {
             return value switch
             {
+                "developer" => ChatCompletionRequestMessageDiscriminatorRole.Developer,
                 "system" => ChatCompletionRequestMessageDiscriminatorRole.System,
                 "user" => ChatCompletionRequestMessageDiscriminatorRole.User,
                 "assistant" => ChatCompletionRequestMessageDiscriminatorRole.Assistant,

@@ -4,7 +4,7 @@
 namespace OpenAI
 {
     /// <summary>
-    /// 
+    /// The log level of the event.
     /// </summary>
     public enum FineTuningJobEventLevel
     {

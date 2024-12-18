@@ -45,7 +45,7 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// 
+        /// Messages sent by the model in response to user messages.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::OpenAI.ChatCompletionRequestAssistantMessage? Value2 { get; init; }

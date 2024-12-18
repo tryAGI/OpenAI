@@ -30,12 +30,9 @@ namespace OpenAI
         /// The ID of an uploaded file that contains training data.<br/>
         /// See [upload file](/docs/api-reference/files/create) for how to upload a file.<br/>
         /// Your dataset must be formatted as a JSONL file. Additionally, you must upload your file with the purpose `fine-tune`.<br/>
-        /// The contents of the file should differ depending on if the model uses the [chat](/docs/api-reference/fine-tuning/chat-input) or [completions](/docs/api-reference/fine-tuning/completions-input) format.<br/>
+        /// The contents of the file should differ depending on if the model uses the [chat](/docs/api-reference/fine-tuning/chat-input), [completions](/docs/api-reference/fine-tuning/completions-input) format, or if the fine-tuning method uses the [preference](/docs/api-reference/fine-tuning/preference-input) format.<br/>
         /// See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.<br/>
         /// Example: file-abc123
-        /// </param>
-        /// <param name="hyperparameters">
-        /// The hyperparameters used for the fine-tuning job.
         /// </param>
         /// <param name="suffix">
         /// A string of up to 64 characters that will be added to your fine-tuned model name.<br/>
@@ -59,16 +56,19 @@ namespace OpenAI
         /// If a seed is not specified, one will be generated for you.<br/>
         /// Example: 42
         /// </param>
+        /// <param name="method">
+        /// The method used for fine-tuning.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::OpenAI.FineTuningJob> CreateFineTuningJobAsync(
             global::OpenAI.AnyOf<string, global::OpenAI.CreateFineTuningJobRequestModel?> model,
             string trainingFile,
-            global::OpenAI.CreateFineTuningJobRequestHyperparameters? hyperparameters = default,
             string? suffix = default,
             string? validationFile = default,
             global::System.Collections.Generic.IList<global::OpenAI.CreateFineTuningJobRequestIntegration>? integrations = default,
             int? seed = default,
+            global::OpenAI.FineTuneMethod? method = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

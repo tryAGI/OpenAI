@@ -48,7 +48,7 @@ namespace OpenAI
         public required global::System.DateTimeOffset? FinishedAt { get; set; }
 
         /// <summary>
-        /// The hyperparameters used for the fine-tuning job. See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.
+        /// The hyperparameters used for the fine-tuning job. This value will only be returned when running `supervised` jobs.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hyperparameters")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -132,6 +132,12 @@ namespace OpenAI
         public global::System.DateTimeOffset? EstimatedFinish { get; set; }
 
         /// <summary>
+        /// The method used for fine-tuning.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("method")]
+        public global::OpenAI.FineTuneMethod? Method { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -156,7 +162,7 @@ namespace OpenAI
         /// The Unix timestamp (in seconds) for when the fine-tuning job was finished. The value will be null if the fine-tuning job is still running.
         /// </param>
         /// <param name="hyperparameters">
-        /// The hyperparameters used for the fine-tuning job. See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.
+        /// The hyperparameters used for the fine-tuning job. This value will only be returned when running `supervised` jobs.
         /// </param>
         /// <param name="model">
         /// The base model that is being fine-tuned.
@@ -191,6 +197,9 @@ namespace OpenAI
         /// <param name="estimatedFinish">
         /// The Unix timestamp (in seconds) for when the fine-tuning job is estimated to finish. The value will be null if the fine-tuning job is not running.
         /// </param>
+        /// <param name="method">
+        /// The method used for fine-tuning.
+        /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public FineTuningJob(
             string id,
@@ -209,7 +218,8 @@ namespace OpenAI
             int seed,
             global::OpenAI.FineTuningJobObject @object,
             global::System.Collections.Generic.IList<global::OpenAI.OneOf<global::OpenAI.FineTuningIntegration>>? integrations,
-            global::System.DateTimeOffset? estimatedFinish)
+            global::System.DateTimeOffset? estimatedFinish,
+            global::OpenAI.FineTuneMethod? method)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;
@@ -228,6 +238,7 @@ namespace OpenAI
             this.Object = @object;
             this.Integrations = integrations;
             this.EstimatedFinish = estimatedFinish;
+            this.Method = method;
         }
 
         /// <summary>

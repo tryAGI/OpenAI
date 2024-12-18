@@ -6,7 +6,7 @@ namespace OpenAI
     /// <summary>
     /// The per-line training example of a fine-tuning input file for completions models
     /// </summary>
-    public sealed partial class FinetuneCompletionRequestInput
+    public sealed partial class FineTuneCompletionRequestInput
     {
         /// <summary>
         /// The input prompt for this training example.
@@ -27,7 +27,7 @@ namespace OpenAI
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="FinetuneCompletionRequestInput" /> class.
+        /// Initializes a new instance of the <see cref="FineTuneCompletionRequestInput" /> class.
         /// </summary>
         /// <param name="prompt">
         /// The input prompt for this training example.
@@ -36,7 +36,7 @@ namespace OpenAI
         /// The desired completion for this training example.
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
-        public FinetuneCompletionRequestInput(
+        public FineTuneCompletionRequestInput(
             string? prompt,
             string? completion)
         {
@@ -45,9 +45,9 @@ namespace OpenAI
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="FinetuneCompletionRequestInput" /> class.
+        /// Initializes a new instance of the <see cref="FineTuneCompletionRequestInput" /> class.
         /// </summary>
-        public FinetuneCompletionRequestInput()
+        public FineTuneCompletionRequestInput()
         {
         }
     }
