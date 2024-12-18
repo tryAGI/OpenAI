@@ -2,7 +2,7 @@
 
 namespace OpenAI
 {
-    public sealed partial class FinetuneCompletionRequestInput
+    public sealed partial class FineTuneDPOMethodHyperparameters
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -34,14 +34,14 @@ namespace OpenAI
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::OpenAI.FinetuneCompletionRequestInput? FromJson(
+        public static global::OpenAI.FineTuneDPOMethodHyperparameters? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::OpenAI.FinetuneCompletionRequestInput),
-                jsonSerializerContext) as global::OpenAI.FinetuneCompletionRequestInput;
+                typeof(global::OpenAI.FineTuneDPOMethodHyperparameters),
+                jsonSerializerContext) as global::OpenAI.FineTuneDPOMethodHyperparameters;
         }
 
         /// <summary>
@@ -51,11 +51,11 @@ namespace OpenAI
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::OpenAI.FinetuneCompletionRequestInput? FromJson(
+        public static global::OpenAI.FineTuneDPOMethodHyperparameters? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::OpenAI.FinetuneCompletionRequestInput>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::OpenAI.FineTuneDPOMethodHyperparameters>(
                 json,
                 jsonSerializerOptions);
         }
@@ -63,14 +63,14 @@ namespace OpenAI
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::OpenAI.FinetuneCompletionRequestInput?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::OpenAI.FineTuneDPOMethodHyperparameters?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::OpenAI.FinetuneCompletionRequestInput),
-                jsonSerializerContext).ConfigureAwait(false)) as global::OpenAI.FinetuneCompletionRequestInput;
+                typeof(global::OpenAI.FineTuneDPOMethodHyperparameters),
+                jsonSerializerContext).ConfigureAwait(false)) as global::OpenAI.FineTuneDPOMethodHyperparameters;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace OpenAI
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::OpenAI.FinetuneCompletionRequestInput?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::OpenAI.FineTuneDPOMethodHyperparameters?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::OpenAI.FinetuneCompletionRequestInput?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::OpenAI.FineTuneDPOMethodHyperparameters?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

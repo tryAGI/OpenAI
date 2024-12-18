@@ -6,7 +6,8 @@
 namespace OpenAI
 {
     /// <summary>
-    /// 
+    /// Messages sent by an end user, containing prompts or additional context<br/>
+    /// information.
     /// </summary>
     public sealed partial class ChatCompletionRequestUserMessage
     {

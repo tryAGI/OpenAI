@@ -24,6 +24,13 @@ namespace OpenAI
         public global::OpenAI.RealtimeClientEventResponseCancelType Type { get; set; }
 
         /// <summary>
+        /// A specific response ID to cancel - if not provided, will cancel an <br/>
+        /// in-progress response in the default conversation.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("response_id")]
+        public string? ResponseId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -38,13 +45,19 @@ namespace OpenAI
         /// <param name="type">
         /// The event type, must be `response.cancel`.
         /// </param>
+        /// <param name="responseId">
+        /// A specific response ID to cancel - if not provided, will cancel an <br/>
+        /// in-progress response in the default conversation.
+        /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeClientEventResponseCancel(
             string? eventId,
-            global::OpenAI.RealtimeClientEventResponseCancelType type)
+            global::OpenAI.RealtimeClientEventResponseCancelType type,
+            string? responseId)
         {
             this.EventId = eventId;
             this.Type = type;
+            this.ResponseId = responseId;
         }
 
         /// <summary>

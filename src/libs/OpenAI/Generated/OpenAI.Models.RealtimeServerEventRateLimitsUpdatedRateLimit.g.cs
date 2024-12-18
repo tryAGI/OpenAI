@@ -12,7 +12,8 @@ namespace OpenAI
         /// The name of the rate limit (`requests`, `tokens`).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string? Name { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenAI.JsonConverters.RealtimeServerEventRateLimitsUpdatedRateLimitNameJsonConverter))]
+        public global::OpenAI.RealtimeServerEventRateLimitsUpdatedRateLimitName? Name { get; set; }
 
         /// <summary>
         /// The maximum allowed value for the rate limit.
@@ -55,7 +56,7 @@ namespace OpenAI
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeServerEventRateLimitsUpdatedRateLimit(
-            string? name,
+            global::OpenAI.RealtimeServerEventRateLimitsUpdatedRateLimitName? name,
             int? limit,
             int? remaining,
             double? resetSeconds)

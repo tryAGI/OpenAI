@@ -11,6 +11,14 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
+        O1,
+        /// <summary>
+        /// 
+        /// </summary>
+        O120241217,
+        /// <summary>
+        /// 
+        /// </summary>
         O1Preview,
         /// <summary>
         /// 
@@ -43,19 +51,23 @@ namespace OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Gpt4oRealtimePreview,
-        /// <summary>
-        /// 
-        /// </summary>
-        Gpt4oRealtimePreview20241001,
-        /// <summary>
-        /// 
-        /// </summary>
         Gpt4oAudioPreview,
         /// <summary>
         /// 
         /// </summary>
         Gpt4oAudioPreview20241001,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt4oAudioPreview20241217,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt4oMiniAudioPreview,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt4oMiniAudioPreview20241217,
         /// <summary>
         /// 
         /// </summary>
@@ -158,6 +170,8 @@ namespace OpenAI
         {
             return value switch
             {
+                CreateChatCompletionRequestModel.O1 => "o1",
+                CreateChatCompletionRequestModel.O120241217 => "o1-2024-12-17",
                 CreateChatCompletionRequestModel.O1Preview => "o1-preview",
                 CreateChatCompletionRequestModel.O1Preview20240912 => "o1-preview-2024-09-12",
                 CreateChatCompletionRequestModel.O1Mini => "o1-mini",
@@ -166,10 +180,11 @@ namespace OpenAI
                 CreateChatCompletionRequestModel.Gpt4o20241120 => "gpt-4o-2024-11-20",
                 CreateChatCompletionRequestModel.Gpt4o20240806 => "gpt-4o-2024-08-06",
                 CreateChatCompletionRequestModel.Gpt4o20240513 => "gpt-4o-2024-05-13",
-                CreateChatCompletionRequestModel.Gpt4oRealtimePreview => "gpt-4o-realtime-preview",
-                CreateChatCompletionRequestModel.Gpt4oRealtimePreview20241001 => "gpt-4o-realtime-preview-2024-10-01",
                 CreateChatCompletionRequestModel.Gpt4oAudioPreview => "gpt-4o-audio-preview",
                 CreateChatCompletionRequestModel.Gpt4oAudioPreview20241001 => "gpt-4o-audio-preview-2024-10-01",
+                CreateChatCompletionRequestModel.Gpt4oAudioPreview20241217 => "gpt-4o-audio-preview-2024-12-17",
+                CreateChatCompletionRequestModel.Gpt4oMiniAudioPreview => "gpt-4o-mini-audio-preview",
+                CreateChatCompletionRequestModel.Gpt4oMiniAudioPreview20241217 => "gpt-4o-mini-audio-preview-2024-12-17",
                 CreateChatCompletionRequestModel.Chatgpt4oLatest => "chatgpt-4o-latest",
                 CreateChatCompletionRequestModel.Gpt4oMini => "gpt-4o-mini",
                 CreateChatCompletionRequestModel.Gpt4oMini20240718 => "gpt-4o-mini-2024-07-18",
@@ -202,6 +217,8 @@ namespace OpenAI
         {
             return value switch
             {
+                "o1" => CreateChatCompletionRequestModel.O1,
+                "o1-2024-12-17" => CreateChatCompletionRequestModel.O120241217,
                 "o1-preview" => CreateChatCompletionRequestModel.O1Preview,
                 "o1-preview-2024-09-12" => CreateChatCompletionRequestModel.O1Preview20240912,
                 "o1-mini" => CreateChatCompletionRequestModel.O1Mini,
@@ -210,10 +227,11 @@ namespace OpenAI
                 "gpt-4o-2024-11-20" => CreateChatCompletionRequestModel.Gpt4o20241120,
                 "gpt-4o-2024-08-06" => CreateChatCompletionRequestModel.Gpt4o20240806,
                 "gpt-4o-2024-05-13" => CreateChatCompletionRequestModel.Gpt4o20240513,
-                "gpt-4o-realtime-preview" => CreateChatCompletionRequestModel.Gpt4oRealtimePreview,
-                "gpt-4o-realtime-preview-2024-10-01" => CreateChatCompletionRequestModel.Gpt4oRealtimePreview20241001,
                 "gpt-4o-audio-preview" => CreateChatCompletionRequestModel.Gpt4oAudioPreview,
                 "gpt-4o-audio-preview-2024-10-01" => CreateChatCompletionRequestModel.Gpt4oAudioPreview20241001,
+                "gpt-4o-audio-preview-2024-12-17" => CreateChatCompletionRequestModel.Gpt4oAudioPreview20241217,
+                "gpt-4o-mini-audio-preview" => CreateChatCompletionRequestModel.Gpt4oMiniAudioPreview,
+                "gpt-4o-mini-audio-preview-2024-12-17" => CreateChatCompletionRequestModel.Gpt4oMiniAudioPreview20241217,
                 "chatgpt-4o-latest" => CreateChatCompletionRequestModel.Chatgpt4oLatest,
                 "gpt-4o-mini" => CreateChatCompletionRequestModel.Gpt4oMini,
                 "gpt-4o-mini-2024-07-18" => CreateChatCompletionRequestModel.Gpt4oMini20240718,

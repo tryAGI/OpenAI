@@ -25,7 +25,7 @@ namespace OpenAI
         /// The ID of an uploaded file that contains training data.<br/>
         /// See [upload file](/docs/api-reference/files/create) for how to upload a file.<br/>
         /// Your dataset must be formatted as a JSONL file. Additionally, you must upload your file with the purpose `fine-tune`.<br/>
-        /// The contents of the file should differ depending on if the model uses the [chat](/docs/api-reference/fine-tuning/chat-input) or [completions](/docs/api-reference/fine-tuning/completions-input) format.<br/>
+        /// The contents of the file should differ depending on if the model uses the [chat](/docs/api-reference/fine-tuning/chat-input), [completions](/docs/api-reference/fine-tuning/completions-input) format, or if the fine-tuning method uses the [preference](/docs/api-reference/fine-tuning/preference-input) format.<br/>
         /// See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.<br/>
         /// Example: file-abc123
         /// </summary>
@@ -35,9 +35,11 @@ namespace OpenAI
         public required string TrainingFile { get; set; }
 
         /// <summary>
-        /// The hyperparameters used for the fine-tuning job.
+        /// The hyperparameters used for the fine-tuning job.<br/>
+        /// This value is now deprecated in favor of `method`, and should be passed in under the `method` parameter.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hyperparameters")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::OpenAI.CreateFineTuningJobRequestHyperparameters? Hyperparameters { get; set; }
 
         /// <summary>
@@ -77,6 +79,12 @@ namespace OpenAI
         public int? Seed { get; set; }
 
         /// <summary>
+        /// The method used for fine-tuning.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("method")]
+        public global::OpenAI.FineTuneMethod? Method { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -94,12 +102,9 @@ namespace OpenAI
         /// The ID of an uploaded file that contains training data.<br/>
         /// See [upload file](/docs/api-reference/files/create) for how to upload a file.<br/>
         /// Your dataset must be formatted as a JSONL file. Additionally, you must upload your file with the purpose `fine-tune`.<br/>
-        /// The contents of the file should differ depending on if the model uses the [chat](/docs/api-reference/fine-tuning/chat-input) or [completions](/docs/api-reference/fine-tuning/completions-input) format.<br/>
+        /// The contents of the file should differ depending on if the model uses the [chat](/docs/api-reference/fine-tuning/chat-input), [completions](/docs/api-reference/fine-tuning/completions-input) format, or if the fine-tuning method uses the [preference](/docs/api-reference/fine-tuning/preference-input) format.<br/>
         /// See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.<br/>
         /// Example: file-abc123
-        /// </param>
-        /// <param name="hyperparameters">
-        /// The hyperparameters used for the fine-tuning job.
         /// </param>
         /// <param name="suffix">
         /// A string of up to 64 characters that will be added to your fine-tuned model name.<br/>
@@ -123,23 +128,26 @@ namespace OpenAI
         /// If a seed is not specified, one will be generated for you.<br/>
         /// Example: 42
         /// </param>
+        /// <param name="method">
+        /// The method used for fine-tuning.
+        /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public CreateFineTuningJobRequest(
             global::OpenAI.AnyOf<string, global::OpenAI.CreateFineTuningJobRequestModel?> model,
             string trainingFile,
-            global::OpenAI.CreateFineTuningJobRequestHyperparameters? hyperparameters,
             string? suffix,
             string? validationFile,
             global::System.Collections.Generic.IList<global::OpenAI.CreateFineTuningJobRequestIntegration>? integrations,
-            int? seed)
+            int? seed,
+            global::OpenAI.FineTuneMethod? method)
         {
             this.Model = model;
             this.TrainingFile = trainingFile ?? throw new global::System.ArgumentNullException(nameof(trainingFile));
-            this.Hyperparameters = hyperparameters;
             this.Suffix = suffix;
             this.ValidationFile = validationFile;
             this.Integrations = integrations;
             this.Seed = seed;
+            this.Method = method;
         }
 
         /// <summary>
