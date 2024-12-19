@@ -69,6 +69,12 @@ namespace OpenAI
         public global::System.DateTimeOffset? AcceptedAt { get; set; }
 
         /// <summary>
+        /// The projects that were granted membership upon acceptance of the invite.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("projects")]
+        public global::System.Collections.Generic.IList<global::OpenAI.InviteProject>? Projects { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -101,6 +107,9 @@ namespace OpenAI
         /// <param name="acceptedAt">
         /// The Unix timestamp (in seconds) of when the invite was accepted.
         /// </param>
+        /// <param name="projects">
+        /// The projects that were granted membership upon acceptance of the invite.
+        /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public Invite(
             string id,
@@ -110,7 +119,8 @@ namespace OpenAI
             global::System.DateTimeOffset invitedAt,
             global::System.DateTimeOffset expiresAt,
             global::OpenAI.InviteObject @object,
-            global::System.DateTimeOffset? acceptedAt)
+            global::System.DateTimeOffset? acceptedAt,
+            global::System.Collections.Generic.IList<global::OpenAI.InviteProject>? projects)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
@@ -120,6 +130,7 @@ namespace OpenAI
             this.ExpiresAt = expiresAt;
             this.Object = @object;
             this.AcceptedAt = acceptedAt;
+            this.Projects = projects;
         }
 
         /// <summary>

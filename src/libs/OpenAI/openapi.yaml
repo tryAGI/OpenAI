@@ -1176,6 +1176,162 @@ paths:
               python: "from openai import OpenAI\nclient = OpenAI()\n\nresponse = client.moderations.create(\n    model=\"omni-moderation-latest\",\n    input=[\n        {\"type\": \"text\", \"text\": \"...text to classify goes here...\"},\n        {\n            \"type\": \"image_url\",\n            \"image_url\": {\n                \"url\": \"https://example.com/image.png\",\n                # can also use base64 encoded image URLs\n                # \"url\": \"data:image/jpeg;base64,abcdefg...\"\n            }\n        },\n    ],\n)\n\nprint(response)\n"
               node.js: "import OpenAI from \"openai\";\nconst openai = new OpenAI();\n\nconst moderation = await openai.moderations.create({\n    model: \"omni-moderation-latest\",\n    input: [\n        { type: \"text\", text: \"...text to classify goes here...\" },\n        {\n            type: \"image_url\",\n            image_url: {\n                url: \"https://example.com/image.png\"\n                // can also use base64 encoded image URLs\n                // url: \"data:image/jpeg;base64,abcdefg...\"\n            }\n        }\n    ],\n});\n\nconsole.log(moderation);\n"
             response: "{\n  \"id\": \"modr-0d9740456c391e43c445bf0f010940c7\",\n  \"model\": \"omni-moderation-latest\",\n  \"results\": [\n    {\n      \"flagged\": true,\n      \"categories\": {\n        \"harassment\": true,\n        \"harassment/threatening\": true,\n        \"sexual\": false,\n        \"hate\": false,\n        \"hate/threatening\": false,\n        \"illicit\": false,\n        \"illicit/violent\": false,\n        \"self-harm/intent\": false,\n        \"self-harm/instructions\": false,\n        \"self-harm\": false,\n        \"sexual/minors\": false,\n        \"violence\": true,\n        \"violence/graphic\": true\n      },\n      \"category_scores\": {\n        \"harassment\": 0.8189693396524255,\n        \"harassment/threatening\": 0.804985420696006,\n        \"sexual\": 1.573112165348997e-6,\n        \"hate\": 0.007562942636942845,\n        \"hate/threatening\": 0.004208854591835476,\n        \"illicit\": 0.030535955153511665,\n        \"illicit/violent\": 0.008925306722380033,\n        \"self-harm/intent\": 0.00023023930975076432,\n        \"self-harm/instructions\": 0.0002293869201073356,\n        \"self-harm\": 0.012598046106750154,\n        \"sexual/minors\": 2.212566909570261e-8,\n        \"violence\": 0.9999992735124786,\n        \"violence/graphic\": 0.843064871157054\n      },\n      \"category_applied_input_types\": {\n        \"harassment\": [\n          \"text\"\n        ],\n        \"harassment/threatening\": [\n          \"text\"\n        ],\n        \"sexual\": [\n          \"text\",\n          \"image\"\n        ],\n        \"hate\": [\n          \"text\"\n        ],\n        \"hate/threatening\": [\n          \"text\"\n        ],\n        \"illicit\": [\n          \"text\"\n        ],\n        \"illicit/violent\": [\n          \"text\"\n        ],\n        \"self-harm/intent\": [\n          \"text\",\n          \"image\"\n        ],\n        \"self-harm/instructions\": [\n          \"text\",\n          \"image\"\n        ],\n        \"self-harm\": [\n          \"text\",\n          \"image\"\n        ],\n        \"sexual/minors\": [\n          \"text\"\n        ],\n        \"violence\": [\n          \"text\",\n          \"image\"\n        ],\n        \"violence/graphic\": [\n          \"text\",\n          \"image\"\n        ]\n      }\n    }\n  ]\n}\n"
+  /organization/admin_api_keys:
+    get:
+      summary: List organization API keys
+      description: Retrieve a paginated list of organization admin API keys.
+      operationId: admin-api-keys-list
+      parameters:
+        - name: after
+          in: query
+          schema:
+            type: string
+            description: Return keys with IDs that come after this ID in the pagination order.
+            nullable: true
+        - name: order
+          in: query
+          schema:
+            enum:
+              - asc
+              - desc
+            type: string
+            description: 'Order results by creation time, ascending or descending.'
+            default: asc
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            description: Maximum number of keys to return.
+            default: 20
+      responses:
+        '200':
+          description: A list of organization API keys.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiKeyList'
+      security:
+        - bearer_identity_edge:
+            - key.secret
+            - api.management.read
+        - basic_identity_edge: [ ]
+      x-oaiMeta:
+        name: List admin API keys
+        group: administration
+        returns: A list of admin API key objects.
+        examples:
+          request:
+            curl: "curl https://api.openai.com/v1/organization/admin_api_keys?after=key_abc&limit=20 \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\"\n"
+          response: "{\n  \"object\": \"list\",\n  \"data\": [\n    {\n      \"object\": \"organization.admin_api_key\",\n      \"id\": \"key_abc\",\n      \"name\": \"Main Admin Key\",\n      \"redacted_value\": \"sk-admin...def\",\n      \"created_at\": 1711471533,\n      \"owner\": {\n        \"type\": \"service_account\",\n        \"object\": \"organization.service_account\",\n        \"id\": \"sa_456\",\n        \"name\": \"My Service Account\",\n        \"created_at\": 1711471533,\n        \"role\": \"member\"\n      }\n    }\n  ],\n  \"first_id\": \"key_abc\",\n  \"last_id\": \"key_abc\",\n  \"has_more\": false\n}\n"
+    post:
+      summary: Create an organization admin API key
+      description: Create a new admin-level API key for the organization.
+      operationId: admin-api-keys-create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+                - name
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: New Admin Key
+        required: true
+      responses:
+        '200':
+          description: The newly created admin API key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminApiKey'
+      security:
+        - bearer_identity_edge:
+            - key.secret
+            - api.management.write
+        - basic_identity_edge: [ ]
+      x-oaiMeta:
+        name: Create admin API key
+        group: administration
+        returns: The created admin API key object.
+        examples:
+          request:
+            curl: "curl -X POST https://api.openai.com/v1/organization/admin_api_keys \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n      \"name\": \"New Admin Key\"\n  }'\n"
+          response: "{\n  \"object\": \"organization.admin_api_key\",\n  \"id\": \"key_xyz\",\n  \"name\": \"New Admin Key\",\n  \"redacted_value\": \"sk-admin...xyz\",\n  \"created_at\": 1711471533,\n  \"owner\": {\n    \"type\": \"user\",\n    \"object\": \"organization.user\",\n    \"id\": \"user_123\",\n    \"name\": \"John Doe\",\n    \"created_at\": 1711471533,\n    \"role\": \"owner\"\n  },\n  \"value\": \"sk-admin-1234abcd\"\n}\n"
+  '/organization/admin_api_keys/{key_id}':
+    get:
+      summary: Retrieve a single organization API key
+      description: Get details for a specific organization API key by its ID.
+      operationId: admin-api-keys-get
+      parameters:
+        - name: key_id
+          in: path
+          required: true
+          schema:
+            type: string
+            description: The ID of the API key.
+      responses:
+        '200':
+          description: Details of the requested API key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminApiKey'
+      security:
+        - bearer_identity_edge:
+            - key.secret
+            - api.management.read
+        - basic_identity_edge: [ ]
+      x-oaiMeta:
+        name: Retrieve admin API key
+        group: administration
+        returns: The requested admin API key object.
+        examples:
+          request:
+            curl: "curl https://api.openai.com/v1/organization/admin_api_keys/key_abc \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\"\n"
+          response: "{\n  \"object\": \"organization.admin_api_key\",\n  \"id\": \"key_abc\",\n  \"name\": \"Main Admin Key\",\n  \"redacted_value\": \"sk-admin...xyz\",\n  \"created_at\": 1711471533,\n  \"owner\": {\n    \"type\": \"user\",\n    \"object\": \"organization.user\",\n    \"id\": \"user_123\",\n    \"name\": \"John Doe\",\n    \"created_at\": 1711471533,\n    \"role\": \"owner\"\n  }\n}\n"
+    delete:
+      summary: Delete an organization admin API key
+      description: Delete the specified admin API key.
+      operationId: admin-api-keys-delete
+      parameters:
+        - name: key_id
+          in: path
+          required: true
+          schema:
+            type: string
+            description: The ID of the API key to be deleted.
+      responses:
+        '200':
+          description: Confirmation that the API key was deleted.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    example: key_abc
+                  object:
+                    type: string
+                    example: organization.admin_api_key.deleted
+                  deleted:
+                    type: boolean
+                    example: true
+      security:
+        - bearer_identity_edge:
+            - key.secret
+            - api.management.write
+        - basic_identity_edge: [ ]
+      x-oaiMeta:
+        name: Delete admin API key
+        group: administration
+        returns: A confirmation object indicating the key was deleted.
+        examples:
+          request:
+            curl: "curl -X DELETE https://api.openai.com/v1/organization/admin_api_keys/key_abc \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\"\n"
+          response: "{\n  \"id\": \"key_abc\",\n  \"object\": \"organization.admin_api_key.deleted\",\n  \"deleted\": true\n}\n"
   /organization/audit_logs:
     get:
       tags:
@@ -1368,8 +1524,7 @@ paths:
         examples:
           request:
             curl: "curl https://api.openai.com/v1/organization/invites?after=invite-abc&limit=20 \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\"\n"
-          response:
-            content: "{\n  \"object\": \"list\",\n  \"data\": [\n    {\n      \"object\": \"organization.invite\",\n      \"id\": \"invite-abc\",\n      \"email\": \"user@example.com\",\n      \"role\": \"owner\",\n      \"status\": \"accepted\",\n      \"invited_at\": 1711471533,\n      \"expires_at\": 1711471533,\n      \"accepted_at\": 1711471533\n    }\n  ],\n  \"first_id\": \"invite-abc\",\n  \"last_id\": \"invite-abc\",\n  \"has_more\": false\n}\n"
+          response: "{\n  \"object\": \"list\",\n  \"data\": [\n    {\n      \"object\": \"organization.invite\",\n      \"id\": \"invite-abc\",\n      \"email\": \"user@example.com\",\n      \"role\": \"owner\",\n      \"status\": \"accepted\",\n      \"invited_at\": 1711471533,\n      \"expires_at\": 1711471533,\n      \"accepted_at\": 1711471533\n    }\n  ],\n  \"first_id\": \"invite-abc\",\n  \"last_id\": \"invite-abc\",\n  \"has_more\": false\n}\n"
     post:
       tags:
         - Invites
@@ -1395,9 +1550,8 @@ paths:
         returns: 'The created [Invite](/docs/api-reference/invite/object) object.'
         examples:
           request:
-            curl: "curl -X POST https://api.openai.com/v1/organization/invites \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n      \"email\": \"user@example.com\",\n      \"role\": \"owner\"\n  }'\n"
-          response:
-            content: "{\n    \"object\": \"organization.invite\",\n    \"id\": \"invite-abc\",\n    \"email\": \"user@example.com\",\n    \"role\": \"owner\",\n    \"invited_at\": 1711471533,\n    \"expires_at\": 1711471533,\n    \"accepted_at\": null\n}\n"
+            curl: "curl -X POST https://api.openai.com/v1/organization/invites \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n      \"email\": \"anotheruser@example.com\",\n      \"role\": \"reader\",\n      \"projects\": [\n        {\n          \"id\": \"project-xyz\",\n          \"role\": \"member\"\n        },\n        {\n          \"id\": \"project-abc\",\n          \"role\": \"owner\"\n        }\n      ]\n  }'\n"
+          response: "{\n  \"object\": \"organization.invite\",\n  \"id\": \"invite-def\",\n  \"email\": \"anotheruser@example.com\",\n  \"role\": \"reader\",\n  \"status\": \"pending\",\n  \"invited_at\": 1711471533,\n  \"expires_at\": 1711471533,\n  \"accepted_at\": null,\n  \"projects\": [\n    {\n      \"id\": \"project-xyz\",\n      \"role\": \"member\"\n    },\n    {\n      \"id\": \"project-abc\",\n      \"role\": \"owner\"\n    }\n  ]\n}\n"
   '/organization/invites/{invite_id}':
     get:
       tags:
@@ -4553,6 +4707,66 @@ components:
           description: "The chunk of bytes for this Part.\n"
           format: binary
       additionalProperties: false
+    AdminApiKey:
+      type: object
+      properties:
+        object:
+          type: string
+          example: organization.admin_api_key
+        id:
+          type: string
+          example: key_abc
+        name:
+          type: string
+          example: Administration Key
+        redacted_value:
+          type: string
+          example: sk-admin...def
+        value:
+          type: string
+          example: sk-admin-1234abcd
+        created_at:
+          type: integer
+          format: int64
+          example: 1711471533
+        owner:
+          type: object
+          properties:
+            type:
+              type: string
+              example: service_account
+            id:
+              type: string
+              example: sa_456
+            name:
+              type: string
+              example: My Service Account
+            created_at:
+              type: integer
+              format: int64
+              example: 1711471533
+            role:
+              type: string
+              example: member
+    ApiKeyList:
+      type: object
+      properties:
+        object:
+          type: string
+          example: list
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdminApiKey'
+        has_more:
+          type: boolean
+          example: false
+        first_id:
+          type: string
+          example: key_abc
+        last_id:
+          type: string
+          example: key_xyz
     AssistantObject:
       title: Assistant
       required:
@@ -9168,10 +9382,25 @@ components:
         accepted_at:
           type: integer
           description: The Unix timestamp (in seconds) of when the invite was accepted.
+        projects:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: Project's public ID
+              role:
+                enum:
+                  - member
+                  - owner
+                type: string
+                description: Project membership role
+          description: The projects that were granted membership upon acceptance of the invite.
       description: Represents an individual `invite` to the organization.
       x-oaiMeta:
         name: The invite object
-        example: "{\n  \"object\": \"organization.invite\",\n  \"id\": \"invite-abc\",\n  \"email\": \"user@example.com\",\n  \"role\": \"owner\",\n  \"status\": \"accepted\",\n  \"invited_at\": 1711471533,\n  \"expires_at\": 1711471533,\n  \"accepted_at\": 1711471533\n}\n"
+        example: "{\n  \"object\": \"organization.invite\",\n  \"id\": \"invite-abc\",\n  \"email\": \"user@example.com\",\n  \"role\": \"owner\",\n  \"status\": \"accepted\",\n  \"invited_at\": 1711471533,\n  \"expires_at\": 1711471533,\n  \"accepted_at\": 1711471533,\n  \"projects\": [\n    {\n      \"id\": \"project-xyz\",\n      \"role\": \"member\"\n    }\n  ]\n}\n"
     InviteDeleteResponse:
       required:
         - object
@@ -9227,6 +9456,24 @@ components:
             - owner
           type: string
           description: '`owner` or `reader`'
+        projects:
+          type: array
+          items:
+            required:
+              - id
+              - role
+            type: object
+            properties:
+              id:
+                type: string
+                description: Project's public ID
+              role:
+                enum:
+                  - member
+                  - owner
+                type: string
+                description: Project membership role
+          description: 'An array of projects to which membership is granted at the same time the org invite is accepted. If omitted, the user will be invited to the default project for compatibility with legacy behavior.'
     ListAssistantsResponse:
       required:
         - object
@@ -16389,11 +16636,28 @@ x-oaiMeta:
           path: events
     - id: administration
       title: Administration
-      description: "Programmatically manage your organization. \nThe Audit Logs endpoint provides a log of all actions taken in the  organization for security and monitoring purposes.\nTo access these endpoints please generate an Admin API Key through the [API Platform Organization overview](/organization/admin-keys). Admin API keys cannot be used for non-administration endpoints.\nFor best practices on setting up your organization, please refer to this [guide](/docs/guides/production-best-practices#setting-up-your-organization)\n"
+      description: "Programmatically manage your organization.\nThe Audit Logs endpoint provides a log of all actions taken in the organization for security and monitoring purposes.\nTo access these endpoints please generate an Admin API Key through the [API Platform Organization overview](/organization/admin-keys). Admin API keys cannot be used for non-administration endpoints.\nFor best practices on setting up your organization, please refer to this [guide](/docs/guides/production-best-practices#setting-up-your-organization)\n"
       navigationGroup: administration
+    - id: admin-api-keys
+      title: Admin API Keys
+      description: "The **Usage API** provides detailed insights into your activity across the OpenAI API. It also includes a separate [Costs endpoint](/docs/api-reference/usage/costs), which offers visibility into your spend, breaking down consumption by invoice line items and project IDs.\nWhile the Usage API delivers granular usage data, it may not always reconcile perfectly with the Costs due to minor differences in how usage and spend are recorded. For financial purposes, we recommend using the [Costs endpoint](/docs/api-reference/usage/costs) or the [Costs tab](/settings/organization/usage) in the Usage Dashboard, which will reconcile back to your billing invoice.\n"
+      navigationGroup: administration
+      sections:
+        - type: endpoint
+          key: admin-api-keys-list
+          path: list
+        - type: endpoint
+          key: admin-api-keys-create
+          path: create
+        - type: endpoint
+          key: admin-api-keys-get
+          path: listget
+        - type: endpoint
+          key: admin-api-keys-delete
+          path: delete
     - id: invite
       title: Invites
-      description: Invite and manage invitations for an organization. Invited users are automatically added to the Default project.
+      description: Invite and manage invitations for an organization.
       navigationGroup: administration
       sections:
         - type: endpoint
@@ -16413,7 +16677,7 @@ x-oaiMeta:
           path: object
     - id: users
       title: Users
-      description: "Manage users and their role in an organization. Users will be automatically added to the Default project.\n"
+      description: "Manage users and their role in an organization.\n"
       navigationGroup: administration
       sections:
         - type: endpoint
@@ -16433,7 +16697,7 @@ x-oaiMeta:
           path: object
     - id: projects
       title: Projects
-      description: "Manage the projects within an orgnanization includes creation, updating, and archiving or projects. \nThe Default project cannot be modified or archived.\n"
+      description: "Manage the projects within an orgnanization includes creation, updating, and archiving or projects.\nThe Default project cannot be archived.\n"
       navigationGroup: administration
       sections:
         - type: endpoint
@@ -16456,7 +16720,7 @@ x-oaiMeta:
           path: object
     - id: project-users
       title: Project users
-      description: "Manage users within a project, including adding, updating roles, and removing users. \nUsers cannot be removed from the Default project, unless they are being removed from the organization.\n"
+      description: "Manage users within a project, including adding, updating roles, and removing users.\n"
       navigationGroup: administration
       sections:
         - type: endpoint
@@ -16479,7 +16743,7 @@ x-oaiMeta:
           path: object
     - id: project-service-accounts
       title: Project service accounts
-      description: "Manage service accounts within a project. A service account is a bot user that is not associated with a user. \nIf a user leaves an organization, their keys and membership in projects will no longer work. Service accounts \ndo not have this limitation. However, service accounts can also be deleted from a project.\n"
+      description: "Manage service accounts within a project. A service account is a bot user that is not associated with a user.\nIf a user leaves an organization, their keys and membership in projects will no longer work. Service accounts\ndo not have this limitation. However, service accounts can also be deleted from a project.\n"
       navigationGroup: administration
       sections:
         - type: endpoint
@@ -16499,7 +16763,7 @@ x-oaiMeta:
           path: object
     - id: project-api-keys
       title: Project API keys
-      description: "Manage API keys for a given project. Supports listing and deleting keys for users. \nThis API does not allow issuing keys for users, as users need to authorize themselves to generate keys.\n"
+      description: "Manage API keys for a given project. Supports listing and deleting keys for users.\nThis API does not allow issuing keys for users, as users need to authorize themselves to generate keys.\n"
       navigationGroup: administration
       sections:
         - type: endpoint
@@ -16530,7 +16794,7 @@ x-oaiMeta:
           path: object
     - id: audit-logs
       title: Audit logs
-      description: "Logs of user actions and configuration changes within this organization. \nTo log events, you must activate logging in the [Organization Settings](/settings/organization/general). \nOnce activated, for security reasons, logging cannot be deactivated.\n"
+      description: "Logs of user actions and configuration changes within this organization.\nTo log events, you must activate logging in the [Organization Settings](/settings/organization/general).\nOnce activated, for security reasons, logging cannot be deactivated.\n"
       navigationGroup: administration
       sections:
         - type: endpoint

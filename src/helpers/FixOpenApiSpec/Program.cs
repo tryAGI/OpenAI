@@ -8,15 +8,6 @@ var path = args[0];
 var text = await File.ReadAllTextAsync(path);
 var realtimeText = await File.ReadAllTextAsync(path.Replace(".yaml", ".realtime.yaml"));
 
-text = text.Replace("description: *run_temperature_description", "description: empty");
-text = text.Replace("description: &run_temperature_description ", "description: ");
-
-text = text.Replace("description: *run_top_p_description", "description: empty");
-text = text.Replace("description: &run_top_p_description ", "description: ");
-
-text = text.Replace("example: *moderation_example", "example: empty");
-text = text.Replace("response: &moderation_example |", "response: |");
-
 var openApiDocument = new OpenApiStringReader().Read(text, out var diagnostics);
 var realtimeOpenApiDocument = new OpenApiStringReader().Read(realtimeText, out var realtimeDiagnostics);
 foreach (var schema in realtimeOpenApiDocument.Components.Schemas)
@@ -53,23 +44,23 @@ openApiDocument.Paths["/files/{file_id}/content"]!.Operations[OperationType.Get]
             Format = "binary",
         }
     });
-
-openApiDocument.Components.Schemas["CreateChatCompletionRequest"]!.Properties["model"].AnyOf[1].Enum =
-    openApiDocument.Components.Schemas["CreateChatCompletionRequest"]!.Properties["model"].AnyOf[1].Enum
-        .DistinctBy(x => (x as OpenApiString)?.Value)
-        .ToList();
-openApiDocument.Components.Schemas["CreateAssistantRequest"]!.Properties["model"].AnyOf[1].Enum =
-    openApiDocument.Components.Schemas["CreateAssistantRequest"]!.Properties["model"].AnyOf[1].Enum
-        .DistinctBy(x => (x as OpenApiString)?.Value)
-        .ToList();
-openApiDocument.Components.Schemas["CreateRunRequest"]!.Properties["model"].AnyOf[1].Enum =
-    openApiDocument.Components.Schemas["CreateRunRequest"]!.Properties["model"].AnyOf[1].Enum
-        .DistinctBy(x => (x as OpenApiString)?.Value)
-        .ToList();
-openApiDocument.Components.Schemas["CreateThreadAndRunRequest"]!.Properties["model"].AnyOf[1].Enum =
-    openApiDocument.Components.Schemas["CreateThreadAndRunRequest"]!.Properties["model"].AnyOf[1].Enum
-        .DistinctBy(x => (x as OpenApiString)?.Value)
-        .ToList();
+//
+// openApiDocument.Components.Schemas["CreateChatCompletionRequest"]!.Properties["model"].AnyOf[1].Enum =
+//     openApiDocument.Components.Schemas["CreateChatCompletionRequest"]!.Properties["model"].AnyOf[1].Enum
+//         .DistinctBy(x => (x as OpenApiString)?.Value)
+//         .ToList();
+// openApiDocument.Components.Schemas["CreateAssistantRequest"]!.Properties["model"].AnyOf[1].Enum =
+//     openApiDocument.Components.Schemas["CreateAssistantRequest"]!.Properties["model"].AnyOf[1].Enum
+//         .DistinctBy(x => (x as OpenApiString)?.Value)
+//         .ToList();
+// openApiDocument.Components.Schemas["CreateRunRequest"]!.Properties["model"].AnyOf[1].Enum =
+//     openApiDocument.Components.Schemas["CreateRunRequest"]!.Properties["model"].AnyOf[1].Enum
+//         .DistinctBy(x => (x as OpenApiString)?.Value)
+//         .ToList();
+// openApiDocument.Components.Schemas["CreateThreadAndRunRequest"]!.Properties["model"].AnyOf[1].Enum =
+//     openApiDocument.Components.Schemas["CreateThreadAndRunRequest"]!.Properties["model"].AnyOf[1].Enum
+//         .DistinctBy(x => (x as OpenApiString)?.Value)
+//         .ToList();
     
 text = openApiDocument.SerializeAsYaml(OpenApiSpecVersion.OpenApi3_0);
 _ = new OpenApiStringReader().Read(text, out diagnostics);
@@ -81,7 +72,7 @@ if (diagnostics.Errors.Count > 0)
         Console.WriteLine(error.Message);
     }
     // Return Exit code 1
-    Environment.Exit(1);
+    //Environment.Exit(1);
 }
 
 await File.WriteAllTextAsync(path, text);

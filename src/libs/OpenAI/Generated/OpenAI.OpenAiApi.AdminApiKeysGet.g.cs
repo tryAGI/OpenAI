@@ -3,83 +3,70 @@
 
 namespace OpenAI
 {
-    public partial class InvitesClient
+    public partial class OpenAiApi
     {
-        partial void PrepareInviteUserArguments(
+        partial void PrepareAdminApiKeysGetArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::OpenAI.InviteRequest request);
-        partial void PrepareInviteUserRequest(
+            ref string keyId);
+        partial void PrepareAdminApiKeysGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::OpenAI.InviteRequest request);
-        partial void ProcessInviteUserResponse(
+            string keyId);
+        partial void ProcessAdminApiKeysGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessInviteUserResponseContent(
+        partial void ProcessAdminApiKeysGetResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Create an invite for a user to the organization. The invite must be accepted by the user before they have access to the organization.
+        /// Retrieve a single organization API key<br/>
+        /// Get details for a specific organization API key by its ID.
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="keyId">
+        /// The ID of the API key.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::OpenAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenAI.Invite> InviteUserAsync(
-            global::OpenAI.InviteRequest request,
+        public async global::System.Threading.Tasks.Task<global::OpenAI.AdminApiKey> AdminApiKeysGetAsync(
+            string keyId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareInviteUserArguments(
+            PrepareAdminApiKeysGetArguments(
                 httpClient: HttpClient,
-                request: request);
+                keyId: ref keyId);
 
             var __pathBuilder = new PathBuilder(
-                path: "/organization/invites",
-                baseUri: HttpClient.BaseAddress); 
+                path: $"/organization/admin_api_keys/{keyId}",
+                baseUri: HttpClient.BaseAddress);
+            foreach (var __authorization in Authorizations)
+            {
+                if (__authorization.Type == "ApiKey" &&
+                    __authorization.Location == "Query")
+                {
+                    __pathBuilder = __pathBuilder.AddRequiredParameter(__authorization.Name, __authorization.Value);
+                }
+            } 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Post,
+                method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
             __httpRequest.Version = global::System.Net.HttpVersion.Version11;
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
-            {
-                if (__authorization.Type == "Http" ||
-                    __authorization.Type == "OAuth2")
-                {
-                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                        scheme: __authorization.Name,
-                        parameter: __authorization.Value);
-                }
-                else if (__authorization.Type == "ApiKey" &&
-                         __authorization.Location == "Header")
-                {
-                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                }
-            }
-            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                content: __httpRequestContentBody,
-                encoding: global::System.Text.Encoding.UTF8,
-                mediaType: "application/json");
-            __httpRequest.Content = __httpRequestContent;
-
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareInviteUserRequest(
+            PrepareAdminApiKeysGetRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                request: request);
+                keyId: keyId);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -89,7 +76,7 @@ namespace OpenAI
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessInviteUserResponse(
+            ProcessAdminApiKeysGetResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
 
@@ -101,7 +88,7 @@ namespace OpenAI
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessInviteUserResponseContent(
+                ProcessAdminApiKeysGetResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -126,7 +113,7 @@ namespace OpenAI
                 }
 
                 return
-                    global::OpenAI.Invite.FromJson(__content, JsonSerializerContext) ??
+                    global::OpenAI.AdminApiKey.FromJson(__content, JsonSerializerContext) ??
                     throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
@@ -152,41 +139,9 @@ namespace OpenAI
                 using var __content = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
 
                 return
-                    await global::OpenAI.Invite.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                    await global::OpenAI.AdminApiKey.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
-        }
-
-        /// <summary>
-        /// Create an invite for a user to the organization. The invite must be accepted by the user before they have access to the organization.
-        /// </summary>
-        /// <param name="email">
-        /// Send an email to this address
-        /// </param>
-        /// <param name="role">
-        /// `owner` or `reader`
-        /// </param>
-        /// <param name="projects">
-        /// An array of projects to which membership is granted at the same time the org invite is accepted. If omitted, the user will be invited to the default project for compatibility with legacy behavior.
-        /// </param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::OpenAI.Invite> InviteUserAsync(
-            string email,
-            global::OpenAI.InviteRequestRole role,
-            global::System.Collections.Generic.IList<global::OpenAI.InviteRequestProject>? projects = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::OpenAI.InviteRequest
-            {
-                Email = email,
-                Role = role,
-                Projects = projects,
-            };
-
-            return await InviteUserAsync(
-                request: __request,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }
