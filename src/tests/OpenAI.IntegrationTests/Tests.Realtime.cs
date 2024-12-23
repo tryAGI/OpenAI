@@ -4,6 +4,25 @@ public partial class Tests
 {
     [Test]
     [Explicit]
+    public async Task Microphone()
+    {
+        using var microphone = new Microphone();
+        microphone.PushCallback = (bytes, count) =>
+        {
+            Console.WriteLine($"Pushed {count} bytes.");
+        };
+
+        microphone.Start();
+        
+        await Task.Delay(TimeSpan.FromSeconds(15));
+        
+        microphone.Stop();
+        
+        OpenAI.Microphone.Terminate();
+    }
+    
+    [Test]
+    [Explicit]
     public async Task Realtime()
     {
         using var realtimeConversationClient = GetAuthenticatedRealtimeClient();

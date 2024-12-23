@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <NoWarn>$(NoWarn)</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Label="NuGet">
+    <PackageId>tryAGI.OpenAI.CLI</PackageId>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>openai</ToolCommandName>
+    <Description>Advanced Voice from command line</Description>
+    <PackageTags>openai;advanced-voice;ai;realtime;api;microphone</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OpenAI\OpenAI.csproj" />
+  </ItemGroup>
+
+</Project>

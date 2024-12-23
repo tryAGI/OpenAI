@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup Label="CLSCompliant">
+    <AssemblyAttribute Include="System.CLSCompliantAttribute">
+      <_Parameter1>false</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+
+  <PropertyGroup Label="Nuget">
+    <PackageId>tryAGI.OpenAI.Microphone</PackageId>
+    <Description>Provides Microphone access</Description>
+    <PackageTags>openai;advanced-voice;ai;realtime;api;microphone</PackageTags>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+ 
+  <ItemGroup>
+    <PackageReference Include="PortAudioSharp2" Version="1.0.0" />
+  </ItemGroup>
+  
+</Project>
