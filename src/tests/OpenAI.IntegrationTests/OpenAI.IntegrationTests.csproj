@@ -19,6 +19,7 @@
     <PackageReference Include="FluentAssertions" Version="7.0.0" />
     <PackageReference Include="NUnit" Version="4.3.2" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.6.0" />
+    <PackageReference Include="org.k2fsa.portaudio.runtime.osx-arm64" Version="1.0.4" />
   </ItemGroup>
 
   <ItemGroup Label="GlobalUsings">
@@ -30,6 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\libs\OpenAI.Microphone\OpenAI.Microphone.csproj" />
     <ProjectReference Include="..\..\libs\OpenAI\OpenAI.csproj" />
   </ItemGroup>
 
