@@ -2,7 +2,7 @@
   "profiles": {
     "FixOpenApiSpec": {
       "commandName": "Project",
-      "commandLineArgs": "../../../../../../src/libs/OpenAI/openapi.yaml"
+      "commandLineArgs": "../../../../../../src/libs/tryAGI.OpenAI/openapi.yaml"
     }
   }
 }

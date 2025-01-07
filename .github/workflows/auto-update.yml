@@ -31,7 +31,7 @@ jobs:
 
       - name: Generate code
         run: |
-          cd src/libs/OpenAI
+          cd src/libs/tryAGI.OpenAI
           chmod +x ./generate.sh
           ./generate.sh
 
