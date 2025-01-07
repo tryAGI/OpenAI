@@ -3,7 +3,7 @@ using System;
 using CSharpToJsonSchema;
 using DescriptionAttribute = System.ComponentModel.DescriptionAttribute;
 
-namespace OpenAI.IntegrationTests;
+namespace tryAGI.OpenAI.IntegrationTests;
 
 [GenerateJsonSchema]
 public interface IVariousTypesTools

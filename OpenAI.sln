@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{61E7E11E-4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{AAA11B78-2764-4520-A97E-46AA7089A588}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenAI", "src\libs\OpenAI\OpenAI.csproj", "{0028BC85-0064-4CE8-A21A-C1F5E922BD59}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tryAGI.OpenAI", "src\libs\tryAGI.OpenAI\tryAGI.OpenAI.csproj", "{0028BC85-0064-4CE8-A21A-C1F5E922BD59}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FixOpenApiSpec", "src\helpers\FixOpenApiSpec\FixOpenApiSpec.csproj", "{594DCFD8-E707-4232-B878-90FA3D880474}"
 EndProject

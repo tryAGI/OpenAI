@@ -1,4 +1,4 @@
-namespace OpenAI.IntegrationTests.Examples;
+namespace tryAGI.OpenAI.IntegrationTests.Examples;
 
 // # START EXAMPLE #
 

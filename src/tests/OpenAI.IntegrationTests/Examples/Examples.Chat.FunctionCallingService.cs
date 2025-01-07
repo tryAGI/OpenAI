@@ -1,7 +1,7 @@
 using CSharpToJsonSchema;
 using DescriptionAttribute = System.ComponentModel.DescriptionAttribute;
 
-namespace OpenAI.IntegrationTests.Examples;
+namespace tryAGI.OpenAI.IntegrationTests.Examples;
 
 // # START EXAMPLE #
 public enum WeatherUnit

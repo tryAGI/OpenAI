@@ -1,7 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace OpenAI.IntegrationTests;
+namespace tryAGI.OpenAI.IntegrationTests;
 
 public partial class Tests
 {

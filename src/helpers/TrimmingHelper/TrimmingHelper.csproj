@@ -9,11 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\libs\OpenAI\OpenAI.csproj" />
+    <ProjectReference Include="..\..\libs\tryAGI.OpenAI\tryAGI.OpenAI.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <TrimmerRootAssembly Include="OpenAI" />
+    <TrimmerRootAssembly Include="tryAGI.OpenAI" />
   </ItemGroup>
 
   <PropertyGroup Label="Publish">

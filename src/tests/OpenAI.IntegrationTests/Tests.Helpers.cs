@@ -1,15 +1,15 @@
-namespace OpenAI.IntegrationTests;
+namespace tryAGI.OpenAI.IntegrationTests;
 
 [TestClass]
 public partial class Tests
 {
-    private static OpenAiApi GetAuthorizedApi()
+    private static OpenAiClient GetAuthorizedApi()
     {
         var apiKey =
             Environment.GetEnvironmentVariable("OPENAI_API_KEY") ??
             throw new AssertInconclusiveException("OPENAI_API_KEY environment variable is not found.");
 
-        var client = new OpenAiApi(apiKey);
+        var client = new OpenAiClient(apiKey);
 
         return client;
     }
@@ -25,7 +25,7 @@ public partial class Tests
         return client;
     }
     
-    internal static (OpenAiApi Api, string Model) GetAuthorizedChatApi(CustomProvider customProvider, string? model = null)
+    internal static (OpenAiClient Api, string Model) GetAuthorizedChatApi(CustomProvider customProvider, string? model = null)
     {
         const string localIpAddress = "10.10.5.85";
         if (customProvider is CustomProvider.Ollama or CustomProvider.LmStudio)// &&
@@ -154,7 +154,7 @@ public partial class Tests
             Environment.GetEnvironmentVariable("OPENAI_API_KEY") ??
             throw new AssertInconclusiveException("OPENAI_API_KEY environment variable is not found.");
 
-        var api = new OpenAiApi(apiKey);
+        var api = new OpenAiClient(apiKey);
 
         return (api, model ?? ChatClient.LatestFastModel.ToValueString());
     }

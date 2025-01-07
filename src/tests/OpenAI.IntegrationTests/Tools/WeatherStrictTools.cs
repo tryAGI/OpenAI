@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using CSharpToJsonSchema;
 using DescriptionAttribute = System.ComponentModel.DescriptionAttribute;
 
-namespace OpenAI.IntegrationTests;
+namespace tryAGI.OpenAI.IntegrationTests;
 
 public enum Unit2
 {

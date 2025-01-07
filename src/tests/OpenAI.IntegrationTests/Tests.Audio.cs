@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace OpenAI.IntegrationTests;
+namespace tryAGI.OpenAI.IntegrationTests;
 
 public partial class Tests
 {

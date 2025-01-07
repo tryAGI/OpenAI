@@ -1,10 +1,10 @@
-namespace OpenAI.IntegrationTests.Examples;
+namespace tryAGI.OpenAI.IntegrationTests.Examples;
 
 public partial class Examples
 {
-    public static OpenAiApi GetAuthenticatedClient()
+    public static OpenAiClient GetAuthenticatedClient()
     {
-        return new OpenAiApi(apiKey:
+        return new OpenAiClient(apiKey:
             Environment.GetEnvironmentVariable("OPENAI_API_KEY") ??
             throw new AssertInconclusiveException("OPENAI_API_KEY environment variable is not found."));
     }

@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace OpenAI.IntegrationTests.Examples;
+namespace tryAGI.OpenAI.IntegrationTests.Examples;
 
 public partial class Examples
 {

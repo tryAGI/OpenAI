@@ -1,0 +1,68 @@
+
+#nullable enable
+
+namespace tryAGI.OpenAI
+{
+    /// <summary>
+    /// Represents a message delta i.e. any changed fields on a message during streaming.
+    /// </summary>
+    public sealed partial class MessageDeltaObject
+    {
+        /// <summary>
+        /// The identifier of the message, which can be referenced in API endpoints.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Id { get; set; }
+
+        /// <summary>
+        /// The object type, which is always `thread.message.delta`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageDeltaObjectObjectJsonConverter))]
+        public global::tryAGI.OpenAI.MessageDeltaObjectObject Object { get; set; }
+
+        /// <summary>
+        /// The delta containing the fields that have changed on the Message.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.MessageDeltaObjectDelta Delta { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageDeltaObject" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The identifier of the message, which can be referenced in API endpoints.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `thread.message.delta`.
+        /// </param>
+        /// <param name="delta">
+        /// The delta containing the fields that have changed on the Message.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public MessageDeltaObject(
+            string id,
+            global::tryAGI.OpenAI.MessageDeltaObjectDelta delta,
+            global::tryAGI.OpenAI.MessageDeltaObjectObject @object)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
+            this.Object = @object;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageDeltaObject" /> class.
+        /// </summary>
+        public MessageDeltaObject()
+        {
+        }
+    }
+}
