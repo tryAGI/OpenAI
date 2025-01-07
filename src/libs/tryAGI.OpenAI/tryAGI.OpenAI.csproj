@@ -16,7 +16,6 @@
   </ItemGroup>
 
   <PropertyGroup Label="Nuget">
-    <PackageId>tryAGI.OpenAI</PackageId>
     <Description>
       Generated C# SDK based on official OpenAI OpenAPI specification. 
       Includes C# Source Generator which allows you to define functions natively through a C# interface, and also provides extensions that make it easier to call this interface later</Description>
