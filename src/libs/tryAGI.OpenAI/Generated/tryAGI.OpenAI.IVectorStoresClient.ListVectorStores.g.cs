@@ -17,7 +17,7 @@ namespace tryAGI.OpenAI
         /// <param name="before"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "TRYAGI_OPENAI_BETA_001")]
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "TRYAGI.OPENAI_BETA_001")]
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ListVectorStoresResponse> ListVectorStoresAsync(
             int? limit = default,
             global::tryAGI.OpenAI.ListVectorStoresOrder? order = default,
