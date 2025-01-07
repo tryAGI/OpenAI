@@ -16,9 +16,4 @@ public sealed partial class JsonSerializerContextTypes
     /// 
     /// </summary>
     public CSharpToJsonSchema.OpenApiSchema? OpenApiSchema { get; set; }
-    
-    /// <summary>
-    /// 
-    /// </summary>
-    public JsonElement? JsonElement { get; set; }
 }
