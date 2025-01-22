@@ -4,10 +4,10 @@
 namespace tryAGI.OpenAI.JsonConverters
 {
     /// <inheritdoc />
-    public class ResponseFormatJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::tryAGI.OpenAI.ResponseFormat>
+    public class ResponseFormat3JsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::tryAGI.OpenAI.ResponseFormat3>
     {
         /// <inheritdoc />
-        public override global::tryAGI.OpenAI.ResponseFormat Read(
+        public override global::tryAGI.OpenAI.ResponseFormat3 Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -43,7 +43,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 jsonSchema = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::tryAGI.OpenAI.ResponseFormat(
+            var result = new global::tryAGI.OpenAI.ResponseFormat3(
                 discriminator?.Type,
                 text,
                 jsonObject,
@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::tryAGI.OpenAI.ResponseFormat value,
+            global::tryAGI.OpenAI.ResponseFormat3 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));

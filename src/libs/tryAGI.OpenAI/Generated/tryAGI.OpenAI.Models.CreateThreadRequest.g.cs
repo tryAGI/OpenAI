@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    /// Options to create a new thread. If no thread is provided when running a <br/>
+    /// request, an empty thread will be created.
     /// </summary>
     public sealed partial class CreateThreadRequest
     {

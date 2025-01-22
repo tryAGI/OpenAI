@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -68,10 +70,11 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.UploadObject? Object { get; set; }
 
         /// <summary>
-        /// The `File` object represents a document that has been uploaded to OpenAI.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file")]
-        public global::tryAGI.OpenAI.OpenAIFile? File { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AllOfJsonConverter<global::tryAGI.OpenAI.OpenAIFile, object>))]
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.OpenAIFile, object>? File { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -106,9 +109,7 @@ namespace tryAGI.OpenAI
         /// <param name="object">
         /// The object type, which is always "upload".
         /// </param>
-        /// <param name="file">
-        /// The `File` object represents a document that has been uploaded to OpenAI.
-        /// </param>
+        /// <param name="file"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public Upload(
             string id,
@@ -119,7 +120,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.UploadStatus status,
             global::System.DateTimeOffset expiresAt,
             global::tryAGI.OpenAI.UploadObject? @object,
-            global::tryAGI.OpenAI.OpenAIFile? file)
+            global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.OpenAIFile, object>? file)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;

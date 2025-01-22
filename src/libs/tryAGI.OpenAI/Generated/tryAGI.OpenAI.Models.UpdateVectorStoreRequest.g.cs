@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -15,10 +17,11 @@ namespace tryAGI.OpenAI
         public string? Name { get; set; }
 
         /// <summary>
-        /// The expiration policy for a vector store.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_after")]
-        public global::tryAGI.OpenAI.VectorStoreExpirationAfter? ExpiresAfter { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AllOfJsonConverter<global::tryAGI.OpenAI.VectorStoreExpirationAfter, object>))]
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.VectorStoreExpirationAfter, object>? ExpiresAfter { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.
@@ -38,16 +41,14 @@ namespace tryAGI.OpenAI
         /// <param name="name">
         /// The name of the vector store.
         /// </param>
-        /// <param name="expiresAfter">
-        /// The expiration policy for a vector store.
-        /// </param>
+        /// <param name="expiresAfter"></param>
         /// <param name="metadata">
         /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public UpdateVectorStoreRequest(
             string? name,
-            global::tryAGI.OpenAI.VectorStoreExpirationAfter? expiresAfter,
+            global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.VectorStoreExpirationAfter, object>? expiresAfter,
             object? metadata)
         {
             this.Name = name;
