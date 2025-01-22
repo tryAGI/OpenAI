@@ -28,9 +28,10 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// The ID of the preceding item after which the new item will be inserted. <br/>
-        /// If not set, the new item will be appended to the end of the conversation. <br/>
-        /// If set, it allows an item to be inserted mid-conversation. If the ID <br/>
-        /// cannot be found, an error will be returned and the item will not be added.
+        /// If not set, the new item will be appended to the end of the conversation.<br/>
+        /// If set to `root`, the new item will be added to the beginning of the conversation.<br/>
+        /// If set to an existing ID, it allows an item to be inserted mid-conversation. If the<br/>
+        /// ID cannot be found, an error will be returned and the item will not be added.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("previous_item_id")]
         public string? PreviousItemId { get; set; }
@@ -63,9 +64,10 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="previousItemId">
         /// The ID of the preceding item after which the new item will be inserted. <br/>
-        /// If not set, the new item will be appended to the end of the conversation. <br/>
-        /// If set, it allows an item to be inserted mid-conversation. If the ID <br/>
-        /// cannot be found, an error will be returned and the item will not be added.
+        /// If not set, the new item will be appended to the end of the conversation.<br/>
+        /// If set to `root`, the new item will be added to the beginning of the conversation.<br/>
+        /// If set to an existing ID, it allows an item to be inserted mid-conversation. If the<br/>
+        /// ID cannot be found, an error will be returned and the item will not be added.
         /// </param>
         /// <param name="item">
         /// A realtime Item is of three types: message, function_call, or function_call_output.<br/>

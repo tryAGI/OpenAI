@@ -146,7 +146,6 @@ namespace tryAGI.OpenAI
         ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
         ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
         ///   - When not set, the default behavior is 'auto'.<br/>
-        ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
         /// Default Value: auto
         /// </param>
         /// <param name="stop">
@@ -211,7 +210,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.CreateChatCompletionRequestAudio? audio = default,
             double? presencePenalty = default,
             global::tryAGI.OpenAI.ResponseFormat? responseFormat = default,
-            int? seed = default,
+            long? seed = default,
             global::tryAGI.OpenAI.CreateChatCompletionRequestServiceTier? serviceTier = default,
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
             bool? stream = default,

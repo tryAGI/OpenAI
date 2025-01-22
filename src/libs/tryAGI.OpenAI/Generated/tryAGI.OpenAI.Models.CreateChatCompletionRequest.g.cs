@@ -186,7 +186,7 @@ namespace tryAGI.OpenAI
         /// Determinism is not guaranteed, and you should refer to the `system_fingerprint` response parameter to monitor changes in the backend.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
-        public int? Seed { get; set; }
+        public long? Seed { get; set; }
 
         /// <summary>
         /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
@@ -194,7 +194,6 @@ namespace tryAGI.OpenAI
         ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
         ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
         ///   - When not set, the default behavior is 'auto'.<br/>
-        ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
         /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
@@ -424,7 +423,6 @@ namespace tryAGI.OpenAI
         ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
         ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
         ///   - When not set, the default behavior is 'auto'.<br/>
-        ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
         /// Default Value: auto
         /// </param>
         /// <param name="stop">
@@ -488,7 +486,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.CreateChatCompletionRequestAudio? audio,
             double? presencePenalty,
             global::tryAGI.OpenAI.ResponseFormat? responseFormat,
-            int? seed,
+            long? seed,
             global::tryAGI.OpenAI.CreateChatCompletionRequestServiceTier? serviceTier,
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>>? stop,
             bool? stream,

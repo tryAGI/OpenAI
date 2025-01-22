@@ -22,8 +22,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeSessionCreateRequestModelJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.RealtimeSessionCreateRequestModel Model { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestModel? Model { get; set; }
 
         /// <summary>
         /// The default system instructions (i.e. system message) prepended to model <br/>
@@ -52,14 +51,17 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RealtimeSessionCreateRequestVoice? Voice { get; set; }
 
         /// <summary>
-        /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
+        /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.<br/>
+        /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate, <br/>
+        /// single channel (mono), and little-endian byte order.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_audio_format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeSessionCreateRequestInputAudioFormatJsonConverter))]
         public global::tryAGI.OpenAI.RealtimeSessionCreateRequestInputAudioFormat? InputAudioFormat { get; set; }
 
         /// <summary>
-        /// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
+        /// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.<br/>
+        /// For `pcm16`, output audio is sampled at a rate of 24kHz.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_audio_format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeSessionCreateRequestOutputAudioFormatJsonConverter))]
@@ -148,10 +150,13 @@ namespace tryAGI.OpenAI
         /// `shimmer` and `verse`.
         /// </param>
         /// <param name="inputAudioFormat">
-        /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
+        /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.<br/>
+        /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate, <br/>
+        /// single channel (mono), and little-endian byte order.
         /// </param>
         /// <param name="outputAudioFormat">
-        /// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
+        /// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.<br/>
+        /// For `pcm16`, output audio is sampled at a rate of 24kHz.
         /// </param>
         /// <param name="inputAudioTranscription">
         /// Configuration for input audio transcription, defaults to off and can be <br/>
@@ -183,8 +188,8 @@ namespace tryAGI.OpenAI
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeSessionCreateRequest(
-            global::tryAGI.OpenAI.RealtimeSessionCreateRequestModel model,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateRequestModalitie>? modalities,
+            global::tryAGI.OpenAI.RealtimeSessionCreateRequestModel? model,
             string? instructions,
             global::tryAGI.OpenAI.RealtimeSessionCreateRequestVoice? voice,
             global::tryAGI.OpenAI.RealtimeSessionCreateRequestInputAudioFormat? inputAudioFormat,
@@ -196,8 +201,8 @@ namespace tryAGI.OpenAI
             double? temperature,
             global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestMaxResponseOutputTokens?>? maxResponseOutputTokens)
         {
-            this.Model = model;
             this.Modalities = modalities;
+            this.Model = model;
             this.Instructions = instructions;
             this.Voice = voice;
             this.InputAudioFormat = inputAudioFormat;

@@ -39,7 +39,7 @@ namespace tryAGI.OpenAI
         public required string Model { get; set; }
 
         /// <summary>
-        /// The service tier used for processing the request. This field is only included if the `service_tier` parameter is specified in the request.<br/>
+        /// The service tier used for processing the request.<br/>
         /// Example: scale
         /// </summary>
         /// <example>scale</example>
@@ -91,7 +91,7 @@ namespace tryAGI.OpenAI
         /// The model to generate the completion.
         /// </param>
         /// <param name="serviceTier">
-        /// The service tier used for processing the request. This field is only included if the `service_tier` parameter is specified in the request.<br/>
+        /// The service tier used for processing the request.<br/>
         /// Example: scale
         /// </param>
         /// <param name="systemFingerprint">

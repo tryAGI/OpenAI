@@ -114,7 +114,7 @@ namespace tryAGI.OpenAI
             int? maxTokens = default,
             int? n = default,
             double? presencePenalty = default,
-            int? seed = default,
+            long? seed = default,
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
             bool? stream = default,
             global::tryAGI.OpenAI.ChatCompletionStreamOptions? streamOptions = default,
