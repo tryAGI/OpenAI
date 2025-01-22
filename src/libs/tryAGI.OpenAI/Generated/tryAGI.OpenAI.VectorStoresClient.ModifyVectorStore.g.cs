@@ -171,9 +171,7 @@ namespace tryAGI.OpenAI
         /// <param name="name">
         /// The name of the vector store.
         /// </param>
-        /// <param name="expiresAfter">
-        /// The expiration policy for a vector store.
-        /// </param>
+        /// <param name="expiresAfter"></param>
         /// <param name="metadata">
         /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.
         /// </param>
@@ -183,7 +181,7 @@ namespace tryAGI.OpenAI
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.VectorStoreObject> ModifyVectorStoreAsync(
             string vectorStoreId,
             string? name = default,
-            global::tryAGI.OpenAI.VectorStoreExpirationAfter? expiresAfter = default,
+            global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.VectorStoreExpirationAfter, object>? expiresAfter = default,
             object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

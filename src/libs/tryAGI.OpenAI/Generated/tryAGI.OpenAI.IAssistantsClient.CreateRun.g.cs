@@ -66,25 +66,12 @@ namespace tryAGI.OpenAI
         /// <param name="maxCompletionTokens">
         /// The maximum number of completion tokens that may be used over the course of the run. The run will make a best effort to use only the number of completion tokens specified, across multiple turns of the run. If the run exceeds the number of completion tokens specified, the run will end with status `incomplete`. See `incomplete_details` for more info.
         /// </param>
-        /// <param name="truncationStrategy">
-        /// Controls for how a thread will be truncated prior to the run. Use this to control the intial context window of the run.
-        /// </param>
-        /// <param name="toolChoice">
-        /// Controls which (if any) tool is called by the model.<br/>
-        /// `none` means the model will not call any tools and instead generates a message.<br/>
-        /// `auto` is the default value and means the model can pick between generating a message or calling one or more tools.<br/>
-        /// `required` means the model must call one or more tools before responding to the user.<br/>
-        /// Specifying a particular tool like `{"type": "file_search"}` or `{"type": "function", "function": {"name": "my_function"}}` forces the model to call that tool.
-        /// </param>
+        /// <param name="truncationStrategy"></param>
+        /// <param name="toolChoice"></param>
         /// <param name="parallelToolCalls">
         /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.
         /// </param>
-        /// <param name="responseFormat">
-        /// Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models#gpt-4o), [GPT-4 Turbo](/docs/models#gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.<br/>
-        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).<br/>
-        /// Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.<br/>
-        /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
-        /// </param>
+        /// <param name="responseFormat"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "TRYAGI_OPENAI_BETA_001")]
@@ -103,10 +90,10 @@ namespace tryAGI.OpenAI
             bool? stream = default,
             int? maxPromptTokens = default,
             int? maxCompletionTokens = default,
-            global::tryAGI.OpenAI.TruncationObject? truncationStrategy = default,
-            global::tryAGI.OpenAI.AssistantsApiToolChoiceOption? toolChoice = default,
+            global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.TruncationObject, object>? truncationStrategy = default,
+            global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.AssistantsApiToolChoiceOption?, object>? toolChoice = default,
             bool? parallelToolCalls = default,
-            global::tryAGI.OpenAI.AssistantsApiResponseFormatOption? responseFormat = default,
+            global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.AssistantsApiResponseFormatOption?, object>? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

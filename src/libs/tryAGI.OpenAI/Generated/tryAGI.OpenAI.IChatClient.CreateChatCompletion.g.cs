@@ -209,7 +209,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.PredictionContent? prediction = default,
             global::tryAGI.OpenAI.CreateChatCompletionRequestAudio? audio = default,
             double? presencePenalty = default,
-            global::tryAGI.OpenAI.ResponseFormat? responseFormat = default,
+            global::tryAGI.OpenAI.ResponseFormat3? responseFormat = default,
             long? seed = default,
             global::tryAGI.OpenAI.CreateChatCompletionRequestServiceTier? serviceTier = default,
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>>? stop = default,

@@ -177,8 +177,8 @@ namespace tryAGI.OpenAI
         /// `max_tokens` or the conversation exceeded the max context length.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseFormatJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseFormat? ResponseFormat { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseFormat3JsonConverter))]
+        public global::tryAGI.OpenAI.ResponseFormat3? ResponseFormat { get; set; }
 
         /// <summary>
         /// This feature is in Beta.<br/>
@@ -485,7 +485,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.PredictionContent? prediction,
             global::tryAGI.OpenAI.CreateChatCompletionRequestAudio? audio,
             double? presencePenalty,
-            global::tryAGI.OpenAI.ResponseFormat? responseFormat,
+            global::tryAGI.OpenAI.ResponseFormat3? responseFormat,
             long? seed,
             global::tryAGI.OpenAI.CreateChatCompletionRequestServiceTier? serviceTier,
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>>? stop,
