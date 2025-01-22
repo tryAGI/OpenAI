@@ -54,10 +54,13 @@ namespace tryAGI.OpenAI
         /// `shimmer` and `verse`.
         /// </param>
         /// <param name="inputAudioFormat">
-        /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
+        /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.<br/>
+        /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate, <br/>
+        /// single channel (mono), and little-endian byte order.
         /// </param>
         /// <param name="outputAudioFormat">
-        /// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
+        /// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.<br/>
+        /// For `pcm16`, output audio is sampled at a rate of 24kHz.
         /// </param>
         /// <param name="inputAudioTranscription">
         /// Configuration for input audio transcription, defaults to off and can be <br/>
@@ -90,8 +93,8 @@ namespace tryAGI.OpenAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.RealtimeSessionCreateResponse> CreateRealtimeSessionAsync(
-            global::tryAGI.OpenAI.RealtimeSessionCreateRequestModel model,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateRequestModalitie>? modalities = default,
+            global::tryAGI.OpenAI.RealtimeSessionCreateRequestModel? model = default,
             string? instructions = default,
             global::tryAGI.OpenAI.RealtimeSessionCreateRequestVoice? voice = default,
             global::tryAGI.OpenAI.RealtimeSessionCreateRequestInputAudioFormat? inputAudioFormat = default,

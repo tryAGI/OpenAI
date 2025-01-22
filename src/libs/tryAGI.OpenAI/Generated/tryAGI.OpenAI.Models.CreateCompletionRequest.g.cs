@@ -100,7 +100,7 @@ namespace tryAGI.OpenAI
         /// Determinism is not guaranteed, and you should refer to the `system_fingerprint` response parameter to monitor changes in the backend.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
-        public int? Seed { get; set; }
+        public long? Seed { get; set; }
 
         /// <summary>
         /// Up to 4 sequences where the API will stop generating further tokens. The returned text will not contain the stop sequence.
@@ -264,7 +264,7 @@ namespace tryAGI.OpenAI
             int? maxTokens,
             int? n,
             double? presencePenalty,
-            int? seed,
+            long? seed,
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>>? stop,
             bool? stream,
             global::tryAGI.OpenAI.ChatCompletionStreamOptions? streamOptions,

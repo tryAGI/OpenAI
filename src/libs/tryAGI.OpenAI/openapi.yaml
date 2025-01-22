@@ -473,6 +473,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CreateChatCompletionResponse'
+            text/event-stream:
+              schema:
+                $ref: '#/components/schemas/CreateChatCompletionStreamResponse'
       x-oaiMeta:
         name: Create chat completion
         group: chat
@@ -483,31 +486,31 @@ paths:
             request:
               curl: "curl https://api.openai.com/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -d '{\n    \"model\": \"VAR_chat_model_id\",\n    \"messages\": [\n      {\n        \"role\": \"developer\",\n        \"content\": \"You are a helpful assistant.\"\n      },\n      {\n        \"role\": \"user\",\n        \"content\": \"Hello!\"\n      }\n    ]\n  }'\n"
               python: "from openai import OpenAI\nclient = OpenAI()\n\ncompletion = client.chat.completions.create(\n  model=\"VAR_chat_model_id\",\n  messages=[\n    {\"role\": \"developer\", \"content\": \"You are a helpful assistant.\"},\n    {\"role\": \"user\", \"content\": \"Hello!\"}\n  ]\n)\n\nprint(completion.choices[0].message)\n"
-              node.js: "import OpenAI from \"openai\";\n\nconst openai = new OpenAI();\n\nasync function main() {\n  const completion = await openai.chat.completions.create({\n    messages: [{ role: \"developer\", content: \"You are a helpful assistant.\" }],\n    model: \"VAR_chat_model_id\",\n  });\n\n  console.log(completion.choices[0]);\n}\n\nmain();"
-            response: "{\n  \"id\": \"chatcmpl-123\",\n  \"object\": \"chat.completion\",\n  \"created\": 1677652288,\n  \"model\": \"gpt-4o-mini\",\n  \"system_fingerprint\": \"fp_44709d6fcb\",\n  \"choices\": [{\n    \"index\": 0,\n    \"message\": {\n      \"role\": \"assistant\",\n      \"content\": \"\\n\\nHello there, how may I assist you today?\",\n    },\n    \"logprobs\": null,\n    \"finish_reason\": \"stop\"\n  }],\n  \"usage\": {\n    \"prompt_tokens\": 9,\n    \"completion_tokens\": 12,\n    \"total_tokens\": 21,\n    \"completion_tokens_details\": {\n      \"reasoning_tokens\": 0,\n      \"accepted_prediction_tokens\": 0,\n      \"rejected_prediction_tokens\": 0\n    }\n  }\n}\n"
+              node.js: "import OpenAI from \"openai\";\n\nconst openai = new OpenAI();\n\nasync function main() {\n  const completion = await openai.chat.completions.create({\n    messages: [{ role: \"developer\", content: \"You are a helpful assistant.\" }],\n    model: \"VAR_chat_model_id\",\n    store: true,\n  });\n\n  console.log(completion.choices[0]);\n}\n\nmain();"
+            response: "{\n  \"id\": \"chatcmpl-123\",\n  \"object\": \"chat.completion\",\n  \"created\": 1677652288,\n  \"model\": \"gpt-4o-mini\",\n  \"system_fingerprint\": \"fp_44709d6fcb\",\n  \"choices\": [{\n    \"index\": 0,\n    \"message\": {\n      \"role\": \"assistant\",\n      \"content\": \"\\n\\nHello there, how may I assist you today?\",\n    },\n    \"logprobs\": null,\n    \"finish_reason\": \"stop\"\n  }],\n  \"service_tier\": \"default\",\n  \"usage\": {\n    \"prompt_tokens\": 9,\n    \"completion_tokens\": 12,\n    \"total_tokens\": 21,\n    \"completion_tokens_details\": {\n      \"reasoning_tokens\": 0,\n      \"accepted_prediction_tokens\": 0,\n      \"rejected_prediction_tokens\": 0\n    }\n  }\n}\n"
           - title: Image input
             request:
               curl: "curl https://api.openai.com/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -d '{\n    \"model\": \"gpt-4o\",\n    \"messages\": [\n      {\n        \"role\": \"user\",\n        \"content\": [\n          {\n            \"type\": \"text\",\n            \"text\": \"What'\\''s in this image?\"\n          },\n          {\n            \"type\": \"image_url\",\n            \"image_url\": {\n              \"url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Gfp-wisconsin-madison-the-nature-boardwalk.jpg/2560px-Gfp-wisconsin-madison-the-nature-boardwalk.jpg\"\n            }\n          }\n        ]\n      }\n    ],\n    \"max_tokens\": 300\n  }'\n"
               python: "from openai import OpenAI\n\nclient = OpenAI()\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",\n    messages=[\n        {\n            \"role\": \"user\",\n            \"content\": [\n                {\"type\": \"text\", \"text\": \"What's in this image?\"},\n                {\n                    \"type\": \"image_url\",\n                    \"image_url\": {\n                        \"url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Gfp-wisconsin-madison-the-nature-boardwalk.jpg/2560px-Gfp-wisconsin-madison-the-nature-boardwalk.jpg\",\n                    }\n                },\n            ],\n        }\n    ],\n    max_tokens=300,\n)\n\nprint(response.choices[0])\n"
-              node.js: "import OpenAI from \"openai\";\n\nconst openai = new OpenAI();\n\nasync function main() {\n  const response = await openai.chat.completions.create({\n    model: \"gpt-4o\",\n    messages: [\n      {\n        role: \"user\",\n        content: [\n          { type: \"text\", text: \"What's in this image?\" },\n          {\n            type: \"image_url\",\n            image_url: {\n              \"url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Gfp-wisconsin-madison-the-nature-boardwalk.jpg/2560px-Gfp-wisconsin-madison-the-nature-boardwalk.jpg\",\n            },\n          }\n        ],\n      },\n    ],\n  });\n  console.log(response.choices[0]);\n}\nmain();"
+              node.js: "import OpenAI from \"openai\";\n\nconst openai = new OpenAI();\n\nasync function main() {\n  const response = await openai.chat.completions.create({\n    model: \"gpt-4o\",\n    messages: [\n      {\n        role: \"user\",\n        content: [\n          { type: \"text\", text: \"What's in this image?\" },\n          {\n            type: \"image_url\",\n            image_url: {\n              \"url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Gfp-wisconsin-madison-the-nature-boardwalk.jpg/2560px-Gfp-wisconsin-madison-the-nature-boardwalk.jpg\",\n            },\n          }\n        ],\n      },\n    ],\n    store: true,\n  });\n  console.log(response.choices[0]);\n}\nmain();"
             response: "{\n  \"id\": \"chatcmpl-123\",\n  \"object\": \"chat.completion\",\n  \"created\": 1677652288,\n  \"model\": \"gpt-4o-mini\",\n  \"system_fingerprint\": \"fp_44709d6fcb\",\n  \"choices\": [{\n    \"index\": 0,\n    \"message\": {\n      \"role\": \"assistant\",\n      \"content\": \"\\n\\nThis image shows a wooden boardwalk extending through a lush green marshland.\",\n    },\n    \"logprobs\": null,\n    \"finish_reason\": \"stop\"\n  }],\n  \"usage\": {\n    \"prompt_tokens\": 9,\n    \"completion_tokens\": 12,\n    \"total_tokens\": 21,\n    \"completion_tokens_details\": {\n      \"reasoning_tokens\": 0,\n      \"accepted_prediction_tokens\": 0,\n      \"rejected_prediction_tokens\": 0\n    }\n  }\n}\n"
           - title: Streaming
             request:
               curl: "curl https://api.openai.com/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -d '{\n    \"model\": \"VAR_chat_model_id\",\n    \"messages\": [\n      {\n        \"role\": \"developer\",\n        \"content\": \"You are a helpful assistant.\"\n      },\n      {\n        \"role\": \"user\",\n        \"content\": \"Hello!\"\n      }\n    ],\n    \"stream\": true\n  }'\n"
               python: "from openai import OpenAI\nclient = OpenAI()\n\ncompletion = client.chat.completions.create(\n  model=\"VAR_chat_model_id\",\n  messages=[\n    {\"role\": \"developer\", \"content\": \"You are a helpful assistant.\"},\n    {\"role\": \"user\", \"content\": \"Hello!\"}\n  ],\n  stream=True\n)\n\nfor chunk in completion:\n  print(chunk.choices[0].delta)\n"
-              node.js: "import OpenAI from \"openai\";\n\nconst openai = new OpenAI();\n\nasync function main() {\n  const completion = await openai.chat.completions.create({\n    model: \"VAR_chat_model_id\",\n    messages: [\n      {\"role\": \"developer\", \"content\": \"You are a helpful assistant.\"},\n      {\"role\": \"user\", \"content\": \"Hello!\"}\n    ],\n    stream: true,\n  });\n\n  for await (const chunk of completion) {\n    console.log(chunk.choices[0].delta.content);\n  }\n}\n\nmain();"
+              node.js: "import OpenAI from \"openai\";\n\nconst openai = new OpenAI();\n\nasync function main() {\n  const completion = await openai.chat.completions.create({\n    model: \"VAR_chat_model_id\",\n    messages: [\n      {\"role\": \"developer\", \"content\": \"You are a helpful assistant.\"},\n      {\"role\": \"user\", \"content\": \"Hello!\"}\n    ],\n    store: true,\n    stream: true,\n  });\n\n  for await (const chunk of completion) {\n    console.log(chunk.choices[0].delta.content);\n  }\n}\n\nmain();"
             response: "{\"id\":\"chatcmpl-123\",\"object\":\"chat.completion.chunk\",\"created\":1694268190,\"model\":\"gpt-4o-mini\", \"system_fingerprint\": \"fp_44709d6fcb\", \"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}]}\n\n{\"id\":\"chatcmpl-123\",\"object\":\"chat.completion.chunk\",\"created\":1694268190,\"model\":\"gpt-4o-mini\", \"system_fingerprint\": \"fp_44709d6fcb\", \"choices\":[{\"index\":0,\"delta\":{\"content\":\"Hello\"},\"logprobs\":null,\"finish_reason\":null}]}\n\n....\n\n{\"id\":\"chatcmpl-123\",\"object\":\"chat.completion.chunk\",\"created\":1694268190,\"model\":\"gpt-4o-mini\", \"system_fingerprint\": \"fp_44709d6fcb\", \"choices\":[{\"index\":0,\"delta\":{},\"logprobs\":null,\"finish_reason\":\"stop\"}]}\n"
           - title: Functions
             request:
               curl: "curl https://api.openai.com/v1/chat/completions \\\n-H \"Content-Type: application/json\" \\\n-H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n-d '{\n  \"model\": \"gpt-4o\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"What'\\''s the weather like in Boston today?\"\n    }\n  ],\n  \"tools\": [\n    {\n      \"type\": \"function\",\n      \"function\": {\n        \"name\": \"get_current_weather\",\n        \"description\": \"Get the current weather in a given location\",\n        \"parameters\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"location\": {\n              \"type\": \"string\",\n              \"description\": \"The city and state, e.g. San Francisco, CA\"\n            },\n            \"unit\": {\n              \"type\": \"string\",\n              \"enum\": [\"celsius\", \"fahrenheit\"]\n            }\n          },\n          \"required\": [\"location\"]\n        }\n      }\n    }\n  ],\n  \"tool_choice\": \"auto\"\n}'\n"
               python: "from openai import OpenAI\nclient = OpenAI()\n\ntools = [\n  {\n    \"type\": \"function\",\n    \"function\": {\n      \"name\": \"get_current_weather\",\n      \"description\": \"Get the current weather in a given location\",\n      \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"location\": {\n            \"type\": \"string\",\n            \"description\": \"The city and state, e.g. San Francisco, CA\",\n          },\n          \"unit\": {\"type\": \"string\", \"enum\": [\"celsius\", \"fahrenheit\"]},\n        },\n        \"required\": [\"location\"],\n      },\n    }\n  }\n]\nmessages = [{\"role\": \"user\", \"content\": \"What's the weather like in Boston today?\"}]\ncompletion = client.chat.completions.create(\n  model=\"VAR_chat_model_id\",\n  messages=messages,\n  tools=tools,\n  tool_choice=\"auto\"\n)\n\nprint(completion)\n"
-              node.js: "import OpenAI from \"openai\";\n\nconst openai = new OpenAI();\n\nasync function main() {\n  const messages = [{\"role\": \"user\", \"content\": \"What's the weather like in Boston today?\"}];\n  const tools = [\n      {\n        \"type\": \"function\",\n        \"function\": {\n          \"name\": \"get_current_weather\",\n          \"description\": \"Get the current weather in a given location\",\n          \"parameters\": {\n            \"type\": \"object\",\n            \"properties\": {\n              \"location\": {\n                \"type\": \"string\",\n                \"description\": \"The city and state, e.g. San Francisco, CA\",\n              },\n              \"unit\": {\"type\": \"string\", \"enum\": [\"celsius\", \"fahrenheit\"]},\n            },\n            \"required\": [\"location\"],\n          },\n        }\n      }\n  ];\n\n  const response = await openai.chat.completions.create({\n    model: \"gpt-4o\",\n    messages: messages,\n    tools: tools,\n    tool_choice: \"auto\",\n  });\n\n  console.log(response);\n}\n\nmain();"
+              node.js: "import OpenAI from \"openai\";\n\nconst openai = new OpenAI();\n\nasync function main() {\n  const messages = [{\"role\": \"user\", \"content\": \"What's the weather like in Boston today?\"}];\n  const tools = [\n      {\n        \"type\": \"function\",\n        \"function\": {\n          \"name\": \"get_current_weather\",\n          \"description\": \"Get the current weather in a given location\",\n          \"parameters\": {\n            \"type\": \"object\",\n            \"properties\": {\n              \"location\": {\n                \"type\": \"string\",\n                \"description\": \"The city and state, e.g. San Francisco, CA\",\n              },\n              \"unit\": {\"type\": \"string\", \"enum\": [\"celsius\", \"fahrenheit\"]},\n            },\n            \"required\": [\"location\"],\n          },\n        }\n      }\n  ];\n\n  const response = await openai.chat.completions.create({\n    model: \"gpt-4o\",\n    messages: messages,\n    tools: tools,\n    tool_choice: \"auto\",\n    store: true,\n  });\n\n  console.log(response);\n}\n\nmain();"
             response: "{\n  \"id\": \"chatcmpl-abc123\",\n  \"object\": \"chat.completion\",\n  \"created\": 1699896916,\n  \"model\": \"gpt-4o-mini\",\n  \"choices\": [\n    {\n      \"index\": 0,\n      \"message\": {\n        \"role\": \"assistant\",\n        \"content\": null,\n        \"tool_calls\": [\n          {\n            \"id\": \"call_abc123\",\n            \"type\": \"function\",\n            \"function\": {\n              \"name\": \"get_current_weather\",\n              \"arguments\": \"{\\n\\\"location\\\": \\\"Boston, MA\\\"\\n}\"\n            }\n          }\n        ]\n      },\n      \"logprobs\": null,\n      \"finish_reason\": \"tool_calls\"\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\": 82,\n    \"completion_tokens\": 17,\n    \"total_tokens\": 99,\n    \"completion_tokens_details\": {\n      \"reasoning_tokens\": 0,\n      \"accepted_prediction_tokens\": 0,\n      \"rejected_prediction_tokens\": 0\n    }\n  }\n}\n"
           - title: Logprobs
             request:
               curl: "curl https://api.openai.com/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -d '{\n    \"model\": \"VAR_chat_model_id\",\n    \"messages\": [\n      {\n        \"role\": \"user\",\n        \"content\": \"Hello!\"\n      }\n    ],\n    \"logprobs\": true,\n    \"top_logprobs\": 2\n  }'\n"
               python: "from openai import OpenAI\nclient = OpenAI()\n\ncompletion = client.chat.completions.create(\n  model=\"VAR_chat_model_id\",\n  messages=[\n    {\"role\": \"user\", \"content\": \"Hello!\"}\n  ],\n  logprobs=True,\n  top_logprobs=2\n)\n\nprint(completion.choices[0].message)\nprint(completion.choices[0].logprobs)\n"
-              node.js: "import OpenAI from \"openai\";\n\nconst openai = new OpenAI();\n\nasync function main() {\n  const completion = await openai.chat.completions.create({\n    messages: [{ role: \"user\", content: \"Hello!\" }],\n    model: \"VAR_chat_model_id\",\n    logprobs: true,\n    top_logprobs: 2,\n  });\n\n  console.log(completion.choices[0]);\n}\n\nmain();"
+              node.js: "import OpenAI from \"openai\";\n\nconst openai = new OpenAI();\n\nasync function main() {\n  const completion = await openai.chat.completions.create({\n    messages: [{ role: \"user\", content: \"Hello!\" }],\n    model: \"VAR_chat_model_id\",\n    store: true,\n    logprobs: true,\n    top_logprobs: 2,\n  });\n\n  console.log(completion.choices[0]);\n}\n\nmain();"
             response: "{\n  \"id\": \"chatcmpl-123\",\n  \"object\": \"chat.completion\",\n  \"created\": 1702685778,\n  \"model\": \"gpt-4o-mini\",\n  \"choices\": [\n    {\n      \"index\": 0,\n      \"message\": {\n        \"role\": \"assistant\",\n        \"content\": \"Hello! How can I assist you today?\"\n      },\n      \"logprobs\": {\n        \"content\": [\n          {\n            \"token\": \"Hello\",\n            \"logprob\": -0.31725305,\n            \"bytes\": [72, 101, 108, 108, 111],\n            \"top_logprobs\": [\n              {\n                \"token\": \"Hello\",\n                \"logprob\": -0.31725305,\n                \"bytes\": [72, 101, 108, 108, 111]\n              },\n              {\n                \"token\": \"Hi\",\n                \"logprob\": -1.3190403,\n                \"bytes\": [72, 105]\n              }\n            ]\n          },\n          {\n            \"token\": \"!\",\n            \"logprob\": -0.02380986,\n            \"bytes\": [\n              33\n            ],\n            \"top_logprobs\": [\n              {\n                \"token\": \"!\",\n                \"logprob\": -0.02380986,\n                \"bytes\": [33]\n              },\n              {\n                \"token\": \" there\",\n                \"logprob\": -3.787621,\n                \"bytes\": [32, 116, 104, 101, 114, 101]\n              }\n            ]\n          },\n          {\n            \"token\": \" How\",\n            \"logprob\": -0.000054669687,\n            \"bytes\": [32, 72, 111, 119],\n            \"top_logprobs\": [\n              {\n                \"token\": \" How\",\n                \"logprob\": -0.000054669687,\n                \"bytes\": [32, 72, 111, 119]\n              },\n              {\n                \"token\": \"<|end|>\",\n                \"logprob\": -10.953937,\n                \"bytes\": null\n              }\n            ]\n          },\n          {\n            \"token\": \" can\",\n            \"logprob\": -0.015801601,\n            \"bytes\": [32, 99, 97, 110],\n            \"top_logprobs\": [\n              {\n                \"token\": \" can\",\n                \"logprob\": -0.015801601,\n                \"bytes\": [32, 99, 97, 110]\n              },\n              {\n                \"token\": \" may\",\n                \"logprob\": -4.161023,\n                \"bytes\": [32, 109, 97, 121]\n              }\n            ]\n          },\n          {\n            \"token\": \" I\",\n            \"logprob\": -3.7697225e-6,\n            \"bytes\": [\n              32,\n              73\n            ],\n            \"top_logprobs\": [\n              {\n                \"token\": \" I\",\n                \"logprob\": -3.7697225e-6,\n                \"bytes\": [32, 73]\n              },\n              {\n                \"token\": \" assist\",\n                \"logprob\": -13.596657,\n                \"bytes\": [32, 97, 115, 115, 105, 115, 116]\n              }\n            ]\n          },\n          {\n            \"token\": \" assist\",\n            \"logprob\": -0.04571125,\n            \"bytes\": [32, 97, 115, 115, 105, 115, 116],\n            \"top_logprobs\": [\n              {\n                \"token\": \" assist\",\n                \"logprob\": -0.04571125,\n                \"bytes\": [32, 97, 115, 115, 105, 115, 116]\n              },\n              {\n                \"token\": \" help\",\n                \"logprob\": -3.1089056,\n                \"bytes\": [32, 104, 101, 108, 112]\n              }\n            ]\n          },\n          {\n            \"token\": \" you\",\n            \"logprob\": -5.4385737e-6,\n            \"bytes\": [32, 121, 111, 117],\n            \"top_logprobs\": [\n              {\n                \"token\": \" you\",\n                \"logprob\": -5.4385737e-6,\n                \"bytes\": [32, 121, 111, 117]\n              },\n              {\n                \"token\": \" today\",\n                \"logprob\": -12.807695,\n                \"bytes\": [32, 116, 111, 100, 97, 121]\n              }\n            ]\n          },\n          {\n            \"token\": \" today\",\n            \"logprob\": -0.0040071653,\n            \"bytes\": [32, 116, 111, 100, 97, 121],\n            \"top_logprobs\": [\n              {\n                \"token\": \" today\",\n                \"logprob\": -0.0040071653,\n                \"bytes\": [32, 116, 111, 100, 97, 121]\n              },\n              {\n                \"token\": \"?\",\n                \"logprob\": -5.5247097,\n                \"bytes\": [63]\n              }\n            ]\n          },\n          {\n            \"token\": \"?\",\n            \"logprob\": -0.0008108172,\n            \"bytes\": [63],\n            \"top_logprobs\": [\n              {\n                \"token\": \"?\",\n                \"logprob\": -0.0008108172,\n                \"bytes\": [63]\n              },\n              {\n                \"token\": \"?\\n\",\n                \"logprob\": -7.184561,\n                \"bytes\": [63, 10]\n              }\n            ]\n          }\n        ]\n      },\n      \"finish_reason\": \"stop\"\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\": 9,\n    \"completion_tokens\": 9,\n    \"total_tokens\": 18,\n    \"completion_tokens_details\": {\n      \"reasoning_tokens\": 0,\n      \"accepted_prediction_tokens\": 0,\n      \"rejected_prediction_tokens\": 0\n    }\n  },\n  \"system_fingerprint\": null\n}\n"
   /completions:
     post:
@@ -1422,7 +1425,7 @@ paths:
         examples:
           request:
             curl: "curl https://api.openai.com/v1/organization/audit_logs \\\n-H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n-H \"Content-Type: application/json\"\n"
-          response: "{\n    \"object\": \"list\",\n    \"data\": [\n        {\n            \"id\": \"audit_log-xxx_yyyymmdd\",\n            \"type\": \"project.archived\",\n            \"effective_at\": 1722461446,\n            \"actor\": {\n                \"type\": \"api_key\",\n                \"api_key\": {\n                    \"type\": \"user\",\n                    \"user\": {\n                        \"id\": \"user-xxx\",\n                        \"email\": \"user@example.com\"\n                    }\n                }\n            },\n            \"project.archived\": {\n                \"id\": \"proj_abc\"\n            },\n        },\n        {\n            \"id\": \"audit_log-yyy__20240101\",\n            \"type\": \"api_key.updated\",\n            \"effective_at\": 1720804190,\n            \"actor\": {\n                \"type\": \"session\",\n                \"session\": {\n                    \"user\": {\n                        \"id\": \"user-xxx\",\n                        \"email\": \"user@example.com\"\n                    },\n                    \"ip_address\": \"127.0.0.1\",\n                    \"user_agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36\"\n                }\n            },\n            \"api_key.updated\": {\n                \"id\": \"key_xxxx\",\n                \"data\": {\n                    \"scopes\": [\"resource_2.operation_2\"]\n                }\n            },\n        }\n    ],\n    \"first_id\": \"audit_log-xxx__20240101\",\n    \"last_id\": \"audit_log_yyy__20240101\",\n    \"has_more\": true\n}\n"
+          response: "{\n    \"object\": \"list\",\n    \"data\": [\n        {\n            \"id\": \"audit_log-xxx_yyyymmdd\",\n            \"type\": \"project.archived\",\n            \"effective_at\": 1722461446,\n            \"actor\": {\n                \"type\": \"api_key\",\n                \"api_key\": {\n                    \"type\": \"user\",\n                    \"user\": {\n                        \"id\": \"user-xxx\",\n                        \"email\": \"user@example.com\"\n                    }\n                }\n            },\n            \"project.archived\": {\n                \"id\": \"proj_abc\"\n            },\n        },\n        {\n            \"id\": \"audit_log-yyy__20240101\",\n            \"type\": \"api_key.updated\",\n            \"effective_at\": 1720804190,\n            \"actor\": {\n                \"type\": \"session\",\n                \"session\": {\n                    \"user\": {\n                        \"id\": \"user-xxx\",\n                        \"email\": \"user@example.com\"\n                    },\n                    \"ip_address\": \"127.0.0.1\",\n                    \"user_agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36\",\n                    \"ja3\": \"a497151ce4338a12c4418c44d375173e\",\n                    \"ja4\": \"q13d0313h3_55b375c5d22e_c7319ce65786\",\n                    \"ip_address_details\": {\n                      \"country\": \"US\",\n                      \"city\": \"San Francisco\",\n                      \"region\": \"California\",\n                      \"region_code\": \"CA\",\n                      \"asn\": \"1234\",\n                      \"latitude\": \"37.77490\",\n                      \"longitude\": \"-122.41940\"\n                    }\n                }\n            },\n            \"api_key.updated\": {\n                \"id\": \"key_xxxx\",\n                \"data\": {\n                    \"scopes\": [\"resource_2.operation_2\"]\n                }\n            },\n        }\n    ],\n    \"first_id\": \"audit_log-xxx__20240101\",\n    \"last_id\": \"audit_log_yyy__20240101\",\n    \"has_more\": true\n}\n"
   /organization/costs:
     get:
       tags:
@@ -1579,8 +1582,7 @@ paths:
         examples:
           request:
             curl: "curl https://api.openai.com/v1/organization/invites/invite-abc \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\"\n"
-          response:
-            content: "{\n    \"object\": \"organization.invite\",\n    \"id\": \"invite-abc\",\n    \"email\": \"user@example.com\",\n    \"role\": \"owner\",\n    \"status\": \"accepted\",\n    \"invited_at\": 1711471533,\n    \"expires_at\": 1711471533,\n    \"accepted_at\": 1711471533\n}\n"
+          response: "{\n    \"object\": \"organization.invite\",\n    \"id\": \"invite-abc\",\n    \"email\": \"user@example.com\",\n    \"role\": \"owner\",\n    \"status\": \"accepted\",\n    \"invited_at\": 1711471533,\n    \"expires_at\": 1711471533,\n    \"accepted_at\": 1711471533\n}\n"
     delete:
       tags:
         - Invites
@@ -1607,8 +1609,7 @@ paths:
         examples:
           request:
             curl: "curl -X DELETE https://api.openai.com/v1/organization/invites/invite-abc \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\"\n"
-          response:
-            content: "{\n    \"object\": \"organization.invite.deleted\",\n    \"id\": \"invite-abc\",\n    \"deleted\": true\n}\n"
+          response: "{\n    \"object\": \"organization.invite.deleted\",\n    \"id\": \"invite-abc\",\n    \"deleted\": true\n}\n"
   /organization/projects:
     get:
       tags:
@@ -1647,8 +1648,7 @@ paths:
         examples:
           request:
             curl: "curl https://api.openai.com/v1/organization/projects?after=proj_abc&limit=20&include_archived=false \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\"\n"
-          response:
-            content: "{\n    \"object\": \"list\",\n    \"data\": [\n        {\n            \"id\": \"proj_abc\",\n            \"object\": \"organization.project\",\n            \"name\": \"Project example\",\n            \"created_at\": 1711471533,\n            \"archived_at\": null,\n            \"status\": \"active\"\n        }\n    ],\n    \"first_id\": \"proj-abc\",\n    \"last_id\": \"proj-xyz\",\n    \"has_more\": false\n}\n"
+          response: "{\n    \"object\": \"list\",\n    \"data\": [\n        {\n            \"id\": \"proj_abc\",\n            \"object\": \"organization.project\",\n            \"name\": \"Project example\",\n            \"created_at\": 1711471533,\n            \"archived_at\": null,\n            \"status\": \"active\"\n        }\n    ],\n    \"first_id\": \"proj-abc\",\n    \"last_id\": \"proj-xyz\",\n    \"has_more\": false\n}\n"
     post:
       tags:
         - Projects
@@ -1675,8 +1675,7 @@ paths:
         examples:
           request:
             curl: "curl -X POST https://api.openai.com/v1/organization/projects \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n      \"name\": \"Project ABC\"\n  }'\n"
-          response:
-            content: "{\n    \"id\": \"proj_abc\",\n    \"object\": \"organization.project\",\n    \"name\": \"Project ABC\",\n    \"created_at\": 1711471533,\n    \"archived_at\": null,\n    \"status\": \"active\"\n}\n"
+          response: "{\n    \"id\": \"proj_abc\",\n    \"object\": \"organization.project\",\n    \"name\": \"Project ABC\",\n    \"created_at\": 1711471533,\n    \"archived_at\": null,\n    \"status\": \"active\"\n}\n"
   '/organization/projects/{project_id}':
     get:
       tags:
@@ -1705,8 +1704,7 @@ paths:
         examples:
           request:
             curl: "curl https://api.openai.com/v1/organization/projects/proj_abc \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\"\n"
-          response:
-            content: "{\n    \"id\": \"proj_abc\",\n    \"object\": \"organization.project\",\n    \"name\": \"Project example\",\n    \"created_at\": 1711471533,\n    \"archived_at\": null,\n    \"status\": \"active\"\n}\n"
+          response: "{\n    \"id\": \"proj_abc\",\n    \"object\": \"organization.project\",\n    \"name\": \"Project example\",\n    \"created_at\": 1711471533,\n    \"archived_at\": null,\n    \"status\": \"active\"\n}\n"
     post:
       tags:
         - Projects
@@ -1784,10 +1782,7 @@ paths:
         examples:
           request:
             curl: "curl https://api.openai.com/v1/organization/projects/proj_abc/api_keys?after=key_abc&limit=20 \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\"\n"
-          response:
-            content: "{\n    \"object\": \"list\",\n    \"data\": [\n        {\n            \"object\": \"organization.project.api_key\",\n            \"redacted_value\": \"sk-abc...def\",\n            \"name\": \"My API Key\",\n            \"created_at\": 1711471533,\n            \"id\": \"key_abc\",\n            \"owner\": {\n                \"type\": \"user\",\n                \"user\": {\n                    \"object\": \"organization.project.user\",\n                    \"id\": \"user_abc\",\n                    \"name\": \"First Last\",\n                    \"email\": \"user@example.com\",\n                    \"role\": \"owner\",\n                    \"added_at\": 1711471533\n                }\n            }\n        }\n    ],\n    \"first_id\": \"key_abc\",\n    \"last_id\": \"key_xyz\",\n    \"has_more\": false\n}\n"
-          error_response:
-            content: "{\n    \"code\": 400,\n    \"message\": \"Project {name} is archived\"\n}\n"
+          response: "{\n    \"object\": \"list\",\n    \"data\": [\n        {\n            \"object\": \"organization.project.api_key\",\n            \"redacted_value\": \"sk-abc...def\",\n            \"name\": \"My API Key\",\n            \"created_at\": 1711471533,\n            \"id\": \"key_abc\",\n            \"owner\": {\n                \"type\": \"user\",\n                \"user\": {\n                    \"object\": \"organization.project.user\",\n                    \"id\": \"user_abc\",\n                    \"name\": \"First Last\",\n                    \"email\": \"user@example.com\",\n                    \"role\": \"owner\",\n                    \"added_at\": 1711471533\n                }\n            }\n        }\n    ],\n    \"first_id\": \"key_abc\",\n    \"last_id\": \"key_xyz\",\n    \"has_more\": false\n}\n"
   '/organization/projects/{project_id}/api_keys/{key_id}':
     get:
       tags:
@@ -1821,8 +1816,7 @@ paths:
         examples:
           request:
             curl: "curl https://api.openai.com/v1/organization/projects/proj_abc/api_keys/key_abc \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\"\n"
-          response:
-            content: "{\n    \"object\": \"organization.project.api_key\",\n    \"redacted_value\": \"sk-abc...def\",\n    \"name\": \"My API Key\",\n    \"created_at\": 1711471533,\n    \"id\": \"key_abc\",\n    \"owner\": {\n        \"type\": \"user\",\n        \"user\": {\n            \"object\": \"organization.project.user\",\n            \"id\": \"user_abc\",\n            \"name\": \"First Last\",\n            \"email\": \"user@example.com\",\n            \"role\": \"owner\",\n            \"added_at\": 1711471533\n        }\n    }\n}\n"
+          response: "{\n    \"object\": \"organization.project.api_key\",\n    \"redacted_value\": \"sk-abc...def\",\n    \"name\": \"My API Key\",\n    \"created_at\": 1711471533,\n    \"id\": \"key_abc\",\n    \"owner\": {\n        \"type\": \"user\",\n        \"user\": {\n            \"object\": \"organization.project.user\",\n            \"id\": \"user_abc\",\n            \"name\": \"First Last\",\n            \"email\": \"user@example.com\",\n            \"role\": \"owner\",\n            \"added_at\": 1711471533\n        }\n    }\n}\n"
     delete:
       tags:
         - Projects
@@ -1861,10 +1855,7 @@ paths:
         examples:
           request:
             curl: "curl -X DELETE https://api.openai.com/v1/organization/projects/proj_abc/api_keys/key_abc \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\"\n"
-          response:
-            content: "{\n    \"object\": \"organization.project.api_key.deleted\",\n    \"id\": \"key_abc\",\n    \"deleted\": true\n}\n"
-          error_response:
-            content: "{\n    \"code\": 400,\n    \"message\": \"API keys cannot be deleted for service accounts, please delete the service account\"\n}\n"
+          response: "{\n    \"object\": \"organization.project.api_key.deleted\",\n    \"id\": \"key_abc\",\n    \"deleted\": true\n}\n"
   '/organization/projects/{project_id}/archive':
     post:
       tags:
@@ -1892,8 +1883,7 @@ paths:
         examples:
           request:
             curl: "curl -X POST https://api.openai.com/v1/organization/projects/proj_abc/archive \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\"\n"
-          response:
-            content: "{\n    \"id\": \"proj_abc\",\n    \"object\": \"organization.project\",\n    \"name\": \"Project DEF\",\n    \"created_at\": 1711471533,\n    \"archived_at\": 1711471533,\n    \"status\": \"archived\"\n}\n"
+          response: "{\n    \"id\": \"proj_abc\",\n    \"object\": \"organization.project\",\n    \"name\": \"Project DEF\",\n    \"created_at\": 1711471533,\n    \"archived_at\": 1711471533,\n    \"status\": \"archived\"\n}\n"
   '/organization/projects/{project_id}/rate_limits':
     get:
       tags:
@@ -2031,8 +2021,7 @@ paths:
         examples:
           request:
             curl: "curl https://api.openai.com/v1/organization/projects/proj_abc/service_accounts?after=custom_id&limit=20 \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\"\n"
-          response:
-            content: "{\n    \"object\": \"list\",\n    \"data\": [\n        {\n            \"object\": \"organization.project.service_account\",\n            \"id\": \"svc_acct_abc\",\n            \"name\": \"Service Account\",\n            \"role\": \"owner\",\n            \"created_at\": 1711471533\n        }\n    ],\n    \"first_id\": \"svc_acct_abc\",\n    \"last_id\": \"svc_acct_xyz\",\n    \"has_more\": false\n}\n"
+          response: "{\n    \"object\": \"list\",\n    \"data\": [\n        {\n            \"object\": \"organization.project.service_account\",\n            \"id\": \"svc_acct_abc\",\n            \"name\": \"Service Account\",\n            \"role\": \"owner\",\n            \"created_at\": 1711471533\n        }\n    ],\n    \"first_id\": \"svc_acct_abc\",\n    \"last_id\": \"svc_acct_xyz\",\n    \"has_more\": false\n}\n"
     post:
       tags:
         - Projects
@@ -2072,8 +2061,7 @@ paths:
         examples:
           request:
             curl: "curl -X POST https://api.openai.com/v1/organization/projects/proj_abc/service_accounts \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n      \"name\": \"Production App\"\n  }'\n"
-          response:
-            content: "{\n    \"object\": \"organization.project.service_account\",\n    \"id\": \"svc_acct_abc\",\n    \"name\": \"Production App\",\n    \"role\": \"member\",\n    \"created_at\": 1711471533,\n    \"api_key\": {\n        \"object\": \"organization.project.service_account.api_key\",\n        \"value\": \"sk-abcdefghijklmnop123\",\n        \"name\": \"Secret Key\",\n        \"created_at\": 1711471533,\n        \"id\": \"key_abc\"\n    }\n}\n"
+          response: "{\n    \"object\": \"organization.project.service_account\",\n    \"id\": \"svc_acct_abc\",\n    \"name\": \"Production App\",\n    \"role\": \"member\",\n    \"created_at\": 1711471533,\n    \"api_key\": {\n        \"object\": \"organization.project.service_account.api_key\",\n        \"value\": \"sk-abcdefghijklmnop123\",\n        \"name\": \"Secret Key\",\n        \"created_at\": 1711471533,\n        \"id\": \"key_abc\"\n    }\n}\n"
   '/organization/projects/{project_id}/service_accounts/{service_account_id}':
     get:
       tags:
@@ -2107,8 +2095,7 @@ paths:
         examples:
           request:
             curl: "curl https://api.openai.com/v1/organization/projects/proj_abc/service_accounts/svc_acct_abc \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\"\n"
-          response:
-            content: "{\n    \"object\": \"organization.project.service_account\",\n    \"id\": \"svc_acct_abc\",\n    \"name\": \"Service Account\",\n    \"role\": \"owner\",\n    \"created_at\": 1711471533\n}\n"
+          response: "{\n    \"object\": \"organization.project.service_account\",\n    \"id\": \"svc_acct_abc\",\n    \"name\": \"Service Account\",\n    \"role\": \"owner\",\n    \"created_at\": 1711471533\n}\n"
     delete:
       tags:
         - Projects
@@ -2141,8 +2128,7 @@ paths:
         examples:
           request:
             curl: "curl -X DELETE https://api.openai.com/v1/organization/projects/proj_abc/service_accounts/svc_acct_abc \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\"\n"
-          response:
-            content: "{\n    \"object\": \"organization.project.service_account.deleted\",\n    \"id\": \"svc_acct_abc\",\n    \"deleted\": true\n}\n"
+          response: "{\n    \"object\": \"organization.project.service_account.deleted\",\n    \"id\": \"svc_acct_abc\",\n    \"deleted\": true\n}\n"
   '/organization/projects/{project_id}/users':
     get:
       tags:
@@ -2187,10 +2173,7 @@ paths:
         examples:
           request:
             curl: "curl https://api.openai.com/v1/organization/projects/proj_abc/users?after=user_abc&limit=20 \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\"\n"
-          response:
-            content: "{\n    \"object\": \"list\",\n    \"data\": [\n        {\n            \"object\": \"organization.project.user\",\n            \"id\": \"user_abc\",\n            \"name\": \"First Last\",\n            \"email\": \"user@example.com\",\n            \"role\": \"owner\",\n            \"added_at\": 1711471533\n        }\n    ],\n    \"first_id\": \"user-abc\",\n    \"last_id\": \"user-xyz\",\n    \"has_more\": false\n}\n"
-          error_response:
-            content: "{\n    \"code\": 400,\n    \"message\": \"Project {name} is archived\"\n}\n"
+          response: "{\n    \"object\": \"list\",\n    \"data\": [\n        {\n            \"object\": \"organization.project.user\",\n            \"id\": \"user_abc\",\n            \"name\": \"First Last\",\n            \"email\": \"user@example.com\",\n            \"role\": \"owner\",\n            \"added_at\": 1711471533\n        }\n    ],\n    \"first_id\": \"user-abc\",\n    \"last_id\": \"user-xyz\",\n    \"has_more\": false\n}\n"
     post:
       tags:
         - Projects
@@ -2230,10 +2213,7 @@ paths:
         examples:
           request:
             curl: "curl -X POST https://api.openai.com/v1/organization/projects/proj_abc/users \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n      \"user_id\": \"user_abc\",\n      \"role\": \"member\"\n  }'\n"
-          response:
-            content: "{\n    \"object\": \"organization.project.user\",\n    \"id\": \"user_abc\",\n    \"email\": \"user@example.com\",\n    \"role\": \"owner\",\n    \"added_at\": 1711471533\n}\n"
-          error_response:
-            content: "{\n    \"code\": 400,\n    \"message\": \"Project {name} is archived\"\n}\n"
+          response: "{\n    \"object\": \"organization.project.user\",\n    \"id\": \"user_abc\",\n    \"email\": \"user@example.com\",\n    \"role\": \"owner\",\n    \"added_at\": 1711471533\n}\n"
   '/organization/projects/{project_id}/users/{user_id}':
     get:
       tags:
@@ -2267,8 +2247,7 @@ paths:
         examples:
           request:
             curl: "curl https://api.openai.com/v1/organization/projects/proj_abc/users/user_abc \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\"\n"
-          response:
-            content: "{\n    \"object\": \"organization.project.user\",\n    \"id\": \"user_abc\",\n    \"name\": \"First Last\",\n    \"email\": \"user@example.com\",\n    \"role\": \"owner\",\n    \"added_at\": 1711471533\n}\n"
+          response: "{\n    \"object\": \"organization.project.user\",\n    \"id\": \"user_abc\",\n    \"name\": \"First Last\",\n    \"email\": \"user@example.com\",\n    \"role\": \"owner\",\n    \"added_at\": 1711471533\n}\n"
     post:
       tags:
         - Projects
@@ -2314,8 +2293,7 @@ paths:
         examples:
           request:
             curl: "curl -X POST https://api.openai.com/v1/organization/projects/proj_abc/users/user_abc \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n      \"role\": \"owner\"\n  }'\n"
-          response:
-            content: "{\n    \"object\": \"organization.project.user\",\n    \"id\": \"user_abc\",\n    \"name\": \"First Last\",\n    \"email\": \"user@example.com\",\n    \"role\": \"owner\",\n    \"added_at\": 1711471533\n}\n"
+          response: "{\n    \"object\": \"organization.project.user\",\n    \"id\": \"user_abc\",\n    \"name\": \"First Last\",\n    \"email\": \"user@example.com\",\n    \"role\": \"owner\",\n    \"added_at\": 1711471533\n}\n"
     delete:
       tags:
         - Projects
@@ -2354,8 +2332,7 @@ paths:
         examples:
           request:
             curl: "curl -X DELETE https://api.openai.com/v1/organization/projects/proj_abc/users/user_abc \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\"\n"
-          response:
-            content: "{\n    \"object\": \"organization.project.user.deleted\",\n    \"id\": \"user_abc\",\n    \"deleted\": true\n}\n"
+          response: "{\n    \"object\": \"organization.project.user.deleted\",\n    \"id\": \"user_abc\",\n    \"deleted\": true\n}\n"
   /organization/usage/audio_speeches:
     get:
       tags:
@@ -3116,8 +3093,7 @@ paths:
         examples:
           request:
             curl: "curl https://api.openai.com/v1/organization/users?after=user_abc&limit=20 \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\"\n"
-          response:
-            content: "{\n    \"object\": \"list\",\n    \"data\": [\n        {\n            \"object\": \"organization.user\",\n            \"id\": \"user_abc\",\n            \"name\": \"First Last\",\n            \"email\": \"user@example.com\",\n            \"role\": \"owner\",\n            \"added_at\": 1711471533\n        }\n    ],\n    \"first_id\": \"user-abc\",\n    \"last_id\": \"user-xyz\",\n    \"has_more\": false\n}\n"
+          response: "{\n    \"object\": \"list\",\n    \"data\": [\n        {\n            \"object\": \"organization.user\",\n            \"id\": \"user_abc\",\n            \"name\": \"First Last\",\n            \"email\": \"user@example.com\",\n            \"role\": \"owner\",\n            \"added_at\": 1711471533\n        }\n    ],\n    \"first_id\": \"user-abc\",\n    \"last_id\": \"user-xyz\",\n    \"has_more\": false\n}\n"
   '/organization/users/{user_id}':
     get:
       tags:
@@ -3145,8 +3121,7 @@ paths:
         examples:
           request:
             curl: "curl https://api.openai.com/v1/organization/users/user_abc \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\"\n"
-          response:
-            content: "{\n    \"object\": \"organization.user\",\n    \"id\": \"user_abc\",\n    \"name\": \"First Last\",\n    \"email\": \"user@example.com\",\n    \"role\": \"owner\",\n    \"added_at\": 1711471533\n}\n"
+          response: "{\n    \"object\": \"organization.user\",\n    \"id\": \"user_abc\",\n    \"name\": \"First Last\",\n    \"email\": \"user@example.com\",\n    \"role\": \"owner\",\n    \"added_at\": 1711471533\n}\n"
     post:
       tags:
         - Users
@@ -3180,8 +3155,7 @@ paths:
         examples:
           request:
             curl: "curl -X POST https://api.openai.com/v1/organization/users/user_abc \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n      \"role\": \"owner\"\n  }'\n"
-          response:
-            content: "{\n    \"object\": \"organization.user\",\n    \"id\": \"user_abc\",\n    \"name\": \"First Last\",\n    \"email\": \"user@example.com\",\n    \"role\": \"owner\",\n    \"added_at\": 1711471533\n}\n"
+          response: "{\n    \"object\": \"organization.user\",\n    \"id\": \"user_abc\",\n    \"name\": \"First Last\",\n    \"email\": \"user@example.com\",\n    \"role\": \"owner\",\n    \"added_at\": 1711471533\n}\n"
     delete:
       tags:
         - Users
@@ -3208,8 +3182,7 @@ paths:
         examples:
           request:
             curl: "curl -X DELETE https://api.openai.com/v1/organization/users/user_abc \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\"\n"
-          response:
-            content: "{\n    \"object\": \"organization.user.deleted\",\n    \"id\": \"user_abc\",\n    \"deleted\": true\n}\n"
+          response: "{\n    \"object\": \"organization.user.deleted\",\n    \"id\": \"user_abc\",\n    \"deleted\": true\n}\n"
   /realtime/sessions:
     post:
       tags:
@@ -4444,7 +4417,7 @@ paths:
             curl: "curl https://api.openai.com/v1/vector_stores/vs_abc123/files_batches/vsfb_abc123/cancel \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"OpenAI-Beta: assistants=v2\" \\\n  -X POST\n"
             python: "from openai import OpenAI\nclient = OpenAI()\n\ndeleted_vector_store_file_batch = client.beta.vector_stores.file_batches.cancel(\n    vector_store_id=\"vs_abc123\",\n    file_batch_id=\"vsfb_abc123\"\n)\nprint(deleted_vector_store_file_batch)\n"
             node.js: "import OpenAI from \"openai\";\nconst openai = new OpenAI();\n\nasync function main() {\n  const deletedVectorStoreFileBatch = await openai.vector_stores.fileBatches.cancel(\n    \"vs_abc123\",\n    \"vsfb_abc123\"\n  );\n  console.log(deletedVectorStoreFileBatch);\n}\n\nmain();\n"
-          response: "{\n  \"id\": \"vsfb_abc123\",\n  \"object\": \"vector_store.file_batch\",\n  \"created_at\": 1699061776,\n  \"vector_store_id\": \"vs_abc123\",\n  \"status\": \"cancelling\",\n  \"file_counts\": {\n    \"in_progress\": 12,\n    \"completed\": 3,\n    \"failed\": 0,\n    \"cancelled\": 0,\n    \"total\": 15,\n  }\n}\n"
+          response: "{\n  \"id\": \"vsfb_abc123\",\n  \"object\": \"vector_store.file_batch\",\n  \"created_at\": 1699061776,\n  \"vector_store_id\": \"vs_abc123\",\n  \"status\": \"in_progress\",\n  \"file_counts\": {\n    \"in_progress\": 12,\n    \"completed\": 3,\n    \"failed\": 0,\n    \"cancelled\": 0,\n    \"total\": 15,\n  }\n}\n"
   '/vector_stores/{vector_store_id}/file_batches/{batch_id}/files':
     get:
       tags:
@@ -4789,6 +4762,7 @@ components:
             - assistant
           type: string
           description: 'The object type, which is always `assistant`.'
+          x-stainless-const: true
         created_at:
           type: integer
           description: The Unix timestamp (in seconds) for when the assistant was created.
@@ -4894,6 +4868,7 @@ components:
             - code_interpreter
           type: string
           description: 'The type of tool being defined: `code_interpreter`'
+          x-stainless-const: true
     AssistantToolsFileSearch:
       title: FileSearch tool
       required:
@@ -4905,6 +4880,7 @@ components:
             - file_search
           type: string
           description: 'The type of tool being defined: `file_search`'
+          x-stainless-const: true
         file_search:
           type: object
           properties:
@@ -4927,6 +4903,7 @@ components:
             - file_search
           type: string
           description: 'The type of tool being defined: `file_search`'
+          x-stainless-const: true
     AssistantToolsFunction:
       title: Function tool
       required:
@@ -4939,6 +4916,7 @@ components:
             - function
           type: string
           description: 'The type of tool being defined: `function`'
+          x-stainless-const: true
         function:
           $ref: '#/components/schemas/FunctionObject'
     AssistantsApiResponseFormatOption:
@@ -4947,6 +4925,7 @@ components:
             - auto
           type: string
           description: "`auto` is the default value\n"
+          x-stainless-const: true
         - $ref: '#/components/schemas/ResponseFormatText'
         - $ref: '#/components/schemas/ResponseFormatJsonObject'
         - $ref: '#/components/schemas/ResponseFormatJsonSchema'
@@ -5384,6 +5363,7 @@ components:
             - auto
           type: string
           description: Always `auto`.
+          x-stainless-const: true
       additionalProperties: false
       description: The default strategy. This strategy currently uses a `max_chunk_size_tokens` of `800` and `chunk_overlap_tokens` of `400`.
     Batch:
@@ -5404,6 +5384,7 @@ components:
             - batch
           type: string
           description: 'The object type, which is always `batch`.'
+          x-stainless-const: true
         endpoint:
           type: string
           description: The OpenAI API endpoint used by the batch.
@@ -5519,6 +5500,7 @@ components:
             - POST
           type: string
           description: The HTTP method to be used for the request. Currently only `POST` is supported.
+          x-stainless-const: true
         url:
           type: string
           description: 'The OpenAI API relative URL to be used for the request. Currently `/v1/chat/completions`, `/v1/embeddings`, and `/v1/completions` are supported.'
@@ -5604,6 +5586,7 @@ components:
             - function
           type: string
           description: 'The type of the tool. Currently, only `function` is supported.'
+          x-stainless-const: true
         function:
           required:
             - name
@@ -5632,6 +5615,7 @@ components:
             - function
           type: string
           description: 'The type of the tool. Currently, only `function` is supported.'
+          x-stainless-const: true
         function:
           type: object
           properties:
@@ -5666,6 +5650,7 @@ components:
             - function
           type: string
           description: 'The type of the tool. Currently, only `function` is supported.'
+          x-stainless-const: true
         function:
           required:
             - name
@@ -5704,6 +5689,7 @@ components:
             - assistant
           type: string
           description: 'The role of the messages author, in this case `assistant`.'
+          x-stainless-const: true
         name:
           type: string
           description: An optional name for the participant. Provides the model information to differentiate between participants of the same role.
@@ -5765,6 +5751,7 @@ components:
             - developer
           type: string
           description: 'The role of the messages author, in this case `developer`.'
+          x-stainless-const: true
         name:
           type: string
           description: An optional name for the participant. Provides the model information to differentiate between participants of the same role.
@@ -5782,6 +5769,7 @@ components:
             - function
           type: string
           description: 'The role of the messages author, in this case `function`.'
+          x-stainless-const: true
         content:
           type: string
           description: The contents of the function message.
@@ -5811,6 +5799,7 @@ components:
             - input_audio
           type: string
           description: The type of the content part. Always `input_audio`.
+          x-stainless-const: true
         input_audio:
           required:
             - data
@@ -5839,6 +5828,7 @@ components:
             - image_url
           type: string
           description: The type of the content part.
+          x-stainless-const: true
         image_url:
           required:
             - url
@@ -5869,6 +5859,7 @@ components:
             - refusal
           type: string
           description: The type of the content part.
+          x-stainless-const: true
         refusal:
           type: string
           description: The refusal message generated by the model.
@@ -5884,6 +5875,7 @@ components:
             - text
           type: string
           description: The type of the content part.
+          x-stainless-const: true
         text:
           type: string
           description: The text content.
@@ -5912,6 +5904,7 @@ components:
             - system
           type: string
           description: 'The role of the messages author, in this case `system`.'
+          x-stainless-const: true
         name:
           type: string
           description: An optional name for the participant. Provides the model information to differentiate between participants of the same role.
@@ -5933,6 +5926,7 @@ components:
             - tool
           type: string
           description: 'The role of the messages author, in this case `tool`.'
+          x-stainless-const: true
         content:
           oneOf:
             - title: Text content
@@ -5977,6 +5971,7 @@ components:
             - user
           type: string
           description: 'The role of the messages author, in this case `user`.'
+          x-stainless-const: true
         name:
           type: string
           description: An optional name for the participant. Provides the model information to differentiate between participants of the same role.
@@ -6007,6 +6002,7 @@ components:
             - assistant
           type: string
           description: The role of the author of this message.
+          x-stainless-const: true
         function_call:
           required:
             - name
@@ -6151,6 +6147,7 @@ components:
             - function
           type: string
           description: 'The type of the tool. Currently, only `function` is supported.'
+          x-stainless-const: true
         function:
           $ref: '#/components/schemas/FunctionObject'
     ChatCompletionToolChoiceOption:
@@ -6231,13 +6228,13 @@ components:
     CostsResult:
       required:
         - object
-        - sessions
       type: object
       properties:
         object:
           enum:
             - organization.costs.result
           type: string
+          x-stainless-const: true
         amount:
           type: object
           properties:
@@ -6373,6 +6370,7 @@ components:
                                   - auto
                                 type: string
                                 description: Always `auto`.
+                                x-stainless-const: true
                             additionalProperties: false
                             description: The default strategy. This strategy currently uses a `max_chunk_size_tokens` of `800` and `chunk_overlap_tokens` of `400`.
                           - title: Static Chunking Strategy
@@ -6386,6 +6384,7 @@ components:
                                   - static
                                 type: string
                                 description: Always `static`.
+                                x-stainless-const: true
                               static:
                                 required:
                                   - max_chunk_size_tokens
@@ -6454,7 +6453,6 @@ components:
               - finish_reason
               - index
               - message
-              - logprobs
             type: object
             properties:
               finish_reason:
@@ -6485,6 +6483,7 @@ components:
             - chat.completion
           type: string
           description: 'The object type, which is always `chat.completion`.'
+          x-stainless-const: true
         usage:
           $ref: '#/components/schemas/CompletionUsage'
       description: 'Represents a chat completion response returned by model, based on the provided input.'
@@ -6671,10 +6670,9 @@ components:
           description: "An object specifying the format that the model must output.\n\nSetting to `{ \"type\": \"json_schema\", \"json_schema\": {...} }` enables\nStructured Outputs which ensures the model will match your supplied JSON\nschema. Learn more in the [Structured Outputs\nguide](/docs/guides/structured-outputs).\n\nSetting to `{ \"type\": \"json_object\" }` enables JSON mode, which ensures\nthe message the model generates is valid JSON.\n\n**Important:** when using JSON mode, you **must** also instruct the model\nto produce JSON yourself via a system or user message. Without this, the\nmodel may generate an unending stream of whitespace until the generation\nreaches the token limit, resulting in a long-running and seemingly \"stuck\"\nrequest. Also note that the message content may be partially cut off if\n`finish_reason=\"length\"`, which indicates the generation exceeded\n`max_tokens` or the conversation exceeded the max context length.\n"
           x-oaiExpandable: true
         seed:
-          maximum: 9223372036854776000
-          minimum: -9223372036854776000
           type: integer
           description: "This feature is in Beta.\nIf specified, our system will make a best effort to sample deterministically, such that repeated requests with the same `seed` and parameters should return the same result.\nDeterminism is not guaranteed, and you should refer to the `system_fingerprint` response parameter to monitor changes in the backend.\n"
+          format: int64
           nullable: true
           x-oaiMeta:
             beta: true
@@ -6683,7 +6681,7 @@ components:
             - auto
             - default
           type: string
-          description: "Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:\n  - If set to 'auto', and the Project is Scale tier enabled, the system will utilize scale tier credits until they are exhausted.\n  - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.\n  - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.\n  - When not set, the default behavior is 'auto'.\n\n  When this parameter is set, the response body will include the `service_tier` utilized.\n"
+          description: "Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:\n  - If set to 'auto', and the Project is Scale tier enabled, the system will utilize scale tier credits until they are exhausted.\n  - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.\n  - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.\n  - When not set, the default behavior is 'auto'.\n"
           default: auto
           nullable: true
         stop:
@@ -6819,7 +6817,7 @@ components:
             - scale
             - default
           type: string
-          description: The service tier used for processing the request. This field is only included if the `service_tier` parameter is specified in the request.
+          description: The service tier used for processing the request.
           nullable: true
           example: scale
         system_fingerprint:
@@ -6830,6 +6828,7 @@ components:
             - chat.completion
           type: string
           description: 'The object type, which is always `chat.completion`.'
+          x-stainless-const: true
         usage:
           $ref: '#/components/schemas/CompletionUsage'
       description: 'Represents a chat completion response returned by model, based on the provided input.'
@@ -6905,7 +6904,7 @@ components:
             - scale
             - default
           type: string
-          description: The service tier used for processing the request. This field is only included if the `service_tier` parameter is specified in the request.
+          description: The service tier used for processing the request.
           nullable: true
           example: scale
         system_fingerprint:
@@ -6916,6 +6915,7 @@ components:
             - chat.completion.chunk
           type: string
           description: 'The object type, which is always `chat.completion.chunk`.'
+          x-stainless-const: true
         usage:
           required:
             - prompt_tokens
@@ -7038,10 +7038,9 @@ components:
           default: 0
           nullable: true
         seed:
-          maximum: 9223372036854776000
-          minimum: -9223372036854776000
           type: integer
           description: "If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same `seed` and parameters should return the same result.\n\nDeterminism is not guaranteed, and you should refer to the `system_fingerprint` response parameter to monitor changes in the backend.\n"
+          format: int64
           nullable: true
         stop:
           oneOf:
@@ -7161,6 +7160,7 @@ components:
             - text_completion
           type: string
           description: 'The object type, which is always "text_completion"'
+          x-stainless-const: true
         usage:
           $ref: '#/components/schemas/CompletionUsage'
       description: "Represents a completion response from the API. Note: both the streamed and non-streamed response objects share the same shape (unlike the chat endpoint).\n"
@@ -7209,7 +7209,7 @@ components:
                   type: integer
               description: The array of arrays containing integers that will be turned into an embedding.
               example: '[[1212, 318, 257, 1332, 13]]'
-          description: "Input text to embed, encoded as a string or array of tokens. To embed multiple inputs in a single request, pass an array of strings or array of token arrays. The input must not exceed the max input tokens for the model (8192 tokens for `text-embedding-ada-002`), cannot be an empty string, and any array must be 2048 dimensions or less. [Example Python code](https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken) for counting tokens.\n"
+          description: "Input text to embed, encoded as a string or array of tokens. To embed multiple inputs in a single request, pass an array of strings or array of token arrays. The input must not exceed the max input tokens for the model (8192 tokens for `text-embedding-ada-002`), cannot be an empty string, and any array must be 2048 dimensions or less. [Example Python code](https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken) for counting tokens. Some models may also impose a limit on total number of tokens summed across inputs.\n"
           example: The quick brown fox jumped over the lazy dog
           x-oaiExpandable: true
         model:
@@ -7262,6 +7262,7 @@ components:
             - list
           type: string
           description: 'The object type, which is always "list".'
+          x-stainless-const: true
         usage:
           required:
             - prompt_tokens
@@ -7324,6 +7325,7 @@ components:
                 - enum:
                     - auto
                   type: string
+                  x-stainless-const: true
                 - maximum: 256
                   minimum: 1
                   type: integer
@@ -7334,6 +7336,7 @@ components:
                 - enum:
                     - auto
                   type: string
+                  x-stainless-const: true
                 - minimum: 0
                   exclusiveMinimum: true
                   type: number
@@ -7344,6 +7347,7 @@ components:
                 - enum:
                     - auto
                   type: string
+                  x-stainless-const: true
                 - maximum: 50
                   minimum: 1
                   type: integer
@@ -7376,6 +7380,7 @@ components:
                   - enum:
                       - wandb
                     type: string
+                    x-stainless-const: true
                 description: "The type of integration to enable. Currently, only \"wandb\" (Weights and Biases) is supported.\n"
               wandb:
                 required:
@@ -7436,6 +7441,7 @@ components:
             - enum:
                 - dall-e-2
               type: string
+              x-stainless-const: true
           description: The model to use for image generation. Only `dall-e-2` is supported at this time.
           default: dall-e-2
           nullable: true
@@ -7558,6 +7564,7 @@ components:
             - enum:
                 - dall-e-2
               type: string
+              x-stainless-const: true
           description: The model to use for image generation. Only `dall-e-2` is supported at this time.
           default: dall-e-2
           nullable: true
@@ -7679,6 +7686,7 @@ components:
                           - image_url
                         type: string
                         description: Always `image_url`.
+                        x-stainless-const: true
                       image_url:
                         required:
                           - url
@@ -7701,6 +7709,7 @@ components:
                           - text
                         type: string
                         description: Always `text`.
+                        x-stainless-const: true
                       text:
                         type: string
                         description: A string of text to classify.
@@ -7886,6 +7895,7 @@ components:
                       enum:
                         - text
                       type: string
+                      x-stainless-const: true
                     description: The applied input type(s) for the category 'hate'.
                   hate/threatening:
                     type: array
@@ -7893,6 +7903,7 @@ components:
                       enum:
                         - text
                       type: string
+                      x-stainless-const: true
                     description: The applied input type(s) for the category 'hate/threatening'.
                   harassment:
                     type: array
@@ -7900,6 +7911,7 @@ components:
                       enum:
                         - text
                       type: string
+                      x-stainless-const: true
                     description: The applied input type(s) for the category 'harassment'.
                   harassment/threatening:
                     type: array
@@ -7907,6 +7919,7 @@ components:
                       enum:
                         - text
                       type: string
+                      x-stainless-const: true
                     description: The applied input type(s) for the category 'harassment/threatening'.
                   illicit:
                     type: array
@@ -7914,6 +7927,7 @@ components:
                       enum:
                         - text
                       type: string
+                      x-stainless-const: true
                     description: The applied input type(s) for the category 'illicit'.
                   illicit/violent:
                     type: array
@@ -7921,6 +7935,7 @@ components:
                       enum:
                         - text
                       type: string
+                      x-stainless-const: true
                     description: The applied input type(s) for the category 'illicit/violent'.
                   self-harm:
                     type: array
@@ -7960,6 +7975,7 @@ components:
                       enum:
                         - text
                       type: string
+                      x-stainless-const: true
                     description: The applied input type(s) for the category 'sexual/minors'.
                   violence:
                     type: array
@@ -8116,13 +8132,16 @@ components:
         voice:
           enum:
             - alloy
+            - ash
+            - coral
             - echo
             - fable
             - onyx
             - nova
+            - sage
             - shimmer
           type: string
-          description: 'The voice to use when generating the audio. Supported voices are `alloy`, `echo`, `fable`, `onyx`, `nova`, and `shimmer`. Previews of the voices are available in the [Text to speech guide](/docs/guides/text-to-speech#voice-options).'
+          description: 'The voice to use when generating the audio. Supported voices are `alloy`, `ash`, `coral`, `echo`, `fable`, `onyx`, `nova`, `sage` and `shimmer`. Previews of the voices are available in the [Text to speech guide](/docs/guides/text-to-speech#voice-options).'
         response_format:
           enum:
             - mp3
@@ -8324,6 +8343,7 @@ components:
                                   - auto
                                 type: string
                                 description: Always `auto`.
+                                x-stainless-const: true
                             additionalProperties: false
                             description: The default strategy. This strategy currently uses a `max_chunk_size_tokens` of `800` and `chunk_overlap_tokens` of `400`.
                           - title: Static Chunking Strategy
@@ -8337,6 +8357,7 @@ components:
                                   - static
                                 type: string
                                 description: Always `static`.
+                                x-stainless-const: true
                               static:
                                 required:
                                   - max_chunk_size_tokens
@@ -8386,6 +8407,7 @@ components:
             - enum:
                 - whisper-1
               type: string
+              x-stainless-const: true
           description: "ID of the model to use. Only `whisper-1` (which is powered by our open source Whisper V2 model) is currently available.\n"
           example: whisper-1
           x-oaiTypeLabel: string
@@ -8473,6 +8495,7 @@ components:
             - enum:
                 - whisper-1
               type: string
+              x-stainless-const: true
           description: "ID of the model to use. Only `whisper-1` (which is powered by our open source Whisper V2 model) is currently available.\n"
           example: whisper-1
           x-oaiTypeLabel: string
@@ -8618,6 +8641,7 @@ components:
           enum:
             - assistant.deleted
           type: string
+          x-stainless-const: true
     DeleteFileResponse:
       required:
         - id
@@ -8631,6 +8655,7 @@ components:
           enum:
             - file
           type: string
+          x-stainless-const: true
         deleted:
           type: boolean
     DeleteMessageResponse:
@@ -8648,6 +8673,7 @@ components:
           enum:
             - thread.message.deleted
           type: string
+          x-stainless-const: true
     DeleteModelResponse:
       required:
         - id
@@ -8676,6 +8702,7 @@ components:
           enum:
             - thread.deleted
           type: string
+          x-stainless-const: true
     DeleteVectorStoreFileResponse:
       required:
         - id
@@ -8691,6 +8718,7 @@ components:
           enum:
             - vector_store.file.deleted
           type: string
+          x-stainless-const: true
     DeleteVectorStoreResponse:
       required:
         - id
@@ -8706,6 +8734,7 @@ components:
           enum:
             - vector_store.deleted
           type: string
+          x-stainless-const: true
     DoneEvent:
       required:
         - event
@@ -8716,10 +8745,12 @@ components:
           enum:
             - done
           type: string
+          x-stainless-const: true
         data:
           enum:
             - '[DONE]'
           type: string
+          x-stainless-const: true
       description: Occurs when a stream ends.
       x-oaiMeta:
         dataDescription: '`data` is `[DONE]`'
@@ -8743,6 +8774,7 @@ components:
             - embedding
           type: string
           description: 'The object type, which is always "embedding".'
+          x-stainless-const: true
       description: "Represents an embedding vector returned by embedding endpoint.\n"
       x-oaiMeta:
         name: The embedding object
@@ -8775,6 +8807,7 @@ components:
           enum:
             - error
           type: string
+          x-stainless-const: true
         data:
           $ref: '#/components/schemas/Error'
       description: 'Occurs when an [error](/docs/guides/error-codes#api-errors) occurs. This can happen due to an internal server error or a timeout.'
@@ -8876,6 +8909,7 @@ components:
                 - enum:
                     - auto
                   type: string
+                  x-stainless-const: true
                 - maximum: 2
                   minimum: 0
                   exclusiveMinimum: true
@@ -8887,6 +8921,7 @@ components:
                 - enum:
                     - auto
                   type: string
+                  x-stainless-const: true
                 - maximum: 256
                   minimum: 1
                   type: integer
@@ -8897,6 +8932,7 @@ components:
                 - enum:
                     - auto
                   type: string
+                  x-stainless-const: true
                 - minimum: 0
                   exclusiveMinimum: true
                   type: number
@@ -8907,6 +8943,7 @@ components:
                 - enum:
                     - auto
                   type: string
+                  x-stainless-const: true
                 - maximum: 50
                   minimum: 1
                   type: integer
@@ -8983,6 +9020,7 @@ components:
                 - enum:
                     - auto
                   type: string
+                  x-stainless-const: true
                 - maximum: 256
                   minimum: 1
                   type: integer
@@ -8993,6 +9031,7 @@ components:
                 - enum:
                     - auto
                   type: string
+                  x-stainless-const: true
                 - minimum: 0
                   exclusiveMinimum: true
                   type: number
@@ -9003,6 +9042,7 @@ components:
                 - enum:
                     - auto
                   type: string
+                  x-stainless-const: true
                 - maximum: 50
                   minimum: 1
                   type: integer
@@ -9022,6 +9062,7 @@ components:
             - wandb
           type: string
           description: The type of the integration being enabled for the fine-tuning job
+          x-stainless-const: true
         wandb:
           required:
             - project
@@ -9107,6 +9148,7 @@ components:
                 - enum:
                     - auto
                   type: string
+                  x-stainless-const: true
                 - maximum: 256
                   minimum: 1
                   type: integer
@@ -9117,6 +9159,7 @@ components:
                 - enum:
                     - auto
                   type: string
+                  x-stainless-const: true
                 - minimum: 0
                   exclusiveMinimum: true
                   type: number
@@ -9127,6 +9170,7 @@ components:
                 - enum:
                     - auto
                   type: string
+                  x-stainless-const: true
                 - maximum: 50
                   minimum: 1
                   type: integer
@@ -9141,6 +9185,7 @@ components:
             - fine_tuning.job
           type: string
           description: 'The object type, which is always "fine_tuning.job".'
+          x-stainless-const: true
         organization_id:
           type: string
           description: The organization that owns the fine-tuning job.
@@ -9243,6 +9288,7 @@ components:
             - fine_tuning.job.checkpoint
           type: string
           description: 'The object type, which is always "fine_tuning.job.checkpoint".'
+          x-stainless-const: true
       description: "The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine-tuning job that is ready to use.\n"
       x-oaiMeta:
         name: The fine-tuning job checkpoint object
@@ -9261,6 +9307,7 @@ components:
             - fine_tuning.job.event
           type: string
           description: 'The object type, which is always "fine_tuning.job.event".'
+          x-stainless-const: true
         id:
           type: string
           description: The object identifier.
@@ -9354,6 +9401,7 @@ components:
             - organization.invite
           type: string
           description: 'The object type, which is always `organization.invite`'
+          x-stainless-const: true
         id:
           type: string
           description: 'The identifier, which can be referenced in API endpoints'
@@ -9413,6 +9461,7 @@ components:
             - organization.invite.deleted
           type: string
           description: 'The object type, which is always `organization.invite.deleted`'
+          x-stainless-const: true
         id:
           type: string
         deleted:
@@ -9428,6 +9477,7 @@ components:
             - list
           type: string
           description: 'The object type, which is always `list`'
+          x-stainless-const: true
         data:
           type: array
           items:
@@ -9516,6 +9566,7 @@ components:
           enum:
             - list
           type: string
+          x-stainless-const: true
         data:
           type: array
           items:
@@ -9551,6 +9602,7 @@ components:
           enum:
             - list
           type: string
+          x-stainless-const: true
     ListFilesResponse:
       required:
         - object
@@ -9591,6 +9643,7 @@ components:
           enum:
             - list
           type: string
+          x-stainless-const: true
         first_id:
           type: string
           nullable: true
@@ -9613,6 +9666,7 @@ components:
           enum:
             - list
           type: string
+          x-stainless-const: true
     ListMessagesResponse:
       required:
         - object
@@ -9647,6 +9701,7 @@ components:
           enum:
             - list
           type: string
+          x-stainless-const: true
         data:
           type: array
           items:
@@ -9668,6 +9723,7 @@ components:
           enum:
             - list
           type: string
+          x-stainless-const: true
     ListRunStepsResponse:
       required:
         - object
@@ -9801,6 +9857,7 @@ components:
             - image_file
           type: string
           description: Always `image_file`.
+          x-stainless-const: true
         image_file:
           required:
             - file_id
@@ -9830,6 +9887,7 @@ components:
             - image_url
           type: string
           description: The type of the content part.
+          x-stainless-const: true
         image_url:
           required:
             - url
@@ -9860,6 +9918,7 @@ components:
             - refusal
           type: string
           description: Always `refusal`.
+          x-stainless-const: true
         refusal:
           type: string
       description: The refusal content generated by the assistant.
@@ -9878,6 +9937,7 @@ components:
             - file_citation
           type: string
           description: Always `file_citation`.
+          x-stainless-const: true
         text:
           type: string
           description: The text in the message content that needs to be replaced.
@@ -9911,6 +9971,7 @@ components:
             - file_path
           type: string
           description: Always `file_path`.
+          x-stainless-const: true
         text:
           type: string
           description: The text in the message content that needs to be replaced.
@@ -9941,6 +10002,7 @@ components:
             - text
           type: string
           description: Always `text`.
+          x-stainless-const: true
         text:
           required:
             - value
@@ -9973,6 +10035,7 @@ components:
             - image_file
           type: string
           description: Always `image_file`.
+          x-stainless-const: true
         image_file:
           type: object
           properties:
@@ -10003,6 +10066,7 @@ components:
             - image_url
           type: string
           description: Always `image_url`.
+          x-stainless-const: true
         image_url:
           type: object
           properties:
@@ -10033,6 +10097,7 @@ components:
             - refusal
           type: string
           description: Always `refusal`.
+          x-stainless-const: true
         refusal:
           type: string
       description: The refusal content that is part of a message.
@@ -10051,6 +10116,7 @@ components:
             - file_citation
           type: string
           description: Always `file_citation`.
+          x-stainless-const: true
         text:
           type: string
           description: The text in the message content that needs to be replaced.
@@ -10085,6 +10151,7 @@ components:
             - file_path
           type: string
           description: Always `file_path`.
+          x-stainless-const: true
         text:
           type: string
           description: The text in the message content that needs to be replaced.
@@ -10116,6 +10183,7 @@ components:
             - text
           type: string
           description: Always `text`.
+          x-stainless-const: true
         text:
           type: object
           properties:
@@ -10146,6 +10214,7 @@ components:
             - thread.message.delta
           type: string
           description: 'The object type, which is always `thread.message.delta`.'
+          x-stainless-const: true
         delta:
           type: object
           properties:
@@ -10194,6 +10263,7 @@ components:
             - thread.message
           type: string
           description: 'The object type, which is always `thread.message`.'
+          x-stainless-const: true
         created_at:
           type: integer
           description: The Unix timestamp (in seconds) for when the message was created.
@@ -10295,6 +10365,7 @@ components:
             - text
           type: string
           description: Always `text`.
+          x-stainless-const: true
         text:
           type: string
           description: Text content to be sent to the model
@@ -10310,6 +10381,7 @@ components:
               enum:
                 - thread.message.created
               type: string
+              x-stainless-const: true
             data:
               $ref: '#/components/schemas/MessageObject'
           description: 'Occurs when a [message](/docs/api-reference/messages/object) is created.'
@@ -10324,6 +10396,7 @@ components:
               enum:
                 - thread.message.in_progress
               type: string
+              x-stainless-const: true
             data:
               $ref: '#/components/schemas/MessageObject'
           description: 'Occurs when a [message](/docs/api-reference/messages/object) moves to an `in_progress` state.'
@@ -10338,6 +10411,7 @@ components:
               enum:
                 - thread.message.delta
               type: string
+              x-stainless-const: true
             data:
               $ref: '#/components/schemas/MessageDeltaObject'
           description: 'Occurs when parts of a [Message](/docs/api-reference/messages/object) are being streamed.'
@@ -10352,6 +10426,7 @@ components:
               enum:
                 - thread.message.completed
               type: string
+              x-stainless-const: true
             data:
               $ref: '#/components/schemas/MessageObject'
           description: 'Occurs when a [message](/docs/api-reference/messages/object) is completed.'
@@ -10366,6 +10441,7 @@ components:
               enum:
                 - thread.message.incomplete
               type: string
+              x-stainless-const: true
             data:
               $ref: '#/components/schemas/MessageObject'
           description: 'Occurs when a [message](/docs/api-reference/messages/object) ends before it is completed.'
@@ -10390,6 +10466,7 @@ components:
             - model
           type: string
           description: 'The object type, which is always "model".'
+          x-stainless-const: true
         owned_by:
           type: string
           description: The organization that owns the model.
@@ -10554,6 +10631,7 @@ components:
             - file
           type: string
           description: 'The object type, which is always `file`.'
+          x-stainless-const: true
         purpose:
           enum:
             - assistants
@@ -10592,6 +10670,7 @@ components:
             - other
           type: string
           description: Always `other`.
+          x-stainless-const: true
       additionalProperties: false
       description: 'This is returned when the chunking strategy is unknown. Typically, this is because the file was indexed before the `chunking_strategy` concept was introduced in the API.'
     ParallelToolCalls:
@@ -10610,6 +10689,7 @@ components:
             - content
           type: string
           description: "The type of the predicted content you want to provide. This type is\ncurrently always `content`.\n"
+          x-stainless-const: true
         content:
           oneOf:
             - title: Text content
@@ -10641,6 +10721,7 @@ components:
             - organization.project
           type: string
           description: 'The object type, which is always `organization.project`'
+          x-stainless-const: true
         name:
           type: string
           description: The name of the project. This appears in reporting.
@@ -10676,6 +10757,7 @@ components:
             - organization.project.api_key
           type: string
           description: 'The object type, which is always `organization.project.api_key`'
+          x-stainless-const: true
         redacted_value:
           type: string
           description: The redacted value of the API key
@@ -10716,6 +10798,7 @@ components:
           enum:
             - organization.project.api_key.deleted
           type: string
+          x-stainless-const: true
         id:
           type: string
         deleted:
@@ -10733,6 +10816,7 @@ components:
           enum:
             - list
           type: string
+          x-stainless-const: true
         data:
           type: array
           items:
@@ -10764,6 +10848,7 @@ components:
           enum:
             - list
           type: string
+          x-stainless-const: true
         data:
           type: array
           items:
@@ -10788,6 +10873,7 @@ components:
             - project.rate_limit
           type: string
           description: 'The object type, which is always `project.rate_limit`'
+          x-stainless-const: true
         id:
           type: string
           description: 'The identifier, which can be referenced in API endpoints.'
@@ -10829,6 +10915,7 @@ components:
           enum:
             - list
           type: string
+          x-stainless-const: true
         data:
           type: array
           items:
@@ -10874,6 +10961,7 @@ components:
             - organization.project.service_account
           type: string
           description: 'The object type, which is always `organization.project.service_account`'
+          x-stainless-const: true
         id:
           type: string
           description: 'The identifier, which can be referenced in API endpoints'
@@ -10907,6 +10995,7 @@ components:
             - organization.project.service_account.api_key
           type: string
           description: 'The object type, which is always `organization.project.service_account.api_key`'
+          x-stainless-const: true
         value:
           type: string
         name:
@@ -10937,6 +11026,7 @@ components:
           enum:
             - organization.project.service_account
           type: string
+          x-stainless-const: true
         id:
           type: string
         name:
@@ -10946,6 +11036,7 @@ components:
             - member
           type: string
           description: Service accounts can only have one role of type `member`
+          x-stainless-const: true
         created_at:
           type: integer
         api_key:
@@ -10961,6 +11052,7 @@ components:
           enum:
             - organization.project.service_account.deleted
           type: string
+          x-stainless-const: true
         id:
           type: string
         deleted:
@@ -10978,6 +11070,7 @@ components:
           enum:
             - list
           type: string
+          x-stainless-const: true
         data:
           type: array
           items:
@@ -11011,6 +11104,7 @@ components:
             - organization.project.user
           type: string
           description: 'The object type, which is always `organization.project.user`'
+          x-stainless-const: true
         id:
           type: string
           description: 'The identifier, which can be referenced in API endpoints'
@@ -11059,6 +11153,7 @@ components:
           enum:
             - organization.project.user.deleted
           type: string
+          x-stainless-const: true
         id:
           type: string
         deleted:
@@ -11109,9 +11204,10 @@ components:
             - conversation.item.create
           type: string
           description: 'The event type, must be `conversation.item.create`.'
+          x-stainless-const: true
         previous_item_id:
           type: string
-          description: "The ID of the preceding item after which the new item will be inserted. \nIf not set, the new item will be appended to the end of the conversation. \nIf set, it allows an item to be inserted mid-conversation. If the ID \ncannot be found, an error will be returned and the item will not be added.\n"
+          description: "The ID of the preceding item after which the new item will be inserted. \nIf not set, the new item will be appended to the end of the conversation.\nIf set to `root`, the new item will be added to the beginning of the conversation.\nIf set to an existing ID, it allows an item to be inserted mid-conversation. If the\nID cannot be found, an error will be returned and the item will not be added.\n"
         item:
           $ref: '#/components/schemas/RealtimeConversationItem'
       description: "Add a new Item to the Conversation's context, including messages, function \ncalls, and function call responses. This event can be used both to populate a \n\"history\" of the conversation and to add new items mid-stream, but has the \ncurrent limitation that it cannot populate assistant audio messages.\n\nIf successful, the server will respond with a `conversation.item.created` \nevent, otherwise an `error` event will be sent.\n"
@@ -11133,6 +11229,7 @@ components:
             - conversation.item.delete
           type: string
           description: 'The event type, must be `conversation.item.delete`.'
+          x-stainless-const: true
         item_id:
           type: string
           description: The ID of the item to delete.
@@ -11157,6 +11254,7 @@ components:
             - conversation.item.truncate
           type: string
           description: 'The event type, must be `conversation.item.truncate`.'
+          x-stainless-const: true
         item_id:
           type: string
           description: "The ID of the assistant message item to truncate. Only assistant message \nitems can be truncated.\n"
@@ -11185,6 +11283,7 @@ components:
             - input_audio_buffer.append
           type: string
           description: 'The event type, must be `input_audio_buffer.append`.'
+          x-stainless-const: true
         audio:
           type: string
           description: "Base64-encoded audio bytes. This must be in the format specified by the \n`input_audio_format` field in the session configuration.\n"
@@ -11206,6 +11305,7 @@ components:
             - input_audio_buffer.clear
           type: string
           description: 'The event type, must be `input_audio_buffer.clear`.'
+          x-stainless-const: true
       description: "Send this event to clear the audio bytes in the buffer. The server will \nrespond with an `input_audio_buffer.cleared` event.\n"
       x-oaiMeta:
         name: input_audio_buffer.clear
@@ -11224,6 +11324,7 @@ components:
             - input_audio_buffer.commit
           type: string
           description: 'The event type, must be `input_audio_buffer.commit`.'
+          x-stainless-const: true
       description: "Send this event to commit the user input audio buffer, which will create a \nnew user message item in the conversation. This event will produce an error \nif the input audio buffer is empty. When in Server VAD mode, the client does \nnot need to send this event, the server will commit the audio buffer \nautomatically.\n\nCommitting the input audio buffer will trigger input audio transcription \n(if enabled in session configuration), but it will not create a response \nfrom the model. The server will respond with an `input_audio_buffer.committed` \nevent.\n"
       x-oaiMeta:
         name: input_audio_buffer.commit
@@ -11242,6 +11343,7 @@ components:
             - response.cancel
           type: string
           description: 'The event type, must be `response.cancel`.'
+          x-stainless-const: true
         response_id:
           type: string
           description: "A specific response ID to cancel - if not provided, will cancel an \nin-progress response in the default conversation.\n"
@@ -11263,6 +11365,7 @@ components:
             - response.create
           type: string
           description: 'The event type, must be `response.create`.'
+          x-stainless-const: true
         response:
           $ref: '#/components/schemas/RealtimeResponseCreateParams'
       description: "This event instructs the server to create a Response, which means triggering \nmodel inference. When in Server VAD mode, the server will create Responses \nautomatically.\n\nA Response will include at least one Item, and may have two, in which case \nthe second will be a function call. These Items will be appended to the \nconversation history.\n\nThe server will respond with a `response.created` event, events for Items \nand content created, and finally a `response.done` event to indicate the \nResponse is complete.\n\nThe `response.create` event includes inference configuration like \n`instructions`, and `temperature`. These fields will override the Session's \nconfiguration for this Response only.\n"
@@ -11284,6 +11387,7 @@ components:
             - session.update
           type: string
           description: 'The event type, must be `session.update`.'
+          x-stainless-const: true
         session:
           $ref: '#/components/schemas/RealtimeSessionCreateRequest'
       description: "Send this event to update the session’s default configuration. The client may \nsend this event at any time to update the session configuration, and any \nfield may be updated at any time, except for \"voice\". The server will respond \nwith a `session.updated` event that shows the full effective configuration. \nOnly fields that are present are updated, thus the correct way to clear a \nfield like \"instructions\" is to pass an empty string.\n"
@@ -11458,6 +11562,7 @@ components:
                   - function
                 type: string
                 description: 'The type of the tool, i.e. `function`.'
+                x-stainless-const: true
               name:
                 type: string
                 description: The name of the function.
@@ -11480,6 +11585,7 @@ components:
             - enum:
                 - inf
               type: string
+              x-stainless-const: true
           description: "Maximum number of output tokens for a single assistant response,\ninclusive of tool calls. Provide an integer between 1 and 4096 to\nlimit output tokens, or `inf` for the maximum available tokens for a\ngiven model. Defaults to `inf`.\n"
         conversation:
           oneOf:
@@ -11516,6 +11622,7 @@ components:
             - conversation.created
           type: string
           description: 'The event type, must be `conversation.created`.'
+          x-stainless-const: true
         conversation:
           type: object
           properties:
@@ -11547,6 +11654,7 @@ components:
             - conversation.item.created
           type: string
           description: 'The event type, must be `conversation.item.created`.'
+          x-stainless-const: true
         previous_item_id:
           type: string
           description: "The ID of the preceding item in the Conversation context, allows the \nclient to understand the order of the conversation.\n"
@@ -11572,6 +11680,7 @@ components:
             - conversation.item.deleted
           type: string
           description: 'The event type, must be `conversation.item.deleted`.'
+          x-stainless-const: true
         item_id:
           type: string
           description: The ID of the item that was deleted.
@@ -11597,6 +11706,7 @@ components:
             - conversation.item.input_audio_transcription.completed
           type: string
           description: "The event type, must be\n`conversation.item.input_audio_transcription.completed`.\n"
+          x-stainless-const: true
         item_id:
           type: string
           description: The ID of the user message item containing the audio.
@@ -11628,6 +11738,7 @@ components:
             - conversation.item.input_audio_transcription.failed
           type: string
           description: "The event type, must be\n`conversation.item.input_audio_transcription.failed`.\n"
+          x-stainless-const: true
         item_id:
           type: string
           description: The ID of the user message item.
@@ -11672,6 +11783,7 @@ components:
             - conversation.item.truncated
           type: string
           description: 'The event type, must be `conversation.item.truncated`.'
+          x-stainless-const: true
         item_id:
           type: string
           description: The ID of the assistant message item that was truncated.
@@ -11701,6 +11813,7 @@ components:
             - error
           type: string
           description: 'The event type, must be `error`.'
+          x-stainless-const: true
         error:
           required:
             - type
@@ -11745,6 +11858,7 @@ components:
             - input_audio_buffer.cleared
           type: string
           description: 'The event type, must be `input_audio_buffer.cleared`.'
+          x-stainless-const: true
       description: "Returned when the input audio buffer is cleared by the client with a \n`input_audio_buffer.clear` event.\n"
       x-oaiMeta:
         name: input_audio_buffer.cleared
@@ -11766,6 +11880,7 @@ components:
             - input_audio_buffer.committed
           type: string
           description: 'The event type, must be `input_audio_buffer.committed`.'
+          x-stainless-const: true
         previous_item_id:
           type: string
           description: "The ID of the preceding item after which the new item will be inserted.\n"
@@ -11793,6 +11908,7 @@ components:
             - input_audio_buffer.speech_started
           type: string
           description: 'The event type, must be `input_audio_buffer.speech_started`.'
+          x-stainless-const: true
         audio_start_ms:
           type: integer
           description: "Milliseconds from the start of all audio written to the buffer during the \nsession when speech was first detected. This will correspond to the \nbeginning of audio sent to the model, and thus includes the \n`prefix_padding_ms` configured in the Session.\n"
@@ -11820,6 +11936,7 @@ components:
             - input_audio_buffer.speech_stopped
           type: string
           description: 'The event type, must be `input_audio_buffer.speech_stopped`.'
+          x-stainless-const: true
         audio_end_ms:
           type: integer
           description: "Milliseconds since the session started when speech stopped. This will \ncorrespond to the end of audio sent to the model, and thus includes the \n`min_silence_duration_ms` configured in the Session.\n"
@@ -11846,6 +11963,7 @@ components:
             - rate_limits.updated
           type: string
           description: 'The event type, must be `rate_limits.updated`.'
+          x-stainless-const: true
         rate_limits:
           type: array
           items:
@@ -11891,6 +12009,7 @@ components:
             - response.audio.delta
           type: string
           description: 'The event type, must be `response.audio.delta`.'
+          x-stainless-const: true
         response_id:
           type: string
           description: The ID of the response.
@@ -11929,6 +12048,7 @@ components:
             - response.audio.done
           type: string
           description: 'The event type, must be `response.audio.done`.'
+          x-stainless-const: true
         response_id:
           type: string
           description: The ID of the response.
@@ -11965,6 +12085,7 @@ components:
             - response.audio_transcript.delta
           type: string
           description: 'The event type, must be `response.audio_transcript.delta`.'
+          x-stainless-const: true
         response_id:
           type: string
           description: The ID of the response.
@@ -12004,6 +12125,7 @@ components:
             - response.audio_transcript.done
           type: string
           description: 'The event type, must be `response.audio_transcript.done`.'
+          x-stainless-const: true
         response_id:
           type: string
           description: The ID of the response.
@@ -12043,6 +12165,7 @@ components:
             - response.content_part.added
           type: string
           description: 'The event type, must be `response.content_part.added`.'
+          x-stainless-const: true
         response_id:
           type: string
           description: The ID of the response.
@@ -12098,6 +12221,7 @@ components:
             - response.content_part.done
           type: string
           description: 'The event type, must be `response.content_part.done`.'
+          x-stainless-const: true
         response_id:
           type: string
           description: The ID of the response.
@@ -12149,6 +12273,7 @@ components:
             - response.created
           type: string
           description: 'The event type, must be `response.created`.'
+          x-stainless-const: true
         response:
           $ref: '#/components/schemas/RealtimeResponse'
       description: "Returned when a new Response is created. The first event of response creation,\nwhere the response is in an initial state of `in_progress`.\n"
@@ -12171,6 +12296,7 @@ components:
             - response.done
           type: string
           description: 'The event type, must be `response.done`.'
+          x-stainless-const: true
         response:
           $ref: '#/components/schemas/RealtimeResponse'
       description: "Returned when a Response is done streaming. Always emitted, no matter the \nfinal state. The Response object included in the `response.done` event will \ninclude all output Items in the Response but will omit the raw audio data.\n"
@@ -12197,6 +12323,7 @@ components:
             - response.function_call_arguments.delta
           type: string
           description: "The event type, must be `response.function_call_arguments.delta`.\n"
+          x-stainless-const: true
         response_id:
           type: string
           description: The ID of the response.
@@ -12236,6 +12363,7 @@ components:
             - response.function_call_arguments.done
           type: string
           description: "The event type, must be `response.function_call_arguments.done`.\n"
+          x-stainless-const: true
         response_id:
           type: string
           description: The ID of the response.
@@ -12273,6 +12401,7 @@ components:
             - response.output_item.added
           type: string
           description: 'The event type, must be `response.output_item.added`.'
+          x-stainless-const: true
         response_id:
           type: string
           description: The ID of the Response to which the item belongs.
@@ -12303,6 +12432,7 @@ components:
             - response.output_item.done
           type: string
           description: 'The event type, must be `response.output_item.done`.'
+          x-stainless-const: true
         response_id:
           type: string
           description: The ID of the Response to which the item belongs.
@@ -12335,6 +12465,7 @@ components:
             - response.text.delta
           type: string
           description: 'The event type, must be `response.text.delta`.'
+          x-stainless-const: true
         response_id:
           type: string
           description: The ID of the response.
@@ -12374,6 +12505,7 @@ components:
             - response.text.done
           type: string
           description: 'The event type, must be `response.text.done`.'
+          x-stainless-const: true
         response_id:
           type: string
           description: The ID of the response.
@@ -12409,6 +12541,7 @@ components:
             - session.created
           type: string
           description: 'The event type, must be `session.created`.'
+          x-stainless-const: true
         session:
           $ref: '#/components/schemas/RealtimeSession'
       description: "Returned when a Session is created. Emitted automatically when a new \nconnection is established as the first server event. This event will contain \nthe default Session configuration.\n"
@@ -12431,6 +12564,7 @@ components:
             - session.updated
           type: string
           description: 'The event type, must be `session.updated`.'
+          x-stainless-const: true
         session:
           $ref: '#/components/schemas/RealtimeSession'
       description: "Returned when a session is updated with a `session.update` event, unless \nthere is an error.\n"
@@ -12557,8 +12691,6 @@ components:
           default: inf
       description: "A session refers to a single WebSocket connection between a client and the server.\n\nOnce a client creates a session, it then sends JSON-formatted events containing text and audio chunks.\nThe server will respond in kind with audio containing voice output, a text transcript of that voice output,\nand function calls (if functions are provided by the client).\n\nA realtime Session represents the overall client-server interaction, and contains default configuration.\n\nIt has a set of default values which can be updated at any time (via session.update) or on a per-response level (via response.create).\n"
     RealtimeSessionCreateRequest:
-      required:
-        - model
       type: object
       properties:
         modalities:
@@ -12598,14 +12730,14 @@ components:
             - g711_ulaw
             - g711_alaw
           type: string
-          description: "The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.\n"
+          description: "The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.\nFor `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate, \nsingle channel (mono), and little-endian byte order.\n"
         output_audio_format:
           enum:
             - pcm16
             - g711_ulaw
             - g711_alaw
           type: string
-          description: "The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.\n"
+          description: "The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.\nFor `pcm16`, output audio is sampled at a rate of 24kHz.\n"
         input_audio_transcription:
           type: object
           properties:
@@ -12643,6 +12775,7 @@ components:
                   - function
                 type: string
                 description: 'The type of the tool, i.e. `function`.'
+                x-stainless-const: true
               name:
                 type: string
                 description: The name of the function.
@@ -12665,6 +12798,7 @@ components:
             - enum:
                 - inf
               type: string
+              x-stainless-const: true
           description: "Maximum number of output tokens for a single assistant response,\ninclusive of tool calls. Provide an integer between 1 and 4096 to\nlimit output tokens, or `inf` for the maximum available tokens for a\ngiven model. Defaults to `inf`.\n"
       description: Realtime session object configuration.
     RealtimeSessionCreateResponse:
@@ -12741,6 +12875,7 @@ components:
                   - function
                 type: string
                 description: 'The type of the tool, i.e. `function`.'
+                x-stainless-const: true
               name:
                 type: string
                 description: The name of the function.
@@ -12763,6 +12898,7 @@ components:
             - enum:
                 - inf
               type: string
+              x-stainless-const: true
           description: "Maximum number of output tokens for a single assistant response,\ninclusive of tool calls. Provide an integer between 1 and 4096 to\nlimit output tokens, or `inf` for the maximum available tokens for a\ngiven model. Defaults to `inf`.\n"
       description: "A new Realtime session configuration, with an ephermeral key. Default TTL\nfor keys is one minute.\n"
       x-oaiMeta:
@@ -12779,6 +12915,7 @@ components:
             - json_object
           type: string
           description: 'The type of response format being defined: `json_object`'
+          x-stainless-const: true
     ResponseFormatJsonSchema:
       required:
         - type
@@ -12790,9 +12927,9 @@ components:
             - json_schema
           type: string
           description: 'The type of response format being defined: `json_schema`'
+          x-stainless-const: true
         json_schema:
           required:
-            - type
             - name
           type: object
           properties:
@@ -12822,6 +12959,7 @@ components:
             - text
           type: string
           description: 'The type of response format being defined: `text`'
+          x-stainless-const: true
     RunCompletionUsage:
       required:
         - prompt_tokens
@@ -12878,6 +13016,7 @@ components:
             - thread.run
           type: string
           description: 'The object type, which is always `thread.run`.'
+          x-stainless-const: true
         created_at:
           type: integer
           description: The Unix timestamp (in seconds) for when the run was created.
@@ -12911,6 +13050,7 @@ components:
                 - submit_tool_outputs
               type: string
               description: 'For now, this is always `submit_tool_outputs`.'
+              x-stainless-const: true
             submit_tool_outputs:
               required:
                 - tool_calls
@@ -13061,6 +13201,7 @@ components:
             - thread.run.step.delta
           type: string
           description: 'The object type, which is always `thread.run.step.delta`.'
+          x-stainless-const: true
         delta:
           type: object
           properties:
@@ -13088,6 +13229,7 @@ components:
             - message_creation
           type: string
           description: Always `message_creation`.
+          x-stainless-const: true
         message_creation:
           type: object
           properties:
@@ -13113,6 +13255,7 @@ components:
             - code_interpreter
           type: string
           description: The type of tool call. This is always going to be `code_interpreter` for this type of tool call.
+          x-stainless-const: true
         code_interpreter:
           type: object
           properties:
@@ -13145,6 +13288,7 @@ components:
             - image
           type: string
           description: Always `image`.
+          x-stainless-const: true
         image:
           type: object
           properties:
@@ -13166,6 +13310,7 @@ components:
             - logs
           type: string
           description: Always `logs`.
+          x-stainless-const: true
         logs:
           type: string
           description: The text output from the Code Interpreter tool call.
@@ -13189,6 +13334,7 @@ components:
             - file_search
           type: string
           description: The type of tool call. This is always going to be `file_search` for this type of tool call.
+          x-stainless-const: true
         file_search:
           type: object
           description: 'For now, this is always going to be an empty object.'
@@ -13211,6 +13357,7 @@ components:
             - function
           type: string
           description: The type of tool call. This is always going to be `function` for this type of tool call.
+          x-stainless-const: true
         function:
           type: object
           properties:
@@ -13236,6 +13383,7 @@ components:
             - tool_calls
           type: string
           description: Always `tool_calls`.
+          x-stainless-const: true
         tool_calls:
           type: array
           items:
@@ -13258,6 +13406,7 @@ components:
             - message_creation
           type: string
           description: Always `message_creation`.
+          x-stainless-const: true
         message_creation:
           required:
             - message_id
@@ -13283,6 +13432,7 @@ components:
             - code_interpreter
           type: string
           description: The type of tool call. This is always going to be `code_interpreter` for this type of tool call.
+          x-stainless-const: true
         code_interpreter:
           required:
             - input
@@ -13315,6 +13465,7 @@ components:
             - image
           type: string
           description: Always `image`.
+          x-stainless-const: true
         image:
           required:
             - file_id
@@ -13335,6 +13486,7 @@ components:
             - logs
           type: string
           description: Always `logs`.
+          x-stainless-const: true
         logs:
           type: string
           description: The text output from the Code Interpreter tool call.
@@ -13355,6 +13507,7 @@ components:
             - file_search
           type: string
           description: The type of tool call. This is always going to be `file_search` for this type of tool call.
+          x-stainless-const: true
         file_search:
           type: object
           properties:
@@ -13379,6 +13532,7 @@ components:
             - default_2024_08_21
           type: string
           description: The ranker used for the file search.
+          x-stainless-const: true
         score_threshold:
           maximum: 1
           minimum: 0
@@ -13414,6 +13568,7 @@ components:
                   - text
                 type: string
                 description: The type of the content.
+                x-stainless-const: true
               text:
                 type: string
                 description: The text content of the file.
@@ -13436,6 +13591,7 @@ components:
             - function
           type: string
           description: The type of tool call. This is always going to be `function` for this type of tool call.
+          x-stainless-const: true
         function:
           required:
             - name
@@ -13466,6 +13622,7 @@ components:
             - tool_calls
           type: string
           description: Always `tool_calls`.
+          x-stainless-const: true
         tool_calls:
           type: array
           items:
@@ -13503,6 +13660,7 @@ components:
             - thread.run.step
           type: string
           description: 'The object type, which is always `thread.run.step`.'
+          x-stainless-const: true
         created_at:
           type: integer
           description: The Unix timestamp (in seconds) for when the run step was created.
@@ -13593,6 +13751,7 @@ components:
               enum:
                 - thread.run.step.created
               type: string
+              x-stainless-const: true
             data:
               $ref: '#/components/schemas/RunStepObject'
           description: 'Occurs when a [run step](/docs/api-reference/run-steps/step-object) is created.'
@@ -13607,6 +13766,7 @@ components:
               enum:
                 - thread.run.step.in_progress
               type: string
+              x-stainless-const: true
             data:
               $ref: '#/components/schemas/RunStepObject'
           description: 'Occurs when a [run step](/docs/api-reference/run-steps/step-object) moves to an `in_progress` state.'
@@ -13621,6 +13781,7 @@ components:
               enum:
                 - thread.run.step.delta
               type: string
+              x-stainless-const: true
             data:
               $ref: '#/components/schemas/RunStepDeltaObject'
           description: 'Occurs when parts of a [run step](/docs/api-reference/run-steps/step-object) are being streamed.'
@@ -13635,6 +13796,7 @@ components:
               enum:
                 - thread.run.step.completed
               type: string
+              x-stainless-const: true
             data:
               $ref: '#/components/schemas/RunStepObject'
           description: 'Occurs when a [run step](/docs/api-reference/run-steps/step-object) is completed.'
@@ -13649,6 +13811,7 @@ components:
               enum:
                 - thread.run.step.failed
               type: string
+              x-stainless-const: true
             data:
               $ref: '#/components/schemas/RunStepObject'
           description: 'Occurs when a [run step](/docs/api-reference/run-steps/step-object) fails.'
@@ -13663,6 +13826,7 @@ components:
               enum:
                 - thread.run.step.cancelled
               type: string
+              x-stainless-const: true
             data:
               $ref: '#/components/schemas/RunStepObject'
           description: 'Occurs when a [run step](/docs/api-reference/run-steps/step-object) is cancelled.'
@@ -13677,6 +13841,7 @@ components:
               enum:
                 - thread.run.step.expired
               type: string
+              x-stainless-const: true
             data:
               $ref: '#/components/schemas/RunStepObject'
           description: 'Occurs when a [run step](/docs/api-reference/run-steps/step-object) expires.'
@@ -13693,6 +13858,7 @@ components:
               enum:
                 - thread.run.created
               type: string
+              x-stainless-const: true
             data:
               $ref: '#/components/schemas/RunObject'
           description: 'Occurs when a new [run](/docs/api-reference/runs/object) is created.'
@@ -13707,6 +13873,7 @@ components:
               enum:
                 - thread.run.queued
               type: string
+              x-stainless-const: true
             data:
               $ref: '#/components/schemas/RunObject'
           description: 'Occurs when a [run](/docs/api-reference/runs/object) moves to a `queued` status.'
@@ -13721,6 +13888,7 @@ components:
               enum:
                 - thread.run.in_progress
               type: string
+              x-stainless-const: true
             data:
               $ref: '#/components/schemas/RunObject'
           description: 'Occurs when a [run](/docs/api-reference/runs/object) moves to an `in_progress` status.'
@@ -13735,6 +13903,7 @@ components:
               enum:
                 - thread.run.requires_action
               type: string
+              x-stainless-const: true
             data:
               $ref: '#/components/schemas/RunObject'
           description: 'Occurs when a [run](/docs/api-reference/runs/object) moves to a `requires_action` status.'
@@ -13749,6 +13918,7 @@ components:
               enum:
                 - thread.run.completed
               type: string
+              x-stainless-const: true
             data:
               $ref: '#/components/schemas/RunObject'
           description: 'Occurs when a [run](/docs/api-reference/runs/object) is completed.'
@@ -13763,6 +13933,7 @@ components:
               enum:
                 - thread.run.incomplete
               type: string
+              x-stainless-const: true
             data:
               $ref: '#/components/schemas/RunObject'
           description: 'Occurs when a [run](/docs/api-reference/runs/object) ends with status `incomplete`.'
@@ -13777,6 +13948,7 @@ components:
               enum:
                 - thread.run.failed
               type: string
+              x-stainless-const: true
             data:
               $ref: '#/components/schemas/RunObject'
           description: 'Occurs when a [run](/docs/api-reference/runs/object) fails.'
@@ -13791,6 +13963,7 @@ components:
               enum:
                 - thread.run.cancelling
               type: string
+              x-stainless-const: true
             data:
               $ref: '#/components/schemas/RunObject'
           description: 'Occurs when a [run](/docs/api-reference/runs/object) moves to a `cancelling` status.'
@@ -13805,6 +13978,7 @@ components:
               enum:
                 - thread.run.cancelled
               type: string
+              x-stainless-const: true
             data:
               $ref: '#/components/schemas/RunObject'
           description: 'Occurs when a [run](/docs/api-reference/runs/object) is cancelled.'
@@ -13819,6 +13993,7 @@ components:
               enum:
                 - thread.run.expired
               type: string
+              x-stainless-const: true
             data:
               $ref: '#/components/schemas/RunObject'
           description: 'Occurs when a [run](/docs/api-reference/runs/object) expires.'
@@ -13839,6 +14014,7 @@ components:
             - function
           type: string
           description: 'The type of tool call the output is required for. For now, this is always `function`.'
+          x-stainless-const: true
         function:
           required:
             - name
@@ -13880,6 +14056,7 @@ components:
             - static
           type: string
           description: Always `static`.
+          x-stainless-const: true
         static:
           $ref: '#/components/schemas/StaticChunkingStrategy'
       additionalProperties: false
@@ -13895,6 +14072,7 @@ components:
             - static
           type: string
           description: Always `static`.
+          x-stainless-const: true
         static:
           $ref: '#/components/schemas/StaticChunkingStrategy'
       additionalProperties: false
@@ -13938,6 +14116,7 @@ components:
             - thread
           type: string
           description: 'The object type, which is always `thread`.'
+          x-stainless-const: true
         created_at:
           type: integer
           description: The Unix timestamp (in seconds) for when the thread was created.
@@ -13988,6 +14167,7 @@ components:
               enum:
                 - thread.created
               type: string
+              x-stainless-const: true
             data:
               $ref: '#/components/schemas/ThreadObject'
           description: 'Occurs when a new [thread](/docs/api-reference/threads/object) is created.'
@@ -14139,6 +14319,7 @@ components:
             - upload
           type: string
           description: 'The object type, which is always "upload".'
+          x-stainless-const: true
         file:
           $ref: '#/components/schemas/OpenAIFile'
       description: "The Upload object can accept byte chunks in the form of Parts.\n"
@@ -14168,6 +14349,7 @@ components:
             - upload.part
           type: string
           description: 'The object type, which is always `upload.part`.'
+          x-stainless-const: true
       description: "The upload Part represents a chunk of bytes we can add to an Upload object.\n"
       x-oaiMeta:
         name: The upload part object
@@ -14183,6 +14365,7 @@ components:
           enum:
             - organization.usage.audio_speeches.result
           type: string
+          x-stainless-const: true
         characters:
           type: integer
           description: The number of characters processed.
@@ -14220,6 +14403,7 @@ components:
           enum:
             - organization.usage.audio_transcriptions.result
           type: string
+          x-stainless-const: true
         seconds:
           type: integer
           description: The number of seconds processed.
@@ -14256,6 +14440,7 @@ components:
           enum:
             - organization.usage.code_interpreter_sessions.result
           type: string
+          x-stainless-const: true
         sessions:
           type: integer
           description: The number of code interpreter sessions.
@@ -14279,6 +14464,7 @@ components:
           enum:
             - organization.usage.completions.result
           type: string
+          x-stainless-const: true
         input_tokens:
           type: integer
           description: 'The aggregated number of text input tokens used, including cached tokens. For customers subscribe to scale tier, this includes scale tier tokens.'
@@ -14332,6 +14518,7 @@ components:
           enum:
             - organization.usage.embeddings.result
           type: string
+          x-stainless-const: true
         input_tokens:
           type: integer
           description: The aggregated number of input tokens used.
@@ -14369,6 +14556,7 @@ components:
           enum:
             - organization.usage.images.result
           type: string
+          x-stainless-const: true
         images:
           type: integer
           description: The number of images processed.
@@ -14414,6 +14602,7 @@ components:
           enum:
             - organization.usage.moderations.result
           type: string
+          x-stainless-const: true
         input_tokens:
           type: integer
           description: The aggregated number of input tokens used.
@@ -14452,6 +14641,7 @@ components:
           enum:
             - page
           type: string
+          x-stainless-const: true
         data:
           type: array
           items:
@@ -14472,6 +14662,7 @@ components:
           enum:
             - bucket
           type: string
+          x-stainless-const: true
         start_time:
           type: integer
         end_time:
@@ -14499,6 +14690,7 @@ components:
           enum:
             - organization.usage.vector_stores.result
           type: string
+          x-stainless-const: true
         usage_bytes:
           type: integer
           description: The vector stores usage in bytes.
@@ -14525,6 +14717,7 @@ components:
             - organization.user
           type: string
           description: 'The object type, which is always `organization.user`'
+          x-stainless-const: true
         id:
           type: string
           description: 'The identifier, which can be referenced in API endpoints'
@@ -14558,6 +14751,7 @@ components:
           enum:
             - organization.user.deleted
           type: string
+          x-stainless-const: true
         id:
           type: string
         deleted:
@@ -14575,6 +14769,7 @@ components:
           enum:
             - list
           type: string
+          x-stainless-const: true
         data:
           type: array
           items:
@@ -14608,6 +14803,7 @@ components:
             - last_active_at
           type: string
           description: 'Anchor timestamp after which the expiration policy applies. Supported anchors: `last_active_at`.'
+          x-stainless-const: true
         days:
           maximum: 365
           minimum: 1
@@ -14633,6 +14829,7 @@ components:
             - vector_store.files_batch
           type: string
           description: 'The object type, which is always `vector_store.file_batch`.'
+          x-stainless-const: true
         created_at:
           type: integer
           description: The Unix timestamp (in seconds) for when the vector store files batch was created.
@@ -14696,6 +14893,7 @@ components:
             - vector_store.file
           type: string
           description: 'The object type, which is always `vector_store.file`.'
+          x-stainless-const: true
         usage_bytes:
           type: integer
           description: The total vector store usage in bytes. Note that this may be different from the original file size.
@@ -14765,6 +14963,7 @@ components:
             - vector_store
           type: string
           description: 'The object type, which is always `vector_store`.'
+          x-stainless-const: true
         created_at:
           type: integer
           description: The Unix timestamp (in seconds) for when the vector store was created.
