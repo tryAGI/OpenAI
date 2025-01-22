@@ -58,15 +58,7 @@ namespace tryAGI.OpenAI
 
             var __pathBuilder = new PathBuilder(
                 path: "/organization/admin_api_keys",
-                baseUri: HttpClient.BaseAddress);
-            foreach (var __authorization in Authorizations)
-            {
-                if (__authorization.Type == "ApiKey" &&
-                    __authorization.Location == "Query")
-                {
-                    __pathBuilder = __pathBuilder.AddRequiredParameter(__authorization.Name, __authorization.Value);
-                }
-            } 
+                baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddOptionalParameter("after", after) 
                 .AddOptionalParameter("order", order?.ToValueString()) 
@@ -80,6 +72,22 @@ namespace tryAGI.OpenAI
             __httpRequest.Version = global::System.Net.HttpVersion.Version11;
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
+
+            foreach (var __authorization in Authorizations)
+            {
+                if (__authorization.Type == "Http" ||
+                    __authorization.Type == "OAuth2")
+                {
+                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: __authorization.Name,
+                        parameter: __authorization.Value);
+                }
+                else if (__authorization.Type == "ApiKey" &&
+                         __authorization.Location == "Header")
+                {
+                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
+                }
+            }
 
             PrepareRequest(
                 client: HttpClient,

@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
     /// `finish_reason="length"`, which indicates the generation exceeded<br/>
     /// `max_tokens` or the conversation exceeded the max context length.
     /// </summary>
-    public readonly partial struct ResponseFormat : global::System.IEquatable<ResponseFormat>
+    public readonly partial struct ResponseFormat3 : global::System.IEquatable<ResponseFormat3>
     {
         /// <summary>
         /// 
@@ -47,17 +47,17 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseFormat(global::tryAGI.OpenAI.ResponseFormatText value) => new ResponseFormat(value);
+        public static implicit operator ResponseFormat3(global::tryAGI.OpenAI.ResponseFormatText value) => new ResponseFormat3(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.ResponseFormatText?(ResponseFormat @this) => @this.Text;
+        public static implicit operator global::tryAGI.OpenAI.ResponseFormatText?(ResponseFormat3 @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
-        public ResponseFormat(global::tryAGI.OpenAI.ResponseFormatText? value)
+        public ResponseFormat3(global::tryAGI.OpenAI.ResponseFormatText? value)
         {
             Text = value;
         }
@@ -82,17 +82,17 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseFormat(global::tryAGI.OpenAI.ResponseFormatJsonObject value) => new ResponseFormat(value);
+        public static implicit operator ResponseFormat3(global::tryAGI.OpenAI.ResponseFormatJsonObject value) => new ResponseFormat3(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.ResponseFormatJsonObject?(ResponseFormat @this) => @this.JsonObject;
+        public static implicit operator global::tryAGI.OpenAI.ResponseFormatJsonObject?(ResponseFormat3 @this) => @this.JsonObject;
 
         /// <summary>
         /// 
         /// </summary>
-        public ResponseFormat(global::tryAGI.OpenAI.ResponseFormatJsonObject? value)
+        public ResponseFormat3(global::tryAGI.OpenAI.ResponseFormatJsonObject? value)
         {
             JsonObject = value;
         }
@@ -117,17 +117,17 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseFormat(global::tryAGI.OpenAI.ResponseFormatJsonSchema value) => new ResponseFormat(value);
+        public static implicit operator ResponseFormat3(global::tryAGI.OpenAI.ResponseFormatJsonSchema value) => new ResponseFormat3(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.ResponseFormatJsonSchema?(ResponseFormat @this) => @this.JsonSchema;
+        public static implicit operator global::tryAGI.OpenAI.ResponseFormatJsonSchema?(ResponseFormat3 @this) => @this.JsonSchema;
 
         /// <summary>
         /// 
         /// </summary>
-        public ResponseFormat(global::tryAGI.OpenAI.ResponseFormatJsonSchema? value)
+        public ResponseFormat3(global::tryAGI.OpenAI.ResponseFormatJsonSchema? value)
         {
             JsonSchema = value;
         }
@@ -135,7 +135,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public ResponseFormat(
+        public ResponseFormat3(
             global::tryAGI.OpenAI.CreateChatCompletionRequestResponseFormatDiscriminatorType? type,
             global::tryAGI.OpenAI.ResponseFormatText? text,
             global::tryAGI.OpenAI.ResponseFormatJsonObject? jsonObject,
@@ -250,7 +250,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public bool Equals(ResponseFormat other)
+        public bool Equals(ResponseFormat3 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseFormatText?>.Default.Equals(Text, other.Text) &&
@@ -262,15 +262,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator ==(ResponseFormat obj1, ResponseFormat obj2)
+        public static bool operator ==(ResponseFormat3 obj1, ResponseFormat3 obj2)
         {
-            return global::System.Collections.Generic.EqualityComparer<ResponseFormat>.Default.Equals(obj1, obj2);
+            return global::System.Collections.Generic.EqualityComparer<ResponseFormat3>.Default.Equals(obj1, obj2);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator !=(ResponseFormat obj1, ResponseFormat obj2)
+        public static bool operator !=(ResponseFormat3 obj1, ResponseFormat3 obj2)
         {
             return !(obj1 == obj2);
         }
@@ -280,7 +280,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public override bool Equals(object? obj)
         {
-            return obj is ResponseFormat o && Equals(o);
+            return obj is ResponseFormat3 o && Equals(o);
         }
     }
 }

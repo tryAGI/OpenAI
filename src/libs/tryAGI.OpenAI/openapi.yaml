@@ -1213,11 +1213,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiKeyList'
-      security:
-        - bearer_identity_edge:
-            - key.secret
-            - api.management.read
-        - basic_identity_edge: [ ]
       x-oaiMeta:
         name: List admin API keys
         group: administration
@@ -1249,11 +1244,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AdminApiKey'
-      security:
-        - bearer_identity_edge:
-            - key.secret
-            - api.management.write
-        - basic_identity_edge: [ ]
       x-oaiMeta:
         name: Create admin API key
         group: administration
@@ -1281,11 +1271,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AdminApiKey'
-      security:
-        - bearer_identity_edge:
-            - key.secret
-            - api.management.read
-        - basic_identity_edge: [ ]
       x-oaiMeta:
         name: Retrieve admin API key
         group: administration
@@ -1322,11 +1307,6 @@ paths:
                   deleted:
                     type: boolean
                     example: true
-      security:
-        - bearer_identity_edge:
-            - key.secret
-            - api.management.write
-        - basic_identity_edge: [ ]
       x-oaiMeta:
         name: Delete admin API key
         group: administration
@@ -4839,7 +4819,9 @@ components:
           nullable: true
           example: 1
         response_format:
-          $ref: '#/components/schemas/AssistantsApiResponseFormatOption'
+          allOf:
+            - $ref: '#/components/schemas/AssistantsApiResponseFormatOption'
+            - nullable: true
       description: Represents an `assistant` that can call the model and use tools.
       x-oaiMeta:
         name: The assistant object
@@ -6432,7 +6414,9 @@ components:
           nullable: true
           example: 1
         response_format:
-          $ref: '#/components/schemas/AssistantsApiResponseFormatOption'
+          allOf:
+            - $ref: '#/components/schemas/AssistantsApiResponseFormatOption'
+            - nullable: true
       additionalProperties: false
     CreateChatCompletionFunctionResponse:
       required:
@@ -8101,13 +8085,19 @@ components:
           description: "The maximum number of completion tokens that may be used over the course of the run. The run will make a best effort to use only the number of completion tokens specified, across multiple turns of the run. If the run exceeds the number of completion tokens specified, the run will end with status `incomplete`. See `incomplete_details` for more info.\n"
           nullable: true
         truncation_strategy:
-          $ref: '#/components/schemas/TruncationObject'
+          allOf:
+            - $ref: '#/components/schemas/TruncationObject'
+            - nullable: true
         tool_choice:
-          $ref: '#/components/schemas/AssistantsApiToolChoiceOption'
+          allOf:
+            - $ref: '#/components/schemas/AssistantsApiToolChoiceOption'
+            - nullable: true
         parallel_tool_calls:
           $ref: '#/components/schemas/ParallelToolCalls'
         response_format:
-          $ref: '#/components/schemas/AssistantsApiResponseFormatOption'
+          allOf:
+            - $ref: '#/components/schemas/AssistantsApiResponseFormatOption'
+            - nullable: true
       additionalProperties: false
     CreateSpeechRequest:
       required:
@@ -8276,13 +8266,19 @@ components:
           description: "The maximum number of completion tokens that may be used over the course of the run. The run will make a best effort to use only the number of completion tokens specified, across multiple turns of the run. If the run exceeds the number of completion tokens specified, the run will end with status `incomplete`. See `incomplete_details` for more info.\n"
           nullable: true
         truncation_strategy:
-          $ref: '#/components/schemas/TruncationObject'
+          allOf:
+            - $ref: '#/components/schemas/TruncationObject'
+            - nullable: true
         tool_choice:
-          $ref: '#/components/schemas/AssistantsApiToolChoiceOption'
+          allOf:
+            - $ref: '#/components/schemas/AssistantsApiToolChoiceOption'
+            - nullable: true
         parallel_tool_calls:
           $ref: '#/components/schemas/ParallelToolCalls'
         response_format:
-          $ref: '#/components/schemas/AssistantsApiResponseFormatOption'
+          allOf:
+            - $ref: '#/components/schemas/AssistantsApiResponseFormatOption'
+            - nullable: true
       additionalProperties: false
     CreateThreadRequest:
       type: object
@@ -8390,6 +8386,7 @@ components:
           nullable: true
           x-oaiTypeLabel: map
       additionalProperties: false
+      description: "Options to create a new thread. If no thread is provided when running a \nrequest, an empty thread will be created.\n"
     CreateTranscriptionRequest:
       required:
         - file
@@ -10551,7 +10548,9 @@ components:
           nullable: true
           example: 1
         response_format:
-          $ref: '#/components/schemas/AssistantsApiResponseFormatOption'
+          allOf:
+            - $ref: '#/components/schemas/AssistantsApiResponseFormatOption'
+            - nullable: true
       additionalProperties: false
     ModifyMessageRequest:
       type: object
@@ -13155,13 +13154,19 @@ components:
           description: "The maximum number of completion tokens specified to have been used over the course of the run.\n"
           nullable: true
         truncation_strategy:
-          $ref: '#/components/schemas/TruncationObject'
+          allOf:
+            - $ref: '#/components/schemas/TruncationObject'
+            - nullable: true
         tool_choice:
-          $ref: '#/components/schemas/AssistantsApiToolChoiceOption'
+          allOf:
+            - $ref: '#/components/schemas/AssistantsApiToolChoiceOption'
+            - nullable: true
         parallel_tool_calls:
           $ref: '#/components/schemas/ParallelToolCalls'
         response_format:
-          $ref: '#/components/schemas/AssistantsApiResponseFormatOption'
+          allOf:
+            - $ref: '#/components/schemas/AssistantsApiResponseFormatOption'
+            - nullable: true
       description: 'Represents an execution run on a [thread](/docs/api-reference/threads).'
       x-oaiMeta:
         name: The run object
@@ -14269,7 +14274,9 @@ components:
           description: The name of the vector store.
           nullable: true
         expires_after:
-          $ref: '#/components/schemas/VectorStoreExpirationAfter'
+          allOf:
+            - $ref: '#/components/schemas/VectorStoreExpirationAfter'
+            - nullable: true
         metadata:
           type: object
           description: "Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.\n"
@@ -14321,7 +14328,10 @@ components:
           description: 'The object type, which is always "upload".'
           x-stainless-const: true
         file:
-          $ref: '#/components/schemas/OpenAIFile'
+          allOf:
+            - $ref: '#/components/schemas/OpenAIFile'
+            - description: The ready File object after the Upload is completed.
+              nullable: true
       description: "The Upload object can accept byte chunks in the form of Parts.\n"
       x-oaiMeta:
         name: The upload object

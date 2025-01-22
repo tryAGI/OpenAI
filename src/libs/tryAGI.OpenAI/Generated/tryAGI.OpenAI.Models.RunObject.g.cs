@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -175,23 +177,20 @@ namespace tryAGI.OpenAI
         public required int? MaxCompletionTokens { get; set; }
 
         /// <summary>
-        /// Controls for how a thread will be truncated prior to the run. Use this to control the intial context window of the run.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("truncation_strategy")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AllOfJsonConverter<global::tryAGI.OpenAI.TruncationObject, object>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.TruncationObject TruncationStrategy { get; set; }
+        public required global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.TruncationObject, object> TruncationStrategy { get; set; }
 
         /// <summary>
-        /// Controls which (if any) tool is called by the model.<br/>
-        /// `none` means the model will not call any tools and instead generates a message.<br/>
-        /// `auto` is the default value and means the model can pick between generating a message or calling one or more tools.<br/>
-        /// `required` means the model must call one or more tools before responding to the user.<br/>
-        /// Specifying a particular tool like `{"type": "file_search"}` or `{"type": "function", "function": {"name": "my_function"}}` forces the model to call that tool.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AssistantsApiToolChoiceOptionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AllOfJsonConverter<global::tryAGI.OpenAI.AssistantsApiToolChoiceOption?, object>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.AssistantsApiToolChoiceOption ToolChoice { get; set; }
+        public required global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.AssistantsApiToolChoiceOption?, object> ToolChoice { get; set; }
 
         /// <summary>
         /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.
@@ -201,15 +200,12 @@ namespace tryAGI.OpenAI
         public required bool? ParallelToolCalls { get; set; }
 
         /// <summary>
-        /// Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models#gpt-4o), [GPT-4 Turbo](/docs/models#gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.<br/>
-        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).<br/>
-        /// Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.<br/>
-        /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AssistantsApiResponseFormatOptionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AllOfJsonConverter<global::tryAGI.OpenAI.AssistantsApiResponseFormatOption?, object>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.AssistantsApiResponseFormatOption ResponseFormat { get; set; }
+        public required global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.AssistantsApiResponseFormatOption?, object> ResponseFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -289,25 +285,12 @@ namespace tryAGI.OpenAI
         /// <param name="maxCompletionTokens">
         /// The maximum number of completion tokens specified to have been used over the course of the run.
         /// </param>
-        /// <param name="truncationStrategy">
-        /// Controls for how a thread will be truncated prior to the run. Use this to control the intial context window of the run.
-        /// </param>
-        /// <param name="toolChoice">
-        /// Controls which (if any) tool is called by the model.<br/>
-        /// `none` means the model will not call any tools and instead generates a message.<br/>
-        /// `auto` is the default value and means the model can pick between generating a message or calling one or more tools.<br/>
-        /// `required` means the model must call one or more tools before responding to the user.<br/>
-        /// Specifying a particular tool like `{"type": "file_search"}` or `{"type": "function", "function": {"name": "my_function"}}` forces the model to call that tool.
-        /// </param>
+        /// <param name="truncationStrategy"></param>
+        /// <param name="toolChoice"></param>
         /// <param name="parallelToolCalls">
         /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.
         /// </param>
-        /// <param name="responseFormat">
-        /// Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models#gpt-4o), [GPT-4 Turbo](/docs/models#gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.<br/>
-        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).<br/>
-        /// Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.<br/>
-        /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
-        /// </param>
+        /// <param name="responseFormat"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RunObject(
             string id,
@@ -330,10 +313,10 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RunCompletionUsage? usage,
             int? maxPromptTokens,
             int? maxCompletionTokens,
-            global::tryAGI.OpenAI.TruncationObject truncationStrategy,
-            global::tryAGI.OpenAI.AssistantsApiToolChoiceOption toolChoice,
+            global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.TruncationObject, object> truncationStrategy,
+            global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.AssistantsApiToolChoiceOption?, object> toolChoice,
             bool? parallelToolCalls,
-            global::tryAGI.OpenAI.AssistantsApiResponseFormatOption responseFormat,
+            global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.AssistantsApiResponseFormatOption?, object> responseFormat,
             global::tryAGI.OpenAI.RunObjectObject @object,
             double? temperature,
             double? topP)
@@ -358,7 +341,7 @@ namespace tryAGI.OpenAI
             this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
             this.MaxPromptTokens = maxPromptTokens;
             this.MaxCompletionTokens = maxCompletionTokens;
-            this.TruncationStrategy = truncationStrategy ?? throw new global::System.ArgumentNullException(nameof(truncationStrategy));
+            this.TruncationStrategy = truncationStrategy;
             this.ToolChoice = toolChoice;
             this.ParallelToolCalls = parallelToolCalls;
             this.ResponseFormat = responseFormat;
