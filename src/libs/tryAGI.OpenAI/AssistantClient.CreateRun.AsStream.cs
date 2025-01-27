@@ -211,7 +211,9 @@ namespace tryAGI.OpenAI
                 Stream = stream,
                 MaxPromptTokens = maxPromptTokens,
                 MaxCompletionTokens = maxCompletionTokens,
-                TruncationStrategy = truncationStrategy,
+                TruncationStrategy = truncationStrategy != null
+                    ? (global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.TruncationObject, object>?)truncationStrategy
+                    : null,
                 ToolChoice = toolChoice,
                 ParallelToolCalls = parallelToolCalls,
                 ResponseFormat = responseFormat,

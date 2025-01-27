@@ -210,7 +210,7 @@ namespace tryAGI.OpenAI
             int? maxCompletionTokens = default,
             int? n = 1,
             double? presencePenalty = 0,
-            global::tryAGI.OpenAI.ResponseFormat? responseFormat = default,
+            global::tryAGI.OpenAI.ResponseFormat3? responseFormat = default,
             int? seed = default,
             global::tryAGI.OpenAI.CreateChatCompletionRequestServiceTier? serviceTier = default,
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
