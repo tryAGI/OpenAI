@@ -187,7 +187,11 @@ namespace tryAGI.OpenAI
         /// A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
         /// </param>
         /// <param name="metadata">
-        /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.
+        /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
+        /// useful for storing additional information about the object in a structured<br/>
+        /// format, and querying for objects via API or the dashboard. <br/>
+        /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
+        /// with a maximum length of 512 characters.
         /// </param>
         /// <param name="temperature">
         /// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.<br/>
@@ -212,7 +216,7 @@ namespace tryAGI.OpenAI
             string? instructions = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem7>? tools = default,
             global::tryAGI.OpenAI.ModifyAssistantRequestToolResources? toolResources = default,
-            object? metadata = default,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             double? temperature = default,
             double? topP = default,
             global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.AssistantsApiResponseFormatOption?, object>? responseFormat = default,

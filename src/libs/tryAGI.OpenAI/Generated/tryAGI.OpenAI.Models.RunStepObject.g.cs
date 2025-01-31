@@ -114,10 +114,14 @@ namespace tryAGI.OpenAI
         public required global::System.DateTimeOffset? CompletedAt { get; set; }
 
         /// <summary>
-        /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.
+        /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
+        /// useful for storing additional information about the object in a structured<br/>
+        /// format, and querying for objects via API or the dashboard. <br/>
+        /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
+        /// with a maximum length of 512 characters.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public object? Metadata { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
         /// Usage statistics related to the run step. This value will be `null` while the run step's status is `in_progress`.
@@ -178,7 +182,11 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) for when the run step completed.
         /// </param>
         /// <param name="metadata">
-        /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.
+        /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
+        /// useful for storing additional information about the object in a structured<br/>
+        /// format, and querying for objects via API or the dashboard. <br/>
+        /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
+        /// with a maximum length of 512 characters.
         /// </param>
         /// <param name="usage">
         /// Usage statistics related to the run step. This value will be `null` while the run step's status is `in_progress`.
@@ -200,7 +208,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RunStepCompletionUsage? usage,
             global::tryAGI.OpenAI.RunStepObjectObject @object,
             global::System.DateTimeOffset? expiredAt,
-            object? metadata)
+            global::System.Collections.Generic.Dictionary<string, string>? metadata)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;

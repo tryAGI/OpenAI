@@ -57,8 +57,11 @@ namespace tryAGI.OpenAI
         /// Default Value: medium
         /// </param>
         /// <param name="metadata">
-        /// Developer-defined tags and values used for filtering completions<br/>
-        /// in the [dashboard](https://platform.openai.com/chat-completions).
+        /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
+        /// useful for storing additional information about the object in a structured<br/>
+        /// format, and querying for objects via API or the dashboard. <br/>
+        /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
+        /// with a maximum length of 512 characters.
         /// </param>
         /// <param name="frequencyPenalty">
         /// Number between -2.0 and 2.0. Positive values penalize new tokens based on<br/>
@@ -143,8 +146,8 @@ namespace tryAGI.OpenAI
         /// <param name="serviceTier">
         /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
         ///   - If set to 'auto', and the Project is Scale tier enabled, the system will utilize scale tier credits until they are exhausted.<br/>
-        ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
-        ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
+        ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarantee.<br/>
+        ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarantee.<br/>
         ///   - When not set, the default behavior is 'auto'.<br/>
         /// Default Value: auto
         /// </param>

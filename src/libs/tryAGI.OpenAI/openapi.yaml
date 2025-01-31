@@ -337,11 +337,7 @@ paths:
                   type: string
                   description: The time frame within which the batch should be processed. Currently only `24h` is supported.
                 metadata:
-                  type: object
-                  additionalProperties:
-                    type: string
-                  description: Optional custom metadata for the batch.
-                  nullable: true
+                  $ref: '#/components/schemas/Metadata'
         required: true
       responses:
         '200':
@@ -3059,6 +3055,13 @@ paths:
           description: "A cursor for use in pagination. `after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include after=obj_foo in order to fetch the next page of the list.\n"
           schema:
             type: string
+        - name: emails
+          in: query
+          description: Filter by the email address of users.
+          schema:
+            type: array
+            items:
+              type: string
       responses:
         '200':
           description: Users listed successfully.
@@ -4798,10 +4801,7 @@ components:
           description: "A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.\n"
           nullable: true
         metadata:
-          type: object
-          description: "Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.\n"
-          nullable: true
-          x-oaiTypeLabel: map
+          $ref: '#/components/schemas/Metadata'
         temperature:
           maximum: 2
           minimum: 0
@@ -5464,10 +5464,7 @@ components:
               description: Number of requests that have failed.
           description: The request counts for different statuses within the batch.
         metadata:
-          type: object
-          description: "Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.\n"
-          nullable: true
-          x-oaiTypeLabel: map
+          $ref: '#/components/schemas/Metadata'
       x-oaiMeta:
         name: The batch object
         example: "{\n  \"id\": \"batch_abc123\",\n  \"object\": \"batch\",\n  \"endpoint\": \"/v1/completions\",\n  \"errors\": null,\n  \"input_file_id\": \"file-abc123\",\n  \"completion_window\": \"24h\",\n  \"status\": \"completed\",\n  \"output_file_id\": \"file-cvaTdG\",\n  \"error_file_id\": \"file-HOWS94\",\n  \"created_at\": 1711471533,\n  \"in_progress_at\": 1711471538,\n  \"expires_at\": 1711557933,\n  \"finalizing_at\": 1711493133,\n  \"completed_at\": 1711493163,\n  \"failed_at\": null,\n  \"expired_at\": null,\n  \"cancelling_at\": null,\n  \"cancelled_at\": null,\n  \"request_counts\": {\n    \"total\": 100,\n    \"completed\": 95,\n    \"failed\": 5\n  },\n  \"metadata\": {\n    \"customer_id\": \"user_123456789\",\n    \"batch_description\": \"Nightly eval job\",\n  }\n}\n"
@@ -6386,17 +6383,12 @@ components:
                         description: 'The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.'
                         x-oaiExpandable: true
                       metadata:
-                        type: object
-                        description: "Set of 16 key-value pairs that can be attached to a vector store. This can be useful for storing additional information about the vector store in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.\n"
-                        x-oaiTypeLabel: map
+                        $ref: '#/components/schemas/Metadata'
                   description: "A helper to create a [vector store](/docs/api-reference/vector-stores/object) with file_ids and attach it to this assistant. There can be a maximum of 1 vector store attached to the assistant.\n"
           description: "A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.\n"
           nullable: true
         metadata:
-          type: object
-          description: "Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.\n"
-          nullable: true
-          x-oaiTypeLabel: map
+          $ref: '#/components/schemas/Metadata'
         temperature:
           maximum: 2
           minimum: 0
@@ -6498,6 +6490,8 @@ components:
           anyOf:
             - type: string
             - enum:
+                - o3-mini
+                - o3-mini-2025-01-31
                 - o1
                 - o1-2024-12-17
                 - o1-preview
@@ -6553,11 +6547,7 @@ components:
           description: "**o1 models only** \n\nConstrains effort on reasoning for \n[reasoning models](https://platform.openai.com/docs/guides/reasoning).\nCurrently supported values are `low`, `medium`, and `high`. Reducing\nreasoning effort can result in faster responses and fewer tokens used\non reasoning in a response.\n"
           default: medium
         metadata:
-          type: object
-          additionalProperties:
-            type: string
-          description: "Developer-defined tags and values used for filtering completions\nin the [dashboard](https://platform.openai.com/chat-completions).\n"
-          nullable: true
+          $ref: '#/components/schemas/Metadata'
         frequency_penalty:
           maximum: 2
           minimum: -2
@@ -6665,7 +6655,7 @@ components:
             - auto
             - default
           type: string
-          description: "Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:\n  - If set to 'auto', and the Project is Scale tier enabled, the system will utilize scale tier credits until they are exhausted.\n  - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.\n  - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.\n  - When not set, the default behavior is 'auto'.\n"
+          description: "Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:\n  - If set to 'auto', and the Project is Scale tier enabled, the system will utilize scale tier credits until they are exhausted.\n  - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarantee.\n  - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarantee.\n  - When not set, the default behavior is 'auto'.\n"
           default: auto
           nullable: true
         stop:
@@ -7635,10 +7625,7 @@ components:
           description: 'A list of files attached to the message, and the tools they should be added to.'
           nullable: true
         metadata:
-          type: object
-          description: "Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.\n"
-          nullable: true
-          x-oaiTypeLabel: map
+          $ref: '#/components/schemas/Metadata'
       additionalProperties: false
     CreateModerationRequest:
       required:
@@ -8050,10 +8037,7 @@ components:
           description: Override the tools the assistant can use for this run. This is useful for modifying the behavior on a per-run basis.
           nullable: true
         metadata:
-          type: object
-          description: "Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.\n"
-          nullable: true
-          x-oaiTypeLabel: map
+          $ref: '#/components/schemas/Metadata'
         temperature:
           maximum: 2
           minimum: 0
@@ -8231,10 +8215,7 @@ components:
           description: "A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.\n"
           nullable: true
         metadata:
-          type: object
-          description: "Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.\n"
-          nullable: true
-          x-oaiTypeLabel: map
+          $ref: '#/components/schemas/Metadata'
         temperature:
           maximum: 2
           minimum: 0
@@ -8373,18 +8354,13 @@ components:
                         description: 'The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.'
                         x-oaiExpandable: true
                       metadata:
-                        type: object
-                        description: "Set of 16 key-value pairs that can be attached to a vector store. This can be useful for storing additional information about the vector store in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.\n"
-                        x-oaiTypeLabel: map
+                        $ref: '#/components/schemas/Metadata'
                     x-oaiExpandable: true
                   description: "A helper to create a [vector store](/docs/api-reference/vector-stores/object) with file_ids and attach it to this thread. There can be a maximum of 1 vector store attached to the thread.\n"
           description: "A set of resources that are made available to the assistant's tools in this thread. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.\n"
           nullable: true
         metadata:
-          type: object
-          description: "Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.\n"
-          nullable: true
-          x-oaiTypeLabel: map
+          $ref: '#/components/schemas/Metadata'
       additionalProperties: false
       description: "Options to create a new thread. If no thread is provided when running a \nrequest, an empty thread will be created.\n"
     CreateTranscriptionRequest:
@@ -8410,7 +8386,7 @@ components:
           x-oaiTypeLabel: string
         language:
           type: string
-          description: "The language of the input audio. Supplying the input language in [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) format will improve accuracy and latency.\n"
+          description: "The language of the input audio. Supplying the input language in [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (e.g. `en`) format will improve accuracy and latency.\n"
         prompt:
           type: string
           description: "An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text#prompting) should match the audio language.\n"
@@ -8608,10 +8584,7 @@ components:
           description: 'The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy. Only applicable if `file_ids` is non-empty.'
           x-oaiExpandable: true
         metadata:
-          type: object
-          description: "Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.\n"
-          nullable: true
-          x-oaiTypeLabel: map
+          $ref: '#/components/schemas/Metadata'
       additionalProperties: false
     DefaultProjectErrorResponse:
       required:
@@ -10341,10 +10314,7 @@ components:
           description: 'A list of files attached to the message, and the tools they were added to.'
           nullable: true
         metadata:
-          type: object
-          description: "Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.\n"
-          nullable: true
-          x-oaiTypeLabel: map
+          $ref: '#/components/schemas/Metadata'
       description: 'Represents a message within a [thread](/docs/api-reference/threads).'
       x-oaiMeta:
         name: The message object
@@ -10444,6 +10414,13 @@ components:
           description: 'Occurs when a [message](/docs/api-reference/messages/object) ends before it is completed.'
           x-oaiMeta:
             dataDescription: '`data` is a [message](/docs/api-reference/messages/object)'
+    Metadata:
+      type: object
+      additionalProperties:
+        type: string
+      description: "Set of 16 key-value pairs that can be attached to an object. This can be\nuseful for storing additional information about the object in a structured\nformat, and querying for objects via API or the dashboard. \n\nKeys are strings with a maximum length of 64 characters. Values are strings\nwith a maximum length of 512 characters.\n"
+      nullable: true
+      x-oaiTypeLabel: map
     Model:
       title: Model
       required:
@@ -10527,10 +10504,7 @@ components:
           description: "A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.\n"
           nullable: true
         metadata:
-          type: object
-          description: "Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.\n"
-          nullable: true
-          x-oaiTypeLabel: map
+          $ref: '#/components/schemas/Metadata'
         temperature:
           maximum: 2
           minimum: 0
@@ -10556,19 +10530,13 @@ components:
       type: object
       properties:
         metadata:
-          type: object
-          description: "Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.\n"
-          nullable: true
-          x-oaiTypeLabel: map
+          $ref: '#/components/schemas/Metadata'
       additionalProperties: false
     ModifyRunRequest:
       type: object
       properties:
         metadata:
-          type: object
-          description: "Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.\n"
-          nullable: true
-          x-oaiTypeLabel: map
+          $ref: '#/components/schemas/Metadata'
       additionalProperties: false
     ModifyThreadRequest:
       type: object
@@ -10597,10 +10565,7 @@ components:
           description: "A set of resources that are made available to the assistant's tools in this thread. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.\n"
           nullable: true
         metadata:
-          type: object
-          description: "Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.\n"
-          nullable: true
-          x-oaiTypeLabel: map
+          $ref: '#/components/schemas/Metadata'
       additionalProperties: false
     OpenAIFile:
       title: OpenAIFile
@@ -11596,10 +11561,7 @@ components:
               default: auto
           description: "Controls which conversation the response is added to. Currently supports\n`auto` and `none`, with `auto` as the default value. The `auto` value\nmeans that the contents of the response will be added to the default\nconversation. Set this to `none` to create an out-of-band response which \nwill not add items to default conversation.\n"
         metadata:
-          type: object
-          description: "Set of 16 key-value pairs that can be attached to an object. This can be\nuseful for storing additional information about the object in a structured\nformat. Keys can be a maximum of 64 characters long and values can be a\nmaximum of 512 characters long.\n"
-          nullable: true
-          x-oaiTypeLabel: map
+          $ref: '#/components/schemas/Metadata'
         input:
           type: array
           items:
@@ -12743,7 +12705,13 @@ components:
             model:
               type: string
               description: "The model to use for transcription, `whisper-1` is the only currently \nsupported model.\n"
-          description: "Configuration for input audio transcription, defaults to off and can be \nset to `null` to turn off once on. Input audio transcription is not native \nto the model, since the model consumes audio directly. Transcription runs \nasynchronously through Whisper and should be treated as rough guidance \nrather than the representation understood by the model.\n"
+            language:
+              type: string
+              description: "The language of the input audio. Supplying the input language in\n[ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (e.g. `en`) format\nwill improve accuracy and latency.\n"
+            prompt:
+              type: string
+              description: "An optional text to guide the model's style or continue a previous audio\nsegment. The [prompt](/docs/guides/speech-to-text#prompting) should match\nthe audio language.\n"
+          description: "Configuration for input audio transcription, defaults to off and can be  set to `null` to turn off once on. Input audio transcription is not native to the model, since the model consumes audio directly. Transcription runs  asynchronously through [OpenAI Whisper transcription](https://platform.openai.com/docs/api-reference/audio/createTranscription) and should be treated as rough guidance rather than the representation understood by the model. The client can optionally set the language and prompt for transcription, these fields will be passed to the Whisper API.\n"
         turn_detection:
           type: object
           properties:
@@ -12801,9 +12769,14 @@ components:
           description: "Maximum number of output tokens for a single assistant response,\ninclusive of tool calls. Provide an integer between 1 and 4096 to\nlimit output tokens, or `inf` for the maximum available tokens for a\ngiven model. Defaults to `inf`.\n"
       description: Realtime session object configuration.
     RealtimeSessionCreateResponse:
+      required:
+        - client_secret
       type: object
       properties:
         client_secret:
+          required:
+            - value
+            - expires_at
           type: object
           properties:
             value:
@@ -13129,10 +13102,7 @@ components:
             x-oaiExpandable: true
           description: 'The list of tools that the [assistant](/docs/api-reference/assistants) used for this run.'
         metadata:
-          type: object
-          description: "Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.\n"
-          nullable: true
-          x-oaiTypeLabel: map
+          $ref: '#/components/schemas/Metadata'
         usage:
           $ref: '#/components/schemas/RunCompletionUsage'
         temperature:
@@ -13734,10 +13704,7 @@ components:
           description: The Unix timestamp (in seconds) for when the run step completed.
           nullable: true
         metadata:
-          type: object
-          description: "Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.\n"
-          nullable: true
-          x-oaiTypeLabel: map
+          $ref: '#/components/schemas/Metadata'
         usage:
           $ref: '#/components/schemas/RunStepCompletionUsage'
       description: "Represents a step in execution of a run.\n"
@@ -14149,10 +14116,7 @@ components:
           description: "A set of resources that are made available to the assistant's tools in this thread. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.\n"
           nullable: true
         metadata:
-          type: object
-          description: "Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.\n"
-          nullable: true
-          x-oaiTypeLabel: map
+          $ref: '#/components/schemas/Metadata'
       description: 'Represents a thread that contains [messages](/docs/api-reference/messages).'
       x-oaiMeta:
         name: The thread object
@@ -14278,10 +14242,7 @@ components:
             - $ref: '#/components/schemas/VectorStoreExpirationAfter'
             - nullable: true
         metadata:
-          type: object
-          description: "Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.\n"
-          nullable: true
-          x-oaiTypeLabel: map
+          $ref: '#/components/schemas/Metadata'
       additionalProperties: false
     Upload:
       title: Upload
@@ -15025,10 +14986,7 @@ components:
           description: The Unix timestamp (in seconds) for when the vector store was last active.
           nullable: true
         metadata:
-          type: object
-          description: "Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.\n"
-          nullable: true
-          x-oaiTypeLabel: map
+          $ref: '#/components/schemas/Metadata'
       description: A vector store is a collection of processed files can be used by the `file_search` tool.
       x-oaiMeta:
         name: The vector store object

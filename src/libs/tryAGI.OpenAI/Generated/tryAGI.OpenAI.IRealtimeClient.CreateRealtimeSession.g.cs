@@ -63,11 +63,7 @@ namespace tryAGI.OpenAI
         /// For `pcm16`, output audio is sampled at a rate of 24kHz.
         /// </param>
         /// <param name="inputAudioTranscription">
-        /// Configuration for input audio transcription, defaults to off and can be <br/>
-        /// set to `null` to turn off once on. Input audio transcription is not native <br/>
-        /// to the model, since the model consumes audio directly. Transcription runs <br/>
-        /// asynchronously through Whisper and should be treated as rough guidance <br/>
-        /// rather than the representation understood by the model.
+        /// Configuration for input audio transcription, defaults to off and can be  set to `null` to turn off once on. Input audio transcription is not native to the model, since the model consumes audio directly. Transcription runs  asynchronously through [OpenAI Whisper transcription](https://platform.openai.com/docs/api-reference/audio/createTranscription) and should be treated as rough guidance rather than the representation understood by the model. The client can optionally set the language and prompt for transcription, these fields will be passed to the Whisper API.
         /// </param>
         /// <param name="turnDetection">
         /// Configuration for turn detection. Can be set to `null` to turn off. Server <br/>
