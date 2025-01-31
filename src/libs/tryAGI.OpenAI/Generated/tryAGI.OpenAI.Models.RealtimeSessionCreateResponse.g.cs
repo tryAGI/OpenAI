@@ -15,7 +15,8 @@ namespace tryAGI.OpenAI
         /// Ephemeral key returned by the API.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("client_secret")]
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseClientSecret? ClientSecret { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.RealtimeSessionCreateResponseClientSecret ClientSecret { get; set; }
 
         /// <summary>
         /// The set of modalities the model can respond with. To disable audio,<br/>
@@ -180,7 +181,7 @@ namespace tryAGI.OpenAI
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeSessionCreateResponse(
-            global::tryAGI.OpenAI.RealtimeSessionCreateResponseClientSecret? clientSecret,
+            global::tryAGI.OpenAI.RealtimeSessionCreateResponseClientSecret clientSecret,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateResponseModalitie>? modalities,
             string? instructions,
             global::tryAGI.OpenAI.RealtimeSessionCreateResponseVoice? voice,
@@ -193,7 +194,7 @@ namespace tryAGI.OpenAI
             double? temperature,
             global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseMaxResponseOutputTokens?>? maxResponseOutputTokens)
         {
-            this.ClientSecret = clientSecret;
+            this.ClientSecret = clientSecret ?? throw new global::System.ArgumentNullException(nameof(clientSecret));
             this.Modalities = modalities;
             this.Instructions = instructions;
             this.Voice = voice;

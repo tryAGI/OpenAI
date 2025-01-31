@@ -101,11 +101,15 @@ namespace tryAGI.OpenAI
         public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.MessageObjectAttachment>? Attachments { get; set; }
 
         /// <summary>
-        /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.
+        /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
+        /// useful for storing additional information about the object in a structured<br/>
+        /// format, and querying for objects via API or the dashboard. <br/>
+        /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
+        /// with a maximum length of 512 characters.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? Metadata { get; set; }
+        public required global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -156,7 +160,11 @@ namespace tryAGI.OpenAI
         /// A list of files attached to the message, and the tools they were added to.
         /// </param>
         /// <param name="metadata">
-        /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.
+        /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
+        /// useful for storing additional information about the object in a structured<br/>
+        /// format, and querying for objects via API or the dashboard. <br/>
+        /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
+        /// with a maximum length of 512 characters.
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public MessageObject(
@@ -168,7 +176,7 @@ namespace tryAGI.OpenAI
             string? assistantId,
             string? runId,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.MessageObjectAttachment>? attachments,
-            object? metadata,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::tryAGI.OpenAI.MessageObjectObject @object,
             global::tryAGI.OpenAI.MessageObjectStatus? status,
             global::tryAGI.OpenAI.MessageObjectIncompleteDetails? incompleteDetails,

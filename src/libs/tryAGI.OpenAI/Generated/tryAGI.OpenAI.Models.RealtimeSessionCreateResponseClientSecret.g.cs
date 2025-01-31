@@ -14,14 +14,16 @@ namespace tryAGI.OpenAI
         /// a standard API token, which should only be used server-side.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        public string? Value { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Value { get; set; }
 
         /// <summary>
         /// Timestamp for when the token expires. Currently, all tokens expire<br/>
         /// after one minute.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
-        public int? ExpiresAt { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int ExpiresAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -43,10 +45,10 @@ namespace tryAGI.OpenAI
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeSessionCreateResponseClientSecret(
-            string? value,
-            int? expiresAt)
+            string value,
+            int expiresAt)
         {
-            this.Value = value;
+            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
             this.ExpiresAt = expiresAt;
         }
 

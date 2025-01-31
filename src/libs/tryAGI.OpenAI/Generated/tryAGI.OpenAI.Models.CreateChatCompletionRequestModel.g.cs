@@ -11,6 +11,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        O3Mini,
+        /// <summary>
+        /// 
+        /// </summary>
+        O3Mini20250131,
+        /// <summary>
+        /// 
+        /// </summary>
         O1,
         /// <summary>
         /// 
@@ -170,6 +178,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                CreateChatCompletionRequestModel.O3Mini => "o3-mini",
+                CreateChatCompletionRequestModel.O3Mini20250131 => "o3-mini-2025-01-31",
                 CreateChatCompletionRequestModel.O1 => "o1",
                 CreateChatCompletionRequestModel.O120241217 => "o1-2024-12-17",
                 CreateChatCompletionRequestModel.O1Preview => "o1-preview",
@@ -217,6 +227,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "o3-mini" => CreateChatCompletionRequestModel.O3Mini,
+                "o3-mini-2025-01-31" => CreateChatCompletionRequestModel.O3Mini20250131,
                 "o1" => CreateChatCompletionRequestModel.O1,
                 "o1-2024-12-17" => CreateChatCompletionRequestModel.O120241217,
                 "o1-preview" => CreateChatCompletionRequestModel.O1Preview,
