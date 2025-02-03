@@ -4,7 +4,7 @@ namespace tryAGI.OpenAI;
 /// <summary>
 /// According https://openai.com/pricing/
 /// </summary>
-public static partial class Metadata
+public static partial class MetadataExtensions
 {
     /// <summary>
     /// Just a constant for 1e-3.

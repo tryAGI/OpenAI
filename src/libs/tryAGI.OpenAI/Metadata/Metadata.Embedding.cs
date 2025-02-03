@@ -1,7 +1,7 @@
 // ReSharper disable once CheckNamespace
 namespace tryAGI.OpenAI;
 
-public static partial class Metadata
+public static partial class MetadataExtensions
 {
     /// <summary>
     /// According https://openai.com/pricing/ <br/>

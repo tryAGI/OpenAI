@@ -185,7 +185,7 @@ namespace tryAGI.OpenAI
             string? additionalInstructions = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateMessageRequest>? additionalMessages = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem4>? tools = default,
-            global::tryAGI.OpenAI.CreateRunRequestMetadata? metadata = default,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             double? temperature = 1,
             double? topP = 1,
             bool? stream = default,
