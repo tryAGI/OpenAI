@@ -11,6 +11,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Developer,
+        /// <summary>
+        /// 
+        /// </summary>
         System,
         /// <summary>
         /// 
@@ -42,6 +46,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                ChatCompletionRole.Developer => "developer",
                 ChatCompletionRole.System => "system",
                 ChatCompletionRole.User => "user",
                 ChatCompletionRole.Assistant => "assistant",
@@ -57,6 +62,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "developer" => ChatCompletionRole.Developer,
                 "system" => ChatCompletionRole.System,
                 "user" => ChatCompletionRole.User,
                 "assistant" => ChatCompletionRole.Assistant,

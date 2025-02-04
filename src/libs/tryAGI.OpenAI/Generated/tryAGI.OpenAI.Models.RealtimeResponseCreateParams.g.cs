@@ -101,12 +101,13 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
-        /// Input items to include in the prompt for the model. Creates a new context<br/>
-        /// for this response, without including the default conversation. Can include<br/>
-        /// references to items from the default conversation.
+        /// Input items to include in the prompt for the model. Using this field<br/>
+        /// creates a new context for this Response instead of using the default<br/>
+        /// conversation. An empty array `[]` will clear the context for this Response.<br/>
+        /// Note that this can include references to items from the default conversation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeConversationItem>? Input { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeConversationItemWithReference>? Input { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -174,9 +175,10 @@ namespace tryAGI.OpenAI
         /// with a maximum length of 512 characters.
         /// </param>
         /// <param name="input">
-        /// Input items to include in the prompt for the model. Creates a new context<br/>
-        /// for this response, without including the default conversation. Can include<br/>
-        /// references to items from the default conversation.
+        /// Input items to include in the prompt for the model. Using this field<br/>
+        /// creates a new context for this Response instead of using the default<br/>
+        /// conversation. An empty array `[]` will clear the context for this Response.<br/>
+        /// Note that this can include references to items from the default conversation.
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RealtimeResponseCreateParams(
@@ -190,7 +192,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeResponseCreateParamsMaxResponseOutputTokens?>? maxResponseOutputTokens,
             global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.RealtimeResponseCreateParamsConversation?>? conversation,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeConversationItem>? input)
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeConversationItemWithReference>? input)
         {
             this.Modalities = modalities;
             this.Instructions = instructions;

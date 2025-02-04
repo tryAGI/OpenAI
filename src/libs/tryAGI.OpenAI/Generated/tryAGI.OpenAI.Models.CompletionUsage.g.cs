@@ -9,25 +9,31 @@ namespace tryAGI.OpenAI
     public sealed partial class CompletionUsage
     {
         /// <summary>
-        /// Number of tokens in the generated completion.
+        /// Number of tokens in the generated completion.<br/>
+        /// Default Value: 0
         /// </summary>
+        /// <default>0</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int CompletionTokens { get; set; }
+        public required int CompletionTokens { get; set; } = 0;
 
         /// <summary>
-        /// Number of tokens in the prompt.
+        /// Number of tokens in the prompt.<br/>
+        /// Default Value: 0
         /// </summary>
+        /// <default>0</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int PromptTokens { get; set; }
+        public required int PromptTokens { get; set; } = 0;
 
         /// <summary>
-        /// Total number of tokens used in the request (prompt + completion).
+        /// Total number of tokens used in the request (prompt + completion).<br/>
+        /// Default Value: 0
         /// </summary>
+        /// <default>0</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int TotalTokens { get; set; }
+        public required int TotalTokens { get; set; } = 0;
 
         /// <summary>
         /// Breakdown of tokens used in a completion.
@@ -51,13 +57,16 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="CompletionUsage" /> class.
         /// </summary>
         /// <param name="completionTokens">
-        /// Number of tokens in the generated completion.
+        /// Number of tokens in the generated completion.<br/>
+        /// Default Value: 0
         /// </param>
         /// <param name="promptTokens">
-        /// Number of tokens in the prompt.
+        /// Number of tokens in the prompt.<br/>
+        /// Default Value: 0
         /// </param>
         /// <param name="totalTokens">
-        /// Total number of tokens used in the request (prompt + completion).
+        /// Total number of tokens used in the request (prompt + completion).<br/>
+        /// Default Value: 0
         /// </param>
         /// <param name="completionTokensDetails">
         /// Breakdown of tokens used in a completion.

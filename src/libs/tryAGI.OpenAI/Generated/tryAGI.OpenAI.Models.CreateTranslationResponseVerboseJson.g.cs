@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("duration")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Duration { get; set; }
+        public required double Duration { get; set; }
 
         /// <summary>
         /// The translated text.
@@ -59,12 +59,12 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public CreateTranslationResponseVerboseJson(
             string language,
-            string duration,
+            double duration,
             string text,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionSegment>? segments)
         {
             this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
-            this.Duration = duration ?? throw new global::System.ArgumentNullException(nameof(duration));
+            this.Duration = duration;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Segments = segments;
         }
