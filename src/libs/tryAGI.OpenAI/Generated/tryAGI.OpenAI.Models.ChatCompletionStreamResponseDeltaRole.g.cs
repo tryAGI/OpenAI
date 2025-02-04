@@ -11,6 +11,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Developer,
+        /// <summary>
+        /// 
+        /// </summary>
         System,
         /// <summary>
         /// 
@@ -38,6 +42,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                ChatCompletionStreamResponseDeltaRole.Developer => "developer",
                 ChatCompletionStreamResponseDeltaRole.System => "system",
                 ChatCompletionStreamResponseDeltaRole.User => "user",
                 ChatCompletionStreamResponseDeltaRole.Assistant => "assistant",
@@ -52,6 +57,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "developer" => ChatCompletionStreamResponseDeltaRole.Developer,
                 "system" => ChatCompletionStreamResponseDeltaRole.System,
                 "user" => ChatCompletionStreamResponseDeltaRole.User,
                 "assistant" => ChatCompletionStreamResponseDeltaRole.Assistant,

@@ -9,13 +9,15 @@ namespace tryAGI.OpenAI
     public sealed partial class CompletionUsagePromptTokensDetails
     {
         /// <summary>
-        /// Audio input tokens present in the prompt.
+        /// Audio input tokens present in the prompt.<br/>
+        /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio_tokens")]
         public int? AudioTokens { get; set; }
 
         /// <summary>
-        /// Cached tokens present in the prompt.
+        /// Cached tokens present in the prompt.<br/>
+        /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cached_tokens")]
         public int? CachedTokens { get; set; }
@@ -30,10 +32,12 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="CompletionUsagePromptTokensDetails" /> class.
         /// </summary>
         /// <param name="audioTokens">
-        /// Audio input tokens present in the prompt.
+        /// Audio input tokens present in the prompt.<br/>
+        /// Default Value: 0
         /// </param>
         /// <param name="cachedTokens">
-        /// Cached tokens present in the prompt.
+        /// Cached tokens present in the prompt.<br/>
+        /// Default Value: 0
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public CompletionUsagePromptTokensDetails(
