@@ -55,7 +55,9 @@ namespace tryAGI.OpenAI
         /// By default, there is only one Conversation, and it gets created at the beginning of the Session.<br/>
         /// In the future, we may add support for additional conversations.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeConversationCreated(
             string? eventId,
             global::tryAGI.OpenAI.RealtimeConversationCreatedType? type,

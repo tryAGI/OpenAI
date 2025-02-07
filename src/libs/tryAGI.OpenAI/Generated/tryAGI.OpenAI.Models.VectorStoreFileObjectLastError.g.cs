@@ -38,7 +38,9 @@ namespace tryAGI.OpenAI
         /// <param name="message">
         /// A human-readable description of the error.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public VectorStoreFileObjectLastError(
             global::tryAGI.OpenAI.VectorStoreFileObjectLastErrorCode code,
             string message)

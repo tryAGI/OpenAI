@@ -66,7 +66,9 @@ namespace tryAGI.OpenAI
         /// Duration of silence to detect speech stop (in milliseconds).<br/>
         /// Example: 200
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeSessionTurnDetection(
             global::tryAGI.OpenAI.RealtimeSessionTurnDetectionType? type,
             double? threshold,

@@ -72,7 +72,9 @@ namespace tryAGI.OpenAI
         /// If the audio output modality is requested, this object contains data<br/>
         /// about the audio response from the model. [Learn more](/docs/guides/audio).
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatCompletionResponseMessage(
             string? content,
             string? refusal,

@@ -35,7 +35,9 @@ namespace tryAGI.OpenAI
         /// <param name="output">
         /// The output of the tool call to be submitted to continue the run.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SubmitToolOutputsRunRequestToolOutput(
             string? toolCallId,
             string? output)

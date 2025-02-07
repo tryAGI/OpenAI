@@ -44,7 +44,9 @@ namespace tryAGI.OpenAI
         /// Always `text`.
         /// </param>
         /// <param name="text"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MessageDeltaContentTextObject(
             int index,
             global::tryAGI.OpenAI.MessageDeltaContentTextObjectType type,

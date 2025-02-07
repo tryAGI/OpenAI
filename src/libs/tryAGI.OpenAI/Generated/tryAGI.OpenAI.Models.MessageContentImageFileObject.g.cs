@@ -35,7 +35,9 @@ namespace tryAGI.OpenAI
         /// Always `image_file`.
         /// </param>
         /// <param name="imageFile"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MessageContentImageFileObject(
             global::tryAGI.OpenAI.MessageContentImageFileObjectImageFile imageFile,
             global::tryAGI.OpenAI.MessageContentImageFileObjectType type)

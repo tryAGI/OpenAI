@@ -26,7 +26,9 @@ namespace tryAGI.OpenAI
         /// <param name="fileId">
         /// The [file](/docs/api-reference/files) ID of the image.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage(
             string? fileId)
         {

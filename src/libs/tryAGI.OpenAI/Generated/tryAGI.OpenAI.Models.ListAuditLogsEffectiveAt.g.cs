@@ -53,7 +53,9 @@ namespace tryAGI.OpenAI
         /// <param name="lte">
         /// Return only events whose `effective_at` (Unix seconds) is less than or equal to this value.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListAuditLogsEffectiveAt(
             int? gt,
             int? gte,

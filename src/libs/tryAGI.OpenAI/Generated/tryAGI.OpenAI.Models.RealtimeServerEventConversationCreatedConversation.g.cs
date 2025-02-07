@@ -35,7 +35,9 @@ namespace tryAGI.OpenAI
         /// <param name="object">
         /// The object type, must be `realtime.conversation`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeServerEventConversationCreatedConversation(
             string? id,
             string? @object)

@@ -54,7 +54,9 @@ namespace tryAGI.OpenAI
         /// <param name="resetSeconds">
         /// Seconds until the rate limit resets.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeServerEventRateLimitsUpdatedRateLimit(
             global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdatedRateLimitName? name,
             int? limit,

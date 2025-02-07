@@ -58,7 +58,9 @@ namespace tryAGI.OpenAI
         /// <param name="object">
         /// The object type, which is always `upload.part`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UploadPart(
             string id,
             global::System.DateTimeOffset createdAt,

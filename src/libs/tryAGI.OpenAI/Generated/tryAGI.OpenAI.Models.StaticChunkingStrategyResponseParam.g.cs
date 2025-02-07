@@ -35,7 +35,9 @@ namespace tryAGI.OpenAI
         /// Always `static`.
         /// </param>
         /// <param name="static"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StaticChunkingStrategyResponseParam(
             global::tryAGI.OpenAI.StaticChunkingStrategy @static,
             global::tryAGI.OpenAI.StaticChunkingStrategyResponseParamType type)

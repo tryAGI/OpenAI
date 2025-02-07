@@ -58,7 +58,9 @@ namespace tryAGI.OpenAI
         /// <param name="ownedBy">
         /// The organization that owns the model.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Model15(
             string id,
             global::System.DateTimeOffset created,

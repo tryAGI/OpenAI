@@ -71,7 +71,9 @@ namespace tryAGI.OpenAI
         /// <param name="error">
         /// Details of the transcription error.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeServerEventConversationItemInputAudioTranscriptionFailed(
             string eventId,
             string itemId,

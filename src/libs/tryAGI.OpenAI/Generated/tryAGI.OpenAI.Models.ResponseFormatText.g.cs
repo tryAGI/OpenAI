@@ -27,7 +27,9 @@ namespace tryAGI.OpenAI
         /// <param name="type">
         /// The type of response format being defined: `text`
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ResponseFormatText(
             global::tryAGI.OpenAI.ResponseFormatTextType type)
         {

@@ -78,7 +78,9 @@ namespace tryAGI.OpenAI
         /// The transcribed text.<br/>
         /// Example: Hello, how are you?
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeConversationItemInputAudioTranscriptionCompleted(
             string? eventId,
             global::tryAGI.OpenAI.RealtimeConversationItemInputAudioTranscriptionCompletedType? type,

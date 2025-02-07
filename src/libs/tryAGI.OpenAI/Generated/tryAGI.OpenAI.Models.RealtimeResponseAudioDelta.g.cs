@@ -102,7 +102,9 @@ namespace tryAGI.OpenAI
         /// Base64-encoded audio data delta.<br/>
         /// Example: Base64EncodedAudioDelta
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeResponseAudioDelta(
             string? eventId,
             global::tryAGI.OpenAI.RealtimeResponseAudioDeltaType? type,

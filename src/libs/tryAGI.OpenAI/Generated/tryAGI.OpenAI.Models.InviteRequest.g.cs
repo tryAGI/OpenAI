@@ -47,7 +47,9 @@ namespace tryAGI.OpenAI
         /// <param name="projects">
         /// An array of projects to which membership is granted at the same time the org invite is accepted. If omitted, the user will be invited to the default project for compatibility with legacy behavior.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public InviteRequest(
             string email,
             global::tryAGI.OpenAI.InviteRequestRole role,

@@ -35,7 +35,9 @@ namespace tryAGI.OpenAI
         /// <param name="data">
         /// Represents a step in execution of a run.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AssistantStreamEventVariant18(
             global::tryAGI.OpenAI.RunStepObject data,
             global::tryAGI.OpenAI.AssistantStreamEventVariant18Event @event)

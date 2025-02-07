@@ -38,7 +38,9 @@ namespace tryAGI.OpenAI
         /// Specifies the detail level of the image if specified by the user. `low` uses fewer tokens, you can opt in to high resolution using `high`.<br/>
         /// Default Value: auto
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MessageDeltaContentImageFileObjectImageFile(
             string? fileId,
             global::tryAGI.OpenAI.MessageDeltaContentImageFileObjectImageFileDetail? detail)

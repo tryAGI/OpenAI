@@ -35,7 +35,9 @@ namespace tryAGI.OpenAI
         /// <param name="changesRequested">
         /// The payload used to update the project.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AuditLogProjectUpdated(
             string? id,
             global::tryAGI.OpenAI.AuditLogProjectUpdatedChangesRequested? changesRequested)

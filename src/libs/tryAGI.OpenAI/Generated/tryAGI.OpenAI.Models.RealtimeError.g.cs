@@ -51,7 +51,9 @@ namespace tryAGI.OpenAI
         /// <param name="error">
         /// Details of the error.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeError(
             string? eventId,
             global::tryAGI.OpenAI.RealtimeErrorType? type,

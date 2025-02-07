@@ -82,7 +82,9 @@ namespace tryAGI.OpenAI
         /// <param name="usage">
         /// Usage statistics for the response.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeResponse(
             string? id,
             global::tryAGI.OpenAI.RealtimeResponseObject? @object,

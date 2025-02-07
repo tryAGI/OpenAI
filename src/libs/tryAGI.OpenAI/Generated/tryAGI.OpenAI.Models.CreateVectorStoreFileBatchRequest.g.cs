@@ -37,7 +37,9 @@ namespace tryAGI.OpenAI
         /// <param name="chunkingStrategy">
         /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateVectorStoreFileBatchRequest(
             global::System.Collections.Generic.IList<string> fileIds,
             global::tryAGI.OpenAI.ChunkingStrategyRequestParam? chunkingStrategy)

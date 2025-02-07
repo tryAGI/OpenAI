@@ -37,7 +37,9 @@ namespace tryAGI.OpenAI
         /// <param name="totalTokens">
         /// The total number of tokens used by the request.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateEmbeddingResponseUsage(
             int promptTokens,
             int totalTokens)

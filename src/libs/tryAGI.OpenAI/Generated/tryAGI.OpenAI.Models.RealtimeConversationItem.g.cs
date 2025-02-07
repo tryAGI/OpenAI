@@ -94,7 +94,9 @@ namespace tryAGI.OpenAI
         /// <param name="content">
         /// The content of the message.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeConversationItem(
             string? id,
             global::tryAGI.OpenAI.RealtimeConversationItemObject? @object,

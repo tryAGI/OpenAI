@@ -110,7 +110,9 @@ namespace tryAGI.OpenAI
         /// <param name="projects">
         /// The projects that were granted membership upon acceptance of the invite.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Invite(
             string id,
             string email,

@@ -45,7 +45,9 @@ namespace tryAGI.OpenAI
         /// <param name="url">
         /// The OpenAI API relative URL to be used for the request. Currently `/v1/chat/completions`, `/v1/embeddings`, and `/v1/completions` are supported.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BatchRequestInput(
             string? customId,
             global::tryAGI.OpenAI.BatchRequestInputMethod? method,

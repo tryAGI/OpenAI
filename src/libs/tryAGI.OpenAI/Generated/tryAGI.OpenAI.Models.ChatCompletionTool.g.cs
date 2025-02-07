@@ -35,7 +35,9 @@ namespace tryAGI.OpenAI
         /// The type of the tool. Currently, only `function` is supported.
         /// </param>
         /// <param name="function"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatCompletionTool(
             global::tryAGI.OpenAI.FunctionObject function,
             global::tryAGI.OpenAI.ChatCompletionToolType type)

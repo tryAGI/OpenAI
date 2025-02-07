@@ -67,7 +67,9 @@ namespace tryAGI.OpenAI
         /// <param name="role">
         /// Example: member
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AdminApiKeyOwner(
             string? type,
             string? id,

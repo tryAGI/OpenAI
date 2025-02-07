@@ -41,7 +41,9 @@ namespace tryAGI.OpenAI
         /// <param name="object"></param>
         /// <param name="id"></param>
         /// <param name="deleted"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProjectUserDeleteResponse(
             string id,
             bool deleted,

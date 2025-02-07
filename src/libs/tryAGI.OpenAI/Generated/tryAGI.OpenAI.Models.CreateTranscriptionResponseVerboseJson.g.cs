@@ -65,7 +65,9 @@ namespace tryAGI.OpenAI
         /// <param name="segments">
         /// Segments of the transcribed text and their corresponding details.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateTranscriptionResponseVerboseJson(
             string language,
             double duration,

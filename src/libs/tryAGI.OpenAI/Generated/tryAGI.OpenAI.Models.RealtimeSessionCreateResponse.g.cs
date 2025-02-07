@@ -179,7 +179,9 @@ namespace tryAGI.OpenAI
         /// limit output tokens, or `inf` for the maximum available tokens for a<br/>
         /// given model. Defaults to `inf`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeSessionCreateResponse(
             global::tryAGI.OpenAI.RealtimeSessionCreateResponseClientSecret clientSecret,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateResponseModalitie>? modalities,

@@ -44,7 +44,9 @@ namespace tryAGI.OpenAI
         /// <param name="body">
         /// The JSON body of the response
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BatchRequestOutputResponse(
             int? statusCode,
             string? requestId,

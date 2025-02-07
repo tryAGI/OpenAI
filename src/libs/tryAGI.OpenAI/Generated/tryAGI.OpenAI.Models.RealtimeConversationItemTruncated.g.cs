@@ -78,7 +78,9 @@ namespace tryAGI.OpenAI
         /// The duration up to which the audio was truncated, in milliseconds.<br/>
         /// Example: 1500
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeConversationItemTruncated(
             string? eventId,
             global::tryAGI.OpenAI.RealtimeConversationItemTruncatedType? type,

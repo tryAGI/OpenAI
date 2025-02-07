@@ -37,7 +37,9 @@ namespace tryAGI.OpenAI
         /// <param name="submitToolOutputs">
         /// Details on the tool outputs needed for this run to continue.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunObjectRequiredAction(
             global::tryAGI.OpenAI.RunObjectRequiredActionSubmitToolOutputs submitToolOutputs,
             global::tryAGI.OpenAI.RunObjectRequiredActionType type)

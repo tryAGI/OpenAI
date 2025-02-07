@@ -61,7 +61,9 @@ namespace tryAGI.OpenAI
         /// <param name="filePath"></param>
         /// <param name="startIndex"></param>
         /// <param name="endIndex"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MessageContentTextAnnotationsFilePathObject(
             string text,
             global::tryAGI.OpenAI.MessageContentTextAnnotationsFilePathObjectFilePath filePath,

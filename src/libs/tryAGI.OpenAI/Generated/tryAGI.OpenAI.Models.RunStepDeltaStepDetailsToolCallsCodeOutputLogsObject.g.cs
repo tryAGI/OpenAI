@@ -46,7 +46,9 @@ namespace tryAGI.OpenAI
         /// <param name="logs">
         /// The text output from the Code Interpreter tool call.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject(
             int index,
             global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType type,

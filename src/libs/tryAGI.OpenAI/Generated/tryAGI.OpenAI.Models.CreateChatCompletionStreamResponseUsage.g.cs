@@ -48,7 +48,9 @@ namespace tryAGI.OpenAI
         /// <param name="totalTokens">
         /// Total number of tokens used in the request (prompt + completion).
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateChatCompletionStreamResponseUsage(
             int completionTokens,
             int promptTokens,

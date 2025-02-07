@@ -27,7 +27,9 @@ namespace tryAGI.OpenAI
         /// <param name="type">
         /// The type of tool being defined: `code_interpreter`
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AssistantToolsCode(
             global::tryAGI.OpenAI.AssistantToolsCodeType type)
         {

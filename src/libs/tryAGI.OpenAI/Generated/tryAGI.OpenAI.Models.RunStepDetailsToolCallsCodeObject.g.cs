@@ -47,7 +47,9 @@ namespace tryAGI.OpenAI
         /// <param name="codeInterpreter">
         /// The Code Interpreter tool call definition.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunStepDetailsToolCallsCodeObject(
             string id,
             global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeObjectCodeInterpreter codeInterpreter,

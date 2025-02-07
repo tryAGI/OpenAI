@@ -28,7 +28,9 @@ namespace tryAGI.OpenAI
         /// <param name="reason">
         /// The reason the message is incomplete.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MessageObjectIncompleteDetails(
             global::tryAGI.OpenAI.MessageObjectIncompleteDetailsReason reason)
         {

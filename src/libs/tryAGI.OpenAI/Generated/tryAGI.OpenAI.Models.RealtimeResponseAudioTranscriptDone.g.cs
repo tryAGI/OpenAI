@@ -102,7 +102,9 @@ namespace tryAGI.OpenAI
         /// The final transcript of the audio.<br/>
         /// Example: Hello, how can I assist you today?
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeResponseAudioTranscriptDone(
             string? eventId,
             global::tryAGI.OpenAI.RealtimeResponseAudioTranscriptDoneType? type,

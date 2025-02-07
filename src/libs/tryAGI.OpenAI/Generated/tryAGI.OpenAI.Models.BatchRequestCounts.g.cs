@@ -47,7 +47,9 @@ namespace tryAGI.OpenAI
         /// <param name="failed">
         /// Number of requests that have failed.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BatchRequestCounts(
             int total,
             int completed,

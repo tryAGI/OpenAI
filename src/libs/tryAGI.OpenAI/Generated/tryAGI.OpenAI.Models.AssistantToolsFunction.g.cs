@@ -35,7 +35,9 @@ namespace tryAGI.OpenAI
         /// The type of tool being defined: `function`
         /// </param>
         /// <param name="function"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AssistantToolsFunction(
             global::tryAGI.OpenAI.FunctionObject function,
             global::tryAGI.OpenAI.AssistantToolsFunctionType type)

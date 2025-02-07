@@ -25,7 +25,9 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="CreateAssistantRequestToolDiscriminator" /> class.
         /// </summary>
         /// <param name="type"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateAssistantRequestToolDiscriminator(
             global::tryAGI.OpenAI.CreateAssistantRequestToolDiscriminatorType? type)
         {

@@ -96,7 +96,9 @@ namespace tryAGI.OpenAI
         /// <param name="output">
         /// The output of the function call (for function_call_output items).
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeConversationItemContentItem(
             global::tryAGI.OpenAI.RealtimeConversationItemContentItemType? type,
             string? text,

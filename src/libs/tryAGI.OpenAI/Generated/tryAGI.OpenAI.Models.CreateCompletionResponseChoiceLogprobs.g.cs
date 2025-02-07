@@ -45,7 +45,9 @@ namespace tryAGI.OpenAI
         /// <param name="tokenLogprobs"></param>
         /// <param name="tokens"></param>
         /// <param name="topLogprobs"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateCompletionResponseChoiceLogprobs(
             global::System.Collections.Generic.IList<int>? textOffset,
             global::System.Collections.Generic.IList<double>? tokenLogprobs,

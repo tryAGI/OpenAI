@@ -35,7 +35,9 @@ namespace tryAGI.OpenAI
         /// <param name="tools">
         /// The tools to add this file to.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MessageObjectAttachment(
             string? fileId,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem6>? tools)

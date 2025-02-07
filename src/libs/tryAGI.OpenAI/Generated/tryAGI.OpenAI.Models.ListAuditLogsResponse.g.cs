@@ -63,7 +63,9 @@ namespace tryAGI.OpenAI
         /// Example: audit_log-hnbkd8s93s
         /// </param>
         /// <param name="hasMore"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListAuditLogsResponse(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AuditLog> data,
             string firstId,

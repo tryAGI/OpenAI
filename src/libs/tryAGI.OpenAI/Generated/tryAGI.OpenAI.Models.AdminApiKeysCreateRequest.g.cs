@@ -28,7 +28,9 @@ namespace tryAGI.OpenAI
         /// <param name="name">
         /// Example: New Admin Key
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AdminApiKeysCreateRequest(
             string name)
         {

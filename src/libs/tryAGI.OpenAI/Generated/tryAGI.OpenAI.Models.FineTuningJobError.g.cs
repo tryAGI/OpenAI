@@ -47,7 +47,9 @@ namespace tryAGI.OpenAI
         /// <param name="param">
         /// The parameter that was invalid, usually `training_file` or `validation_file`. This field will be null if the failure was not parameter-specific.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FineTuningJobError(
             string code,
             string message,

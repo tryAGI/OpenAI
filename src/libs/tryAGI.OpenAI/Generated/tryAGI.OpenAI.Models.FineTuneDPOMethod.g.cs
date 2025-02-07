@@ -26,7 +26,9 @@ namespace tryAGI.OpenAI
         /// <param name="hyperparameters">
         /// The hyperparameters used for the fine-tuning job.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FineTuneDPOMethod(
             global::tryAGI.OpenAI.FineTuneDPOMethodHyperparameters? hyperparameters)
         {

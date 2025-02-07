@@ -71,7 +71,9 @@ namespace tryAGI.OpenAI
         /// A function_call_output item indicates a function response.<br/>
         /// The client may add and remove message and function_call_output Items using conversation.item.create and conversation.item.delete.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeConversationItemCreated(
             string? eventId,
             global::tryAGI.OpenAI.RealtimeConversationItemCreatedType? type,

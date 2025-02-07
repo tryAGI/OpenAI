@@ -37,7 +37,9 @@ namespace tryAGI.OpenAI
         /// <param name="dataname">
         /// The chunk of bytes for this Part.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AddUploadPartRequest(
             byte[] data,
             string dataname)

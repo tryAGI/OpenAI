@@ -61,7 +61,9 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="hasMore"></param>
         /// <param name="object"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListBatchesResponse(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Batch> data,
             bool hasMore,

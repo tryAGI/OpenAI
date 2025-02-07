@@ -26,7 +26,9 @@ namespace tryAGI.OpenAI
         /// <param name="fileIds">
         /// A list of [file](/docs/api-reference/files) IDs made available to the `code_interpreter`` tool. There can be a maximum of 20 files associated with the tool.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AssistantObjectToolResourcesCodeInterpreter(
             global::System.Collections.Generic.IList<string>? fileIds)
         {

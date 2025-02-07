@@ -42,7 +42,9 @@ namespace tryAGI.OpenAI
         /// Specifies the output audio format. Must be one of `wav`, `mp3`, `flac`,<br/>
         /// `opus`, or `pcm16`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateChatCompletionRequestAudio(
             global::tryAGI.OpenAI.CreateChatCompletionRequestAudioVoice voice,
             global::tryAGI.OpenAI.CreateChatCompletionRequestAudioFormat format)

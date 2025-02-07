@@ -71,7 +71,9 @@ namespace tryAGI.OpenAI
         /// <param name="itemId">
         /// The ID of the user message item that will be created when speech stops.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeServerEventInputAudioBufferSpeechStarted(
             string eventId,
             int audioStartMs,

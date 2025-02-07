@@ -66,7 +66,9 @@ namespace tryAGI.OpenAI
         /// Seconds until the rate limit resets.<br/>
         /// Example: 60
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeRateLimitsUpdatedRateLimit(
             global::tryAGI.OpenAI.RealtimeRateLimitsUpdatedRateLimitName? name,
             int? limit,

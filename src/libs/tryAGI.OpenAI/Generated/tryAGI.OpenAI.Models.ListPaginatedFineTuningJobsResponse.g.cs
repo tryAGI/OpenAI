@@ -41,7 +41,9 @@ namespace tryAGI.OpenAI
         /// <param name="data"></param>
         /// <param name="hasMore"></param>
         /// <param name="object"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListPaginatedFineTuningJobsResponse(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FineTuningJob> data,
             bool hasMore,

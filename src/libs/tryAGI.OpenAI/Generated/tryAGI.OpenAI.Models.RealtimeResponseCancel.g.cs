@@ -42,7 +42,9 @@ namespace tryAGI.OpenAI
         /// The event type, must be "response.cancel".<br/>
         /// Example: response.cancel
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeResponseCancel(
             string? eventId,
             global::tryAGI.OpenAI.RealtimeResponseCancelType? type)

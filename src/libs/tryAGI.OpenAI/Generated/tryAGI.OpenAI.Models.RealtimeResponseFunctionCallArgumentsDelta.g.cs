@@ -102,7 +102,9 @@ namespace tryAGI.OpenAI
         /// The arguments delta as a JSON string.<br/>
         /// Example: {"location": "San"
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeResponseFunctionCallArgumentsDelta(
             string? eventId,
             global::tryAGI.OpenAI.RealtimeResponseFunctionCallArgumentsDeltaType? type,

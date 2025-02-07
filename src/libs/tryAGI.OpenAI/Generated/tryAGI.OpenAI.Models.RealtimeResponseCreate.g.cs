@@ -45,7 +45,9 @@ namespace tryAGI.OpenAI
         /// <param name="response">
         /// Configuration for the response.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeResponseCreate(
             string? eventId,
             global::tryAGI.OpenAI.RealtimeResponseCreateType? type,

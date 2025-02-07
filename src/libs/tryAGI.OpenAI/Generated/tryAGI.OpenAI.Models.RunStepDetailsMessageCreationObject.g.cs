@@ -35,7 +35,9 @@ namespace tryAGI.OpenAI
         /// Always `message_creation`.
         /// </param>
         /// <param name="messageCreation"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunStepDetailsMessageCreationObject(
             global::tryAGI.OpenAI.RunStepDetailsMessageCreationObjectMessageCreation messageCreation,
             global::tryAGI.OpenAI.RunStepDetailsMessageCreationObjectType type)

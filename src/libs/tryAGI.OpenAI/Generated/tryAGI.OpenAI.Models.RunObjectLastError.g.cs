@@ -38,7 +38,9 @@ namespace tryAGI.OpenAI
         /// <param name="message">
         /// A human-readable description of the error.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunObjectLastError(
             global::tryAGI.OpenAI.RunObjectLastErrorCode code,
             string message)

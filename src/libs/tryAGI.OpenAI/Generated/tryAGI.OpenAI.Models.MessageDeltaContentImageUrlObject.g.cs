@@ -44,7 +44,9 @@ namespace tryAGI.OpenAI
         /// Always `image_url`.
         /// </param>
         /// <param name="imageUrl"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MessageDeltaContentImageUrlObject(
             int index,
             global::tryAGI.OpenAI.MessageDeltaContentImageUrlObjectType type,

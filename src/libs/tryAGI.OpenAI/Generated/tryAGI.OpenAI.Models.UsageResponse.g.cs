@@ -49,7 +49,9 @@ namespace tryAGI.OpenAI
         /// <param name="data"></param>
         /// <param name="hasMore"></param>
         /// <param name="nextPage"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UsageResponse(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageTimeBucket> data,
             bool hasMore,

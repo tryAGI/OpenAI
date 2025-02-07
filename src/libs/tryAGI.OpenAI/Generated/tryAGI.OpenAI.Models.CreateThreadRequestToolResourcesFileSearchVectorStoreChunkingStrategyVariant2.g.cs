@@ -35,7 +35,9 @@ namespace tryAGI.OpenAI
         /// Always `static`.
         /// </param>
         /// <param name="static"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2(
             global::tryAGI.OpenAI.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Static @static,
             global::tryAGI.OpenAI.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Type type)

@@ -41,7 +41,9 @@ namespace tryAGI.OpenAI
         /// <param name="id"></param>
         /// <param name="deleted"></param>
         /// <param name="object"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DeleteVectorStoreResponse(
             string id,
             bool deleted,

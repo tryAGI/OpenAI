@@ -44,7 +44,9 @@ namespace tryAGI.OpenAI
         /// The object type, must be "realtime.conversation".<br/>
         /// Example: realtime.conversation
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeConversation(
             string? id,
             global::tryAGI.OpenAI.RealtimeConversationObject? @object)

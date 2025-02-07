@@ -56,7 +56,9 @@ namespace tryAGI.OpenAI
         /// <param name="content">
         /// The content of the result that was found. The content is only included if requested via the include query parameter.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunStepDetailsToolCallsFileSearchResultObject(
             string fileId,
             string fileName,

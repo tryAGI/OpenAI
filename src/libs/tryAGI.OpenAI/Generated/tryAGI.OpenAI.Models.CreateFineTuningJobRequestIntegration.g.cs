@@ -41,7 +41,9 @@ namespace tryAGI.OpenAI
         /// metrics will be sent to. Optionally, you can set an explicit display name for your run, add tags<br/>
         /// to your run, and set a default entity (team, username, etc) to be associated with your run.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateFineTuningJobRequestIntegration(
             global::tryAGI.OpenAI.CreateFineTuningJobRequestIntegrationWandb wandb,
             global::tryAGI.OpenAI.CreateFineTuningJobRequestIntegrationType type)

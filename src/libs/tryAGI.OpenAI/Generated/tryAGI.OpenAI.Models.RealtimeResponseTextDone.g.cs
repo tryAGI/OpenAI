@@ -102,7 +102,9 @@ namespace tryAGI.OpenAI
         /// The final text content.<br/>
         /// Example: Sure, I can help with that.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeResponseTextDone(
             string? eventId,
             global::tryAGI.OpenAI.RealtimeResponseTextDoneType? type,

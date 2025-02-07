@@ -45,7 +45,9 @@ namespace tryAGI.OpenAI
         /// <param name="dpo">
         /// Configuration for the DPO fine-tuning method.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FineTuneMethod(
             global::tryAGI.OpenAI.FineTuneMethodType? type,
             global::tryAGI.OpenAI.FineTuneSupervisedMethod? supervised,

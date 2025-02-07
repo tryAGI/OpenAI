@@ -133,7 +133,9 @@ namespace tryAGI.OpenAI
         /// Example: 1
         /// </param>
         /// <param name="responseFormat"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateAssistantRequest(
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateAssistantRequestModel?> model,
             string? name,

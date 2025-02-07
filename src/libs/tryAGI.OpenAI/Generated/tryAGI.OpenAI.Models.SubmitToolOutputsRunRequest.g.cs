@@ -36,7 +36,9 @@ namespace tryAGI.OpenAI
         /// <param name="stream">
         /// If `true`, returns a stream of events that happen during the Run as server-sent events, terminating when the Run enters a terminal state with a `data: [DONE]` message.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SubmitToolOutputsRunRequest(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SubmitToolOutputsRunRequestToolOutput> toolOutputs,
             bool? stream)

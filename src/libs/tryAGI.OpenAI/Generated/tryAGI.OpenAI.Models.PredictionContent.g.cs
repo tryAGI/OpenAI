@@ -47,7 +47,9 @@ namespace tryAGI.OpenAI
         /// If generated tokens would match this content, the entire model response<br/>
         /// can be returned much more quickly.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PredictionContent(
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText>> content,
             global::tryAGI.OpenAI.PredictionContentType type)

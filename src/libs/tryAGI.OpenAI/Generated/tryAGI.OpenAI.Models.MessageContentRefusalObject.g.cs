@@ -35,7 +35,9 @@ namespace tryAGI.OpenAI
         /// Always `refusal`.
         /// </param>
         /// <param name="refusal"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MessageContentRefusalObject(
             string refusal,
             global::tryAGI.OpenAI.MessageContentRefusalObjectType type)

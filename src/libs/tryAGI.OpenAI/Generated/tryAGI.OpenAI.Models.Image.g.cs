@@ -44,7 +44,9 @@ namespace tryAGI.OpenAI
         /// <param name="revisedPrompt">
         /// The prompt that was used to generate the image, if there was any revision to the prompt.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Image(
             string? b64Json,
             string? url,

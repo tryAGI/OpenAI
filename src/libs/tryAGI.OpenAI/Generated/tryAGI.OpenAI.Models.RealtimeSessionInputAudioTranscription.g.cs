@@ -41,7 +41,9 @@ namespace tryAGI.OpenAI
         /// The model to use for transcription.<br/>
         /// Example: whisper-1
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeSessionInputAudioTranscription(
             bool? enabled,
             string? model)

@@ -57,7 +57,9 @@ namespace tryAGI.OpenAI
         /// <param name="topLogprobs">
         /// List of the most likely tokens and their log probability, at this token position. In rare cases, there may be fewer than the number of requested `top_logprobs` returned.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatCompletionTokenLogprob(
             string token,
             double logprob,

@@ -56,7 +56,9 @@ namespace tryAGI.OpenAI
         /// <param name="fileSearch">
         /// For now, this is always going to be an empty object.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunStepDeltaStepDetailsToolCallsFileSearchObject(
             int index,
             object fileSearch,

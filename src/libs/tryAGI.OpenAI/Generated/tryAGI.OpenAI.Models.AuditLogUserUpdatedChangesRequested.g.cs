@@ -26,7 +26,9 @@ namespace tryAGI.OpenAI
         /// <param name="role">
         /// The role of the user. Is either `owner` or `member`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AuditLogUserUpdatedChangesRequested(
             string? role)
         {

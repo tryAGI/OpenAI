@@ -47,7 +47,9 @@ namespace tryAGI.OpenAI
         /// <param name="deleted">
         /// Example: true
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AdminApiKeysDeleteResponse(
             string? id,
             string? @object,
