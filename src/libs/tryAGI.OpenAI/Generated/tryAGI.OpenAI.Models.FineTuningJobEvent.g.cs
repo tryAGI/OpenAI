@@ -88,7 +88,9 @@ namespace tryAGI.OpenAI
         /// <param name="data">
         /// The data associated with the event.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FineTuningJobEvent(
             string id,
             global::System.DateTimeOffset createdAt,

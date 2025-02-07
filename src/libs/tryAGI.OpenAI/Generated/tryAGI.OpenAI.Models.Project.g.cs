@@ -79,7 +79,9 @@ namespace tryAGI.OpenAI
         /// <param name="status">
         /// `active` or `archived`
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Project(
             string id,
             string name,

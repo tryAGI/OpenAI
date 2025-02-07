@@ -64,7 +64,9 @@ namespace tryAGI.OpenAI
         /// <param name="lastId">
         /// Example: key_xyz
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ApiKeyList(
             string? @object,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AdminApiKey>? data,

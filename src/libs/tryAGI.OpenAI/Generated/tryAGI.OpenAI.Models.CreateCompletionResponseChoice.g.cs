@@ -56,7 +56,9 @@ namespace tryAGI.OpenAI
         /// <param name="index"></param>
         /// <param name="logprobs"></param>
         /// <param name="text"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateCompletionResponseChoice(
             global::tryAGI.OpenAI.CreateCompletionResponseChoiceFinishReason finishReason,
             int index,

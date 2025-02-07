@@ -34,7 +34,9 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="eventId"></param>
         /// <param name="type"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeServerEventBase(
             string eventId,
             global::tryAGI.OpenAI.RealtimeServerEventType type)

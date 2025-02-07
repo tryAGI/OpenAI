@@ -33,7 +33,9 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="created"></param>
         /// <param name="data"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ImagesResponse(
             int created,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Image> data)

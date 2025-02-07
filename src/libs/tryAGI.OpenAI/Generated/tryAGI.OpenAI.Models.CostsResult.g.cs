@@ -52,7 +52,9 @@ namespace tryAGI.OpenAI
         /// <param name="projectId">
         /// When `group_by=project_id`, this field provides the project ID of the grouped costs result.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CostsResult(
             global::tryAGI.OpenAI.CostsResultObject @object,
             global::tryAGI.OpenAI.CostsResultAmount? amount,

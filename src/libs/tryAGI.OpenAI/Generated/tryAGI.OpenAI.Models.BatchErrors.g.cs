@@ -33,7 +33,9 @@ namespace tryAGI.OpenAI
         /// The object type, which is always `list`.
         /// </param>
         /// <param name="data"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BatchErrors(
             string? @object,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BatchErrorsDataItem>? data)

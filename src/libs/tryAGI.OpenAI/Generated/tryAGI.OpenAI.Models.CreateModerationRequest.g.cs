@@ -51,7 +51,9 @@ namespace tryAGI.OpenAI
         /// Default Value: omni-moderation-latest<br/>
         /// Example: omni-moderation-2024-09-26
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateModerationRequest(
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputVariant3Item>> input,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateModerationRequestModel?>? model)

@@ -28,7 +28,9 @@ namespace tryAGI.OpenAI
         /// <param name="role">
         /// `owner` or `reader`
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UserRoleUpdateRequest(
             global::tryAGI.OpenAI.UserRoleUpdateRequestRole role)
         {

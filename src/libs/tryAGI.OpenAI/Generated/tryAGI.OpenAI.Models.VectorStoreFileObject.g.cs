@@ -99,7 +99,9 @@ namespace tryAGI.OpenAI
         /// <param name="chunkingStrategy">
         /// The strategy used to chunk the file.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public VectorStoreFileObject(
             string id,
             int usageBytes,

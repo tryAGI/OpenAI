@@ -43,7 +43,9 @@ namespace tryAGI.OpenAI
         /// <param name="before"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
+#if NET8_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "TRYAGI_OPENAI_BETA_001")]
+#endif
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ListRunsResponse> ListRunsAsync(
             string threadId,
             int? limit = default,
@@ -122,7 +124,11 @@ namespace tryAGI.OpenAI
 
             if (ReadResponseAsString)
             {
-                var __content = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                var __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                    cancellationToken
+#endif
+                ).ConfigureAwait(false);
 
                 ProcessResponseContent(
                     client: HttpClient,
@@ -176,7 +182,11 @@ namespace tryAGI.OpenAI
                     };
                 }
 
-                using var __content = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                using var __content = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                    cancellationToken
+#endif
+                ).ConfigureAwait(false);
 
                 return
                     await global::tryAGI.OpenAI.ListRunsResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??

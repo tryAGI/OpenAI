@@ -35,7 +35,9 @@ namespace tryAGI.OpenAI
         /// The type of response format being defined: `json_schema`
         /// </param>
         /// <param name="jsonSchema"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ResponseFormatJsonSchema(
             global::tryAGI.OpenAI.ResponseFormatJsonSchemaJsonSchema jsonSchema,
             global::tryAGI.OpenAI.ResponseFormatJsonSchemaType type)

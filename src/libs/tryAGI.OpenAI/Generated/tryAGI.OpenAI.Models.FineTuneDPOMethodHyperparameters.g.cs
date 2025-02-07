@@ -67,7 +67,9 @@ namespace tryAGI.OpenAI
         /// The number of epochs to train the model for. An epoch refers to one full cycle through the training dataset.<br/>
         /// Default Value: auto
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FineTuneDPOMethodHyperparameters(
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneDPOMethodHyperparametersBeta?, double?>? beta,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneDPOMethodHyperparametersBatchSize?, int?>? batchSize,

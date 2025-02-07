@@ -54,7 +54,9 @@ namespace tryAGI.OpenAI
         /// <param name="transcript">
         /// The transcript of the audio (if type is "audio").
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeServerEventResponseContentPartAddedPart(
             global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartAddedPartType? type,
             string? text,

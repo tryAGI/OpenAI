@@ -27,7 +27,9 @@ namespace tryAGI.OpenAI
         /// <param name="fileId">
         /// The ID of the file that was generated.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MessageContentTextAnnotationsFilePathObjectFilePath(
             string fileId)
         {

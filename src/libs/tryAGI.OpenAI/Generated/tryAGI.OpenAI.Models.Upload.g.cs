@@ -110,7 +110,9 @@ namespace tryAGI.OpenAI
         /// The object type, which is always "upload".
         /// </param>
         /// <param name="file"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Upload(
             string id,
             global::System.DateTimeOffset createdAt,

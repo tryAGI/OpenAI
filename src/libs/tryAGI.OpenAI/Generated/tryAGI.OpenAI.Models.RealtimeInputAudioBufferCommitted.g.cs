@@ -66,7 +66,9 @@ namespace tryAGI.OpenAI
         /// The ID of the user message item that will be created.<br/>
         /// Example: msg_002
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeInputAudioBufferCommitted(
             string? eventId,
             global::tryAGI.OpenAI.RealtimeInputAudioBufferCommittedType? type,

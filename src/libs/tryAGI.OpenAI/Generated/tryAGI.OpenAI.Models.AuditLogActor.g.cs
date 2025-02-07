@@ -45,7 +45,9 @@ namespace tryAGI.OpenAI
         /// <param name="apiKey">
         /// The API Key used to perform the audit logged action.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AuditLogActor(
             global::tryAGI.OpenAI.AuditLogActorType? type,
             global::tryAGI.OpenAI.AuditLogActorSession? session,

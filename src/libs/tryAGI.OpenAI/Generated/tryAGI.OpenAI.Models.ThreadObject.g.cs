@@ -76,7 +76,9 @@ namespace tryAGI.OpenAI
         /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
         /// with a maximum length of 512 characters.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ThreadObject(
             string id,
             global::System.DateTimeOffset createdAt,

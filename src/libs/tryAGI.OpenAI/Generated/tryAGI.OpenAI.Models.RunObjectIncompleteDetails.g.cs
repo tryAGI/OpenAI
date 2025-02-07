@@ -27,7 +27,9 @@ namespace tryAGI.OpenAI
         /// <param name="reason">
         /// The reason why the run is incomplete. This will point to which specific token limit was reached over the course of the run.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunObjectIncompleteDetails(
             global::tryAGI.OpenAI.RunObjectIncompleteDetailsReason? reason)
         {

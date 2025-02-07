@@ -78,7 +78,9 @@ namespace tryAGI.OpenAI
         /// enabled. `true` by default.<br/>
         /// Default Value: true
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeSessionCreateRequestTurnDetection(
             string? type,
             double? threshold,

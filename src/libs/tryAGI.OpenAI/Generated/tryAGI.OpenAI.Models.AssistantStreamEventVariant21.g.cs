@@ -35,7 +35,9 @@ namespace tryAGI.OpenAI
         /// <param name="data">
         /// Represents a message within a [thread](/docs/api-reference/threads).
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AssistantStreamEventVariant21(
             global::tryAGI.OpenAI.MessageObject data,
             global::tryAGI.OpenAI.AssistantStreamEventVariant21Event @event)

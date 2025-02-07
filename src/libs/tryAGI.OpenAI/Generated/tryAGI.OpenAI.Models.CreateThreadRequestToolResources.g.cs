@@ -31,7 +31,9 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="codeInterpreter"></param>
         /// <param name="fileSearch"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateThreadRequestToolResources(
             global::tryAGI.OpenAI.CreateThreadRequestToolResourcesCodeInterpreter? codeInterpreter,
             global::tryAGI.OpenAI.CreateThreadRequestToolResourcesFileSearch? fileSearch)

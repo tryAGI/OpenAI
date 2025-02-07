@@ -54,7 +54,9 @@ namespace tryAGI.OpenAI
         /// Base64-encoded audio bytes.<br/>
         /// Example: Base64EncodedAudioData
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeInputAudioBufferAppend(
             string? eventId,
             global::tryAGI.OpenAI.RealtimeInputAudioBufferAppendType? type,

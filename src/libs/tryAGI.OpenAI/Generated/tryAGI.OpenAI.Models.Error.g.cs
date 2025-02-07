@@ -49,7 +49,9 @@ namespace tryAGI.OpenAI
         /// <param name="message"></param>
         /// <param name="param"></param>
         /// <param name="type"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Error(
             string? code,
             string message,

@@ -45,7 +45,9 @@ namespace tryAGI.OpenAI
         /// <param name="serviceAccount">
         /// Represents an individual service account in a project.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProjectApiKeyOwner(
             global::tryAGI.OpenAI.ProjectApiKeyOwnerType? type,
             global::tryAGI.OpenAI.ProjectUser? user,

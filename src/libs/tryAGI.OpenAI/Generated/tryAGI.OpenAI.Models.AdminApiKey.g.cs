@@ -84,7 +84,9 @@ namespace tryAGI.OpenAI
         /// Example: 1711471533L
         /// </param>
         /// <param name="owner"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AdminApiKey(
             string? @object,
             string? id,

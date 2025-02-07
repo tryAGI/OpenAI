@@ -50,7 +50,9 @@ namespace tryAGI.OpenAI
         /// <param name="name">
         /// An optional name for the participant. Provides the model information to differentiate between participants of the same role.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatCompletionRequestUserMessage(
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestUserMessageContentPart>> content,
             global::tryAGI.OpenAI.ChatCompletionRequestUserMessageRole role,

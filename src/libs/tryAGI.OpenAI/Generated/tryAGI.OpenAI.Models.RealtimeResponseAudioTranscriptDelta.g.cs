@@ -102,7 +102,9 @@ namespace tryAGI.OpenAI
         /// The transcript delta.<br/>
         /// Example: Hello, how can I a
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeResponseAudioTranscriptDelta(
             string? eventId,
             global::tryAGI.OpenAI.RealtimeResponseAudioTranscriptDeltaType? type,

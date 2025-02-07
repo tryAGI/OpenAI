@@ -49,7 +49,9 @@ namespace tryAGI.OpenAI
         /// A specific response ID to cancel - if not provided, will cancel an <br/>
         /// in-progress response in the default conversation.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeClientEventResponseCancel(
             string? eventId,
             global::tryAGI.OpenAI.RealtimeClientEventResponseCancelType type,

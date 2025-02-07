@@ -57,7 +57,9 @@ namespace tryAGI.OpenAI
         /// <param name="firstId"></param>
         /// <param name="lastId"></param>
         /// <param name="hasMore"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProjectApiKeyListResponse(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ProjectApiKey> data,
             string firstId,

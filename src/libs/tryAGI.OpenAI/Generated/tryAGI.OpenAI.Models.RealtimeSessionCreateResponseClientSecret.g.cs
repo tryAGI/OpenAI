@@ -43,7 +43,9 @@ namespace tryAGI.OpenAI
         /// Timestamp for when the token expires. Currently, all tokens expire<br/>
         /// after one minute.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeSessionCreateResponseClientSecret(
             string value,
             int expiresAt)

@@ -40,7 +40,9 @@ namespace tryAGI.OpenAI
         /// A string of text to classify.<br/>
         /// Example: I want to kill them
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateModerationRequestInputVariant3ItemVariant2(
             string text,
             global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2Type type)

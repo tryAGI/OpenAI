@@ -71,7 +71,9 @@ namespace tryAGI.OpenAI
         /// limits.<br/>
         /// Default Value: 0
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CompletionUsageCompletionTokensDetails(
             int? acceptedPredictionTokens,
             int? audioTokens,

@@ -61,7 +61,9 @@ namespace tryAGI.OpenAI
         /// through the training dataset.<br/>
         /// Default Value: auto
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FineTuningJobHyperparameters(
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuningJobHyperparametersBatchSize?, int?>? batchSize,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuningJobHyperparametersLearningRateMultiplier?, double?>? learningRateMultiplier,

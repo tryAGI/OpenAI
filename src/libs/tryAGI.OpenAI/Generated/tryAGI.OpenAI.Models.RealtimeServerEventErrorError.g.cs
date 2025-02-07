@@ -64,7 +64,9 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// The event_id of the client event that caused the error, if applicable.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeServerEventErrorError(
             string type,
             string message,

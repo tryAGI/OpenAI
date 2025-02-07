@@ -79,7 +79,9 @@ namespace tryAGI.OpenAI
         /// <param name="addedAt">
         /// The Unix timestamp (in seconds) of when the project was added.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProjectUser(
             string id,
             string name,

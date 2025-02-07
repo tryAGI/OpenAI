@@ -35,7 +35,9 @@ namespace tryAGI.OpenAI
         /// <param name="changesRequested">
         /// The payload used to update the rate limits.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AuditLogRateLimitUpdated(
             string? id,
             global::tryAGI.OpenAI.AuditLogRateLimitUpdatedChangesRequested? changesRequested)

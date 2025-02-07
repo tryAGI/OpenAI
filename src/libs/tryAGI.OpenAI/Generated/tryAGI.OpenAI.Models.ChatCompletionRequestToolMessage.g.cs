@@ -50,7 +50,9 @@ namespace tryAGI.OpenAI
         /// <param name="toolCallId">
         /// Tool call that this message is responding to.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatCompletionRequestToolMessage(
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestToolMessageContentPart>> content,
             string toolCallId,

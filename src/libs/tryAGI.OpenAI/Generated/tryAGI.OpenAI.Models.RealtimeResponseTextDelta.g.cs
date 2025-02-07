@@ -102,7 +102,9 @@ namespace tryAGI.OpenAI
         /// The text delta.<br/>
         /// Example: Sure, I can h
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeResponseTextDelta(
             string? eventId,
             global::tryAGI.OpenAI.RealtimeResponseTextDeltaType? type,

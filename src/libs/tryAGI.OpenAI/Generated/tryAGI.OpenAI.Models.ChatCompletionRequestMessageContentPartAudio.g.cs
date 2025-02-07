@@ -35,7 +35,9 @@ namespace tryAGI.OpenAI
         /// The type of the content part. Always `input_audio`.
         /// </param>
         /// <param name="inputAudio"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatCompletionRequestMessageContentPartAudio(
             global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudioInputAudio inputAudio,
             global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudioType type)

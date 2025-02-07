@@ -67,7 +67,9 @@ namespace tryAGI.OpenAI
         /// <param name="transcript">
         /// The transcript of the audio, used for `input_audio` content type.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeConversationItemWithReferenceContentItem(
             global::tryAGI.OpenAI.RealtimeConversationItemWithReferenceContentItemType? type,
             string? text,

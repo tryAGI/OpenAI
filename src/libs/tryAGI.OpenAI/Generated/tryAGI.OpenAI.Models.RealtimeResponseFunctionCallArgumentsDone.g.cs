@@ -102,7 +102,9 @@ namespace tryAGI.OpenAI
         /// The final arguments as a JSON string.<br/>
         /// Example: {"location": "San Francisco"}
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeResponseFunctionCallArgumentsDone(
             string? eventId,
             global::tryAGI.OpenAI.RealtimeResponseFunctionCallArgumentsDoneType? type,

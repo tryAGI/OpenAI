@@ -35,7 +35,9 @@ namespace tryAGI.OpenAI
         /// <param name="completion">
         /// The desired completion for this training example.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FineTuneCompletionRequestInput(
             string? prompt,
             string? completion)

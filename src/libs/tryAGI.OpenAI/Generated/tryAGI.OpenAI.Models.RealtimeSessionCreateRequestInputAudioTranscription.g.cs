@@ -54,7 +54,9 @@ namespace tryAGI.OpenAI
         /// segment. The [prompt](/docs/guides/speech-to-text#prompting) should match<br/>
         /// the audio language.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeSessionCreateRequestInputAudioTranscription(
             string? model,
             string? language,

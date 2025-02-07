@@ -62,7 +62,9 @@ namespace tryAGI.OpenAI
         /// <param name="parameters">
         /// Parameters of the function in JSON Schema.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeSessionTool(
             string? type,
             string? name,

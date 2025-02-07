@@ -35,7 +35,9 @@ namespace tryAGI.OpenAI
         /// <param name="data">
         /// The payload used to create the invite.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AuditLogInviteSent(
             string? id,
             global::tryAGI.OpenAI.AuditLogInviteSentData? data)

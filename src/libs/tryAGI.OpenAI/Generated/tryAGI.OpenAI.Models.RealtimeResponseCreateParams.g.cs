@@ -180,7 +180,9 @@ namespace tryAGI.OpenAI
         /// conversation. An empty array `[]` will clear the context for this Response.<br/>
         /// Note that this can include references to items from the default conversation.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeResponseCreateParams(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeResponseCreateParamsModalitie>? modalities,
             string? instructions,

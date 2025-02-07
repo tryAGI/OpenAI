@@ -62,7 +62,9 @@ namespace tryAGI.OpenAI
         /// <param name="hasMore">
         /// The `has_more` property is used for pagination to indicate there are additional results.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public InviteListResponse(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Invite> data,
             global::tryAGI.OpenAI.InviteListResponseObject @object,

@@ -200,7 +200,9 @@ namespace tryAGI.OpenAI
         /// <param name="method">
         /// The method used for fine-tuning.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FineTuningJob(
             string id,
             global::System.DateTimeOffset createdAt,

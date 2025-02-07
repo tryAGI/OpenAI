@@ -71,7 +71,9 @@ namespace tryAGI.OpenAI
         /// <param name="batch1DayMaxInputTokens">
         /// The maximum batch input tokens per day. Only relevant for certain models.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AuditLogRateLimitUpdatedChangesRequested(
             int? maxRequestsPer1Minute,
             int? maxTokensPer1Minute,

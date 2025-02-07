@@ -35,7 +35,9 @@ namespace tryAGI.OpenAI
         /// <param name="message">
         /// A human-readable error message.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BatchRequestOutputError(
             string? code,
             string? message)

@@ -54,7 +54,9 @@ namespace tryAGI.OpenAI
         /// The ID of the item that was deleted.<br/>
         /// Example: msg_005
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeConversationItemDeleted(
             string? eventId,
             global::tryAGI.OpenAI.RealtimeConversationItemDeletedType? type,

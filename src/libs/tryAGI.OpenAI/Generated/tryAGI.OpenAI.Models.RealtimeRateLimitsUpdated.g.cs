@@ -51,7 +51,9 @@ namespace tryAGI.OpenAI
         /// <param name="rateLimits">
         /// List of rate limit information.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeRateLimitsUpdated(
             string? eventId,
             global::tryAGI.OpenAI.RealtimeRateLimitsUpdatedType? type,

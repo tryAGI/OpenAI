@@ -185,7 +185,9 @@ namespace tryAGI.OpenAI
         /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.
         /// </param>
         /// <param name="responseFormat"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateRunRequest(
             string assistantId,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateRunRequestModel?>? model,

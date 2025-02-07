@@ -27,7 +27,9 @@ namespace tryAGI.OpenAI
         /// <param name="type">
         /// Always `auto`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1(
             global::tryAGI.OpenAI.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1Type type)
         {

@@ -36,7 +36,9 @@ namespace tryAGI.OpenAI
         /// <param name="content">
         /// The content of the message in array of text and/or images.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MessageDeltaObjectDelta(
             global::tryAGI.OpenAI.MessageDeltaObjectDeltaRole? role,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentItem>? content)

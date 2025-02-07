@@ -44,7 +44,9 @@ namespace tryAGI.OpenAI
         /// Always `image`.
         /// </param>
         /// <param name="image"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunStepDeltaStepDetailsToolCallsCodeOutputImageObject(
             int index,
             global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType type,

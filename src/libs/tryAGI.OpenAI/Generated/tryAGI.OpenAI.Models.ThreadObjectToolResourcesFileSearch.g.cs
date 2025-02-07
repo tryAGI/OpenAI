@@ -26,7 +26,9 @@ namespace tryAGI.OpenAI
         /// <param name="vectorStoreIds">
         /// The [vector store](/docs/api-reference/vector-stores/object) attached to this thread. There can be a maximum of 1 vector store attached to the thread.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ThreadObjectToolResourcesFileSearch(
             global::System.Collections.Generic.IList<string>? vectorStoreIds)
         {

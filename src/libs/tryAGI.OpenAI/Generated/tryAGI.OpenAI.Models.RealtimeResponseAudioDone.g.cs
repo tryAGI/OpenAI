@@ -90,7 +90,9 @@ namespace tryAGI.OpenAI
         /// The index of the content part in the item's content array.<br/>
         /// Example: 0
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeResponseAudioDone(
             string? eventId,
             global::tryAGI.OpenAI.RealtimeResponseAudioDoneType? type,

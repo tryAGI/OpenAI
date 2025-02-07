@@ -74,7 +74,9 @@ namespace tryAGI.OpenAI
         /// The event_id of the client event that caused the error, if applicable.<br/>
         /// Example: event_567
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeErrorDetails(
             string? type,
             string? code,

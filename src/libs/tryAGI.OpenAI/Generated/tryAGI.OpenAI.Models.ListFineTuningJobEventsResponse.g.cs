@@ -33,7 +33,9 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="data"></param>
         /// <param name="object"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListFineTuningJobEventsResponse(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FineTuningJobEvent> data,
             global::tryAGI.OpenAI.ListFineTuningJobEventsResponseObject @object)

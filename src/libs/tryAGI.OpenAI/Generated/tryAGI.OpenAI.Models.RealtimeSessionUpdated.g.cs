@@ -61,7 +61,9 @@ namespace tryAGI.OpenAI
         /// A realtime Session represents the overall client-server interaction, and contains default configuration.<br/>
         /// It has a set of default values which can be updated at any time (via session.update) or on a per-response level (via response.create).
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeSessionUpdated(
             string? eventId,
             global::tryAGI.OpenAI.RealtimeSessionUpdatedType? type,

@@ -47,7 +47,9 @@ namespace tryAGI.OpenAI
         /// <param name="function">
         /// The function that the model called.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatCompletionMessageToolCall(
             string id,
             global::tryAGI.OpenAI.ChatCompletionMessageToolCallFunction function,
