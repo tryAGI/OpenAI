@@ -49,7 +49,7 @@ public partial class Examples
             purpose: CreateFileRequestPurpose.Assistants);
 
         AssistantObject assistant = await api.Assistants.CreateAssistantAsync(
-            model: CreateAssistantRequestModel.Gpt4o,
+            model: AssistantSupportedModels.Gpt4o,
             name: "Example: Contoso sales RAG",
             instructions: "You are an assistant that looks up sales data and helps visualize the information based"
                           + " on user queries. When asked to generate a graph, chart, or other visualization, use"

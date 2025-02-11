@@ -30,7 +30,7 @@ public partial class Examples
             purpose: CreateFileRequestPurpose.Vision);
 
         AssistantObject assistant = await api.Assistants.CreateAssistantAsync(
-            model: CreateAssistantRequestModel.Gpt4o,
+            model: AssistantSupportedModels.Gpt4o,
             instructions: "When asked a question, attempt to answer very concisely. " +
                           "Prefer one-sentence answers whenever feasible.");
 

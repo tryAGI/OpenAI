@@ -180,7 +180,7 @@ namespace tryAGI.OpenAI
             string threadId,
             string assistantId,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateRunIncludeItem>? include = default,
-            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateRunRequestModel?>? model = default,
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.AssistantSupportedModels?>? model = default,
             string? instructions = default,
             string? additionalInstructions = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateMessageRequest>? additionalMessages = default,

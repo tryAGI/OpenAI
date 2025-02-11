@@ -15,7 +15,7 @@ public partial class Examples
         IList<ChatCompletionTool> tools = service.AsTools().AsOpenAiTools();
         
         AssistantObject assistant = await api.Assistants.CreateAssistantAsync(
-            model: CreateAssistantRequestModel.Gpt4o,
+            model: AssistantSupportedModels.Gpt4o,
             name: "Example: Function Calling",
             instructions: "Don't make assumptions about what values to plug into functions."
                           + " Ask for clarification if a user request is ambiguous.",
