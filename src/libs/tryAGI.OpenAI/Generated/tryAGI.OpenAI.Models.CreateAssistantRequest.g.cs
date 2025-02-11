@@ -16,9 +16,9 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <example>gpt-4o</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.CreateAssistantRequestModel?>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.AssistantSupportedModels?>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateAssistantRequestModel?> Model { get; set; }
+        public required global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.AssistantSupportedModels?> Model { get; set; }
 
         /// <summary>
         /// The name of the assistant. The maximum length is 256 characters.
@@ -37,6 +37,19 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
         public string? Instructions { get; set; }
+
+        /// <summary>
+        /// **o1 and o3-mini models only** <br/>
+        /// Constrains effort on reasoning for <br/>
+        /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
+        /// Currently supported values are `low`, `medium`, and `high`. Reducing<br/>
+        /// reasoning effort can result in faster responses and fewer tokens used<br/>
+        /// on reasoning in a response.<br/>
+        /// Default Value: medium
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reasoning_effort")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ReasoningEffortJsonConverter))]
+        public global::tryAGI.OpenAI.ReasoningEffort? ReasoningEffort { get; set; }
 
         /// <summary>
         /// A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `file_search`, or `function`.
@@ -108,6 +121,15 @@ namespace tryAGI.OpenAI
         /// <param name="instructions">
         /// The system instructions that the assistant uses. The maximum length is 256,000 characters.
         /// </param>
+        /// <param name="reasoningEffort">
+        /// **o1 and o3-mini models only** <br/>
+        /// Constrains effort on reasoning for <br/>
+        /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
+        /// Currently supported values are `low`, `medium`, and `high`. Reducing<br/>
+        /// reasoning effort can result in faster responses and fewer tokens used<br/>
+        /// on reasoning in a response.<br/>
+        /// Default Value: medium
+        /// </param>
         /// <param name="tools">
         /// A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `file_search`, or `function`.
         /// </param>
@@ -137,10 +159,11 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateAssistantRequest(
-            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateAssistantRequestModel?> model,
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.AssistantSupportedModels?> model,
             string? name,
             string? description,
             string? instructions,
+            global::tryAGI.OpenAI.ReasoningEffort? reasoningEffort,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem2>? tools,
             global::tryAGI.OpenAI.CreateAssistantRequestToolResources? toolResources,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
@@ -152,6 +175,7 @@ namespace tryAGI.OpenAI
             this.Name = name;
             this.Description = description;
             this.Instructions = instructions;
+            this.ReasoningEffort = reasoningEffort;
             this.Tools = tools;
             this.ToolResources = toolResources;
             this.Metadata = metadata;

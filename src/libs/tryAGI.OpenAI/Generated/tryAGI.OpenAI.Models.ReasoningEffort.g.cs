@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// **o1 models only** <br/>
+    /// **o1 and o3-mini models only** <br/>
     /// Constrains effort on reasoning for <br/>
     /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
     /// Currently supported values are `low`, `medium`, and `high`. Reducing<br/>
@@ -12,7 +12,7 @@ namespace tryAGI.OpenAI
     /// on reasoning in a response.<br/>
     /// Default Value: medium
     /// </summary>
-    public enum CreateChatCompletionRequestReasoningEffort
+    public enum ReasoningEffort
     {
         /// <summary>
         /// 
@@ -31,31 +31,31 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class CreateChatCompletionRequestReasoningEffortExtensions
+    public static class ReasoningEffortExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this CreateChatCompletionRequestReasoningEffort value)
+        public static string ToValueString(this ReasoningEffort value)
         {
             return value switch
             {
-                CreateChatCompletionRequestReasoningEffort.Low => "low",
-                CreateChatCompletionRequestReasoningEffort.Medium => "medium",
-                CreateChatCompletionRequestReasoningEffort.High => "high",
+                ReasoningEffort.Low => "low",
+                ReasoningEffort.Medium => "medium",
+                ReasoningEffort.High => "high",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CreateChatCompletionRequestReasoningEffort? ToEnum(string value)
+        public static ReasoningEffort? ToEnum(string value)
         {
             return value switch
             {
-                "low" => CreateChatCompletionRequestReasoningEffort.Low,
-                "medium" => CreateChatCompletionRequestReasoningEffort.Medium,
-                "high" => CreateChatCompletionRequestReasoningEffort.High,
+                "low" => ReasoningEffort.Low,
+                "medium" => ReasoningEffort.Medium,
+                "high" => ReasoningEffort.High,
                 _ => null,
             };
         }

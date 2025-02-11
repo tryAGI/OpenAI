@@ -3,10 +3,10 @@
 namespace tryAGI.OpenAI.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class CreateChatCompletionRequestReasoningEffortNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::tryAGI.OpenAI.CreateChatCompletionRequestReasoningEffort?>
+    public sealed class ReasoningEffortJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::tryAGI.OpenAI.ReasoningEffort>
     {
         /// <inheritdoc />
-        public override global::tryAGI.OpenAI.CreateChatCompletionRequestReasoningEffort? Read(
+        public override global::tryAGI.OpenAI.ReasoningEffort Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::tryAGI.OpenAI.CreateChatCompletionRequestReasoningEffortExtensions.ToEnum(stringValue);
+                        return global::tryAGI.OpenAI.ReasoningEffortExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::tryAGI.OpenAI.CreateChatCompletionRequestReasoningEffort)numValue;
+                    return (global::tryAGI.OpenAI.ReasoningEffort)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -38,19 +38,12 @@ namespace tryAGI.OpenAI.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::tryAGI.OpenAI.CreateChatCompletionRequestReasoningEffort? value,
+            global::tryAGI.OpenAI.ReasoningEffort value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            if (value == null)
-            {
-                writer.WriteNullValue();
-            }
-            else
-            {
-                writer.WriteStringValue(global::tryAGI.OpenAI.CreateChatCompletionRequestReasoningEffortExtensions.ToValueString(value.Value));
-            }
+            writer.WriteStringValue(global::tryAGI.OpenAI.ReasoningEffortExtensions.ToValueString(value));
         }
     }
 }

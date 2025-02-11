@@ -23,6 +23,13 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ListFineTuningJobEventsResponseObject Object { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool HasMore { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -33,14 +40,17 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="data"></param>
         /// <param name="object"></param>
+        /// <param name="hasMore"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ListFineTuningJobEventsResponse(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FineTuningJobEvent> data,
+            bool hasMore,
             global::tryAGI.OpenAI.ListFineTuningJobEventsResponseObject @object)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.HasMore = hasMore;
             this.Object = @object;
         }
 

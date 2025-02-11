@@ -12,7 +12,7 @@ namespace tryAGI.OpenAI
     /// Truncating audio will delete the server-side text transcript to ensure there <br/>
     /// is not text in the context that hasn't been heard by the user.<br/>
     /// If successful, the server will respond with a `conversation.item.truncated` <br/>
-    /// event.
+    /// event. 
     /// </summary>
     public sealed partial class RealtimeClientEventConversationItemTruncate
     {

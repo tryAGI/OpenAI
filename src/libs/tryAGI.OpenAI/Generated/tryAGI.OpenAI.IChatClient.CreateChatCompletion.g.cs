@@ -48,7 +48,7 @@ namespace tryAGI.OpenAI
         /// Default Value: false
         /// </param>
         /// <param name="reasoningEffort">
-        /// **o1 models only** <br/>
+        /// **o1 and o3-mini models only** <br/>
         /// Constrains effort on reasoning for <br/>
         /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
         /// Currently supported values are `low`, `medium`, and `high`. Reducing<br/>
@@ -200,7 +200,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestMessage> messages,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateChatCompletionRequestModel?> model,
             bool? store = default,
-            global::tryAGI.OpenAI.CreateChatCompletionRequestReasoningEffort? reasoningEffort = default,
+            global::tryAGI.OpenAI.ReasoningEffort? reasoningEffort = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             double? frequencyPenalty = default,
             global::System.Collections.Generic.Dictionary<string, int>? logitBias = default,
