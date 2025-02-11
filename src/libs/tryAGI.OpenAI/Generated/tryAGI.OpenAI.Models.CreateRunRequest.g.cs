@@ -23,8 +23,21 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <example>gpt-4o</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.CreateRunRequestModel?>))]
-        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateRunRequestModel?>? Model { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.AssistantSupportedModels?>))]
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.AssistantSupportedModels?>? Model { get; set; }
+
+        /// <summary>
+        /// **o1 and o3-mini models only** <br/>
+        /// Constrains effort on reasoning for <br/>
+        /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
+        /// Currently supported values are `low`, `medium`, and `high`. Reducing<br/>
+        /// reasoning effort can result in faster responses and fewer tokens used<br/>
+        /// on reasoning in a response.<br/>
+        /// Default Value: medium
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reasoning_effort")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ReasoningEffortJsonConverter))]
+        public global::tryAGI.OpenAI.ReasoningEffort? ReasoningEffort { get; set; }
 
         /// <summary>
         /// Overrides the [instructions](/docs/api-reference/assistants/createAssistant) of the assistant. This is useful for modifying the behavior on a per-run basis.
@@ -140,6 +153,15 @@ namespace tryAGI.OpenAI
         /// The ID of the [Model](/docs/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.<br/>
         /// Example: gpt-4o
         /// </param>
+        /// <param name="reasoningEffort">
+        /// **o1 and o3-mini models only** <br/>
+        /// Constrains effort on reasoning for <br/>
+        /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
+        /// Currently supported values are `low`, `medium`, and `high`. Reducing<br/>
+        /// reasoning effort can result in faster responses and fewer tokens used<br/>
+        /// on reasoning in a response.<br/>
+        /// Default Value: medium
+        /// </param>
         /// <param name="instructions">
         /// Overrides the [instructions](/docs/api-reference/assistants/createAssistant) of the assistant. This is useful for modifying the behavior on a per-run basis.
         /// </param>
@@ -190,7 +212,8 @@ namespace tryAGI.OpenAI
 #endif
         public CreateRunRequest(
             string assistantId,
-            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateRunRequestModel?>? model,
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.AssistantSupportedModels?>? model,
+            global::tryAGI.OpenAI.ReasoningEffort? reasoningEffort,
             string? instructions,
             string? additionalInstructions,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateMessageRequest>? additionalMessages,
@@ -208,6 +231,7 @@ namespace tryAGI.OpenAI
         {
             this.AssistantId = assistantId ?? throw new global::System.ArgumentNullException(nameof(assistantId));
             this.Model = model;
+            this.ReasoningEffort = reasoningEffort;
             this.Instructions = instructions;
             this.AdditionalInstructions = additionalInstructions;
             this.AdditionalMessages = additionalMessages;

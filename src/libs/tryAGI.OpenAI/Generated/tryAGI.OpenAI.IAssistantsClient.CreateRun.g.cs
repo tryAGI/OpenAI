@@ -33,6 +33,15 @@ namespace tryAGI.OpenAI
         /// The ID of the [Model](/docs/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.<br/>
         /// Example: gpt-4o
         /// </param>
+        /// <param name="reasoningEffort">
+        /// **o1 and o3-mini models only** <br/>
+        /// Constrains effort on reasoning for <br/>
+        /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
+        /// Currently supported values are `low`, `medium`, and `high`. Reducing<br/>
+        /// reasoning effort can result in faster responses and fewer tokens used<br/>
+        /// on reasoning in a response.<br/>
+        /// Default Value: medium
+        /// </param>
         /// <param name="instructions">
         /// Overrides the [instructions](/docs/api-reference/assistants/createAssistant) of the assistant. This is useful for modifying the behavior on a per-run basis.
         /// </param>
@@ -87,7 +96,8 @@ namespace tryAGI.OpenAI
             string threadId,
             string assistantId,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateRunIncludeItem>? include = default,
-            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateRunRequestModel?>? model = default,
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.AssistantSupportedModels?>? model = default,
+            global::tryAGI.OpenAI.ReasoningEffort? reasoningEffort = default,
             string? instructions = default,
             string? additionalInstructions = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateMessageRequest>? additionalMessages = default,

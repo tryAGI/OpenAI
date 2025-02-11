@@ -184,6 +184,15 @@ namespace tryAGI.OpenAI
         /// <param name="instructions">
         /// The system instructions that the assistant uses. The maximum length is 256,000 characters.
         /// </param>
+        /// <param name="reasoningEffort">
+        /// **o1 and o3-mini models only** <br/>
+        /// Constrains effort on reasoning for <br/>
+        /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
+        /// Currently supported values are `low`, `medium`, and `high`. Reducing<br/>
+        /// reasoning effort can result in faster responses and fewer tokens used<br/>
+        /// on reasoning in a response.<br/>
+        /// Default Value: medium
+        /// </param>
         /// <param name="tools">
         /// A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `file_search`, or `function`.
         /// </param>
@@ -215,10 +224,11 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "TRYAGI_OPENAI_BETA_001")]
 #endif
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AssistantObject> CreateAssistantAsync(
-            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateAssistantRequestModel?> model,
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.AssistantSupportedModels?> model,
             string? name = default,
             string? description = default,
             string? instructions = default,
+            global::tryAGI.OpenAI.ReasoningEffort? reasoningEffort = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem2>? tools = default,
             global::tryAGI.OpenAI.CreateAssistantRequestToolResources? toolResources = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
@@ -233,6 +243,7 @@ namespace tryAGI.OpenAI
                 Name = name,
                 Description = description,
                 Instructions = instructions,
+                ReasoningEffort = reasoningEffort,
                 Tools = tools,
                 ToolResources = toolResources,
                 Metadata = metadata,

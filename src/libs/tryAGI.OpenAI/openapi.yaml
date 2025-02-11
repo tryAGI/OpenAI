@@ -2563,7 +2563,7 @@ paths:
         examples:
           request:
             curl: "curl \"https://api.openai.com/v1/organization/usage/code_interpreter_sessions?start_time=1730419200&limit=1\" \\\n-H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n-H \"Content-Type: application/json\"\n"
-          response: "{\n    \"object\": \"page\",\n    \"data\": [\n        {\n            \"object\": \"bucket\",\n            \"start_time\": 1730419200,\n            \"end_time\": 1730505600,\n            \"results\": [\n                {\n                    \"object\": \"organization.usage.code_interpreter_sessions.result\",\n                    \"sessions\": 1,\n                    \"project_id\": null\n                }\n            ]\n        }\n    ],\n    \"has_more\": false,\n    \"next_page\": null\n}\n"
+          response: "{\n    \"object\": \"page\",\n    \"data\": [\n        {\n            \"object\": \"bucket\",\n            \"start_time\": 1730419200,\n            \"end_time\": 1730505600,\n            \"results\": [\n                {\n                    \"object\": \"organization.usage.code_interpreter_sessions.result\",\n                    \"num_sessions\": 1,\n                    \"project_id\": null\n                }\n            ]\n        }\n    ],\n    \"has_more\": false,\n    \"next_page\": null\n}\n"
   /organization/usage/completions:
     get:
       tags:
@@ -4839,6 +4839,37 @@ components:
       x-oaiMeta:
         name: Assistant stream events
         beta: true
+    AssistantSupportedModels:
+      enum:
+        - o3-mini
+        - o3-mini-2025-01-31
+        - o1
+        - o1-2024-12-17
+        - gpt-4o
+        - gpt-4o-2024-11-20
+        - gpt-4o-2024-08-06
+        - gpt-4o-2024-05-13
+        - gpt-4o-mini
+        - gpt-4o-mini-2024-07-18
+        - gpt-4-turbo
+        - gpt-4-turbo-2024-04-09
+        - gpt-4-0125-preview
+        - gpt-4-turbo-preview
+        - gpt-4-1106-preview
+        - gpt-4-vision-preview
+        - gpt-4
+        - gpt-4-0314
+        - gpt-4-0613
+        - gpt-4-32k
+        - gpt-4-32k-0314
+        - gpt-4-32k-0613
+        - gpt-3.5-turbo
+        - gpt-3.5-turbo-16k
+        - gpt-3.5-turbo-0613
+        - gpt-3.5-turbo-1106
+        - gpt-3.5-turbo-0125
+        - gpt-3.5-turbo-16k-0613
+      type: string
     AssistantToolsCode:
       title: Code interpreter tool
       required:
@@ -6255,32 +6286,7 @@ components:
         model:
           anyOf:
             - type: string
-            - enum:
-                - gpt-4o
-                - gpt-4o-2024-11-20
-                - gpt-4o-2024-08-06
-                - gpt-4o-2024-05-13
-                - gpt-4o-mini
-                - gpt-4o-mini-2024-07-18
-                - gpt-4-turbo
-                - gpt-4-turbo-2024-04-09
-                - gpt-4-0125-preview
-                - gpt-4-turbo-preview
-                - gpt-4-1106-preview
-                - gpt-4-vision-preview
-                - gpt-4
-                - gpt-4-0314
-                - gpt-4-0613
-                - gpt-4-32k
-                - gpt-4-32k-0314
-                - gpt-4-32k-0613
-                - gpt-3.5-turbo
-                - gpt-3.5-turbo-16k
-                - gpt-3.5-turbo-0613
-                - gpt-3.5-turbo-1106
-                - gpt-3.5-turbo-0125
-                - gpt-3.5-turbo-16k-0613
-              type: string
+            - $ref: '#/components/schemas/AssistantSupportedModels'
           description: "ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.\n"
           example: gpt-4o
           x-oaiTypeLabel: string
@@ -6299,6 +6305,8 @@ components:
           type: string
           description: "The system instructions that the assistant uses. The maximum length is 256,000 characters.\n"
           nullable: true
+        reasoning_effort:
+          $ref: '#/components/schemas/ReasoningEffort'
         tools:
           maxItems: 128
           type: array
@@ -6550,13 +6558,7 @@ components:
           default: false
           nullable: true
         reasoning_effort:
-          enum:
-            - low
-            - medium
-            - high
-          type: string
-          description: "**o1 models only** \n\nConstrains effort on reasoning for \n[reasoning models](https://platform.openai.com/docs/guides/reasoning).\nCurrently supported values are `low`, `medium`, and `high`. Reducing\nreasoning effort can result in faster responses and fewer tokens used\non reasoning in a response.\n"
-          default: medium
+          $ref: '#/components/schemas/ReasoningEffort'
         metadata:
           $ref: '#/components/schemas/Metadata'
         frequency_penalty:
@@ -7772,9 +7774,11 @@ components:
                   illicit:
                     type: boolean
                     description: 'Content that includes instructions or advice that facilitate the planning or execution of wrongdoing, or that gives advice or instruction on how to commit illicit acts. For example, "how to shoplift" would fit this category.'
+                    nullable: true
                   illicit/violent:
                     type: boolean
                     description: 'Content that includes instructions or advice that facilitate the planning or execution of wrongdoing that also includes violence, or that gives advice or instruction on the procurement of any weapon.'
+                    nullable: true
                   self-harm:
                     type: boolean
                     description: 'Content that promotes, encourages, or depicts acts of self-harm, such as suicide, cutting, and eating disorders.'
@@ -7992,36 +7996,13 @@ components:
         model:
           anyOf:
             - type: string
-            - enum:
-                - gpt-4o
-                - gpt-4o-2024-11-20
-                - gpt-4o-2024-08-06
-                - gpt-4o-2024-05-13
-                - gpt-4o-mini
-                - gpt-4o-mini-2024-07-18
-                - gpt-4-turbo
-                - gpt-4-turbo-2024-04-09
-                - gpt-4-0125-preview
-                - gpt-4-turbo-preview
-                - gpt-4-1106-preview
-                - gpt-4-vision-preview
-                - gpt-4
-                - gpt-4-0314
-                - gpt-4-0613
-                - gpt-4-32k
-                - gpt-4-32k-0314
-                - gpt-4-32k-0613
-                - gpt-3.5-turbo
-                - gpt-3.5-turbo-16k
-                - gpt-3.5-turbo-0613
-                - gpt-3.5-turbo-1106
-                - gpt-3.5-turbo-0125
-                - gpt-3.5-turbo-16k-0613
-              type: string
+            - $ref: '#/components/schemas/AssistantSupportedModels'
           description: 'The ID of the [Model](/docs/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.'
           nullable: true
           example: gpt-4o
           x-oaiTypeLabel: string
+        reasoning_effort:
+          $ref: '#/components/schemas/ReasoningEffort'
         instructions:
           type: string
           description: 'Overrides the [instructions](/docs/api-reference/assistants/createAssistant) of the assistant. This is useful for modifying the behavior on a per-run basis.'
@@ -9637,6 +9618,7 @@ components:
       required:
         - object
         - data
+        - has_more
       type: object
       properties:
         data:
@@ -9648,6 +9630,8 @@ components:
             - list
           type: string
           x-stainless-const: true
+        has_more:
+          type: boolean
     ListMessagesResponse:
       required:
         - object
@@ -10465,7 +10449,10 @@ components:
         model:
           anyOf:
             - type: string
+            - $ref: '#/components/schemas/AssistantSupportedModels'
           description: "ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.\n"
+        reasoning_effort:
+          $ref: '#/components/schemas/ReasoningEffort'
         name:
           maxLength: 256
           type: string
@@ -11239,7 +11226,7 @@ components:
         audio_end_ms:
           type: integer
           description: "Inclusive duration up to which audio is truncated, in milliseconds. If \nthe audio_end_ms is greater than the actual audio duration, the server \nwill respond with an error.\n"
-      description: "Send this event to truncate a previous assistant message’s audio. The server \nwill produce audio faster than realtime, so this event is useful when the user \ninterrupts to truncate audio that has already been sent to the client but not \nyet played. This will synchronize the server's understanding of the audio with \nthe client's playback.\n\nTruncating audio will delete the server-side text transcript to ensure there \nis not text in the context that hasn't been heard by the user.\n\nIf successful, the server will respond with a `conversation.item.truncated` \nevent.\n"
+      description: "Send this event to truncate a previous assistant message’s audio. The server \nwill produce audio faster than realtime, so this event is useful when the user \ninterrupts to truncate audio that has already been sent to the client but not \nyet played. This will synchronize the server's understanding of the audio with \nthe client's playback.\n\nTruncating audio will delete the server-side text transcript to ensure there \nis not text in the context that hasn't been heard by the user.\n\nIf successful, the server will respond with a `conversation.item.truncated` \nevent. \n"
       x-oaiMeta:
         name: conversation.item.truncate
         group: realtime
@@ -12962,6 +12949,15 @@ components:
         name: The session object
         group: realtime
         example: "{\n  \"id\": \"sess_001\",\n  \"object\": \"realtime.session\",\n  \"model\": \"gpt-4o-realtime-preview-2024-12-17\",\n  \"modalities\": [\"audio\", \"text\"],\n  \"instructions\": \"You are a friendly assistant.\",\n  \"voice\": \"alloy\",\n  \"input_audio_format\": \"pcm16\",\n  \"output_audio_format\": \"pcm16\",\n  \"input_audio_transcription\": {\n      \"model\": \"whisper-1\"\n  },\n  \"turn_detection\": null,\n  \"tools\": [],\n  \"tool_choice\": \"none\",\n  \"temperature\": 0.7,\n  \"max_response_output_tokens\": 200,\n  \"client_secret\": {\n    \"value\": \"ek_abc123\", \n    \"expires_at\": 1234567890\n  }\n}\n"
+    ReasoningEffort:
+      enum:
+        - low
+        - medium
+        - high
+      type: string
+      description: "**o1 and o3-mini models only** \n\nConstrains effort on reasoning for \n[reasoning models](https://platform.openai.com/docs/guides/reasoning).\nCurrently supported values are `low`, `medium`, and `high`. Reducing\nreasoning effort can result in faster responses and fewer tokens used\non reasoning in a response.\n"
+      default: medium
+      nullable: true
     ResponseFormatJsonObject:
       required:
         - type
@@ -14497,7 +14493,7 @@ components:
             - organization.usage.code_interpreter_sessions.result
           type: string
           x-stainless-const: true
-        sessions:
+        num_sessions:
           type: integer
           description: The number of code interpreter sessions.
         project_id:
@@ -14507,7 +14503,7 @@ components:
       description: The aggregated code interpreter sessions usage details of the specific time bucket.
       x-oaiMeta:
         name: Code interpreter sessions usage object
-        example: "{\n    \"object\": \"organization.usage.code_interpreter_sessions.result\",\n    \"sessions\": 1,\n    \"project_id\": \"proj_abc\"\n}\n"
+        example: "{\n    \"object\": \"organization.usage.code_interpreter_sessions.result\",\n    \"num_sessions\": 1,\n    \"project_id\": \"proj_abc\"\n}\n"
     UsageCompletionsResult:
       required:
         - object

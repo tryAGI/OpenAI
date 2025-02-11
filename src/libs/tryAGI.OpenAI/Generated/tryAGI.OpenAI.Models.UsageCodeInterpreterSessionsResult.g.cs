@@ -18,9 +18,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The number of code interpreter sessions.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("sessions")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Sessions { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("num_sessions")]
+        public int? NumSessions { get; set; }
 
         /// <summary>
         /// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
@@ -38,7 +37,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="UsageCodeInterpreterSessionsResult" /> class.
         /// </summary>
         /// <param name="object"></param>
-        /// <param name="sessions">
+        /// <param name="numSessions">
         /// The number of code interpreter sessions.
         /// </param>
         /// <param name="projectId">
@@ -48,12 +47,12 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UsageCodeInterpreterSessionsResult(
-            int sessions,
             global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResultObject @object,
+            int? numSessions,
             string? projectId)
         {
-            this.Sessions = sessions;
             this.Object = @object;
+            this.NumSessions = numSessions;
             this.ProjectId = projectId;
         }
 

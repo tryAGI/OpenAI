@@ -41,14 +41,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("illicit")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool Illicit { get; set; }
+        public required bool? Illicit { get; set; }
 
         /// <summary>
         /// Content that includes instructions or advice that facilitate the planning or execution of wrongdoing that also includes violence, or that gives advice or instruction on the procurement of any weapon.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("illicit/violent")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool IllicitViolent { get; set; }
+        public required bool? IllicitViolent { get; set; }
 
         /// <summary>
         /// Content that promotes, encourages, or depicts acts of self-harm, such as suicide, cutting, and eating disorders.
@@ -155,8 +155,8 @@ namespace tryAGI.OpenAI
             bool hateThreatening,
             bool harassment,
             bool harassmentThreatening,
-            bool illicit,
-            bool illicitViolent,
+            bool? illicit,
+            bool? illicitViolent,
             bool selfHarm,
             bool selfHarmIntent,
             bool selfHarmInstructions,

@@ -26,6 +26,15 @@ namespace tryAGI.OpenAI
         /// <param name="model">
         /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
         /// </param>
+        /// <param name="reasoningEffort">
+        /// **o1 and o3-mini models only** <br/>
+        /// Constrains effort on reasoning for <br/>
+        /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
+        /// Currently supported values are `low`, `medium`, and `high`. Reducing<br/>
+        /// reasoning effort can result in faster responses and fewer tokens used<br/>
+        /// on reasoning in a response.<br/>
+        /// Default Value: medium
+        /// </param>
         /// <param name="name">
         /// The name of the assistant. The maximum length is 256 characters.
         /// </param>
@@ -67,7 +76,8 @@ namespace tryAGI.OpenAI
 #endif
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AssistantObject> ModifyAssistantAsync(
             string assistantId,
-            string? model = default,
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.AssistantSupportedModels?>? model = default,
+            global::tryAGI.OpenAI.ReasoningEffort? reasoningEffort = default,
             string? name = default,
             string? description = default,
             string? instructions = default,

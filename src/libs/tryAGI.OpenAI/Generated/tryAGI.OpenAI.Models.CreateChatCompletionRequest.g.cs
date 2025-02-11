@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
         public bool? Store { get; set; }
 
         /// <summary>
-        /// **o1 models only** <br/>
+        /// **o1 and o3-mini models only** <br/>
         /// Constrains effort on reasoning for <br/>
         /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
         /// Currently supported values are `low`, `medium`, and `high`. Reducing<br/>
@@ -49,8 +49,8 @@ namespace tryAGI.OpenAI
         /// Default Value: medium
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reasoning_effort")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateChatCompletionRequestReasoningEffortJsonConverter))]
-        public global::tryAGI.OpenAI.CreateChatCompletionRequestReasoningEffort? ReasoningEffort { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ReasoningEffortJsonConverter))]
+        public global::tryAGI.OpenAI.ReasoningEffort? ReasoningEffort { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
@@ -328,7 +328,7 @@ namespace tryAGI.OpenAI
         /// Default Value: false
         /// </param>
         /// <param name="reasoningEffort">
-        /// **o1 models only** <br/>
+        /// **o1 and o3-mini models only** <br/>
         /// Constrains effort on reasoning for <br/>
         /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
         /// Currently supported values are `low`, `medium`, and `high`. Reducing<br/>
@@ -481,7 +481,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestMessage> messages,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateChatCompletionRequestModel?> model,
             bool? store,
-            global::tryAGI.OpenAI.CreateChatCompletionRequestReasoningEffort? reasoningEffort,
+            global::tryAGI.OpenAI.ReasoningEffort? reasoningEffort,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             double? frequencyPenalty,
             global::System.Collections.Generic.Dictionary<string, int>? logitBias,

@@ -3,10 +3,10 @@
 namespace tryAGI.OpenAI.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class CreateAssistantRequestModelJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::tryAGI.OpenAI.CreateAssistantRequestModel>
+    public sealed class AssistantSupportedModelsJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::tryAGI.OpenAI.AssistantSupportedModels>
     {
         /// <inheritdoc />
-        public override global::tryAGI.OpenAI.CreateAssistantRequestModel Read(
+        public override global::tryAGI.OpenAI.AssistantSupportedModels Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::tryAGI.OpenAI.CreateAssistantRequestModelExtensions.ToEnum(stringValue) ?? default;
+                        return global::tryAGI.OpenAI.AssistantSupportedModelsExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::tryAGI.OpenAI.CreateAssistantRequestModel)numValue;
+                    return (global::tryAGI.OpenAI.AssistantSupportedModels)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -38,12 +38,12 @@ namespace tryAGI.OpenAI.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::tryAGI.OpenAI.CreateAssistantRequestModel value,
+            global::tryAGI.OpenAI.AssistantSupportedModels value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::tryAGI.OpenAI.CreateAssistantRequestModelExtensions.ToValueString(value));
+            writer.WriteStringValue(global::tryAGI.OpenAI.AssistantSupportedModelsExtensions.ToValueString(value));
         }
     }
 }

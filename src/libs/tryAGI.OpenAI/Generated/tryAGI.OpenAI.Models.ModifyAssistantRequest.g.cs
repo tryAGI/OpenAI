@@ -14,7 +14,21 @@ namespace tryAGI.OpenAI
         /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        public string? Model { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.AssistantSupportedModels?>))]
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.AssistantSupportedModels?>? Model { get; set; }
+
+        /// <summary>
+        /// **o1 and o3-mini models only** <br/>
+        /// Constrains effort on reasoning for <br/>
+        /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
+        /// Currently supported values are `low`, `medium`, and `high`. Reducing<br/>
+        /// reasoning effort can result in faster responses and fewer tokens used<br/>
+        /// on reasoning in a response.<br/>
+        /// Default Value: medium
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reasoning_effort")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ReasoningEffortJsonConverter))]
+        public global::tryAGI.OpenAI.ReasoningEffort? ReasoningEffort { get; set; }
 
         /// <summary>
         /// The name of the assistant. The maximum length is 256 characters.
@@ -94,6 +108,15 @@ namespace tryAGI.OpenAI
         /// <param name="model">
         /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
         /// </param>
+        /// <param name="reasoningEffort">
+        /// **o1 and o3-mini models only** <br/>
+        /// Constrains effort on reasoning for <br/>
+        /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
+        /// Currently supported values are `low`, `medium`, and `high`. Reducing<br/>
+        /// reasoning effort can result in faster responses and fewer tokens used<br/>
+        /// on reasoning in a response.<br/>
+        /// Default Value: medium
+        /// </param>
         /// <param name="name">
         /// The name of the assistant. The maximum length is 256 characters.
         /// </param>
@@ -132,7 +155,8 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ModifyAssistantRequest(
-            string? model,
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.AssistantSupportedModels?>? model,
+            global::tryAGI.OpenAI.ReasoningEffort? reasoningEffort,
             string? name,
             string? description,
             string? instructions,
@@ -144,6 +168,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.AssistantsApiResponseFormatOption?, object>? responseFormat)
         {
             this.Model = model;
+            this.ReasoningEffort = reasoningEffort;
             this.Name = name;
             this.Description = description;
             this.Instructions = instructions;
