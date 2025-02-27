@@ -74,6 +74,11 @@ public static class CustomProviders
     /// <summary>
     /// 
     /// </summary>
+    public const string CohereBaseUrl = "https://api.cohere.ai/compatibility/v1";
+    
+    /// <summary>
+    /// 
+    /// </summary>
     public const string OllamaBaseUrl = "http://localhost:11434/v1";
     
     /// <summary>
@@ -210,6 +215,15 @@ public static class CustomProviders
     public static OpenAiClient Hyperbolic(string apiKey)
     {
         return new OpenAiClient(apiKey, baseUri: new Uri(HyperbolicBaseUrl));
+    }
+    
+    /// <summary>
+    /// Create an API to use for Cohere.
+    /// </summary>
+    /// <returns></returns>
+    public static OpenAiClient Cohere(string apiKey)
+    {
+        return new OpenAiClient(apiKey, baseUri: new Uri(CohereBaseUrl));
     }
     
     /// <summary>

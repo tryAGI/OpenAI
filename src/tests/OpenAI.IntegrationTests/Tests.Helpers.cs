@@ -149,6 +149,13 @@ public partial class Tests
                 throw new AssertInconclusiveException("XAI_API_KEY environment variable is not found.")),
                 model ?? "grok-beta");
         }
+        if (customProvider == CustomProvider.Cohere)
+        {
+            return (CustomProviders.Cohere(apiKey:
+                Environment.GetEnvironmentVariable("COHERE_API_KEY") ??
+                throw new AssertInconclusiveException("COHERE_API_KEY environment variable is not found.")),
+                model ?? "command-r-08-2024");
+        }
 
         var apiKey =
             Environment.GetEnvironmentVariable("OPENAI_API_KEY") ??

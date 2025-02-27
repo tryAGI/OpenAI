@@ -20,4 +20,5 @@ public enum CustomProvider
     Codestral,
     Hyperbolic,
     Cerebras,
+    Cohere,
 }
