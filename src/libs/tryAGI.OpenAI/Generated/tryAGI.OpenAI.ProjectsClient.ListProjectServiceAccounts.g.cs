@@ -119,7 +119,7 @@ namespace tryAGI.OpenAI
                 }
 
                 throw new global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.ErrorResponse>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_400,
