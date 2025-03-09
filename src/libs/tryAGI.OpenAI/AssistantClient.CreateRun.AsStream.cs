@@ -1,6 +1,6 @@
 using System.Linq;
+using System.Net.ServerSentEvents;
 using System.Runtime.CompilerServices;
-using tryAGI.OpenAI.Extensions;
 
 #nullable enable
 
@@ -88,22 +88,19 @@ namespace tryAGI.OpenAI
             response.EnsureSuccessStatusCode();
             
             using var stream = await response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-            using var reader = new StreamReader(stream);
-
-#if NET8_0_OR_GREATER
-            while (await reader.ReadLineAsync(cancellationToken).ConfigureAwait(false) is { } streamData)
-#else
-            while (await reader.ReadLineAsync().ConfigureAwait(false) is { } streamData)
-#endif
+            
+            await foreach (SseItem<string> sseEvent in SseParser.Create(stream)
+                               .EnumerateAsync(cancellationToken)
+                               .ConfigureAwait(false))
             {
-                cancellationToken.ThrowIfCancellationRequested();
-
-                if (!streamData.TryGetEventStreamData(out var eventData)) { continue; }
-                if (string.IsNullOrWhiteSpace(eventData)) { continue; }
+                if (sseEvent.Data == "[DONE]")
+                {
+                    yield break;
+                }
 
                 var partialResponse = 
-                    global::System.Text.Json.JsonSerializer.Deserialize(eventData, global::tryAGI.OpenAI.SourceGenerationContext.Default.NullableAssistantStreamEvent) ??
-                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{eventData}\" ");
+                    global::System.Text.Json.JsonSerializer.Deserialize(sseEvent.Data, global::tryAGI.OpenAI.SourceGenerationContext.Default.NullableAssistantStreamEvent) ??
+                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{sseEvent.Data}\" ");
 
                 yield return partialResponse;
             }
