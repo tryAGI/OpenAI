@@ -130,6 +130,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public ResponsesClient Responses { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public VectorStoresClient VectorStores { get; }
 
     }

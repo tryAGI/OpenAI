@@ -3,7 +3,7 @@ using var api = GetAuthenticatedClient();
 
 IAsyncEnumerable<CreateChatCompletionStreamResponse> enumerable = api.Chat.CreateChatCompletionAsStreamAsync(
     messages: ["Say 'this is a test.'"],
-    model: CreateChatCompletionRequestModel.Gpt4o);
+    model: ModelIdsEnum.Gpt4o);
 
 Console.WriteLine("[ASSISTANT]:");
 await foreach (CreateChatCompletionStreamResponse chatUpdate in enumerable)

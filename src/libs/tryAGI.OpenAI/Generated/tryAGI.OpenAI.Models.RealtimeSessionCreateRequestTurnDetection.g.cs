@@ -40,12 +40,19 @@ namespace tryAGI.OpenAI
         public int? SilenceDurationMs { get; set; }
 
         /// <summary>
-        /// Whether or not to automatically generate a response when VAD is<br/>
-        /// enabled. `true` by default.<br/>
+        /// Whether or not to automatically generate a response when a VAD stop event occurs. `true` by default.<br/>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("create_response")]
         public bool? CreateResponse { get; set; }
+
+        /// <summary>
+        /// Whether or not to automatically interrupt any ongoing response with output to the default<br/>
+        /// conversation (i.e. `conversation` of `auto`) when a VAD start event occurs. `true` by default.<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("interrupt_response")]
+        public bool? InterruptResponse { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -74,8 +81,12 @@ namespace tryAGI.OpenAI
         /// but may jump in on short pauses from the user.
         /// </param>
         /// <param name="createResponse">
-        /// Whether or not to automatically generate a response when VAD is<br/>
-        /// enabled. `true` by default.<br/>
+        /// Whether or not to automatically generate a response when a VAD stop event occurs. `true` by default.<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="interruptResponse">
+        /// Whether or not to automatically interrupt any ongoing response with output to the default<br/>
+        /// conversation (i.e. `conversation` of `auto`) when a VAD start event occurs. `true` by default.<br/>
         /// Default Value: true
         /// </param>
 #if NET7_0_OR_GREATER
@@ -86,13 +97,15 @@ namespace tryAGI.OpenAI
             double? threshold,
             int? prefixPaddingMs,
             int? silenceDurationMs,
-            bool? createResponse)
+            bool? createResponse,
+            bool? interruptResponse)
         {
             this.Type = type;
             this.Threshold = threshold;
             this.PrefixPaddingMs = prefixPaddingMs;
             this.SilenceDurationMs = silenceDurationMs;
             this.CreateResponse = createResponse;
+            this.InterruptResponse = interruptResponse;
         }
 
         /// <summary>

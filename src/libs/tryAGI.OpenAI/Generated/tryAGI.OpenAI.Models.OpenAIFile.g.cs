@@ -31,6 +31,13 @@ namespace tryAGI.OpenAI
         public required global::System.DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
+        /// The Unix timestamp (in seconds) for when the file will expire.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
+        public global::System.DateTimeOffset? ExpiresAt { get; set; }
+
+        /// <summary>
         /// The name of the file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
@@ -85,6 +92,9 @@ namespace tryAGI.OpenAI
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) for when the file was created.
         /// </param>
+        /// <param name="expiresAt">
+        /// The Unix timestamp (in seconds) for when the file will expire.
+        /// </param>
         /// <param name="filename">
         /// The name of the file.
         /// </param>
@@ -107,6 +117,7 @@ namespace tryAGI.OpenAI
             string filename,
             global::tryAGI.OpenAI.OpenAIFilePurpose purpose,
             global::tryAGI.OpenAI.OpenAIFileStatus status,
+            global::System.DateTimeOffset? expiresAt,
             global::tryAGI.OpenAI.OpenAIFileObject @object)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -115,6 +126,7 @@ namespace tryAGI.OpenAI
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
             this.Purpose = purpose;
             this.Status = status;
+            this.ExpiresAt = expiresAt;
             this.Object = @object;
         }
 

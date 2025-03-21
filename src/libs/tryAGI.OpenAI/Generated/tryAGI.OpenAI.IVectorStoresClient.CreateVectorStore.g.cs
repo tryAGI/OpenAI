@@ -10,9 +10,6 @@ namespace tryAGI.OpenAI
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "TRYAGI_OPENAI_BETA_001")]
-#endif
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.VectorStoreObject> CreateVectorStoreAsync(
             global::tryAGI.OpenAI.CreateVectorStoreRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -41,14 +38,11 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "TRYAGI_OPENAI_BETA_001")]
-#endif
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.VectorStoreObject> CreateVectorStoreAsync(
             global::System.Collections.Generic.IList<string>? fileIds = default,
             string? name = default,
             global::tryAGI.OpenAI.VectorStoreExpirationAfter? expiresAfter = default,
-            global::tryAGI.OpenAI.CreateVectorStoreRequestChunkingStrategy? chunkingStrategy = default,
+            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam, global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam>? chunkingStrategy = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

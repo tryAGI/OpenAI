@@ -48,7 +48,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        /// Default response format. Used to generate text responses.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ResponseFormatText? Value2 { get; init; }
@@ -83,7 +83,10 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        /// JSON object response format. An older method of generating JSON responses.<br/>
+        /// Using `json_schema` is recommended for models that support it. Note that the<br/>
+        /// model will not generate JSON without a system or user message instructing it<br/>
+        /// to do so.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ResponseFormatJsonObject? Value3 { get; init; }
@@ -118,7 +121,8 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        /// JSON Schema response format. Used to generate structured JSON responses.<br/>
+        /// Learn more about [Structured Outputs](/docs/guides/structured-outputs).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ResponseFormatJsonSchema? Value4 { get; init; }

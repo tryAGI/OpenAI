@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -63,8 +65,18 @@ namespace tryAGI.OpenAI
         /// The strategy used to chunk the file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chunking_strategy")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VectorStoreFileObjectChunkingStrategyJsonConverter))]
-        public global::tryAGI.OpenAI.VectorStoreFileObjectChunkingStrategy? ChunkingStrategy { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.StaticChunkingStrategyResponseParam, global::tryAGI.OpenAI.OtherChunkingStrategyResponseParam>))]
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.StaticChunkingStrategyResponseParam, global::tryAGI.OpenAI.OtherChunkingStrategyResponseParam>? ChunkingStrategy { get; set; }
+
+        /// <summary>
+        /// Set of 16 key-value pairs that can be attached to an object. This can be <br/>
+        /// useful for storing additional information about the object in a structured <br/>
+        /// format, and querying for objects via API or the dashboard. Keys are strings <br/>
+        /// with a maximum length of 64 characters. Values are strings with a maximum <br/>
+        /// length of 512 characters, booleans, or numbers.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("attributes")]
+        public object? Attributes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -99,6 +111,13 @@ namespace tryAGI.OpenAI
         /// <param name="chunkingStrategy">
         /// The strategy used to chunk the file.
         /// </param>
+        /// <param name="attributes">
+        /// Set of 16 key-value pairs that can be attached to an object. This can be <br/>
+        /// useful for storing additional information about the object in a structured <br/>
+        /// format, and querying for objects via API or the dashboard. Keys are strings <br/>
+        /// with a maximum length of 64 characters. Values are strings with a maximum <br/>
+        /// length of 512 characters, booleans, or numbers.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -110,7 +129,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.VectorStoreFileObjectStatus status,
             global::tryAGI.OpenAI.VectorStoreFileObjectLastError? lastError,
             global::tryAGI.OpenAI.VectorStoreFileObjectObject @object,
-            global::tryAGI.OpenAI.VectorStoreFileObjectChunkingStrategy? chunkingStrategy)
+            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.StaticChunkingStrategyResponseParam, global::tryAGI.OpenAI.OtherChunkingStrategyResponseParam>? chunkingStrategy,
+            object? attributes)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.UsageBytes = usageBytes;
@@ -120,6 +140,7 @@ namespace tryAGI.OpenAI
             this.LastError = lastError ?? throw new global::System.ArgumentNullException(nameof(lastError));
             this.Object = @object;
             this.ChunkingStrategy = chunkingStrategy;
+            this.Attributes = attributes;
         }
 
         /// <summary>

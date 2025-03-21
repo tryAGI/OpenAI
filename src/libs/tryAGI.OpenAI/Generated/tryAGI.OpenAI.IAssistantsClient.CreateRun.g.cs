@@ -34,7 +34,7 @@ namespace tryAGI.OpenAI
         /// Example: gpt-4o
         /// </param>
         /// <param name="reasoningEffort">
-        /// **o1 and o3-mini models only** <br/>
+        /// **o-series models only** <br/>
         /// Constrains effort on reasoning for <br/>
         /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
         /// Currently supported values are `low`, `medium`, and `high`. Reducing<br/>
@@ -86,7 +86,12 @@ namespace tryAGI.OpenAI
         /// <param name="parallelToolCalls">
         /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.
         /// </param>
-        /// <param name="responseFormat"></param>
+        /// <param name="responseFormat">
+        /// Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models#gpt-4o), [GPT-4 Turbo](/docs/models#gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.<br/>
+        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).<br/>
+        /// Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.<br/>
+        /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
 #if NET8_0_OR_GREATER
@@ -101,7 +106,7 @@ namespace tryAGI.OpenAI
             string? instructions = default,
             string? additionalInstructions = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateMessageRequest>? additionalMessages = default,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem4>? tools = default,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.AssistantToolsCode, global::tryAGI.OpenAI.AssistantToolsFileSearch, global::tryAGI.OpenAI.AssistantToolsFunction>>? tools = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             double? temperature = default,
             double? topP = default,
@@ -111,7 +116,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.TruncationObject, object>? truncationStrategy = default,
             global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.AssistantsApiToolChoiceOption?, object>? toolChoice = default,
             bool? parallelToolCalls = default,
-            global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.AssistantsApiResponseFormatOption?, object>? responseFormat = default,
+            global::tryAGI.OpenAI.AssistantsApiResponseFormatOption? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

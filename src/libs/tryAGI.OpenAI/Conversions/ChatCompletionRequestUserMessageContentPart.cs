@@ -7,8 +7,8 @@ public partial struct ChatCompletionRequestUserMessageContentPart
     {
         return IsText
             ? Text?.Text ?? string.Empty
-            : IsImageUrl
-                ? ImageUrl?.ImageUrl.Url ?? string.Empty
+            : IsImage
+                ? Image?.ImageUrl.Url ?? string.Empty
                 : string.Empty;
     }
     

@@ -210,6 +210,13 @@ namespace tryAGI.OpenAI
         /// <param name="method">
         /// The method used for fine-tuning.
         /// </param>
+        /// <param name="metadata">
+        /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
+        /// useful for storing additional information about the object in a structured<br/>
+        /// format, and querying for objects via API or the dashboard. <br/>
+        /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
+        /// with a maximum length of 512 characters.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.FineTuningJob> CreateFineTuningJobAsync(
@@ -220,6 +227,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateFineTuningJobRequestIntegration>? integrations = default,
             int? seed = default,
             global::tryAGI.OpenAI.FineTuneMethod? method = default,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::tryAGI.OpenAI.CreateFineTuningJobRequest
@@ -231,6 +239,7 @@ namespace tryAGI.OpenAI
                 Integrations = integrations,
                 Seed = seed,
                 Method = method,
+                Metadata = metadata,
             };
 
             return await CreateFineTuningJobAsync(

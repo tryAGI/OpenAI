@@ -9,12 +9,12 @@ public static partial class MetadataExtensions
     /// <param name="model"></param>
     /// <returns></returns>
     public static ChatModelMetadata? TryGetChatModelMetadata(
-        this CreateChatCompletionRequestModel model)
+        this ModelIdsEnum model)
     {
         return model switch
         {
-            CreateChatCompletionRequestModel.O1Preview or 
-            CreateChatCompletionRequestModel.O1Preview20240912 => new ChatModelMetadata
+            ModelIdsEnum.O1Preview or 
+            ModelIdsEnum.O1Preview20240912 => new ChatModelMetadata
             {
                 Id = model.ToValueString(),
                 PricePerInputTokenInUsd = 15.00 * UsdPerMillionTokens,
@@ -23,8 +23,8 @@ public static partial class MetadataExtensions
                 OutputLength = 16_000,
             },
             
-            CreateChatCompletionRequestModel.O1Mini or 
-            CreateChatCompletionRequestModel.O1Mini20240912 => new ChatModelMetadata
+            ModelIdsEnum.O1Mini or 
+            ModelIdsEnum.O1Mini20240912 => new ChatModelMetadata
             {
                 Id = model.ToValueString(),
                 PricePerInputTokenInUsd = 3.00 * UsdPerMillionTokens,
@@ -33,8 +33,8 @@ public static partial class MetadataExtensions
                 OutputLength = 16_000,
             },
             
-            CreateChatCompletionRequestModel.Gpt4o or
-            CreateChatCompletionRequestModel.Gpt4o20240806 => new ChatModelMetadata
+            ModelIdsEnum.Gpt4o or
+            ModelIdsEnum.Gpt4o20240806 => new ChatModelMetadata
             {
                 Id = model.ToValueString(),
                 PricePerInputTokenInUsd = 2.5 * UsdPerMillionTokens,
@@ -42,7 +42,7 @@ public static partial class MetadataExtensions
                 ContextLength = 128_000,
                 OutputLength = 16_000,
             },
-            CreateChatCompletionRequestModel.Gpt4o20240513 => new ChatModelMetadata
+            ModelIdsEnum.Gpt4o20240513 => new ChatModelMetadata
             {
                 Id = model.ToValueString(),
                 PricePerInputTokenInUsd = 5.0 * UsdPerMillionTokens,
@@ -50,8 +50,8 @@ public static partial class MetadataExtensions
                 ContextLength = 128_000,
                 OutputLength = 16_000,
             },
-            CreateChatCompletionRequestModel.Gpt4oMini or
-            CreateChatCompletionRequestModel.Gpt4oMini20240718 => new ChatModelMetadata
+            ModelIdsEnum.Gpt4oMini or
+            ModelIdsEnum.Gpt4oMini20240718 => new ChatModelMetadata
             {
                 Id = model.ToValueString(),
                 PricePerInputTokenInUsd = 0.15 * UsdPerMillionTokens,
@@ -64,12 +64,12 @@ public static partial class MetadataExtensions
                 FineTunePricePerOutputTokenInUsd = 1.20 * UsdPerMillionTokens,
             },
             
-            CreateChatCompletionRequestModel.Gpt4Turbo or
-            CreateChatCompletionRequestModel.Gpt4Turbo20240409 or
-            CreateChatCompletionRequestModel.Gpt40125Preview or
-            CreateChatCompletionRequestModel.Gpt4TurboPreview or
-            CreateChatCompletionRequestModel.Gpt41106Preview or
-            CreateChatCompletionRequestModel.Gpt4VisionPreview => new ChatModelMetadata
+            ModelIdsEnum.Gpt4Turbo or
+            ModelIdsEnum.Gpt4Turbo20240409 or
+            ModelIdsEnum.Gpt40125Preview or
+            ModelIdsEnum.Gpt4TurboPreview or
+            ModelIdsEnum.Gpt41106Preview or
+            ModelIdsEnum.Gpt4VisionPreview => new ChatModelMetadata
             {
                 Id = model.ToValueString(),
                 PricePerInputTokenInUsd = 10.0 * UsdPerMillionTokens,
@@ -78,9 +78,9 @@ public static partial class MetadataExtensions
                 OutputLength = 16_000,
             },
             
-            CreateChatCompletionRequestModel.Gpt4 or
-            CreateChatCompletionRequestModel.Gpt40314 or
-            CreateChatCompletionRequestModel.Gpt40613 => new ChatModelMetadata
+            ModelIdsEnum.Gpt4 or
+            ModelIdsEnum.Gpt40314 or
+            ModelIdsEnum.Gpt40613 => new ChatModelMetadata
             {
                 Id = model.ToValueString(),
                 PricePerInputTokenInUsd = 30.0 * UsdPerMillionTokens,
@@ -89,9 +89,9 @@ public static partial class MetadataExtensions
                 OutputLength = 16_000,
             },
             
-            CreateChatCompletionRequestModel.Gpt432k or
-            CreateChatCompletionRequestModel.Gpt432k0314 or
-            CreateChatCompletionRequestModel.Gpt432k0613 => new ChatModelMetadata
+            ModelIdsEnum.Gpt432k or
+            ModelIdsEnum.Gpt432k0314 or
+            ModelIdsEnum.Gpt432k0613 => new ChatModelMetadata
             {
                 Id = model.ToValueString(),
                 PricePerInputTokenInUsd = 60.0 * UsdPerMillionTokens,
@@ -100,8 +100,8 @@ public static partial class MetadataExtensions
                 OutputLength = 16_000,
             },
             
-            CreateChatCompletionRequestModel.Gpt35Turbo or
-            CreateChatCompletionRequestModel.Gpt35Turbo0125 => new ChatModelMetadata
+            ModelIdsEnum.Gpt35Turbo or
+            ModelIdsEnum.Gpt35Turbo0125 => new ChatModelMetadata
             {
                 Id = model.ToValueString(),
                 PricePerInputTokenInUsd = 0.5 * UsdPerMillionTokens,
@@ -113,7 +113,7 @@ public static partial class MetadataExtensions
                 FineTunePricePerInputTokenInUsd = 3.0 * UsdPerMillionTokens,
                 FineTunePricePerOutputTokenInUsd = 6.0 * UsdPerMillionTokens,
             },
-            CreateChatCompletionRequestModel.Gpt35Turbo1106 => new ChatModelMetadata
+            ModelIdsEnum.Gpt35Turbo1106 => new ChatModelMetadata
             {
                 Id = model.ToValueString(),
                 PricePerInputTokenInUsd = 1.0 * UsdPerMillionTokens,
@@ -121,7 +121,7 @@ public static partial class MetadataExtensions
                 ContextLength = 16_385,
                 OutputLength = 16_000,
             },
-            CreateChatCompletionRequestModel.Gpt35Turbo0613 => new ChatModelMetadata
+            ModelIdsEnum.Gpt35Turbo0613 => new ChatModelMetadata
             {
                 Id = model.ToValueString(),
                 PricePerInputTokenInUsd = 1.5 * UsdPerMillionTokens,
@@ -129,7 +129,7 @@ public static partial class MetadataExtensions
                 ContextLength = 4_096,
                 OutputLength = 16_000,
             },
-            CreateChatCompletionRequestModel.Gpt35Turbo0301 => new ChatModelMetadata
+            ModelIdsEnum.Gpt35Turbo0301 => new ChatModelMetadata
             {
                 Id = model.ToValueString(),
                 PricePerInputTokenInUsd = 2.0 * UsdPerMillionTokens,
@@ -137,8 +137,8 @@ public static partial class MetadataExtensions
                 ContextLength = 4_096,
                 OutputLength = 16_000,
             },
-            CreateChatCompletionRequestModel.Gpt35Turbo16k or
-            CreateChatCompletionRequestModel.Gpt35Turbo16k0613 => new ChatModelMetadata
+            ModelIdsEnum.Gpt35Turbo16k or
+            ModelIdsEnum.Gpt35Turbo16k0613 => new ChatModelMetadata
             {
                 Id = model.ToValueString(),
                 PricePerInputTokenInUsd = 3.0 * UsdPerMillionTokens,
@@ -153,7 +153,7 @@ public static partial class MetadataExtensions
     
     /// <inheritdoc cref="TryGetFineTunePriceInUsd"/>
     public static double? TryGetPriceInUsd(
-        this CreateChatCompletionRequestModel model,
+        this ModelIdsEnum model,
         int inputTokens,
         int outputTokens)
     {
@@ -170,10 +170,10 @@ public static partial class MetadataExtensions
             outputTokens * metadata.PricePerOutputTokenInUsd;
     }
 
-    /// <inheritdoc cref="TryGetPriceInUsd(CreateChatCompletionRequestModel, int, int)"/>
+    /// <inheritdoc cref="TryGetPriceInUsd(ModelIdsEnum, int, int)"/>
     /// <exception cref="InvalidOperationException"></exception>
     public static double GetPriceInUsd(
-        this CreateChatCompletionRequestModel model,
+        this ModelIdsEnum model,
         int inputTokens,
         int outputTokens)
     {
@@ -184,7 +184,7 @@ public static partial class MetadataExtensions
 
     /// <inheritdoc cref="TryGetFineTunePriceInUsd"/>
     public static double? TryGetFineTunePriceInUsd(
-        this CreateChatCompletionRequestModel model,
+        this ModelIdsEnum model,
         int trainingTokens,
         int inputTokens,
         int outputTokens)
@@ -206,7 +206,7 @@ public static partial class MetadataExtensions
     /// <inheritdoc cref="TryGetFineTunePriceInUsd"/>
     /// <exception cref="InvalidOperationException"></exception>
     public static double GetFineTunePriceInUsd(
-        this CreateChatCompletionRequestModel model,
+        this ModelIdsEnum model,
         int trainingTokens,
         int inputTokens,
         int outputTokens)
@@ -219,7 +219,7 @@ public static partial class MetadataExtensions
     /// <inheritdoc cref="TryGetChatModelMetadata"/>
     /// <exception cref="InvalidOperationException"></exception>
     public static int? TryGetContextLength(
-        this CreateChatCompletionRequestModel model)
+        this ModelIdsEnum model)
     {
         return model.TryGetChatModelMetadata()?.ContextLength;
     }
@@ -227,7 +227,7 @@ public static partial class MetadataExtensions
     /// <inheritdoc cref="TryGetChatModelMetadata"/>
     /// <exception cref="InvalidOperationException"></exception>
     public static int? TryGetOutputLength(
-        this CreateChatCompletionRequestModel model)
+        this ModelIdsEnum model)
     {
         return model.TryGetChatModelMetadata()?.OutputLength;
     }
@@ -235,7 +235,7 @@ public static partial class MetadataExtensions
     /// <inheritdoc cref="TryGetContextLength"/>
     /// <exception cref="InvalidOperationException"></exception>
     public static int GetContextLength(
-        this CreateChatCompletionRequestModel model)
+        this ModelIdsEnum model)
     {
         return model.TryGetContextLength() ??
                throw new InvalidOperationException(
@@ -245,7 +245,7 @@ public static partial class MetadataExtensions
     /// <inheritdoc cref="TryGetOutputLength"/>
     /// <exception cref="InvalidOperationException"></exception>
     public static int GetOutputLength(
-        this CreateChatCompletionRequestModel model)
+        this ModelIdsEnum model)
     {
         return model.TryGetOutputLength() ??
                throw new InvalidOperationException(

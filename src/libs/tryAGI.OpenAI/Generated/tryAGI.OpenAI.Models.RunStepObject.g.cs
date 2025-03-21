@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -71,9 +73,9 @@ namespace tryAGI.OpenAI
         /// The details of the run step.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("step_details")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RunStepObjectStepDetailsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.RunStepDetailsMessageCreationObject, global::tryAGI.OpenAI.RunStepDetailsToolCallsObject>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.RunStepObjectStepDetails StepDetails { get; set; }
+        public required global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDetailsMessageCreationObject, global::tryAGI.OpenAI.RunStepDetailsToolCallsObject> StepDetails { get; set; }
 
         /// <summary>
         /// The last error associated with this run step. Will be `null` if there are no errors.
@@ -202,7 +204,7 @@ namespace tryAGI.OpenAI
             string runId,
             global::tryAGI.OpenAI.RunStepObjectType type,
             global::tryAGI.OpenAI.RunStepObjectStatus status,
-            global::tryAGI.OpenAI.RunStepObjectStepDetails stepDetails,
+            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDetailsMessageCreationObject, global::tryAGI.OpenAI.RunStepDetailsToolCallsObject> stepDetails,
             global::tryAGI.OpenAI.RunStepObjectLastError? lastError,
             global::System.DateTimeOffset? cancelledAt,
             global::System.DateTimeOffset? failedAt,

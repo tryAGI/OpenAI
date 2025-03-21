@@ -138,6 +138,16 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.FineTuneMethod? Method { get; set; }
 
         /// <summary>
+        /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
+        /// useful for storing additional information about the object in a structured<br/>
+        /// format, and querying for objects via API or the dashboard. <br/>
+        /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
+        /// with a maximum length of 512 characters.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -200,6 +210,13 @@ namespace tryAGI.OpenAI
         /// <param name="method">
         /// The method used for fine-tuning.
         /// </param>
+        /// <param name="metadata">
+        /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
+        /// useful for storing additional information about the object in a structured<br/>
+        /// format, and querying for objects via API or the dashboard. <br/>
+        /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
+        /// with a maximum length of 512 characters.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -221,7 +238,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.FineTuningJobObject @object,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuningIntegration>>? integrations,
             global::System.DateTimeOffset? estimatedFinish,
-            global::tryAGI.OpenAI.FineTuneMethod? method)
+            global::tryAGI.OpenAI.FineTuneMethod? method,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;
@@ -241,6 +259,7 @@ namespace tryAGI.OpenAI
             this.Integrations = integrations;
             this.EstimatedFinish = estimatedFinish;
             this.Method = method;
+            this.Metadata = metadata;
         }
 
         /// <summary>

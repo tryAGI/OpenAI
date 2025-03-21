@@ -55,7 +55,7 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.UploadStatus Status { get; set; }
 
         /// <summary>
-        /// The Unix timestamp (in seconds) for when the Upload was created.
+        /// The Unix timestamp (in seconds) for when the Upload will expire.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
@@ -104,7 +104,7 @@ namespace tryAGI.OpenAI
         /// The status of the Upload.
         /// </param>
         /// <param name="expiresAt">
-        /// The Unix timestamp (in seconds) for when the Upload was created.
+        /// The Unix timestamp (in seconds) for when the Upload will expire.
         /// </param>
         /// <param name="object">
         /// The object type, which is always "upload".

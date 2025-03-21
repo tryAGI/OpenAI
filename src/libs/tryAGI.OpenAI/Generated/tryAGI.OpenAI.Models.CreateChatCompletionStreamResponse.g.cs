@@ -4,7 +4,9 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Represents a streamed chunk of a chat completion response returned by model, based on the provided input.
+    /// Represents a streamed chunk of a chat completion response returned<br/>
+    /// by the model, based on the provided input. <br/>
+    /// [Learn more](/docs/guides/streaming-responses).
     /// </summary>
     public sealed partial class CreateChatCompletionStreamResponse
     {

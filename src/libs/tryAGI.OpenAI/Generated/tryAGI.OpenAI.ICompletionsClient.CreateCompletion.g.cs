@@ -71,7 +71,8 @@ namespace tryAGI.OpenAI
         /// Determinism is not guaranteed, and you should refer to the `system_fingerprint` response parameter to monitor changes in the backend.
         /// </param>
         /// <param name="stop">
-        /// Up to 4 sequences where the API will stop generating further tokens. The returned text will not contain the stop sequence.
+        /// Up to 4 sequences where the API will stop generating further tokens. The<br/>
+        /// returned text will not contain the stop sequence.
         /// </param>
         /// <param name="stream">
         /// Whether to stream back partial progress. If set, tokens will be sent as data-only [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format) as they become available, with the stream terminated by a `data: [DONE]` message. [Example Python code](https://cookbook.openai.com/examples/how_to_stream_completions).<br/>
@@ -115,7 +116,7 @@ namespace tryAGI.OpenAI
             int? n = default,
             double? presencePenalty = default,
             long? seed = default,
-            global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
+            global::tryAGI.OpenAI.StopConfiguration? stop = default,
             bool? stream = default,
             global::tryAGI.OpenAI.ChatCompletionStreamOptions? streamOptions = default,
             string? suffix = default,

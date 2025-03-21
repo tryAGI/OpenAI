@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -18,7 +20,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("annotations")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnnotationsItem2>? Annotations { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject, global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFilePathObject>>? Annotations { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public MessageDeltaContentTextObjectText(
             string? value,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnnotationsItem2>? annotations)
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject, global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFilePathObject>>? annotations)
         {
             this.Value = value;
             this.Annotations = annotations;

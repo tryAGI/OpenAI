@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.MessageObject> CreateMessageAsync(
             string threadId,
             global::tryAGI.OpenAI.CreateMessageRequestRole role,
-            global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentVariant2Item>> content,
+            global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageContentImageFileObject, global::tryAGI.OpenAI.MessageContentImageUrlObject, global::tryAGI.OpenAI.MessageRequestContentTextObject>>> content,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateMessageRequestAttachment>? attachments = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default);

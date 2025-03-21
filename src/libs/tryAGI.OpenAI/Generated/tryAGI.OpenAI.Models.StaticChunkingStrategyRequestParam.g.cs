@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    /// Customize your own chunking strategy by setting chunk size and chunk overlap.
     /// </summary>
     public sealed partial class StaticChunkingStrategyRequestParam
     {

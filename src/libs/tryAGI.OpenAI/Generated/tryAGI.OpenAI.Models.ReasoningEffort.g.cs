@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// **o1 and o3-mini models only** <br/>
+    /// **o-series models only** <br/>
     /// Constrains effort on reasoning for <br/>
     /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
     /// Currently supported values are `low`, `medium`, and `high`. Reducing<br/>

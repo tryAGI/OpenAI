@@ -103,11 +103,12 @@ namespace tryAGI.OpenAI
         public long? Seed { get; set; }
 
         /// <summary>
-        /// Up to 4 sequences where the API will stop generating further tokens. The returned text will not contain the stop sequence.
+        /// Up to 4 sequences where the API will stop generating further tokens. The<br/>
+        /// returned text will not contain the stop sequence.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
-        public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>>? Stop { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.StopConfigurationJsonConverter))]
+        public global::tryAGI.OpenAI.StopConfiguration? Stop { get; set; }
 
         /// <summary>
         /// Whether to stream back partial progress. If set, tokens will be sent as data-only [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format) as they become available, with the stream terminated by a `data: [DONE]` message. [Example Python code](https://cookbook.openai.com/examples/how_to_stream_completions).<br/>
@@ -222,7 +223,8 @@ namespace tryAGI.OpenAI
         /// Determinism is not guaranteed, and you should refer to the `system_fingerprint` response parameter to monitor changes in the backend.
         /// </param>
         /// <param name="stop">
-        /// Up to 4 sequences where the API will stop generating further tokens. The returned text will not contain the stop sequence.
+        /// Up to 4 sequences where the API will stop generating further tokens. The<br/>
+        /// returned text will not contain the stop sequence.
         /// </param>
         /// <param name="stream">
         /// Whether to stream back partial progress. If set, tokens will be sent as data-only [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format) as they become available, with the stream terminated by a `data: [DONE]` message. [Example Python code](https://cookbook.openai.com/examples/how_to_stream_completions).<br/>
@@ -267,7 +269,7 @@ namespace tryAGI.OpenAI
             int? n,
             double? presencePenalty,
             long? seed,
-            global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>>? stop,
+            global::tryAGI.OpenAI.StopConfiguration? stop,
             bool? stream,
             global::tryAGI.OpenAI.ChatCompletionStreamOptions? streamOptions,
             string? suffix,

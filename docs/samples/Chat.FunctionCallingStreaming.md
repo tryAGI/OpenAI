@@ -20,7 +20,7 @@ do
     IAsyncEnumerable<CreateChatCompletionStreamResponse> chatUpdates
         = api.Chat.CreateChatCompletionAsStreamAsync(
             messages,
-            model: CreateChatCompletionRequestModel.Gpt4o20240806,
+            model: ModelIdsEnum.Gpt4o20240806,
             tools: tools);
 
     await foreach (CreateChatCompletionStreamResponse chatUpdate in chatUpdates)

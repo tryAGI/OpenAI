@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Model15> RetrieveModelAsync(
+        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Model14> RetrieveModelAsync(
             string model,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -124,7 +124,7 @@ namespace tryAGI.OpenAI
                 }
 
                 return
-                    global::tryAGI.OpenAI.Model15.FromJson(__content, JsonSerializerContext) ??
+                    global::tryAGI.OpenAI.Model14.FromJson(__content, JsonSerializerContext) ??
                     throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
@@ -154,7 +154,7 @@ namespace tryAGI.OpenAI
                 ).ConfigureAwait(false);
 
                 return
-                    await global::tryAGI.OpenAI.Model15.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                    await global::tryAGI.OpenAI.Model14.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }

@@ -15,7 +15,7 @@ do
     requiresAction = false;
     CreateChatCompletionResponse chatCompletion = await api.Chat.CreateChatCompletionAsync(
         messages,
-        model: CreateChatCompletionRequestModel.Gpt4o20240806,
+        model: ModelIdsEnum.Gpt4o20240806,
         tools: tools);
 
     switch (chatCompletion.Choices[0].FinishReason)

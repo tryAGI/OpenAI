@@ -202,6 +202,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public ResponsesClient Responses => new ResponsesClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public VectorStoresClient VectorStores => new VectorStoresClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,

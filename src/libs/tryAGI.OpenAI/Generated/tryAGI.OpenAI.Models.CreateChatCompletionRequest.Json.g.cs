@@ -2,7 +2,7 @@
 
 namespace tryAGI.OpenAI
 {
-    public sealed partial class CreateChatCompletionRequest
+    public readonly partial struct CreateChatCompletionRequest
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -41,7 +41,7 @@ namespace tryAGI.OpenAI
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
                 typeof(global::tryAGI.OpenAI.CreateChatCompletionRequest),
-                jsonSerializerContext) as global::tryAGI.OpenAI.CreateChatCompletionRequest;
+                jsonSerializerContext) as global::tryAGI.OpenAI.CreateChatCompletionRequest?;
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace tryAGI.OpenAI
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
                 typeof(global::tryAGI.OpenAI.CreateChatCompletionRequest),
-                jsonSerializerContext).ConfigureAwait(false)) as global::tryAGI.OpenAI.CreateChatCompletionRequest;
+                jsonSerializerContext).ConfigureAwait(false)) as global::tryAGI.OpenAI.CreateChatCompletionRequest?;
         }
 
         /// <summary>

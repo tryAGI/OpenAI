@@ -51,6 +51,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Gpt45Preview,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt45Preview20250227,
+        /// <summary>
+        /// 
+        /// </summary>
         Gpt4Turbo,
         /// <summary>
         /// 
@@ -144,6 +152,8 @@ namespace tryAGI.OpenAI
                 AssistantSupportedModels.Gpt4o20240513 => "gpt-4o-2024-05-13",
                 AssistantSupportedModels.Gpt4oMini => "gpt-4o-mini",
                 AssistantSupportedModels.Gpt4oMini20240718 => "gpt-4o-mini-2024-07-18",
+                AssistantSupportedModels.Gpt45Preview => "gpt-4.5-preview",
+                AssistantSupportedModels.Gpt45Preview20250227 => "gpt-4.5-preview-2025-02-27",
                 AssistantSupportedModels.Gpt4Turbo => "gpt-4-turbo",
                 AssistantSupportedModels.Gpt4Turbo20240409 => "gpt-4-turbo-2024-04-09",
                 AssistantSupportedModels.Gpt40125Preview => "gpt-4-0125-preview",
@@ -182,6 +192,8 @@ namespace tryAGI.OpenAI
                 "gpt-4o-2024-05-13" => AssistantSupportedModels.Gpt4o20240513,
                 "gpt-4o-mini" => AssistantSupportedModels.Gpt4oMini,
                 "gpt-4o-mini-2024-07-18" => AssistantSupportedModels.Gpt4oMini20240718,
+                "gpt-4.5-preview" => AssistantSupportedModels.Gpt45Preview,
+                "gpt-4.5-preview-2025-02-27" => AssistantSupportedModels.Gpt45Preview20250227,
                 "gpt-4-turbo" => AssistantSupportedModels.Gpt4Turbo,
                 "gpt-4-turbo-2024-04-09" => AssistantSupportedModels.Gpt4Turbo20240409,
                 "gpt-4-0125-preview" => AssistantSupportedModels.Gpt40125Preview,

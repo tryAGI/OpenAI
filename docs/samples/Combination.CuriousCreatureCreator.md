@@ -3,7 +3,7 @@ using var api = GetAuthenticatedClient();
 
 // First, we'll use gpt-4o to have a creative helper imagine a twist on a household pet
 CreateChatCompletionResponse creativeWriterResult = await api.Chat.CreateChatCompletionAsync(
-    model: CreateChatCompletionRequestModel.Gpt4o,
+    model: ModelIdsEnum.Gpt4o,
     messages:
     [
         "You're a creative helper that specializes in brainstorming designs for concepts that fuse ordinary, mundane items with a fantastical touch. In particular, you can provide good one-paragraph descriptions of concept images.".AsSystemMessage(),

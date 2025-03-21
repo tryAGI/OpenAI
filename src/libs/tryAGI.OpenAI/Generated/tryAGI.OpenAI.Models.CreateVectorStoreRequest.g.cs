@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -30,8 +32,8 @@ namespace tryAGI.OpenAI
         /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy. Only applicable if `file_ids` is non-empty.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chunking_strategy")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateVectorStoreRequestChunkingStrategyJsonConverter))]
-        public global::tryAGI.OpenAI.CreateVectorStoreRequestChunkingStrategy? ChunkingStrategy { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam, global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam>))]
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam, global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam>? ChunkingStrategy { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
@@ -78,7 +80,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<string>? fileIds,
             string? name,
             global::tryAGI.OpenAI.VectorStoreExpirationAfter? expiresAfter,
-            global::tryAGI.OpenAI.CreateVectorStoreRequestChunkingStrategy? chunkingStrategy,
+            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam, global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam>? chunkingStrategy,
             global::System.Collections.Generic.Dictionary<string, string>? metadata)
         {
             this.FileIds = fileIds;

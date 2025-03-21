@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The schema for the response format, described as a JSON Schema object.
+    /// The schema for the response format, described as a JSON Schema object.<br/>
+    /// Learn how to build JSON schemas [here](https://json-schema.org/).
     /// </summary>
     public sealed partial class ResponseFormatJsonSchemaSchema
     {

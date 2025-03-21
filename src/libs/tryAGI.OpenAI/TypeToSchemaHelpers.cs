@@ -19,7 +19,7 @@ public static class TypeToSchemaHelpers2
 #if NET6_0_OR_GREATER
     [RequiresUnreferencedCode("This method uses reflection to generate a JSON schema. Use overload with JsonTypeInfo parameter to avoid this")]
 #endif
-    public static ResponseFormatJsonSchemaJsonSchema AsResponseFormat(Type type, bool strict)
+    public static ResponseFormatJsonSchemaJsonSchema AsResponseFormat(System.Type type, bool strict)
     {
         type = type ?? throw new ArgumentNullException(nameof(type));
             

@@ -13,8 +13,8 @@ namespace tryAGI.OpenAI
         /// The ranker to use for the file search. If not specified will use the `auto` ranker.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ranker")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.FileSearchRankingOptionsRankerJsonConverter))]
-        public global::tryAGI.OpenAI.FileSearchRankingOptionsRanker? Ranker { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.FileSearchRankerJsonConverter))]
+        public global::tryAGI.OpenAI.FileSearchRanker? Ranker { get; set; }
 
         /// <summary>
         /// The score threshold for the file search. All values must be a floating point number between 0 and 1.
@@ -43,7 +43,7 @@ namespace tryAGI.OpenAI
 #endif
         public FileSearchRankingOptions(
             double scoreThreshold,
-            global::tryAGI.OpenAI.FileSearchRankingOptionsRanker? ranker)
+            global::tryAGI.OpenAI.FileSearchRanker? ranker)
         {
             this.ScoreThreshold = scoreThreshold;
             this.Ranker = ranker;

@@ -10,11 +10,6 @@ namespace tryAGI.OpenAI
     public readonly partial struct RealtimeServerEvent : global::System.IEquatable<RealtimeServerEvent>
     {
         /// <summary>
-        /// 
-        /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventDiscriminatorType? Type { get; }
-
-        /// <summary>
         /// Returned when an error occurs.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -998,7 +993,6 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public RealtimeServerEvent(
-            global::tryAGI.OpenAI.RealtimeServerEventDiscriminatorType? type,
             global::tryAGI.OpenAI.RealtimeError? error,
             global::tryAGI.OpenAI.RealtimeSessionCreated? sessionCreated,
             global::tryAGI.OpenAI.RealtimeSessionUpdated? sessionUpdated,
@@ -1029,8 +1023,6 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RealtimeRateLimitsUpdated? rateLimitsUpdated
             )
         {
-            Type = type;
-
             Error = error;
             SessionCreated = sessionCreated;
             SessionUpdated = sessionUpdated;

@@ -4,12 +4,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The type of response format being defined: `json_schema`
+    /// The type of response format being defined. Always `json_schema`.
     /// </summary>
     public enum ResponseFormatJsonSchemaType
     {
         /// <summary>
-        /// `json_schema`
+        /// 
         /// </summary>
         JsonSchema,
     }

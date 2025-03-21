@@ -8,12 +8,14 @@ namespace tryAGI.OpenAI
         partial void PrepareListPaginatedFineTuningJobsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? after,
-            ref int? limit);
+            ref int? limit,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata);
         partial void PrepareListPaginatedFineTuningJobsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? after,
-            int? limit);
+            int? limit,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata);
         partial void ProcessListPaginatedFineTuningJobsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -30,11 +32,13 @@ namespace tryAGI.OpenAI
         /// <param name="limit">
         /// Default Value: 20
         /// </param>
+        /// <param name="metadata"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ListPaginatedFineTuningJobsResponse> ListPaginatedFineTuningJobsAsync(
             string? after = default,
             int? limit = default,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -42,7 +46,8 @@ namespace tryAGI.OpenAI
             PrepareListPaginatedFineTuningJobsArguments(
                 httpClient: HttpClient,
                 after: ref after,
-                limit: ref limit);
+                limit: ref limit,
+                metadata: metadata);
 
             var __pathBuilder = new PathBuilder(
                 path: "/fine_tuning/jobs",
@@ -50,6 +55,7 @@ namespace tryAGI.OpenAI
             __pathBuilder 
                 .AddOptionalParameter("after", after) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
+                .AddOptionalParameter("metadata", metadata?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -83,7 +89,8 @@ namespace tryAGI.OpenAI
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 after: after,
-                limit: limit);
+                limit: limit,
+                metadata: metadata);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

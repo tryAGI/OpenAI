@@ -4,12 +4,15 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Send this event to update the session’s default configuration. The client may <br/>
-    /// send this event at any time to update the session configuration, and any <br/>
-    /// field may be updated at any time, except for "voice". The server will respond <br/>
-    /// with a `session.updated` event that shows the full effective configuration. <br/>
-    /// Only fields that are present are updated, thus the correct way to clear a <br/>
-    /// field like "instructions" is to pass an empty string.
+    /// Send this event to update the session’s default configuration.<br/>
+    /// The client may send this event at any time to update any field,<br/>
+    /// except for `voice`. However, note that once a session has been<br/>
+    /// initialized with a particular `model`, it can’t be changed to<br/>
+    /// another model using `session.update`.<br/>
+    /// When the server receives a `session.update`, it will respond<br/>
+    /// with a `session.updated` event showing the full, effective configuration.<br/>
+    /// Only the fields that are present are updated. To clear a field like<br/>
+    /// `instructions`, pass an empty string.
     /// </summary>
     public sealed partial class RealtimeClientEventSessionUpdate
     {
