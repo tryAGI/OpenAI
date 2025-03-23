@@ -19,6 +19,14 @@ namespace tryAGI.OpenAI
         public string? PreviousResponseId { get; set; }
 
         /// <summary>
+        /// Example: gpt-4o
+        /// </summary>
+        /// <example>gpt-4o</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ModelIdsResponsesJsonConverter))]
+        public global::tryAGI.OpenAI.ModelIdsResponses? Model { get; set; }
+
+        /// <summary>
         /// **o-series models only**<br/>
         /// Configuration options for <br/>
         /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).
@@ -102,6 +110,9 @@ namespace tryAGI.OpenAI
         /// create multi-turn conversations. Learn more about <br/>
         /// [conversation state](/docs/guides/conversation-state).
         /// </param>
+        /// <param name="model">
+        /// Example: gpt-4o
+        /// </param>
         /// <param name="reasoning">
         /// **o-series models only**<br/>
         /// Configuration options for <br/>
@@ -154,6 +165,7 @@ namespace tryAGI.OpenAI
 #endif
         public ResponseProperties(
             string? previousResponseId,
+            global::tryAGI.OpenAI.ModelIdsResponses? model,
             global::tryAGI.OpenAI.Reasoning? reasoning,
             int? maxOutputTokens,
             string? instructions,
@@ -163,6 +175,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ResponsePropertiesTruncation? truncation)
         {
             this.PreviousResponseId = previousResponseId;
+            this.Model = model;
             this.Reasoning = reasoning;
             this.MaxOutputTokens = maxOutputTokens;
             this.Instructions = instructions;

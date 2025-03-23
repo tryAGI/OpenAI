@@ -4,8 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Returned when a conversation item is created. There are several scenarios that <br/>
-    /// produce this event:<br/>
+    /// Returned when a conversation item is created. There are several scenarios that produce this event:<br/>
     ///   - The server is generating a Response, which if successful will produce <br/>
     ///     either one or two Items, which will be of type `message` <br/>
     ///     (role `assistant`) or type `function_call`.<br/>

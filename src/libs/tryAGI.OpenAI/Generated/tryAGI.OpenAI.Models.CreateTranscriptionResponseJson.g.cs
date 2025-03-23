@@ -16,6 +16,12 @@ namespace tryAGI.OpenAI
         public required string Text { get; set; }
 
         /// <summary>
+        /// The log probabilities of the tokens in the transcription. Only returned with the models `gpt-4o-transcribe` and `gpt-4o-mini-transcribe` if `logprobs` is added to the `include` array.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProbProperties>? Logprobs { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -27,13 +33,18 @@ namespace tryAGI.OpenAI
         /// <param name="text">
         /// The transcribed text.
         /// </param>
+        /// <param name="logprobs">
+        /// The log probabilities of the tokens in the transcription. Only returned with the models `gpt-4o-transcribe` and `gpt-4o-mini-transcribe` if `logprobs` is added to the `include` array.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateTranscriptionResponseJson(
-            string text)
+            string text,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProbProperties>? logprobs)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Logprobs = logprobs;
         }
 
         /// <summary>

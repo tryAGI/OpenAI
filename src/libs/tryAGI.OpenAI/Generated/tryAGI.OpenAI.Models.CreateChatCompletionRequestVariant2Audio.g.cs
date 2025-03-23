@@ -10,13 +10,13 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateChatCompletionRequestVariant2Audio
     {
         /// <summary>
-        /// The voice the model uses to respond. Supported voices are <br/>
-        /// `alloy`, `ash`, `ballad`, `coral`, `echo`, `sage`, and `shimmer`.
+        /// Example: ash
         /// </summary>
+        /// <example>ash</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateChatCompletionRequestVariant2AudioVoiceJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VoiceIdsSharedJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2AudioVoice Voice { get; set; }
+        public required global::tryAGI.OpenAI.VoiceIdsShared Voice { get; set; }
 
         /// <summary>
         /// Specifies the output audio format. Must be one of `wav`, `mp3`, `flac`,<br/>
@@ -37,8 +37,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="CreateChatCompletionRequestVariant2Audio" /> class.
         /// </summary>
         /// <param name="voice">
-        /// The voice the model uses to respond. Supported voices are <br/>
-        /// `alloy`, `ash`, `ballad`, `coral`, `echo`, `sage`, and `shimmer`.
+        /// Example: ash
         /// </param>
         /// <param name="format">
         /// Specifies the output audio format. Must be one of `wav`, `mp3`, `flac`,<br/>
@@ -48,7 +47,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateChatCompletionRequestVariant2Audio(
-            global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2AudioVoice voice,
+            global::tryAGI.OpenAI.VoiceIdsShared voice,
             global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2AudioFormat format)
         {
             this.Voice = voice;

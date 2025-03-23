@@ -4,10 +4,14 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The endpoint to be used for all requests in the batch. Currently `/v1/chat/completions`, `/v1/embeddings`, and `/v1/completions` are supported. Note that `/v1/embeddings` batches are also restricted to a maximum of 50,000 embedding inputs across all requests in the batch.
+    /// The endpoint to be used for all requests in the batch. Currently `/v1/responses`, `/v1/chat/completions`, `/v1/embeddings`, and `/v1/completions` are supported. Note that `/v1/embeddings` batches are also restricted to a maximum of 50,000 embedding inputs across all requests in the batch.
     /// </summary>
     public enum CreateBatchRequestEndpoint
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        V1Responses,
         /// <summary>
         /// 
         /// </summary>
@@ -34,6 +38,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                CreateBatchRequestEndpoint.V1Responses => "/v1/responses",
                 CreateBatchRequestEndpoint.V1ChatCompletions => "/v1/chat/completions",
                 CreateBatchRequestEndpoint.V1Embeddings => "/v1/embeddings",
                 CreateBatchRequestEndpoint.V1Completions => "/v1/completions",
@@ -47,6 +52,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "/v1/responses" => CreateBatchRequestEndpoint.V1Responses,
                 "/v1/chat/completions" => CreateBatchRequestEndpoint.V1ChatCompletions,
                 "/v1/embeddings" => CreateBatchRequestEndpoint.V1Embeddings,
                 "/v1/completions" => CreateBatchRequestEndpoint.V1Completions,

@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        ComputerPreview,
+        ComputerUsePreview,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                ComputerToolType.ComputerPreview => "computer-preview",
+                ComputerToolType.ComputerUsePreview => "computer_use_preview",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "computer-preview" => ComputerToolType.ComputerPreview,
+                "computer_use_preview" => ComputerToolType.ComputerUsePreview,
                 _ => null,
             };
         }

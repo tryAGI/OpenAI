@@ -45,8 +45,8 @@ namespace tryAGI.OpenAI
         /// Default Value: json
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AudioResponseFormatJsonConverter))]
-        public global::tryAGI.OpenAI.AudioResponseFormat? ResponseFormat { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateTranslationRequestResponseFormatJsonConverter))]
+        public global::tryAGI.OpenAI.CreateTranslationRequestResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
         /// The sampling temperature, between 0 and 1. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. If set to 0, the model will use [log probability](https://en.wikipedia.org/wiki/Log_probability) to automatically increase the temperature until certain thresholds are hit.<br/>
@@ -93,7 +93,7 @@ namespace tryAGI.OpenAI
             string filename,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateTranslationRequestModel?> model,
             string? prompt,
-            global::tryAGI.OpenAI.AudioResponseFormat? responseFormat,
+            global::tryAGI.OpenAI.CreateTranslationRequestResponseFormat? responseFormat,
             double? temperature)
         {
             this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));

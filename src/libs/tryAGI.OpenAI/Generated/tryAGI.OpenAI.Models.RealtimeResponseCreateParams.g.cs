@@ -34,14 +34,12 @@ namespace tryAGI.OpenAI
         public string? Instructions { get; set; }
 
         /// <summary>
-        /// The voice the model uses to respond. Voice cannot be changed during the <br/>
-        /// session once the model has responded with audio at least once. Current <br/>
-        /// voice options are `alloy`, `ash`, `ballad`, `coral`, `echo` `sage`, <br/>
-        /// `shimmer` and `verse`.
+        /// Example: ash
         /// </summary>
+        /// <example>ash</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeResponseCreateParamsVoiceJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeResponseCreateParamsVoice? Voice { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VoiceIdsSharedJsonConverter))]
+        public global::tryAGI.OpenAI.VoiceIdsShared? Voice { get; set; }
 
         /// <summary>
         /// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
@@ -136,10 +134,7 @@ namespace tryAGI.OpenAI
         /// start of the session.
         /// </param>
         /// <param name="voice">
-        /// The voice the model uses to respond. Voice cannot be changed during the <br/>
-        /// session once the model has responded with audio at least once. Current <br/>
-        /// voice options are `alloy`, `ash`, `ballad`, `coral`, `echo` `sage`, <br/>
-        /// `shimmer` and `verse`.
+        /// Example: ash
         /// </param>
         /// <param name="outputAudioFormat">
         /// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
@@ -186,7 +181,7 @@ namespace tryAGI.OpenAI
         public RealtimeResponseCreateParams(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeResponseCreateParamsModalitie>? modalities,
             string? instructions,
-            global::tryAGI.OpenAI.RealtimeResponseCreateParamsVoice? voice,
+            global::tryAGI.OpenAI.VoiceIdsShared? voice,
             global::tryAGI.OpenAI.RealtimeResponseCreateParamsOutputAudioFormat? outputAudioFormat,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeResponseCreateParamsTool>? tools,
             string? toolChoice,
