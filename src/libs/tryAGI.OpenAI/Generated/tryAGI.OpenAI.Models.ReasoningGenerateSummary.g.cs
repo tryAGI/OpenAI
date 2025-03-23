@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// **o-series models only** <br/>
+    /// **computer_use_preview only**<br/>
     /// A summary of the reasoning performed by the model. This can be<br/>
     /// useful for debugging and understanding the model's reasoning process.<br/>
     /// One of `concise` or `detailed`.

@@ -26,9 +26,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Reasoning text contents.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ReasoningItemContentItem> Content { get; set; }
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ReasoningItemSummaryItem> Summary { get; set; }
 
         /// <summary>
         /// The status of the item. One of `in_progress`, `completed`, or<br/>
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// The unique identifier of the reasoning content.
         /// </param>
-        /// <param name="content">
+        /// <param name="summary">
         /// Reasoning text contents.
         /// </param>
         /// <param name="status">
@@ -65,12 +65,12 @@ namespace tryAGI.OpenAI
 #endif
         public ReasoningItem(
             string id,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ReasoningItemContentItem> content,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ReasoningItemSummaryItem> summary,
             global::tryAGI.OpenAI.ReasoningItemType type,
             global::tryAGI.OpenAI.ReasoningItemStatus? status)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
+            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
             this.Type = type;
             this.Status = status;
         }

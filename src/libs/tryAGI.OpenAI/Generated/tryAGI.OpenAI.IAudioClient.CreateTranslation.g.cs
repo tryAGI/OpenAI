@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
             string filename,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateTranslationRequestModel?> model,
             string? prompt = default,
-            global::tryAGI.OpenAI.AudioResponseFormat? responseFormat = default,
+            global::tryAGI.OpenAI.CreateTranslationRequestResponseFormat? responseFormat = default,
             double? temperature = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

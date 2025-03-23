@@ -64,11 +64,10 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CreateChatCompletionStreamResponseObject Object { get; set; }
 
         /// <summary>
-        /// An optional field that will only be present when you set `stream_options: {"include_usage": true}` in your request.<br/>
-        /// When present, it contains a null value except for the last chunk which contains the token usage statistics for the entire request.
+        /// Usage statistics for the completion request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
-        public global::tryAGI.OpenAI.CreateChatCompletionStreamResponseUsage? Usage { get; set; }
+        public global::tryAGI.OpenAI.CompletionUsage? Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -104,8 +103,7 @@ namespace tryAGI.OpenAI
         /// The object type, which is always `chat.completion.chunk`.
         /// </param>
         /// <param name="usage">
-        /// An optional field that will only be present when you set `stream_options: {"include_usage": true}` in your request.<br/>
-        /// When present, it contains a null value except for the last chunk which contains the token usage statistics for the entire request.
+        /// Usage statistics for the completion request.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -118,7 +116,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.CreateChatCompletionStreamResponseServiceTier? serviceTier,
             string? systemFingerprint,
             global::tryAGI.OpenAI.CreateChatCompletionStreamResponseObject @object,
-            global::tryAGI.OpenAI.CreateChatCompletionStreamResponseUsage? usage)
+            global::tryAGI.OpenAI.CompletionUsage? usage)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Choices = choices ?? throw new global::System.ArgumentNullException(nameof(choices));

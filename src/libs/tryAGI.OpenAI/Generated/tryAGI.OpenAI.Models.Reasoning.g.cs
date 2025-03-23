@@ -21,11 +21,10 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("effort")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ReasoningEffortJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ReasoningEffort? Effort { get; set; }
+        public global::tryAGI.OpenAI.ReasoningEffort? Effort { get; set; }
 
         /// <summary>
-        /// **o-series models only** <br/>
+        /// **computer_use_preview only**<br/>
         /// A summary of the reasoning performed by the model. This can be<br/>
         /// useful for debugging and understanding the model's reasoning process.<br/>
         /// One of `concise` or `detailed`.
@@ -53,7 +52,7 @@ namespace tryAGI.OpenAI
         /// Default Value: medium
         /// </param>
         /// <param name="generateSummary">
-        /// **o-series models only** <br/>
+        /// **computer_use_preview only**<br/>
         /// A summary of the reasoning performed by the model. This can be<br/>
         /// useful for debugging and understanding the model's reasoning process.<br/>
         /// One of `concise` or `detailed`.

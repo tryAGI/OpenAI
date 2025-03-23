@@ -21,6 +21,15 @@ namespace tryAGI.OpenAI
         public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestMessage> Messages { get; set; }
 
         /// <summary>
+        /// Example: gpt-4o
+        /// </summary>
+        /// <example>gpt-4o</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ModelIdsSharedJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.ModelIdsShared Model { get; set; }
+
+        /// <summary>
         /// Output types that you would like the model to generate.<br/>
         /// Most models are capable of generating text, which is the default:<br/>
         /// `["text"]`<br/>
@@ -203,7 +212,7 @@ namespace tryAGI.OpenAI
         /// Determinism is not guaranteed, and you should refer to the `system_fingerprint` response parameter to monitor changes in the backend.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
-        public int? Seed { get; set; }
+        public long? Seed { get; set; }
 
         /// <summary>
         /// Options for streaming response. Only set this when you set `stream: true`.
@@ -273,6 +282,9 @@ namespace tryAGI.OpenAI
         /// [model](/docs/models) you use, different message types (modalities) are<br/>
         /// supported, like [text](/docs/guides/text-generation),<br/>
         /// [images](/docs/guides/vision), and [audio](/docs/guides/audio).
+        /// </param>
+        /// <param name="model">
+        /// Example: gpt-4o
         /// </param>
         /// <param name="modalities">
         /// Output types that you would like the model to generate.<br/>
@@ -411,6 +423,7 @@ namespace tryAGI.OpenAI
 #endif
         public CreateChatCompletionRequestVariant2(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestMessage> messages,
+            global::tryAGI.OpenAI.ModelIdsShared model,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResponseModalitie>? modalities,
             global::tryAGI.OpenAI.ReasoningEffort? reasoningEffort,
             int? maxCompletionTokens,
@@ -428,13 +441,14 @@ namespace tryAGI.OpenAI
             bool? logprobs,
             int? n,
             global::tryAGI.OpenAI.PredictionContent? prediction,
-            int? seed,
+            long? seed,
             global::tryAGI.OpenAI.ChatCompletionStreamOptions? streamOptions,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionTool>? tools,
             global::tryAGI.OpenAI.ChatCompletionToolChoiceOption? toolChoice,
             bool? parallelToolCalls)
         {
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
+            this.Model = model;
             this.Modalities = modalities;
             this.ReasoningEffort = reasoningEffort;
             this.MaxCompletionTokens = maxCompletionTokens;

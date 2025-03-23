@@ -223,13 +223,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// A tool call to run a function. See the <br/>
-        /// [function calling guide](/docs/guides/function-calling) for more information.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.FunctionToolCall? FunctionToolCall { get; init; }
+        public global::tryAGI.OpenAI.FunctionToolCallResource? FunctionToolCall { get; init; }
 #else
-        public global::tryAGI.OpenAI.FunctionToolCall? FunctionToolCall { get; }
+        public global::tryAGI.OpenAI.FunctionToolCallResource? FunctionToolCall { get; }
 #endif
 
         /// <summary>
@@ -243,17 +242,17 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ItemResource(global::tryAGI.OpenAI.FunctionToolCall value) => new ItemResource(value);
+        public static implicit operator ItemResource(global::tryAGI.OpenAI.FunctionToolCallResource value) => new ItemResource(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.FunctionToolCall?(ItemResource @this) => @this.FunctionToolCall;
+        public static implicit operator global::tryAGI.OpenAI.FunctionToolCallResource?(ItemResource @this) => @this.FunctionToolCall;
 
         /// <summary>
         /// 
         /// </summary>
-        public ItemResource(global::tryAGI.OpenAI.FunctionToolCall? value)
+        public ItemResource(global::tryAGI.OpenAI.FunctionToolCallResource? value)
         {
             FunctionToolCall = value;
         }
@@ -303,7 +302,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ComputerToolCall? computerToolCall,
             global::tryAGI.OpenAI.ComputerToolCallOutputResource? computerToolCallOutput,
             global::tryAGI.OpenAI.WebSearchToolCall? webSearchToolCall,
-            global::tryAGI.OpenAI.FunctionToolCall? functionToolCall,
+            global::tryAGI.OpenAI.FunctionToolCallResource? functionToolCall,
             global::tryAGI.OpenAI.FunctionToolCallOutputResource? functionToolCallOutput
             )
         {
@@ -349,7 +348,7 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.ComputerToolCall?, TResult>? computerToolCall = null,
             global::System.Func<global::tryAGI.OpenAI.ComputerToolCallOutputResource?, TResult>? computerToolCallOutput = null,
             global::System.Func<global::tryAGI.OpenAI.WebSearchToolCall?, TResult>? webSearchToolCall = null,
-            global::System.Func<global::tryAGI.OpenAI.FunctionToolCall?, TResult>? functionToolCall = null,
+            global::System.Func<global::tryAGI.OpenAI.FunctionToolCallResource?, TResult>? functionToolCall = null,
             global::System.Func<global::tryAGI.OpenAI.FunctionToolCallOutputResource?, TResult>? functionToolCallOutput = null,
             bool validate = true)
         {
@@ -404,7 +403,7 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.ComputerToolCall?>? computerToolCall = null,
             global::System.Action<global::tryAGI.OpenAI.ComputerToolCallOutputResource?>? computerToolCallOutput = null,
             global::System.Action<global::tryAGI.OpenAI.WebSearchToolCall?>? webSearchToolCall = null,
-            global::System.Action<global::tryAGI.OpenAI.FunctionToolCall?>? functionToolCall = null,
+            global::System.Action<global::tryAGI.OpenAI.FunctionToolCallResource?>? functionToolCall = null,
             global::System.Action<global::tryAGI.OpenAI.FunctionToolCallOutputResource?>? functionToolCallOutput = null,
             bool validate = true)
         {
@@ -467,7 +466,7 @@ namespace tryAGI.OpenAI
                 WebSearchToolCall,
                 typeof(global::tryAGI.OpenAI.WebSearchToolCall),
                 FunctionToolCall,
-                typeof(global::tryAGI.OpenAI.FunctionToolCall),
+                typeof(global::tryAGI.OpenAI.FunctionToolCallResource),
                 FunctionToolCallOutput,
                 typeof(global::tryAGI.OpenAI.FunctionToolCallOutputResource),
             };
@@ -492,7 +491,7 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ComputerToolCall?>.Default.Equals(ComputerToolCall, other.ComputerToolCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ComputerToolCallOutputResource?>.Default.Equals(ComputerToolCallOutput, other.ComputerToolCallOutput) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.WebSearchToolCall?>.Default.Equals(WebSearchToolCall, other.WebSearchToolCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FunctionToolCall?>.Default.Equals(FunctionToolCall, other.FunctionToolCall) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FunctionToolCallResource?>.Default.Equals(FunctionToolCall, other.FunctionToolCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FunctionToolCallOutputResource?>.Default.Equals(FunctionToolCallOutput, other.FunctionToolCallOutput) 
                 ;
         }

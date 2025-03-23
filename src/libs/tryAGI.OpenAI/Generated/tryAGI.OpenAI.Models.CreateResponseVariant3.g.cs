@@ -25,7 +25,12 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>> Input { get; set; }
 
         /// <summary>
-        /// 
+        /// Specify additional output data to include in the model response. Currently<br/>
+        /// supported values are:<br/>
+        /// - `file_search_call.results`: Include the search results of<br/>
+        ///   the file search tool call.<br/>
+        /// - `message.input_image.image_url`: Include image urls from the input message.<br/>
+        /// - `computer_call_output.output.image_url`: Include image urls from the computer call output.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("include")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? Include { get; set; }
@@ -73,7 +78,14 @@ namespace tryAGI.OpenAI
         /// - [Conversation state](/docs/guides/conversation-state)<br/>
         /// - [Function calling](/docs/guides/function-calling)
         /// </param>
-        /// <param name="include"></param>
+        /// <param name="include">
+        /// Specify additional output data to include in the model response. Currently<br/>
+        /// supported values are:<br/>
+        /// - `file_search_call.results`: Include the search results of<br/>
+        ///   the file search tool call.<br/>
+        /// - `message.input_image.image_url`: Include image urls from the input message.<br/>
+        /// - `computer_call_output.output.image_url`: Include image urls from the computer call output.
+        /// </param>
         /// <param name="parallelToolCalls">
         /// Whether to allow the model to run tool calls in parallel.<br/>
         /// Default Value: true

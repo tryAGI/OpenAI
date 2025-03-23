@@ -4,29 +4,29 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.<br/>
+    /// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`. For `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`, the only supported format is `json`.<br/>
     /// Default Value: json
     /// </summary>
     public enum AudioResponseFormat
     {
         /// <summary>
-        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`.
+        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`. For `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`, the only supported format is `json`.
         /// </summary>
         Json,
         /// <summary>
-        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`.
+        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`. For `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`, the only supported format is `json`.
         /// </summary>
         Text,
         /// <summary>
-        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`.
+        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`. For `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`, the only supported format is `json`.
         /// </summary>
         Srt,
         /// <summary>
-        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`.
+        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`. For `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`, the only supported format is `json`.
         /// </summary>
         VerboseJson,
         /// <summary>
-        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`.
+        /// `json`, `text`, `srt`, `verbose_json`, or `vtt`. For `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`, the only supported format is `json`.
         /// </summary>
         Vtt,
     }

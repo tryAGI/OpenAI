@@ -53,6 +53,12 @@ namespace tryAGI.OpenAI
         public required string Transcript { get; set; }
 
         /// <summary>
+        /// The log probabilities of the transcription.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProbProperties>? Logprobs { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -77,6 +83,9 @@ namespace tryAGI.OpenAI
         /// <param name="transcript">
         /// The transcribed text.
         /// </param>
+        /// <param name="logprobs">
+        /// The log probabilities of the transcription.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -85,13 +94,15 @@ namespace tryAGI.OpenAI
             string itemId,
             int contentIndex,
             string transcript,
-            global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType type)
+            global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType type,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProbProperties>? logprobs)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.ContentIndex = contentIndex;
             this.Transcript = transcript ?? throw new global::System.ArgumentNullException(nameof(transcript));
             this.Type = type;
+            this.Logprobs = logprobs;
         }
 
         /// <summary>
