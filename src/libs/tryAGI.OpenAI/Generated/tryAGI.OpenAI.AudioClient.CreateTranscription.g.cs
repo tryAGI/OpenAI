@@ -72,7 +72,7 @@ namespace tryAGI.OpenAI
                 name: "file",
                 fileName: request.Filename ?? string.Empty);
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent(request.Model.Value1?.ToString() ?? request.Model.Value2?.ToValueString() ?? string.Empty),
+                content: new global::System.Net.Http.StringContent(request.Model.ToString() ?? string.Empty),
                 name: "model");
             if (request.Language != default)
             {

@@ -501,6 +501,23 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            ConversationItemCreate?.ToString() ??
+            ConversationItemDelete?.ToString() ??
+            ConversationItemRetrieve?.ToString() ??
+            ConversationItemTruncate?.ToString() ??
+            InputAudioBufferAppend?.ToString() ??
+            InputAudioBufferClear?.ToString() ??
+            InputAudioBufferCommit?.ToString() ??
+            ResponseCancel?.ToString() ??
+            ResponseCreate?.ToString() ??
+            SessionUpdate?.ToString() ??
+            TranscriptionSessionUpdate?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsConversationItemCreate || IsConversationItemDelete || IsConversationItemRetrieve || IsConversationItemTruncate || IsInputAudioBufferAppend || IsInputAudioBufferClear || IsInputAudioBufferCommit || IsResponseCancel || IsResponseCreate || IsSessionUpdate || IsTranscriptionSessionUpdate;

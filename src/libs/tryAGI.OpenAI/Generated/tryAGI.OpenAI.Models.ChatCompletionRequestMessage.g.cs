@@ -259,6 +259,18 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            Developer?.ToString() ??
+            System?.ToString() ??
+            User?.ToString() ??
+            Assistant?.ToString() ??
+            Tool?.ToString() ??
+            Function?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsDeveloper && !IsSystem && !IsUser && !IsAssistant && !IsTool && !IsFunction || !IsDeveloper && IsSystem && !IsUser && !IsAssistant && !IsTool && !IsFunction || !IsDeveloper && !IsSystem && IsUser && !IsAssistant && !IsTool && !IsFunction || !IsDeveloper && !IsSystem && !IsUser && IsAssistant && !IsTool && !IsFunction || !IsDeveloper && !IsSystem && !IsUser && !IsAssistant && IsTool && !IsFunction || !IsDeveloper && !IsSystem && !IsUser && !IsAssistant && !IsTool && IsFunction;
