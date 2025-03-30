@@ -102,6 +102,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            InputContent?.ToString() ??
+            OutputContent?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsInputContent && !IsOutputContent || !IsInputContent && IsOutputContent;

@@ -268,6 +268,18 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            Thread?.ToString() ??
+            Run?.ToString() ??
+            RunStep?.ToString() ??
+            Message?.ToString() ??
+            Error?.ToString() ??
+            Done?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsThread && !IsRun && !IsRunStep && !IsMessage && !IsError && !IsDone || !IsThread && IsRun && !IsRunStep && !IsMessage && !IsError && !IsDone || !IsThread && !IsRun && IsRunStep && !IsMessage && !IsError && !IsDone || !IsThread && !IsRun && !IsRunStep && IsMessage && !IsError && !IsDone || !IsThread && !IsRun && !IsRunStep && !IsMessage && IsError && !IsDone || !IsThread && !IsRun && !IsRunStep && !IsMessage && !IsError && IsDone;

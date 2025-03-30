@@ -102,6 +102,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            TranscriptTextDelta?.ToString() ??
+            TranscriptTextDone?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsTranscriptTextDelta || IsTranscriptTextDone;

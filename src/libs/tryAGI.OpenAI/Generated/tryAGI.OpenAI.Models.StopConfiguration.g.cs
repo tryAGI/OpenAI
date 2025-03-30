@@ -93,6 +93,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            Value1?.ToString() ??
+            Value2?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;

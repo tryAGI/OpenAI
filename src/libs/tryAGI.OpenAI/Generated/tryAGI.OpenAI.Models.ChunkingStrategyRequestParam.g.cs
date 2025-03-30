@@ -102,6 +102,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            Auto?.ToString() ??
+            Static?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsAuto && !IsStatic || !IsAuto && IsStatic;

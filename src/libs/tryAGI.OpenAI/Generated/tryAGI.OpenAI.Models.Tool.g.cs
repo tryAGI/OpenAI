@@ -182,6 +182,16 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            FileSearch?.ToString() ??
+            Function?.ToString() ??
+            Computer?.ToString() ??
+            WebSearch?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsFileSearch && !IsFunction && !IsComputer && !IsWebSearch || !IsFileSearch && IsFunction && !IsComputer && !IsWebSearch || !IsFileSearch && !IsFunction && IsComputer && !IsWebSearch || !IsFileSearch && !IsFunction && !IsComputer && IsWebSearch;
