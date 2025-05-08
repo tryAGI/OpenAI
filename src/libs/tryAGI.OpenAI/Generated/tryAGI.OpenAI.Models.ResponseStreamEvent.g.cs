@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseAudioDeltaEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseAudioDeltaEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseAudioDeltaEvent?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseAudioDoneEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseAudioDoneEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseAudioDoneEvent?)value);
 
         /// <summary>
         /// 
@@ -99,7 +99,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseAudioTranscriptDeltaEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseAudioTranscriptDeltaEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseAudioTranscriptDeltaEvent?)value);
 
         /// <summary>
         /// 
@@ -134,7 +134,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseAudioTranscriptDoneEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseAudioTranscriptDoneEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseAudioTranscriptDoneEvent?)value);
 
         /// <summary>
         /// 
@@ -169,7 +169,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDeltaEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDeltaEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDeltaEvent?)value);
 
         /// <summary>
         /// 
@@ -204,7 +204,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDoneEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDoneEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDoneEvent?)value);
 
         /// <summary>
         /// 
@@ -239,7 +239,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCodeInterpreterCallCompletedEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCodeInterpreterCallCompletedEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseCodeInterpreterCallCompletedEvent?)value);
 
         /// <summary>
         /// 
@@ -274,7 +274,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCodeInterpreterCallInProgressEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCodeInterpreterCallInProgressEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseCodeInterpreterCallInProgressEvent?)value);
 
         /// <summary>
         /// 
@@ -309,7 +309,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCodeInterpreterCallInterpretingEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCodeInterpreterCallInterpretingEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseCodeInterpreterCallInterpretingEvent?)value);
 
         /// <summary>
         /// 
@@ -344,7 +344,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCompletedEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCompletedEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseCompletedEvent?)value);
 
         /// <summary>
         /// 
@@ -379,7 +379,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseContentPartAddedEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseContentPartAddedEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseContentPartAddedEvent?)value);
 
         /// <summary>
         /// 
@@ -414,7 +414,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseContentPartDoneEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseContentPartDoneEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseContentPartDoneEvent?)value);
 
         /// <summary>
         /// 
@@ -449,7 +449,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCreatedEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCreatedEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseCreatedEvent?)value);
 
         /// <summary>
         /// 
@@ -484,7 +484,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseErrorEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseErrorEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseErrorEvent?)value);
 
         /// <summary>
         /// 
@@ -519,7 +519,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseFileSearchCallCompletedEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseFileSearchCallCompletedEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseFileSearchCallCompletedEvent?)value);
 
         /// <summary>
         /// 
@@ -554,7 +554,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseFileSearchCallInProgressEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseFileSearchCallInProgressEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseFileSearchCallInProgressEvent?)value);
 
         /// <summary>
         /// 
@@ -589,7 +589,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseFileSearchCallSearchingEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseFileSearchCallSearchingEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseFileSearchCallSearchingEvent?)value);
 
         /// <summary>
         /// 
@@ -624,7 +624,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDeltaEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDeltaEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDeltaEvent?)value);
 
         /// <summary>
         /// 
@@ -659,7 +659,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEvent?)value);
 
         /// <summary>
         /// 
@@ -694,7 +694,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseInProgressEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseInProgressEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseInProgressEvent?)value);
 
         /// <summary>
         /// 
@@ -729,7 +729,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseFailedEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseFailedEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseFailedEvent?)value);
 
         /// <summary>
         /// 
@@ -764,7 +764,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseIncompleteEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseIncompleteEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseIncompleteEvent?)value);
 
         /// <summary>
         /// 
@@ -799,7 +799,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseOutputItemAddedEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseOutputItemAddedEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseOutputItemAddedEvent?)value);
 
         /// <summary>
         /// 
@@ -834,7 +834,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseOutputItemDoneEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseOutputItemDoneEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseOutputItemDoneEvent?)value);
 
         /// <summary>
         /// 
@@ -847,6 +847,146 @@ namespace tryAGI.OpenAI
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseOutputItemDoneEvent? value)
         {
             OutputItemDone = value;
+        }
+
+        /// <summary>
+        /// Emitted when a new reasoning summary part is added.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEvent? ReasoningSummaryPartAdded { get; init; }
+#else
+        public global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEvent? ReasoningSummaryPartAdded { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningSummaryPartAdded))]
+#endif
+        public bool IsReasoningSummaryPartAdded => ReasoningSummaryPartAdded != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEvent?(ResponseStreamEvent @this) => @this.ReasoningSummaryPartAdded;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEvent? value)
+        {
+            ReasoningSummaryPartAdded = value;
+        }
+
+        /// <summary>
+        /// Emitted when a reasoning summary part is completed.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEvent? ReasoningSummaryPartDone { get; init; }
+#else
+        public global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEvent? ReasoningSummaryPartDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningSummaryPartDone))]
+#endif
+        public bool IsReasoningSummaryPartDone => ReasoningSummaryPartDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEvent?(ResponseStreamEvent @this) => @this.ReasoningSummaryPartDone;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEvent? value)
+        {
+            ReasoningSummaryPartDone = value;
+        }
+
+        /// <summary>
+        /// Emitted when a delta is added to a reasoning summary text.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ResponseReasoningSummaryTextDeltaEvent? ReasoningSummaryTextDelta { get; init; }
+#else
+        public global::tryAGI.OpenAI.ResponseReasoningSummaryTextDeltaEvent? ReasoningSummaryTextDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningSummaryTextDelta))]
+#endif
+        public bool IsReasoningSummaryTextDelta => ReasoningSummaryTextDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseReasoningSummaryTextDeltaEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseReasoningSummaryTextDeltaEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.ResponseReasoningSummaryTextDeltaEvent?(ResponseStreamEvent @this) => @this.ReasoningSummaryTextDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseReasoningSummaryTextDeltaEvent? value)
+        {
+            ReasoningSummaryTextDelta = value;
+        }
+
+        /// <summary>
+        /// Emitted when a reasoning summary text is completed.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEvent? ReasoningSummaryTextDone { get; init; }
+#else
+        public global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEvent? ReasoningSummaryTextDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningSummaryTextDone))]
+#endif
+        public bool IsReasoningSummaryTextDone => ReasoningSummaryTextDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEvent?(ResponseStreamEvent @this) => @this.ReasoningSummaryTextDone;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEvent? value)
+        {
+            ReasoningSummaryTextDone = value;
         }
 
         /// <summary>
@@ -869,7 +1009,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseRefusalDeltaEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseRefusalDeltaEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseRefusalDeltaEvent?)value);
 
         /// <summary>
         /// 
@@ -904,7 +1044,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseRefusalDoneEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseRefusalDoneEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseRefusalDoneEvent?)value);
 
         /// <summary>
         /// 
@@ -939,7 +1079,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseTextAnnotationDeltaEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseTextAnnotationDeltaEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseTextAnnotationDeltaEvent?)value);
 
         /// <summary>
         /// 
@@ -974,7 +1114,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseTextDeltaEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseTextDeltaEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseTextDeltaEvent?)value);
 
         /// <summary>
         /// 
@@ -1009,7 +1149,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseTextDoneEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseTextDoneEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseTextDoneEvent?)value);
 
         /// <summary>
         /// 
@@ -1044,7 +1184,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseWebSearchCallCompletedEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseWebSearchCallCompletedEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseWebSearchCallCompletedEvent?)value);
 
         /// <summary>
         /// 
@@ -1079,7 +1219,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseWebSearchCallInProgressEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseWebSearchCallInProgressEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseWebSearchCallInProgressEvent?)value);
 
         /// <summary>
         /// 
@@ -1114,7 +1254,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseWebSearchCallSearchingEvent value) => new ResponseStreamEvent(value);
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseWebSearchCallSearchingEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseWebSearchCallSearchingEvent?)value);
 
         /// <summary>
         /// 
@@ -1157,6 +1297,10 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ResponseIncompleteEvent? incomplete,
             global::tryAGI.OpenAI.ResponseOutputItemAddedEvent? outputItemAdded,
             global::tryAGI.OpenAI.ResponseOutputItemDoneEvent? outputItemDone,
+            global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEvent? reasoningSummaryPartAdded,
+            global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEvent? reasoningSummaryPartDone,
+            global::tryAGI.OpenAI.ResponseReasoningSummaryTextDeltaEvent? reasoningSummaryTextDelta,
+            global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEvent? reasoningSummaryTextDone,
             global::tryAGI.OpenAI.ResponseRefusalDeltaEvent? refusalDelta,
             global::tryAGI.OpenAI.ResponseRefusalDoneEvent? refusalDone,
             global::tryAGI.OpenAI.ResponseTextAnnotationDeltaEvent? textAnnotationDelta,
@@ -1191,6 +1335,10 @@ namespace tryAGI.OpenAI
             Incomplete = incomplete;
             OutputItemAdded = outputItemAdded;
             OutputItemDone = outputItemDone;
+            ReasoningSummaryPartAdded = reasoningSummaryPartAdded;
+            ReasoningSummaryPartDone = reasoningSummaryPartDone;
+            ReasoningSummaryTextDelta = reasoningSummaryTextDelta;
+            ReasoningSummaryTextDone = reasoningSummaryTextDone;
             RefusalDelta = refusalDelta;
             RefusalDone = refusalDone;
             TextAnnotationDelta = textAnnotationDelta;
@@ -1213,6 +1361,10 @@ namespace tryAGI.OpenAI
             TextAnnotationDelta as object ??
             RefusalDone as object ??
             RefusalDelta as object ??
+            ReasoningSummaryTextDone as object ??
+            ReasoningSummaryTextDelta as object ??
+            ReasoningSummaryPartDone as object ??
+            ReasoningSummaryPartAdded as object ??
             OutputItemDone as object ??
             OutputItemAdded as object ??
             Incomplete as object ??
@@ -1267,6 +1419,10 @@ namespace tryAGI.OpenAI
             Incomplete?.ToString() ??
             OutputItemAdded?.ToString() ??
             OutputItemDone?.ToString() ??
+            ReasoningSummaryPartAdded?.ToString() ??
+            ReasoningSummaryPartDone?.ToString() ??
+            ReasoningSummaryTextDelta?.ToString() ??
+            ReasoningSummaryTextDone?.ToString() ??
             RefusalDelta?.ToString() ??
             RefusalDone?.ToString() ??
             TextAnnotationDelta?.ToString() ??
@@ -1282,7 +1438,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsAudioDelta || IsAudioDone || IsAudioTranscriptDelta || IsAudioTranscriptDone || IsCodeInterpreterCallDelta || IsCodeInterpreterCallDone || IsCodeInterpreterCallCompleted || IsCodeInterpreterCallInProgress || IsCodeInterpreterCallInterpreting || IsCompleted || IsContentPartAdded || IsContentPartDone || IsCreated || IsError || IsFileSearchCallCompleted || IsFileSearchCallInProgress || IsFileSearchCallSearching || IsFunctionCallArgumentsDelta || IsFunctionCallArgumentsDone || IsInProgress || IsFailed || IsIncomplete || IsOutputItemAdded || IsOutputItemDone || IsRefusalDelta || IsRefusalDone || IsTextAnnotationDelta || IsTextDelta || IsTextDone || IsWebSearchCallCompleted || IsWebSearchCallInProgress || IsWebSearchCallSearching;
+            return IsAudioDelta || IsAudioDone || IsAudioTranscriptDelta || IsAudioTranscriptDone || IsCodeInterpreterCallDelta || IsCodeInterpreterCallDone || IsCodeInterpreterCallCompleted || IsCodeInterpreterCallInProgress || IsCodeInterpreterCallInterpreting || IsCompleted || IsContentPartAdded || IsContentPartDone || IsCreated || IsError || IsFileSearchCallCompleted || IsFileSearchCallInProgress || IsFileSearchCallSearching || IsFunctionCallArgumentsDelta || IsFunctionCallArgumentsDone || IsInProgress || IsFailed || IsIncomplete || IsOutputItemAdded || IsOutputItemDone || IsReasoningSummaryPartAdded || IsReasoningSummaryPartDone || IsReasoningSummaryTextDelta || IsReasoningSummaryTextDone || IsRefusalDelta || IsRefusalDone || IsTextAnnotationDelta || IsTextDelta || IsTextDone || IsWebSearchCallCompleted || IsWebSearchCallInProgress || IsWebSearchCallSearching;
         }
 
         /// <summary>
@@ -1313,6 +1469,10 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.ResponseIncompleteEvent?, TResult>? incomplete = null,
             global::System.Func<global::tryAGI.OpenAI.ResponseOutputItemAddedEvent?, TResult>? outputItemAdded = null,
             global::System.Func<global::tryAGI.OpenAI.ResponseOutputItemDoneEvent?, TResult>? outputItemDone = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEvent?, TResult>? reasoningSummaryPartAdded = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEvent?, TResult>? reasoningSummaryPartDone = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseReasoningSummaryTextDeltaEvent?, TResult>? reasoningSummaryTextDelta = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEvent?, TResult>? reasoningSummaryTextDone = null,
             global::System.Func<global::tryAGI.OpenAI.ResponseRefusalDeltaEvent?, TResult>? refusalDelta = null,
             global::System.Func<global::tryAGI.OpenAI.ResponseRefusalDoneEvent?, TResult>? refusalDone = null,
             global::System.Func<global::tryAGI.OpenAI.ResponseTextAnnotationDeltaEvent?, TResult>? textAnnotationDelta = null,
@@ -1424,6 +1584,22 @@ namespace tryAGI.OpenAI
             {
                 return outputItemDone(OutputItemDone!);
             }
+            else if (IsReasoningSummaryPartAdded && reasoningSummaryPartAdded != null)
+            {
+                return reasoningSummaryPartAdded(ReasoningSummaryPartAdded!);
+            }
+            else if (IsReasoningSummaryPartDone && reasoningSummaryPartDone != null)
+            {
+                return reasoningSummaryPartDone(ReasoningSummaryPartDone!);
+            }
+            else if (IsReasoningSummaryTextDelta && reasoningSummaryTextDelta != null)
+            {
+                return reasoningSummaryTextDelta(ReasoningSummaryTextDelta!);
+            }
+            else if (IsReasoningSummaryTextDone && reasoningSummaryTextDone != null)
+            {
+                return reasoningSummaryTextDone(ReasoningSummaryTextDone!);
+            }
             else if (IsRefusalDelta && refusalDelta != null)
             {
                 return refusalDelta(RefusalDelta!);
@@ -1488,6 +1664,10 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.ResponseIncompleteEvent?>? incomplete = null,
             global::System.Action<global::tryAGI.OpenAI.ResponseOutputItemAddedEvent?>? outputItemAdded = null,
             global::System.Action<global::tryAGI.OpenAI.ResponseOutputItemDoneEvent?>? outputItemDone = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEvent?>? reasoningSummaryPartAdded = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEvent?>? reasoningSummaryPartDone = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseReasoningSummaryTextDeltaEvent?>? reasoningSummaryTextDelta = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEvent?>? reasoningSummaryTextDone = null,
             global::System.Action<global::tryAGI.OpenAI.ResponseRefusalDeltaEvent?>? refusalDelta = null,
             global::System.Action<global::tryAGI.OpenAI.ResponseRefusalDoneEvent?>? refusalDone = null,
             global::System.Action<global::tryAGI.OpenAI.ResponseTextAnnotationDeltaEvent?>? textAnnotationDelta = null,
@@ -1599,6 +1779,22 @@ namespace tryAGI.OpenAI
             {
                 outputItemDone?.Invoke(OutputItemDone!);
             }
+            else if (IsReasoningSummaryPartAdded)
+            {
+                reasoningSummaryPartAdded?.Invoke(ReasoningSummaryPartAdded!);
+            }
+            else if (IsReasoningSummaryPartDone)
+            {
+                reasoningSummaryPartDone?.Invoke(ReasoningSummaryPartDone!);
+            }
+            else if (IsReasoningSummaryTextDelta)
+            {
+                reasoningSummaryTextDelta?.Invoke(ReasoningSummaryTextDelta!);
+            }
+            else if (IsReasoningSummaryTextDone)
+            {
+                reasoningSummaryTextDone?.Invoke(ReasoningSummaryTextDone!);
+            }
             else if (IsRefusalDelta)
             {
                 refusalDelta?.Invoke(RefusalDelta!);
@@ -1688,6 +1884,14 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.ResponseOutputItemAddedEvent),
                 OutputItemDone,
                 typeof(global::tryAGI.OpenAI.ResponseOutputItemDoneEvent),
+                ReasoningSummaryPartAdded,
+                typeof(global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEvent),
+                ReasoningSummaryPartDone,
+                typeof(global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEvent),
+                ReasoningSummaryTextDelta,
+                typeof(global::tryAGI.OpenAI.ResponseReasoningSummaryTextDeltaEvent),
+                ReasoningSummaryTextDone,
+                typeof(global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEvent),
                 RefusalDelta,
                 typeof(global::tryAGI.OpenAI.ResponseRefusalDeltaEvent),
                 RefusalDone,
@@ -1744,6 +1948,10 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseIncompleteEvent?>.Default.Equals(Incomplete, other.Incomplete) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseOutputItemAddedEvent?>.Default.Equals(OutputItemAdded, other.OutputItemAdded) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseOutputItemDoneEvent?>.Default.Equals(OutputItemDone, other.OutputItemDone) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEvent?>.Default.Equals(ReasoningSummaryPartAdded, other.ReasoningSummaryPartAdded) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEvent?>.Default.Equals(ReasoningSummaryPartDone, other.ReasoningSummaryPartDone) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseReasoningSummaryTextDeltaEvent?>.Default.Equals(ReasoningSummaryTextDelta, other.ReasoningSummaryTextDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEvent?>.Default.Equals(ReasoningSummaryTextDone, other.ReasoningSummaryTextDone) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseRefusalDeltaEvent?>.Default.Equals(RefusalDelta, other.RefusalDelta) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseRefusalDoneEvent?>.Default.Equals(RefusalDone, other.RefusalDone) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseTextAnnotationDeltaEvent?>.Default.Equals(TextAnnotationDelta, other.TextAnnotationDelta) &&

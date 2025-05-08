@@ -23,6 +23,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        CheckpointPermissionCreated,
+        /// <summary>
+        /// 
+        /// </summary>
+        CheckpointPermissionDeleted,
+        /// <summary>
+        /// 
+        /// </summary>
         InviteSent,
         /// <summary>
         /// 
@@ -113,6 +121,8 @@ namespace tryAGI.OpenAI
                 AuditLogEventType.ApiKeyCreated => "api_key.created",
                 AuditLogEventType.ApiKeyUpdated => "api_key.updated",
                 AuditLogEventType.ApiKeyDeleted => "api_key.deleted",
+                AuditLogEventType.CheckpointPermissionCreated => "checkpoint_permission.created",
+                AuditLogEventType.CheckpointPermissionDeleted => "checkpoint_permission.deleted",
                 AuditLogEventType.InviteSent => "invite.sent",
                 AuditLogEventType.InviteAccepted => "invite.accepted",
                 AuditLogEventType.InviteDeleted => "invite.deleted",
@@ -145,6 +155,8 @@ namespace tryAGI.OpenAI
                 "api_key.created" => AuditLogEventType.ApiKeyCreated,
                 "api_key.updated" => AuditLogEventType.ApiKeyUpdated,
                 "api_key.deleted" => AuditLogEventType.ApiKeyDeleted,
+                "checkpoint_permission.created" => AuditLogEventType.CheckpointPermissionCreated,
+                "checkpoint_permission.deleted" => AuditLogEventType.CheckpointPermissionDeleted,
                 "invite.sent" => AuditLogEventType.InviteSent,
                 "invite.accepted" => AuditLogEventType.InviteAccepted,
                 "invite.deleted" => AuditLogEventType.InviteDeleted,

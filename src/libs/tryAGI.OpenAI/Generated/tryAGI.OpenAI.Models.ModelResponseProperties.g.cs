@@ -50,6 +50,21 @@ namespace tryAGI.OpenAI
         public string? User { get; set; }
 
         /// <summary>
+        /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
+        ///   - If set to 'auto', and the Project is Scale tier enabled, the system<br/>
+        ///     will utilize scale tier credits until they are exhausted.<br/>
+        ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
+        ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
+        ///   - If set to 'flex', the request will be processed with the Flex Processing service tier. [Learn more](/docs/guides/flex-processing).<br/>
+        ///   - When not set, the default behavior is 'auto'.<br/>
+        ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
+        /// Default Value: auto
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ServiceTierJsonConverter))]
+        public global::tryAGI.OpenAI.ServiceTier? ServiceTier { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -84,6 +99,17 @@ namespace tryAGI.OpenAI
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
         /// Example: user-1234
         /// </param>
+        /// <param name="serviceTier">
+        /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
+        ///   - If set to 'auto', and the Project is Scale tier enabled, the system<br/>
+        ///     will utilize scale tier credits until they are exhausted.<br/>
+        ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
+        ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
+        ///   - If set to 'flex', the request will be processed with the Flex Processing service tier. [Learn more](/docs/guides/flex-processing).<br/>
+        ///   - When not set, the default behavior is 'auto'.<br/>
+        ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
+        /// Default Value: auto
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -91,12 +117,14 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             double? temperature,
             double? topP,
-            string? user)
+            string? user,
+            global::tryAGI.OpenAI.ServiceTier? serviceTier)
         {
             this.Metadata = metadata;
             this.Temperature = temperature;
             this.TopP = topP;
             this.User = user;
+            this.ServiceTier = serviceTier;
         }
 
         /// <summary>

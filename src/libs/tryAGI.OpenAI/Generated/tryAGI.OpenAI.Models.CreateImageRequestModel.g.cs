@@ -16,6 +16,10 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         DallE3,
+        /// <summary>
+        /// 
+        /// </summary>
+        GptImage1,
     }
 
     /// <summary>
@@ -32,6 +36,7 @@ namespace tryAGI.OpenAI
             {
                 CreateImageRequestModel.DallE2 => "dall-e-2",
                 CreateImageRequestModel.DallE3 => "dall-e-3",
+                CreateImageRequestModel.GptImage1 => "gpt-image-1",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,6 +49,7 @@ namespace tryAGI.OpenAI
             {
                 "dall-e-2" => CreateImageRequestModel.DallE2,
                 "dall-e-3" => CreateImageRequestModel.DallE3,
+                "gpt-image-1" => CreateImageRequestModel.GptImage1,
                 _ => null,
             };
         }

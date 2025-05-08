@@ -5,6 +5,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
+    /// Not supported with latest reasoning models `o3` and `o4-mini`.<br/>
     /// Up to 4 sequences where the API will stop generating further tokens. The<br/>
     /// returned text will not contain the stop sequence.
     /// </summary>
@@ -30,7 +31,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator StopConfiguration(string value) => new StopConfiguration(value);
+        public static implicit operator StopConfiguration(string value) => new StopConfiguration((string?)value);
 
         /// <summary>
         /// 

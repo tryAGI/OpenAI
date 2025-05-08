@@ -11,6 +11,30 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Gpt41,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt41Mini,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt41Nano,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt4120250414,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt41Mini20250414,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt41Nano20250414,
+        /// <summary>
+        /// 
+        /// </summary>
         Gpt4o,
         /// <summary>
         /// 
@@ -126,6 +150,12 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                CreateThreadAndRunRequestModel.Gpt41 => "gpt-4.1",
+                CreateThreadAndRunRequestModel.Gpt41Mini => "gpt-4.1-mini",
+                CreateThreadAndRunRequestModel.Gpt41Nano => "gpt-4.1-nano",
+                CreateThreadAndRunRequestModel.Gpt4120250414 => "gpt-4.1-2025-04-14",
+                CreateThreadAndRunRequestModel.Gpt41Mini20250414 => "gpt-4.1-mini-2025-04-14",
+                CreateThreadAndRunRequestModel.Gpt41Nano20250414 => "gpt-4.1-nano-2025-04-14",
                 CreateThreadAndRunRequestModel.Gpt4o => "gpt-4o",
                 CreateThreadAndRunRequestModel.Gpt4o20241120 => "gpt-4o-2024-11-20",
                 CreateThreadAndRunRequestModel.Gpt4o20240806 => "gpt-4o-2024-08-06",
@@ -162,6 +192,12 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "gpt-4.1" => CreateThreadAndRunRequestModel.Gpt41,
+                "gpt-4.1-mini" => CreateThreadAndRunRequestModel.Gpt41Mini,
+                "gpt-4.1-nano" => CreateThreadAndRunRequestModel.Gpt41Nano,
+                "gpt-4.1-2025-04-14" => CreateThreadAndRunRequestModel.Gpt4120250414,
+                "gpt-4.1-mini-2025-04-14" => CreateThreadAndRunRequestModel.Gpt41Mini20250414,
+                "gpt-4.1-nano-2025-04-14" => CreateThreadAndRunRequestModel.Gpt41Nano20250414,
                 "gpt-4o" => CreateThreadAndRunRequestModel.Gpt4o,
                 "gpt-4o-2024-11-20" => CreateThreadAndRunRequestModel.Gpt4o20241120,
                 "gpt-4o-2024-08-06" => CreateThreadAndRunRequestModel.Gpt4o20240806,

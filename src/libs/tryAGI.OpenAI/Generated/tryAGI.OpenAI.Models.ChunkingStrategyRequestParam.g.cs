@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChunkingStrategyRequestParam(global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam value) => new ChunkingStrategyRequestParam(value);
+        public static implicit operator ChunkingStrategyRequestParam(global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam value) => new ChunkingStrategyRequestParam((global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChunkingStrategyRequestParam(global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam value) => new ChunkingStrategyRequestParam(value);
+        public static implicit operator ChunkingStrategyRequestParam(global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam value) => new ChunkingStrategyRequestParam((global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam?)value);
 
         /// <summary>
         /// 

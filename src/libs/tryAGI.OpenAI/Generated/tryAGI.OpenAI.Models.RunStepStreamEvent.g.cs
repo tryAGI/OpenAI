@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RunStepStreamEvent(global::tryAGI.OpenAI.RunStepStreamEventVariant1 value) => new RunStepStreamEvent(value);
+        public static implicit operator RunStepStreamEvent(global::tryAGI.OpenAI.RunStepStreamEventVariant1 value) => new RunStepStreamEvent((global::tryAGI.OpenAI.RunStepStreamEventVariant1?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RunStepStreamEvent(global::tryAGI.OpenAI.RunStepStreamEventVariant2 value) => new RunStepStreamEvent(value);
+        public static implicit operator RunStepStreamEvent(global::tryAGI.OpenAI.RunStepStreamEventVariant2 value) => new RunStepStreamEvent((global::tryAGI.OpenAI.RunStepStreamEventVariant2?)value);
 
         /// <summary>
         /// 
@@ -99,7 +99,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RunStepStreamEvent(global::tryAGI.OpenAI.RunStepStreamEventVariant3 value) => new RunStepStreamEvent(value);
+        public static implicit operator RunStepStreamEvent(global::tryAGI.OpenAI.RunStepStreamEventVariant3 value) => new RunStepStreamEvent((global::tryAGI.OpenAI.RunStepStreamEventVariant3?)value);
 
         /// <summary>
         /// 
@@ -134,7 +134,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RunStepStreamEvent(global::tryAGI.OpenAI.RunStepStreamEventVariant4 value) => new RunStepStreamEvent(value);
+        public static implicit operator RunStepStreamEvent(global::tryAGI.OpenAI.RunStepStreamEventVariant4 value) => new RunStepStreamEvent((global::tryAGI.OpenAI.RunStepStreamEventVariant4?)value);
 
         /// <summary>
         /// 
@@ -169,7 +169,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RunStepStreamEvent(global::tryAGI.OpenAI.RunStepStreamEventVariant5 value) => new RunStepStreamEvent(value);
+        public static implicit operator RunStepStreamEvent(global::tryAGI.OpenAI.RunStepStreamEventVariant5 value) => new RunStepStreamEvent((global::tryAGI.OpenAI.RunStepStreamEventVariant5?)value);
 
         /// <summary>
         /// 
@@ -204,7 +204,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RunStepStreamEvent(global::tryAGI.OpenAI.RunStepStreamEventVariant6 value) => new RunStepStreamEvent(value);
+        public static implicit operator RunStepStreamEvent(global::tryAGI.OpenAI.RunStepStreamEventVariant6 value) => new RunStepStreamEvent((global::tryAGI.OpenAI.RunStepStreamEventVariant6?)value);
 
         /// <summary>
         /// 
@@ -239,7 +239,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RunStepStreamEvent(global::tryAGI.OpenAI.RunStepStreamEventVariant7 value) => new RunStepStreamEvent(value);
+        public static implicit operator RunStepStreamEvent(global::tryAGI.OpenAI.RunStepStreamEventVariant7 value) => new RunStepStreamEvent((global::tryAGI.OpenAI.RunStepStreamEventVariant7?)value);
 
         /// <summary>
         /// 

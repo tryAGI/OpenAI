@@ -43,7 +43,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Inserts a system (or developer) message as the first item in the model's context.<br/>
         /// When using along with `previous_response_id`, the instructions from a previous<br/>
-        /// response will be not be carried over to the next response. This makes it simple<br/>
+        /// response will not be carried over to the next response. This makes it simple<br/>
         /// to swap out system (or developer) messages in new responses.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
@@ -124,7 +124,7 @@ namespace tryAGI.OpenAI
         /// <param name="instructions">
         /// Inserts a system (or developer) message as the first item in the model's context.<br/>
         /// When using along with `previous_response_id`, the instructions from a previous<br/>
-        /// response will be not be carried over to the next response. This makes it simple<br/>
+        /// response will not be carried over to the next response. This makes it simple<br/>
         /// to swap out system (or developer) messages in new responses.
         /// </param>
         /// <param name="text">

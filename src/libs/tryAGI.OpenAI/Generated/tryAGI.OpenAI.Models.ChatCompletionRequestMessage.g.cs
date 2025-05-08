@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionRequestMessage(global::tryAGI.OpenAI.ChatCompletionRequestDeveloperMessage value) => new ChatCompletionRequestMessage(value);
+        public static implicit operator ChatCompletionRequestMessage(global::tryAGI.OpenAI.ChatCompletionRequestDeveloperMessage value) => new ChatCompletionRequestMessage((global::tryAGI.OpenAI.ChatCompletionRequestDeveloperMessage?)value);
 
         /// <summary>
         /// 
@@ -68,7 +68,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionRequestMessage(global::tryAGI.OpenAI.ChatCompletionRequestSystemMessage value) => new ChatCompletionRequestMessage(value);
+        public static implicit operator ChatCompletionRequestMessage(global::tryAGI.OpenAI.ChatCompletionRequestSystemMessage value) => new ChatCompletionRequestMessage((global::tryAGI.OpenAI.ChatCompletionRequestSystemMessage?)value);
 
         /// <summary>
         /// 
@@ -104,7 +104,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionRequestMessage(global::tryAGI.OpenAI.ChatCompletionRequestUserMessage value) => new ChatCompletionRequestMessage(value);
+        public static implicit operator ChatCompletionRequestMessage(global::tryAGI.OpenAI.ChatCompletionRequestUserMessage value) => new ChatCompletionRequestMessage((global::tryAGI.OpenAI.ChatCompletionRequestUserMessage?)value);
 
         /// <summary>
         /// 
@@ -139,7 +139,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionRequestMessage(global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage value) => new ChatCompletionRequestMessage(value);
+        public static implicit operator ChatCompletionRequestMessage(global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage value) => new ChatCompletionRequestMessage((global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage?)value);
 
         /// <summary>
         /// 
@@ -174,7 +174,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionRequestMessage(global::tryAGI.OpenAI.ChatCompletionRequestToolMessage value) => new ChatCompletionRequestMessage(value);
+        public static implicit operator ChatCompletionRequestMessage(global::tryAGI.OpenAI.ChatCompletionRequestToolMessage value) => new ChatCompletionRequestMessage((global::tryAGI.OpenAI.ChatCompletionRequestToolMessage?)value);
 
         /// <summary>
         /// 
@@ -209,7 +209,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionRequestMessage(global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessage value) => new ChatCompletionRequestMessage(value);
+        public static implicit operator ChatCompletionRequestMessage(global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessage value) => new ChatCompletionRequestMessage((global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessage?)value);
 
         /// <summary>
         /// 

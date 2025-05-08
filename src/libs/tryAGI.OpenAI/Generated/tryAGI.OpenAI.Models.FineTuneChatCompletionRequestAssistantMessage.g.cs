@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator FineTuneChatCompletionRequestAssistantMessage(global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessageVariant1 value) => new FineTuneChatCompletionRequestAssistantMessage(value);
+        public static implicit operator FineTuneChatCompletionRequestAssistantMessage(global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessageVariant1 value) => new FineTuneChatCompletionRequestAssistantMessage((global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessageVariant1?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator FineTuneChatCompletionRequestAssistantMessage(global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage value) => new FineTuneChatCompletionRequestAssistantMessage(value);
+        public static implicit operator FineTuneChatCompletionRequestAssistantMessage(global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage value) => new FineTuneChatCompletionRequestAssistantMessage((global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage?)value);
 
         /// <summary>
         /// 

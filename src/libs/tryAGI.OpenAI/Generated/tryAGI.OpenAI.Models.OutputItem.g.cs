@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OutputItem(global::tryAGI.OpenAI.OutputMessage value) => new OutputItem(value);
+        public static implicit operator OutputItem(global::tryAGI.OpenAI.OutputMessage value) => new OutputItem((global::tryAGI.OpenAI.OutputMessage?)value);
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OutputItem(global::tryAGI.OpenAI.FileSearchToolCall value) => new OutputItem(value);
+        public static implicit operator OutputItem(global::tryAGI.OpenAI.FileSearchToolCall value) => new OutputItem((global::tryAGI.OpenAI.FileSearchToolCall?)value);
 
         /// <summary>
         /// 
@@ -101,7 +101,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OutputItem(global::tryAGI.OpenAI.FunctionToolCall value) => new OutputItem(value);
+        public static implicit operator OutputItem(global::tryAGI.OpenAI.FunctionToolCall value) => new OutputItem((global::tryAGI.OpenAI.FunctionToolCall?)value);
 
         /// <summary>
         /// 
@@ -137,7 +137,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OutputItem(global::tryAGI.OpenAI.WebSearchToolCall value) => new OutputItem(value);
+        public static implicit operator OutputItem(global::tryAGI.OpenAI.WebSearchToolCall value) => new OutputItem((global::tryAGI.OpenAI.WebSearchToolCall?)value);
 
         /// <summary>
         /// 
@@ -173,7 +173,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OutputItem(global::tryAGI.OpenAI.ComputerToolCall value) => new OutputItem(value);
+        public static implicit operator OutputItem(global::tryAGI.OpenAI.ComputerToolCall value) => new OutputItem((global::tryAGI.OpenAI.ComputerToolCall?)value);
 
         /// <summary>
         /// 
@@ -209,7 +209,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OutputItem(global::tryAGI.OpenAI.ReasoningItem value) => new OutputItem(value);
+        public static implicit operator OutputItem(global::tryAGI.OpenAI.ReasoningItem value) => new OutputItem((global::tryAGI.OpenAI.ReasoningItem?)value);
 
         /// <summary>
         /// 

@@ -11,7 +11,8 @@ namespace tryAGI.OpenAI
             ref int? limit,
             ref global::tryAGI.OpenAI.ListInputItemsOrder? order,
             ref string? after,
-            ref string? before);
+            ref string? before,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include);
         partial void PrepareListInputItemsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -19,7 +20,8 @@ namespace tryAGI.OpenAI
             int? limit,
             global::tryAGI.OpenAI.ListInputItemsOrder? order,
             string? after,
-            string? before);
+            string? before,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include);
         partial void ProcessListInputItemsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -39,6 +41,7 @@ namespace tryAGI.OpenAI
         /// <param name="order"></param>
         /// <param name="after"></param>
         /// <param name="before"></param>
+        /// <param name="include"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ResponseItemList> ListInputItemsAsync(
@@ -47,6 +50,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ListInputItemsOrder? order = default,
             string? after = default,
             string? before = default,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -57,7 +61,8 @@ namespace tryAGI.OpenAI
                 limit: ref limit,
                 order: ref order,
                 after: ref after,
-                before: ref before);
+                before: ref before,
+                include: include);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/responses/{responseId}/input_items",
@@ -103,7 +108,8 @@ namespace tryAGI.OpenAI
                 limit: limit,
                 order: order,
                 after: after,
-                before: before);
+                before: before,
+                include: include);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

@@ -7,12 +7,12 @@ namespace tryAGI.OpenAI
     {
         partial void PrepareCreateFineTuningCheckpointPermissionArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string permissionId,
+            ref string fineTunedModelCheckpoint,
             global::tryAGI.OpenAI.CreateFineTuningCheckpointPermissionRequest request);
         partial void PrepareCreateFineTuningCheckpointPermissionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string permissionId,
+            string fineTunedModelCheckpoint,
             global::tryAGI.OpenAI.CreateFineTuningCheckpointPermissionRequest request);
         partial void ProcessCreateFineTuningCheckpointPermissionResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -27,14 +27,14 @@ namespace tryAGI.OpenAI
         /// **NOTE:** Calling this endpoint requires an [admin API key](../admin-api-keys).<br/>
         /// This enables organization owners to share fine-tuned models with other projects in their organization.
         /// </summary>
-        /// <param name="permissionId">
+        /// <param name="fineTunedModelCheckpoint">
         /// Example: ft:gpt-4o-mini-2024-07-18:org:weather:B7R9VjQd
         /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ListFineTuningCheckpointPermissionResponse> CreateFineTuningCheckpointPermissionAsync(
-            string permissionId,
+            string fineTunedModelCheckpoint,
             global::tryAGI.OpenAI.CreateFineTuningCheckpointPermissionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -44,11 +44,11 @@ namespace tryAGI.OpenAI
                 client: HttpClient);
             PrepareCreateFineTuningCheckpointPermissionArguments(
                 httpClient: HttpClient,
-                permissionId: ref permissionId,
+                fineTunedModelCheckpoint: ref fineTunedModelCheckpoint,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
-                path: $"/fine_tuning/checkpoints/{permissionId}/permissions",
+                path: $"/fine_tuning/checkpoints/{fineTunedModelCheckpoint}/permissions",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -87,7 +87,7 @@ namespace tryAGI.OpenAI
             PrepareCreateFineTuningCheckpointPermissionRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                permissionId: permissionId,
+                fineTunedModelCheckpoint: fineTunedModelCheckpoint,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -178,7 +178,7 @@ namespace tryAGI.OpenAI
         /// **NOTE:** Calling this endpoint requires an [admin API key](../admin-api-keys).<br/>
         /// This enables organization owners to share fine-tuned models with other projects in their organization.
         /// </summary>
-        /// <param name="permissionId">
+        /// <param name="fineTunedModelCheckpoint">
         /// Example: ft:gpt-4o-mini-2024-07-18:org:weather:B7R9VjQd
         /// </param>
         /// <param name="projectIds">
@@ -187,7 +187,7 @@ namespace tryAGI.OpenAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ListFineTuningCheckpointPermissionResponse> CreateFineTuningCheckpointPermissionAsync(
-            string permissionId,
+            string fineTunedModelCheckpoint,
             global::System.Collections.Generic.IList<string> projectIds,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -197,7 +197,7 @@ namespace tryAGI.OpenAI
             };
 
             return await CreateFineTuningCheckpointPermissionAsync(
-                permissionId: permissionId,
+                fineTunedModelCheckpoint: fineTunedModelCheckpoint,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

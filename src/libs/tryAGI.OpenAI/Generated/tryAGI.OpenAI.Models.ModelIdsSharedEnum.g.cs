@@ -11,6 +11,46 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Gpt41,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt41Mini,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt41Nano,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt4120250414,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt41Mini20250414,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt41Nano20250414,
+        /// <summary>
+        /// 
+        /// </summary>
+        O4Mini,
+        /// <summary>
+        /// 
+        /// </summary>
+        O4Mini20250416,
+        /// <summary>
+        /// 
+        /// </summary>
+        O3,
+        /// <summary>
+        /// 
+        /// </summary>
+        O320250416,
+        /// <summary>
+        /// 
+        /// </summary>
         O3Mini,
         /// <summary>
         /// 
@@ -194,6 +234,16 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                ModelIdsSharedEnum.Gpt41 => "gpt-4.1",
+                ModelIdsSharedEnum.Gpt41Mini => "gpt-4.1-mini",
+                ModelIdsSharedEnum.Gpt41Nano => "gpt-4.1-nano",
+                ModelIdsSharedEnum.Gpt4120250414 => "gpt-4.1-2025-04-14",
+                ModelIdsSharedEnum.Gpt41Mini20250414 => "gpt-4.1-mini-2025-04-14",
+                ModelIdsSharedEnum.Gpt41Nano20250414 => "gpt-4.1-nano-2025-04-14",
+                ModelIdsSharedEnum.O4Mini => "o4-mini",
+                ModelIdsSharedEnum.O4Mini20250416 => "o4-mini-2025-04-16",
+                ModelIdsSharedEnum.O3 => "o3",
+                ModelIdsSharedEnum.O320250416 => "o3-2025-04-16",
                 ModelIdsSharedEnum.O3Mini => "o3-mini",
                 ModelIdsSharedEnum.O3Mini20250131 => "o3-mini-2025-01-31",
                 ModelIdsSharedEnum.O1 => "o1",
@@ -247,6 +297,16 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "gpt-4.1" => ModelIdsSharedEnum.Gpt41,
+                "gpt-4.1-mini" => ModelIdsSharedEnum.Gpt41Mini,
+                "gpt-4.1-nano" => ModelIdsSharedEnum.Gpt41Nano,
+                "gpt-4.1-2025-04-14" => ModelIdsSharedEnum.Gpt4120250414,
+                "gpt-4.1-mini-2025-04-14" => ModelIdsSharedEnum.Gpt41Mini20250414,
+                "gpt-4.1-nano-2025-04-14" => ModelIdsSharedEnum.Gpt41Nano20250414,
+                "o4-mini" => ModelIdsSharedEnum.O4Mini,
+                "o4-mini-2025-04-16" => ModelIdsSharedEnum.O4Mini20250416,
+                "o3" => ModelIdsSharedEnum.O3,
+                "o3-2025-04-16" => ModelIdsSharedEnum.O320250416,
                 "o3-mini" => ModelIdsSharedEnum.O3Mini,
                 "o3-mini-2025-01-31" => ModelIdsSharedEnum.O3Mini20250131,
                 "o1" => ModelIdsSharedEnum.O1,

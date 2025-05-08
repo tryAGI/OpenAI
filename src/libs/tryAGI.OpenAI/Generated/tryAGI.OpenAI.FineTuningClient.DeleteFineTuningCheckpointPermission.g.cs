@@ -7,10 +7,12 @@ namespace tryAGI.OpenAI
     {
         partial void PrepareDeleteFineTuningCheckpointPermissionArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string fineTunedModelCheckpoint,
             ref string permissionId);
         partial void PrepareDeleteFineTuningCheckpointPermissionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string fineTunedModelCheckpoint,
             string permissionId);
         partial void ProcessDeleteFineTuningCheckpointPermissionResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -25,12 +27,16 @@ namespace tryAGI.OpenAI
         /// **NOTE:** This endpoint requires an [admin API key](../admin-api-keys).<br/>
         /// Organization owners can use this endpoint to delete a permission for a fine-tuned model checkpoint.
         /// </summary>
+        /// <param name="fineTunedModelCheckpoint">
+        /// Example: ft:gpt-4o-mini-2024-07-18:org:weather:B7R9VjQd
+        /// </param>
         /// <param name="permissionId">
         /// Example: cp_zc4Q7MP6XxulcVzj4MZdwsAB
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.DeleteFineTuningCheckpointPermissionResponse> DeleteFineTuningCheckpointPermissionAsync(
+            string fineTunedModelCheckpoint,
             string permissionId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -38,10 +44,11 @@ namespace tryAGI.OpenAI
                 client: HttpClient);
             PrepareDeleteFineTuningCheckpointPermissionArguments(
                 httpClient: HttpClient,
+                fineTunedModelCheckpoint: ref fineTunedModelCheckpoint,
                 permissionId: ref permissionId);
 
             var __pathBuilder = new PathBuilder(
-                path: $"/fine_tuning/checkpoints/{permissionId}/permissions",
+                path: $"/fine_tuning/checkpoints/{fineTunedModelCheckpoint}/permissions/{permissionId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -74,6 +81,7 @@ namespace tryAGI.OpenAI
             PrepareDeleteFineTuningCheckpointPermissionRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
+                fineTunedModelCheckpoint: fineTunedModelCheckpoint,
                 permissionId: permissionId);
 
             using var __response = await HttpClient.SendAsync(

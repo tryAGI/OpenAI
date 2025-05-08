@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TextResponseFormatConfiguration(global::tryAGI.OpenAI.ResponseFormatText value) => new TextResponseFormatConfiguration(value);
+        public static implicit operator TextResponseFormatConfiguration(global::tryAGI.OpenAI.ResponseFormatText value) => new TextResponseFormatConfiguration((global::tryAGI.OpenAI.ResponseFormatText?)value);
 
         /// <summary>
         /// 
@@ -73,7 +73,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TextResponseFormatConfiguration(global::tryAGI.OpenAI.TextResponseFormatJsonSchema value) => new TextResponseFormatConfiguration(value);
+        public static implicit operator TextResponseFormatConfiguration(global::tryAGI.OpenAI.TextResponseFormatJsonSchema value) => new TextResponseFormatConfiguration((global::tryAGI.OpenAI.TextResponseFormatJsonSchema?)value);
 
         /// <summary>
         /// 
@@ -111,7 +111,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TextResponseFormatConfiguration(global::tryAGI.OpenAI.ResponseFormatJsonObject value) => new TextResponseFormatConfiguration(value);
+        public static implicit operator TextResponseFormatConfiguration(global::tryAGI.OpenAI.ResponseFormatJsonObject value) => new TextResponseFormatConfiguration((global::tryAGI.OpenAI.ResponseFormatJsonObject?)value);
 
         /// <summary>
         /// 

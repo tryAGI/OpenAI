@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AssistantsApiResponseFormatOption(global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum value) => new AssistantsApiResponseFormatOption(value);
+        public static implicit operator AssistantsApiResponseFormatOption(global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum value) => new AssistantsApiResponseFormatOption((global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum?)value);
 
         /// <summary>
         /// 
@@ -67,7 +67,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AssistantsApiResponseFormatOption(global::tryAGI.OpenAI.ResponseFormatText value) => new AssistantsApiResponseFormatOption(value);
+        public static implicit operator AssistantsApiResponseFormatOption(global::tryAGI.OpenAI.ResponseFormatText value) => new AssistantsApiResponseFormatOption((global::tryAGI.OpenAI.ResponseFormatText?)value);
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AssistantsApiResponseFormatOption(global::tryAGI.OpenAI.ResponseFormatJsonObject value) => new AssistantsApiResponseFormatOption(value);
+        public static implicit operator AssistantsApiResponseFormatOption(global::tryAGI.OpenAI.ResponseFormatJsonObject value) => new AssistantsApiResponseFormatOption((global::tryAGI.OpenAI.ResponseFormatJsonObject?)value);
 
         /// <summary>
         /// 
@@ -141,7 +141,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AssistantsApiResponseFormatOption(global::tryAGI.OpenAI.ResponseFormatJsonSchema value) => new AssistantsApiResponseFormatOption(value);
+        public static implicit operator AssistantsApiResponseFormatOption(global::tryAGI.OpenAI.ResponseFormatJsonSchema value) => new AssistantsApiResponseFormatOption((global::tryAGI.OpenAI.ResponseFormatJsonSchema?)value);
 
         /// <summary>
         /// 

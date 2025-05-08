@@ -4,23 +4,29 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    /// The response from the image generation endpoint.
     /// </summary>
     public sealed partial class ImagesResponse
     {
         /// <summary>
-        /// 
+        /// The Unix timestamp (in seconds) of when the image was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Created { get; set; }
+        public required global::System.DateTimeOffset Created { get; set; }
 
         /// <summary>
-        /// 
+        /// The list of generated images.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Image> Data { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Image2>? Data { get; set; }
+
+        /// <summary>
+        /// For `gpt-image-1` only, the token usage information for the image generation.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
+        public global::tryAGI.OpenAI.ImagesResponseUsage? Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,17 +37,26 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ImagesResponse" /> class.
         /// </summary>
-        /// <param name="created"></param>
-        /// <param name="data"></param>
+        /// <param name="created">
+        /// The Unix timestamp (in seconds) of when the image was created.
+        /// </param>
+        /// <param name="data">
+        /// The list of generated images.
+        /// </param>
+        /// <param name="usage">
+        /// For `gpt-image-1` only, the token usage information for the image generation.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ImagesResponse(
-            int created,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Image> data)
+            global::System.DateTimeOffset created,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Image2>? data,
+            global::tryAGI.OpenAI.ImagesResponseUsage? usage)
         {
             this.Created = created;
-            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.Data = data;
+            this.Usage = usage;
         }
 
         /// <summary>

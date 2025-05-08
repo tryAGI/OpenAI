@@ -4,9 +4,13 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The quality of the image that will be generated. `hd` creates images with finer details and greater consistency across the image. This param is only supported for `dall-e-3`.<br/>
-    /// Default Value: standard<br/>
-    /// Example: standard
+    /// The quality of the image that will be generated. <br/>
+    /// - `auto` (default value) will automatically select the best quality for the given model.<br/>
+    /// - `high`, `medium` and `low` are supported for `gpt-image-1`.<br/>
+    /// - `hd` and `standard` are supported for `dall-e-3`.<br/>
+    /// - `standard` is the only option for `dall-e-2`.<br/>
+    /// Default Value: auto<br/>
+    /// Example: medium
     /// </summary>
     public enum CreateImageRequestQuality
     {
@@ -18,6 +22,22 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         Hd,
+        /// <summary>
+        /// 
+        /// </summary>
+        Low,
+        /// <summary>
+        /// 
+        /// </summary>
+        Medium,
+        /// <summary>
+        /// 
+        /// </summary>
+        High,
+        /// <summary>
+        /// 
+        /// </summary>
+        Auto,
     }
 
     /// <summary>
@@ -34,6 +54,10 @@ namespace tryAGI.OpenAI
             {
                 CreateImageRequestQuality.Standard => "standard",
                 CreateImageRequestQuality.Hd => "hd",
+                CreateImageRequestQuality.Low => "low",
+                CreateImageRequestQuality.Medium => "medium",
+                CreateImageRequestQuality.High => "high",
+                CreateImageRequestQuality.Auto => "auto",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,6 +70,10 @@ namespace tryAGI.OpenAI
             {
                 "standard" => CreateImageRequestQuality.Standard,
                 "hd" => CreateImageRequestQuality.Hd,
+                "low" => CreateImageRequestQuality.Low,
+                "medium" => CreateImageRequestQuality.Medium,
+                "high" => CreateImageRequestQuality.High,
+                "auto" => CreateImageRequestQuality.Auto,
                 _ => null,
             };
         }

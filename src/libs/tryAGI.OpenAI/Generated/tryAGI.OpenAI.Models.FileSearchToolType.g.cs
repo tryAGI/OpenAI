@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The type of the file search tool. Always `file_search`.
+    /// The type of the file search tool. Always `file_search`.<br/>
+    /// Default Value: file_search
     /// </summary>
     public enum FileSearchToolType
     {

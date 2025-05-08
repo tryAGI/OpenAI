@@ -35,7 +35,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageVariationRequestModel?>? Model { get; set; }
 
         /// <summary>
-        /// The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only `n=1` is supported.<br/>
+        /// The number of images to generate. Must be between 1 and 10.<br/>
         /// Default Value: 1<br/>
         /// Example: 1
         /// </summary>
@@ -92,7 +92,7 @@ namespace tryAGI.OpenAI
         /// Example: dall-e-2
         /// </param>
         /// <param name="n">
-        /// The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only `n=1` is supported.<br/>
+        /// The number of images to generate. Must be between 1 and 10.<br/>
         /// Default Value: 1<br/>
         /// Example: 1
         /// </param>

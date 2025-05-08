@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CodeInterpreterToolOutput(global::tryAGI.OpenAI.CodeInterpreterTextOutput value) => new CodeInterpreterToolOutput(value);
+        public static implicit operator CodeInterpreterToolOutput(global::tryAGI.OpenAI.CodeInterpreterTextOutput value) => new CodeInterpreterToolOutput((global::tryAGI.OpenAI.CodeInterpreterTextOutput?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CodeInterpreterToolOutput(global::tryAGI.OpenAI.CodeInterpreterFileOutput value) => new CodeInterpreterToolOutput(value);
+        public static implicit operator CodeInterpreterToolOutput(global::tryAGI.OpenAI.CodeInterpreterFileOutput value) => new CodeInterpreterToolOutput((global::tryAGI.OpenAI.CodeInterpreterFileOutput?)value);
 
         /// <summary>
         /// 

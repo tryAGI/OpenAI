@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ModelIdsResponses(global::tryAGI.OpenAI.ModelIdsShared value) => new ModelIdsResponses(value);
+        public static implicit operator ModelIdsResponses(global::tryAGI.OpenAI.ModelIdsShared value) => new ModelIdsResponses((global::tryAGI.OpenAI.ModelIdsShared?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ModelIdsResponses(global::tryAGI.OpenAI.ModelIdsResponsesEnum value) => new ModelIdsResponses(value);
+        public static implicit operator ModelIdsResponses(global::tryAGI.OpenAI.ModelIdsResponsesEnum value) => new ModelIdsResponses((global::tryAGI.OpenAI.ModelIdsResponsesEnum?)value);
 
         /// <summary>
         /// 
