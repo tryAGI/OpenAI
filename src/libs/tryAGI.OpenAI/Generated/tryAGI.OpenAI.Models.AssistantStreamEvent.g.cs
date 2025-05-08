@@ -43,7 +43,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AssistantStreamEvent(global::tryAGI.OpenAI.ThreadStreamEvent value) => new AssistantStreamEvent(value);
+        public static implicit operator AssistantStreamEvent(global::tryAGI.OpenAI.ThreadStreamEvent value) => new AssistantStreamEvent((global::tryAGI.OpenAI.ThreadStreamEvent?)value);
 
         /// <summary>
         /// 
@@ -78,7 +78,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AssistantStreamEvent(global::tryAGI.OpenAI.RunStreamEvent value) => new AssistantStreamEvent(value);
+        public static implicit operator AssistantStreamEvent(global::tryAGI.OpenAI.RunStreamEvent value) => new AssistantStreamEvent((global::tryAGI.OpenAI.RunStreamEvent?)value);
 
         /// <summary>
         /// 
@@ -113,7 +113,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AssistantStreamEvent(global::tryAGI.OpenAI.RunStepStreamEvent value) => new AssistantStreamEvent(value);
+        public static implicit operator AssistantStreamEvent(global::tryAGI.OpenAI.RunStepStreamEvent value) => new AssistantStreamEvent((global::tryAGI.OpenAI.RunStepStreamEvent?)value);
 
         /// <summary>
         /// 
@@ -148,7 +148,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AssistantStreamEvent(global::tryAGI.OpenAI.MessageStreamEvent value) => new AssistantStreamEvent(value);
+        public static implicit operator AssistantStreamEvent(global::tryAGI.OpenAI.MessageStreamEvent value) => new AssistantStreamEvent((global::tryAGI.OpenAI.MessageStreamEvent?)value);
 
         /// <summary>
         /// 
@@ -183,7 +183,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AssistantStreamEvent(global::tryAGI.OpenAI.ErrorEvent value) => new AssistantStreamEvent(value);
+        public static implicit operator AssistantStreamEvent(global::tryAGI.OpenAI.ErrorEvent value) => new AssistantStreamEvent((global::tryAGI.OpenAI.ErrorEvent?)value);
 
         /// <summary>
         /// 
@@ -218,7 +218,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AssistantStreamEvent(global::tryAGI.OpenAI.DoneEvent value) => new AssistantStreamEvent(value);
+        public static implicit operator AssistantStreamEvent(global::tryAGI.OpenAI.DoneEvent value) => new AssistantStreamEvent((global::tryAGI.OpenAI.DoneEvent?)value);
 
         /// <summary>
         /// 

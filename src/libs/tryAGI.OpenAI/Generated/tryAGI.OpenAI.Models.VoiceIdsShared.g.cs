@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator VoiceIdsShared(string value) => new VoiceIdsShared(value);
+        public static implicit operator VoiceIdsShared(string value) => new VoiceIdsShared((string?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator VoiceIdsShared(global::tryAGI.OpenAI.VoiceIdsSharedEnum value) => new VoiceIdsShared(value);
+        public static implicit operator VoiceIdsShared(global::tryAGI.OpenAI.VoiceIdsSharedEnum value) => new VoiceIdsShared((global::tryAGI.OpenAI.VoiceIdsSharedEnum?)value);
 
         /// <summary>
         /// 

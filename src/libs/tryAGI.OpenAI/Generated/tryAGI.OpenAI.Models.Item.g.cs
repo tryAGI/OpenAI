@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Item(global::tryAGI.OpenAI.InputMessage value) => new Item(value);
+        public static implicit operator Item(global::tryAGI.OpenAI.InputMessage value) => new Item((global::tryAGI.OpenAI.InputMessage?)value);
 
         /// <summary>
         /// 
@@ -66,7 +66,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Item(global::tryAGI.OpenAI.OutputMessage value) => new Item(value);
+        public static implicit operator Item(global::tryAGI.OpenAI.OutputMessage value) => new Item((global::tryAGI.OpenAI.OutputMessage?)value);
 
         /// <summary>
         /// 
@@ -102,7 +102,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Item(global::tryAGI.OpenAI.FileSearchToolCall value) => new Item(value);
+        public static implicit operator Item(global::tryAGI.OpenAI.FileSearchToolCall value) => new Item((global::tryAGI.OpenAI.FileSearchToolCall?)value);
 
         /// <summary>
         /// 
@@ -138,7 +138,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Item(global::tryAGI.OpenAI.ComputerToolCall value) => new Item(value);
+        public static implicit operator Item(global::tryAGI.OpenAI.ComputerToolCall value) => new Item((global::tryAGI.OpenAI.ComputerToolCall?)value);
 
         /// <summary>
         /// 
@@ -157,35 +157,35 @@ namespace tryAGI.OpenAI
         /// The output of a computer tool call.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ComputerToolCallOutput? ComputerToolCallOutput { get; init; }
+        public global::tryAGI.OpenAI.ComputerCallOutputItemParam? ComputerCallOutputParam { get; init; }
 #else
-        public global::tryAGI.OpenAI.ComputerToolCallOutput? ComputerToolCallOutput { get; }
+        public global::tryAGI.OpenAI.ComputerCallOutputItemParam? ComputerCallOutputParam { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerToolCallOutput))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerCallOutputParam))]
 #endif
-        public bool IsComputerToolCallOutput => ComputerToolCallOutput != null;
+        public bool IsComputerCallOutputParam => ComputerCallOutputParam != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Item(global::tryAGI.OpenAI.ComputerToolCallOutput value) => new Item(value);
+        public static implicit operator Item(global::tryAGI.OpenAI.ComputerCallOutputItemParam value) => new Item((global::tryAGI.OpenAI.ComputerCallOutputItemParam?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.ComputerToolCallOutput?(Item @this) => @this.ComputerToolCallOutput;
+        public static implicit operator global::tryAGI.OpenAI.ComputerCallOutputItemParam?(Item @this) => @this.ComputerCallOutputParam;
 
         /// <summary>
         /// 
         /// </summary>
-        public Item(global::tryAGI.OpenAI.ComputerToolCallOutput? value)
+        public Item(global::tryAGI.OpenAI.ComputerCallOutputItemParam? value)
         {
-            ComputerToolCallOutput = value;
+            ComputerCallOutputParam = value;
         }
 
         /// <summary>
@@ -209,7 +209,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Item(global::tryAGI.OpenAI.WebSearchToolCall value) => new Item(value);
+        public static implicit operator Item(global::tryAGI.OpenAI.WebSearchToolCall value) => new Item((global::tryAGI.OpenAI.WebSearchToolCall?)value);
 
         /// <summary>
         /// 
@@ -245,7 +245,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Item(global::tryAGI.OpenAI.FunctionToolCall value) => new Item(value);
+        public static implicit operator Item(global::tryAGI.OpenAI.FunctionToolCall value) => new Item((global::tryAGI.OpenAI.FunctionToolCall?)value);
 
         /// <summary>
         /// 
@@ -264,35 +264,35 @@ namespace tryAGI.OpenAI
         /// The output of a function tool call.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.FunctionToolCallOutput? FunctionToolCallOutput { get; init; }
+        public global::tryAGI.OpenAI.FunctionCallOutputItemParam? FunctionCallOutputParam { get; init; }
 #else
-        public global::tryAGI.OpenAI.FunctionToolCallOutput? FunctionToolCallOutput { get; }
+        public global::tryAGI.OpenAI.FunctionCallOutputItemParam? FunctionCallOutputParam { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionToolCallOutput))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCallOutputParam))]
 #endif
-        public bool IsFunctionToolCallOutput => FunctionToolCallOutput != null;
+        public bool IsFunctionCallOutputParam => FunctionCallOutputParam != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Item(global::tryAGI.OpenAI.FunctionToolCallOutput value) => new Item(value);
+        public static implicit operator Item(global::tryAGI.OpenAI.FunctionCallOutputItemParam value) => new Item((global::tryAGI.OpenAI.FunctionCallOutputItemParam?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.FunctionToolCallOutput?(Item @this) => @this.FunctionToolCallOutput;
+        public static implicit operator global::tryAGI.OpenAI.FunctionCallOutputItemParam?(Item @this) => @this.FunctionCallOutputParam;
 
         /// <summary>
         /// 
         /// </summary>
-        public Item(global::tryAGI.OpenAI.FunctionToolCallOutput? value)
+        public Item(global::tryAGI.OpenAI.FunctionCallOutputItemParam? value)
         {
-            FunctionToolCallOutput = value;
+            FunctionCallOutputParam = value;
         }
 
         /// <summary>
@@ -316,7 +316,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Item(global::tryAGI.OpenAI.ReasoningItem value) => new Item(value);
+        public static implicit operator Item(global::tryAGI.OpenAI.ReasoningItem value) => new Item((global::tryAGI.OpenAI.ReasoningItem?)value);
 
         /// <summary>
         /// 
@@ -339,10 +339,10 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.OutputMessage? outputMessage,
             global::tryAGI.OpenAI.FileSearchToolCall? fileSearchToolCall,
             global::tryAGI.OpenAI.ComputerToolCall? computerToolCall,
-            global::tryAGI.OpenAI.ComputerToolCallOutput? computerToolCallOutput,
+            global::tryAGI.OpenAI.ComputerCallOutputItemParam? computerCallOutputParam,
             global::tryAGI.OpenAI.WebSearchToolCall? webSearchToolCall,
             global::tryAGI.OpenAI.FunctionToolCall? functionToolCall,
-            global::tryAGI.OpenAI.FunctionToolCallOutput? functionToolCallOutput,
+            global::tryAGI.OpenAI.FunctionCallOutputItemParam? functionCallOutputParam,
             global::tryAGI.OpenAI.ReasoningItem? reasoning
             )
         {
@@ -350,10 +350,10 @@ namespace tryAGI.OpenAI
             OutputMessage = outputMessage;
             FileSearchToolCall = fileSearchToolCall;
             ComputerToolCall = computerToolCall;
-            ComputerToolCallOutput = computerToolCallOutput;
+            ComputerCallOutputParam = computerCallOutputParam;
             WebSearchToolCall = webSearchToolCall;
             FunctionToolCall = functionToolCall;
-            FunctionToolCallOutput = functionToolCallOutput;
+            FunctionCallOutputParam = functionCallOutputParam;
             Reasoning = reasoning;
         }
 
@@ -362,10 +362,10 @@ namespace tryAGI.OpenAI
         /// </summary>
         public object? Object =>
             Reasoning as object ??
-            FunctionToolCallOutput as object ??
+            FunctionCallOutputParam as object ??
             FunctionToolCall as object ??
             WebSearchToolCall as object ??
-            ComputerToolCallOutput as object ??
+            ComputerCallOutputParam as object ??
             ComputerToolCall as object ??
             FileSearchToolCall as object ??
             OutputMessage as object ??
@@ -380,10 +380,10 @@ namespace tryAGI.OpenAI
             OutputMessage?.ToString() ??
             FileSearchToolCall?.ToString() ??
             ComputerToolCall?.ToString() ??
-            ComputerToolCallOutput?.ToString() ??
+            ComputerCallOutputParam?.ToString() ??
             WebSearchToolCall?.ToString() ??
             FunctionToolCall?.ToString() ??
-            FunctionToolCallOutput?.ToString() ??
+            FunctionCallOutputParam?.ToString() ??
             Reasoning?.ToString() 
             ;
 
@@ -392,7 +392,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerToolCallOutput && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionToolCallOutput && !IsReasoning || !IsInputMessage && IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerToolCallOutput && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionToolCallOutput && !IsReasoning || !IsInputMessage && !IsOutputMessage && IsFileSearchToolCall && !IsComputerToolCall && !IsComputerToolCallOutput && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionToolCallOutput && !IsReasoning || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && IsComputerToolCall && !IsComputerToolCallOutput && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionToolCallOutput && !IsReasoning || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && IsComputerToolCallOutput && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionToolCallOutput && !IsReasoning || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerToolCallOutput && IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionToolCallOutput && !IsReasoning || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerToolCallOutput && !IsWebSearchToolCall && IsFunctionToolCall && !IsFunctionToolCallOutput && !IsReasoning || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerToolCallOutput && !IsWebSearchToolCall && !IsFunctionToolCall && IsFunctionToolCallOutput && !IsReasoning || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerToolCallOutput && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionToolCallOutput && IsReasoning;
+            return IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerCallOutputParam && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionCallOutputParam && !IsReasoning || !IsInputMessage && IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerCallOutputParam && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionCallOutputParam && !IsReasoning || !IsInputMessage && !IsOutputMessage && IsFileSearchToolCall && !IsComputerToolCall && !IsComputerCallOutputParam && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionCallOutputParam && !IsReasoning || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && IsComputerToolCall && !IsComputerCallOutputParam && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionCallOutputParam && !IsReasoning || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && IsComputerCallOutputParam && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionCallOutputParam && !IsReasoning || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerCallOutputParam && IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionCallOutputParam && !IsReasoning || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerCallOutputParam && !IsWebSearchToolCall && IsFunctionToolCall && !IsFunctionCallOutputParam && !IsReasoning || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerCallOutputParam && !IsWebSearchToolCall && !IsFunctionToolCall && IsFunctionCallOutputParam && !IsReasoning || !IsInputMessage && !IsOutputMessage && !IsFileSearchToolCall && !IsComputerToolCall && !IsComputerCallOutputParam && !IsWebSearchToolCall && !IsFunctionToolCall && !IsFunctionCallOutputParam && IsReasoning;
         }
 
         /// <summary>
@@ -403,10 +403,10 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.OutputMessage?, TResult>? outputMessage = null,
             global::System.Func<global::tryAGI.OpenAI.FileSearchToolCall?, TResult>? fileSearchToolCall = null,
             global::System.Func<global::tryAGI.OpenAI.ComputerToolCall?, TResult>? computerToolCall = null,
-            global::System.Func<global::tryAGI.OpenAI.ComputerToolCallOutput?, TResult>? computerToolCallOutput = null,
+            global::System.Func<global::tryAGI.OpenAI.ComputerCallOutputItemParam?, TResult>? computerCallOutputParam = null,
             global::System.Func<global::tryAGI.OpenAI.WebSearchToolCall?, TResult>? webSearchToolCall = null,
             global::System.Func<global::tryAGI.OpenAI.FunctionToolCall?, TResult>? functionToolCall = null,
-            global::System.Func<global::tryAGI.OpenAI.FunctionToolCallOutput?, TResult>? functionToolCallOutput = null,
+            global::System.Func<global::tryAGI.OpenAI.FunctionCallOutputItemParam?, TResult>? functionCallOutputParam = null,
             global::System.Func<global::tryAGI.OpenAI.ReasoningItem?, TResult>? reasoning = null,
             bool validate = true)
         {
@@ -431,9 +431,9 @@ namespace tryAGI.OpenAI
             {
                 return computerToolCall(ComputerToolCall!);
             }
-            else if (IsComputerToolCallOutput && computerToolCallOutput != null)
+            else if (IsComputerCallOutputParam && computerCallOutputParam != null)
             {
-                return computerToolCallOutput(ComputerToolCallOutput!);
+                return computerCallOutputParam(ComputerCallOutputParam!);
             }
             else if (IsWebSearchToolCall && webSearchToolCall != null)
             {
@@ -443,9 +443,9 @@ namespace tryAGI.OpenAI
             {
                 return functionToolCall(FunctionToolCall!);
             }
-            else if (IsFunctionToolCallOutput && functionToolCallOutput != null)
+            else if (IsFunctionCallOutputParam && functionCallOutputParam != null)
             {
-                return functionToolCallOutput(FunctionToolCallOutput!);
+                return functionCallOutputParam(FunctionCallOutputParam!);
             }
             else if (IsReasoning && reasoning != null)
             {
@@ -463,10 +463,10 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.OutputMessage?>? outputMessage = null,
             global::System.Action<global::tryAGI.OpenAI.FileSearchToolCall?>? fileSearchToolCall = null,
             global::System.Action<global::tryAGI.OpenAI.ComputerToolCall?>? computerToolCall = null,
-            global::System.Action<global::tryAGI.OpenAI.ComputerToolCallOutput?>? computerToolCallOutput = null,
+            global::System.Action<global::tryAGI.OpenAI.ComputerCallOutputItemParam?>? computerCallOutputParam = null,
             global::System.Action<global::tryAGI.OpenAI.WebSearchToolCall?>? webSearchToolCall = null,
             global::System.Action<global::tryAGI.OpenAI.FunctionToolCall?>? functionToolCall = null,
-            global::System.Action<global::tryAGI.OpenAI.FunctionToolCallOutput?>? functionToolCallOutput = null,
+            global::System.Action<global::tryAGI.OpenAI.FunctionCallOutputItemParam?>? functionCallOutputParam = null,
             global::System.Action<global::tryAGI.OpenAI.ReasoningItem?>? reasoning = null,
             bool validate = true)
         {
@@ -491,9 +491,9 @@ namespace tryAGI.OpenAI
             {
                 computerToolCall?.Invoke(ComputerToolCall!);
             }
-            else if (IsComputerToolCallOutput)
+            else if (IsComputerCallOutputParam)
             {
-                computerToolCallOutput?.Invoke(ComputerToolCallOutput!);
+                computerCallOutputParam?.Invoke(ComputerCallOutputParam!);
             }
             else if (IsWebSearchToolCall)
             {
@@ -503,9 +503,9 @@ namespace tryAGI.OpenAI
             {
                 functionToolCall?.Invoke(FunctionToolCall!);
             }
-            else if (IsFunctionToolCallOutput)
+            else if (IsFunctionCallOutputParam)
             {
-                functionToolCallOutput?.Invoke(FunctionToolCallOutput!);
+                functionCallOutputParam?.Invoke(FunctionCallOutputParam!);
             }
             else if (IsReasoning)
             {
@@ -528,14 +528,14 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.FileSearchToolCall),
                 ComputerToolCall,
                 typeof(global::tryAGI.OpenAI.ComputerToolCall),
-                ComputerToolCallOutput,
-                typeof(global::tryAGI.OpenAI.ComputerToolCallOutput),
+                ComputerCallOutputParam,
+                typeof(global::tryAGI.OpenAI.ComputerCallOutputItemParam),
                 WebSearchToolCall,
                 typeof(global::tryAGI.OpenAI.WebSearchToolCall),
                 FunctionToolCall,
                 typeof(global::tryAGI.OpenAI.FunctionToolCall),
-                FunctionToolCallOutput,
-                typeof(global::tryAGI.OpenAI.FunctionToolCallOutput),
+                FunctionCallOutputParam,
+                typeof(global::tryAGI.OpenAI.FunctionCallOutputItemParam),
                 Reasoning,
                 typeof(global::tryAGI.OpenAI.ReasoningItem),
             };
@@ -558,10 +558,10 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.OutputMessage?>.Default.Equals(OutputMessage, other.OutputMessage) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FileSearchToolCall?>.Default.Equals(FileSearchToolCall, other.FileSearchToolCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ComputerToolCall?>.Default.Equals(ComputerToolCall, other.ComputerToolCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ComputerToolCallOutput?>.Default.Equals(ComputerToolCallOutput, other.ComputerToolCallOutput) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ComputerCallOutputItemParam?>.Default.Equals(ComputerCallOutputParam, other.ComputerCallOutputParam) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.WebSearchToolCall?>.Default.Equals(WebSearchToolCall, other.WebSearchToolCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FunctionToolCall?>.Default.Equals(FunctionToolCall, other.FunctionToolCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FunctionToolCallOutput?>.Default.Equals(FunctionToolCallOutput, other.FunctionToolCallOutput) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FunctionCallOutputItemParam?>.Default.Equals(FunctionCallOutputParam, other.FunctionCallOutputParam) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ReasoningItem?>.Default.Equals(Reasoning, other.Reasoning) 
                 ;
         }

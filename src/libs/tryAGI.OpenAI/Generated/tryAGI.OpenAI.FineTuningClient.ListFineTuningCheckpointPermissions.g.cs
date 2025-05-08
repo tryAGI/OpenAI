@@ -7,7 +7,7 @@ namespace tryAGI.OpenAI
     {
         partial void PrepareListFineTuningCheckpointPermissionsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string permissionId,
+            ref string fineTunedModelCheckpoint,
             ref string? projectId,
             ref string? after,
             ref int? limit,
@@ -15,7 +15,7 @@ namespace tryAGI.OpenAI
         partial void PrepareListFineTuningCheckpointPermissionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string permissionId,
+            string fineTunedModelCheckpoint,
             string? projectId,
             string? after,
             int? limit,
@@ -33,7 +33,7 @@ namespace tryAGI.OpenAI
         /// **NOTE:** This endpoint requires an [admin API key](../admin-api-keys).<br/>
         /// Organization owners can use this endpoint to view all permissions for a fine-tuned model checkpoint.
         /// </summary>
-        /// <param name="permissionId">
+        /// <param name="fineTunedModelCheckpoint">
         /// Example: ft-AF1WoRqd3aJAHsqc9NY7iL8F
         /// </param>
         /// <param name="projectId"></param>
@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ListFineTuningCheckpointPermissionResponse> ListFineTuningCheckpointPermissionsAsync(
-            string permissionId,
+            string fineTunedModelCheckpoint,
             string? projectId = default,
             string? after = default,
             int? limit = default,
@@ -58,14 +58,14 @@ namespace tryAGI.OpenAI
                 client: HttpClient);
             PrepareListFineTuningCheckpointPermissionsArguments(
                 httpClient: HttpClient,
-                permissionId: ref permissionId,
+                fineTunedModelCheckpoint: ref fineTunedModelCheckpoint,
                 projectId: ref projectId,
                 after: ref after,
                 limit: ref limit,
                 order: ref order);
 
             var __pathBuilder = new PathBuilder(
-                path: $"/fine_tuning/checkpoints/{permissionId}/permissions",
+                path: $"/fine_tuning/checkpoints/{fineTunedModelCheckpoint}/permissions",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddOptionalParameter("project_id", projectId) 
@@ -104,7 +104,7 @@ namespace tryAGI.OpenAI
             PrepareListFineTuningCheckpointPermissionsRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                permissionId: permissionId,
+                fineTunedModelCheckpoint: fineTunedModelCheckpoint,
                 projectId: projectId,
                 after: after,
                 limit: limit,

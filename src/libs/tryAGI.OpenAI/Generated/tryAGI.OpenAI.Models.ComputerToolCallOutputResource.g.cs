@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ComputerToolCallOutputResource(global::tryAGI.OpenAI.ComputerToolCallOutput value) => new ComputerToolCallOutputResource(value);
+        public static implicit operator ComputerToolCallOutputResource(global::tryAGI.OpenAI.ComputerToolCallOutput value) => new ComputerToolCallOutputResource((global::tryAGI.OpenAI.ComputerToolCallOutput?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ComputerToolCallOutputResource(global::tryAGI.OpenAI.ComputerToolCallOutputResourceVariant2 value) => new ComputerToolCallOutputResource(value);
+        public static implicit operator ComputerToolCallOutputResource(global::tryAGI.OpenAI.ComputerToolCallOutputResourceVariant2 value) => new ComputerToolCallOutputResource((global::tryAGI.OpenAI.ComputerToolCallOutputResourceVariant2?)value);
 
         /// <summary>
         /// 

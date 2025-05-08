@@ -13,9 +13,9 @@ namespace tryAGI.OpenAI
         /// A text input to the model.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.InputText? Text { get; init; }
+        public global::tryAGI.OpenAI.InputTextContent? Text { get; init; }
 #else
-        public global::tryAGI.OpenAI.InputText? Text { get; }
+        public global::tryAGI.OpenAI.InputTextContent? Text { get; }
 #endif
 
         /// <summary>
@@ -29,17 +29,17 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputContent(global::tryAGI.OpenAI.InputText value) => new InputContent(value);
+        public static implicit operator InputContent(global::tryAGI.OpenAI.InputTextContent value) => new InputContent((global::tryAGI.OpenAI.InputTextContent?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.InputText?(InputContent @this) => @this.Text;
+        public static implicit operator global::tryAGI.OpenAI.InputTextContent?(InputContent @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
-        public InputContent(global::tryAGI.OpenAI.InputText? value)
+        public InputContent(global::tryAGI.OpenAI.InputTextContent? value)
         {
             Text = value;
         }
@@ -48,9 +48,9 @@ namespace tryAGI.OpenAI
         /// An image input to the model. Learn about [image inputs](/docs/guides/vision).
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.InputImage? Image { get; init; }
+        public global::tryAGI.OpenAI.InputImageContent? Image { get; init; }
 #else
-        public global::tryAGI.OpenAI.InputImage? Image { get; }
+        public global::tryAGI.OpenAI.InputImageContent? Image { get; }
 #endif
 
         /// <summary>
@@ -64,17 +64,17 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputContent(global::tryAGI.OpenAI.InputImage value) => new InputContent(value);
+        public static implicit operator InputContent(global::tryAGI.OpenAI.InputImageContent value) => new InputContent((global::tryAGI.OpenAI.InputImageContent?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.InputImage?(InputContent @this) => @this.Image;
+        public static implicit operator global::tryAGI.OpenAI.InputImageContent?(InputContent @this) => @this.Image;
 
         /// <summary>
         /// 
         /// </summary>
-        public InputContent(global::tryAGI.OpenAI.InputImage? value)
+        public InputContent(global::tryAGI.OpenAI.InputImageContent? value)
         {
             Image = value;
         }
@@ -83,9 +83,9 @@ namespace tryAGI.OpenAI
         /// A file input to the model.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.InputFile? File { get; init; }
+        public global::tryAGI.OpenAI.InputFileContent? File { get; init; }
 #else
-        public global::tryAGI.OpenAI.InputFile? File { get; }
+        public global::tryAGI.OpenAI.InputFileContent? File { get; }
 #endif
 
         /// <summary>
@@ -99,17 +99,17 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputContent(global::tryAGI.OpenAI.InputFile value) => new InputContent(value);
+        public static implicit operator InputContent(global::tryAGI.OpenAI.InputFileContent value) => new InputContent((global::tryAGI.OpenAI.InputFileContent?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.InputFile?(InputContent @this) => @this.File;
+        public static implicit operator global::tryAGI.OpenAI.InputFileContent?(InputContent @this) => @this.File;
 
         /// <summary>
         /// 
         /// </summary>
-        public InputContent(global::tryAGI.OpenAI.InputFile? value)
+        public InputContent(global::tryAGI.OpenAI.InputFileContent? value)
         {
             File = value;
         }
@@ -118,9 +118,9 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public InputContent(
-            global::tryAGI.OpenAI.InputText? text,
-            global::tryAGI.OpenAI.InputImage? image,
-            global::tryAGI.OpenAI.InputFile? file
+            global::tryAGI.OpenAI.InputTextContent? text,
+            global::tryAGI.OpenAI.InputImageContent? image,
+            global::tryAGI.OpenAI.InputFileContent? file
             )
         {
             Text = text;
@@ -158,9 +158,9 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.InputText?, TResult>? text = null,
-            global::System.Func<global::tryAGI.OpenAI.InputImage?, TResult>? image = null,
-            global::System.Func<global::tryAGI.OpenAI.InputFile?, TResult>? file = null,
+            global::System.Func<global::tryAGI.OpenAI.InputTextContent?, TResult>? text = null,
+            global::System.Func<global::tryAGI.OpenAI.InputImageContent?, TResult>? image = null,
+            global::System.Func<global::tryAGI.OpenAI.InputFileContent?, TResult>? file = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +188,9 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.InputText?>? text = null,
-            global::System.Action<global::tryAGI.OpenAI.InputImage?>? image = null,
-            global::System.Action<global::tryAGI.OpenAI.InputFile?>? file = null,
+            global::System.Action<global::tryAGI.OpenAI.InputTextContent?>? text = null,
+            global::System.Action<global::tryAGI.OpenAI.InputImageContent?>? image = null,
+            global::System.Action<global::tryAGI.OpenAI.InputFileContent?>? file = null,
             bool validate = true)
         {
             if (validate)
@@ -220,11 +220,11 @@ namespace tryAGI.OpenAI
             var fields = new object?[]
             {
                 Text,
-                typeof(global::tryAGI.OpenAI.InputText),
+                typeof(global::tryAGI.OpenAI.InputTextContent),
                 Image,
-                typeof(global::tryAGI.OpenAI.InputImage),
+                typeof(global::tryAGI.OpenAI.InputImageContent),
                 File,
-                typeof(global::tryAGI.OpenAI.InputFile),
+                typeof(global::tryAGI.OpenAI.InputFileContent),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -241,9 +241,9 @@ namespace tryAGI.OpenAI
         public bool Equals(InputContent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputText?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputImage?>.Default.Equals(Image, other.Image) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputFile?>.Default.Equals(File, other.File) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputTextContent?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputImageContent?>.Default.Equals(Image, other.Image) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputFileContent?>.Default.Equals(File, other.File) 
                 ;
         }
 

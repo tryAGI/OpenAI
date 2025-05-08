@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
         /// The log probabilities of the tokens in the transcription. Only returned with the models `gpt-4o-transcribe` and `gpt-4o-mini-transcribe` if `logprobs` is added to the `include` array.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProbProperties>? Logprobs { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateTranscriptionResponseJsonLogprob>? Logprobs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,7 +41,7 @@ namespace tryAGI.OpenAI
 #endif
         public CreateTranscriptionResponseJson(
             string text,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProbProperties>? logprobs)
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateTranscriptionResponseJsonLogprob>? logprobs)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Logprobs = logprobs;

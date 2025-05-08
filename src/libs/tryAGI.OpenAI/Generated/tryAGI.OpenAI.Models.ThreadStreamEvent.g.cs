@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ThreadStreamEvent(global::tryAGI.OpenAI.ThreadStreamEventVariant1 value) => new ThreadStreamEvent(value);
+        public static implicit operator ThreadStreamEvent(global::tryAGI.OpenAI.ThreadStreamEventVariant1 value) => new ThreadStreamEvent((global::tryAGI.OpenAI.ThreadStreamEventVariant1?)value);
 
         /// <summary>
         /// 

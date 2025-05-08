@@ -33,7 +33,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputItem(global::tryAGI.OpenAI.EasyInputMessage value) => new InputItem(value);
+        public static implicit operator InputItem(global::tryAGI.OpenAI.EasyInputMessage value) => new InputItem((global::tryAGI.OpenAI.EasyInputMessage?)value);
 
         /// <summary>
         /// 
@@ -68,7 +68,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputItem(global::tryAGI.OpenAI.Item value) => new InputItem(value);
+        public static implicit operator InputItem(global::tryAGI.OpenAI.Item value) => new InputItem((global::tryAGI.OpenAI.Item?)value);
 
         /// <summary>
         /// 
@@ -87,9 +87,9 @@ namespace tryAGI.OpenAI
         /// An internal identifier for an item to reference.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ItemReference? Value3 { get; init; }
+        public global::tryAGI.OpenAI.ItemReferenceParam? Value3 { get; init; }
 #else
-        public global::tryAGI.OpenAI.ItemReference? Value3 { get; }
+        public global::tryAGI.OpenAI.ItemReferenceParam? Value3 { get; }
 #endif
 
         /// <summary>
@@ -103,17 +103,17 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputItem(global::tryAGI.OpenAI.ItemReference value) => new InputItem(value);
+        public static implicit operator InputItem(global::tryAGI.OpenAI.ItemReferenceParam value) => new InputItem((global::tryAGI.OpenAI.ItemReferenceParam?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.ItemReference?(InputItem @this) => @this.Value3;
+        public static implicit operator global::tryAGI.OpenAI.ItemReferenceParam?(InputItem @this) => @this.Value3;
 
         /// <summary>
         /// 
         /// </summary>
-        public InputItem(global::tryAGI.OpenAI.ItemReference? value)
+        public InputItem(global::tryAGI.OpenAI.ItemReferenceParam? value)
         {
             Value3 = value;
         }
@@ -124,7 +124,7 @@ namespace tryAGI.OpenAI
         public InputItem(
             global::tryAGI.OpenAI.EasyInputMessage? value1,
             global::tryAGI.OpenAI.Item? value2,
-            global::tryAGI.OpenAI.ItemReference? value3
+            global::tryAGI.OpenAI.ItemReferenceParam? value3
             )
         {
             Value1 = value1;
@@ -164,7 +164,7 @@ namespace tryAGI.OpenAI
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.EasyInputMessage?, TResult>? value1 = null,
             global::System.Func<global::tryAGI.OpenAI.Item?, TResult>? value2 = null,
-            global::System.Func<global::tryAGI.OpenAI.ItemReference?, TResult>? value3 = null,
+            global::System.Func<global::tryAGI.OpenAI.ItemReferenceParam?, TResult>? value3 = null,
             bool validate = true)
         {
             if (validate)
@@ -194,7 +194,7 @@ namespace tryAGI.OpenAI
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.EasyInputMessage?>? value1 = null,
             global::System.Action<global::tryAGI.OpenAI.Item?>? value2 = null,
-            global::System.Action<global::tryAGI.OpenAI.ItemReference?>? value3 = null,
+            global::System.Action<global::tryAGI.OpenAI.ItemReferenceParam?>? value3 = null,
             bool validate = true)
         {
             if (validate)
@@ -228,7 +228,7 @@ namespace tryAGI.OpenAI
                 Value2,
                 typeof(global::tryAGI.OpenAI.Item),
                 Value3,
-                typeof(global::tryAGI.OpenAI.ItemReference),
+                typeof(global::tryAGI.OpenAI.ItemReferenceParam),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -247,7 +247,7 @@ namespace tryAGI.OpenAI
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.EasyInputMessage?>.Default.Equals(Value1, other.Value1) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.Item?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ItemReference?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ItemReferenceParam?>.Default.Equals(Value3, other.Value3) 
                 ;
         }
 

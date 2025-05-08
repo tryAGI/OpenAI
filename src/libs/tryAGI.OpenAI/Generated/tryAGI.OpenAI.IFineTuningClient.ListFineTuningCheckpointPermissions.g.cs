@@ -8,7 +8,7 @@ namespace tryAGI.OpenAI
         /// **NOTE:** This endpoint requires an [admin API key](../admin-api-keys).<br/>
         /// Organization owners can use this endpoint to view all permissions for a fine-tuned model checkpoint.
         /// </summary>
-        /// <param name="permissionId">
+        /// <param name="fineTunedModelCheckpoint">
         /// Example: ft-AF1WoRqd3aJAHsqc9NY7iL8F
         /// </param>
         /// <param name="projectId"></param>
@@ -22,7 +22,7 @@ namespace tryAGI.OpenAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ListFineTuningCheckpointPermissionResponse> ListFineTuningCheckpointPermissionsAsync(
-            string permissionId,
+            string fineTunedModelCheckpoint,
             string? projectId = default,
             string? after = default,
             int? limit = default,

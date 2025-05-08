@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CreateChatCompletionRequest(global::tryAGI.OpenAI.CreateModelResponseProperties value) => new CreateChatCompletionRequest(value);
+        public static implicit operator CreateChatCompletionRequest(global::tryAGI.OpenAI.CreateModelResponseProperties value) => new CreateChatCompletionRequest((global::tryAGI.OpenAI.CreateModelResponseProperties?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CreateChatCompletionRequest(global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2 value) => new CreateChatCompletionRequest(value);
+        public static implicit operator CreateChatCompletionRequest(global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2 value) => new CreateChatCompletionRequest((global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2?)value);
 
         /// <summary>
         /// 

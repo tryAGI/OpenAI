@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CreateResponse(global::tryAGI.OpenAI.CreateModelResponseProperties value) => new CreateResponse(value);
+        public static implicit operator CreateResponse(global::tryAGI.OpenAI.CreateModelResponseProperties value) => new CreateResponse((global::tryAGI.OpenAI.CreateModelResponseProperties?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CreateResponse(global::tryAGI.OpenAI.ResponseProperties value) => new CreateResponse(value);
+        public static implicit operator CreateResponse(global::tryAGI.OpenAI.ResponseProperties value) => new CreateResponse((global::tryAGI.OpenAI.ResponseProperties?)value);
 
         /// <summary>
         /// 
@@ -99,7 +99,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CreateResponse(global::tryAGI.OpenAI.CreateResponseVariant3 value) => new CreateResponse(value);
+        public static implicit operator CreateResponse(global::tryAGI.OpenAI.CreateResponseVariant3 value) => new CreateResponse((global::tryAGI.OpenAI.CreateResponseVariant3?)value);
 
         /// <summary>
         /// 

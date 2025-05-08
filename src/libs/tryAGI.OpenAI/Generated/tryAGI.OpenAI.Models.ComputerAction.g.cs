@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ComputerAction(global::tryAGI.OpenAI.Click value) => new ComputerAction(value);
+        public static implicit operator ComputerAction(global::tryAGI.OpenAI.Click value) => new ComputerAction((global::tryAGI.OpenAI.Click?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ComputerAction(global::tryAGI.OpenAI.DoubleClick value) => new ComputerAction(value);
+        public static implicit operator ComputerAction(global::tryAGI.OpenAI.DoubleClick value) => new ComputerAction((global::tryAGI.OpenAI.DoubleClick?)value);
 
         /// <summary>
         /// 
@@ -99,7 +99,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ComputerAction(global::tryAGI.OpenAI.Drag value) => new ComputerAction(value);
+        public static implicit operator ComputerAction(global::tryAGI.OpenAI.Drag value) => new ComputerAction((global::tryAGI.OpenAI.Drag?)value);
 
         /// <summary>
         /// 
@@ -134,7 +134,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ComputerAction(global::tryAGI.OpenAI.KeyPress value) => new ComputerAction(value);
+        public static implicit operator ComputerAction(global::tryAGI.OpenAI.KeyPress value) => new ComputerAction((global::tryAGI.OpenAI.KeyPress?)value);
 
         /// <summary>
         /// 
@@ -169,7 +169,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ComputerAction(global::tryAGI.OpenAI.Move value) => new ComputerAction(value);
+        public static implicit operator ComputerAction(global::tryAGI.OpenAI.Move value) => new ComputerAction((global::tryAGI.OpenAI.Move?)value);
 
         /// <summary>
         /// 
@@ -204,7 +204,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ComputerAction(global::tryAGI.OpenAI.Screenshot value) => new ComputerAction(value);
+        public static implicit operator ComputerAction(global::tryAGI.OpenAI.Screenshot value) => new ComputerAction((global::tryAGI.OpenAI.Screenshot?)value);
 
         /// <summary>
         /// 
@@ -239,7 +239,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ComputerAction(global::tryAGI.OpenAI.Scroll value) => new ComputerAction(value);
+        public static implicit operator ComputerAction(global::tryAGI.OpenAI.Scroll value) => new ComputerAction((global::tryAGI.OpenAI.Scroll?)value);
 
         /// <summary>
         /// 
@@ -274,7 +274,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ComputerAction(global::tryAGI.OpenAI.Type value) => new ComputerAction(value);
+        public static implicit operator ComputerAction(global::tryAGI.OpenAI.Type value) => new ComputerAction((global::tryAGI.OpenAI.Type?)value);
 
         /// <summary>
         /// 
@@ -309,7 +309,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ComputerAction(global::tryAGI.OpenAI.Wait value) => new ComputerAction(value);
+        public static implicit operator ComputerAction(global::tryAGI.OpenAI.Wait value) => new ComputerAction((global::tryAGI.OpenAI.Wait?)value);
 
         /// <summary>
         /// 

@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CreateModelResponseProperties(global::tryAGI.OpenAI.ModelResponseProperties value) => new CreateModelResponseProperties(value);
+        public static implicit operator CreateModelResponseProperties(global::tryAGI.OpenAI.ModelResponseProperties value) => new CreateModelResponseProperties((global::tryAGI.OpenAI.ModelResponseProperties?)value);
 
         /// <summary>
         /// 

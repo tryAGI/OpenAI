@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessageStreamEvent(global::tryAGI.OpenAI.MessageStreamEventVariant1 value) => new MessageStreamEvent(value);
+        public static implicit operator MessageStreamEvent(global::tryAGI.OpenAI.MessageStreamEventVariant1 value) => new MessageStreamEvent((global::tryAGI.OpenAI.MessageStreamEventVariant1?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessageStreamEvent(global::tryAGI.OpenAI.MessageStreamEventVariant2 value) => new MessageStreamEvent(value);
+        public static implicit operator MessageStreamEvent(global::tryAGI.OpenAI.MessageStreamEventVariant2 value) => new MessageStreamEvent((global::tryAGI.OpenAI.MessageStreamEventVariant2?)value);
 
         /// <summary>
         /// 
@@ -99,7 +99,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessageStreamEvent(global::tryAGI.OpenAI.MessageStreamEventVariant3 value) => new MessageStreamEvent(value);
+        public static implicit operator MessageStreamEvent(global::tryAGI.OpenAI.MessageStreamEventVariant3 value) => new MessageStreamEvent((global::tryAGI.OpenAI.MessageStreamEventVariant3?)value);
 
         /// <summary>
         /// 
@@ -134,7 +134,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessageStreamEvent(global::tryAGI.OpenAI.MessageStreamEventVariant4 value) => new MessageStreamEvent(value);
+        public static implicit operator MessageStreamEvent(global::tryAGI.OpenAI.MessageStreamEventVariant4 value) => new MessageStreamEvent((global::tryAGI.OpenAI.MessageStreamEventVariant4?)value);
 
         /// <summary>
         /// 
@@ -169,7 +169,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessageStreamEvent(global::tryAGI.OpenAI.MessageStreamEventVariant5 value) => new MessageStreamEvent(value);
+        public static implicit operator MessageStreamEvent(global::tryAGI.OpenAI.MessageStreamEventVariant5 value) => new MessageStreamEvent((global::tryAGI.OpenAI.MessageStreamEventVariant5?)value);
 
         /// <summary>
         /// 

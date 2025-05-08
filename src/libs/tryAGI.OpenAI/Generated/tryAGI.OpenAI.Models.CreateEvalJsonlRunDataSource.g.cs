@@ -1,0 +1,62 @@
+
+#pragma warning disable CS0618 // Type or member is obsolete
+
+#nullable enable
+
+namespace tryAGI.OpenAI
+{
+    /// <summary>
+    /// A JsonlRunDataSource object with that specifies a JSONL file that matches the eval 
+    /// </summary>
+    public sealed partial class CreateEvalJsonlRunDataSource
+    {
+        /// <summary>
+        /// The type of data source. Always `jsonl`.<br/>
+        /// Default Value: jsonl
+        /// </summary>
+        /// <default>global::tryAGI.OpenAI.CreateEvalJsonlRunDataSourceType.Jsonl</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateEvalJsonlRunDataSourceTypeJsonConverter))]
+        public global::tryAGI.OpenAI.CreateEvalJsonlRunDataSourceType Type { get; set; } = global::tryAGI.OpenAI.CreateEvalJsonlRunDataSourceType.Jsonl;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.EvalJsonlFileContentSource, global::tryAGI.OpenAI.EvalJsonlFileIdSource>))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalJsonlFileContentSource, global::tryAGI.OpenAI.EvalJsonlFileIdSource> Source { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateEvalJsonlRunDataSource" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// The type of data source. Always `jsonl`.<br/>
+        /// Default Value: jsonl
+        /// </param>
+        /// <param name="source"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public CreateEvalJsonlRunDataSource(
+            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalJsonlFileContentSource, global::tryAGI.OpenAI.EvalJsonlFileIdSource> source,
+            global::tryAGI.OpenAI.CreateEvalJsonlRunDataSourceType type = global::tryAGI.OpenAI.CreateEvalJsonlRunDataSourceType.Jsonl)
+        {
+            this.Source = source;
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateEvalJsonlRunDataSource" /> class.
+        /// </summary>
+        public CreateEvalJsonlRunDataSource()
+        {
+        }
+    }
+}

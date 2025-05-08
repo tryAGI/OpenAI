@@ -41,13 +41,19 @@ namespace tryAGI.OpenAI
         public required string Model { get; set; }
 
         /// <summary>
-        /// The service tier used for processing the request.<br/>
-        /// Example: scale
+        /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
+        ///   - If set to 'auto', and the Project is Scale tier enabled, the system<br/>
+        ///     will utilize scale tier credits until they are exhausted.<br/>
+        ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
+        ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
+        ///   - If set to 'flex', the request will be processed with the Flex Processing service tier. [Learn more](/docs/guides/flex-processing).<br/>
+        ///   - When not set, the default behavior is 'auto'.<br/>
+        ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
+        /// Default Value: auto
         /// </summary>
-        /// <example>scale</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateChatCompletionStreamResponseServiceTierJsonConverter))]
-        public global::tryAGI.OpenAI.CreateChatCompletionStreamResponseServiceTier? ServiceTier { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ServiceTierJsonConverter))]
+        public global::tryAGI.OpenAI.ServiceTier? ServiceTier { get; set; }
 
         /// <summary>
         /// This fingerprint represents the backend configuration that the model runs with.<br/>
@@ -92,8 +98,15 @@ namespace tryAGI.OpenAI
         /// The model to generate the completion.
         /// </param>
         /// <param name="serviceTier">
-        /// The service tier used for processing the request.<br/>
-        /// Example: scale
+        /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
+        ///   - If set to 'auto', and the Project is Scale tier enabled, the system<br/>
+        ///     will utilize scale tier credits until they are exhausted.<br/>
+        ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
+        ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
+        ///   - If set to 'flex', the request will be processed with the Flex Processing service tier. [Learn more](/docs/guides/flex-processing).<br/>
+        ///   - When not set, the default behavior is 'auto'.<br/>
+        ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
+        /// Default Value: auto
         /// </param>
         /// <param name="systemFingerprint">
         /// This fingerprint represents the backend configuration that the model runs with.<br/>
@@ -113,7 +126,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateChatCompletionStreamResponseChoice> choices,
             global::System.DateTimeOffset created,
             string model,
-            global::tryAGI.OpenAI.CreateChatCompletionStreamResponseServiceTier? serviceTier,
+            global::tryAGI.OpenAI.ServiceTier? serviceTier,
             string? systemFingerprint,
             global::tryAGI.OpenAI.CreateChatCompletionStreamResponseObject @object,
             global::tryAGI.OpenAI.CompletionUsage? usage)

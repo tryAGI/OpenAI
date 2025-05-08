@@ -13,9 +13,9 @@ namespace tryAGI.OpenAI
         /// A text output from the model.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.OutputText? Text { get; init; }
+        public global::tryAGI.OpenAI.OutputTextContent? Text { get; init; }
 #else
-        public global::tryAGI.OpenAI.OutputText? Text { get; }
+        public global::tryAGI.OpenAI.OutputTextContent? Text { get; }
 #endif
 
         /// <summary>
@@ -29,17 +29,17 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OutputContent(global::tryAGI.OpenAI.OutputText value) => new OutputContent(value);
+        public static implicit operator OutputContent(global::tryAGI.OpenAI.OutputTextContent value) => new OutputContent((global::tryAGI.OpenAI.OutputTextContent?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.OutputText?(OutputContent @this) => @this.Text;
+        public static implicit operator global::tryAGI.OpenAI.OutputTextContent?(OutputContent @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
-        public OutputContent(global::tryAGI.OpenAI.OutputText? value)
+        public OutputContent(global::tryAGI.OpenAI.OutputTextContent? value)
         {
             Text = value;
         }
@@ -48,9 +48,9 @@ namespace tryAGI.OpenAI
         /// A refusal from the model.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.Refusal? Refusal { get; init; }
+        public global::tryAGI.OpenAI.RefusalContent? Refusal { get; init; }
 #else
-        public global::tryAGI.OpenAI.Refusal? Refusal { get; }
+        public global::tryAGI.OpenAI.RefusalContent? Refusal { get; }
 #endif
 
         /// <summary>
@@ -64,17 +64,17 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OutputContent(global::tryAGI.OpenAI.Refusal value) => new OutputContent(value);
+        public static implicit operator OutputContent(global::tryAGI.OpenAI.RefusalContent value) => new OutputContent((global::tryAGI.OpenAI.RefusalContent?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.Refusal?(OutputContent @this) => @this.Refusal;
+        public static implicit operator global::tryAGI.OpenAI.RefusalContent?(OutputContent @this) => @this.Refusal;
 
         /// <summary>
         /// 
         /// </summary>
-        public OutputContent(global::tryAGI.OpenAI.Refusal? value)
+        public OutputContent(global::tryAGI.OpenAI.RefusalContent? value)
         {
             Refusal = value;
         }
@@ -83,8 +83,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public OutputContent(
-            global::tryAGI.OpenAI.OutputText? text,
-            global::tryAGI.OpenAI.Refusal? refusal
+            global::tryAGI.OpenAI.OutputTextContent? text,
+            global::tryAGI.OpenAI.RefusalContent? refusal
             )
         {
             Text = text;
@@ -119,8 +119,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.OutputText?, TResult>? text = null,
-            global::System.Func<global::tryAGI.OpenAI.Refusal?, TResult>? refusal = null,
+            global::System.Func<global::tryAGI.OpenAI.OutputTextContent?, TResult>? text = null,
+            global::System.Func<global::tryAGI.OpenAI.RefusalContent?, TResult>? refusal = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +144,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.OutputText?>? text = null,
-            global::System.Action<global::tryAGI.OpenAI.Refusal?>? refusal = null,
+            global::System.Action<global::tryAGI.OpenAI.OutputTextContent?>? text = null,
+            global::System.Action<global::tryAGI.OpenAI.RefusalContent?>? refusal = null,
             bool validate = true)
         {
             if (validate)
@@ -171,9 +171,9 @@ namespace tryAGI.OpenAI
             var fields = new object?[]
             {
                 Text,
-                typeof(global::tryAGI.OpenAI.OutputText),
+                typeof(global::tryAGI.OpenAI.OutputTextContent),
                 Refusal,
-                typeof(global::tryAGI.OpenAI.Refusal),
+                typeof(global::tryAGI.OpenAI.RefusalContent),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -190,8 +190,8 @@ namespace tryAGI.OpenAI
         public bool Equals(OutputContent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.OutputText?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.Refusal?>.Default.Equals(Refusal, other.Refusal) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.OutputTextContent?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RefusalContent?>.Default.Equals(Refusal, other.Refusal) 
                 ;
         }
 

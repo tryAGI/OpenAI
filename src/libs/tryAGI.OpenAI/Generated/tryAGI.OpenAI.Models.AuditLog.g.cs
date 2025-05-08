@@ -63,6 +63,18 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.AuditLogApiKeyDeleted? ApiKeyDeleted { get; set; }
 
         /// <summary>
+        /// The project and fine-tuned model checkpoint that the checkpoint permission was created for.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("checkpoint_permission.created")]
+        public global::tryAGI.OpenAI.AuditLogCheckpointPermissionCreated? CheckpointPermissionCreated { get; set; }
+
+        /// <summary>
+        /// The details for events with this `type`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("checkpoint_permission.deleted")]
+        public global::tryAGI.OpenAI.AuditLogCheckpointPermissionDeleted? CheckpointPermissionDeleted { get; set; }
+
+        /// <summary>
         /// The details for events with this `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("invite.sent")]
@@ -165,6 +177,36 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.AuditLogUserDeleted? UserDeleted { get; set; }
 
         /// <summary>
+        /// The details for events with this `type`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("certificate.created")]
+        public global::tryAGI.OpenAI.AuditLogCertificateCreated? CertificateCreated { get; set; }
+
+        /// <summary>
+        /// The details for events with this `type`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("certificate.updated")]
+        public global::tryAGI.OpenAI.AuditLogCertificateUpdated? CertificateUpdated { get; set; }
+
+        /// <summary>
+        /// The details for events with this `type`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("certificate.deleted")]
+        public global::tryAGI.OpenAI.AuditLogCertificateDeleted? CertificateDeleted { get; set; }
+
+        /// <summary>
+        /// The details for events with this `type`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("certificates.activated")]
+        public global::tryAGI.OpenAI.AuditLogCertificatesActivated? CertificatesActivated { get; set; }
+
+        /// <summary>
+        /// The details for events with this `type`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("certificates.deactivated")]
+        public global::tryAGI.OpenAI.AuditLogCertificatesDeactivated? CertificatesDeactivated { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -195,6 +237,12 @@ namespace tryAGI.OpenAI
         /// The details for events with this `type`.
         /// </param>
         /// <param name="apiKeyDeleted">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="checkpointPermissionCreated">
+        /// The project and fine-tuned model checkpoint that the checkpoint permission was created for.
+        /// </param>
+        /// <param name="checkpointPermissionDeleted">
         /// The details for events with this `type`.
         /// </param>
         /// <param name="inviteSent">
@@ -248,6 +296,21 @@ namespace tryAGI.OpenAI
         /// <param name="userDeleted">
         /// The details for events with this `type`.
         /// </param>
+        /// <param name="certificateCreated">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="certificateUpdated">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="certificateDeleted">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="certificatesActivated">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="certificatesDeactivated">
+        /// The details for events with this `type`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -260,6 +323,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AuditLogApiKeyCreated? apiKeyCreated,
             global::tryAGI.OpenAI.AuditLogApiKeyUpdated? apiKeyUpdated,
             global::tryAGI.OpenAI.AuditLogApiKeyDeleted? apiKeyDeleted,
+            global::tryAGI.OpenAI.AuditLogCheckpointPermissionCreated? checkpointPermissionCreated,
+            global::tryAGI.OpenAI.AuditLogCheckpointPermissionDeleted? checkpointPermissionDeleted,
             global::tryAGI.OpenAI.AuditLogInviteSent? inviteSent,
             global::tryAGI.OpenAI.AuditLogInviteAccepted? inviteAccepted,
             global::tryAGI.OpenAI.AuditLogInviteDeleted? inviteDeleted,
@@ -276,7 +341,12 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AuditLogServiceAccountDeleted? serviceAccountDeleted,
             global::tryAGI.OpenAI.AuditLogUserAdded? userAdded,
             global::tryAGI.OpenAI.AuditLogUserUpdated? userUpdated,
-            global::tryAGI.OpenAI.AuditLogUserDeleted? userDeleted)
+            global::tryAGI.OpenAI.AuditLogUserDeleted? userDeleted,
+            global::tryAGI.OpenAI.AuditLogCertificateCreated? certificateCreated,
+            global::tryAGI.OpenAI.AuditLogCertificateUpdated? certificateUpdated,
+            global::tryAGI.OpenAI.AuditLogCertificateDeleted? certificateDeleted,
+            global::tryAGI.OpenAI.AuditLogCertificatesActivated? certificatesActivated,
+            global::tryAGI.OpenAI.AuditLogCertificatesDeactivated? certificatesDeactivated)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;
@@ -286,6 +356,8 @@ namespace tryAGI.OpenAI
             this.ApiKeyCreated = apiKeyCreated;
             this.ApiKeyUpdated = apiKeyUpdated;
             this.ApiKeyDeleted = apiKeyDeleted;
+            this.CheckpointPermissionCreated = checkpointPermissionCreated;
+            this.CheckpointPermissionDeleted = checkpointPermissionDeleted;
             this.InviteSent = inviteSent;
             this.InviteAccepted = inviteAccepted;
             this.InviteDeleted = inviteDeleted;
@@ -303,6 +375,11 @@ namespace tryAGI.OpenAI
             this.UserAdded = userAdded;
             this.UserUpdated = userUpdated;
             this.UserDeleted = userDeleted;
+            this.CertificateCreated = certificateCreated;
+            this.CertificateUpdated = certificateUpdated;
+            this.CertificateDeleted = certificateDeleted;
+            this.CertificatesActivated = certificatesActivated;
+            this.CertificatesDeactivated = certificatesDeactivated;
         }
 
         /// <summary>

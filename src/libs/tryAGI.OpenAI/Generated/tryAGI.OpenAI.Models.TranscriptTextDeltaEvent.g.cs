@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI
         /// The log probabilities of the delta. Only included if you [create a transcription](/docs/api-reference/audio/create-transcription) with the `include[]` parameter set to `logprobs`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProbProperties>? Logprobs { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptTextDeltaEventLogprob>? Logprobs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,7 +52,7 @@ namespace tryAGI.OpenAI
         public TranscriptTextDeltaEvent(
             string delta,
             global::tryAGI.OpenAI.TranscriptTextDeltaEventType type,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProbProperties>? logprobs)
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptTextDeltaEventLogprob>? logprobs)
         {
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.Type = type;

@@ -11,6 +11,30 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Gpt41,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt41Mini,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt41Nano,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt4120250414,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt41Mini20250414,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt41Nano20250414,
+        /// <summary>
+        /// 
+        /// </summary>
         O3Mini,
         /// <summary>
         /// 
@@ -142,6 +166,12 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                AssistantSupportedModels.Gpt41 => "gpt-4.1",
+                AssistantSupportedModels.Gpt41Mini => "gpt-4.1-mini",
+                AssistantSupportedModels.Gpt41Nano => "gpt-4.1-nano",
+                AssistantSupportedModels.Gpt4120250414 => "gpt-4.1-2025-04-14",
+                AssistantSupportedModels.Gpt41Mini20250414 => "gpt-4.1-mini-2025-04-14",
+                AssistantSupportedModels.Gpt41Nano20250414 => "gpt-4.1-nano-2025-04-14",
                 AssistantSupportedModels.O3Mini => "o3-mini",
                 AssistantSupportedModels.O3Mini20250131 => "o3-mini-2025-01-31",
                 AssistantSupportedModels.O1 => "o1",
@@ -182,6 +212,12 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "gpt-4.1" => AssistantSupportedModels.Gpt41,
+                "gpt-4.1-mini" => AssistantSupportedModels.Gpt41Mini,
+                "gpt-4.1-nano" => AssistantSupportedModels.Gpt41Nano,
+                "gpt-4.1-2025-04-14" => AssistantSupportedModels.Gpt4120250414,
+                "gpt-4.1-mini-2025-04-14" => AssistantSupportedModels.Gpt41Mini20250414,
+                "gpt-4.1-nano-2025-04-14" => AssistantSupportedModels.Gpt41Nano20250414,
                 "o3-mini" => AssistantSupportedModels.O3Mini,
                 "o3-mini-2025-01-31" => AssistantSupportedModels.O3Mini20250131,
                 "o1" => AssistantSupportedModels.O1,

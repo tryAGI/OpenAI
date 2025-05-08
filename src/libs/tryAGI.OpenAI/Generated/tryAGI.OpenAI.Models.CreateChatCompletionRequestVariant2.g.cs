@@ -108,20 +108,6 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ResponseFormatText, global::tryAGI.OpenAI.ResponseFormatJsonSchema, global::tryAGI.OpenAI.ResponseFormatJsonObject>? ResponseFormat { get; set; }
 
         /// <summary>
-        /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
-        ///   - If set to 'auto', and the Project is Scale tier enabled, the system<br/>
-        ///     will utilize scale tier credits until they are exhausted.<br/>
-        ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
-        ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
-        ///   - When not set, the default behavior is 'auto'.<br/>
-        ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
-        /// Default Value: auto
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateChatCompletionRequestVariant2ServiceTierJsonConverter))]
-        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2ServiceTier? ServiceTier { get; set; }
-
-        /// <summary>
         /// Parameters for audio output. Required when audio output is requested with<br/>
         /// `modalities: ["audio"]`. [Learn more](/docs/guides/audio).
         /// </summary>
@@ -149,6 +135,7 @@ namespace tryAGI.OpenAI
         public bool? Stream { get; set; }
 
         /// <summary>
+        /// Not supported with latest reasoning models `o3` and `o4-mini`.<br/>
         /// Up to 4 sequences where the API will stop generating further tokens. The<br/>
         /// returned text will not contain the stop sequence.
         /// </summary>
@@ -182,7 +169,7 @@ namespace tryAGI.OpenAI
         /// chat completion. This value can be used to control<br/>
         /// [costs](https://openai.com/api/pricing/) for text generated via API.<br/>
         /// This value is now deprecated in favor of `max_completion_tokens`, and is<br/>
-        /// not compatible with [o1 series models](/docs/guides/reasoning).
+        /// not compatible with [o-series models](/docs/guides/reasoning).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_tokens")]
         [global::System.Obsolete("This property marked as deprecated.")]
@@ -212,7 +199,7 @@ namespace tryAGI.OpenAI
         /// Determinism is not guaranteed, and you should refer to the `system_fingerprint` response parameter to monitor changes in the backend.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
-        public long? Seed { get; set; }
+        public int? Seed { get; set; }
 
         /// <summary>
         /// Options for streaming response. Only set this when you set `stream: true`.
@@ -338,16 +325,6 @@ namespace tryAGI.OpenAI
         /// ensures the message the model generates is valid JSON. Using `json_schema`<br/>
         /// is preferred for models that support it.
         /// </param>
-        /// <param name="serviceTier">
-        /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
-        ///   - If set to 'auto', and the Project is Scale tier enabled, the system<br/>
-        ///     will utilize scale tier credits until they are exhausted.<br/>
-        ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
-        ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
-        ///   - When not set, the default behavior is 'auto'.<br/>
-        ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
-        /// Default Value: auto
-        /// </param>
         /// <param name="audio">
         /// Parameters for audio output. Required when audio output is requested with<br/>
         /// `modalities: ["audio"]`. [Learn more](/docs/guides/audio).
@@ -367,6 +344,7 @@ namespace tryAGI.OpenAI
         /// Default Value: false
         /// </param>
         /// <param name="stop">
+        /// Not supported with latest reasoning models `o3` and `o4-mini`.<br/>
         /// Up to 4 sequences where the API will stop generating further tokens. The<br/>
         /// returned text will not contain the stop sequence.
         /// </param>
@@ -432,7 +410,6 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2WebSearchOptions? webSearchOptions,
             int? topLogprobs,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ResponseFormatText, global::tryAGI.OpenAI.ResponseFormatJsonSchema, global::tryAGI.OpenAI.ResponseFormatJsonObject>? responseFormat,
-            global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2ServiceTier? serviceTier,
             global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2Audio? audio,
             bool? store,
             bool? stream,
@@ -441,7 +418,7 @@ namespace tryAGI.OpenAI
             bool? logprobs,
             int? n,
             global::tryAGI.OpenAI.PredictionContent? prediction,
-            long? seed,
+            int? seed,
             global::tryAGI.OpenAI.ChatCompletionStreamOptions? streamOptions,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionTool>? tools,
             global::tryAGI.OpenAI.ChatCompletionToolChoiceOption? toolChoice,
@@ -457,7 +434,6 @@ namespace tryAGI.OpenAI
             this.WebSearchOptions = webSearchOptions;
             this.TopLogprobs = topLogprobs;
             this.ResponseFormat = responseFormat;
-            this.ServiceTier = serviceTier;
             this.Audio = audio;
             this.Store = store;
             this.Stream = stream;

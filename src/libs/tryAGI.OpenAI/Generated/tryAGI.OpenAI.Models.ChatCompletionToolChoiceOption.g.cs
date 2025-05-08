@@ -34,7 +34,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionToolChoiceOption(global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum value) => new ChatCompletionToolChoiceOption(value);
+        public static implicit operator ChatCompletionToolChoiceOption(global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum value) => new ChatCompletionToolChoiceOption((global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChatCompletionToolChoiceOption(global::tryAGI.OpenAI.ChatCompletionNamedToolChoice value) => new ChatCompletionToolChoiceOption(value);
+        public static implicit operator ChatCompletionToolChoiceOption(global::tryAGI.OpenAI.ChatCompletionNamedToolChoice value) => new ChatCompletionToolChoiceOption((global::tryAGI.OpenAI.ChatCompletionNamedToolChoice?)value);
 
         /// <summary>
         /// 

@@ -24,13 +24,23 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ReasoningEffort? Effort { get; set; }
 
         /// <summary>
-        /// **computer_use_preview only**<br/>
         /// A summary of the reasoning performed by the model. This can be<br/>
         /// useful for debugging and understanding the model's reasoning process.<br/>
-        /// One of `concise` or `detailed`.
+        /// One of `auto`, `concise`, or `detailed`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ReasoningSummaryJsonConverter))]
+        public global::tryAGI.OpenAI.ReasoningSummary? Summary { get; set; }
+
+        /// <summary>
+        /// **Deprecated:** use `summary` instead.<br/>
+        /// A summary of the reasoning performed by the model. This can be<br/>
+        /// useful for debugging and understanding the model's reasoning process.<br/>
+        /// One of `auto`, `concise`, or `detailed`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("generate_summary")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ReasoningGenerateSummaryJsonConverter))]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::tryAGI.OpenAI.ReasoningGenerateSummary? GenerateSummary { get; set; }
 
         /// <summary>
@@ -51,21 +61,20 @@ namespace tryAGI.OpenAI
         /// on reasoning in a response.<br/>
         /// Default Value: medium
         /// </param>
-        /// <param name="generateSummary">
-        /// **computer_use_preview only**<br/>
+        /// <param name="summary">
         /// A summary of the reasoning performed by the model. This can be<br/>
         /// useful for debugging and understanding the model's reasoning process.<br/>
-        /// One of `concise` or `detailed`.
+        /// One of `auto`, `concise`, or `detailed`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Reasoning(
             global::tryAGI.OpenAI.ReasoningEffort? effort,
-            global::tryAGI.OpenAI.ReasoningGenerateSummary? generateSummary)
+            global::tryAGI.OpenAI.ReasoningSummary? summary)
         {
             this.Effort = effort;
-            this.GenerateSummary = generateSummary;
+            this.Summary = summary;
         }
 
         /// <summary>

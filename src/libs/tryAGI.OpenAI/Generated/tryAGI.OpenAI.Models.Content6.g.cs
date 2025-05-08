@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Content6(global::tryAGI.OpenAI.InputContent value) => new Content6(value);
+        public static implicit operator Content6(global::tryAGI.OpenAI.InputContent value) => new Content6((global::tryAGI.OpenAI.InputContent?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Content6(global::tryAGI.OpenAI.OutputContent value) => new Content6(value);
+        public static implicit operator Content6(global::tryAGI.OpenAI.OutputContent value) => new Content6((global::tryAGI.OpenAI.OutputContent?)value);
 
         /// <summary>
         /// 

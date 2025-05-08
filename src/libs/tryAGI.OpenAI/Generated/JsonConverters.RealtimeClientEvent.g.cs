@@ -89,6 +89,18 @@ namespace tryAGI.OpenAI.JsonConverters
             }
 
             readerCopy = reader;
+            global::tryAGI.OpenAI.RealtimeClientEventOutputAudioBufferClear? outputAudioBufferClear = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeClientEventOutputAudioBufferClear), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeClientEventOutputAudioBufferClear> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeClientEventOutputAudioBufferClear).Name}");
+                outputAudioBufferClear = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+
+            readerCopy = reader;
             global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferCommit? inputAudioBufferCommit = default;
             try
             {
@@ -155,6 +167,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 conversationItemTruncate,
                 inputAudioBufferAppend,
                 inputAudioBufferClear,
+                outputAudioBufferClear,
                 inputAudioBufferCommit,
                 responseCancel,
                 responseCreate,
@@ -196,6 +209,12 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferClear), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferClear> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferClear).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            else if (outputAudioBufferClear != null)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeClientEventOutputAudioBufferClear), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeClientEventOutputAudioBufferClear> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeClientEventOutputAudioBufferClear).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             else if (inputAudioBufferCommit != null)
@@ -276,6 +295,12 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferClear), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferClear?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferClear).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudioBufferClear, typeInfo);
+            }
+            else if (value.IsOutputAudioBufferClear)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeClientEventOutputAudioBufferClear), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeClientEventOutputAudioBufferClear?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeClientEventOutputAudioBufferClear).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputAudioBufferClear, typeInfo);
             }
             else if (value.IsInputAudioBufferCommit)
             {
