@@ -28,6 +28,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     var numValue = reader.GetInt32();
                     return (global::tryAGI.OpenAI.OutputMessageStatus)numValue;
                 }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::tryAGI.OpenAI.OutputMessageStatus?);
+                }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
             }
