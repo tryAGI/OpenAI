@@ -84,7 +84,7 @@ namespace tryAGI.OpenAI
                 limit: ref limit,
                 page: ref page);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: "/organization/usage/moderations",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

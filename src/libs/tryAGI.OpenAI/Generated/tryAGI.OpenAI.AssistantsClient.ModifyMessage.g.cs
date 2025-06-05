@@ -52,7 +52,7 @@ namespace tryAGI.OpenAI
                 messageId: ref messageId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/threads/{threadId}/messages/{messageId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

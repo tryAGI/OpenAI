@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
                 threadId: ref threadId,
                 messageId: ref messageId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/threads/{threadId}/messages/{messageId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
                 httpClient: HttpClient,
                 fineTuningJobId: ref fineTuningJobId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/fine_tuning/jobs/{fineTuningJobId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

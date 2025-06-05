@@ -44,7 +44,7 @@ namespace tryAGI.OpenAI
                 limit: ref limit,
                 after: ref after);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: "/organization/invites",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -68,7 +68,7 @@ namespace tryAGI.OpenAI
                 limit: ref limit,
                 order: ref order);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: "/chat/completions",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

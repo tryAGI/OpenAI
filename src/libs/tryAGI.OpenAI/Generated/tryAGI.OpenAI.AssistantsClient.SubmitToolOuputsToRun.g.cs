@@ -52,7 +52,7 @@ namespace tryAGI.OpenAI
                 runId: ref runId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/threads/{threadId}/runs/{runId}/submit_tool_outputs",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

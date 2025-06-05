@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
                 order: ref order,
                 after: ref after);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: "/files",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

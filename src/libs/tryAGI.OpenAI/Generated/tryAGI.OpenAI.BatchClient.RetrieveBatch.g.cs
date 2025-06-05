@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
                 httpClient: HttpClient,
                 batchId: ref batchId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/batches/{batchId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

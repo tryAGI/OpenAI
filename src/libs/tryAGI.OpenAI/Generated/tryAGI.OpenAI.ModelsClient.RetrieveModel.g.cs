@@ -39,7 +39,7 @@ namespace tryAGI.OpenAI
                 httpClient: HttpClient,
                 model: ref model);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/models/{model}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

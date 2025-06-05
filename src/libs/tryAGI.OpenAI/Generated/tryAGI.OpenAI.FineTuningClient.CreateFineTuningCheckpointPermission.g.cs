@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
                 fineTunedModelCheckpoint: ref fineTunedModelCheckpoint,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/fine_tuning/checkpoints/{fineTunedModelCheckpoint}/permissions",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
