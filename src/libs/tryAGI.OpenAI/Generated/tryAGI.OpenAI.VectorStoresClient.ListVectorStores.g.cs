@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
                 after: ref after,
                 before: ref before);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: "/vector_stores",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

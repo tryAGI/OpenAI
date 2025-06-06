@@ -54,7 +54,7 @@ namespace tryAGI.OpenAI
                 after: ref after,
                 before: ref before);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/organization/projects/{projectId}/rate_limits",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

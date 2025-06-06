@@ -46,7 +46,7 @@ namespace tryAGI.OpenAI
                 vectorStoreId: ref vectorStoreId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/vector_stores/{vectorStoreId}/search",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

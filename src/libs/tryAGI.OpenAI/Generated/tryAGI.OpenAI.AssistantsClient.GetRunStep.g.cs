@@ -55,7 +55,7 @@ namespace tryAGI.OpenAI
                 stepId: ref stepId,
                 include: include);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/threads/{threadId}/runs/{runId}/steps/{stepId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -49,7 +49,7 @@ namespace tryAGI.OpenAI
                 limit: ref limit,
                 metadata: metadata);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: "/fine_tuning/jobs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

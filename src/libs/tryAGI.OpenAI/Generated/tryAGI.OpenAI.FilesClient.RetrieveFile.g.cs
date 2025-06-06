@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
                 httpClient: HttpClient,
                 fileId: ref fileId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/files/{fileId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

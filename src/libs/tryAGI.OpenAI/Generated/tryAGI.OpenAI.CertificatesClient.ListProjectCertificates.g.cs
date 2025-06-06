@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
                 order: ref order,
                 projectId: ref projectId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/organization/projects/{projectId}/certificates",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

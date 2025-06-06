@@ -43,7 +43,7 @@ namespace tryAGI.OpenAI
                 httpClient: HttpClient,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: "/responses",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

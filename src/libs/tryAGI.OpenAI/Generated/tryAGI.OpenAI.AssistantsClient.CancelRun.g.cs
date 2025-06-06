@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
                 threadId: ref threadId,
                 runId: ref runId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/threads/{threadId}/runs/{runId}/cancel",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

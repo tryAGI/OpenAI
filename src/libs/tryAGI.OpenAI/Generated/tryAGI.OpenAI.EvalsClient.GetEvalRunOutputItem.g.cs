@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
                 runId: ref runId,
                 outputItemId: ref outputItemId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/evals/{evalId}/runs/{runId}/output_items/{outputItemId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
