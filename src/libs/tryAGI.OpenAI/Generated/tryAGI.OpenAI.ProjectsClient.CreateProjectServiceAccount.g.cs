@@ -44,7 +44,7 @@ namespace tryAGI.OpenAI
                 projectId: ref projectId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/organization/projects/{projectId}/service_accounts",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

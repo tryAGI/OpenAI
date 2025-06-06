@@ -44,7 +44,7 @@ namespace tryAGI.OpenAI
                 after: ref after,
                 limit: ref limit);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: "/batches",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

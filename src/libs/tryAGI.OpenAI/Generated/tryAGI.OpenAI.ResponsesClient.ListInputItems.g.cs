@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
                 before: ref before,
                 include: include);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/responses/{responseId}/input_items",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

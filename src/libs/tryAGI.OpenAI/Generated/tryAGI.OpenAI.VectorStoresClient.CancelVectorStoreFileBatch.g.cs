@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
                 vectorStoreId: ref vectorStoreId,
                 batchId: ref batchId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/vector_stores/{vectorStoreId}/file_batches/{batchId}/cancel",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

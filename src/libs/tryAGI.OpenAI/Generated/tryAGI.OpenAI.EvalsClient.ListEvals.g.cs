@@ -58,7 +58,7 @@ namespace tryAGI.OpenAI
                 order: ref order,
                 orderBy: ref orderBy);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: "/evals",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

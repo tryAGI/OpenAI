@@ -74,7 +74,7 @@ namespace tryAGI.OpenAI
                 before: ref before,
                 include: include);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/threads/{threadId}/runs/{runId}/steps",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -38,7 +38,7 @@ namespace tryAGI.OpenAI
                 httpClient: HttpClient,
                 completionId: ref completionId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/chat/completions/{completionId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

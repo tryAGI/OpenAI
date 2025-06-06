@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
                 order: ref order,
                 limit: ref limit);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: "/organization/admin_api_keys",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
