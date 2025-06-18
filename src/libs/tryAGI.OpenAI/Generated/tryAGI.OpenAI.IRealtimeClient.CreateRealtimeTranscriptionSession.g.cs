@@ -33,7 +33,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="inputAudioFormat">
         /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.<br/>
-        /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate, <br/>
+        /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate,<br/>
         /// single channel (mono), and little-endian byte order.<br/>
         /// Default Value: pcm16
         /// </param>
@@ -54,6 +54,9 @@ namespace tryAGI.OpenAI
         /// The set of items to include in the transcription. Current available items are:<br/>
         /// - `item.input_audio_transcription.logprobs`
         /// </param>
+        /// <param name="clientSecret">
+        /// Configuration options for the generated client secret.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponse> CreateRealtimeTranscriptionSessionAsync(
@@ -63,6 +66,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestTurnDetection? turnDetection = default,
             global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction? inputAudioNoiseReduction = default,
             global::System.Collections.Generic.IList<string>? include = default,
+            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestClientSecret? clientSecret = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

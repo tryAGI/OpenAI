@@ -60,6 +60,9 @@ namespace tryAGI.OpenAI
         /// Note: Streaming is not supported for the `whisper-1` model and will be ignored.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="chunkingStrategy">
+        /// Controls how the audio is cut into chunks. When set to `"auto"`, the server first normalizes loudness and then uses voice activity detection (VAD) to choose boundaries. `server_vad` object can be provided to tweak VAD detection parameters manually. If unset, the audio is transcribed as a single block. 
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>> CreateTranscriptionAsync(
@@ -73,6 +76,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionInclude>? include = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateTranscriptionRequestTimestampGranularitie>? timestampGranularities = default,
             bool? stream = default,
+            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.CreateTranscriptionRequestChunkingStrategy?, global::tryAGI.OpenAI.VadConfig>? chunkingStrategy = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

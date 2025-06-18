@@ -7,17 +7,17 @@ namespace tryAGI.OpenAI
     {
         partial void PrepareListProjectCertificatesArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string projectId,
             ref int? limit,
             ref string? after,
-            ref global::tryAGI.OpenAI.ListProjectCertificatesOrder? order,
-            ref string projectId);
+            ref global::tryAGI.OpenAI.ListProjectCertificatesOrder? order);
         partial void PrepareListProjectCertificatesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string projectId,
             int? limit,
             string? after,
-            global::tryAGI.OpenAI.ListProjectCertificatesOrder? order,
-            string projectId);
+            global::tryAGI.OpenAI.ListProjectCertificatesOrder? order);
         partial void ProcessListProjectCertificatesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -30,6 +30,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// List certificates for this project.
         /// </summary>
+        /// <param name="projectId"></param>
         /// <param name="limit">
         /// Default Value: 20
         /// </param>
@@ -37,7 +38,6 @@ namespace tryAGI.OpenAI
         /// <param name="order">
         /// Default Value: desc
         /// </param>
-        /// <param name="projectId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ListCertificatesResponse> ListProjectCertificatesAsync(
@@ -51,10 +51,10 @@ namespace tryAGI.OpenAI
                 client: HttpClient);
             PrepareListProjectCertificatesArguments(
                 httpClient: HttpClient,
+                projectId: ref projectId,
                 limit: ref limit,
                 after: ref after,
-                order: ref order,
-                projectId: ref projectId);
+                order: ref order);
 
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/organization/projects/{projectId}/certificates",
@@ -95,10 +95,10 @@ namespace tryAGI.OpenAI
             PrepareListProjectCertificatesRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
+                projectId: projectId,
                 limit: limit,
                 after: after,
-                order: order,
-                projectId: projectId);
+                order: order);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -132,8 +132,12 @@ namespace tryAGI.OpenAI
                 try
                 {
                     __response.EnsureSuccessStatusCode();
+
+                    return
+                        global::tryAGI.OpenAI.ListCertificatesResponse.FromJson(__content, JsonSerializerContext) ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
-                catch (global::System.Net.Http.HttpRequestException __ex)
+                catch (global::System.Exception __ex)
                 {
                     throw new global::tryAGI.OpenAI.ApiException(
                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
@@ -147,18 +151,24 @@ namespace tryAGI.OpenAI
                             h => h.Value),
                     };
                 }
-
-                return
-                    global::tryAGI.OpenAI.ListCertificatesResponse.FromJson(__content, JsonSerializerContext) ??
-                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
             {
                 try
                 {
                     __response.EnsureSuccessStatusCode();
+
+                    using var __content = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+
+                    return
+                        await global::tryAGI.OpenAI.ListCertificatesResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
-                catch (global::System.Net.Http.HttpRequestException __ex)
+                catch (global::System.Exception __ex)
                 {
                     throw new global::tryAGI.OpenAI.ApiException(
                         message: __response.ReasonPhrase ?? string.Empty,
@@ -171,16 +181,6 @@ namespace tryAGI.OpenAI
                             h => h.Value),
                     };
                 }
-
-                using var __content = await __response.Content.ReadAsStreamAsync(
-#if NET5_0_OR_GREATER
-                    cancellationToken
-#endif
-                ).ConfigureAwait(false);
-
-                return
-                    await global::tryAGI.OpenAI.ListCertificatesResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
-                    throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
     }

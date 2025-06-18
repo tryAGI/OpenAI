@@ -7,15 +7,13 @@ namespace tryAGI.OpenAI
     {
         partial void PrepareGetCertificateArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string certId,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.GetCertificateIncludeItem>? include,
-            ref string certificateId);
+            ref string certificateId,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.GetCertificateIncludeItem>? include);
         partial void PrepareGetCertificateRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string certId,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.GetCertificateIncludeItem>? include,
-            string certificateId);
+            string certificateId,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.GetCertificateIncludeItem>? include);
         partial void ProcessGetCertificateResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -29,13 +27,11 @@ namespace tryAGI.OpenAI
         /// Get a certificate that has been uploaded to the organization.<br/>
         /// You can get a certificate regardless of whether it is active or not.
         /// </summary>
-        /// <param name="certId"></param>
-        /// <param name="include"></param>
         /// <param name="certificateId"></param>
+        /// <param name="include"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Certificate> GetCertificateAsync(
-            string certId,
             string certificateId,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.GetCertificateIncludeItem>? include = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -44,9 +40,8 @@ namespace tryAGI.OpenAI
                 client: HttpClient);
             PrepareGetCertificateArguments(
                 httpClient: HttpClient,
-                certId: ref certId,
-                include: include,
-                certificateId: ref certificateId);
+                certificateId: ref certificateId,
+                include: include);
 
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/organization/certificates/{certificateId}",
@@ -85,9 +80,8 @@ namespace tryAGI.OpenAI
             PrepareGetCertificateRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                certId: certId,
-                include: include,
-                certificateId: certificateId);
+                certificateId: certificateId,
+                include: include);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -121,8 +115,12 @@ namespace tryAGI.OpenAI
                 try
                 {
                     __response.EnsureSuccessStatusCode();
+
+                    return
+                        global::tryAGI.OpenAI.Certificate.FromJson(__content, JsonSerializerContext) ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
-                catch (global::System.Net.Http.HttpRequestException __ex)
+                catch (global::System.Exception __ex)
                 {
                     throw new global::tryAGI.OpenAI.ApiException(
                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
@@ -136,18 +134,24 @@ namespace tryAGI.OpenAI
                             h => h.Value),
                     };
                 }
-
-                return
-                    global::tryAGI.OpenAI.Certificate.FromJson(__content, JsonSerializerContext) ??
-                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
             {
                 try
                 {
                     __response.EnsureSuccessStatusCode();
+
+                    using var __content = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+
+                    return
+                        await global::tryAGI.OpenAI.Certificate.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
-                catch (global::System.Net.Http.HttpRequestException __ex)
+                catch (global::System.Exception __ex)
                 {
                     throw new global::tryAGI.OpenAI.ApiException(
                         message: __response.ReasonPhrase ?? string.Empty,
@@ -160,16 +164,6 @@ namespace tryAGI.OpenAI
                             h => h.Value),
                     };
                 }
-
-                using var __content = await __response.Content.ReadAsStreamAsync(
-#if NET5_0_OR_GREATER
-                    cancellationToken
-#endif
-                ).ConfigureAwait(false);
-
-                return
-                    await global::tryAGI.OpenAI.Certificate.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
-                    throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
     }

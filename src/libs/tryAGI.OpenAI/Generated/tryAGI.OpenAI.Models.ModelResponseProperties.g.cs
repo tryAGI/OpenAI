@@ -42,7 +42,8 @@ namespace tryAGI.OpenAI
         public double? TopP { get; set; }
 
         /// <summary>
-        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
+        /// A stable identifier for your end-users. <br/>
+        /// Used to boost cache hit rates by better bucketing similar requests and  to help OpenAI detect and prevent abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
         /// Example: user-1234
         /// </summary>
         /// <example>user-1234</example>
@@ -53,8 +54,8 @@ namespace tryAGI.OpenAI
         /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
         ///   - If set to 'auto', and the Project is Scale tier enabled, the system<br/>
         ///     will utilize scale tier credits until they are exhausted.<br/>
-        ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
-        ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
+        ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarantee.<br/>
+        ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarantee.<br/>
         ///   - If set to 'flex', the request will be processed with the Flex Processing service tier. [Learn more](/docs/guides/flex-processing).<br/>
         ///   - When not set, the default behavior is 'auto'.<br/>
         ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
@@ -96,15 +97,16 @@ namespace tryAGI.OpenAI
         /// Example: 1
         /// </param>
         /// <param name="user">
-        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
+        /// A stable identifier for your end-users. <br/>
+        /// Used to boost cache hit rates by better bucketing similar requests and  to help OpenAI detect and prevent abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
         /// Example: user-1234
         /// </param>
         /// <param name="serviceTier">
         /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
         ///   - If set to 'auto', and the Project is Scale tier enabled, the system<br/>
         ///     will utilize scale tier credits until they are exhausted.<br/>
-        ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
-        ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
+        ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarantee.<br/>
+        ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarantee.<br/>
         ///   - If set to 'flex', the request will be processed with the Flex Processing service tier. [Learn more](/docs/guides/flex-processing).<br/>
         ///   - When not set, the default behavior is 'auto'.<br/>
         ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>

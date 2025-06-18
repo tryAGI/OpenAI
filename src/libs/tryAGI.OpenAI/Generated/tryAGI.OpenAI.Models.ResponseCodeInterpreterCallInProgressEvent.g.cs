@@ -30,6 +30,13 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.CodeInterpreterToolCall CodeInterpreterCall { get; set; }
 
         /// <summary>
+        /// The sequence number of this event.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int SequenceNumber { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -47,16 +54,21 @@ namespace tryAGI.OpenAI
         /// <param name="codeInterpreterCall">
         /// A tool call to run code.
         /// </param>
+        /// <param name="sequenceNumber">
+        /// The sequence number of this event.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseCodeInterpreterCallInProgressEvent(
             int outputIndex,
             global::tryAGI.OpenAI.CodeInterpreterToolCall codeInterpreterCall,
+            int sequenceNumber,
             global::tryAGI.OpenAI.ResponseCodeInterpreterCallInProgressEventType type)
         {
             this.OutputIndex = outputIndex;
             this.CodeInterpreterCall = codeInterpreterCall ?? throw new global::System.ArgumentNullException(nameof(codeInterpreterCall));
+            this.SequenceNumber = sequenceNumber;
             this.Type = type;
         }
 

@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSourceType Type { get; set; } = global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSourceType.Completions;
 
         /// <summary>
-        /// 
+        /// Used when sampling from a model. Dictates the structure of the messages passed into the model. Can either be a reference to a prebuilt trajectory (ie, `item.input_trajectory`), or a template with variable references to the `item` namespace.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_messages")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSourceInputMessagesVariant1, global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSourceInputMessagesVariant2>))]
@@ -39,7 +39,7 @@ namespace tryAGI.OpenAI
         public string? Model { get; set; }
 
         /// <summary>
-        /// 
+        /// Determines what populates the `item` namespace in this run's data source.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.EvalJsonlFileContentSource, global::tryAGI.OpenAI.EvalJsonlFileIdSource, global::tryAGI.OpenAI.EvalStoredCompletionsSource>))]
@@ -59,12 +59,16 @@ namespace tryAGI.OpenAI
         /// The type of run data source. Always `completions`.<br/>
         /// Default Value: completions
         /// </param>
-        /// <param name="inputMessages"></param>
+        /// <param name="inputMessages">
+        /// Used when sampling from a model. Dictates the structure of the messages passed into the model. Can either be a reference to a prebuilt trajectory (ie, `item.input_trajectory`), or a template with variable references to the `item` namespace.
+        /// </param>
         /// <param name="samplingParams"></param>
         /// <param name="model">
         /// The name of the model to use for generating completions (e.g. "o3-mini").
         /// </param>
-        /// <param name="source"></param>
+        /// <param name="source">
+        /// Determines what populates the `item` namespace in this run's data source.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

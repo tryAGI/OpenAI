@@ -12,7 +12,7 @@ namespace tryAGI.OpenAI
         /// The hyperparameters used for the fine-tuning job.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hyperparameters")]
-        public global::tryAGI.OpenAI.FineTuneSupervisedMethodHyperparameters? Hyperparameters { get; set; }
+        public global::tryAGI.OpenAI.FineTuneSupervisedHyperparameters? Hyperparameters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FineTuneSupervisedMethod(
-            global::tryAGI.OpenAI.FineTuneSupervisedMethodHyperparameters? hyperparameters)
+            global::tryAGI.OpenAI.FineTuneSupervisedHyperparameters? hyperparameters)
         {
             this.Hyperparameters = hyperparameters;
         }

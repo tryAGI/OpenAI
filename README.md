@@ -25,12 +25,12 @@ Examples and documentation can be found here: https://tryagi.github.io/OpenAI/
 using var api = new OpenAiApi("API_KEY");
 string response = await api.Chat.CreateChatCompletionAsync(
     messages: ["Generate five random words."],
-    model: CreateChatCompletionRequestModel.Gpt4oMini);
+    model: ModelIdsSharedEnum.Gpt4oMini);
 Console.WriteLine(response); // "apple, banana, cherry, date, elderberry"
 
 var enumerable = api.Chat.CreateChatCompletionAsStreamAsync(
     messages: ["Generate five random words."],
-    model: CreateChatCompletionRequestModel.Gpt4oMini);
+    model: ModelIdsSharedEnum.Gpt4oMini);
 
 await foreach (string response in enumerable)
 {
@@ -97,7 +97,7 @@ var messages = new List<ChatCompletionRequestMessage>
     "You are a helpful weather assistant.".AsSystemMessage(),
     "What is the current temperature in Dubai, UAE in Celsius?".AsUserMessage(),
 };
-var model = CreateChatCompletionRequestModel.Gpt4oMini;
+var model = ModelIdsSharedEnum.Gpt4oMini;
 var result = await api.Chat.CreateChatCompletionAsync(
     messages,
     model: model,
@@ -142,7 +142,7 @@ using var api = new OpenAiApi("API_KEY");
 
 var response = await api.Chat.CreateChatCompletionAsAsync<Weather>(
     messages: ["Generate random weather."],
-    model: CreateChatCompletionRequestModel.Gpt4oMini,
+    model: ModelIdsSharedEnum.Gpt4oMini,
     jsonSerializerOptions: new JsonSerializerOptions
     {
         Converters = {new JsonStringEnumConverter()},
@@ -151,7 +151,7 @@ var response = await api.Chat.CreateChatCompletionAsAsync<Weather>(
 var response = await api.Chat.CreateChatCompletionAsAsync(
     jsonTypeInfo: SourceGeneratedContext.Default.Weather,
     messages: ["Generate random weather."],
-    model: CreateChatCompletionRequestModel.Gpt4oMini);
+    model: ModelIdsSharedEnum.Gpt4oMini);
 
 // response.Value1 contains the structured output
 // response.Value2 contains the CreateChatCompletionResponse object
@@ -202,10 +202,10 @@ There also non-try methods that throw an exception if the value is not found.
 using OpenAI;
 
 // You can try to get the enum from string using:
-var model = CreateChatCompletionRequestModelExtensions.ToEnum("gpt-4o") ?? throw new Exception("Invalid model");
+var model = ModelIdsSharedEnumExtensions.ToEnum("gpt-4o") ?? throw new Exception("Invalid model");
 
 // Chat
-var model = CreateChatCompletionRequestModel.Gpt4oMini;
+var model = ModelIdsSharedEnum.Gpt4oMini;
 double? priceInUsd = model.TryGetPriceInUsd(
     inputTokens: 500,
     outputTokens: 500)

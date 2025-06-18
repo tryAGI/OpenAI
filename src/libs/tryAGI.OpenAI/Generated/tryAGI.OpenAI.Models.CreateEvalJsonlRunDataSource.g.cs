@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CreateEvalJsonlRunDataSourceType Type { get; set; } = global::tryAGI.OpenAI.CreateEvalJsonlRunDataSourceType.Jsonl;
 
         /// <summary>
-        /// 
+        /// Determines what populates the `item` namespace in the data source.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.EvalJsonlFileContentSource, global::tryAGI.OpenAI.EvalJsonlFileIdSource>))]
@@ -40,7 +40,9 @@ namespace tryAGI.OpenAI
         /// The type of data source. Always `jsonl`.<br/>
         /// Default Value: jsonl
         /// </param>
-        /// <param name="source"></param>
+        /// <param name="source">
+        /// Determines what populates the `item` namespace in the data source.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

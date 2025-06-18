@@ -2,15 +2,15 @@ namespace tryAGI.OpenAI;
 
 public partial struct ChatCompletionRequestUserMessageContentPart
 {
-    /// <inheritdoc />
-    public override string ToString()
-    {
-        return IsText
-            ? Text?.Text ?? string.Empty
-            : IsImage
-                ? Image?.ImageUrl.Url ?? string.Empty
-                : string.Empty;
-    }
+    // /// <inheritdoc />
+    // public override string ToString()
+    // {
+    //     return IsText
+    //         ? Text?.Text ?? string.Empty
+    //         : IsImage
+    //             ? Image?.ImageUrl.Url ?? string.Empty
+    //             : string.Empty;
+    // }
     
     /// <summary>
     /// 
@@ -20,7 +20,7 @@ public partial struct ChatCompletionRequestUserMessageContentPart
     public static implicit operator string(ChatCompletionRequestUserMessageContentPart response)
     {
 #pragma warning disable CA1062
-        return response.ToString();
+        return response.ToString() ?? string.Empty;
 #pragma warning restore CA1062
     }
     

@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The type of the event. Always `response.code_interpreter_call.code.delta`.
+    /// The type of the event. Always `response.code_interpreter_call_code.delta`.
     /// </summary>
     public enum ResponseCodeInterpreterCallCodeDeltaEventType
     {
@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                ResponseCodeInterpreterCallCodeDeltaEventType.ResponseCodeInterpreterCallCodeDelta => "response.code_interpreter_call.code.delta",
+                ResponseCodeInterpreterCallCodeDeltaEventType.ResponseCodeInterpreterCallCodeDelta => "response.code_interpreter_call_code.delta",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "response.code_interpreter_call.code.delta" => ResponseCodeInterpreterCallCodeDeltaEventType.ResponseCodeInterpreterCallCodeDelta,
+                "response.code_interpreter_call_code.delta" => ResponseCodeInterpreterCallCodeDeltaEventType.ResponseCodeInterpreterCallCodeDelta,
                 _ => null,
             };
         }

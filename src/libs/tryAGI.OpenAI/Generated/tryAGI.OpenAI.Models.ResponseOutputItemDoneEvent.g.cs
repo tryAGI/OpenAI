@@ -23,6 +23,13 @@ namespace tryAGI.OpenAI
         public required int OutputIndex { get; set; }
 
         /// <summary>
+        /// The sequence number of this event.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int SequenceNumber { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item")]
@@ -45,16 +52,21 @@ namespace tryAGI.OpenAI
         /// <param name="outputIndex">
         /// The index of the output item that was marked done.
         /// </param>
+        /// <param name="sequenceNumber">
+        /// The sequence number of this event.
+        /// </param>
         /// <param name="item"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseOutputItemDoneEvent(
             int outputIndex,
+            int sequenceNumber,
             global::tryAGI.OpenAI.OutputItem item,
             global::tryAGI.OpenAI.ResponseOutputItemDoneEventType type)
         {
             this.OutputIndex = outputIndex;
+            this.SequenceNumber = sequenceNumber;
             this.Item = item;
             this.Type = type;
         }

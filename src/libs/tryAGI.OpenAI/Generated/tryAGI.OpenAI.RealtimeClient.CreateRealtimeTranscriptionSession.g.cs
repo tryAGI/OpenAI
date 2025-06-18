@@ -118,8 +118,12 @@ namespace tryAGI.OpenAI
                 try
                 {
                     __response.EnsureSuccessStatusCode();
+
+                    return
+                        global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponse.FromJson(__content, JsonSerializerContext) ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
-                catch (global::System.Net.Http.HttpRequestException __ex)
+                catch (global::System.Exception __ex)
                 {
                     throw new global::tryAGI.OpenAI.ApiException(
                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
@@ -133,18 +137,24 @@ namespace tryAGI.OpenAI
                             h => h.Value),
                     };
                 }
-
-                return
-                    global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponse.FromJson(__content, JsonSerializerContext) ??
-                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
             {
                 try
                 {
                     __response.EnsureSuccessStatusCode();
+
+                    using var __content = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+
+                    return
+                        await global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
-                catch (global::System.Net.Http.HttpRequestException __ex)
+                catch (global::System.Exception __ex)
                 {
                     throw new global::tryAGI.OpenAI.ApiException(
                         message: __response.ReasonPhrase ?? string.Empty,
@@ -157,16 +167,6 @@ namespace tryAGI.OpenAI
                             h => h.Value),
                     };
                 }
-
-                using var __content = await __response.Content.ReadAsStreamAsync(
-#if NET5_0_OR_GREATER
-                    cancellationToken
-#endif
-                ).ConfigureAwait(false);
-
-                return
-                    await global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
-                    throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
 
@@ -184,7 +184,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="inputAudioFormat">
         /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.<br/>
-        /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate, <br/>
+        /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate,<br/>
         /// single channel (mono), and little-endian byte order.<br/>
         /// Default Value: pcm16
         /// </param>
@@ -205,6 +205,9 @@ namespace tryAGI.OpenAI
         /// The set of items to include in the transcription. Current available items are:<br/>
         /// - `item.input_audio_transcription.logprobs`
         /// </param>
+        /// <param name="clientSecret">
+        /// Configuration options for the generated client secret.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponse> CreateRealtimeTranscriptionSessionAsync(
@@ -214,6 +217,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestTurnDetection? turnDetection = default,
             global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction? inputAudioNoiseReduction = default,
             global::System.Collections.Generic.IList<string>? include = default,
+            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestClientSecret? clientSecret = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequest
@@ -224,6 +228,7 @@ namespace tryAGI.OpenAI
                 TurnDetection = turnDetection,
                 InputAudioNoiseReduction = inputAudioNoiseReduction,
                 Include = include,
+                ClientSecret = clientSecret,
             };
 
             return await CreateRealtimeTranscriptionSessionAsync(

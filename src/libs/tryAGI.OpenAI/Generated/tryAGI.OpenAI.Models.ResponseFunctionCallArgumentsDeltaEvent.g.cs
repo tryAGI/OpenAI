@@ -30,6 +30,13 @@ namespace tryAGI.OpenAI
         public required int OutputIndex { get; set; }
 
         /// <summary>
+        /// The sequence number of this event.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int SequenceNumber { get; set; }
+
+        /// <summary>
         /// The function-call arguments delta that is added.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
@@ -54,6 +61,9 @@ namespace tryAGI.OpenAI
         /// <param name="outputIndex">
         /// The index of the output item that the function-call arguments delta is added to.
         /// </param>
+        /// <param name="sequenceNumber">
+        /// The sequence number of this event.
+        /// </param>
         /// <param name="delta">
         /// The function-call arguments delta that is added.
         /// </param>
@@ -63,11 +73,13 @@ namespace tryAGI.OpenAI
         public ResponseFunctionCallArgumentsDeltaEvent(
             string itemId,
             int outputIndex,
+            int sequenceNumber,
             string delta,
             global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDeltaEventType type)
         {
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
+            this.SequenceNumber = sequenceNumber;
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.Type = type;
         }

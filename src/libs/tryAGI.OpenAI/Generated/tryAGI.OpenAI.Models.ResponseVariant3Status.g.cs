@@ -5,7 +5,7 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// The status of the response generation. One of `completed`, `failed`, <br/>
-    /// `in_progress`, or `incomplete`.
+    /// `in_progress`, `cancelled`, `queued`, or `incomplete`.
     /// </summary>
     public enum ResponseVariant3Status
     {
@@ -21,6 +21,14 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         InProgress,
+        /// <summary>
+        /// 
+        /// </summary>
+        Cancelled,
+        /// <summary>
+        /// 
+        /// </summary>
+        Queued,
         /// <summary>
         /// 
         /// </summary>
@@ -42,6 +50,8 @@ namespace tryAGI.OpenAI
                 ResponseVariant3Status.Completed => "completed",
                 ResponseVariant3Status.Failed => "failed",
                 ResponseVariant3Status.InProgress => "in_progress",
+                ResponseVariant3Status.Cancelled => "cancelled",
+                ResponseVariant3Status.Queued => "queued",
                 ResponseVariant3Status.Incomplete => "incomplete",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -56,6 +66,8 @@ namespace tryAGI.OpenAI
                 "completed" => ResponseVariant3Status.Completed,
                 "failed" => ResponseVariant3Status.Failed,
                 "in_progress" => ResponseVariant3Status.InProgress,
+                "cancelled" => ResponseVariant3Status.Cancelled,
+                "queued" => ResponseVariant3Status.Queued,
                 "incomplete" => ResponseVariant3Status.Incomplete,
                 _ => null,
             };

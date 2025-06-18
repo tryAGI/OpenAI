@@ -113,8 +113,12 @@ namespace tryAGI.OpenAI
                 try
                 {
                     __response.EnsureSuccessStatusCode();
+
+                    return
+                        global::tryAGI.OpenAI.CreateEmbeddingResponse.FromJson(__content, JsonSerializerContext) ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
-                catch (global::System.Net.Http.HttpRequestException __ex)
+                catch (global::System.Exception __ex)
                 {
                     throw new global::tryAGI.OpenAI.ApiException(
                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
@@ -128,18 +132,24 @@ namespace tryAGI.OpenAI
                             h => h.Value),
                     };
                 }
-
-                return
-                    global::tryAGI.OpenAI.CreateEmbeddingResponse.FromJson(__content, JsonSerializerContext) ??
-                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
             {
                 try
                 {
                     __response.EnsureSuccessStatusCode();
+
+                    using var __content = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+
+                    return
+                        await global::tryAGI.OpenAI.CreateEmbeddingResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
-                catch (global::System.Net.Http.HttpRequestException __ex)
+                catch (global::System.Exception __ex)
                 {
                     throw new global::tryAGI.OpenAI.ApiException(
                         message: __response.ReasonPhrase ?? string.Empty,
@@ -152,16 +162,6 @@ namespace tryAGI.OpenAI
                             h => h.Value),
                     };
                 }
-
-                using var __content = await __response.Content.ReadAsStreamAsync(
-#if NET5_0_OR_GREATER
-                    cancellationToken
-#endif
-                ).ConfigureAwait(false);
-
-                return
-                    await global::tryAGI.OpenAI.CreateEmbeddingResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
-                    throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
 
@@ -169,7 +169,7 @@ namespace tryAGI.OpenAI
         /// Creates an embedding vector representing the input text.
         /// </summary>
         /// <param name="input">
-        /// Input text to embed, encoded as a string or array of tokens. To embed multiple inputs in a single request, pass an array of strings or array of token arrays. The input must not exceed the max input tokens for the model (8192 tokens for `text-embedding-ada-002`), cannot be an empty string, and any array must be 2048 dimensions or less. [Example Python code](https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken) for counting tokens. Some models may also impose a limit on total number of tokens summed across inputs.<br/>
+        /// Input text to embed, encoded as a string or array of tokens. To embed multiple inputs in a single request, pass an array of strings or array of token arrays. The input must not exceed the max input tokens for the model (8192 tokens for all embedding models), cannot be an empty string, and any array must be 2048 dimensions or less. [Example Python code](https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken) for counting tokens. In addition to the per-input token limit, all embedding  models enforce a maximum of 300,000 tokens summed across all inputs in a  single request.<br/>
         /// Example: The quick brown fox jumped over the lazy dog
         /// </param>
         /// <param name="model">

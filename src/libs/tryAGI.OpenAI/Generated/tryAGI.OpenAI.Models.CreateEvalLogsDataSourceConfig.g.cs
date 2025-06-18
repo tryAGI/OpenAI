@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// A data source config which specifies the metadata property of your stored completions query.<br/>
+    /// A data source config which specifies the metadata property of your logs query.<br/>
     /// This is usually metadata like `usecase=chatbot` or `prompt-version=v2`, etc.
     /// </summary>
     public sealed partial class CreateEvalLogsDataSourceConfig

@@ -44,6 +44,13 @@ namespace tryAGI.OpenAI
         public required string Text { get; set; }
 
         /// <summary>
+        /// The sequence number for this event.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int SequenceNumber { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -67,6 +74,9 @@ namespace tryAGI.OpenAI
         /// <param name="text">
         /// The text content that is finalized.
         /// </param>
+        /// <param name="sequenceNumber">
+        /// The sequence number for this event.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -75,12 +85,14 @@ namespace tryAGI.OpenAI
             int outputIndex,
             int contentIndex,
             string text,
+            int sequenceNumber,
             global::tryAGI.OpenAI.ResponseTextDoneEventType type)
         {
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.ContentIndex = contentIndex;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.SequenceNumber = sequenceNumber;
             this.Type = type;
         }
 

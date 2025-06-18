@@ -24,6 +24,13 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.Response Response { get; set; }
 
         /// <summary>
+        /// The sequence number for this event.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int SequenceNumber { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -36,14 +43,19 @@ namespace tryAGI.OpenAI
         /// The type of the event. Always `response.created`.
         /// </param>
         /// <param name="response"></param>
+        /// <param name="sequenceNumber">
+        /// The sequence number for this event.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseCreatedEvent(
             global::tryAGI.OpenAI.Response response,
+            int sequenceNumber,
             global::tryAGI.OpenAI.ResponseCreatedEventType type)
         {
             this.Response = response;
+            this.SequenceNumber = sequenceNumber;
             this.Type = type;
         }
 

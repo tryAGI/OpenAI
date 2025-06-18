@@ -23,7 +23,7 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// Get info about a fine-tuning job.<br/>
-        /// [Learn more about fine-tuning](/docs/guides/fine-tuning)
+        /// [Learn more about fine-tuning](/docs/guides/model-optimization)
         /// </summary>
         /// <param name="fineTuningJobId">
         /// Example: ft-AF1WoRqd3aJAHsqc9NY7iL8F
@@ -108,8 +108,12 @@ namespace tryAGI.OpenAI
                 try
                 {
                     __response.EnsureSuccessStatusCode();
+
+                    return
+                        global::tryAGI.OpenAI.FineTuningJob.FromJson(__content, JsonSerializerContext) ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
-                catch (global::System.Net.Http.HttpRequestException __ex)
+                catch (global::System.Exception __ex)
                 {
                     throw new global::tryAGI.OpenAI.ApiException(
                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
@@ -123,18 +127,24 @@ namespace tryAGI.OpenAI
                             h => h.Value),
                     };
                 }
-
-                return
-                    global::tryAGI.OpenAI.FineTuningJob.FromJson(__content, JsonSerializerContext) ??
-                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
             {
                 try
                 {
                     __response.EnsureSuccessStatusCode();
+
+                    using var __content = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+
+                    return
+                        await global::tryAGI.OpenAI.FineTuningJob.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
-                catch (global::System.Net.Http.HttpRequestException __ex)
+                catch (global::System.Exception __ex)
                 {
                     throw new global::tryAGI.OpenAI.ApiException(
                         message: __response.ReasonPhrase ?? string.Empty,
@@ -147,16 +157,6 @@ namespace tryAGI.OpenAI
                             h => h.Value),
                     };
                 }
-
-                using var __content = await __response.Content.ReadAsStreamAsync(
-#if NET5_0_OR_GREATER
-                    cancellationToken
-#endif
-                ).ConfigureAwait(false);
-
-                return
-                    await global::tryAGI.OpenAI.FineTuningJob.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
-                    throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
     }

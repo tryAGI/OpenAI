@@ -36,6 +36,30 @@ namespace tryAGI.OpenAI
         public int? Seed { get; set; }
 
         /// <summary>
+        /// An array of tools the model may call while generating a response. You<br/>
+        /// can specify which tool to use by setting the `tool_choice` parameter.<br/>
+        /// The two categories of tools you can provide the model are:<br/>
+        /// - **Built-in tools**: Tools that are provided by OpenAI that extend the<br/>
+        ///   model's capabilities, like [web search](/docs/guides/tools-web-search)<br/>
+        ///   or [file search](/docs/guides/tools-file-search). Learn more about<br/>
+        ///   [built-in tools](/docs/guides/tools).<br/>
+        /// - **Function calls (custom tools)**: Functions that are defined by you,<br/>
+        ///   enabling the model to call your own code. Learn more about<br/>
+        ///   [function calling](/docs/guides/function-calling).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Tool>? Tools { get; set; }
+
+        /// <summary>
+        /// Configuration options for a text response from the model. Can be plain<br/>
+        /// text or structured JSON data. Learn more:<br/>
+        /// - [Text inputs and outputs](/docs/guides/text)<br/>
+        /// - [Structured Outputs](/docs/guides/structured-outputs)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
+        public global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceSamplingParamsText? Text { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -59,6 +83,24 @@ namespace tryAGI.OpenAI
         /// A seed value to initialize the randomness, during sampling.<br/>
         /// Default Value: 42
         /// </param>
+        /// <param name="tools">
+        /// An array of tools the model may call while generating a response. You<br/>
+        /// can specify which tool to use by setting the `tool_choice` parameter.<br/>
+        /// The two categories of tools you can provide the model are:<br/>
+        /// - **Built-in tools**: Tools that are provided by OpenAI that extend the<br/>
+        ///   model's capabilities, like [web search](/docs/guides/tools-web-search)<br/>
+        ///   or [file search](/docs/guides/tools-file-search). Learn more about<br/>
+        ///   [built-in tools](/docs/guides/tools).<br/>
+        /// - **Function calls (custom tools)**: Functions that are defined by you,<br/>
+        ///   enabling the model to call your own code. Learn more about<br/>
+        ///   [function calling](/docs/guides/function-calling).
+        /// </param>
+        /// <param name="text">
+        /// Configuration options for a text response from the model. Can be plain<br/>
+        /// text or structured JSON data. Learn more:<br/>
+        /// - [Text inputs and outputs](/docs/guides/text)<br/>
+        /// - [Structured Outputs](/docs/guides/structured-outputs)
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -66,12 +108,16 @@ namespace tryAGI.OpenAI
             double? temperature,
             int? maxCompletionTokens,
             double? topP,
-            int? seed)
+            int? seed,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Tool>? tools,
+            global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceSamplingParamsText? text)
         {
             this.Temperature = temperature;
             this.MaxCompletionTokens = maxCompletionTokens;
             this.TopP = topP;
             this.Seed = seed;
+            this.Tools = tools;
+            this.Text = text;
         }
 
         /// <summary>

@@ -9,10 +9,10 @@ namespace tryAGI.OpenAI
     public sealed partial class FineTuneDPOMethod
     {
         /// <summary>
-        /// The hyperparameters used for the fine-tuning job.
+        /// The hyperparameters used for the DPO fine-tuning job.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hyperparameters")]
-        public global::tryAGI.OpenAI.FineTuneDPOMethodHyperparameters? Hyperparameters { get; set; }
+        public global::tryAGI.OpenAI.FineTuneDPOHyperparameters? Hyperparameters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -24,13 +24,13 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="FineTuneDPOMethod" /> class.
         /// </summary>
         /// <param name="hyperparameters">
-        /// The hyperparameters used for the fine-tuning job.
+        /// The hyperparameters used for the DPO fine-tuning job.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FineTuneDPOMethod(
-            global::tryAGI.OpenAI.FineTuneDPOMethodHyperparameters? hyperparameters)
+            global::tryAGI.OpenAI.FineTuneDPOHyperparameters? hyperparameters)
         {
             this.Hyperparameters = hyperparameters;
         }

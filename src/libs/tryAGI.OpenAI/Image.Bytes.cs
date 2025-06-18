@@ -1,6 +1,6 @@
 namespace tryAGI.OpenAI;
 
-public partial class Image
+public partial class Image2
 {
     /// <summary>
     /// Returns bytes of base64-encoded JSON of the generated image.

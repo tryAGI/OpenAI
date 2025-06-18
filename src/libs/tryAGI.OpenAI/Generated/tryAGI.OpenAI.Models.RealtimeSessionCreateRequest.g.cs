@@ -25,8 +25,8 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RealtimeSessionCreateRequestModel? Model { get; set; }
 
         /// <summary>
-        /// The default system instructions (i.e. system message) prepended to model  calls. This field allows the client to guide the model on desired  responses. The model can be instructed on response content and format,  (e.g. "be extremely succinct", "act friendly", "here are examples of good  responses") and on audio behavior (e.g. "talk quickly", "inject emotion  into your voice", "laugh frequently"). The instructions are not guaranteed  to be followed by the model, but they provide guidance to the model on the desired behavior.<br/>
-        /// Note that the server sets default instructions which will be used if this  field is not set and are visible in the `session.created` event at the  start of the session.
+        /// The default system instructions (i.e. system message) prepended to model calls. This field allows the client to guide the model on desired responses. The model can be instructed on response content and format, (e.g. "be extremely succinct", "act friendly", "here are examples of good responses") and on audio behavior (e.g. "talk quickly", "inject emotion into your voice", "laugh frequently"). The instructions are not guaranteed to be followed by the model, but they provide guidance to the model on the desired behavior.<br/>
+        /// Note that the server sets default instructions which will be used if this field is not set and are visible in the `session.created` event at the start of the session.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
         public string? Instructions { get; set; }
@@ -41,7 +41,7 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.<br/>
-        /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate, <br/>
+        /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate,<br/>
         /// single channel (mono), and little-endian byte order.<br/>
         /// Default Value: pcm16
         /// </summary>
@@ -59,7 +59,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RealtimeSessionCreateRequestOutputAudioFormat? OutputAudioFormat { get; set; }
 
         /// <summary>
-        /// Configuration for input audio transcription, defaults to off and can be  set to `null` to turn off once on. Input audio transcription is not native to the model, since the model consumes audio directly. Transcription runs  asynchronously through [the /audio/transcriptions endpoint](https://platform.openai.com/docs/api-reference/audio/createTranscription) and should be treated as guidance of input audio content rather than precisely what the model heard. The client can optionally set the language and prompt for transcription, these offer additional guidance to the transcription service.
+        /// Configuration for input audio transcription, defaults to off and can be set to `null` to turn off once on. Input audio transcription is not native to the model, since the model consumes audio directly. Transcription runs asynchronously through [the /audio/transcriptions endpoint](https://platform.openai.com/docs/api-reference/audio/createTranscription) and should be treated as guidance of input audio content rather than precisely what the model heard. The client can optionally set the language and prompt for transcription, these offer additional guidance to the transcription service.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_audio_transcription")]
         public global::tryAGI.OpenAI.RealtimeSessionCreateRequestInputAudioTranscription? InputAudioTranscription { get; set; }
@@ -81,13 +81,32 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RealtimeSessionCreateRequestInputAudioNoiseReduction? InputAudioNoiseReduction { get; set; }
 
         /// <summary>
+        /// The speed of the model's spoken response. 1.0 is the default speed. 0.25 is<br/>
+        /// the minimum speed. 1.5 is the maximum speed. This value can only be changed<br/>
+        /// in between model turns, not while a response is in progress.<br/>
+        /// Default Value: 1
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
+        public double? Speed { get; set; }
+
+        /// <summary>
+        /// Configuration options for tracing. Set to null to disable tracing. Once <br/>
+        /// tracing is enabled for a session, the configuration cannot be modified.<br/>
+        /// `auto` will create a trace for the session with default values for the <br/>
+        /// workflow name, group id, and metadata.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tracing")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.RealtimeSessionCreateRequestTracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestTracingEnum2>))]
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateRequestTracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestTracingEnum2>? Tracing { get; set; }
+
+        /// <summary>
         /// Tools (functions) available to the model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateRequestTool>? Tools { get; set; }
 
         /// <summary>
-        /// How the model chooses tools. Options are `auto`, `none`, `required`, or <br/>
+        /// How the model chooses tools. Options are `auto`, `none`, `required`, or<br/>
         /// specify a function.<br/>
         /// Default Value: auto
         /// </summary>
@@ -112,6 +131,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestMaxResponseOutputTokens?>? MaxResponseOutputTokens { get; set; }
 
         /// <summary>
+        /// Configuration options for the generated client secret.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("client_secret")]
+        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestClientSecret? ClientSecret { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -128,15 +153,15 @@ namespace tryAGI.OpenAI
         /// The Realtime model used for this session.
         /// </param>
         /// <param name="instructions">
-        /// The default system instructions (i.e. system message) prepended to model  calls. This field allows the client to guide the model on desired  responses. The model can be instructed on response content and format,  (e.g. "be extremely succinct", "act friendly", "here are examples of good  responses") and on audio behavior (e.g. "talk quickly", "inject emotion  into your voice", "laugh frequently"). The instructions are not guaranteed  to be followed by the model, but they provide guidance to the model on the desired behavior.<br/>
-        /// Note that the server sets default instructions which will be used if this  field is not set and are visible in the `session.created` event at the  start of the session.
+        /// The default system instructions (i.e. system message) prepended to model calls. This field allows the client to guide the model on desired responses. The model can be instructed on response content and format, (e.g. "be extremely succinct", "act friendly", "here are examples of good responses") and on audio behavior (e.g. "talk quickly", "inject emotion into your voice", "laugh frequently"). The instructions are not guaranteed to be followed by the model, but they provide guidance to the model on the desired behavior.<br/>
+        /// Note that the server sets default instructions which will be used if this field is not set and are visible in the `session.created` event at the start of the session.
         /// </param>
         /// <param name="voice">
         /// Example: ash
         /// </param>
         /// <param name="inputAudioFormat">
         /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.<br/>
-        /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate, <br/>
+        /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate,<br/>
         /// single channel (mono), and little-endian byte order.<br/>
         /// Default Value: pcm16
         /// </param>
@@ -146,7 +171,7 @@ namespace tryAGI.OpenAI
         /// Default Value: pcm16
         /// </param>
         /// <param name="inputAudioTranscription">
-        /// Configuration for input audio transcription, defaults to off and can be  set to `null` to turn off once on. Input audio transcription is not native to the model, since the model consumes audio directly. Transcription runs  asynchronously through [the /audio/transcriptions endpoint](https://platform.openai.com/docs/api-reference/audio/createTranscription) and should be treated as guidance of input audio content rather than precisely what the model heard. The client can optionally set the language and prompt for transcription, these offer additional guidance to the transcription service.
+        /// Configuration for input audio transcription, defaults to off and can be set to `null` to turn off once on. Input audio transcription is not native to the model, since the model consumes audio directly. Transcription runs asynchronously through [the /audio/transcriptions endpoint](https://platform.openai.com/docs/api-reference/audio/createTranscription) and should be treated as guidance of input audio content rather than precisely what the model heard. The client can optionally set the language and prompt for transcription, these offer additional guidance to the transcription service.
         /// </param>
         /// <param name="turnDetection">
         /// Configuration for turn detection, ether Server VAD or Semantic VAD. This can be set to `null` to turn off, in which case the client must manually trigger model response.<br/>
@@ -158,11 +183,23 @@ namespace tryAGI.OpenAI
         /// Noise reduction filters audio added to the input audio buffer before it is sent to VAD and the model.<br/>
         /// Filtering the audio can improve VAD and turn detection accuracy (reducing false positives) and model performance by improving perception of the input audio.
         /// </param>
+        /// <param name="speed">
+        /// The speed of the model's spoken response. 1.0 is the default speed. 0.25 is<br/>
+        /// the minimum speed. 1.5 is the maximum speed. This value can only be changed<br/>
+        /// in between model turns, not while a response is in progress.<br/>
+        /// Default Value: 1
+        /// </param>
+        /// <param name="tracing">
+        /// Configuration options for tracing. Set to null to disable tracing. Once <br/>
+        /// tracing is enabled for a session, the configuration cannot be modified.<br/>
+        /// `auto` will create a trace for the session with default values for the <br/>
+        /// workflow name, group id, and metadata.
+        /// </param>
         /// <param name="tools">
         /// Tools (functions) available to the model.
         /// </param>
         /// <param name="toolChoice">
-        /// How the model chooses tools. Options are `auto`, `none`, `required`, or <br/>
+        /// How the model chooses tools. Options are `auto`, `none`, `required`, or<br/>
         /// specify a function.<br/>
         /// Default Value: auto
         /// </param>
@@ -175,6 +212,9 @@ namespace tryAGI.OpenAI
         /// inclusive of tool calls. Provide an integer between 1 and 4096 to<br/>
         /// limit output tokens, or `inf` for the maximum available tokens for a<br/>
         /// given model. Defaults to `inf`.
+        /// </param>
+        /// <param name="clientSecret">
+        /// Configuration options for the generated client secret.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -189,10 +229,13 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RealtimeSessionCreateRequestInputAudioTranscription? inputAudioTranscription,
             global::tryAGI.OpenAI.RealtimeSessionCreateRequestTurnDetection? turnDetection,
             global::tryAGI.OpenAI.RealtimeSessionCreateRequestInputAudioNoiseReduction? inputAudioNoiseReduction,
+            double? speed,
+            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateRequestTracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestTracingEnum2>? tracing,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateRequestTool>? tools,
             string? toolChoice,
             double? temperature,
-            global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestMaxResponseOutputTokens?>? maxResponseOutputTokens)
+            global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestMaxResponseOutputTokens?>? maxResponseOutputTokens,
+            global::tryAGI.OpenAI.RealtimeSessionCreateRequestClientSecret? clientSecret)
         {
             this.Modalities = modalities;
             this.Model = model;
@@ -203,10 +246,13 @@ namespace tryAGI.OpenAI
             this.InputAudioTranscription = inputAudioTranscription;
             this.TurnDetection = turnDetection;
             this.InputAudioNoiseReduction = inputAudioNoiseReduction;
+            this.Speed = speed;
+            this.Tracing = tracing;
             this.Tools = tools;
             this.ToolChoice = toolChoice;
             this.Temperature = temperature;
             this.MaxResponseOutputTokens = maxResponseOutputTokens;
+            this.ClientSecret = clientSecret;
         }
 
         /// <summary>

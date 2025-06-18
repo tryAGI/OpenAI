@@ -5,7 +5,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// A chat message that makes up the prompt or context. May include variable references to the "item" namespace, ie {{item.name}}.
+    /// A chat message that makes up the prompt or context. May include variable references to the `item` namespace, ie {{item.name}}.
     /// </summary>
     public readonly partial struct CreateEvalItem : global::System.IEquatable<CreateEvalItem>
     {

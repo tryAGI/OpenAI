@@ -27,10 +27,28 @@ namespace tryAGI.OpenAI
         public string? Name { get; set; }
 
         /// <summary>
-        /// 
+        /// Visibility of the threads page which shows messages created with the Assistants API and Playground. One of `ANY_ROLE`, `OWNERS`, or `NONE`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("settings")]
-        public global::tryAGI.OpenAI.AuditLogOrganizationUpdatedChangesRequestedSettings? Settings { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("threads_ui_visibility")]
+        public string? ThreadsUiVisibility { get; set; }
+
+        /// <summary>
+        /// Visibility of the usage dashboard which shows activity and costs for your organization. One of `ANY_ROLE` or `OWNERS`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("usage_dashboard_visibility")]
+        public string? UsageDashboardVisibility { get; set; }
+
+        /// <summary>
+        /// How your organization logs data from supported API calls. One of `disabled`, `enabled_per_call`, `enabled_for_all_projects`, or `enabled_for_selected_projects`
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("api_call_logging")]
+        public string? ApiCallLogging { get; set; }
+
+        /// <summary>
+        /// The list of project ids if api_call_logging is set to `enabled_for_selected_projects`
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("api_call_logging_project_ids")]
+        public string? ApiCallLoggingProjectIds { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -50,7 +68,18 @@ namespace tryAGI.OpenAI
         /// <param name="name">
         /// The organization name.
         /// </param>
-        /// <param name="settings"></param>
+        /// <param name="threadsUiVisibility">
+        /// Visibility of the threads page which shows messages created with the Assistants API and Playground. One of `ANY_ROLE`, `OWNERS`, or `NONE`.
+        /// </param>
+        /// <param name="usageDashboardVisibility">
+        /// Visibility of the usage dashboard which shows activity and costs for your organization. One of `ANY_ROLE` or `OWNERS`.
+        /// </param>
+        /// <param name="apiCallLogging">
+        /// How your organization logs data from supported API calls. One of `disabled`, `enabled_per_call`, `enabled_for_all_projects`, or `enabled_for_selected_projects`
+        /// </param>
+        /// <param name="apiCallLoggingProjectIds">
+        /// The list of project ids if api_call_logging is set to `enabled_for_selected_projects`
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -58,12 +87,18 @@ namespace tryAGI.OpenAI
             string? title,
             string? description,
             string? name,
-            global::tryAGI.OpenAI.AuditLogOrganizationUpdatedChangesRequestedSettings? settings)
+            string? threadsUiVisibility,
+            string? usageDashboardVisibility,
+            string? apiCallLogging,
+            string? apiCallLoggingProjectIds)
         {
             this.Title = title;
             this.Description = description;
             this.Name = name;
-            this.Settings = settings;
+            this.ThreadsUiVisibility = threadsUiVisibility;
+            this.UsageDashboardVisibility = usageDashboardVisibility;
+            this.ApiCallLogging = apiCallLogging;
+            this.ApiCallLoggingProjectIds = apiCallLoggingProjectIds;
         }
 
         /// <summary>

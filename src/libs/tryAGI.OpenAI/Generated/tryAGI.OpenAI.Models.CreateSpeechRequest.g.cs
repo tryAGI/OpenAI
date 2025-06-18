@@ -49,7 +49,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CreateSpeechRequestResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
-        /// The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is the default.<br/>
+        /// The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is the default. Does not work with `gpt-4o-mini-tts`.<br/>
         /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
@@ -81,7 +81,7 @@ namespace tryAGI.OpenAI
         /// Default Value: mp3
         /// </param>
         /// <param name="speed">
-        /// The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is the default.<br/>
+        /// The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is the default. Does not work with `gpt-4o-mini-tts`.<br/>
         /// Default Value: 1
         /// </param>
 #if NET7_0_OR_GREATER

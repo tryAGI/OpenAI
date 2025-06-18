@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Creates a fine-tuning job which begins the process of creating a new model from a given dataset.<br/>
         /// Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.<br/>
-        /// [Learn more about fine-tuning](/docs/guides/fine-tuning)
+        /// [Learn more about fine-tuning](/docs/guides/model-optimization)
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -115,8 +115,12 @@ namespace tryAGI.OpenAI
                 try
                 {
                     __response.EnsureSuccessStatusCode();
+
+                    return
+                        global::tryAGI.OpenAI.FineTuningJob.FromJson(__content, JsonSerializerContext) ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
-                catch (global::System.Net.Http.HttpRequestException __ex)
+                catch (global::System.Exception __ex)
                 {
                     throw new global::tryAGI.OpenAI.ApiException(
                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
@@ -130,18 +134,24 @@ namespace tryAGI.OpenAI
                             h => h.Value),
                     };
                 }
-
-                return
-                    global::tryAGI.OpenAI.FineTuningJob.FromJson(__content, JsonSerializerContext) ??
-                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
             {
                 try
                 {
                     __response.EnsureSuccessStatusCode();
+
+                    using var __content = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+
+                    return
+                        await global::tryAGI.OpenAI.FineTuningJob.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
-                catch (global::System.Net.Http.HttpRequestException __ex)
+                catch (global::System.Exception __ex)
                 {
                     throw new global::tryAGI.OpenAI.ApiException(
                         message: __response.ReasonPhrase ?? string.Empty,
@@ -154,23 +164,13 @@ namespace tryAGI.OpenAI
                             h => h.Value),
                     };
                 }
-
-                using var __content = await __response.Content.ReadAsStreamAsync(
-#if NET5_0_OR_GREATER
-                    cancellationToken
-#endif
-                ).ConfigureAwait(false);
-
-                return
-                    await global::tryAGI.OpenAI.FineTuningJob.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
-                    throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
 
         /// <summary>
         /// Creates a fine-tuning job which begins the process of creating a new model from a given dataset.<br/>
         /// Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.<br/>
-        /// [Learn more about fine-tuning](/docs/guides/fine-tuning)
+        /// [Learn more about fine-tuning](/docs/guides/model-optimization)
         /// </summary>
         /// <param name="model">
         /// The name of the model to fine-tune. You can select one of the<br/>
@@ -182,7 +182,7 @@ namespace tryAGI.OpenAI
         /// See [upload file](/docs/api-reference/files/create) for how to upload a file.<br/>
         /// Your dataset must be formatted as a JSONL file. Additionally, you must upload your file with the purpose `fine-tune`.<br/>
         /// The contents of the file should differ depending on if the model uses the [chat](/docs/api-reference/fine-tuning/chat-input), [completions](/docs/api-reference/fine-tuning/completions-input) format, or if the fine-tuning method uses the [preference](/docs/api-reference/fine-tuning/preference-input) format.<br/>
-        /// See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.<br/>
+        /// See the [fine-tuning guide](/docs/guides/model-optimization) for more details.<br/>
         /// Example: file-abc123
         /// </param>
         /// <param name="suffix">
@@ -196,7 +196,7 @@ namespace tryAGI.OpenAI
         /// the fine-tuning results file.<br/>
         /// The same data should not be present in both train and validation files.<br/>
         /// Your dataset must be formatted as a JSONL file. You must upload your file with the purpose `fine-tune`.<br/>
-        /// See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.<br/>
+        /// See the [fine-tuning guide](/docs/guides/model-optimization) for more details.<br/>
         /// Example: file-abc123
         /// </param>
         /// <param name="integrations">

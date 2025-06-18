@@ -72,6 +72,25 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RealtimeSessionCreateResponseInputAudioTranscription? InputAudioTranscription { get; set; }
 
         /// <summary>
+        /// The speed of the model's spoken response. 1.0 is the default speed. 0.25 is<br/>
+        /// the minimum speed. 1.5 is the maximum speed. This value can only be changed<br/>
+        /// in between model turns, not while a response is in progress.<br/>
+        /// Default Value: 1
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
+        public double? Speed { get; set; }
+
+        /// <summary>
+        /// Configuration options for tracing. Set to null to disable tracing. Once <br/>
+        /// tracing is enabled for a session, the configuration cannot be modified.<br/>
+        /// `auto` will create a trace for the session with default values for the <br/>
+        /// workflow name, group id, and metadata.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tracing")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.RealtimeSessionCreateResponseTracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseTracingEnum2>))]
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateResponseTracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseTracingEnum2>? Tracing { get; set; }
+
+        /// <summary>
         /// Configuration for turn detection. Can be set to `null` to turn off. Server <br/>
         /// VAD means that the model will detect the start and end of speech based on <br/>
         /// audio volume and respond at the end of user speech.
@@ -153,6 +172,18 @@ namespace tryAGI.OpenAI
         /// asynchronously through Whisper and should be treated as rough guidance <br/>
         /// rather than the representation understood by the model.
         /// </param>
+        /// <param name="speed">
+        /// The speed of the model's spoken response. 1.0 is the default speed. 0.25 is<br/>
+        /// the minimum speed. 1.5 is the maximum speed. This value can only be changed<br/>
+        /// in between model turns, not while a response is in progress.<br/>
+        /// Default Value: 1
+        /// </param>
+        /// <param name="tracing">
+        /// Configuration options for tracing. Set to null to disable tracing. Once <br/>
+        /// tracing is enabled for a session, the configuration cannot be modified.<br/>
+        /// `auto` will create a trace for the session with default values for the <br/>
+        /// workflow name, group id, and metadata.
+        /// </param>
         /// <param name="turnDetection">
         /// Configuration for turn detection. Can be set to `null` to turn off. Server <br/>
         /// VAD means that the model will detect the start and end of speech based on <br/>
@@ -185,6 +216,8 @@ namespace tryAGI.OpenAI
             string? inputAudioFormat,
             string? outputAudioFormat,
             global::tryAGI.OpenAI.RealtimeSessionCreateResponseInputAudioTranscription? inputAudioTranscription,
+            double? speed,
+            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateResponseTracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseTracingEnum2>? tracing,
             global::tryAGI.OpenAI.RealtimeSessionCreateResponseTurnDetection? turnDetection,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateResponseTool>? tools,
             string? toolChoice,
@@ -198,6 +231,8 @@ namespace tryAGI.OpenAI
             this.InputAudioFormat = inputAudioFormat;
             this.OutputAudioFormat = outputAudioFormat;
             this.InputAudioTranscription = inputAudioTranscription;
+            this.Speed = speed;
+            this.Tracing = tracing;
             this.TurnDetection = turnDetection;
             this.Tools = tools;
             this.ToolChoice = toolChoice;

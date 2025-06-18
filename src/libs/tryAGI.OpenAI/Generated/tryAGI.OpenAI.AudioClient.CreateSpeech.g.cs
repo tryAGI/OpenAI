@@ -109,8 +109,10 @@ namespace tryAGI.OpenAI
                 try
                 {
                     __response.EnsureSuccessStatusCode();
+
+                    return __content;
                 }
-                catch (global::System.Net.Http.HttpRequestException __ex)
+                catch (global::System.Exception __ex)
                 {
                     throw new global::tryAGI.OpenAI.ApiException(
                         message: __response.ReasonPhrase ?? string.Empty,
@@ -123,16 +125,22 @@ namespace tryAGI.OpenAI
                             h => h.Value),
                     };
                 }
-
-                return __content;
             }
             else
             {
                 try
                 {
                     __response.EnsureSuccessStatusCode();
+
+                    var __content = await __response.Content.ReadAsByteArrayAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+
+                    return __content;
                 }
-                catch (global::System.Net.Http.HttpRequestException __ex)
+                catch (global::System.Exception __ex)
                 {
                     throw new global::tryAGI.OpenAI.ApiException(
                         message: __response.ReasonPhrase ?? string.Empty,
@@ -145,14 +153,6 @@ namespace tryAGI.OpenAI
                             h => h.Value),
                     };
                 }
-
-                var __content = await __response.Content.ReadAsByteArrayAsync(
-#if NET5_0_OR_GREATER
-                    cancellationToken
-#endif
-                ).ConfigureAwait(false);
-
-                return __content;
             }
         }
 
@@ -176,7 +176,7 @@ namespace tryAGI.OpenAI
         /// Default Value: mp3
         /// </param>
         /// <param name="speed">
-        /// The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is the default.<br/>
+        /// The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is the default. Does not work with `gpt-4o-mini-tts`.<br/>
         /// Default Value: 1
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

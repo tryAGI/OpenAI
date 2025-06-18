@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
     /// Like:<br/>
     ///  - Improve the quality of my chatbot<br/>
     ///  - See how well my chatbot handles customer support<br/>
-    ///  - Check if o3-mini is better at my usecase than gpt-4o
+    ///  - Check if o4-mini is better at my usecase than gpt-4o
     /// </summary>
     public sealed partial class Eval
     {
@@ -44,9 +44,9 @@ namespace tryAGI.OpenAI
         /// Configuration of data sources used in runs of the evaluation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_source_config")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.EvalCustomDataSourceConfig, global::tryAGI.OpenAI.EvalStoredCompletionsDataSourceConfig>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.EvalCustomDataSourceConfig, global::tryAGI.OpenAI.EvalLogsDataSourceConfig, global::tryAGI.OpenAI.EvalStoredCompletionsDataSourceConfig>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalCustomDataSourceConfig, global::tryAGI.OpenAI.EvalStoredCompletionsDataSourceConfig> DataSourceConfig { get; set; }
+        public required global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalCustomDataSourceConfig, global::tryAGI.OpenAI.EvalLogsDataSourceConfig, global::tryAGI.OpenAI.EvalStoredCompletionsDataSourceConfig> DataSourceConfig { get; set; }
 
         /// <summary>
         /// A list of testing criteria.<br/>
@@ -54,7 +54,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("testing_criteria")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalLabelModelGrader, global::tryAGI.OpenAI.EvalStringCheckGrader, global::tryAGI.OpenAI.EvalTextSimilarityGrader, global::tryAGI.OpenAI.EvalPythonGrader, global::tryAGI.OpenAI.EvalScoreModelGrader>> TestingCriteria { get; set; }
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalGraderLabelModel?, global::tryAGI.OpenAI.EvalGraderStringCheck?, global::tryAGI.OpenAI.EvalGraderTextSimilarity?, global::tryAGI.OpenAI.EvalGraderPython?, global::tryAGI.OpenAI.EvalGraderScoreModel?>> TestingCriteria { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the eval was created.
@@ -118,8 +118,8 @@ namespace tryAGI.OpenAI
         public Eval(
             string id,
             string name,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalCustomDataSourceConfig, global::tryAGI.OpenAI.EvalStoredCompletionsDataSourceConfig> dataSourceConfig,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalLabelModelGrader, global::tryAGI.OpenAI.EvalStringCheckGrader, global::tryAGI.OpenAI.EvalTextSimilarityGrader, global::tryAGI.OpenAI.EvalPythonGrader, global::tryAGI.OpenAI.EvalScoreModelGrader>> testingCriteria,
+            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalCustomDataSourceConfig, global::tryAGI.OpenAI.EvalLogsDataSourceConfig, global::tryAGI.OpenAI.EvalStoredCompletionsDataSourceConfig> dataSourceConfig,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalGraderLabelModel?, global::tryAGI.OpenAI.EvalGraderStringCheck?, global::tryAGI.OpenAI.EvalGraderTextSimilarity?, global::tryAGI.OpenAI.EvalGraderPython?, global::tryAGI.OpenAI.EvalGraderScoreModel?>> testingCriteria,
             global::System.DateTimeOffset createdAt,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::tryAGI.OpenAI.EvalObject @object = global::tryAGI.OpenAI.EvalObject.Eval)

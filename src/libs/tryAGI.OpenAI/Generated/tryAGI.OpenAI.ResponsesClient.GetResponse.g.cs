@@ -8,12 +8,16 @@ namespace tryAGI.OpenAI
         partial void PrepareGetResponseArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string responseId,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include);
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include,
+            ref bool? stream,
+            ref int? startingAfter);
         partial void PrepareGetResponseRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string responseId,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include);
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include,
+            bool? stream,
+            int? startingAfter);
         partial void ProcessGetResponseResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -30,11 +34,15 @@ namespace tryAGI.OpenAI
         /// Example: resp_677efb5139a88190b512bc3fef8e535d
         /// </param>
         /// <param name="include"></param>
+        /// <param name="stream"></param>
+        /// <param name="startingAfter"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Response> GetResponseAsync(
             string responseId,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include = default,
+            bool? stream = default,
+            int? startingAfter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -42,13 +50,17 @@ namespace tryAGI.OpenAI
             PrepareGetResponseArguments(
                 httpClient: HttpClient,
                 responseId: ref responseId,
-                include: include);
+                include: include,
+                stream: ref stream,
+                startingAfter: ref startingAfter);
 
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/responses/{responseId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddOptionalParameter("include", include, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("stream", stream?.ToString()) 
+                .AddOptionalParameter("starting_after", startingAfter?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -82,7 +94,9 @@ namespace tryAGI.OpenAI
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 responseId: responseId,
-                include: include);
+                include: include,
+                stream: stream,
+                startingAfter: startingAfter);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -116,8 +130,12 @@ namespace tryAGI.OpenAI
                 try
                 {
                     __response.EnsureSuccessStatusCode();
+
+                    return
+                        global::tryAGI.OpenAI.Response.FromJson(__content, JsonSerializerContext) ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
-                catch (global::System.Net.Http.HttpRequestException __ex)
+                catch (global::System.Exception __ex)
                 {
                     throw new global::tryAGI.OpenAI.ApiException(
                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
@@ -131,18 +149,24 @@ namespace tryAGI.OpenAI
                             h => h.Value),
                     };
                 }
-
-                return
-                    global::tryAGI.OpenAI.Response.FromJson(__content, JsonSerializerContext) ??
-                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
             {
                 try
                 {
                     __response.EnsureSuccessStatusCode();
+
+                    using var __content = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+
+                    return
+                        await global::tryAGI.OpenAI.Response.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
-                catch (global::System.Net.Http.HttpRequestException __ex)
+                catch (global::System.Exception __ex)
                 {
                     throw new global::tryAGI.OpenAI.ApiException(
                         message: __response.ReasonPhrase ?? string.Empty,
@@ -155,16 +179,6 @@ namespace tryAGI.OpenAI
                             h => h.Value),
                     };
                 }
-
-                using var __content = await __response.Content.ReadAsStreamAsync(
-#if NET5_0_OR_GREATER
-                    cancellationToken
-#endif
-                ).ConfigureAwait(false);
-
-                return
-                    await global::tryAGI.OpenAI.Response.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
-                    throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
     }

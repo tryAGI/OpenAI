@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSourceInputMessagesVariant1Type Type { get; set; }
 
         /// <summary>
-        /// A list of chat messages forming the prompt or context. May include variable references to the "item" namespace, ie {{item.name}}.
+        /// A list of chat messages forming the prompt or context. May include variable references to the `item` namespace, ie {{item.name}}.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("template")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         /// The type of input messages. Always `template`.
         /// </param>
         /// <param name="template">
-        /// A list of chat messages forming the prompt or context. May include variable references to the "item" namespace, ie {{item.name}}.
+        /// A list of chat messages forming the prompt or context. May include variable references to the `item` namespace, ie {{item.name}}.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

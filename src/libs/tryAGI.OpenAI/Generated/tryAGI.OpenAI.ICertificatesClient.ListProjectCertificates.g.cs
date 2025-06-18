@@ -7,6 +7,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// List certificates for this project.
         /// </summary>
+        /// <param name="projectId"></param>
         /// <param name="limit">
         /// Default Value: 20
         /// </param>
@@ -14,7 +15,6 @@ namespace tryAGI.OpenAI
         /// <param name="order">
         /// Default Value: desc
         /// </param>
-        /// <param name="projectId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ListCertificatesResponse> ListProjectCertificatesAsync(

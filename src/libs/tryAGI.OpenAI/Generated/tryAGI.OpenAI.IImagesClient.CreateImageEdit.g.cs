@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// <param name="image">
         /// The image(s) to edit. Must be a supported image file or an array of images.<br/>
         /// For `gpt-image-1`, each image should be a `png`, `webp`, or `jpg` file less <br/>
-        /// than 25MB. You can provide up to 16 images.<br/>
+        /// than 50MB. You can provide up to 16 images.<br/>
         /// For `dall-e-2`, you can only provide one image, and it should be a square <br/>
         /// `png` file less than 4MB.
         /// </param>
@@ -33,6 +33,16 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="maskname">
         /// An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. If there are multiple images provided, the mask will be applied on the first image. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.
+        /// </param>
+        /// <param name="background">
+        /// Allows to set transparency for the background of the generated image(s). <br/>
+        /// This parameter is only supported for `gpt-image-1`. Must be one of <br/>
+        /// `transparent`, `opaque` or `auto` (default value). When `auto` is used, the <br/>
+        /// model will automatically determine the best background for the image.<br/>
+        /// If `transparent`, the output format needs to support transparency, so it <br/>
+        /// should be set to either `png` (default value) or `webp`.<br/>
+        /// Default Value: auto<br/>
+        /// Example: transparent
         /// </param>
         /// <param name="model">
         /// The model to use for image generation. Only `dall-e-2` and `gpt-image-1` are supported. Defaults to `dall-e-2` unless a parameter specific to `gpt-image-1` is used.<br/>
@@ -54,6 +64,20 @@ namespace tryAGI.OpenAI
         /// Default Value: url<br/>
         /// Example: url
         /// </param>
+        /// <param name="outputFormat">
+        /// The format in which the generated images are returned. This parameter is<br/>
+        /// only supported for `gpt-image-1`. Must be one of `png`, `jpeg`, or `webp`.<br/>
+        /// The default value is `png`.<br/>
+        /// Default Value: png<br/>
+        /// Example: png
+        /// </param>
+        /// <param name="outputCompression">
+        /// The compression level (0-100%) for the generated images. This parameter <br/>
+        /// is only supported for `gpt-image-1` with the `webp` or `jpeg` output <br/>
+        /// formats, and defaults to 100.<br/>
+        /// Default Value: 100<br/>
+        /// Example: 100
+        /// </param>
         /// <param name="user">
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
         /// Example: user-1234
@@ -70,10 +94,13 @@ namespace tryAGI.OpenAI
             string prompt,
             byte[]? mask = default,
             string? maskname = default,
+            global::tryAGI.OpenAI.CreateImageEditRequestBackground? background = default,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageEditRequestModel?>? model = default,
             int? n = default,
             global::tryAGI.OpenAI.CreateImageEditRequestSize? size = default,
             global::tryAGI.OpenAI.CreateImageEditRequestResponseFormat? responseFormat = default,
+            global::tryAGI.OpenAI.CreateImageEditRequestOutputFormat? outputFormat = default,
+            int? outputCompression = default,
             string? user = default,
             global::tryAGI.OpenAI.CreateImageEditRequestQuality? quality = default,
             global::System.Threading.CancellationToken cancellationToken = default);

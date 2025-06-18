@@ -80,6 +80,41 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// A citation for a container file used to generate a model response.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ContainerFileCitationBody? ContainerFileCitationBody { get; init; }
+#else
+        public global::tryAGI.OpenAI.ContainerFileCitationBody? ContainerFileCitationBody { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContainerFileCitationBody))]
+#endif
+        public bool IsContainerFileCitationBody => ContainerFileCitationBody != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Annotation(global::tryAGI.OpenAI.ContainerFileCitationBody value) => new Annotation((global::tryAGI.OpenAI.ContainerFileCitationBody?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.ContainerFileCitationBody?(Annotation @this) => @this.ContainerFileCitationBody;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Annotation(global::tryAGI.OpenAI.ContainerFileCitationBody? value)
+        {
+            ContainerFileCitationBody = value;
+        }
+
+        /// <summary>
         /// A path to a file.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -120,11 +155,13 @@ namespace tryAGI.OpenAI
         public Annotation(
             global::tryAGI.OpenAI.FileCitationBody? fileCitationBody,
             global::tryAGI.OpenAI.UrlCitationBody? urlCitationBody,
+            global::tryAGI.OpenAI.ContainerFileCitationBody? containerFileCitationBody,
             global::tryAGI.OpenAI.FilePath? filePath
             )
         {
             FileCitationBody = fileCitationBody;
             UrlCitationBody = urlCitationBody;
+            ContainerFileCitationBody = containerFileCitationBody;
             FilePath = filePath;
         }
 
@@ -133,6 +170,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public object? Object =>
             FilePath as object ??
+            ContainerFileCitationBody as object ??
             UrlCitationBody as object ??
             FileCitationBody as object 
             ;
@@ -143,6 +181,7 @@ namespace tryAGI.OpenAI
         public override string? ToString() =>
             FileCitationBody?.ToString() ??
             UrlCitationBody?.ToString() ??
+            ContainerFileCitationBody?.ToString() ??
             FilePath?.ToString() 
             ;
 
@@ -151,7 +190,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsFileCitationBody && !IsUrlCitationBody && !IsFilePath || !IsFileCitationBody && IsUrlCitationBody && !IsFilePath || !IsFileCitationBody && !IsUrlCitationBody && IsFilePath;
+            return IsFileCitationBody && !IsUrlCitationBody && !IsContainerFileCitationBody && !IsFilePath || !IsFileCitationBody && IsUrlCitationBody && !IsContainerFileCitationBody && !IsFilePath || !IsFileCitationBody && !IsUrlCitationBody && IsContainerFileCitationBody && !IsFilePath || !IsFileCitationBody && !IsUrlCitationBody && !IsContainerFileCitationBody && IsFilePath;
         }
 
         /// <summary>
@@ -160,6 +199,7 @@ namespace tryAGI.OpenAI
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.FileCitationBody?, TResult>? fileCitationBody = null,
             global::System.Func<global::tryAGI.OpenAI.UrlCitationBody?, TResult>? urlCitationBody = null,
+            global::System.Func<global::tryAGI.OpenAI.ContainerFileCitationBody?, TResult>? containerFileCitationBody = null,
             global::System.Func<global::tryAGI.OpenAI.FilePath?, TResult>? filePath = null,
             bool validate = true)
         {
@@ -176,6 +216,10 @@ namespace tryAGI.OpenAI
             {
                 return urlCitationBody(UrlCitationBody!);
             }
+            else if (IsContainerFileCitationBody && containerFileCitationBody != null)
+            {
+                return containerFileCitationBody(ContainerFileCitationBody!);
+            }
             else if (IsFilePath && filePath != null)
             {
                 return filePath(FilePath!);
@@ -190,6 +234,7 @@ namespace tryAGI.OpenAI
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.FileCitationBody?>? fileCitationBody = null,
             global::System.Action<global::tryAGI.OpenAI.UrlCitationBody?>? urlCitationBody = null,
+            global::System.Action<global::tryAGI.OpenAI.ContainerFileCitationBody?>? containerFileCitationBody = null,
             global::System.Action<global::tryAGI.OpenAI.FilePath?>? filePath = null,
             bool validate = true)
         {
@@ -205,6 +250,10 @@ namespace tryAGI.OpenAI
             else if (IsUrlCitationBody)
             {
                 urlCitationBody?.Invoke(UrlCitationBody!);
+            }
+            else if (IsContainerFileCitationBody)
+            {
+                containerFileCitationBody?.Invoke(ContainerFileCitationBody!);
             }
             else if (IsFilePath)
             {
@@ -223,6 +272,8 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.FileCitationBody),
                 UrlCitationBody,
                 typeof(global::tryAGI.OpenAI.UrlCitationBody),
+                ContainerFileCitationBody,
+                typeof(global::tryAGI.OpenAI.ContainerFileCitationBody),
                 FilePath,
                 typeof(global::tryAGI.OpenAI.FilePath),
             };
@@ -243,6 +294,7 @@ namespace tryAGI.OpenAI
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FileCitationBody?>.Default.Equals(FileCitationBody, other.FileCitationBody) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.UrlCitationBody?>.Default.Equals(UrlCitationBody, other.UrlCitationBody) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ContainerFileCitationBody?>.Default.Equals(ContainerFileCitationBody, other.ContainerFileCitationBody) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FilePath?>.Default.Equals(FilePath, other.FilePath) 
                 ;
         }

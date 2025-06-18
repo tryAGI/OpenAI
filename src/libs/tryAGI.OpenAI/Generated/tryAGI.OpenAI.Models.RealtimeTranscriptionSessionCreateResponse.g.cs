@@ -6,7 +6,7 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// A new Realtime transcription session configuration.<br/>
     /// When a session is created on the server via REST API, the session object<br/>
-    /// also contains an ephemeral key. Default TTL for keys is one minute. This <br/>
+    /// also contains an ephemeral key. Default TTL for keys is 10 minutes. This <br/>
     /// property is not present when a session is updated via the WebSocket API.
     /// </summary>
     public sealed partial class RealtimeTranscriptionSessionCreateResponse

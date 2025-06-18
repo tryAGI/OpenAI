@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseCodeInterpreterCallCodeDoneEvent
     {
         /// <summary>
-        /// The type of the event. Always `response.code_interpreter_call.code.done`.
+        /// The type of the event. Always `response.code_interpreter_call_code.done`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseCodeInterpreterCallCodeDoneEventTypeJsonConverter))]
@@ -30,6 +30,13 @@ namespace tryAGI.OpenAI
         public required string Code { get; set; }
 
         /// <summary>
+        /// The sequence number of this event.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int SequenceNumber { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -39,7 +46,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="ResponseCodeInterpreterCallCodeDoneEvent" /> class.
         /// </summary>
         /// <param name="type">
-        /// The type of the event. Always `response.code_interpreter_call.code.done`.
+        /// The type of the event. Always `response.code_interpreter_call_code.done`.
         /// </param>
         /// <param name="outputIndex">
         /// The index of the output item that the code interpreter call is in progress.
@@ -47,16 +54,21 @@ namespace tryAGI.OpenAI
         /// <param name="code">
         /// The final code snippet output by the code interpreter.
         /// </param>
+        /// <param name="sequenceNumber">
+        /// The sequence number of this event.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseCodeInterpreterCallCodeDoneEvent(
             int outputIndex,
             string code,
+            int sequenceNumber,
             global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDoneEventType type)
         {
             this.OutputIndex = outputIndex;
             this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
+            this.SequenceNumber = sequenceNumber;
             this.Type = type;
         }
 

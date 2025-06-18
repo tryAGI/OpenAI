@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The type of method. Is either `supervised` or `dpo`.
+    /// The type of method. Is either `supervised`, `dpo`, or `reinforcement`.
     /// </summary>
     public enum FineTuneMethodType
     {
@@ -16,6 +16,10 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         Dpo,
+        /// <summary>
+        /// 
+        /// </summary>
+        Reinforcement,
     }
 
     /// <summary>
@@ -32,6 +36,7 @@ namespace tryAGI.OpenAI
             {
                 FineTuneMethodType.Supervised => "supervised",
                 FineTuneMethodType.Dpo => "dpo",
+                FineTuneMethodType.Reinforcement => "reinforcement",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,6 +49,7 @@ namespace tryAGI.OpenAI
             {
                 "supervised" => FineTuneMethodType.Supervised,
                 "dpo" => FineTuneMethodType.Dpo,
+                "reinforcement" => FineTuneMethodType.Reinforcement,
                 _ => null,
             };
         }

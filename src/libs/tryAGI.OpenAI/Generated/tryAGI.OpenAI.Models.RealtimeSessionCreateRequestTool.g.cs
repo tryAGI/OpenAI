@@ -22,8 +22,8 @@ namespace tryAGI.OpenAI
         public string? Name { get; set; }
 
         /// <summary>
-        /// The description of the function, including guidance on when and how <br/>
-        /// to call it, and guidance about what to tell the user when calling <br/>
+        /// The description of the function, including guidance on when and how<br/>
+        /// to call it, and guidance about what to tell the user when calling<br/>
         /// (if anything).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
@@ -51,8 +51,8 @@ namespace tryAGI.OpenAI
         /// The name of the function.
         /// </param>
         /// <param name="description">
-        /// The description of the function, including guidance on when and how <br/>
-        /// to call it, and guidance about what to tell the user when calling <br/>
+        /// The description of the function, including guidance on when and how<br/>
+        /// to call it, and guidance about what to tell the user when calling<br/>
         /// (if anything).
         /// </param>
         /// <param name="parameters">

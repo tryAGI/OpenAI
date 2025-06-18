@@ -11,16 +11,16 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateEvalResponsesRunDataSource
     {
         /// <summary>
-        /// The type of run data source. Always `completions`.<br/>
-        /// Default Value: completions
+        /// The type of run data source. Always `responses`.<br/>
+        /// Default Value: responses
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceType.Completions</default>
+        /// <default>global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceType.Responses</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateEvalResponsesRunDataSourceTypeJsonConverter))]
-        public global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceType Type { get; set; } = global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceType.Completions;
+        public global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceType Type { get; set; } = global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceType.Responses;
 
         /// <summary>
-        /// 
+        /// Used when sampling from a model. Dictates the structure of the messages passed into the model. Can either be a reference to a prebuilt trajectory (ie, `item.input_trajectory`), or a template with variable references to the `item` namespace.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_messages")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesVariant1, global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesVariant2>))]
@@ -39,7 +39,7 @@ namespace tryAGI.OpenAI
         public string? Model { get; set; }
 
         /// <summary>
-        /// 
+        /// Determines what populates the `item` namespace in this run's data source.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.EvalJsonlFileContentSource, global::tryAGI.OpenAI.EvalJsonlFileIdSource, global::tryAGI.OpenAI.EvalResponsesSource>))]
@@ -56,15 +56,19 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="CreateEvalResponsesRunDataSource" /> class.
         /// </summary>
         /// <param name="type">
-        /// The type of run data source. Always `completions`.<br/>
-        /// Default Value: completions
+        /// The type of run data source. Always `responses`.<br/>
+        /// Default Value: responses
         /// </param>
-        /// <param name="inputMessages"></param>
+        /// <param name="inputMessages">
+        /// Used when sampling from a model. Dictates the structure of the messages passed into the model. Can either be a reference to a prebuilt trajectory (ie, `item.input_trajectory`), or a template with variable references to the `item` namespace.
+        /// </param>
         /// <param name="samplingParams"></param>
         /// <param name="model">
         /// The name of the model to use for generating completions (e.g. "o3-mini").
         /// </param>
-        /// <param name="source"></param>
+        /// <param name="source">
+        /// Determines what populates the `item` namespace in this run's data source.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -73,7 +77,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesVariant1, global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesVariant2>? inputMessages,
             global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceSamplingParams? samplingParams,
             string? model,
-            global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceType type = global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceType.Completions)
+            global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceType type = global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceType.Responses)
         {
             this.Source = source;
             this.Type = type;

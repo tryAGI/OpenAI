@@ -1,5 +1,5 @@
 dotnet tool install --global autosdk.cli --prerelease
-curl -O https://raw.githubusercontent.com/openai/openai-openapi/master/openapi.yaml
+curl -o openapi.yaml https://app.stainless.com/api/spec/documented/openai/openapi.documented.yml
 dotnet run --project ../../helpers/FixOpenApiSpec openapi.yaml
 if [ $? -ne 0 ]; then
   echo "Failed, exiting..."

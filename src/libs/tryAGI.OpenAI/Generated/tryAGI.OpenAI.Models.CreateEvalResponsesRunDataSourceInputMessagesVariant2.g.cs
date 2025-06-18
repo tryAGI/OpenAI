@@ -16,7 +16,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesVariant2Type Type { get; set; }
 
         /// <summary>
-        /// A reference to a variable in the "item" namespace. Ie, "item.name"
+        /// A reference to a variable in the `item` namespace. Ie, "item.name"
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item_reference")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -35,7 +35,7 @@ namespace tryAGI.OpenAI
         /// The type of input messages. Always `item_reference`.
         /// </param>
         /// <param name="itemReference">
-        /// A reference to a variable in the "item" namespace. Ie, "item.name"
+        /// A reference to a variable in the `item` namespace. Ie, "item.name"
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

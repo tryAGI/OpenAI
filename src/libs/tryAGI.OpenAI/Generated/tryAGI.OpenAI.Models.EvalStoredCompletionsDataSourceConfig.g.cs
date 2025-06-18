@@ -4,11 +4,9 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// A StoredCompletionsDataSourceConfig which specifies the metadata property of your stored completions query.<br/>
-    /// This is usually metadata like `usecase=chatbot` or `prompt-version=v2`, etc.<br/>
-    /// The schema returned by this data source config is used to defined what variables are available in your evals.<br/>
-    /// `item` and `sample` are both defined when using this data source config.
+    /// Deprecated in favor of LogsDataSourceConfig.
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class EvalStoredCompletionsDataSourceConfig
     {
         /// <summary>
@@ -18,6 +16,7 @@ namespace tryAGI.OpenAI
         /// <default>global::tryAGI.OpenAI.EvalStoredCompletionsDataSourceConfigType.StoredCompletions</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EvalStoredCompletionsDataSourceConfigTypeJsonConverter))]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::tryAGI.OpenAI.EvalStoredCompletionsDataSourceConfigType Type { get; set; } = global::tryAGI.OpenAI.EvalStoredCompletionsDataSourceConfigType.StoredCompletions;
 
         /// <summary>
@@ -28,6 +27,7 @@ namespace tryAGI.OpenAI
         /// with a maximum length of 512 characters.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
@@ -36,6 +36,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("schema")]
         [global::System.Text.Json.Serialization.JsonRequired]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public required object Schema { get; set; }
 
         /// <summary>

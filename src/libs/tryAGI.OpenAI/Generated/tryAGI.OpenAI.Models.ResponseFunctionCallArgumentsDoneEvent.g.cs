@@ -30,6 +30,13 @@ namespace tryAGI.OpenAI
         public required int OutputIndex { get; set; }
 
         /// <summary>
+        /// The sequence number of this event.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int SequenceNumber { get; set; }
+
+        /// <summary>
         /// The function-call arguments.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
@@ -52,6 +59,9 @@ namespace tryAGI.OpenAI
         /// <param name="outputIndex">
         /// The index of the output item.
         /// </param>
+        /// <param name="sequenceNumber">
+        /// The sequence number of this event.
+        /// </param>
         /// <param name="arguments">
         /// The function-call arguments.
         /// </param>
@@ -61,11 +71,13 @@ namespace tryAGI.OpenAI
         public ResponseFunctionCallArgumentsDoneEvent(
             string itemId,
             int outputIndex,
+            int sequenceNumber,
             string arguments,
             global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEventType type)
         {
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
+            this.SequenceNumber = sequenceNumber;
             this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
             this.Type = type;
         }

@@ -90,6 +90,13 @@ namespace tryAGI.OpenAI
         public bool? Stream { get; set; }
 
         /// <summary>
+        /// Controls how the audio is cut into chunks. When set to `"auto"`, the server first normalizes loudness and then uses voice activity detection (VAD) to choose boundaries. `server_vad` object can be provided to tweak VAD detection parameters manually. If unset, the audio is transcribed as a single block. 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("chunking_strategy")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.CreateTranscriptionRequestChunkingStrategy?, global::tryAGI.OpenAI.VadConfig>))]
+        public global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.CreateTranscriptionRequestChunkingStrategy?, global::tryAGI.OpenAI.VadConfig>? ChunkingStrategy { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -141,6 +148,9 @@ namespace tryAGI.OpenAI
         /// Note: Streaming is not supported for the `whisper-1` model and will be ignored.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="chunkingStrategy">
+        /// Controls how the audio is cut into chunks. When set to `"auto"`, the server first normalizes loudness and then uses voice activity detection (VAD) to choose boundaries. `server_vad` object can be provided to tweak VAD detection parameters manually. If unset, the audio is transcribed as a single block. 
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -154,7 +164,8 @@ namespace tryAGI.OpenAI
             double? temperature,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionInclude>? include,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateTranscriptionRequestTimestampGranularitie>? timestampGranularities,
-            bool? stream)
+            bool? stream,
+            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.CreateTranscriptionRequestChunkingStrategy?, global::tryAGI.OpenAI.VadConfig>? chunkingStrategy)
         {
             this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
@@ -166,6 +177,7 @@ namespace tryAGI.OpenAI
             this.Include = include;
             this.TimestampGranularities = timestampGranularities;
             this.Stream = stream;
+            this.ChunkingStrategy = chunkingStrategy;
         }
 
         /// <summary>

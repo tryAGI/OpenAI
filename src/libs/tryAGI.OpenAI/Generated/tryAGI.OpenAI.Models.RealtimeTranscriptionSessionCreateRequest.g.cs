@@ -17,7 +17,7 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.<br/>
-        /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate, <br/>
+        /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate,<br/>
         /// single channel (mono), and little-endian byte order.<br/>
         /// Default Value: pcm16
         /// </summary>
@@ -55,6 +55,12 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IList<string>? Include { get; set; }
 
         /// <summary>
+        /// Configuration options for the generated client secret.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("client_secret")]
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestClientSecret? ClientSecret { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -69,7 +75,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="inputAudioFormat">
         /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.<br/>
-        /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate, <br/>
+        /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate,<br/>
         /// single channel (mono), and little-endian byte order.<br/>
         /// Default Value: pcm16
         /// </param>
@@ -90,6 +96,9 @@ namespace tryAGI.OpenAI
         /// The set of items to include in the transcription. Current available items are:<br/>
         /// - `item.input_audio_transcription.logprobs`
         /// </param>
+        /// <param name="clientSecret">
+        /// Configuration options for the generated client secret.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -99,7 +108,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestInputAudioTranscription? inputAudioTranscription,
             global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestTurnDetection? turnDetection,
             global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction? inputAudioNoiseReduction,
-            global::System.Collections.Generic.IList<string>? include)
+            global::System.Collections.Generic.IList<string>? include,
+            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestClientSecret? clientSecret)
         {
             this.Modalities = modalities;
             this.InputAudioFormat = inputAudioFormat;
@@ -107,6 +117,7 @@ namespace tryAGI.OpenAI
             this.TurnDetection = turnDetection;
             this.InputAudioNoiseReduction = inputAudioNoiseReduction;
             this.Include = include;
+            this.ClientSecret = clientSecret;
         }
 
         /// <summary>

@@ -9,11 +9,12 @@ namespace tryAGI.OpenAI
     public sealed partial class FineTuneMethod
     {
         /// <summary>
-        /// The type of method. Is either `supervised` or `dpo`.
+        /// The type of method. Is either `supervised`, `dpo`, or `reinforcement`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.FineTuneMethodTypeJsonConverter))]
-        public global::tryAGI.OpenAI.FineTuneMethodType? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.FineTuneMethodType Type { get; set; }
 
         /// <summary>
         /// Configuration for the supervised fine-tuning method.
@@ -28,6 +29,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.FineTuneDPOMethod? Dpo { get; set; }
 
         /// <summary>
+        /// Configuration for the reinforcement fine-tuning method.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reinforcement")]
+        public global::tryAGI.OpenAI.FineTuneReinforcementMethod? Reinforcement { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -37,7 +44,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="FineTuneMethod" /> class.
         /// </summary>
         /// <param name="type">
-        /// The type of method. Is either `supervised` or `dpo`.
+        /// The type of method. Is either `supervised`, `dpo`, or `reinforcement`.
         /// </param>
         /// <param name="supervised">
         /// Configuration for the supervised fine-tuning method.
@@ -45,17 +52,22 @@ namespace tryAGI.OpenAI
         /// <param name="dpo">
         /// Configuration for the DPO fine-tuning method.
         /// </param>
+        /// <param name="reinforcement">
+        /// Configuration for the reinforcement fine-tuning method.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FineTuneMethod(
-            global::tryAGI.OpenAI.FineTuneMethodType? type,
+            global::tryAGI.OpenAI.FineTuneMethodType type,
             global::tryAGI.OpenAI.FineTuneSupervisedMethod? supervised,
-            global::tryAGI.OpenAI.FineTuneDPOMethod? dpo)
+            global::tryAGI.OpenAI.FineTuneDPOMethod? dpo,
+            global::tryAGI.OpenAI.FineTuneReinforcementMethod? reinforcement)
         {
             this.Type = type;
             this.Supervised = supervised;
             this.Dpo = dpo;
+            this.Reinforcement = reinforcement;
         }
 
         /// <summary>

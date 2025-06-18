@@ -32,6 +32,12 @@ namespace tryAGI.OpenAI
         public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Annotation> Annotations { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProb>? Logprobs { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -50,17 +56,20 @@ namespace tryAGI.OpenAI
         /// <param name="annotations">
         /// The annotations of the text output.
         /// </param>
+        /// <param name="logprobs"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputTextContent(
             string text,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Annotation> annotations,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProb>? logprobs,
             global::tryAGI.OpenAI.OutputTextContentType type = global::tryAGI.OpenAI.OutputTextContentType.OutputText)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Annotations = annotations ?? throw new global::System.ArgumentNullException(nameof(annotations));
             this.Type = type;
+            this.Logprobs = logprobs;
         }
 
         /// <summary>

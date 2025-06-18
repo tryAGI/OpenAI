@@ -101,6 +101,15 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
+        /// Manage and run graders in the OpenAI platform.
+        /// </summary>
+        public GradersClient Graders => new GradersClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
         /// Create large batches of API requests to run asynchronously.
         /// </summary>
         public BatchClient Batch => new BatchClient(HttpClient, authorizations: Authorizations)

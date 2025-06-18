@@ -45,6 +45,13 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.OutputContent Part { get; set; }
 
         /// <summary>
+        /// The sequence number of this event.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int SequenceNumber { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -66,6 +73,9 @@ namespace tryAGI.OpenAI
         /// The index of the content part that was added.
         /// </param>
         /// <param name="part"></param>
+        /// <param name="sequenceNumber">
+        /// The sequence number of this event.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -74,12 +84,14 @@ namespace tryAGI.OpenAI
             int outputIndex,
             int contentIndex,
             global::tryAGI.OpenAI.OutputContent part,
+            int sequenceNumber,
             global::tryAGI.OpenAI.ResponseContentPartAddedEventType type)
         {
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.ContentIndex = contentIndex;
             this.Part = part;
+            this.SequenceNumber = sequenceNumber;
             this.Type = type;
         }
 

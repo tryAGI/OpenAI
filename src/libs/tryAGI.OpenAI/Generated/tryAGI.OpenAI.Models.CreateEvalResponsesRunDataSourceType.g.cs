@@ -4,15 +4,15 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The type of run data source. Always `completions`.<br/>
-    /// Default Value: completions
+    /// The type of run data source. Always `responses`.<br/>
+    /// Default Value: responses
     /// </summary>
     public enum CreateEvalResponsesRunDataSourceType
     {
         /// <summary>
         /// 
         /// </summary>
-        Completions,
+        Responses,
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                CreateEvalResponsesRunDataSourceType.Completions => "completions",
+                CreateEvalResponsesRunDataSourceType.Responses => "responses",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,7 +38,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "completions" => CreateEvalResponsesRunDataSourceType.Completions,
+                "responses" => CreateEvalResponsesRunDataSourceType.Responses,
                 _ => null,
             };
         }
