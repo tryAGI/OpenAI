@@ -30,7 +30,7 @@ public partial class Examples
             instructions: "Use functions to resolve family relations into the names of people. Use file search to "
                           + " look up the favorite numbers of people. Use code interpreter to create graphs of lines.",
             tools: tools
-                .Select(x => new ToolsItem2(new AssistantToolsFunction
+                .Select(x => new OneOf<global::tryAGI.OpenAI.AssistantToolsCode, global::tryAGI.OpenAI.AssistantToolsFileSearch, global::tryAGI.OpenAI.AssistantToolsFunction>(new AssistantToolsFunction
                 {
                     Function = x.Function,
                 }))
@@ -104,12 +104,12 @@ public partial class Examples
             foreach (MessageObject message in messages.Data)
             {
                 Console.WriteLine($"[{message.Role.ToString().ToUpper()}]: ");
-                foreach (ContentItem2 contentItem in message.Content)
+                foreach (global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageContentImageFileObject, global::tryAGI.OpenAI.MessageContentImageUrlObject, global::tryAGI.OpenAI.MessageContentTextObject, global::tryAGI.OpenAI.MessageContentRefusalObject> contentItem in message.Content)
                 {
-                    if (contentItem.ImageFile is {} imageFile)
+                    if (contentItem.Value1?.ImageFile is {} imageFile)
                     {
-                        OpenAIFile imageInfo = await api.Files.RetrieveFileAsync(imageFile.ImageFile.FileId);
-                        byte[] imageBytes = await api.Files.DownloadFileAsync(imageFile.ImageFile.FileId);
+                        OpenAIFile imageInfo = await api.Files.RetrieveFileAsync(imageFile.FileId);
+                        byte[] imageBytes = await api.Files.DownloadFileAsync(imageFile.FileId);
         
                         FileInfo fileInfo = new($"{imageInfo.Filename}.png");
         
@@ -117,38 +117,38 @@ public partial class Examples
         
                         Console.WriteLine($"<image: {new Uri(fileInfo.FullName).AbsoluteUri}>");
                     }
-                    if (contentItem.ImageUrl is {} imageUrl)
+                    if (contentItem.Value2?.ImageUrl is {} imageUrl)
                     {
-                        Console.WriteLine($" <Image URL> {imageUrl.ImageUrl.Url}");
+                        Console.WriteLine($" <Image URL> {imageUrl.Url}");
                     }
-                    if (contentItem.Text is {} text)
+                    if (contentItem.Value3?.Text is {} text)
                     {
-                        Console.WriteLine($"{text.Text.Value}");
+                        Console.WriteLine($"{text.Value}");
                         
                         // Include annotations, if any.
-                        if (text.Text.Annotations.Count > 0)
+                        if (text.Annotations.Count > 0)
                         {
                             Console.WriteLine();
-                            foreach (AnnotationsItem annotation in text.Text.Annotations)
+                            foreach (global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageContentTextAnnotationsFileCitationObject, global::tryAGI.OpenAI.MessageContentTextAnnotationsFilePathObject> annotation in text.Annotations)
                             {
-                                if (annotation.FileCitation is {} fileCitation)
+                                if (annotation.Value1?.FileCitation is {} fileCitation)
                                 {
-                                    Console.WriteLine($"* File citation, file ID: {fileCitation.FileCitation.FileId}");
-                                    Console.WriteLine($"* Text to replace: {fileCitation.Text}");
-                                    Console.WriteLine($"* Message content index range: {fileCitation.StartIndex}-{fileCitation.EndIndex}");
+                                    Console.WriteLine($"* File citation, file ID: {fileCitation.FileId}");
+                                    //Console.WriteLine($"* Text to replace: {fileCitation}");
+                                    //Console.WriteLine($"* Message content index range: {fileCitation.StartIndex}-{fileCitation.EndIndex}");
                                 }
-                                if (annotation.FilePath is {} filePath)
+                                if (annotation.Value2?.FilePath is {} filePath)
                                 {
-                                    Console.WriteLine($"* File output, new file ID: {filePath.FilePath.FileId}");
-                                    Console.WriteLine($"* Text to replace: {filePath.Text}");
-                                    Console.WriteLine($"* Message content index range: {filePath.StartIndex}-{filePath.EndIndex}");
+                                    Console.WriteLine($"* File output, new file ID: {filePath.FileId}");
+                                    //Console.WriteLine($"* Text to replace: {filePath.Text}");
+                                    //Console.WriteLine($"* Message content index range: {filePath.StartIndex}-{filePath.EndIndex}");
                                 }
                             }
                         }
                     }
-                    if (contentItem.Refusal is {} refusal)
+                    if (contentItem.Value4?.Refusal is {} refusal)
                     {
-                        Console.WriteLine($"Refusal: {refusal.Refusal}");
+                        Console.WriteLine($"Refusal: {refusal}");
                     }
                 }
                 Console.WriteLine();
@@ -163,34 +163,34 @@ public partial class Examples
             foreach (RunStepObject step in runSteps.Data)
             {
                 Console.WriteLine($"Run step: {step.Status}");
-                foreach (var toolCall in step.StepDetails.ToolCalls?.ToolCalls ?? [])
+                foreach (var toolCall in step.StepDetails.Value2?.ToolCalls ?? [])
                 {
-                    if (toolCall.CodeInterpreter is {} codeInterpreter)
+                    if (toolCall.Value1?.CodeInterpreter is {} codeInterpreter)
                     {
-                        Console.WriteLine($" --> Tool call: {codeInterpreter.Type}");
-                        foreach (var output in codeInterpreter.CodeInterpreter.Outputs)
+                        //Console.WriteLine($" --> Tool call: {codeInterpreter.Type}");
+                        foreach (var output in codeInterpreter.Outputs)
                         {
-                            if (output.Logs is {} logs)
+                            if (output.Value1?.Logs is {} logs)
                             {
-                                Console.WriteLine($"    --> Output: {logs.Logs}");
+                                Console.WriteLine($"    --> Output: {logs}");
                             }
-                            if (output.Image is {} image)
+                            if (output.Value2?.Image is {} image)
                             {
-                                Console.WriteLine($"    --> Output: {image.Image.FileId}");
+                                Console.WriteLine($"    --> Output: {image.FileId}");
                             }
                         }
                     }
-                    if (toolCall.FileSearch is {} fileSearch)
+                    if (toolCall.Value2?.FileSearch is {} fileSearch)
                     {
-                        Console.WriteLine($" --> Tool call: {fileSearch.Type}");
-                        foreach (var output in fileSearch.FileSearch.Results ?? [])
+                        //Console.WriteLine($" --> Tool call: {fileSearch.Type}");
+                        foreach (var output in fileSearch.Results ?? [])
                         {
                             Console.WriteLine($"    --> Output: {output.FileId}");
                         }
                     }
-                    if (toolCall.Function is {} tool)
+                    if (toolCall.Value3?.Function is {} tool)
                     {
-                        Console.WriteLine($" --> Tool call: {tool.Type}");
+                        //Console.WriteLine($" --> Tool call: {tool.Type}");
                     }
                 }
             }

@@ -14,7 +14,7 @@ public partial class Examples
                    + " attractions. We highly recommend this hotel.",
             model: CreateEmbeddingRequestModel.TextEmbedding3Small,
             dimensions: 512);
-        IList<double> vector = embedding.Data[0].Embedding1;
+        IList<float> vector = embedding.Data[0].Embedding1;
 
         Console.WriteLine($"Dimension: {vector.Count}");
         Console.WriteLine("Floats: ");

@@ -163,6 +163,6 @@ public partial class Tests
 
         var api = new OpenAiClient(apiKey);
 
-        return (api, model ?? ChatClient.LatestFastModel.ToValueString());
+        return (api, model ?? ModelIdsSharedEnum.Gpt4oMini.ToValueString());
     }
 }

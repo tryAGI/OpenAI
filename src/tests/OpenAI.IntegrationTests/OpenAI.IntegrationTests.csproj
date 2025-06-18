@@ -23,7 +23,7 @@
 
   <ItemGroup Label="GlobalUsings">
     <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
-    <Using Include="FluentAssertions" />
+    <Using Include="AwesomeAssertions" />
     <Using Include="NUnit.Framework" />
     <Compile Remove="Extended\**\*.*" />
     <None Include="Extended\**\*.*" />

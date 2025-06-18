@@ -20,7 +20,7 @@ public partial class Examples
 
         foreach (Embedding embedding in response.Data)
         {
-            IList<double> vector = embedding.Embedding1;
+            IList<float> vector = embedding.Embedding1;
 
             Console.WriteLine($"Dimension: {vector.Count}");
             Console.WriteLine("Floats: ");

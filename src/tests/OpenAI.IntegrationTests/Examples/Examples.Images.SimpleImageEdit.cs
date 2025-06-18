@@ -22,14 +22,14 @@ public partial class Examples
         
         ImagesResponse image = await api.Images.CreateImageEditAsync(
             image: H.Resources.images_flower_vase_png.AsBytes(),
-            imagename: H.Resources.images_flower_vase_png.FileName,
+            //imagename: H.Resources.images_flower_vase_png.FileName,
             prompt: "A vase full of beautiful flowers.",
             mask: H.Resources.images_flower_vase_mask_png.AsBytes(),
             maskname: H.Resources.images_flower_vase_mask_png.FileName,
             model: CreateImageEditRequestModel.DallE2,
             size: CreateImageEditRequestSize.x512x512,
             responseFormat: CreateImageEditRequestResponseFormat.B64Json);
-        byte[] bytes = image.Data[0].Bytes;
+        byte[] bytes = image.Data?[0].Bytes ?? throw new InvalidOperationException("No bytes returned from the API.");
 
         FileInfo fileInfo = new($"{Guid.NewGuid()}.png");
         

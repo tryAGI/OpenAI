@@ -19,7 +19,7 @@ public partial class Examples
             name: "Example: Function Calling",
             instructions: "Don't make assumptions about what values to plug into functions."
                           + " Ask for clarification if a user request is ambiguous.",
-            tools: tools.Select(x => new ToolsItem2(new AssistantToolsFunction
+            tools: tools.Select(x => new OneOf<AssistantToolsCode, AssistantToolsFileSearch, AssistantToolsFunction>(new AssistantToolsFunction
             {
                 Function = x.Function,
             })).ToArray());
@@ -41,13 +41,13 @@ public partial class Examples
             
             await foreach (AssistantStreamEvent streamingUpdate in streamingUpdates)
             {
-                if (streamingUpdate.ThreadRunCreated is { Data: {} newRun })
+                if (streamingUpdate.Run?.Value1 is { Data: {} newRun })
                 {
                     Console.WriteLine("--- Run created! ---");
                         
                     currentRun = newRun;
                 }
-                if (streamingUpdate.ThreadRunRequiresAction is { Data.RequiredAction: {} requiredAction })
+                if (streamingUpdate.Run?.Value4 is { Data.RequiredAction: {} requiredAction })
                 {
                     foreach (RunToolCallObject toolCall in requiredAction.SubmitToolOutputs.ToolCalls)
                     {
@@ -61,28 +61,28 @@ public partial class Examples
                         });
                     }
                 }
-                if (streamingUpdate.ThreadMessageDelta is {} delta)
+                if (streamingUpdate.Message?.Value3 is {} delta)
                 {
                     foreach (var deltaVariation in delta.Data.Delta.Content ?? [])
                     {
-                        if (deltaVariation.ImageFile is {} imageFile)
+                        if (deltaVariation.Value1?.ImageFile is {} imageFile)
                         {
                             Console.WriteLine();
-                            Console.WriteLine(imageFile.ImageFile?.FileId);
+                            Console.WriteLine(imageFile.FileId);
                         }
-                        if (deltaVariation.Text is {} text)
+                        if (deltaVariation.Value2?.Text is {} text)
                         {
-                            Console.Write(text.Text?.Value);
+                            Console.Write(text?.Value);
                         }
-                        if (deltaVariation.Refusal is {} refusal)
-                        {
-                            Console.WriteLine();
-                            Console.WriteLine(refusal.Refusal);
-                        }
-                        if (deltaVariation.ImageUrl is {} imageUrl)
+                        if (deltaVariation.Value3?.Refusal is {} refusal)
                         {
                             Console.WriteLine();
-                            Console.WriteLine(imageUrl.ImageUrl?.Url);
+                            Console.WriteLine(refusal);
+                        }
+                        if (deltaVariation.Value4?.ImageUrl is {} imageUrl)
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine(imageUrl.Url);
                         }
                     }
                 }

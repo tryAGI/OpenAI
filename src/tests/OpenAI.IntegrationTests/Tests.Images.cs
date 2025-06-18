@@ -14,9 +14,9 @@ public partial class Tests
             size: CreateImageRequestSize.x256x256,
             responseFormat: CreateImageRequestResponseFormat.Url,
             user: "tryAGI.OpenAI.IntegrationTests.Tests.CreateImage_Url");
-        response.Data.ElementAt(0).Url.Should().NotBeNullOrEmpty();
+        response.Data?.ElementAt(0).Url.Should().NotBeNullOrEmpty();
 
-        Process.Start(new ProcessStartInfo(response.Data.ElementAt(0).Url!)
+        Process.Start(new ProcessStartInfo(response.Data?.ElementAt(0).Url!)
         {
             UseShellExecute = true,
         });
@@ -32,10 +32,10 @@ public partial class Tests
             size: CreateImageRequestSize.x256x256,
             responseFormat: CreateImageRequestResponseFormat.B64Json,
             user: "tryAGI.OpenAI.IntegrationTests.Tests.CreateImage_Base64");
-        var base64 = response.Data.ElementAt(0).B64Json;
+        var base64 = response.Data?.ElementAt(0).B64Json;
         base64.Should().NotBeEmpty();
 
-        var bytes = Convert.FromBase64String(base64!);
+        var bytes = Convert.FromBase64String(base64);
         var path = Path.Combine(Path.GetTempPath(), "cat.png");
         await File.WriteAllBytesAsync(path, bytes);
         

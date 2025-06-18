@@ -14,7 +14,7 @@ public partial class Examples
         ImagesResponse appleImage = await api.Images.CreateImageAsync(
             prompt: "picture of apple",
             responseFormat: CreateImageRequestResponseFormat.B64Json);
-        byte[] appleBytes = appleImage.Data[0].Bytes;
+        byte[] appleBytes = appleImage.Data?[0].Bytes ?? [];
 
         FileInfo appleFileInfo = new($"{Guid.NewGuid()}.png");
         
@@ -57,32 +57,32 @@ public partial class Examples
                 Console.WriteLine($"Code: {error.Data.Code}");
                 Console.WriteLine($"Type: {error.Data.Type}");
             }
-            if (streamingUpdate.ThreadRunCreated is not null)
+            if (streamingUpdate.Run?.Value1 is not null)
             {
                 Console.WriteLine("--- Run created! ---");
             }
-            if (streamingUpdate.ThreadMessageDelta is {} delta)
+            if (streamingUpdate.Message?.Value3 is {} delta)
             {
                 foreach (var deltaVariation in delta.Data.Delta.Content ?? [])
                 {
-                    if (deltaVariation.ImageFile is {} imageFile)
+                    if (deltaVariation.Value1?.ImageFile is {} imageFile)
                     {
                         Console.WriteLine();
-                        Console.WriteLine(imageFile.ImageFile?.FileId);
+                        Console.WriteLine(imageFile?.FileId);
                     }
-                    if (deltaVariation.Text is {} text)
+                    if (deltaVariation.Value2?.Text is {} text)
                     {
-                        Console.Write(text.Text?.Value);
+                        Console.Write(text.Value);
                     }
-                    if (deltaVariation.Refusal is {} refusal)
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine(refusal.Refusal);
-                    }
-                    if (deltaVariation.ImageUrl is {} imageUrl)
+                    if (deltaVariation.Value3?.Refusal is {} refusal)
                     {
                         Console.WriteLine();
-                        Console.WriteLine(imageUrl.ImageUrl?.Url);
+                        Console.WriteLine(refusal);
+                    }
+                    if (deltaVariation.Value4?.ImageUrl is {} imageUrl)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine(imageUrl.Url);
                     }
                 }
             }

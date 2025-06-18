@@ -15,7 +15,7 @@ public partial class Examples
                    + " consider using a moisture meter to accurately gauge the soil’s wetness. Should the soil retain"
                    + " moisture, it is wise to postpone watering for a couple more days. When in doubt, it is often safer"
                    + " to water sparingly and maintain a less-is-more approach.",
-            voice: CreateSpeechRequestVoice.Alloy);
+            voice: VoiceIdsSharedEnum.Alloy);
 
         FileInfo fileInfo = new($"{Guid.NewGuid()}.mp3");
         

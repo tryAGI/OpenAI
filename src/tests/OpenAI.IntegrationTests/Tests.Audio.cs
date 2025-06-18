@@ -11,7 +11,7 @@ public partial class Tests
         var response = await api.Audio.CreateSpeechAsync(
             model: CreateSpeechRequestModel.Tts1,
             input: "Create speech test is successful.",
-            voice: CreateSpeechRequestVoice.Alloy,
+            voice: VoiceIdsSharedEnum.Alloy,
             responseFormat: CreateSpeechRequestResponseFormat.Mp3,
             speed: 1.0);
         response.Should().NotBeNull();
@@ -29,7 +29,7 @@ public partial class Tests
             filename: "mp3.mp3",
             model: CreateTranslationRequestModel.Whisper1,
             prompt: null,
-            responseFormat: AudioResponseFormat.Json,
+            responseFormat: CreateTranslationRequestResponseFormat.Json,
             temperature: 0.0);
         response2.Should().NotBeNull();
         response2.Object.Should().BeOfType<CreateTranslationResponseJson>();

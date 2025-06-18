@@ -13,7 +13,7 @@ public partial class Examples
                    + " and a really helpful concierge. The location is perfect -- right downtown, close to all the tourist"
                    + " attractions. We highly recommend this hotel.",
             model: CreateEmbeddingRequestModel.TextEmbedding3Small);
-        IList<double> vector = embedding.Data[0].Embedding1;
+        IList<float> vector = embedding.Data[0].Embedding1;
 
         Console.WriteLine($"Dimension: {vector.Count}");
         Console.WriteLine("Floats: ");
