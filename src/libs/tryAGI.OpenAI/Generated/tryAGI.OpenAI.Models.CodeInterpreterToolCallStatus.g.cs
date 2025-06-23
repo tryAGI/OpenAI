@@ -15,11 +15,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Completed,
+        /// <summary>
+        /// 
+        /// </summary>
+        Incomplete,
+        /// <summary>
+        /// 
+        /// </summary>
         Interpreting,
         /// <summary>
         /// 
         /// </summary>
-        Completed,
+        Failed,
     }
 
     /// <summary>
@@ -35,8 +43,10 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 CodeInterpreterToolCallStatus.InProgress => "in_progress",
-                CodeInterpreterToolCallStatus.Interpreting => "interpreting",
                 CodeInterpreterToolCallStatus.Completed => "completed",
+                CodeInterpreterToolCallStatus.Incomplete => "incomplete",
+                CodeInterpreterToolCallStatus.Interpreting => "interpreting",
+                CodeInterpreterToolCallStatus.Failed => "failed",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,8 +58,10 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "in_progress" => CodeInterpreterToolCallStatus.InProgress,
-                "interpreting" => CodeInterpreterToolCallStatus.Interpreting,
                 "completed" => CodeInterpreterToolCallStatus.Completed,
+                "incomplete" => CodeInterpreterToolCallStatus.Incomplete,
+                "interpreting" => CodeInterpreterToolCallStatus.Interpreting,
+                "failed" => CodeInterpreterToolCallStatus.Failed,
                 _ => null,
             };
         }

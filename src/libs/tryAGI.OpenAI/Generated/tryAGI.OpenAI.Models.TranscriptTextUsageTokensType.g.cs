@@ -4,41 +4,40 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The type of the code interpreter tool call. Always `code_interpreter_call`.<br/>
-    /// Default Value: code_interpreter_call
+    /// The type of the usage object. Always `tokens` for this variant.
     /// </summary>
-    public enum CodeInterpreterToolCallType
+    public enum TranscriptTextUsageTokensType
     {
         /// <summary>
         /// 
         /// </summary>
-        CodeInterpreterCall,
+        Tokens,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class CodeInterpreterToolCallTypeExtensions
+    public static class TranscriptTextUsageTokensTypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this CodeInterpreterToolCallType value)
+        public static string ToValueString(this TranscriptTextUsageTokensType value)
         {
             return value switch
             {
-                CodeInterpreterToolCallType.CodeInterpreterCall => "code_interpreter_call",
+                TranscriptTextUsageTokensType.Tokens => "tokens",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CodeInterpreterToolCallType? ToEnum(string value)
+        public static TranscriptTextUsageTokensType? ToEnum(string value)
         {
             return value switch
             {
-                "code_interpreter_call" => CodeInterpreterToolCallType.CodeInterpreterCall,
+                "tokens" => TranscriptTextUsageTokensType.Tokens,
                 _ => null,
             };
         }

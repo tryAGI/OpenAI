@@ -4,41 +4,40 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The anchor point for the ephemeral token expiration. Only `created_at` is currently supported.<br/>
-    /// Default Value: created_at
+    /// The type of the usage object. Always `duration` for this variant.
     /// </summary>
-    public enum RealtimeSessionCreateRequestClientSecretExpiresAtAnchor
+    public enum TranscriptTextUsageDurationType
     {
         /// <summary>
         /// 
         /// </summary>
-        CreatedAt,
+        Duration,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class RealtimeSessionCreateRequestClientSecretExpiresAtAnchorExtensions
+    public static class TranscriptTextUsageDurationTypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this RealtimeSessionCreateRequestClientSecretExpiresAtAnchor value)
+        public static string ToValueString(this TranscriptTextUsageDurationType value)
         {
             return value switch
             {
-                RealtimeSessionCreateRequestClientSecretExpiresAtAnchor.CreatedAt => "created_at",
+                TranscriptTextUsageDurationType.Duration => "duration",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RealtimeSessionCreateRequestClientSecretExpiresAtAnchor? ToEnum(string value)
+        public static TranscriptTextUsageDurationType? ToEnum(string value)
         {
             return value switch
             {
-                "created_at" => RealtimeSessionCreateRequestClientSecretExpiresAtAnchor.CreatedAt,
+                "duration" => TranscriptTextUsageDurationType.Duration,
                 _ => null,
             };
         }

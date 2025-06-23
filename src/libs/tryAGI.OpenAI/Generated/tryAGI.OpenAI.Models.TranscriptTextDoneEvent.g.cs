@@ -29,6 +29,12 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptTextDoneEventLogprob>? Logprobs { get; set; }
 
         /// <summary>
+        /// Usage statistics for models billed by token usage.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
+        public global::tryAGI.OpenAI.TranscriptTextUsageTokens? Usage { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -46,17 +52,22 @@ namespace tryAGI.OpenAI
         /// <param name="logprobs">
         /// The log probabilities of the individual tokens in the transcription. Only included if you [create a transcription](/docs/api-reference/audio/create-transcription) with the `include[]` parameter set to `logprobs`.
         /// </param>
+        /// <param name="usage">
+        /// Usage statistics for models billed by token usage.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TranscriptTextDoneEvent(
             string text,
             global::tryAGI.OpenAI.TranscriptTextDoneEventType type,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptTextDoneEventLogprob>? logprobs)
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptTextDoneEventLogprob>? logprobs,
+            global::tryAGI.OpenAI.TranscriptTextUsageTokens? usage)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
             this.Logprobs = logprobs;
+            this.Usage = usage;
         }
 
         /// <summary>

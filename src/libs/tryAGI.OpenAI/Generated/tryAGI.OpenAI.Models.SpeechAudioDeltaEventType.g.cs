@@ -4,41 +4,40 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The type of the code interpreter tool call. Always `code_interpreter_call`.<br/>
-    /// Default Value: code_interpreter_call
+    /// The type of the event. Always `speech.audio.delta`.
     /// </summary>
-    public enum CodeInterpreterToolCallType
+    public enum SpeechAudioDeltaEventType
     {
         /// <summary>
         /// 
         /// </summary>
-        CodeInterpreterCall,
+        SpeechAudioDelta,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class CodeInterpreterToolCallTypeExtensions
+    public static class SpeechAudioDeltaEventTypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this CodeInterpreterToolCallType value)
+        public static string ToValueString(this SpeechAudioDeltaEventType value)
         {
             return value switch
             {
-                CodeInterpreterToolCallType.CodeInterpreterCall => "code_interpreter_call",
+                SpeechAudioDeltaEventType.SpeechAudioDelta => "speech.audio.delta",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CodeInterpreterToolCallType? ToEnum(string value)
+        public static SpeechAudioDeltaEventType? ToEnum(string value)
         {
             return value switch
             {
-                "code_interpreter_call" => CodeInterpreterToolCallType.CodeInterpreterCall,
+                "speech.audio.delta" => SpeechAudioDeltaEventType.SpeechAudioDelta,
                 _ => null,
             };
         }

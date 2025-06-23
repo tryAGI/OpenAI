@@ -6,7 +6,7 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class CodeInterpreterToolOutputDiscriminator
+    public sealed partial class CodeInterpreterToolCallOutputsDiscriminator
     {
         /// <summary>
         /// 
@@ -21,22 +21,22 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CodeInterpreterToolOutputDiscriminator" /> class.
+        /// Initializes a new instance of the <see cref="CodeInterpreterToolCallOutputsDiscriminator" /> class.
         /// </summary>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public CodeInterpreterToolOutputDiscriminator(
+        public CodeInterpreterToolCallOutputsDiscriminator(
             string? type)
         {
             this.Type = type;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CodeInterpreterToolOutputDiscriminator" /> class.
+        /// Initializes a new instance of the <see cref="CodeInterpreterToolCallOutputsDiscriminator" /> class.
         /// </summary>
-        public CodeInterpreterToolOutputDiscriminator()
+        public CodeInterpreterToolCallOutputsDiscriminator()
         {
         }
     }

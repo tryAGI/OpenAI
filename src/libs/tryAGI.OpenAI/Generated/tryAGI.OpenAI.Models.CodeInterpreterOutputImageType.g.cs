@@ -4,41 +4,41 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The type of the code interpreter tool call. Always `code_interpreter_call`.<br/>
-    /// Default Value: code_interpreter_call
+    /// The type of the output. Always 'image'.<br/>
+    /// Default Value: image
     /// </summary>
-    public enum CodeInterpreterToolCallType
+    public enum CodeInterpreterOutputImageType
     {
         /// <summary>
         /// 
         /// </summary>
-        CodeInterpreterCall,
+        Image,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class CodeInterpreterToolCallTypeExtensions
+    public static class CodeInterpreterOutputImageTypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this CodeInterpreterToolCallType value)
+        public static string ToValueString(this CodeInterpreterOutputImageType value)
         {
             return value switch
             {
-                CodeInterpreterToolCallType.CodeInterpreterCall => "code_interpreter_call",
+                CodeInterpreterOutputImageType.Image => "image",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static CodeInterpreterToolCallType? ToEnum(string value)
+        public static CodeInterpreterOutputImageType? ToEnum(string value)
         {
             return value switch
             {
-                "code_interpreter_call" => CodeInterpreterToolCallType.CodeInterpreterCall,
+                "image" => CodeInterpreterOutputImageType.Image,
                 _ => null,
             };
         }

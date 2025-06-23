@@ -6,15 +6,14 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// Configuration for the ephemeral token expiration.
     /// </summary>
-    public sealed partial class RealtimeSessionCreateRequestClientSecretExpiresAt
+    public sealed partial class RealtimeSessionCreateRequestClientSecretExpiresAfter
     {
         /// <summary>
-        /// The anchor point for the ephemeral token expiration. Only `created_at` is currently supported.<br/>
-        /// Default Value: created_at
+        /// The anchor point for the ephemeral token expiration. Only `created_at` is currently supported.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("anchor")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeSessionCreateRequestClientSecretExpiresAtAnchorJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestClientSecretExpiresAtAnchor? Anchor { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeSessionCreateRequestClientSecretExpiresAfterAnchorJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestClientSecretExpiresAfterAnchor Anchor { get; set; }
 
         /// <summary>
         /// The number of seconds from the anchor point to the expiration. Select a value between `10` and `7200`.<br/>
@@ -30,11 +29,10 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RealtimeSessionCreateRequestClientSecretExpiresAt" /> class.
+        /// Initializes a new instance of the <see cref="RealtimeSessionCreateRequestClientSecretExpiresAfter" /> class.
         /// </summary>
         /// <param name="anchor">
-        /// The anchor point for the ephemeral token expiration. Only `created_at` is currently supported.<br/>
-        /// Default Value: created_at
+        /// The anchor point for the ephemeral token expiration. Only `created_at` is currently supported.
         /// </param>
         /// <param name="seconds">
         /// The number of seconds from the anchor point to the expiration. Select a value between `10` and `7200`.<br/>
@@ -43,8 +41,8 @@ namespace tryAGI.OpenAI
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public RealtimeSessionCreateRequestClientSecretExpiresAt(
-            global::tryAGI.OpenAI.RealtimeSessionCreateRequestClientSecretExpiresAtAnchor? anchor,
+        public RealtimeSessionCreateRequestClientSecretExpiresAfter(
+            global::tryAGI.OpenAI.RealtimeSessionCreateRequestClientSecretExpiresAfterAnchor anchor,
             int? seconds)
         {
             this.Anchor = anchor;
@@ -52,9 +50,9 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RealtimeSessionCreateRequestClientSecretExpiresAt" /> class.
+        /// Initializes a new instance of the <see cref="RealtimeSessionCreateRequestClientSecretExpiresAfter" /> class.
         /// </summary>
-        public RealtimeSessionCreateRequestClientSecretExpiresAt()
+        public RealtimeSessionCreateRequestClientSecretExpiresAfter()
         {
         }
     }

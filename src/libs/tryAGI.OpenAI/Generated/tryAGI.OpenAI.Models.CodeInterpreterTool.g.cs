@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -20,9 +22,9 @@ namespace tryAGI.OpenAI
         /// specifies uploaded file IDs to make available to your code.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("container")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ContainerJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, global::tryAGI.OpenAI.CodeInterpreterToolAuto>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.Container Container { get; set; }
+        public required global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.CodeInterpreterToolAuto> Container { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,7 +46,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CodeInterpreterTool(
-            global::tryAGI.OpenAI.Container container,
+            global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.CodeInterpreterToolAuto> container,
             global::tryAGI.OpenAI.CodeInterpreterToolType type)
         {
             this.Container = container;
