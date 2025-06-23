@@ -32,6 +32,13 @@ namespace tryAGI.OpenAI
         public required int Index { get; set; }
 
         /// <summary>
+        /// The filename of the file cited.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Filename { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -50,16 +57,21 @@ namespace tryAGI.OpenAI
         /// <param name="index">
         /// The index of the file in the list of files.
         /// </param>
+        /// <param name="filename">
+        /// The filename of the file cited.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FileCitationBody(
             string fileId,
             int index,
+            string filename,
             global::tryAGI.OpenAI.FileCitationBodyType type = global::tryAGI.OpenAI.FileCitationBodyType.FileCitation)
         {
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
             this.Index = index;
+            this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
             this.Type = type;
         }
 

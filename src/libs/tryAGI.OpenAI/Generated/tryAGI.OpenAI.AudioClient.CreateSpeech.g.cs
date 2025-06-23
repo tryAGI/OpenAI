@@ -176,8 +176,12 @@ namespace tryAGI.OpenAI
         /// Default Value: mp3
         /// </param>
         /// <param name="speed">
-        /// The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is the default. Does not work with `gpt-4o-mini-tts`.<br/>
+        /// The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is the default.<br/>
         /// Default Value: 1
+        /// </param>
+        /// <param name="streamFormat">
+        /// The format to stream the audio in. Supported formats are `sse` and `audio`. `sse` is not supported for `tts-1` or `tts-1-hd`.<br/>
+        /// Default Value: audio
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -188,6 +192,7 @@ namespace tryAGI.OpenAI
             string? instructions = default,
             global::tryAGI.OpenAI.CreateSpeechRequestResponseFormat? responseFormat = default,
             double? speed = default,
+            global::tryAGI.OpenAI.CreateSpeechRequestStreamFormat? streamFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::tryAGI.OpenAI.CreateSpeechRequest
@@ -198,6 +203,7 @@ namespace tryAGI.OpenAI
                 Voice = voice,
                 ResponseFormat = responseFormat,
                 Speed = speed,
+                StreamFormat = streamFormat,
             };
 
             return await CreateSpeechAsync(

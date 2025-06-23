@@ -42,6 +42,12 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionSegment>? Segments { get; set; }
 
         /// <summary>
+        /// Usage statistics for models billed by audio input duration.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
+        public global::tryAGI.OpenAI.TranscriptTextUsageDuration? Usage { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -65,6 +71,9 @@ namespace tryAGI.OpenAI
         /// <param name="segments">
         /// Segments of the transcribed text and their corresponding details.
         /// </param>
+        /// <param name="usage">
+        /// Usage statistics for models billed by audio input duration.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -73,13 +82,15 @@ namespace tryAGI.OpenAI
             double duration,
             string text,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionWord>? words,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionSegment>? segments)
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionSegment>? segments,
+            global::tryAGI.OpenAI.TranscriptTextUsageDuration? usage)
         {
             this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
             this.Duration = duration;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Words = words;
             this.Segments = segments;
+            this.Usage = usage;
         }
 
         /// <summary>

@@ -11,8 +11,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Configuration for the ephemeral token expiration.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
-        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestClientSecretExpiresAt? ExpiresAt { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_after")]
+        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestClientSecretExpiresAfter? ExpiresAfter { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -23,16 +23,16 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeSessionCreateRequestClientSecret" /> class.
         /// </summary>
-        /// <param name="expiresAt">
+        /// <param name="expiresAfter">
         /// Configuration for the ephemeral token expiration.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeSessionCreateRequestClientSecret(
-            global::tryAGI.OpenAI.RealtimeSessionCreateRequestClientSecretExpiresAt? expiresAt)
+            global::tryAGI.OpenAI.RealtimeSessionCreateRequestClientSecretExpiresAfter? expiresAfter)
         {
-            this.ExpiresAt = expiresAt;
+            this.ExpiresAfter = expiresAfter;
         }
 
         /// <summary>

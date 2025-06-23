@@ -239,22 +239,34 @@ paths:
               schema:
                 type: string
                 format: binary
+            text/event-stream:
+              schema:
+                $ref: '#/components/schemas/CreateSpeechResponseStreamEvent'
       x-oaiMeta:
         name: Create speech
         group: audio
-        returns: The audio file content.
+        returns: 'The audio file content or a [stream of audio events](/docs/api-reference/audio/speech-audio-delta-event).'
         examples:
-          response: ''
-          request:
-            curl: "curl https://api.openai.com/v1/audio/speech \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"model\": \"gpt-4o-mini-tts\",\n    \"input\": \"The quick brown fox jumped over the lazy dog.\",\n    \"voice\": \"alloy\"\n  }' \\\n  --output speech.mp3\n"
-            python: "import os\nfrom openai import OpenAI\n\nclient = OpenAI(\n    api_key=os.environ.get(\"OPENAI_API_KEY\"),  # This is the default and can be omitted\n)\nspeech = client.audio.speech.create(\n    input=\"input\",\n    model=\"string\",\n    voice=\"ash\",\n)\nprint(speech)\ncontent = speech.read()\nprint(content)"
-            javascript: "import fs from \"fs\";\nimport path from \"path\";\nimport OpenAI from \"openai\";\n\nconst openai = new OpenAI();\n\nconst speechFile = path.resolve(\"./speech.mp3\");\n\nasync function main() {\n  const mp3 = await openai.audio.speech.create({\n    model: \"gpt-4o-mini-tts\",\n    voice: \"alloy\",\n    input: \"Today is a wonderful day to build something people love!\",\n  });\n  console.log(speechFile);\n  const buffer = Buffer.from(await mp3.arrayBuffer());\n  await fs.promises.writeFile(speechFile, buffer);\n}\nmain();\n"
-            csharp: "using System;\nusing System.IO;\n\nusing OpenAI.Audio;\n\nAudioClient client = new(\n    model: \"gpt-4o-mini-tts\",\n    apiKey: Environment.GetEnvironmentVariable(\"OPENAI_API_KEY\")\n);\n\nBinaryData speech = client.GenerateSpeech(\n    text: \"The quick brown fox jumped over the lazy dog.\",\n    voice: GeneratedSpeechVoice.Alloy\n);\n\nusing FileStream stream = File.OpenWrite(\"speech.mp3\");\nspeech.ToStream().CopyTo(stream);\n"
-            node.js: "import OpenAI from 'openai';\n\nconst client = new OpenAI({\n  apiKey: process.env['OPENAI_API_KEY'], // This is the default and can be omitted\n});\n\nconst speech = await client.audio.speech.create({ input: 'input', model: 'string', voice: 'ash' });\n\nconsole.log(speech);\n\nconst content = await speech.blob();\nconsole.log(content);"
-            go: "package main\n\nimport (\n  \"context\"\n  \"fmt\"\n\n  \"github.com/openai/openai-go\"\n  \"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n  client := openai.NewClient(\n    option.WithAPIKey(\"My API Key\"), // defaults to os.LookupEnv(\"OPENAI_API_KEY\")\n  )\n  speech, err := client.Audio.Speech.New(context.TODO(), openai.AudioSpeechNewParams{\n    Input: \"input\",\n    Model: openai.SpeechModelTTS1,\n    Voice: openai.AudioSpeechNewParamsVoiceAlloy,\n  })\n  if err != nil {\n    panic(err.Error())\n  }\n  fmt.Printf(\"%+v\\n\", speech)\n}\n"
-            java: "package com.openai.example;\n\nimport com.openai.client.OpenAIClient;\nimport com.openai.client.okhttp.OpenAIOkHttpClient;\nimport com.openai.core.http.HttpResponse;\nimport com.openai.models.audio.speech.SpeechCreateParams;\nimport com.openai.models.audio.speech.SpeechModel;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        // Configures using the `OPENAI_API_KEY`, `OPENAI_ORG_ID`, `OPENAI_PROJECT_ID` and `OPENAI_BASE_URL` environment variables\n        OpenAIClient client = OpenAIOkHttpClient.fromEnv();\n\n        SpeechCreateParams params = SpeechCreateParams.builder()\n            .input(\"input\")\n            .model(SpeechModel.TTS_1)\n            .voice(SpeechCreateParams.Voice.ALLOY)\n            .build();\n        HttpResponse speech = client.audio().speech().create(params);\n    }\n}"
-            kotlin: "package com.openai.example\n\nimport com.openai.client.OpenAIClient\nimport com.openai.client.okhttp.OpenAIOkHttpClient\nimport com.openai.core.http.HttpResponse\nimport com.openai.models.audio.speech.SpeechCreateParams\nimport com.openai.models.audio.speech.SpeechModel\n\nfun main() {\n    // Configures using the `OPENAI_API_KEY`, `OPENAI_ORG_ID`, `OPENAI_PROJECT_ID` and `OPENAI_BASE_URL` environment variables\n    val client: OpenAIClient = OpenAIOkHttpClient.fromEnv()\n\n    val params: SpeechCreateParams = SpeechCreateParams.builder()\n        .input(\"input\")\n        .model(SpeechModel.TTS_1)\n        .voice(SpeechCreateParams.Voice.ALLOY)\n        .build()\n    val speech: HttpResponse = client.audio().speech().create(params)\n}"
-            ruby: "require \"openai\"\n\nopenai = OpenAI::Client.new(\n  api_key: ENV[\"OPENAI_API_KEY\"] # This is the default and can be omitted\n)\n\nspeech = openai.audio.speech.create(input: \"input\", model: :\"tts-1\", voice: :alloy)\n\nputs(speech)"
+          - title: Default
+            request:
+              curl: "curl https://api.openai.com/v1/audio/speech \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"model\": \"gpt-4o-mini-tts\",\n    \"input\": \"The quick brown fox jumped over the lazy dog.\",\n    \"voice\": \"alloy\"\n  }' \\\n  --output speech.mp3\n"
+              python: "import os\nfrom openai import OpenAI\n\nclient = OpenAI(\n    api_key=os.environ.get(\"OPENAI_API_KEY\"),  # This is the default and can be omitted\n)\nspeech = client.audio.speech.create(\n    input=\"input\",\n    model=\"string\",\n    voice=\"ash\",\n)\nprint(speech)\ncontent = speech.read()\nprint(content)"
+              javascript: "import fs from \"fs\";\nimport path from \"path\";\nimport OpenAI from \"openai\";\n\nconst openai = new OpenAI();\n\nconst speechFile = path.resolve(\"./speech.mp3\");\n\nasync function main() {\n  const mp3 = await openai.audio.speech.create({\n    model: \"gpt-4o-mini-tts\",\n    voice: \"alloy\",\n    input: \"Today is a wonderful day to build something people love!\",\n  });\n  console.log(speechFile);\n  const buffer = Buffer.from(await mp3.arrayBuffer());\n  await fs.promises.writeFile(speechFile, buffer);\n}\nmain();\n"
+              csharp: "using System;\nusing System.IO;\n\nusing OpenAI.Audio;\n\nAudioClient client = new(\n    model: \"gpt-4o-mini-tts\",\n    apiKey: Environment.GetEnvironmentVariable(\"OPENAI_API_KEY\")\n);\n\nBinaryData speech = client.GenerateSpeech(\n    text: \"The quick brown fox jumped over the lazy dog.\",\n    voice: GeneratedSpeechVoice.Alloy\n);\n\nusing FileStream stream = File.OpenWrite(\"speech.mp3\");\nspeech.ToStream().CopyTo(stream);\n"
+              node.js: "import OpenAI from 'openai';\n\nconst client = new OpenAI({\n  apiKey: process.env['OPENAI_API_KEY'], // This is the default and can be omitted\n});\n\nconst speech = await client.audio.speech.create({ input: 'input', model: 'string', voice: 'ash' });\n\nconsole.log(speech);\n\nconst content = await speech.blob();\nconsole.log(content);"
+              go: "package main\n\nimport (\n  \"context\"\n  \"fmt\"\n\n  \"github.com/openai/openai-go\"\n  \"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n  client := openai.NewClient(\n    option.WithAPIKey(\"My API Key\"), // defaults to os.LookupEnv(\"OPENAI_API_KEY\")\n  )\n  speech, err := client.Audio.Speech.New(context.TODO(), openai.AudioSpeechNewParams{\n    Input: \"input\",\n    Model: openai.SpeechModelTTS1,\n    Voice: openai.AudioSpeechNewParamsVoiceAlloy,\n  })\n  if err != nil {\n    panic(err.Error())\n  }\n  fmt.Printf(\"%+v\\n\", speech)\n}\n"
+              java: "package com.openai.example;\n\nimport com.openai.client.OpenAIClient;\nimport com.openai.client.okhttp.OpenAIOkHttpClient;\nimport com.openai.core.http.HttpResponse;\nimport com.openai.models.audio.speech.SpeechCreateParams;\nimport com.openai.models.audio.speech.SpeechModel;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        // Configures using the `OPENAI_API_KEY`, `OPENAI_ORG_ID`, `OPENAI_PROJECT_ID` and `OPENAI_BASE_URL` environment variables\n        OpenAIClient client = OpenAIOkHttpClient.fromEnv();\n\n        SpeechCreateParams params = SpeechCreateParams.builder()\n            .input(\"input\")\n            .model(SpeechModel.TTS_1)\n            .voice(SpeechCreateParams.Voice.ALLOY)\n            .build();\n        HttpResponse speech = client.audio().speech().create(params);\n    }\n}"
+              kotlin: "package com.openai.example\n\nimport com.openai.client.OpenAIClient\nimport com.openai.client.okhttp.OpenAIOkHttpClient\nimport com.openai.core.http.HttpResponse\nimport com.openai.models.audio.speech.SpeechCreateParams\nimport com.openai.models.audio.speech.SpeechModel\n\nfun main() {\n    // Configures using the `OPENAI_API_KEY`, `OPENAI_ORG_ID`, `OPENAI_PROJECT_ID` and `OPENAI_BASE_URL` environment variables\n    val client: OpenAIClient = OpenAIOkHttpClient.fromEnv()\n\n    val params: SpeechCreateParams = SpeechCreateParams.builder()\n        .input(\"input\")\n        .model(SpeechModel.TTS_1)\n        .voice(SpeechCreateParams.Voice.ALLOY)\n        .build()\n    val speech: HttpResponse = client.audio().speech().create(params)\n}"
+              ruby: "require \"openai\"\n\nopenai = OpenAI::Client.new(\n  api_key: ENV[\"OPENAI_API_KEY\"] # This is the default and can be omitted\n)\n\nspeech = openai.audio.speech.create(input: \"input\", model: :\"tts-1\", voice: :alloy)\n\nputs(speech)"
+          - title: SSE Stream Format
+            request:
+              curl: "curl https://api.openai.com/v1/audio/speech \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"model\": \"gpt-4o-mini-tts\",\n    \"input\": \"The quick brown fox jumped over the lazy dog.\",\n    \"voice\": \"alloy\",\n    \"stream_format\": \"sse\"\n  }'\n"
+              node.js: "import OpenAI from 'openai';\n\nconst client = new OpenAI({\n  apiKey: process.env['OPENAI_API_KEY'], // This is the default and can be omitted\n});\n\nconst speech = await client.audio.speech.create({ input: 'input', model: 'string', voice: 'ash' });\n\nconsole.log(speech);\n\nconst content = await speech.blob();\nconsole.log(content);"
+              python: "import os\nfrom openai import OpenAI\n\nclient = OpenAI(\n    api_key=os.environ.get(\"OPENAI_API_KEY\"),  # This is the default and can be omitted\n)\nspeech = client.audio.speech.create(\n    input=\"input\",\n    model=\"string\",\n    voice=\"ash\",\n)\nprint(speech)\ncontent = speech.read()\nprint(content)"
+              go: "package main\n\nimport (\n  \"context\"\n  \"fmt\"\n\n  \"github.com/openai/openai-go\"\n  \"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n  client := openai.NewClient(\n    option.WithAPIKey(\"My API Key\"), // defaults to os.LookupEnv(\"OPENAI_API_KEY\")\n  )\n  speech, err := client.Audio.Speech.New(context.TODO(), openai.AudioSpeechNewParams{\n    Input: \"input\",\n    Model: openai.SpeechModelTTS1,\n    Voice: openai.AudioSpeechNewParamsVoiceAlloy,\n  })\n  if err != nil {\n    panic(err.Error())\n  }\n  fmt.Printf(\"%+v\\n\", speech)\n}\n"
+              java: "package com.openai.example;\n\nimport com.openai.client.OpenAIClient;\nimport com.openai.client.okhttp.OpenAIOkHttpClient;\nimport com.openai.core.http.HttpResponse;\nimport com.openai.models.audio.speech.SpeechCreateParams;\nimport com.openai.models.audio.speech.SpeechModel;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        // Configures using the `OPENAI_API_KEY`, `OPENAI_ORG_ID`, `OPENAI_PROJECT_ID` and `OPENAI_BASE_URL` environment variables\n        OpenAIClient client = OpenAIOkHttpClient.fromEnv();\n\n        SpeechCreateParams params = SpeechCreateParams.builder()\n            .input(\"input\")\n            .model(SpeechModel.TTS_1)\n            .voice(SpeechCreateParams.Voice.ALLOY)\n            .build();\n        HttpResponse speech = client.audio().speech().create(params);\n    }\n}"
+              kotlin: "package com.openai.example\n\nimport com.openai.client.OpenAIClient\nimport com.openai.client.okhttp.OpenAIOkHttpClient\nimport com.openai.core.http.HttpResponse\nimport com.openai.models.audio.speech.SpeechCreateParams\nimport com.openai.models.audio.speech.SpeechModel\n\nfun main() {\n    // Configures using the `OPENAI_API_KEY`, `OPENAI_ORG_ID`, `OPENAI_PROJECT_ID` and `OPENAI_BASE_URL` environment variables\n    val client: OpenAIClient = OpenAIOkHttpClient.fromEnv()\n\n    val params: SpeechCreateParams = SpeechCreateParams.builder()\n        .input(\"input\")\n        .model(SpeechModel.TTS_1)\n        .voice(SpeechCreateParams.Voice.ALLOY)\n        .build()\n    val speech: HttpResponse = client.audio().speech().create(params)\n}"
+              ruby: "require \"openai\"\n\nopenai = OpenAI::Client.new(\n  api_key: ENV[\"OPENAI_API_KEY\"] # This is the default and can be omitted\n)\n\nspeech = openai.audio.speech.create(input: \"input\", model: :\"tts-1\", voice: :alloy)\n\nputs(speech)"
   /audio/transcriptions:
     post:
       tags:
@@ -295,7 +307,7 @@ paths:
               java: "package com.openai.example;\n\nimport com.openai.client.OpenAIClient;\nimport com.openai.client.okhttp.OpenAIOkHttpClient;\nimport com.openai.models.audio.AudioModel;\nimport com.openai.models.audio.transcriptions.TranscriptionCreateParams;\nimport com.openai.models.audio.transcriptions.TranscriptionCreateResponse;\nimport java.io.ByteArrayInputStream;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        // Configures using the `OPENAI_API_KEY`, `OPENAI_ORG_ID`, `OPENAI_PROJECT_ID` and `OPENAI_BASE_URL` environment variables\n        OpenAIClient client = OpenAIOkHttpClient.fromEnv();\n\n        TranscriptionCreateParams params = TranscriptionCreateParams.builder()\n            .file(ByteArrayInputStream(\"some content\".getBytes()))\n            .model(AudioModel.WHISPER_1)\n            .build();\n        TranscriptionCreateResponse transcription = client.audio().transcriptions().create(params);\n    }\n}"
               kotlin: "package com.openai.example\n\nimport com.openai.client.OpenAIClient\nimport com.openai.client.okhttp.OpenAIOkHttpClient\nimport com.openai.models.audio.AudioModel\nimport com.openai.models.audio.transcriptions.TranscriptionCreateParams\nimport com.openai.models.audio.transcriptions.TranscriptionCreateResponse\nimport java.io.ByteArrayInputStream\n\nfun main() {\n    // Configures using the `OPENAI_API_KEY`, `OPENAI_ORG_ID`, `OPENAI_PROJECT_ID` and `OPENAI_BASE_URL` environment variables\n    val client: OpenAIClient = OpenAIOkHttpClient.fromEnv()\n\n    val params: TranscriptionCreateParams = TranscriptionCreateParams.builder()\n        .file(\"some content\".byteInputStream())\n        .model(AudioModel.WHISPER_1)\n        .build()\n    val transcription: TranscriptionCreateResponse = client.audio().transcriptions().create(params)\n}"
               ruby: "require \"openai\"\n\nopenai = OpenAI::Client.new(\n  api_key: ENV[\"OPENAI_API_KEY\"] # This is the default and can be omitted\n)\n\ntranscription = openai.audio.transcriptions.create(file: Pathname(__FILE__), model: :\"whisper-1\")\n\nputs(transcription)"
-            response: "{\n  \"text\": \"Imagine the wildest idea that you've ever had, and you're curious about how it might scale to something that's a 100, a 1,000 times bigger. This is a place where you can get to do that.\"\n}\n"
+            response: "{\n  \"text\": \"Imagine the wildest idea that you've ever had, and you're curious about how it might scale to something that's a 100, a 1,000 times bigger. This is a place where you can get to do that.\",\n  \"usage\": {\n    \"type\": \"tokens\",\n    \"input_tokens\": 14,\n    \"input_token_details\": {\n      \"text_tokens\": 0,\n      \"audio_tokens\": 14\n    },\n    \"output_tokens\": 45,\n    \"total_tokens\": 59\n  }\n}\n"
           - title: Streaming
             request:
               curl: "curl https://api.openai.com/v1/audio/transcriptions \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -H \"Content-Type: multipart/form-data\" \\\n  -F file=\"@/path/to/file/audio.mp3\" \\\n  -F model=\"gpt-4o-mini-transcribe\" \\\n  -F stream=true\n"
@@ -306,7 +318,7 @@ paths:
               java: "package com.openai.example;\n\nimport com.openai.client.OpenAIClient;\nimport com.openai.client.okhttp.OpenAIOkHttpClient;\nimport com.openai.models.audio.AudioModel;\nimport com.openai.models.audio.transcriptions.TranscriptionCreateParams;\nimport com.openai.models.audio.transcriptions.TranscriptionCreateResponse;\nimport java.io.ByteArrayInputStream;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        // Configures using the `OPENAI_API_KEY`, `OPENAI_ORG_ID`, `OPENAI_PROJECT_ID` and `OPENAI_BASE_URL` environment variables\n        OpenAIClient client = OpenAIOkHttpClient.fromEnv();\n\n        TranscriptionCreateParams params = TranscriptionCreateParams.builder()\n            .file(ByteArrayInputStream(\"some content\".getBytes()))\n            .model(AudioModel.WHISPER_1)\n            .build();\n        TranscriptionCreateResponse transcription = client.audio().transcriptions().create(params);\n    }\n}"
               kotlin: "package com.openai.example\n\nimport com.openai.client.OpenAIClient\nimport com.openai.client.okhttp.OpenAIOkHttpClient\nimport com.openai.models.audio.AudioModel\nimport com.openai.models.audio.transcriptions.TranscriptionCreateParams\nimport com.openai.models.audio.transcriptions.TranscriptionCreateResponse\nimport java.io.ByteArrayInputStream\n\nfun main() {\n    // Configures using the `OPENAI_API_KEY`, `OPENAI_ORG_ID`, `OPENAI_PROJECT_ID` and `OPENAI_BASE_URL` environment variables\n    val client: OpenAIClient = OpenAIOkHttpClient.fromEnv()\n\n    val params: TranscriptionCreateParams = TranscriptionCreateParams.builder()\n        .file(\"some content\".byteInputStream())\n        .model(AudioModel.WHISPER_1)\n        .build()\n    val transcription: TranscriptionCreateResponse = client.audio().transcriptions().create(params)\n}"
               ruby: "require \"openai\"\n\nopenai = OpenAI::Client.new(\n  api_key: ENV[\"OPENAI_API_KEY\"] # This is the default and can be omitted\n)\n\ntranscription = openai.audio.transcriptions.create(file: Pathname(__FILE__), model: :\"whisper-1\")\n\nputs(transcription)"
-            response: "data: {\"type\":\"transcript.text.delta\",\"delta\":\"I\",\"logprobs\":[{\"token\":\"I\",\"logprob\":-0.00007588794,\"bytes\":[73]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" see\",\"logprobs\":[{\"token\":\" see\",\"logprob\":-3.1281633e-7,\"bytes\":[32,115,101,101]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" skies\",\"logprobs\":[{\"token\":\" skies\",\"logprob\":-2.3392786e-6,\"bytes\":[32,115,107,105,101,115]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" of\",\"logprobs\":[{\"token\":\" of\",\"logprob\":-3.1281633e-7,\"bytes\":[32,111,102]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" blue\",\"logprobs\":[{\"token\":\" blue\",\"logprob\":-1.0280384e-6,\"bytes\":[32,98,108,117,101]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" and\",\"logprobs\":[{\"token\":\" and\",\"logprob\":-0.0005108566,\"bytes\":[32,97,110,100]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" clouds\",\"logprobs\":[{\"token\":\" clouds\",\"logprob\":-1.9361265e-7,\"bytes\":[32,99,108,111,117,100,115]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" of\",\"logprobs\":[{\"token\":\" of\",\"logprob\":-1.9361265e-7,\"bytes\":[32,111,102]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" white\",\"logprobs\":[{\"token\":\" white\",\"logprob\":-7.89631e-7,\"bytes\":[32,119,104,105,116,101]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\",\",\"logprobs\":[{\"token\":\",\",\"logprob\":-0.0014890312,\"bytes\":[44]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" the\",\"logprobs\":[{\"token\":\" the\",\"logprob\":-0.0110956915,\"bytes\":[32,116,104,101]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" bright\",\"logprobs\":[{\"token\":\" bright\",\"logprob\":0.0,\"bytes\":[32,98,114,105,103,104,116]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" blessed\",\"logprobs\":[{\"token\":\" blessed\",\"logprob\":-0.000045848617,\"bytes\":[32,98,108,101,115,115,101,100]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" days\",\"logprobs\":[{\"token\":\" days\",\"logprob\":-0.000010802739,\"bytes\":[32,100,97,121,115]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\",\",\"logprobs\":[{\"token\":\",\",\"logprob\":-0.00001700133,\"bytes\":[44]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" the\",\"logprobs\":[{\"token\":\" the\",\"logprob\":-0.0000118755715,\"bytes\":[32,116,104,101]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" dark\",\"logprobs\":[{\"token\":\" dark\",\"logprob\":-5.5122365e-7,\"bytes\":[32,100,97,114,107]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" sacred\",\"logprobs\":[{\"token\":\" sacred\",\"logprob\":-5.4385737e-6,\"bytes\":[32,115,97,99,114,101,100]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" nights\",\"logprobs\":[{\"token\":\" nights\",\"logprob\":-4.00813e-6,\"bytes\":[32,110,105,103,104,116,115]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\",\",\"logprobs\":[{\"token\":\",\",\"logprob\":-0.0036910512,\"bytes\":[44]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" and\",\"logprobs\":[{\"token\":\" and\",\"logprob\":-0.0031903093,\"bytes\":[32,97,110,100]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" I\",\"logprobs\":[{\"token\":\" I\",\"logprob\":-1.504853e-6,\"bytes\":[32,73]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" think\",\"logprobs\":[{\"token\":\" think\",\"logprob\":-4.3202e-7,\"bytes\":[32,116,104,105,110,107]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" to\",\"logprobs\":[{\"token\":\" to\",\"logprob\":-1.9361265e-7,\"bytes\":[32,116,111]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" myself\",\"logprobs\":[{\"token\":\" myself\",\"logprob\":-1.7432603e-6,\"bytes\":[32,109,121,115,101,108,102]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\",\",\"logprobs\":[{\"token\":\",\",\"logprob\":-0.29254505,\"bytes\":[44]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" what\",\"logprobs\":[{\"token\":\" what\",\"logprob\":-0.016815351,\"bytes\":[32,119,104,97,116]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" a\",\"logprobs\":[{\"token\":\" a\",\"logprob\":-3.1281633e-7,\"bytes\":[32,97]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" wonderful\",\"logprobs\":[{\"token\":\" wonderful\",\"logprob\":-2.1008714e-6,\"bytes\":[32,119,111,110,100,101,114,102,117,108]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" world\",\"logprobs\":[{\"token\":\" world\",\"logprob\":-8.180258e-6,\"bytes\":[32,119,111,114,108,100]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\".\",\"logprobs\":[{\"token\":\".\",\"logprob\":-0.014231676,\"bytes\":[46]}]}\n\ndata: {\"type\":\"transcript.text.done\",\"text\":\"I see skies of blue and clouds of white, the bright blessed days, the dark sacred nights, and I think to myself, what a wonderful world.\",\"logprobs\":[{\"token\":\"I\",\"logprob\":-0.00007588794,\"bytes\":[73]},{\"token\":\" see\",\"logprob\":-3.1281633e-7,\"bytes\":[32,115,101,101]},{\"token\":\" skies\",\"logprob\":-2.3392786e-6,\"bytes\":[32,115,107,105,101,115]},{\"token\":\" of\",\"logprob\":-3.1281633e-7,\"bytes\":[32,111,102]},{\"token\":\" blue\",\"logprob\":-1.0280384e-6,\"bytes\":[32,98,108,117,101]},{\"token\":\" and\",\"logprob\":-0.0005108566,\"bytes\":[32,97,110,100]},{\"token\":\" clouds\",\"logprob\":-1.9361265e-7,\"bytes\":[32,99,108,111,117,100,115]},{\"token\":\" of\",\"logprob\":-1.9361265e-7,\"bytes\":[32,111,102]},{\"token\":\" white\",\"logprob\":-7.89631e-7,\"bytes\":[32,119,104,105,116,101]},{\"token\":\",\",\"logprob\":-0.0014890312,\"bytes\":[44]},{\"token\":\" the\",\"logprob\":-0.0110956915,\"bytes\":[32,116,104,101]},{\"token\":\" bright\",\"logprob\":0.0,\"bytes\":[32,98,114,105,103,104,116]},{\"token\":\" blessed\",\"logprob\":-0.000045848617,\"bytes\":[32,98,108,101,115,115,101,100]},{\"token\":\" days\",\"logprob\":-0.000010802739,\"bytes\":[32,100,97,121,115]},{\"token\":\",\",\"logprob\":-0.00001700133,\"bytes\":[44]},{\"token\":\" the\",\"logprob\":-0.0000118755715,\"bytes\":[32,116,104,101]},{\"token\":\" dark\",\"logprob\":-5.5122365e-7,\"bytes\":[32,100,97,114,107]},{\"token\":\" sacred\",\"logprob\":-5.4385737e-6,\"bytes\":[32,115,97,99,114,101,100]},{\"token\":\" nights\",\"logprob\":-4.00813e-6,\"bytes\":[32,110,105,103,104,116,115]},{\"token\":\",\",\"logprob\":-0.0036910512,\"bytes\":[44]},{\"token\":\" and\",\"logprob\":-0.0031903093,\"bytes\":[32,97,110,100]},{\"token\":\" I\",\"logprob\":-1.504853e-6,\"bytes\":[32,73]},{\"token\":\" think\",\"logprob\":-4.3202e-7,\"bytes\":[32,116,104,105,110,107]},{\"token\":\" to\",\"logprob\":-1.9361265e-7,\"bytes\":[32,116,111]},{\"token\":\" myself\",\"logprob\":-1.7432603e-6,\"bytes\":[32,109,121,115,101,108,102]},{\"token\":\",\",\"logprob\":-0.29254505,\"bytes\":[44]},{\"token\":\" what\",\"logprob\":-0.016815351,\"bytes\":[32,119,104,97,116]},{\"token\":\" a\",\"logprob\":-3.1281633e-7,\"bytes\":[32,97]},{\"token\":\" wonderful\",\"logprob\":-2.1008714e-6,\"bytes\":[32,119,111,110,100,101,114,102,117,108]},{\"token\":\" world\",\"logprob\":-8.180258e-6,\"bytes\":[32,119,111,114,108,100]},{\"token\":\".\",\"logprob\":-0.014231676,\"bytes\":[46]}]}\n"
+            response: "data: {\"type\":\"transcript.text.delta\",\"delta\":\"I\",\"logprobs\":[{\"token\":\"I\",\"logprob\":-0.00007588794,\"bytes\":[73]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" see\",\"logprobs\":[{\"token\":\" see\",\"logprob\":-3.1281633e-7,\"bytes\":[32,115,101,101]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" skies\",\"logprobs\":[{\"token\":\" skies\",\"logprob\":-2.3392786e-6,\"bytes\":[32,115,107,105,101,115]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" of\",\"logprobs\":[{\"token\":\" of\",\"logprob\":-3.1281633e-7,\"bytes\":[32,111,102]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" blue\",\"logprobs\":[{\"token\":\" blue\",\"logprob\":-1.0280384e-6,\"bytes\":[32,98,108,117,101]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" and\",\"logprobs\":[{\"token\":\" and\",\"logprob\":-0.0005108566,\"bytes\":[32,97,110,100]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" clouds\",\"logprobs\":[{\"token\":\" clouds\",\"logprob\":-1.9361265e-7,\"bytes\":[32,99,108,111,117,100,115]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" of\",\"logprobs\":[{\"token\":\" of\",\"logprob\":-1.9361265e-7,\"bytes\":[32,111,102]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" white\",\"logprobs\":[{\"token\":\" white\",\"logprob\":-7.89631e-7,\"bytes\":[32,119,104,105,116,101]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\",\",\"logprobs\":[{\"token\":\",\",\"logprob\":-0.0014890312,\"bytes\":[44]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" the\",\"logprobs\":[{\"token\":\" the\",\"logprob\":-0.0110956915,\"bytes\":[32,116,104,101]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" bright\",\"logprobs\":[{\"token\":\" bright\",\"logprob\":0.0,\"bytes\":[32,98,114,105,103,104,116]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" blessed\",\"logprobs\":[{\"token\":\" blessed\",\"logprob\":-0.000045848617,\"bytes\":[32,98,108,101,115,115,101,100]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" days\",\"logprobs\":[{\"token\":\" days\",\"logprob\":-0.000010802739,\"bytes\":[32,100,97,121,115]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\",\",\"logprobs\":[{\"token\":\",\",\"logprob\":-0.00001700133,\"bytes\":[44]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" the\",\"logprobs\":[{\"token\":\" the\",\"logprob\":-0.0000118755715,\"bytes\":[32,116,104,101]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" dark\",\"logprobs\":[{\"token\":\" dark\",\"logprob\":-5.5122365e-7,\"bytes\":[32,100,97,114,107]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" sacred\",\"logprobs\":[{\"token\":\" sacred\",\"logprob\":-5.4385737e-6,\"bytes\":[32,115,97,99,114,101,100]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" nights\",\"logprobs\":[{\"token\":\" nights\",\"logprob\":-4.00813e-6,\"bytes\":[32,110,105,103,104,116,115]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\",\",\"logprobs\":[{\"token\":\",\",\"logprob\":-0.0036910512,\"bytes\":[44]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" and\",\"logprobs\":[{\"token\":\" and\",\"logprob\":-0.0031903093,\"bytes\":[32,97,110,100]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" I\",\"logprobs\":[{\"token\":\" I\",\"logprob\":-1.504853e-6,\"bytes\":[32,73]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" think\",\"logprobs\":[{\"token\":\" think\",\"logprob\":-4.3202e-7,\"bytes\":[32,116,104,105,110,107]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" to\",\"logprobs\":[{\"token\":\" to\",\"logprob\":-1.9361265e-7,\"bytes\":[32,116,111]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" myself\",\"logprobs\":[{\"token\":\" myself\",\"logprob\":-1.7432603e-6,\"bytes\":[32,109,121,115,101,108,102]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\",\",\"logprobs\":[{\"token\":\",\",\"logprob\":-0.29254505,\"bytes\":[44]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" what\",\"logprobs\":[{\"token\":\" what\",\"logprob\":-0.016815351,\"bytes\":[32,119,104,97,116]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" a\",\"logprobs\":[{\"token\":\" a\",\"logprob\":-3.1281633e-7,\"bytes\":[32,97]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" wonderful\",\"logprobs\":[{\"token\":\" wonderful\",\"logprob\":-2.1008714e-6,\"bytes\":[32,119,111,110,100,101,114,102,117,108]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\" world\",\"logprobs\":[{\"token\":\" world\",\"logprob\":-8.180258e-6,\"bytes\":[32,119,111,114,108,100]}]}\n\ndata: {\"type\":\"transcript.text.delta\",\"delta\":\".\",\"logprobs\":[{\"token\":\".\",\"logprob\":-0.014231676,\"bytes\":[46]}]}\n\ndata: {\"type\":\"transcript.text.done\",\"text\":\"I see skies of blue and clouds of white, the bright blessed days, the dark sacred nights, and I think to myself, what a wonderful world.\",\"logprobs\":[{\"token\":\"I\",\"logprob\":-0.00007588794,\"bytes\":[73]},{\"token\":\" see\",\"logprob\":-3.1281633e-7,\"bytes\":[32,115,101,101]},{\"token\":\" skies\",\"logprob\":-2.3392786e-6,\"bytes\":[32,115,107,105,101,115]},{\"token\":\" of\",\"logprob\":-3.1281633e-7,\"bytes\":[32,111,102]},{\"token\":\" blue\",\"logprob\":-1.0280384e-6,\"bytes\":[32,98,108,117,101]},{\"token\":\" and\",\"logprob\":-0.0005108566,\"bytes\":[32,97,110,100]},{\"token\":\" clouds\",\"logprob\":-1.9361265e-7,\"bytes\":[32,99,108,111,117,100,115]},{\"token\":\" of\",\"logprob\":-1.9361265e-7,\"bytes\":[32,111,102]},{\"token\":\" white\",\"logprob\":-7.89631e-7,\"bytes\":[32,119,104,105,116,101]},{\"token\":\",\",\"logprob\":-0.0014890312,\"bytes\":[44]},{\"token\":\" the\",\"logprob\":-0.0110956915,\"bytes\":[32,116,104,101]},{\"token\":\" bright\",\"logprob\":0.0,\"bytes\":[32,98,114,105,103,104,116]},{\"token\":\" blessed\",\"logprob\":-0.000045848617,\"bytes\":[32,98,108,101,115,115,101,100]},{\"token\":\" days\",\"logprob\":-0.000010802739,\"bytes\":[32,100,97,121,115]},{\"token\":\",\",\"logprob\":-0.00001700133,\"bytes\":[44]},{\"token\":\" the\",\"logprob\":-0.0000118755715,\"bytes\":[32,116,104,101]},{\"token\":\" dark\",\"logprob\":-5.5122365e-7,\"bytes\":[32,100,97,114,107]},{\"token\":\" sacred\",\"logprob\":-5.4385737e-6,\"bytes\":[32,115,97,99,114,101,100]},{\"token\":\" nights\",\"logprob\":-4.00813e-6,\"bytes\":[32,110,105,103,104,116,115]},{\"token\":\",\",\"logprob\":-0.0036910512,\"bytes\":[44]},{\"token\":\" and\",\"logprob\":-0.0031903093,\"bytes\":[32,97,110,100]},{\"token\":\" I\",\"logprob\":-1.504853e-6,\"bytes\":[32,73]},{\"token\":\" think\",\"logprob\":-4.3202e-7,\"bytes\":[32,116,104,105,110,107]},{\"token\":\" to\",\"logprob\":-1.9361265e-7,\"bytes\":[32,116,111]},{\"token\":\" myself\",\"logprob\":-1.7432603e-6,\"bytes\":[32,109,121,115,101,108,102]},{\"token\":\",\",\"logprob\":-0.29254505,\"bytes\":[44]},{\"token\":\" what\",\"logprob\":-0.016815351,\"bytes\":[32,119,104,97,116]},{\"token\":\" a\",\"logprob\":-3.1281633e-7,\"bytes\":[32,97]},{\"token\":\" wonderful\",\"logprob\":-2.1008714e-6,\"bytes\":[32,119,111,110,100,101,114,102,117,108]},{\"token\":\" world\",\"logprob\":-8.180258e-6,\"bytes\":[32,119,111,114,108,100]},{\"token\":\".\",\"logprob\":-0.014231676,\"bytes\":[46]}],\"usage\":{\"input_tokens\":14,\"input_token_details\":{\"text_tokens\":0,\"audio_tokens\":14},\"output_tokens\":45,\"total_tokens\":59}}\n"
           - title: Logprobs
             request:
               curl: "curl https://api.openai.com/v1/audio/transcriptions \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -H \"Content-Type: multipart/form-data\" \\\n  -F file=\"@/path/to/file/audio.mp3\" \\\n  -F \"include[]=logprobs\" \\\n  -F model=\"gpt-4o-transcribe\" \\\n  -F response_format=\"json\"\n"
@@ -317,7 +329,7 @@ paths:
               java: "package com.openai.example;\n\nimport com.openai.client.OpenAIClient;\nimport com.openai.client.okhttp.OpenAIOkHttpClient;\nimport com.openai.models.audio.AudioModel;\nimport com.openai.models.audio.transcriptions.TranscriptionCreateParams;\nimport com.openai.models.audio.transcriptions.TranscriptionCreateResponse;\nimport java.io.ByteArrayInputStream;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        // Configures using the `OPENAI_API_KEY`, `OPENAI_ORG_ID`, `OPENAI_PROJECT_ID` and `OPENAI_BASE_URL` environment variables\n        OpenAIClient client = OpenAIOkHttpClient.fromEnv();\n\n        TranscriptionCreateParams params = TranscriptionCreateParams.builder()\n            .file(ByteArrayInputStream(\"some content\".getBytes()))\n            .model(AudioModel.WHISPER_1)\n            .build();\n        TranscriptionCreateResponse transcription = client.audio().transcriptions().create(params);\n    }\n}"
               kotlin: "package com.openai.example\n\nimport com.openai.client.OpenAIClient\nimport com.openai.client.okhttp.OpenAIOkHttpClient\nimport com.openai.models.audio.AudioModel\nimport com.openai.models.audio.transcriptions.TranscriptionCreateParams\nimport com.openai.models.audio.transcriptions.TranscriptionCreateResponse\nimport java.io.ByteArrayInputStream\n\nfun main() {\n    // Configures using the `OPENAI_API_KEY`, `OPENAI_ORG_ID`, `OPENAI_PROJECT_ID` and `OPENAI_BASE_URL` environment variables\n    val client: OpenAIClient = OpenAIOkHttpClient.fromEnv()\n\n    val params: TranscriptionCreateParams = TranscriptionCreateParams.builder()\n        .file(\"some content\".byteInputStream())\n        .model(AudioModel.WHISPER_1)\n        .build()\n    val transcription: TranscriptionCreateResponse = client.audio().transcriptions().create(params)\n}"
               ruby: "require \"openai\"\n\nopenai = OpenAI::Client.new(\n  api_key: ENV[\"OPENAI_API_KEY\"] # This is the default and can be omitted\n)\n\ntranscription = openai.audio.transcriptions.create(file: Pathname(__FILE__), model: :\"whisper-1\")\n\nputs(transcription)"
-            response: "{\n  \"text\": \"Hey, my knee is hurting and I want to see the doctor tomorrow ideally.\",\n  \"logprobs\": [\n    { \"token\": \"Hey\", \"logprob\": -1.0415299, \"bytes\": [72, 101, 121] },\n    { \"token\": \",\", \"logprob\": -9.805982e-5, \"bytes\": [44] },\n    { \"token\": \" my\", \"logprob\": -0.00229799, \"bytes\": [32, 109, 121] },\n    {\n      \"token\": \" knee\",\n      \"logprob\": -4.7159858e-5,\n      \"bytes\": [32, 107, 110, 101, 101]\n    },\n    { \"token\": \" is\", \"logprob\": -0.043909557, \"bytes\": [32, 105, 115] },\n    {\n      \"token\": \" hurting\",\n      \"logprob\": -1.1041146e-5,\n      \"bytes\": [32, 104, 117, 114, 116, 105, 110, 103]\n    },\n    { \"token\": \" and\", \"logprob\": -0.011076359, \"bytes\": [32, 97, 110, 100] },\n    { \"token\": \" I\", \"logprob\": -5.3193703e-6, \"bytes\": [32, 73] },\n    {\n      \"token\": \" want\",\n      \"logprob\": -0.0017156356,\n      \"bytes\": [32, 119, 97, 110, 116]\n    },\n    { \"token\": \" to\", \"logprob\": -7.89631e-7, \"bytes\": [32, 116, 111] },\n    { \"token\": \" see\", \"logprob\": -5.5122365e-7, \"bytes\": [32, 115, 101, 101] },\n    { \"token\": \" the\", \"logprob\": -0.0040786397, \"bytes\": [32, 116, 104, 101] },\n    {\n      \"token\": \" doctor\",\n      \"logprob\": -2.3392786e-6,\n      \"bytes\": [32, 100, 111, 99, 116, 111, 114]\n    },\n    {\n      \"token\": \" tomorrow\",\n      \"logprob\": -7.89631e-7,\n      \"bytes\": [32, 116, 111, 109, 111, 114, 114, 111, 119]\n    },\n    {\n      \"token\": \" ideally\",\n      \"logprob\": -0.5800861,\n      \"bytes\": [32, 105, 100, 101, 97, 108, 108, 121]\n    },\n    { \"token\": \".\", \"logprob\": -0.00011093382, \"bytes\": [46] }\n  ]\n}\n"
+            response: "{\n  \"text\": \"Hey, my knee is hurting and I want to see the doctor tomorrow ideally.\",\n  \"logprobs\": [\n    { \"token\": \"Hey\", \"logprob\": -1.0415299, \"bytes\": [72, 101, 121] },\n    { \"token\": \",\", \"logprob\": -9.805982e-5, \"bytes\": [44] },\n    { \"token\": \" my\", \"logprob\": -0.00229799, \"bytes\": [32, 109, 121] },\n    {\n      \"token\": \" knee\",\n      \"logprob\": -4.7159858e-5,\n      \"bytes\": [32, 107, 110, 101, 101]\n    },\n    { \"token\": \" is\", \"logprob\": -0.043909557, \"bytes\": [32, 105, 115] },\n    {\n      \"token\": \" hurting\",\n      \"logprob\": -1.1041146e-5,\n      \"bytes\": [32, 104, 117, 114, 116, 105, 110, 103]\n    },\n    { \"token\": \" and\", \"logprob\": -0.011076359, \"bytes\": [32, 97, 110, 100] },\n    { \"token\": \" I\", \"logprob\": -5.3193703e-6, \"bytes\": [32, 73] },\n    {\n      \"token\": \" want\",\n      \"logprob\": -0.0017156356,\n      \"bytes\": [32, 119, 97, 110, 116]\n    },\n    { \"token\": \" to\", \"logprob\": -7.89631e-7, \"bytes\": [32, 116, 111] },\n    { \"token\": \" see\", \"logprob\": -5.5122365e-7, \"bytes\": [32, 115, 101, 101] },\n    { \"token\": \" the\", \"logprob\": -0.0040786397, \"bytes\": [32, 116, 104, 101] },\n    {\n      \"token\": \" doctor\",\n      \"logprob\": -2.3392786e-6,\n      \"bytes\": [32, 100, 111, 99, 116, 111, 114]\n    },\n    {\n      \"token\": \" tomorrow\",\n      \"logprob\": -7.89631e-7,\n      \"bytes\": [32, 116, 111, 109, 111, 114, 114, 111, 119]\n    },\n    {\n      \"token\": \" ideally\",\n      \"logprob\": -0.5800861,\n      \"bytes\": [32, 105, 100, 101, 97, 108, 108, 121]\n    },\n    { \"token\": \".\", \"logprob\": -0.00011093382, \"bytes\": [46] }\n  ],\n  \"usage\": {\n    \"type\": \"tokens\",\n    \"input_tokens\": 14,\n    \"input_token_details\": {\n      \"text_tokens\": 0,\n      \"audio_tokens\": 14\n    },\n    \"output_tokens\": 45,\n    \"total_tokens\": 59\n  }\n}\n"
           - title: Word timestamps
             request:
               curl: "curl https://api.openai.com/v1/audio/transcriptions \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -H \"Content-Type: multipart/form-data\" \\\n  -F file=\"@/path/to/file/audio.mp3\" \\\n  -F \"timestamp_granularities[]=word\" \\\n  -F model=\"whisper-1\" \\\n  -F response_format=\"verbose_json\"\n"
@@ -329,7 +341,7 @@ paths:
               java: "package com.openai.example;\n\nimport com.openai.client.OpenAIClient;\nimport com.openai.client.okhttp.OpenAIOkHttpClient;\nimport com.openai.models.audio.AudioModel;\nimport com.openai.models.audio.transcriptions.TranscriptionCreateParams;\nimport com.openai.models.audio.transcriptions.TranscriptionCreateResponse;\nimport java.io.ByteArrayInputStream;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        // Configures using the `OPENAI_API_KEY`, `OPENAI_ORG_ID`, `OPENAI_PROJECT_ID` and `OPENAI_BASE_URL` environment variables\n        OpenAIClient client = OpenAIOkHttpClient.fromEnv();\n\n        TranscriptionCreateParams params = TranscriptionCreateParams.builder()\n            .file(ByteArrayInputStream(\"some content\".getBytes()))\n            .model(AudioModel.WHISPER_1)\n            .build();\n        TranscriptionCreateResponse transcription = client.audio().transcriptions().create(params);\n    }\n}"
               kotlin: "package com.openai.example\n\nimport com.openai.client.OpenAIClient\nimport com.openai.client.okhttp.OpenAIOkHttpClient\nimport com.openai.models.audio.AudioModel\nimport com.openai.models.audio.transcriptions.TranscriptionCreateParams\nimport com.openai.models.audio.transcriptions.TranscriptionCreateResponse\nimport java.io.ByteArrayInputStream\n\nfun main() {\n    // Configures using the `OPENAI_API_KEY`, `OPENAI_ORG_ID`, `OPENAI_PROJECT_ID` and `OPENAI_BASE_URL` environment variables\n    val client: OpenAIClient = OpenAIOkHttpClient.fromEnv()\n\n    val params: TranscriptionCreateParams = TranscriptionCreateParams.builder()\n        .file(\"some content\".byteInputStream())\n        .model(AudioModel.WHISPER_1)\n        .build()\n    val transcription: TranscriptionCreateResponse = client.audio().transcriptions().create(params)\n}"
               ruby: "require \"openai\"\n\nopenai = OpenAI::Client.new(\n  api_key: ENV[\"OPENAI_API_KEY\"] # This is the default and can be omitted\n)\n\ntranscription = openai.audio.transcriptions.create(file: Pathname(__FILE__), model: :\"whisper-1\")\n\nputs(transcription)"
-            response: "{\n  \"task\": \"transcribe\",\n  \"language\": \"english\",\n  \"duration\": 8.470000267028809,\n  \"text\": \"The beach was a popular spot on a hot summer day. People were swimming in the ocean, building sandcastles, and playing beach volleyball.\",\n  \"words\": [\n    {\n      \"word\": \"The\",\n      \"start\": 0.0,\n      \"end\": 0.23999999463558197\n    },\n    ...\n    {\n      \"word\": \"volleyball\",\n      \"start\": 7.400000095367432,\n      \"end\": 7.900000095367432\n    }\n  ]\n}\n"
+            response: "{\n  \"task\": \"transcribe\",\n  \"language\": \"english\",\n  \"duration\": 8.470000267028809,\n  \"text\": \"The beach was a popular spot on a hot summer day. People were swimming in the ocean, building sandcastles, and playing beach volleyball.\",\n  \"words\": [\n    {\n      \"word\": \"The\",\n      \"start\": 0.0,\n      \"end\": 0.23999999463558197\n    },\n    ...\n    {\n      \"word\": \"volleyball\",\n      \"start\": 7.400000095367432,\n      \"end\": 7.900000095367432\n    }\n  ],\n  \"usage\": {\n    \"type\": \"duration\",\n    \"seconds\": 9\n  }\n}\n"
           - title: Segment timestamps
             request:
               curl: "curl https://api.openai.com/v1/audio/transcriptions \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -H \"Content-Type: multipart/form-data\" \\\n  -F file=\"@/path/to/file/audio.mp3\" \\\n  -F \"timestamp_granularities[]=segment\" \\\n  -F model=\"whisper-1\" \\\n  -F response_format=\"verbose_json\"\n"
@@ -341,7 +353,7 @@ paths:
               java: "package com.openai.example;\n\nimport com.openai.client.OpenAIClient;\nimport com.openai.client.okhttp.OpenAIOkHttpClient;\nimport com.openai.models.audio.AudioModel;\nimport com.openai.models.audio.transcriptions.TranscriptionCreateParams;\nimport com.openai.models.audio.transcriptions.TranscriptionCreateResponse;\nimport java.io.ByteArrayInputStream;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        // Configures using the `OPENAI_API_KEY`, `OPENAI_ORG_ID`, `OPENAI_PROJECT_ID` and `OPENAI_BASE_URL` environment variables\n        OpenAIClient client = OpenAIOkHttpClient.fromEnv();\n\n        TranscriptionCreateParams params = TranscriptionCreateParams.builder()\n            .file(ByteArrayInputStream(\"some content\".getBytes()))\n            .model(AudioModel.WHISPER_1)\n            .build();\n        TranscriptionCreateResponse transcription = client.audio().transcriptions().create(params);\n    }\n}"
               kotlin: "package com.openai.example\n\nimport com.openai.client.OpenAIClient\nimport com.openai.client.okhttp.OpenAIOkHttpClient\nimport com.openai.models.audio.AudioModel\nimport com.openai.models.audio.transcriptions.TranscriptionCreateParams\nimport com.openai.models.audio.transcriptions.TranscriptionCreateResponse\nimport java.io.ByteArrayInputStream\n\nfun main() {\n    // Configures using the `OPENAI_API_KEY`, `OPENAI_ORG_ID`, `OPENAI_PROJECT_ID` and `OPENAI_BASE_URL` environment variables\n    val client: OpenAIClient = OpenAIOkHttpClient.fromEnv()\n\n    val params: TranscriptionCreateParams = TranscriptionCreateParams.builder()\n        .file(\"some content\".byteInputStream())\n        .model(AudioModel.WHISPER_1)\n        .build()\n    val transcription: TranscriptionCreateResponse = client.audio().transcriptions().create(params)\n}"
               ruby: "require \"openai\"\n\nopenai = OpenAI::Client.new(\n  api_key: ENV[\"OPENAI_API_KEY\"] # This is the default and can be omitted\n)\n\ntranscription = openai.audio.transcriptions.create(file: Pathname(__FILE__), model: :\"whisper-1\")\n\nputs(transcription)"
-            response: "{\n  \"task\": \"transcribe\",\n  \"language\": \"english\",\n  \"duration\": 8.470000267028809,\n  \"text\": \"The beach was a popular spot on a hot summer day. People were swimming in the ocean, building sandcastles, and playing beach volleyball.\",\n  \"segments\": [\n    {\n      \"id\": 0,\n      \"seek\": 0,\n      \"start\": 0.0,\n      \"end\": 3.319999933242798,\n      \"text\": \" The beach was a popular spot on a hot summer day.\",\n      \"tokens\": [\n        50364, 440, 7534, 390, 257, 3743, 4008, 322, 257, 2368, 4266, 786, 13, 50530\n      ],\n      \"temperature\": 0.0,\n      \"avg_logprob\": -0.2860786020755768,\n      \"compression_ratio\": 1.2363636493682861,\n      \"no_speech_prob\": 0.00985979475080967\n    },\n    ...\n  ]\n}\n"
+            response: "{\n  \"task\": \"transcribe\",\n  \"language\": \"english\",\n  \"duration\": 8.470000267028809,\n  \"text\": \"The beach was a popular spot on a hot summer day. People were swimming in the ocean, building sandcastles, and playing beach volleyball.\",\n  \"segments\": [\n    {\n      \"id\": 0,\n      \"seek\": 0,\n      \"start\": 0.0,\n      \"end\": 3.319999933242798,\n      \"text\": \" The beach was a popular spot on a hot summer day.\",\n      \"tokens\": [\n        50364, 440, 7534, 390, 257, 3743, 4008, 322, 257, 2368, 4266, 786, 13, 50530\n      ],\n      \"temperature\": 0.0,\n      \"avg_logprob\": -0.2860786020755768,\n      \"compression_ratio\": 1.2363636493682861,\n      \"no_speech_prob\": 0.00985979475080967\n    },\n    ...\n  ],\n  \"usage\": {\n    \"type\": \"duration\",\n    \"seconds\": 9\n  }\n}\n"
   /audio/translations:
     post:
       tags:
@@ -2154,12 +2166,12 @@ paths:
           response: "{\n  \"object\": \"list\",\n  \"data\": [\n    {\n      \"object\": \"checkpoint.permission\",\n      \"id\": \"cp_zc4Q7MP6XxulcVzj4MZdwsAB\",\n      \"created_at\": 1721764867,\n      \"project_id\": \"proj_abGMw1llN8IrBb6SvvY5A1iH\"\n    },\n    {\n      \"object\": \"checkpoint.permission\",\n      \"id\": \"cp_enQCFmOTGj3syEpYVhBRLTSy\",\n      \"created_at\": 1721764800,\n      \"project_id\": \"proj_iqGMw1llN8IrBb6SvvY5A1oF\"\n    },\n  ],\n  \"first_id\": \"cp_zc4Q7MP6XxulcVzj4MZdwsAB\",\n  \"last_id\": \"cp_enQCFmOTGj3syEpYVhBRLTSy\",\n  \"has_more\": false\n}\n"
           request:
             curl: "curl https://api.openai.com/v1/fine_tuning/checkpoints/ft:gpt-4o-mini-2024-07-18:org:weather:B7R9VjQd/permissions \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\"\n"
-            node.js: "import OpenAI from 'openai';\n\nconst client = new OpenAI({\n  apiKey: process.env['OPENAI_API_KEY'], // This is the default and can be omitted\n});\n\n// Automatically fetches more pages as needed.\nfor await (const permissionRetrieveResponse of client.fineTuning.checkpoints.permissions.retrieve(\n  'ft-AF1WoRqd3aJAHsqc9NY7iL8F',\n)) {\n  console.log(permissionRetrieveResponse.id);\n}"
-            python: "import os\nfrom openai import OpenAI\n\nclient = OpenAI(\n    api_key=os.environ.get(\"OPENAI_API_KEY\"),  # This is the default and can be omitted\n)\npage = client.fine_tuning.checkpoints.permissions.retrieve(\n    fine_tuned_model_checkpoint=\"ft-AF1WoRqd3aJAHsqc9NY7iL8F\",\n)\npage = page.data[0]\nprint(page.id)"
-            go: "package main\n\nimport (\n  \"context\"\n  \"fmt\"\n\n  \"github.com/openai/openai-go\"\n  \"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n  client := openai.NewClient(\n    option.WithAPIKey(\"My API Key\"), // defaults to os.LookupEnv(\"OPENAI_API_KEY\")\n  )\n  page, err := client.FineTuning.Checkpoints.Permissions.Get(\n    context.TODO(),\n    \"ft-AF1WoRqd3aJAHsqc9NY7iL8F\",\n    openai.FineTuningCheckpointPermissionGetParams{\n\n    },\n  )\n  if err != nil {\n    panic(err.Error())\n  }\n  fmt.Printf(\"%+v\\n\", page)\n}\n"
-            java: "package com.openai.example;\n\nimport com.openai.client.OpenAIClient;\nimport com.openai.client.okhttp.OpenAIOkHttpClient;\nimport com.openai.models.finetuning.checkpoints.permissions.PermissionRetrievePage;\nimport com.openai.models.finetuning.checkpoints.permissions.PermissionRetrieveParams;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        // Configures using the `OPENAI_API_KEY`, `OPENAI_ORG_ID`, `OPENAI_PROJECT_ID` and `OPENAI_BASE_URL` environment variables\n        OpenAIClient client = OpenAIOkHttpClient.fromEnv();\n\n        PermissionRetrievePage page = client.fineTuning().checkpoints().permissions().retrieve(\"ft-AF1WoRqd3aJAHsqc9NY7iL8F\");\n    }\n}"
-            kotlin: "package com.openai.example\n\nimport com.openai.client.OpenAIClient\nimport com.openai.client.okhttp.OpenAIOkHttpClient\nimport com.openai.models.finetuning.checkpoints.permissions.PermissionRetrievePage\nimport com.openai.models.finetuning.checkpoints.permissions.PermissionRetrieveParams\n\nfun main() {\n    // Configures using the `OPENAI_API_KEY`, `OPENAI_ORG_ID`, `OPENAI_PROJECT_ID` and `OPENAI_BASE_URL` environment variables\n    val client: OpenAIClient = OpenAIOkHttpClient.fromEnv()\n\n    val page: PermissionRetrievePage = client.fineTuning().checkpoints().permissions().retrieve(\"ft-AF1WoRqd3aJAHsqc9NY7iL8F\")\n}"
-            ruby: "require \"openai\"\n\nopenai = OpenAI::Client.new(\n  api_key: ENV[\"OPENAI_API_KEY\"] # This is the default and can be omitted\n)\n\npage = openai.fine_tuning.checkpoints.permissions.retrieve(\"ft-AF1WoRqd3aJAHsqc9NY7iL8F\")\n\nputs(page)"
+            node.js: "import OpenAI from 'openai';\n\nconst client = new OpenAI({\n  apiKey: process.env['OPENAI_API_KEY'], // This is the default and can be omitted\n});\n\nconst permission = await client.fineTuning.checkpoints.permissions.retrieve('ft-AF1WoRqd3aJAHsqc9NY7iL8F');\n\nconsole.log(permission.first_id);"
+            python: "import os\nfrom openai import OpenAI\n\nclient = OpenAI(\n    api_key=os.environ.get(\"OPENAI_API_KEY\"),  # This is the default and can be omitted\n)\npermission = client.fine_tuning.checkpoints.permissions.retrieve(\n    fine_tuned_model_checkpoint=\"ft-AF1WoRqd3aJAHsqc9NY7iL8F\",\n)\nprint(permission.first_id)"
+            go: "package main\n\nimport (\n  \"context\"\n  \"fmt\"\n\n  \"github.com/openai/openai-go\"\n  \"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n  client := openai.NewClient(\n    option.WithAPIKey(\"My API Key\"), // defaults to os.LookupEnv(\"OPENAI_API_KEY\")\n  )\n  permission, err := client.FineTuning.Checkpoints.Permissions.Get(\n    context.TODO(),\n    \"ft-AF1WoRqd3aJAHsqc9NY7iL8F\",\n    openai.FineTuningCheckpointPermissionGetParams{\n\n    },\n  )\n  if err != nil {\n    panic(err.Error())\n  }\n  fmt.Printf(\"%+v\\n\", permission.FirstID)\n}\n"
+            java: "package com.openai.example;\n\nimport com.openai.client.OpenAIClient;\nimport com.openai.client.okhttp.OpenAIOkHttpClient;\nimport com.openai.models.finetuning.checkpoints.permissions.PermissionRetrieveParams;\nimport com.openai.models.finetuning.checkpoints.permissions.PermissionRetrieveResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        // Configures using the `OPENAI_API_KEY`, `OPENAI_ORG_ID`, `OPENAI_PROJECT_ID` and `OPENAI_BASE_URL` environment variables\n        OpenAIClient client = OpenAIOkHttpClient.fromEnv();\n\n        PermissionRetrieveResponse permission = client.fineTuning().checkpoints().permissions().retrieve(\"ft-AF1WoRqd3aJAHsqc9NY7iL8F\");\n    }\n}"
+            kotlin: "package com.openai.example\n\nimport com.openai.client.OpenAIClient\nimport com.openai.client.okhttp.OpenAIOkHttpClient\nimport com.openai.models.finetuning.checkpoints.permissions.PermissionRetrieveParams\nimport com.openai.models.finetuning.checkpoints.permissions.PermissionRetrieveResponse\n\nfun main() {\n    // Configures using the `OPENAI_API_KEY`, `OPENAI_ORG_ID`, `OPENAI_PROJECT_ID` and `OPENAI_BASE_URL` environment variables\n    val client: OpenAIClient = OpenAIOkHttpClient.fromEnv()\n\n    val permission: PermissionRetrieveResponse = client.fineTuning().checkpoints().permissions().retrieve(\"ft-AF1WoRqd3aJAHsqc9NY7iL8F\")\n}"
+            ruby: "require \"openai\"\n\nopenai = OpenAI::Client.new(\n  api_key: ENV[\"OPENAI_API_KEY\"] # This is the default and can be omitted\n)\n\npermission = openai.fine_tuning.checkpoints.permissions.retrieve(\"ft-AF1WoRqd3aJAHsqc9NY7iL8F\")\n\nputs(permission)"
     post:
       tags:
         - Fine-tuning
@@ -2482,7 +2494,7 @@ paths:
         group: fine-tuning
         returns: 'A list of fine-tuning [checkpoint objects](/docs/api-reference/fine-tuning/checkpoint-object) for a fine-tuning job.'
         examples:
-          response: "{\n  \"object\": \"list\"\n  \"data\": [\n    {\n      \"object\": \"fine_tuning.job.checkpoint\",\n      \"id\": \"ftckpt_zc4Q7MP6XxulcVzj4MZdwsAB\",\n      \"created_at\": 1721764867,\n      \"fine_tuned_model_checkpoint\": \"ft:gpt-4o-mini-2024-07-18:my-org:custom-suffix:96olL566:ckpt-step-2000\",\n      \"metrics\": {\n        \"full_valid_loss\": 0.134,\n        \"full_valid_mean_token_accuracy\": 0.874\n      },\n      \"fine_tuning_job_id\": \"ftjob-abc123\",\n      \"step_number\": 2000,\n    },\n    {\n      \"object\": \"fine_tuning.job.checkpoint\",\n      \"id\": \"ftckpt_enQCFmOTGj3syEpYVhBRLTSy\",\n      \"created_at\": 1721764800,\n      \"fine_tuned_model_checkpoint\": \"ft:gpt-4o-mini-2024-07-18:my-org:custom-suffix:7q8mpxmy:ckpt-step-1000\",\n      \"metrics\": {\n        \"full_valid_loss\": 0.167,\n        \"full_valid_mean_token_accuracy\": 0.781\n      },\n      \"fine_tuning_job_id\": \"ftjob-abc123\",\n      \"step_number\": 1000,\n    },\n  ],\n  \"first_id\": \"ftckpt_zc4Q7MP6XxulcVzj4MZdwsAB\",\n  \"last_id\": \"ftckpt_enQCFmOTGj3syEpYVhBRLTSy\",\n  \"has_more\": true\n}\n"
+          response: "{\n  \"object\": \"list\",\n  \"data\": [\n    {\n      \"object\": \"fine_tuning.job.checkpoint\",\n      \"id\": \"ftckpt_zc4Q7MP6XxulcVzj4MZdwsAB\",\n      \"created_at\": 1721764867,\n      \"fine_tuned_model_checkpoint\": \"ft:gpt-4o-mini-2024-07-18:my-org:custom-suffix:96olL566:ckpt-step-2000\",\n      \"metrics\": {\n        \"full_valid_loss\": 0.134,\n        \"full_valid_mean_token_accuracy\": 0.874\n      },\n      \"fine_tuning_job_id\": \"ftjob-abc123\",\n      \"step_number\": 2000\n    },\n    {\n      \"object\": \"fine_tuning.job.checkpoint\",\n      \"id\": \"ftckpt_enQCFmOTGj3syEpYVhBRLTSy\",\n      \"created_at\": 1721764800,\n      \"fine_tuned_model_checkpoint\": \"ft:gpt-4o-mini-2024-07-18:my-org:custom-suffix:7q8mpxmy:ckpt-step-1000\",\n      \"metrics\": {\n        \"full_valid_loss\": 0.167,\n        \"full_valid_mean_token_accuracy\": 0.781\n      },\n      \"fine_tuning_job_id\": \"ftjob-abc123\",\n      \"step_number\": 1000\n    }\n  ],\n  \"first_id\": \"ftckpt_zc4Q7MP6XxulcVzj4MZdwsAB\",\n  \"last_id\": \"ftckpt_enQCFmOTGj3syEpYVhBRLTSy\",\n  \"has_more\": true\n}\n"
           request:
             curl: "curl https://api.openai.com/v1/fine_tuning/jobs/ftjob-abc123/checkpoints \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\"\n"
             node.js: "import OpenAI from 'openai';\n\nconst client = new OpenAI({\n  apiKey: process.env['OPENAI_API_KEY'], // This is the default and can be omitted\n});\n\n// Automatically fetches more pages as needed.\nfor await (const fineTuningJobCheckpoint of client.fineTuning.jobs.checkpoints.list(\n  'ft-AF1WoRqd3aJAHsqc9NY7iL8F',\n)) {\n  console.log(fineTuningJobCheckpoint.id);\n}"
@@ -5425,7 +5437,7 @@ paths:
           response: "{\n  \"id\": \"resp_6786a1bec27481909a17d673315b29f6\",\n  \"object\": \"response\",\n  \"deleted\": true\n}\n"
           request:
             curl: "curl -X DELETE https://api.openai.com/v1/responses/resp_123 \\\n    -H \"Content-Type: application/json\" \\\n    -H \"Authorization: Bearer $OPENAI_API_KEY\"\n"
-            javascript: "import OpenAI from \"openai\";\nconst client = new OpenAI();\n\nconst response = await client.responses.del(\"resp_123\");\nconsole.log(response);\n"
+            javascript: "import OpenAI from \"openai\";\nconst client = new OpenAI();\n\nconst response = await client.responses.delete(\"resp_123\");\nconsole.log(response);\n"
             python: "import os\nfrom openai import OpenAI\n\nclient = OpenAI(\n    api_key=os.environ.get(\"OPENAI_API_KEY\"),  # This is the default and can be omitted\n)\nclient.responses.delete(\n    \"resp_677efb5139a88190b512bc3fef8e535d\",\n)"
             node.js: "import OpenAI from 'openai';\n\nconst client = new OpenAI({\n  apiKey: process.env['OPENAI_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.responses.delete('resp_677efb5139a88190b512bc3fef8e535d');"
             go: "package main\n\nimport (\n  \"context\"\n\n  \"github.com/openai/openai-go\"\n  \"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n  client := openai.NewClient(\n    option.WithAPIKey(\"My API Key\"), // defaults to os.LookupEnv(\"OPENAI_API_KEY\")\n  )\n  err := client.Responses.Delete(context.TODO(), \"resp_677efb5139a88190b512bc3fef8e535d\")\n  if err != nil {\n    panic(err.Error())\n  }\n}\n"
@@ -9173,6 +9185,42 @@ components:
                 type: string
                 description: "The ID of the file.\n"
       description: "The output of a code interpreter tool call that is a file.\n"
+    CodeInterpreterOutputImage:
+      title: Code interpreter output image
+      required:
+        - type
+        - url
+      type: object
+      properties:
+        type:
+          enum:
+            - image
+          type: string
+          description: The type of the output. Always 'image'.
+          default: image
+          x-stainless-const: true
+        url:
+          type: string
+          description: The URL of the image output from the code interpreter.
+      description: "The image output from the code interpreter.\n"
+    CodeInterpreterOutputLogs:
+      title: Code interpreter output logs
+      required:
+        - type
+        - logs
+      type: object
+      properties:
+        type:
+          enum:
+            - logs
+          type: string
+          description: The type of the output. Always 'logs'.
+          default: logs
+          x-stainless-const: true
+        logs:
+          type: string
+          description: The logs output from the code interpreter.
+      description: "The logs output from the code interpreter.\n"
     CodeInterpreterTextOutput:
       title: Code interpreter text output
       required:
@@ -9209,8 +9257,6 @@ components:
               description: The container ID.
             - $ref: '#/components/schemas/CodeInterpreterToolAuto'
           description: "The code interpreter container. Can be a container ID or an object that\nspecifies uploaded file IDs to make available to your code.\n"
-          discriminator:
-            propertyName: type
       description: "A tool that runs Python code to help generate a response to a prompt.\n"
     CodeInterpreterToolAuto:
       title: CodeInterpreterContainerAuto
@@ -9233,49 +9279,51 @@ components:
     CodeInterpreterToolCall:
       title: Code interpreter tool call
       required:
-        - id
         - type
-        - code
+        - id
         - status
-        - results
+        - container_id
+        - code
+        - outputs
       type: object
       properties:
-        id:
-          type: string
-          description: "The unique ID of the code interpreter tool call.\n"
         type:
           enum:
             - code_interpreter_call
           type: string
           description: "The type of the code interpreter tool call. Always `code_interpreter_call`.\n"
+          default: code_interpreter_call
           x-stainless-const: true
+        id:
+          type: string
+          description: "The unique ID of the code interpreter tool call.\n"
+        status:
+          enum:
+            - in_progress
+            - completed
+            - incomplete
+            - interpreting
+            - failed
+          type: string
+          description: "The status of the code interpreter tool call.\n"
         container_id:
           type: string
           description: "The ID of the container used to run the code.\n"
         code:
           type: string
-          description: "The code to run.\n"
-        status:
-          enum:
-            - in_progress
-            - interpreting
-            - completed
-          type: string
-          description: "The status of the code interpreter tool call.\n"
-        results:
+          description: "The code to run, or null if not available.\n"
+          nullable: true
+        outputs:
           type: array
           items:
-            $ref: '#/components/schemas/CodeInterpreterToolOutput'
-          description: "The results of the code interpreter tool call.\n"
+            oneOf:
+              - $ref: '#/components/schemas/CodeInterpreterOutputLogs'
+              - $ref: '#/components/schemas/CodeInterpreterOutputImage'
+          description: "The outputs generated by the code interpreter, such as logs or images. \nCan be null if no outputs are available.\n"
+          nullable: true
+          discriminator:
+            propertyName: type
       description: "A tool call to run code.\n"
-    CodeInterpreterToolOutput:
-      title: Code interpreter tool output
-      oneOf:
-        - $ref: '#/components/schemas/CodeInterpreterTextOutput'
-        - $ref: '#/components/schemas/CodeInterpreterFileOutput'
-      description: "The output of a code interpreter tool.\n"
-      discriminator:
-        propertyName: type
     ComparisonFilter:
       title: Comparison Filter
       required:
@@ -11789,12 +11837,12 @@ components:
               oneOf:
                 - title: Text input
                   type: string
-                  description: "A text input to the model, equivalent to a text input with the \n`user` role.\n"
+                  description: "A text input to the model, equivalent to a text input with the\n`user` role.\n"
                 - title: Input item list
                   type: array
                   items:
                     $ref: '#/components/schemas/InputItem'
-                  description: "A list of one or many input items to the model, containing \ndifferent content types.\n"
+                  description: "A list of one or many input items to the model, containing\ndifferent content types.\n"
               description: "Text, image, or file inputs to the model, used to generate a response.\n\nLearn more:\n- [Text inputs and outputs](/docs/guides/text)\n- [Image inputs](/docs/guides/images)\n- [File inputs](/docs/guides/pdf-files)\n- [Conversation state](/docs/guides/conversation-state)\n- [Function calling](/docs/guides/function-calling)\n"
             include:
               type: array
@@ -11950,9 +11998,22 @@ components:
           maximum: 4
           minimum: 0.25
           type: number
-          description: The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is the default. Does not work with `gpt-4o-mini-tts`.
+          description: The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is the default.
           default: 1
+        stream_format:
+          enum:
+            - sse
+            - audio
+          type: string
+          description: The format to stream the audio in. Supported formats are `sse` and `audio`. `sse` is not supported for `tts-1` or `tts-1-hd`.
+          default: audio
       additionalProperties: false
+    CreateSpeechResponseStreamEvent:
+      anyOf:
+        - $ref: '#/components/schemas/SpeechAudioDeltaEvent'
+        - $ref: '#/components/schemas/SpeechAudioDoneEvent'
+      discriminator:
+        propertyName: type
     CreateThreadAndRunRequest:
       required:
         - assistant_id
@@ -12280,11 +12341,17 @@ components:
                   type: number
                 description: The bytes of the token.
           description: "The log probabilities of the tokens in the transcription. Only returned with the models `gpt-4o-transcribe` and `gpt-4o-mini-transcribe` if `logprobs` is added to the `include` array.\n"
+        usage:
+          type: object
+          oneOf:
+            - $ref: '#/components/schemas/TranscriptTextUsageTokens'
+            - $ref: '#/components/schemas/TranscriptTextUsageDuration'
+          description: Token usage statistics for the request.
       description: 'Represents a transcription response returned by model, based on the provided input.'
       x-oaiMeta:
         name: The transcription object (JSON)
         group: audio
-        example: "{\n  \"text\": \"Imagine the wildest idea that you've ever had, and you're curious about how it might scale to something that's a 100, a 1,000 times bigger. This is a place where you can get to do that.\"\n}\n"
+        example: "{\n  \"text\": \"Imagine the wildest idea that you've ever had, and you're curious about how it might scale to something that's a 100, a 1,000 times bigger. This is a place where you can get to do that.\",\n  \"usage\": {\n    \"type\": \"tokens\",\n    \"input_tokens\": 14,\n    \"input_token_details\": {\n      \"text_tokens\": 10,\n      \"audio_tokens\": 4\n    },\n    \"output_tokens\": 101,\n    \"total_tokens\": 115\n  }\n}\n"
     CreateTranscriptionResponseStreamEvent:
       anyOf:
         - $ref: '#/components/schemas/TranscriptTextDeltaEvent'
@@ -12317,11 +12384,13 @@ components:
           items:
             $ref: '#/components/schemas/TranscriptionSegment'
           description: Segments of the transcribed text and their corresponding details.
+        usage:
+          $ref: '#/components/schemas/TranscriptTextUsageDuration'
       description: 'Represents a verbose json transcription response returned by model, based on the provided input.'
       x-oaiMeta:
         name: The transcription object (Verbose JSON)
         group: audio
-        example: "{\n  \"task\": \"transcribe\",\n  \"language\": \"english\",\n  \"duration\": 8.470000267028809,\n  \"text\": \"The beach was a popular spot on a hot summer day. People were swimming in the ocean, building sandcastles, and playing beach volleyball.\",\n  \"segments\": [\n    {\n      \"id\": 0,\n      \"seek\": 0,\n      \"start\": 0.0,\n      \"end\": 3.319999933242798,\n      \"text\": \" The beach was a popular spot on a hot summer day.\",\n      \"tokens\": [\n        50364, 440, 7534, 390, 257, 3743, 4008, 322, 257, 2368, 4266, 786, 13, 50530\n      ],\n      \"temperature\": 0.0,\n      \"avg_logprob\": -0.2860786020755768,\n      \"compression_ratio\": 1.2363636493682861,\n      \"no_speech_prob\": 0.00985979475080967\n    },\n    ...\n  ]\n}\n"
+        example: "{\n  \"task\": \"transcribe\",\n  \"language\": \"english\",\n  \"duration\": 8.470000267028809,\n  \"text\": \"The beach was a popular spot on a hot summer day. People were swimming in the ocean, building sandcastles, and playing beach volleyball.\",\n  \"segments\": [\n    {\n      \"id\": 0,\n      \"seek\": 0,\n      \"start\": 0.0,\n      \"end\": 3.319999933242798,\n      \"text\": \" The beach was a popular spot on a hot summer day.\",\n      \"tokens\": [\n        50364, 440, 7534, 390, 257, 3743, 4008, 322, 257, 2368, 4266, 786, 13, 50530\n      ],\n      \"temperature\": 0.0,\n      \"avg_logprob\": -0.2860786020755768,\n      \"compression_ratio\": 1.2363636493682861,\n      \"no_speech_prob\": 0.00985979475080967\n    },\n    ...\n  ],\n  \"usage\": {\n    \"type\": \"duration\",\n    \"seconds\": 9\n  }\n}\n"
     CreateTranslationRequest:
       required:
         - file
@@ -18075,7 +18144,7 @@ components:
             $ref: '#/components/schemas/LogProbProperties'
           description: The log probabilities of the transcription.
           nullable: true
-      description: "This event is the output of audio transcription for user audio written to the \nuser audio buffer. Transcription begins when the input audio buffer is \ncommitted by the client or server (in `server_vad` mode). Transcription runs \nasynchronously with Response creation, so this event may come before or after \nthe Response events.\n\nRealtime API models accept audio natively, and thus input transcription is a \nseparate process run on a separate ASR (Automatic Speech Recognition) model, \ncurrently always `whisper-1`. Thus the transcript may diverge somewhat from \nthe model's interpretation, and should be treated as a rough guide.\n"
+      description: "This event is the output of audio transcription for user audio written to the \nuser audio buffer. Transcription begins when the input audio buffer is \ncommitted by the client or server (in `server_vad` mode). Transcription runs \nasynchronously with Response creation, so this event may come before or after \nthe Response events.\n\nRealtime API models accept audio natively, and thus input transcription is a\nseparate process run on a separate ASR (Automatic Speech Recognition) model.\nThe transcript may diverge somewhat from the model's interpretation, and\nshould be treated as a rough guide.\n"
       x-oaiMeta:
         name: conversation.item.input_audio_transcription.completed
         group: realtime
@@ -19377,7 +19446,9 @@ components:
         client_secret:
           type: object
           properties:
-            expires_at:
+            expires_after:
+              required:
+                - anchor
               type: object
               properties:
                 anchor:
@@ -19385,7 +19456,6 @@ components:
                     - created_at
                   type: string
                   description: "The anchor point for the ephemeral token expiration. Only `created_at` is currently supported.\n"
-                  default: created_at
                 seconds:
                   type: integer
                   description: "The number of seconds from the anchor point to the expiration. Select a value between `10` and `7200`.\n"
@@ -19434,8 +19504,8 @@ components:
           properties:
             model:
               type: string
-              description: "The model to use for transcription, `whisper-1` is the only currently \nsupported model.\n"
-          description: "Configuration for input audio transcription, defaults to off and can be \nset to `null` to turn off once on. Input audio transcription is not native \nto the model, since the model consumes audio directly. Transcription runs \nasynchronously through Whisper and should be treated as rough guidance \nrather than the representation understood by the model.\n"
+              description: "The model to use for transcription.\n"
+          description: "Configuration for input audio transcription, defaults to off and can be \nset to `null` to turn off once on. Input audio transcription is not native \nto the model, since the model consumes audio directly. Transcription runs\nasynchronously and should be treated as rough guidance\nrather than the representation understood by the model.\n"
         speed:
           maximum: 1.5
           minimum: 0.25
@@ -20000,8 +20070,8 @@ components:
     ResponseCodeInterpreterCallCodeDeltaEvent:
       required:
         - type
-        - response_id
         - output_index
+        - item_id
         - delta
         - sequence_number
       type: object
@@ -20010,27 +20080,30 @@ components:
           enum:
             - response.code_interpreter_call_code.delta
           type: string
-          description: "The type of the event. Always `response.code_interpreter_call_code.delta`.\n"
+          description: The type of the event. Always `response.code_interpreter_call_code.delta`.
           x-stainless-const: true
         output_index:
           type: integer
-          description: "The index of the output item that the code interpreter call is in progress.\n"
+          description: The index of the output item in the response for which the code is being streamed.
+        item_id:
+          type: string
+          description: The unique identifier of the code interpreter tool call item.
         delta:
           type: string
-          description: "The partial code snippet added by the code interpreter.\n"
+          description: The partial code snippet being streamed by the code interpreter.
         sequence_number:
           type: integer
-          description: The sequence number of this event.
-      description: Emitted when a partial code snippet is added by the code interpreter.
+          description: 'The sequence number of this event, used to order streaming events.'
+      description: Emitted when a partial code snippet is streamed by the code interpreter.
       x-oaiMeta:
         name: response.code_interpreter_call_code.delta
         group: responses
-        example: "{\n  \"type\": \"response.code_interpreter_call_code.delta\",\n  \"response_id\": \"resp-123\",\n  \"output_index\": 0,\n  \"delta\": \"partial code\",\n  \"sequence_number\": 1\n}\n"
+        example: "{\n  \"type\": \"response.code_interpreter_call_code.delta\",\n  \"output_index\": 0,\n  \"item_id\": \"ci_12345\",\n  \"delta\": \"print('Hello, world')\",\n  \"sequence_number\": 1\n}\n"
     ResponseCodeInterpreterCallCodeDoneEvent:
       required:
         - type
-        - response_id
         - output_index
+        - item_id
         - code
         - sequence_number
       type: object
@@ -20039,28 +20112,30 @@ components:
           enum:
             - response.code_interpreter_call_code.done
           type: string
-          description: "The type of the event. Always `response.code_interpreter_call_code.done`.\n"
+          description: The type of the event. Always `response.code_interpreter_call_code.done`.
           x-stainless-const: true
         output_index:
           type: integer
-          description: "The index of the output item that the code interpreter call is in progress.\n"
+          description: The index of the output item in the response for which the code is finalized.
+        item_id:
+          type: string
+          description: The unique identifier of the code interpreter tool call item.
         code:
           type: string
-          description: "The final code snippet output by the code interpreter.\n"
+          description: The final code snippet output by the code interpreter.
         sequence_number:
           type: integer
-          description: The sequence number of this event.
-      description: Emitted when code snippet output is finalized by the code interpreter.
+          description: 'The sequence number of this event, used to order streaming events.'
+      description: Emitted when the code snippet is finalized by the code interpreter.
       x-oaiMeta:
         name: response.code_interpreter_call_code.done
         group: responses
-        example: "{\n  \"type\": \"response.code_interpreter_call_code.done\",\n  \"response_id\": \"resp-123\",\n  \"output_index\": 3,\n  \"code\": \"console.log('done');\",\n  \"sequence_number\": 1\n}\n"
+        example: "{\n  \"type\": \"response.code_interpreter_call_code.done\",\n  \"output_index\": 3,\n  \"item_id\": \"ci_12345\",\n  \"code\": \"print('done')\",\n  \"sequence_number\": 1\n}\n"
     ResponseCodeInterpreterCallCompletedEvent:
       required:
         - type
-        - response_id
         - output_index
-        - code_interpreter_call
+        - item_id
         - sequence_number
       type: object
       properties:
@@ -20068,27 +20143,27 @@ components:
           enum:
             - response.code_interpreter_call.completed
           type: string
-          description: "The type of the event. Always `response.code_interpreter_call.completed`.\n"
+          description: The type of the event. Always `response.code_interpreter_call.completed`.
           x-stainless-const: true
         output_index:
           type: integer
-          description: "The index of the output item that the code interpreter call is in progress.\n"
-        code_interpreter_call:
-          $ref: '#/components/schemas/CodeInterpreterToolCall'
+          description: The index of the output item in the response for which the code interpreter call is completed.
+        item_id:
+          type: string
+          description: The unique identifier of the code interpreter tool call item.
         sequence_number:
           type: integer
-          description: The sequence number of this event.
+          description: 'The sequence number of this event, used to order streaming events.'
       description: Emitted when the code interpreter call is completed.
       x-oaiMeta:
         name: response.code_interpreter_call.completed
         group: responses
-        example: "{\n  \"type\": \"response.code_interpreter_call.completed\",\n  \"response_id\": \"resp-123\",\n  \"output_index\": 5,\n  \"code_interpreter_call\": {},\n  \"sequence_number\": 1\n}\n"
+        example: "{\n  \"type\": \"response.code_interpreter_call.completed\",\n  \"output_index\": 5,\n  \"item_id\": \"ci_12345\",\n  \"sequence_number\": 1\n}\n"
     ResponseCodeInterpreterCallInProgressEvent:
       required:
         - type
-        - response_id
         - output_index
-        - code_interpreter_call
+        - item_id
         - sequence_number
       type: object
       properties:
@@ -20096,27 +20171,27 @@ components:
           enum:
             - response.code_interpreter_call.in_progress
           type: string
-          description: "The type of the event. Always `response.code_interpreter_call.in_progress`.\n"
+          description: The type of the event. Always `response.code_interpreter_call.in_progress`.
           x-stainless-const: true
         output_index:
           type: integer
-          description: "The index of the output item that the code interpreter call is in progress.\n"
-        code_interpreter_call:
-          $ref: '#/components/schemas/CodeInterpreterToolCall'
+          description: The index of the output item in the response for which the code interpreter call is in progress.
+        item_id:
+          type: string
+          description: The unique identifier of the code interpreter tool call item.
         sequence_number:
           type: integer
-          description: The sequence number of this event.
+          description: 'The sequence number of this event, used to order streaming events.'
       description: Emitted when a code interpreter call is in progress.
       x-oaiMeta:
         name: response.code_interpreter_call.in_progress
         group: responses
-        example: "{\n  \"type\": \"response.code_interpreter_call.in.progress\",\n  \"response_id\": \"resp-123\",\n  \"output_index\": 0,\n  \"code_interpreter_call\": {},\n  \"sequence_number\": 1\n}\n"
+        example: "{\n  \"type\": \"response.code_interpreter_call.in_progress\",\n  \"output_index\": 0,\n  \"item_id\": \"ci_12345\",\n  \"sequence_number\": 1\n}\n"
     ResponseCodeInterpreterCallInterpretingEvent:
       required:
         - type
-        - response_id
         - output_index
-        - code_interpreter_call
+        - item_id
         - sequence_number
       type: object
       properties:
@@ -20124,21 +20199,22 @@ components:
           enum:
             - response.code_interpreter_call.interpreting
           type: string
-          description: "The type of the event. Always `response.code_interpreter_call.interpreting`.\n"
+          description: The type of the event. Always `response.code_interpreter_call.interpreting`.
           x-stainless-const: true
-        sequence_number:
-          type: integer
-          description: The sequence number of this event.
         output_index:
           type: integer
-          description: "The index of the output item that the code interpreter call is in progress.\n"
-        code_interpreter_call:
-          $ref: '#/components/schemas/CodeInterpreterToolCall'
+          description: The index of the output item in the response for which the code interpreter is interpreting code.
+        item_id:
+          type: string
+          description: The unique identifier of the code interpreter tool call item.
+        sequence_number:
+          type: integer
+          description: 'The sequence number of this event, used to order streaming events.'
       description: Emitted when the code interpreter is actively interpreting the code snippet.
       x-oaiMeta:
         name: response.code_interpreter_call.interpreting
         group: responses
-        example: "{\n  \"type\": \"response.code_interpreter_call.interpreting\",\n  \"response_id\": \"resp-123\",\n  \"output_index\": 4,\n  \"code_interpreter_call\": {},\n  \"sequence_number\": 1\n}\n"
+        example: "{\n  \"type\": \"response.code_interpreter_call.interpreting\",\n  \"output_index\": 4,\n  \"item_id\": \"ci_12345\",\n  \"sequence_number\": 1\n}\n"
     ResponseCompletedEvent:
       required:
         - type
@@ -23015,6 +23091,60 @@ components:
       description: "Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:\n  - If set to 'auto', and the Project is Scale tier enabled, the system\n    will utilize scale tier credits until they are exhausted.\n  - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarantee.\n  - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarantee.\n  - If set to 'flex', the request will be processed with the Flex Processing service tier. [Learn more](/docs/guides/flex-processing).\n  - When not set, the default behavior is 'auto'.\n\n  When this parameter is set, the response body will include the `service_tier` utilized.\n"
       default: auto
       nullable: true
+    SpeechAudioDeltaEvent:
+      required:
+        - type
+        - audio
+      type: object
+      properties:
+        type:
+          enum:
+            - speech.audio.delta
+          type: string
+          description: "The type of the event. Always `speech.audio.delta`.\n"
+          x-stainless-const: true
+        audio:
+          type: string
+          description: "A chunk of Base64-encoded audio data.\n"
+      description: Emitted for each chunk of audio data generated during speech synthesis.
+      x-oaiMeta:
+        name: Stream Event (speech.audio.delta)
+        group: speech
+        example: "{\n  \"type\": \"speech.audio.delta\",\n  \"audio\": \"base64-encoded-audio-data\"\n}\n"
+    SpeechAudioDoneEvent:
+      required:
+        - type
+        - usage
+      type: object
+      properties:
+        type:
+          enum:
+            - speech.audio.done
+          type: string
+          description: "The type of the event. Always `speech.audio.done`.\n"
+          x-stainless-const: true
+        usage:
+          required:
+            - input_tokens
+            - output_tokens
+            - total_tokens
+          type: object
+          properties:
+            input_tokens:
+              type: integer
+              description: Number of input tokens in the prompt.
+            output_tokens:
+              type: integer
+              description: Number of output tokens generated.
+            total_tokens:
+              type: integer
+              description: Total number of tokens used (input + output).
+          description: "Token usage statistics for the request.\n"
+      description: Emitted when the speech synthesis is complete and all audio has been streamed.
+      x-oaiMeta:
+        name: Stream Event (speech.audio.done)
+        group: speech
+        example: "{\n  \"type\": \"speech.audio.done\",\n  \"usage\": {\n    \"input_tokens\": 14,\n    \"output_tokens\": 101,\n    \"total_tokens\": 115\n  }\n}\n"
     StaticChunkingStrategy:
       required:
         - max_chunk_size_tokens
@@ -23343,11 +23473,65 @@ components:
                   type: integer
                 description: "The bytes that were used to generate the log probability.\n"
           description: "The log probabilities of the individual tokens in the transcription. Only included if you [create a transcription](/docs/api-reference/audio/create-transcription) with the `include[]` parameter set to `logprobs`.\n"
+        usage:
+          $ref: '#/components/schemas/TranscriptTextUsageTokens'
       description: 'Emitted when the transcription is complete. Contains the complete transcription text. Only emitted when you [create a transcription](/docs/api-reference/audio/create-transcription) with the `Stream` parameter set to `true`.'
       x-oaiMeta:
         name: Stream Event (transcript.text.done)
         group: transcript
-        example: "{\n  \"type\": \"transcript.text.done\",\n  \"text\": \"I see skies of blue and clouds of white, the bright blessed days, the dark sacred nights, and I think to myself, what a wonderful world.\"\n}\n"
+        example: "{\n  \"type\": \"transcript.text.done\",\n  \"text\": \"I see skies of blue and clouds of white, the bright blessed days, the dark sacred nights, and I think to myself, what a wonderful world.\",\n  \"usage\": {\n    \"type\": \"tokens\",\n    \"input_tokens\": 14,\n    \"input_token_details\": {\n      \"text_tokens\": 10,\n      \"audio_tokens\": 4\n    },\n    \"output_tokens\": 31,\n    \"total_tokens\": 45\n  }\n}\n"
+    TranscriptTextUsageDuration:
+      title: Duration Usage
+      required:
+        - type
+        - duration
+      type: object
+      properties:
+        type:
+          enum:
+            - duration
+          type: string
+          description: The type of the usage object. Always `duration` for this variant.
+          x-stainless-const: true
+        duration:
+          type: number
+          description: Duration of the input audio in seconds.
+      description: Usage statistics for models billed by audio input duration.
+    TranscriptTextUsageTokens:
+      title: Token Usage
+      required:
+        - type
+        - input_tokens
+        - output_tokens
+        - total_tokens
+      type: object
+      properties:
+        type:
+          enum:
+            - tokens
+          type: string
+          description: The type of the usage object. Always `tokens` for this variant.
+          x-stainless-const: true
+        input_tokens:
+          type: integer
+          description: Number of input tokens billed for this request.
+        input_token_details:
+          type: object
+          properties:
+            text_tokens:
+              type: integer
+              description: Number of text tokens billed for this request.
+            audio_tokens:
+              type: integer
+              description: Number of audio tokens billed for this request.
+          description: Details about the input tokens billed for this request.
+        output_tokens:
+          type: integer
+          description: Number of output tokens generated.
+        total_tokens:
+          type: integer
+          description: Total number of tokens used (input + output).
+      description: Usage statistics for models billed by token usage.
     TranscriptionChunkingStrategy:
       type: object
       oneOf:
@@ -24815,6 +24999,7 @@ components:
         - type
         - file_id
         - index
+        - filename
       type: object
       properties:
         type:
@@ -24830,6 +25015,9 @@ components:
         index:
           type: integer
           description: The index of the file in the list of files.
+        filename:
+          type: string
+          description: The filename of the file cited.
       description: A citation to a file.
     UrlCitationBody:
       title: URL citation
@@ -24869,6 +25057,7 @@ components:
         - file_id
         - start_index
         - end_index
+        - filename
       type: object
       properties:
         type:
@@ -24890,6 +25079,9 @@ components:
         end_index:
           type: integer
           description: The index of the last character of the container file citation in the message.
+        filename:
+          type: string
+          description: The filename of the container file cited.
       description: A citation for a container file used to generate a model response.
     Annotation:
       oneOf:
@@ -26661,6 +26853,21 @@ x-oaiMeta:
         - type: object
           key: ResponseErrorEvent
           path: <auto>
+        - type: object
+          key: ResponseCodeInterpreterCallInProgressEvent
+          path: <auto>
+        - type: object
+          key: ResponseCodeInterpreterCallCodeDeltaEvent
+          path: <auto>
+        - type: object
+          key: ResponseCodeInterpreterCallCodeDoneEvent
+          path: <auto>
+        - type: object
+          key: ResponseCodeInterpreterCallInterpretingEvent
+          path: <auto>
+        - type: object
+          key: ResponseCodeInterpreterCallCompletedEvent
+          path: <auto>
     - id: chat
       title: Chat Completions
       description: "The Chat Completions API endpoint will generate a model response from a\nlist of messages comprising a conversation.\n\nRelated guides:\n- [Quickstart](/docs/quickstart?api-mode=chat)\n- [Text inputs and outputs](/docs/guides/text?api-mode=chat)\n- [Image inputs](/docs/guides/images?api-mode=chat)\n- [Audio inputs and outputs](/docs/guides/audio?api-mode=chat)\n- [Structured Outputs](/docs/guides/structured-outputs?api-mode=chat)\n- [Function calling](/docs/guides/function-calling?api-mode=chat)\n- [Conversation state](/docs/guides/conversation-state?api-mode=chat)\n\n**Starting a new project?** We recommend trying [Responses](/docs/api-reference/responses)\nto take advantage of the latest OpenAI platform features. Compare\n[Chat Completions with Responses](/docs/guides/responses-vs-chat-completions?api-mode=responses).\n"
@@ -26891,6 +27098,12 @@ x-oaiMeta:
         - type: object
           key: CreateTranscriptionResponseVerboseJson
           path: verbose-json-object
+        - type: object
+          key: SpeechAudioDeltaEvent
+          path: speech-audio-delta-event
+        - type: object
+          key: SpeechAudioDoneEvent
+          path: speech-audio-done-event
         - type: object
           key: TranscriptTextDeltaEvent
           path: transcript-text-delta-event

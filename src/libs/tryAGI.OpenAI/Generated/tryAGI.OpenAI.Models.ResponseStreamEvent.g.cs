@@ -150,7 +150,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Emitted when a partial code snippet is added by the code interpreter.
+        /// Emitted when a partial code snippet is streamed by the code interpreter.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDeltaEvent? CodeInterpreterCallDelta { get; init; }
@@ -185,7 +185,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Emitted when code snippet output is finalized by the code interpreter.
+        /// Emitted when the code snippet is finalized by the code interpreter.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDoneEvent? CodeInterpreterCallDone { get; init; }

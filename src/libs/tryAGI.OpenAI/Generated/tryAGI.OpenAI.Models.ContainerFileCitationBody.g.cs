@@ -46,6 +46,13 @@ namespace tryAGI.OpenAI
         public required int EndIndex { get; set; }
 
         /// <summary>
+        /// The filename of the container file cited.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Filename { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -70,6 +77,9 @@ namespace tryAGI.OpenAI
         /// <param name="endIndex">
         /// The index of the last character of the container file citation in the message.
         /// </param>
+        /// <param name="filename">
+        /// The filename of the container file cited.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -78,12 +88,14 @@ namespace tryAGI.OpenAI
             string fileId,
             int startIndex,
             int endIndex,
+            string filename,
             global::tryAGI.OpenAI.ContainerFileCitationBodyType type = global::tryAGI.OpenAI.ContainerFileCitationBodyType.ContainerFileCitation)
         {
             this.ContainerId = containerId ?? throw new global::System.ArgumentNullException(nameof(containerId));
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
             this.StartIndex = startIndex;
             this.EndIndex = endIndex;
+            this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
             this.Type = type;
         }
 

@@ -49,11 +49,19 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CreateSpeechRequestResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
-        /// The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is the default. Does not work with `gpt-4o-mini-tts`.<br/>
+        /// The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is the default.<br/>
         /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
         public double? Speed { get; set; }
+
+        /// <summary>
+        /// The format to stream the audio in. Supported formats are `sse` and `audio`. `sse` is not supported for `tts-1` or `tts-1-hd`.<br/>
+        /// Default Value: audio
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("stream_format")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateSpeechRequestStreamFormatJsonConverter))]
+        public global::tryAGI.OpenAI.CreateSpeechRequestStreamFormat? StreamFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -81,8 +89,12 @@ namespace tryAGI.OpenAI
         /// Default Value: mp3
         /// </param>
         /// <param name="speed">
-        /// The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is the default. Does not work with `gpt-4o-mini-tts`.<br/>
+        /// The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is the default.<br/>
         /// Default Value: 1
+        /// </param>
+        /// <param name="streamFormat">
+        /// The format to stream the audio in. Supported formats are `sse` and `audio`. `sse` is not supported for `tts-1` or `tts-1-hd`.<br/>
+        /// Default Value: audio
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -93,7 +105,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.VoiceIdsShared voice,
             string? instructions,
             global::tryAGI.OpenAI.CreateSpeechRequestResponseFormat? responseFormat,
-            double? speed)
+            double? speed,
+            global::tryAGI.OpenAI.CreateSpeechRequestStreamFormat? streamFormat)
         {
             this.Model = model;
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
@@ -101,6 +114,7 @@ namespace tryAGI.OpenAI
             this.Instructions = instructions;
             this.ResponseFormat = responseFormat;
             this.Speed = speed;
+            this.StreamFormat = streamFormat;
         }
 
         /// <summary>

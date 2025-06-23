@@ -6,15 +6,14 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// Configuration for input audio transcription, defaults to off and can be <br/>
     /// set to `null` to turn off once on. Input audio transcription is not native <br/>
-    /// to the model, since the model consumes audio directly. Transcription runs <br/>
-    /// asynchronously through Whisper and should be treated as rough guidance <br/>
+    /// to the model, since the model consumes audio directly. Transcription runs<br/>
+    /// asynchronously and should be treated as rough guidance<br/>
     /// rather than the representation understood by the model.
     /// </summary>
     public sealed partial class RealtimeSessionCreateResponseInputAudioTranscription
     {
         /// <summary>
-        /// The model to use for transcription, `whisper-1` is the only currently <br/>
-        /// supported model.
+        /// The model to use for transcription.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         public string? Model { get; set; }
@@ -29,8 +28,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="RealtimeSessionCreateResponseInputAudioTranscription" /> class.
         /// </summary>
         /// <param name="model">
-        /// The model to use for transcription, `whisper-1` is the only currently <br/>
-        /// supported model.
+        /// The model to use for transcription.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

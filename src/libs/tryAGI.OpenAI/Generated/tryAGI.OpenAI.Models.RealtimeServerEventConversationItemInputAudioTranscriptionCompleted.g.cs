@@ -9,10 +9,10 @@ namespace tryAGI.OpenAI
     /// committed by the client or server (in `server_vad` mode). Transcription runs <br/>
     /// asynchronously with Response creation, so this event may come before or after <br/>
     /// the Response events.<br/>
-    /// Realtime API models accept audio natively, and thus input transcription is a <br/>
-    /// separate process run on a separate ASR (Automatic Speech Recognition) model, <br/>
-    /// currently always `whisper-1`. Thus the transcript may diverge somewhat from <br/>
-    /// the model's interpretation, and should be treated as a rough guide.
+    /// Realtime API models accept audio natively, and thus input transcription is a<br/>
+    /// separate process run on a separate ASR (Automatic Speech Recognition) model.<br/>
+    /// The transcript may diverge somewhat from the model's interpretation, and<br/>
+    /// should be treated as a rough guide.
     /// </summary>
     public sealed partial class RealtimeServerEventConversationItemInputAudioTranscriptionCompleted
     {
