@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseWebSearchCallCompletedEvent
     {
         /// <summary>
-        /// The type of the event. Always `response.web_search_call.completed`.
+        /// Unique ID for the output item associated with the web search call.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseWebSearchCallCompletedEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseWebSearchCallCompletedEventType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ItemId { get; set; }
 
         /// <summary>
         /// The index of the output item that the web search call is associated with.
@@ -23,18 +23,18 @@ namespace tryAGI.OpenAI
         public required int OutputIndex { get; set; }
 
         /// <summary>
-        /// Unique ID for the output item associated with the web search call.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ItemId { get; set; }
-
-        /// <summary>
         /// The sequence number of the web search call being processed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int SequenceNumber { get; set; }
+
+        /// <summary>
+        /// The type of the event. Always `response.web_search_call.completed`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseWebSearchCallCompletedEventTypeJsonConverter))]
+        public global::tryAGI.OpenAI.ResponseWebSearchCallCompletedEventType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,29 +45,29 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseWebSearchCallCompletedEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `response.web_search_call.completed`.
+        /// <param name="itemId">
+        /// Unique ID for the output item associated with the web search call.
         /// </param>
         /// <param name="outputIndex">
         /// The index of the output item that the web search call is associated with.
         /// </param>
-        /// <param name="itemId">
-        /// Unique ID for the output item associated with the web search call.
-        /// </param>
         /// <param name="sequenceNumber">
         /// The sequence number of the web search call being processed.
+        /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `response.web_search_call.completed`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseWebSearchCallCompletedEvent(
-            int outputIndex,
             string itemId,
+            int outputIndex,
             int sequenceNumber,
             global::tryAGI.OpenAI.ResponseWebSearchCallCompletedEventType type)
         {
-            this.OutputIndex = outputIndex;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
+            this.OutputIndex = outputIndex;
             this.SequenceNumber = sequenceNumber;
             this.Type = type;
         }

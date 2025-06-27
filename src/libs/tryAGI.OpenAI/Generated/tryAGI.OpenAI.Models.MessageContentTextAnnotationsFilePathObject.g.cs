@@ -9,18 +9,11 @@ namespace tryAGI.OpenAI
     public sealed partial class MessageContentTextAnnotationsFilePathObject
     {
         /// <summary>
-        /// Always `file_path`.
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageContentTextAnnotationsFilePathObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.MessageContentTextAnnotationsFilePathObjectType Type { get; set; }
-
-        /// <summary>
-        /// The text in the message content that needs to be replaced.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("end_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Text { get; set; }
+        public required int EndIndex { get; set; }
 
         /// <summary>
         /// 
@@ -37,11 +30,18 @@ namespace tryAGI.OpenAI
         public required int StartIndex { get; set; }
 
         /// <summary>
-        /// 
+        /// The text in the message content that needs to be replaced.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("end_index")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int EndIndex { get; set; }
+        public required string Text { get; set; }
+
+        /// <summary>
+        /// Always `file_path`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageContentTextAnnotationsFilePathObjectTypeJsonConverter))]
+        public global::tryAGI.OpenAI.MessageContentTextAnnotationsFilePathObjectType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,29 +52,29 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageContentTextAnnotationsFilePathObject" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Always `file_path`.
-        /// </param>
+        /// <param name="endIndex"></param>
+        /// <param name="filePath"></param>
+        /// <param name="startIndex"></param>
         /// <param name="text">
         /// The text in the message content that needs to be replaced.
         /// </param>
-        /// <param name="filePath"></param>
-        /// <param name="startIndex"></param>
-        /// <param name="endIndex"></param>
+        /// <param name="type">
+        /// Always `file_path`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessageContentTextAnnotationsFilePathObject(
-            string text,
+            int endIndex,
             global::tryAGI.OpenAI.MessageContentTextAnnotationsFilePathObjectFilePath filePath,
             int startIndex,
-            int endIndex,
+            string text,
             global::tryAGI.OpenAI.MessageContentTextAnnotationsFilePathObjectType type)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.EndIndex = endIndex;
             this.FilePath = filePath ?? throw new global::System.ArgumentNullException(nameof(filePath));
             this.StartIndex = startIndex;
-            this.EndIndex = endIndex;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
         }
 

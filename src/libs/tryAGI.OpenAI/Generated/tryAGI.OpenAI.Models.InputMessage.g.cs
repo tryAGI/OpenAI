@@ -11,11 +11,12 @@ namespace tryAGI.OpenAI
     public sealed partial class InputMessage
     {
         /// <summary>
-        /// The type of the message input. Always set to `message`.
+        /// A list of one or many input items to the model, containing different content <br/>
+        /// types.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.InputMessageTypeJsonConverter))]
-        public global::tryAGI.OpenAI.InputMessageType? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputContent> Content { get; set; }
 
         /// <summary>
         /// The role of the message input. One of `user`, `system`, or `developer`.
@@ -34,12 +35,11 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.InputMessageStatus? Status { get; set; }
 
         /// <summary>
-        /// A list of one or many input items to the model, containing different content <br/>
-        /// types.
+        /// The type of the message input. Always set to `message`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputContent> Content { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.InputMessageTypeJsonConverter))]
+        public global::tryAGI.OpenAI.InputMessageType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -50,8 +50,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="InputMessage" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the message input. Always set to `message`.
+        /// <param name="content">
+        /// A list of one or many input items to the model, containing different content <br/>
+        /// types.
         /// </param>
         /// <param name="role">
         /// The role of the message input. One of `user`, `system`, or `developer`.
@@ -60,23 +61,22 @@ namespace tryAGI.OpenAI
         /// The status of item. One of `in_progress`, `completed`, or<br/>
         /// `incomplete`. Populated when items are returned via API.
         /// </param>
-        /// <param name="content">
-        /// A list of one or many input items to the model, containing different content <br/>
-        /// types.
+        /// <param name="type">
+        /// The type of the message input. Always set to `message`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public InputMessage(
-            global::tryAGI.OpenAI.InputMessageRole role,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputContent> content,
-            global::tryAGI.OpenAI.InputMessageType? type,
-            global::tryAGI.OpenAI.InputMessageStatus? status)
+            global::tryAGI.OpenAI.InputMessageRole role,
+            global::tryAGI.OpenAI.InputMessageStatus? status,
+            global::tryAGI.OpenAI.InputMessageType? type)
         {
-            this.Role = role;
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
-            this.Type = type;
+            this.Role = role;
             this.Status = status;
+            this.Type = type;
         }
 
         /// <summary>

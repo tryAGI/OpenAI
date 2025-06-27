@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -11,11 +9,10 @@ namespace tryAGI.OpenAI
     public sealed partial class ComputerCallOutputItemParam
     {
         /// <summary>
-        /// 
+        /// The safety checks reported by the API that have been acknowledged by the developer.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, object>))]
-        public global::tryAGI.OpenAI.AnyOf<string, object>? Id { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("acknowledged_safety_checks")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ComputerCallSafetyCheckParam>? AcknowledgedSafetyChecks { get; set; }
 
         /// <summary>
         /// The ID of the computer tool call that produced the output.
@@ -23,6 +20,26 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CallId { get; set; }
+
+        /// <summary>
+        /// The ID of the computer tool call output.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
+
+        /// <summary>
+        /// A computer screenshot image used with the computer use tool.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.ComputerScreenshotImage Output { get; set; }
+
+        /// <summary>
+        /// The status of the message input. One of `in_progress`, `completed`, or `incomplete`. Populated when input items are returned via API.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ComputerCallOutputItemParamStatusJsonConverter))]
+        public global::tryAGI.OpenAI.ComputerCallOutputItemParamStatus? Status { get; set; }
 
         /// <summary>
         /// The type of the computer tool call output. Always `computer_call_output`.<br/>
@@ -34,27 +51,6 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ComputerCallOutputItemParamType Type { get; set; } = global::tryAGI.OpenAI.ComputerCallOutputItemParamType.ComputerCallOutput;
 
         /// <summary>
-        /// A computer screenshot image used with the computer use tool.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("output")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ComputerScreenshotImage Output { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("acknowledged_safety_checks")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ComputerCallSafetyCheckParam>, object>))]
-        public global::tryAGI.OpenAI.AnyOf<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ComputerCallSafetyCheckParam>, object>? AcknowledgedSafetyChecks { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.ComputerCallOutputItemParamStatus?, object>))]
-        public global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ComputerCallOutputItemParamStatus?, object>? Status { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -63,36 +59,42 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ComputerCallOutputItemParam" /> class.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="acknowledgedSafetyChecks">
+        /// The safety checks reported by the API that have been acknowledged by the developer.
+        /// </param>
         /// <param name="callId">
         /// The ID of the computer tool call that produced the output.
+        /// </param>
+        /// <param name="id">
+        /// The ID of the computer tool call output.
+        /// </param>
+        /// <param name="output">
+        /// A computer screenshot image used with the computer use tool.
+        /// </param>
+        /// <param name="status">
+        /// The status of the message input. One of `in_progress`, `completed`, or `incomplete`. Populated when input items are returned via API.
         /// </param>
         /// <param name="type">
         /// The type of the computer tool call output. Always `computer_call_output`.<br/>
         /// Default Value: computer_call_output
         /// </param>
-        /// <param name="output">
-        /// A computer screenshot image used with the computer use tool.
-        /// </param>
-        /// <param name="acknowledgedSafetyChecks"></param>
-        /// <param name="status"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ComputerCallOutputItemParam(
             string callId,
             global::tryAGI.OpenAI.ComputerScreenshotImage output,
-            global::tryAGI.OpenAI.AnyOf<string, object>? id,
-            global::tryAGI.OpenAI.AnyOf<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ComputerCallSafetyCheckParam>, object>? acknowledgedSafetyChecks,
-            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ComputerCallOutputItemParamStatus?, object>? status,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ComputerCallSafetyCheckParam>? acknowledgedSafetyChecks,
+            string? id,
+            global::tryAGI.OpenAI.ComputerCallOutputItemParamStatus? status,
             global::tryAGI.OpenAI.ComputerCallOutputItemParamType type = global::tryAGI.OpenAI.ComputerCallOutputItemParamType.ComputerCallOutput)
         {
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
-            this.Id = id;
-            this.Type = type;
             this.AcknowledgedSafetyChecks = acknowledgedSafetyChecks;
+            this.Id = id;
             this.Status = status;
+            this.Type = type;
         }
 
         /// <summary>

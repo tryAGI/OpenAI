@@ -9,15 +9,6 @@ namespace tryAGI.OpenAI
     public sealed partial class ChatCompletionList
     {
         /// <summary>
-        /// The type of this object. It is always set to "list".<br/>
-        /// Default Value: list
-        /// </summary>
-        /// <default>global::tryAGI.OpenAI.ChatCompletionListObject.List</default>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatCompletionListObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ChatCompletionListObject Object { get; set; } = global::tryAGI.OpenAI.ChatCompletionListObject.List;
-
-        /// <summary>
         /// An array of chat completion objects.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
@@ -32,6 +23,13 @@ namespace tryAGI.OpenAI
         public required string FirstId { get; set; }
 
         /// <summary>
+        /// Indicates whether there are more Chat Completions available.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool HasMore { get; set; }
+
+        /// <summary>
         /// The identifier of the last chat completion in the data array.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_id")]
@@ -39,11 +37,13 @@ namespace tryAGI.OpenAI
         public required string LastId { get; set; }
 
         /// <summary>
-        /// Indicates whether there are more Chat Completions available.
+        /// The type of this object. It is always set to "list".<br/>
+        /// Default Value: list
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool HasMore { get; set; }
+        /// <default>global::tryAGI.OpenAI.ChatCompletionListObject.List</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatCompletionListObjectJsonConverter))]
+        public global::tryAGI.OpenAI.ChatCompletionListObject Object { get; set; } = global::tryAGI.OpenAI.ChatCompletionListObject.List;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,21 +54,21 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionList" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The type of this object. It is always set to "list".<br/>
-        /// Default Value: list
-        /// </param>
         /// <param name="data">
         /// An array of chat completion objects.
         /// </param>
         /// <param name="firstId">
         /// The identifier of the first chat completion in the data array.
         /// </param>
+        /// <param name="hasMore">
+        /// Indicates whether there are more Chat Completions available.
+        /// </param>
         /// <param name="lastId">
         /// The identifier of the last chat completion in the data array.
         /// </param>
-        /// <param name="hasMore">
-        /// Indicates whether there are more Chat Completions available.
+        /// <param name="object">
+        /// The type of this object. It is always set to "list".<br/>
+        /// Default Value: list
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -76,14 +76,14 @@ namespace tryAGI.OpenAI
         public ChatCompletionList(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateChatCompletionResponse> data,
             string firstId,
-            string lastId,
             bool hasMore,
+            string lastId,
             global::tryAGI.OpenAI.ChatCompletionListObject @object = global::tryAGI.OpenAI.ChatCompletionListObject.List)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.FirstId = firstId ?? throw new global::System.ArgumentNullException(nameof(firstId));
-            this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
             this.HasMore = hasMore;
+            this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
             this.Object = @object;
         }
 

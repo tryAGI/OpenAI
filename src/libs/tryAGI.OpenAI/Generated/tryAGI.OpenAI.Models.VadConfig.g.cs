@@ -9,13 +9,6 @@ namespace tryAGI.OpenAI
     public sealed partial class VadConfig
     {
         /// <summary>
-        /// Must be set to `server_vad` to enable manual chunking using server side VAD.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VadConfigTypeJsonConverter))]
-        public global::tryAGI.OpenAI.VadConfigType Type { get; set; }
-
-        /// <summary>
         /// Amount of audio to include before the VAD detected speech (in <br/>
         /// milliseconds).<br/>
         /// Default Value: 300
@@ -42,6 +35,13 @@ namespace tryAGI.OpenAI
         public double? Threshold { get; set; }
 
         /// <summary>
+        /// Must be set to `server_vad` to enable manual chunking using server side VAD.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VadConfigTypeJsonConverter))]
+        public global::tryAGI.OpenAI.VadConfigType Type { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -50,9 +50,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="VadConfig" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Must be set to `server_vad` to enable manual chunking using server side VAD.
-        /// </param>
         /// <param name="prefixPaddingMs">
         /// Amount of audio to include before the VAD detected speech (in <br/>
         /// milliseconds).<br/>
@@ -70,19 +67,22 @@ namespace tryAGI.OpenAI
         /// thus might perform better in noisy environments.<br/>
         /// Default Value: 0.5
         /// </param>
+        /// <param name="type">
+        /// Must be set to `server_vad` to enable manual chunking using server side VAD.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public VadConfig(
-            global::tryAGI.OpenAI.VadConfigType type,
             int? prefixPaddingMs,
             int? silenceDurationMs,
-            double? threshold)
+            double? threshold,
+            global::tryAGI.OpenAI.VadConfigType type)
         {
-            this.Type = type;
             this.PrefixPaddingMs = prefixPaddingMs;
             this.SilenceDurationMs = silenceDurationMs;
             this.Threshold = threshold;
+            this.Type = type;
         }
 
         /// <summary>

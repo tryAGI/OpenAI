@@ -9,14 +9,6 @@ namespace tryAGI.OpenAI
     public sealed partial class ListRunStepsResponse
     {
         /// <summary>
-        /// Example: list
-        /// </summary>
-        /// <example>list</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Object { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
@@ -32,6 +24,14 @@ namespace tryAGI.OpenAI
         public required string FirstId { get; set; }
 
         /// <summary>
+        /// Example: false
+        /// </summary>
+        /// <example>false</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool HasMore { get; set; }
+
+        /// <summary>
         /// Example: step_abc456
         /// </summary>
         /// <example>step_abc456</example>
@@ -40,12 +40,12 @@ namespace tryAGI.OpenAI
         public required string LastId { get; set; }
 
         /// <summary>
-        /// Example: false
+        /// Example: list
         /// </summary>
-        /// <example>false</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
+        /// <example>list</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool HasMore { get; set; }
+        public required string Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -56,34 +56,34 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ListRunStepsResponse" /> class.
         /// </summary>
-        /// <param name="object">
-        /// Example: list
-        /// </param>
         /// <param name="data"></param>
         /// <param name="firstId">
         /// Example: step_abc123
         /// </param>
+        /// <param name="hasMore">
+        /// Example: false
+        /// </param>
         /// <param name="lastId">
         /// Example: step_abc456
         /// </param>
-        /// <param name="hasMore">
-        /// Example: false
+        /// <param name="object">
+        /// Example: list
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ListRunStepsResponse(
-            string @object,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RunStepObject> data,
             string firstId,
+            bool hasMore,
             string lastId,
-            bool hasMore)
+            string @object)
         {
-            this.Object = @object ?? throw new global::System.ArgumentNullException(nameof(@object));
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.FirstId = firstId ?? throw new global::System.ArgumentNullException(nameof(firstId));
-            this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
             this.HasMore = hasMore;
+            this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
+            this.Object = @object ?? throw new global::System.ArgumentNullException(nameof(@object));
         }
 
         /// <summary>

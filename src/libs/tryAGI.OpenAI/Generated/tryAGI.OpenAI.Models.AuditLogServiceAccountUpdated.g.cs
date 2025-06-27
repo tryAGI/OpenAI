@@ -9,16 +9,16 @@ namespace tryAGI.OpenAI
     public sealed partial class AuditLogServiceAccountUpdated
     {
         /// <summary>
-        /// The service account ID.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string? Id { get; set; }
-
-        /// <summary>
         /// The payload used to updated the service account.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("changes_requested")]
         public global::tryAGI.OpenAI.AuditLogServiceAccountUpdatedChangesRequested? ChangesRequested { get; set; }
+
+        /// <summary>
+        /// The service account ID.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,21 +29,21 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="AuditLogServiceAccountUpdated" /> class.
         /// </summary>
-        /// <param name="id">
-        /// The service account ID.
-        /// </param>
         /// <param name="changesRequested">
         /// The payload used to updated the service account.
+        /// </param>
+        /// <param name="id">
+        /// The service account ID.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AuditLogServiceAccountUpdated(
-            string? id,
-            global::tryAGI.OpenAI.AuditLogServiceAccountUpdatedChangesRequested? changesRequested)
+            global::tryAGI.OpenAI.AuditLogServiceAccountUpdatedChangesRequested? changesRequested,
+            string? id)
         {
-            this.Id = id;
             this.ChangesRequested = changesRequested;
+            this.Id = id;
         }
 
         /// <summary>

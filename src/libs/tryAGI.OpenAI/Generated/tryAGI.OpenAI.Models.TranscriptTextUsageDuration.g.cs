@@ -9,18 +9,18 @@ namespace tryAGI.OpenAI
     public sealed partial class TranscriptTextUsageDuration
     {
         /// <summary>
-        /// The type of the usage object. Always `duration` for this variant.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.TranscriptTextUsageDurationTypeJsonConverter))]
-        public global::tryAGI.OpenAI.TranscriptTextUsageDurationType Type { get; set; }
-
-        /// <summary>
         /// Duration of the input audio in seconds.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("duration")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Duration { get; set; }
+
+        /// <summary>
+        /// The type of the usage object. Always `duration` for this variant.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.TranscriptTextUsageDurationTypeJsonConverter))]
+        public global::tryAGI.OpenAI.TranscriptTextUsageDurationType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,11 +31,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="TranscriptTextUsageDuration" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the usage object. Always `duration` for this variant.
-        /// </param>
         /// <param name="duration">
         /// Duration of the input audio in seconds.
+        /// </param>
+        /// <param name="type">
+        /// The type of the usage object. Always `duration` for this variant.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

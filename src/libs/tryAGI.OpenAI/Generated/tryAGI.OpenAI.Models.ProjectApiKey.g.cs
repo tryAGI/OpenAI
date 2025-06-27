@@ -9,33 +9,19 @@ namespace tryAGI.OpenAI
     public sealed partial class ProjectApiKey
     {
         /// <summary>
-        /// The object type, which is always `organization.project.api_key`
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectApiKeyObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ProjectApiKeyObject Object { get; set; }
-
-        /// <summary>
-        /// The redacted value of the API key
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("redacted_value")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string RedactedValue { get; set; }
-
-        /// <summary>
-        /// The name of the API key
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
-
-        /// <summary>
         /// The Unix timestamp (in seconds) of when the API key was created
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset CreatedAt { get; set; }
+
+        /// <summary>
+        /// The identifier, which can be referenced in API endpoints
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Id { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the API key was last used.
@@ -46,11 +32,18 @@ namespace tryAGI.OpenAI
         public required global::System.DateTimeOffset LastUsedAt { get; set; }
 
         /// <summary>
-        /// The identifier, which can be referenced in API endpoints
+        /// The name of the API key
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public required string Name { get; set; }
+
+        /// <summary>
+        /// The object type, which is always `organization.project.api_key`
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectApiKeyObjectJsonConverter))]
+        public global::tryAGI.OpenAI.ProjectApiKeyObject Object { get; set; }
 
         /// <summary>
         /// 
@@ -58,6 +51,13 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::tryAGI.OpenAI.ProjectApiKeyOwner Owner { get; set; }
+
+        /// <summary>
+        /// The redacted value of the API key
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("redacted_value")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string RedactedValue { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -68,43 +68,43 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectApiKey" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The object type, which is always `organization.project.api_key`
-        /// </param>
-        /// <param name="redactedValue">
-        /// The redacted value of the API key
-        /// </param>
-        /// <param name="name">
-        /// The name of the API key
-        /// </param>
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) of when the API key was created
-        /// </param>
-        /// <param name="lastUsedAt">
-        /// The Unix timestamp (in seconds) of when the API key was last used.
         /// </param>
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints
         /// </param>
+        /// <param name="lastUsedAt">
+        /// The Unix timestamp (in seconds) of when the API key was last used.
+        /// </param>
+        /// <param name="name">
+        /// The name of the API key
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `organization.project.api_key`
+        /// </param>
         /// <param name="owner"></param>
+        /// <param name="redactedValue">
+        /// The redacted value of the API key
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ProjectApiKey(
-            string redactedValue,
-            string name,
             global::System.DateTimeOffset createdAt,
-            global::System.DateTimeOffset lastUsedAt,
             string id,
+            global::System.DateTimeOffset lastUsedAt,
+            string name,
             global::tryAGI.OpenAI.ProjectApiKeyOwner owner,
+            string redactedValue,
             global::tryAGI.OpenAI.ProjectApiKeyObject @object)
         {
-            this.RedactedValue = redactedValue ?? throw new global::System.ArgumentNullException(nameof(redactedValue));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.CreatedAt = createdAt;
-            this.LastUsedAt = lastUsedAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.LastUsedAt = lastUsedAt;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
+            this.RedactedValue = redactedValue ?? throw new global::System.ArgumentNullException(nameof(redactedValue));
             this.Object = @object;
         }
 

@@ -9,17 +9,17 @@ namespace tryAGI.OpenAI
     public sealed partial class UsageCodeInterpreterSessionsResult
     {
         /// <summary>
+        /// The number of code interpreter sessions.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("num_sessions")]
+        public int? NumSessions { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UsageCodeInterpreterSessionsResultObjectJsonConverter))]
         public global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResultObject Object { get; set; }
-
-        /// <summary>
-        /// The number of code interpreter sessions.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("num_sessions")]
-        public int? NumSessions { get; set; }
 
         /// <summary>
         /// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
@@ -36,10 +36,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="UsageCodeInterpreterSessionsResult" /> class.
         /// </summary>
-        /// <param name="object"></param>
         /// <param name="numSessions">
         /// The number of code interpreter sessions.
         /// </param>
+        /// <param name="object"></param>
         /// <param name="projectId">
         /// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
         /// </param>
@@ -47,12 +47,12 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UsageCodeInterpreterSessionsResult(
-            global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResultObject @object,
             int? numSessions,
+            global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResultObject @object,
             string? projectId)
         {
-            this.Object = @object;
             this.NumSessions = numSessions;
+            this.Object = @object;
             this.ProjectId = projectId;
         }
 

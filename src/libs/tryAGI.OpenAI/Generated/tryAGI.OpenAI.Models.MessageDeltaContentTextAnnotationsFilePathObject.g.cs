@@ -9,24 +9,10 @@ namespace tryAGI.OpenAI
     public sealed partial class MessageDeltaContentTextAnnotationsFilePathObject
     {
         /// <summary>
-        /// The index of the annotation in the text content part.
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("index")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Index { get; set; }
-
-        /// <summary>
-        /// Always `file_path`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageDeltaContentTextAnnotationsFilePathObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFilePathObjectType Type { get; set; }
-
-        /// <summary>
-        /// The text in the message content that needs to be replaced.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        public string? Text { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("end_index")]
+        public int? EndIndex { get; set; }
 
         /// <summary>
         /// 
@@ -35,16 +21,30 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFilePathObjectFilePath? FilePath { get; set; }
 
         /// <summary>
+        /// The index of the annotation in the text content part.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("index")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int Index { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_index")]
         public int? StartIndex { get; set; }
 
         /// <summary>
-        /// 
+        /// The text in the message content that needs to be replaced.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("end_index")]
-        public int? EndIndex { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
+        public string? Text { get; set; }
+
+        /// <summary>
+        /// Always `file_path`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageDeltaContentTextAnnotationsFilePathObjectTypeJsonConverter))]
+        public global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFilePathObjectType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -55,35 +55,35 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageDeltaContentTextAnnotationsFilePathObject" /> class.
         /// </summary>
+        /// <param name="endIndex"></param>
+        /// <param name="filePath"></param>
         /// <param name="index">
         /// The index of the annotation in the text content part.
+        /// </param>
+        /// <param name="startIndex"></param>
+        /// <param name="text">
+        /// The text in the message content that needs to be replaced.
         /// </param>
         /// <param name="type">
         /// Always `file_path`.
         /// </param>
-        /// <param name="text">
-        /// The text in the message content that needs to be replaced.
-        /// </param>
-        /// <param name="filePath"></param>
-        /// <param name="startIndex"></param>
-        /// <param name="endIndex"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessageDeltaContentTextAnnotationsFilePathObject(
             int index,
-            global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFilePathObjectType type,
-            string? text,
+            int? endIndex,
             global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFilePathObjectFilePath? filePath,
             int? startIndex,
-            int? endIndex)
+            string? text,
+            global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFilePathObjectType type)
         {
             this.Index = index;
-            this.Type = type;
-            this.Text = text;
+            this.EndIndex = endIndex;
             this.FilePath = filePath;
             this.StartIndex = startIndex;
-            this.EndIndex = endIndex;
+            this.Text = text;
+            this.Type = type;
         }
 
         /// <summary>

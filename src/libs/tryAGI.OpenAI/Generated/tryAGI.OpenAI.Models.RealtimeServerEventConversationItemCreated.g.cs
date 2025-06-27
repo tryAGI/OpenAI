@@ -24,11 +24,15 @@ namespace tryAGI.OpenAI
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be `conversation.item.created`.
+        /// A realtime Item is of three types: message, function_call, or function_call_output.<br/>
+        /// A message item can contain text or audio.<br/>
+        /// A function_call item indicates a model's desire to call a function, which is the only tool supported for now<br/>
+        /// A function_call_output item indicates a function response.<br/>
+        /// The client may add and remove message and function_call_output Items using conversation.item.create and conversation.item.delete.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventConversationItemCreatedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemCreatedType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("item")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.RealtimeConversationItem Item { get; set; }
 
         /// <summary>
         /// The ID of the preceding item in the Conversation context, allows the <br/>
@@ -39,15 +43,11 @@ namespace tryAGI.OpenAI
         public required string PreviousItemId { get; set; }
 
         /// <summary>
-        /// A realtime Item is of three types: message, function_call, or function_call_output.<br/>
-        /// A message item can contain text or audio.<br/>
-        /// A function_call item indicates a model's desire to call a function, which is the only tool supported for now<br/>
-        /// A function_call_output item indicates a function response.<br/>
-        /// The client may add and remove message and function_call_output Items using conversation.item.create and conversation.item.delete.
+        /// The event type, must be `conversation.item.created`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("item")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.RealtimeConversationItem Item { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventConversationItemCreatedTypeJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemCreatedType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -61,13 +61,6 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `conversation.item.created`.
-        /// </param>
-        /// <param name="previousItemId">
-        /// The ID of the preceding item in the Conversation context, allows the <br/>
-        /// client to understand the order of the conversation.
-        /// </param>
         /// <param name="item">
         /// A realtime Item is of three types: message, function_call, or function_call_output.<br/>
         /// A message item can contain text or audio.<br/>
@@ -75,18 +68,25 @@ namespace tryAGI.OpenAI
         /// A function_call_output item indicates a function response.<br/>
         /// The client may add and remove message and function_call_output Items using conversation.item.create and conversation.item.delete.
         /// </param>
+        /// <param name="previousItemId">
+        /// The ID of the preceding item in the Conversation context, allows the <br/>
+        /// client to understand the order of the conversation.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `conversation.item.created`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeServerEventConversationItemCreated(
             string eventId,
-            string previousItemId,
             global::tryAGI.OpenAI.RealtimeConversationItem item,
+            string previousItemId,
             global::tryAGI.OpenAI.RealtimeServerEventConversationItemCreatedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.PreviousItemId = previousItemId ?? throw new global::System.ArgumentNullException(nameof(previousItemId));
             this.Item = item ?? throw new global::System.ArgumentNullException(nameof(item));
+            this.PreviousItemId = previousItemId ?? throw new global::System.ArgumentNullException(nameof(previousItemId));
             this.Type = type;
         }
 

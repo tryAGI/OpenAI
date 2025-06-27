@@ -11,13 +11,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ListAuditLogsResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ListAuditLogsResponseObject Object { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AuditLog> Data { get; set; }
@@ -31,6 +24,13 @@ namespace tryAGI.OpenAI
         public required string FirstId { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool HasMore { get; set; }
+
+        /// <summary>
         /// Example: audit_log-hnbkd8s93s
         /// </summary>
         /// <example>audit_log-hnbkd8s93s</example>
@@ -41,9 +41,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool HasMore { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ListAuditLogsResponseObjectJsonConverter))]
+        public global::tryAGI.OpenAI.ListAuditLogsResponseObject Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,29 +54,29 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ListAuditLogsResponse" /> class.
         /// </summary>
-        /// <param name="object"></param>
         /// <param name="data"></param>
         /// <param name="firstId">
         /// Example: audit_log-defb456h8dks
         /// </param>
+        /// <param name="hasMore"></param>
         /// <param name="lastId">
         /// Example: audit_log-hnbkd8s93s
         /// </param>
-        /// <param name="hasMore"></param>
+        /// <param name="object"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ListAuditLogsResponse(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AuditLog> data,
             string firstId,
-            string lastId,
             bool hasMore,
+            string lastId,
             global::tryAGI.OpenAI.ListAuditLogsResponseObject @object)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.FirstId = firstId ?? throw new global::System.ArgumentNullException(nameof(firstId));
-            this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
             this.HasMore = hasMore;
+            this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
             this.Object = @object;
         }
 

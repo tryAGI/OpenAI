@@ -19,18 +19,18 @@ namespace tryAGI.OpenAI
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be `output_audio_buffer.started`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventOutputAudioBufferStartedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStartedType Type { get; set; }
-
-        /// <summary>
         /// The unique ID of the response that produced the audio.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ResponseId { get; set; }
+
+        /// <summary>
+        /// The event type, must be `output_audio_buffer.started`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventOutputAudioBufferStartedTypeJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStartedType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,11 +44,11 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `output_audio_buffer.started`.
-        /// </param>
         /// <param name="responseId">
         /// The unique ID of the response that produced the audio.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `output_audio_buffer.started`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

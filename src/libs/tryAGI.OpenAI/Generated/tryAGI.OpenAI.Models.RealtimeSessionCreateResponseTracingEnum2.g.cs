@@ -9,13 +9,6 @@ namespace tryAGI.OpenAI
     public sealed partial class RealtimeSessionCreateResponseTracingEnum2
     {
         /// <summary>
-        /// The name of the workflow to attach to this trace. This is used to <br/>
-        /// name the trace in the traces dashboard.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("workflow_name")]
-        public string? WorkflowName { get; set; }
-
-        /// <summary>
         /// The group id to attach to this trace to enable filtering and <br/>
         /// grouping in the traces dashboard.
         /// </summary>
@@ -30,6 +23,13 @@ namespace tryAGI.OpenAI
         public object? Metadata { get; set; }
 
         /// <summary>
+        /// The name of the workflow to attach to this trace. This is used to <br/>
+        /// name the trace in the traces dashboard.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workflow_name")]
+        public string? WorkflowName { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -38,10 +38,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeSessionCreateResponseTracingEnum2" /> class.
         /// </summary>
-        /// <param name="workflowName">
-        /// The name of the workflow to attach to this trace. This is used to <br/>
-        /// name the trace in the traces dashboard.
-        /// </param>
         /// <param name="groupId">
         /// The group id to attach to this trace to enable filtering and <br/>
         /// grouping in the traces dashboard.
@@ -50,17 +46,21 @@ namespace tryAGI.OpenAI
         /// The arbitrary metadata to attach to this trace to enable <br/>
         /// filtering in the traces dashboard.
         /// </param>
+        /// <param name="workflowName">
+        /// The name of the workflow to attach to this trace. This is used to <br/>
+        /// name the trace in the traces dashboard.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeSessionCreateResponseTracingEnum2(
-            string? workflowName,
             string? groupId,
-            object? metadata)
+            object? metadata,
+            string? workflowName)
         {
-            this.WorkflowName = workflowName;
             this.GroupId = groupId;
             this.Metadata = metadata;
+            this.WorkflowName = workflowName;
         }
 
         /// <summary>

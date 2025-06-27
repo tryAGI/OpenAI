@@ -9,16 +9,16 @@ namespace tryAGI.OpenAI
     public sealed partial class AuditLogInviteSent
     {
         /// <summary>
-        /// The ID of the invite.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string? Id { get; set; }
-
-        /// <summary>
         /// The payload used to create the invite.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         public global::tryAGI.OpenAI.AuditLogInviteSentData? Data { get; set; }
+
+        /// <summary>
+        /// The ID of the invite.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,21 +29,21 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="AuditLogInviteSent" /> class.
         /// </summary>
-        /// <param name="id">
-        /// The ID of the invite.
-        /// </param>
         /// <param name="data">
         /// The payload used to create the invite.
+        /// </param>
+        /// <param name="id">
+        /// The ID of the invite.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AuditLogInviteSent(
-            string? id,
-            global::tryAGI.OpenAI.AuditLogInviteSentData? data)
+            global::tryAGI.OpenAI.AuditLogInviteSentData? data,
+            string? id)
         {
-            this.Id = id;
             this.Data = data;
+            this.Id = id;
         }
 
         /// <summary>

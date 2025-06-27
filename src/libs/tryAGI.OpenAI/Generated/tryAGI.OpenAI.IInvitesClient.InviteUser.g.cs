@@ -20,11 +20,11 @@ namespace tryAGI.OpenAI
         /// <param name="email">
         /// Send an email to this address
         /// </param>
-        /// <param name="role">
-        /// `owner` or `reader`
-        /// </param>
         /// <param name="projects">
         /// An array of projects to which membership is granted at the same time the org invite is accepted. If omitted, the user will be invited to the default project for compatibility with legacy behavior.
+        /// </param>
+        /// <param name="role">
+        /// `owner` or `reader`
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

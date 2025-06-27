@@ -9,6 +9,13 @@ namespace tryAGI.OpenAI
     public sealed partial class RunStepDetailsToolCallsFileSearchObject
     {
         /// <summary>
+        /// For now, this is always going to be an empty object.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("file_search")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchObjectFileSearch FileSearch { get; set; }
+
+        /// <summary>
         /// The ID of the tool call object.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -23,13 +30,6 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchObjectType Type { get; set; }
 
         /// <summary>
-        /// For now, this is always going to be an empty object.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("file_search")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchObjectFileSearch FileSearch { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -38,25 +38,25 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RunStepDetailsToolCallsFileSearchObject" /> class.
         /// </summary>
+        /// <param name="fileSearch">
+        /// For now, this is always going to be an empty object.
+        /// </param>
         /// <param name="id">
         /// The ID of the tool call object.
         /// </param>
         /// <param name="type">
         /// The type of tool call. This is always going to be `file_search` for this type of tool call.
         /// </param>
-        /// <param name="fileSearch">
-        /// For now, this is always going to be an empty object.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RunStepDetailsToolCallsFileSearchObject(
-            string id,
             global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchObjectFileSearch fileSearch,
+            string id,
             global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchObjectType type)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.FileSearch = fileSearch ?? throw new global::System.ArgumentNullException(nameof(fileSearch));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;
         }
 

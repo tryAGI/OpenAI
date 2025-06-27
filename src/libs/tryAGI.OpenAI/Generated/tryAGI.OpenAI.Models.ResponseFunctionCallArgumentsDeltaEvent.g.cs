@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseFunctionCallArgumentsDeltaEvent
     {
         /// <summary>
-        /// The type of the event. Always `response.function_call_arguments.delta`.
+        /// The function-call arguments delta that is added.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseFunctionCallArgumentsDeltaEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDeltaEventType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Delta { get; set; }
 
         /// <summary>
         /// The ID of the output item that the function-call arguments delta is added to.
@@ -37,11 +37,11 @@ namespace tryAGI.OpenAI
         public required int SequenceNumber { get; set; }
 
         /// <summary>
-        /// The function-call arguments delta that is added.
+        /// The type of the event. Always `response.function_call_arguments.delta`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Delta { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseFunctionCallArgumentsDeltaEventTypeJsonConverter))]
+        public global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDeltaEventType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,8 +52,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseFunctionCallArgumentsDeltaEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `response.function_call_arguments.delta`.
+        /// <param name="delta">
+        /// The function-call arguments delta that is added.
         /// </param>
         /// <param name="itemId">
         /// The ID of the output item that the function-call arguments delta is added to.
@@ -64,23 +64,23 @@ namespace tryAGI.OpenAI
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
         /// </param>
-        /// <param name="delta">
-        /// The function-call arguments delta that is added.
+        /// <param name="type">
+        /// The type of the event. Always `response.function_call_arguments.delta`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseFunctionCallArgumentsDeltaEvent(
+            string delta,
             string itemId,
             int outputIndex,
             int sequenceNumber,
-            string delta,
             global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDeltaEventType type)
         {
+            this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.SequenceNumber = sequenceNumber;
-            this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.Type = type;
         }
 

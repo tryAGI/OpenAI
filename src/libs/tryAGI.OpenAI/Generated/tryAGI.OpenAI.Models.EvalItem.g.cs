@@ -15,6 +15,14 @@ namespace tryAGI.OpenAI
     public sealed partial class EvalItem
     {
         /// <summary>
+        /// Text inputs to the model - can contain template strings.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, global::tryAGI.OpenAI.InputTextContent, global::tryAGI.OpenAI.EvalItemContent>))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.InputTextContent, global::tryAGI.OpenAI.EvalItemContent> Content { get; set; }
+
+        /// <summary>
         /// The role of the message input. One of `user`, `assistant`, `system`, or<br/>
         /// `developer`.
         /// </summary>
@@ -22,14 +30,6 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EvalItemRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::tryAGI.OpenAI.EvalItemRole Role { get; set; }
-
-        /// <summary>
-        /// Text inputs to the model - can contain template strings.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, global::tryAGI.OpenAI.InputTextContent, global::tryAGI.OpenAI.EvalItemContent>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.InputTextContent, global::tryAGI.OpenAI.EvalItemContent> Content { get; set; }
 
         /// <summary>
         /// The type of the message input. Always `message`.
@@ -47,12 +47,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="EvalItem" /> class.
         /// </summary>
+        /// <param name="content">
+        /// Text inputs to the model - can contain template strings.
+        /// </param>
         /// <param name="role">
         /// The role of the message input. One of `user`, `assistant`, `system`, or<br/>
         /// `developer`.
-        /// </param>
-        /// <param name="content">
-        /// Text inputs to the model - can contain template strings.
         /// </param>
         /// <param name="type">
         /// The type of the message input. Always `message`.
@@ -61,12 +61,12 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public EvalItem(
-            global::tryAGI.OpenAI.EvalItemRole role,
             global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.InputTextContent, global::tryAGI.OpenAI.EvalItemContent> content,
+            global::tryAGI.OpenAI.EvalItemRole role,
             global::tryAGI.OpenAI.EvalItemType? type)
         {
-            this.Role = role;
             this.Content = content;
+            this.Role = role;
             this.Type = type;
         }
 

@@ -9,16 +9,16 @@ namespace tryAGI.OpenAI
     public sealed partial class AuditLogApiKeyUpdated
     {
         /// <summary>
-        /// The tracking ID of the API key.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string? Id { get; set; }
-
-        /// <summary>
         /// The payload used to update the API key.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("changes_requested")]
         public global::tryAGI.OpenAI.AuditLogApiKeyUpdatedChangesRequested? ChangesRequested { get; set; }
+
+        /// <summary>
+        /// The tracking ID of the API key.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,21 +29,21 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="AuditLogApiKeyUpdated" /> class.
         /// </summary>
-        /// <param name="id">
-        /// The tracking ID of the API key.
-        /// </param>
         /// <param name="changesRequested">
         /// The payload used to update the API key.
+        /// </param>
+        /// <param name="id">
+        /// The tracking ID of the API key.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AuditLogApiKeyUpdated(
-            string? id,
-            global::tryAGI.OpenAI.AuditLogApiKeyUpdatedChangesRequested? changesRequested)
+            global::tryAGI.OpenAI.AuditLogApiKeyUpdatedChangesRequested? changesRequested,
+            string? id)
         {
-            this.Id = id;
             this.ChangesRequested = changesRequested;
+            this.Id = id;
         }
 
         /// <summary>

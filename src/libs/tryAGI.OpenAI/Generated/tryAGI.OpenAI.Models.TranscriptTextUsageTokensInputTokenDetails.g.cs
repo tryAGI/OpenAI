@@ -9,16 +9,16 @@ namespace tryAGI.OpenAI
     public sealed partial class TranscriptTextUsageTokensInputTokenDetails
     {
         /// <summary>
-        /// Number of text tokens billed for this request.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("text_tokens")]
-        public int? TextTokens { get; set; }
-
-        /// <summary>
         /// Number of audio tokens billed for this request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio_tokens")]
         public int? AudioTokens { get; set; }
+
+        /// <summary>
+        /// Number of text tokens billed for this request.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("text_tokens")]
+        public int? TextTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,21 +29,21 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="TranscriptTextUsageTokensInputTokenDetails" /> class.
         /// </summary>
-        /// <param name="textTokens">
-        /// Number of text tokens billed for this request.
-        /// </param>
         /// <param name="audioTokens">
         /// Number of audio tokens billed for this request.
+        /// </param>
+        /// <param name="textTokens">
+        /// Number of text tokens billed for this request.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TranscriptTextUsageTokensInputTokenDetails(
-            int? textTokens,
-            int? audioTokens)
+            int? audioTokens,
+            int? textTokens)
         {
-            this.TextTokens = textTokens;
             this.AudioTokens = audioTokens;
+            this.TextTokens = textTokens;
         }
 
         /// <summary>

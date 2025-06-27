@@ -9,13 +9,6 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseCreatedEvent
     {
         /// <summary>
-        /// The type of the event. Always `response.created`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseCreatedEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseCreatedEventType Type { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response")]
@@ -31,6 +24,13 @@ namespace tryAGI.OpenAI
         public required int SequenceNumber { get; set; }
 
         /// <summary>
+        /// The type of the event. Always `response.created`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseCreatedEventTypeJsonConverter))]
+        public global::tryAGI.OpenAI.ResponseCreatedEventType Type { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -39,12 +39,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseCreatedEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `response.created`.
-        /// </param>
         /// <param name="response"></param>
         /// <param name="sequenceNumber">
         /// The sequence number for this event.
+        /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `response.created`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

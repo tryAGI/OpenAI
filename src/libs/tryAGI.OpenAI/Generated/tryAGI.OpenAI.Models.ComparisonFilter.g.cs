@@ -11,6 +11,13 @@ namespace tryAGI.OpenAI
     public sealed partial class ComparisonFilter
     {
         /// <summary>
+        /// The key to compare against the value.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("key")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Key { get; set; }
+
+        /// <summary>
         /// Specifies the comparison operator: `eq`, `ne`, `gt`, `gte`, `lt`, `lte`.<br/>
         /// - `eq`: equals<br/>
         /// - `ne`: not equal<br/>
@@ -25,13 +32,6 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ComparisonFilterTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::tryAGI.OpenAI.ComparisonFilterType Type { get; set; } = global::tryAGI.OpenAI.ComparisonFilterType.Eq;
-
-        /// <summary>
-        /// The key to compare against the value.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("key")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Key { get; set; }
 
         /// <summary>
         /// The value to compare against the attribute key; supports string, number, or boolean types.
@@ -50,6 +50,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ComparisonFilter" /> class.
         /// </summary>
+        /// <param name="key">
+        /// The key to compare against the value.
+        /// </param>
         /// <param name="type">
         /// Specifies the comparison operator: `eq`, `ne`, `gt`, `gte`, `lt`, `lte`.<br/>
         /// - `eq`: equals<br/>
@@ -60,9 +63,6 @@ namespace tryAGI.OpenAI
         /// - `lte`: less than or equal<br/>
         /// Default Value: eq
         /// </param>
-        /// <param name="key">
-        /// The key to compare against the value.
-        /// </param>
         /// <param name="value">
         /// The value to compare against the attribute key; supports string, number, or boolean types.
         /// </param>
@@ -70,12 +70,12 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ComparisonFilter(
-            global::tryAGI.OpenAI.ComparisonFilterType type,
             string key,
+            global::tryAGI.OpenAI.ComparisonFilterType type,
             global::tryAGI.OpenAI.OneOf<string, double?, bool?> value)
         {
-            this.Type = type;
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
+            this.Type = type;
             this.Value = value;
         }
 

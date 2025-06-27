@@ -18,18 +18,18 @@ namespace tryAGI.OpenAI
         public string? EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be `conversation.item.retrieve`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeClientEventConversationItemRetrieveTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemRetrieveType Type { get; set; }
-
-        /// <summary>
         /// The ID of the item to retrieve.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ItemId { get; set; }
+
+        /// <summary>
+        /// The event type, must be `conversation.item.retrieve`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeClientEventConversationItemRetrieveTypeJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemRetrieveType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -43,11 +43,11 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// Optional client-generated ID used to identify this event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `conversation.item.retrieve`.
-        /// </param>
         /// <param name="itemId">
         /// The ID of the item to retrieve.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `conversation.item.retrieve`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

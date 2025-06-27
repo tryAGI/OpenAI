@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UserDeleteResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.UserDeleteResponseObject Object { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool Deleted { get; set; }
 
         /// <summary>
         /// 
@@ -25,9 +25,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool Deleted { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UserDeleteResponseObjectJsonConverter))]
+        public global::tryAGI.OpenAI.UserDeleteResponseObject Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,19 +38,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="UserDeleteResponse" /> class.
         /// </summary>
-        /// <param name="object"></param>
-        /// <param name="id"></param>
         /// <param name="deleted"></param>
+        /// <param name="id"></param>
+        /// <param name="object"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UserDeleteResponse(
-            string id,
             bool deleted,
+            string id,
             global::tryAGI.OpenAI.UserDeleteResponseObject @object)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Deleted = deleted;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;
         }
 

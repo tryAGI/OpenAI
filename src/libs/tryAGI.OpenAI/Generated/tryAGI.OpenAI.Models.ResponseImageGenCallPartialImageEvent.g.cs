@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseImageGenCallPartialImageEvent
     {
         /// <summary>
-        /// The type of the event. Always 'response.image_generation_call.partial_image'.
+        /// The unique identifier of the image generation item being processed.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseImageGenCallPartialImageEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseImageGenCallPartialImageEventType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ItemId { get; set; }
 
         /// <summary>
         /// The index of the output item in the response's output array.
@@ -23,18 +23,11 @@ namespace tryAGI.OpenAI
         public required int OutputIndex { get; set; }
 
         /// <summary>
-        /// The unique identifier of the image generation item being processed.
+        /// Base64-encoded partial image data, suitable for rendering as an image.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("partial_image_b64")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ItemId { get; set; }
-
-        /// <summary>
-        /// The sequence number of the image generation item being processed.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int SequenceNumber { get; set; }
+        public required string PartialImageB64 { get; set; }
 
         /// <summary>
         /// 0-based index for the partial image (backend is 1-based, but this is 0-based for the user).
@@ -44,11 +37,18 @@ namespace tryAGI.OpenAI
         public required int PartialImageIndex { get; set; }
 
         /// <summary>
-        /// Base64-encoded partial image data, suitable for rendering as an image.
+        /// The sequence number of the image generation item being processed.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("partial_image_b64")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string PartialImageB64 { get; set; }
+        public required int SequenceNumber { get; set; }
+
+        /// <summary>
+        /// The type of the event. Always 'response.image_generation_call.partial_image'.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseImageGenCallPartialImageEventTypeJsonConverter))]
+        public global::tryAGI.OpenAI.ResponseImageGenCallPartialImageEventType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -59,40 +59,40 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseImageGenCallPartialImageEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always 'response.image_generation_call.partial_image'.
+        /// <param name="itemId">
+        /// The unique identifier of the image generation item being processed.
         /// </param>
         /// <param name="outputIndex">
         /// The index of the output item in the response's output array.
         /// </param>
-        /// <param name="itemId">
-        /// The unique identifier of the image generation item being processed.
-        /// </param>
-        /// <param name="sequenceNumber">
-        /// The sequence number of the image generation item being processed.
+        /// <param name="partialImageB64">
+        /// Base64-encoded partial image data, suitable for rendering as an image.
         /// </param>
         /// <param name="partialImageIndex">
         /// 0-based index for the partial image (backend is 1-based, but this is 0-based for the user).
         /// </param>
-        /// <param name="partialImageB64">
-        /// Base64-encoded partial image data, suitable for rendering as an image.
+        /// <param name="sequenceNumber">
+        /// The sequence number of the image generation item being processed.
+        /// </param>
+        /// <param name="type">
+        /// The type of the event. Always 'response.image_generation_call.partial_image'.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseImageGenCallPartialImageEvent(
-            int outputIndex,
             string itemId,
-            int sequenceNumber,
-            int partialImageIndex,
+            int outputIndex,
             string partialImageB64,
+            int partialImageIndex,
+            int sequenceNumber,
             global::tryAGI.OpenAI.ResponseImageGenCallPartialImageEventType type)
         {
-            this.OutputIndex = outputIndex;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
-            this.SequenceNumber = sequenceNumber;
-            this.PartialImageIndex = partialImageIndex;
+            this.OutputIndex = outputIndex;
             this.PartialImageB64 = partialImageB64 ?? throw new global::System.ArgumentNullException(nameof(partialImageB64));
+            this.PartialImageIndex = partialImageIndex;
+            this.SequenceNumber = sequenceNumber;
             this.Type = type;
         }
 

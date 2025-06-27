@@ -20,11 +20,15 @@ namespace tryAGI.OpenAI
         public string? EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be `conversation.item.create`.
+        /// A realtime Item is of three types: message, function_call, or function_call_output.<br/>
+        /// A message item can contain text or audio.<br/>
+        /// A function_call item indicates a model's desire to call a function, which is the only tool supported for now<br/>
+        /// A function_call_output item indicates a function response.<br/>
+        /// The client may add and remove message and function_call_output Items using conversation.item.create and conversation.item.delete.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeClientEventConversationItemCreateTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemCreateType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("item")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.RealtimeConversationItem Item { get; set; }
 
         /// <summary>
         /// The ID of the preceding item after which the new item will be inserted. <br/>
@@ -37,15 +41,11 @@ namespace tryAGI.OpenAI
         public string? PreviousItemId { get; set; }
 
         /// <summary>
-        /// A realtime Item is of three types: message, function_call, or function_call_output.<br/>
-        /// A message item can contain text or audio.<br/>
-        /// A function_call item indicates a model's desire to call a function, which is the only tool supported for now<br/>
-        /// A function_call_output item indicates a function response.<br/>
-        /// The client may add and remove message and function_call_output Items using conversation.item.create and conversation.item.delete.
+        /// The event type, must be `conversation.item.create`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("item")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.RealtimeConversationItem Item { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeClientEventConversationItemCreateTypeJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemCreateType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -59,8 +59,12 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// Optional client-generated ID used to identify this event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `conversation.item.create`.
+        /// <param name="item">
+        /// A realtime Item is of three types: message, function_call, or function_call_output.<br/>
+        /// A message item can contain text or audio.<br/>
+        /// A function_call item indicates a model's desire to call a function, which is the only tool supported for now<br/>
+        /// A function_call_output item indicates a function response.<br/>
+        /// The client may add and remove message and function_call_output Items using conversation.item.create and conversation.item.delete.
         /// </param>
         /// <param name="previousItemId">
         /// The ID of the preceding item after which the new item will be inserted. <br/>
@@ -69,12 +73,8 @@ namespace tryAGI.OpenAI
         /// If set to an existing ID, it allows an item to be inserted mid-conversation. If the<br/>
         /// ID cannot be found, an error will be returned and the item will not be added.
         /// </param>
-        /// <param name="item">
-        /// A realtime Item is of three types: message, function_call, or function_call_output.<br/>
-        /// A message item can contain text or audio.<br/>
-        /// A function_call item indicates a model's desire to call a function, which is the only tool supported for now<br/>
-        /// A function_call_output item indicates a function response.<br/>
-        /// The client may add and remove message and function_call_output Items using conversation.item.create and conversation.item.delete.
+        /// <param name="type">
+        /// The event type, must be `conversation.item.create`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -82,13 +82,13 @@ namespace tryAGI.OpenAI
         public RealtimeClientEventConversationItemCreate(
             global::tryAGI.OpenAI.RealtimeConversationItem item,
             string? eventId,
-            global::tryAGI.OpenAI.RealtimeClientEventConversationItemCreateType type,
-            string? previousItemId)
+            string? previousItemId,
+            global::tryAGI.OpenAI.RealtimeClientEventConversationItemCreateType type)
         {
             this.Item = item ?? throw new global::System.ArgumentNullException(nameof(item));
             this.EventId = eventId;
-            this.Type = type;
             this.PreviousItemId = previousItemId;
+            this.Type = type;
         }
 
         /// <summary>

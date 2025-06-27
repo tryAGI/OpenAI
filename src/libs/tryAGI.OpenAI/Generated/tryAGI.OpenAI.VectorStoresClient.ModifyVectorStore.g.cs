@@ -175,10 +175,9 @@ namespace tryAGI.OpenAI
         /// Modifies a vector store.
         /// </summary>
         /// <param name="vectorStoreId"></param>
-        /// <param name="name">
-        /// The name of the vector store.
+        /// <param name="expiresAfter">
+        /// The expiration policy for a vector store.
         /// </param>
-        /// <param name="expiresAfter"></param>
         /// <param name="metadata">
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
         /// useful for storing additional information about the object in a structured<br/>
@@ -186,20 +185,23 @@ namespace tryAGI.OpenAI
         /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
         /// with a maximum length of 512 characters.
         /// </param>
+        /// <param name="name">
+        /// The name of the vector store.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.VectorStoreObject> ModifyVectorStoreAsync(
             string vectorStoreId,
-            string? name = default,
-            global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.VectorStoreExpirationAfter, object>? expiresAfter = default,
+            global::tryAGI.OpenAI.VectorStoreExpirationAfter? expiresAfter = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
+            string? name = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::tryAGI.OpenAI.UpdateVectorStoreRequest
             {
-                Name = name,
                 ExpiresAfter = expiresAfter,
                 Metadata = metadata,
+                Name = name,
             };
 
             return await ModifyVectorStoreAsync(

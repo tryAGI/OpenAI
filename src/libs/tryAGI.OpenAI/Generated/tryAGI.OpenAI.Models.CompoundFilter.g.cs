@@ -11,19 +11,19 @@ namespace tryAGI.OpenAI
     public sealed partial class CompoundFilter
     {
         /// <summary>
+        /// Array of filters to combine. Items can be `ComparisonFilter` or `CompoundFilter`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ComparisonFilter, object>> Filters { get; set; }
+
+        /// <summary>
         /// Type of operation: `and` or `or`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CompoundFilterTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::tryAGI.OpenAI.CompoundFilterType Type { get; set; }
-
-        /// <summary>
-        /// Array of filters to combine. Items can be `ComparisonFilter` or `CompoundFilter`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ComparisonFilter, object>> Filters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -34,21 +34,21 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CompoundFilter" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Type of operation: `and` or `or`.
-        /// </param>
         /// <param name="filters">
         /// Array of filters to combine. Items can be `ComparisonFilter` or `CompoundFilter`.
+        /// </param>
+        /// <param name="type">
+        /// Type of operation: `and` or `or`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CompoundFilter(
-            global::tryAGI.OpenAI.CompoundFilterType type,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ComparisonFilter, object>> filters)
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ComparisonFilter, object>> filters,
+            global::tryAGI.OpenAI.CompoundFilterType type)
         {
-            this.Type = type;
             this.Filters = filters ?? throw new global::System.ArgumentNullException(nameof(filters));
+            this.Type = type;
         }
 
         /// <summary>

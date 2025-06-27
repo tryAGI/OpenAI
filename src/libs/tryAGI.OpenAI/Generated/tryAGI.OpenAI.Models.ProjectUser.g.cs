@@ -9,11 +9,19 @@ namespace tryAGI.OpenAI
     public sealed partial class ProjectUser
     {
         /// <summary>
-        /// The object type, which is always `organization.project.user`
+        /// The Unix timestamp (in seconds) of when the project was added.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectUserObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ProjectUserObject Object { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("added_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.DateTimeOffset AddedAt { get; set; }
+
+        /// <summary>
+        /// The email address of the user
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("email")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Email { get; set; }
 
         /// <summary>
         /// The identifier, which can be referenced in API endpoints
@@ -30,11 +38,11 @@ namespace tryAGI.OpenAI
         public required string Name { get; set; }
 
         /// <summary>
-        /// The email address of the user
+        /// The object type, which is always `organization.project.user`
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("email")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Email { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectUserObjectJsonConverter))]
+        public global::tryAGI.OpenAI.ProjectUserObject Object { get; set; }
 
         /// <summary>
         /// `owner` or `member`
@@ -45,14 +53,6 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.ProjectUserRole Role { get; set; }
 
         /// <summary>
-        /// The Unix timestamp (in seconds) of when the project was added.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("added_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset AddedAt { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -61,8 +61,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectUser" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The object type, which is always `organization.project.user`
+        /// <param name="addedAt">
+        /// The Unix timestamp (in seconds) of when the project was added.
+        /// </param>
+        /// <param name="email">
+        /// The email address of the user
         /// </param>
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints
@@ -70,31 +73,28 @@ namespace tryAGI.OpenAI
         /// <param name="name">
         /// The name of the user
         /// </param>
-        /// <param name="email">
-        /// The email address of the user
+        /// <param name="object">
+        /// The object type, which is always `organization.project.user`
         /// </param>
         /// <param name="role">
         /// `owner` or `member`
-        /// </param>
-        /// <param name="addedAt">
-        /// The Unix timestamp (in seconds) of when the project was added.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ProjectUser(
+            global::System.DateTimeOffset addedAt,
+            string email,
             string id,
             string name,
-            string email,
             global::tryAGI.OpenAI.ProjectUserRole role,
-            global::System.DateTimeOffset addedAt,
             global::tryAGI.OpenAI.ProjectUserObject @object)
         {
+            this.AddedAt = addedAt;
+            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
             this.Role = role;
-            this.AddedAt = addedAt;
             this.Object = @object;
         }
 

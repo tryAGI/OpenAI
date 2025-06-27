@@ -9,20 +9,6 @@ namespace tryAGI.OpenAI
     public sealed partial class GraderStringCheck
     {
         /// <summary>
-        /// The object type, which is always `string_check`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.GraderStringCheckTypeJsonConverter))]
-        public global::tryAGI.OpenAI.GraderStringCheckType Type { get; set; }
-
-        /// <summary>
-        /// The name of the grader.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
-
-        /// <summary>
         /// The input text. This may include template strings.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
@@ -30,11 +16,11 @@ namespace tryAGI.OpenAI
         public required string Input { get; set; }
 
         /// <summary>
-        /// The reference text. This may include template strings.
+        /// The name of the grader.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("reference")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Reference { get; set; }
+        public required string Name { get; set; }
 
         /// <summary>
         /// The string check operation to perform. One of `eq`, `ne`, `like`, or `ilike`.
@@ -45,6 +31,20 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.GraderStringCheckOperation Operation { get; set; }
 
         /// <summary>
+        /// The reference text. This may include template strings.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reference")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Reference { get; set; }
+
+        /// <summary>
+        /// The object type, which is always `string_check`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.GraderStringCheckTypeJsonConverter))]
+        public global::tryAGI.OpenAI.GraderStringCheckType Type { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -53,35 +53,35 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="GraderStringCheck" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The object type, which is always `string_check`.
+        /// <param name="input">
+        /// The input text. This may include template strings.
         /// </param>
         /// <param name="name">
         /// The name of the grader.
         /// </param>
-        /// <param name="input">
-        /// The input text. This may include template strings.
+        /// <param name="operation">
+        /// The string check operation to perform. One of `eq`, `ne`, `like`, or `ilike`.
         /// </param>
         /// <param name="reference">
         /// The reference text. This may include template strings.
         /// </param>
-        /// <param name="operation">
-        /// The string check operation to perform. One of `eq`, `ne`, `like`, or `ilike`.
+        /// <param name="type">
+        /// The object type, which is always `string_check`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GraderStringCheck(
-            string name,
             string input,
-            string reference,
+            string name,
             global::tryAGI.OpenAI.GraderStringCheckOperation operation,
+            string reference,
             global::tryAGI.OpenAI.GraderStringCheckType type)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
-            this.Reference = reference ?? throw new global::System.ArgumentNullException(nameof(reference));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Operation = operation;
+            this.Reference = reference ?? throw new global::System.ArgumentNullException(nameof(reference));
             this.Type = type;
         }
 

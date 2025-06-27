@@ -11,6 +11,14 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateEvalJsonlRunDataSource
     {
         /// <summary>
+        /// Determines what populates the `item` namespace in the data source.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.EvalJsonlFileContentSource, global::tryAGI.OpenAI.EvalJsonlFileIdSource>))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalJsonlFileContentSource, global::tryAGI.OpenAI.EvalJsonlFileIdSource> Source { get; set; }
+
+        /// <summary>
         /// The type of data source. Always `jsonl`.<br/>
         /// Default Value: jsonl
         /// </summary>
@@ -18,14 +26,6 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateEvalJsonlRunDataSourceTypeJsonConverter))]
         public global::tryAGI.OpenAI.CreateEvalJsonlRunDataSourceType Type { get; set; } = global::tryAGI.OpenAI.CreateEvalJsonlRunDataSourceType.Jsonl;
-
-        /// <summary>
-        /// Determines what populates the `item` namespace in the data source.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.EvalJsonlFileContentSource, global::tryAGI.OpenAI.EvalJsonlFileIdSource>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalJsonlFileContentSource, global::tryAGI.OpenAI.EvalJsonlFileIdSource> Source { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,12 +36,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateEvalJsonlRunDataSource" /> class.
         /// </summary>
+        /// <param name="source">
+        /// Determines what populates the `item` namespace in the data source.
+        /// </param>
         /// <param name="type">
         /// The type of data source. Always `jsonl`.<br/>
         /// Default Value: jsonl
-        /// </param>
-        /// <param name="source">
-        /// Determines what populates the `item` namespace in the data source.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

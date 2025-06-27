@@ -9,6 +9,13 @@ namespace tryAGI.OpenAI
     public sealed partial class RunStepDeltaObject
     {
         /// <summary>
+        /// The delta containing the fields that have changed on the run step.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.RunStepDeltaObjectDelta Delta { get; set; }
+
+        /// <summary>
         /// The identifier of the run step, which can be referenced in API endpoints.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -23,13 +30,6 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RunStepDeltaObjectObject Object { get; set; }
 
         /// <summary>
-        /// The delta containing the fields that have changed on the run step.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.RunStepDeltaObjectDelta Delta { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -38,25 +38,25 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RunStepDeltaObject" /> class.
         /// </summary>
+        /// <param name="delta">
+        /// The delta containing the fields that have changed on the run step.
+        /// </param>
         /// <param name="id">
         /// The identifier of the run step, which can be referenced in API endpoints.
         /// </param>
         /// <param name="object">
         /// The object type, which is always `thread.run.step.delta`.
         /// </param>
-        /// <param name="delta">
-        /// The delta containing the fields that have changed on the run step.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RunStepDeltaObject(
-            string id,
             global::tryAGI.OpenAI.RunStepDeltaObjectDelta delta,
+            string id,
             global::tryAGI.OpenAI.RunStepDeltaObjectObject @object)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;
         }
 

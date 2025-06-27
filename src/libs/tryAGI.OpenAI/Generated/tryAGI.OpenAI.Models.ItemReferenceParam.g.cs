@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -11,18 +9,19 @@ namespace tryAGI.OpenAI
     public sealed partial class ItemReferenceParam
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.ItemReferenceParamType?, object>))]
-        public global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ItemReferenceParamType?, object>? Type { get; set; }
-
-        /// <summary>
         /// The ID of the item to reference.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
+
+        /// <summary>
+        /// The type of item to reference. Always `item_reference`.<br/>
+        /// Default Value: item_reference
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ItemReferenceParamTypeJsonConverter))]
+        public global::tryAGI.OpenAI.ItemReferenceParamType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,16 +32,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemReferenceParam" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="id">
         /// The ID of the item to reference.
+        /// </param>
+        /// <param name="type">
+        /// The type of item to reference. Always `item_reference`.<br/>
+        /// Default Value: item_reference
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ItemReferenceParam(
             string id,
-            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ItemReferenceParamType?, object>? type)
+            global::tryAGI.OpenAI.ItemReferenceParamType? type)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;

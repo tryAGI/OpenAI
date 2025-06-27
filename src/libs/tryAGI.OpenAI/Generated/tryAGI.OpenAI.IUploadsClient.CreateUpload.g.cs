@@ -43,27 +43,27 @@ namespace tryAGI.OpenAI
         /// follow the documentation on [creating a<br/>
         /// File](/docs/api-reference/files/create).
         /// </summary>
-        /// <param name="filename">
-        /// The name of the file to upload.
-        /// </param>
-        /// <param name="purpose">
-        /// The intended purpose of the uploaded file.<br/>
-        /// See the [documentation on File purposes](/docs/api-reference/files/create#files-create-purpose).
-        /// </param>
         /// <param name="bytes">
         /// The number of bytes in the file you are uploading.
+        /// </param>
+        /// <param name="filename">
+        /// The name of the file to upload.
         /// </param>
         /// <param name="mimeType">
         /// The MIME type of the file.<br/>
         /// This must fall within the supported MIME types for your file purpose. See the supported MIME types for assistants and vision.
         /// </param>
+        /// <param name="purpose">
+        /// The intended purpose of the uploaded file.<br/>
+        /// See the [documentation on File purposes](/docs/api-reference/files/create#files-create-purpose).
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Upload> CreateUploadAsync(
-            string filename,
-            global::tryAGI.OpenAI.CreateUploadRequestPurpose purpose,
             int bytes,
+            string filename,
             string mimeType,
+            global::tryAGI.OpenAI.CreateUploadRequestPurpose purpose,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

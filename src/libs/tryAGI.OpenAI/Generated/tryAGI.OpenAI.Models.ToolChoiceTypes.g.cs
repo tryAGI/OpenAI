@@ -17,7 +17,6 @@ namespace tryAGI.OpenAI
         /// - `web_search_preview`<br/>
         /// - `computer_use_preview`<br/>
         /// - `code_interpreter`<br/>
-        /// - `mcp`<br/>
         /// - `image_generation`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -42,7 +41,6 @@ namespace tryAGI.OpenAI
         /// - `web_search_preview`<br/>
         /// - `computer_use_preview`<br/>
         /// - `code_interpreter`<br/>
-        /// - `mcp`<br/>
         /// - `image_generation`
         /// </param>
 #if NET7_0_OR_GREATER

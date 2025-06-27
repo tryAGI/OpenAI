@@ -10,16 +10,16 @@ namespace tryAGI.OpenAI
     public sealed partial class ImageGenToolInputImageMask
     {
         /// <summary>
-        /// Base64-encoded mask image.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
-        public string? ImageUrl { get; set; }
-
-        /// <summary>
         /// File ID for the mask image.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
         public string? FileId { get; set; }
+
+        /// <summary>
+        /// Base64-encoded mask image.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
+        public string? ImageUrl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,21 +30,21 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageGenToolInputImageMask" /> class.
         /// </summary>
-        /// <param name="imageUrl">
-        /// Base64-encoded mask image.
-        /// </param>
         /// <param name="fileId">
         /// File ID for the mask image.
+        /// </param>
+        /// <param name="imageUrl">
+        /// Base64-encoded mask image.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ImageGenToolInputImageMask(
-            string? imageUrl,
-            string? fileId)
+            string? fileId,
+            string? imageUrl)
         {
-            this.ImageUrl = imageUrl;
             this.FileId = fileId;
+            this.ImageUrl = imageUrl;
         }
 
         /// <summary>

@@ -9,18 +9,18 @@ namespace tryAGI.OpenAI
     public sealed partial class ImagesResponseUsage
     {
         /// <summary>
-        /// The total number of tokens (images and text) used for the image generation.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int TotalTokens { get; set; }
-
-        /// <summary>
         /// The number of tokens (images and text) in the input prompt.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int InputTokens { get; set; }
+
+        /// <summary>
+        /// The input tokens detailed information for the image generation.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens_details")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.ImagesResponseUsageInputTokensDetails InputTokensDetails { get; set; }
 
         /// <summary>
         /// The number of image tokens in the output image.
@@ -30,11 +30,11 @@ namespace tryAGI.OpenAI
         public required int OutputTokens { get; set; }
 
         /// <summary>
-        /// The input tokens detailed information for the image generation.
+        /// The total number of tokens (images and text) used for the image generation.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens_details")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ImagesResponseUsageInputTokensDetails InputTokensDetails { get; set; }
+        public required int TotalTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,31 +45,31 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ImagesResponseUsage" /> class.
         /// </summary>
-        /// <param name="totalTokens">
-        /// The total number of tokens (images and text) used for the image generation.
-        /// </param>
         /// <param name="inputTokens">
         /// The number of tokens (images and text) in the input prompt.
+        /// </param>
+        /// <param name="inputTokensDetails">
+        /// The input tokens detailed information for the image generation.
         /// </param>
         /// <param name="outputTokens">
         /// The number of image tokens in the output image.
         /// </param>
-        /// <param name="inputTokensDetails">
-        /// The input tokens detailed information for the image generation.
+        /// <param name="totalTokens">
+        /// The total number of tokens (images and text) used for the image generation.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ImagesResponseUsage(
-            int totalTokens,
             int inputTokens,
+            global::tryAGI.OpenAI.ImagesResponseUsageInputTokensDetails inputTokensDetails,
             int outputTokens,
-            global::tryAGI.OpenAI.ImagesResponseUsageInputTokensDetails inputTokensDetails)
+            int totalTokens)
         {
-            this.TotalTokens = totalTokens;
             this.InputTokens = inputTokens;
-            this.OutputTokens = outputTokens;
             this.InputTokensDetails = inputTokensDetails ?? throw new global::System.ArgumentNullException(nameof(inputTokensDetails));
+            this.OutputTokens = outputTokens;
+            this.TotalTokens = totalTokens;
         }
 
         /// <summary>

@@ -12,13 +12,11 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateEvalCustomDataSourceConfig
     {
         /// <summary>
-        /// The type of data source. Always `custom`.<br/>
-        /// Default Value: custom
+        /// Whether the eval should expect you to populate the sample namespace (ie, by generating responses off of your data source)<br/>
+        /// Default Value: false
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.CreateEvalCustomDataSourceConfigType.Custom</default>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateEvalCustomDataSourceConfigTypeJsonConverter))]
-        public global::tryAGI.OpenAI.CreateEvalCustomDataSourceConfigType Type { get; set; } = global::tryAGI.OpenAI.CreateEvalCustomDataSourceConfigType.Custom;
+        [global::System.Text.Json.Serialization.JsonPropertyName("include_sample_schema")]
+        public bool? IncludeSampleSchema { get; set; }
 
         /// <summary>
         /// The json schema for each row in the data source.<br/>
@@ -46,11 +44,13 @@ namespace tryAGI.OpenAI
         public required object ItemSchema { get; set; }
 
         /// <summary>
-        /// Whether the eval should expect you to populate the sample namespace (ie, by generating responses off of your data source)<br/>
-        /// Default Value: false
+        /// The type of data source. Always `custom`.<br/>
+        /// Default Value: custom
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("include_sample_schema")]
-        public bool? IncludeSampleSchema { get; set; }
+        /// <default>global::tryAGI.OpenAI.CreateEvalCustomDataSourceConfigType.Custom</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateEvalCustomDataSourceConfigTypeJsonConverter))]
+        public global::tryAGI.OpenAI.CreateEvalCustomDataSourceConfigType Type { get; set; } = global::tryAGI.OpenAI.CreateEvalCustomDataSourceConfigType.Custom;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -61,9 +61,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateEvalCustomDataSourceConfig" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of data source. Always `custom`.<br/>
-        /// Default Value: custom
+        /// <param name="includeSampleSchema">
+        /// Whether the eval should expect you to populate the sample namespace (ie, by generating responses off of your data source)<br/>
+        /// Default Value: false
         /// </param>
         /// <param name="itemSchema">
         /// The json schema for each row in the data source.<br/>
@@ -76,9 +76,9 @@ namespace tryAGI.OpenAI
         ///   "required": ["name", "age"]<br/>
         /// }
         /// </param>
-        /// <param name="includeSampleSchema">
-        /// Whether the eval should expect you to populate the sample namespace (ie, by generating responses off of your data source)<br/>
-        /// Default Value: false
+        /// <param name="type">
+        /// The type of data source. Always `custom`.<br/>
+        /// Default Value: custom
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -89,8 +89,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.CreateEvalCustomDataSourceConfigType type = global::tryAGI.OpenAI.CreateEvalCustomDataSourceConfigType.Custom)
         {
             this.ItemSchema = itemSchema ?? throw new global::System.ArgumentNullException(nameof(itemSchema));
-            this.Type = type;
             this.IncludeSampleSchema = includeSampleSchema;
+            this.Type = type;
         }
 
         /// <summary>

@@ -77,18 +77,18 @@ namespace tryAGI.OpenAI
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{containerId}"),
                 name: "container_id");
-            if (request.FileId != default)
-            {
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.FileId}"),
-                    name: "file_id");
-            } 
             if (request.File != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>()),
                     name: "file",
                     fileName: request.Filename ?? string.Empty);
+            } 
+            if (request.FileId != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.FileId}"),
+                    name: "file_id");
             }
             __httpRequest.Content = __httpRequestContent;
 
@@ -191,29 +191,29 @@ namespace tryAGI.OpenAI
         /// Creates a container file.
         /// </summary>
         /// <param name="containerId"></param>
-        /// <param name="fileId">
-        /// Name of the file to create.
-        /// </param>
         /// <param name="file">
         /// The File object (not file name) to be uploaded.
         /// </param>
         /// <param name="filename">
         /// The File object (not file name) to be uploaded.
         /// </param>
+        /// <param name="fileId">
+        /// Name of the file to create.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ContainerFileResource> CreateContainerFileAsync(
             string containerId,
-            string? fileId = default,
             byte[]? file = default,
             string? filename = default,
+            string? fileId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::tryAGI.OpenAI.CreateContainerFileBody
             {
-                FileId = fileId,
                 File = file,
                 Filename = filename,
+                FileId = fileId,
             };
 
             return await CreateContainerFileAsync(

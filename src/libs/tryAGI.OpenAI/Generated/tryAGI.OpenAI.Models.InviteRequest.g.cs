@@ -16,18 +16,18 @@ namespace tryAGI.OpenAI
         public required string Email { get; set; }
 
         /// <summary>
+        /// An array of projects to which membership is granted at the same time the org invite is accepted. If omitted, the user will be invited to the default project for compatibility with legacy behavior.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("projects")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InviteRequestProject>? Projects { get; set; }
+
+        /// <summary>
         /// `owner` or `reader`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.InviteRequestRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::tryAGI.OpenAI.InviteRequestRole Role { get; set; }
-
-        /// <summary>
-        /// An array of projects to which membership is granted at the same time the org invite is accepted. If omitted, the user will be invited to the default project for compatibility with legacy behavior.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("projects")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InviteRequestProject>? Projects { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,11 +41,11 @@ namespace tryAGI.OpenAI
         /// <param name="email">
         /// Send an email to this address
         /// </param>
-        /// <param name="role">
-        /// `owner` or `reader`
-        /// </param>
         /// <param name="projects">
         /// An array of projects to which membership is granted at the same time the org invite is accepted. If omitted, the user will be invited to the default project for compatibility with legacy behavior.
+        /// </param>
+        /// <param name="role">
+        /// `owner` or `reader`
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

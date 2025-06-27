@@ -9,16 +9,16 @@ namespace tryAGI.OpenAI
     public sealed partial class AuditLogUserUpdated
     {
         /// <summary>
-        /// The project ID.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string? Id { get; set; }
-
-        /// <summary>
         /// The payload used to update the user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("changes_requested")]
         public global::tryAGI.OpenAI.AuditLogUserUpdatedChangesRequested? ChangesRequested { get; set; }
+
+        /// <summary>
+        /// The project ID.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,21 +29,21 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="AuditLogUserUpdated" /> class.
         /// </summary>
-        /// <param name="id">
-        /// The project ID.
-        /// </param>
         /// <param name="changesRequested">
         /// The payload used to update the user.
+        /// </param>
+        /// <param name="id">
+        /// The project ID.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AuditLogUserUpdated(
-            string? id,
-            global::tryAGI.OpenAI.AuditLogUserUpdatedChangesRequested? changesRequested)
+            global::tryAGI.OpenAI.AuditLogUserUpdatedChangesRequested? changesRequested,
+            string? id)
         {
-            this.Id = id;
             this.ChangesRequested = changesRequested;
+            this.Id = id;
         }
 
         /// <summary>

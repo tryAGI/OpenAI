@@ -11,10 +11,12 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateEvalRunRequest
     {
         /// <summary>
-        /// The name of the run.
+        /// Details about the run's data source.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string? Name { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("data_source")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.CreateEvalJsonlRunDataSource, global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSource, global::tryAGI.OpenAI.CreateEvalResponsesRunDataSource>))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalJsonlRunDataSource, global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSource, global::tryAGI.OpenAI.CreateEvalResponsesRunDataSource> DataSource { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
@@ -27,12 +29,10 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
-        /// Details about the run's data source.
+        /// The name of the run.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("data_source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.CreateEvalJsonlRunDataSource, global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSource, global::tryAGI.OpenAI.CreateEvalResponsesRunDataSource>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalJsonlRunDataSource, global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSource, global::tryAGI.OpenAI.CreateEvalResponsesRunDataSource> DataSource { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string? Name { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -43,8 +43,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateEvalRunRequest" /> class.
         /// </summary>
-        /// <param name="name">
-        /// The name of the run.
+        /// <param name="dataSource">
+        /// Details about the run's data source.
         /// </param>
         /// <param name="metadata">
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
@@ -53,20 +53,20 @@ namespace tryAGI.OpenAI
         /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
         /// with a maximum length of 512 characters.
         /// </param>
-        /// <param name="dataSource">
-        /// Details about the run's data source.
+        /// <param name="name">
+        /// The name of the run.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateEvalRunRequest(
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalJsonlRunDataSource, global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSource, global::tryAGI.OpenAI.CreateEvalResponsesRunDataSource> dataSource,
-            string? name,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata)
+            global::System.Collections.Generic.Dictionary<string, string>? metadata,
+            string? name)
         {
             this.DataSource = dataSource;
-            this.Name = name;
             this.Metadata = metadata;
+            this.Name = name;
         }
 
         /// <summary>

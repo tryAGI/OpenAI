@@ -16,17 +16,17 @@ namespace tryAGI.OpenAI
         public required int Index { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("refusal")]
+        public string? Refusal { get; set; }
+
+        /// <summary>
         /// Always `refusal`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageDeltaContentRefusalObjectTypeJsonConverter))]
         public global::tryAGI.OpenAI.MessageDeltaContentRefusalObjectType Type { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("refusal")]
-        public string? Refusal { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,21 +40,21 @@ namespace tryAGI.OpenAI
         /// <param name="index">
         /// The index of the refusal part in the message.
         /// </param>
+        /// <param name="refusal"></param>
         /// <param name="type">
         /// Always `refusal`.
         /// </param>
-        /// <param name="refusal"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessageDeltaContentRefusalObject(
             int index,
-            global::tryAGI.OpenAI.MessageDeltaContentRefusalObjectType type,
-            string? refusal)
+            string? refusal,
+            global::tryAGI.OpenAI.MessageDeltaContentRefusalObjectType type)
         {
             this.Index = index;
-            this.Type = type;
             this.Refusal = refusal;
+            this.Type = type;
         }
 
         /// <summary>

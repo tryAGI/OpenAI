@@ -9,10 +9,10 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateTranscriptionResponseJsonLogprob
     {
         /// <summary>
-        /// The token in the transcription.
+        /// The bytes of the token.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("token")]
-        public string? Token { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
+        public global::System.Collections.Generic.IList<double>? Bytes { get; set; }
 
         /// <summary>
         /// The log probability of the token.
@@ -21,10 +21,10 @@ namespace tryAGI.OpenAI
         public double? Logprob { get; set; }
 
         /// <summary>
-        /// The bytes of the token.
+        /// The token in the transcription.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
-        public global::System.Collections.Generic.IList<double>? Bytes { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("token")]
+        public string? Token { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -35,26 +35,26 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateTranscriptionResponseJsonLogprob" /> class.
         /// </summary>
-        /// <param name="token">
-        /// The token in the transcription.
+        /// <param name="bytes">
+        /// The bytes of the token.
         /// </param>
         /// <param name="logprob">
         /// The log probability of the token.
         /// </param>
-        /// <param name="bytes">
-        /// The bytes of the token.
+        /// <param name="token">
+        /// The token in the transcription.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateTranscriptionResponseJsonLogprob(
-            string? token,
+            global::System.Collections.Generic.IList<double>? bytes,
             double? logprob,
-            global::System.Collections.Generic.IList<double>? bytes)
+            string? token)
         {
-            this.Token = token;
-            this.Logprob = logprob;
             this.Bytes = bytes;
+            this.Logprob = logprob;
+            this.Token = token;
         }
 
         /// <summary>

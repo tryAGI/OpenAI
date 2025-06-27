@@ -17,18 +17,18 @@ namespace tryAGI.OpenAI
         public required string Id { get; set; }
 
         /// <summary>
-        /// Optional version of the prompt template.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("version")]
-        public string? Version { get; set; }
-
-        /// <summary>
         /// Optional map of values to substitute in for variables in your<br/>
         /// prompt. The substitution values can either be strings, or other<br/>
         /// Response input types like images or files.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("variables")]
         public object? Variables { get; set; }
+
+        /// <summary>
+        /// Optional version of the prompt template.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("version")]
+        public string? Version { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,25 +42,25 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// The unique identifier of the prompt template to use.
         /// </param>
-        /// <param name="version">
-        /// Optional version of the prompt template.
-        /// </param>
         /// <param name="variables">
         /// Optional map of values to substitute in for variables in your<br/>
         /// prompt. The substitution values can either be strings, or other<br/>
         /// Response input types like images or files.
+        /// </param>
+        /// <param name="version">
+        /// Optional version of the prompt template.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Prompt2(
             string id,
-            string? version,
-            object? variables)
+            object? variables,
+            string? version)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Version = version;
             this.Variables = variables;
+            this.Version = version;
         }
 
         /// <summary>

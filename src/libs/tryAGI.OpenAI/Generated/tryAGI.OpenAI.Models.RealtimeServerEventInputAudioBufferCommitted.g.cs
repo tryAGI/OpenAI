@@ -19,11 +19,11 @@ namespace tryAGI.OpenAI
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be `input_audio_buffer.committed`.
+        /// The ID of the user message item that will be created.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventInputAudioBufferCommittedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCommittedType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ItemId { get; set; }
 
         /// <summary>
         /// The ID of the preceding item after which the new item will be inserted.
@@ -33,11 +33,11 @@ namespace tryAGI.OpenAI
         public required string PreviousItemId { get; set; }
 
         /// <summary>
-        /// The ID of the user message item that will be created.
+        /// The event type, must be `input_audio_buffer.committed`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ItemId { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventInputAudioBufferCommittedTypeJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCommittedType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -51,27 +51,27 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `input_audio_buffer.committed`.
+        /// <param name="itemId">
+        /// The ID of the user message item that will be created.
         /// </param>
         /// <param name="previousItemId">
         /// The ID of the preceding item after which the new item will be inserted.
         /// </param>
-        /// <param name="itemId">
-        /// The ID of the user message item that will be created.
+        /// <param name="type">
+        /// The event type, must be `input_audio_buffer.committed`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeServerEventInputAudioBufferCommitted(
             string eventId,
-            string previousItemId,
             string itemId,
+            string previousItemId,
             global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCommittedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.PreviousItemId = previousItemId ?? throw new global::System.ArgumentNullException(nameof(previousItemId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
+            this.PreviousItemId = previousItemId ?? throw new global::System.ArgumentNullException(nameof(previousItemId));
             this.Type = type;
         }
 

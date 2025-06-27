@@ -9,11 +9,10 @@ namespace tryAGI.OpenAI
     public sealed partial class UsageEmbeddingsResult
     {
         /// <summary>
-        /// 
+        /// When `group_by=api_key_id`, this field provides the API key ID of the grouped usage result.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UsageEmbeddingsResultObjectJsonConverter))]
-        public global::tryAGI.OpenAI.UsageEmbeddingsResultObject Object { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("api_key_id")]
+        public string? ApiKeyId { get; set; }
 
         /// <summary>
         /// The aggregated number of input tokens used.
@@ -23,11 +22,24 @@ namespace tryAGI.OpenAI
         public required int InputTokens { get; set; }
 
         /// <summary>
+        /// When `group_by=model`, this field provides the model name of the grouped usage result.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        public string? Model { get; set; }
+
+        /// <summary>
         /// The count of requests made to the model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_model_requests")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int NumModelRequests { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UsageEmbeddingsResultObjectJsonConverter))]
+        public global::tryAGI.OpenAI.UsageEmbeddingsResultObject Object { get; set; }
 
         /// <summary>
         /// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
@@ -42,18 +54,6 @@ namespace tryAGI.OpenAI
         public string? UserId { get; set; }
 
         /// <summary>
-        /// When `group_by=api_key_id`, this field provides the API key ID of the grouped usage result.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("api_key_id")]
-        public string? ApiKeyId { get; set; }
-
-        /// <summary>
-        /// When `group_by=model`, this field provides the model name of the grouped usage result.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        public string? Model { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -62,24 +62,24 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="UsageEmbeddingsResult" /> class.
         /// </summary>
-        /// <param name="object"></param>
+        /// <param name="apiKeyId">
+        /// When `group_by=api_key_id`, this field provides the API key ID of the grouped usage result.
+        /// </param>
         /// <param name="inputTokens">
         /// The aggregated number of input tokens used.
+        /// </param>
+        /// <param name="model">
+        /// When `group_by=model`, this field provides the model name of the grouped usage result.
         /// </param>
         /// <param name="numModelRequests">
         /// The count of requests made to the model.
         /// </param>
+        /// <param name="object"></param>
         /// <param name="projectId">
         /// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
         /// </param>
         /// <param name="userId">
         /// When `group_by=user_id`, this field provides the user ID of the grouped usage result.
-        /// </param>
-        /// <param name="apiKeyId">
-        /// When `group_by=api_key_id`, this field provides the API key ID of the grouped usage result.
-        /// </param>
-        /// <param name="model">
-        /// When `group_by=model`, this field provides the model name of the grouped usage result.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -87,19 +87,19 @@ namespace tryAGI.OpenAI
         public UsageEmbeddingsResult(
             int inputTokens,
             int numModelRequests,
+            string? apiKeyId,
+            string? model,
             global::tryAGI.OpenAI.UsageEmbeddingsResultObject @object,
             string? projectId,
-            string? userId,
-            string? apiKeyId,
-            string? model)
+            string? userId)
         {
             this.InputTokens = inputTokens;
             this.NumModelRequests = numModelRequests;
+            this.ApiKeyId = apiKeyId;
+            this.Model = model;
             this.Object = @object;
             this.ProjectId = projectId;
             this.UserId = userId;
-            this.ApiKeyId = apiKeyId;
-            this.Model = model;
         }
 
         /// <summary>

@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public sealed partial class EvalRunPerTestingCriteriaResult
     {
         /// <summary>
-        /// A description of the testing criteria.
+        /// Number of tests failed for this criteria.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("testing_criteria")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("failed")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string TestingCriteria { get; set; }
+        public required int Failed { get; set; }
 
         /// <summary>
         /// Number of tests passed for this criteria.
@@ -23,11 +23,11 @@ namespace tryAGI.OpenAI
         public required int Passed { get; set; }
 
         /// <summary>
-        /// Number of tests failed for this criteria.
+        /// A description of the testing criteria.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("failed")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("testing_criteria")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Failed { get; set; }
+        public required string TestingCriteria { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,26 +38,26 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="EvalRunPerTestingCriteriaResult" /> class.
         /// </summary>
-        /// <param name="testingCriteria">
-        /// A description of the testing criteria.
+        /// <param name="failed">
+        /// Number of tests failed for this criteria.
         /// </param>
         /// <param name="passed">
         /// Number of tests passed for this criteria.
         /// </param>
-        /// <param name="failed">
-        /// Number of tests failed for this criteria.
+        /// <param name="testingCriteria">
+        /// A description of the testing criteria.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public EvalRunPerTestingCriteriaResult(
-            string testingCriteria,
+            int failed,
             int passed,
-            int failed)
+            string testingCriteria)
         {
-            this.TestingCriteria = testingCriteria ?? throw new global::System.ArgumentNullException(nameof(testingCriteria));
-            this.Passed = passed;
             this.Failed = failed;
+            this.Passed = passed;
+            this.TestingCriteria = testingCriteria ?? throw new global::System.ArgumentNullException(nameof(testingCriteria));
         }
 
         /// <summary>

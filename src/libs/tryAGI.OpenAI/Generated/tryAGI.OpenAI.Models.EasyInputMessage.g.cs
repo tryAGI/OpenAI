@@ -15,15 +15,6 @@ namespace tryAGI.OpenAI
     public sealed partial class EasyInputMessage
     {
         /// <summary>
-        /// The role of the message input. One of `user`, `assistant`, `system`, or<br/>
-        /// `developer`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EasyInputMessageRoleJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.EasyInputMessageRole Role { get; set; }
-
-        /// <summary>
         /// Text, image, or audio input to the model, used to generate a response.<br/>
         /// Can also contain previous assistant responses.
         /// </summary>
@@ -31,6 +22,15 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputContent>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputContent>> Content { get; set; }
+
+        /// <summary>
+        /// The role of the message input. One of `user`, `assistant`, `system`, or<br/>
+        /// `developer`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EasyInputMessageRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.EasyInputMessageRole Role { get; set; }
 
         /// <summary>
         /// The type of the message input. Always `message`.
@@ -48,13 +48,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="EasyInputMessage" /> class.
         /// </summary>
-        /// <param name="role">
-        /// The role of the message input. One of `user`, `assistant`, `system`, or<br/>
-        /// `developer`.
-        /// </param>
         /// <param name="content">
         /// Text, image, or audio input to the model, used to generate a response.<br/>
         /// Can also contain previous assistant responses.
+        /// </param>
+        /// <param name="role">
+        /// The role of the message input. One of `user`, `assistant`, `system`, or<br/>
+        /// `developer`.
         /// </param>
         /// <param name="type">
         /// The type of the message input. Always `message`.
@@ -63,12 +63,12 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public EasyInputMessage(
-            global::tryAGI.OpenAI.EasyInputMessageRole role,
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputContent>> content,
+            global::tryAGI.OpenAI.EasyInputMessageRole role,
             global::tryAGI.OpenAI.EasyInputMessageType? type)
         {
-            this.Role = role;
             this.Content = content;
+            this.Role = role;
             this.Type = type;
         }
 

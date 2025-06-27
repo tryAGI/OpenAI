@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -11,11 +9,11 @@ namespace tryAGI.OpenAI
     public sealed partial class Upload
     {
         /// <summary>
-        /// The Upload unique identifier, which can be referenced in API endpoints.
+        /// The intended number of bytes to be uploaded.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public required int Bytes { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the Upload was created.
@@ -26,6 +24,20 @@ namespace tryAGI.OpenAI
         public required global::System.DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
+        /// The Unix timestamp (in seconds) for when the Upload will expire.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.DateTimeOffset ExpiresAt { get; set; }
+
+        /// <summary>
+        /// The `File` object represents a document that has been uploaded to OpenAI.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("file")]
+        public global::tryAGI.OpenAI.OpenAIFile? File { get; set; }
+
+        /// <summary>
         /// The name of the file to be uploaded.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
@@ -33,11 +45,18 @@ namespace tryAGI.OpenAI
         public required string Filename { get; set; }
 
         /// <summary>
-        /// The intended number of bytes to be uploaded.
+        /// The Upload unique identifier, which can be referenced in API endpoints.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Bytes { get; set; }
+        public required string Id { get; set; }
+
+        /// <summary>
+        /// The object type, which is always "upload".
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UploadObjectJsonConverter))]
+        public global::tryAGI.OpenAI.UploadObject? Object { get; set; }
 
         /// <summary>
         /// The intended purpose of the file. [Please refer here](/docs/api-reference/files/object#files/object-purpose) for acceptable values.
@@ -55,28 +74,6 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.UploadStatus Status { get; set; }
 
         /// <summary>
-        /// The Unix timestamp (in seconds) for when the Upload will expire.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset ExpiresAt { get; set; }
-
-        /// <summary>
-        /// The object type, which is always "upload".
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UploadObjectJsonConverter))]
-        public global::tryAGI.OpenAI.UploadObject? Object { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("file")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AllOfJsonConverter<global::tryAGI.OpenAI.OpenAIFile, object>))]
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.OpenAIFile, object>? File { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -85,17 +82,26 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="Upload" /> class.
         /// </summary>
-        /// <param name="id">
-        /// The Upload unique identifier, which can be referenced in API endpoints.
+        /// <param name="bytes">
+        /// The intended number of bytes to be uploaded.
         /// </param>
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) for when the Upload was created.
         /// </param>
+        /// <param name="expiresAt">
+        /// The Unix timestamp (in seconds) for when the Upload will expire.
+        /// </param>
+        /// <param name="file">
+        /// The `File` object represents a document that has been uploaded to OpenAI.
+        /// </param>
         /// <param name="filename">
         /// The name of the file to be uploaded.
         /// </param>
-        /// <param name="bytes">
-        /// The intended number of bytes to be uploaded.
+        /// <param name="id">
+        /// The Upload unique identifier, which can be referenced in API endpoints.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always "upload".
         /// </param>
         /// <param name="purpose">
         /// The intended purpose of the file. [Please refer here](/docs/api-reference/files/object#files/object-purpose) for acceptable values.
@@ -103,36 +109,29 @@ namespace tryAGI.OpenAI
         /// <param name="status">
         /// The status of the Upload.
         /// </param>
-        /// <param name="expiresAt">
-        /// The Unix timestamp (in seconds) for when the Upload will expire.
-        /// </param>
-        /// <param name="object">
-        /// The object type, which is always "upload".
-        /// </param>
-        /// <param name="file"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Upload(
-            string id,
-            global::System.DateTimeOffset createdAt,
-            string filename,
             int bytes,
+            global::System.DateTimeOffset createdAt,
+            global::System.DateTimeOffset expiresAt,
+            string filename,
+            string id,
             string purpose,
             global::tryAGI.OpenAI.UploadStatus status,
-            global::System.DateTimeOffset expiresAt,
-            global::tryAGI.OpenAI.UploadObject? @object,
-            global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.OpenAIFile, object>? file)
+            global::tryAGI.OpenAI.OpenAIFile? file,
+            global::tryAGI.OpenAI.UploadObject? @object)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.CreatedAt = createdAt;
-            this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
             this.Bytes = bytes;
+            this.CreatedAt = createdAt;
+            this.ExpiresAt = expiresAt;
+            this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Purpose = purpose ?? throw new global::System.ArgumentNullException(nameof(purpose));
             this.Status = status;
-            this.ExpiresAt = expiresAt;
-            this.Object = @object;
             this.File = file;
+            this.Object = @object;
         }
 
         /// <summary>

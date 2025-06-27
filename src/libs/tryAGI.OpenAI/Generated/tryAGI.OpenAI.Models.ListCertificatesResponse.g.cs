@@ -23,18 +23,18 @@ namespace tryAGI.OpenAI
         public string? FirstId { get; set; }
 
         /// <summary>
-        /// Example: cert_abc
-        /// </summary>
-        /// <example>cert_abc</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("last_id")]
-        public string? LastId { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool HasMore { get; set; }
+
+        /// <summary>
+        /// Example: cert_abc
+        /// </summary>
+        /// <example>cert_abc</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("last_id")]
+        public string? LastId { get; set; }
 
         /// <summary>
         /// 
@@ -56,10 +56,10 @@ namespace tryAGI.OpenAI
         /// <param name="firstId">
         /// Example: cert_abc
         /// </param>
+        /// <param name="hasMore"></param>
         /// <param name="lastId">
         /// Example: cert_abc
         /// </param>
-        /// <param name="hasMore"></param>
         /// <param name="object"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

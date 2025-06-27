@@ -17,6 +17,14 @@ namespace tryAGI.OpenAI
     public sealed partial class RealtimeClientEventInputAudioBufferAppend
     {
         /// <summary>
+        /// Base64-encoded audio bytes. This must be in the format specified by the <br/>
+        /// `input_audio_format` field in the session configuration.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("audio")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Audio { get; set; }
+
+        /// <summary>
         /// Optional client-generated ID used to identify this event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event_id")]
@@ -30,14 +38,6 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferAppendType Type { get; set; }
 
         /// <summary>
-        /// Base64-encoded audio bytes. This must be in the format specified by the <br/>
-        /// `input_audio_format` field in the session configuration.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("audio")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Audio { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -46,15 +46,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeClientEventInputAudioBufferAppend" /> class.
         /// </summary>
+        /// <param name="audio">
+        /// Base64-encoded audio bytes. This must be in the format specified by the <br/>
+        /// `input_audio_format` field in the session configuration.
+        /// </param>
         /// <param name="eventId">
         /// Optional client-generated ID used to identify this event.
         /// </param>
         /// <param name="type">
         /// The event type, must be `input_audio_buffer.append`.
-        /// </param>
-        /// <param name="audio">
-        /// Base64-encoded audio bytes. This must be in the format specified by the <br/>
-        /// `input_audio_format` field in the session configuration.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

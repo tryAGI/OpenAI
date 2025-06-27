@@ -9,12 +9,6 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateContainerFileBody
     {
         /// <summary>
-        /// Name of the file to create.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
-        public string? FileId { get; set; }
-
-        /// <summary>
         /// The File object (not file name) to be uploaded.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file")]
@@ -27,6 +21,12 @@ namespace tryAGI.OpenAI
         public string? Filename { get; set; }
 
         /// <summary>
+        /// Name of the file to create.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
+        public string? FileId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -35,26 +35,26 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateContainerFileBody" /> class.
         /// </summary>
-        /// <param name="fileId">
-        /// Name of the file to create.
-        /// </param>
         /// <param name="file">
         /// The File object (not file name) to be uploaded.
         /// </param>
         /// <param name="filename">
         /// The File object (not file name) to be uploaded.
         /// </param>
+        /// <param name="fileId">
+        /// Name of the file to create.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateContainerFileBody(
-            string? fileId,
             byte[]? file,
-            string? filename)
+            string? filename,
+            string? fileId)
         {
-            this.FileId = fileId;
             this.File = file;
             this.Filename = filename;
+            this.FileId = fileId;
         }
 
         /// <summary>

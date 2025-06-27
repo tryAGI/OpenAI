@@ -10,18 +10,18 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseFormatJsonSchema
     {
         /// <summary>
-        /// The type of response format being defined. Always `json_schema`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseFormatJsonSchemaTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseFormatJsonSchemaType Type { get; set; }
-
-        /// <summary>
         /// Structured Outputs configuration options, including a JSON Schema.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("json_schema")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::tryAGI.OpenAI.ResponseFormatJsonSchemaJsonSchema JsonSchema { get; set; }
+
+        /// <summary>
+        /// The type of response format being defined. Always `json_schema`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseFormatJsonSchemaTypeJsonConverter))]
+        public global::tryAGI.OpenAI.ResponseFormatJsonSchemaType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseFormatJsonSchema" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of response format being defined. Always `json_schema`.
-        /// </param>
         /// <param name="jsonSchema">
         /// Structured Outputs configuration options, including a JSON Schema.
+        /// </param>
+        /// <param name="type">
+        /// The type of response format being defined. Always `json_schema`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

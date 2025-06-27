@@ -185,11 +185,11 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="threadId"></param>
         /// <param name="runId"></param>
-        /// <param name="toolOutputs">
-        /// A list of tools for which the outputs are being submitted.
-        /// </param>
         /// <param name="stream">
         /// If `true`, returns a stream of events that happen during the Run as server-sent events, terminating when the Run enters a terminal state with a `data: [DONE]` message.
+        /// </param>
+        /// <param name="toolOutputs">
+        /// A list of tools for which the outputs are being submitted.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -205,8 +205,8 @@ namespace tryAGI.OpenAI
         {
             var __request = new global::tryAGI.OpenAI.SubmitToolOutputsRunRequest
             {
-                ToolOutputs = toolOutputs,
                 Stream = stream,
+                ToolOutputs = toolOutputs,
             };
 
             return await SubmitToolOuputsToRunAsync(

@@ -11,20 +11,20 @@ namespace tryAGI.OpenAI
     public sealed partial class FineTuneDPOHyperparameters
     {
         /// <summary>
-        /// The beta value for the DPO method. A higher beta value will increase the weight of the penalty between the policy and reference model.<br/>
-        /// Default Value: auto
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("beta")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.FineTuneDPOHyperparametersBeta?, double?>))]
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneDPOHyperparametersBeta?, double?>? Beta { get; set; }
-
-        /// <summary>
         /// Number of examples in each batch. A larger batch size means that model parameters are updated less frequently, but with lower variance.<br/>
         /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("batch_size")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.FineTuneDPOHyperparametersBatchSize?, int?>))]
         public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneDPOHyperparametersBatchSize?, int?>? BatchSize { get; set; }
+
+        /// <summary>
+        /// The beta value for the DPO method. A higher beta value will increase the weight of the penalty between the policy and reference model.<br/>
+        /// Default Value: auto
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("beta")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.FineTuneDPOHyperparametersBeta?, double?>))]
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneDPOHyperparametersBeta?, double?>? Beta { get; set; }
 
         /// <summary>
         /// Scaling factor for the learning rate. A smaller learning rate may be useful to avoid overfitting.<br/>
@@ -51,12 +51,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="FineTuneDPOHyperparameters" /> class.
         /// </summary>
-        /// <param name="beta">
-        /// The beta value for the DPO method. A higher beta value will increase the weight of the penalty between the policy and reference model.<br/>
-        /// Default Value: auto
-        /// </param>
         /// <param name="batchSize">
         /// Number of examples in each batch. A larger batch size means that model parameters are updated less frequently, but with lower variance.<br/>
+        /// Default Value: auto
+        /// </param>
+        /// <param name="beta">
+        /// The beta value for the DPO method. A higher beta value will increase the weight of the penalty between the policy and reference model.<br/>
         /// Default Value: auto
         /// </param>
         /// <param name="learningRateMultiplier">
@@ -71,13 +71,13 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FineTuneDPOHyperparameters(
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneDPOHyperparametersBeta?, double?>? beta,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneDPOHyperparametersBatchSize?, int?>? batchSize,
+            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneDPOHyperparametersBeta?, double?>? beta,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneDPOHyperparametersLearningRateMultiplier?, double?>? learningRateMultiplier,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneDPOHyperparametersNEpochs?, int?>? nEpochs)
         {
-            this.Beta = beta;
             this.BatchSize = batchSize;
+            this.Beta = beta;
             this.LearningRateMultiplier = learningRateMultiplier;
             this.NEpochs = nEpochs;
         }

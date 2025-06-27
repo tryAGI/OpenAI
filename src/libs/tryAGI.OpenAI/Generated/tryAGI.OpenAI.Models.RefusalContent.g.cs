@@ -9,6 +9,13 @@ namespace tryAGI.OpenAI
     public sealed partial class RefusalContent
     {
         /// <summary>
+        /// The refusal explanationfrom the model.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("refusal")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Refusal { get; set; }
+
+        /// <summary>
         /// The type of the refusal. Always `refusal`.<br/>
         /// Default Value: refusal
         /// </summary>
@@ -16,13 +23,6 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RefusalContentTypeJsonConverter))]
         public global::tryAGI.OpenAI.RefusalContentType Type { get; set; } = global::tryAGI.OpenAI.RefusalContentType.Refusal;
-
-        /// <summary>
-        /// The refusal explanationfrom the model.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("refusal")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Refusal { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,12 +33,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RefusalContent" /> class.
         /// </summary>
+        /// <param name="refusal">
+        /// The refusal explanationfrom the model.
+        /// </param>
         /// <param name="type">
         /// The type of the refusal. Always `refusal`.<br/>
         /// Default Value: refusal
-        /// </param>
-        /// <param name="refusal">
-        /// The refusal explanationfrom the model.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

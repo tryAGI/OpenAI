@@ -9,17 +9,17 @@ namespace tryAGI.OpenAI
     public sealed partial class RealtimeServerEventRateLimitsUpdatedRateLimit
     {
         /// <summary>
+        /// The maximum allowed value for the rate limit.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
+        public int? Limit { get; set; }
+
+        /// <summary>
         /// The name of the rate limit (`requests`, `tokens`).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventRateLimitsUpdatedRateLimitNameJsonConverter))]
         public global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdatedRateLimitName? Name { get; set; }
-
-        /// <summary>
-        /// The maximum allowed value for the rate limit.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
-        public int? Limit { get; set; }
 
         /// <summary>
         /// The remaining value before the limit is reached.
@@ -42,11 +42,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeServerEventRateLimitsUpdatedRateLimit" /> class.
         /// </summary>
-        /// <param name="name">
-        /// The name of the rate limit (`requests`, `tokens`).
-        /// </param>
         /// <param name="limit">
         /// The maximum allowed value for the rate limit.
+        /// </param>
+        /// <param name="name">
+        /// The name of the rate limit (`requests`, `tokens`).
         /// </param>
         /// <param name="remaining">
         /// The remaining value before the limit is reached.
@@ -58,13 +58,13 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeServerEventRateLimitsUpdatedRateLimit(
-            global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdatedRateLimitName? name,
             int? limit,
+            global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdatedRateLimitName? name,
             int? remaining,
             double? resetSeconds)
         {
-            this.Name = name;
             this.Limit = limit;
+            this.Name = name;
             this.Remaining = remaining;
             this.ResetSeconds = resetSeconds;
         }

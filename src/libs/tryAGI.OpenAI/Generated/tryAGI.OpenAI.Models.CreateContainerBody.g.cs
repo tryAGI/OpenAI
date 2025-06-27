@@ -9,11 +9,10 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateContainerBody
     {
         /// <summary>
-        /// Name of the container to create.
+        /// Container expiration time in seconds relative to the 'anchor' time.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_after")]
+        public global::tryAGI.OpenAI.CreateContainerBodyExpiresAfter? ExpiresAfter { get; set; }
 
         /// <summary>
         /// IDs of files to copy to the container.
@@ -22,10 +21,11 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IList<string>? FileIds { get; set; }
 
         /// <summary>
-        /// Container expiration time in seconds relative to the 'anchor' time.
+        /// Name of the container to create.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("expires_after")]
-        public global::tryAGI.OpenAI.CreateContainerBodyExpiresAfter? ExpiresAfter { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,26 +36,26 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateContainerBody" /> class.
         /// </summary>
-        /// <param name="name">
-        /// Name of the container to create.
+        /// <param name="expiresAfter">
+        /// Container expiration time in seconds relative to the 'anchor' time.
         /// </param>
         /// <param name="fileIds">
         /// IDs of files to copy to the container.
         /// </param>
-        /// <param name="expiresAfter">
-        /// Container expiration time in seconds relative to the 'anchor' time.
+        /// <param name="name">
+        /// Name of the container to create.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateContainerBody(
             string name,
-            global::System.Collections.Generic.IList<string>? fileIds,
-            global::tryAGI.OpenAI.CreateContainerBodyExpiresAfter? expiresAfter)
+            global::tryAGI.OpenAI.CreateContainerBodyExpiresAfter? expiresAfter,
+            global::System.Collections.Generic.IList<string>? fileIds)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.FileIds = fileIds;
             this.ExpiresAfter = expiresAfter;
+            this.FileIds = fileIds;
         }
 
         /// <summary>

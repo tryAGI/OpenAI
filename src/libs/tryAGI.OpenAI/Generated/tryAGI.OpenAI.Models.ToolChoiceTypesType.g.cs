@@ -11,7 +11,6 @@ namespace tryAGI.OpenAI
     /// - `web_search_preview`<br/>
     /// - `computer_use_preview`<br/>
     /// - `code_interpreter`<br/>
-    /// - `mcp`<br/>
     /// - `image_generation`
     /// </summary>
     public enum ToolChoiceTypesType
@@ -40,10 +39,6 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         CodeInterpreter,
-        /// <summary>
-        /// 
-        /// </summary>
-        Mcp,
     }
 
     /// <summary>
@@ -64,7 +59,6 @@ namespace tryAGI.OpenAI
                 ToolChoiceTypesType.WebSearchPreview20250311 => "web_search_preview_2025_03_11",
                 ToolChoiceTypesType.ImageGeneration => "image_generation",
                 ToolChoiceTypesType.CodeInterpreter => "code_interpreter",
-                ToolChoiceTypesType.Mcp => "mcp",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -81,7 +75,6 @@ namespace tryAGI.OpenAI
                 "web_search_preview_2025_03_11" => ToolChoiceTypesType.WebSearchPreview20250311,
                 "image_generation" => ToolChoiceTypesType.ImageGeneration,
                 "code_interpreter" => ToolChoiceTypesType.CodeInterpreter,
-                "mcp" => ToolChoiceTypesType.Mcp,
                 _ => null,
             };
         }

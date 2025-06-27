@@ -9,18 +9,18 @@ namespace tryAGI.OpenAI
     public sealed partial class RunStepDetailsToolCallsCodeOutputImageObject
     {
         /// <summary>
-        /// Always `image`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RunStepDetailsToolCallsCodeOutputImageObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputImageObjectType Type { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputImageObjectImage Image { get; set; }
+
+        /// <summary>
+        /// Always `image`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RunStepDetailsToolCallsCodeOutputImageObjectTypeJsonConverter))]
+        public global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputImageObjectType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,10 +31,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RunStepDetailsToolCallsCodeOutputImageObject" /> class.
         /// </summary>
+        /// <param name="image"></param>
         /// <param name="type">
         /// Always `image`.
         /// </param>
-        /// <param name="image"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

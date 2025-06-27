@@ -11,20 +11,27 @@ namespace tryAGI.OpenAI
     public sealed partial class EvalRun
     {
         /// <summary>
-        /// The type of the object. Always "eval.run".<br/>
-        /// Default Value: eval.run
+        /// Unix timestamp (in seconds) when the evaluation run was created.
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.EvalRunObject.EvalRun</default>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EvalRunObjectJsonConverter))]
-        public global::tryAGI.OpenAI.EvalRunObject Object { get; set; } = global::tryAGI.OpenAI.EvalRunObject.EvalRun;
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
-        /// Unique identifier for the evaluation run.
+        /// Information about the run's data source.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("data_source")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.CreateEvalJsonlRunDataSource, global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSource, global::tryAGI.OpenAI.CreateEvalResponsesRunDataSource>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public required global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalJsonlRunDataSource, global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSource, global::tryAGI.OpenAI.CreateEvalResponsesRunDataSource> DataSource { get; set; }
+
+        /// <summary>
+        /// An object representing an error response from the Eval API.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.EvalApiError Error { get; set; }
 
         /// <summary>
         /// The identifier of the associated evaluation.
@@ -34,11 +41,22 @@ namespace tryAGI.OpenAI
         public required string EvalId { get; set; }
 
         /// <summary>
-        /// The status of the evaluation run.
+        /// Unique identifier for the evaluation run.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Status { get; set; }
+        public required string Id { get; set; }
+
+        /// <summary>
+        /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
+        /// useful for storing additional information about the object in a structured<br/>
+        /// format, and querying for objects via API or the dashboard. <br/>
+        /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
+        /// with a maximum length of 512 characters.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
         /// The model that is evaluated, if applicable.
@@ -55,26 +73,13 @@ namespace tryAGI.OpenAI
         public required string Name { get; set; }
 
         /// <summary>
-        /// Unix timestamp (in seconds) when the evaluation run was created.
+        /// The type of the object. Always "eval.run".<br/>
+        /// Default Value: eval.run
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
-
-        /// <summary>
-        /// The URL to the rendered evaluation run report on the UI dashboard.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("report_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ReportUrl { get; set; }
-
-        /// <summary>
-        /// Counters summarizing the outcomes of the evaluation run.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("result_counts")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.EvalRunResultCounts ResultCounts { get; set; }
+        /// <default>global::tryAGI.OpenAI.EvalRunObject.EvalRun</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EvalRunObjectJsonConverter))]
+        public global::tryAGI.OpenAI.EvalRunObject Object { get; set; } = global::tryAGI.OpenAI.EvalRunObject.EvalRun;
 
         /// <summary>
         /// Usage statistics for each model during the evaluation run.
@@ -91,30 +96,25 @@ namespace tryAGI.OpenAI
         public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunPerTestingCriteriaResult> PerTestingCriteriaResults { get; set; }
 
         /// <summary>
-        /// Information about the run's data source.
+        /// The URL to the rendered evaluation run report on the UI dashboard.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("data_source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.CreateEvalJsonlRunDataSource, global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSource, global::tryAGI.OpenAI.CreateEvalResponsesRunDataSource>))]
+        [global::System.Text.Json.Serialization.JsonPropertyName("report_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalJsonlRunDataSource, global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSource, global::tryAGI.OpenAI.CreateEvalResponsesRunDataSource> DataSource { get; set; }
+        public required string ReportUrl { get; set; }
 
         /// <summary>
-        /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
-        /// useful for storing additional information about the object in a structured<br/>
-        /// format, and querying for objects via API or the dashboard. <br/>
-        /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
-        /// with a maximum length of 512 characters.
+        /// Counters summarizing the outcomes of the evaluation run.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("result_counts")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
+        public required global::tryAGI.OpenAI.EvalRunResultCounts ResultCounts { get; set; }
 
         /// <summary>
-        /// An object representing an error response from the Eval API.
+        /// The status of the evaluation run.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.EvalApiError Error { get; set; }
+        public required string Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -125,42 +125,20 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="EvalRun" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The type of the object. Always "eval.run".<br/>
-        /// Default Value: eval.run
+        /// <param name="createdAt">
+        /// Unix timestamp (in seconds) when the evaluation run was created.
         /// </param>
-        /// <param name="id">
-        /// Unique identifier for the evaluation run.
+        /// <param name="dataSource">
+        /// Information about the run's data source.
+        /// </param>
+        /// <param name="error">
+        /// An object representing an error response from the Eval API.
         /// </param>
         /// <param name="evalId">
         /// The identifier of the associated evaluation.
         /// </param>
-        /// <param name="status">
-        /// The status of the evaluation run.
-        /// </param>
-        /// <param name="model">
-        /// The model that is evaluated, if applicable.
-        /// </param>
-        /// <param name="name">
-        /// The name of the evaluation run.
-        /// </param>
-        /// <param name="createdAt">
-        /// Unix timestamp (in seconds) when the evaluation run was created.
-        /// </param>
-        /// <param name="reportUrl">
-        /// The URL to the rendered evaluation run report on the UI dashboard.
-        /// </param>
-        /// <param name="resultCounts">
-        /// Counters summarizing the outcomes of the evaluation run.
-        /// </param>
-        /// <param name="perModelUsage">
-        /// Usage statistics for each model during the evaluation run.
-        /// </param>
-        /// <param name="perTestingCriteriaResults">
-        /// Results per testing criteria applied during the evaluation run.
-        /// </param>
-        /// <param name="dataSource">
-        /// Information about the run's data source.
+        /// <param name="id">
+        /// Unique identifier for the evaluation run.
         /// </param>
         /// <param name="metadata">
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
@@ -169,41 +147,63 @@ namespace tryAGI.OpenAI
         /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
         /// with a maximum length of 512 characters.
         /// </param>
-        /// <param name="error">
-        /// An object representing an error response from the Eval API.
+        /// <param name="model">
+        /// The model that is evaluated, if applicable.
+        /// </param>
+        /// <param name="name">
+        /// The name of the evaluation run.
+        /// </param>
+        /// <param name="object">
+        /// The type of the object. Always "eval.run".<br/>
+        /// Default Value: eval.run
+        /// </param>
+        /// <param name="perModelUsage">
+        /// Usage statistics for each model during the evaluation run.
+        /// </param>
+        /// <param name="perTestingCriteriaResults">
+        /// Results per testing criteria applied during the evaluation run.
+        /// </param>
+        /// <param name="reportUrl">
+        /// The URL to the rendered evaluation run report on the UI dashboard.
+        /// </param>
+        /// <param name="resultCounts">
+        /// Counters summarizing the outcomes of the evaluation run.
+        /// </param>
+        /// <param name="status">
+        /// The status of the evaluation run.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public EvalRun(
-            string id,
+            global::System.DateTimeOffset createdAt,
+            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalJsonlRunDataSource, global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSource, global::tryAGI.OpenAI.CreateEvalResponsesRunDataSource> dataSource,
+            global::tryAGI.OpenAI.EvalApiError error,
             string evalId,
-            string status,
+            string id,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata,
             string model,
             string name,
-            global::System.DateTimeOffset createdAt,
-            string reportUrl,
-            global::tryAGI.OpenAI.EvalRunResultCounts resultCounts,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunPerModelUsageItem> perModelUsage,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunPerTestingCriteriaResult> perTestingCriteriaResults,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalJsonlRunDataSource, global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSource, global::tryAGI.OpenAI.CreateEvalResponsesRunDataSource> dataSource,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata,
-            global::tryAGI.OpenAI.EvalApiError error,
+            string reportUrl,
+            global::tryAGI.OpenAI.EvalRunResultCounts resultCounts,
+            string status,
             global::tryAGI.OpenAI.EvalRunObject @object = global::tryAGI.OpenAI.EvalRunObject.EvalRun)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
+            this.DataSource = dataSource;
+            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
             this.EvalId = evalId ?? throw new global::System.ArgumentNullException(nameof(evalId));
-            this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.CreatedAt = createdAt;
-            this.ReportUrl = reportUrl ?? throw new global::System.ArgumentNullException(nameof(reportUrl));
-            this.ResultCounts = resultCounts ?? throw new global::System.ArgumentNullException(nameof(resultCounts));
             this.PerModelUsage = perModelUsage ?? throw new global::System.ArgumentNullException(nameof(perModelUsage));
             this.PerTestingCriteriaResults = perTestingCriteriaResults ?? throw new global::System.ArgumentNullException(nameof(perTestingCriteriaResults));
-            this.DataSource = dataSource;
-            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
-            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
+            this.ReportUrl = reportUrl ?? throw new global::System.ArgumentNullException(nameof(reportUrl));
+            this.ResultCounts = resultCounts ?? throw new global::System.ArgumentNullException(nameof(resultCounts));
+            this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
             this.Object = @object;
         }
 

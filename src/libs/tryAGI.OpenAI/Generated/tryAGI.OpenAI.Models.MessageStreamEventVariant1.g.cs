@@ -9,18 +9,18 @@ namespace tryAGI.OpenAI
     public sealed partial class MessageStreamEventVariant1
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("event")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageStreamEventVariant1EventJsonConverter))]
-        public global::tryAGI.OpenAI.MessageStreamEventVariant1Event Event { get; set; }
-
-        /// <summary>
         /// Represents a message within a [thread](/docs/api-reference/threads).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::tryAGI.OpenAI.MessageObject Data { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("event")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageStreamEventVariant1EventJsonConverter))]
+        public global::tryAGI.OpenAI.MessageStreamEventVariant1Event Event { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,10 +31,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageStreamEventVariant1" /> class.
         /// </summary>
-        /// <param name="event"></param>
         /// <param name="data">
         /// Represents a message within a [thread](/docs/api-reference/threads).
         /// </param>
+        /// <param name="event"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

@@ -9,13 +9,6 @@ namespace tryAGI.OpenAI
     public sealed partial class ContainerFileListResource
     {
         /// <summary>
-        /// The type of object returned, must be 'list'.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ContainerFileListResourceObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ContainerFileListResourceObject Object { get; set; }
-
-        /// <summary>
         /// A list of container files.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
@@ -30,6 +23,13 @@ namespace tryAGI.OpenAI
         public required string FirstId { get; set; }
 
         /// <summary>
+        /// Whether there are more files available.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool HasMore { get; set; }
+
+        /// <summary>
         /// The ID of the last file in the list.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_id")]
@@ -37,11 +37,11 @@ namespace tryAGI.OpenAI
         public required string LastId { get; set; }
 
         /// <summary>
-        /// Whether there are more files available.
+        /// The type of object returned, must be 'list'.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool HasMore { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ContainerFileListResourceObjectJsonConverter))]
+        public global::tryAGI.OpenAI.ContainerFileListResourceObject Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,20 +52,20 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ContainerFileListResource" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The type of object returned, must be 'list'.
-        /// </param>
         /// <param name="data">
         /// A list of container files.
         /// </param>
         /// <param name="firstId">
         /// The ID of the first file in the list.
         /// </param>
+        /// <param name="hasMore">
+        /// Whether there are more files available.
+        /// </param>
         /// <param name="lastId">
         /// The ID of the last file in the list.
         /// </param>
-        /// <param name="hasMore">
-        /// Whether there are more files available.
+        /// <param name="object">
+        /// The type of object returned, must be 'list'.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -73,14 +73,14 @@ namespace tryAGI.OpenAI
         public ContainerFileListResource(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContainerFileResource> data,
             string firstId,
-            string lastId,
             bool hasMore,
+            string lastId,
             global::tryAGI.OpenAI.ContainerFileListResourceObject @object)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.FirstId = firstId ?? throw new global::System.ArgumentNullException(nameof(firstId));
-            this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
             this.HasMore = hasMore;
+            this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
             this.Object = @object;
         }
 

@@ -55,7 +55,7 @@ public partial class Examples
 
         RunObject run = await api.Assistants.CreateThreadAndRunAsync(
             assistantId: assistant.Id,
-            new CreateThreadRequest
+            thread: new CreateThreadRequest
             {
                 Messages = [
                     "Create a graph of a line with a slope that's my father's favorite number "

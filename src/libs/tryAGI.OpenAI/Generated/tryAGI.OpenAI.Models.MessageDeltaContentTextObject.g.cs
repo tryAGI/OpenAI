@@ -16,17 +16,17 @@ namespace tryAGI.OpenAI
         public required int Index { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
+        public global::tryAGI.OpenAI.MessageDeltaContentTextObjectText? Text { get; set; }
+
+        /// <summary>
         /// Always `text`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageDeltaContentTextObjectTypeJsonConverter))]
         public global::tryAGI.OpenAI.MessageDeltaContentTextObjectType Type { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        public global::tryAGI.OpenAI.MessageDeltaContentTextObjectText? Text { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,21 +40,21 @@ namespace tryAGI.OpenAI
         /// <param name="index">
         /// The index of the content part in the message.
         /// </param>
+        /// <param name="text"></param>
         /// <param name="type">
         /// Always `text`.
         /// </param>
-        /// <param name="text"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessageDeltaContentTextObject(
             int index,
-            global::tryAGI.OpenAI.MessageDeltaContentTextObjectType type,
-            global::tryAGI.OpenAI.MessageDeltaContentTextObjectText? text)
+            global::tryAGI.OpenAI.MessageDeltaContentTextObjectText? text,
+            global::tryAGI.OpenAI.MessageDeltaContentTextObjectType type)
         {
             this.Index = index;
-            this.Type = type;
             this.Text = text;
+            this.Type = type;
         }
 
         /// <summary>

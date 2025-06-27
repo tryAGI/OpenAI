@@ -9,24 +9,10 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateEvalResponsesRunDataSourceSamplingParams
     {
         /// <summary>
-        /// A higher temperature increases randomness in the outputs.<br/>
-        /// Default Value: 1
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
-        public double? Temperature { get; set; }
-
-        /// <summary>
         /// The maximum number of tokens in the generated output.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_completion_tokens")]
         public int? MaxCompletionTokens { get; set; }
-
-        /// <summary>
-        /// An alternative to temperature for nucleus sampling; 1.0 includes all tokens.<br/>
-        /// Default Value: 1
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("top_p")]
-        public double? TopP { get; set; }
 
         /// <summary>
         /// A seed value to initialize the randomness, during sampling.<br/>
@@ -34,6 +20,22 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
         public int? Seed { get; set; }
+
+        /// <summary>
+        /// A higher temperature increases randomness in the outputs.<br/>
+        /// Default Value: 1
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
+        public double? Temperature { get; set; }
+
+        /// <summary>
+        /// Configuration options for a text response from the model. Can be plain<br/>
+        /// text or structured JSON data. Learn more:<br/>
+        /// - [Text inputs and outputs](/docs/guides/text)<br/>
+        /// - [Structured Outputs](/docs/guides/structured-outputs)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
+        public global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceSamplingParamsText? Text { get; set; }
 
         /// <summary>
         /// An array of tools the model may call while generating a response. You<br/>
@@ -51,13 +53,11 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Tool>? Tools { get; set; }
 
         /// <summary>
-        /// Configuration options for a text response from the model. Can be plain<br/>
-        /// text or structured JSON data. Learn more:<br/>
-        /// - [Text inputs and outputs](/docs/guides/text)<br/>
-        /// - [Structured Outputs](/docs/guides/structured-outputs)
+        /// An alternative to temperature for nucleus sampling; 1.0 includes all tokens.<br/>
+        /// Default Value: 1
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        public global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceSamplingParamsText? Text { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("top_p")]
+        public double? TopP { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -68,20 +68,22 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateEvalResponsesRunDataSourceSamplingParams" /> class.
         /// </summary>
-        /// <param name="temperature">
-        /// A higher temperature increases randomness in the outputs.<br/>
-        /// Default Value: 1
-        /// </param>
         /// <param name="maxCompletionTokens">
         /// The maximum number of tokens in the generated output.
-        /// </param>
-        /// <param name="topP">
-        /// An alternative to temperature for nucleus sampling; 1.0 includes all tokens.<br/>
-        /// Default Value: 1
         /// </param>
         /// <param name="seed">
         /// A seed value to initialize the randomness, during sampling.<br/>
         /// Default Value: 42
+        /// </param>
+        /// <param name="temperature">
+        /// A higher temperature increases randomness in the outputs.<br/>
+        /// Default Value: 1
+        /// </param>
+        /// <param name="text">
+        /// Configuration options for a text response from the model. Can be plain<br/>
+        /// text or structured JSON data. Learn more:<br/>
+        /// - [Text inputs and outputs](/docs/guides/text)<br/>
+        /// - [Structured Outputs](/docs/guides/structured-outputs)
         /// </param>
         /// <param name="tools">
         /// An array of tools the model may call while generating a response. You<br/>
@@ -95,29 +97,27 @@ namespace tryAGI.OpenAI
         ///   enabling the model to call your own code. Learn more about<br/>
         ///   [function calling](/docs/guides/function-calling).
         /// </param>
-        /// <param name="text">
-        /// Configuration options for a text response from the model. Can be plain<br/>
-        /// text or structured JSON data. Learn more:<br/>
-        /// - [Text inputs and outputs](/docs/guides/text)<br/>
-        /// - [Structured Outputs](/docs/guides/structured-outputs)
+        /// <param name="topP">
+        /// An alternative to temperature for nucleus sampling; 1.0 includes all tokens.<br/>
+        /// Default Value: 1
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateEvalResponsesRunDataSourceSamplingParams(
-            double? temperature,
             int? maxCompletionTokens,
-            double? topP,
             int? seed,
+            double? temperature,
+            global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceSamplingParamsText? text,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Tool>? tools,
-            global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceSamplingParamsText? text)
+            double? topP)
         {
-            this.Temperature = temperature;
             this.MaxCompletionTokens = maxCompletionTokens;
-            this.TopP = topP;
             this.Seed = seed;
-            this.Tools = tools;
+            this.Temperature = temperature;
             this.Text = text;
+            this.Tools = tools;
+            this.TopP = topP;
         }
 
         /// <summary>

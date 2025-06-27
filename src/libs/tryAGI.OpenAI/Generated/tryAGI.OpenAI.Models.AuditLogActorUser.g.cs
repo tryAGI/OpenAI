@@ -9,16 +9,16 @@ namespace tryAGI.OpenAI
     public sealed partial class AuditLogActorUser
     {
         /// <summary>
-        /// The user id.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string? Id { get; set; }
-
-        /// <summary>
         /// The user email.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         public string? Email { get; set; }
+
+        /// <summary>
+        /// The user id.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,21 +29,21 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="AuditLogActorUser" /> class.
         /// </summary>
-        /// <param name="id">
-        /// The user id.
-        /// </param>
         /// <param name="email">
         /// The user email.
+        /// </param>
+        /// <param name="id">
+        /// The user id.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AuditLogActorUser(
-            string? id,
-            string? email)
+            string? email,
+            string? id)
         {
-            this.Id = id;
             this.Email = email;
+            this.Id = id;
         }
 
         /// <summary>

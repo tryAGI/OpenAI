@@ -11,14 +11,6 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateSpeechRequest
     {
         /// <summary>
-        /// One of the available [TTS models](/docs/models#tts): `tts-1`, `tts-1-hd` or `gpt-4o-mini-tts`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.CreateSpeechRequestModel?>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateSpeechRequestModel?> Model { get; set; }
-
-        /// <summary>
         /// The text to generate audio for. The maximum length is 4096 characters.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
@@ -32,13 +24,12 @@ namespace tryAGI.OpenAI
         public string? Instructions { get; set; }
 
         /// <summary>
-        /// Example: ash
+        /// One of the available [TTS models](/docs/models#tts): `tts-1`, `tts-1-hd` or `gpt-4o-mini-tts`.
         /// </summary>
-        /// <example>ash</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("voice")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VoiceIdsSharedJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.CreateSpeechRequestModel?>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.VoiceIdsShared Voice { get; set; }
+        public required global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateSpeechRequestModel?> Model { get; set; }
 
         /// <summary>
         /// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.<br/>
@@ -64,6 +55,15 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CreateSpeechRequestStreamFormat? StreamFormat { get; set; }
 
         /// <summary>
+        /// Example: ash
+        /// </summary>
+        /// <example>ash</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("voice")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VoiceIdsSharedJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.VoiceIdsShared Voice { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -72,17 +72,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateSpeechRequest" /> class.
         /// </summary>
-        /// <param name="model">
-        /// One of the available [TTS models](/docs/models#tts): `tts-1`, `tts-1-hd` or `gpt-4o-mini-tts`.
-        /// </param>
         /// <param name="input">
         /// The text to generate audio for. The maximum length is 4096 characters.
         /// </param>
         /// <param name="instructions">
         /// Control the voice of your generated audio with additional instructions. Does not work with `tts-1` or `tts-1-hd`.
         /// </param>
-        /// <param name="voice">
-        /// Example: ash
+        /// <param name="model">
+        /// One of the available [TTS models](/docs/models#tts): `tts-1`, `tts-1-hd` or `gpt-4o-mini-tts`.
         /// </param>
         /// <param name="responseFormat">
         /// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.<br/>
@@ -96,20 +93,23 @@ namespace tryAGI.OpenAI
         /// The format to stream the audio in. Supported formats are `sse` and `audio`. `sse` is not supported for `tts-1` or `tts-1-hd`.<br/>
         /// Default Value: audio
         /// </param>
+        /// <param name="voice">
+        /// Example: ash
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateSpeechRequest(
-            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateSpeechRequestModel?> model,
             string input,
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateSpeechRequestModel?> model,
             global::tryAGI.OpenAI.VoiceIdsShared voice,
             string? instructions,
             global::tryAGI.OpenAI.CreateSpeechRequestResponseFormat? responseFormat,
             double? speed,
             global::tryAGI.OpenAI.CreateSpeechRequestStreamFormat? streamFormat)
         {
-            this.Model = model;
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
+            this.Model = model;
             this.Voice = voice;
             this.Instructions = instructions;
             this.ResponseFormat = responseFormat;

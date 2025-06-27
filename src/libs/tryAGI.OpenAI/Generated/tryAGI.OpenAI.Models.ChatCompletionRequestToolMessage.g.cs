@@ -11,19 +11,19 @@ namespace tryAGI.OpenAI
     public sealed partial class ChatCompletionRequestToolMessage
     {
         /// <summary>
-        /// The role of the messages author, in this case `tool`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatCompletionRequestToolMessageRoleJsonConverter))]
-        public global::tryAGI.OpenAI.ChatCompletionRequestToolMessageRole Role { get; set; }
-
-        /// <summary>
         /// The contents of the tool message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestToolMessageContentPart>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestToolMessageContentPart>> Content { get; set; }
+
+        /// <summary>
+        /// The role of the messages author, in this case `tool`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatCompletionRequestToolMessageRoleJsonConverter))]
+        public global::tryAGI.OpenAI.ChatCompletionRequestToolMessageRole Role { get; set; }
 
         /// <summary>
         /// Tool call that this message is responding to.
@@ -41,11 +41,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionRequestToolMessage" /> class.
         /// </summary>
-        /// <param name="role">
-        /// The role of the messages author, in this case `tool`.
-        /// </param>
         /// <param name="content">
         /// The contents of the tool message.
+        /// </param>
+        /// <param name="role">
+        /// The role of the messages author, in this case `tool`.
         /// </param>
         /// <param name="toolCallId">
         /// Tool call that this message is responding to.

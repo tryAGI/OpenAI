@@ -19,6 +19,19 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
+        /// Specifies the processing type used for serving the request.<br/>
+        ///   - If set to 'auto', then the request will be processed with the service tier configured in the Project settings. Unless otherwise configured, the Project will use 'default'.<br/>
+        ///   - If set to 'default', then the requset will be processed with the standard pricing and performance for the selected model.<br/>
+        ///   - If set to '[flex](/docs/guides/flex-processing)' or 'priority', then the request will be processed with the corresponding service tier. [Contact sales](https://openai.com/contact-sales) to learn more about Priority processing.<br/>
+        ///   - When not set, the default behavior is 'auto'.<br/>
+        ///   When the `service_tier` parameter is set, the response body will include the `service_tier` value based on the processing mode actually used to serve the request. This response value may be different from the value set in the parameter.<br/>
+        /// Default Value: auto
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ServiceTierJsonConverter))]
+        public global::tryAGI.OpenAI.ServiceTier? ServiceTier { get; set; }
+
+        /// <summary>
         /// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.<br/>
         /// We generally recommend altering this or `top_p` but not both.<br/>
         /// Default Value: 1<br/>
@@ -27,6 +40,13 @@ namespace tryAGI.OpenAI
         /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
         public double? Temperature { get; set; }
+
+        /// <summary>
+        /// An integer between 0 and 20 specifying the number of most likely tokens to<br/>
+        /// return at each token position, each with an associated log probability.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("top_logprobs")]
+        public int? TopLogprobs { get; set; }
 
         /// <summary>
         /// An alternative to sampling with temperature, called nucleus sampling,<br/>
@@ -51,21 +71,6 @@ namespace tryAGI.OpenAI
         public string? User { get; set; }
 
         /// <summary>
-        /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
-        ///   - If set to 'auto', and the Project is Scale tier enabled, the system<br/>
-        ///     will utilize scale tier credits until they are exhausted.<br/>
-        ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarantee.<br/>
-        ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarantee.<br/>
-        ///   - If set to 'flex', the request will be processed with the Flex Processing service tier. [Learn more](/docs/guides/flex-processing).<br/>
-        ///   - When not set, the default behavior is 'auto'.<br/>
-        ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
-        /// Default Value: auto
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ServiceTierJsonConverter))]
-        public global::tryAGI.OpenAI.ServiceTier? ServiceTier { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -81,11 +86,24 @@ namespace tryAGI.OpenAI
         /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
         /// with a maximum length of 512 characters.
         /// </param>
+        /// <param name="serviceTier">
+        /// Specifies the processing type used for serving the request.<br/>
+        ///   - If set to 'auto', then the request will be processed with the service tier configured in the Project settings. Unless otherwise configured, the Project will use 'default'.<br/>
+        ///   - If set to 'default', then the requset will be processed with the standard pricing and performance for the selected model.<br/>
+        ///   - If set to '[flex](/docs/guides/flex-processing)' or 'priority', then the request will be processed with the corresponding service tier. [Contact sales](https://openai.com/contact-sales) to learn more about Priority processing.<br/>
+        ///   - When not set, the default behavior is 'auto'.<br/>
+        ///   When the `service_tier` parameter is set, the response body will include the `service_tier` value based on the processing mode actually used to serve the request. This response value may be different from the value set in the parameter.<br/>
+        /// Default Value: auto
+        /// </param>
         /// <param name="temperature">
         /// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.<br/>
         /// We generally recommend altering this or `top_p` but not both.<br/>
         /// Default Value: 1<br/>
         /// Example: 1
+        /// </param>
+        /// <param name="topLogprobs">
+        /// An integer between 0 and 20 specifying the number of most likely tokens to<br/>
+        /// return at each token position, each with an associated log probability.
         /// </param>
         /// <param name="topP">
         /// An alternative to sampling with temperature, called nucleus sampling,<br/>
@@ -101,32 +119,23 @@ namespace tryAGI.OpenAI
         /// Used to boost cache hit rates by better bucketing similar requests and  to help OpenAI detect and prevent abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
         /// Example: user-1234
         /// </param>
-        /// <param name="serviceTier">
-        /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
-        ///   - If set to 'auto', and the Project is Scale tier enabled, the system<br/>
-        ///     will utilize scale tier credits until they are exhausted.<br/>
-        ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarantee.<br/>
-        ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarantee.<br/>
-        ///   - If set to 'flex', the request will be processed with the Flex Processing service tier. [Learn more](/docs/guides/flex-processing).<br/>
-        ///   - When not set, the default behavior is 'auto'.<br/>
-        ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
-        /// Default Value: auto
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ModelResponseProperties(
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
+            global::tryAGI.OpenAI.ServiceTier? serviceTier,
             double? temperature,
+            int? topLogprobs,
             double? topP,
-            string? user,
-            global::tryAGI.OpenAI.ServiceTier? serviceTier)
+            string? user)
         {
             this.Metadata = metadata;
+            this.ServiceTier = serviceTier;
             this.Temperature = temperature;
+            this.TopLogprobs = topLogprobs;
             this.TopP = topP;
             this.User = user;
-            this.ServiceTier = serviceTier;
         }
 
         /// <summary>

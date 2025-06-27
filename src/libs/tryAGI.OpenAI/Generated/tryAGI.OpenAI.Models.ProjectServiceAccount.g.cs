@@ -9,11 +9,12 @@ namespace tryAGI.OpenAI
     public sealed partial class ProjectServiceAccount
     {
         /// <summary>
-        /// The object type, which is always `organization.project.service_account`
+        /// The Unix timestamp (in seconds) of when the service account was created
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectServiceAccountObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ProjectServiceAccountObject Object { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
         /// The identifier, which can be referenced in API endpoints
@@ -30,20 +31,19 @@ namespace tryAGI.OpenAI
         public required string Name { get; set; }
 
         /// <summary>
+        /// The object type, which is always `organization.project.service_account`
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectServiceAccountObjectJsonConverter))]
+        public global::tryAGI.OpenAI.ProjectServiceAccountObject Object { get; set; }
+
+        /// <summary>
         /// `owner` or `member`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectServiceAccountRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::tryAGI.OpenAI.ProjectServiceAccountRole Role { get; set; }
-
-        /// <summary>
-        /// The Unix timestamp (in seconds) of when the service account was created
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,8 +54,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectServiceAccount" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The object type, which is always `organization.project.service_account`
+        /// <param name="createdAt">
+        /// The Unix timestamp (in seconds) of when the service account was created
         /// </param>
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints
@@ -63,26 +63,26 @@ namespace tryAGI.OpenAI
         /// <param name="name">
         /// The name of the service account
         /// </param>
+        /// <param name="object">
+        /// The object type, which is always `organization.project.service_account`
+        /// </param>
         /// <param name="role">
         /// `owner` or `member`
-        /// </param>
-        /// <param name="createdAt">
-        /// The Unix timestamp (in seconds) of when the service account was created
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ProjectServiceAccount(
+            global::System.DateTimeOffset createdAt,
             string id,
             string name,
             global::tryAGI.OpenAI.ProjectServiceAccountRole role,
-            global::System.DateTimeOffset createdAt,
             global::tryAGI.OpenAI.ProjectServiceAccountObject @object)
         {
+            this.CreatedAt = createdAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Role = role;
-            this.CreatedAt = createdAt;
             this.Object = @object;
         }
 

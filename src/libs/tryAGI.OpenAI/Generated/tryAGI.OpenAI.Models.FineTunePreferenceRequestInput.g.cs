@@ -19,16 +19,16 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.FineTunePreferenceRequestInputInput? Input { get; set; }
 
         /// <summary>
-        /// The preferred completion message for the output.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("preferred_output")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage>>? PreferredOutput { get; set; }
-
-        /// <summary>
         /// The non-preferred completion message for the output.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("non_preferred_output")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage>>? NonPreferredOutput { get; set; }
+
+        /// <summary>
+        /// The preferred completion message for the output.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("preferred_output")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage>>? PreferredOutput { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,23 +40,23 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="FineTunePreferenceRequestInput" /> class.
         /// </summary>
         /// <param name="input"></param>
-        /// <param name="preferredOutput">
-        /// The preferred completion message for the output.
-        /// </param>
         /// <param name="nonPreferredOutput">
         /// The non-preferred completion message for the output.
+        /// </param>
+        /// <param name="preferredOutput">
+        /// The preferred completion message for the output.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FineTunePreferenceRequestInput(
             global::tryAGI.OpenAI.FineTunePreferenceRequestInputInput? input,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage>>? preferredOutput,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage>>? nonPreferredOutput)
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage>>? nonPreferredOutput,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage>>? preferredOutput)
         {
             this.Input = input;
-            this.PreferredOutput = preferredOutput;
             this.NonPreferredOutput = nonPreferredOutput;
+            this.PreferredOutput = preferredOutput;
         }
 
         /// <summary>

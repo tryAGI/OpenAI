@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -11,6 +9,12 @@ namespace tryAGI.OpenAI
     public sealed partial class ComputerCallSafetyCheckParam
     {
         /// <summary>
+        /// The type of the pending safety check.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("code")]
+        public string? Code { get; set; }
+
+        /// <summary>
         /// The ID of the pending safety check.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -18,18 +22,10 @@ namespace tryAGI.OpenAI
         public required string Id { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("code")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, object>))]
-        public global::tryAGI.OpenAI.AnyOf<string, object>? Code { get; set; }
-
-        /// <summary>
-        /// 
+        /// Details about the pending safety check.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, object>))]
-        public global::tryAGI.OpenAI.AnyOf<string, object>? Message { get; set; }
+        public string? Message { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,18 +36,22 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ComputerCallSafetyCheckParam" /> class.
         /// </summary>
+        /// <param name="code">
+        /// The type of the pending safety check.
+        /// </param>
         /// <param name="id">
         /// The ID of the pending safety check.
         /// </param>
-        /// <param name="code"></param>
-        /// <param name="message"></param>
+        /// <param name="message">
+        /// Details about the pending safety check.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ComputerCallSafetyCheckParam(
             string id,
-            global::tryAGI.OpenAI.AnyOf<string, object>? code,
-            global::tryAGI.OpenAI.AnyOf<string, object>? message)
+            string? code,
+            string? message)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Code = code;

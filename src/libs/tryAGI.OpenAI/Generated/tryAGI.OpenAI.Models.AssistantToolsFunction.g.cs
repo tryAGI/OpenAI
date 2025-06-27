@@ -9,18 +9,18 @@ namespace tryAGI.OpenAI
     public sealed partial class AssistantToolsFunction
     {
         /// <summary>
-        /// The type of tool being defined: `function`
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AssistantToolsFunctionTypeJsonConverter))]
-        public global::tryAGI.OpenAI.AssistantToolsFunctionType Type { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::tryAGI.OpenAI.FunctionObject Function { get; set; }
+
+        /// <summary>
+        /// The type of tool being defined: `function`
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AssistantToolsFunctionTypeJsonConverter))]
+        public global::tryAGI.OpenAI.AssistantToolsFunctionType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,10 +31,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="AssistantToolsFunction" /> class.
         /// </summary>
+        /// <param name="function"></param>
         /// <param name="type">
         /// The type of tool being defined: `function`
         /// </param>
-        /// <param name="function"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

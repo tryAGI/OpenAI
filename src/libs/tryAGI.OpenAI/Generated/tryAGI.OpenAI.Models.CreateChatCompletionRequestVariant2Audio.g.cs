@@ -10,15 +10,6 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateChatCompletionRequestVariant2Audio
     {
         /// <summary>
-        /// Example: ash
-        /// </summary>
-        /// <example>ash</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("voice")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VoiceIdsSharedJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.VoiceIdsShared Voice { get; set; }
-
-        /// <summary>
         /// Specifies the output audio format. Must be one of `wav`, `mp3`, `flac`,<br/>
         /// `opus`, or `pcm16`.
         /// </summary>
@@ -26,6 +17,15 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateChatCompletionRequestVariant2AudioFormatJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2AudioFormat Format { get; set; }
+
+        /// <summary>
+        /// Example: ash
+        /// </summary>
+        /// <example>ash</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("voice")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VoiceIdsSharedJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.VoiceIdsShared Voice { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,22 +36,22 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateChatCompletionRequestVariant2Audio" /> class.
         /// </summary>
-        /// <param name="voice">
-        /// Example: ash
-        /// </param>
         /// <param name="format">
         /// Specifies the output audio format. Must be one of `wav`, `mp3`, `flac`,<br/>
         /// `opus`, or `pcm16`.
+        /// </param>
+        /// <param name="voice">
+        /// Example: ash
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateChatCompletionRequestVariant2Audio(
-            global::tryAGI.OpenAI.VoiceIdsShared voice,
-            global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2AudioFormat format)
+            global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2AudioFormat format,
+            global::tryAGI.OpenAI.VoiceIdsShared voice)
         {
-            this.Voice = voice;
             this.Format = format;
+            this.Voice = voice;
         }
 
         /// <summary>

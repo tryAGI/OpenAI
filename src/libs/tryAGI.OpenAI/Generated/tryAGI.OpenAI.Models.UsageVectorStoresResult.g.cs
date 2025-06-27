@@ -16,17 +16,17 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.UsageVectorStoresResultObject Object { get; set; }
 
         /// <summary>
+        /// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("project_id")]
+        public string? ProjectId { get; set; }
+
+        /// <summary>
         /// The vector stores usage in bytes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int UsageBytes { get; set; }
-
-        /// <summary>
-        /// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("project_id")]
-        public string? ProjectId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,11 +38,11 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="UsageVectorStoresResult" /> class.
         /// </summary>
         /// <param name="object"></param>
-        /// <param name="usageBytes">
-        /// The vector stores usage in bytes.
-        /// </param>
         /// <param name="projectId">
         /// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
+        /// </param>
+        /// <param name="usageBytes">
+        /// The vector stores usage in bytes.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -9,6 +9,12 @@ namespace tryAGI.OpenAI
     public sealed partial class AuditLogCertificateDeleted
     {
         /// <summary>
+        /// The certificate content in PEM format.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("certificate")]
+        public string? Certificate { get; set; }
+
+        /// <summary>
         /// The certificate ID.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -21,12 +27,6 @@ namespace tryAGI.OpenAI
         public string? Name { get; set; }
 
         /// <summary>
-        /// The certificate content in PEM format.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("certificate")]
-        public string? Certificate { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -35,26 +35,26 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="AuditLogCertificateDeleted" /> class.
         /// </summary>
+        /// <param name="certificate">
+        /// The certificate content in PEM format.
+        /// </param>
         /// <param name="id">
         /// The certificate ID.
         /// </param>
         /// <param name="name">
         /// The name of the certificate.
         /// </param>
-        /// <param name="certificate">
-        /// The certificate content in PEM format.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AuditLogCertificateDeleted(
+            string? certificate,
             string? id,
-            string? name,
-            string? certificate)
+            string? name)
         {
+            this.Certificate = certificate;
             this.Id = id;
             this.Name = name;
-            this.Certificate = certificate;
         }
 
         /// <summary>

@@ -9,18 +9,18 @@ namespace tryAGI.OpenAI
     public sealed partial class ChatCompletionRequestMessageContentPartImage
     {
         /// <summary>
-        /// The type of the content part.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatCompletionRequestMessageContentPartImageTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImageType Type { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImageImageUrl ImageUrl { get; set; }
+
+        /// <summary>
+        /// The type of the content part.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatCompletionRequestMessageContentPartImageTypeJsonConverter))]
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImageType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,10 +31,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionRequestMessageContentPartImage" /> class.
         /// </summary>
+        /// <param name="imageUrl"></param>
         /// <param name="type">
         /// The type of the content part.
         /// </param>
-        /// <param name="imageUrl"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

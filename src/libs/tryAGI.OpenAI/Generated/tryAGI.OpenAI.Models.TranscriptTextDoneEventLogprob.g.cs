@@ -9,10 +9,10 @@ namespace tryAGI.OpenAI
     public sealed partial class TranscriptTextDoneEventLogprob
     {
         /// <summary>
-        /// The token that was used to generate the log probability.
+        /// The bytes that were used to generate the log probability.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("token")]
-        public string? Token { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
+        public global::System.Collections.Generic.IList<int>? Bytes { get; set; }
 
         /// <summary>
         /// The log probability of the token.
@@ -21,10 +21,10 @@ namespace tryAGI.OpenAI
         public double? Logprob { get; set; }
 
         /// <summary>
-        /// The bytes that were used to generate the log probability.
+        /// The token that was used to generate the log probability.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
-        public global::System.Collections.Generic.IList<int>? Bytes { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("token")]
+        public string? Token { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -35,26 +35,26 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="TranscriptTextDoneEventLogprob" /> class.
         /// </summary>
-        /// <param name="token">
-        /// The token that was used to generate the log probability.
+        /// <param name="bytes">
+        /// The bytes that were used to generate the log probability.
         /// </param>
         /// <param name="logprob">
         /// The log probability of the token.
         /// </param>
-        /// <param name="bytes">
-        /// The bytes that were used to generate the log probability.
+        /// <param name="token">
+        /// The token that was used to generate the log probability.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TranscriptTextDoneEventLogprob(
-            string? token,
+            global::System.Collections.Generic.IList<int>? bytes,
             double? logprob,
-            global::System.Collections.Generic.IList<int>? bytes)
+            string? token)
         {
-            this.Token = token;
-            this.Logprob = logprob;
             this.Bytes = bytes;
+            this.Logprob = logprob;
+            this.Token = token;
         }
 
         /// <summary>

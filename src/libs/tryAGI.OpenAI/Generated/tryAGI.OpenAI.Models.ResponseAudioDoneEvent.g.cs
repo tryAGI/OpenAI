@@ -9,18 +9,18 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseAudioDoneEvent
     {
         /// <summary>
-        /// The type of the event. Always `response.audio.done`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseAudioDoneEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseAudioDoneEventType Type { get; set; }
-
-        /// <summary>
         /// The sequence number of the delta.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int SequenceNumber { get; set; }
+
+        /// <summary>
+        /// The type of the event. Always `response.audio.done`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseAudioDoneEventTypeJsonConverter))]
+        public global::tryAGI.OpenAI.ResponseAudioDoneEventType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,11 +31,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseAudioDoneEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `response.audio.done`.
-        /// </param>
         /// <param name="sequenceNumber">
         /// The sequence number of the delta.
+        /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `response.audio.done`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -24,15 +24,6 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ReasoningEffort? Effort { get; set; }
 
         /// <summary>
-        /// A summary of the reasoning performed by the model. This can be<br/>
-        /// useful for debugging and understanding the model's reasoning process.<br/>
-        /// One of `auto`, `concise`, or `detailed`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ReasoningSummaryJsonConverter))]
-        public global::tryAGI.OpenAI.ReasoningSummary? Summary { get; set; }
-
-        /// <summary>
         /// **Deprecated:** use `summary` instead.<br/>
         /// A summary of the reasoning performed by the model. This can be<br/>
         /// useful for debugging and understanding the model's reasoning process.<br/>
@@ -42,6 +33,15 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ReasoningGenerateSummaryJsonConverter))]
         [global::System.Obsolete("This property marked as deprecated.")]
         public global::tryAGI.OpenAI.ReasoningGenerateSummary? GenerateSummary { get; set; }
+
+        /// <summary>
+        /// A summary of the reasoning performed by the model. This can be<br/>
+        /// useful for debugging and understanding the model's reasoning process.<br/>
+        /// One of `auto`, `concise`, or `detailed`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ReasoningSummaryJsonConverter))]
+        public global::tryAGI.OpenAI.ReasoningSummary? Summary { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

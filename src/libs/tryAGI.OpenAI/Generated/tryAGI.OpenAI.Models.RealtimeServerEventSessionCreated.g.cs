@@ -18,13 +18,6 @@ namespace tryAGI.OpenAI
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be `session.created`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventSessionCreatedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeServerEventSessionCreatedType Type { get; set; }
-
-        /// <summary>
         /// A session refers to a single WebSocket connection between a client and the server.<br/>
         /// Once a client creates a session, it then sends JSON-formatted events containing text and audio chunks.<br/>
         /// The server will respond in kind with audio containing voice output, a text transcript of that voice output,<br/>
@@ -35,6 +28,13 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("session")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::tryAGI.OpenAI.RealtimeSession Session { get; set; }
+
+        /// <summary>
+        /// The event type, must be `session.created`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventSessionCreatedTypeJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeServerEventSessionCreatedType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,9 +48,6 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `session.created`.
-        /// </param>
         /// <param name="session">
         /// A session refers to a single WebSocket connection between a client and the server.<br/>
         /// Once a client creates a session, it then sends JSON-formatted events containing text and audio chunks.<br/>
@@ -58,6 +55,9 @@ namespace tryAGI.OpenAI
         /// and function calls (if functions are provided by the client).<br/>
         /// A realtime Session represents the overall client-server interaction, and contains default configuration.<br/>
         /// It has a set of default values which can be updated at any time (via session.update) or on a per-response level (via response.create).
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `session.created`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

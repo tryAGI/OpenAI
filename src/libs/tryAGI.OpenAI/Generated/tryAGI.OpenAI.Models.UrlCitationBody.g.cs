@@ -9,6 +9,27 @@ namespace tryAGI.OpenAI
     public sealed partial class UrlCitationBody
     {
         /// <summary>
+        /// The index of the last character of the URL citation in the message.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("end_index")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int EndIndex { get; set; }
+
+        /// <summary>
+        /// The index of the first character of the URL citation in the message.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("start_index")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int StartIndex { get; set; }
+
+        /// <summary>
+        /// The title of the web resource.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("title")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Title { get; set; }
+
+        /// <summary>
         /// The type of the URL citation. Always `url_citation`.<br/>
         /// Default Value: url_citation
         /// </summary>
@@ -25,27 +46,6 @@ namespace tryAGI.OpenAI
         public required string Url { get; set; }
 
         /// <summary>
-        /// The index of the first character of the URL citation in the message.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("start_index")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int StartIndex { get; set; }
-
-        /// <summary>
-        /// The index of the last character of the URL citation in the message.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("end_index")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int EndIndex { get; set; }
-
-        /// <summary>
-        /// The title of the web resource.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("title")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Title { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -54,6 +54,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="UrlCitationBody" /> class.
         /// </summary>
+        /// <param name="endIndex">
+        /// The index of the last character of the URL citation in the message.
+        /// </param>
+        /// <param name="startIndex">
+        /// The index of the first character of the URL citation in the message.
+        /// </param>
+        /// <param name="title">
+        /// The title of the web resource.
+        /// </param>
         /// <param name="type">
         /// The type of the URL citation. Always `url_citation`.<br/>
         /// Default Value: url_citation
@@ -61,29 +70,20 @@ namespace tryAGI.OpenAI
         /// <param name="url">
         /// The URL of the web resource.
         /// </param>
-        /// <param name="startIndex">
-        /// The index of the first character of the URL citation in the message.
-        /// </param>
-        /// <param name="endIndex">
-        /// The index of the last character of the URL citation in the message.
-        /// </param>
-        /// <param name="title">
-        /// The title of the web resource.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UrlCitationBody(
-            string url,
-            int startIndex,
             int endIndex,
+            int startIndex,
             string title,
+            string url,
             global::tryAGI.OpenAI.UrlCitationBodyType type = global::tryAGI.OpenAI.UrlCitationBodyType.UrlCitation)
         {
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.StartIndex = startIndex;
             this.EndIndex = endIndex;
+            this.StartIndex = startIndex;
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Type = type;
         }
 

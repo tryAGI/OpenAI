@@ -9,6 +9,21 @@ namespace tryAGI.OpenAI
     public sealed partial class VectorStoreFileBatchObject
     {
         /// <summary>
+        /// The Unix timestamp (in seconds) for when the vector store files batch was created.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.DateTimeOffset CreatedAt { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("file_counts")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.VectorStoreFileBatchObjectFileCounts FileCounts { get; set; }
+
+        /// <summary>
         /// The identifier, which can be referenced in API endpoints.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -23,21 +38,6 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.VectorStoreFileBatchObjectObject Object { get; set; }
 
         /// <summary>
-        /// The Unix timestamp (in seconds) for when the vector store files batch was created.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
-
-        /// <summary>
-        /// The ID of the [vector store](/docs/api-reference/vector-stores/object) that the [File](/docs/api-reference/files) is attached to.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("vector_store_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string VectorStoreId { get; set; }
-
-        /// <summary>
         /// The status of the vector store files batch, which can be either `in_progress`, `completed`, `cancelled` or `failed`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
@@ -46,11 +46,11 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.VectorStoreFileBatchObjectStatus Status { get; set; }
 
         /// <summary>
-        /// 
+        /// The ID of the [vector store](/docs/api-reference/vector-stores/object) that the [File](/docs/api-reference/files) is attached to.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("file_counts")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("vector_store_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.VectorStoreFileBatchObjectFileCounts FileCounts { get; set; }
+        public required string VectorStoreId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -61,38 +61,38 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="VectorStoreFileBatchObject" /> class.
         /// </summary>
+        /// <param name="createdAt">
+        /// The Unix timestamp (in seconds) for when the vector store files batch was created.
+        /// </param>
+        /// <param name="fileCounts"></param>
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints.
         /// </param>
         /// <param name="object">
         /// The object type, which is always `vector_store.file_batch`.
         /// </param>
-        /// <param name="createdAt">
-        /// The Unix timestamp (in seconds) for when the vector store files batch was created.
+        /// <param name="status">
+        /// The status of the vector store files batch, which can be either `in_progress`, `completed`, `cancelled` or `failed`.
         /// </param>
         /// <param name="vectorStoreId">
         /// The ID of the [vector store](/docs/api-reference/vector-stores/object) that the [File](/docs/api-reference/files) is attached to.
         /// </param>
-        /// <param name="status">
-        /// The status of the vector store files batch, which can be either `in_progress`, `completed`, `cancelled` or `failed`.
-        /// </param>
-        /// <param name="fileCounts"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public VectorStoreFileBatchObject(
-            string id,
             global::System.DateTimeOffset createdAt,
-            string vectorStoreId,
-            global::tryAGI.OpenAI.VectorStoreFileBatchObjectStatus status,
             global::tryAGI.OpenAI.VectorStoreFileBatchObjectFileCounts fileCounts,
+            string id,
+            global::tryAGI.OpenAI.VectorStoreFileBatchObjectStatus status,
+            string vectorStoreId,
             global::tryAGI.OpenAI.VectorStoreFileBatchObjectObject @object)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;
-            this.VectorStoreId = vectorStoreId ?? throw new global::System.ArgumentNullException(nameof(vectorStoreId));
-            this.Status = status;
             this.FileCounts = fileCounts ?? throw new global::System.ArgumentNullException(nameof(fileCounts));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Status = status;
+            this.VectorStoreId = vectorStoreId ?? throw new global::System.ArgumentNullException(nameof(vectorStoreId));
             this.Object = @object;
         }
 

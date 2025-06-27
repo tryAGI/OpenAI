@@ -9,16 +9,16 @@ namespace tryAGI.OpenAI
     public sealed partial class RunStepDeltaStepDetailsToolCallsFunctionObjectFunction
     {
         /// <summary>
-        /// The name of the function.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string? Name { get; set; }
-
-        /// <summary>
         /// The arguments passed to the function.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
         public string? Arguments { get; set; }
+
+        /// <summary>
+        /// The name of the function.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string? Name { get; set; }
 
         /// <summary>
         /// The output of the function. This will be `null` if the outputs have not been [submitted](/docs/api-reference/runs/submitToolOutputs) yet.
@@ -35,11 +35,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RunStepDeltaStepDetailsToolCallsFunctionObjectFunction" /> class.
         /// </summary>
-        /// <param name="name">
-        /// The name of the function.
-        /// </param>
         /// <param name="arguments">
         /// The arguments passed to the function.
+        /// </param>
+        /// <param name="name">
+        /// The name of the function.
         /// </param>
         /// <param name="output">
         /// The output of the function. This will be `null` if the outputs have not been [submitted](/docs/api-reference/runs/submitToolOutputs) yet.
@@ -48,12 +48,12 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RunStepDeltaStepDetailsToolCallsFunctionObjectFunction(
-            string? name,
             string? arguments,
+            string? name,
             string? output)
         {
-            this.Name = name;
             this.Arguments = arguments;
+            this.Name = name;
             this.Output = output;
         }
 

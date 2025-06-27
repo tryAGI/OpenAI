@@ -9,6 +9,20 @@ namespace tryAGI.OpenAI
     public sealed partial class Scroll
     {
         /// <summary>
+        /// The horizontal scroll distance.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("scroll_x")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int ScrollX { get; set; }
+
+        /// <summary>
+        /// The vertical scroll distance.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("scroll_y")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int ScrollY { get; set; }
+
+        /// <summary>
         /// Specifies the event type. For a scroll action, this property is <br/>
         /// always set to `scroll`.<br/>
         /// Default Value: scroll
@@ -33,20 +47,6 @@ namespace tryAGI.OpenAI
         public required int Y { get; set; }
 
         /// <summary>
-        /// The horizontal scroll distance.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("scroll_x")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ScrollX { get; set; }
-
-        /// <summary>
-        /// The vertical scroll distance.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("scroll_y")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ScrollY { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -55,6 +55,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="Scroll" /> class.
         /// </summary>
+        /// <param name="scrollX">
+        /// The horizontal scroll distance.
+        /// </param>
+        /// <param name="scrollY">
+        /// The vertical scroll distance.
+        /// </param>
         /// <param name="type">
         /// Specifies the event type. For a scroll action, this property is <br/>
         /// always set to `scroll`.<br/>
@@ -66,26 +72,20 @@ namespace tryAGI.OpenAI
         /// <param name="y">
         /// The y-coordinate where the scroll occurred.
         /// </param>
-        /// <param name="scrollX">
-        /// The horizontal scroll distance.
-        /// </param>
-        /// <param name="scrollY">
-        /// The vertical scroll distance.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Scroll(
-            int x,
-            int y,
             int scrollX,
             int scrollY,
+            int x,
+            int y,
             global::tryAGI.OpenAI.ScrollType type = global::tryAGI.OpenAI.ScrollType.Scroll)
         {
-            this.X = x;
-            this.Y = y;
             this.ScrollX = scrollX;
             this.ScrollY = scrollY;
+            this.X = x;
+            this.Y = y;
             this.Type = type;
         }
 

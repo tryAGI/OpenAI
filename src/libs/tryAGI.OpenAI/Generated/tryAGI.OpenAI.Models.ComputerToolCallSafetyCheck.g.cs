@@ -9,18 +9,18 @@ namespace tryAGI.OpenAI
     public sealed partial class ComputerToolCallSafetyCheck
     {
         /// <summary>
-        /// The ID of the pending safety check.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
-
-        /// <summary>
         /// The type of the pending safety check.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Code { get; set; }
+
+        /// <summary>
+        /// The ID of the pending safety check.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Id { get; set; }
 
         /// <summary>
         /// Details about the pending safety check.
@@ -38,11 +38,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ComputerToolCallSafetyCheck" /> class.
         /// </summary>
-        /// <param name="id">
-        /// The ID of the pending safety check.
-        /// </param>
         /// <param name="code">
         /// The type of the pending safety check.
+        /// </param>
+        /// <param name="id">
+        /// The ID of the pending safety check.
         /// </param>
         /// <param name="message">
         /// Details about the pending safety check.
@@ -51,12 +51,12 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ComputerToolCallSafetyCheck(
-            string id,
             string code,
+            string id,
             string message)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
         }
 

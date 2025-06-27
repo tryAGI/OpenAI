@@ -9,13 +9,6 @@ namespace tryAGI.OpenAI
     public sealed partial class OutputAudio
     {
         /// <summary>
-        /// The type of the output audio. Always `output_audio`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OutputAudioTypeJsonConverter))]
-        public global::tryAGI.OpenAI.OutputAudioType Type { get; set; }
-
-        /// <summary>
         /// Base64-encoded audio data from the model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
@@ -30,6 +23,13 @@ namespace tryAGI.OpenAI
         public required string Transcript { get; set; }
 
         /// <summary>
+        /// The type of the output audio. Always `output_audio`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OutputAudioTypeJsonConverter))]
+        public global::tryAGI.OpenAI.OutputAudioType Type { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -38,14 +38,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputAudio" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the output audio. Always `output_audio`.
-        /// </param>
         /// <param name="data">
         /// Base64-encoded audio data from the model.
         /// </param>
         /// <param name="transcript">
         /// The transcript of the audio data from the model.
+        /// </param>
+        /// <param name="type">
+        /// The type of the output audio. Always `output_audio`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -26,17 +26,17 @@ namespace tryAGI.OpenAI
         public string? EventId { get; set; }
 
         /// <summary>
+        /// Create a new Realtime response with these parameters
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("response")]
+        public global::tryAGI.OpenAI.RealtimeResponseCreateParams? Response { get; set; }
+
+        /// <summary>
         /// The event type, must be `response.create`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeClientEventResponseCreateTypeJsonConverter))]
         public global::tryAGI.OpenAI.RealtimeClientEventResponseCreateType Type { get; set; }
-
-        /// <summary>
-        /// Create a new Realtime response with these parameters
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("response")]
-        public global::tryAGI.OpenAI.RealtimeResponseCreateParams? Response { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -50,23 +50,23 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// Optional client-generated ID used to identify this event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `response.create`.
-        /// </param>
         /// <param name="response">
         /// Create a new Realtime response with these parameters
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `response.create`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeClientEventResponseCreate(
             string? eventId,
-            global::tryAGI.OpenAI.RealtimeClientEventResponseCreateType type,
-            global::tryAGI.OpenAI.RealtimeResponseCreateParams? response)
+            global::tryAGI.OpenAI.RealtimeResponseCreateParams? response,
+            global::tryAGI.OpenAI.RealtimeClientEventResponseCreateType type)
         {
             this.EventId = eventId;
-            this.Type = type;
             this.Response = response;
+            this.Type = type;
         }
 
         /// <summary>

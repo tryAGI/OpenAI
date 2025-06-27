@@ -9,16 +9,16 @@ namespace tryAGI.OpenAI
     public sealed partial class AuditLogActorSession
     {
         /// <summary>
-        /// The user who performed the audit logged action.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("user")]
-        public global::tryAGI.OpenAI.AuditLogActorUser? User { get; set; }
-
-        /// <summary>
         /// The IP address from which the action was performed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ip_address")]
         public string? IpAddress { get; set; }
+
+        /// <summary>
+        /// The user who performed the audit logged action.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user")]
+        public global::tryAGI.OpenAI.AuditLogActorUser? User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,21 +29,21 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="AuditLogActorSession" /> class.
         /// </summary>
-        /// <param name="user">
-        /// The user who performed the audit logged action.
-        /// </param>
         /// <param name="ipAddress">
         /// The IP address from which the action was performed.
+        /// </param>
+        /// <param name="user">
+        /// The user who performed the audit logged action.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AuditLogActorSession(
-            global::tryAGI.OpenAI.AuditLogActorUser? user,
-            string? ipAddress)
+            string? ipAddress,
+            global::tryAGI.OpenAI.AuditLogActorUser? user)
         {
-            this.User = user;
             this.IpAddress = ipAddress;
+            this.User = user;
         }
 
         /// <summary>

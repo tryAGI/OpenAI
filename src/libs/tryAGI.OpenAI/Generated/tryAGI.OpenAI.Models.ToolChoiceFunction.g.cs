@@ -9,18 +9,18 @@ namespace tryAGI.OpenAI
     public sealed partial class ToolChoiceFunction
     {
         /// <summary>
-        /// For function calling, the type is always `function`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ToolChoiceFunctionTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ToolChoiceFunctionType Type { get; set; }
-
-        /// <summary>
         /// The name of the function to call.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
+
+        /// <summary>
+        /// For function calling, the type is always `function`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ToolChoiceFunctionTypeJsonConverter))]
+        public global::tryAGI.OpenAI.ToolChoiceFunctionType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,11 +31,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolChoiceFunction" /> class.
         /// </summary>
-        /// <param name="type">
-        /// For function calling, the type is always `function`.
-        /// </param>
         /// <param name="name">
         /// The name of the function to call.
+        /// </param>
+        /// <param name="type">
+        /// For function calling, the type is always `function`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

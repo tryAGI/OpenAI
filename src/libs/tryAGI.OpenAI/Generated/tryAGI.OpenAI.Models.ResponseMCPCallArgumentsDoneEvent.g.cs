@@ -9,18 +9,11 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseMCPCallArgumentsDoneEvent
     {
         /// <summary>
-        /// The type of the event. Always 'response.mcp_call.arguments_done'.
+        /// The finalized arguments for the MCP tool call.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseMCPCallArgumentsDoneEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseMCPCallArgumentsDoneEventType Type { get; set; }
-
-        /// <summary>
-        /// The index of the output item in the response's output array.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("output_index")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int OutputIndex { get; set; }
+        public required object Arguments { get; set; }
 
         /// <summary>
         /// The unique identifier of the MCP tool call item being processed.
@@ -30,11 +23,11 @@ namespace tryAGI.OpenAI
         public required string ItemId { get; set; }
 
         /// <summary>
-        /// The finalized arguments for the MCP tool call.
+        /// The index of the output item in the response's output array.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Arguments { get; set; }
+        public required int OutputIndex { get; set; }
 
         /// <summary>
         /// The sequence number of this event.
@@ -42,6 +35,13 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int SequenceNumber { get; set; }
+
+        /// <summary>
+        /// The type of the event. Always 'response.mcp_call.arguments_done'.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseMCPCallArgumentsDoneEventTypeJsonConverter))]
+        public global::tryAGI.OpenAI.ResponseMCPCallArgumentsDoneEventType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,34 +52,34 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseMCPCallArgumentsDoneEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always 'response.mcp_call.arguments_done'.
-        /// </param>
-        /// <param name="outputIndex">
-        /// The index of the output item in the response's output array.
+        /// <param name="arguments">
+        /// The finalized arguments for the MCP tool call.
         /// </param>
         /// <param name="itemId">
         /// The unique identifier of the MCP tool call item being processed.
         /// </param>
-        /// <param name="arguments">
-        /// The finalized arguments for the MCP tool call.
+        /// <param name="outputIndex">
+        /// The index of the output item in the response's output array.
         /// </param>
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
+        /// </param>
+        /// <param name="type">
+        /// The type of the event. Always 'response.mcp_call.arguments_done'.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseMCPCallArgumentsDoneEvent(
-            int outputIndex,
-            string itemId,
             object arguments,
+            string itemId,
+            int outputIndex,
             int sequenceNumber,
             global::tryAGI.OpenAI.ResponseMCPCallArgumentsDoneEventType type)
         {
-            this.OutputIndex = outputIndex;
-            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
+            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
+            this.OutputIndex = outputIndex;
             this.SequenceNumber = sequenceNumber;
             this.Type = type;
         }

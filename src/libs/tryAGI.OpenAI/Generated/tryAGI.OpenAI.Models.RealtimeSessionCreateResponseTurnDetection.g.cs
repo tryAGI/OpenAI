@@ -11,20 +11,6 @@ namespace tryAGI.OpenAI
     public sealed partial class RealtimeSessionCreateResponseTurnDetection
     {
         /// <summary>
-        /// Type of turn detection, only `server_vad` is currently supported.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; }
-
-        /// <summary>
-        /// Activation threshold for VAD (0.0 to 1.0), this defaults to 0.5. A <br/>
-        /// higher threshold will require louder audio to activate the model, and <br/>
-        /// thus might perform better in noisy environments.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("threshold")]
-        public double? Threshold { get; set; }
-
-        /// <summary>
         /// Amount of audio to include before the VAD detected speech (in <br/>
         /// milliseconds). Defaults to 300ms.
         /// </summary>
@@ -40,6 +26,20 @@ namespace tryAGI.OpenAI
         public int? SilenceDurationMs { get; set; }
 
         /// <summary>
+        /// Activation threshold for VAD (0.0 to 1.0), this defaults to 0.5. A <br/>
+        /// higher threshold will require louder audio to activate the model, and <br/>
+        /// thus might perform better in noisy environments.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("threshold")]
+        public double? Threshold { get; set; }
+
+        /// <summary>
+        /// Type of turn detection, only `server_vad` is currently supported.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        public string? Type { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -48,14 +48,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeSessionCreateResponseTurnDetection" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Type of turn detection, only `server_vad` is currently supported.
-        /// </param>
-        /// <param name="threshold">
-        /// Activation threshold for VAD (0.0 to 1.0), this defaults to 0.5. A <br/>
-        /// higher threshold will require louder audio to activate the model, and <br/>
-        /// thus might perform better in noisy environments.
-        /// </param>
         /// <param name="prefixPaddingMs">
         /// Amount of audio to include before the VAD detected speech (in <br/>
         /// milliseconds). Defaults to 300ms.
@@ -65,19 +57,27 @@ namespace tryAGI.OpenAI
         /// to 500ms. With shorter values the model will respond more quickly, <br/>
         /// but may jump in on short pauses from the user.
         /// </param>
+        /// <param name="threshold">
+        /// Activation threshold for VAD (0.0 to 1.0), this defaults to 0.5. A <br/>
+        /// higher threshold will require louder audio to activate the model, and <br/>
+        /// thus might perform better in noisy environments.
+        /// </param>
+        /// <param name="type">
+        /// Type of turn detection, only `server_vad` is currently supported.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeSessionCreateResponseTurnDetection(
-            string? type,
-            double? threshold,
             int? prefixPaddingMs,
-            int? silenceDurationMs)
+            int? silenceDurationMs,
+            double? threshold,
+            string? type)
         {
-            this.Type = type;
-            this.Threshold = threshold;
             this.PrefixPaddingMs = prefixPaddingMs;
             this.SilenceDurationMs = silenceDurationMs;
+            this.Threshold = threshold;
+            this.Type = type;
         }
 
         /// <summary>

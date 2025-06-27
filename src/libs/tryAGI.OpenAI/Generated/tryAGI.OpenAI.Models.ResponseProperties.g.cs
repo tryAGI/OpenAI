@@ -11,30 +11,6 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseProperties
     {
         /// <summary>
-        /// The unique ID of the previous response to the model. Use this to<br/>
-        /// create multi-turn conversations. Learn more about <br/>
-        /// [conversation state](/docs/guides/conversation-state).
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("previous_response_id")]
-        public string? PreviousResponseId { get; set; }
-
-        /// <summary>
-        /// Example: gpt-4o
-        /// </summary>
-        /// <example>gpt-4o</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ModelIdsResponsesJsonConverter))]
-        public global::tryAGI.OpenAI.ModelIdsResponses? Model { get; set; }
-
-        /// <summary>
-        /// **o-series models only**<br/>
-        /// Configuration options for <br/>
-        /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("reasoning")]
-        public global::tryAGI.OpenAI.Reasoning? Reasoning { get; set; }
-
-        /// <summary>
         /// Whether to run the model response in the background. <br/>
         /// [Learn more](/docs/guides/background).<br/>
         /// Default Value: false
@@ -49,6 +25,43 @@ namespace tryAGI.OpenAI
         public int? MaxOutputTokens { get; set; }
 
         /// <summary>
+        /// The maximum number of total calls to built-in tools that can be processed in a response. This maximum number applies across all built-in tool calls, not per individual tool. Any further attempts to call a tool by the model will be ignored.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_tool_calls")]
+        public int? MaxToolCalls { get; set; }
+
+        /// <summary>
+        /// Example: gpt-4o
+        /// </summary>
+        /// <example>gpt-4o</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ModelIdsResponsesJsonConverter))]
+        public global::tryAGI.OpenAI.ModelIdsResponses? Model { get; set; }
+
+        /// <summary>
+        /// The unique ID of the previous response to the model. Use this to<br/>
+        /// create multi-turn conversations. Learn more about <br/>
+        /// [conversation state](/docs/guides/conversation-state).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("previous_response_id")]
+        public string? PreviousResponseId { get; set; }
+
+        /// <summary>
+        /// Reference to a prompt template and its variables. <br/>
+        /// [Learn more](/docs/guides/text?api-mode=responses#reusable-prompts).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
+        public global::tryAGI.OpenAI.Prompt2? Prompt { get; set; }
+
+        /// <summary>
+        /// **o-series models only**<br/>
+        /// Configuration options for <br/>
+        /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reasoning")]
+        public global::tryAGI.OpenAI.Reasoning? Reasoning { get; set; }
+
+        /// <summary>
         /// Configuration options for a text response from the model. Can be plain<br/>
         /// text or structured JSON data. Learn more:<br/>
         /// - [Text inputs and outputs](/docs/guides/text)<br/>
@@ -56,6 +69,15 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         public global::tryAGI.OpenAI.ResponsePropertiesText? Text { get; set; }
+
+        /// <summary>
+        /// How the model should select which tool (or tools) to use when generating<br/>
+        /// a response. See the `tools` parameter to see how to specify which tools<br/>
+        /// the model can call.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceTypes, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP>))]
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceTypes, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP>? ToolChoice { get; set; }
 
         /// <summary>
         /// An array of tools the model may call while generating a response. You <br/>
@@ -71,22 +93,6 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Tool>? Tools { get; set; }
-
-        /// <summary>
-        /// How the model should select which tool (or tools) to use when generating<br/>
-        /// a response. See the `tools` parameter to see how to specify which tools<br/>
-        /// the model can call.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceTypes, global::tryAGI.OpenAI.ToolChoiceFunction>))]
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceTypes, global::tryAGI.OpenAI.ToolChoiceFunction>? ToolChoice { get; set; }
-
-        /// <summary>
-        /// Reference to a prompt template and its variables. <br/>
-        /// [Learn more](/docs/guides/text?api-mode=responses#reusable-prompts).
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
-        public global::tryAGI.OpenAI.Prompt2? Prompt { get; set; }
 
         /// <summary>
         /// The truncation strategy to use for the model response.<br/>
@@ -111,19 +117,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseProperties" /> class.
         /// </summary>
-        /// <param name="previousResponseId">
-        /// The unique ID of the previous response to the model. Use this to<br/>
-        /// create multi-turn conversations. Learn more about <br/>
-        /// [conversation state](/docs/guides/conversation-state).
-        /// </param>
-        /// <param name="model">
-        /// Example: gpt-4o
-        /// </param>
-        /// <param name="reasoning">
-        /// **o-series models only**<br/>
-        /// Configuration options for <br/>
-        /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).
-        /// </param>
         /// <param name="background">
         /// Whether to run the model response in the background. <br/>
         /// [Learn more](/docs/guides/background).<br/>
@@ -132,11 +125,36 @@ namespace tryAGI.OpenAI
         /// <param name="maxOutputTokens">
         /// An upper bound for the number of tokens that can be generated for a response, including visible output tokens and [reasoning tokens](/docs/guides/reasoning).
         /// </param>
+        /// <param name="maxToolCalls">
+        /// The maximum number of total calls to built-in tools that can be processed in a response. This maximum number applies across all built-in tool calls, not per individual tool. Any further attempts to call a tool by the model will be ignored.
+        /// </param>
+        /// <param name="model">
+        /// Example: gpt-4o
+        /// </param>
+        /// <param name="previousResponseId">
+        /// The unique ID of the previous response to the model. Use this to<br/>
+        /// create multi-turn conversations. Learn more about <br/>
+        /// [conversation state](/docs/guides/conversation-state).
+        /// </param>
+        /// <param name="prompt">
+        /// Reference to a prompt template and its variables. <br/>
+        /// [Learn more](/docs/guides/text?api-mode=responses#reusable-prompts).
+        /// </param>
+        /// <param name="reasoning">
+        /// **o-series models only**<br/>
+        /// Configuration options for <br/>
+        /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).
+        /// </param>
         /// <param name="text">
         /// Configuration options for a text response from the model. Can be plain<br/>
         /// text or structured JSON data. Learn more:<br/>
         /// - [Text inputs and outputs](/docs/guides/text)<br/>
         /// - [Structured Outputs](/docs/guides/structured-outputs)
+        /// </param>
+        /// <param name="toolChoice">
+        /// How the model should select which tool (or tools) to use when generating<br/>
+        /// a response. See the `tools` parameter to see how to specify which tools<br/>
+        /// the model can call.
         /// </param>
         /// <param name="tools">
         /// An array of tools the model may call while generating a response. You <br/>
@@ -149,15 +167,6 @@ namespace tryAGI.OpenAI
         /// - **Function calls (custom tools)**: Functions that are defined by you,<br/>
         ///   enabling the model to call your own code. Learn more about<br/>
         ///   [function calling](/docs/guides/function-calling).
-        /// </param>
-        /// <param name="toolChoice">
-        /// How the model should select which tool (or tools) to use when generating<br/>
-        /// a response. See the `tools` parameter to see how to specify which tools<br/>
-        /// the model can call.
-        /// </param>
-        /// <param name="prompt">
-        /// Reference to a prompt template and its variables. <br/>
-        /// [Learn more](/docs/guides/text?api-mode=responses#reusable-prompts).
         /// </param>
         /// <param name="truncation">
         /// The truncation strategy to use for the model response.<br/>
@@ -173,26 +182,28 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseProperties(
-            string? previousResponseId,
-            global::tryAGI.OpenAI.ModelIdsResponses? model,
-            global::tryAGI.OpenAI.Reasoning? reasoning,
             bool? background,
             int? maxOutputTokens,
-            global::tryAGI.OpenAI.ResponsePropertiesText? text,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Tool>? tools,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceTypes, global::tryAGI.OpenAI.ToolChoiceFunction>? toolChoice,
+            int? maxToolCalls,
+            global::tryAGI.OpenAI.ModelIdsResponses? model,
+            string? previousResponseId,
             global::tryAGI.OpenAI.Prompt2? prompt,
+            global::tryAGI.OpenAI.Reasoning? reasoning,
+            global::tryAGI.OpenAI.ResponsePropertiesText? text,
+            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceTypes, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP>? toolChoice,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Tool>? tools,
             global::tryAGI.OpenAI.ResponsePropertiesTruncation? truncation)
         {
-            this.PreviousResponseId = previousResponseId;
-            this.Model = model;
-            this.Reasoning = reasoning;
             this.Background = background;
             this.MaxOutputTokens = maxOutputTokens;
-            this.Text = text;
-            this.Tools = tools;
-            this.ToolChoice = toolChoice;
+            this.MaxToolCalls = maxToolCalls;
+            this.Model = model;
+            this.PreviousResponseId = previousResponseId;
             this.Prompt = prompt;
+            this.Reasoning = reasoning;
+            this.Text = text;
+            this.ToolChoice = toolChoice;
+            this.Tools = tools;
             this.Truncation = truncation;
         }
 

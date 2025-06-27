@@ -9,19 +9,19 @@ namespace tryAGI.OpenAI
     public sealed partial class Model14
     {
         /// <summary>
-        /// The model identifier, which can be referenced in the API endpoints.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
-
-        /// <summary>
         /// The Unix timestamp (in seconds) when the model was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset Created { get; set; }
+
+        /// <summary>
+        /// The model identifier, which can be referenced in the API endpoints.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Id { get; set; }
 
         /// <summary>
         /// The object type, which is always "model".
@@ -46,11 +46,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="Model14" /> class.
         /// </summary>
-        /// <param name="id">
-        /// The model identifier, which can be referenced in the API endpoints.
-        /// </param>
         /// <param name="created">
         /// The Unix timestamp (in seconds) when the model was created.
+        /// </param>
+        /// <param name="id">
+        /// The model identifier, which can be referenced in the API endpoints.
         /// </param>
         /// <param name="object">
         /// The object type, which is always "model".
@@ -62,13 +62,13 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Model14(
-            string id,
             global::System.DateTimeOffset created,
+            string id,
             string ownedBy,
             global::tryAGI.OpenAI.ModelObject @object)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Created = created;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.OwnedBy = ownedBy ?? throw new global::System.ArgumentNullException(nameof(ownedBy));
             this.Object = @object;
         }

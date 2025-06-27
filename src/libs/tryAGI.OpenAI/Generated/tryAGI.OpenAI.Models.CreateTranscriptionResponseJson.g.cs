@@ -11,17 +11,17 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateTranscriptionResponseJson
     {
         /// <summary>
+        /// The log probabilities of the tokens in the transcription. Only returned with the models `gpt-4o-transcribe` and `gpt-4o-mini-transcribe` if `logprobs` is added to the `include` array.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateTranscriptionResponseJsonLogprob>? Logprobs { get; set; }
+
+        /// <summary>
         /// The transcribed text.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Text { get; set; }
-
-        /// <summary>
-        /// The log probabilities of the tokens in the transcription. Only returned with the models `gpt-4o-transcribe` and `gpt-4o-mini-transcribe` if `logprobs` is added to the `include` array.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateTranscriptionResponseJsonLogprob>? Logprobs { get; set; }
 
         /// <summary>
         /// Token usage statistics for the request.
@@ -39,11 +39,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateTranscriptionResponseJson" /> class.
         /// </summary>
-        /// <param name="text">
-        /// The transcribed text.
-        /// </param>
         /// <param name="logprobs">
         /// The log probabilities of the tokens in the transcription. Only returned with the models `gpt-4o-transcribe` and `gpt-4o-mini-transcribe` if `logprobs` is added to the `include` array.
+        /// </param>
+        /// <param name="text">
+        /// The transcribed text.
         /// </param>
         /// <param name="usage">
         /// Token usage statistics for the request.

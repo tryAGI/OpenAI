@@ -170,28 +170,28 @@ namespace tryAGI.OpenAI
         /// Create Container<br/>
         /// Creates a container.
         /// </summary>
-        /// <param name="name">
-        /// Name of the container to create.
+        /// <param name="expiresAfter">
+        /// Container expiration time in seconds relative to the 'anchor' time.
         /// </param>
         /// <param name="fileIds">
         /// IDs of files to copy to the container.
         /// </param>
-        /// <param name="expiresAfter">
-        /// Container expiration time in seconds relative to the 'anchor' time.
+        /// <param name="name">
+        /// Name of the container to create.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ContainerResource> CreateContainerAsync(
             string name,
-            global::System.Collections.Generic.IList<string>? fileIds = default,
             global::tryAGI.OpenAI.CreateContainerBodyExpiresAfter? expiresAfter = default,
+            global::System.Collections.Generic.IList<string>? fileIds = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::tryAGI.OpenAI.CreateContainerBody
             {
-                Name = name,
-                FileIds = fileIds,
                 ExpiresAfter = expiresAfter,
+                FileIds = fileIds,
+                Name = name,
             };
 
             return await CreateContainerAsync(

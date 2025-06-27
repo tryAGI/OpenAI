@@ -9,19 +9,6 @@ namespace tryAGI.OpenAI
     public sealed partial class RealtimeSessionCreateResponseTool
     {
         /// <summary>
-        /// The type of the tool, i.e. `function`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeSessionCreateResponseToolTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseToolType? Type { get; set; }
-
-        /// <summary>
-        /// The name of the function.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string? Name { get; set; }
-
-        /// <summary>
         /// The description of the function, including guidance on when and how <br/>
         /// to call it, and guidance about what to tell the user when calling <br/>
         /// (if anything).
@@ -30,10 +17,23 @@ namespace tryAGI.OpenAI
         public string? Description { get; set; }
 
         /// <summary>
+        /// The name of the function.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string? Name { get; set; }
+
+        /// <summary>
         /// Parameters of the function in JSON Schema.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
         public object? Parameters { get; set; }
+
+        /// <summary>
+        /// The type of the tool, i.e. `function`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeSessionCreateResponseToolTypeJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseToolType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,33 +44,33 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeSessionCreateResponseTool" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the tool, i.e. `function`.
-        /// </param>
-        /// <param name="name">
-        /// The name of the function.
-        /// </param>
         /// <param name="description">
         /// The description of the function, including guidance on when and how <br/>
         /// to call it, and guidance about what to tell the user when calling <br/>
         /// (if anything).
         /// </param>
+        /// <param name="name">
+        /// The name of the function.
+        /// </param>
         /// <param name="parameters">
         /// Parameters of the function in JSON Schema.
+        /// </param>
+        /// <param name="type">
+        /// The type of the tool, i.e. `function`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeSessionCreateResponseTool(
-            global::tryAGI.OpenAI.RealtimeSessionCreateResponseToolType? type,
-            string? name,
             string? description,
-            object? parameters)
+            string? name,
+            object? parameters,
+            global::tryAGI.OpenAI.RealtimeSessionCreateResponseToolType? type)
         {
-            this.Type = type;
-            this.Name = name;
             this.Description = description;
+            this.Name = name;
             this.Parameters = parameters;
+            this.Type = type;
         }
 
         /// <summary>

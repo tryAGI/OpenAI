@@ -11,18 +11,18 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateEvalCompletionsRunDataSourceInputMessagesVariant1
     {
         /// <summary>
-        /// The type of input messages. Always `template`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateEvalCompletionsRunDataSourceInputMessagesVariant1TypeJsonConverter))]
-        public global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSourceInputMessagesVariant1Type Type { get; set; }
-
-        /// <summary>
         /// A list of chat messages forming the prompt or context. May include variable references to the `item` namespace, ie {{item.name}}.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("template")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EasyInputMessage, global::tryAGI.OpenAI.EvalItem>> Template { get; set; }
+
+        /// <summary>
+        /// The type of input messages. Always `template`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateEvalCompletionsRunDataSourceInputMessagesVariant1TypeJsonConverter))]
+        public global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSourceInputMessagesVariant1Type Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,11 +33,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateEvalCompletionsRunDataSourceInputMessagesVariant1" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of input messages. Always `template`.
-        /// </param>
         /// <param name="template">
         /// A list of chat messages forming the prompt or context. May include variable references to the `item` namespace, ie {{item.name}}.
+        /// </param>
+        /// <param name="type">
+        /// The type of input messages. Always `template`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

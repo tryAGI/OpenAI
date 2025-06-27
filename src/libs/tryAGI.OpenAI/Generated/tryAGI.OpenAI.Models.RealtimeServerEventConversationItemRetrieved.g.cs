@@ -16,13 +16,6 @@ namespace tryAGI.OpenAI
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be `conversation.item.retrieved`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventConversationItemRetrievedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemRetrievedType Type { get; set; }
-
-        /// <summary>
         /// A realtime Item is of three types: message, function_call, or function_call_output.<br/>
         /// A message item can contain text or audio.<br/>
         /// A function_call item indicates a model's desire to call a function, which is the only tool supported for now<br/>
@@ -32,6 +25,13 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("item")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::tryAGI.OpenAI.RealtimeConversationItem Item { get; set; }
+
+        /// <summary>
+        /// The event type, must be `conversation.item.retrieved`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventConversationItemRetrievedTypeJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemRetrievedType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,15 +45,15 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `conversation.item.retrieved`.
-        /// </param>
         /// <param name="item">
         /// A realtime Item is of three types: message, function_call, or function_call_output.<br/>
         /// A message item can contain text or audio.<br/>
         /// A function_call item indicates a model's desire to call a function, which is the only tool supported for now<br/>
         /// A function_call_output item indicates a function response.<br/>
         /// The client may add and remove message and function_call_output Items using conversation.item.create and conversation.item.delete.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `conversation.item.retrieved`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -170,11 +170,11 @@ namespace tryAGI.OpenAI
         /// Upload a certificate to the organization. This does **not** automatically activate the certificate.<br/>
         /// Organizations can upload up to 50 certificates.
         /// </summary>
-        /// <param name="name">
-        /// An optional name for the certificate
-        /// </param>
         /// <param name="content">
         /// The certificate content in PEM format
+        /// </param>
+        /// <param name="name">
+        /// An optional name for the certificate
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -185,8 +185,8 @@ namespace tryAGI.OpenAI
         {
             var __request = new global::tryAGI.OpenAI.UploadCertificateRequest
             {
-                Name = name,
                 Content = content,
+                Name = name,
             };
 
             return await UploadCertificateAsync(

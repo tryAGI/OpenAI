@@ -11,13 +11,6 @@ namespace tryAGI.OpenAI
     public sealed partial class CodeInterpreterTool
     {
         /// <summary>
-        /// The type of the code interpreter tool. Always `code_interpreter`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CodeInterpreterToolTypeJsonConverter))]
-        public global::tryAGI.OpenAI.CodeInterpreterToolType Type { get; set; }
-
-        /// <summary>
         /// The code interpreter container. Can be a container ID or an object that<br/>
         /// specifies uploaded file IDs to make available to your code.
         /// </summary>
@@ -25,6 +18,13 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, global::tryAGI.OpenAI.CodeInterpreterToolAuto>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.CodeInterpreterToolAuto> Container { get; set; }
+
+        /// <summary>
+        /// The type of the code interpreter tool. Always `code_interpreter`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CodeInterpreterToolTypeJsonConverter))]
+        public global::tryAGI.OpenAI.CodeInterpreterToolType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -35,12 +35,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CodeInterpreterTool" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the code interpreter tool. Always `code_interpreter`.
-        /// </param>
         /// <param name="container">
         /// The code interpreter container. Can be a container ID or an object that<br/>
         /// specifies uploaded file IDs to make available to your code.
+        /// </param>
+        /// <param name="type">
+        /// The type of the code interpreter tool. Always `code_interpreter`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

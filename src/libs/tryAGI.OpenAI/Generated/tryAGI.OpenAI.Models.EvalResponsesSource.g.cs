@@ -9,11 +9,22 @@ namespace tryAGI.OpenAI
     public sealed partial class EvalResponsesSource
     {
         /// <summary>
-        /// The type of run data source. Always `responses`.
+        /// Only include items created after this timestamp (inclusive). This is a query parameter used to select responses.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EvalResponsesSourceTypeJsonConverter))]
-        public global::tryAGI.OpenAI.EvalResponsesSourceType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_after")]
+        public int? CreatedAfter { get; set; }
+
+        /// <summary>
+        /// Only include items created before this timestamp (inclusive). This is a query parameter used to select responses.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_before")]
+        public int? CreatedBefore { get; set; }
+
+        /// <summary>
+        /// Optional string to search the 'instructions' field. This is a query parameter used to select responses.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("instructions_search")]
+        public string? InstructionsSearch { get; set; }
 
         /// <summary>
         /// Metadata filter for the responses. This is a query parameter used to select responses.
@@ -26,24 +37,6 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         public string? Model { get; set; }
-
-        /// <summary>
-        /// Optional string to search the 'instructions' field. This is a query parameter used to select responses.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("instructions_search")]
-        public string? InstructionsSearch { get; set; }
-
-        /// <summary>
-        /// Only include items created after this timestamp (inclusive). This is a query parameter used to select responses.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("created_after")]
-        public int? CreatedAfter { get; set; }
-
-        /// <summary>
-        /// Only include items created before this timestamp (inclusive). This is a query parameter used to select responses.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("created_before")]
-        public int? CreatedBefore { get; set; }
 
         /// <summary>
         /// **o-series models only** <br/>
@@ -65,22 +58,29 @@ namespace tryAGI.OpenAI
         public double? Temperature { get; set; }
 
         /// <summary>
+        /// List of tool names. This is a query parameter used to select responses.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
+        public global::System.Collections.Generic.IList<string>? Tools { get; set; }
+
+        /// <summary>
         /// Nucleus sampling parameter. This is a query parameter used to select responses.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_p")]
         public double? TopP { get; set; }
 
         /// <summary>
+        /// The type of run data source. Always `responses`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EvalResponsesSourceTypeJsonConverter))]
+        public global::tryAGI.OpenAI.EvalResponsesSourceType Type { get; set; }
+
+        /// <summary>
         /// List of user identifiers. This is a query parameter used to select responses.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("users")]
         public global::System.Collections.Generic.IList<string>? Users { get; set; }
-
-        /// <summary>
-        /// List of tool names. This is a query parameter used to select responses.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        public global::System.Collections.Generic.IList<string>? Tools { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -91,23 +91,20 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="EvalResponsesSource" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of run data source. Always `responses`.
+        /// <param name="createdAfter">
+        /// Only include items created after this timestamp (inclusive). This is a query parameter used to select responses.
+        /// </param>
+        /// <param name="createdBefore">
+        /// Only include items created before this timestamp (inclusive). This is a query parameter used to select responses.
+        /// </param>
+        /// <param name="instructionsSearch">
+        /// Optional string to search the 'instructions' field. This is a query parameter used to select responses.
         /// </param>
         /// <param name="metadata">
         /// Metadata filter for the responses. This is a query parameter used to select responses.
         /// </param>
         /// <param name="model">
         /// The name of the model to find responses for. This is a query parameter used to select responses.
-        /// </param>
-        /// <param name="instructionsSearch">
-        /// Optional string to search the 'instructions' field. This is a query parameter used to select responses.
-        /// </param>
-        /// <param name="createdAfter">
-        /// Only include items created after this timestamp (inclusive). This is a query parameter used to select responses.
-        /// </param>
-        /// <param name="createdBefore">
-        /// Only include items created before this timestamp (inclusive). This is a query parameter used to select responses.
         /// </param>
         /// <param name="reasoningEffort">
         /// **o-series models only** <br/>
@@ -121,42 +118,45 @@ namespace tryAGI.OpenAI
         /// <param name="temperature">
         /// Sampling temperature. This is a query parameter used to select responses.
         /// </param>
+        /// <param name="tools">
+        /// List of tool names. This is a query parameter used to select responses.
+        /// </param>
         /// <param name="topP">
         /// Nucleus sampling parameter. This is a query parameter used to select responses.
         /// </param>
+        /// <param name="type">
+        /// The type of run data source. Always `responses`.
+        /// </param>
         /// <param name="users">
         /// List of user identifiers. This is a query parameter used to select responses.
-        /// </param>
-        /// <param name="tools">
-        /// List of tool names. This is a query parameter used to select responses.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public EvalResponsesSource(
-            global::tryAGI.OpenAI.EvalResponsesSourceType type,
-            object? metadata,
-            string? model,
-            string? instructionsSearch,
             int? createdAfter,
             int? createdBefore,
+            string? instructionsSearch,
+            object? metadata,
+            string? model,
             global::tryAGI.OpenAI.ReasoningEffort? reasoningEffort,
             double? temperature,
+            global::System.Collections.Generic.IList<string>? tools,
             double? topP,
-            global::System.Collections.Generic.IList<string>? users,
-            global::System.Collections.Generic.IList<string>? tools)
+            global::tryAGI.OpenAI.EvalResponsesSourceType type,
+            global::System.Collections.Generic.IList<string>? users)
         {
-            this.Type = type;
-            this.Metadata = metadata;
-            this.Model = model;
-            this.InstructionsSearch = instructionsSearch;
             this.CreatedAfter = createdAfter;
             this.CreatedBefore = createdBefore;
+            this.InstructionsSearch = instructionsSearch;
+            this.Metadata = metadata;
+            this.Model = model;
             this.ReasoningEffort = reasoningEffort;
             this.Temperature = temperature;
-            this.TopP = topP;
-            this.Users = users;
             this.Tools = tools;
+            this.TopP = topP;
+            this.Type = type;
+            this.Users = users;
         }
 
         /// <summary>

@@ -10,12 +10,6 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateChatCompletionRequestVariant2WebSearchOptions
     {
         /// <summary>
-        /// Approximate location parameters for the search.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("user_location")]
-        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2WebSearchOptionsUserLocation? UserLocation { get; set; }
-
-        /// <summary>
         /// High level guidance for the amount of context window space to use for the <br/>
         /// search. One of `low`, `medium`, or `high`. `medium` is the default.<br/>
         /// Default Value: medium
@@ -23,6 +17,12 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("search_context_size")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebSearchContextSizeJsonConverter))]
         public global::tryAGI.OpenAI.WebSearchContextSize? SearchContextSize { get; set; }
+
+        /// <summary>
+        /// Approximate location parameters for the search.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user_location")]
+        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2WebSearchOptionsUserLocation? UserLocation { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,23 +33,23 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateChatCompletionRequestVariant2WebSearchOptions" /> class.
         /// </summary>
-        /// <param name="userLocation">
-        /// Approximate location parameters for the search.
-        /// </param>
         /// <param name="searchContextSize">
         /// High level guidance for the amount of context window space to use for the <br/>
         /// search. One of `low`, `medium`, or `high`. `medium` is the default.<br/>
         /// Default Value: medium
         /// </param>
+        /// <param name="userLocation">
+        /// Approximate location parameters for the search.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateChatCompletionRequestVariant2WebSearchOptions(
-            global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2WebSearchOptionsUserLocation? userLocation,
-            global::tryAGI.OpenAI.WebSearchContextSize? searchContextSize)
+            global::tryAGI.OpenAI.WebSearchContextSize? searchContextSize,
+            global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2WebSearchOptionsUserLocation? userLocation)
         {
-            this.UserLocation = userLocation;
             this.SearchContextSize = searchContextSize;
+            this.UserLocation = userLocation;
         }
 
         /// <summary>

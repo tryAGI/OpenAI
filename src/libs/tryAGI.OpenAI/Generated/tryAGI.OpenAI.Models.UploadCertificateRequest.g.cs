@@ -9,17 +9,17 @@ namespace tryAGI.OpenAI
     public sealed partial class UploadCertificateRequest
     {
         /// <summary>
-        /// An optional name for the certificate
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string? Name { get; set; }
-
-        /// <summary>
         /// The certificate content in PEM format
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Content { get; set; }
+
+        /// <summary>
+        /// An optional name for the certificate
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string? Name { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,11 +30,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="UploadCertificateRequest" /> class.
         /// </summary>
-        /// <param name="name">
-        /// An optional name for the certificate
-        /// </param>
         /// <param name="content">
         /// The certificate content in PEM format
+        /// </param>
+        /// <param name="name">
+        /// An optional name for the certificate
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -11,13 +11,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectListResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ProjectListResponseObject Object { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Project> Data { get; set; }
@@ -32,6 +25,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool HasMore { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string LastId { get; set; }
@@ -39,9 +39,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool HasMore { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectListResponseObjectJsonConverter))]
+        public global::tryAGI.OpenAI.ProjectListResponseObject Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,25 +52,25 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectListResponse" /> class.
         /// </summary>
-        /// <param name="object"></param>
         /// <param name="data"></param>
         /// <param name="firstId"></param>
-        /// <param name="lastId"></param>
         /// <param name="hasMore"></param>
+        /// <param name="lastId"></param>
+        /// <param name="object"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ProjectListResponse(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Project> data,
             string firstId,
-            string lastId,
             bool hasMore,
+            string lastId,
             global::tryAGI.OpenAI.ProjectListResponseObject @object)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.FirstId = firstId ?? throw new global::System.ArgumentNullException(nameof(firstId));
-            this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
             this.HasMore = hasMore;
+            this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
             this.Object = @object;
         }
 

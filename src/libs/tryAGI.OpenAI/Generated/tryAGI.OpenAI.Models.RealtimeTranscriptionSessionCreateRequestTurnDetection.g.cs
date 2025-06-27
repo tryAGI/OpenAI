@@ -11,12 +11,11 @@ namespace tryAGI.OpenAI
     public sealed partial class RealtimeTranscriptionSessionCreateRequestTurnDetection
     {
         /// <summary>
-        /// Type of turn detection.<br/>
-        /// Default Value: server_vad
+        /// Whether or not to automatically generate a response when a VAD stop event occurs. Not available for transcription sessions.<br/>
+        /// Default Value: true
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranscriptionSessionCreateRequestTurnDetectionTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestTurnDetectionType? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("create_response")]
+        public bool? CreateResponse { get; set; }
 
         /// <summary>
         /// Used only for `semantic_vad` mode. The eagerness of the model to respond. `low` will wait longer for the user to continue speaking, `high` will respond more quickly. `auto` is the default and is equivalent to `medium`.<br/>
@@ -27,12 +26,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestTurnDetectionEagerness? Eagerness { get; set; }
 
         /// <summary>
-        /// Used only for `server_vad` mode. Activation threshold for VAD (0.0 to 1.0), this defaults to 0.5. A<br/>
-        /// higher threshold will require louder audio to activate the model, and<br/>
-        /// thus might perform better in noisy environments.
+        /// Whether or not to automatically interrupt any ongoing response with output to the default<br/>
+        /// conversation (i.e. `conversation` of `auto`) when a VAD start event occurs. Not available for transcription sessions.<br/>
+        /// Default Value: true
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("threshold")]
-        public double? Threshold { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("interrupt_response")]
+        public bool? InterruptResponse { get; set; }
 
         /// <summary>
         /// Used only for `server_vad` mode. Amount of audio to include before the VAD detected speech (in<br/>
@@ -50,19 +49,20 @@ namespace tryAGI.OpenAI
         public int? SilenceDurationMs { get; set; }
 
         /// <summary>
-        /// Whether or not to automatically generate a response when a VAD stop event occurs. Not available for transcription sessions.<br/>
-        /// Default Value: true
+        /// Used only for `server_vad` mode. Activation threshold for VAD (0.0 to 1.0), this defaults to 0.5. A<br/>
+        /// higher threshold will require louder audio to activate the model, and<br/>
+        /// thus might perform better in noisy environments.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("create_response")]
-        public bool? CreateResponse { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("threshold")]
+        public double? Threshold { get; set; }
 
         /// <summary>
-        /// Whether or not to automatically interrupt any ongoing response with output to the default<br/>
-        /// conversation (i.e. `conversation` of `auto`) when a VAD start event occurs. Not available for transcription sessions.<br/>
-        /// Default Value: true
+        /// Type of turn detection.<br/>
+        /// Default Value: server_vad
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("interrupt_response")]
-        public bool? InterruptResponse { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranscriptionSessionCreateRequestTurnDetectionTypeJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestTurnDetectionType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -73,18 +73,18 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeTranscriptionSessionCreateRequestTurnDetection" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Type of turn detection.<br/>
-        /// Default Value: server_vad
+        /// <param name="createResponse">
+        /// Whether or not to automatically generate a response when a VAD stop event occurs. Not available for transcription sessions.<br/>
+        /// Default Value: true
         /// </param>
         /// <param name="eagerness">
         /// Used only for `semantic_vad` mode. The eagerness of the model to respond. `low` will wait longer for the user to continue speaking, `high` will respond more quickly. `auto` is the default and is equivalent to `medium`.<br/>
         /// Default Value: auto
         /// </param>
-        /// <param name="threshold">
-        /// Used only for `server_vad` mode. Activation threshold for VAD (0.0 to 1.0), this defaults to 0.5. A<br/>
-        /// higher threshold will require louder audio to activate the model, and<br/>
-        /// thus might perform better in noisy environments.
+        /// <param name="interruptResponse">
+        /// Whether or not to automatically interrupt any ongoing response with output to the default<br/>
+        /// conversation (i.e. `conversation` of `auto`) when a VAD start event occurs. Not available for transcription sessions.<br/>
+        /// Default Value: true
         /// </param>
         /// <param name="prefixPaddingMs">
         /// Used only for `server_vad` mode. Amount of audio to include before the VAD detected speech (in<br/>
@@ -95,34 +95,34 @@ namespace tryAGI.OpenAI
         /// to 500ms. With shorter values the model will respond more quickly,<br/>
         /// but may jump in on short pauses from the user.
         /// </param>
-        /// <param name="createResponse">
-        /// Whether or not to automatically generate a response when a VAD stop event occurs. Not available for transcription sessions.<br/>
-        /// Default Value: true
+        /// <param name="threshold">
+        /// Used only for `server_vad` mode. Activation threshold for VAD (0.0 to 1.0), this defaults to 0.5. A<br/>
+        /// higher threshold will require louder audio to activate the model, and<br/>
+        /// thus might perform better in noisy environments.
         /// </param>
-        /// <param name="interruptResponse">
-        /// Whether or not to automatically interrupt any ongoing response with output to the default<br/>
-        /// conversation (i.e. `conversation` of `auto`) when a VAD start event occurs. Not available for transcription sessions.<br/>
-        /// Default Value: true
+        /// <param name="type">
+        /// Type of turn detection.<br/>
+        /// Default Value: server_vad
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeTranscriptionSessionCreateRequestTurnDetection(
-            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestTurnDetectionType? type,
+            bool? createResponse,
             global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestTurnDetectionEagerness? eagerness,
-            double? threshold,
+            bool? interruptResponse,
             int? prefixPaddingMs,
             int? silenceDurationMs,
-            bool? createResponse,
-            bool? interruptResponse)
+            double? threshold,
+            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestTurnDetectionType? type)
         {
-            this.Type = type;
+            this.CreateResponse = createResponse;
             this.Eagerness = eagerness;
-            this.Threshold = threshold;
+            this.InterruptResponse = interruptResponse;
             this.PrefixPaddingMs = prefixPaddingMs;
             this.SilenceDurationMs = silenceDurationMs;
-            this.CreateResponse = createResponse;
-            this.InterruptResponse = interruptResponse;
+            this.Threshold = threshold;
+            this.Type = type;
         }
 
         /// <summary>

@@ -9,18 +9,18 @@ namespace tryAGI.OpenAI
     public sealed partial class ImagesResponseUsageInputTokensDetails
     {
         /// <summary>
-        /// The number of text tokens in the input prompt.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("text_tokens")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int TextTokens { get; set; }
-
-        /// <summary>
         /// The number of image tokens in the input prompt.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int ImageTokens { get; set; }
+
+        /// <summary>
+        /// The number of text tokens in the input prompt.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("text_tokens")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int TextTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,21 +31,21 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ImagesResponseUsageInputTokensDetails" /> class.
         /// </summary>
-        /// <param name="textTokens">
-        /// The number of text tokens in the input prompt.
-        /// </param>
         /// <param name="imageTokens">
         /// The number of image tokens in the input prompt.
+        /// </param>
+        /// <param name="textTokens">
+        /// The number of text tokens in the input prompt.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ImagesResponseUsageInputTokensDetails(
-            int textTokens,
-            int imageTokens)
+            int imageTokens,
+            int textTokens)
         {
-            this.TextTokens = textTokens;
             this.ImageTokens = imageTokens;
+            this.TextTokens = textTokens;
         }
 
         /// <summary>

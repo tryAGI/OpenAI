@@ -4,14 +4,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
-    ///   - If set to 'auto', and the Project is Scale tier enabled, the system<br/>
-    ///     will utilize scale tier credits until they are exhausted.<br/>
-    ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarantee.<br/>
-    ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarantee.<br/>
-    ///   - If set to 'flex', the request will be processed with the Flex Processing service tier. [Learn more](/docs/guides/flex-processing).<br/>
+    /// Specifies the processing type used for serving the request.<br/>
+    ///   - If set to 'auto', then the request will be processed with the service tier configured in the Project settings. Unless otherwise configured, the Project will use 'default'.<br/>
+    ///   - If set to 'default', then the requset will be processed with the standard pricing and performance for the selected model.<br/>
+    ///   - If set to '[flex](/docs/guides/flex-processing)' or 'priority', then the request will be processed with the corresponding service tier. [Contact sales](https://openai.com/contact-sales) to learn more about Priority processing.<br/>
     ///   - When not set, the default behavior is 'auto'.<br/>
-    ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
+    ///   When the `service_tier` parameter is set, the response body will include the `service_tier` value based on the processing mode actually used to serve the request. This response value may be different from the value set in the parameter.<br/>
     /// Default Value: auto
     /// </summary>
     public enum ServiceTier
@@ -25,13 +23,17 @@ namespace tryAGI.OpenAI
         /// </summary>
         Default,
         /// <summary>
-        /// 
+        /// //openai.com/contact-sales) to learn more about Priority processing.
         /// </summary>
         Flex,
         /// <summary>
         /// 
         /// </summary>
         Scale,
+        /// <summary>
+        /// //openai.com/contact-sales) to learn more about Priority processing.
+        /// </summary>
+        Priority,
     }
 
     /// <summary>
@@ -50,6 +52,7 @@ namespace tryAGI.OpenAI
                 ServiceTier.Default => "default",
                 ServiceTier.Flex => "flex",
                 ServiceTier.Scale => "scale",
+                ServiceTier.Priority => "priority",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,6 +67,7 @@ namespace tryAGI.OpenAI
                 "default" => ServiceTier.Default,
                 "flex" => ServiceTier.Flex,
                 "scale" => ServiceTier.Scale,
+                "priority" => ServiceTier.Priority,
                 _ => null,
             };
         }

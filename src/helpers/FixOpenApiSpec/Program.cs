@@ -1,14 +1,22 @@
+using AutoSDK.Helpers;
 using Microsoft.OpenApi;
-using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Extensions;
 using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Readers;
 
 var path = args[0];
-var text = await File.ReadAllTextAsync(path);
+var jsonOrYaml = await File.ReadAllTextAsync(path);
+
+jsonOrYaml = jsonOrYaml.Replace("minimum: -9223372036854776000", "");
+
+if (OpenApi31Support.IsOpenApi31(jsonOrYaml))
+{
+    jsonOrYaml = OpenApi31Support.ConvertToOpenApi30(jsonOrYaml);
+}
+
 var realtimeText = await File.ReadAllTextAsync(path.Replace(".yaml", ".realtime.yaml"));
 
-var openApiDocument = new OpenApiStringReader().Read(text, out var diagnostics);
+var openApiDocument = new OpenApiStringReader().Read(jsonOrYaml, out var diagnostics);
 var realtimeOpenApiDocument = new OpenApiStringReader().Read(realtimeText, out var realtimeDiagnostics);
 foreach (var schema in realtimeOpenApiDocument.Components.Schemas)
 {
@@ -62,8 +70,8 @@ openApiDocument.Paths["/files/{file_id}/content"]!.Operations[OperationType.Get]
 //         .DistinctBy(x => (x as OpenApiString)?.Value)
 //         .ToList();
     
-text = openApiDocument.SerializeAsYaml(OpenApiSpecVersion.OpenApi3_0);
-_ = new OpenApiStringReader().Read(text, out diagnostics);
+jsonOrYaml = openApiDocument.SerializeAsYaml(OpenApiSpecVersion.OpenApi3_0);
+_ = new OpenApiStringReader().Read(jsonOrYaml, out diagnostics);
 
 if (diagnostics.Errors.Count > 0)
 {
@@ -75,4 +83,4 @@ if (diagnostics.Errors.Count > 0)
     //Environment.Exit(1);
 }
 
-await File.WriteAllTextAsync(path, text);
+await File.WriteAllTextAsync(path, jsonOrYaml);

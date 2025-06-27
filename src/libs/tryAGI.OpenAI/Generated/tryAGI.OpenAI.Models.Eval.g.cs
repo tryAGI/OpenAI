@@ -16,29 +16,12 @@ namespace tryAGI.OpenAI
     public sealed partial class Eval
     {
         /// <summary>
-        /// The object type.<br/>
-        /// Default Value: eval
+        /// The Unix timestamp (in seconds) for when the eval was created.
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.EvalObject.Eval</default>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EvalObjectJsonConverter))]
-        public global::tryAGI.OpenAI.EvalObject Object { get; set; } = global::tryAGI.OpenAI.EvalObject.Eval;
-
-        /// <summary>
-        /// Unique identifier for the evaluation.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
-
-        /// <summary>
-        /// The name of the evaluation.<br/>
-        /// Example: Chatbot effectiveness Evaluation
-        /// </summary>
-        /// <example>Chatbot effectiveness Evaluation</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public required global::System.DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
         /// Configuration of data sources used in runs of the evaluation.
@@ -49,20 +32,11 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalCustomDataSourceConfig, global::tryAGI.OpenAI.EvalLogsDataSourceConfig, global::tryAGI.OpenAI.EvalStoredCompletionsDataSourceConfig> DataSourceConfig { get; set; }
 
         /// <summary>
-        /// A list of testing criteria.<br/>
-        /// Default Value: eval
+        /// Unique identifier for the evaluation.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("testing_criteria")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalGraderLabelModel?, global::tryAGI.OpenAI.EvalGraderStringCheck?, global::tryAGI.OpenAI.EvalGraderTextSimilarity?, global::tryAGI.OpenAI.EvalGraderPython?, global::tryAGI.OpenAI.EvalGraderScoreModel?>> TestingCriteria { get; set; }
-
-        /// <summary>
-        /// The Unix timestamp (in seconds) for when the eval was created.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
+        public required string Id { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
@@ -76,6 +50,32 @@ namespace tryAGI.OpenAI
         public required global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
+        /// The name of the evaluation.<br/>
+        /// Example: Chatbot effectiveness Evaluation
+        /// </summary>
+        /// <example>Chatbot effectiveness Evaluation</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
+
+        /// <summary>
+        /// The object type.<br/>
+        /// Default Value: eval
+        /// </summary>
+        /// <default>global::tryAGI.OpenAI.EvalObject.Eval</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EvalObjectJsonConverter))]
+        public global::tryAGI.OpenAI.EvalObject Object { get; set; } = global::tryAGI.OpenAI.EvalObject.Eval;
+
+        /// <summary>
+        /// A list of testing criteria.<br/>
+        /// Default Value: eval
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("testing_criteria")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalGraderLabelModel?, global::tryAGI.OpenAI.EvalGraderStringCheck?, global::tryAGI.OpenAI.EvalGraderTextSimilarity?, global::tryAGI.OpenAI.EvalGraderPython?, global::tryAGI.OpenAI.EvalGraderScoreModel?>> TestingCriteria { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -84,26 +84,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="Eval" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The object type.<br/>
-        /// Default Value: eval
-        /// </param>
-        /// <param name="id">
-        /// Unique identifier for the evaluation.
-        /// </param>
-        /// <param name="name">
-        /// The name of the evaluation.<br/>
-        /// Example: Chatbot effectiveness Evaluation
+        /// <param name="createdAt">
+        /// The Unix timestamp (in seconds) for when the eval was created.
         /// </param>
         /// <param name="dataSourceConfig">
         /// Configuration of data sources used in runs of the evaluation.
         /// </param>
-        /// <param name="testingCriteria">
-        /// A list of testing criteria.<br/>
-        /// Default Value: eval
-        /// </param>
-        /// <param name="createdAt">
-        /// The Unix timestamp (in seconds) for when the eval was created.
+        /// <param name="id">
+        /// Unique identifier for the evaluation.
         /// </param>
         /// <param name="metadata">
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
@@ -112,24 +100,36 @@ namespace tryAGI.OpenAI
         /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
         /// with a maximum length of 512 characters.
         /// </param>
+        /// <param name="name">
+        /// The name of the evaluation.<br/>
+        /// Example: Chatbot effectiveness Evaluation
+        /// </param>
+        /// <param name="object">
+        /// The object type.<br/>
+        /// Default Value: eval
+        /// </param>
+        /// <param name="testingCriteria">
+        /// A list of testing criteria.<br/>
+        /// Default Value: eval
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Eval(
-            string id,
-            string name,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalCustomDataSourceConfig, global::tryAGI.OpenAI.EvalLogsDataSourceConfig, global::tryAGI.OpenAI.EvalStoredCompletionsDataSourceConfig> dataSourceConfig,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalGraderLabelModel?, global::tryAGI.OpenAI.EvalGraderStringCheck?, global::tryAGI.OpenAI.EvalGraderTextSimilarity?, global::tryAGI.OpenAI.EvalGraderPython?, global::tryAGI.OpenAI.EvalGraderScoreModel?>> testingCriteria,
             global::System.DateTimeOffset createdAt,
+            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalCustomDataSourceConfig, global::tryAGI.OpenAI.EvalLogsDataSourceConfig, global::tryAGI.OpenAI.EvalStoredCompletionsDataSourceConfig> dataSourceConfig,
+            string id,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
+            string name,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalGraderLabelModel?, global::tryAGI.OpenAI.EvalGraderStringCheck?, global::tryAGI.OpenAI.EvalGraderTextSimilarity?, global::tryAGI.OpenAI.EvalGraderPython?, global::tryAGI.OpenAI.EvalGraderScoreModel?>> testingCriteria,
             global::tryAGI.OpenAI.EvalObject @object = global::tryAGI.OpenAI.EvalObject.Eval)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.DataSourceConfig = dataSourceConfig;
-            this.TestingCriteria = testingCriteria ?? throw new global::System.ArgumentNullException(nameof(testingCriteria));
             this.CreatedAt = createdAt;
+            this.DataSourceConfig = dataSourceConfig;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.TestingCriteria = testingCriteria ?? throw new global::System.ArgumentNullException(nameof(testingCriteria));
             this.Object = @object;
         }
 

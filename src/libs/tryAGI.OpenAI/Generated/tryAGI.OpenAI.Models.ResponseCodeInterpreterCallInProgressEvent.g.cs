@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseCodeInterpreterCallInProgressEvent
     {
         /// <summary>
-        /// The type of the event. Always `response.code_interpreter_call.in_progress`.
+        /// The unique identifier of the code interpreter tool call item.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseCodeInterpreterCallInProgressEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallInProgressEventType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ItemId { get; set; }
 
         /// <summary>
         /// The index of the output item in the response for which the code interpreter call is in progress.
@@ -23,18 +23,18 @@ namespace tryAGI.OpenAI
         public required int OutputIndex { get; set; }
 
         /// <summary>
-        /// The unique identifier of the code interpreter tool call item.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ItemId { get; set; }
-
-        /// <summary>
         /// The sequence number of this event, used to order streaming events.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int SequenceNumber { get; set; }
+
+        /// <summary>
+        /// The type of the event. Always `response.code_interpreter_call.in_progress`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseCodeInterpreterCallInProgressEventTypeJsonConverter))]
+        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallInProgressEventType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,29 +45,29 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseCodeInterpreterCallInProgressEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `response.code_interpreter_call.in_progress`.
+        /// <param name="itemId">
+        /// The unique identifier of the code interpreter tool call item.
         /// </param>
         /// <param name="outputIndex">
         /// The index of the output item in the response for which the code interpreter call is in progress.
         /// </param>
-        /// <param name="itemId">
-        /// The unique identifier of the code interpreter tool call item.
-        /// </param>
         /// <param name="sequenceNumber">
         /// The sequence number of this event, used to order streaming events.
+        /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `response.code_interpreter_call.in_progress`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseCodeInterpreterCallInProgressEvent(
-            int outputIndex,
             string itemId,
+            int outputIndex,
             int sequenceNumber,
             global::tryAGI.OpenAI.ResponseCodeInterpreterCallInProgressEventType type)
         {
-            this.OutputIndex = outputIndex;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
+            this.OutputIndex = outputIndex;
             this.SequenceNumber = sequenceNumber;
             this.Type = type;
         }

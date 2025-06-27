@@ -11,13 +11,6 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateChatCompletionStreamResponse
     {
         /// <summary>
-        /// A unique identifier for the chat completion. Each chunk has the same ID.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
-
-        /// <summary>
         /// A list of chat completion choices. Can contain more than one elements if `n` is greater than 1. Can also be empty for the<br/>
         /// last chunk if you set `stream_options: {"include_usage": true}`.
         /// </summary>
@@ -34,6 +27,13 @@ namespace tryAGI.OpenAI
         public required global::System.DateTimeOffset Created { get; set; }
 
         /// <summary>
+        /// A unique identifier for the chat completion. Each chunk has the same ID.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Id { get; set; }
+
+        /// <summary>
         /// The model to generate the completion.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
@@ -41,14 +41,19 @@ namespace tryAGI.OpenAI
         public required string Model { get; set; }
 
         /// <summary>
-        /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
-        ///   - If set to 'auto', and the Project is Scale tier enabled, the system<br/>
-        ///     will utilize scale tier credits until they are exhausted.<br/>
-        ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarantee.<br/>
-        ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarantee.<br/>
-        ///   - If set to 'flex', the request will be processed with the Flex Processing service tier. [Learn more](/docs/guides/flex-processing).<br/>
+        /// The object type, which is always `chat.completion.chunk`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateChatCompletionStreamResponseObjectJsonConverter))]
+        public global::tryAGI.OpenAI.CreateChatCompletionStreamResponseObject Object { get; set; }
+
+        /// <summary>
+        /// Specifies the processing type used for serving the request.<br/>
+        ///   - If set to 'auto', then the request will be processed with the service tier configured in the Project settings. Unless otherwise configured, the Project will use 'default'.<br/>
+        ///   - If set to 'default', then the requset will be processed with the standard pricing and performance for the selected model.<br/>
+        ///   - If set to '[flex](/docs/guides/flex-processing)' or 'priority', then the request will be processed with the corresponding service tier. [Contact sales](https://openai.com/contact-sales) to learn more about Priority processing.<br/>
         ///   - When not set, the default behavior is 'auto'.<br/>
-        ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
+        ///   When the `service_tier` parameter is set, the response body will include the `service_tier` value based on the processing mode actually used to serve the request. This response value may be different from the value set in the parameter.<br/>
         /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
@@ -61,13 +66,6 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("system_fingerprint")]
         public string? SystemFingerprint { get; set; }
-
-        /// <summary>
-        /// The object type, which is always `chat.completion.chunk`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateChatCompletionStreamResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.CreateChatCompletionStreamResponseObject Object { get; set; }
 
         /// <summary>
         /// Usage statistics for the completion request.
@@ -84,9 +82,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateChatCompletionStreamResponse" /> class.
         /// </summary>
-        /// <param name="id">
-        /// A unique identifier for the chat completion. Each chunk has the same ID.
-        /// </param>
         /// <param name="choices">
         /// A list of chat completion choices. Can contain more than one elements if `n` is greater than 1. Can also be empty for the<br/>
         /// last chunk if you set `stream_options: {"include_usage": true}`.
@@ -94,26 +89,27 @@ namespace tryAGI.OpenAI
         /// <param name="created">
         /// The Unix timestamp (in seconds) of when the chat completion was created. Each chunk has the same timestamp.
         /// </param>
+        /// <param name="id">
+        /// A unique identifier for the chat completion. Each chunk has the same ID.
+        /// </param>
         /// <param name="model">
         /// The model to generate the completion.
         /// </param>
+        /// <param name="object">
+        /// The object type, which is always `chat.completion.chunk`.
+        /// </param>
         /// <param name="serviceTier">
-        /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
-        ///   - If set to 'auto', and the Project is Scale tier enabled, the system<br/>
-        ///     will utilize scale tier credits until they are exhausted.<br/>
-        ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarantee.<br/>
-        ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarantee.<br/>
-        ///   - If set to 'flex', the request will be processed with the Flex Processing service tier. [Learn more](/docs/guides/flex-processing).<br/>
+        /// Specifies the processing type used for serving the request.<br/>
+        ///   - If set to 'auto', then the request will be processed with the service tier configured in the Project settings. Unless otherwise configured, the Project will use 'default'.<br/>
+        ///   - If set to 'default', then the requset will be processed with the standard pricing and performance for the selected model.<br/>
+        ///   - If set to '[flex](/docs/guides/flex-processing)' or 'priority', then the request will be processed with the corresponding service tier. [Contact sales](https://openai.com/contact-sales) to learn more about Priority processing.<br/>
         ///   - When not set, the default behavior is 'auto'.<br/>
-        ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
+        ///   When the `service_tier` parameter is set, the response body will include the `service_tier` value based on the processing mode actually used to serve the request. This response value may be different from the value set in the parameter.<br/>
         /// Default Value: auto
         /// </param>
         /// <param name="systemFingerprint">
         /// This fingerprint represents the backend configuration that the model runs with.<br/>
         /// Can be used in conjunction with the `seed` request parameter to understand when backend changes have been made that might impact determinism.
-        /// </param>
-        /// <param name="object">
-        /// The object type, which is always `chat.completion.chunk`.
         /// </param>
         /// <param name="usage">
         /// Usage statistics for the completion request.
@@ -122,22 +118,22 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateChatCompletionStreamResponse(
-            string id,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateChatCompletionStreamResponseChoice> choices,
             global::System.DateTimeOffset created,
+            string id,
             string model,
+            global::tryAGI.OpenAI.CreateChatCompletionStreamResponseObject @object,
             global::tryAGI.OpenAI.ServiceTier? serviceTier,
             string? systemFingerprint,
-            global::tryAGI.OpenAI.CreateChatCompletionStreamResponseObject @object,
             global::tryAGI.OpenAI.CompletionUsage? usage)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Choices = choices ?? throw new global::System.ArgumentNullException(nameof(choices));
             this.Created = created;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Object = @object;
             this.ServiceTier = serviceTier;
             this.SystemFingerprint = systemFingerprint;
-            this.Object = @object;
             this.Usage = usage;
         }
 

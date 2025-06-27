@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseFunctionCallArgumentsDoneEvent
     {
         /// <summary>
-        /// 
+        /// The function-call arguments.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseFunctionCallArgumentsDoneEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEventType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Arguments { get; set; }
 
         /// <summary>
         /// The ID of the item.
@@ -37,11 +37,11 @@ namespace tryAGI.OpenAI
         public required int SequenceNumber { get; set; }
 
         /// <summary>
-        /// The function-call arguments.
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Arguments { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseFunctionCallArgumentsDoneEventTypeJsonConverter))]
+        public global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEventType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,7 +52,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseFunctionCallArgumentsDoneEvent" /> class.
         /// </summary>
-        /// <param name="type"></param>
+        /// <param name="arguments">
+        /// The function-call arguments.
+        /// </param>
         /// <param name="itemId">
         /// The ID of the item.
         /// </param>
@@ -62,23 +64,21 @@ namespace tryAGI.OpenAI
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
         /// </param>
-        /// <param name="arguments">
-        /// The function-call arguments.
-        /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseFunctionCallArgumentsDoneEvent(
+            string arguments,
             string itemId,
             int outputIndex,
             int sequenceNumber,
-            string arguments,
             global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEventType type)
         {
+            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.SequenceNumber = sequenceNumber;
-            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
             this.Type = type;
         }
 

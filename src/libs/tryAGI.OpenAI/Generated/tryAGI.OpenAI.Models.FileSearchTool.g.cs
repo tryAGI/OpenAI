@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -10,6 +8,24 @@ namespace tryAGI.OpenAI
     /// </summary>
     public sealed partial class FileSearchTool
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
+        public object? Filters { get; set; }
+
+        /// <summary>
+        /// The maximum number of results to return. This number should be between 1 and 50 inclusive.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_num_results")]
+        public int? MaxNumResults { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ranking_options")]
+        public global::tryAGI.OpenAI.RankingOptions? RankingOptions { get; set; }
+
         /// <summary>
         /// The type of the file search tool. Always `file_search`.<br/>
         /// Default Value: file_search
@@ -27,25 +43,6 @@ namespace tryAGI.OpenAI
         public required global::System.Collections.Generic.IList<string> VectorStoreIds { get; set; }
 
         /// <summary>
-        /// The maximum number of results to return. This number should be between 1 and 50 inclusive.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("max_num_results")]
-        public int? MaxNumResults { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("ranking_options")]
-        public global::tryAGI.OpenAI.RankingOptions? RankingOptions { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.Filters2?, object>))]
-        public global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.Filters2?, object>? Filters { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -54,6 +51,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="FileSearchTool" /> class.
         /// </summary>
+        /// <param name="filters"></param>
+        /// <param name="maxNumResults">
+        /// The maximum number of results to return. This number should be between 1 and 50 inclusive.
+        /// </param>
+        /// <param name="rankingOptions"></param>
         /// <param name="type">
         /// The type of the file search tool. Always `file_search`.<br/>
         /// Default Value: file_search
@@ -61,26 +63,21 @@ namespace tryAGI.OpenAI
         /// <param name="vectorStoreIds">
         /// The IDs of the vector stores to search.
         /// </param>
-        /// <param name="maxNumResults">
-        /// The maximum number of results to return. This number should be between 1 and 50 inclusive.
-        /// </param>
-        /// <param name="rankingOptions"></param>
-        /// <param name="filters"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FileSearchTool(
             global::System.Collections.Generic.IList<string> vectorStoreIds,
+            object? filters,
             int? maxNumResults,
             global::tryAGI.OpenAI.RankingOptions? rankingOptions,
-            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.Filters2?, object>? filters,
             global::tryAGI.OpenAI.FileSearchToolType type = global::tryAGI.OpenAI.FileSearchToolType.FileSearch)
         {
             this.VectorStoreIds = vectorStoreIds ?? throw new global::System.ArgumentNullException(nameof(vectorStoreIds));
-            this.Type = type;
+            this.Filters = filters;
             this.MaxNumResults = maxNumResults;
             this.RankingOptions = rankingOptions;
-            this.Filters = filters;
+            this.Type = type;
         }
 
         /// <summary>

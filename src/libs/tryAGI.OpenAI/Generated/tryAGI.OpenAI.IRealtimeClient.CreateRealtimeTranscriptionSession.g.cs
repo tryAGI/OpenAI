@@ -27,9 +27,12 @@ namespace tryAGI.OpenAI
         /// a usable ephemeral API token that can be used to authenticate browser clients<br/>
         /// for the Realtime API.
         /// </summary>
-        /// <param name="modalities">
-        /// The set of modalities the model can respond with. To disable audio,<br/>
-        /// set this to ["text"].
+        /// <param name="clientSecret">
+        /// Configuration options for the generated client secret.
+        /// </param>
+        /// <param name="include">
+        /// The set of items to include in the transcription. Current available items are:<br/>
+        /// - `item.input_audio_transcription.logprobs`
         /// </param>
         /// <param name="inputAudioFormat">
         /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.<br/>
@@ -37,36 +40,33 @@ namespace tryAGI.OpenAI
         /// single channel (mono), and little-endian byte order.<br/>
         /// Default Value: pcm16
         /// </param>
+        /// <param name="inputAudioNoiseReduction">
+        /// Configuration for input audio noise reduction. This can be set to `null` to turn off.<br/>
+        /// Noise reduction filters audio added to the input audio buffer before it is sent to VAD and the model.<br/>
+        /// Filtering the audio can improve VAD and turn detection accuracy (reducing false positives) and model performance by improving perception of the input audio.
+        /// </param>
         /// <param name="inputAudioTranscription">
         /// Configuration for input audio transcription. The client can optionally set the language and prompt for transcription, these offer additional guidance to the transcription service.
+        /// </param>
+        /// <param name="modalities">
+        /// The set of modalities the model can respond with. To disable audio,<br/>
+        /// set this to ["text"].
         /// </param>
         /// <param name="turnDetection">
         /// Configuration for turn detection, ether Server VAD or Semantic VAD. This can be set to `null` to turn off, in which case the client must manually trigger model response.<br/>
         /// Server VAD means that the model will detect the start and end of speech based on audio volume and respond at the end of user speech.<br/>
         /// Semantic VAD is more advanced and uses a turn detection model (in conjuction with VAD) to semantically estimate whether the user has finished speaking, then dynamically sets a timeout based on this probability. For example, if user audio trails off with "uhhm", the model will score a low probability of turn end and wait longer for the user to continue speaking. This can be useful for more natural conversations, but may have a higher latency.
         /// </param>
-        /// <param name="inputAudioNoiseReduction">
-        /// Configuration for input audio noise reduction. This can be set to `null` to turn off.<br/>
-        /// Noise reduction filters audio added to the input audio buffer before it is sent to VAD and the model.<br/>
-        /// Filtering the audio can improve VAD and turn detection accuracy (reducing false positives) and model performance by improving perception of the input audio.
-        /// </param>
-        /// <param name="include">
-        /// The set of items to include in the transcription. Current available items are:<br/>
-        /// - `item.input_audio_transcription.logprobs`
-        /// </param>
-        /// <param name="clientSecret">
-        /// Configuration options for the generated client secret.
-        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponse> CreateRealtimeTranscriptionSessionAsync(
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestModalitie>? modalities = default,
-            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestInputAudioFormat? inputAudioFormat = default,
-            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestInputAudioTranscription? inputAudioTranscription = default,
-            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestTurnDetection? turnDetection = default,
-            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction? inputAudioNoiseReduction = default,
-            global::System.Collections.Generic.IList<string>? include = default,
             global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestClientSecret? clientSecret = default,
+            global::System.Collections.Generic.IList<string>? include = default,
+            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestInputAudioFormat? inputAudioFormat = default,
+            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction? inputAudioNoiseReduction = default,
+            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestInputAudioTranscription? inputAudioTranscription = default,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestModalitie>? modalities = default,
+            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestTurnDetection? turnDetection = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

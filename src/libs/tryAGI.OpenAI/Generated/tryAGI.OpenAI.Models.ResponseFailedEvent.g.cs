@@ -9,11 +9,12 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseFailedEvent
     {
         /// <summary>
-        /// The type of the event. Always `response.failed`.
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseFailedEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseFailedEventType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("response")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.Response Response { get; set; }
 
         /// <summary>
         /// The sequence number of this event.
@@ -23,12 +24,11 @@ namespace tryAGI.OpenAI
         public required int SequenceNumber { get; set; }
 
         /// <summary>
-        /// 
+        /// The type of the event. Always `response.failed`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("response")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.Response Response { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseFailedEventTypeJsonConverter))]
+        public global::tryAGI.OpenAI.ResponseFailedEventType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,23 +39,23 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseFailedEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `response.failed`.
-        /// </param>
+        /// <param name="response"></param>
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
         /// </param>
-        /// <param name="response"></param>
+        /// <param name="type">
+        /// The type of the event. Always `response.failed`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseFailedEvent(
-            int sequenceNumber,
             global::tryAGI.OpenAI.Response response,
+            int sequenceNumber,
             global::tryAGI.OpenAI.ResponseFailedEventType type)
         {
-            this.SequenceNumber = sequenceNumber;
             this.Response = response;
+            this.SequenceNumber = sequenceNumber;
             this.Type = type;
         }
 

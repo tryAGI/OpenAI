@@ -15,16 +15,16 @@ namespace tryAGI.OpenAI
         public string? B64Json { get; set; }
 
         /// <summary>
-        /// When using `dall-e-2` or `dall-e-3`, the URL of the generated image if `response_format` is set to `url` (default value). Unsupported for `gpt-image-1`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("url")]
-        public string? Url { get; set; }
-
-        /// <summary>
         /// For `dall-e-3` only, the revised prompt that was used to generate the image.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("revised_prompt")]
         public string? RevisedPrompt { get; set; }
+
+        /// <summary>
+        /// When using `dall-e-2` or `dall-e-3`, the URL of the generated image if `response_format` is set to `url` (default value). Unsupported for `gpt-image-1`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("url")]
+        public string? Url { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,23 +38,23 @@ namespace tryAGI.OpenAI
         /// <param name="b64Json">
         /// The base64-encoded JSON of the generated image. Default value for `gpt-image-1`, and only present if `response_format` is set to `b64_json` for `dall-e-2` and `dall-e-3`.
         /// </param>
-        /// <param name="url">
-        /// When using `dall-e-2` or `dall-e-3`, the URL of the generated image if `response_format` is set to `url` (default value). Unsupported for `gpt-image-1`.
-        /// </param>
         /// <param name="revisedPrompt">
         /// For `dall-e-3` only, the revised prompt that was used to generate the image.
+        /// </param>
+        /// <param name="url">
+        /// When using `dall-e-2` or `dall-e-3`, the URL of the generated image if `response_format` is set to `url` (default value). Unsupported for `gpt-image-1`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Image2(
             string? b64Json,
-            string? url,
-            string? revisedPrompt)
+            string? revisedPrompt,
+            string? url)
         {
             this.B64Json = b64Json;
-            this.Url = url;
             this.RevisedPrompt = revisedPrompt;
+            this.Url = url;
         }
 
         /// <summary>

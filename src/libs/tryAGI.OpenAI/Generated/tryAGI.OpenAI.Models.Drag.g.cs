@@ -9,16 +9,6 @@ namespace tryAGI.OpenAI
     public sealed partial class Drag
     {
         /// <summary>
-        /// Specifies the event type. For a drag action, this property is <br/>
-        /// always set to `drag`.<br/>
-        /// Default Value: drag
-        /// </summary>
-        /// <default>global::tryAGI.OpenAI.DragType.Drag</default>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.DragTypeJsonConverter))]
-        public global::tryAGI.OpenAI.DragType Type { get; set; } = global::tryAGI.OpenAI.DragType.Drag;
-
-        /// <summary>
         /// An array of coordinates representing the path of the drag action. Coordinates will appear as an array<br/>
         /// of objects, eg<br/>
         /// ```<br/>
@@ -33,6 +23,16 @@ namespace tryAGI.OpenAI
         public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Coordinate> Path { get; set; }
 
         /// <summary>
+        /// Specifies the event type. For a drag action, this property is <br/>
+        /// always set to `drag`.<br/>
+        /// Default Value: drag
+        /// </summary>
+        /// <default>global::tryAGI.OpenAI.DragType.Drag</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.DragTypeJsonConverter))]
+        public global::tryAGI.OpenAI.DragType Type { get; set; } = global::tryAGI.OpenAI.DragType.Drag;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -41,11 +41,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="Drag" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Specifies the event type. For a drag action, this property is <br/>
-        /// always set to `drag`.<br/>
-        /// Default Value: drag
-        /// </param>
         /// <param name="path">
         /// An array of coordinates representing the path of the drag action. Coordinates will appear as an array<br/>
         /// of objects, eg<br/>
@@ -55,6 +50,11 @@ namespace tryAGI.OpenAI
         ///   { x: 200, y: 300 }<br/>
         /// ]<br/>
         /// ```
+        /// </param>
+        /// <param name="type">
+        /// Specifies the event type. For a drag action, this property is <br/>
+        /// always set to `drag`.<br/>
+        /// Default Value: drag
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

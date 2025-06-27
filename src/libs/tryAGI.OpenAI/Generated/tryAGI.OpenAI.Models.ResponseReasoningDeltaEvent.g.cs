@@ -9,11 +9,18 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseReasoningDeltaEvent
     {
         /// <summary>
-        /// The type of the event. Always 'response.reasoning.delta'.
+        /// The index of the reasoning content part within the output item.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseReasoningDeltaEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseReasoningDeltaEventType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("content_index")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int ContentIndex { get; set; }
+
+        /// <summary>
+        /// The partial update to the reasoning content.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required object Delta { get; set; }
 
         /// <summary>
         /// The unique identifier of the item for which reasoning is being updated.
@@ -30,25 +37,18 @@ namespace tryAGI.OpenAI
         public required int OutputIndex { get; set; }
 
         /// <summary>
-        /// The index of the reasoning content part within the output item.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content_index")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ContentIndex { get; set; }
-
-        /// <summary>
-        /// The partial update to the reasoning content.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Delta { get; set; }
-
-        /// <summary>
         /// The sequence number of this event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int SequenceNumber { get; set; }
+
+        /// <summary>
+        /// The type of the event. Always 'response.reasoning.delta'.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseReasoningDeltaEventTypeJsonConverter))]
+        public global::tryAGI.OpenAI.ResponseReasoningDeltaEventType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -59,8 +59,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseReasoningDeltaEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always 'response.reasoning.delta'.
+        /// <param name="contentIndex">
+        /// The index of the reasoning content part within the output item.
+        /// </param>
+        /// <param name="delta">
+        /// The partial update to the reasoning content.
         /// </param>
         /// <param name="itemId">
         /// The unique identifier of the item for which reasoning is being updated.
@@ -68,30 +71,27 @@ namespace tryAGI.OpenAI
         /// <param name="outputIndex">
         /// The index of the output item in the response's output array.
         /// </param>
-        /// <param name="contentIndex">
-        /// The index of the reasoning content part within the output item.
-        /// </param>
-        /// <param name="delta">
-        /// The partial update to the reasoning content.
-        /// </param>
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
+        /// </param>
+        /// <param name="type">
+        /// The type of the event. Always 'response.reasoning.delta'.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseReasoningDeltaEvent(
-            string itemId,
-            int outputIndex,
             int contentIndex,
             object delta,
+            string itemId,
+            int outputIndex,
             int sequenceNumber,
             global::tryAGI.OpenAI.ResponseReasoningDeltaEventType type)
         {
-            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
-            this.OutputIndex = outputIndex;
             this.ContentIndex = contentIndex;
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
+            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
+            this.OutputIndex = outputIndex;
             this.SequenceNumber = sequenceNumber;
             this.Type = type;
         }

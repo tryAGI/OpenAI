@@ -9,13 +9,18 @@ namespace tryAGI.OpenAI
     public sealed partial class ComputerUsePreviewTool
     {
         /// <summary>
-        /// The type of the computer use tool. Always `computer_use_preview`.<br/>
-        /// Default Value: computer_use_preview
+        /// The height of the computer display.
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.ComputerUsePreviewToolType.ComputerUsePreview</default>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ComputerUsePreviewToolTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ComputerUsePreviewToolType Type { get; set; } = global::tryAGI.OpenAI.ComputerUsePreviewToolType.ComputerUsePreview;
+        [global::System.Text.Json.Serialization.JsonPropertyName("display_height")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int DisplayHeight { get; set; }
+
+        /// <summary>
+        /// The width of the computer display.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("display_width")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int DisplayWidth { get; set; }
 
         /// <summary>
         /// The type of computer environment to control.
@@ -26,18 +31,13 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.ComputerUsePreviewToolEnvironment Environment { get; set; }
 
         /// <summary>
-        /// The width of the computer display.
+        /// The type of the computer use tool. Always `computer_use_preview`.<br/>
+        /// Default Value: computer_use_preview
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("display_width")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int DisplayWidth { get; set; }
-
-        /// <summary>
-        /// The height of the computer display.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("display_height")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int DisplayHeight { get; set; }
+        /// <default>global::tryAGI.OpenAI.ComputerUsePreviewToolType.ComputerUsePreview</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ComputerUsePreviewToolTypeJsonConverter))]
+        public global::tryAGI.OpenAI.ComputerUsePreviewToolType Type { get; set; } = global::tryAGI.OpenAI.ComputerUsePreviewToolType.ComputerUsePreview;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,31 +48,31 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ComputerUsePreviewTool" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the computer use tool. Always `computer_use_preview`.<br/>
-        /// Default Value: computer_use_preview
-        /// </param>
-        /// <param name="environment">
-        /// The type of computer environment to control.
+        /// <param name="displayHeight">
+        /// The height of the computer display.
         /// </param>
         /// <param name="displayWidth">
         /// The width of the computer display.
         /// </param>
-        /// <param name="displayHeight">
-        /// The height of the computer display.
+        /// <param name="environment">
+        /// The type of computer environment to control.
+        /// </param>
+        /// <param name="type">
+        /// The type of the computer use tool. Always `computer_use_preview`.<br/>
+        /// Default Value: computer_use_preview
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ComputerUsePreviewTool(
-            global::tryAGI.OpenAI.ComputerUsePreviewToolEnvironment environment,
-            int displayWidth,
             int displayHeight,
+            int displayWidth,
+            global::tryAGI.OpenAI.ComputerUsePreviewToolEnvironment environment,
             global::tryAGI.OpenAI.ComputerUsePreviewToolType type = global::tryAGI.OpenAI.ComputerUsePreviewToolType.ComputerUsePreview)
         {
-            this.Environment = environment;
-            this.DisplayWidth = displayWidth;
             this.DisplayHeight = displayHeight;
+            this.DisplayWidth = displayWidth;
+            this.Environment = environment;
             this.Type = type;
         }
 

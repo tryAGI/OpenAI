@@ -9,18 +9,18 @@ namespace tryAGI.OpenAI
     public sealed partial class MessageRequestContentTextObject
     {
         /// <summary>
-        /// Always `text`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageRequestContentTextObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.MessageRequestContentTextObjectType Type { get; set; }
-
-        /// <summary>
         /// Text content to be sent to the model
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Text { get; set; }
+
+        /// <summary>
+        /// Always `text`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageRequestContentTextObjectTypeJsonConverter))]
+        public global::tryAGI.OpenAI.MessageRequestContentTextObjectType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,11 +31,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageRequestContentTextObject" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Always `text`.
-        /// </param>
         /// <param name="text">
         /// Text content to be sent to the model
+        /// </param>
+        /// <param name="type">
+        /// Always `text`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

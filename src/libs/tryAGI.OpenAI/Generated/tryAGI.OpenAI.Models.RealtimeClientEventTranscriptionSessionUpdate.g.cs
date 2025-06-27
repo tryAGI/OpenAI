@@ -15,18 +15,18 @@ namespace tryAGI.OpenAI
         public string? EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be `transcription_session.update`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeClientEventTranscriptionSessionUpdateTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeClientEventTranscriptionSessionUpdateType Type { get; set; }
-
-        /// <summary>
         /// Realtime transcription session object configuration.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequest Session { get; set; }
+
+        /// <summary>
+        /// The event type, must be `transcription_session.update`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeClientEventTranscriptionSessionUpdateTypeJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeClientEventTranscriptionSessionUpdateType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,11 +40,11 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// Optional client-generated ID used to identify this event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `transcription_session.update`.
-        /// </param>
         /// <param name="session">
         /// Realtime transcription session object configuration.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `transcription_session.update`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

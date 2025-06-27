@@ -9,13 +9,6 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseInProgressEvent
     {
         /// <summary>
-        /// The type of the event. Always `response.in_progress`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseInProgressEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseInProgressEventType Type { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response")]
@@ -31,6 +24,13 @@ namespace tryAGI.OpenAI
         public required int SequenceNumber { get; set; }
 
         /// <summary>
+        /// The type of the event. Always `response.in_progress`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseInProgressEventTypeJsonConverter))]
+        public global::tryAGI.OpenAI.ResponseInProgressEventType Type { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -39,12 +39,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseInProgressEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `response.in_progress`.
-        /// </param>
         /// <param name="response"></param>
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
+        /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `response.in_progress`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

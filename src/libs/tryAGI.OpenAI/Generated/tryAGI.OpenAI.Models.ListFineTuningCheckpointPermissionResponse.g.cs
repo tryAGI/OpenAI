@@ -18,15 +18,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ListFineTuningCheckpointPermissionResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ListFineTuningCheckpointPermissionResponseObject Object { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("first_id")]
+        public string? FirstId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("first_id")]
-        public string? FirstId { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool HasMore { get; set; }
 
         /// <summary>
         /// 
@@ -37,9 +37,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool HasMore { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ListFineTuningCheckpointPermissionResponseObjectJsonConverter))]
+        public global::tryAGI.OpenAI.ListFineTuningCheckpointPermissionResponseObject Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -51,25 +51,25 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="ListFineTuningCheckpointPermissionResponse" /> class.
         /// </summary>
         /// <param name="data"></param>
-        /// <param name="object"></param>
         /// <param name="firstId"></param>
-        /// <param name="lastId"></param>
         /// <param name="hasMore"></param>
+        /// <param name="lastId"></param>
+        /// <param name="object"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ListFineTuningCheckpointPermissionResponse(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FineTuningCheckpointPermission> data,
             bool hasMore,
-            global::tryAGI.OpenAI.ListFineTuningCheckpointPermissionResponseObject @object,
             string? firstId,
-            string? lastId)
+            string? lastId,
+            global::tryAGI.OpenAI.ListFineTuningCheckpointPermissionResponseObject @object)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.HasMore = hasMore;
-            this.Object = @object;
             this.FirstId = firstId;
             this.LastId = lastId;
+            this.Object = @object;
         }
 
         /// <summary>

@@ -9,24 +9,10 @@ namespace tryAGI.OpenAI
     public sealed partial class MessageDeltaContentTextAnnotationsFileCitationObject
     {
         /// <summary>
-        /// The index of the annotation in the text content part.
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("index")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Index { get; set; }
-
-        /// <summary>
-        /// Always `file_citation`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageDeltaContentTextAnnotationsFileCitationObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFileCitationObjectType Type { get; set; }
-
-        /// <summary>
-        /// The text in the message content that needs to be replaced.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        public string? Text { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("end_index")]
+        public int? EndIndex { get; set; }
 
         /// <summary>
         /// 
@@ -35,16 +21,30 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation? FileCitation { get; set; }
 
         /// <summary>
+        /// The index of the annotation in the text content part.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("index")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int Index { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_index")]
         public int? StartIndex { get; set; }
 
         /// <summary>
-        /// 
+        /// The text in the message content that needs to be replaced.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("end_index")]
-        public int? EndIndex { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
+        public string? Text { get; set; }
+
+        /// <summary>
+        /// Always `file_citation`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageDeltaContentTextAnnotationsFileCitationObjectTypeJsonConverter))]
+        public global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFileCitationObjectType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -55,35 +55,35 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageDeltaContentTextAnnotationsFileCitationObject" /> class.
         /// </summary>
+        /// <param name="endIndex"></param>
+        /// <param name="fileCitation"></param>
         /// <param name="index">
         /// The index of the annotation in the text content part.
+        /// </param>
+        /// <param name="startIndex"></param>
+        /// <param name="text">
+        /// The text in the message content that needs to be replaced.
         /// </param>
         /// <param name="type">
         /// Always `file_citation`.
         /// </param>
-        /// <param name="text">
-        /// The text in the message content that needs to be replaced.
-        /// </param>
-        /// <param name="fileCitation"></param>
-        /// <param name="startIndex"></param>
-        /// <param name="endIndex"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessageDeltaContentTextAnnotationsFileCitationObject(
             int index,
-            global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFileCitationObjectType type,
-            string? text,
+            int? endIndex,
             global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation? fileCitation,
             int? startIndex,
-            int? endIndex)
+            string? text,
+            global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFileCitationObjectType type)
         {
             this.Index = index;
-            this.Type = type;
-            this.Text = text;
+            this.EndIndex = endIndex;
             this.FileCitation = fileCitation;
             this.StartIndex = startIndex;
-            this.EndIndex = endIndex;
+            this.Text = text;
+            this.Type = type;
         }
 
         /// <summary>

@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public sealed partial class EvalRunOutputItemSampleUsage
     {
         /// <summary>
-        /// The total number of tokens used.
+        /// The number of tokens retrieved from cache.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("cached_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int TotalTokens { get; set; }
+        public required int CachedTokens { get; set; }
 
         /// <summary>
         /// The number of completion tokens generated.
@@ -30,11 +30,11 @@ namespace tryAGI.OpenAI
         public required int PromptTokens { get; set; }
 
         /// <summary>
-        /// The number of tokens retrieved from cache.
+        /// The total number of tokens used.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("cached_tokens")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int CachedTokens { get; set; }
+        public required int TotalTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,8 +45,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="EvalRunOutputItemSampleUsage" /> class.
         /// </summary>
-        /// <param name="totalTokens">
-        /// The total number of tokens used.
+        /// <param name="cachedTokens">
+        /// The number of tokens retrieved from cache.
         /// </param>
         /// <param name="completionTokens">
         /// The number of completion tokens generated.
@@ -54,22 +54,22 @@ namespace tryAGI.OpenAI
         /// <param name="promptTokens">
         /// The number of prompt tokens used.
         /// </param>
-        /// <param name="cachedTokens">
-        /// The number of tokens retrieved from cache.
+        /// <param name="totalTokens">
+        /// The total number of tokens used.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public EvalRunOutputItemSampleUsage(
-            int totalTokens,
+            int cachedTokens,
             int completionTokens,
             int promptTokens,
-            int cachedTokens)
+            int totalTokens)
         {
-            this.TotalTokens = totalTokens;
+            this.CachedTokens = cachedTokens;
             this.CompletionTokens = completionTokens;
             this.PromptTokens = promptTokens;
-            this.CachedTokens = cachedTokens;
+            this.TotalTokens = totalTokens;
         }
 
         /// <summary>

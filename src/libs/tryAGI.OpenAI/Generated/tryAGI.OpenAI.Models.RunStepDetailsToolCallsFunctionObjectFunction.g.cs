@@ -9,18 +9,18 @@ namespace tryAGI.OpenAI
     public sealed partial class RunStepDetailsToolCallsFunctionObjectFunction
     {
         /// <summary>
-        /// The name of the function.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
-
-        /// <summary>
         /// The arguments passed to the function.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Arguments { get; set; }
+
+        /// <summary>
+        /// The name of the function.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
 
         /// <summary>
         /// The output of the function. This will be `null` if the outputs have not been [submitted](/docs/api-reference/runs/submitToolOutputs) yet.
@@ -38,11 +38,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RunStepDetailsToolCallsFunctionObjectFunction" /> class.
         /// </summary>
-        /// <param name="name">
-        /// The name of the function.
-        /// </param>
         /// <param name="arguments">
         /// The arguments passed to the function.
+        /// </param>
+        /// <param name="name">
+        /// The name of the function.
         /// </param>
         /// <param name="output">
         /// The output of the function. This will be `null` if the outputs have not been [submitted](/docs/api-reference/runs/submitToolOutputs) yet.
@@ -51,12 +51,12 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RunStepDetailsToolCallsFunctionObjectFunction(
-            string name,
             string arguments,
+            string name,
             string? output)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
         }
 

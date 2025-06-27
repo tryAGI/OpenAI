@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public sealed partial class VectorStoreFileBatchObjectFileCounts
     {
         /// <summary>
-        /// The number of files that are currently being processed.
+        /// The number of files that where cancelled.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("in_progress")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("cancelled")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int InProgress { get; set; }
+        public required int Cancelled { get; set; }
 
         /// <summary>
         /// The number of files that have been processed.
@@ -30,11 +30,11 @@ namespace tryAGI.OpenAI
         public required int Failed { get; set; }
 
         /// <summary>
-        /// The number of files that where cancelled.
+        /// The number of files that are currently being processed.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("cancelled")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("in_progress")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Cancelled { get; set; }
+        public required int InProgress { get; set; }
 
         /// <summary>
         /// The total number of files.
@@ -52,8 +52,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="VectorStoreFileBatchObjectFileCounts" /> class.
         /// </summary>
-        /// <param name="inProgress">
-        /// The number of files that are currently being processed.
+        /// <param name="cancelled">
+        /// The number of files that where cancelled.
         /// </param>
         /// <param name="completed">
         /// The number of files that have been processed.
@@ -61,8 +61,8 @@ namespace tryAGI.OpenAI
         /// <param name="failed">
         /// The number of files that have failed to process.
         /// </param>
-        /// <param name="cancelled">
-        /// The number of files that where cancelled.
+        /// <param name="inProgress">
+        /// The number of files that are currently being processed.
         /// </param>
         /// <param name="total">
         /// The total number of files.
@@ -71,16 +71,16 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public VectorStoreFileBatchObjectFileCounts(
-            int inProgress,
+            int cancelled,
             int completed,
             int failed,
-            int cancelled,
+            int inProgress,
             int total)
         {
-            this.InProgress = inProgress;
+            this.Cancelled = cancelled;
             this.Completed = completed;
             this.Failed = failed;
-            this.Cancelled = cancelled;
+            this.InProgress = inProgress;
             this.Total = total;
         }
 

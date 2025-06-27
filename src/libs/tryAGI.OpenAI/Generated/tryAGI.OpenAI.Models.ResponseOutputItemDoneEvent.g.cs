@@ -9,11 +9,12 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseOutputItemDoneEvent
     {
         /// <summary>
-        /// The type of the event. Always `response.output_item.done`.
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseOutputItemDoneEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseOutputItemDoneEventType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("item")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OutputItemJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.OutputItem Item { get; set; }
 
         /// <summary>
         /// The index of the output item that was marked done.
@@ -30,12 +31,11 @@ namespace tryAGI.OpenAI
         public required int SequenceNumber { get; set; }
 
         /// <summary>
-        /// 
+        /// The type of the event. Always `response.output_item.done`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("item")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OutputItemJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.OutputItem Item { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseOutputItemDoneEventTypeJsonConverter))]
+        public global::tryAGI.OpenAI.ResponseOutputItemDoneEventType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,28 +46,28 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseOutputItemDoneEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `response.output_item.done`.
-        /// </param>
+        /// <param name="item"></param>
         /// <param name="outputIndex">
         /// The index of the output item that was marked done.
         /// </param>
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
         /// </param>
-        /// <param name="item"></param>
+        /// <param name="type">
+        /// The type of the event. Always `response.output_item.done`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseOutputItemDoneEvent(
+            global::tryAGI.OpenAI.OutputItem item,
             int outputIndex,
             int sequenceNumber,
-            global::tryAGI.OpenAI.OutputItem item,
             global::tryAGI.OpenAI.ResponseOutputItemDoneEventType type)
         {
+            this.Item = item;
             this.OutputIndex = outputIndex;
             this.SequenceNumber = sequenceNumber;
-            this.Item = item;
             this.Type = type;
         }
 

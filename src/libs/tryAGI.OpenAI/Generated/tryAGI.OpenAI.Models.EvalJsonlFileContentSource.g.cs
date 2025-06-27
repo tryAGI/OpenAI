@@ -9,6 +9,13 @@ namespace tryAGI.OpenAI
     public sealed partial class EvalJsonlFileContentSource
     {
         /// <summary>
+        /// The content of the jsonl file.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalJsonlFileContentSourceContentItem> Content { get; set; }
+
+        /// <summary>
         /// The type of jsonl source. Always `file_content`.<br/>
         /// Default Value: file_content
         /// </summary>
@@ -16,13 +23,6 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EvalJsonlFileContentSourceTypeJsonConverter))]
         public global::tryAGI.OpenAI.EvalJsonlFileContentSourceType Type { get; set; } = global::tryAGI.OpenAI.EvalJsonlFileContentSourceType.FileContent;
-
-        /// <summary>
-        /// The content of the jsonl file.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalJsonlFileContentSourceContentItem> Content { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,12 +33,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="EvalJsonlFileContentSource" /> class.
         /// </summary>
+        /// <param name="content">
+        /// The content of the jsonl file.
+        /// </param>
         /// <param name="type">
         /// The type of jsonl source. Always `file_content`.<br/>
         /// Default Value: file_content
-        /// </param>
-        /// <param name="content">
-        /// The content of the jsonl file.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

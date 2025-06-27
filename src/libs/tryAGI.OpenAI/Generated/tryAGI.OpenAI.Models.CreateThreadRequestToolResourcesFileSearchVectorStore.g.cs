@@ -11,17 +11,17 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateThreadRequestToolResourcesFileSearchVectorStore
     {
         /// <summary>
-        /// A list of [file](/docs/api-reference/files) IDs to add to the vector store. There can be a maximum of 10000 files in a vector store.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("file_ids")]
-        public global::System.Collections.Generic.IList<string>? FileIds { get; set; }
-
-        /// <summary>
         /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chunking_strategy")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1, global::tryAGI.OpenAI.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2>))]
         public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1, global::tryAGI.OpenAI.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2>? ChunkingStrategy { get; set; }
+
+        /// <summary>
+        /// A list of [file](/docs/api-reference/files) IDs to add to the vector store. There can be a maximum of 10000 files in a vector store.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("file_ids")]
+        public global::System.Collections.Generic.IList<string>? FileIds { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
@@ -42,11 +42,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateThreadRequestToolResourcesFileSearchVectorStore" /> class.
         /// </summary>
-        /// <param name="fileIds">
-        /// A list of [file](/docs/api-reference/files) IDs to add to the vector store. There can be a maximum of 10000 files in a vector store.
-        /// </param>
         /// <param name="chunkingStrategy">
         /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
+        /// </param>
+        /// <param name="fileIds">
+        /// A list of [file](/docs/api-reference/files) IDs to add to the vector store. There can be a maximum of 10000 files in a vector store.
         /// </param>
         /// <param name="metadata">
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
@@ -59,12 +59,12 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateThreadRequestToolResourcesFileSearchVectorStore(
-            global::System.Collections.Generic.IList<string>? fileIds,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1, global::tryAGI.OpenAI.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2>? chunkingStrategy,
+            global::System.Collections.Generic.IList<string>? fileIds,
             global::System.Collections.Generic.Dictionary<string, string>? metadata)
         {
-            this.FileIds = fileIds;
             this.ChunkingStrategy = chunkingStrategy;
+            this.FileIds = fileIds;
             this.Metadata = metadata;
         }
 

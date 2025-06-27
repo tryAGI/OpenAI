@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseImageGenCallCompletedEvent
     {
         /// <summary>
-        /// The type of the event. Always 'response.image_generation_call.completed'.
+        /// The unique identifier of the image generation item being processed.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseImageGenCallCompletedEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseImageGenCallCompletedEventType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ItemId { get; set; }
 
         /// <summary>
         /// The index of the output item in the response's output array.
@@ -30,11 +30,11 @@ namespace tryAGI.OpenAI
         public required int SequenceNumber { get; set; }
 
         /// <summary>
-        /// The unique identifier of the image generation item being processed.
+        /// The type of the event. Always 'response.image_generation_call.completed'.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ItemId { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseImageGenCallCompletedEventTypeJsonConverter))]
+        public global::tryAGI.OpenAI.ResponseImageGenCallCompletedEventType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,8 +45,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseImageGenCallCompletedEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always 'response.image_generation_call.completed'.
+        /// <param name="itemId">
+        /// The unique identifier of the image generation item being processed.
         /// </param>
         /// <param name="outputIndex">
         /// The index of the output item in the response's output array.
@@ -54,21 +54,21 @@ namespace tryAGI.OpenAI
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
         /// </param>
-        /// <param name="itemId">
-        /// The unique identifier of the image generation item being processed.
+        /// <param name="type">
+        /// The type of the event. Always 'response.image_generation_call.completed'.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseImageGenCallCompletedEvent(
+            string itemId,
             int outputIndex,
             int sequenceNumber,
-            string itemId,
             global::tryAGI.OpenAI.ResponseImageGenCallCompletedEventType type)
         {
+            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.SequenceNumber = sequenceNumber;
-            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.Type = type;
         }
 

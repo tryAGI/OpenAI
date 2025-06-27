@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseReasoningSummaryDeltaEvent
     {
         /// <summary>
-        /// The type of the event. Always 'response.reasoning_summary.delta'.
+        /// The partial update to the reasoning summary content.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseReasoningSummaryDeltaEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseReasoningSummaryDeltaEventType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required object Delta { get; set; }
 
         /// <summary>
         /// The unique identifier of the item for which the reasoning summary is being updated.
@@ -30,13 +30,6 @@ namespace tryAGI.OpenAI
         public required int OutputIndex { get; set; }
 
         /// <summary>
-        /// The index of the summary part within the output item.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("summary_index")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int SummaryIndex { get; set; }
-
-        /// <summary>
         /// The sequence number of this event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
@@ -44,11 +37,18 @@ namespace tryAGI.OpenAI
         public required int SequenceNumber { get; set; }
 
         /// <summary>
-        /// The partial update to the reasoning summary content.
+        /// The index of the summary part within the output item.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("summary_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Delta { get; set; }
+        public required int SummaryIndex { get; set; }
+
+        /// <summary>
+        /// The type of the event. Always 'response.reasoning_summary.delta'.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseReasoningSummaryDeltaEventTypeJsonConverter))]
+        public global::tryAGI.OpenAI.ResponseReasoningSummaryDeltaEventType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -59,8 +59,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseReasoningSummaryDeltaEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always 'response.reasoning_summary.delta'.
+        /// <param name="delta">
+        /// The partial update to the reasoning summary content.
         /// </param>
         /// <param name="itemId">
         /// The unique identifier of the item for which the reasoning summary is being updated.
@@ -68,31 +68,31 @@ namespace tryAGI.OpenAI
         /// <param name="outputIndex">
         /// The index of the output item in the response's output array.
         /// </param>
-        /// <param name="summaryIndex">
-        /// The index of the summary part within the output item.
-        /// </param>
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
         /// </param>
-        /// <param name="delta">
-        /// The partial update to the reasoning summary content.
+        /// <param name="summaryIndex">
+        /// The index of the summary part within the output item.
+        /// </param>
+        /// <param name="type">
+        /// The type of the event. Always 'response.reasoning_summary.delta'.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseReasoningSummaryDeltaEvent(
+            object delta,
             string itemId,
             int outputIndex,
-            int summaryIndex,
             int sequenceNumber,
-            object delta,
+            int summaryIndex,
             global::tryAGI.OpenAI.ResponseReasoningSummaryDeltaEventType type)
         {
+            this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
-            this.SummaryIndex = summaryIndex;
             this.SequenceNumber = sequenceNumber;
-            this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
+            this.SummaryIndex = summaryIndex;
             this.Type = type;
         }
 

@@ -9,18 +9,18 @@ namespace tryAGI.OpenAI
     public sealed partial class CodeInterpreterFileOutputFile
     {
         /// <summary>
-        /// The MIME type of the file.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("mime_type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string MimeType { get; set; }
-
-        /// <summary>
         /// The ID of the file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string FileId { get; set; }
+
+        /// <summary>
+        /// The MIME type of the file.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("mime_type")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string MimeType { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,21 +31,21 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CodeInterpreterFileOutputFile" /> class.
         /// </summary>
-        /// <param name="mimeType">
-        /// The MIME type of the file.
-        /// </param>
         /// <param name="fileId">
         /// The ID of the file.
+        /// </param>
+        /// <param name="mimeType">
+        /// The MIME type of the file.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CodeInterpreterFileOutputFile(
-            string mimeType,
-            string fileId)
+            string fileId,
+            string mimeType)
         {
-            this.MimeType = mimeType ?? throw new global::System.ArgumentNullException(nameof(mimeType));
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
+            this.MimeType = mimeType ?? throw new global::System.ArgumentNullException(nameof(mimeType));
         }
 
         /// <summary>
