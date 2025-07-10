@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The type of the event. Always 'response.mcp_call.arguments_done'.
+    /// The type of the event. Always 'response.mcp_call_arguments.done'.
     /// </summary>
     public enum ResponseMCPCallArgumentsDoneEventType
     {
@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                ResponseMCPCallArgumentsDoneEventType.ResponseMcpCallArgumentsDone => "response.mcp_call.arguments_done",
+                ResponseMCPCallArgumentsDoneEventType.ResponseMcpCallArgumentsDone => "response.mcp_call_arguments.done",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "response.mcp_call.arguments_done" => ResponseMCPCallArgumentsDoneEventType.ResponseMcpCallArgumentsDone,
+                "response.mcp_call_arguments.done" => ResponseMCPCallArgumentsDoneEventType.ResponseMcpCallArgumentsDone,
                 _ => null,
             };
         }

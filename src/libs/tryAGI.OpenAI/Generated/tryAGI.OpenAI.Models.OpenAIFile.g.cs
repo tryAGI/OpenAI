@@ -52,7 +52,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.OpenAIFileObject Object { get; set; }
 
         /// <summary>
-        /// The intended purpose of the file. Supported values are `assistants`, `assistants_output`, `batch`, `batch_output`, `fine-tune`, `fine-tune-results` and `vision`.
+        /// The intended purpose of the file. Supported values are `assistants`, `assistants_output`, `batch`, `batch_output`, `fine-tune`, `fine-tune-results`, `vision`, and `user_data`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("purpose")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OpenAIFilePurposeJsonConverter))]
@@ -102,7 +102,7 @@ namespace tryAGI.OpenAI
         /// The object type, which is always `file`.
         /// </param>
         /// <param name="purpose">
-        /// The intended purpose of the file. Supported values are `assistants`, `assistants_output`, `batch`, `batch_output`, `fine-tune`, `fine-tune-results` and `vision`.
+        /// The intended purpose of the file. Supported values are `assistants`, `assistants_output`, `batch`, `batch_output`, `fine-tune`, `fine-tune-results`, `vision`, and `user_data`.
         /// </param>
         /// <param name="status">
         /// Deprecated. The current status of the file, which can be either `uploaded`, `processed`, or `error`.

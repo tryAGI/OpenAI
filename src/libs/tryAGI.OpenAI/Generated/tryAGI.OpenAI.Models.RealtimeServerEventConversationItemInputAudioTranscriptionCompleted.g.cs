@@ -1,13 +1,15 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// This event is the output of audio transcription for user audio written to the <br/>
-    /// user audio buffer. Transcription begins when the input audio buffer is <br/>
-    /// committed by the client or server (in `server_vad` mode). Transcription runs <br/>
-    /// asynchronously with Response creation, so this event may come before or after <br/>
+    /// This event is the output of audio transcription for user audio written to the<br/>
+    /// user audio buffer. Transcription begins when the input audio buffer is<br/>
+    /// committed by the client or server (in `server_vad` mode). Transcription runs<br/>
+    /// asynchronously with Response creation, so this event may come before or after<br/>
     /// the Response events.<br/>
     /// Realtime API models accept audio natively, and thus input transcription is a<br/>
     /// separate process run on a separate ASR (Automatic Speech Recognition) model.<br/>
@@ -59,6 +61,14 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType Type { get; set; }
 
         /// <summary>
+        /// Usage statistics for the transcription.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.TranscriptTextUsageTokens, global::tryAGI.OpenAI.TranscriptTextUsageDuration>))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.TranscriptTextUsageTokens, global::tryAGI.OpenAI.TranscriptTextUsageDuration> Usage { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -86,6 +96,9 @@ namespace tryAGI.OpenAI
         /// The event type, must be<br/>
         /// `conversation.item.input_audio_transcription.completed`.
         /// </param>
+        /// <param name="usage">
+        /// Usage statistics for the transcription.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -94,6 +107,7 @@ namespace tryAGI.OpenAI
             string eventId,
             string itemId,
             string transcript,
+            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.TranscriptTextUsageTokens, global::tryAGI.OpenAI.TranscriptTextUsageDuration> usage,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProbProperties>? logprobs,
             global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType type)
         {
@@ -101,6 +115,7 @@ namespace tryAGI.OpenAI
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.Transcript = transcript ?? throw new global::System.ArgumentNullException(nameof(transcript));
+            this.Usage = usage;
             this.Logprobs = logprobs;
             this.Type = type;
         }

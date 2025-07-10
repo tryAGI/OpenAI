@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The intended purpose of the file. Supported values are `assistants`, `assistants_output`, `batch`, `batch_output`, `fine-tune`, `fine-tune-results` and `vision`.
+    /// The intended purpose of the file. Supported values are `assistants`, `assistants_output`, `batch`, `batch_output`, `fine-tune`, `fine-tune-results`, `vision`, and `user_data`.
     /// </summary>
     public enum OpenAIFilePurpose
     {
@@ -36,6 +36,10 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         Vision,
+        /// <summary>
+        /// 
+        /// </summary>
+        UserData,
     }
 
     /// <summary>
@@ -57,6 +61,7 @@ namespace tryAGI.OpenAI
                 OpenAIFilePurpose.FineTune => "fine-tune",
                 OpenAIFilePurpose.FineTuneResults => "fine-tune-results",
                 OpenAIFilePurpose.Vision => "vision",
+                OpenAIFilePurpose.UserData => "user_data",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -74,6 +79,7 @@ namespace tryAGI.OpenAI
                 "fine-tune" => OpenAIFilePurpose.FineTune,
                 "fine-tune-results" => OpenAIFilePurpose.FineTuneResults,
                 "vision" => OpenAIFilePurpose.Vision,
+                "user_data" => OpenAIFilePurpose.UserData,
                 _ => null,
             };
         }

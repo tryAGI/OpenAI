@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         public required int SequenceNumber { get; set; }
 
         /// <summary>
-        /// The type of the event. Always 'response.mcp_call.arguments_done'.
+        /// The type of the event. Always 'response.mcp_call_arguments.done'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseMCPCallArgumentsDoneEventTypeJsonConverter))]
@@ -65,7 +65,7 @@ namespace tryAGI.OpenAI
         /// The sequence number of this event.
         /// </param>
         /// <param name="type">
-        /// The type of the event. Always 'response.mcp_call.arguments_done'.
+        /// The type of the event. Always 'response.mcp_call_arguments.done'.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
