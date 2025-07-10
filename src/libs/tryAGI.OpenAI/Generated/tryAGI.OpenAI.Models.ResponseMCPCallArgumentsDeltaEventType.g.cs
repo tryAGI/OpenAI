@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The type of the event. Always 'response.mcp_call.arguments_delta'.
+    /// The type of the event. Always 'response.mcp_call_arguments.delta'.
     /// </summary>
     public enum ResponseMCPCallArgumentsDeltaEventType
     {
@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                ResponseMCPCallArgumentsDeltaEventType.ResponseMcpCallArgumentsDelta => "response.mcp_call.arguments_delta",
+                ResponseMCPCallArgumentsDeltaEventType.ResponseMcpCallArgumentsDelta => "response.mcp_call_arguments.delta",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "response.mcp_call.arguments_delta" => ResponseMCPCallArgumentsDeltaEventType.ResponseMcpCallArgumentsDelta,
+                "response.mcp_call_arguments.delta" => ResponseMCPCallArgumentsDeltaEventType.ResponseMcpCallArgumentsDelta,
                 _ => null,
             };
         }

@@ -21,6 +21,12 @@ namespace tryAGI.OpenAI
         public string? FileId { get; set; }
 
         /// <summary>
+        /// The URL of the file to be sent to the model.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("file_url")]
+        public string? FileUrl { get; set; }
+
+        /// <summary>
         /// The name of the file to be sent to the model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
@@ -50,6 +56,9 @@ namespace tryAGI.OpenAI
         /// <param name="fileId">
         /// The ID of the file to be sent to the model.
         /// </param>
+        /// <param name="fileUrl">
+        /// The URL of the file to be sent to the model.
+        /// </param>
         /// <param name="filename">
         /// The name of the file to be sent to the model.
         /// </param>
@@ -63,11 +72,13 @@ namespace tryAGI.OpenAI
         public InputFileContent(
             string? fileData,
             string? fileId,
+            string? fileUrl,
             string? filename,
             global::tryAGI.OpenAI.InputFileContentType type = global::tryAGI.OpenAI.InputFileContentType.InputFile)
         {
             this.FileData = fileData;
             this.FileId = fileId;
+            this.FileUrl = fileUrl;
             this.Filename = filename;
             this.Type = type;
         }

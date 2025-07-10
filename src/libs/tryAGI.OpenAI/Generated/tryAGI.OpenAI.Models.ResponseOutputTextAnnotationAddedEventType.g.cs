@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The type of the event. Always 'response.output_text_annotation.added'.
+    /// The type of the event. Always 'response.output_text.annotation.added'.
     /// </summary>
     public enum ResponseOutputTextAnnotationAddedEventType
     {
@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                ResponseOutputTextAnnotationAddedEventType.ResponseOutputTextAnnotationAdded => "response.output_text_annotation.added",
+                ResponseOutputTextAnnotationAddedEventType.ResponseOutputTextAnnotationAdded => "response.output_text.annotation.added",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "response.output_text_annotation.added" => ResponseOutputTextAnnotationAddedEventType.ResponseOutputTextAnnotationAdded,
+                "response.output_text.annotation.added" => ResponseOutputTextAnnotationAddedEventType.ResponseOutputTextAnnotationAdded,
                 _ => null,
             };
         }

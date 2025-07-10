@@ -34,6 +34,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MCPToolRequireApprovalEnum, global::tryAGI.OpenAI.MCPToolRequireApprovalEnum2?>? RequireApproval { get; set; }
 
         /// <summary>
+        /// Optional description of the MCP server, used to provide more context.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("server_description")]
+        public string? ServerDescription { get; set; }
+
+        /// <summary>
         /// A label for this MCP server, used to identify it in tool calls.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("server_label")]
@@ -74,6 +80,9 @@ namespace tryAGI.OpenAI
         /// Specify which of the MCP server's tools require approval.<br/>
         /// Default Value: always
         /// </param>
+        /// <param name="serverDescription">
+        /// Optional description of the MCP server, used to provide more context.
+        /// </param>
         /// <param name="serverLabel">
         /// A label for this MCP server, used to identify it in tool calls.
         /// </param>
@@ -92,6 +101,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.OneOf<global::System.Collections.Generic.IList<string>, global::tryAGI.OpenAI.MCPToolAllowedTools>? allowedTools,
             global::System.Collections.Generic.Dictionary<string, string>? headers,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MCPToolRequireApprovalEnum, global::tryAGI.OpenAI.MCPToolRequireApprovalEnum2?>? requireApproval,
+            string? serverDescription,
             global::tryAGI.OpenAI.MCPToolType type)
         {
             this.ServerLabel = serverLabel ?? throw new global::System.ArgumentNullException(nameof(serverLabel));
@@ -99,6 +109,7 @@ namespace tryAGI.OpenAI
             this.AllowedTools = allowedTools;
             this.Headers = headers;
             this.RequireApproval = requireApproval;
+            this.ServerDescription = serverDescription;
             this.Type = type;
         }
 
