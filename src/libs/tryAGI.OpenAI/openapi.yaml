@@ -2482,7 +2482,7 @@ paths:
           response: "{\n  \"created\": 1713833628,\n  \"data\": [\n    {\n      \"b64_json\": \"...\"\n    }\n  ],\n  \"usage\": {\n    \"total_tokens\": 100,\n    \"input_tokens\": 50,\n    \"output_tokens\": 50,\n    \"input_tokens_details\": {\n      \"text_tokens\": 10,\n      \"image_tokens\": 40\n    }\n  }\n}\n"
         group: images
         name: Create image edit
-        returns: 'Returns a list of [image](/docs/api-reference/images/object) objects.'
+        returns: 'Returns an [image](/docs/api-reference/images/object) object.'
   /images/generations:
     post:
       tags:
@@ -2515,7 +2515,7 @@ paths:
           response: "{\n  \"created\": 1713833628,\n  \"data\": [\n    {\n      \"b64_json\": \"...\"\n    }\n  ],\n  \"usage\": {\n    \"total_tokens\": 100,\n    \"input_tokens\": 50,\n    \"output_tokens\": 50,\n    \"input_tokens_details\": {\n      \"text_tokens\": 10,\n      \"image_tokens\": 40\n    }\n  }\n}\n"
         group: images
         name: Create image
-        returns: 'Returns a list of [image](/docs/api-reference/images/object) objects.'
+        returns: 'Returns an [image](/docs/api-reference/images/object) object.'
   /images/variations:
     post:
       tags:
@@ -12868,7 +12868,29 @@ components:
                   description: "The type of the output text. Always `output_text`.\n"
                   x-stainless-const: true
               description: "A text output from the model.\n"
-          description: "Text inputs to the model - can contain template strings.\n"
+            - title: Input image
+              required:
+                - type
+                - image_url
+              type: object
+              properties:
+                detail:
+                  type: string
+                  description: "The detail level of the image to be sent to the model. One of `high`, `low`, or `auto`. Defaults to `auto`.\n"
+                image_url:
+                  type: string
+                  description: "The URL of the image input.\n"
+                type:
+                  enum:
+                    - input_image
+                  type: string
+                  description: "The type of the image input. Always `input_image`.\n"
+                  x-stainless-const: true
+              description: "An image input to the model.\n"
+            - title: An array of Input text and Input image
+              type: array
+              description: "A list of inputs, each of which may be either an input text or input image object.\n"
+          description: "Inputs to the model - can contain template strings.\n"
         role:
           enum:
             - user
@@ -18047,8 +18069,9 @@ components:
           enum:
             - completed
             - incomplete
+            - in_progress
           type: string
-          description: "The status of the item (`completed`, `incomplete`). These have no effect \non the conversation, but are accepted for consistency with the \n`conversation.item.created` event.\n"
+          description: "The status of the item (`completed`, `incomplete`, `in_progress`). These have no effect \non the conversation, but are accepted for consistency with the \n`conversation.item.created` event.\n"
         type:
           enum:
             - message
@@ -18246,7 +18269,6 @@ components:
       required:
         - event_id
         - type
-        - previous_item_id
         - item
       type: object
       properties:
@@ -18257,7 +18279,8 @@ components:
           $ref: '#/components/schemas/RealtimeConversationItem'
         previous_item_id:
           type: string
-          description: "The ID of the preceding item in the Conversation context, allows the \nclient to understand the order of the conversation.\n"
+          description: "The ID of the preceding item in the Conversation context, allows the \nclient to understand the order of the conversation. Can be `null` if the \nitem has no predecessor.\n"
+          nullable: true
         type:
           enum:
             - conversation.item.created
@@ -18544,7 +18567,6 @@ components:
       required:
         - event_id
         - type
-        - previous_item_id
         - item_id
       type: object
       properties:
@@ -18556,7 +18578,8 @@ components:
           description: The ID of the user message item that will be created.
         previous_item_id:
           type: string
-          description: "The ID of the preceding item after which the new item will be inserted.\n"
+          description: "The ID of the preceding item after which the new item will be inserted.\nCan be `null` if the item has no predecessor.\n"
+          nullable: true
         type:
           enum:
             - input_audio_buffer.committed
