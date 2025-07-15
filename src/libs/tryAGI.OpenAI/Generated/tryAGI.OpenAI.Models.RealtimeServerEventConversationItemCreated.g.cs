@@ -36,11 +36,11 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// The ID of the preceding item in the Conversation context, allows the <br/>
-        /// client to understand the order of the conversation.
+        /// client to understand the order of the conversation. Can be `null` if the <br/>
+        /// item has no predecessor.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("previous_item_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string PreviousItemId { get; set; }
+        public string? PreviousItemId { get; set; }
 
         /// <summary>
         /// The event type, must be `conversation.item.created`.
@@ -70,7 +70,8 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="previousItemId">
         /// The ID of the preceding item in the Conversation context, allows the <br/>
-        /// client to understand the order of the conversation.
+        /// client to understand the order of the conversation. Can be `null` if the <br/>
+        /// item has no predecessor.
         /// </param>
         /// <param name="type">
         /// The event type, must be `conversation.item.created`.
@@ -81,12 +82,12 @@ namespace tryAGI.OpenAI
         public RealtimeServerEventConversationItemCreated(
             string eventId,
             global::tryAGI.OpenAI.RealtimeConversationItem item,
-            string previousItemId,
+            string? previousItemId,
             global::tryAGI.OpenAI.RealtimeServerEventConversationItemCreatedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Item = item ?? throw new global::System.ArgumentNullException(nameof(item));
-            this.PreviousItemId = previousItemId ?? throw new global::System.ArgumentNullException(nameof(previousItemId));
+            this.PreviousItemId = previousItemId;
             this.Type = type;
         }
 

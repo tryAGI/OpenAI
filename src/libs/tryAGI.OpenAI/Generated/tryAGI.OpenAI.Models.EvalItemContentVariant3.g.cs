@@ -6,7 +6,7 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// A text output from the model.
     /// </summary>
-    public sealed partial class EvalItemContent
+    public sealed partial class EvalItemContentVariant3
     {
         /// <summary>
         /// The text output from the model.
@@ -19,8 +19,8 @@ namespace tryAGI.OpenAI
         /// The type of the output text. Always `output_text`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EvalItemContentTypeJsonConverter))]
-        public global::tryAGI.OpenAI.EvalItemContentType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EvalItemContentVariant3TypeJsonConverter))]
+        public global::tryAGI.OpenAI.EvalItemContentVariant3Type Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EvalItemContent" /> class.
+        /// Initializes a new instance of the <see cref="EvalItemContentVariant3" /> class.
         /// </summary>
         /// <param name="text">
         /// The text output from the model.
@@ -40,18 +40,18 @@ namespace tryAGI.OpenAI
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public EvalItemContent(
+        public EvalItemContentVariant3(
             string text,
-            global::tryAGI.OpenAI.EvalItemContentType type)
+            global::tryAGI.OpenAI.EvalItemContentVariant3Type type)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EvalItemContent" /> class.
+        /// Initializes a new instance of the <see cref="EvalItemContentVariant3" /> class.
         /// </summary>
-        public EvalItemContent()
+        public EvalItemContentVariant3()
         {
         }
     }

@@ -26,11 +26,11 @@ namespace tryAGI.OpenAI
         public required string ItemId { get; set; }
 
         /// <summary>
-        /// The ID of the preceding item after which the new item will be inserted.
+        /// The ID of the preceding item after which the new item will be inserted.<br/>
+        /// Can be `null` if the item has no predecessor.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("previous_item_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string PreviousItemId { get; set; }
+        public string? PreviousItemId { get; set; }
 
         /// <summary>
         /// The event type, must be `input_audio_buffer.committed`.
@@ -55,7 +55,8 @@ namespace tryAGI.OpenAI
         /// The ID of the user message item that will be created.
         /// </param>
         /// <param name="previousItemId">
-        /// The ID of the preceding item after which the new item will be inserted.
+        /// The ID of the preceding item after which the new item will be inserted.<br/>
+        /// Can be `null` if the item has no predecessor.
         /// </param>
         /// <param name="type">
         /// The event type, must be `input_audio_buffer.committed`.
@@ -66,12 +67,12 @@ namespace tryAGI.OpenAI
         public RealtimeServerEventInputAudioBufferCommitted(
             string eventId,
             string itemId,
-            string previousItemId,
+            string? previousItemId,
             global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCommittedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
-            this.PreviousItemId = previousItemId ?? throw new global::System.ArgumentNullException(nameof(previousItemId));
+            this.PreviousItemId = previousItemId;
             this.Type = type;
         }
 

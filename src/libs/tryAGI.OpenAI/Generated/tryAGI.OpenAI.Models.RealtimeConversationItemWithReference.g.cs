@@ -71,7 +71,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RealtimeConversationItemWithReferenceRole? Role { get; set; }
 
         /// <summary>
-        /// The status of the item (`completed`, `incomplete`). These have no effect <br/>
+        /// The status of the item (`completed`, `incomplete`, `in_progress`). These have no effect <br/>
         /// on the conversation, but are accepted for consistency with the <br/>
         /// `conversation.item.created` event.
         /// </summary>
@@ -132,7 +132,7 @@ namespace tryAGI.OpenAI
         /// applicable for `message` items.
         /// </param>
         /// <param name="status">
-        /// The status of the item (`completed`, `incomplete`). These have no effect <br/>
+        /// The status of the item (`completed`, `incomplete`, `in_progress`). These have no effect <br/>
         /// on the conversation, but are accepted for consistency with the <br/>
         /// `conversation.item.created` event.
         /// </param>

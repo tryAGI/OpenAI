@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The status of the item (`completed`, `incomplete`). These have no effect <br/>
+    /// The status of the item (`completed`, `incomplete`, `in_progress`). These have no effect <br/>
     /// on the conversation, but are accepted for consistency with the <br/>
     /// `conversation.item.created` event.
     /// </summary>
@@ -18,6 +18,10 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         Incomplete,
+        /// <summary>
+        /// 
+        /// </summary>
+        InProgress,
     }
 
     /// <summary>
@@ -34,6 +38,7 @@ namespace tryAGI.OpenAI
             {
                 RealtimeConversationItemWithReferenceStatus.Completed => "completed",
                 RealtimeConversationItemWithReferenceStatus.Incomplete => "incomplete",
+                RealtimeConversationItemWithReferenceStatus.InProgress => "in_progress",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,6 +51,7 @@ namespace tryAGI.OpenAI
             {
                 "completed" => RealtimeConversationItemWithReferenceStatus.Completed,
                 "incomplete" => RealtimeConversationItemWithReferenceStatus.Incomplete,
+                "in_progress" => RealtimeConversationItemWithReferenceStatus.InProgress,
                 _ => null,
             };
         }
