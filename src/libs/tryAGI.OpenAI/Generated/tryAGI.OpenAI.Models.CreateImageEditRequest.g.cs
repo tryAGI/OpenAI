@@ -38,6 +38,16 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.AnyOf<byte[], global::System.Collections.Generic.IList<byte[]>> Image { get; set; }
 
         /// <summary>
+        /// Control how much effort the model will exert to match the style and features,<br/>
+        /// especially facial features, of input images. This parameter is only supported<br/>
+        /// for `gpt-image-1`. Supports `high` and `low`. Defaults to `low`.<br/>
+        /// Default Value: low
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("input_fidelity")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImageInputFidelityJsonConverter))]
+        public global::tryAGI.OpenAI.ImageInputFidelity? InputFidelity { get; set; }
+
+        /// <summary>
         /// An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. If there are multiple images provided, the mask will be applied on the first image. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mask")]
@@ -92,6 +102,17 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CreateImageEditRequestOutputFormat? OutputFormat { get; set; }
 
         /// <summary>
+        /// The number of partial images to generate. This parameter is used for<br/>
+        /// streaming responses that return partial images. Value must be between 0 and 3.<br/>
+        /// When set to 0, the response will be a single image sent in one streaming event.<br/>
+        /// Default Value: 0<br/>
+        /// Example: 1
+        /// </summary>
+        /// <example>1</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("partial_images")]
+        public int? PartialImages { get; set; }
+
+        /// <summary>
         /// A text description of the desired image(s). The maximum length is 1000 characters for `dall-e-2`, and 32000 characters for `gpt-image-1`.<br/>
         /// Example: A cute baby sea otter wearing a beret
         /// </summary>
@@ -131,6 +152,16 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CreateImageEditRequestSize? Size { get; set; }
 
         /// <summary>
+        /// Edit the image in streaming mode. Defaults to `false`. See the <br/>
+        /// [Image generation guide](/docs/guides/image-generation) for more information.<br/>
+        /// Default Value: false<br/>
+        /// Example: false
+        /// </summary>
+        /// <example>false</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("stream")]
+        public bool? Stream { get; set; }
+
+        /// <summary>
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
         /// Example: user-1234
         /// </summary>
@@ -164,6 +195,12 @@ namespace tryAGI.OpenAI
         /// For `dall-e-2`, you can only provide one image, and it should be a square <br/>
         /// `png` file less than 4MB.
         /// </param>
+        /// <param name="inputFidelity">
+        /// Control how much effort the model will exert to match the style and features,<br/>
+        /// especially facial features, of input images. This parameter is only supported<br/>
+        /// for `gpt-image-1`. Supports `high` and `low`. Defaults to `low`.<br/>
+        /// Default Value: low
+        /// </param>
         /// <param name="mask">
         /// An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. If there are multiple images provided, the mask will be applied on the first image. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.
         /// </param>
@@ -194,6 +231,13 @@ namespace tryAGI.OpenAI
         /// Default Value: png<br/>
         /// Example: png
         /// </param>
+        /// <param name="partialImages">
+        /// The number of partial images to generate. This parameter is used for<br/>
+        /// streaming responses that return partial images. Value must be between 0 and 3.<br/>
+        /// When set to 0, the response will be a single image sent in one streaming event.<br/>
+        /// Default Value: 0<br/>
+        /// Example: 1
+        /// </param>
         /// <param name="prompt">
         /// A text description of the desired image(s). The maximum length is 1000 characters for `dall-e-2`, and 32000 characters for `gpt-image-1`.<br/>
         /// Example: A cute baby sea otter wearing a beret
@@ -213,6 +257,12 @@ namespace tryAGI.OpenAI
         /// Default Value: 1024x1024<br/>
         /// Example: 1024x1024
         /// </param>
+        /// <param name="stream">
+        /// Edit the image in streaming mode. Defaults to `false`. See the <br/>
+        /// [Image generation guide](/docs/guides/image-generation) for more information.<br/>
+        /// Default Value: false<br/>
+        /// Example: false
+        /// </param>
         /// <param name="user">
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
         /// Example: user-1234
@@ -224,29 +274,35 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AnyOf<byte[], global::System.Collections.Generic.IList<byte[]>> image,
             string prompt,
             global::tryAGI.OpenAI.CreateImageEditRequestBackground? background,
+            global::tryAGI.OpenAI.ImageInputFidelity? inputFidelity,
             byte[]? mask,
             string? maskname,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageEditRequestModel?>? model,
             int? n,
             int? outputCompression,
             global::tryAGI.OpenAI.CreateImageEditRequestOutputFormat? outputFormat,
+            int? partialImages,
             global::tryAGI.OpenAI.CreateImageEditRequestQuality? quality,
             global::tryAGI.OpenAI.CreateImageEditRequestResponseFormat? responseFormat,
             global::tryAGI.OpenAI.CreateImageEditRequestSize? size,
+            bool? stream,
             string? user)
         {
             this.Image = image;
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Background = background;
+            this.InputFidelity = inputFidelity;
             this.Mask = mask;
             this.Maskname = maskname;
             this.Model = model;
             this.N = n;
             this.OutputCompression = outputCompression;
             this.OutputFormat = outputFormat;
+            this.PartialImages = partialImages;
             this.Quality = quality;
             this.ResponseFormat = responseFormat;
             this.Size = size;
+            this.Stream = stream;
             this.User = user;
         }
 

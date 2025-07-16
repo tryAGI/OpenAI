@@ -6,7 +6,7 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// For `gpt-image-1` only, the token usage information for the image generation.
     /// </summary>
-    public sealed partial class ImagesResponseUsage
+    public sealed partial class ImagesUsage
     {
         /// <summary>
         /// The number of tokens (images and text) in the input prompt.
@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens_details")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ImagesResponseUsageInputTokensDetails InputTokensDetails { get; set; }
+        public required global::tryAGI.OpenAI.ImagesUsageInputTokensDetails InputTokensDetails { get; set; }
 
         /// <summary>
         /// The number of image tokens in the output image.
@@ -43,7 +43,7 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ImagesResponseUsage" /> class.
+        /// Initializes a new instance of the <see cref="ImagesUsage" /> class.
         /// </summary>
         /// <param name="inputTokens">
         /// The number of tokens (images and text) in the input prompt.
@@ -60,9 +60,9 @@ namespace tryAGI.OpenAI
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public ImagesResponseUsage(
+        public ImagesUsage(
             int inputTokens,
-            global::tryAGI.OpenAI.ImagesResponseUsageInputTokensDetails inputTokensDetails,
+            global::tryAGI.OpenAI.ImagesUsageInputTokensDetails inputTokensDetails,
             int outputTokens,
             int totalTokens)
         {
@@ -73,9 +73,9 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ImagesResponseUsage" /> class.
+        /// Initializes a new instance of the <see cref="ImagesUsage" /> class.
         /// </summary>
-        public ImagesResponseUsage()
+        public ImagesUsage()
         {
         }
     }

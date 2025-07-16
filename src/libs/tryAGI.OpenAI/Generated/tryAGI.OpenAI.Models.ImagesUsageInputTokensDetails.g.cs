@@ -6,7 +6,7 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// The input tokens detailed information for the image generation.
     /// </summary>
-    public sealed partial class ImagesResponseUsageInputTokensDetails
+    public sealed partial class ImagesUsageInputTokensDetails
     {
         /// <summary>
         /// The number of image tokens in the input prompt.
@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ImagesResponseUsageInputTokensDetails" /> class.
+        /// Initializes a new instance of the <see cref="ImagesUsageInputTokensDetails" /> class.
         /// </summary>
         /// <param name="imageTokens">
         /// The number of image tokens in the input prompt.
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public ImagesResponseUsageInputTokensDetails(
+        public ImagesUsageInputTokensDetails(
             int imageTokens,
             int textTokens)
         {
@@ -49,9 +49,9 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ImagesResponseUsageInputTokensDetails" /> class.
+        /// Initializes a new instance of the <see cref="ImagesUsageInputTokensDetails" /> class.
         /// </summary>
-        public ImagesResponseUsageInputTokensDetails()
+        public ImagesUsageInputTokensDetails()
         {
         }
     }
