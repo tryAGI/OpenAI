@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class RefusalContent
     {
         /// <summary>
-        /// The refusal explanationfrom the model.
+        /// The refusal explanation from the model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("refusal")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -34,7 +34,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="RefusalContent" /> class.
         /// </summary>
         /// <param name="refusal">
-        /// The refusal explanationfrom the model.
+        /// The refusal explanation from the model.
         /// </param>
         /// <param name="type">
         /// The type of the refusal. Always `refusal`.<br/>

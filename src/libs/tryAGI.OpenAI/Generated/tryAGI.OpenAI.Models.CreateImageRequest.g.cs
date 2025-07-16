@@ -74,6 +74,17 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CreateImageRequestOutputFormat? OutputFormat { get; set; }
 
         /// <summary>
+        /// The number of partial images to generate. This parameter is used for<br/>
+        /// streaming responses that return partial images. Value must be between 0 and 3.<br/>
+        /// When set to 0, the response will be a single image sent in one streaming event.<br/>
+        /// Default Value: 0<br/>
+        /// Example: 1
+        /// </summary>
+        /// <example>1</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("partial_images")]
+        public int? PartialImages { get; set; }
+
+        /// <summary>
         /// A text description of the desired image(s). The maximum length is 32000 characters for `gpt-image-1`, 1000 characters for `dall-e-2` and 4000 characters for `dall-e-3`.<br/>
         /// Example: A cute baby sea otter
         /// </summary>
@@ -115,6 +126,17 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateImageRequestSizeJsonConverter))]
         public global::tryAGI.OpenAI.CreateImageRequestSize? Size { get; set; }
+
+        /// <summary>
+        /// Generate the image in streaming mode. Defaults to `false`. See the <br/>
+        /// [Image generation guide](/docs/guides/image-generation) for more information.<br/>
+        /// This parameter is only supported for `gpt-image-1`.<br/>
+        /// Default Value: false<br/>
+        /// Example: false
+        /// </summary>
+        /// <example>false</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("stream")]
+        public bool? Stream { get; set; }
 
         /// <summary>
         /// The style of the generated images. This parameter is only supported for `dall-e-3`. Must be one of `vivid` or `natural`. Vivid causes the model to lean towards generating hyper-real and dramatic images. Natural causes the model to produce more natural, less hyper-real looking images.<br/>
@@ -178,6 +200,13 @@ namespace tryAGI.OpenAI
         /// Default Value: png<br/>
         /// Example: png
         /// </param>
+        /// <param name="partialImages">
+        /// The number of partial images to generate. This parameter is used for<br/>
+        /// streaming responses that return partial images. Value must be between 0 and 3.<br/>
+        /// When set to 0, the response will be a single image sent in one streaming event.<br/>
+        /// Default Value: 0<br/>
+        /// Example: 1
+        /// </param>
         /// <param name="prompt">
         /// A text description of the desired image(s). The maximum length is 32000 characters for `gpt-image-1`, 1000 characters for `dall-e-2` and 4000 characters for `dall-e-3`.<br/>
         /// Example: A cute baby sea otter
@@ -201,6 +230,13 @@ namespace tryAGI.OpenAI
         /// Default Value: auto<br/>
         /// Example: 1024x1024
         /// </param>
+        /// <param name="stream">
+        /// Generate the image in streaming mode. Defaults to `false`. See the <br/>
+        /// [Image generation guide](/docs/guides/image-generation) for more information.<br/>
+        /// This parameter is only supported for `gpt-image-1`.<br/>
+        /// Default Value: false<br/>
+        /// Example: false
+        /// </param>
         /// <param name="style">
         /// The style of the generated images. This parameter is only supported for `dall-e-3`. Must be one of `vivid` or `natural`. Vivid causes the model to lean towards generating hyper-real and dramatic images. Natural causes the model to produce more natural, less hyper-real looking images.<br/>
         /// Default Value: vivid<br/>
@@ -221,9 +257,11 @@ namespace tryAGI.OpenAI
             int? n,
             int? outputCompression,
             global::tryAGI.OpenAI.CreateImageRequestOutputFormat? outputFormat,
+            int? partialImages,
             global::tryAGI.OpenAI.CreateImageRequestQuality? quality,
             global::tryAGI.OpenAI.CreateImageRequestResponseFormat? responseFormat,
             global::tryAGI.OpenAI.CreateImageRequestSize? size,
+            bool? stream,
             global::tryAGI.OpenAI.CreateImageRequestStyle? style,
             string? user)
         {
@@ -234,9 +272,11 @@ namespace tryAGI.OpenAI
             this.N = n;
             this.OutputCompression = outputCompression;
             this.OutputFormat = outputFormat;
+            this.PartialImages = partialImages;
             this.Quality = quality;
             this.ResponseFormat = responseFormat;
             this.Size = size;
+            this.Stream = stream;
             this.Style = style;
             this.User = user;
         }

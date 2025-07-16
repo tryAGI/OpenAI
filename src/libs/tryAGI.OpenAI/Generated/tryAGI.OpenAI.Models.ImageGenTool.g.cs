@@ -18,6 +18,16 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ImageGenToolBackground? Background { get; set; }
 
         /// <summary>
+        /// Control how much effort the model will exert to match the style and features,<br/>
+        /// especially facial features, of input images. This parameter is only supported<br/>
+        /// for `gpt-image-1`. Supports `high` and `low`. Defaults to `low`.<br/>
+        /// Default Value: low
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("input_fidelity")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImageInputFidelityJsonConverter))]
+        public global::tryAGI.OpenAI.ImageInputFidelity? InputFidelity { get; set; }
+
+        /// <summary>
         /// Optional mask for inpainting. Contains `image_url` <br/>
         /// (string, optional) and `file_id` (string, optional).
         /// </summary>
@@ -102,6 +112,12 @@ namespace tryAGI.OpenAI
         /// `opaque`, or `auto`. Default: `auto`.<br/>
         /// Default Value: auto
         /// </param>
+        /// <param name="inputFidelity">
+        /// Control how much effort the model will exert to match the style and features,<br/>
+        /// especially facial features, of input images. This parameter is only supported<br/>
+        /// for `gpt-image-1`. Supports `high` and `low`. Defaults to `low`.<br/>
+        /// Default Value: low
+        /// </param>
         /// <param name="inputImageMask">
         /// Optional mask for inpainting. Contains `image_url` <br/>
         /// (string, optional) and `file_id` (string, optional).
@@ -145,6 +161,7 @@ namespace tryAGI.OpenAI
 #endif
         public ImageGenTool(
             global::tryAGI.OpenAI.ImageGenToolBackground? background,
+            global::tryAGI.OpenAI.ImageInputFidelity? inputFidelity,
             global::tryAGI.OpenAI.ImageGenToolInputImageMask? inputImageMask,
             global::tryAGI.OpenAI.ImageGenToolModel? model,
             global::tryAGI.OpenAI.ImageGenToolModeration? moderation,
@@ -156,6 +173,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ImageGenToolType type)
         {
             this.Background = background;
+            this.InputFidelity = inputFidelity;
             this.InputImageMask = inputImageMask;
             this.Model = model;
             this.Moderation = moderation;
