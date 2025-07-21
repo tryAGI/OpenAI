@@ -127,7 +127,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.AuditLogOrganizationUpdated? OrganizationUpdated { get; set; }
 
         /// <summary>
-        /// The project that the action was scoped to. Absent for actions not scoped to projects.
+        /// The project that the action was scoped to. Absent for actions not scoped to projects. Note that any admin actions taken via Admin API keys are associated with the default project.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project")]
         public global::tryAGI.OpenAI.AuditLogProject? Project { get; set; }
@@ -273,7 +273,7 @@ namespace tryAGI.OpenAI
         /// The details for events with this `type`.
         /// </param>
         /// <param name="project">
-        /// The project that the action was scoped to. Absent for actions not scoped to projects.
+        /// The project that the action was scoped to. Absent for actions not scoped to projects. Note that any admin actions taken via Admin API keys are associated with the default project.
         /// </param>
         /// <param name="projectArchived">
         /// The details for events with this `type`.

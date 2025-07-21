@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The project that the action was scoped to. Absent for actions not scoped to projects.
+    /// The project that the action was scoped to. Absent for actions not scoped to projects. Note that any admin actions taken via Admin API keys are associated with the default project.
     /// </summary>
     public sealed partial class AuditLogProject
     {

@@ -50,7 +50,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Specifies the processing type used for serving the request.<br/>
         ///   - If set to 'auto', then the request will be processed with the service tier configured in the Project settings. Unless otherwise configured, the Project will use 'default'.<br/>
-        ///   - If set to 'default', then the requset will be processed with the standard pricing and performance for the selected model.<br/>
+        ///   - If set to 'default', then the request will be processed with the standard pricing and performance for the selected model.<br/>
         ///   - If set to '[flex](/docs/guides/flex-processing)' or 'priority', then the request will be processed with the corresponding service tier. [Contact sales](https://openai.com/contact-sales) to learn more about Priority processing.<br/>
         ///   - When not set, the default behavior is 'auto'.<br/>
         ///   When the `service_tier` parameter is set, the response body will include the `service_tier` value based on the processing mode actually used to serve the request. This response value may be different from the value set in the parameter.<br/>
@@ -101,7 +101,7 @@ namespace tryAGI.OpenAI
         /// <param name="serviceTier">
         /// Specifies the processing type used for serving the request.<br/>
         ///   - If set to 'auto', then the request will be processed with the service tier configured in the Project settings. Unless otherwise configured, the Project will use 'default'.<br/>
-        ///   - If set to 'default', then the requset will be processed with the standard pricing and performance for the selected model.<br/>
+        ///   - If set to 'default', then the request will be processed with the standard pricing and performance for the selected model.<br/>
         ///   - If set to '[flex](/docs/guides/flex-processing)' or 'priority', then the request will be processed with the corresponding service tier. [Contact sales](https://openai.com/contact-sales) to learn more about Priority processing.<br/>
         ///   - When not set, the default behavior is 'auto'.<br/>
         ///   When the `service_tier` parameter is set, the response body will include the `service_tier` value based on the processing mode actually used to serve the request. This response value may be different from the value set in the parameter.<br/>

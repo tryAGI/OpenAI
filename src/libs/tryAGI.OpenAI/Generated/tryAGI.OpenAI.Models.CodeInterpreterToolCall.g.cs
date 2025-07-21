@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
         public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CodeInterpreterOutputLogs, global::tryAGI.OpenAI.CodeInterpreterOutputImage>>? Outputs { get; set; }
 
         /// <summary>
-        /// The status of the code interpreter tool call.
+        /// The status of the code interpreter tool call. Valid values are `in_progress`, `completed`, `incomplete`, `interpreting`, and `failed`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CodeInterpreterToolCallStatusJsonConverter))]
@@ -79,7 +79,7 @@ namespace tryAGI.OpenAI
         /// Can be null if no outputs are available.
         /// </param>
         /// <param name="status">
-        /// The status of the code interpreter tool call.
+        /// The status of the code interpreter tool call. Valid values are `in_progress`, `completed`, `incomplete`, `interpreting`, and `failed`.
         /// </param>
         /// <param name="type">
         /// The type of the code interpreter tool call. Always `code_interpreter_call`.<br/>

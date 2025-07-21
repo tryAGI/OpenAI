@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseMCPCallArgumentsDoneEvent
     {
         /// <summary>
-        /// The finalized arguments for the MCP tool call.
+        /// A JSON string containing the finalized arguments for the MCP tool call.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Arguments { get; set; }
+        public required string Arguments { get; set; }
 
         /// <summary>
         /// The unique identifier of the MCP tool call item being processed.
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="ResponseMCPCallArgumentsDoneEvent" /> class.
         /// </summary>
         /// <param name="arguments">
-        /// The finalized arguments for the MCP tool call.
+        /// A JSON string containing the finalized arguments for the MCP tool call.
         /// </param>
         /// <param name="itemId">
         /// The unique identifier of the MCP tool call item being processed.
@@ -71,7 +71,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseMCPCallArgumentsDoneEvent(
-            object arguments,
+            string arguments,
             string itemId,
             int outputIndex,
             int sequenceNumber,
