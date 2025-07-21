@@ -9,6 +9,20 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseMCPListToolsFailedEvent
     {
         /// <summary>
+        /// The ID of the MCP tool call item that failed.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ItemId { get; set; }
+
+        /// <summary>
+        /// The index of the output item that failed.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_index")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int OutputIndex { get; set; }
+
+        /// <summary>
         /// The sequence number of this event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
@@ -31,6 +45,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseMCPListToolsFailedEvent" /> class.
         /// </summary>
+        /// <param name="itemId">
+        /// The ID of the MCP tool call item that failed.
+        /// </param>
+        /// <param name="outputIndex">
+        /// The index of the output item that failed.
+        /// </param>
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
         /// </param>
@@ -41,9 +61,13 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseMCPListToolsFailedEvent(
+            string itemId,
+            int outputIndex,
             int sequenceNumber,
             global::tryAGI.OpenAI.ResponseMCPListToolsFailedEventType type)
         {
+            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
+            this.OutputIndex = outputIndex;
             this.SequenceNumber = sequenceNumber;
             this.Type = type;
         }

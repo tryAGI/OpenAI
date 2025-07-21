@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The status of the code interpreter tool call.
+    /// The status of the code interpreter tool call. Valid values are `in_progress`, `completed`, `incomplete`, `interpreting`, and `failed`.
     /// </summary>
     public enum CodeInterpreterToolCallStatus
     {

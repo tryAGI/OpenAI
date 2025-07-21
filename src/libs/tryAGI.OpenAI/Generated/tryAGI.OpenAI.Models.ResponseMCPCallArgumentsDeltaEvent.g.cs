@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseMCPCallArgumentsDeltaEvent
     {
         /// <summary>
-        /// The partial update to the arguments for the MCP tool call.
+        /// A JSON string containing the partial update to the arguments for the MCP tool call.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Delta { get; set; }
+        public required string Delta { get; set; }
 
         /// <summary>
         /// The unique identifier of the MCP tool call item being processed.
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="ResponseMCPCallArgumentsDeltaEvent" /> class.
         /// </summary>
         /// <param name="delta">
-        /// The partial update to the arguments for the MCP tool call.
+        /// A JSON string containing the partial update to the arguments for the MCP tool call.
         /// </param>
         /// <param name="itemId">
         /// The unique identifier of the MCP tool call item being processed.
@@ -71,7 +71,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseMCPCallArgumentsDeltaEvent(
-            object delta,
+            string delta,
             string itemId,
             int outputIndex,
             int sequenceNumber,

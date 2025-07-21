@@ -54,7 +54,7 @@ namespace tryAGI.OpenAI
         /// For `gpt-image-1` only, the token usage information for the image generation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
-        public global::tryAGI.OpenAI.ImagesUsage? Usage { get; set; }
+        public global::tryAGI.OpenAI.ImageGenUsage? Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -96,7 +96,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ImagesResponseOutputFormat? outputFormat,
             global::tryAGI.OpenAI.ImagesResponseQuality? quality,
             global::tryAGI.OpenAI.ImagesResponseSize? size,
-            global::tryAGI.OpenAI.ImagesUsage? usage)
+            global::tryAGI.OpenAI.ImageGenUsage? usage)
         {
             this.Created = created;
             this.Background = background;

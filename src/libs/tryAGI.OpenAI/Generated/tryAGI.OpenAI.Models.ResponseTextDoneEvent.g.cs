@@ -23,6 +23,13 @@ namespace tryAGI.OpenAI
         public required string ItemId { get; set; }
 
         /// <summary>
+        /// The log probabilities of the tokens in the delta.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResponseLogProb> Logprobs { get; set; }
+
+        /// <summary>
         /// The index of the output item that the text content is finalized.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_index")]
@@ -65,6 +72,9 @@ namespace tryAGI.OpenAI
         /// <param name="itemId">
         /// The ID of the output item that the text content is finalized.
         /// </param>
+        /// <param name="logprobs">
+        /// The log probabilities of the tokens in the delta.
+        /// </param>
         /// <param name="outputIndex">
         /// The index of the output item that the text content is finalized.
         /// </param>
@@ -83,6 +93,7 @@ namespace tryAGI.OpenAI
         public ResponseTextDoneEvent(
             int contentIndex,
             string itemId,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResponseLogProb> logprobs,
             int outputIndex,
             int sequenceNumber,
             string text,
@@ -90,6 +101,7 @@ namespace tryAGI.OpenAI
         {
             this.ContentIndex = contentIndex;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
+            this.Logprobs = logprobs ?? throw new global::System.ArgumentNullException(nameof(logprobs));
             this.OutputIndex = outputIndex;
             this.SequenceNumber = sequenceNumber;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));

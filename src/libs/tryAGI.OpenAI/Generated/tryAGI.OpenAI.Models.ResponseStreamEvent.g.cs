@@ -1725,76 +1725,6 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Emitted when there is a delta (partial update) to the reasoning content.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ResponseReasoningDeltaEvent? ReasoningDelta { get; init; }
-#else
-        public global::tryAGI.OpenAI.ResponseReasoningDeltaEvent? ReasoningDelta { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningDelta))]
-#endif
-        public bool IsReasoningDelta => ReasoningDelta != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseReasoningDeltaEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseReasoningDeltaEvent?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.ResponseReasoningDeltaEvent?(ResponseStreamEvent @this) => @this.ReasoningDelta;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseReasoningDeltaEvent? value)
-        {
-            ReasoningDelta = value;
-        }
-
-        /// <summary>
-        /// Emitted when the reasoning content is finalized for an item.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ResponseReasoningDoneEvent? ReasoningDone { get; init; }
-#else
-        public global::tryAGI.OpenAI.ResponseReasoningDoneEvent? ReasoningDone { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningDone))]
-#endif
-        public bool IsReasoningDone => ReasoningDone != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseReasoningDoneEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseReasoningDoneEvent?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.ResponseReasoningDoneEvent?(ResponseStreamEvent @this) => @this.ReasoningDone;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseReasoningDoneEvent? value)
-        {
-            ReasoningDone = value;
-        }
-
-        /// <summary>
         /// Emitted when there is a delta (partial update) to the reasoning summary content.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -1917,8 +1847,6 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ResponseMCPListToolsInProgressEvent? mCPListToolsInProgress,
             global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEvent? outputTextAnnotationAdded,
             global::tryAGI.OpenAI.ResponseQueuedEvent? queued,
-            global::tryAGI.OpenAI.ResponseReasoningDeltaEvent? reasoningDelta,
-            global::tryAGI.OpenAI.ResponseReasoningDoneEvent? reasoningDone,
             global::tryAGI.OpenAI.ResponseReasoningSummaryDeltaEvent? reasoningSummaryDelta,
             global::tryAGI.OpenAI.ResponseReasoningSummaryDoneEvent? reasoningSummaryDone
             )
@@ -1972,8 +1900,6 @@ namespace tryAGI.OpenAI
             MCPListToolsInProgress = mCPListToolsInProgress;
             OutputTextAnnotationAdded = outputTextAnnotationAdded;
             Queued = queued;
-            ReasoningDelta = reasoningDelta;
-            ReasoningDone = reasoningDone;
             ReasoningSummaryDelta = reasoningSummaryDelta;
             ReasoningSummaryDone = reasoningSummaryDone;
         }
@@ -1984,8 +1910,6 @@ namespace tryAGI.OpenAI
         public object? Object =>
             ReasoningSummaryDone as object ??
             ReasoningSummaryDelta as object ??
-            ReasoningDone as object ??
-            ReasoningDelta as object ??
             Queued as object ??
             OutputTextAnnotationAdded as object ??
             MCPListToolsInProgress as object ??
@@ -2090,8 +2014,6 @@ namespace tryAGI.OpenAI
             MCPListToolsInProgress?.ToString() ??
             OutputTextAnnotationAdded?.ToString() ??
             Queued?.ToString() ??
-            ReasoningDelta?.ToString() ??
-            ReasoningDone?.ToString() ??
             ReasoningSummaryDelta?.ToString() ??
             ReasoningSummaryDone?.ToString() 
             ;
@@ -2101,7 +2023,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsAudioDelta || IsAudioDone || IsAudioTranscriptDelta || IsAudioTranscriptDone || IsCodeInterpreterCallDelta || IsCodeInterpreterCallDone || IsCodeInterpreterCallCompleted || IsCodeInterpreterCallInProgress || IsCodeInterpreterCallInterpreting || IsCompleted || IsContentPartAdded || IsContentPartDone || IsCreated || IsError || IsFileSearchCallCompleted || IsFileSearchCallInProgress || IsFileSearchCallSearching || IsFunctionCallArgumentsDelta || IsFunctionCallArgumentsDone || IsInProgress || IsFailed || IsIncomplete || IsOutputItemAdded || IsOutputItemDone || IsReasoningSummaryPartAdded || IsReasoningSummaryPartDone || IsReasoningSummaryTextDelta || IsReasoningSummaryTextDone || IsRefusalDelta || IsRefusalDone || IsTextDelta || IsTextDone || IsWebSearchCallCompleted || IsWebSearchCallInProgress || IsWebSearchCallSearching || IsImageGenCallCompleted || IsImageGenCallGenerating || IsImageGenCallInProgress || IsImageGenCallPartial || IsMCPCallArgumentsDelta || IsMCPCallArgumentsDone || IsMCPCallCompleted || IsMCPCallFailed || IsMCPCallInProgress || IsMCPListToolsCompleted || IsMCPListToolsFailed || IsMCPListToolsInProgress || IsOutputTextAnnotationAdded || IsQueued || IsReasoningDelta || IsReasoningDone || IsReasoningSummaryDelta || IsReasoningSummaryDone;
+            return IsAudioDelta || IsAudioDone || IsAudioTranscriptDelta || IsAudioTranscriptDone || IsCodeInterpreterCallDelta || IsCodeInterpreterCallDone || IsCodeInterpreterCallCompleted || IsCodeInterpreterCallInProgress || IsCodeInterpreterCallInterpreting || IsCompleted || IsContentPartAdded || IsContentPartDone || IsCreated || IsError || IsFileSearchCallCompleted || IsFileSearchCallInProgress || IsFileSearchCallSearching || IsFunctionCallArgumentsDelta || IsFunctionCallArgumentsDone || IsInProgress || IsFailed || IsIncomplete || IsOutputItemAdded || IsOutputItemDone || IsReasoningSummaryPartAdded || IsReasoningSummaryPartDone || IsReasoningSummaryTextDelta || IsReasoningSummaryTextDone || IsRefusalDelta || IsRefusalDone || IsTextDelta || IsTextDone || IsWebSearchCallCompleted || IsWebSearchCallInProgress || IsWebSearchCallSearching || IsImageGenCallCompleted || IsImageGenCallGenerating || IsImageGenCallInProgress || IsImageGenCallPartial || IsMCPCallArgumentsDelta || IsMCPCallArgumentsDone || IsMCPCallCompleted || IsMCPCallFailed || IsMCPCallInProgress || IsMCPListToolsCompleted || IsMCPListToolsFailed || IsMCPListToolsInProgress || IsOutputTextAnnotationAdded || IsQueued || IsReasoningSummaryDelta || IsReasoningSummaryDone;
         }
 
         /// <summary>
@@ -2157,8 +2079,6 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.ResponseMCPListToolsInProgressEvent?, TResult>? mCPListToolsInProgress = null,
             global::System.Func<global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEvent?, TResult>? outputTextAnnotationAdded = null,
             global::System.Func<global::tryAGI.OpenAI.ResponseQueuedEvent?, TResult>? queued = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseReasoningDeltaEvent?, TResult>? reasoningDelta = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseReasoningDoneEvent?, TResult>? reasoningDone = null,
             global::System.Func<global::tryAGI.OpenAI.ResponseReasoningSummaryDeltaEvent?, TResult>? reasoningSummaryDelta = null,
             global::System.Func<global::tryAGI.OpenAI.ResponseReasoningSummaryDoneEvent?, TResult>? reasoningSummaryDone = null,
             bool validate = true)
@@ -2364,14 +2284,6 @@ namespace tryAGI.OpenAI
             {
                 return queued(Queued!);
             }
-            else if (IsReasoningDelta && reasoningDelta != null)
-            {
-                return reasoningDelta(ReasoningDelta!);
-            }
-            else if (IsReasoningDone && reasoningDone != null)
-            {
-                return reasoningDone(ReasoningDone!);
-            }
             else if (IsReasoningSummaryDelta && reasoningSummaryDelta != null)
             {
                 return reasoningSummaryDelta(ReasoningSummaryDelta!);
@@ -2437,8 +2349,6 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.ResponseMCPListToolsInProgressEvent?>? mCPListToolsInProgress = null,
             global::System.Action<global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEvent?>? outputTextAnnotationAdded = null,
             global::System.Action<global::tryAGI.OpenAI.ResponseQueuedEvent?>? queued = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseReasoningDeltaEvent?>? reasoningDelta = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseReasoningDoneEvent?>? reasoningDone = null,
             global::System.Action<global::tryAGI.OpenAI.ResponseReasoningSummaryDeltaEvent?>? reasoningSummaryDelta = null,
             global::System.Action<global::tryAGI.OpenAI.ResponseReasoningSummaryDoneEvent?>? reasoningSummaryDone = null,
             bool validate = true)
@@ -2644,14 +2554,6 @@ namespace tryAGI.OpenAI
             {
                 queued?.Invoke(Queued!);
             }
-            else if (IsReasoningDelta)
-            {
-                reasoningDelta?.Invoke(ReasoningDelta!);
-            }
-            else if (IsReasoningDone)
-            {
-                reasoningDone?.Invoke(ReasoningDone!);
-            }
             else if (IsReasoningSummaryDelta)
             {
                 reasoningSummaryDelta?.Invoke(ReasoningSummaryDelta!);
@@ -2767,10 +2669,6 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEvent),
                 Queued,
                 typeof(global::tryAGI.OpenAI.ResponseQueuedEvent),
-                ReasoningDelta,
-                typeof(global::tryAGI.OpenAI.ResponseReasoningDeltaEvent),
-                ReasoningDone,
-                typeof(global::tryAGI.OpenAI.ResponseReasoningDoneEvent),
                 ReasoningSummaryDelta,
                 typeof(global::tryAGI.OpenAI.ResponseReasoningSummaryDeltaEvent),
                 ReasoningSummaryDone,
@@ -2840,8 +2738,6 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseMCPListToolsInProgressEvent?>.Default.Equals(MCPListToolsInProgress, other.MCPListToolsInProgress) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEvent?>.Default.Equals(OutputTextAnnotationAdded, other.OutputTextAnnotationAdded) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseQueuedEvent?>.Default.Equals(Queued, other.Queued) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseReasoningDeltaEvent?>.Default.Equals(ReasoningDelta, other.ReasoningDelta) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseReasoningDoneEvent?>.Default.Equals(ReasoningDone, other.ReasoningDone) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseReasoningSummaryDeltaEvent?>.Default.Equals(ReasoningSummaryDelta, other.ReasoningSummaryDelta) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseReasoningSummaryDoneEvent?>.Default.Equals(ReasoningSummaryDone, other.ReasoningSummaryDone) 
                 ;

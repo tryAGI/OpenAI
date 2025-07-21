@@ -31,18 +31,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Fable,
-        /// <summary>
-        /// 
-        /// </summary>
-        Onyx,
-        /// <summary>
-        /// 
-        /// </summary>
-        Nova,
-        /// <summary>
-        /// 
-        /// </summary>
         Sage,
         /// <summary>
         /// 
@@ -71,9 +59,6 @@ namespace tryAGI.OpenAI
                 VoiceIdsSharedEnum.Ballad => "ballad",
                 VoiceIdsSharedEnum.Coral => "coral",
                 VoiceIdsSharedEnum.Echo => "echo",
-                VoiceIdsSharedEnum.Fable => "fable",
-                VoiceIdsSharedEnum.Onyx => "onyx",
-                VoiceIdsSharedEnum.Nova => "nova",
                 VoiceIdsSharedEnum.Sage => "sage",
                 VoiceIdsSharedEnum.Shimmer => "shimmer",
                 VoiceIdsSharedEnum.Verse => "verse",
@@ -92,9 +77,6 @@ namespace tryAGI.OpenAI
                 "ballad" => VoiceIdsSharedEnum.Ballad,
                 "coral" => VoiceIdsSharedEnum.Coral,
                 "echo" => VoiceIdsSharedEnum.Echo,
-                "fable" => VoiceIdsSharedEnum.Fable,
-                "onyx" => VoiceIdsSharedEnum.Onyx,
-                "nova" => VoiceIdsSharedEnum.Nova,
                 "sage" => VoiceIdsSharedEnum.Sage,
                 "shimmer" => VoiceIdsSharedEnum.Shimmer,
                 "verse" => VoiceIdsSharedEnum.Verse,
