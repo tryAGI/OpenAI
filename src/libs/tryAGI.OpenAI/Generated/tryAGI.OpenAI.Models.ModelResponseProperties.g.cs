@@ -19,6 +19,23 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
+        /// Used by OpenAI to cache responses for similar requests to optimize your cache hit rates. Replaces the `user` field. [Learn more](/docs/guides/prompt-caching).<br/>
+        /// Example: prompt-cache-key-1234
+        /// </summary>
+        /// <example>prompt-cache-key-1234</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_key")]
+        public string? PromptCacheKey { get; set; }
+
+        /// <summary>
+        /// A stable identifier used to help detect users of your application that may be violating OpenAI's usage policies. <br/>
+        /// The IDs should be a string that uniquely identifies each user. We recommend hashing their username or email address, in order to avoid sending us any identifying information. [Learn more](/docs/guides/safety-best-practices#safety-identifiers).<br/>
+        /// Example: safety-identifier-1234
+        /// </summary>
+        /// <example>safety-identifier-1234</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("safety_identifier")]
+        public string? SafetyIdentifier { get; set; }
+
+        /// <summary>
         /// Specifies the processing type used for serving the request.<br/>
         ///   - If set to 'auto', then the request will be processed with the service tier configured in the Project settings. Unless otherwise configured, the Project will use 'default'.<br/>
         ///   - If set to 'default', then the request will be processed with the standard pricing and performance for the selected model.<br/>
@@ -62,12 +79,14 @@ namespace tryAGI.OpenAI
         public double? TopP { get; set; }
 
         /// <summary>
+        /// This field is being replaced by `safety_identifier` and `prompt_cache_key`. Use `prompt_cache_key` instead to maintain caching optimizations.<br/>
         /// A stable identifier for your end-users. <br/>
-        /// Used to boost cache hit rates by better bucketing similar requests and  to help OpenAI detect and prevent abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
+        /// Used to boost cache hit rates by better bucketing similar requests and  to help OpenAI detect and prevent abuse. [Learn more](/docs/guides/safety-best-practices#safety-identifiers).<br/>
         /// Example: user-1234
         /// </summary>
         /// <example>user-1234</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? User { get; set; }
 
         /// <summary>
@@ -85,6 +104,15 @@ namespace tryAGI.OpenAI
         /// format, and querying for objects via API or the dashboard. <br/>
         /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
         /// with a maximum length of 512 characters.
+        /// </param>
+        /// <param name="promptCacheKey">
+        /// Used by OpenAI to cache responses for similar requests to optimize your cache hit rates. Replaces the `user` field. [Learn more](/docs/guides/prompt-caching).<br/>
+        /// Example: prompt-cache-key-1234
+        /// </param>
+        /// <param name="safetyIdentifier">
+        /// A stable identifier used to help detect users of your application that may be violating OpenAI's usage policies. <br/>
+        /// The IDs should be a string that uniquely identifies each user. We recommend hashing their username or email address, in order to avoid sending us any identifying information. [Learn more](/docs/guides/safety-best-practices#safety-identifiers).<br/>
+        /// Example: safety-identifier-1234
         /// </param>
         /// <param name="serviceTier">
         /// Specifies the processing type used for serving the request.<br/>
@@ -114,28 +142,25 @@ namespace tryAGI.OpenAI
         /// Default Value: 1<br/>
         /// Example: 1
         /// </param>
-        /// <param name="user">
-        /// A stable identifier for your end-users. <br/>
-        /// Used to boost cache hit rates by better bucketing similar requests and  to help OpenAI detect and prevent abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
-        /// Example: user-1234
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ModelResponseProperties(
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
+            string? promptCacheKey,
+            string? safetyIdentifier,
             global::tryAGI.OpenAI.ServiceTier? serviceTier,
             double? temperature,
             int? topLogprobs,
-            double? topP,
-            string? user)
+            double? topP)
         {
             this.Metadata = metadata;
+            this.PromptCacheKey = promptCacheKey;
+            this.SafetyIdentifier = safetyIdentifier;
             this.ServiceTier = serviceTier;
             this.Temperature = temperature;
             this.TopLogprobs = topLogprobs;
             this.TopP = topP;
-            this.User = user;
         }
 
         /// <summary>
