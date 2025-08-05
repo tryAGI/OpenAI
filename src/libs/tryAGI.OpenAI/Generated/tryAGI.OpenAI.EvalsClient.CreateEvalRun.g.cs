@@ -24,6 +24,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Create eval run<br/>
         /// Kicks off a new run for a given evaluation, specifying the data source, and what model configuration to use to test. The datasource will be validated against the schema specified in the config of the evaluation.
         /// </summary>
         /// <param name="evalId"></param>
@@ -209,6 +210,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// Create eval run<br/>
         /// Kicks off a new run for a given evaluation, specifying the data source, and what model configuration to use to test. The datasource will be validated against the schema specified in the config of the evaluation.
         /// </summary>
         /// <param name="evalId"></param>
@@ -229,7 +231,7 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.EvalRun> CreateEvalRunAsync(
             string evalId,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalJsonlRunDataSource, global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSource, global::tryAGI.OpenAI.CreateEvalResponsesRunDataSource> dataSource,
+            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.CreateEvalJsonlRunDataSource, global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSource, global::tryAGI.OpenAI.CreateEvalResponsesRunDataSource> dataSource,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             string? name = default,
             global::System.Threading.CancellationToken cancellationToken = default)

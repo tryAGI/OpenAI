@@ -22,8 +22,8 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Create an organization admin API key<br/>
-        /// Create a new admin-level API key for the organization.
+        /// Create admin API key<br/>
+        /// Create an organization admin API key
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -167,8 +167,8 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Create an organization admin API key<br/>
-        /// Create a new admin-level API key for the organization.
+        /// Create admin API key<br/>
+        /// Create an organization admin API key
         /// </summary>
         /// <param name="name">
         /// Example: New Admin Key

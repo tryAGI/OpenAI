@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Model14> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Model16> Data { get; set; }
 
         /// <summary>
         /// 
@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ListModelsResponse(
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Model14> data,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Model16> data,
             global::tryAGI.OpenAI.ListModelsResponseObject @object)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));

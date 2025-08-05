@@ -5,8 +5,8 @@ namespace tryAGI.OpenAI
     public partial interface IOpenAiClient
     {
         /// <summary>
-        /// Delete Container<br/>
-        /// Delete a container.
+        /// Delete a container<br/>
+        /// Delete Container
         /// </summary>
         /// <param name="containerId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

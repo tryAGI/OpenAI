@@ -30,6 +30,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// List runs<br/>
         /// Returns a list of runs belonging to a thread.
         /// </summary>
         /// <param name="threadId"></param>

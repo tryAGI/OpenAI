@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IResponsesClient
     {
         /// <summary>
+        /// Get a model response<br/>
         /// Retrieves a model response with the given ID.
         /// </summary>
         /// <param name="responseId">

@@ -25,8 +25,8 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// The ID of an uploaded file that contains requests for the new batch.<br/>
-        /// See [upload file](/docs/api-reference/files/create) for how to upload a file.<br/>
-        /// Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/request-input), and must be uploaded with the purpose `batch`. The file can contain up to 50,000 requests, and can be up to 200 MB in size.
+        /// See [upload file](https://platform.openai.com/docs/api-reference/files/create) for how to upload a file.<br/>
+        /// Your input file must be formatted as a [JSONL file](https://platform.openai.com/docs/api-reference/batch/request-input), and must be uploaded with the purpose `batch`. The file can contain up to 50,000 requests, and can be up to 200 MB in size.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_file_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -59,8 +59,8 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="inputFileId">
         /// The ID of an uploaded file that contains requests for the new batch.<br/>
-        /// See [upload file](/docs/api-reference/files/create) for how to upload a file.<br/>
-        /// Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/request-input), and must be uploaded with the purpose `batch`. The file can contain up to 50,000 requests, and can be up to 200 MB in size.
+        /// See [upload file](https://platform.openai.com/docs/api-reference/files/create) for how to upload a file.<br/>
+        /// Your input file must be formatted as a [JSONL file](https://platform.openai.com/docs/api-reference/batch/request-input), and must be uploaded with the purpose `batch`. The file can contain up to 50,000 requests, and can be up to 200 MB in size.
         /// </param>
         /// <param name="metadata">
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>

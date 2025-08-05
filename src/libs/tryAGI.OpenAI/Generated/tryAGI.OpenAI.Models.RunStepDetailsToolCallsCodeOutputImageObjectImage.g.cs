@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class RunStepDetailsToolCallsCodeOutputImageObjectImage
     {
         /// <summary>
-        /// The [file](/docs/api-reference/files) ID of the image.
+        /// The [file](https://platform.openai.com/docs/api-reference/files) ID of the image.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -25,7 +25,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="RunStepDetailsToolCallsCodeOutputImageObjectImage" /> class.
         /// </summary>
         /// <param name="fileId">
-        /// The [file](/docs/api-reference/files) ID of the image.
+        /// The [file](https://platform.openai.com/docs/api-reference/files) ID of the image.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -6,7 +6,7 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// Represents a streamed chunk of a chat completion response returned<br/>
     /// by the model, based on the provided input. <br/>
-    /// [Learn more](/docs/guides/streaming-responses).
+    /// [Learn more](https://platform.openai.com/docs/guides/streaming-responses).
     /// </summary>
     public sealed partial class CreateChatCompletionStreamResponse
     {
@@ -51,7 +51,7 @@ namespace tryAGI.OpenAI
         /// Specifies the processing type used for serving the request.<br/>
         ///   - If set to 'auto', then the request will be processed with the service tier configured in the Project settings. Unless otherwise configured, the Project will use 'default'.<br/>
         ///   - If set to 'default', then the request will be processed with the standard pricing and performance for the selected model.<br/>
-        ///   - If set to '[flex](/docs/guides/flex-processing)' or 'priority', then the request will be processed with the corresponding service tier. [Contact sales](https://openai.com/contact-sales) to learn more about Priority processing.<br/>
+        ///   - If set to '[flex](https://platform.openai.com/docs/guides/flex-processing)' or 'priority', then the request will be processed with the corresponding service tier. [Contact sales](https://openai.com/contact-sales) to learn more about Priority processing.<br/>
         ///   - When not set, the default behavior is 'auto'.<br/>
         ///   When the `service_tier` parameter is set, the response body will include the `service_tier` value based on the processing mode actually used to serve the request. This response value may be different from the value set in the parameter.<br/>
         /// Default Value: auto
@@ -102,7 +102,7 @@ namespace tryAGI.OpenAI
         /// Specifies the processing type used for serving the request.<br/>
         ///   - If set to 'auto', then the request will be processed with the service tier configured in the Project settings. Unless otherwise configured, the Project will use 'default'.<br/>
         ///   - If set to 'default', then the request will be processed with the standard pricing and performance for the selected model.<br/>
-        ///   - If set to '[flex](/docs/guides/flex-processing)' or 'priority', then the request will be processed with the corresponding service tier. [Contact sales](https://openai.com/contact-sales) to learn more about Priority processing.<br/>
+        ///   - If set to '[flex](https://platform.openai.com/docs/guides/flex-processing)' or 'priority', then the request will be processed with the corresponding service tier. [Contact sales](https://openai.com/contact-sales) to learn more about Priority processing.<br/>
         ///   - When not set, the default behavior is 'auto'.<br/>
         ///   When the `service_tier` parameter is set, the response body will include the `service_tier` value based on the processing mode actually used to serve the request. This response value may be different from the value set in the parameter.<br/>
         /// Default Value: auto

@@ -32,6 +32,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// List messages<br/>
         /// Returns a list of messages for a given thread.
         /// </summary>
         /// <param name="threadId"></param>

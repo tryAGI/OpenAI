@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IRealtimeClient
     {
         /// <summary>
+        /// Create session<br/>
         /// Create an ephemeral API token for use in client-side applications with the<br/>
         /// Realtime API. Can be configured with the same session parameters as the<br/>
         /// `session.update` client event.<br/>
@@ -20,6 +21,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
+        /// Create session<br/>
         /// Create an ephemeral API token for use in client-side applications with the<br/>
         /// Realtime API. Can be configured with the same session parameters as the<br/>
         /// `session.update` client event.<br/>
@@ -106,7 +108,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RealtimeSessionCreateRequestInputAudioNoiseReduction? inputAudioNoiseReduction = default,
             global::tryAGI.OpenAI.RealtimeSessionCreateRequestInputAudioTranscription? inputAudioTranscription = default,
             string? instructions = default,
-            global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestMaxResponseOutputTokens?>? maxResponseOutputTokens = default,
+            global::tryAGI.OpenAI.AnyOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestMaxResponseOutputTokens?>? maxResponseOutputTokens = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateRequestModalitie>? modalities = default,
             global::tryAGI.OpenAI.RealtimeSessionCreateRequestModel? model = default,
             global::tryAGI.OpenAI.RealtimeSessionCreateRequestOutputAudioFormat? outputAudioFormat = default,
@@ -114,7 +116,7 @@ namespace tryAGI.OpenAI
             double? temperature = default,
             string? toolChoice = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateRequestTool>? tools = default,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateRequestTracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestTracingEnum2>? tracing = default,
+            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.RealtimeSessionCreateRequestTracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestTracingEnum2>? tracing = default,
             global::tryAGI.OpenAI.RealtimeSessionCreateRequestTurnDetection? turnDetection = default,
             global::tryAGI.OpenAI.VoiceIdsShared? voice = default,
             global::System.Threading.CancellationToken cancellationToken = default);

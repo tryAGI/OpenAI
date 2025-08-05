@@ -5,16 +5,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Controls how the audio is cut into chunks. When set to `"auto"`, the<br/>
-    /// server first normalizes loudness and then uses voice activity detection (VAD) to<br/>
-    /// choose boundaries. `server_vad` object can be provided to tweak VAD detection<br/>
-    /// parameters manually. If unset, the audio is transcribed as a single block. 
+    /// Controls how the audio is cut into chunks. When set to `"auto"`, the server first normalizes loudness and then uses voice activity detection (VAD) to choose boundaries. `server_vad` object can be provided to tweak VAD detection parameters manually. If unset, the audio is transcribed as a single block. 
     /// </summary>
     public readonly partial struct TranscriptionChunkingStrategy : global::System.IEquatable<TranscriptionChunkingStrategy>
     {
         /// <summary>
-        /// Automatically set chunking parameters based on the audio. Must be set to `"auto"`.<br/>
-        /// Default Value: [auto]
+        /// Automatically set chunking parameters based on the audio. Must be set to `"auto"`.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum? Value1 { get; init; }
@@ -116,7 +112,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsValue1 || IsValue2;
         }
 
         /// <summary>

@@ -22,6 +22,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Create transcription session<br/>
         /// Create an ephemeral API token for use in client-side applications with the<br/>
         /// Realtime API specifically for realtime transcriptions. <br/>
         /// Can be configured with the same session parameters as the `transcription_session.update` client event.<br/>
@@ -171,6 +172,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// Create transcription session<br/>
         /// Create an ephemeral API token for use in client-side applications with the<br/>
         /// Realtime API specifically for realtime transcriptions. <br/>
         /// Can be configured with the same session parameters as the `transcription_session.update` client event.<br/>

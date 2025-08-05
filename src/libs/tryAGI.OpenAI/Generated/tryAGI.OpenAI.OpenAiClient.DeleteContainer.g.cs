@@ -17,8 +17,8 @@ namespace tryAGI.OpenAI
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
-        /// Delete Container<br/>
-        /// Delete a container.
+        /// Delete a container<br/>
+        /// Delete Container
         /// </summary>
         /// <param name="containerId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

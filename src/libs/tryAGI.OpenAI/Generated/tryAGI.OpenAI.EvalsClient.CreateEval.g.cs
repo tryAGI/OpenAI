@@ -22,9 +22,10 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Create eval<br/>
         /// Create the structure of an evaluation that can be used to test a model's performance.<br/>
         /// An evaluation is a set of testing criteria and the config for a data source, which dictates the schema of the data used in the evaluation. After creating an evaluation, you can run it on different models and model parameters. We support several types of graders and datasources.<br/>
-        /// For more information, see the [Evals guide](/docs/guides/evals).
+        /// For more information, see the [Evals guide](https://platform.openai.com/docs/guides/evals).
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -168,9 +169,10 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// Create eval<br/>
         /// Create the structure of an evaluation that can be used to test a model's performance.<br/>
         /// An evaluation is a set of testing criteria and the config for a data source, which dictates the schema of the data used in the evaluation. After creating an evaluation, you can run it on different models and model parameters. We support several types of graders and datasources.<br/>
-        /// For more information, see the [Evals guide](/docs/guides/evals).
+        /// For more information, see the [Evals guide](https://platform.openai.com/docs/guides/evals).
         /// </summary>
         /// <param name="dataSourceConfig">
         /// The configuration for the data source used for the evaluation runs. Dictates the schema of the data used in the evaluation.
@@ -192,9 +194,9 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Eval> CreateEvalAsync(
 #pragma warning disable CS0618 // Type or member is obsolete
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalCustomDataSourceConfig, global::tryAGI.OpenAI.CreateEvalLogsDataSourceConfig, global::tryAGI.OpenAI.CreateEvalStoredCompletionsDataSourceConfig> dataSourceConfig,
+            global::tryAGI.OpenAI.CreateEvalRequestDataSourceConfig dataSourceConfig,
 #pragma warning disable CS0618 // Type or member is obsolete
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalLabelModelGrader, global::tryAGI.OpenAI.EvalGraderStringCheck?, global::tryAGI.OpenAI.EvalGraderTextSimilarity?, global::tryAGI.OpenAI.EvalGraderPython?, global::tryAGI.OpenAI.EvalGraderScoreModel?>> testingCriteria,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TestingCriteriaItem> testingCriteria,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             string? name = default,
             global::System.Threading.CancellationToken cancellationToken = default)

@@ -25,11 +25,8 @@ namespace tryAGI.OpenAI
         public required string Imagename { get; set; }
 
         /// <summary>
-        /// The model to use for image generation. Only `dall-e-2` is supported at this time.<br/>
-        /// Default Value: dall-e-2<br/>
-        /// Example: dall-e-2
+        /// The model to use for image generation. Only `dall-e-2` is supported at this time.
         /// </summary>
-        /// <example>dall-e-2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.CreateImageVariationRequestModel?>))]
         public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageVariationRequestModel?>? Model { get; set; }
@@ -64,7 +61,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CreateImageVariationRequestSize? Size { get; set; }
 
         /// <summary>
-        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
+        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](https://platform.openai.com/docs/guides/safety-best-practices#end-user-ids).<br/>
         /// Example: user-1234
         /// </summary>
         /// <example>user-1234</example>
@@ -87,9 +84,7 @@ namespace tryAGI.OpenAI
         /// The image to use as the basis for the variation(s). Must be a valid PNG file, less than 4MB, and square.
         /// </param>
         /// <param name="model">
-        /// The model to use for image generation. Only `dall-e-2` is supported at this time.<br/>
-        /// Default Value: dall-e-2<br/>
-        /// Example: dall-e-2
+        /// The model to use for image generation. Only `dall-e-2` is supported at this time.
         /// </param>
         /// <param name="n">
         /// The number of images to generate. Must be between 1 and 10.<br/>
@@ -107,7 +102,7 @@ namespace tryAGI.OpenAI
         /// Example: 1024x1024
         /// </param>
         /// <param name="user">
-        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
+        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](https://platform.openai.com/docs/guides/safety-best-practices#end-user-ids).<br/>
         /// Example: user-1234
         /// </param>
 #if NET7_0_OR_GREATER

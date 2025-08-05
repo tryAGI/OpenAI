@@ -4,10 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Metadata filters for the logs data source.<br/>
-    /// Example: {<br/>
-    ///   "use_case": "customer_support_agent"<br/>
-    /// }
+    /// Metadata filters for the logs data source.
     /// </summary>
     public sealed partial class CreateEvalLogsDataSourceConfigMetadata
     {

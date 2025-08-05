@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface ICertificatesClient
     {
         /// <summary>
+        /// Modify certificate<br/>
         /// Modify a certificate. Note that only the name can be modified.
         /// </summary>
         /// <param name="certificateId"></param>
@@ -17,6 +18,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
+        /// Modify certificate<br/>
         /// Modify a certificate. Note that only the name can be modified.
         /// </summary>
         /// <param name="certificateId"></param>

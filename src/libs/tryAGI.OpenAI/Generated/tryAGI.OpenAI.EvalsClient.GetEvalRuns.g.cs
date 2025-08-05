@@ -30,6 +30,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Get eval runs<br/>
         /// Get a list of runs for an evaluation.
         /// </summary>
         /// <param name="evalId"></param>

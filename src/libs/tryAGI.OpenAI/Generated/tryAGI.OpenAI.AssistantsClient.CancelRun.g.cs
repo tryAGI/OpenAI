@@ -24,6 +24,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Cancel a run<br/>
         /// Cancels a run that is `in_progress`.
         /// </summary>
         /// <param name="threadId"></param>

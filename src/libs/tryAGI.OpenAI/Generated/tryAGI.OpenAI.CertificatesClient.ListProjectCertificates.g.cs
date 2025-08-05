@@ -28,6 +28,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// List project certificates<br/>
         /// List certificates for this project.
         /// </summary>
         /// <param name="projectId"></param>

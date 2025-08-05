@@ -26,6 +26,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// List fine-tuning checkpoints<br/>
         /// List checkpoints for a fine-tuning job.
         /// </summary>
         /// <param name="fineTuningJobId">

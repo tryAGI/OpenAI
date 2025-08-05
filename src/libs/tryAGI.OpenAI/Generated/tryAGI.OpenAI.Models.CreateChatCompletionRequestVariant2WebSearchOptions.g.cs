@@ -5,7 +5,7 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// This tool searches the web for relevant results to use in a response.<br/>
-    /// Learn more about the [web search tool](/docs/guides/tools-web-search?api-mode=chat).
+    /// Learn more about the [web search tool](https://platform.openai.com/docs/guides/tools-web-search?api-mode=chat).
     /// </summary>
     public sealed partial class CreateChatCompletionRequestVariant2WebSearchOptions
     {

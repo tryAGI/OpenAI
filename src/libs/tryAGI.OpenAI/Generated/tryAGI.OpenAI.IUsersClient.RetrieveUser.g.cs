@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IUsersClient
     {
         /// <summary>
+        /// Retrieve user<br/>
         /// Retrieves a user by their identifier.
         /// </summary>
         /// <param name="userId"></param>

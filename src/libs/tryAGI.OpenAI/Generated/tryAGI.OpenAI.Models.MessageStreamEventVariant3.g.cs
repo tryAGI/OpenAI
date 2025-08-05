@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Occurs when parts of a [Message](/docs/api-reference/messages/object) are being streamed.
+    /// Occurs when parts of a [Message](https://platform.openai.com/docs/api-reference/messages/object) are being streamed.
     /// </summary>
     public sealed partial class MessageStreamEventVariant3
     {

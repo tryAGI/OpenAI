@@ -42,6 +42,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Completions<br/>
         /// Get completions usage details for the organization.
         /// </summary>
         /// <param name="startTime"></param>

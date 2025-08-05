@@ -60,11 +60,8 @@ namespace tryAGI.OpenAI
         public string? Maskname { get; set; }
 
         /// <summary>
-        /// The model to use for image generation. Only `dall-e-2` and `gpt-image-1` are supported. Defaults to `dall-e-2` unless a parameter specific to `gpt-image-1` is used.<br/>
-        /// Default Value: dall-e-2<br/>
-        /// Example: gpt-image-1
+        /// The model to use for image generation. Only `dall-e-2` and `gpt-image-1` are supported. Defaults to `dall-e-2` unless a parameter specific to `gpt-image-1` is used.
         /// </summary>
-        /// <example>gpt-image-1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.CreateImageEditRequestModel?>))]
         public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageEditRequestModel?>? Model { get; set; }
@@ -155,7 +152,7 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// Edit the image in streaming mode. Defaults to `false`. See the <br/>
-        /// [Image generation guide](/docs/guides/image-generation) for more information.<br/>
+        /// [Image generation guide](https://platform.openai.com/docs/guides/image-generation) for more information.<br/>
         /// Default Value: false<br/>
         /// Example: false
         /// </summary>
@@ -164,7 +161,7 @@ namespace tryAGI.OpenAI
         public bool? Stream { get; set; }
 
         /// <summary>
-        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
+        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](https://platform.openai.com/docs/guides/safety-best-practices#end-user-ids).<br/>
         /// Example: user-1234
         /// </summary>
         /// <example>user-1234</example>
@@ -210,9 +207,7 @@ namespace tryAGI.OpenAI
         /// An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. If there are multiple images provided, the mask will be applied on the first image. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.
         /// </param>
         /// <param name="model">
-        /// The model to use for image generation. Only `dall-e-2` and `gpt-image-1` are supported. Defaults to `dall-e-2` unless a parameter specific to `gpt-image-1` is used.<br/>
-        /// Default Value: dall-e-2<br/>
-        /// Example: gpt-image-1
+        /// The model to use for image generation. Only `dall-e-2` and `gpt-image-1` are supported. Defaults to `dall-e-2` unless a parameter specific to `gpt-image-1` is used.
         /// </param>
         /// <param name="n">
         /// The number of images to generate. Must be between 1 and 10.<br/>
@@ -263,12 +258,12 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="stream">
         /// Edit the image in streaming mode. Defaults to `false`. See the <br/>
-        /// [Image generation guide](/docs/guides/image-generation) for more information.<br/>
+        /// [Image generation guide](https://platform.openai.com/docs/guides/image-generation) for more information.<br/>
         /// Default Value: false<br/>
         /// Example: false
         /// </param>
         /// <param name="user">
-        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
+        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](https://platform.openai.com/docs/guides/safety-best-practices#end-user-ids).<br/>
         /// Example: user-1234
         /// </param>
 #if NET7_0_OR_GREATER

@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class Embedding
     {
         /// <summary>
-        /// The embedding vector, which is a list of floats. The length of vector depends on the model as listed in the [embedding guide](/docs/guides/embeddings).
+        /// The embedding vector, which is a list of floats. The length of vector depends on the model as listed in the [embedding guide](https://platform.openai.com/docs/guides/embeddings).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embedding")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -39,7 +39,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="Embedding" /> class.
         /// </summary>
         /// <param name="embedding1">
-        /// The embedding vector, which is a list of floats. The length of vector depends on the model as listed in the [embedding guide](/docs/guides/embeddings).
+        /// The embedding vector, which is a list of floats. The length of vector depends on the model as listed in the [embedding guide](https://platform.openai.com/docs/guides/embeddings).
         /// </param>
         /// <param name="index">
         /// The index of the embedding in the list of embeddings.

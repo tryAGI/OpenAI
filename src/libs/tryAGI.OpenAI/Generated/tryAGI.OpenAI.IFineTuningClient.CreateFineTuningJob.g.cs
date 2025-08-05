@@ -5,9 +5,10 @@ namespace tryAGI.OpenAI
     public partial interface IFineTuningClient
     {
         /// <summary>
+        /// Create fine-tuning job<br/>
         /// Creates a fine-tuning job which begins the process of creating a new model from a given dataset.<br/>
         /// Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.<br/>
-        /// [Learn more about fine-tuning](/docs/guides/model-optimization)
+        /// [Learn more about fine-tuning](https://platform.openai.com/docs/guides/model-optimization)
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -17,9 +18,10 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
+        /// Create fine-tuning job<br/>
         /// Creates a fine-tuning job which begins the process of creating a new model from a given dataset.<br/>
         /// Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.<br/>
-        /// [Learn more about fine-tuning](/docs/guides/model-optimization)
+        /// [Learn more about fine-tuning](https://platform.openai.com/docs/guides/model-optimization)
         /// </summary>
         /// <param name="integrations">
         /// A list of integrations to enable for your fine-tuning job.
@@ -36,7 +38,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="model">
         /// The name of the model to fine-tune. You can select one of the<br/>
-        /// [supported models](/docs/guides/fine-tuning#which-models-can-be-fine-tuned).<br/>
+        /// [supported models](https://platform.openai.com/docs/guides/fine-tuning#which-models-can-be-fine-tuned).<br/>
         /// Example: gpt-4o-mini
         /// </param>
         /// <param name="seed">
@@ -50,10 +52,10 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="trainingFile">
         /// The ID of an uploaded file that contains training data.<br/>
-        /// See [upload file](/docs/api-reference/files/create) for how to upload a file.<br/>
+        /// See [upload file](https://platform.openai.com/docs/api-reference/files/create) for how to upload a file.<br/>
         /// Your dataset must be formatted as a JSONL file. Additionally, you must upload your file with the purpose `fine-tune`.<br/>
-        /// The contents of the file should differ depending on if the model uses the [chat](/docs/api-reference/fine-tuning/chat-input), [completions](/docs/api-reference/fine-tuning/completions-input) format, or if the fine-tuning method uses the [preference](/docs/api-reference/fine-tuning/preference-input) format.<br/>
-        /// See the [fine-tuning guide](/docs/guides/model-optimization) for more details.<br/>
+        /// The contents of the file should differ depending on if the model uses the [chat](https://platform.openai.com/docs/api-reference/fine-tuning/chat-input), [completions](https://platform.openai.com/docs/api-reference/fine-tuning/completions-input) format, or if the fine-tuning method uses the [preference](https://platform.openai.com/docs/api-reference/fine-tuning/preference-input) format.<br/>
+        /// See the [fine-tuning guide](https://platform.openai.com/docs/guides/model-optimization) for more details.<br/>
         /// Example: file-abc123
         /// </param>
         /// <param name="validationFile">
@@ -63,7 +65,7 @@ namespace tryAGI.OpenAI
         /// the fine-tuning results file.<br/>
         /// The same data should not be present in both train and validation files.<br/>
         /// Your dataset must be formatted as a JSONL file. You must upload your file with the purpose `fine-tune`.<br/>
-        /// See the [fine-tuning guide](/docs/guides/model-optimization) for more details.<br/>
+        /// See the [fine-tuning guide](https://platform.openai.com/docs/guides/model-optimization) for more details.<br/>
         /// Example: file-abc123
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

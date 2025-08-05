@@ -22,6 +22,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Delete assistant<br/>
         /// Delete an assistant.
         /// </summary>
         /// <param name="assistantId"></param>

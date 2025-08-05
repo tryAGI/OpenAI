@@ -28,6 +28,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// List vector stores<br/>
         /// Returns a list of vector stores.
         /// </summary>
         /// <param name="limit">

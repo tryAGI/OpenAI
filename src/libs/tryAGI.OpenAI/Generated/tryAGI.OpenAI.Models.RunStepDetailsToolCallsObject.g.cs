@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -15,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_calls")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeObject, global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchObject, global::tryAGI.OpenAI.RunStepDetailsToolCallsFunctionObject>> ToolCalls { get; set; }
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RunStepDetailsToolCall> ToolCalls { get; set; }
 
         /// <summary>
         /// Always `tool_calls`.
@@ -43,7 +41,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RunStepDetailsToolCallsObject(
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeObject, global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchObject, global::tryAGI.OpenAI.RunStepDetailsToolCallsFunctionObject>> toolCalls,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RunStepDetailsToolCall> toolCalls,
             global::tryAGI.OpenAI.RunStepDetailsToolCallsObjectType type)
         {
             this.ToolCalls = toolCalls ?? throw new global::System.ArgumentNullException(nameof(toolCalls));
