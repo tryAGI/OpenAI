@@ -4,12 +4,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Occurs when a [run](/docs/api-reference/runs/object) expires.
+    /// Occurs when a [run](https://platform.openai.com/docs/api-reference/runs/object) expires.
     /// </summary>
     public sealed partial class RunStreamEventVariant10
     {
         /// <summary>
-        /// Represents an execution run on a [thread](/docs/api-reference/threads).
+        /// Represents an execution run on a [thread](https://platform.openai.com/docs/api-reference/threads).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="RunStreamEventVariant10" /> class.
         /// </summary>
         /// <param name="data">
-        /// Represents an execution run on a [thread](/docs/api-reference/threads).
+        /// Represents an execution run on a [thread](https://platform.openai.com/docs/api-reference/threads).
         /// </param>
         /// <param name="event"></param>
 #if NET7_0_OR_GREATER

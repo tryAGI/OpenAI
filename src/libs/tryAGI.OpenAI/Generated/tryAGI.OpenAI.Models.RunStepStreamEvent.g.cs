@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct RunStepStreamEvent : global::System.IEquatable<RunStepStreamEvent>
     {
         /// <summary>
-        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is created.
+        /// Occurs when a [run step](https://platform.openai.com/docs/api-reference/run-steps/step-object) is created.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RunStepStreamEventVariant1? Value1 { get; init; }
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) moves to an `in_progress` state.
+        /// Occurs when a [run step](https://platform.openai.com/docs/api-reference/run-steps/step-object) moves to an `in_progress` state.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RunStepStreamEventVariant2? Value2 { get; init; }
@@ -80,7 +80,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Occurs when parts of a [run step](/docs/api-reference/run-steps/step-object) are being streamed.
+        /// Occurs when parts of a [run step](https://platform.openai.com/docs/api-reference/run-steps/step-object) are being streamed.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RunStepStreamEventVariant3? Value3 { get; init; }
@@ -115,7 +115,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is completed.
+        /// Occurs when a [run step](https://platform.openai.com/docs/api-reference/run-steps/step-object) is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RunStepStreamEventVariant4? Value4 { get; init; }
@@ -150,7 +150,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) fails.
+        /// Occurs when a [run step](https://platform.openai.com/docs/api-reference/run-steps/step-object) fails.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RunStepStreamEventVariant5? Value5 { get; init; }
@@ -185,7 +185,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is cancelled.
+        /// Occurs when a [run step](https://platform.openai.com/docs/api-reference/run-steps/step-object) is cancelled.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RunStepStreamEventVariant6? Value6 { get; init; }
@@ -220,7 +220,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) expires.
+        /// Occurs when a [run step](https://platform.openai.com/docs/api-reference/run-steps/step-object) expires.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RunStepStreamEventVariant7? Value7 { get; init; }
@@ -307,7 +307,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && IsValue5 && !IsValue6 && !IsValue7 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && IsValue6 && !IsValue7 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && IsValue7;
+            return IsValue1 || IsValue2 || IsValue3 || IsValue4 || IsValue5 || IsValue6 || IsValue7;
         }
 
         /// <summary>

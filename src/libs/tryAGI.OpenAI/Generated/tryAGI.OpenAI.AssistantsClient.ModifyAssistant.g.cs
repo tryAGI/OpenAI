@@ -24,6 +24,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Modify assistant<br/>
         /// Modifies an assistant.
         /// </summary>
         /// <param name="assistantId"></param>
@@ -175,6 +176,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// Modify assistant<br/>
         /// Modifies an assistant.
         /// </summary>
         /// <param name="assistantId"></param>
@@ -192,7 +194,7 @@ namespace tryAGI.OpenAI
         /// with a maximum length of 512 characters.
         /// </param>
         /// <param name="model">
-        /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
+        /// ID of the model to use. You can use the [List models](https://platform.openai.com/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](https://platform.openai.com/docs/models) for descriptions of them.
         /// </param>
         /// <param name="name">
         /// The name of the assistant. The maximum length is 256 characters.
@@ -207,8 +209,8 @@ namespace tryAGI.OpenAI
         /// Default Value: medium
         /// </param>
         /// <param name="responseFormat">
-        /// Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models#gpt-4o), [GPT-4 Turbo](/docs/models#gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.<br/>
-        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).<br/>
+        /// Specifies the format that the model must output. Compatible with [GPT-4o](https://platform.openai.com/docs/models#gpt-4o), [GPT-4 Turbo](https://platform.openai.com/docs/models#gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.<br/>
+        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](https://platform.openai.com/docs/guides/structured-outputs).<br/>
         /// Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.<br/>
         /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
         /// </param>
@@ -245,7 +247,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AssistantsApiResponseFormatOption? responseFormat = default,
             double? temperature = default,
             global::tryAGI.OpenAI.ModifyAssistantRequestToolResources? toolResources = default,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.AssistantToolsCode, global::tryAGI.OpenAI.AssistantToolsFileSearch, global::tryAGI.OpenAI.AssistantToolsFunction>>? tools = default,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AssistantTool>? tools = default,
             double? topP = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

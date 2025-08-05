@@ -24,6 +24,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Retrieve project API key<br/>
         /// Retrieves an API key in the project.
         /// </summary>
         /// <param name="projectId"></param>

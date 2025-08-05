@@ -32,6 +32,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// List input items<br/>
         /// Returns a list of input items for a given response.
         /// </summary>
         /// <param name="responseId"></param>

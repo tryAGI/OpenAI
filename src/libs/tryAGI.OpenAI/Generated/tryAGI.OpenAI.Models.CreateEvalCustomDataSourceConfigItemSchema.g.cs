@@ -4,15 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The json schema for each row in the data source.<br/>
-    /// Example: {<br/>
-    ///   "type": "object",<br/>
-    ///   "properties": {<br/>
-    ///     "name": {"type": "string"},<br/>
-    ///     "age": {"type": "integer"}<br/>
-    ///   },<br/>
-    ///   "required": ["name", "age"]<br/>
-    /// }
+    /// The json schema for each row in the data source.
     /// </summary>
     public sealed partial class CreateEvalCustomDataSourceConfigItemSchema
     {

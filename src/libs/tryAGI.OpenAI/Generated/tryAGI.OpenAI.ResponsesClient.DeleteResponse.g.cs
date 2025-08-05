@@ -17,6 +17,7 @@ namespace tryAGI.OpenAI
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
+        /// Delete a model response<br/>
         /// Deletes a model response with the given ID.
         /// </summary>
         /// <param name="responseId">

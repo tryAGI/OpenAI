@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Default Value: [text, audio]
+    /// 
     /// </summary>
     public enum RealtimeSessionCreateRequestModalitie
     {

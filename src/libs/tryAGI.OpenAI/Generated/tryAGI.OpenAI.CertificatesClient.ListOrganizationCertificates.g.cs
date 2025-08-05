@@ -26,6 +26,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// List organization certificates<br/>
         /// List uploaded certificates for this organization.
         /// </summary>
         /// <param name="limit">

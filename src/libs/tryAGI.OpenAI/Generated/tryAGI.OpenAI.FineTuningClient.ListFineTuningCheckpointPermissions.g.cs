@@ -30,6 +30,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// List checkpoint permissions<br/>
         /// **NOTE:** This endpoint requires an [admin API key](../admin-api-keys).<br/>
         /// Organization owners can use this endpoint to view all permissions for a fine-tuned model checkpoint.
         /// </summary>

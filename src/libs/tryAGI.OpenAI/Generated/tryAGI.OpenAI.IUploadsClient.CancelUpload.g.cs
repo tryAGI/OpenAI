@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IUploadsClient
     {
         /// <summary>
+        /// Cancel upload<br/>
         /// Cancels the Upload. No Parts may be added after an Upload is cancelled.
         /// </summary>
         /// <param name="uploadId">

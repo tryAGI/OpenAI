@@ -22,6 +22,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Create project<br/>
         /// Create a new project in the organization. Projects can be created and archived, but cannot be deleted.
         /// </summary>
         /// <param name="request"></param>
@@ -166,6 +167,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// Create project<br/>
         /// Create a new project in the organization. Projects can be created and archived, but cannot be deleted.
         /// </summary>
         /// <param name="name">

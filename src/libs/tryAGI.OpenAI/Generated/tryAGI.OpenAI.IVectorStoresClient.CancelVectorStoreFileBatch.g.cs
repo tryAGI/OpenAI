@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IVectorStoresClient
     {
         /// <summary>
+        /// Cancel vector store file batch<br/>
         /// Cancel a vector store file batch. This attempts to cancel the processing of files in this batch as soon as possible.
         /// </summary>
         /// <param name="vectorStoreId"></param>

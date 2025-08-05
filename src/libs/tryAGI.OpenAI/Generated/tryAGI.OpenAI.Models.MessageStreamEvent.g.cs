@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct MessageStreamEvent : global::System.IEquatable<MessageStreamEvent>
     {
         /// <summary>
-        /// Occurs when a [message](/docs/api-reference/messages/object) is created.
+        /// Occurs when a [message](https://platform.openai.com/docs/api-reference/messages/object) is created.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.MessageStreamEventVariant1? Value1 { get; init; }
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Occurs when a [message](/docs/api-reference/messages/object) moves to an `in_progress` state.
+        /// Occurs when a [message](https://platform.openai.com/docs/api-reference/messages/object) moves to an `in_progress` state.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.MessageStreamEventVariant2? Value2 { get; init; }
@@ -80,7 +80,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Occurs when parts of a [Message](/docs/api-reference/messages/object) are being streamed.
+        /// Occurs when parts of a [Message](https://platform.openai.com/docs/api-reference/messages/object) are being streamed.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.MessageStreamEventVariant3? Value3 { get; init; }
@@ -115,7 +115,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Occurs when a [message](/docs/api-reference/messages/object) is completed.
+        /// Occurs when a [message](https://platform.openai.com/docs/api-reference/messages/object) is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.MessageStreamEventVariant4? Value4 { get; init; }
@@ -150,7 +150,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Occurs when a [message](/docs/api-reference/messages/object) ends before it is completed.
+        /// Occurs when a [message](https://platform.openai.com/docs/api-reference/messages/object) ends before it is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.MessageStreamEventVariant5? Value5 { get; init; }
@@ -229,7 +229,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 && !IsValue5 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4 && !IsValue5 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && IsValue5;
+            return IsValue1 || IsValue2 || IsValue3 || IsValue4 || IsValue5;
         }
 
         /// <summary>

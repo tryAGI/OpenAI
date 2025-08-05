@@ -7,10 +7,16 @@ namespace tryAGI.OpenAI
     /// A description of the chain of thought used by a reasoning model while generating<br/>
     /// a response. Be sure to include these items in your `input` to the Responses API<br/>
     /// for subsequent turns of a conversation if you are manually <br/>
-    /// [managing context](/docs/guides/conversation-state).
+    /// [managing context](https://platform.openai.com/docs/guides/conversation-state).
     /// </summary>
     public sealed partial class ReasoningItem
     {
+        /// <summary>
+        /// Reasoning text content.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ReasoningItemContentItem>? Content { get; set; }
+
         /// <summary>
         /// The encrypted content of the reasoning item - populated when a response is<br/>
         /// generated with `reasoning.encrypted_content` in the `include` parameter.
@@ -34,7 +40,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ReasoningItemStatus? Status { get; set; }
 
         /// <summary>
-        /// Reasoning text contents.
+        /// Reasoning summary content.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -56,6 +62,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ReasoningItem" /> class.
         /// </summary>
+        /// <param name="content">
+        /// Reasoning text content.
+        /// </param>
         /// <param name="encryptedContent">
         /// The encrypted content of the reasoning item - populated when a response is<br/>
         /// generated with `reasoning.encrypted_content` in the `include` parameter.
@@ -68,7 +77,7 @@ namespace tryAGI.OpenAI
         /// `incomplete`. Populated when items are returned via API.
         /// </param>
         /// <param name="summary">
-        /// Reasoning text contents.
+        /// Reasoning summary content.
         /// </param>
         /// <param name="type">
         /// The type of the object. Always `reasoning`.
@@ -79,12 +88,14 @@ namespace tryAGI.OpenAI
         public ReasoningItem(
             string id,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ReasoningItemSummaryItem> summary,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ReasoningItemContentItem>? content,
             string? encryptedContent,
             global::tryAGI.OpenAI.ReasoningItemStatus? status,
             global::tryAGI.OpenAI.ReasoningItemType type)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
+            this.Content = content;
             this.EncryptedContent = encryptedContent;
             this.Status = status;
             this.Type = type;

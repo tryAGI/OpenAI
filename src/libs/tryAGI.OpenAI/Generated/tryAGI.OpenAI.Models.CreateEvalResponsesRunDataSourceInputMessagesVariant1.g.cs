@@ -15,7 +15,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("template")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesVariant1TemplateItem, global::tryAGI.OpenAI.EvalItem>> Template { get; set; }
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesVariant1TemplateItem, global::tryAGI.OpenAI.EvalItem>> Template { get; set; }
 
         /// <summary>
         /// The type of input messages. Always `template`.
@@ -43,7 +43,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateEvalResponsesRunDataSourceInputMessagesVariant1(
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesVariant1TemplateItem, global::tryAGI.OpenAI.EvalItem>> template,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesVariant1TemplateItem, global::tryAGI.OpenAI.EvalItem>> template,
             global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesVariant1Type type)
         {
             this.Template = template ?? throw new global::System.ArgumentNullException(nameof(template));

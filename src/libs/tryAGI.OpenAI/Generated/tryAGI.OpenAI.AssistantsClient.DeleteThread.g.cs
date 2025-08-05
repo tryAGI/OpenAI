@@ -22,6 +22,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Delete thread<br/>
         /// Delete a thread.
         /// </summary>
         /// <param name="threadId"></param>

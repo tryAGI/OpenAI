@@ -22,8 +22,8 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Retrieve a single organization API key<br/>
-        /// Get details for a specific organization API key by its ID.
+        /// Retrieve admin API key<br/>
+        /// Retrieve a single organization API key
         /// </summary>
         /// <param name="keyId">
         /// The ID of the API key.

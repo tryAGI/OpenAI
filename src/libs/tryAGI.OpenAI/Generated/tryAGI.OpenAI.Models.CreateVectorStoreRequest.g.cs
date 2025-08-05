@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -14,8 +12,8 @@ namespace tryAGI.OpenAI
         /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy. Only applicable if `file_ids` is non-empty.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chunking_strategy")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam, global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam>))]
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam, global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam>? ChunkingStrategy { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChunkingStrategyRequestParamJsonConverter))]
+        public global::tryAGI.OpenAI.ChunkingStrategyRequestParam? ChunkingStrategy { get; set; }
 
         /// <summary>
         /// The expiration policy for a vector store.
@@ -24,7 +22,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.VectorStoreExpirationAfter? ExpiresAfter { get; set; }
 
         /// <summary>
-        /// A list of [File](/docs/api-reference/files) IDs that the vector store should use. Useful for tools like `file_search` that can access files.
+        /// A list of [File](https://platform.openai.com/docs/api-reference/files) IDs that the vector store should use. Useful for tools like `file_search` that can access files.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_ids")]
         public global::System.Collections.Generic.IList<string>? FileIds { get; set; }
@@ -61,7 +59,7 @@ namespace tryAGI.OpenAI
         /// The expiration policy for a vector store.
         /// </param>
         /// <param name="fileIds">
-        /// A list of [File](/docs/api-reference/files) IDs that the vector store should use. Useful for tools like `file_search` that can access files.
+        /// A list of [File](https://platform.openai.com/docs/api-reference/files) IDs that the vector store should use. Useful for tools like `file_search` that can access files.
         /// </param>
         /// <param name="metadata">
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
@@ -77,7 +75,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateVectorStoreRequest(
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam, global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam>? chunkingStrategy,
+            global::tryAGI.OpenAI.ChunkingStrategyRequestParam? chunkingStrategy,
             global::tryAGI.OpenAI.VectorStoreExpirationAfter? expiresAfter,
             global::System.Collections.Generic.IList<string>? fileIds,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,

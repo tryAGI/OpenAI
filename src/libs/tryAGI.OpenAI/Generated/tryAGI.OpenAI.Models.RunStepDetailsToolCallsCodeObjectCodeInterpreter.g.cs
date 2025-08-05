@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -22,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputLogsObject, global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputImageObject>> Outputs { get; set; }
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeObjectCodeInterpreterOutput> Outputs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public RunStepDetailsToolCallsCodeObjectCodeInterpreter(
             string input,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputLogsObject, global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputImageObject>> outputs)
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeObjectCodeInterpreterOutput> outputs)
         {
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Outputs = outputs ?? throw new global::System.ArgumentNullException(nameof(outputs));

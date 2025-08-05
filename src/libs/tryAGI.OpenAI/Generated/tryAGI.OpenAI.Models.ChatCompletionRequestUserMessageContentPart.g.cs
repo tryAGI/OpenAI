@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct ChatCompletionRequestUserMessageContentPart : global::System.IEquatable<ChatCompletionRequestUserMessageContentPart>
     {
         /// <summary>
-        /// Learn about [text inputs](/docs/guides/text-generation).
+        /// Learn about [text inputs](https://platform.openai.com/docs/guides/text-generation).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText? Text { get; init; }
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Learn about [image inputs](/docs/guides/vision).
+        /// Learn about [image inputs](https://platform.openai.com/docs/guides/vision).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImage? Image { get; init; }
@@ -80,7 +80,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Learn about [audio inputs](/docs/guides/audio).
+        /// Learn about [audio inputs](https://platform.openai.com/docs/guides/audio).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudio? Audio { get; init; }
@@ -115,7 +115,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Learn about [file inputs](/docs/guides/text) for text generation.
+        /// Learn about [file inputs](https://platform.openai.com/docs/guides/text) for text generation.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFile? File { get; init; }
@@ -190,7 +190,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsImage && !IsAudio && !IsFile || !IsText && IsImage && !IsAudio && !IsFile || !IsText && !IsImage && IsAudio && !IsFile || !IsText && !IsImage && !IsAudio && IsFile;
+            return IsText || IsImage || IsAudio || IsFile;
         }
 
         /// <summary>

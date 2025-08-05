@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// The intended purpose of the uploaded file.<br/>
-        /// See the [documentation on File purposes](/docs/api-reference/files/create#files-create-purpose).
+        /// See the [documentation on File purposes](https://platform.openai.com/docs/api-reference/files/create#files-create-purpose).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("purpose")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateUploadRequestPurposeJsonConverter))]
@@ -60,7 +60,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="purpose">
         /// The intended purpose of the uploaded file.<br/>
-        /// See the [documentation on File purposes](/docs/api-reference/files/create#files-create-purpose).
+        /// See the [documentation on File purposes](https://platform.openai.com/docs/api-reference/files/create#files-create-purpose).
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

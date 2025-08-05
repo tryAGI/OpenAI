@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IProjectsClient
     {
         /// <summary>
+        /// Modify project<br/>
         /// Modifies a project in the organization.
         /// </summary>
         /// <param name="projectId"></param>
@@ -17,6 +18,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
+        /// Modify project<br/>
         /// Modifies a project in the organization.
         /// </summary>
         /// <param name="projectId"></param>

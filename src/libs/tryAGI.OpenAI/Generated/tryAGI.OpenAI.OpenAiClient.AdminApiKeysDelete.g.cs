@@ -22,8 +22,8 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Delete an organization admin API key<br/>
-        /// Delete the specified admin API key.
+        /// Delete admin API key<br/>
+        /// Delete an organization admin API key
         /// </summary>
         /// <param name="keyId">
         /// The ID of the API key to be deleted.

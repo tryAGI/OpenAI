@@ -24,6 +24,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Delete project API key<br/>
         /// Deletes an API key from the project.
         /// </summary>
         /// <param name="projectId"></param>

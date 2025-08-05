@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IFilesClient
     {
         /// <summary>
+        /// Delete file<br/>
         /// Delete a file.
         /// </summary>
         /// <param name="fileId"></param>

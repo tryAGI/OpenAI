@@ -5,8 +5,8 @@ namespace tryAGI.OpenAI
     public partial interface IOpenAiClient
     {
         /// <summary>
-        /// Retrieve Container File<br/>
-        /// Retrieves a container file.
+        /// Retrieve container file<br/>
+        /// Retrieve Container File
         /// </summary>
         /// <param name="containerId"></param>
         /// <param name="fileId"></param>

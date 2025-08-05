@@ -1,17 +1,15 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Represents an execution run on a [thread](/docs/api-reference/threads).
+    /// Represents an execution run on a [thread](https://platform.openai.com/docs/api-reference/threads).
     /// </summary>
     public sealed partial class RunObject
     {
         /// <summary>
-        /// The ID of the [assistant](/docs/api-reference/assistants) used for execution of this run.
+        /// The ID of the [assistant](https://platform.openai.com/docs/api-reference/assistants) used for execution of this run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assistant_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -72,7 +70,7 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.RunObjectIncompleteDetails? IncompleteDetails { get; set; }
 
         /// <summary>
-        /// The instructions that the [assistant](/docs/api-reference/assistants) used for this run.
+        /// The instructions that the [assistant](https://platform.openai.com/docs/api-reference/assistants) used for this run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -111,7 +109,7 @@ namespace tryAGI.OpenAI
         public required global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
-        /// The model that the [assistant](/docs/api-reference/assistants) used for this run.
+        /// The model that the [assistant](https://platform.openai.com/docs/api-reference/assistants) used for this run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -125,7 +123,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RunObjectObject Object { get; set; }
 
         /// <summary>
-        /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.
+        /// Whether to enable [parallel function calling](https://platform.openai.com/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parallel_tool_calls")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -139,8 +137,8 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.RunObjectRequiredAction? RequiredAction { get; set; }
 
         /// <summary>
-        /// Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models#gpt-4o), [GPT-4 Turbo](/docs/models#gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.<br/>
-        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).<br/>
+        /// Specifies the format that the model must output. Compatible with [GPT-4o](https://platform.openai.com/docs/models#gpt-4o), [GPT-4 Turbo](https://platform.openai.com/docs/models#gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.<br/>
+        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](https://platform.openai.com/docs/guides/structured-outputs).<br/>
         /// Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.<br/>
         /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
         /// </summary>
@@ -161,9 +159,9 @@ namespace tryAGI.OpenAI
         /// The status of the run, which can be either `queued`, `in_progress`, `requires_action`, `cancelling`, `cancelled`, `failed`, `completed`, `incomplete`, or `expired`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RunObjectStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RunStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.RunObjectStatus Status { get; set; }
+        public required global::tryAGI.OpenAI.RunStatus Status { get; set; }
 
         /// <summary>
         /// The sampling temperature used for this run. If not set, defaults to 1.
@@ -172,7 +170,7 @@ namespace tryAGI.OpenAI
         public double? Temperature { get; set; }
 
         /// <summary>
-        /// The ID of the [thread](/docs/api-reference/threads) that was executed on as a part of this run.
+        /// The ID of the [thread](https://platform.openai.com/docs/api-reference/threads) that was executed on as a part of this run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("thread_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -191,11 +189,11 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.AssistantsApiToolChoiceOption ToolChoice { get; set; }
 
         /// <summary>
-        /// The list of tools that the [assistant](/docs/api-reference/assistants) used for this run.
+        /// The list of tools that the [assistant](https://platform.openai.com/docs/api-reference/assistants) used for this run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.AssistantToolsCode, global::tryAGI.OpenAI.AssistantToolsFileSearch, global::tryAGI.OpenAI.AssistantToolsFunction>> Tools { get; set; }
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AssistantTool> Tools { get; set; }
 
         /// <summary>
         /// The nucleus sampling value used for this run. If not set, defaults to 1.
@@ -227,7 +225,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="RunObject" /> class.
         /// </summary>
         /// <param name="assistantId">
-        /// The ID of the [assistant](/docs/api-reference/assistants) used for execution of this run.
+        /// The ID of the [assistant](https://platform.openai.com/docs/api-reference/assistants) used for execution of this run.
         /// </param>
         /// <param name="cancelledAt">
         /// The Unix timestamp (in seconds) for when the run was cancelled.
@@ -251,7 +249,7 @@ namespace tryAGI.OpenAI
         /// Details on why the run is incomplete. Will be `null` if the run is not incomplete.
         /// </param>
         /// <param name="instructions">
-        /// The instructions that the [assistant](/docs/api-reference/assistants) used for this run.
+        /// The instructions that the [assistant](https://platform.openai.com/docs/api-reference/assistants) used for this run.
         /// </param>
         /// <param name="lastError">
         /// The last error associated with this run. Will be `null` if there are no errors.
@@ -270,20 +268,20 @@ namespace tryAGI.OpenAI
         /// with a maximum length of 512 characters.
         /// </param>
         /// <param name="model">
-        /// The model that the [assistant](/docs/api-reference/assistants) used for this run.
+        /// The model that the [assistant](https://platform.openai.com/docs/api-reference/assistants) used for this run.
         /// </param>
         /// <param name="object">
         /// The object type, which is always `thread.run`.
         /// </param>
         /// <param name="parallelToolCalls">
-        /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.
+        /// Whether to enable [parallel function calling](https://platform.openai.com/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.
         /// </param>
         /// <param name="requiredAction">
         /// Details on the action required to continue the run. Will be `null` if no action is required.
         /// </param>
         /// <param name="responseFormat">
-        /// Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models#gpt-4o), [GPT-4 Turbo](/docs/models#gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.<br/>
-        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).<br/>
+        /// Specifies the format that the model must output. Compatible with [GPT-4o](https://platform.openai.com/docs/models#gpt-4o), [GPT-4 Turbo](https://platform.openai.com/docs/models#gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.<br/>
+        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](https://platform.openai.com/docs/guides/structured-outputs).<br/>
         /// Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.<br/>
         /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
         /// </param>
@@ -297,7 +295,7 @@ namespace tryAGI.OpenAI
         /// The sampling temperature used for this run. If not set, defaults to 1.
         /// </param>
         /// <param name="threadId">
-        /// The ID of the [thread](/docs/api-reference/threads) that was executed on as a part of this run.
+        /// The ID of the [thread](https://platform.openai.com/docs/api-reference/threads) that was executed on as a part of this run.
         /// </param>
         /// <param name="toolChoice">
         /// Controls which (if any) tool is called by the model.<br/>
@@ -307,7 +305,7 @@ namespace tryAGI.OpenAI
         /// Specifying a particular tool like `{"type": "file_search"}` or `{"type": "function", "function": {"name": "my_function"}}` forces the model to call that tool.
         /// </param>
         /// <param name="tools">
-        /// The list of tools that the [assistant](/docs/api-reference/assistants) used for this run.
+        /// The list of tools that the [assistant](https://platform.openai.com/docs/api-reference/assistants) used for this run.
         /// </param>
         /// <param name="topP">
         /// The nucleus sampling value used for this run. If not set, defaults to 1.
@@ -340,10 +338,10 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RunObjectRequiredAction? requiredAction,
             global::tryAGI.OpenAI.AssistantsApiResponseFormatOption responseFormat,
             global::System.DateTimeOffset? startedAt,
-            global::tryAGI.OpenAI.RunObjectStatus status,
+            global::tryAGI.OpenAI.RunStatus status,
             string threadId,
             global::tryAGI.OpenAI.AssistantsApiToolChoiceOption toolChoice,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.AssistantToolsCode, global::tryAGI.OpenAI.AssistantToolsFileSearch, global::tryAGI.OpenAI.AssistantToolsFunction>> tools,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AssistantTool> tools,
             global::tryAGI.OpenAI.TruncationObject truncationStrategy,
             global::tryAGI.OpenAI.RunCompletionUsage? usage,
             global::tryAGI.OpenAI.RunObjectObject @object,

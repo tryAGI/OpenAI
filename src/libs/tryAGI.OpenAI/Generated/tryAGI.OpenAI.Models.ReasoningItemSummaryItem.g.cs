@@ -9,8 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class ReasoningItemSummaryItem
     {
         /// <summary>
-        /// A short summary of the reasoning used by the model when generating<br/>
-        /// the response.
+        /// A summary of the reasoning output from the model so far.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -33,8 +32,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="ReasoningItemSummaryItem" /> class.
         /// </summary>
         /// <param name="text">
-        /// A short summary of the reasoning used by the model when generating<br/>
-        /// the response.
+        /// A summary of the reasoning output from the model so far.
         /// </param>
         /// <param name="type">
         /// The type of the object. Always `summary_text`.

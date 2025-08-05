@@ -22,6 +22,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Delete vector store<br/>
         /// Delete a vector store.
         /// </summary>
         /// <param name="vectorStoreId"></param>

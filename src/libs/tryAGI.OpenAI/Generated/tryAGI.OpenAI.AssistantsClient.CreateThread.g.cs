@@ -22,6 +22,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Create thread<br/>
         /// Create a thread.
         /// </summary>
         /// <param name="request"></param>
@@ -169,10 +170,11 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// Create thread<br/>
         /// Create a thread.
         /// </summary>
         /// <param name="messages">
-        /// A list of [messages](/docs/api-reference/messages) to start the thread with.
+        /// A list of [messages](https://platform.openai.com/docs/api-reference/messages) to start the thread with.
         /// </param>
         /// <param name="metadata">
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>

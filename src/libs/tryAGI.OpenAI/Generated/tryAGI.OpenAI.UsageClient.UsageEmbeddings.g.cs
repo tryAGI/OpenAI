@@ -40,6 +40,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Embeddings<br/>
         /// Get embeddings usage details for the organization.
         /// </summary>
         /// <param name="startTime"></param>

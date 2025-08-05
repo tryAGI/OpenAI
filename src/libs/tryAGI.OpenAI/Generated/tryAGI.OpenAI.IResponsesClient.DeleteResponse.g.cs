@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IResponsesClient
     {
         /// <summary>
+        /// Delete a model response<br/>
         /// Deletes a model response with the given ID.
         /// </summary>
         /// <param name="responseId">

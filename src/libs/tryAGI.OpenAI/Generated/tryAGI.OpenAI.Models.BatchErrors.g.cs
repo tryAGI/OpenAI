@@ -12,7 +12,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BatchErrorsDataItem>? Data { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BatchError>? Data { get; set; }
 
         /// <summary>
         /// The object type, which is always `list`.
@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BatchErrors(
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BatchErrorsDataItem>? data,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BatchError>? data,
             string? @object)
         {
             this.Data = data;

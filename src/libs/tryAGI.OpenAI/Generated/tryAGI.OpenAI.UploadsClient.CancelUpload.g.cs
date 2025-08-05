@@ -22,6 +22,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Cancel upload<br/>
         /// Cancels the Upload. No Parts may be added after an Upload is cancelled.
         /// </summary>
         /// <param name="uploadId">

@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IInvitesClient
     {
         /// <summary>
+        /// List invites<br/>
         /// Returns a list of invites in the organization.
         /// </summary>
         /// <param name="limit">

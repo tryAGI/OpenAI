@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class ThreadObjectToolResourcesCodeInterpreter
     {
         /// <summary>
-        /// A list of [file](/docs/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.
+        /// A list of [file](https://platform.openai.com/docs/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_ids")]
         public global::System.Collections.Generic.IList<string>? FileIds { get; set; }
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="ThreadObjectToolResourcesCodeInterpreter" /> class.
         /// </summary>
         /// <param name="fileIds">
-        /// A list of [file](/docs/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.
+        /// A list of [file](https://platform.openai.com/docs/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -24,6 +24,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Retrieve project service account<br/>
         /// Retrieves a service account in the project.
         /// </summary>
         /// <param name="projectId"></param>

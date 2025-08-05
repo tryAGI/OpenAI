@@ -28,6 +28,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// List assistants<br/>
         /// Returns a list of assistants.
         /// </summary>
         /// <param name="limit">

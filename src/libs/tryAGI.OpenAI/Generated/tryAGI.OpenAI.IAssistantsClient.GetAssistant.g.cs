@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IAssistantsClient
     {
         /// <summary>
+        /// Retrieve assistant<br/>
         /// Retrieves an assistant.
         /// </summary>
         /// <param name="assistantId"></param>

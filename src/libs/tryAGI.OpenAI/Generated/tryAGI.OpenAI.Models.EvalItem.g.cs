@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// Inputs to the model - can contain template strings.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, global::tryAGI.OpenAI.InputTextContent, global::tryAGI.OpenAI.EvalItemContentVariant3, global::tryAGI.OpenAI.EvalItemContentVariant4, byte[]>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.InputTextContent, global::tryAGI.OpenAI.EvalItemContentVariant3, global::tryAGI.OpenAI.EvalItemContentVariant4, byte[]>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.InputTextContent, global::tryAGI.OpenAI.EvalItemContentVariant3, global::tryAGI.OpenAI.EvalItemContentVariant4, byte[]> Content { get; set; }
+        public required global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.InputTextContent, global::tryAGI.OpenAI.EvalItemContentVariant3, global::tryAGI.OpenAI.EvalItemContentVariant4, byte[]> Content { get; set; }
 
         /// <summary>
         /// The role of the message input. One of `user`, `assistant`, `system`, or<br/>
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public EvalItem(
-            global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.InputTextContent, global::tryAGI.OpenAI.EvalItemContentVariant3, global::tryAGI.OpenAI.EvalItemContentVariant4, byte[]> content,
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.InputTextContent, global::tryAGI.OpenAI.EvalItemContentVariant3, global::tryAGI.OpenAI.EvalItemContentVariant4, byte[]> content,
             global::tryAGI.OpenAI.EvalItemRole role,
             global::tryAGI.OpenAI.EvalItemType? type)
         {

@@ -45,9 +45,9 @@ namespace tryAGI.OpenAI
         /// to swap out system (or developer) messages in new responses.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>? Instructions { get; set; }
+        public required global::tryAGI.OpenAI.AnyOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>? Instructions { get; set; }
 
         /// <summary>
         /// The object type of this resource - always set to `response`.
@@ -165,7 +165,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ResponseError? error,
             string id,
             global::tryAGI.OpenAI.ResponseVariant3IncompleteDetails? incompleteDetails,
-            global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>? instructions,
+            global::tryAGI.OpenAI.AnyOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>? instructions,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputItem> output,
             bool parallelToolCalls,
             global::tryAGI.OpenAI.ResponseVariant3Object @object,
