@@ -10,16 +10,8 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateEvalLogsDataSourceConfig
     {
         /// <summary>
-        /// Metadata filters for the logs data source.<br/>
-        /// Example: {<br/>
-        ///   "use_case": "customer_support_agent"<br/>
-        /// }
+        /// Metadata filters for the logs data source.
         /// </summary>
-        /// <example>
-        /// {<br/>
-        ///   "use_case": "customer_support_agent"<br/>
-        /// }
-        /// </example>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public object? Metadata { get; set; }
 
@@ -42,10 +34,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="CreateEvalLogsDataSourceConfig" /> class.
         /// </summary>
         /// <param name="metadata">
-        /// Metadata filters for the logs data source.<br/>
-        /// Example: {<br/>
-        ///   "use_case": "customer_support_agent"<br/>
-        /// }
+        /// Metadata filters for the logs data source.
         /// </param>
         /// <param name="type">
         /// The type of data source. Always `logs`.<br/>

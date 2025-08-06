@@ -41,8 +41,8 @@ namespace tryAGI.OpenAI
         /// The type of this object (`container.file`).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Object { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ContainerFileResourceObjectJsonConverter))]
+        public global::tryAGI.OpenAI.ContainerFileResourceObject Object { get; set; }
 
         /// <summary>
         /// Path of the file in the container.
@@ -96,17 +96,17 @@ namespace tryAGI.OpenAI
             string containerId,
             global::System.DateTimeOffset createdAt,
             string id,
-            string @object,
             string path,
-            string source)
+            string source,
+            global::tryAGI.OpenAI.ContainerFileResourceObject @object)
         {
             this.Bytes = bytes;
             this.ContainerId = containerId ?? throw new global::System.ArgumentNullException(nameof(containerId));
             this.CreatedAt = createdAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Object = @object ?? throw new global::System.ArgumentNullException(nameof(@object));
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
             this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
+            this.Object = @object;
         }
 
         /// <summary>

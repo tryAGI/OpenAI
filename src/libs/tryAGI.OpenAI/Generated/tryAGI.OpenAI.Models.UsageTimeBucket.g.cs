@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -29,7 +27,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("result")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.UsageCompletionsResult, global::tryAGI.OpenAI.UsageEmbeddingsResult, global::tryAGI.OpenAI.UsageModerationsResult, global::tryAGI.OpenAI.UsageImagesResult, global::tryAGI.OpenAI.UsageAudioSpeechesResult, global::tryAGI.OpenAI.UsageAudioTranscriptionsResult, global::tryAGI.OpenAI.UsageVectorStoresResult, global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult, global::tryAGI.OpenAI.CostsResult>> Result { get; set; }
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResultItem> Result { get; set; }
 
         /// <summary>
         /// 
@@ -56,7 +54,7 @@ namespace tryAGI.OpenAI
 #endif
         public UsageTimeBucket(
             int endTime,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.UsageCompletionsResult, global::tryAGI.OpenAI.UsageEmbeddingsResult, global::tryAGI.OpenAI.UsageModerationsResult, global::tryAGI.OpenAI.UsageImagesResult, global::tryAGI.OpenAI.UsageAudioSpeechesResult, global::tryAGI.OpenAI.UsageAudioTranscriptionsResult, global::tryAGI.OpenAI.UsageVectorStoresResult, global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult, global::tryAGI.OpenAI.CostsResult>> result,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResultItem> result,
             int startTime,
             global::tryAGI.OpenAI.UsageTimeBucketObject @object)
         {

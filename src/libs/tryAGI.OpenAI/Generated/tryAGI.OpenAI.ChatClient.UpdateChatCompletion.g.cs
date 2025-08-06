@@ -24,6 +24,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Update chat completion<br/>
         /// Modify a stored chat completion. Only Chat Completions that have been<br/>
         /// created with the `store` parameter set to `true` can be modified. Currently,<br/>
         /// the only supported modification is to update the `metadata` field.
@@ -174,6 +175,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// Update chat completion<br/>
         /// Modify a stored chat completion. Only Chat Completions that have been<br/>
         /// created with the `store` parameter set to `true` can be modified. Currently,<br/>
         /// the only supported modification is to update the `metadata` field.

@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IProjectsClient
     {
         /// <summary>
+        /// Retrieve project service account<br/>
         /// Retrieves a service account in the project.
         /// </summary>
         /// <param name="projectId"></param>

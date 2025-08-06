@@ -4,12 +4,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Occurs when a [message](/docs/api-reference/messages/object) moves to an `in_progress` state.
+    /// Occurs when a [message](https://platform.openai.com/docs/api-reference/messages/object) moves to an `in_progress` state.
     /// </summary>
     public sealed partial class MessageStreamEventVariant2
     {
         /// <summary>
-        /// Represents a message within a [thread](/docs/api-reference/threads).
+        /// Represents a message within a [thread](https://platform.openai.com/docs/api-reference/threads).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="MessageStreamEventVariant2" /> class.
         /// </summary>
         /// <param name="data">
-        /// Represents a message within a [thread](/docs/api-reference/threads).
+        /// Represents a message within a [thread](https://platform.openai.com/docs/api-reference/threads).
         /// </param>
         /// <param name="event"></param>
 #if NET7_0_OR_GREATER

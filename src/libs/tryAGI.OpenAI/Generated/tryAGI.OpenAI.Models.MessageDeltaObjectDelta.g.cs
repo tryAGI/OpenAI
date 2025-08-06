@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -14,7 +12,7 @@ namespace tryAGI.OpenAI
         /// The content of the message in array of text and/or images.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageDeltaContentImageFileObject, global::tryAGI.OpenAI.MessageDeltaContentTextObject, global::tryAGI.OpenAI.MessageDeltaContentRefusalObject, global::tryAGI.OpenAI.MessageDeltaContentImageUrlObject>>? Content { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.MessageContentDelta>? Content { get; set; }
 
         /// <summary>
         /// The entity that produced the message. One of `user` or `assistant`.
@@ -42,7 +40,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessageDeltaObjectDelta(
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageDeltaContentImageFileObject, global::tryAGI.OpenAI.MessageDeltaContentTextObject, global::tryAGI.OpenAI.MessageDeltaContentRefusalObject, global::tryAGI.OpenAI.MessageDeltaContentImageUrlObject>>? content,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.MessageContentDelta>? content,
             global::tryAGI.OpenAI.MessageDeltaObjectDeltaRole? role)
         {
             this.Content = content;

@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IAssistantsClient
     {
         /// <summary>
+        /// Modify message<br/>
         /// Modifies a message.
         /// </summary>
         /// <param name="threadId"></param>
@@ -22,6 +23,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
+        /// Modify message<br/>
         /// Modifies a message.
         /// </summary>
         /// <param name="threadId"></param>

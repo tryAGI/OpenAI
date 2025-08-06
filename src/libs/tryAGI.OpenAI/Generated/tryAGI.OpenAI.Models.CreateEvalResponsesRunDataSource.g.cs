@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -14,8 +12,8 @@ namespace tryAGI.OpenAI
         /// Used when sampling from a model. Dictates the structure of the messages passed into the model. Can either be a reference to a prebuilt trajectory (ie, `item.input_trajectory`), or a template with variable references to the `item` namespace.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_messages")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesVariant1, global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesVariant2>))]
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesVariant1, global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesVariant2>? InputMessages { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.InputMessages2JsonConverter))]
+        public global::tryAGI.OpenAI.InputMessages2? InputMessages { get; set; }
 
         /// <summary>
         /// The name of the model to use for generating completions (e.g. "o3-mini").
@@ -33,9 +31,9 @@ namespace tryAGI.OpenAI
         /// Determines what populates the `item` namespace in this run's data source.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.EvalJsonlFileContentSource, global::tryAGI.OpenAI.EvalJsonlFileIdSource, global::tryAGI.OpenAI.EvalResponsesSource>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.Source3JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalJsonlFileContentSource, global::tryAGI.OpenAI.EvalJsonlFileIdSource, global::tryAGI.OpenAI.EvalResponsesSource> Source { get; set; }
+        public required global::tryAGI.OpenAI.Source3 Source { get; set; }
 
         /// <summary>
         /// The type of run data source. Always `responses`.<br/>
@@ -73,8 +71,8 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateEvalResponsesRunDataSource(
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalJsonlFileContentSource, global::tryAGI.OpenAI.EvalJsonlFileIdSource, global::tryAGI.OpenAI.EvalResponsesSource> source,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesVariant1, global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesVariant2>? inputMessages,
+            global::tryAGI.OpenAI.Source3 source,
+            global::tryAGI.OpenAI.InputMessages2? inputMessages,
             string? model,
             global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceSamplingParams? samplingParams,
             global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceType type = global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceType.Responses)

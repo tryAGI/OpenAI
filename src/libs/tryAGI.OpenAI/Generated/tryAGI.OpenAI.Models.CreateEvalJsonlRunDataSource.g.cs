@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -14,9 +12,9 @@ namespace tryAGI.OpenAI
         /// Determines what populates the `item` namespace in the data source.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.EvalJsonlFileContentSource, global::tryAGI.OpenAI.EvalJsonlFileIdSource>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.Source2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalJsonlFileContentSource, global::tryAGI.OpenAI.EvalJsonlFileIdSource> Source { get; set; }
+        public required global::tryAGI.OpenAI.Source2 Source { get; set; }
 
         /// <summary>
         /// The type of data source. Always `jsonl`.<br/>
@@ -47,7 +45,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateEvalJsonlRunDataSource(
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalJsonlFileContentSource, global::tryAGI.OpenAI.EvalJsonlFileIdSource> source,
+            global::tryAGI.OpenAI.Source2 source,
             global::tryAGI.OpenAI.CreateEvalJsonlRunDataSourceType type = global::tryAGI.OpenAI.CreateEvalJsonlRunDataSourceType.Jsonl)
         {
             this.Source = source;

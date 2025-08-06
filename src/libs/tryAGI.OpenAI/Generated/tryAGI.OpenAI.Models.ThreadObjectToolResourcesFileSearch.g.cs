@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class ThreadObjectToolResourcesFileSearch
     {
         /// <summary>
-        /// The [vector store](/docs/api-reference/vector-stores/object) attached to this thread. There can be a maximum of 1 vector store attached to the thread.
+        /// The [vector store](https://platform.openai.com/docs/api-reference/vector-stores/object) attached to this thread. There can be a maximum of 1 vector store attached to the thread.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vector_store_ids")]
         public global::System.Collections.Generic.IList<string>? VectorStoreIds { get; set; }
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="ThreadObjectToolResourcesFileSearch" /> class.
         /// </summary>
         /// <param name="vectorStoreIds">
-        /// The [vector store](/docs/api-reference/vector-stores/object) attached to this thread. There can be a maximum of 1 vector store attached to the thread.
+        /// The [vector store](https://platform.openai.com/docs/api-reference/vector-stores/object) attached to this thread. There can be a maximum of 1 vector store attached to the thread.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

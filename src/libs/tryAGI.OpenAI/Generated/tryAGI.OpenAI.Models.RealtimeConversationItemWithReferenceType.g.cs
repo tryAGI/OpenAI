@@ -20,6 +20,10 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         FunctionCallOutput,
+        /// <summary>
+        /// 
+        /// </summary>
+        ItemReference,
     }
 
     /// <summary>
@@ -37,6 +41,7 @@ namespace tryAGI.OpenAI
                 RealtimeConversationItemWithReferenceType.Message => "message",
                 RealtimeConversationItemWithReferenceType.FunctionCall => "function_call",
                 RealtimeConversationItemWithReferenceType.FunctionCallOutput => "function_call_output",
+                RealtimeConversationItemWithReferenceType.ItemReference => "item_reference",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,6 +55,7 @@ namespace tryAGI.OpenAI
                 "message" => RealtimeConversationItemWithReferenceType.Message,
                 "function_call" => RealtimeConversationItemWithReferenceType.FunctionCall,
                 "function_call_output" => RealtimeConversationItemWithReferenceType.FunctionCallOutput,
+                "item_reference" => RealtimeConversationItemWithReferenceType.ItemReference,
                 _ => null,
             };
         }

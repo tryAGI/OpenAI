@@ -24,6 +24,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Update an eval<br/>
         /// Update certain properties of an evaluation.
         /// </summary>
         /// <param name="evalId"></param>
@@ -172,6 +173,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// Update an eval<br/>
         /// Update certain properties of an evaluation.
         /// </summary>
         /// <param name="evalId"></param>

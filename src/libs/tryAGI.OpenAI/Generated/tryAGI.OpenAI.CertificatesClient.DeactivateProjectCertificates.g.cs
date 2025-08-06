@@ -24,6 +24,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Deactivate certificates for project<br/>
         /// Deactivate certificates at the project level. You can atomically and <br/>
         /// idempotently deactivate up to 10 certificates at a time.
         /// </summary>
@@ -173,6 +174,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// Deactivate certificates for project<br/>
         /// Deactivate certificates at the project level. You can atomically and <br/>
         /// idempotently deactivate up to 10 certificates at a time.
         /// </summary>

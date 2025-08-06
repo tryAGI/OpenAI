@@ -24,6 +24,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Activate certificates for project<br/>
         /// Activate certificates at the project level.<br/>
         /// You can atomically and idempotently activate up to 10 certificates at a time.
         /// </summary>
@@ -173,6 +174,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// Activate certificates for project<br/>
         /// Activate certificates at the project level.<br/>
         /// You can atomically and idempotently activate up to 10 certificates at a time.
         /// </summary>

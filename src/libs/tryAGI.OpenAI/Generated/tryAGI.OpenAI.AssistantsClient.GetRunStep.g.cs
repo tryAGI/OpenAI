@@ -28,6 +28,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Retrieve run step<br/>
         /// Retrieves a run step.
         /// </summary>
         /// <param name="threadId"></param>

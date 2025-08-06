@@ -22,6 +22,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Run grader<br/>
         /// Run a grader.
         /// </summary>
         /// <param name="request"></param>
@@ -169,6 +170,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// Run grader<br/>
         /// Run a grader.
         /// </summary>
         /// <param name="grader">
@@ -176,11 +178,11 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="item">
         /// The dataset item provided to the grader. This will be used to populate <br/>
-        /// the `item` namespace. See [the guide](/docs/guides/graders) for more details. 
+        /// the `item` namespace. See [the guide](https://platform.openai.com/docs/guides/graders) for more details. 
         /// </param>
         /// <param name="modelSample">
         /// The model sample to be evaluated. This value will be used to populate <br/>
-        /// the `sample` namespace. See [the guide](/docs/guides/graders) for more details.<br/>
+        /// the `sample` namespace. See [the guide](https://platform.openai.com/docs/guides/graders) for more details.<br/>
         /// The `output_json` variable will be populated if the model sample is a <br/>
         /// valid JSON string.<br/>
         ///  
@@ -191,7 +193,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "TRYAGI_OPENAI_BETA_001")]
 #endif
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.RunGraderResponse> RunGraderAsync(
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.GraderStringCheck, global::tryAGI.OpenAI.GraderTextSimilarity, global::tryAGI.OpenAI.GraderPython, global::tryAGI.OpenAI.GraderScoreModel, global::tryAGI.OpenAI.GraderMulti> grader,
+            global::tryAGI.OpenAI.RunGraderRequestGrader grader,
             string modelSample,
             object? item = default,
             global::System.Threading.CancellationToken cancellationToken = default)

@@ -28,6 +28,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// List evals<br/>
         /// List evaluations for a project.
         /// </summary>
         /// <param name="after"></param>

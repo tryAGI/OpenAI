@@ -24,6 +24,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Delete message<br/>
         /// Deletes a message.
         /// </summary>
         /// <param name="threadId"></param>

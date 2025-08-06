@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     {
         /// <summary>
         /// The number of tokens that were retrieved from the cache. <br/>
-        /// [More on prompt caching](/docs/guides/prompt-caching).
+        /// [More on prompt caching](https://platform.openai.com/docs/guides/prompt-caching).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cached_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="cachedTokens">
         /// The number of tokens that were retrieved from the cache. <br/>
-        /// [More on prompt caching](/docs/guides/prompt-caching).
+        /// [More on prompt caching](https://platform.openai.com/docs/guides/prompt-caching).
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

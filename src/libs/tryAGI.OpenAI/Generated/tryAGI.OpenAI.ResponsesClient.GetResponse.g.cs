@@ -28,6 +28,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Get a model response<br/>
         /// Retrieves a model response with the given ID.
         /// </summary>
         /// <param name="responseId">

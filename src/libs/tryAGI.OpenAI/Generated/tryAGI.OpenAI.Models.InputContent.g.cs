@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// An image input to the model. Learn about [image inputs](/docs/guides/vision).
+        /// An image input to the model. Learn about [image inputs](https://platform.openai.com/docs/guides/vision).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.InputImageContent? Image { get; init; }
@@ -151,7 +151,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsImage && !IsFile || !IsText && IsImage && !IsFile || !IsText && !IsImage && IsFile;
+            return IsText || IsImage || IsFile;
         }
 
         /// <summary>

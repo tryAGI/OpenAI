@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IUsageClient
     {
         /// <summary>
+        /// Moderations<br/>
         /// Get moderations usage details for the organization.
         /// </summary>
         /// <param name="startTime"></param>

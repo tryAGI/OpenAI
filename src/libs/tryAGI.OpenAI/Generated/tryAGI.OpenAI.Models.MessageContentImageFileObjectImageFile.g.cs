@@ -17,7 +17,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.MessageContentImageFileObjectImageFileDetail? Detail { get; set; }
 
         /// <summary>
-        /// The [File](/docs/api-reference/files) ID of the image in the message content. Set `purpose="vision"` when uploading the File if you need to later display the file content.
+        /// The [File](https://platform.openai.com/docs/api-reference/files) ID of the image in the message content. Set `purpose="vision"` when uploading the File if you need to later display the file content.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         /// Default Value: auto
         /// </param>
         /// <param name="fileId">
-        /// The [File](/docs/api-reference/files) ID of the image in the message content. Set `purpose="vision"` when uploading the File if you need to later display the file content.
+        /// The [File](https://platform.openai.com/docs/api-reference/files) ID of the image in the message content. Set `purpose="vision"` when uploading the File if you need to later display the file content.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

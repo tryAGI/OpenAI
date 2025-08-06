@@ -76,25 +76,12 @@ namespace tryAGI.OpenAI.JsonConverters
             {
             }
 
-            readerCopy = reader;
-            global::tryAGI.OpenAI.DoneEvent? done = default;
-            try
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.DoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.DoneEvent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.DoneEvent).Name}");
-                done = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
-            }
-            catch (global::System.Text.Json.JsonException)
-            {
-            }
-
             var result = new global::tryAGI.OpenAI.AssistantStreamEvent(
                 thread,
                 run,
                 runStep,
                 message,
-                error,
-                done
+                error
                 );
 
             if (thread != null)
@@ -125,12 +112,6 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ErrorEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ErrorEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ErrorEvent).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            else if (done != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.DoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.DoneEvent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.DoneEvent).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -175,12 +156,6 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ErrorEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ErrorEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ErrorEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Error, typeInfo);
-            }
-            else if (value.IsDone)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.DoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.DoneEvent?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.DoneEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Done, typeInfo);
             }
         }
     }

@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IAssistantsClient
     {
         /// <summary>
+        /// Retrieve run<br/>
         /// Retrieves a run.
         /// </summary>
         /// <param name="threadId"></param>

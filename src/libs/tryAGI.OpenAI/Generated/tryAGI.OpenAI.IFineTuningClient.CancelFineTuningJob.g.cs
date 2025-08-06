@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IFineTuningClient
     {
         /// <summary>
+        /// Cancel fine-tuning<br/>
         /// Immediately cancel a fine-tune job.
         /// </summary>
         /// <param name="fineTuningJobId">

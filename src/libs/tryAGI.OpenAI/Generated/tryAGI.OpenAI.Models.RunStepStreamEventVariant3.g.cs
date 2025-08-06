@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Occurs when parts of a [run step](/docs/api-reference/run-steps/step-object) are being streamed.
+    /// Occurs when parts of a [run step](https://platform.openai.com/docs/api-reference/run-steps/step-object) are being streamed.
     /// </summary>
     public sealed partial class RunStepStreamEventVariant3
     {

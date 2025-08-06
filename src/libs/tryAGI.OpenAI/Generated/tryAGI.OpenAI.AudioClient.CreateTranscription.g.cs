@@ -22,12 +22,13 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Create transcription<br/>
         /// Transcribes audio into the input language.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>> CreateTranscriptionAsync(
+        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>> CreateTranscriptionAsync(
             global::tryAGI.OpenAI.CreateTranscriptionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -81,7 +82,7 @@ namespace tryAGI.OpenAI
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Include, x => x.ToValueString()))}]"),
-                    name: "include[]");
+                    name: "include");
             } 
             if (request.Language != default)
             {
@@ -120,7 +121,7 @@ namespace tryAGI.OpenAI
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.TimestampGranularities, x => x.ToValueString()))}]"),
-                    name: "timestamp_granularities[]");
+                    name: "timestamp_granularities");
             }
             __httpRequest.Content = __httpRequestContent;
 
@@ -166,7 +167,7 @@ namespace tryAGI.OpenAI
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>.FromJson(__content, JsonSerializerContext) ??
+                        global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -197,7 +198,7 @@ namespace tryAGI.OpenAI
                     ).ConfigureAwait(false);
 
                     return
-                        await global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -217,6 +218,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// Create transcription<br/>
         /// Transcribes audio into the input language.
         /// </summary>
         /// <param name="chunkingStrategy">
@@ -243,7 +245,7 @@ namespace tryAGI.OpenAI
         /// Example: gpt-4o-transcribe
         /// </param>
         /// <param name="prompt">
-        /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text#prompting) should match the audio language.
+        /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](https://platform.openai.com/docs/guides/speech-to-text#prompting) should match the audio language.
         /// </param>
         /// <param name="responseFormat">
         /// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`. For `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`, the only supported format is `json`.<br/>
@@ -252,7 +254,7 @@ namespace tryAGI.OpenAI
         /// <param name="stream">
         /// If set to true, the model response data will be streamed to the client<br/>
         /// as it is generated using [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format). <br/>
-        /// See the [Streaming section of the Speech-to-Text guide](/docs/guides/speech-to-text?lang=curl#streaming-transcriptions)<br/>
+        /// See the [Streaming section of the Speech-to-Text guide](https://platform.openai.com/docs/guides/speech-to-text?lang=curl#streaming-transcriptions)<br/>
         /// for more information.<br/>
         /// Note: Streaming is not supported for the `whisper-1` model and will be ignored.<br/>
         /// Default Value: false
@@ -267,11 +269,11 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>> CreateTranscriptionAsync(
+        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>> CreateTranscriptionAsync(
             byte[] file,
             string filename,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateTranscriptionRequestModel?> model,
-            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.CreateTranscriptionRequestChunkingStrategy?, global::tryAGI.OpenAI.VadConfig>? chunkingStrategy = default,
+            global::tryAGI.OpenAI.TranscriptionChunkingStrategy? chunkingStrategy = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionInclude>? include = default,
             string? language = default,
             string? prompt = default,

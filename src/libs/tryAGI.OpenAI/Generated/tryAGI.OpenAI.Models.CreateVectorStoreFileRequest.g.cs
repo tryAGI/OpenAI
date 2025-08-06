@@ -19,14 +19,14 @@ namespace tryAGI.OpenAI
         public object? Attributes { get; set; }
 
         /// <summary>
-        /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
+        /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy. Only applicable if `file_ids` is non-empty.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chunking_strategy")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChunkingStrategyRequestParamJsonConverter))]
         public global::tryAGI.OpenAI.ChunkingStrategyRequestParam? ChunkingStrategy { get; set; }
 
         /// <summary>
-        /// A [File](/docs/api-reference/files) ID that the vector store should use. Useful for tools like `file_search` that can access files.
+        /// A [File](https://platform.openai.com/docs/api-reference/files) ID that the vector store should use. Useful for tools like `file_search` that can access files.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -49,10 +49,10 @@ namespace tryAGI.OpenAI
         /// length of 512 characters, booleans, or numbers.
         /// </param>
         /// <param name="chunkingStrategy">
-        /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
+        /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy. Only applicable if `file_ids` is non-empty.
         /// </param>
         /// <param name="fileId">
-        /// A [File](/docs/api-reference/files) ID that the vector store should use. Useful for tools like `file_search` that can access files.
+        /// A [File](https://platform.openai.com/docs/api-reference/files) ID that the vector store should use. Useful for tools like `file_search` that can access files.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

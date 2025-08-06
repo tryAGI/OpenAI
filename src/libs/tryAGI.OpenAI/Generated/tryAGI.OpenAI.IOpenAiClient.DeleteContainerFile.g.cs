@@ -5,8 +5,8 @@ namespace tryAGI.OpenAI
     public partial interface IOpenAiClient
     {
         /// <summary>
-        /// Delete Container File<br/>
-        /// Delete a container file.
+        /// Delete a container file<br/>
+        /// Delete Container File
         /// </summary>
         /// <param name="containerId"></param>
         /// <param name="fileId"></param>

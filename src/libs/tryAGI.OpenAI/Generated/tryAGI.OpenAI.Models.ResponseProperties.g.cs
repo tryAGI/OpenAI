@@ -12,14 +12,14 @@ namespace tryAGI.OpenAI
     {
         /// <summary>
         /// Whether to run the model response in the background. <br/>
-        /// [Learn more](/docs/guides/background).<br/>
+        /// [Learn more](https://platform.openai.com/docs/guides/background).<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("background")]
         public bool? Background { get; set; }
 
         /// <summary>
-        /// An upper bound for the number of tokens that can be generated for a response, including visible output tokens and [reasoning tokens](/docs/guides/reasoning).
+        /// An upper bound for the number of tokens that can be generated for a response, including visible output tokens and [reasoning tokens](https://platform.openai.com/docs/guides/reasoning).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_output_tokens")]
         public int? MaxOutputTokens { get; set; }
@@ -41,14 +41,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The unique ID of the previous response to the model. Use this to<br/>
         /// create multi-turn conversations. Learn more about <br/>
-        /// [conversation state](/docs/guides/conversation-state).
+        /// [conversation state](https://platform.openai.com/docs/guides/conversation-state).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("previous_response_id")]
         public string? PreviousResponseId { get; set; }
 
         /// <summary>
         /// Reference to a prompt template and its variables. <br/>
-        /// [Learn more](/docs/guides/text?api-mode=responses#reusable-prompts).
+        /// [Learn more](https://platform.openai.com/docs/guides/text?api-mode=responses#reusable-prompts).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         public global::tryAGI.OpenAI.Prompt2? Prompt { get; set; }
@@ -64,8 +64,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Configuration options for a text response from the model. Can be plain<br/>
         /// text or structured JSON data. Learn more:<br/>
-        /// - [Text inputs and outputs](/docs/guides/text)<br/>
-        /// - [Structured Outputs](/docs/guides/structured-outputs)
+        /// - [Text inputs and outputs](https://platform.openai.com/docs/guides/text)<br/>
+        /// - [Structured Outputs](https://platform.openai.com/docs/guides/structured-outputs)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         public global::tryAGI.OpenAI.ResponsePropertiesText? Text { get; set; }
@@ -76,20 +76,20 @@ namespace tryAGI.OpenAI
         /// the model can call.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceTypes, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP>))]
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceTypes, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP>? ToolChoice { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceTypes, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP>))]
+        public global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceTypes, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP>? ToolChoice { get; set; }
 
         /// <summary>
         /// An array of tools the model may call while generating a response. You <br/>
         /// can specify which tool to use by setting the `tool_choice` parameter.<br/>
         /// The two categories of tools you can provide the model are:<br/>
         /// - **Built-in tools**: Tools that are provided by OpenAI that extend the<br/>
-        ///   model's capabilities, like [web search](/docs/guides/tools-web-search)<br/>
-        ///   or [file search](/docs/guides/tools-file-search). Learn more about<br/>
-        ///   [built-in tools](/docs/guides/tools).<br/>
+        ///   model's capabilities, like [web search](https://platform.openai.com/docs/guides/tools-web-search)<br/>
+        ///   or [file search](https://platform.openai.com/docs/guides/tools-file-search). Learn more about<br/>
+        ///   [built-in tools](https://platform.openai.com/docs/guides/tools).<br/>
         /// - **Function calls (custom tools)**: Functions that are defined by you,<br/>
         ///   enabling the model to call your own code. Learn more about<br/>
-        ///   [function calling](/docs/guides/function-calling).
+        ///   [function calling](https://platform.openai.com/docs/guides/function-calling).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Tool>? Tools { get; set; }
@@ -119,11 +119,11 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="background">
         /// Whether to run the model response in the background. <br/>
-        /// [Learn more](/docs/guides/background).<br/>
+        /// [Learn more](https://platform.openai.com/docs/guides/background).<br/>
         /// Default Value: false
         /// </param>
         /// <param name="maxOutputTokens">
-        /// An upper bound for the number of tokens that can be generated for a response, including visible output tokens and [reasoning tokens](/docs/guides/reasoning).
+        /// An upper bound for the number of tokens that can be generated for a response, including visible output tokens and [reasoning tokens](https://platform.openai.com/docs/guides/reasoning).
         /// </param>
         /// <param name="maxToolCalls">
         /// The maximum number of total calls to built-in tools that can be processed in a response. This maximum number applies across all built-in tool calls, not per individual tool. Any further attempts to call a tool by the model will be ignored.
@@ -134,11 +134,11 @@ namespace tryAGI.OpenAI
         /// <param name="previousResponseId">
         /// The unique ID of the previous response to the model. Use this to<br/>
         /// create multi-turn conversations. Learn more about <br/>
-        /// [conversation state](/docs/guides/conversation-state).
+        /// [conversation state](https://platform.openai.com/docs/guides/conversation-state).
         /// </param>
         /// <param name="prompt">
         /// Reference to a prompt template and its variables. <br/>
-        /// [Learn more](/docs/guides/text?api-mode=responses#reusable-prompts).
+        /// [Learn more](https://platform.openai.com/docs/guides/text?api-mode=responses#reusable-prompts).
         /// </param>
         /// <param name="reasoning">
         /// **o-series models only**<br/>
@@ -148,8 +148,8 @@ namespace tryAGI.OpenAI
         /// <param name="text">
         /// Configuration options for a text response from the model. Can be plain<br/>
         /// text or structured JSON data. Learn more:<br/>
-        /// - [Text inputs and outputs](/docs/guides/text)<br/>
-        /// - [Structured Outputs](/docs/guides/structured-outputs)
+        /// - [Text inputs and outputs](https://platform.openai.com/docs/guides/text)<br/>
+        /// - [Structured Outputs](https://platform.openai.com/docs/guides/structured-outputs)
         /// </param>
         /// <param name="toolChoice">
         /// How the model should select which tool (or tools) to use when generating<br/>
@@ -161,12 +161,12 @@ namespace tryAGI.OpenAI
         /// can specify which tool to use by setting the `tool_choice` parameter.<br/>
         /// The two categories of tools you can provide the model are:<br/>
         /// - **Built-in tools**: Tools that are provided by OpenAI that extend the<br/>
-        ///   model's capabilities, like [web search](/docs/guides/tools-web-search)<br/>
-        ///   or [file search](/docs/guides/tools-file-search). Learn more about<br/>
-        ///   [built-in tools](/docs/guides/tools).<br/>
+        ///   model's capabilities, like [web search](https://platform.openai.com/docs/guides/tools-web-search)<br/>
+        ///   or [file search](https://platform.openai.com/docs/guides/tools-file-search). Learn more about<br/>
+        ///   [built-in tools](https://platform.openai.com/docs/guides/tools).<br/>
         /// - **Function calls (custom tools)**: Functions that are defined by you,<br/>
         ///   enabling the model to call your own code. Learn more about<br/>
-        ///   [function calling](/docs/guides/function-calling).
+        ///   [function calling](https://platform.openai.com/docs/guides/function-calling).
         /// </param>
         /// <param name="truncation">
         /// The truncation strategy to use for the model response.<br/>
@@ -190,7 +190,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.Prompt2? prompt,
             global::tryAGI.OpenAI.Reasoning? reasoning,
             global::tryAGI.OpenAI.ResponsePropertiesText? text,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceTypes, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP>? toolChoice,
+            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceTypes, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP>? toolChoice,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Tool>? tools,
             global::tryAGI.OpenAI.ResponsePropertiesTruncation? truncation)
         {

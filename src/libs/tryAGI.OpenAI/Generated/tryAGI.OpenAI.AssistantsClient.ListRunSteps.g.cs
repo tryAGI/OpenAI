@@ -34,6 +34,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// List run steps<br/>
         /// Returns a list of run steps belonging to a run.
         /// </summary>
         /// <param name="threadId"></param>

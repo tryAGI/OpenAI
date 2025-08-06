@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IProjectsClient
     {
         /// <summary>
+        /// Create project user<br/>
         /// Adds a user to the project. Users must already be members of the organization to be added to a project.
         /// </summary>
         /// <param name="projectId"></param>
@@ -17,6 +18,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
+        /// Create project user<br/>
         /// Adds a user to the project. Users must already be members of the organization to be added to a project.
         /// </summary>
         /// <param name="projectId"></param>

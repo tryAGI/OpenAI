@@ -5,7 +5,7 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// Data about a previous audio response from the model. <br/>
-    /// [Learn more](/docs/guides/audio).
+    /// [Learn more](https://platform.openai.com/docs/guides/audio).
     /// </summary>
     public sealed partial class ChatCompletionRequestAssistantMessageAudio
     {

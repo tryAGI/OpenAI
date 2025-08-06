@@ -5,7 +5,7 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// A tool call to run a function. See the <br/>
-    /// [function calling guide](/docs/guides/function-calling) for more information.
+    /// [function calling guide](https://platform.openai.com/docs/guides/function-calling) for more information.
     /// </summary>
     public sealed partial class FunctionToolCall
     {

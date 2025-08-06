@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IProjectsClient
     {
         /// <summary>
+        /// Modify project rate limit<br/>
         /// Updates a project rate limit.
         /// </summary>
         /// <param name="projectId"></param>
@@ -19,6 +20,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
+        /// Modify project rate limit<br/>
         /// Updates a project rate limit.
         /// </summary>
         /// <param name="projectId"></param>

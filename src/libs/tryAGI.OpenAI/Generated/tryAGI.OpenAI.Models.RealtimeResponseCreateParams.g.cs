@@ -18,8 +18,8 @@ namespace tryAGI.OpenAI
         /// will not add items to default conversation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conversation")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, global::tryAGI.OpenAI.RealtimeResponseCreateParamsConversation?>))]
-        public global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.RealtimeResponseCreateParamsConversation?>? Conversation { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.RealtimeResponseCreateParamsConversation?>))]
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.RealtimeResponseCreateParamsConversation?>? Conversation { get; set; }
 
         /// <summary>
         /// Input items to include in the prompt for the model. Using this field<br/>
@@ -53,8 +53,8 @@ namespace tryAGI.OpenAI
         /// given model. Defaults to `inf`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_response_output_tokens")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<int?, global::tryAGI.OpenAI.RealtimeResponseCreateParamsMaxResponseOutputTokens?>))]
-        public global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeResponseCreateParamsMaxResponseOutputTokens?>? MaxResponseOutputTokens { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<int?, global::tryAGI.OpenAI.RealtimeResponseCreateParamsMaxResponseOutputTokens?>))]
+        public global::tryAGI.OpenAI.AnyOf<int?, global::tryAGI.OpenAI.RealtimeResponseCreateParamsMaxResponseOutputTokens?>? MaxResponseOutputTokens { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
@@ -179,10 +179,10 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeResponseCreateParams(
-            global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.RealtimeResponseCreateParamsConversation?>? conversation,
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.RealtimeResponseCreateParamsConversation?>? conversation,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeConversationItemWithReference>? input,
             string? instructions,
-            global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeResponseCreateParamsMaxResponseOutputTokens?>? maxResponseOutputTokens,
+            global::tryAGI.OpenAI.AnyOf<int?, global::tryAGI.OpenAI.RealtimeResponseCreateParamsMaxResponseOutputTokens?>? maxResponseOutputTokens,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeResponseCreateParamsModalitie>? modalities,
             global::tryAGI.OpenAI.RealtimeResponseCreateParamsOutputAudioFormat? outputAudioFormat,

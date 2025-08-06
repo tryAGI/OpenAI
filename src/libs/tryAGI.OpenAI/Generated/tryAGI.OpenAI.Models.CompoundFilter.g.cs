@@ -15,7 +15,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ComparisonFilter, object>> Filters { get; set; }
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ComparisonFilter, object>> Filters { get; set; }
 
         /// <summary>
         /// Type of operation: `and` or `or`.
@@ -44,7 +44,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CompoundFilter(
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ComparisonFilter, object>> filters,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ComparisonFilter, object>> filters,
             global::tryAGI.OpenAI.CompoundFilterType type)
         {
             this.Filters = filters ?? throw new global::System.ArgumentNullException(nameof(filters));

@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IEvalsClient
     {
         /// <summary>
+        /// Get eval run output items<br/>
         /// Get a list of output items for an evaluation run.
         /// </summary>
         /// <param name="evalId"></param>

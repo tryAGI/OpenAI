@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class ChatCompletionRequestMessageContentPartImageImageUrl
     {
         /// <summary>
-        /// Specifies the detail level of the image. Learn more in the [Vision guide](/docs/guides/vision#low-or-high-fidelity-image-understanding).<br/>
+        /// Specifies the detail level of the image. Learn more in the [Vision guide](https://platform.openai.com/docs/guides/vision#low-or-high-fidelity-image-understanding).<br/>
         /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
@@ -33,7 +33,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="ChatCompletionRequestMessageContentPartImageImageUrl" /> class.
         /// </summary>
         /// <param name="detail">
-        /// Specifies the detail level of the image. Learn more in the [Vision guide](/docs/guides/vision#low-or-high-fidelity-image-understanding).<br/>
+        /// Specifies the detail level of the image. Learn more in the [Vision guide](https://platform.openai.com/docs/guides/vision#low-or-high-fidelity-image-understanding).<br/>
         /// Default Value: auto
         /// </param>
         /// <param name="url">

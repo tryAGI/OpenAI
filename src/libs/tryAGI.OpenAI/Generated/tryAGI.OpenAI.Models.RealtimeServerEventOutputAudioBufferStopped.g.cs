@@ -7,7 +7,7 @@ namespace tryAGI.OpenAI
     /// **WebRTC Only:** Emitted when the output audio buffer has been completely drained on the server,<br/>
     /// and no more audio is forthcoming. This event is emitted after the full response<br/>
     /// data has been sent to the client (`response.done`).<br/>
-    /// [Learn more](/docs/guides/realtime-conversations#client-and-server-events-for-audio-in-webrtc).
+    /// [Learn more](https://platform.openai.com/docs/guides/realtime-conversations#client-and-server-events-for-audio-in-webrtc).
     /// </summary>
     public sealed partial class RealtimeServerEventOutputAudioBufferStopped
     {

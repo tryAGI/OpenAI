@@ -28,6 +28,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// List project rate limits<br/>
         /// Returns the rate limits per model for a project.
         /// </summary>
         /// <param name="projectId"></param>

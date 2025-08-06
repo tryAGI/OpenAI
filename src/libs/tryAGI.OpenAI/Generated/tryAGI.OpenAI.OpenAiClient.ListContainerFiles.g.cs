@@ -28,8 +28,8 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// List Container files<br/>
-        /// Lists container files.
+        /// List container files<br/>
+        /// List Container files
         /// </summary>
         /// <param name="containerId"></param>
         /// <param name="limit">

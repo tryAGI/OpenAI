@@ -26,6 +26,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// List fine-tuning jobs<br/>
         /// List your organization's fine-tuning jobs
         /// </summary>
         /// <param name="after"></param>

@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct RunStreamEvent : global::System.IEquatable<RunStreamEvent>
     {
         /// <summary>
-        /// Occurs when a new [run](/docs/api-reference/runs/object) is created.
+        /// Occurs when a new [run](https://platform.openai.com/docs/api-reference/runs/object) is created.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RunStreamEventVariant1? Value1 { get; init; }
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `queued` status.
+        /// Occurs when a [run](https://platform.openai.com/docs/api-reference/runs/object) moves to a `queued` status.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RunStreamEventVariant2? Value2 { get; init; }
@@ -80,7 +80,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Occurs when a [run](/docs/api-reference/runs/object) moves to an `in_progress` status.
+        /// Occurs when a [run](https://platform.openai.com/docs/api-reference/runs/object) moves to an `in_progress` status.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RunStreamEventVariant3? Value3 { get; init; }
@@ -115,7 +115,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `requires_action` status.
+        /// Occurs when a [run](https://platform.openai.com/docs/api-reference/runs/object) moves to a `requires_action` status.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RunStreamEventVariant4? Value4 { get; init; }
@@ -150,7 +150,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Occurs when a [run](/docs/api-reference/runs/object) is completed.
+        /// Occurs when a [run](https://platform.openai.com/docs/api-reference/runs/object) is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RunStreamEventVariant5? Value5 { get; init; }
@@ -185,7 +185,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Occurs when a [run](/docs/api-reference/runs/object) ends with status `incomplete`.
+        /// Occurs when a [run](https://platform.openai.com/docs/api-reference/runs/object) ends with status `incomplete`.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RunStreamEventVariant6? Value6 { get; init; }
@@ -220,7 +220,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Occurs when a [run](/docs/api-reference/runs/object) fails.
+        /// Occurs when a [run](https://platform.openai.com/docs/api-reference/runs/object) fails.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RunStreamEventVariant7? Value7 { get; init; }
@@ -255,7 +255,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `cancelling` status.
+        /// Occurs when a [run](https://platform.openai.com/docs/api-reference/runs/object) moves to a `cancelling` status.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RunStreamEventVariant8? Value8 { get; init; }
@@ -290,7 +290,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Occurs when a [run](/docs/api-reference/runs/object) is cancelled.
+        /// Occurs when a [run](https://platform.openai.com/docs/api-reference/runs/object) is cancelled.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RunStreamEventVariant9? Value9 { get; init; }
@@ -325,7 +325,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Occurs when a [run](/docs/api-reference/runs/object) expires.
+        /// Occurs when a [run](https://platform.openai.com/docs/api-reference/runs/object) expires.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RunStreamEventVariant10? Value10 { get; init; }
@@ -424,7 +424,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && IsValue8 && !IsValue9 && !IsValue10 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && IsValue9 && !IsValue10 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && IsValue10;
+            return IsValue1 || IsValue2 || IsValue3 || IsValue4 || IsValue5 || IsValue6 || IsValue7 || IsValue8 || IsValue9 || IsValue10;
         }
 
         /// <summary>
