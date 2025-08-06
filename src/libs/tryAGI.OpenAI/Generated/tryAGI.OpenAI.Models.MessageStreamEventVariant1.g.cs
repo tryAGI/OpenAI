@@ -4,12 +4,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Occurs when a [message](/docs/api-reference/messages/object) is created.
+    /// Occurs when a [message](https://platform.openai.com/docs/api-reference/messages/object) is created.
     /// </summary>
     public sealed partial class MessageStreamEventVariant1
     {
         /// <summary>
-        /// Represents a message within a [thread](/docs/api-reference/threads).
+        /// Represents a message within a [thread](https://platform.openai.com/docs/api-reference/threads).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="MessageStreamEventVariant1" /> class.
         /// </summary>
         /// <param name="data">
-        /// Represents a message within a [thread](/docs/api-reference/threads).
+        /// Represents a message within a [thread](https://platform.openai.com/docs/api-reference/threads).
         /// </param>
         /// <param name="event"></param>
 #if NET7_0_OR_GREATER

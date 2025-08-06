@@ -5,7 +5,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
+    /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy. Only applicable if `file_ids` is non-empty.
     /// </summary>
     public readonly partial struct ChunkingStrategyRequestParam : global::System.IEquatable<ChunkingStrategyRequestParam>
     {
@@ -112,7 +112,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsAuto && !IsStatic || !IsAuto && IsStatic;
+            return IsAuto || IsStatic;
         }
 
         /// <summary>

@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// An image input to the model. Learn about [image inputs](/docs/guides/vision).
+    /// An image input to the model. Learn about [image inputs](https://platform.openai.com/docs/guides/vision).
     /// </summary>
     public sealed partial class InputImageContent
     {

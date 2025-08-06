@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IProjectsClient
     {
         /// <summary>
+        /// Retrieve project API key<br/>
         /// Retrieves an API key in the project.
         /// </summary>
         /// <param name="projectId"></param>

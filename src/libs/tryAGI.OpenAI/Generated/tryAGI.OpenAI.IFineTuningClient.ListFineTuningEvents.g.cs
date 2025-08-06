@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IFineTuningClient
     {
         /// <summary>
+        /// List fine-tuning events<br/>
         /// Get status updates for a fine-tuning job.
         /// </summary>
         /// <param name="fineTuningJobId">

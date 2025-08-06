@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IEvalsClient
     {
         /// <summary>
+        /// Cancel eval run<br/>
         /// Cancel an ongoing evaluation run.
         /// </summary>
         /// <param name="evalId"></param>

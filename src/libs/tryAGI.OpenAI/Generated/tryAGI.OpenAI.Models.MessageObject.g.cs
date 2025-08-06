@@ -1,17 +1,15 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Represents a message within a [thread](/docs/api-reference/threads).
+    /// Represents a message within a [thread](https://platform.openai.com/docs/api-reference/threads).
     /// </summary>
     public sealed partial class MessageObject
     {
         /// <summary>
-        /// If applicable, the ID of the [assistant](/docs/api-reference/assistants) that authored this message.
+        /// If applicable, the ID of the [assistant](https://platform.openai.com/docs/api-reference/assistants) that authored this message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assistant_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -36,7 +34,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageContentImageFileObject, global::tryAGI.OpenAI.MessageContentImageUrlObject, global::tryAGI.OpenAI.MessageContentTextObject, global::tryAGI.OpenAI.MessageContentRefusalObject>> Content { get; set; }
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.MessageContent> Content { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the message was created.
@@ -93,7 +91,7 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.MessageObjectRole Role { get; set; }
 
         /// <summary>
-        /// The ID of the [run](/docs/api-reference/runs) associated with the creation of this message. Value is `null` when messages are created manually using the create message or create thread endpoints.
+        /// The ID of the [run](https://platform.openai.com/docs/api-reference/runs) associated with the creation of this message. Value is `null` when messages are created manually using the create message or create thread endpoints.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -107,7 +105,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.MessageObjectStatus? Status { get; set; }
 
         /// <summary>
-        /// The [thread](/docs/api-reference/threads) ID that this message belongs to.
+        /// The [thread](https://platform.openai.com/docs/api-reference/threads) ID that this message belongs to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("thread_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -123,7 +121,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="MessageObject" /> class.
         /// </summary>
         /// <param name="assistantId">
-        /// If applicable, the ID of the [assistant](/docs/api-reference/assistants) that authored this message.
+        /// If applicable, the ID of the [assistant](https://platform.openai.com/docs/api-reference/assistants) that authored this message.
         /// </param>
         /// <param name="attachments">
         /// A list of files attached to the message, and the tools they were added to.
@@ -160,13 +158,13 @@ namespace tryAGI.OpenAI
         /// The entity that produced the message. One of `user` or `assistant`.
         /// </param>
         /// <param name="runId">
-        /// The ID of the [run](/docs/api-reference/runs) associated with the creation of this message. Value is `null` when messages are created manually using the create message or create thread endpoints.
+        /// The ID of the [run](https://platform.openai.com/docs/api-reference/runs) associated with the creation of this message. Value is `null` when messages are created manually using the create message or create thread endpoints.
         /// </param>
         /// <param name="status">
         /// The status of the message, which can be either `in_progress`, `incomplete`, or `completed`.
         /// </param>
         /// <param name="threadId">
-        /// The [thread](/docs/api-reference/threads) ID that this message belongs to.
+        /// The [thread](https://platform.openai.com/docs/api-reference/threads) ID that this message belongs to.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -174,7 +172,7 @@ namespace tryAGI.OpenAI
         public MessageObject(
             string? assistantId,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.MessageObjectAttachment>? attachments,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageContentImageFileObject, global::tryAGI.OpenAI.MessageContentImageUrlObject, global::tryAGI.OpenAI.MessageContentTextObject, global::tryAGI.OpenAI.MessageContentRefusalObject>> content,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.MessageContent> content,
             global::System.DateTimeOffset createdAt,
             string id,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,

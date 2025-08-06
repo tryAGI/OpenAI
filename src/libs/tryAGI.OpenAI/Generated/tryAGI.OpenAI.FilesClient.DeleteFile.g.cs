@@ -22,6 +22,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Delete file<br/>
         /// Delete a file.
         /// </summary>
         /// <param name="fileId"></param>

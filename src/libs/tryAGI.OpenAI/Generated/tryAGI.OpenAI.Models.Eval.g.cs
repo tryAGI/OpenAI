@@ -27,9 +27,9 @@ namespace tryAGI.OpenAI
         /// Configuration of data sources used in runs of the evaluation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_source_config")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.EvalCustomDataSourceConfig, global::tryAGI.OpenAI.EvalLogsDataSourceConfig, global::tryAGI.OpenAI.EvalStoredCompletionsDataSourceConfig>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EvalDataSourceConfigJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalCustomDataSourceConfig, global::tryAGI.OpenAI.EvalLogsDataSourceConfig, global::tryAGI.OpenAI.EvalStoredCompletionsDataSourceConfig> DataSourceConfig { get; set; }
+        public required global::tryAGI.OpenAI.EvalDataSourceConfig DataSourceConfig { get; set; }
 
         /// <summary>
         /// Unique identifier for the evaluation.
@@ -68,12 +68,11 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.EvalObject Object { get; set; } = global::tryAGI.OpenAI.EvalObject.Eval;
 
         /// <summary>
-        /// A list of testing criteria.<br/>
-        /// Default Value: eval
+        /// A list of testing criteria.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("testing_criteria")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalGraderLabelModel?, global::tryAGI.OpenAI.EvalGraderStringCheck?, global::tryAGI.OpenAI.EvalGraderTextSimilarity?, global::tryAGI.OpenAI.EvalGraderPython?, global::tryAGI.OpenAI.EvalGraderScoreModel?>> TestingCriteria { get; set; }
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.EvalGraderLabelModel?, global::tryAGI.OpenAI.EvalGraderStringCheck?, global::tryAGI.OpenAI.EvalGraderTextSimilarity?, global::tryAGI.OpenAI.EvalGraderPython?, global::tryAGI.OpenAI.EvalGraderScoreModel?>> TestingCriteria { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -109,19 +108,18 @@ namespace tryAGI.OpenAI
         /// Default Value: eval
         /// </param>
         /// <param name="testingCriteria">
-        /// A list of testing criteria.<br/>
-        /// Default Value: eval
+        /// A list of testing criteria.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Eval(
             global::System.DateTimeOffset createdAt,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalCustomDataSourceConfig, global::tryAGI.OpenAI.EvalLogsDataSourceConfig, global::tryAGI.OpenAI.EvalStoredCompletionsDataSourceConfig> dataSourceConfig,
+            global::tryAGI.OpenAI.EvalDataSourceConfig dataSourceConfig,
             string id,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             string name,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalGraderLabelModel?, global::tryAGI.OpenAI.EvalGraderStringCheck?, global::tryAGI.OpenAI.EvalGraderTextSimilarity?, global::tryAGI.OpenAI.EvalGraderPython?, global::tryAGI.OpenAI.EvalGraderScoreModel?>> testingCriteria,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.EvalGraderLabelModel?, global::tryAGI.OpenAI.EvalGraderStringCheck?, global::tryAGI.OpenAI.EvalGraderTextSimilarity?, global::tryAGI.OpenAI.EvalGraderPython?, global::tryAGI.OpenAI.EvalGraderScoreModel?>> testingCriteria,
             global::tryAGI.OpenAI.EvalObject @object = global::tryAGI.OpenAI.EvalObject.Eval)
         {
             this.CreatedAt = createdAt;

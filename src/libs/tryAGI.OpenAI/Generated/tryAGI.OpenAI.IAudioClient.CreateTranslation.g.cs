@@ -5,16 +5,18 @@ namespace tryAGI.OpenAI
     public partial interface IAudioClient
     {
         /// <summary>
+        /// Create translation<br/>
         /// Translates audio into English.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranslationResponseJson, global::tryAGI.OpenAI.CreateTranslationResponseVerboseJson>> CreateTranslationAsync(
+        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.CreateTranslationResponseJson, global::tryAGI.OpenAI.CreateTranslationResponseVerboseJson>> CreateTranslationAsync(
             global::tryAGI.OpenAI.CreateTranslationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
+        /// Create translation<br/>
         /// Translates audio into English.
         /// </summary>
         /// <param name="file">
@@ -28,7 +30,7 @@ namespace tryAGI.OpenAI
         /// Example: whisper-1
         /// </param>
         /// <param name="prompt">
-        /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text#prompting) should be in English.
+        /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](https://platform.openai.com/docs/guides/speech-to-text#prompting) should be in English.
         /// </param>
         /// <param name="responseFormat">
         /// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.<br/>
@@ -40,7 +42,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranslationResponseJson, global::tryAGI.OpenAI.CreateTranslationResponseVerboseJson>> CreateTranslationAsync(
+        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.CreateTranslationResponseJson, global::tryAGI.OpenAI.CreateTranslationResponseVerboseJson>> CreateTranslationAsync(
             byte[] file,
             string filename,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateTranslationRequestModel?> model,

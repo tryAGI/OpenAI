@@ -24,6 +24,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// List invites<br/>
         /// Returns a list of invites in the organization.
         /// </summary>
         /// <param name="limit">

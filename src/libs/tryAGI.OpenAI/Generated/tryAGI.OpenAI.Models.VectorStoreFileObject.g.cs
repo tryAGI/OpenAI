@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -24,8 +22,8 @@ namespace tryAGI.OpenAI
         /// The strategy used to chunk the file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chunking_strategy")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.StaticChunkingStrategyResponseParam, global::tryAGI.OpenAI.OtherChunkingStrategyResponseParam>))]
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.StaticChunkingStrategyResponseParam, global::tryAGI.OpenAI.OtherChunkingStrategyResponseParam>? ChunkingStrategy { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChunkingStrategyResponseJsonConverter))]
+        public global::tryAGI.OpenAI.ChunkingStrategyResponse? ChunkingStrategy { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the vector store file was created.
@@ -72,7 +70,7 @@ namespace tryAGI.OpenAI
         public required int UsageBytes { get; set; }
 
         /// <summary>
-        /// The ID of the [vector store](/docs/api-reference/vector-stores/object) that the [File](/docs/api-reference/files) is attached to.
+        /// The ID of the [vector store](https://platform.openai.com/docs/api-reference/vector-stores/object) that the [File](https://platform.openai.com/docs/api-reference/files) is attached to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vector_store_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -116,7 +114,7 @@ namespace tryAGI.OpenAI
         /// The total vector store usage in bytes. Note that this may be different from the original file size.
         /// </param>
         /// <param name="vectorStoreId">
-        /// The ID of the [vector store](/docs/api-reference/vector-stores/object) that the [File](/docs/api-reference/files) is attached to.
+        /// The ID of the [vector store](https://platform.openai.com/docs/api-reference/vector-stores/object) that the [File](https://platform.openai.com/docs/api-reference/files) is attached to.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -129,7 +127,7 @@ namespace tryAGI.OpenAI
             int usageBytes,
             string vectorStoreId,
             object? attributes,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.StaticChunkingStrategyResponseParam, global::tryAGI.OpenAI.OtherChunkingStrategyResponseParam>? chunkingStrategy,
+            global::tryAGI.OpenAI.ChunkingStrategyResponse? chunkingStrategy,
             global::tryAGI.OpenAI.VectorStoreFileObjectObject @object)
         {
             this.CreatedAt = createdAt;

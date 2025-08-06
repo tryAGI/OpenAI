@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IUsersClient
     {
         /// <summary>
+        /// Modify user<br/>
         /// Modifies a user's role in the organization.
         /// </summary>
         /// <param name="userId"></param>
@@ -17,6 +18,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
+        /// Modify user<br/>
         /// Modifies a user's role in the organization.
         /// </summary>
         /// <param name="userId"></param>

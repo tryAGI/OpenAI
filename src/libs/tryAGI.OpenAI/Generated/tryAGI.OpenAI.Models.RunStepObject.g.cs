@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -11,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class RunStepObject
     {
         /// <summary>
-        /// The ID of the [assistant](/docs/api-reference/assistants) associated with the run step.
+        /// The ID of the [assistant](https://platform.openai.com/docs/api-reference/assistants) associated with the run step.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assistant_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -88,7 +86,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RunStepObjectObject Object { get; set; }
 
         /// <summary>
-        /// The ID of the [run](/docs/api-reference/runs) that this run step is a part of.
+        /// The ID of the [run](https://platform.openai.com/docs/api-reference/runs) that this run step is a part of.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -106,12 +104,12 @@ namespace tryAGI.OpenAI
         /// The details of the run step.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("step_details")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.RunStepDetailsMessageCreationObject, global::tryAGI.OpenAI.RunStepDetailsToolCallsObject>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RunStepObjectStepDetailsJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDetailsMessageCreationObject, global::tryAGI.OpenAI.RunStepDetailsToolCallsObject> StepDetails { get; set; }
+        public required global::tryAGI.OpenAI.RunStepObjectStepDetails StepDetails { get; set; }
 
         /// <summary>
-        /// The ID of the [thread](/docs/api-reference/threads) that was run.
+        /// The ID of the [thread](https://platform.openai.com/docs/api-reference/threads) that was run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("thread_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -142,7 +140,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="RunStepObject" /> class.
         /// </summary>
         /// <param name="assistantId">
-        /// The ID of the [assistant](/docs/api-reference/assistants) associated with the run step.
+        /// The ID of the [assistant](https://platform.openai.com/docs/api-reference/assistants) associated with the run step.
         /// </param>
         /// <param name="cancelledAt">
         /// The Unix timestamp (in seconds) for when the run step was cancelled.
@@ -176,7 +174,7 @@ namespace tryAGI.OpenAI
         /// The object type, which is always `thread.run.step`.
         /// </param>
         /// <param name="runId">
-        /// The ID of the [run](/docs/api-reference/runs) that this run step is a part of.
+        /// The ID of the [run](https://platform.openai.com/docs/api-reference/runs) that this run step is a part of.
         /// </param>
         /// <param name="status">
         /// The status of the run step, which can be either `in_progress`, `cancelled`, `failed`, `completed`, or `expired`.
@@ -185,7 +183,7 @@ namespace tryAGI.OpenAI
         /// The details of the run step.
         /// </param>
         /// <param name="threadId">
-        /// The ID of the [thread](/docs/api-reference/threads) that was run.
+        /// The ID of the [thread](https://platform.openai.com/docs/api-reference/threads) that was run.
         /// </param>
         /// <param name="type">
         /// The type of run step, which can be either `message_creation` or `tool_calls`.
@@ -206,7 +204,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RunStepObjectLastError? lastError,
             string runId,
             global::tryAGI.OpenAI.RunStepObjectStatus status,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDetailsMessageCreationObject, global::tryAGI.OpenAI.RunStepDetailsToolCallsObject> stepDetails,
+            global::tryAGI.OpenAI.RunStepObjectStepDetails stepDetails,
             string threadId,
             global::tryAGI.OpenAI.RunStepObjectType type,
             global::tryAGI.OpenAI.RunStepCompletionUsage? usage,

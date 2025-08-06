@@ -38,6 +38,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// List audit logs<br/>
         /// List user actions and configuration changes within this organization.
         /// </summary>
         /// <param name="effectiveAt"></param>

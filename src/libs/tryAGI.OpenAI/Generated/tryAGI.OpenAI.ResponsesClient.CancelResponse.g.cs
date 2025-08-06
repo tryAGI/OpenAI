@@ -22,9 +22,10 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Cancel a response<br/>
         /// Cancels a model response with the given ID. Only responses created with<br/>
         /// the `background` parameter set to `true` can be cancelled. <br/>
-        /// [Learn more](/docs/guides/background).
+        /// [Learn more](https://platform.openai.com/docs/guides/background).
         /// </summary>
         /// <param name="responseId">
         /// Example: resp_677efb5139a88190b512bc3fef8e535d

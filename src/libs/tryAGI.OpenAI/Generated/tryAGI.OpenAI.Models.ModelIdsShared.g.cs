@@ -48,9 +48,9 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ModelIdsSharedEnum? Value2 { get; init; }
+        public global::tryAGI.OpenAI.ChatModel? Value2 { get; init; }
 #else
-        public global::tryAGI.OpenAI.ModelIdsSharedEnum? Value2 { get; }
+        public global::tryAGI.OpenAI.ChatModel? Value2 { get; }
 #endif
 
         /// <summary>
@@ -64,17 +64,17 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ModelIdsShared(global::tryAGI.OpenAI.ModelIdsSharedEnum value) => new ModelIdsShared((global::tryAGI.OpenAI.ModelIdsSharedEnum?)value);
+        public static implicit operator ModelIdsShared(global::tryAGI.OpenAI.ChatModel value) => new ModelIdsShared((global::tryAGI.OpenAI.ChatModel?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.ModelIdsSharedEnum?(ModelIdsShared @this) => @this.Value2;
+        public static implicit operator global::tryAGI.OpenAI.ChatModel?(ModelIdsShared @this) => @this.Value2;
 
         /// <summary>
         /// 
         /// </summary>
-        public ModelIdsShared(global::tryAGI.OpenAI.ModelIdsSharedEnum? value)
+        public ModelIdsShared(global::tryAGI.OpenAI.ChatModel? value)
         {
             Value2 = value;
         }
@@ -84,7 +84,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public ModelIdsShared(
             string? value1,
-            global::tryAGI.OpenAI.ModelIdsSharedEnum? value2
+            global::tryAGI.OpenAI.ChatModel? value2
             )
         {
             Value1 = value1;
@@ -120,7 +120,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<global::tryAGI.OpenAI.ModelIdsSharedEnum?, TResult>? value2 = null,
+            global::System.Func<global::tryAGI.OpenAI.ChatModel?, TResult>? value2 = null,
             bool validate = true)
         {
             if (validate)
@@ -145,7 +145,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public void Match(
             global::System.Action<string?>? value1 = null,
-            global::System.Action<global::tryAGI.OpenAI.ModelIdsSharedEnum?>? value2 = null,
+            global::System.Action<global::tryAGI.OpenAI.ChatModel?>? value2 = null,
             bool validate = true)
         {
             if (validate)
@@ -173,7 +173,7 @@ namespace tryAGI.OpenAI
                 Value1,
                 typeof(string),
                 Value2,
-                typeof(global::tryAGI.OpenAI.ModelIdsSharedEnum),
+                typeof(global::tryAGI.OpenAI.ChatModel),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -191,7 +191,7 @@ namespace tryAGI.OpenAI
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ModelIdsSharedEnum?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ChatModel?>.Default.Equals(Value2, other.Value2) 
                 ;
         }
 

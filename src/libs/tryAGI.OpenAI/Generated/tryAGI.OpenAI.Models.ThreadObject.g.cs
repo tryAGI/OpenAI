@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Represents a thread that contains [messages](/docs/api-reference/messages).
+    /// Represents a thread that contains [messages](https://platform.openai.com/docs/api-reference/messages).
     /// </summary>
     public sealed partial class ThreadObject
     {

@@ -1,13 +1,11 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace tryAGI.OpenAI
 {
     /// <summary>
     /// The results of a web search tool call. See the <br/>
-    /// [web search guide](/docs/guides/tools-web-search) for more information.
+    /// [web search guide](https://platform.openai.com/docs/guides/tools-web-search) for more information.
     /// </summary>
     public sealed partial class WebSearchToolCall
     {
@@ -16,9 +14,9 @@ namespace tryAGI.OpenAI
         /// Includes details on how the model used the web (search, open_page, find).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.WebSearchActionSearch, global::tryAGI.OpenAI.WebSearchActionOpenPage, global::tryAGI.OpenAI.WebSearchActionFind>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebSearchToolCallActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.WebSearchActionSearch, global::tryAGI.OpenAI.WebSearchActionOpenPage, global::tryAGI.OpenAI.WebSearchActionFind> Action { get; set; }
+        public required global::tryAGI.OpenAI.WebSearchToolCallAction Action { get; set; }
 
         /// <summary>
         /// The unique ID of the web search tool call.
@@ -68,7 +66,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebSearchToolCall(
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.WebSearchActionSearch, global::tryAGI.OpenAI.WebSearchActionOpenPage, global::tryAGI.OpenAI.WebSearchActionFind> action,
+            global::tryAGI.OpenAI.WebSearchToolCallAction action,
             string id,
             global::tryAGI.OpenAI.WebSearchToolCallStatus status,
             global::tryAGI.OpenAI.WebSearchToolCallType type)

@@ -22,6 +22,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Retrieve thread<br/>
         /// Retrieves a thread.
         /// </summary>
         /// <param name="threadId"></param>

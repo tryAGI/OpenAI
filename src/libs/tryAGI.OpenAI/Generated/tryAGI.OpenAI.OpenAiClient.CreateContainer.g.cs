@@ -22,8 +22,8 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Create Container<br/>
-        /// Creates a container.
+        /// Create container<br/>
+        /// Create Container
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -167,8 +167,8 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Create Container<br/>
-        /// Creates a container.
+        /// Create container<br/>
+        /// Create Container
         /// </summary>
         /// <param name="expiresAfter">
         /// Container expiration time in seconds relative to the 'anchor' time.

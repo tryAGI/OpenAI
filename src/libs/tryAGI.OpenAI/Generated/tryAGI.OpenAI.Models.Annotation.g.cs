@@ -190,7 +190,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsFileCitationBody && !IsUrlCitationBody && !IsContainerFileCitationBody && !IsFilePath || !IsFileCitationBody && IsUrlCitationBody && !IsContainerFileCitationBody && !IsFilePath || !IsFileCitationBody && !IsUrlCitationBody && IsContainerFileCitationBody && !IsFilePath || !IsFileCitationBody && !IsUrlCitationBody && !IsContainerFileCitationBody && IsFilePath;
+            return IsFileCitationBody || IsUrlCitationBody || IsContainerFileCitationBody || IsFilePath;
         }
 
         /// <summary>

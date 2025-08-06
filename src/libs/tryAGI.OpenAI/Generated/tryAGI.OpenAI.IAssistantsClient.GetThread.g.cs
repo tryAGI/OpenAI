@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IAssistantsClient
     {
         /// <summary>
+        /// Retrieve thread<br/>
         /// Retrieves a thread.
         /// </summary>
         /// <param name="threadId"></param>

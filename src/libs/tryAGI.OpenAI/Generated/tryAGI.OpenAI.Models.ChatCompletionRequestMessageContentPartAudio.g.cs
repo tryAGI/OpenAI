@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Learn about [audio inputs](/docs/guides/audio).
+    /// Learn about [audio inputs](https://platform.openai.com/docs/guides/audio).
     /// </summary>
     public sealed partial class ChatCompletionRequestMessageContentPartAudio
     {

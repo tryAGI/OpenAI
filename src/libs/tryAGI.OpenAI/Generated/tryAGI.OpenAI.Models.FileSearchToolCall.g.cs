@@ -5,7 +5,7 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// The results of a file search tool call. See the <br/>
-    /// [file search guide](/docs/guides/tools-file-search) for more information.
+    /// [file search guide](https://platform.openai.com/docs/guides/tools-file-search) for more information.
     /// </summary>
     public sealed partial class FileSearchToolCall
     {

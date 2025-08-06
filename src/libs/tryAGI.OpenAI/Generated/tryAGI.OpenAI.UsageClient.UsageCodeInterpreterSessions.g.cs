@@ -34,6 +34,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Code interpreter sessions<br/>
         /// Get code interpreter sessions usage details for the organization.
         /// </summary>
         /// <param name="startTime"></param>

@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface ICertificatesClient
     {
         /// <summary>
+        /// List project certificates<br/>
         /// List certificates for this project.
         /// </summary>
         /// <param name="projectId"></param>

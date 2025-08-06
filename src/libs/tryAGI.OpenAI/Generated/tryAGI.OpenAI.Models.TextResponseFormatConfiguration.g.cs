@@ -8,7 +8,7 @@ namespace tryAGI.OpenAI
     /// An object specifying the format that the model must output.<br/>
     /// Configuring `{ "type": "json_schema" }` enables Structured Outputs, <br/>
     /// which ensures the model will match your supplied JSON schema. Learn more in the <br/>
-    /// [Structured Outputs guide](/docs/guides/structured-outputs).<br/>
+    /// [Structured Outputs guide](https://platform.openai.com/docs/guides/structured-outputs).<br/>
     /// The default format is `{ "type": "text" }` with no additional options.<br/>
     /// **Not recommended for gpt-4o and newer models:**<br/>
     /// Setting to `{ "type": "json_object" }` enables the older JSON mode, which<br/>
@@ -54,7 +54,7 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// JSON Schema response format. Used to generate structured JSON responses.<br/>
-        /// Learn more about [Structured Outputs](/docs/guides/structured-outputs).
+        /// Learn more about [Structured Outputs](https://platform.openai.com/docs/guides/structured-outputs).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.TextResponseFormatJsonSchema? Value2 { get; init; }
@@ -163,7 +163,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 || !IsValue1 && IsValue2 && !IsValue3 || !IsValue1 && !IsValue2 && IsValue3;
+            return IsValue1 || IsValue2 || IsValue3;
         }
 
         /// <summary>

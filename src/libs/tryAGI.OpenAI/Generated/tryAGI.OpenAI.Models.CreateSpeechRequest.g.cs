@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
         public string? Instructions { get; set; }
 
         /// <summary>
-        /// One of the available [TTS models](/docs/models#tts): `tts-1`, `tts-1-hd` or `gpt-4o-mini-tts`.
+        /// One of the available [TTS models](https://platform.openai.com/docs/models#tts): `tts-1`, `tts-1-hd` or `gpt-4o-mini-tts`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.CreateSpeechRequestModel?>))]
@@ -79,7 +79,7 @@ namespace tryAGI.OpenAI
         /// Control the voice of your generated audio with additional instructions. Does not work with `tts-1` or `tts-1-hd`.
         /// </param>
         /// <param name="model">
-        /// One of the available [TTS models](/docs/models#tts): `tts-1`, `tts-1-hd` or `gpt-4o-mini-tts`.
+        /// One of the available [TTS models](https://platform.openai.com/docs/models#tts): `tts-1`, `tts-1-hd` or `gpt-4o-mini-tts`.
         /// </param>
         /// <param name="responseFormat">
         /// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.<br/>

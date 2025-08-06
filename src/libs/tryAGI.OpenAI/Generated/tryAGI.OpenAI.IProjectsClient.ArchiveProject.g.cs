@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IProjectsClient
     {
         /// <summary>
+        /// Archive project<br/>
         /// Archives a project in the organization. Archived projects cannot be used or updated.
         /// </summary>
         /// <param name="projectId"></param>

@@ -26,8 +26,8 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// List organization API keys<br/>
-        /// Retrieve a paginated list of organization admin API keys.
+        /// List all organization and project API keys.<br/>
+        /// List organization API keys
         /// </summary>
         /// <param name="after">
         /// Return keys with IDs that come after this ID in the pagination order.

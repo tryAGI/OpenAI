@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IUsageClient
     {
         /// <summary>
+        /// Images<br/>
         /// Get images usage details for the organization.
         /// </summary>
         /// <param name="startTime"></param>

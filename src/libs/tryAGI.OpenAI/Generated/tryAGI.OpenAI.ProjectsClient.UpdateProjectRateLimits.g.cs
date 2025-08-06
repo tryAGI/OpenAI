@@ -26,6 +26,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Modify project rate limit<br/>
         /// Updates a project rate limit.
         /// </summary>
         /// <param name="projectId"></param>
@@ -215,6 +216,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// Modify project rate limit<br/>
         /// Updates a project rate limit.
         /// </summary>
         /// <param name="projectId"></param>

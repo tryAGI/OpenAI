@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IUsageClient
     {
         /// <summary>
+        /// Audio speeches<br/>
         /// Get audio speeches usage details for the organization.
         /// </summary>
         /// <param name="startTime"></param>

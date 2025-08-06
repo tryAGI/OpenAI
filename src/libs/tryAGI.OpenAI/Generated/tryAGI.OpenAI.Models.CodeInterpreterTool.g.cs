@@ -15,9 +15,9 @@ namespace tryAGI.OpenAI
         /// specifies uploaded file IDs to make available to your code.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("container")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, global::tryAGI.OpenAI.CodeInterpreterToolAuto>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.CodeInterpreterToolAuto>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.CodeInterpreterToolAuto> Container { get; set; }
+        public required global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CodeInterpreterToolAuto> Container { get; set; }
 
         /// <summary>
         /// The type of the code interpreter tool. Always `code_interpreter`.
@@ -46,7 +46,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CodeInterpreterTool(
-            global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.CodeInterpreterToolAuto> container,
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CodeInterpreterToolAuto> container,
             global::tryAGI.OpenAI.CodeInterpreterToolType type)
         {
             this.Container = container;

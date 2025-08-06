@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -22,9 +20,9 @@ namespace tryAGI.OpenAI
         /// Information about the run's data source.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.CreateEvalJsonlRunDataSource, global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSource, global::tryAGI.OpenAI.CreateEvalResponsesRunDataSource>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EvalRunDataSourceJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalJsonlRunDataSource, global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSource, global::tryAGI.OpenAI.CreateEvalResponsesRunDataSource> DataSource { get; set; }
+        public required global::tryAGI.OpenAI.EvalRunDataSource DataSource { get; set; }
 
         /// <summary>
         /// An object representing an error response from the Eval API.
@@ -177,7 +175,7 @@ namespace tryAGI.OpenAI
 #endif
         public EvalRun(
             global::System.DateTimeOffset createdAt,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalJsonlRunDataSource, global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSource, global::tryAGI.OpenAI.CreateEvalResponsesRunDataSource> dataSource,
+            global::tryAGI.OpenAI.EvalRunDataSource dataSource,
             global::tryAGI.OpenAI.EvalApiError error,
             string evalId,
             string id,

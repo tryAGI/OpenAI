@@ -40,6 +40,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Audio speeches<br/>
         /// Get audio speeches usage details for the organization.
         /// </summary>
         /// <param name="startTime"></param>

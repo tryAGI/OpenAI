@@ -14,8 +14,8 @@ namespace tryAGI.OpenAI
         /// A filter to apply based on file attributes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.ComparisonFilter, global::tryAGI.OpenAI.CompoundFilter>))]
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ComparisonFilter, global::tryAGI.OpenAI.CompoundFilter>? Filters { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.ComparisonFilter, global::tryAGI.OpenAI.CompoundFilter>))]
+        public global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ComparisonFilter, global::tryAGI.OpenAI.CompoundFilter>? Filters { get; set; }
 
         /// <summary>
         /// The maximum number of results to return. This number should be between 1 and 50 inclusive.<br/>
@@ -28,9 +28,9 @@ namespace tryAGI.OpenAI
         /// A query string for a search
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("query")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>> Query { get; set; }
+        public required global::tryAGI.OpenAI.AnyOf<string, global::System.Collections.Generic.IList<string>> Query { get; set; }
 
         /// <summary>
         /// Ranking options for search.
@@ -75,8 +75,8 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public VectorStoreSearchRequest(
-            global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>> query,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ComparisonFilter, global::tryAGI.OpenAI.CompoundFilter>? filters,
+            global::tryAGI.OpenAI.AnyOf<string, global::System.Collections.Generic.IList<string>> query,
+            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ComparisonFilter, global::tryAGI.OpenAI.CompoundFilter>? filters,
             int? maxNumResults,
             global::tryAGI.OpenAI.VectorStoreSearchRequestRankingOptions? rankingOptions,
             bool? rewriteQuery)

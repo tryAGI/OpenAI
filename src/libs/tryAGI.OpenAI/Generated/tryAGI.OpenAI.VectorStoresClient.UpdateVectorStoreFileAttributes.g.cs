@@ -26,6 +26,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Update vector store file attributes<br/>
         /// Update attributes on a vector store file.
         /// </summary>
         /// <param name="vectorStoreId">
@@ -182,6 +183,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// Update vector store file attributes<br/>
         /// Update attributes on a vector store file.
         /// </summary>
         /// <param name="vectorStoreId">

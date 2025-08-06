@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IAuditLogsClient
     {
         /// <summary>
+        /// List audit logs<br/>
         /// List user actions and configuration changes within this organization.
         /// </summary>
         /// <param name="effectiveAt"></param>

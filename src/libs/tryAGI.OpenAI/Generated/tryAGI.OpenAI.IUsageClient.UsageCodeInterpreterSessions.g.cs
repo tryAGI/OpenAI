@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IUsageClient
     {
         /// <summary>
+        /// Code interpreter sessions<br/>
         /// Get code interpreter sessions usage details for the organization.
         /// </summary>
         /// <param name="startTime"></param>

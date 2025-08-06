@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// An optional text to guide the model's style or continue a previous audio<br/>
         /// segment.<br/>
-        /// For `whisper-1`, the [prompt is a list of keywords](/docs/guides/speech-to-text#prompting).<br/>
+        /// For `whisper-1`, the [prompt is a list of keywords](https://platform.openai.com/docs/guides/speech-to-text#prompting).<br/>
         /// For `gpt-4o-transcribe` models, the prompt is a free text string, for example "expect words related to technology".
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
@@ -52,7 +52,7 @@ namespace tryAGI.OpenAI
         /// <param name="prompt">
         /// An optional text to guide the model's style or continue a previous audio<br/>
         /// segment.<br/>
-        /// For `whisper-1`, the [prompt is a list of keywords](/docs/guides/speech-to-text#prompting).<br/>
+        /// For `whisper-1`, the [prompt is a list of keywords](https://platform.openai.com/docs/guides/speech-to-text#prompting).<br/>
         /// For `gpt-4o-transcribe` models, the prompt is a free text string, for example "expect words related to technology".
         /// </param>
 #if NET7_0_OR_GREATER

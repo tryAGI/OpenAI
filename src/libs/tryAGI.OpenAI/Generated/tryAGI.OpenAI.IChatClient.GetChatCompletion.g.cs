@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IChatClient
     {
         /// <summary>
+        /// Get chat completion<br/>
         /// Get a stored chat completion. Only Chat Completions that have been created<br/>
         /// with the `store` parameter set to `true` will be returned.
         /// </summary>
