@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IUsersClient
     {
         /// <summary>
+        /// List users<br/>
         /// Lists all of the users in the organization.
         /// </summary>
         /// <param name="limit">

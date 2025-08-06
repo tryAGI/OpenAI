@@ -19,26 +19,8 @@ namespace tryAGI.OpenAI
         public bool? IncludeSampleSchema { get; set; }
 
         /// <summary>
-        /// The json schema for each row in the data source.<br/>
-        /// Example: {<br/>
-        ///   "type": "object",<br/>
-        ///   "properties": {<br/>
-        ///     "name": {"type": "string"},<br/>
-        ///     "age": {"type": "integer"}<br/>
-        ///   },<br/>
-        ///   "required": ["name", "age"]<br/>
-        /// }
+        /// The json schema for each row in the data source.
         /// </summary>
-        /// <example>
-        /// {<br/>
-        ///   "type": "object",<br/>
-        ///   "properties": {<br/>
-        ///     "name": {"type": "string"},<br/>
-        ///     "age": {"type": "integer"}<br/>
-        ///   },<br/>
-        ///   "required": ["name", "age"]<br/>
-        /// }
-        /// </example>
         [global::System.Text.Json.Serialization.JsonPropertyName("item_schema")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required object ItemSchema { get; set; }
@@ -66,15 +48,7 @@ namespace tryAGI.OpenAI
         /// Default Value: false
         /// </param>
         /// <param name="itemSchema">
-        /// The json schema for each row in the data source.<br/>
-        /// Example: {<br/>
-        ///   "type": "object",<br/>
-        ///   "properties": {<br/>
-        ///     "name": {"type": "string"},<br/>
-        ///     "age": {"type": "integer"}<br/>
-        ///   },<br/>
-        ///   "required": ["name", "age"]<br/>
-        /// }
+        /// The json schema for each row in the data source.
         /// </param>
         /// <param name="type">
         /// The type of data source. Always `custom`.<br/>

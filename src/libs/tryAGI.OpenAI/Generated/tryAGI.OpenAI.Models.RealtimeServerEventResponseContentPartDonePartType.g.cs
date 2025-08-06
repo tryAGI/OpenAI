@@ -11,11 +11,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Audio,
+        Text,
         /// <summary>
         /// 
         /// </summary>
-        Text,
+        Audio,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                RealtimeServerEventResponseContentPartDonePartType.Audio => "audio",
                 RealtimeServerEventResponseContentPartDonePartType.Text => "text",
+                RealtimeServerEventResponseContentPartDonePartType.Audio => "audio",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "audio" => RealtimeServerEventResponseContentPartDonePartType.Audio,
                 "text" => RealtimeServerEventResponseContentPartDonePartType.Text,
+                "audio" => RealtimeServerEventResponseContentPartDonePartType.Audio,
                 _ => null,
             };
         }

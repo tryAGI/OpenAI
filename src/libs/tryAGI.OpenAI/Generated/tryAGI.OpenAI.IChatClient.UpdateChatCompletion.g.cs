@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IChatClient
     {
         /// <summary>
+        /// Update chat completion<br/>
         /// Modify a stored chat completion. Only Chat Completions that have been<br/>
         /// created with the `store` parameter set to `true` can be modified. Currently,<br/>
         /// the only supported modification is to update the `metadata` field.
@@ -19,6 +20,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
+        /// Update chat completion<br/>
         /// Modify a stored chat completion. Only Chat Completions that have been<br/>
         /// created with the `store` parameter set to `true` can be modified. Currently,<br/>
         /// the only supported modification is to update the `metadata` field.

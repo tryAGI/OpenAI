@@ -24,6 +24,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Modify project<br/>
         /// Modifies a project in the organization.
         /// </summary>
         /// <param name="projectId"></param>
@@ -209,6 +210,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// Modify project<br/>
         /// Modifies a project in the organization.
         /// </summary>
         /// <param name="projectId"></param>

@@ -26,6 +26,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// List users<br/>
         /// Lists all of the users in the organization.
         /// </summary>
         /// <param name="limit">

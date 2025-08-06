@@ -24,9 +24,9 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Create container file<br/>
         /// Create a Container File<br/>
-        /// You can send either a multipart/form-data request with the raw file content, or a JSON request with a file ID.<br/>
-        /// Creates a container file.
+        /// You can send either a multipart/form-data request with the raw file content, or a JSON request with a file ID.
         /// </summary>
         /// <param name="containerId"></param>
         /// <param name="request"></param>
@@ -186,9 +186,9 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// Create container file<br/>
         /// Create a Container File<br/>
-        /// You can send either a multipart/form-data request with the raw file content, or a JSON request with a file ID.<br/>
-        /// Creates a container file.
+        /// You can send either a multipart/form-data request with the raw file content, or a JSON request with a file ID.
         /// </summary>
         /// <param name="containerId"></param>
         /// <param name="file">

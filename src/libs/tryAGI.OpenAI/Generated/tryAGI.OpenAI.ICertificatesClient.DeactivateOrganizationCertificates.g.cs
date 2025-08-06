@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface ICertificatesClient
     {
         /// <summary>
+        /// Deactivate certificates for organization<br/>
         /// Deactivate certificates at the organization level.<br/>
         /// You can atomically and idempotently deactivate up to 10 certificates at a time.
         /// </summary>
@@ -16,6 +17,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
+        /// Deactivate certificates for organization<br/>
         /// Deactivate certificates at the organization level.<br/>
         /// You can atomically and idempotently deactivate up to 10 certificates at a time.
         /// </summary>

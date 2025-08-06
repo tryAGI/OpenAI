@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Learn about [file inputs](/docs/guides/text) for text generation.
+    /// Learn about [file inputs](https://platform.openai.com/docs/guides/text) for text generation.
     /// </summary>
     public sealed partial class ChatCompletionRequestMessageContentPartFile
     {

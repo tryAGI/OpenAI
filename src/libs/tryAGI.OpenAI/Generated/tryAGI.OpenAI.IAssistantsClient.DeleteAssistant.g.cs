@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IAssistantsClient
     {
         /// <summary>
+        /// Delete assistant<br/>
         /// Delete an assistant.
         /// </summary>
         /// <param name="assistantId"></param>

@@ -24,6 +24,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Retrieve vector store file batch<br/>
         /// Retrieves a vector store file batch.
         /// </summary>
         /// <param name="vectorStoreId">

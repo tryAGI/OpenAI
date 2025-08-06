@@ -22,6 +22,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Retrieve vector store<br/>
         /// Retrieves a vector store.
         /// </summary>
         /// <param name="vectorStoreId"></param>

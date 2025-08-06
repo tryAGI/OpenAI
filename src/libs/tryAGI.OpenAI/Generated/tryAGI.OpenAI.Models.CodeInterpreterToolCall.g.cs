@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -37,7 +35,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CodeInterpreterOutputLogs, global::tryAGI.OpenAI.CodeInterpreterOutputImage>>? Outputs { get; set; }
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputsItem>? Outputs { get; set; }
 
         /// <summary>
         /// The status of the code interpreter tool call. Valid values are `in_progress`, `completed`, `incomplete`, `interpreting`, and `failed`.
@@ -92,7 +90,7 @@ namespace tryAGI.OpenAI
             string? code,
             string containerId,
             string id,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CodeInterpreterOutputLogs, global::tryAGI.OpenAI.CodeInterpreterOutputImage>>? outputs,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputsItem>? outputs,
             global::tryAGI.OpenAI.CodeInterpreterToolCallStatus status,
             global::tryAGI.OpenAI.CodeInterpreterToolCallType type = global::tryAGI.OpenAI.CodeInterpreterToolCallType.CodeInterpreterCall)
         {

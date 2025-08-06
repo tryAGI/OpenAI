@@ -44,6 +44,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Images<br/>
         /// Get images usage details for the organization.
         /// </summary>
         /// <param name="startTime"></param>

@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IProjectsClient
     {
         /// <summary>
+        /// Create project<br/>
         /// Create a new project in the organization. Projects can be created and archived, but cannot be deleted.
         /// </summary>
         /// <param name="request"></param>
@@ -15,6 +16,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
+        /// Create project<br/>
         /// Create a new project in the organization. Projects can be created and archived, but cannot be deleted.
         /// </summary>
         /// <param name="name">

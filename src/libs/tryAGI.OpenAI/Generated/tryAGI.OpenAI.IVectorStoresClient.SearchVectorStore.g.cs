@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IVectorStoresClient
     {
         /// <summary>
+        /// Search vector store<br/>
         /// Search a vector store for relevant chunks based on a query and file attributes filter.
         /// </summary>
         /// <param name="vectorStoreId">
@@ -19,6 +20,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
+        /// Search vector store<br/>
         /// Search a vector store for relevant chunks based on a query and file attributes filter.
         /// </summary>
         /// <param name="vectorStoreId">
@@ -45,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.VectorStoreSearchResultsPage> SearchVectorStoreAsync(
             string vectorStoreId,
-            global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>> query,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ComparisonFilter, global::tryAGI.OpenAI.CompoundFilter>? filters = default,
+            global::tryAGI.OpenAI.AnyOf<string, global::System.Collections.Generic.IList<string>> query,
+            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ComparisonFilter, global::tryAGI.OpenAI.CompoundFilter>? filters = default,
             int? maxNumResults = default,
             global::tryAGI.OpenAI.VectorStoreSearchRequestRankingOptions? rankingOptions = default,
             bool? rewriteQuery = default,

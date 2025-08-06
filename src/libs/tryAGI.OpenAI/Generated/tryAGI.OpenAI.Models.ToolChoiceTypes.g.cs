@@ -5,13 +5,13 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// Indicates that the model should use a built-in tool to generate a response.<br/>
-    /// [Learn more about built-in tools](/docs/guides/tools).
+    /// [Learn more about built-in tools](https://platform.openai.com/docs/guides/tools).
     /// </summary>
     public sealed partial class ToolChoiceTypes
     {
         /// <summary>
         /// The type of hosted tool the model should to use. Learn more about<br/>
-        /// [built-in tools](/docs/guides/tools).<br/>
+        /// [built-in tools](https://platform.openai.com/docs/guides/tools).<br/>
         /// Allowed values are:<br/>
         /// - `file_search`<br/>
         /// - `web_search_preview`<br/>
@@ -35,7 +35,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="type">
         /// The type of hosted tool the model should to use. Learn more about<br/>
-        /// [built-in tools](/docs/guides/tools).<br/>
+        /// [built-in tools](https://platform.openai.com/docs/guides/tools).<br/>
         /// Allowed values are:<br/>
         /// - `file_search`<br/>
         /// - `web_search_preview`<br/>

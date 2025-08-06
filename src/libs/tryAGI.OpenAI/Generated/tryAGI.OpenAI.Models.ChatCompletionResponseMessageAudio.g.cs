@@ -5,7 +5,7 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// If the audio output modality is requested, this object contains data<br/>
-    /// about the audio response from the model. [Learn more](/docs/guides/audio).
+    /// about the audio response from the model. [Learn more](https://platform.openai.com/docs/guides/audio).
     /// </summary>
     public sealed partial class ChatCompletionResponseMessageAudio
     {

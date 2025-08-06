@@ -22,6 +22,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Retrieve assistant<br/>
         /// Retrieves an assistant.
         /// </summary>
         /// <param name="assistantId"></param>

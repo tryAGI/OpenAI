@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IProjectsClient
     {
         /// <summary>
+        /// Delete project API key<br/>
         /// Deletes an API key from the project.
         /// </summary>
         /// <param name="projectId"></param>

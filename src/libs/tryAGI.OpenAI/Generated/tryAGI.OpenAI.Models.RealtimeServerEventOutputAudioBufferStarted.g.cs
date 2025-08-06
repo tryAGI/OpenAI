@@ -7,7 +7,7 @@ namespace tryAGI.OpenAI
     /// **WebRTC Only:** Emitted when the server begins streaming audio to the client. This event is<br/>
     /// emitted after an audio content part has been added (`response.content_part.added`)<br/>
     /// to the response.<br/>
-    /// [Learn more](/docs/guides/realtime-conversations#client-and-server-events-for-audio-in-webrtc).
+    /// [Learn more](https://platform.openai.com/docs/guides/realtime-conversations#client-and-server-events-for-audio-in-webrtc).
     /// </summary>
     public sealed partial class RealtimeServerEventOutputAudioBufferStarted
     {

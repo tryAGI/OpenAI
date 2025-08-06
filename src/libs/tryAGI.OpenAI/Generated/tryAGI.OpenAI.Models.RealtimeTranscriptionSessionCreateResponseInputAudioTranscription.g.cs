@@ -25,7 +25,7 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// An optional text to guide the model's style or continue a previous audio<br/>
-        /// segment. The [prompt](/docs/guides/speech-to-text#prompting) should match<br/>
+        /// segment. The [prompt](https://platform.openai.com/docs/guides/speech-to-text#prompting) should match<br/>
         /// the audio language.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
@@ -50,7 +50,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="prompt">
         /// An optional text to guide the model's style or continue a previous audio<br/>
-        /// segment. The [prompt](/docs/guides/speech-to-text#prompting) should match<br/>
+        /// segment. The [prompt](https://platform.openai.com/docs/guides/speech-to-text#prompting) should match<br/>
         /// the audio language.
         /// </param>
 #if NET7_0_OR_GREATER

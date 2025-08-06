@@ -5,7 +5,7 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// A tool call to a computer use tool. See the <br/>
-    /// [computer use guide](/docs/guides/tools-computer-use) for more information.
+    /// [computer use guide](https://platform.openai.com/docs/guides/tools-computer-use) for more information.
     /// </summary>
     public sealed partial class ComputerToolCall
     {

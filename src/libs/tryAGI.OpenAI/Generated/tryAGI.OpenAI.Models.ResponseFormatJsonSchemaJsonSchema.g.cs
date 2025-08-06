@@ -35,7 +35,7 @@ namespace tryAGI.OpenAI
         /// If set to true, the model will always follow the exact schema defined<br/>
         /// in the `schema` field. Only a subset of JSON Schema is supported when<br/>
         /// `strict` is `true`. To learn more, read the [Structured Outputs<br/>
-        /// guide](/docs/guides/structured-outputs).<br/>
+        /// guide](https://platform.openai.com/docs/guides/structured-outputs).<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("strict")]
@@ -67,7 +67,7 @@ namespace tryAGI.OpenAI
         /// If set to true, the model will always follow the exact schema defined<br/>
         /// in the `schema` field. Only a subset of JSON Schema is supported when<br/>
         /// `strict` is `true`. To learn more, read the [Structured Outputs<br/>
-        /// guide](/docs/guides/structured-outputs).<br/>
+        /// guide](https://platform.openai.com/docs/guides/structured-outputs).<br/>
         /// Default Value: false
         /// </param>
 #if NET7_0_OR_GREATER

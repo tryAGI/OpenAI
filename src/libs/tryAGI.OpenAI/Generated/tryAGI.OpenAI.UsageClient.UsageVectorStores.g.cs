@@ -34,6 +34,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Vector stores<br/>
         /// Get vector stores usage details for the organization.
         /// </summary>
         /// <param name="startTime"></param>

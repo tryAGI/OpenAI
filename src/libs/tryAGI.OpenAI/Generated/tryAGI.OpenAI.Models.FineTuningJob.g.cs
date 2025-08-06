@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -65,7 +63,7 @@ namespace tryAGI.OpenAI
         /// A list of integrations to enable for this fine-tuning job.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("integrations")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuningIntegration>>? Integrations { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.IntegrationsItem>? Integrations { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
@@ -105,7 +103,7 @@ namespace tryAGI.OpenAI
         public required string OrganizationId { get; set; }
 
         /// <summary>
-        /// The compiled results file ID(s) for the fine-tuning job. You can retrieve the results with the [Files API](/docs/api-reference/files/retrieve-contents).
+        /// The compiled results file ID(s) for the fine-tuning job. You can retrieve the results with the [Files API](https://platform.openai.com/docs/api-reference/files/retrieve-contents).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("result_files")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -134,14 +132,14 @@ namespace tryAGI.OpenAI
         public required int? TrainedTokens { get; set; }
 
         /// <summary>
-        /// The file ID used for training. You can retrieve the training data with the [Files API](/docs/api-reference/files/retrieve-contents).
+        /// The file ID used for training. You can retrieve the training data with the [Files API](https://platform.openai.com/docs/api-reference/files/retrieve-contents).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("training_file")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string TrainingFile { get; set; }
 
         /// <summary>
-        /// The file ID used for validation. You can retrieve the validation results with the [Files API](/docs/api-reference/files/retrieve-contents).
+        /// The file ID used for validation. You can retrieve the validation results with the [Files API](https://platform.openai.com/docs/api-reference/files/retrieve-contents).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("validation_file")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -200,7 +198,7 @@ namespace tryAGI.OpenAI
         /// The organization that owns the fine-tuning job.
         /// </param>
         /// <param name="resultFiles">
-        /// The compiled results file ID(s) for the fine-tuning job. You can retrieve the results with the [Files API](/docs/api-reference/files/retrieve-contents).
+        /// The compiled results file ID(s) for the fine-tuning job. You can retrieve the results with the [Files API](https://platform.openai.com/docs/api-reference/files/retrieve-contents).
         /// </param>
         /// <param name="seed">
         /// The seed used for the fine-tuning job.
@@ -212,10 +210,10 @@ namespace tryAGI.OpenAI
         /// The total number of billable tokens processed by this fine-tuning job. The value will be null if the fine-tuning job is still running.
         /// </param>
         /// <param name="trainingFile">
-        /// The file ID used for training. You can retrieve the training data with the [Files API](/docs/api-reference/files/retrieve-contents).
+        /// The file ID used for training. You can retrieve the training data with the [Files API](https://platform.openai.com/docs/api-reference/files/retrieve-contents).
         /// </param>
         /// <param name="validationFile">
-        /// The file ID used for validation. You can retrieve the validation results with the [Files API](/docs/api-reference/files/retrieve-contents).
+        /// The file ID used for validation. You can retrieve the validation results with the [Files API](https://platform.openai.com/docs/api-reference/files/retrieve-contents).
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -236,7 +234,7 @@ namespace tryAGI.OpenAI
             string trainingFile,
             string? validationFile,
             global::System.DateTimeOffset? estimatedFinish,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuningIntegration>>? integrations,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.IntegrationsItem>? integrations,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::tryAGI.OpenAI.FineTuneMethod? method,
             global::tryAGI.OpenAI.FineTuningJobObject @object)

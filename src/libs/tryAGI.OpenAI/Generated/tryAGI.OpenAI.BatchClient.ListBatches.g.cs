@@ -24,6 +24,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// List batch<br/>
         /// List your organization's batches.
         /// </summary>
         /// <param name="after"></param>

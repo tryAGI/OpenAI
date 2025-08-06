@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IProjectsClient
     {
         /// <summary>
+        /// Modify project user<br/>
         /// Modifies a user's role in the project.
         /// </summary>
         /// <param name="projectId"></param>
@@ -19,6 +20,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
+        /// Modify project user<br/>
         /// Modifies a user's role in the project.
         /// </summary>
         /// <param name="projectId"></param>

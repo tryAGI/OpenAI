@@ -24,6 +24,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Create project service account<br/>
         /// Creates a new service account in the project. This also returns an unredacted API key for the service account.
         /// </summary>
         /// <param name="projectId"></param>
@@ -209,6 +210,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// Create project service account<br/>
         /// Creates a new service account in the project. This also returns an unredacted API key for the service account.
         /// </summary>
         /// <param name="projectId"></param>

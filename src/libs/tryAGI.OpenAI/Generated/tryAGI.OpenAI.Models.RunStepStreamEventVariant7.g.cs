@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) expires.
+    /// Occurs when a [run step](https://platform.openai.com/docs/api-reference/run-steps/step-object) expires.
     /// </summary>
     public sealed partial class RunStepStreamEventVariant7
     {
