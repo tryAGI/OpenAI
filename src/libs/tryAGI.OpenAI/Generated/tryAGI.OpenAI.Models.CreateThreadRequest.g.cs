@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateThreadRequest
     {
         /// <summary>
-        /// A list of [messages](/docs/api-reference/messages) to start the thread with.
+        /// A list of [messages](https://platform.openai.com/docs/api-reference/messages) to start the thread with.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateMessageRequest>? Messages { get; set; }
@@ -41,7 +41,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="CreateThreadRequest" /> class.
         /// </summary>
         /// <param name="messages">
-        /// A list of [messages](/docs/api-reference/messages) to start the thread with.
+        /// A list of [messages](https://platform.openai.com/docs/api-reference/messages) to start the thread with.
         /// </param>
         /// <param name="metadata">
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>

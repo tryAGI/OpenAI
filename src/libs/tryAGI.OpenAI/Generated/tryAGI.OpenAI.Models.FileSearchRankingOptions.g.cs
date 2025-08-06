@@ -5,7 +5,7 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// The ranking options for the file search. If not specified, the file search tool will use the `auto` ranker and a score_threshold of 0.<br/>
-    /// See the [file search tool documentation](/docs/assistants/tools/file-search#customizing-file-search-settings) for more information.
+    /// See the [file search tool documentation](https://platform.openai.com/docs/assistants/tools/file-search#customizing-file-search-settings) for more information.
     /// </summary>
     public sealed partial class FileSearchRankingOptions
     {

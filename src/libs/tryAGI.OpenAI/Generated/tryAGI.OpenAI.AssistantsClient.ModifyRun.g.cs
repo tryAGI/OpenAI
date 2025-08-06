@@ -26,6 +26,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Modify run<br/>
         /// Modifies a run.
         /// </summary>
         /// <param name="threadId"></param>
@@ -181,6 +182,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// Modify run<br/>
         /// Modifies a run.
         /// </summary>
         /// <param name="threadId"></param>

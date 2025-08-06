@@ -10,14 +10,14 @@ namespace tryAGI.OpenAI
     {
         /// <summary>
         /// Annotations for the message, when applicable, as when using the<br/>
-        /// [web search tool](/docs/guides/tools-web-search?api-mode=chat).
+        /// [web search tool](https://platform.openai.com/docs/guides/tools-web-search?api-mode=chat).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("annotations")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionResponseMessageAnnotation>? Annotations { get; set; }
 
         /// <summary>
         /// If the audio output modality is requested, this object contains data<br/>
-        /// about the audio response from the model. [Learn more](/docs/guides/audio).
+        /// about the audio response from the model. [Learn more](https://platform.openai.com/docs/guides/audio).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio")]
         public global::tryAGI.OpenAI.ChatCompletionResponseMessageAudio? Audio { get; set; }
@@ -65,11 +65,11 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="annotations">
         /// Annotations for the message, when applicable, as when using the<br/>
-        /// [web search tool](/docs/guides/tools-web-search?api-mode=chat).
+        /// [web search tool](https://platform.openai.com/docs/guides/tools-web-search?api-mode=chat).
         /// </param>
         /// <param name="audio">
         /// If the audio output modality is requested, this object contains data<br/>
-        /// about the audio response from the model. [Learn more](/docs/guides/audio).
+        /// about the audio response from the model. [Learn more](https://platform.openai.com/docs/guides/audio).
         /// </param>
         /// <param name="content">
         /// The contents of the message.

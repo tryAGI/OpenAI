@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// The name of the model to fine-tune. You can select one of the<br/>
-        /// [supported models](/docs/guides/fine-tuning#which-models-can-be-fine-tuned).<br/>
+        /// [supported models](https://platform.openai.com/docs/guides/fine-tuning#which-models-can-be-fine-tuned).<br/>
         /// Example: gpt-4o-mini
         /// </summary>
         /// <example>gpt-4o-mini</example>
@@ -69,10 +69,10 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// The ID of an uploaded file that contains training data.<br/>
-        /// See [upload file](/docs/api-reference/files/create) for how to upload a file.<br/>
+        /// See [upload file](https://platform.openai.com/docs/api-reference/files/create) for how to upload a file.<br/>
         /// Your dataset must be formatted as a JSONL file. Additionally, you must upload your file with the purpose `fine-tune`.<br/>
-        /// The contents of the file should differ depending on if the model uses the [chat](/docs/api-reference/fine-tuning/chat-input), [completions](/docs/api-reference/fine-tuning/completions-input) format, or if the fine-tuning method uses the [preference](/docs/api-reference/fine-tuning/preference-input) format.<br/>
-        /// See the [fine-tuning guide](/docs/guides/model-optimization) for more details.<br/>
+        /// The contents of the file should differ depending on if the model uses the [chat](https://platform.openai.com/docs/api-reference/fine-tuning/chat-input), [completions](https://platform.openai.com/docs/api-reference/fine-tuning/completions-input) format, or if the fine-tuning method uses the [preference](https://platform.openai.com/docs/api-reference/fine-tuning/preference-input) format.<br/>
+        /// See the [fine-tuning guide](https://platform.openai.com/docs/guides/model-optimization) for more details.<br/>
         /// Example: file-abc123
         /// </summary>
         /// <example>file-abc123</example>
@@ -87,7 +87,7 @@ namespace tryAGI.OpenAI
         /// the fine-tuning results file.<br/>
         /// The same data should not be present in both train and validation files.<br/>
         /// Your dataset must be formatted as a JSONL file. You must upload your file with the purpose `fine-tune`.<br/>
-        /// See the [fine-tuning guide](/docs/guides/model-optimization) for more details.<br/>
+        /// See the [fine-tuning guide](https://platform.openai.com/docs/guides/model-optimization) for more details.<br/>
         /// Example: file-abc123
         /// </summary>
         /// <example>file-abc123</example>
@@ -118,7 +118,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="model">
         /// The name of the model to fine-tune. You can select one of the<br/>
-        /// [supported models](/docs/guides/fine-tuning#which-models-can-be-fine-tuned).<br/>
+        /// [supported models](https://platform.openai.com/docs/guides/fine-tuning#which-models-can-be-fine-tuned).<br/>
         /// Example: gpt-4o-mini
         /// </param>
         /// <param name="seed">
@@ -132,10 +132,10 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="trainingFile">
         /// The ID of an uploaded file that contains training data.<br/>
-        /// See [upload file](/docs/api-reference/files/create) for how to upload a file.<br/>
+        /// See [upload file](https://platform.openai.com/docs/api-reference/files/create) for how to upload a file.<br/>
         /// Your dataset must be formatted as a JSONL file. Additionally, you must upload your file with the purpose `fine-tune`.<br/>
-        /// The contents of the file should differ depending on if the model uses the [chat](/docs/api-reference/fine-tuning/chat-input), [completions](/docs/api-reference/fine-tuning/completions-input) format, or if the fine-tuning method uses the [preference](/docs/api-reference/fine-tuning/preference-input) format.<br/>
-        /// See the [fine-tuning guide](/docs/guides/model-optimization) for more details.<br/>
+        /// The contents of the file should differ depending on if the model uses the [chat](https://platform.openai.com/docs/api-reference/fine-tuning/chat-input), [completions](https://platform.openai.com/docs/api-reference/fine-tuning/completions-input) format, or if the fine-tuning method uses the [preference](https://platform.openai.com/docs/api-reference/fine-tuning/preference-input) format.<br/>
+        /// See the [fine-tuning guide](https://platform.openai.com/docs/guides/model-optimization) for more details.<br/>
         /// Example: file-abc123
         /// </param>
         /// <param name="validationFile">
@@ -145,7 +145,7 @@ namespace tryAGI.OpenAI
         /// the fine-tuning results file.<br/>
         /// The same data should not be present in both train and validation files.<br/>
         /// Your dataset must be formatted as a JSONL file. You must upload your file with the purpose `fine-tune`.<br/>
-        /// See the [fine-tuning guide](/docs/guides/model-optimization) for more details.<br/>
+        /// See the [fine-tuning guide](https://platform.openai.com/docs/guides/model-optimization) for more details.<br/>
         /// Example: file-abc123
         /// </param>
 #if NET7_0_OR_GREATER

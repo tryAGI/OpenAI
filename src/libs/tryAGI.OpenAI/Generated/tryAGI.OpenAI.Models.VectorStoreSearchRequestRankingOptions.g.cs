@@ -9,6 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class VectorStoreSearchRequestRankingOptions
     {
         /// <summary>
+        /// Enable re-ranking; set to `none` to disable, which can help reduce latency.<br/>
         /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ranker")]
@@ -31,6 +32,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="VectorStoreSearchRequestRankingOptions" /> class.
         /// </summary>
         /// <param name="ranker">
+        /// Enable re-ranking; set to `none` to disable, which can help reduce latency.<br/>
         /// Default Value: auto
         /// </param>
         /// <param name="scoreThreshold">

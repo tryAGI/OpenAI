@@ -28,6 +28,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// List files<br/>
         /// Returns a list of files.
         /// </summary>
         /// <param name="purpose"></param>

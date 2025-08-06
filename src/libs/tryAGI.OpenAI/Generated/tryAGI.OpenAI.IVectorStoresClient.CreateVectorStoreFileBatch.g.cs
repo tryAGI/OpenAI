@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IVectorStoresClient
     {
         /// <summary>
+        /// Create vector store file batch<br/>
         /// Create a vector store file batch.
         /// </summary>
         /// <param name="vectorStoreId">
@@ -19,6 +20,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
+        /// Create vector store file batch<br/>
         /// Create a vector store file batch.
         /// </summary>
         /// <param name="vectorStoreId">
@@ -32,10 +34,10 @@ namespace tryAGI.OpenAI
         /// length of 512 characters, booleans, or numbers.
         /// </param>
         /// <param name="chunkingStrategy">
-        /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
+        /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy. Only applicable if `file_ids` is non-empty.
         /// </param>
         /// <param name="fileIds">
-        /// A list of [File](/docs/api-reference/files) IDs that the vector store should use. Useful for tools like `file_search` that can access files.
+        /// A list of [File](https://platform.openai.com/docs/api-reference/files) IDs that the vector store should use. Useful for tools like `file_search` that can access files.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

@@ -24,6 +24,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Delete project user<br/>
         /// Deletes a user from the project.
         /// </summary>
         /// <param name="projectId"></param>

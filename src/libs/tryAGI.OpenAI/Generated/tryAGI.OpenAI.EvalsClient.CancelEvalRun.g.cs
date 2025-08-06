@@ -24,6 +24,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Cancel eval run<br/>
         /// Cancel an ongoing evaluation run.
         /// </summary>
         /// <param name="evalId"></param>

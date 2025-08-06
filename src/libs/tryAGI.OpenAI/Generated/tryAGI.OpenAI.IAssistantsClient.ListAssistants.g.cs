@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IAssistantsClient
     {
         /// <summary>
+        /// List assistants<br/>
         /// Returns a list of assistants.
         /// </summary>
         /// <param name="limit">

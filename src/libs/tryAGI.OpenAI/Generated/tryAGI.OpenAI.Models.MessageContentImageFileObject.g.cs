@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// References an image [File](/docs/api-reference/files) in the content of a message.
+    /// References an image [File](https://platform.openai.com/docs/api-reference/files) in the content of a message.
     /// </summary>
     public sealed partial class MessageContentImageFileObject
     {

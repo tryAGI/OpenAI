@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IAssistantsClient
     {
         /// <summary>
+        /// Delete thread<br/>
         /// Delete a thread.
         /// </summary>
         /// <param name="threadId"></param>

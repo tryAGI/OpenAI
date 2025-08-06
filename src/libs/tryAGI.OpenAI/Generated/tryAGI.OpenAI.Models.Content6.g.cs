@@ -112,7 +112,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsInputContent && !IsOutputContent || !IsInputContent && IsOutputContent;
+            return IsInputContent || IsOutputContent;
         }
 
         /// <summary>

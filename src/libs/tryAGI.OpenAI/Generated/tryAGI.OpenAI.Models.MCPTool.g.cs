@@ -7,7 +7,7 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// Give the model access to additional tools via remote Model Context Protocol <br/>
-    /// (MCP) servers. [Learn more about MCP](/docs/guides/tools-remote-mcp).
+    /// (MCP) servers. [Learn more about MCP](https://platform.openai.com/docs/guides/tools-remote-mcp).
     /// </summary>
     public sealed partial class MCPTool
     {
@@ -15,8 +15,8 @@ namespace tryAGI.OpenAI
         /// List of allowed tool names or a filter object.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_tools")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<string>, global::tryAGI.OpenAI.MCPToolAllowedTools>))]
-        public global::tryAGI.OpenAI.OneOf<global::System.Collections.Generic.IList<string>, global::tryAGI.OpenAI.MCPToolAllowedTools>? AllowedTools { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, global::tryAGI.OpenAI.MCPToolAllowedTools>))]
+        public global::tryAGI.OpenAI.AnyOf<global::System.Collections.Generic.IList<string>, global::tryAGI.OpenAI.MCPToolAllowedTools>? AllowedTools { get; set; }
 
         /// <summary>
         /// Optional HTTP headers to send to the MCP server. Use for authentication<br/>
@@ -26,12 +26,11 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.Dictionary<string, string>? Headers { get; set; }
 
         /// <summary>
-        /// Specify which of the MCP server's tools require approval.<br/>
-        /// Default Value: always
+        /// Specify which of the MCP server's tools require approval.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("require_approval")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.MCPToolRequireApprovalEnum, global::tryAGI.OpenAI.MCPToolRequireApprovalEnum2?>))]
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MCPToolRequireApprovalEnum, global::tryAGI.OpenAI.MCPToolRequireApprovalEnum2?>? RequireApproval { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.MCPToolRequireApprovalEnum, global::tryAGI.OpenAI.MCPToolRequireApprovalEnum2?>))]
+        public global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.MCPToolRequireApprovalEnum, global::tryAGI.OpenAI.MCPToolRequireApprovalEnum2?>? RequireApproval { get; set; }
 
         /// <summary>
         /// Optional description of the MCP server, used to provide more context.
@@ -77,8 +76,7 @@ namespace tryAGI.OpenAI
         /// or other purposes.
         /// </param>
         /// <param name="requireApproval">
-        /// Specify which of the MCP server's tools require approval.<br/>
-        /// Default Value: always
+        /// Specify which of the MCP server's tools require approval.
         /// </param>
         /// <param name="serverDescription">
         /// Optional description of the MCP server, used to provide more context.
@@ -98,9 +96,9 @@ namespace tryAGI.OpenAI
         public MCPTool(
             string serverLabel,
             string serverUrl,
-            global::tryAGI.OpenAI.OneOf<global::System.Collections.Generic.IList<string>, global::tryAGI.OpenAI.MCPToolAllowedTools>? allowedTools,
+            global::tryAGI.OpenAI.AnyOf<global::System.Collections.Generic.IList<string>, global::tryAGI.OpenAI.MCPToolAllowedTools>? allowedTools,
             global::System.Collections.Generic.Dictionary<string, string>? headers,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MCPToolRequireApprovalEnum, global::tryAGI.OpenAI.MCPToolRequireApprovalEnum2?>? requireApproval,
+            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.MCPToolRequireApprovalEnum, global::tryAGI.OpenAI.MCPToolRequireApprovalEnum2?>? requireApproval,
             string? serverDescription,
             global::tryAGI.OpenAI.MCPToolType type)
         {

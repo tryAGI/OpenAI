@@ -12,7 +12,7 @@ namespace tryAGI.OpenAI
     {
         /// <summary>
         /// Parameters for audio output. Required when audio output is requested with<br/>
-        /// `modalities: ["audio"]`. [Learn more](/docs/guides/audio).
+        /// `modalities: ["audio"]`. [Learn more](https://platform.openai.com/docs/guides/audio).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio")]
         public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2Audio? Audio { get; set; }
@@ -39,8 +39,8 @@ namespace tryAGI.OpenAI
         /// if functions are present.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function_call")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2FunctionCall?, global::tryAGI.OpenAI.ChatCompletionFunctionCallOption>))]
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2FunctionCall?, global::tryAGI.OpenAI.ChatCompletionFunctionCallOption>? FunctionCall { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2FunctionCall?, global::tryAGI.OpenAI.ChatCompletionFunctionCallOption>))]
+        public global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2FunctionCall?, global::tryAGI.OpenAI.ChatCompletionFunctionCallOption>? FunctionCall { get; set; }
 
         /// <summary>
         /// Deprecated in favor of `tools`.<br/>
@@ -72,7 +72,7 @@ namespace tryAGI.OpenAI
         public bool? Logprobs { get; set; }
 
         /// <summary>
-        /// An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and [reasoning tokens](/docs/guides/reasoning).
+        /// An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and [reasoning tokens](https://platform.openai.com/docs/guides/reasoning).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_completion_tokens")]
         public int? MaxCompletionTokens { get; set; }
@@ -82,7 +82,7 @@ namespace tryAGI.OpenAI
         /// chat completion. This value can be used to control<br/>
         /// [costs](https://openai.com/api/pricing/) for text generated via API.<br/>
         /// This value is now deprecated in favor of `max_completion_tokens`, and is<br/>
-        /// not compatible with [o-series models](/docs/guides/reasoning).
+        /// not compatible with [o-series models](https://platform.openai.com/docs/guides/reasoning).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_tokens")]
         [global::System.Obsolete("This property marked as deprecated.")]
@@ -90,9 +90,9 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// A list of messages comprising the conversation so far. Depending on the<br/>
-        /// [model](/docs/models) you use, different message types (modalities) are<br/>
-        /// supported, like [text](/docs/guides/text-generation),<br/>
-        /// [images](/docs/guides/vision), and [audio](/docs/guides/audio).
+        /// [model](https://platform.openai.com/docs/models) you use, different message types (modalities) are<br/>
+        /// supported, like [text](https://platform.openai.com/docs/guides/text-generation),<br/>
+        /// [images](https://platform.openai.com/docs/guides/vision), and [audio](https://platform.openai.com/docs/guides/audio).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -103,7 +103,7 @@ namespace tryAGI.OpenAI
         /// Most models are capable of generating text, which is the default:<br/>
         /// `["text"]`<br/>
         /// The `gpt-4o-audio-preview` model can also be used to <br/>
-        /// [generate audio](/docs/guides/audio). To request that this model generate <br/>
+        /// [generate audio](https://platform.openai.com/docs/guides/audio). To request that this model generate <br/>
         /// both text and audio responses, you can use:<br/>
         /// `["text", "audio"]`
         /// </summary>
@@ -129,13 +129,13 @@ namespace tryAGI.OpenAI
         public int? N { get; set; }
 
         /// <summary>
-        /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.
+        /// Whether to enable [parallel function calling](https://platform.openai.com/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parallel_tool_calls")]
         public bool? ParallelToolCalls { get; set; }
 
         /// <summary>
-        /// Configuration for a [Predicted Output](/docs/guides/predicted-outputs),<br/>
+        /// Configuration for a [Predicted Output](https://platform.openai.com/docs/guides/predicted-outputs),<br/>
         /// which can greatly improve response times when large parts of the model<br/>
         /// response are known ahead of time. This is most common when you are<br/>
         /// regenerating a file with only minor changes to most of the content.
@@ -170,14 +170,14 @@ namespace tryAGI.OpenAI
         /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables<br/>
         /// Structured Outputs which ensures the model will match your supplied JSON<br/>
         /// schema. Learn more in the [Structured Outputs<br/>
-        /// guide](/docs/guides/structured-outputs).<br/>
+        /// guide](https://platform.openai.com/docs/guides/structured-outputs).<br/>
         /// Setting to `{ "type": "json_object" }` enables the older JSON mode, which<br/>
         /// ensures the message the model generates is valid JSON. Using `json_schema`<br/>
         /// is preferred for models that support it.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.ResponseFormatText, global::tryAGI.OpenAI.ResponseFormatJsonSchema, global::tryAGI.OpenAI.ResponseFormatJsonObject>))]
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ResponseFormatText, global::tryAGI.OpenAI.ResponseFormatJsonSchema, global::tryAGI.OpenAI.ResponseFormatJsonObject>? ResponseFormat { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.ResponseFormatText, global::tryAGI.OpenAI.ResponseFormatJsonSchema, global::tryAGI.OpenAI.ResponseFormatJsonObject>))]
+        public global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ResponseFormatText, global::tryAGI.OpenAI.ResponseFormatJsonSchema, global::tryAGI.OpenAI.ResponseFormatJsonObject>? ResponseFormat { get; set; }
 
         /// <summary>
         /// This feature is in Beta.<br/>
@@ -198,8 +198,8 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// Whether or not to store the output of this chat completion request for <br/>
-        /// use in our [model distillation](/docs/guides/distillation) or<br/>
-        /// [evals](/docs/guides/evals) products. <br/>
+        /// use in our [model distillation](https://platform.openai.com/docs/guides/distillation) or<br/>
+        /// [evals](https://platform.openai.com/docs/guides/evals) products. <br/>
         /// Supports text and image inputs. Note: image inputs over 10MB will be dropped.<br/>
         /// Default Value: false
         /// </summary>
@@ -209,8 +209,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// If set to true, the model response data will be streamed to the client<br/>
         /// as it is generated using [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format).<br/>
-        /// See the [Streaming section below](/docs/api-reference/chat/streaming)<br/>
-        /// for more information, along with the [streaming responses](/docs/guides/streaming-responses)<br/>
+        /// See the [Streaming section below](https://platform.openai.com/docs/api-reference/chat/streaming)<br/>
+        /// for more information, along with the [streaming responses](https://platform.openai.com/docs/guides/streaming-responses)<br/>
         /// guide for more information on how to handle the streaming events.<br/>
         /// Default Value: false
         /// </summary>
@@ -251,7 +251,7 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// This tool searches the web for relevant results to use in a response.<br/>
-        /// Learn more about the [web search tool](/docs/guides/tools-web-search?api-mode=chat).
+        /// Learn more about the [web search tool](https://platform.openai.com/docs/guides/tools-web-search?api-mode=chat).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("web_search_options")]
         public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2WebSearchOptions? WebSearchOptions { get; set; }
@@ -267,7 +267,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="audio">
         /// Parameters for audio output. Required when audio output is requested with<br/>
-        /// `modalities: ["audio"]`. [Learn more](/docs/guides/audio).
+        /// `modalities: ["audio"]`. [Learn more](https://platform.openai.com/docs/guides/audio).
         /// </param>
         /// <param name="frequencyPenalty">
         /// Number between -2.0 and 2.0. Positive values penalize new tokens based on<br/>
@@ -291,20 +291,20 @@ namespace tryAGI.OpenAI
         /// Default Value: false
         /// </param>
         /// <param name="maxCompletionTokens">
-        /// An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and [reasoning tokens](/docs/guides/reasoning).
+        /// An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and [reasoning tokens](https://platform.openai.com/docs/guides/reasoning).
         /// </param>
         /// <param name="messages">
         /// A list of messages comprising the conversation so far. Depending on the<br/>
-        /// [model](/docs/models) you use, different message types (modalities) are<br/>
-        /// supported, like [text](/docs/guides/text-generation),<br/>
-        /// [images](/docs/guides/vision), and [audio](/docs/guides/audio).
+        /// [model](https://platform.openai.com/docs/models) you use, different message types (modalities) are<br/>
+        /// supported, like [text](https://platform.openai.com/docs/guides/text-generation),<br/>
+        /// [images](https://platform.openai.com/docs/guides/vision), and [audio](https://platform.openai.com/docs/guides/audio).
         /// </param>
         /// <param name="modalities">
         /// Output types that you would like the model to generate.<br/>
         /// Most models are capable of generating text, which is the default:<br/>
         /// `["text"]`<br/>
         /// The `gpt-4o-audio-preview` model can also be used to <br/>
-        /// [generate audio](/docs/guides/audio). To request that this model generate <br/>
+        /// [generate audio](https://platform.openai.com/docs/guides/audio). To request that this model generate <br/>
         /// both text and audio responses, you can use:<br/>
         /// `["text", "audio"]`
         /// </param>
@@ -317,10 +317,10 @@ namespace tryAGI.OpenAI
         /// Example: 1
         /// </param>
         /// <param name="parallelToolCalls">
-        /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.
+        /// Whether to enable [parallel function calling](https://platform.openai.com/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.
         /// </param>
         /// <param name="prediction">
-        /// Configuration for a [Predicted Output](/docs/guides/predicted-outputs),<br/>
+        /// Configuration for a [Predicted Output](https://platform.openai.com/docs/guides/predicted-outputs),<br/>
         /// which can greatly improve response times when large parts of the model<br/>
         /// response are known ahead of time. This is most common when you are<br/>
         /// regenerating a file with only minor changes to most of the content.
@@ -345,7 +345,7 @@ namespace tryAGI.OpenAI
         /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables<br/>
         /// Structured Outputs which ensures the model will match your supplied JSON<br/>
         /// schema. Learn more in the [Structured Outputs<br/>
-        /// guide](/docs/guides/structured-outputs).<br/>
+        /// guide](https://platform.openai.com/docs/guides/structured-outputs).<br/>
         /// Setting to `{ "type": "json_object" }` enables the older JSON mode, which<br/>
         /// ensures the message the model generates is valid JSON. Using `json_schema`<br/>
         /// is preferred for models that support it.
@@ -362,16 +362,16 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="store">
         /// Whether or not to store the output of this chat completion request for <br/>
-        /// use in our [model distillation](/docs/guides/distillation) or<br/>
-        /// [evals](/docs/guides/evals) products. <br/>
+        /// use in our [model distillation](https://platform.openai.com/docs/guides/distillation) or<br/>
+        /// [evals](https://platform.openai.com/docs/guides/evals) products. <br/>
         /// Supports text and image inputs. Note: image inputs over 10MB will be dropped.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="stream">
         /// If set to true, the model response data will be streamed to the client<br/>
         /// as it is generated using [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format).<br/>
-        /// See the [Streaming section below](/docs/api-reference/chat/streaming)<br/>
-        /// for more information, along with the [streaming responses](/docs/guides/streaming-responses)<br/>
+        /// See the [Streaming section below](https://platform.openai.com/docs/api-reference/chat/streaming)<br/>
+        /// for more information, along with the [streaming responses](https://platform.openai.com/docs/guides/streaming-responses)<br/>
         /// guide for more information on how to handle the streaming events.<br/>
         /// Default Value: false
         /// </param>
@@ -396,7 +396,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="webSearchOptions">
         /// This tool searches the web for relevant results to use in a response.<br/>
-        /// Learn more about the [web search tool](/docs/guides/tools-web-search?api-mode=chat).
+        /// Learn more about the [web search tool](https://platform.openai.com/docs/guides/tools-web-search?api-mode=chat).
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -415,7 +415,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.PredictionContent? prediction,
             double? presencePenalty,
             global::tryAGI.OpenAI.ReasoningEffort? reasoningEffort,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ResponseFormatText, global::tryAGI.OpenAI.ResponseFormatJsonSchema, global::tryAGI.OpenAI.ResponseFormatJsonObject>? responseFormat,
+            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ResponseFormatText, global::tryAGI.OpenAI.ResponseFormatJsonSchema, global::tryAGI.OpenAI.ResponseFormatJsonObject>? responseFormat,
             int? seed,
             global::tryAGI.OpenAI.StopConfiguration? stop,
             bool? store,

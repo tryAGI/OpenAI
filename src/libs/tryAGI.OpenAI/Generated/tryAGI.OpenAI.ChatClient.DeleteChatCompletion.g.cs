@@ -22,6 +22,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Delete chat completion<br/>
         /// Delete a stored chat completion. Only Chat Completions that have been<br/>
         /// created with the `store` parameter set to `true` can be deleted.
         /// </summary>

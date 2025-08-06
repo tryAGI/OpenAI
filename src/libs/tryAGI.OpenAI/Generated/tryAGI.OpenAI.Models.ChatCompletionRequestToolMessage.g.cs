@@ -14,9 +14,9 @@ namespace tryAGI.OpenAI
         /// The contents of the tool message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestToolMessageContentPart>>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestToolMessageContentPart>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestToolMessageContentPart>> Content { get; set; }
+        public required global::tryAGI.OpenAI.AnyOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestToolMessageContentPart>> Content { get; set; }
 
         /// <summary>
         /// The role of the messages author, in this case `tool`.
@@ -54,7 +54,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatCompletionRequestToolMessage(
-            global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestToolMessageContentPart>> content,
+            global::tryAGI.OpenAI.AnyOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestToolMessageContentPart>> content,
             string toolCallId,
             global::tryAGI.OpenAI.ChatCompletionRequestToolMessageRole role)
         {

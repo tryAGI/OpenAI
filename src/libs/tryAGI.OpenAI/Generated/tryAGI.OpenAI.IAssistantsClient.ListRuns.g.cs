@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IAssistantsClient
     {
         /// <summary>
+        /// List runs<br/>
         /// Returns a list of runs belonging to a thread.
         /// </summary>
         /// <param name="threadId"></param>

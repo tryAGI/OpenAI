@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -15,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("annotations")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageContentTextAnnotationsFileCitationObject, global::tryAGI.OpenAI.MessageContentTextAnnotationsFilePathObject>> Annotations { get; set; }
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TextAnnotation> Annotations { get; set; }
 
         /// <summary>
         /// The data that makes up the text.
@@ -41,7 +39,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessageContentTextObjectText(
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageContentTextAnnotationsFileCitationObject, global::tryAGI.OpenAI.MessageContentTextAnnotationsFilePathObject>> annotations,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TextAnnotation> annotations,
             string value)
         {
             this.Annotations = annotations ?? throw new global::System.ArgumentNullException(nameof(annotations));

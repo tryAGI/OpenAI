@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IVectorStoresClient
     {
         /// <summary>
+        /// List vector store files<br/>
         /// Returns a list of vector store files.
         /// </summary>
         /// <param name="vectorStoreId"></param>

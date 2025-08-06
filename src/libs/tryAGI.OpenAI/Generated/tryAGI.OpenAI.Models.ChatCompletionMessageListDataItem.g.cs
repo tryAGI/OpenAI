@@ -15,7 +15,7 @@ namespace tryAGI.OpenAI
         /// Otherwise, null.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_parts")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText, global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImage>>? ContentParts { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText, global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImage>>? ContentParts { get; set; }
 
         /// <summary>
         /// The identifier of the chat message.
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
 #endif
         public ChatCompletionMessageListDataItem(
             string id,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText, global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImage>>? contentParts)
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText, global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImage>>? contentParts)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.ContentParts = contentParts;

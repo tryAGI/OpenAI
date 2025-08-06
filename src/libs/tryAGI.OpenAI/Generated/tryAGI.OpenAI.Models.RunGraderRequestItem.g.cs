@@ -5,7 +5,7 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// The dataset item provided to the grader. This will be used to populate <br/>
-    /// the `item` namespace. See [the guide](/docs/guides/graders) for more details. 
+    /// the `item` namespace. See [the guide](https://platform.openai.com/docs/guides/graders) for more details. 
     /// </summary>
     public sealed partial class RunGraderRequestItem
     {

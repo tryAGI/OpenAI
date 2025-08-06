@@ -22,13 +22,13 @@ namespace tryAGI.OpenAI
         /// The non-preferred completion message for the output.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("non_preferred_output")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage>>? NonPreferredOutput { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage>>? NonPreferredOutput { get; set; }
 
         /// <summary>
         /// The preferred completion message for the output.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("preferred_output")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage>>? PreferredOutput { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage>>? PreferredOutput { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -51,8 +51,8 @@ namespace tryAGI.OpenAI
 #endif
         public FineTunePreferenceRequestInput(
             global::tryAGI.OpenAI.FineTunePreferenceRequestInputInput? input,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage>>? nonPreferredOutput,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage>>? preferredOutput)
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage>>? nonPreferredOutput,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage>>? preferredOutput)
         {
             this.Input = input;
             this.NonPreferredOutput = nonPreferredOutput;

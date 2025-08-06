@@ -112,7 +112,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsRefusal || !IsText && IsRefusal;
+            return IsText || IsRefusal;
         }
 
         /// <summary>

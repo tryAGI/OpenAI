@@ -32,15 +32,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Text, image, or file inputs to the model, used to generate a response.<br/>
         /// Learn more:<br/>
-        /// - [Text inputs and outputs](/docs/guides/text)<br/>
-        /// - [Image inputs](/docs/guides/images)<br/>
-        /// - [File inputs](/docs/guides/pdf-files)<br/>
-        /// - [Conversation state](/docs/guides/conversation-state)<br/>
-        /// - [Function calling](/docs/guides/function-calling)
+        /// - [Text inputs and outputs](https://platform.openai.com/docs/guides/text)<br/>
+        /// - [Image inputs](https://platform.openai.com/docs/guides/images)<br/>
+        /// - [File inputs](https://platform.openai.com/docs/guides/pdf-files)<br/>
+        /// - [Conversation state](https://platform.openai.com/docs/guides/conversation-state)<br/>
+        /// - [Function calling](https://platform.openai.com/docs/guides/function-calling)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>))]
-        public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>? Input { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>))]
+        public global::tryAGI.OpenAI.AnyOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>? Input { get; set; }
 
         /// <summary>
         /// A system (or developer) message inserted into the model's context.<br/>
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// If set to true, the model response data will be streamed to the client<br/>
         /// as it is generated using [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format).<br/>
-        /// See the [Streaming section below](/docs/api-reference/responses-streaming)<br/>
+        /// See the [Streaming section below](https://platform.openai.com/docs/api-reference/responses-streaming)<br/>
         /// for more information.<br/>
         /// Default Value: false
         /// </summary>
@@ -104,11 +104,11 @@ namespace tryAGI.OpenAI
         /// <param name="input">
         /// Text, image, or file inputs to the model, used to generate a response.<br/>
         /// Learn more:<br/>
-        /// - [Text inputs and outputs](/docs/guides/text)<br/>
-        /// - [Image inputs](/docs/guides/images)<br/>
-        /// - [File inputs](/docs/guides/pdf-files)<br/>
-        /// - [Conversation state](/docs/guides/conversation-state)<br/>
-        /// - [Function calling](/docs/guides/function-calling)
+        /// - [Text inputs and outputs](https://platform.openai.com/docs/guides/text)<br/>
+        /// - [Image inputs](https://platform.openai.com/docs/guides/images)<br/>
+        /// - [File inputs](https://platform.openai.com/docs/guides/pdf-files)<br/>
+        /// - [Conversation state](https://platform.openai.com/docs/guides/conversation-state)<br/>
+        /// - [Function calling](https://platform.openai.com/docs/guides/function-calling)
         /// </param>
         /// <param name="instructions">
         /// A system (or developer) message inserted into the model's context.<br/>
@@ -128,7 +128,7 @@ namespace tryAGI.OpenAI
         /// <param name="stream">
         /// If set to true, the model response data will be streamed to the client<br/>
         /// as it is generated using [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format).<br/>
-        /// See the [Streaming section below](/docs/api-reference/responses-streaming)<br/>
+        /// See the [Streaming section below](https://platform.openai.com/docs/api-reference/responses-streaming)<br/>
         /// for more information.<br/>
         /// Default Value: false
         /// </param>
@@ -137,7 +137,7 @@ namespace tryAGI.OpenAI
 #endif
         public CreateResponseVariant3(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include,
-            global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>? input,
+            global::tryAGI.OpenAI.AnyOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>? input,
             string? instructions,
             bool? parallelToolCalls,
             bool? store,

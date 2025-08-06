@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IInvitesClient
     {
         /// <summary>
+        /// Retrieve invite<br/>
         /// Retrieves an invite.
         /// </summary>
         /// <param name="inviteId"></param>

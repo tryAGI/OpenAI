@@ -5,7 +5,7 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// JSON Schema response format. Used to generate structured JSON responses.<br/>
-    /// Learn more about [Structured Outputs](/docs/guides/structured-outputs).
+    /// Learn more about [Structured Outputs](https://platform.openai.com/docs/guides/structured-outputs).
     /// </summary>
     public sealed partial class TextResponseFormatJsonSchema
     {
@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         /// If set to true, the model will always follow the exact schema defined<br/>
         /// in the `schema` field. Only a subset of JSON Schema is supported when<br/>
         /// `strict` is `true`. To learn more, read the [Structured Outputs<br/>
-        /// guide](/docs/guides/structured-outputs).<br/>
+        /// guide](https://platform.openai.com/docs/guides/structured-outputs).<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("strict")]
@@ -76,7 +76,7 @@ namespace tryAGI.OpenAI
         /// If set to true, the model will always follow the exact schema defined<br/>
         /// in the `schema` field. Only a subset of JSON Schema is supported when<br/>
         /// `strict` is `true`. To learn more, read the [Structured Outputs<br/>
-        /// guide](/docs/guides/structured-outputs).<br/>
+        /// guide](https://platform.openai.com/docs/guides/structured-outputs).<br/>
         /// Default Value: false
         /// </param>
         /// <param name="type">

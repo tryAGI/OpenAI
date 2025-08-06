@@ -5,7 +5,7 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// The type of hosted tool the model should to use. Learn more about<br/>
-    /// [built-in tools](/docs/guides/tools).<br/>
+    /// [built-in tools](https://platform.openai.com/docs/guides/tools).<br/>
     /// Allowed values are:<br/>
     /// - `file_search`<br/>
     /// - `web_search_preview`<br/>

@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IEvalsClient
     {
         /// <summary>
+        /// Update an eval<br/>
         /// Update certain properties of an evaluation.
         /// </summary>
         /// <param name="evalId"></param>
@@ -17,6 +18,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
+        /// Update an eval<br/>
         /// Update certain properties of an evaluation.
         /// </summary>
         /// <param name="evalId"></param>

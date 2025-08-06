@@ -22,6 +22,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Create embeddings<br/>
         /// Creates an embedding vector representing the input text.
         /// </summary>
         /// <param name="request"></param>
@@ -166,6 +167,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// Create embeddings<br/>
         /// Creates an embedding vector representing the input text.
         /// </summary>
         /// <param name="dimensions">
@@ -181,17 +183,17 @@ namespace tryAGI.OpenAI
         /// Example: The quick brown fox jumped over the lazy dog
         /// </param>
         /// <param name="model">
-        /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.<br/>
+        /// ID of the model to use. You can use the [List models](https://platform.openai.com/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](https://platform.openai.com/docs/models) for descriptions of them.<br/>
         /// Example: text-embedding-3-small
         /// </param>
         /// <param name="user">
-        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
+        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](https://platform.openai.com/docs/guides/safety-best-practices#end-user-ids).<br/>
         /// Example: user-1234
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.CreateEmbeddingResponse> CreateEmbeddingAsync(
-            global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>> input,
+            global::tryAGI.OpenAI.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>> input,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateEmbeddingRequestModel?> model,
             int? dimensions = default,
             global::tryAGI.OpenAI.CreateEmbeddingRequestEncodingFormat? encodingFormat = default,

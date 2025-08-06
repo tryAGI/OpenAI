@@ -34,6 +34,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Costs<br/>
         /// Get costs details for the organization.
         /// </summary>
         /// <param name="startTime"></param>

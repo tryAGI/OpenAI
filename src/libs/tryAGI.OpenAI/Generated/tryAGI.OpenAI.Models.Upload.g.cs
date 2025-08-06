@@ -56,10 +56,10 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UploadObjectJsonConverter))]
-        public global::tryAGI.OpenAI.UploadObject? Object { get; set; }
+        public global::tryAGI.OpenAI.UploadObject Object { get; set; }
 
         /// <summary>
-        /// The intended purpose of the file. [Please refer here](/docs/api-reference/files/object#files/object-purpose) for acceptable values.
+        /// The intended purpose of the file. [Please refer here](https://platform.openai.com/docs/api-reference/files/object#files/object-purpose) for acceptable values.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("purpose")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -104,7 +104,7 @@ namespace tryAGI.OpenAI
         /// The object type, which is always "upload".
         /// </param>
         /// <param name="purpose">
-        /// The intended purpose of the file. [Please refer here](/docs/api-reference/files/object#files/object-purpose) for acceptable values.
+        /// The intended purpose of the file. [Please refer here](https://platform.openai.com/docs/api-reference/files/object#files/object-purpose) for acceptable values.
         /// </param>
         /// <param name="status">
         /// The status of the Upload.
@@ -121,7 +121,7 @@ namespace tryAGI.OpenAI
             string purpose,
             global::tryAGI.OpenAI.UploadStatus status,
             global::tryAGI.OpenAI.OpenAIFile? file,
-            global::tryAGI.OpenAI.UploadObject? @object)
+            global::tryAGI.OpenAI.UploadObject @object)
         {
             this.Bytes = bytes;
             this.CreatedAt = createdAt;

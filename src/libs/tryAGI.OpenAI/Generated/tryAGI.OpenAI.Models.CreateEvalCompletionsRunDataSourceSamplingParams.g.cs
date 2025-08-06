@@ -21,14 +21,14 @@ namespace tryAGI.OpenAI
         /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables<br/>
         /// Structured Outputs which ensures the model will match your supplied JSON<br/>
         /// schema. Learn more in the [Structured Outputs<br/>
-        /// guide](/docs/guides/structured-outputs).<br/>
+        /// guide](https://platform.openai.com/docs/guides/structured-outputs).<br/>
         /// Setting to `{ "type": "json_object" }` enables the older JSON mode, which<br/>
         /// ensures the message the model generates is valid JSON. Using `json_schema`<br/>
         /// is preferred for models that support it.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.ResponseFormatText, global::tryAGI.OpenAI.ResponseFormatJsonSchema, global::tryAGI.OpenAI.ResponseFormatJsonObject>))]
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ResponseFormatText, global::tryAGI.OpenAI.ResponseFormatJsonSchema, global::tryAGI.OpenAI.ResponseFormatJsonObject>? ResponseFormat { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.ResponseFormatText, global::tryAGI.OpenAI.ResponseFormatJsonSchema, global::tryAGI.OpenAI.ResponseFormatJsonObject>))]
+        public global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ResponseFormatText, global::tryAGI.OpenAI.ResponseFormatJsonSchema, global::tryAGI.OpenAI.ResponseFormatJsonObject>? ResponseFormat { get; set; }
 
         /// <summary>
         /// A seed value to initialize the randomness, during sampling.<br/>
@@ -74,7 +74,7 @@ namespace tryAGI.OpenAI
         /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables<br/>
         /// Structured Outputs which ensures the model will match your supplied JSON<br/>
         /// schema. Learn more in the [Structured Outputs<br/>
-        /// guide](/docs/guides/structured-outputs).<br/>
+        /// guide](https://platform.openai.com/docs/guides/structured-outputs).<br/>
         /// Setting to `{ "type": "json_object" }` enables the older JSON mode, which<br/>
         /// ensures the message the model generates is valid JSON. Using `json_schema`<br/>
         /// is preferred for models that support it.
@@ -99,7 +99,7 @@ namespace tryAGI.OpenAI
 #endif
         public CreateEvalCompletionsRunDataSourceSamplingParams(
             int? maxCompletionTokens,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ResponseFormatText, global::tryAGI.OpenAI.ResponseFormatJsonSchema, global::tryAGI.OpenAI.ResponseFormatJsonObject>? responseFormat,
+            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ResponseFormatText, global::tryAGI.OpenAI.ResponseFormatJsonSchema, global::tryAGI.OpenAI.ResponseFormatJsonObject>? responseFormat,
             int? seed,
             double? temperature,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionTool>? tools,

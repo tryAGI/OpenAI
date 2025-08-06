@@ -24,6 +24,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Create project user<br/>
         /// Adds a user to the project. Users must already be members of the organization to be added to a project.
         /// </summary>
         /// <param name="projectId"></param>
@@ -209,6 +210,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// Create project user<br/>
         /// Adds a user to the project. Users must already be members of the organization to be added to a project.
         /// </summary>
         /// <param name="projectId"></param>

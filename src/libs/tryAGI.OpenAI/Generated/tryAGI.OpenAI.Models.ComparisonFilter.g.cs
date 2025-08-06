@@ -37,9 +37,9 @@ namespace tryAGI.OpenAI
         /// The value to compare against the attribute key; supports string, number, or boolean types.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, double?, bool?>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, double?, bool?>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.OneOf<string, double?, bool?> Value { get; set; }
+        public required global::tryAGI.OpenAI.AnyOf<string, double?, bool?> Value { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -72,7 +72,7 @@ namespace tryAGI.OpenAI
         public ComparisonFilter(
             string key,
             global::tryAGI.OpenAI.ComparisonFilterType type,
-            global::tryAGI.OpenAI.OneOf<string, double?, bool?> value)
+            global::tryAGI.OpenAI.AnyOf<string, double?, bool?> value)
         {
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.Type = type;

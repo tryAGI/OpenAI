@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) moves to an `in_progress` state.
+    /// Occurs when a [run step](https://platform.openai.com/docs/api-reference/run-steps/step-object) moves to an `in_progress` state.
     /// </summary>
     public sealed partial class RunStepStreamEventVariant2
     {

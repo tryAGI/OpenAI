@@ -24,6 +24,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Create message<br/>
         /// Create a message.
         /// </summary>
         /// <param name="threadId"></param>
@@ -175,6 +176,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// Create message<br/>
         /// Create a message.
         /// </summary>
         /// <param name="threadId"></param>
@@ -201,7 +203,7 @@ namespace tryAGI.OpenAI
 #endif
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.MessageObject> CreateMessageAsync(
             string threadId,
-            global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageContentImageFileObject, global::tryAGI.OpenAI.MessageContentImageUrlObject, global::tryAGI.OpenAI.MessageRequestContentTextObject>>> content,
+            global::tryAGI.OpenAI.AnyOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentVariant2Item>> content,
             global::tryAGI.OpenAI.CreateMessageRequestRole role,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateMessageRequestAttachment>? attachments = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,

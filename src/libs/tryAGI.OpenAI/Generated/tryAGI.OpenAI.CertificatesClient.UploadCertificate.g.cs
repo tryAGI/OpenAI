@@ -22,6 +22,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Upload certificate<br/>
         /// Upload a certificate to the organization. This does **not** automatically activate the certificate.<br/>
         /// Organizations can upload up to 50 certificates.
         /// </summary>
@@ -167,6 +168,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// Upload certificate<br/>
         /// Upload a certificate to the organization. This does **not** automatically activate the certificate.<br/>
         /// Organizations can upload up to 50 certificates.
         /// </summary>

@@ -24,6 +24,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Search vector store<br/>
         /// Search a vector store for relevant chunks based on a query and file attributes filter.
         /// </summary>
         /// <param name="vectorStoreId">
@@ -174,6 +175,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// Search vector store<br/>
         /// Search a vector store for relevant chunks based on a query and file attributes filter.
         /// </summary>
         /// <param name="vectorStoreId">
@@ -200,8 +202,8 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.VectorStoreSearchResultsPage> SearchVectorStoreAsync(
             string vectorStoreId,
-            global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>> query,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ComparisonFilter, global::tryAGI.OpenAI.CompoundFilter>? filters = default,
+            global::tryAGI.OpenAI.AnyOf<string, global::System.Collections.Generic.IList<string>> query,
+            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ComparisonFilter, global::tryAGI.OpenAI.CompoundFilter>? filters = default,
             int? maxNumResults = default,
             global::tryAGI.OpenAI.VectorStoreSearchRequestRankingOptions? rankingOptions = default,
             bool? rewriteQuery = default,
