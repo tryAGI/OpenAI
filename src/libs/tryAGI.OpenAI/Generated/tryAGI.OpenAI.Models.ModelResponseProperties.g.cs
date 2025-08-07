@@ -90,6 +90,16 @@ namespace tryAGI.OpenAI
         public string? User { get; set; }
 
         /// <summary>
+        /// Constrains the verbosity of the model's response. Lower values will result in<br/>
+        /// more concise responses, while higher values will result in more verbose responses.<br/>
+        /// Currently supported values are `low`, `medium`, and `high`.<br/>
+        /// Default Value: medium
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("verbosity")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VerbosityJsonConverter))]
+        public global::tryAGI.OpenAI.Verbosity? Verbosity { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -142,6 +152,12 @@ namespace tryAGI.OpenAI
         /// Default Value: 1<br/>
         /// Example: 1
         /// </param>
+        /// <param name="verbosity">
+        /// Constrains the verbosity of the model's response. Lower values will result in<br/>
+        /// more concise responses, while higher values will result in more verbose responses.<br/>
+        /// Currently supported values are `low`, `medium`, and `high`.<br/>
+        /// Default Value: medium
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -152,7 +168,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ServiceTier? serviceTier,
             double? temperature,
             int? topLogprobs,
-            double? topP)
+            double? topP,
+            global::tryAGI.OpenAI.Verbosity? verbosity)
         {
             this.Metadata = metadata;
             this.PromptCacheKey = promptCacheKey;
@@ -161,6 +178,7 @@ namespace tryAGI.OpenAI
             this.Temperature = temperature;
             this.TopLogprobs = topLogprobs;
             this.TopP = topP;
+            this.Verbosity = verbosity;
         }
 
         /// <summary>

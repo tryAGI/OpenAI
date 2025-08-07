@@ -6,10 +6,10 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// The truncation strategy to use for the model response.<br/>
     /// - `auto`: If the context of this response and previous ones exceeds<br/>
-    ///   the model's context window size, the model will truncate the <br/>
+    ///   the model's context window size, the model will truncate the<br/>
     ///   response to fit the context window by dropping input items in the<br/>
-    ///   middle of the conversation. <br/>
-    /// - `disabled` (default): If a model response will exceed the context window <br/>
+    ///   middle of the conversation.<br/>
+    /// - `disabled` (default): If a model response will exceed the context window<br/>
     ///   size for a model, the request will fail with a 400 error.<br/>
     /// Default Value: disabled
     /// </summary>

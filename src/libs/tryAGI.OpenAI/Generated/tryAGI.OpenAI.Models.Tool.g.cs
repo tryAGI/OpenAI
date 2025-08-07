@@ -291,6 +291,42 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// A custom tool that processes input using a specified format. Learn more about<br/>
+        /// [custom tools](https://platform.openai.com/docs/guides/function-calling#custom-tools).
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.CustomTool? Custom { get; init; }
+#else
+        public global::tryAGI.OpenAI.CustomTool? Custom { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Custom))]
+#endif
+        public bool IsCustom => Custom != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Tool(global::tryAGI.OpenAI.CustomTool value) => new Tool((global::tryAGI.OpenAI.CustomTool?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.CustomTool?(Tool @this) => @this.Custom;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Tool(global::tryAGI.OpenAI.CustomTool? value)
+        {
+            Custom = value;
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         public Tool(
@@ -301,7 +337,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.MCPTool? mCP,
             global::tryAGI.OpenAI.CodeInterpreterTool? codeInterpreter,
             global::tryAGI.OpenAI.ImageGenTool? imageGen,
-            global::tryAGI.OpenAI.LocalShellTool? localShell
+            global::tryAGI.OpenAI.LocalShellTool? localShell,
+            global::tryAGI.OpenAI.CustomTool? custom
             )
         {
             Function = function;
@@ -312,12 +349,14 @@ namespace tryAGI.OpenAI
             CodeInterpreter = codeInterpreter;
             ImageGen = imageGen;
             LocalShell = localShell;
+            Custom = custom;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            Custom as object ??
             LocalShell as object ??
             ImageGen as object ??
             CodeInterpreter as object ??
@@ -339,7 +378,8 @@ namespace tryAGI.OpenAI
             MCP?.ToString() ??
             CodeInterpreter?.ToString() ??
             ImageGen?.ToString() ??
-            LocalShell?.ToString() 
+            LocalShell?.ToString() ??
+            Custom?.ToString() 
             ;
 
         /// <summary>
@@ -347,7 +387,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsFunction || IsFileSearch || IsWebSearchPreview || IsComputerUsePreview || IsMCP || IsCodeInterpreter || IsImageGen || IsLocalShell;
+            return IsFunction || IsFileSearch || IsWebSearchPreview || IsComputerUsePreview || IsMCP || IsCodeInterpreter || IsImageGen || IsLocalShell || IsCustom;
         }
 
         /// <summary>
@@ -362,6 +402,7 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.CodeInterpreterTool?, TResult>? codeInterpreter = null,
             global::System.Func<global::tryAGI.OpenAI.ImageGenTool?, TResult>? imageGen = null,
             global::System.Func<global::tryAGI.OpenAI.LocalShellTool?, TResult>? localShell = null,
+            global::System.Func<global::tryAGI.OpenAI.CustomTool?, TResult>? custom = null,
             bool validate = true)
         {
             if (validate)
@@ -401,6 +442,10 @@ namespace tryAGI.OpenAI
             {
                 return localShell(LocalShell!);
             }
+            else if (IsCustom && custom != null)
+            {
+                return custom(Custom!);
+            }
 
             return default(TResult);
         }
@@ -417,6 +462,7 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.CodeInterpreterTool?>? codeInterpreter = null,
             global::System.Action<global::tryAGI.OpenAI.ImageGenTool?>? imageGen = null,
             global::System.Action<global::tryAGI.OpenAI.LocalShellTool?>? localShell = null,
+            global::System.Action<global::tryAGI.OpenAI.CustomTool?>? custom = null,
             bool validate = true)
         {
             if (validate)
@@ -456,6 +502,10 @@ namespace tryAGI.OpenAI
             {
                 localShell?.Invoke(LocalShell!);
             }
+            else if (IsCustom)
+            {
+                custom?.Invoke(Custom!);
+            }
         }
 
         /// <summary>
@@ -481,6 +531,8 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.ImageGenTool),
                 LocalShell,
                 typeof(global::tryAGI.OpenAI.LocalShellTool),
+                Custom,
+                typeof(global::tryAGI.OpenAI.CustomTool),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -504,7 +556,8 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.MCPTool?>.Default.Equals(MCP, other.MCP) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CodeInterpreterTool?>.Default.Equals(CodeInterpreter, other.CodeInterpreter) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ImageGenTool?>.Default.Equals(ImageGen, other.ImageGen) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LocalShellTool?>.Default.Equals(LocalShell, other.LocalShell) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LocalShellTool?>.Default.Equals(LocalShell, other.LocalShell) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CustomTool?>.Default.Equals(Custom, other.Custom) 
                 ;
         }
 
