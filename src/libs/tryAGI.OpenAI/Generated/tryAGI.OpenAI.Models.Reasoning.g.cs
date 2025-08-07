@@ -11,10 +11,9 @@ namespace tryAGI.OpenAI
     public sealed partial class Reasoning
     {
         /// <summary>
-        /// **o-series models only** <br/>
         /// Constrains effort on reasoning for <br/>
         /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
-        /// Currently supported values are `low`, `medium`, and `high`. Reducing<br/>
+        /// Currently supported values are `minimal`, `low`, `medium`, and `high`. Reducing<br/>
         /// reasoning effort can result in faster responses and fewer tokens used<br/>
         /// on reasoning in a response.<br/>
         /// Default Value: medium
@@ -53,10 +52,9 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="Reasoning" /> class.
         /// </summary>
         /// <param name="effort">
-        /// **o-series models only** <br/>
         /// Constrains effort on reasoning for <br/>
         /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
-        /// Currently supported values are `low`, `medium`, and `high`. Reducing<br/>
+        /// Currently supported values are `minimal`, `low`, `medium`, and `high`. Reducing<br/>
         /// reasoning effort can result in faster responses and fewer tokens used<br/>
         /// on reasoning in a response.<br/>
         /// Default Value: medium
