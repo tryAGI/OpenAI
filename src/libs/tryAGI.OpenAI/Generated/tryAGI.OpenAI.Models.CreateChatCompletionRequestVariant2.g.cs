@@ -251,6 +251,16 @@ namespace tryAGI.OpenAI
         public int? TopLogprobs { get; set; }
 
         /// <summary>
+        /// Constrains the verbosity of the model's response. Lower values will result in<br/>
+        /// more concise responses, while higher values will result in more verbose responses.<br/>
+        /// Currently supported values are `low`, `medium`, and `high`.<br/>
+        /// Default Value: medium
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("verbosity")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VerbosityJsonConverter))]
+        public global::tryAGI.OpenAI.Verbosity? Verbosity { get; set; }
+
+        /// <summary>
         /// This tool searches the web for relevant results to use in a response.<br/>
         /// Learn more about the [web search tool](https://platform.openai.com/docs/guides/tools-web-search?api-mode=chat).
         /// </summary>
@@ -396,6 +406,12 @@ namespace tryAGI.OpenAI
         /// return at each token position, each with an associated log probability.<br/>
         /// `logprobs` must be set to `true` if this parameter is used.
         /// </param>
+        /// <param name="verbosity">
+        /// Constrains the verbosity of the model's response. Lower values will result in<br/>
+        /// more concise responses, while higher values will result in more verbose responses.<br/>
+        /// Currently supported values are `low`, `medium`, and `high`.<br/>
+        /// Default Value: medium
+        /// </param>
         /// <param name="webSearchOptions">
         /// This tool searches the web for relevant results to use in a response.<br/>
         /// Learn more about the [web search tool](https://platform.openai.com/docs/guides/tools-web-search?api-mode=chat).
@@ -426,6 +442,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ChatCompletionToolChoiceOption? toolChoice,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem>? tools,
             int? topLogprobs,
+            global::tryAGI.OpenAI.Verbosity? verbosity,
             global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2WebSearchOptions? webSearchOptions)
         {
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
@@ -450,6 +467,7 @@ namespace tryAGI.OpenAI
             this.ToolChoice = toolChoice;
             this.Tools = tools;
             this.TopLogprobs = topLogprobs;
+            this.Verbosity = verbosity;
             this.WebSearchOptions = webSearchOptions;
         }
 

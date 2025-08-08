@@ -27,6 +27,16 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.TextResponseFormatConfiguration? Format { get; set; }
 
         /// <summary>
+        /// Constrains the verbosity of the model's response. Lower values will result in<br/>
+        /// more concise responses, while higher values will result in more verbose responses.<br/>
+        /// Currently supported values are `low`, `medium`, and `high`.<br/>
+        /// Default Value: medium
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("verbosity")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VerbosityJsonConverter))]
+        public global::tryAGI.OpenAI.Verbosity? Verbosity { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -46,13 +56,21 @@ namespace tryAGI.OpenAI
         /// ensures the message the model generates is valid JSON. Using `json_schema`<br/>
         /// is preferred for models that support it.
         /// </param>
+        /// <param name="verbosity">
+        /// Constrains the verbosity of the model's response. Lower values will result in<br/>
+        /// more concise responses, while higher values will result in more verbose responses.<br/>
+        /// Currently supported values are `low`, `medium`, and `high`.<br/>
+        /// Default Value: medium
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponsePropertiesText(
-            global::tryAGI.OpenAI.TextResponseFormatConfiguration? format)
+            global::tryAGI.OpenAI.TextResponseFormatConfiguration? format,
+            global::tryAGI.OpenAI.Verbosity? verbosity)
         {
             this.Format = format;
+            this.Verbosity = verbosity;
         }
 
         /// <summary>

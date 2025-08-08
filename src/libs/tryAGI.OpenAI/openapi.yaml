@@ -10366,6 +10366,8 @@ components:
               type: integer
               description: "An integer between 0 and 20 specifying the number of most likely tokens to\nreturn at each token position, each with an associated log probability.\n`logprobs` must be set to `true` if this parameter is used.\n"
               nullable: true
+            verbosity:
+              $ref: '#/components/schemas/Verbosity'
             web_search_options:
               title: Web search
               type: object
@@ -17890,8 +17892,6 @@ components:
           description: "This field is being replaced by `safety_identifier` and `prompt_cache_key`. Use `prompt_cache_key` instead to maintain caching optimizations.\nA stable identifier for your end-users. \nUsed to boost cache hit rates by better bucketing similar requests and  to help OpenAI detect and prevent abuse. [Learn more](https://platform.openai.com/docs/guides/safety-best-practices#safety-identifiers).\n"
           example: user-1234
           deprecated: true
-        verbosity:
-          $ref: '#/components/schemas/Verbosity'
     ModerationImageURLInput:
       required:
         - type
@@ -22709,6 +22709,8 @@ components:
           properties:
             format:
               $ref: '#/components/schemas/TextResponseFormatConfiguration'
+            verbosity:
+              $ref: '#/components/schemas/Verbosity'
           description: "Configuration options for a text response from the model. Can be plain\ntext or structured JSON data. Learn more:\n- [Text inputs and outputs](https://platform.openai.com/docs/guides/text)\n- [Structured Outputs](https://platform.openai.com/docs/guides/structured-outputs)\n"
         tool_choice:
           anyOf:
