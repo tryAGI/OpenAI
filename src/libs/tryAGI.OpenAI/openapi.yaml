@@ -10355,6 +10355,10 @@ components:
                   propertyName: type
                 x-stainless-go-variant-constructor:
                   naming: 'chat_completion_{variant}_tool'
+                x-stainless-naming:
+                  python:
+                    model_name: chat_completion_tool_union
+                    param_model_name: chat_completion_tool_union_param
               description: "A list of tools the model may call. You can provide either\n[custom tools](https://platform.openai.com/docs/guides/function-calling#custom-tools) or\n[function tools](https://platform.openai.com/docs/guides/function-calling).\n"
             top_logprobs:
               maximum: 20
