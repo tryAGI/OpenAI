@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    /// A function tool that can be used to generate a response.
     /// </summary>
     public sealed partial class ChatCompletionTool
     {

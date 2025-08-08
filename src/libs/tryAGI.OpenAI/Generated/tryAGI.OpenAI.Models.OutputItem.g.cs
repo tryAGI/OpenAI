@@ -437,6 +437,41 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// A call to a custom tool created by the model.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.CustomToolCall? CustomToolCall { get; init; }
+#else
+        public global::tryAGI.OpenAI.CustomToolCall? CustomToolCall { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomToolCall))]
+#endif
+        public bool IsCustomToolCall => CustomToolCall != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator OutputItem(global::tryAGI.OpenAI.CustomToolCall value) => new OutputItem((global::tryAGI.OpenAI.CustomToolCall?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.CustomToolCall?(OutputItem @this) => @this.CustomToolCall;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OutputItem(global::tryAGI.OpenAI.CustomToolCall? value)
+        {
+            CustomToolCall = value;
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         public OutputItem(
@@ -451,7 +486,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.LocalShellToolCall? localShellToolCall,
             global::tryAGI.OpenAI.MCPToolCall? mCPToolCall,
             global::tryAGI.OpenAI.MCPListTools? mCPListTools,
-            global::tryAGI.OpenAI.MCPApprovalRequest? mCPApprovalRequest
+            global::tryAGI.OpenAI.MCPApprovalRequest? mCPApprovalRequest,
+            global::tryAGI.OpenAI.CustomToolCall? customToolCall
             )
         {
             Message = message;
@@ -466,12 +502,14 @@ namespace tryAGI.OpenAI
             MCPToolCall = mCPToolCall;
             MCPListTools = mCPListTools;
             MCPApprovalRequest = mCPApprovalRequest;
+            CustomToolCall = customToolCall;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            CustomToolCall as object ??
             MCPApprovalRequest as object ??
             MCPListTools as object ??
             MCPToolCall as object ??
@@ -501,7 +539,8 @@ namespace tryAGI.OpenAI
             LocalShellToolCall?.ToString() ??
             MCPToolCall?.ToString() ??
             MCPListTools?.ToString() ??
-            MCPApprovalRequest?.ToString() 
+            MCPApprovalRequest?.ToString() ??
+            CustomToolCall?.ToString() 
             ;
 
         /// <summary>
@@ -509,7 +548,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsMessage || IsFileSearchToolCall || IsFunctionToolCall || IsWebSearchToolCall || IsComputerToolCall || IsReasoning || IsImageGenToolCall || IsCodeInterpreterToolCall || IsLocalShellToolCall || IsMCPToolCall || IsMCPListTools || IsMCPApprovalRequest;
+            return IsMessage || IsFileSearchToolCall || IsFunctionToolCall || IsWebSearchToolCall || IsComputerToolCall || IsReasoning || IsImageGenToolCall || IsCodeInterpreterToolCall || IsLocalShellToolCall || IsMCPToolCall || IsMCPListTools || IsMCPApprovalRequest || IsCustomToolCall;
         }
 
         /// <summary>
@@ -528,6 +567,7 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.MCPToolCall?, TResult>? mCPToolCall = null,
             global::System.Func<global::tryAGI.OpenAI.MCPListTools?, TResult>? mCPListTools = null,
             global::System.Func<global::tryAGI.OpenAI.MCPApprovalRequest?, TResult>? mCPApprovalRequest = null,
+            global::System.Func<global::tryAGI.OpenAI.CustomToolCall?, TResult>? customToolCall = null,
             bool validate = true)
         {
             if (validate)
@@ -583,6 +623,10 @@ namespace tryAGI.OpenAI
             {
                 return mCPApprovalRequest(MCPApprovalRequest!);
             }
+            else if (IsCustomToolCall && customToolCall != null)
+            {
+                return customToolCall(CustomToolCall!);
+            }
 
             return default(TResult);
         }
@@ -603,6 +647,7 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.MCPToolCall?>? mCPToolCall = null,
             global::System.Action<global::tryAGI.OpenAI.MCPListTools?>? mCPListTools = null,
             global::System.Action<global::tryAGI.OpenAI.MCPApprovalRequest?>? mCPApprovalRequest = null,
+            global::System.Action<global::tryAGI.OpenAI.CustomToolCall?>? customToolCall = null,
             bool validate = true)
         {
             if (validate)
@@ -658,6 +703,10 @@ namespace tryAGI.OpenAI
             {
                 mCPApprovalRequest?.Invoke(MCPApprovalRequest!);
             }
+            else if (IsCustomToolCall)
+            {
+                customToolCall?.Invoke(CustomToolCall!);
+            }
         }
 
         /// <summary>
@@ -691,6 +740,8 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.MCPListTools),
                 MCPApprovalRequest,
                 typeof(global::tryAGI.OpenAI.MCPApprovalRequest),
+                CustomToolCall,
+                typeof(global::tryAGI.OpenAI.CustomToolCall),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -718,7 +769,8 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LocalShellToolCall?>.Default.Equals(LocalShellToolCall, other.LocalShellToolCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.MCPToolCall?>.Default.Equals(MCPToolCall, other.MCPToolCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.MCPListTools?>.Default.Equals(MCPListTools, other.MCPListTools) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.MCPApprovalRequest?>.Default.Equals(MCPApprovalRequest, other.MCPApprovalRequest) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.MCPApprovalRequest?>.Default.Equals(MCPApprovalRequest, other.MCPApprovalRequest) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CustomToolCall?>.Default.Equals(CustomToolCall, other.CustomToolCall) 
                 ;
         }
 

@@ -77,6 +77,12 @@ namespace tryAGI.OpenAI
         public bool? Stream { get; set; }
 
         /// <summary>
+        /// Options for streaming responses. Only set this when you set `stream: true`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("stream_options")]
+        public global::tryAGI.OpenAI.ResponseStreamOptions? StreamOptions { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -132,6 +138,9 @@ namespace tryAGI.OpenAI
         /// for more information.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="streamOptions">
+        /// Options for streaming responses. Only set this when you set `stream: true`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -141,7 +150,8 @@ namespace tryAGI.OpenAI
             string? instructions,
             bool? parallelToolCalls,
             bool? store,
-            bool? stream)
+            bool? stream,
+            global::tryAGI.OpenAI.ResponseStreamOptions? streamOptions)
         {
             this.Include = include;
             this.Input = input;
@@ -149,6 +159,7 @@ namespace tryAGI.OpenAI
             this.ParallelToolCalls = parallelToolCalls;
             this.Store = store;
             this.Stream = stream;
+            this.StreamOptions = streamOptions;
         }
 
         /// <summary>
