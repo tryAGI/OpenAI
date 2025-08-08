@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseProperties
     {
         /// <summary>
-        /// Whether to run the model response in the background. <br/>
+        /// Whether to run the model response in the background.<br/>
         /// [Learn more](https://platform.openai.com/docs/guides/background).<br/>
         /// Default Value: false
         /// </summary>
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// The unique ID of the previous response to the model. Use this to<br/>
-        /// create multi-turn conversations. Learn more about <br/>
+        /// create multi-turn conversations. Learn more about<br/>
         /// [conversation state](https://platform.openai.com/docs/guides/conversation-state).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("previous_response_id")]
@@ -76,11 +76,11 @@ namespace tryAGI.OpenAI
         /// the model can call.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceTypes, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP>))]
-        public global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceTypes, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP>? ToolChoice { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceAllowed, global::tryAGI.OpenAI.ToolChoiceTypes, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP, global::tryAGI.OpenAI.ToolChoiceCustom>))]
+        public global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceAllowed, global::tryAGI.OpenAI.ToolChoiceTypes, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP, global::tryAGI.OpenAI.ToolChoiceCustom>? ToolChoice { get; set; }
 
         /// <summary>
-        /// An array of tools the model may call while generating a response. You <br/>
+        /// An array of tools the model may call while generating a response. You<br/>
         /// can specify which tool to use by setting the `tool_choice` parameter.<br/>
         /// The two categories of tools you can provide the model are:<br/>
         /// - **Built-in tools**: Tools that are provided by OpenAI that extend the<br/>
@@ -88,8 +88,10 @@ namespace tryAGI.OpenAI
         ///   or [file search](https://platform.openai.com/docs/guides/tools-file-search). Learn more about<br/>
         ///   [built-in tools](https://platform.openai.com/docs/guides/tools).<br/>
         /// - **Function calls (custom tools)**: Functions that are defined by you,<br/>
-        ///   enabling the model to call your own code. Learn more about<br/>
-        ///   [function calling](https://platform.openai.com/docs/guides/function-calling).
+        ///   enabling the model to call your own code with strongly typed arguments<br/>
+        ///   and outputs. Learn more about<br/>
+        ///   [function calling](https://platform.openai.com/docs/guides/function-calling). You can also use<br/>
+        ///   custom tools to call your own code.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Tool>? Tools { get; set; }
@@ -97,10 +99,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The truncation strategy to use for the model response.<br/>
         /// - `auto`: If the context of this response and previous ones exceeds<br/>
-        ///   the model's context window size, the model will truncate the <br/>
+        ///   the model's context window size, the model will truncate the<br/>
         ///   response to fit the context window by dropping input items in the<br/>
-        ///   middle of the conversation. <br/>
-        /// - `disabled` (default): If a model response will exceed the context window <br/>
+        ///   middle of the conversation.<br/>
+        /// - `disabled` (default): If a model response will exceed the context window<br/>
         ///   size for a model, the request will fail with a 400 error.<br/>
         /// Default Value: disabled
         /// </summary>
@@ -118,7 +120,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="ResponseProperties" /> class.
         /// </summary>
         /// <param name="background">
-        /// Whether to run the model response in the background. <br/>
+        /// Whether to run the model response in the background.<br/>
         /// [Learn more](https://platform.openai.com/docs/guides/background).<br/>
         /// Default Value: false
         /// </param>
@@ -133,7 +135,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="previousResponseId">
         /// The unique ID of the previous response to the model. Use this to<br/>
-        /// create multi-turn conversations. Learn more about <br/>
+        /// create multi-turn conversations. Learn more about<br/>
         /// [conversation state](https://platform.openai.com/docs/guides/conversation-state).
         /// </param>
         /// <param name="prompt">
@@ -157,7 +159,7 @@ namespace tryAGI.OpenAI
         /// the model can call.
         /// </param>
         /// <param name="tools">
-        /// An array of tools the model may call while generating a response. You <br/>
+        /// An array of tools the model may call while generating a response. You<br/>
         /// can specify which tool to use by setting the `tool_choice` parameter.<br/>
         /// The two categories of tools you can provide the model are:<br/>
         /// - **Built-in tools**: Tools that are provided by OpenAI that extend the<br/>
@@ -165,16 +167,18 @@ namespace tryAGI.OpenAI
         ///   or [file search](https://platform.openai.com/docs/guides/tools-file-search). Learn more about<br/>
         ///   [built-in tools](https://platform.openai.com/docs/guides/tools).<br/>
         /// - **Function calls (custom tools)**: Functions that are defined by you,<br/>
-        ///   enabling the model to call your own code. Learn more about<br/>
-        ///   [function calling](https://platform.openai.com/docs/guides/function-calling).
+        ///   enabling the model to call your own code with strongly typed arguments<br/>
+        ///   and outputs. Learn more about<br/>
+        ///   [function calling](https://platform.openai.com/docs/guides/function-calling). You can also use<br/>
+        ///   custom tools to call your own code.
         /// </param>
         /// <param name="truncation">
         /// The truncation strategy to use for the model response.<br/>
         /// - `auto`: If the context of this response and previous ones exceeds<br/>
-        ///   the model's context window size, the model will truncate the <br/>
+        ///   the model's context window size, the model will truncate the<br/>
         ///   response to fit the context window by dropping input items in the<br/>
-        ///   middle of the conversation. <br/>
-        /// - `disabled` (default): If a model response will exceed the context window <br/>
+        ///   middle of the conversation.<br/>
+        /// - `disabled` (default): If a model response will exceed the context window<br/>
         ///   size for a model, the request will fail with a 400 error.<br/>
         /// Default Value: disabled
         /// </param>
@@ -190,7 +194,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.Prompt2? prompt,
             global::tryAGI.OpenAI.Reasoning? reasoning,
             global::tryAGI.OpenAI.ResponsePropertiesText? text,
-            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceTypes, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP>? toolChoice,
+            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceAllowed, global::tryAGI.OpenAI.ToolChoiceTypes, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP, global::tryAGI.OpenAI.ToolChoiceCustom>? toolChoice,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Tool>? tools,
             global::tryAGI.OpenAI.ResponsePropertiesTruncation? truncation)
         {

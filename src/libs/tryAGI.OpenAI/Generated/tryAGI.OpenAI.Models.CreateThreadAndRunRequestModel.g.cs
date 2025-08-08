@@ -11,6 +11,30 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Gpt5,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt5Mini,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt5Nano,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt520250807,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt5Mini20250807,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt5Nano20250807,
+        /// <summary>
+        /// 
+        /// </summary>
         Gpt41,
         /// <summary>
         /// 
@@ -150,6 +174,12 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                CreateThreadAndRunRequestModel.Gpt5 => "gpt-5",
+                CreateThreadAndRunRequestModel.Gpt5Mini => "gpt-5-mini",
+                CreateThreadAndRunRequestModel.Gpt5Nano => "gpt-5-nano",
+                CreateThreadAndRunRequestModel.Gpt520250807 => "gpt-5-2025-08-07",
+                CreateThreadAndRunRequestModel.Gpt5Mini20250807 => "gpt-5-mini-2025-08-07",
+                CreateThreadAndRunRequestModel.Gpt5Nano20250807 => "gpt-5-nano-2025-08-07",
                 CreateThreadAndRunRequestModel.Gpt41 => "gpt-4.1",
                 CreateThreadAndRunRequestModel.Gpt41Mini => "gpt-4.1-mini",
                 CreateThreadAndRunRequestModel.Gpt41Nano => "gpt-4.1-nano",
@@ -192,6 +222,12 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "gpt-5" => CreateThreadAndRunRequestModel.Gpt5,
+                "gpt-5-mini" => CreateThreadAndRunRequestModel.Gpt5Mini,
+                "gpt-5-nano" => CreateThreadAndRunRequestModel.Gpt5Nano,
+                "gpt-5-2025-08-07" => CreateThreadAndRunRequestModel.Gpt520250807,
+                "gpt-5-mini-2025-08-07" => CreateThreadAndRunRequestModel.Gpt5Mini20250807,
+                "gpt-5-nano-2025-08-07" => CreateThreadAndRunRequestModel.Gpt5Nano20250807,
                 "gpt-4.1" => CreateThreadAndRunRequestModel.Gpt41,
                 "gpt-4.1-mini" => CreateThreadAndRunRequestModel.Gpt41Mini,
                 "gpt-4.1-nano" => CreateThreadAndRunRequestModel.Gpt41Nano,

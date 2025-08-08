@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI
         /// The tools to add this file to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem2>? Tools { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public CreateMessageRequestAttachment(
             string? fileId,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem>? tools)
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem2>? tools)
         {
             this.FileId = fileId;
             this.Tools = tools;

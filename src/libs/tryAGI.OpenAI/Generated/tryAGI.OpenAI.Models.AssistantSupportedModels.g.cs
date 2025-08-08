@@ -11,6 +11,30 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Gpt5,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt5Mini,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt5Nano,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt520250807,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt5Mini20250807,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt5Nano20250807,
+        /// <summary>
+        /// 
+        /// </summary>
         Gpt41,
         /// <summary>
         /// 
@@ -166,6 +190,12 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                AssistantSupportedModels.Gpt5 => "gpt-5",
+                AssistantSupportedModels.Gpt5Mini => "gpt-5-mini",
+                AssistantSupportedModels.Gpt5Nano => "gpt-5-nano",
+                AssistantSupportedModels.Gpt520250807 => "gpt-5-2025-08-07",
+                AssistantSupportedModels.Gpt5Mini20250807 => "gpt-5-mini-2025-08-07",
+                AssistantSupportedModels.Gpt5Nano20250807 => "gpt-5-nano-2025-08-07",
                 AssistantSupportedModels.Gpt41 => "gpt-4.1",
                 AssistantSupportedModels.Gpt41Mini => "gpt-4.1-mini",
                 AssistantSupportedModels.Gpt41Nano => "gpt-4.1-nano",
@@ -212,6 +242,12 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "gpt-5" => AssistantSupportedModels.Gpt5,
+                "gpt-5-mini" => AssistantSupportedModels.Gpt5Mini,
+                "gpt-5-nano" => AssistantSupportedModels.Gpt5Nano,
+                "gpt-5-2025-08-07" => AssistantSupportedModels.Gpt520250807,
+                "gpt-5-mini-2025-08-07" => AssistantSupportedModels.Gpt5Mini20250807,
+                "gpt-5-nano-2025-08-07" => AssistantSupportedModels.Gpt5Nano20250807,
                 "gpt-4.1" => AssistantSupportedModels.Gpt41,
                 "gpt-4.1-mini" => AssistantSupportedModels.Gpt41Mini,
                 "gpt-4.1-nano" => AssistantSupportedModels.Gpt41Nano,

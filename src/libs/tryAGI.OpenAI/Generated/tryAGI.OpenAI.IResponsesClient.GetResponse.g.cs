@@ -14,6 +14,7 @@ namespace tryAGI.OpenAI
         /// <param name="include"></param>
         /// <param name="stream"></param>
         /// <param name="startingAfter"></param>
+        /// <param name="includeObfuscation"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Response> GetResponseAsync(
@@ -21,6 +22,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include = default,
             bool? stream = default,
             int? startingAfter = default,
+            bool? includeObfuscation = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
