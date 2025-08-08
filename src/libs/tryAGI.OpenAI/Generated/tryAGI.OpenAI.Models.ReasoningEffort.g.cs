@@ -4,16 +4,19 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// **o-series models only** <br/>
     /// Constrains effort on reasoning for <br/>
     /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
-    /// Currently supported values are `low`, `medium`, and `high`. Reducing<br/>
+    /// Currently supported values are `minimal`, `low`, `medium`, and `high`. Reducing<br/>
     /// reasoning effort can result in faster responses and fewer tokens used<br/>
     /// on reasoning in a response.<br/>
     /// Default Value: medium
     /// </summary>
     public enum ReasoningEffort
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        Minimal,
         /// <summary>
         /// 
         /// </summary>
@@ -40,6 +43,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                ReasoningEffort.Minimal => "minimal",
                 ReasoningEffort.Low => "low",
                 ReasoningEffort.Medium => "medium",
                 ReasoningEffort.High => "high",
@@ -53,6 +57,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "minimal" => ReasoningEffort.Minimal,
                 "low" => ReasoningEffort.Low,
                 "medium" => ReasoningEffort.Medium,
                 "high" => ReasoningEffort.High,

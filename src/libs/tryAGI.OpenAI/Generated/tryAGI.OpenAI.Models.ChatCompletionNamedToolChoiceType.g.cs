@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The type of the tool. Currently, only `function` is supported.
+    /// For function calling, the type is always `function`.
     /// </summary>
     public enum ChatCompletionNamedToolChoiceType
     {

@@ -16,7 +16,7 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceFunction Function { get; set; }
 
         /// <summary>
-        /// The type of the tool. Currently, only `function` is supported.
+        /// For function calling, the type is always `function`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatCompletionNamedToolChoiceTypeJsonConverter))]
@@ -33,7 +33,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="function"></param>
         /// <param name="type">
-        /// The type of the tool. Currently, only `function` is supported.
+        /// For function calling, the type is always `function`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

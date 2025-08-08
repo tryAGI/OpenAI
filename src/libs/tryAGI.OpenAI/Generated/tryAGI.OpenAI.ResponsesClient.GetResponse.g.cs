@@ -10,14 +10,16 @@ namespace tryAGI.OpenAI
             ref string responseId,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include,
             ref bool? stream,
-            ref int? startingAfter);
+            ref int? startingAfter,
+            ref bool? includeObfuscation);
         partial void PrepareGetResponseRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string responseId,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include,
             bool? stream,
-            int? startingAfter);
+            int? startingAfter,
+            bool? includeObfuscation);
         partial void ProcessGetResponseResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -37,6 +39,7 @@ namespace tryAGI.OpenAI
         /// <param name="include"></param>
         /// <param name="stream"></param>
         /// <param name="startingAfter"></param>
+        /// <param name="includeObfuscation"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Response> GetResponseAsync(
@@ -44,6 +47,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include = default,
             bool? stream = default,
             int? startingAfter = default,
+            bool? includeObfuscation = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -53,7 +57,8 @@ namespace tryAGI.OpenAI
                 responseId: ref responseId,
                 include: include,
                 stream: ref stream,
-                startingAfter: ref startingAfter);
+                startingAfter: ref startingAfter,
+                includeObfuscation: ref includeObfuscation);
 
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/responses/{responseId}",
@@ -62,6 +67,7 @@ namespace tryAGI.OpenAI
                 .AddOptionalParameter("include", include, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
                 .AddOptionalParameter("stream", stream?.ToString()) 
                 .AddOptionalParameter("starting_after", startingAfter?.ToString()) 
+                .AddOptionalParameter("include_obfuscation", includeObfuscation?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -97,7 +103,8 @@ namespace tryAGI.OpenAI
                 responseId: responseId,
                 include: include,
                 stream: stream,
-                startingAfter: startingAfter);
+                startingAfter: startingAfter,
+                includeObfuscation: includeObfuscation);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

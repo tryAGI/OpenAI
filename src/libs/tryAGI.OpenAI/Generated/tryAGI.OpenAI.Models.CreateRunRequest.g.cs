@@ -71,10 +71,9 @@ namespace tryAGI.OpenAI
         public bool? ParallelToolCalls { get; set; }
 
         /// <summary>
-        /// **o-series models only** <br/>
         /// Constrains effort on reasoning for <br/>
         /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
-        /// Currently supported values are `low`, `medium`, and `high`. Reducing<br/>
+        /// Currently supported values are `minimal`, `low`, `medium`, and `high`. Reducing<br/>
         /// reasoning effort can result in faster responses and fewer tokens used<br/>
         /// on reasoning in a response.<br/>
         /// Default Value: medium
@@ -182,10 +181,9 @@ namespace tryAGI.OpenAI
         /// Whether to enable [parallel function calling](https://platform.openai.com/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.
         /// </param>
         /// <param name="reasoningEffort">
-        /// **o-series models only** <br/>
         /// Constrains effort on reasoning for <br/>
         /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
-        /// Currently supported values are `low`, `medium`, and `high`. Reducing<br/>
+        /// Currently supported values are `minimal`, `low`, `medium`, and `high`. Reducing<br/>
         /// reasoning effort can result in faster responses and fewer tokens used<br/>
         /// on reasoning in a response.<br/>
         /// Default Value: medium

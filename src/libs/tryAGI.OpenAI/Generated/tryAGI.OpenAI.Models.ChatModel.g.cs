@@ -11,6 +11,34 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Gpt5,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt5Mini,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt5Nano,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt520250807,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt5Mini20250807,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt5Nano20250807,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt5ChatLatest,
+        /// <summary>
+        /// 
+        /// </summary>
         Gpt41,
         /// <summary>
         /// 
@@ -242,6 +270,13 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                ChatModel.Gpt5 => "gpt-5",
+                ChatModel.Gpt5Mini => "gpt-5-mini",
+                ChatModel.Gpt5Nano => "gpt-5-nano",
+                ChatModel.Gpt520250807 => "gpt-5-2025-08-07",
+                ChatModel.Gpt5Mini20250807 => "gpt-5-mini-2025-08-07",
+                ChatModel.Gpt5Nano20250807 => "gpt-5-nano-2025-08-07",
+                ChatModel.Gpt5ChatLatest => "gpt-5-chat-latest",
                 ChatModel.Gpt41 => "gpt-4.1",
                 ChatModel.Gpt41Mini => "gpt-4.1-mini",
                 ChatModel.Gpt41Nano => "gpt-4.1-nano",
@@ -307,6 +342,13 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "gpt-5" => ChatModel.Gpt5,
+                "gpt-5-mini" => ChatModel.Gpt5Mini,
+                "gpt-5-nano" => ChatModel.Gpt5Nano,
+                "gpt-5-2025-08-07" => ChatModel.Gpt520250807,
+                "gpt-5-mini-2025-08-07" => ChatModel.Gpt5Mini20250807,
+                "gpt-5-nano-2025-08-07" => ChatModel.Gpt5Nano20250807,
+                "gpt-5-chat-latest" => ChatModel.Gpt5ChatLatest,
                 "gpt-4.1" => ChatModel.Gpt41,
                 "gpt-4.1-mini" => ChatModel.Gpt41Mini,
                 "gpt-4.1-nano" => ChatModel.Gpt41Nano,

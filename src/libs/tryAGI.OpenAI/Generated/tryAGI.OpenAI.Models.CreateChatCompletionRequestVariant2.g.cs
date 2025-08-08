@@ -153,10 +153,9 @@ namespace tryAGI.OpenAI
         public double? PresencePenalty { get; set; }
 
         /// <summary>
-        /// **o-series models only** <br/>
         /// Constrains effort on reasoning for <br/>
         /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
-        /// Currently supported values are `low`, `medium`, and `high`. Reducing<br/>
+        /// Currently supported values are `minimal`, `low`, `medium`, and `high`. Reducing<br/>
         /// reasoning effort can result in faster responses and fewer tokens used<br/>
         /// on reasoning in a response.<br/>
         /// Default Value: medium
@@ -197,9 +196,9 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.StopConfiguration? Stop { get; set; }
 
         /// <summary>
-        /// Whether or not to store the output of this chat completion request for <br/>
+        /// Whether or not to store the output of this chat completion request for<br/>
         /// use in our [model distillation](https://platform.openai.com/docs/guides/distillation) or<br/>
-        /// [evals](https://platform.openai.com/docs/guides/evals) products. <br/>
+        /// [evals](https://platform.openai.com/docs/guides/evals) products.<br/>
         /// Supports text and image inputs. Note: image inputs over 10MB will be dropped.<br/>
         /// Default Value: false
         /// </summary>
@@ -236,10 +235,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ChatCompletionToolChoiceOption? ToolChoice { get; set; }
 
         /// <summary>
-        /// A list of tools the model may call. Currently, only functions are supported as a tool. Use this to provide a list of functions the model may generate JSON inputs for. A max of 128 functions are supported.
+        /// A list of tools the model may call. You can provide either<br/>
+        /// [custom tools](https://platform.openai.com/docs/guides/function-calling#custom-tools) or<br/>
+        /// [function tools](https://platform.openai.com/docs/guides/function-calling).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionTool>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem>? Tools { get; set; }
 
         /// <summary>
         /// An integer between 0 and 20 specifying the number of most likely tokens to<br/>
@@ -332,10 +333,9 @@ namespace tryAGI.OpenAI
         /// Default Value: 0
         /// </param>
         /// <param name="reasoningEffort">
-        /// **o-series models only** <br/>
         /// Constrains effort on reasoning for <br/>
         /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
-        /// Currently supported values are `low`, `medium`, and `high`. Reducing<br/>
+        /// Currently supported values are `minimal`, `low`, `medium`, and `high`. Reducing<br/>
         /// reasoning effort can result in faster responses and fewer tokens used<br/>
         /// on reasoning in a response.<br/>
         /// Default Value: medium
@@ -361,9 +361,9 @@ namespace tryAGI.OpenAI
         /// returned text will not contain the stop sequence.
         /// </param>
         /// <param name="store">
-        /// Whether or not to store the output of this chat completion request for <br/>
+        /// Whether or not to store the output of this chat completion request for<br/>
         /// use in our [model distillation](https://platform.openai.com/docs/guides/distillation) or<br/>
-        /// [evals](https://platform.openai.com/docs/guides/evals) products. <br/>
+        /// [evals](https://platform.openai.com/docs/guides/evals) products.<br/>
         /// Supports text and image inputs. Note: image inputs over 10MB will be dropped.<br/>
         /// Default Value: false
         /// </param>
@@ -387,7 +387,9 @@ namespace tryAGI.OpenAI
         /// `none` is the default when no tools are present. `auto` is the default if tools are present.
         /// </param>
         /// <param name="tools">
-        /// A list of tools the model may call. Currently, only functions are supported as a tool. Use this to provide a list of functions the model may generate JSON inputs for. A max of 128 functions are supported.
+        /// A list of tools the model may call. You can provide either<br/>
+        /// [custom tools](https://platform.openai.com/docs/guides/function-calling#custom-tools) or<br/>
+        /// [function tools](https://platform.openai.com/docs/guides/function-calling).
         /// </param>
         /// <param name="topLogprobs">
         /// An integer between 0 and 20 specifying the number of most likely tokens to<br/>
@@ -422,7 +424,7 @@ namespace tryAGI.OpenAI
             bool? stream,
             global::tryAGI.OpenAI.ChatCompletionStreamOptions? streamOptions,
             global::tryAGI.OpenAI.ChatCompletionToolChoiceOption? toolChoice,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionTool>? tools,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem>? tools,
             int? topLogprobs,
             global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2WebSearchOptions? webSearchOptions)
         {
