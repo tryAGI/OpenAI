@@ -10,101 +10,101 @@ namespace tryAGI.OpenAI
     public readonly partial struct ToolsItem : global::System.IEquatable<ToolsItem>
     {
         /// <summary>
-        /// 
+        /// A function tool that can be used to generate a response.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.AssistantToolsCode? AssistantCode { get; init; }
+        public global::tryAGI.OpenAI.ChatCompletionTool? ChatCompletionTool { get; init; }
 #else
-        public global::tryAGI.OpenAI.AssistantToolsCode? AssistantCode { get; }
+        public global::tryAGI.OpenAI.ChatCompletionTool? ChatCompletionTool { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AssistantCode))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatCompletionTool))]
 #endif
-        public bool IsAssistantCode => AssistantCode != null;
+        public bool IsChatCompletionTool => ChatCompletionTool != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolsItem(global::tryAGI.OpenAI.AssistantToolsCode value) => new ToolsItem((global::tryAGI.OpenAI.AssistantToolsCode?)value);
+        public static implicit operator ToolsItem(global::tryAGI.OpenAI.ChatCompletionTool value) => new ToolsItem((global::tryAGI.OpenAI.ChatCompletionTool?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.AssistantToolsCode?(ToolsItem @this) => @this.AssistantCode;
+        public static implicit operator global::tryAGI.OpenAI.ChatCompletionTool?(ToolsItem @this) => @this.ChatCompletionTool;
 
         /// <summary>
         /// 
         /// </summary>
-        public ToolsItem(global::tryAGI.OpenAI.AssistantToolsCode? value)
+        public ToolsItem(global::tryAGI.OpenAI.ChatCompletionTool? value)
         {
-            AssistantCode = value;
+            ChatCompletionTool = value;
         }
 
         /// <summary>
-        /// 
+        /// A custom tool that processes input using a specified format.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.AssistantToolsFileSearchTypeOnly? AssistantFileSearchTypeOnly { get; init; }
+        public global::tryAGI.OpenAI.CustomToolChatCompletions? CustomToolChatCompletions { get; init; }
 #else
-        public global::tryAGI.OpenAI.AssistantToolsFileSearchTypeOnly? AssistantFileSearchTypeOnly { get; }
+        public global::tryAGI.OpenAI.CustomToolChatCompletions? CustomToolChatCompletions { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AssistantFileSearchTypeOnly))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomToolChatCompletions))]
 #endif
-        public bool IsAssistantFileSearchTypeOnly => AssistantFileSearchTypeOnly != null;
+        public bool IsCustomToolChatCompletions => CustomToolChatCompletions != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolsItem(global::tryAGI.OpenAI.AssistantToolsFileSearchTypeOnly value) => new ToolsItem((global::tryAGI.OpenAI.AssistantToolsFileSearchTypeOnly?)value);
+        public static implicit operator ToolsItem(global::tryAGI.OpenAI.CustomToolChatCompletions value) => new ToolsItem((global::tryAGI.OpenAI.CustomToolChatCompletions?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.AssistantToolsFileSearchTypeOnly?(ToolsItem @this) => @this.AssistantFileSearchTypeOnly;
+        public static implicit operator global::tryAGI.OpenAI.CustomToolChatCompletions?(ToolsItem @this) => @this.CustomToolChatCompletions;
 
         /// <summary>
         /// 
         /// </summary>
-        public ToolsItem(global::tryAGI.OpenAI.AssistantToolsFileSearchTypeOnly? value)
+        public ToolsItem(global::tryAGI.OpenAI.CustomToolChatCompletions? value)
         {
-            AssistantFileSearchTypeOnly = value;
+            CustomToolChatCompletions = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ToolsItem(
-            global::tryAGI.OpenAI.AssistantToolsCode? assistantCode,
-            global::tryAGI.OpenAI.AssistantToolsFileSearchTypeOnly? assistantFileSearchTypeOnly
+            global::tryAGI.OpenAI.ChatCompletionTool? chatCompletionTool,
+            global::tryAGI.OpenAI.CustomToolChatCompletions? customToolChatCompletions
             )
         {
-            AssistantCode = assistantCode;
-            AssistantFileSearchTypeOnly = assistantFileSearchTypeOnly;
+            ChatCompletionTool = chatCompletionTool;
+            CustomToolChatCompletions = customToolChatCompletions;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            AssistantFileSearchTypeOnly as object ??
-            AssistantCode as object 
+            CustomToolChatCompletions as object ??
+            ChatCompletionTool as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            AssistantCode?.ToString() ??
-            AssistantFileSearchTypeOnly?.ToString() 
+            ChatCompletionTool?.ToString() ??
+            CustomToolChatCompletions?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsAssistantCode || IsAssistantFileSearchTypeOnly;
+            return IsChatCompletionTool || IsCustomToolChatCompletions;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.AssistantToolsCode?, TResult>? assistantCode = null,
-            global::System.Func<global::tryAGI.OpenAI.AssistantToolsFileSearchTypeOnly?, TResult>? assistantFileSearchTypeOnly = null,
+            global::System.Func<global::tryAGI.OpenAI.ChatCompletionTool?, TResult>? chatCompletionTool = null,
+            global::System.Func<global::tryAGI.OpenAI.CustomToolChatCompletions?, TResult>? customToolChatCompletions = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsAssistantCode && assistantCode != null)
+            if (IsChatCompletionTool && chatCompletionTool != null)
             {
-                return assistantCode(AssistantCode!);
+                return chatCompletionTool(ChatCompletionTool!);
             }
-            else if (IsAssistantFileSearchTypeOnly && assistantFileSearchTypeOnly != null)
+            else if (IsCustomToolChatCompletions && customToolChatCompletions != null)
             {
-                return assistantFileSearchTypeOnly(AssistantFileSearchTypeOnly!);
+                return customToolChatCompletions(CustomToolChatCompletions!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.AssistantToolsCode?>? assistantCode = null,
-            global::System.Action<global::tryAGI.OpenAI.AssistantToolsFileSearchTypeOnly?>? assistantFileSearchTypeOnly = null,
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionTool?>? chatCompletionTool = null,
+            global::System.Action<global::tryAGI.OpenAI.CustomToolChatCompletions?>? customToolChatCompletions = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsAssistantCode)
+            if (IsChatCompletionTool)
             {
-                assistantCode?.Invoke(AssistantCode!);
+                chatCompletionTool?.Invoke(ChatCompletionTool!);
             }
-            else if (IsAssistantFileSearchTypeOnly)
+            else if (IsCustomToolChatCompletions)
             {
-                assistantFileSearchTypeOnly?.Invoke(AssistantFileSearchTypeOnly!);
+                customToolChatCompletions?.Invoke(CustomToolChatCompletions!);
             }
         }
 
@@ -170,10 +170,10 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                AssistantCode,
-                typeof(global::tryAGI.OpenAI.AssistantToolsCode),
-                AssistantFileSearchTypeOnly,
-                typeof(global::tryAGI.OpenAI.AssistantToolsFileSearchTypeOnly),
+                ChatCompletionTool,
+                typeof(global::tryAGI.OpenAI.ChatCompletionTool),
+                CustomToolChatCompletions,
+                typeof(global::tryAGI.OpenAI.CustomToolChatCompletions),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -190,8 +190,8 @@ namespace tryAGI.OpenAI
         public bool Equals(ToolsItem other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.AssistantToolsCode?>.Default.Equals(AssistantCode, other.AssistantCode) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.AssistantToolsFileSearchTypeOnly?>.Default.Equals(AssistantFileSearchTypeOnly, other.AssistantFileSearchTypeOnly) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ChatCompletionTool?>.Default.Equals(ChatCompletionTool, other.ChatCompletionTool) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CustomToolChatCompletions?>.Default.Equals(CustomToolChatCompletions, other.CustomToolChatCompletions) 
                 ;
         }
 

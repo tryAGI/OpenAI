@@ -1795,6 +1795,76 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// Event representing a delta (partial update) to the input of a custom tool call.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent? CustomToolCallInputDelta { get; init; }
+#else
+        public global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent? CustomToolCallInputDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomToolCallInputDelta))]
+#endif
+        public bool IsCustomToolCallInputDelta => CustomToolCallInputDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent?(ResponseStreamEvent @this) => @this.CustomToolCallInputDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent? value)
+        {
+            CustomToolCallInputDelta = value;
+        }
+
+        /// <summary>
+        /// Event indicating that input for a custom tool call is complete.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent? CustomToolCallInputDone { get; init; }
+#else
+        public global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent? CustomToolCallInputDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomToolCallInputDone))]
+#endif
+        public bool IsCustomToolCallInputDone => CustomToolCallInputDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent?(ResponseStreamEvent @this) => @this.CustomToolCallInputDone;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent? value)
+        {
+            CustomToolCallInputDone = value;
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         public ResponseStreamEvent(
@@ -1848,7 +1918,9 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ResponseMCPListToolsFailedEvent? mCPListToolsFailed,
             global::tryAGI.OpenAI.ResponseMCPListToolsInProgressEvent? mCPListToolsInProgress,
             global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEvent? outputTextAnnotationAdded,
-            global::tryAGI.OpenAI.ResponseQueuedEvent? queued
+            global::tryAGI.OpenAI.ResponseQueuedEvent? queued,
+            global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent? customToolCallInputDelta,
+            global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent? customToolCallInputDone
             )
         {
             AudioDelta = audioDelta;
@@ -1902,12 +1974,16 @@ namespace tryAGI.OpenAI
             MCPListToolsInProgress = mCPListToolsInProgress;
             OutputTextAnnotationAdded = outputTextAnnotationAdded;
             Queued = queued;
+            CustomToolCallInputDelta = customToolCallInputDelta;
+            CustomToolCallInputDone = customToolCallInputDone;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            CustomToolCallInputDone as object ??
+            CustomToolCallInputDelta as object ??
             Queued as object ??
             OutputTextAnnotationAdded as object ??
             MCPListToolsInProgress as object ??
@@ -2015,7 +2091,9 @@ namespace tryAGI.OpenAI
             MCPListToolsFailed?.ToString() ??
             MCPListToolsInProgress?.ToString() ??
             OutputTextAnnotationAdded?.ToString() ??
-            Queued?.ToString() 
+            Queued?.ToString() ??
+            CustomToolCallInputDelta?.ToString() ??
+            CustomToolCallInputDone?.ToString() 
             ;
 
         /// <summary>
@@ -2023,7 +2101,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsAudioDelta || IsAudioDone || IsAudioTranscriptDelta || IsAudioTranscriptDone || IsCodeInterpreterCallDelta || IsCodeInterpreterCallDone || IsCodeInterpreterCallCompleted || IsCodeInterpreterCallInProgress || IsCodeInterpreterCallInterpreting || IsCompleted || IsContentPartAdded || IsContentPartDone || IsCreated || IsError || IsFileSearchCallCompleted || IsFileSearchCallInProgress || IsFileSearchCallSearching || IsFunctionCallArgumentsDelta || IsFunctionCallArgumentsDone || IsInProgress || IsFailed || IsIncomplete || IsOutputItemAdded || IsOutputItemDone || IsReasoningSummaryPartAdded || IsReasoningSummaryPartDone || IsReasoningSummaryTextDelta || IsReasoningSummaryTextDone || IsReasoningTextDelta || IsReasoningTextDone || IsRefusalDelta || IsRefusalDone || IsTextDelta || IsTextDone || IsWebSearchCallCompleted || IsWebSearchCallInProgress || IsWebSearchCallSearching || IsImageGenCallCompleted || IsImageGenCallGenerating || IsImageGenCallInProgress || IsImageGenCallPartial || IsMCPCallArgumentsDelta || IsMCPCallArgumentsDone || IsMCPCallCompleted || IsMCPCallFailed || IsMCPCallInProgress || IsMCPListToolsCompleted || IsMCPListToolsFailed || IsMCPListToolsInProgress || IsOutputTextAnnotationAdded || IsQueued;
+            return IsAudioDelta || IsAudioDone || IsAudioTranscriptDelta || IsAudioTranscriptDone || IsCodeInterpreterCallDelta || IsCodeInterpreterCallDone || IsCodeInterpreterCallCompleted || IsCodeInterpreterCallInProgress || IsCodeInterpreterCallInterpreting || IsCompleted || IsContentPartAdded || IsContentPartDone || IsCreated || IsError || IsFileSearchCallCompleted || IsFileSearchCallInProgress || IsFileSearchCallSearching || IsFunctionCallArgumentsDelta || IsFunctionCallArgumentsDone || IsInProgress || IsFailed || IsIncomplete || IsOutputItemAdded || IsOutputItemDone || IsReasoningSummaryPartAdded || IsReasoningSummaryPartDone || IsReasoningSummaryTextDelta || IsReasoningSummaryTextDone || IsReasoningTextDelta || IsReasoningTextDone || IsRefusalDelta || IsRefusalDone || IsTextDelta || IsTextDone || IsWebSearchCallCompleted || IsWebSearchCallInProgress || IsWebSearchCallSearching || IsImageGenCallCompleted || IsImageGenCallGenerating || IsImageGenCallInProgress || IsImageGenCallPartial || IsMCPCallArgumentsDelta || IsMCPCallArgumentsDone || IsMCPCallCompleted || IsMCPCallFailed || IsMCPCallInProgress || IsMCPListToolsCompleted || IsMCPListToolsFailed || IsMCPListToolsInProgress || IsOutputTextAnnotationAdded || IsQueued || IsCustomToolCallInputDelta || IsCustomToolCallInputDone;
         }
 
         /// <summary>
@@ -2081,6 +2159,8 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.ResponseMCPListToolsInProgressEvent?, TResult>? mCPListToolsInProgress = null,
             global::System.Func<global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEvent?, TResult>? outputTextAnnotationAdded = null,
             global::System.Func<global::tryAGI.OpenAI.ResponseQueuedEvent?, TResult>? queued = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent?, TResult>? customToolCallInputDelta = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent?, TResult>? customToolCallInputDone = null,
             bool validate = true)
         {
             if (validate)
@@ -2292,6 +2372,14 @@ namespace tryAGI.OpenAI
             {
                 return queued(Queued!);
             }
+            else if (IsCustomToolCallInputDelta && customToolCallInputDelta != null)
+            {
+                return customToolCallInputDelta(CustomToolCallInputDelta!);
+            }
+            else if (IsCustomToolCallInputDone && customToolCallInputDone != null)
+            {
+                return customToolCallInputDone(CustomToolCallInputDone!);
+            }
 
             return default(TResult);
         }
@@ -2351,6 +2439,8 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.ResponseMCPListToolsInProgressEvent?>? mCPListToolsInProgress = null,
             global::System.Action<global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEvent?>? outputTextAnnotationAdded = null,
             global::System.Action<global::tryAGI.OpenAI.ResponseQueuedEvent?>? queued = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent?>? customToolCallInputDelta = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent?>? customToolCallInputDone = null,
             bool validate = true)
         {
             if (validate)
@@ -2562,6 +2652,14 @@ namespace tryAGI.OpenAI
             {
                 queued?.Invoke(Queued!);
             }
+            else if (IsCustomToolCallInputDelta)
+            {
+                customToolCallInputDelta?.Invoke(CustomToolCallInputDelta!);
+            }
+            else if (IsCustomToolCallInputDone)
+            {
+                customToolCallInputDone?.Invoke(CustomToolCallInputDone!);
+            }
         }
 
         /// <summary>
@@ -2673,6 +2771,10 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEvent),
                 Queued,
                 typeof(global::tryAGI.OpenAI.ResponseQueuedEvent),
+                CustomToolCallInputDelta,
+                typeof(global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent),
+                CustomToolCallInputDone,
+                typeof(global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -2739,7 +2841,9 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseMCPListToolsFailedEvent?>.Default.Equals(MCPListToolsFailed, other.MCPListToolsFailed) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseMCPListToolsInProgressEvent?>.Default.Equals(MCPListToolsInProgress, other.MCPListToolsInProgress) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEvent?>.Default.Equals(OutputTextAnnotationAdded, other.OutputTextAnnotationAdded) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseQueuedEvent?>.Default.Equals(Queued, other.Queued) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseQueuedEvent?>.Default.Equals(Queued, other.Queued) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent?>.Default.Equals(CustomToolCallInputDelta, other.CustomToolCallInputDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent?>.Default.Equals(CustomToolCallInputDone, other.CustomToolCallInputDone) 
                 ;
         }
 

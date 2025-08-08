@@ -628,6 +628,30 @@ namespace tryAGI.OpenAI.JsonConverters
             {
             }
 
+            readerCopy = reader;
+            global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent? customToolCallInputDelta = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent).Name}");
+                customToolCallInputDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+
+            readerCopy = reader;
+            global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent? customToolCallInputDone = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent).Name}");
+                customToolCallInputDone = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+
             var result = new global::tryAGI.OpenAI.ResponseStreamEvent(
                 audioDelta,
                 audioDone,
@@ -679,7 +703,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 mCPListToolsFailed,
                 mCPListToolsInProgress,
                 outputTextAnnotationAdded,
-                queued
+                queued,
+                customToolCallInputDelta,
+                customToolCallInputDone
                 );
 
             if (audioDelta != null)
@@ -986,6 +1012,18 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ResponseQueuedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ResponseQueuedEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ResponseQueuedEvent).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            else if (customToolCallInputDelta != null)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            else if (customToolCallInputDone != null)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -1306,6 +1344,18 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ResponseQueuedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ResponseQueuedEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ResponseQueuedEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Queued, typeInfo);
+            }
+            else if (value.IsCustomToolCallInputDelta)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomToolCallInputDelta, typeInfo);
+            }
+            else if (value.IsCustomToolCallInputDone)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomToolCallInputDone, typeInfo);
             }
         }
     }

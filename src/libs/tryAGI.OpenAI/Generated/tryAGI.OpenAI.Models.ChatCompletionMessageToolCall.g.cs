@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    /// A call to a function tool created by the model.
     /// </summary>
     public sealed partial class ChatCompletionMessageToolCall
     {
