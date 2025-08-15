@@ -184,6 +184,7 @@ namespace tryAGI.OpenAI
         /// Determinism is not guaranteed, and you should refer to the `system_fingerprint` response parameter to monitor changes in the backend.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public int? Seed { get; set; }
 
         /// <summary>
@@ -360,11 +361,6 @@ namespace tryAGI.OpenAI
         /// ensures the message the model generates is valid JSON. Using `json_schema`<br/>
         /// is preferred for models that support it.
         /// </param>
-        /// <param name="seed">
-        /// This feature is in Beta.<br/>
-        /// If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same `seed` and parameters should return the same result.<br/>
-        /// Determinism is not guaranteed, and you should refer to the `system_fingerprint` response parameter to monitor changes in the backend.
-        /// </param>
         /// <param name="stop">
         /// Not supported with latest reasoning models `o3` and `o4-mini`.<br/>
         /// Up to 4 sequences where the API will stop generating further tokens. The<br/>
@@ -434,7 +430,6 @@ namespace tryAGI.OpenAI
             double? presencePenalty,
             global::tryAGI.OpenAI.ReasoningEffort? reasoningEffort,
             global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ResponseFormatText, global::tryAGI.OpenAI.ResponseFormatJsonSchema, global::tryAGI.OpenAI.ResponseFormatJsonObject>? responseFormat,
-            int? seed,
             global::tryAGI.OpenAI.StopConfiguration? stop,
             bool? store,
             bool? stream,
@@ -459,7 +454,6 @@ namespace tryAGI.OpenAI
             this.PresencePenalty = presencePenalty;
             this.ReasoningEffort = reasoningEffort;
             this.ResponseFormat = responseFormat;
-            this.Seed = seed;
             this.Stop = stop;
             this.Store = store;
             this.Stream = stream;

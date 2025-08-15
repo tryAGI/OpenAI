@@ -43,6 +43,12 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
+        /// The expiration policy for the output and/or error file that are generated for a batch.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_expires_after")]
+        public global::tryAGI.OpenAI.BatchFileExpirationAfter? OutputExpiresAfter { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -69,6 +75,9 @@ namespace tryAGI.OpenAI
         /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
         /// with a maximum length of 512 characters.
         /// </param>
+        /// <param name="outputExpiresAfter">
+        /// The expiration policy for the output and/or error file that are generated for a batch.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -76,12 +85,14 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.CreateBatchRequestEndpoint endpoint,
             string inputFileId,
             global::tryAGI.OpenAI.CreateBatchRequestCompletionWindow completionWindow,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata)
+            global::System.Collections.Generic.Dictionary<string, string>? metadata,
+            global::tryAGI.OpenAI.BatchFileExpirationAfter? outputExpiresAfter)
         {
             this.Endpoint = endpoint;
             this.InputFileId = inputFileId ?? throw new global::System.ArgumentNullException(nameof(inputFileId));
             this.CompletionWindow = completionWindow;
             this.Metadata = metadata;
+            this.OutputExpiresAfter = outputExpiresAfter;
         }
 
         /// <summary>

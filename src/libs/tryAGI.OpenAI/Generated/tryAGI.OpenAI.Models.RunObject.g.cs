@@ -202,7 +202,7 @@ namespace tryAGI.OpenAI
         public double? TopP { get; set; }
 
         /// <summary>
-        /// Controls for how a thread will be truncated prior to the run. Use this to control the intial context window of the run.
+        /// Controls for how a thread will be truncated prior to the run. Use this to control the initial context window of the run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("truncation_strategy")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -311,7 +311,7 @@ namespace tryAGI.OpenAI
         /// The nucleus sampling value used for this run. If not set, defaults to 1.
         /// </param>
         /// <param name="truncationStrategy">
-        /// Controls for how a thread will be truncated prior to the run. Use this to control the intial context window of the run.
+        /// Controls for how a thread will be truncated prior to the run. Use this to control the initial context window of the run.
         /// </param>
         /// <param name="usage">
         /// Usage statistics related to the run. This value will be `null` if the run is not in a terminal state (i.e. `in_progress`, `queued`, etc.).

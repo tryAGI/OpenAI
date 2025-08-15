@@ -54,8 +54,8 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.Prompt2? Prompt { get; set; }
 
         /// <summary>
-        /// **o-series models only**<br/>
-        /// Configuration options for <br/>
+        /// **gpt-5 and o-series models only**<br/>
+        /// Configuration options for<br/>
         /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reasoning")]
@@ -143,8 +143,8 @@ namespace tryAGI.OpenAI
         /// [Learn more](https://platform.openai.com/docs/guides/text?api-mode=responses#reusable-prompts).
         /// </param>
         /// <param name="reasoning">
-        /// **o-series models only**<br/>
-        /// Configuration options for <br/>
+        /// **gpt-5 and o-series models only**<br/>
+        /// Configuration options for<br/>
         /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).
         /// </param>
         /// <param name="text">

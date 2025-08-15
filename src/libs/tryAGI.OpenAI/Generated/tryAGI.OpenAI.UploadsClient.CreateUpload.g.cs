@@ -199,6 +199,9 @@ namespace tryAGI.OpenAI
         /// <param name="bytes">
         /// The number of bytes in the file you are uploading.
         /// </param>
+        /// <param name="expiresAfter">
+        /// The expiration policy for a file. By default, files with `purpose=batch` expire after 30 days and all other files are persisted until they are manually deleted.
+        /// </param>
         /// <param name="filename">
         /// The name of the file to upload.
         /// </param>
@@ -217,11 +220,13 @@ namespace tryAGI.OpenAI
             string filename,
             string mimeType,
             global::tryAGI.OpenAI.CreateUploadRequestPurpose purpose,
+            global::tryAGI.OpenAI.FileExpirationAfter? expiresAfter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::tryAGI.OpenAI.CreateUploadRequest
             {
                 Bytes = bytes,
+                ExpiresAfter = expiresAfter,
                 Filename = filename,
                 MimeType = mimeType,
                 Purpose = purpose,

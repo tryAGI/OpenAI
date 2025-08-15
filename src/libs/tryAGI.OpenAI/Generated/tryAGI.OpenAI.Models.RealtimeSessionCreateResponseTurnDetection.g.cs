@@ -4,30 +4,30 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Configuration for turn detection. Can be set to `null` to turn off. Server <br/>
-    /// VAD means that the model will detect the start and end of speech based on <br/>
+    /// Configuration for turn detection. Can be set to `null` to turn off. Server<br/>
+    /// VAD means that the model will detect the start and end of speech based on<br/>
     /// audio volume and respond at the end of user speech.
     /// </summary>
     public sealed partial class RealtimeSessionCreateResponseTurnDetection
     {
         /// <summary>
-        /// Amount of audio to include before the VAD detected speech (in <br/>
+        /// Amount of audio to include before the VAD detected speech (in<br/>
         /// milliseconds). Defaults to 300ms.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prefix_padding_ms")]
         public int? PrefixPaddingMs { get; set; }
 
         /// <summary>
-        /// Duration of silence to detect speech stop (in milliseconds). Defaults <br/>
-        /// to 500ms. With shorter values the model will respond more quickly, <br/>
+        /// Duration of silence to detect speech stop (in milliseconds). Defaults<br/>
+        /// to 500ms. With shorter values the model will respond more quickly,<br/>
         /// but may jump in on short pauses from the user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("silence_duration_ms")]
         public int? SilenceDurationMs { get; set; }
 
         /// <summary>
-        /// Activation threshold for VAD (0.0 to 1.0), this defaults to 0.5. A <br/>
-        /// higher threshold will require louder audio to activate the model, and <br/>
+        /// Activation threshold for VAD (0.0 to 1.0), this defaults to 0.5. A<br/>
+        /// higher threshold will require louder audio to activate the model, and<br/>
         /// thus might perform better in noisy environments.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("threshold")]
@@ -49,17 +49,17 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="RealtimeSessionCreateResponseTurnDetection" /> class.
         /// </summary>
         /// <param name="prefixPaddingMs">
-        /// Amount of audio to include before the VAD detected speech (in <br/>
+        /// Amount of audio to include before the VAD detected speech (in<br/>
         /// milliseconds). Defaults to 300ms.
         /// </param>
         /// <param name="silenceDurationMs">
-        /// Duration of silence to detect speech stop (in milliseconds). Defaults <br/>
-        /// to 500ms. With shorter values the model will respond more quickly, <br/>
+        /// Duration of silence to detect speech stop (in milliseconds). Defaults<br/>
+        /// to 500ms. With shorter values the model will respond more quickly,<br/>
         /// but may jump in on short pauses from the user.
         /// </param>
         /// <param name="threshold">
-        /// Activation threshold for VAD (0.0 to 1.0), this defaults to 0.5. A <br/>
-        /// higher threshold will require louder audio to activate the model, and <br/>
+        /// Activation threshold for VAD (0.0 to 1.0), this defaults to 0.5. A<br/>
+        /// higher threshold will require louder audio to activate the model, and<br/>
         /// thus might perform better in noisy environments.
         /// </param>
         /// <param name="type">

@@ -51,7 +51,7 @@ namespace tryAGI.OpenAI
         /// Specifies the processing type used for serving the request.<br/>
         ///   - If set to 'auto', then the request will be processed with the service tier configured in the Project settings. Unless otherwise configured, the Project will use 'default'.<br/>
         ///   - If set to 'default', then the request will be processed with the standard pricing and performance for the selected model.<br/>
-        ///   - If set to '[flex](https://platform.openai.com/docs/guides/flex-processing)' or 'priority', then the request will be processed with the corresponding service tier. [Contact sales](https://openai.com/contact-sales) to learn more about Priority processing.<br/>
+        ///   - If set to '[flex](https://platform.openai.com/docs/guides/flex-processing)' or '[priority](https://openai.com/api-priority-processing/)', then the request will be processed with the corresponding service tier.<br/>
         ///   - When not set, the default behavior is 'auto'.<br/>
         ///   When the `service_tier` parameter is set, the response body will include the `service_tier` value based on the processing mode actually used to serve the request. This response value may be different from the value set in the parameter.<br/>
         /// Default Value: auto
@@ -65,6 +65,7 @@ namespace tryAGI.OpenAI
         /// Can be used in conjunction with the `seed` request parameter to understand when backend changes have been made that might impact determinism.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("system_fingerprint")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? SystemFingerprint { get; set; }
 
         /// <summary>
@@ -102,14 +103,10 @@ namespace tryAGI.OpenAI
         /// Specifies the processing type used for serving the request.<br/>
         ///   - If set to 'auto', then the request will be processed with the service tier configured in the Project settings. Unless otherwise configured, the Project will use 'default'.<br/>
         ///   - If set to 'default', then the request will be processed with the standard pricing and performance for the selected model.<br/>
-        ///   - If set to '[flex](https://platform.openai.com/docs/guides/flex-processing)' or 'priority', then the request will be processed with the corresponding service tier. [Contact sales](https://openai.com/contact-sales) to learn more about Priority processing.<br/>
+        ///   - If set to '[flex](https://platform.openai.com/docs/guides/flex-processing)' or '[priority](https://openai.com/api-priority-processing/)', then the request will be processed with the corresponding service tier.<br/>
         ///   - When not set, the default behavior is 'auto'.<br/>
         ///   When the `service_tier` parameter is set, the response body will include the `service_tier` value based on the processing mode actually used to serve the request. This response value may be different from the value set in the parameter.<br/>
         /// Default Value: auto
-        /// </param>
-        /// <param name="systemFingerprint">
-        /// This fingerprint represents the backend configuration that the model runs with.<br/>
-        /// Can be used in conjunction with the `seed` request parameter to understand when backend changes have been made that might impact determinism.
         /// </param>
         /// <param name="usage">
         /// Usage statistics for the completion request.
@@ -124,7 +121,6 @@ namespace tryAGI.OpenAI
             string model,
             global::tryAGI.OpenAI.CreateChatCompletionStreamResponseObject @object,
             global::tryAGI.OpenAI.ServiceTier? serviceTier,
-            string? systemFingerprint,
             global::tryAGI.OpenAI.CompletionUsage? usage)
         {
             this.Choices = choices ?? throw new global::System.ArgumentNullException(nameof(choices));
@@ -133,7 +129,6 @@ namespace tryAGI.OpenAI
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Object = @object;
             this.ServiceTier = serviceTier;
-            this.SystemFingerprint = systemFingerprint;
             this.Usage = usage;
         }
 

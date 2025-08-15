@@ -5,8 +5,8 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// Send this event to cancel an in-progress response. The server will respond <br/>
-    /// with a `response.cancelled` event or an error if there is no response to <br/>
-    /// cancel.
+    /// with a `response.done` event with a status of `response.status=cancelled`. If <br/>
+    /// there is no response to cancel, the server will respond with an error.
     /// </summary>
     public sealed partial class RealtimeClientEventResponseCancel
     {

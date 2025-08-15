@@ -98,7 +98,7 @@ namespace tryAGI.OpenAI
         /// Example: 1
         /// </param>
         /// <param name="truncationStrategy">
-        /// Controls for how a thread will be truncated prior to the run. Use this to control the intial context window of the run.
+        /// Controls for how a thread will be truncated prior to the run. Use this to control the initial context window of the run.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

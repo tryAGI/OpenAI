@@ -16,6 +16,12 @@ namespace tryAGI.OpenAI
         public required int Bytes { get; set; }
 
         /// <summary>
+        /// The expiration policy for a file. By default, files with `purpose=batch` expire after 30 days and all other files are persisted until they are manually deleted.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_after")]
+        public global::tryAGI.OpenAI.FileExpirationAfter? ExpiresAfter { get; set; }
+
+        /// <summary>
         /// The name of the file to upload.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
@@ -51,6 +57,9 @@ namespace tryAGI.OpenAI
         /// <param name="bytes">
         /// The number of bytes in the file you are uploading.
         /// </param>
+        /// <param name="expiresAfter">
+        /// The expiration policy for a file. By default, files with `purpose=batch` expire after 30 days and all other files are persisted until they are manually deleted.
+        /// </param>
         /// <param name="filename">
         /// The name of the file to upload.
         /// </param>
@@ -69,12 +78,14 @@ namespace tryAGI.OpenAI
             int bytes,
             string filename,
             string mimeType,
-            global::tryAGI.OpenAI.CreateUploadRequestPurpose purpose)
+            global::tryAGI.OpenAI.CreateUploadRequestPurpose purpose,
+            global::tryAGI.OpenAI.FileExpirationAfter? expiresAfter)
         {
             this.Bytes = bytes;
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
             this.MimeType = mimeType ?? throw new global::System.ArgumentNullException(nameof(mimeType));
             this.Purpose = purpose;
+            this.ExpiresAfter = expiresAfter;
         }
 
         /// <summary>
