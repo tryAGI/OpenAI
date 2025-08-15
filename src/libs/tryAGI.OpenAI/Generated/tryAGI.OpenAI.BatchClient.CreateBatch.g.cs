@@ -188,6 +188,9 @@ namespace tryAGI.OpenAI
         /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
         /// with a maximum length of 512 characters.
         /// </param>
+        /// <param name="outputExpiresAfter">
+        /// The expiration policy for the output and/or error file that are generated for a batch.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Batch> CreateBatchAsync(
@@ -195,6 +198,7 @@ namespace tryAGI.OpenAI
             string inputFileId,
             global::tryAGI.OpenAI.CreateBatchRequestCompletionWindow completionWindow = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
+            global::tryAGI.OpenAI.BatchFileExpirationAfter? outputExpiresAfter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::tryAGI.OpenAI.CreateBatchRequest
@@ -203,6 +207,7 @@ namespace tryAGI.OpenAI
                 Endpoint = endpoint,
                 InputFileId = inputFileId,
                 Metadata = metadata,
+                OutputExpiresAfter = outputExpiresAfter,
             };
 
             return await CreateBatchAsync(

@@ -9,6 +9,12 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateFileRequest
     {
         /// <summary>
+        /// The expiration policy for a file. By default, files with `purpose=batch` expire after 30 days and all other files are persisted until they are manually deleted.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_after")]
+        public global::tryAGI.OpenAI.FileExpirationAfter? ExpiresAfter { get; set; }
+
+        /// <summary>
         /// The File object (not file name) to be uploaded.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file")]
@@ -39,6 +45,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateFileRequest" /> class.
         /// </summary>
+        /// <param name="expiresAfter">
+        /// The expiration policy for a file. By default, files with `purpose=batch` expire after 30 days and all other files are persisted until they are manually deleted.
+        /// </param>
         /// <param name="file">
         /// The File object (not file name) to be uploaded.
         /// </param>
@@ -54,11 +63,13 @@ namespace tryAGI.OpenAI
         public CreateFileRequest(
             byte[] file,
             string filename,
-            global::tryAGI.OpenAI.FilePurpose purpose)
+            global::tryAGI.OpenAI.FilePurpose purpose,
+            global::tryAGI.OpenAI.FileExpirationAfter? expiresAfter)
         {
             this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
             this.Purpose = purpose;
+            this.ExpiresAfter = expiresAfter;
         }
 
         /// <summary>

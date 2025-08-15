@@ -415,6 +415,8 @@ paths:
                   description: "The ID of an uploaded file that contains requests for the new batch.\n\nSee [upload file](https://platform.openai.com/docs/api-reference/files/create) for how to upload a file.\n\nYour input file must be formatted as a [JSONL file](https://platform.openai.com/docs/api-reference/batch/request-input), and must be uploaded with the purpose `batch`. The file can contain up to 50,000 requests, and can be up to 200 MB in size.\n"
                 metadata:
                   $ref: '#/components/schemas/Metadata'
+                output_expires_after:
+                  $ref: '#/components/schemas/BatchFileExpirationAfter'
         required: true
       responses:
         '200':
@@ -1826,7 +1828,7 @@ paths:
             node.js: "import OpenAI from 'openai';\n\nconst client = new OpenAI({\n  apiKey: 'My API Key',\n});\n\n// Automatically fetches more pages as needed.\nfor await (const fileObject of client.files.list()) {\n  console.log(fileObject);\n}"
             python: "from openai import OpenAI\n\nclient = OpenAI(\n    api_key=\"My API Key\",\n)\npage = client.files.list()\npage = page.data[0]\nprint(page)"
             ruby: "require \"openai\"\n\nopenai = OpenAI::Client.new(api_key: \"My API Key\")\n\npage = openai.files.list\n\nputs(page)"
-          response: "{\n  \"object\": \"list\",\n  \"data\": [\n    {\n      \"id\": \"file-abc123\",\n      \"object\": \"file\",\n      \"bytes\": 175,\n      \"created_at\": 1613677385,\n      \"filename\": \"salesOverview.pdf\",\n      \"purpose\": \"assistants\",\n    },\n    {\n      \"id\": \"file-abc456\",\n      \"object\": \"file\",\n      \"bytes\": 140,\n      \"created_at\": 1613779121,\n      \"filename\": \"puppy.jsonl\",\n      \"purpose\": \"fine-tune\",\n    }\n  ],\n  \"first_id\": \"file-abc123\",\n  \"last_id\": \"file-abc456\",\n  \"has_more\": false\n}\n"
+          response: "{\n  \"object\": \"list\",\n  \"data\": [\n    {\n      \"id\": \"file-abc123\",\n      \"object\": \"file\",\n      \"bytes\": 175,\n      \"created_at\": 1613677385,\n      \"expires_at\": 1677614202,\n      \"filename\": \"salesOverview.pdf\",\n      \"purpose\": \"assistants\",\n    },\n    {\n      \"id\": \"file-abc456\",\n      \"object\": \"file\",\n      \"bytes\": 140,\n      \"created_at\": 1613779121,\n      \"expires_at\": 1677614202,\n      \"filename\": \"puppy.jsonl\",\n      \"purpose\": \"fine-tune\",\n    }\n  ],\n  \"first_id\": \"file-abc123\",\n  \"last_id\": \"file-abc456\",\n  \"has_more\": false\n}\n"
         group: files
         name: List files
         returns: 'A list of [File](https://platform.openai.com/docs/api-reference/files/object) objects.'
@@ -1834,7 +1836,7 @@ paths:
       tags:
         - Files
       summary: Upload file
-      description: "Upload a file that can be used across various endpoints. Individual files can be up to 512 MB, and the size of all files uploaded by one organization can be up to 100 GB.\n\nThe Assistants API supports files up to 2 million tokens and of specific file types. See the [Assistants Tools guide](https://platform.openai.com/docs/assistants/tools) for details.\n\nThe Fine-tuning API only supports `.jsonl` files. The input also has certain required formats for fine-tuning [chat](https://platform.openai.com/docs/api-reference/fine-tuning/chat-input) or [completions](https://platform.openai.com/docs/api-reference/fine-tuning/completions-input) models.\n\nThe Batch API only supports `.jsonl` files up to 200 MB in size. The input also has a specific required [format](https://platform.openai.com/docs/api-reference/batch/request-input).\n\nPlease [contact us](https://help.openai.com/) if you need to increase these storage limits.\n"
+      description: "Upload a file that can be used across various endpoints. Individual files can be up to 512 MB, and the size of all files uploaded by one organization can be up to 1 TB.\n\nThe Assistants API supports files up to 2 million tokens and of specific file types. See the [Assistants Tools guide](https://platform.openai.com/docs/assistants/tools) for details.\n\nThe Fine-tuning API only supports `.jsonl` files. The input also has certain required formats for fine-tuning [chat](https://platform.openai.com/docs/api-reference/fine-tuning/chat-input) or [completions](https://platform.openai.com/docs/api-reference/fine-tuning/completions-input) models.\n\nThe Batch API only supports `.jsonl` files up to 200 MB in size. The input also has a specific required [format](https://platform.openai.com/docs/api-reference/batch/request-input).\n\nPlease [contact us](https://help.openai.com/) if you need to increase these storage limits.\n"
       operationId: createFile
       requestBody:
         content:
@@ -1852,14 +1854,14 @@ paths:
       x-oaiMeta:
         examples:
           request:
-            curl: "curl https://api.openai.com/v1/files \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -F purpose=\"fine-tune\" \\\n  -F file=\"@mydata.jsonl\"\n"
+            curl: "curl https://api.openai.com/v1/files \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -F purpose=\"fine-tune\" \\\n  -F file=\"@mydata.jsonl\"\n  -F expires_after[anchor]=\"created_at\"\n  -F expires_after[seconds]=3600\n"
             go: "package main\n\nimport (\n  \"bytes\"\n  \"context\"\n  \"fmt\"\n  \"io\"\n\n  \"github.com/openai/openai-go\"\n  \"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n  client := openai.NewClient(\n    option.WithAPIKey(\"My API Key\"),\n  )\n  fileObject, err := client.Files.New(context.TODO(), openai.FileNewParams{\n    File: io.Reader(bytes.NewBuffer([]byte(\"some file contents\"))),\n    Purpose: openai.FilePurposeAssistants,\n  })\n  if err != nil {\n    panic(err.Error())\n  }\n  fmt.Printf(\"%+v\\n\", fileObject.ID)\n}\n"
             java: "package com.openai.example;\n\nimport com.openai.client.OpenAIClient;\nimport com.openai.client.okhttp.OpenAIOkHttpClient;\nimport com.openai.models.files.FileCreateParams;\nimport com.openai.models.files.FileObject;\nimport com.openai.models.files.FilePurpose;\nimport java.io.ByteArrayInputStream;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        OpenAIClient client = OpenAIOkHttpClient.fromEnv();\n\n        FileCreateParams params = FileCreateParams.builder()\n            .file(ByteArrayInputStream(\"some content\".getBytes()))\n            .purpose(FilePurpose.ASSISTANTS)\n            .build();\n        FileObject fileObject = client.files().create(params);\n    }\n}"
             kotlin: "package com.openai.example\n\nimport com.openai.client.OpenAIClient\nimport com.openai.client.okhttp.OpenAIOkHttpClient\nimport com.openai.models.files.FileCreateParams\nimport com.openai.models.files.FileObject\nimport com.openai.models.files.FilePurpose\nimport java.io.ByteArrayInputStream\n\nfun main() {\n    val client: OpenAIClient = OpenAIOkHttpClient.fromEnv()\n\n    val params: FileCreateParams = FileCreateParams.builder()\n        .file(\"some content\".byteInputStream())\n        .purpose(FilePurpose.ASSISTANTS)\n        .build()\n    val fileObject: FileObject = client.files().create(params)\n}"
             node.js: "import OpenAI from 'openai';\n\nconst client = new OpenAI({\n  apiKey: 'My API Key',\n});\n\nconst fileObject = await client.files.create({\n  file: fs.createReadStream('fine-tune.jsonl'),\n  purpose: 'assistants',\n});\n\nconsole.log(fileObject.id);"
             python: "from openai import OpenAI\n\nclient = OpenAI(\n    api_key=\"My API Key\",\n)\nfile_object = client.files.create(\n    file=b\"raw file contents\",\n    purpose=\"assistants\",\n)\nprint(file_object.id)"
             ruby: "require \"openai\"\n\nopenai = OpenAI::Client.new(api_key: \"My API Key\")\n\nfile_object = openai.files.create(file: Pathname(__FILE__), purpose: :assistants)\n\nputs(file_object)"
-          response: "{\n  \"id\": \"file-abc123\",\n  \"object\": \"file\",\n  \"bytes\": 120000,\n  \"created_at\": 1677610602,\n  \"filename\": \"mydata.jsonl\",\n  \"purpose\": \"fine-tune\",\n}\n"
+          response: "{\n  \"id\": \"file-abc123\",\n  \"object\": \"file\",\n  \"bytes\": 120000,\n  \"created_at\": 1677610602,\n  \"expires_at\": 1677614202,\n  \"filename\": \"mydata.jsonl\",\n  \"purpose\": \"fine-tune\",\n}\n"
         group: files
         name: Upload file
         returns: 'The uploaded [File](https://platform.openai.com/docs/api-reference/files/object) object.'
@@ -1928,7 +1930,7 @@ paths:
             node.js: "import OpenAI from 'openai';\n\nconst client = new OpenAI({\n  apiKey: 'My API Key',\n});\n\nconst fileObject = await client.files.retrieve('file_id');\n\nconsole.log(fileObject.id);"
             python: "from openai import OpenAI\n\nclient = OpenAI(\n    api_key=\"My API Key\",\n)\nfile_object = client.files.retrieve(\n    \"file_id\",\n)\nprint(file_object.id)"
             ruby: "require \"openai\"\n\nopenai = OpenAI::Client.new(api_key: \"My API Key\")\n\nfile_object = openai.files.retrieve(\"file_id\")\n\nputs(file_object)"
-          response: "{\n  \"id\": \"file-abc123\",\n  \"object\": \"file\",\n  \"bytes\": 120000,\n  \"created_at\": 1677610602,\n  \"filename\": \"mydata.jsonl\",\n  \"purpose\": \"fine-tune\",\n}\n"
+          response: "{\n  \"id\": \"file-abc123\",\n  \"object\": \"file\",\n  \"bytes\": 120000,\n  \"created_at\": 1677610602,\n  \"expires_at\": 1677614202,\n  \"filename\": \"mydata.jsonl\",\n  \"purpose\": \"fine-tune\",\n}\n"
         group: files
         name: Retrieve file
         returns: 'The [File](https://platform.openai.com/docs/api-reference/files/object) object matching the specified ID.'
@@ -6301,7 +6303,7 @@ paths:
       x-oaiMeta:
         examples:
           request:
-            curl: "curl https://api.openai.com/v1/uploads \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -d '{\n    \"purpose\": \"fine-tune\",\n    \"filename\": \"training_examples.jsonl\",\n    \"bytes\": 2147483648,\n    \"mime_type\": \"text/jsonl\"\n  }'\n"
+            curl: "curl https://api.openai.com/v1/uploads \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -d '{\n    \"purpose\": \"fine-tune\",\n    \"filename\": \"training_examples.jsonl\",\n    \"bytes\": 2147483648,\n    \"mime_type\": \"text/jsonl\",\n    \"expires_after\": {\n      \"anchor\": \"created_at\",\n      \"seconds\": 3600\n    }\n  }'\n"
             go: "package main\n\nimport (\n  \"context\"\n  \"fmt\"\n\n  \"github.com/openai/openai-go\"\n  \"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n  client := openai.NewClient(\n    option.WithAPIKey(\"My API Key\"),\n  )\n  upload, err := client.Uploads.New(context.TODO(), openai.UploadNewParams{\n    Bytes: 0,\n    Filename: \"filename\",\n    MimeType: \"mime_type\",\n    Purpose: openai.FilePurposeAssistants,\n  })\n  if err != nil {\n    panic(err.Error())\n  }\n  fmt.Printf(\"%+v\\n\", upload.ID)\n}\n"
             java: "package com.openai.example;\n\nimport com.openai.client.OpenAIClient;\nimport com.openai.client.okhttp.OpenAIOkHttpClient;\nimport com.openai.models.files.FilePurpose;\nimport com.openai.models.uploads.Upload;\nimport com.openai.models.uploads.UploadCreateParams;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        OpenAIClient client = OpenAIOkHttpClient.fromEnv();\n\n        UploadCreateParams params = UploadCreateParams.builder()\n            .bytes(0L)\n            .filename(\"filename\")\n            .mimeType(\"mime_type\")\n            .purpose(FilePurpose.ASSISTANTS)\n            .build();\n        Upload upload = client.uploads().create(params);\n    }\n}"
             kotlin: "package com.openai.example\n\nimport com.openai.client.OpenAIClient\nimport com.openai.client.okhttp.OpenAIOkHttpClient\nimport com.openai.models.files.FilePurpose\nimport com.openai.models.uploads.Upload\nimport com.openai.models.uploads.UploadCreateParams\n\nfun main() {\n    val client: OpenAIClient = OpenAIOkHttpClient.fromEnv()\n\n    val params: UploadCreateParams = UploadCreateParams.builder()\n        .bytes(0L)\n        .filename(\"filename\")\n        .mimeType(\"mime_type\")\n        .purpose(FilePurpose.ASSISTANTS)\n        .build()\n    val upload: Upload = client.uploads().create(params)\n}"
@@ -6386,7 +6388,7 @@ paths:
             node.js: "import OpenAI from 'openai';\n\nconst client = new OpenAI({\n  apiKey: 'My API Key',\n});\n\nconst upload = await client.uploads.complete('upload_abc123', { part_ids: ['string'] });\n\nconsole.log(upload.id);"
             python: "from openai import OpenAI\n\nclient = OpenAI(\n    api_key=\"My API Key\",\n)\nupload = client.uploads.complete(\n    upload_id=\"upload_abc123\",\n    part_ids=[\"string\"],\n)\nprint(upload.id)"
             ruby: "require \"openai\"\n\nopenai = OpenAI::Client.new(api_key: \"My API Key\")\n\nupload = openai.uploads.complete(\"upload_abc123\", part_ids: [\"string\"])\n\nputs(upload)"
-          response: "{\n  \"id\": \"upload_abc123\",\n  \"object\": \"upload\",\n  \"bytes\": 2147483648,\n  \"created_at\": 1719184911,\n  \"filename\": \"training_examples.jsonl\",\n  \"purpose\": \"fine-tune\",\n  \"status\": \"completed\",\n  \"expires_at\": 1719127296,\n  \"file\": {\n    \"id\": \"file-xyz321\",\n    \"object\": \"file\",\n    \"bytes\": 2147483648,\n    \"created_at\": 1719186911,\n    \"filename\": \"training_examples.jsonl\",\n    \"purpose\": \"fine-tune\",\n  }\n}\n"
+          response: "{\n  \"id\": \"upload_abc123\",\n  \"object\": \"upload\",\n  \"bytes\": 2147483648,\n  \"created_at\": 1719184911,\n  \"filename\": \"training_examples.jsonl\",\n  \"purpose\": \"fine-tune\",\n  \"status\": \"completed\",\n  \"expires_at\": 1719127296,\n  \"file\": {\n    \"id\": \"file-xyz321\",\n    \"object\": \"file\",\n    \"bytes\": 2147483648,\n    \"created_at\": 1719186911,\n    \"expires_at\": 1719127296,\n    \"filename\": \"training_examples.jsonl\",\n    \"purpose\": \"fine-tune\",\n  }\n}\n"
         group: uploads
         name: Complete upload
         returns: 'The [Upload](https://platform.openai.com/docs/api-reference/uploads/object) object with status `completed` with an additional `file` property containing the created usable File object.'
@@ -8168,6 +8170,25 @@ components:
           type: string
           description: 'The name of the parameter that caused the error, if applicable.'
           nullable: true
+    BatchFileExpirationAfter:
+      title: File expiration policy
+      required:
+        - anchor
+        - seconds
+      type: object
+      properties:
+        anchor:
+          enum:
+            - created_at
+          type: string
+          description: 'Anchor timestamp after which the expiration policy applies. Supported anchors: `created_at`. Note that the anchor is the file creation time, not the time the batch is created.'
+          x-stainless-const: true
+        seconds:
+          maximum: 2592000
+          minimum: 3600
+          type: integer
+          description: The number of seconds after the anchor time that the file will expire. Must be between 3600 (1 hour) and 2592000 (30 days).
+      description: The expiration policy for the output and/or error file that are generated for a batch.
     BatchRequestCounts:
       required:
         - total
@@ -10331,6 +10352,7 @@ components:
               type: integer
               description: "This feature is in Beta.\nIf specified, our system will make a best effort to sample deterministically, such that repeated requests with the same `seed` and parameters should return the same result.\nDeterminism is not guaranteed, and you should refer to the `system_fingerprint` response parameter to monitor changes in the backend.\n"
               nullable: true
+              deprecated: true
               x-oaiMeta:
                 beta: true
             stop:
@@ -10468,6 +10490,7 @@ components:
         system_fingerprint:
           type: string
           description: "This fingerprint represents the backend configuration that the model runs with.\n\nCan be used in conjunction with the `seed` request parameter to understand when backend changes have been made that might impact determinism.\n"
+          deprecated: true
         usage:
           $ref: '#/components/schemas/CompletionUsage'
       description: 'Represents a chat completion response returned by model, based on the provided input.'
@@ -10549,6 +10572,7 @@ components:
         system_fingerprint:
           type: string
           description: "This fingerprint represents the backend configuration that the model runs with.\nCan be used in conjunction with the `seed` request parameter to understand when backend changes have been made that might impact determinism.\n"
+          deprecated: true
         usage:
           $ref: '#/components/schemas/CompletionUsage'
       description: "Represents a streamed chunk of a chat completion response returned\nby the model, based on the provided input. \n[Learn more](https://platform.openai.com/docs/guides/streaming-responses).\n"
@@ -11334,6 +11358,8 @@ components:
         - purpose
       type: object
       properties:
+        expires_after:
+          $ref: '#/components/schemas/FileExpirationAfter'
         file:
           type: string
           description: "The File object (not file name) to be uploaded.\n"
@@ -12987,6 +13013,8 @@ components:
         bytes:
           type: integer
           description: "The number of bytes in the file you are uploading.\n"
+        expires_after:
+          $ref: '#/components/schemas/FileExpirationAfter'
         filename:
           type: string
           description: "The name of the file to upload.\n"
@@ -14351,6 +14379,25 @@ components:
           default: file_citation
           x-stainless-const: true
       description: A citation to a file.
+    FileExpirationAfter:
+      title: File expiration policy
+      required:
+        - anchor
+        - seconds
+      type: object
+      properties:
+        anchor:
+          enum:
+            - created_at
+          type: string
+          description: 'Anchor timestamp after which the expiration policy applies. Supported anchors: `created_at`.'
+          x-stainless-const: true
+        seconds:
+          maximum: 2592000
+          minimum: 3600
+          type: integer
+          description: The number of seconds after the anchor time that the file will expire. Must be between 3600 (1 hour) and 2592000 (30 days).
+      description: 'The expiration policy for a file. By default, files with `purpose=batch` expire after 30 days and all other files are persisted until they are manually deleted.'
     FilePath:
       title: File path
       required:
@@ -17877,6 +17924,11 @@ components:
           default: 1
           nullable: true
           example: 1
+        text:
+          type: object
+          properties:
+            verbosity:
+              $ref: '#/components/schemas/Verbosity'
         top_logprobs:
           maximum: 20
           minimum: 0
@@ -19031,7 +19083,7 @@ components:
             - response.cancel
           description: 'The event type, must be `response.cancel`.'
           x-stainless-const: true
-      description: "Send this event to cancel an in-progress response. The server will respond \nwith a `response.cancelled` event or an error if there is no response to \ncancel.\n"
+      description: "Send this event to cancel an in-progress response. The server will respond \nwith a `response.done` event with a status of `response.status=cancelled`. If \nthere is no response to cancel, the server will respond with an error.\n"
       x-oaiMeta:
         example: "{\n    \"event_id\": \"event_567\",\n    \"type\": \"response.cancel\"\n}\n"
         group: realtime
@@ -20788,15 +20840,15 @@ components:
               properties:
                 group_id:
                   type: string
-                  description: "The group id to attach to this trace to enable filtering and \ngrouping in the traces dashboard.\n"
+                  description: "The group id to attach to this trace to enable filtering and\ngrouping in the traces dashboard.\n"
                 metadata:
                   type: object
-                  description: "The arbitrary metadata to attach to this trace to enable \nfiltering in the traces dashboard.\n"
+                  description: "The arbitrary metadata to attach to this trace to enable\nfiltering in the traces dashboard.\n"
                 workflow_name:
                   type: string
-                  description: "The name of the workflow to attach to this trace. This is used to \nname the trace in the traces dashboard.\n"
+                  description: "The name of the workflow to attach to this trace. This is used to\nname the trace in the traces dashboard.\n"
               description: "Granular configuration for tracing.\n"
-          description: "Configuration options for tracing. Set to null to disable tracing. Once \ntracing is enabled for a session, the configuration cannot be modified.\n\n`auto` will create a trace for the session with default values for the \nworkflow name, group id, and metadata.\n"
+          description: "Configuration options for tracing. Set to null to disable tracing. Once\ntracing is enabled for a session, the configuration cannot be modified.\n\n`auto` will create a trace for the session with default values for the\nworkflow name, group id, and metadata.\n"
         turn_detection:
           type: object
           properties:
@@ -20833,7 +20885,7 @@ components:
               type: string
               description: "Type of turn detection.\n"
               default: server_vad
-          description: "Configuration for turn detection, ether Server VAD or Semantic VAD. This can be set to `null` to turn off, in which case the client must manually trigger model response.\nServer VAD means that the model will detect the start and end of speech based on audio volume and respond at the end of user speech.\nSemantic VAD is more advanced and uses a turn detection model (in conjuction with VAD) to semantically estimate whether the user has finished speaking, then dynamically sets a timeout based on this probability. For example, if user audio trails off with \"uhhm\", the model will score a low probability of turn end and wait longer for the user to continue speaking. This can be useful for more natural conversations, but may have a higher latency.\n"
+          description: "Configuration for turn detection, ether Server VAD or Semantic VAD. This can be set to `null` to turn off, in which case the client must manually trigger model response.\nServer VAD means that the model will detect the start and end of speech based on audio volume and respond at the end of user speech.\nSemantic VAD is more advanced and uses a turn detection model (in conjunction with VAD) to semantically estimate whether the user has finished speaking, then dynamically sets a timeout based on this probability. For example, if user audio trails off with \"uhhm\", the model will score a low probability of turn end and wait longer for the user to continue speaking. This can be useful for more natural conversations, but may have a higher latency.\n"
         voice:
           $ref: '#/components/schemas/VoiceIdsShared'
       description: Realtime session object configuration.
@@ -20864,10 +20916,10 @@ components:
             model:
               type: string
               description: "The model to use for transcription.\n"
-          description: "Configuration for input audio transcription, defaults to off and can be \nset to `null` to turn off once on. Input audio transcription is not native \nto the model, since the model consumes audio directly. Transcription runs\nasynchronously and should be treated as rough guidance\nrather than the representation understood by the model.\n"
+          description: "Configuration for input audio transcription, defaults to off and can be\nset to `null` to turn off once on. Input audio transcription is not native\nto the model, since the model consumes audio directly. Transcription runs\nasynchronously and should be treated as rough guidance\nrather than the representation understood by the model.\n"
         instructions:
           type: string
-          description: "The default system instructions (i.e. system message) prepended to model \ncalls. This field allows the client to guide the model on desired \nresponses. The model can be instructed on response content and format, \n(e.g. \"be extremely succinct\", \"act friendly\", \"here are examples of good \nresponses\") and on audio behavior (e.g. \"talk quickly\", \"inject emotion \ninto your voice\", \"laugh frequently\"). The instructions are not guaranteed \nto be followed by the model, but they provide guidance to the model on the \ndesired behavior.\n\nNote that the server sets default instructions which will be used if this \nfield is not set and are visible in the `session.created` event at the \nstart of the session.\n"
+          description: "The default system instructions (i.e. system message) prepended to model\ncalls. This field allows the client to guide the model on desired\nresponses. The model can be instructed on response content and format,\n(e.g. \"be extremely succinct\", \"act friendly\", \"here are examples of good\nresponses\") and on audio behavior (e.g. \"talk quickly\", \"inject emotion\ninto your voice\", \"laugh frequently\"). The instructions are not guaranteed\nto be followed by the model, but they provide guidance to the model on the\ndesired behavior.\n\nNote that the server sets default instructions which will be used if this\nfield is not set and are visible in the `session.created` event at the\nstart of the session.\n"
         max_response_output_tokens:
           anyOf:
             - type: integer
@@ -20897,7 +20949,7 @@ components:
           description: "Sampling temperature for the model, limited to [0.6, 1.2]. Defaults to 0.8.\n"
         tool_choice:
           type: string
-          description: "How the model chooses tools. Options are `auto`, `none`, `required`, or \nspecify a function.\n"
+          description: "How the model chooses tools. Options are `auto`, `none`, `required`, or\nspecify a function.\n"
         tools:
           type: array
           items:
@@ -20905,7 +20957,7 @@ components:
             properties:
               description:
                 type: string
-                description: "The description of the function, including guidance on when and how \nto call it, and guidance about what to tell the user when calling \n(if anything).\n"
+                description: "The description of the function, including guidance on when and how\nto call it, and guidance about what to tell the user when calling\n(if anything).\n"
               name:
                 type: string
                 description: The name of the function.
@@ -20933,36 +20985,36 @@ components:
               properties:
                 group_id:
                   type: string
-                  description: "The group id to attach to this trace to enable filtering and \ngrouping in the traces dashboard.\n"
+                  description: "The group id to attach to this trace to enable filtering and\ngrouping in the traces dashboard.\n"
                 metadata:
                   type: object
-                  description: "The arbitrary metadata to attach to this trace to enable \nfiltering in the traces dashboard.\n"
+                  description: "The arbitrary metadata to attach to this trace to enable\nfiltering in the traces dashboard.\n"
                 workflow_name:
                   type: string
-                  description: "The name of the workflow to attach to this trace. This is used to \nname the trace in the traces dashboard.\n"
+                  description: "The name of the workflow to attach to this trace. This is used to\nname the trace in the traces dashboard.\n"
               description: "Granular configuration for tracing.\n"
-          description: "Configuration options for tracing. Set to null to disable tracing. Once \ntracing is enabled for a session, the configuration cannot be modified.\n\n`auto` will create a trace for the session with default values for the \nworkflow name, group id, and metadata.\n"
+          description: "Configuration options for tracing. Set to null to disable tracing. Once\ntracing is enabled for a session, the configuration cannot be modified.\n\n`auto` will create a trace for the session with default values for the\nworkflow name, group id, and metadata.\n"
         turn_detection:
           type: object
           properties:
             prefix_padding_ms:
               type: integer
-              description: "Amount of audio to include before the VAD detected speech (in \nmilliseconds). Defaults to 300ms.\n"
+              description: "Amount of audio to include before the VAD detected speech (in\nmilliseconds). Defaults to 300ms.\n"
             silence_duration_ms:
               type: integer
-              description: "Duration of silence to detect speech stop (in milliseconds). Defaults \nto 500ms. With shorter values the model will respond more quickly, \nbut may jump in on short pauses from the user.\n"
+              description: "Duration of silence to detect speech stop (in milliseconds). Defaults\nto 500ms. With shorter values the model will respond more quickly,\nbut may jump in on short pauses from the user.\n"
             threshold:
               type: number
-              description: "Activation threshold for VAD (0.0 to 1.0), this defaults to 0.5. A \nhigher threshold will require louder audio to activate the model, and \nthus might perform better in noisy environments.\n"
+              description: "Activation threshold for VAD (0.0 to 1.0), this defaults to 0.5. A\nhigher threshold will require louder audio to activate the model, and\nthus might perform better in noisy environments.\n"
             type:
               type: string
               description: "Type of turn detection, only `server_vad` is currently supported.\n"
-          description: "Configuration for turn detection. Can be set to `null` to turn off. Server \nVAD means that the model will detect the start and end of speech based on \naudio volume and respond at the end of user speech.\n"
+          description: "Configuration for turn detection. Can be set to `null` to turn off. Server\nVAD means that the model will detect the start and end of speech based on\naudio volume and respond at the end of user speech.\n"
         voice:
           $ref: '#/components/schemas/VoiceIdsShared'
-      description: "A new Realtime session configuration, with an ephermeral key. Default TTL\nfor keys is one minute.\n"
+      description: "A new Realtime session configuration, with an ephemeral key. Default TTL\nfor keys is one minute.\n"
       x-oaiMeta:
-        example: "{\n  \"id\": \"sess_001\",\n  \"object\": \"realtime.session\",\n  \"model\": \"gpt-4o-realtime-preview\",\n  \"modalities\": [\"audio\", \"text\"],\n  \"instructions\": \"You are a friendly assistant.\",\n  \"voice\": \"alloy\",\n  \"input_audio_format\": \"pcm16\",\n  \"output_audio_format\": \"pcm16\",\n  \"input_audio_transcription\": {\n      \"model\": \"whisper-1\"\n  },\n  \"turn_detection\": null,\n  \"tools\": [],\n  \"tool_choice\": \"none\",\n  \"temperature\": 0.7,\n  \"speed\": 1.1,\n  \"tracing\": \"auto\",\n  \"max_response_output_tokens\": 200,\n  \"client_secret\": {\n    \"value\": \"ek_abc123\", \n    \"expires_at\": 1234567890\n  }\n}\n"
+        example: "{\n  \"id\": \"sess_001\",\n  \"object\": \"realtime.session\",\n  \"model\": \"gpt-4o-realtime-preview\",\n  \"modalities\": [\"audio\", \"text\"],\n  \"instructions\": \"You are a friendly assistant.\",\n  \"voice\": \"alloy\",\n  \"input_audio_format\": \"pcm16\",\n  \"output_audio_format\": \"pcm16\",\n  \"input_audio_transcription\": {\n      \"model\": \"whisper-1\"\n  },\n  \"turn_detection\": null,\n  \"tools\": [],\n  \"tool_choice\": \"none\",\n  \"temperature\": 0.7,\n  \"speed\": 1.1,\n  \"tracing\": \"auto\",\n  \"max_response_output_tokens\": 200,\n  \"client_secret\": {\n    \"value\": \"ek_abc123\",\n    \"expires_at\": 1234567890\n  }\n}\n"
         group: realtime
         name: The session object
     RealtimeTranscriptionSessionCreateRequest:
@@ -21069,7 +21121,7 @@ components:
               type: string
               description: "Type of turn detection.\n"
               default: server_vad
-          description: "Configuration for turn detection, ether Server VAD or Semantic VAD. This can be set to `null` to turn off, in which case the client must manually trigger model response.\nServer VAD means that the model will detect the start and end of speech based on audio volume and respond at the end of user speech.\nSemantic VAD is more advanced and uses a turn detection model (in conjuction with VAD) to semantically estimate whether the user has finished speaking, then dynamically sets a timeout based on this probability. For example, if user audio trails off with \"uhhm\", the model will score a low probability of turn end and wait longer for the user to continue speaking. This can be useful for more natural conversations, but may have a higher latency.\n"
+          description: "Configuration for turn detection, ether Server VAD or Semantic VAD. This can be set to `null` to turn off, in which case the client must manually trigger model response.\nServer VAD means that the model will detect the start and end of speech based on audio volume and respond at the end of user speech.\nSemantic VAD is more advanced and uses a turn detection model (in conjunction with VAD) to semantically estimate whether the user has finished speaking, then dynamically sets a timeout based on this probability. For example, if user audio trails off with \"uhhm\", the model will score a low probability of turn end and wait longer for the user to continue speaking. This can be useful for more natural conversations, but may have a higher latency.\n"
       description: Realtime transcription session object configuration.
     RealtimeTranscriptionSessionCreateResponse:
       required:
@@ -21160,7 +21212,7 @@ components:
           type: string
           description: "A summary of the reasoning performed by the model. This can be\nuseful for debugging and understanding the model's reasoning process.\nOne of `auto`, `concise`, or `detailed`.\n"
           nullable: true
-      description: "**o-series models only**\n\nConfiguration options for \n[reasoning models](https://platform.openai.com/docs/guides/reasoning).\n"
+      description: "**gpt-5 and o-series models only**\n\nConfiguration options for\n[reasoning models](https://platform.openai.com/docs/guides/reasoning).\n"
     ReasoningEffort:
       enum:
         - minimal
@@ -24597,7 +24649,7 @@ components:
         - scale
         - priority
       type: string
-      description: "Specifies the processing type used for serving the request.\n  - If set to 'auto', then the request will be processed with the service tier configured in the Project settings. Unless otherwise configured, the Project will use 'default'.\n  - If set to 'default', then the request will be processed with the standard pricing and performance for the selected model.\n  - If set to '[flex](https://platform.openai.com/docs/guides/flex-processing)' or 'priority', then the request will be processed with the corresponding service tier. [Contact sales](https://openai.com/contact-sales) to learn more about Priority processing.\n  - When not set, the default behavior is 'auto'.\n\n  When the `service_tier` parameter is set, the response body will include the `service_tier` value based on the processing mode actually used to serve the request. This response value may be different from the value set in the parameter.\n"
+      description: "Specifies the processing type used for serving the request.\n  - If set to 'auto', then the request will be processed with the service tier configured in the Project settings. Unless otherwise configured, the Project will use 'default'.\n  - If set to 'default', then the request will be processed with the standard pricing and performance for the selected model.\n  - If set to '[flex](https://platform.openai.com/docs/guides/flex-processing)' or '[priority](https://openai.com/api-priority-processing/)', then the request will be processed with the corresponding service tier.\n  - When not set, the default behavior is 'auto'.\n\n  When the `service_tier` parameter is set, the response body will include the `service_tier` value based on the processing mode actually used to serve the request. This response value may be different from the value set in the parameter.\n"
       default: auto
       nullable: true
     SpeechAudioDeltaEvent:
@@ -25259,7 +25311,7 @@ components:
             - last_messages
           type: string
           description: 'The truncation strategy to use for the thread. The default is `auto`. If set to `last_messages`, the thread will be truncated to the n most recent messages in the thread. When set to `auto`, messages in the middle of the thread will be dropped to fit the context length of the model, `max_prompt_tokens`.'
-      description: Controls for how a thread will be truncated prior to the run. Use this to control the intial context window of the run.
+      description: Controls for how a thread will be truncated prior to the run. Use this to control the initial context window of the run.
     Type:
       title: Type
       required:
@@ -29531,7 +29583,7 @@ x-oaiMeta:
           path: list
           type: endpoint
         - key: create-project-user
-          path: creeate
+          path: create
           type: endpoint
         - key: retrieve-project-user
           path: retrieve

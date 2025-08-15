@@ -9,8 +9,8 @@ namespace tryAGI.OpenAI
     public sealed partial class RealtimeSessionCreateResponseTool
     {
         /// <summary>
-        /// The description of the function, including guidance on when and how <br/>
-        /// to call it, and guidance about what to tell the user when calling <br/>
+        /// The description of the function, including guidance on when and how<br/>
+        /// to call it, and guidance about what to tell the user when calling<br/>
         /// (if anything).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
@@ -45,8 +45,8 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="RealtimeSessionCreateResponseTool" /> class.
         /// </summary>
         /// <param name="description">
-        /// The description of the function, including guidance on when and how <br/>
-        /// to call it, and guidance about what to tell the user when calling <br/>
+        /// The description of the function, including guidance on when and how<br/>
+        /// to call it, and guidance about what to tell the user when calling<br/>
         /// (if anything).
         /// </param>
         /// <param name="name">

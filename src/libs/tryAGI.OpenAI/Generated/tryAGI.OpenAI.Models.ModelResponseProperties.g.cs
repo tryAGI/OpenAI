@@ -39,7 +39,7 @@ namespace tryAGI.OpenAI
         /// Specifies the processing type used for serving the request.<br/>
         ///   - If set to 'auto', then the request will be processed with the service tier configured in the Project settings. Unless otherwise configured, the Project will use 'default'.<br/>
         ///   - If set to 'default', then the request will be processed with the standard pricing and performance for the selected model.<br/>
-        ///   - If set to '[flex](https://platform.openai.com/docs/guides/flex-processing)' or 'priority', then the request will be processed with the corresponding service tier. [Contact sales](https://openai.com/contact-sales) to learn more about Priority processing.<br/>
+        ///   - If set to '[flex](https://platform.openai.com/docs/guides/flex-processing)' or '[priority](https://openai.com/api-priority-processing/)', then the request will be processed with the corresponding service tier.<br/>
         ///   - When not set, the default behavior is 'auto'.<br/>
         ///   When the `service_tier` parameter is set, the response body will include the `service_tier` value based on the processing mode actually used to serve the request. This response value may be different from the value set in the parameter.<br/>
         /// Default Value: auto
@@ -57,6 +57,12 @@ namespace tryAGI.OpenAI
         /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
         public double? Temperature { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
+        public global::tryAGI.OpenAI.ModelResponsePropertiesText? Text { get; set; }
 
         /// <summary>
         /// An integer between 0 and 20 specifying the number of most likely tokens to<br/>
@@ -118,7 +124,7 @@ namespace tryAGI.OpenAI
         /// Specifies the processing type used for serving the request.<br/>
         ///   - If set to 'auto', then the request will be processed with the service tier configured in the Project settings. Unless otherwise configured, the Project will use 'default'.<br/>
         ///   - If set to 'default', then the request will be processed with the standard pricing and performance for the selected model.<br/>
-        ///   - If set to '[flex](https://platform.openai.com/docs/guides/flex-processing)' or 'priority', then the request will be processed with the corresponding service tier. [Contact sales](https://openai.com/contact-sales) to learn more about Priority processing.<br/>
+        ///   - If set to '[flex](https://platform.openai.com/docs/guides/flex-processing)' or '[priority](https://openai.com/api-priority-processing/)', then the request will be processed with the corresponding service tier.<br/>
         ///   - When not set, the default behavior is 'auto'.<br/>
         ///   When the `service_tier` parameter is set, the response body will include the `service_tier` value based on the processing mode actually used to serve the request. This response value may be different from the value set in the parameter.<br/>
         /// Default Value: auto
@@ -129,6 +135,7 @@ namespace tryAGI.OpenAI
         /// Default Value: 1<br/>
         /// Example: 1
         /// </param>
+        /// <param name="text"></param>
         /// <param name="topLogprobs">
         /// An integer between 0 and 20 specifying the number of most likely tokens to<br/>
         /// return at each token position, each with an associated log probability.
@@ -151,6 +158,7 @@ namespace tryAGI.OpenAI
             string? safetyIdentifier,
             global::tryAGI.OpenAI.ServiceTier? serviceTier,
             double? temperature,
+            global::tryAGI.OpenAI.ModelResponsePropertiesText? text,
             int? topLogprobs,
             double? topP)
         {
@@ -159,6 +167,7 @@ namespace tryAGI.OpenAI
             this.SafetyIdentifier = safetyIdentifier;
             this.ServiceTier = serviceTier;
             this.Temperature = temperature;
+            this.Text = text;
             this.TopLogprobs = topLogprobs;
             this.TopP = topP;
         }

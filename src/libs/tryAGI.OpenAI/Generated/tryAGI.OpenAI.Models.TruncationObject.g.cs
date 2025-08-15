@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Controls for how a thread will be truncated prior to the run. Use this to control the intial context window of the run.
+    /// Controls for how a thread will be truncated prior to the run. Use this to control the initial context window of the run.
     /// </summary>
     public sealed partial class TruncationObject
     {

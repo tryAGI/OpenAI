@@ -129,7 +129,7 @@ namespace tryAGI.OpenAI
         public double? TopP { get; set; }
 
         /// <summary>
-        /// Controls for how a thread will be truncated prior to the run. Use this to control the intial context window of the run.
+        /// Controls for how a thread will be truncated prior to the run. Use this to control the initial context window of the run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("truncation_strategy")]
         public global::tryAGI.OpenAI.TruncationObject? TruncationStrategy { get; set; }
@@ -210,7 +210,7 @@ namespace tryAGI.OpenAI
         /// Example: 1
         /// </param>
         /// <param name="truncationStrategy">
-        /// Controls for how a thread will be truncated prior to the run. Use this to control the intial context window of the run.
+        /// Controls for how a thread will be truncated prior to the run. Use this to control the initial context window of the run.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

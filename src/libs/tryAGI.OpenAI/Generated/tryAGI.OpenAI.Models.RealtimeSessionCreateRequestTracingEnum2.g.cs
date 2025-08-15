@@ -9,21 +9,21 @@ namespace tryAGI.OpenAI
     public sealed partial class RealtimeSessionCreateRequestTracingEnum2
     {
         /// <summary>
-        /// The group id to attach to this trace to enable filtering and <br/>
+        /// The group id to attach to this trace to enable filtering and<br/>
         /// grouping in the traces dashboard.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_id")]
         public string? GroupId { get; set; }
 
         /// <summary>
-        /// The arbitrary metadata to attach to this trace to enable <br/>
+        /// The arbitrary metadata to attach to this trace to enable<br/>
         /// filtering in the traces dashboard.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public object? Metadata { get; set; }
 
         /// <summary>
-        /// The name of the workflow to attach to this trace. This is used to <br/>
+        /// The name of the workflow to attach to this trace. This is used to<br/>
         /// name the trace in the traces dashboard.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workflow_name")]
@@ -39,15 +39,15 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="RealtimeSessionCreateRequestTracingEnum2" /> class.
         /// </summary>
         /// <param name="groupId">
-        /// The group id to attach to this trace to enable filtering and <br/>
+        /// The group id to attach to this trace to enable filtering and<br/>
         /// grouping in the traces dashboard.
         /// </param>
         /// <param name="metadata">
-        /// The arbitrary metadata to attach to this trace to enable <br/>
+        /// The arbitrary metadata to attach to this trace to enable<br/>
         /// filtering in the traces dashboard.
         /// </param>
         /// <param name="workflowName">
-        /// The name of the workflow to attach to this trace. This is used to <br/>
+        /// The name of the workflow to attach to this trace. This is used to<br/>
         /// name the trace in the traces dashboard.
         /// </param>
 #if NET7_0_OR_GREATER

@@ -4,8 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// **o-series models only**<br/>
-    /// Configuration options for <br/>
+    /// **gpt-5 and o-series models only**<br/>
+    /// Configuration options for<br/>
     /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).
     /// </summary>
     public sealed partial class Reasoning
