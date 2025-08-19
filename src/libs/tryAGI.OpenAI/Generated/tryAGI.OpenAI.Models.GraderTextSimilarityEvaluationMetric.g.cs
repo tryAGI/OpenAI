@@ -4,10 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The evaluation metric to use. One of `fuzzy_match`, `bleu`, `gleu`, `meteor`, `rouge_1`, `rouge_2`, `rouge_3`, `rouge_4`, `rouge_5`, or `rouge_l`.
+    /// The evaluation metric to use. One of `cosine`, `fuzzy_match`, `bleu`, <br/>
+    /// `gleu`, `meteor`, `rouge_1`, `rouge_2`, `rouge_3`, `rouge_4`, `rouge_5`, <br/>
+    /// or `rouge_l`.
     /// </summary>
     public enum GraderTextSimilarityEvaluationMetric
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        Cosine,
         /// <summary>
         /// 
         /// </summary>
@@ -62,6 +68,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                GraderTextSimilarityEvaluationMetric.Cosine => "cosine",
                 GraderTextSimilarityEvaluationMetric.FuzzyMatch => "fuzzy_match",
                 GraderTextSimilarityEvaluationMetric.Bleu => "bleu",
                 GraderTextSimilarityEvaluationMetric.Gleu => "gleu",
@@ -82,6 +89,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "cosine" => GraderTextSimilarityEvaluationMetric.Cosine,
                 "fuzzy_match" => GraderTextSimilarityEvaluationMetric.FuzzyMatch,
                 "bleu" => GraderTextSimilarityEvaluationMetric.Bleu,
                 "gleu" => GraderTextSimilarityEvaluationMetric.Gleu,
