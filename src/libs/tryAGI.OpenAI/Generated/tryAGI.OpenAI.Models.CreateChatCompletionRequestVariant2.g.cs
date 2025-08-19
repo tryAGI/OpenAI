@@ -200,7 +200,7 @@ namespace tryAGI.OpenAI
         /// Whether or not to store the output of this chat completion request for<br/>
         /// use in our [model distillation](https://platform.openai.com/docs/guides/distillation) or<br/>
         /// [evals](https://platform.openai.com/docs/guides/evals) products.<br/>
-        /// Supports text and image inputs. Note: image inputs over 10MB will be dropped.<br/>
+        /// Supports text and image inputs. Note: image inputs over 8MB will be dropped.<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("store")]
@@ -370,7 +370,7 @@ namespace tryAGI.OpenAI
         /// Whether or not to store the output of this chat completion request for<br/>
         /// use in our [model distillation](https://platform.openai.com/docs/guides/distillation) or<br/>
         /// [evals](https://platform.openai.com/docs/guides/evals) products.<br/>
-        /// Supports text and image inputs. Note: image inputs over 10MB will be dropped.<br/>
+        /// Supports text and image inputs. Note: image inputs over 8MB will be dropped.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="stream">

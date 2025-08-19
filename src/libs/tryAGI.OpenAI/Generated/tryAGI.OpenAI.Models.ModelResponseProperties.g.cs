@@ -59,12 +59,6 @@ namespace tryAGI.OpenAI
         public double? Temperature { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        public global::tryAGI.OpenAI.ModelResponsePropertiesText? Text { get; set; }
-
-        /// <summary>
         /// An integer between 0 and 20 specifying the number of most likely tokens to<br/>
         /// return at each token position, each with an associated log probability.
         /// </summary>
@@ -135,7 +129,6 @@ namespace tryAGI.OpenAI
         /// Default Value: 1<br/>
         /// Example: 1
         /// </param>
-        /// <param name="text"></param>
         /// <param name="topLogprobs">
         /// An integer between 0 and 20 specifying the number of most likely tokens to<br/>
         /// return at each token position, each with an associated log probability.
@@ -158,7 +151,6 @@ namespace tryAGI.OpenAI
             string? safetyIdentifier,
             global::tryAGI.OpenAI.ServiceTier? serviceTier,
             double? temperature,
-            global::tryAGI.OpenAI.ModelResponsePropertiesText? text,
             int? topLogprobs,
             double? topP)
         {
@@ -167,7 +159,6 @@ namespace tryAGI.OpenAI
             this.SafetyIdentifier = safetyIdentifier;
             this.ServiceTier = serviceTier;
             this.Temperature = temperature;
-            this.Text = text;
             this.TopLogprobs = topLogprobs;
             this.TopP = topP;
         }

@@ -9,7 +9,9 @@ namespace tryAGI.OpenAI
     public sealed partial class GraderTextSimilarity
     {
         /// <summary>
-        /// The evaluation metric to use. One of `fuzzy_match`, `bleu`, `gleu`, `meteor`, `rouge_1`, `rouge_2`, `rouge_3`, `rouge_4`, `rouge_5`, or `rouge_l`.
+        /// The evaluation metric to use. One of `cosine`, `fuzzy_match`, `bleu`, <br/>
+        /// `gleu`, `meteor`, `rouge_1`, `rouge_2`, `rouge_3`, `rouge_4`, `rouge_5`, <br/>
+        /// or `rouge_l`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("evaluation_metric")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.GraderTextSimilarityEvaluationMetricJsonConverter))]
@@ -56,7 +58,9 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="GraderTextSimilarity" /> class.
         /// </summary>
         /// <param name="evaluationMetric">
-        /// The evaluation metric to use. One of `fuzzy_match`, `bleu`, `gleu`, `meteor`, `rouge_1`, `rouge_2`, `rouge_3`, `rouge_4`, `rouge_5`, or `rouge_l`.
+        /// The evaluation metric to use. One of `cosine`, `fuzzy_match`, `bleu`, <br/>
+        /// `gleu`, `meteor`, `rouge_1`, `rouge_2`, `rouge_3`, `rouge_4`, `rouge_5`, <br/>
+        /// or `rouge_l`.
         /// </param>
         /// <param name="input">
         /// The text being graded.
