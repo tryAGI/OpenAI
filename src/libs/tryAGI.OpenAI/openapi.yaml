@@ -17726,7 +17726,6 @@ components:
       required:
         - type
         - server_label
-        - server_url
       type: object
       properties:
         allowed_tools:
@@ -17736,19 +17735,24 @@ components:
               items:
                 type: string
               description: A string array of allowed tool names
-            - title: MCP allowed tools filter
-              type: object
-              properties:
-                tool_names:
-                  title: MCP allowed tools
-                  type: array
-                  items:
-                    type: string
-                  description: List of allowed tool names.
-              additionalProperties: false
-              description: "A filter object to specify which tools are allowed.\n"
+            - $ref: '#/components/schemas/MCPToolFilter'
           description: "List of allowed tool names or a filter object.\n"
           nullable: true
+        authorization:
+          type: string
+          description: "An OAuth access token that can be used with a remote MCP server, either \nwith a custom MCP server URL or a service connector. Your application\nmust handle the OAuth authorization flow and provide the token here.\n"
+        connector_id:
+          enum:
+            - connector_dropbox
+            - connector_gmail
+            - connector_googlecalendar
+            - connector_googledrive
+            - connector_microsoftteams
+            - connector_outlookcalendar
+            - connector_outlookemail
+            - connector_sharepoint
+          type: string
+          description: "Identifier for service connectors, like those available in ChatGPT. One of\n`server_url` or `connector_id` must be provided. Learn more about service\nconnectors [here](https://platform.openai.com/docs/guides/tools-remote-mcp#connectors).\n\nCurrently supported `connector_id` values are:\n\n- Dropbox: `connector_dropbox`\n- Gmail: `connector_gmail`\n- Google Calendar: `connector_googlecalendar`\n- Google Drive: `connector_googledrive`\n- Microsoft Teams: `connector_microsoftteams`\n- Outlook Calendar: `connector_outlookcalendar`\n- Outlook Email: `connector_outlookemail`\n- SharePoint: `connector_sharepoint`\n"
         headers:
           type: object
           additionalProperties:
@@ -17761,24 +17765,11 @@ components:
               type: object
               properties:
                 always:
-                  type: object
-                  properties:
-                    tool_names:
-                      type: array
-                      items:
-                        type: string
-                      description: List of tools that require approval.
-                  description: "A list of tools that always require approval.\n"
+                  $ref: '#/components/schemas/MCPToolFilter'
                 never:
-                  type: object
-                  properties:
-                    tool_names:
-                      type: array
-                      items:
-                        type: string
-                      description: List of tools that do not require approval.
-                  description: "A list of tools that never require approval.\n"
+                  $ref: '#/components/schemas/MCPToolFilter'
               additionalProperties: false
+              description: "Specify which of the MCP server's tools require approval. Can be\n`always`, `never`, or a filter object associated with tools\nthat require approval.\n"
             - title: MCP tool approval setting
               enum:
                 - always
@@ -17795,7 +17786,7 @@ components:
           description: "A label for this MCP server, used to identify it in tool calls.\n"
         server_url:
           type: string
-          description: "The URL for the MCP server.\n"
+          description: "The URL for the MCP server. One of `server_url` or `connector_id` must be \nprovided.\n"
         type:
           enum:
             - mcp
@@ -17840,6 +17831,21 @@ components:
           description: "The type of the item. Always `mcp_call`.\n"
           x-stainless-const: true
       description: "An invocation of a tool on an MCP server.\n"
+    MCPToolFilter:
+      title: MCP tool filter
+      type: object
+      properties:
+        read_only:
+          type: boolean
+          description: "Indicates whether or not a tool modifies data or is read-only. If an\nMCP server is [annotated with `readOnlyHint`](https://modelcontextprotocol.io/specification/2025-06-18/schema#toolannotations-readonlyhint),\nit will match this filter.\n"
+        tool_names:
+          title: MCP allowed tools
+          type: array
+          items:
+            type: string
+          description: List of allowed tool names.
+      additionalProperties: false
+      description: "A filter object to specify which tools are allowed.\n"
     Message:
       title: Message
       required:
