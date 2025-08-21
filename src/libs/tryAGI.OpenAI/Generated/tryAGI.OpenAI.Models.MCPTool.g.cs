@@ -15,8 +15,34 @@ namespace tryAGI.OpenAI
         /// List of allowed tool names or a filter object.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_tools")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, global::tryAGI.OpenAI.MCPToolAllowedTools>))]
-        public global::tryAGI.OpenAI.AnyOf<global::System.Collections.Generic.IList<string>, global::tryAGI.OpenAI.MCPToolAllowedTools>? AllowedTools { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, global::tryAGI.OpenAI.MCPToolFilter>))]
+        public global::tryAGI.OpenAI.AnyOf<global::System.Collections.Generic.IList<string>, global::tryAGI.OpenAI.MCPToolFilter>? AllowedTools { get; set; }
+
+        /// <summary>
+        /// An OAuth access token that can be used with a remote MCP server, either <br/>
+        /// with a custom MCP server URL or a service connector. Your application<br/>
+        /// must handle the OAuth authorization flow and provide the token here.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("authorization")]
+        public string? Authorization { get; set; }
+
+        /// <summary>
+        /// Identifier for service connectors, like those available in ChatGPT. One of<br/>
+        /// `server_url` or `connector_id` must be provided. Learn more about service<br/>
+        /// connectors [here](https://platform.openai.com/docs/guides/tools-remote-mcp#connectors).<br/>
+        /// Currently supported `connector_id` values are:<br/>
+        /// - Dropbox: `connector_dropbox`<br/>
+        /// - Gmail: `connector_gmail`<br/>
+        /// - Google Calendar: `connector_googlecalendar`<br/>
+        /// - Google Drive: `connector_googledrive`<br/>
+        /// - Microsoft Teams: `connector_microsoftteams`<br/>
+        /// - Outlook Calendar: `connector_outlookcalendar`<br/>
+        /// - Outlook Email: `connector_outlookemail`<br/>
+        /// - SharePoint: `connector_sharepoint`
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("connector_id")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MCPToolConnectorIdJsonConverter))]
+        public global::tryAGI.OpenAI.MCPToolConnectorId? ConnectorId { get; set; }
 
         /// <summary>
         /// Optional HTTP headers to send to the MCP server. Use for authentication<br/>
@@ -46,11 +72,11 @@ namespace tryAGI.OpenAI
         public required string ServerLabel { get; set; }
 
         /// <summary>
-        /// The URL for the MCP server.
+        /// The URL for the MCP server. One of `server_url` or `connector_id` must be <br/>
+        /// provided.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("server_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ServerUrl { get; set; }
+        public string? ServerUrl { get; set; }
 
         /// <summary>
         /// The type of the MCP tool. Always `mcp`.
@@ -71,6 +97,25 @@ namespace tryAGI.OpenAI
         /// <param name="allowedTools">
         /// List of allowed tool names or a filter object.
         /// </param>
+        /// <param name="authorization">
+        /// An OAuth access token that can be used with a remote MCP server, either <br/>
+        /// with a custom MCP server URL or a service connector. Your application<br/>
+        /// must handle the OAuth authorization flow and provide the token here.
+        /// </param>
+        /// <param name="connectorId">
+        /// Identifier for service connectors, like those available in ChatGPT. One of<br/>
+        /// `server_url` or `connector_id` must be provided. Learn more about service<br/>
+        /// connectors [here](https://platform.openai.com/docs/guides/tools-remote-mcp#connectors).<br/>
+        /// Currently supported `connector_id` values are:<br/>
+        /// - Dropbox: `connector_dropbox`<br/>
+        /// - Gmail: `connector_gmail`<br/>
+        /// - Google Calendar: `connector_googlecalendar`<br/>
+        /// - Google Drive: `connector_googledrive`<br/>
+        /// - Microsoft Teams: `connector_microsoftteams`<br/>
+        /// - Outlook Calendar: `connector_outlookcalendar`<br/>
+        /// - Outlook Email: `connector_outlookemail`<br/>
+        /// - SharePoint: `connector_sharepoint`
+        /// </param>
         /// <param name="headers">
         /// Optional HTTP headers to send to the MCP server. Use for authentication<br/>
         /// or other purposes.
@@ -85,7 +130,8 @@ namespace tryAGI.OpenAI
         /// A label for this MCP server, used to identify it in tool calls.
         /// </param>
         /// <param name="serverUrl">
-        /// The URL for the MCP server.
+        /// The URL for the MCP server. One of `server_url` or `connector_id` must be <br/>
+        /// provided.
         /// </param>
         /// <param name="type">
         /// The type of the MCP tool. Always `mcp`.
@@ -95,19 +141,23 @@ namespace tryAGI.OpenAI
 #endif
         public MCPTool(
             string serverLabel,
-            string serverUrl,
-            global::tryAGI.OpenAI.AnyOf<global::System.Collections.Generic.IList<string>, global::tryAGI.OpenAI.MCPToolAllowedTools>? allowedTools,
+            global::tryAGI.OpenAI.AnyOf<global::System.Collections.Generic.IList<string>, global::tryAGI.OpenAI.MCPToolFilter>? allowedTools,
+            string? authorization,
+            global::tryAGI.OpenAI.MCPToolConnectorId? connectorId,
             global::System.Collections.Generic.Dictionary<string, string>? headers,
             global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.MCPToolRequireApprovalEnum, global::tryAGI.OpenAI.MCPToolRequireApprovalEnum2?>? requireApproval,
             string? serverDescription,
+            string? serverUrl,
             global::tryAGI.OpenAI.MCPToolType type)
         {
             this.ServerLabel = serverLabel ?? throw new global::System.ArgumentNullException(nameof(serverLabel));
-            this.ServerUrl = serverUrl ?? throw new global::System.ArgumentNullException(nameof(serverUrl));
             this.AllowedTools = allowedTools;
+            this.Authorization = authorization;
+            this.ConnectorId = connectorId;
             this.Headers = headers;
             this.RequireApproval = requireApproval;
             this.ServerDescription = serverDescription;
+            this.ServerUrl = serverUrl;
             this.Type = type;
         }
 
