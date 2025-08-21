@@ -14,7 +14,6 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="order"></param>
         /// <param name="after"></param>
-        /// <param name="before"></param>
         /// <param name="include"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
@@ -23,7 +22,6 @@ namespace tryAGI.OpenAI
             int? limit = default,
             global::tryAGI.OpenAI.ListInputItemsOrder? order = default,
             string? after = default,
-            string? before = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

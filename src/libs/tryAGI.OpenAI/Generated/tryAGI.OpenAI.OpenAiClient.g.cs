@@ -65,6 +65,15 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
+        /// Manage conversations and conversation items.
+        /// </summary>
+        public ConversationsClient Conversations => new ConversationsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
         /// Given a prompt, the model will return one or more predicted completions, and can also return the probabilities of alternative tokens at each position.
         /// </summary>
         public CompletionsClient Completions => new CompletionsClient(HttpClient, authorizations: Authorizations)

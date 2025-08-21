@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -13,7 +15,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("template")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TemplateItem> Template { get; set; }
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.EasyInputMessage, global::tryAGI.OpenAI.EvalItem>> Template { get; set; }
 
         /// <summary>
         /// The type of input messages. Always `template`.
@@ -41,7 +43,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateEvalCompletionsRunDataSourceInputMessagesVariant1(
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TemplateItem> template,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.EasyInputMessage, global::tryAGI.OpenAI.EvalItem>> template,
             global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSourceInputMessagesVariant1Type type)
         {
             this.Template = template ?? throw new global::System.ArgumentNullException(nameof(template));

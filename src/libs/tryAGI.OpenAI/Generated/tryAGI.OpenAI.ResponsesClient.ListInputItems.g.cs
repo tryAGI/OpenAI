@@ -11,7 +11,6 @@ namespace tryAGI.OpenAI
             ref int? limit,
             ref global::tryAGI.OpenAI.ListInputItemsOrder? order,
             ref string? after,
-            ref string? before,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include);
         partial void PrepareListInputItemsRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -20,7 +19,6 @@ namespace tryAGI.OpenAI
             int? limit,
             global::tryAGI.OpenAI.ListInputItemsOrder? order,
             string? after,
-            string? before,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include);
         partial void ProcessListInputItemsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -41,7 +39,6 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="order"></param>
         /// <param name="after"></param>
-        /// <param name="before"></param>
         /// <param name="include"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
@@ -50,7 +47,6 @@ namespace tryAGI.OpenAI
             int? limit = default,
             global::tryAGI.OpenAI.ListInputItemsOrder? order = default,
             string? after = default,
-            string? before = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -62,7 +58,6 @@ namespace tryAGI.OpenAI
                 limit: ref limit,
                 order: ref order,
                 after: ref after,
-                before: ref before,
                 include: include);
 
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
@@ -72,7 +67,6 @@ namespace tryAGI.OpenAI
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("order", order?.ToValueString()) 
                 .AddOptionalParameter("after", after) 
-                .AddOptionalParameter("before", before) 
                 .AddOptionalParameter("include", include, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();
@@ -110,7 +104,6 @@ namespace tryAGI.OpenAI
                 limit: limit,
                 order: order,
                 after: after,
-                before: before,
                 include: include);
 
             using var __response = await HttpClient.SendAsync(

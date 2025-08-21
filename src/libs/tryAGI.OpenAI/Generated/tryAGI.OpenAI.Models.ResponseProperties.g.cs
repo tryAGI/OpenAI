@@ -41,7 +41,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The unique ID of the previous response to the model. Use this to<br/>
         /// create multi-turn conversations. Learn more about<br/>
-        /// [conversation state](https://platform.openai.com/docs/guides/conversation-state).
+        /// [conversation state](https://platform.openai.com/docs/guides/conversation-state). Cannot be used in conjunction with `conversation`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("previous_response_id")]
         public string? PreviousResponseId { get; set; }
@@ -136,7 +136,7 @@ namespace tryAGI.OpenAI
         /// <param name="previousResponseId">
         /// The unique ID of the previous response to the model. Use this to<br/>
         /// create multi-turn conversations. Learn more about<br/>
-        /// [conversation state](https://platform.openai.com/docs/guides/conversation-state).
+        /// [conversation state](https://platform.openai.com/docs/guides/conversation-state). Cannot be used in conjunction with `conversation`.
         /// </param>
         /// <param name="prompt">
         /// Reference to a prompt template and its variables. <br/>
