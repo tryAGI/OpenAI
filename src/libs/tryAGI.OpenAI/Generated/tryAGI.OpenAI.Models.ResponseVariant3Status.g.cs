@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The status of the response generation. One of `completed`, `failed`, <br/>
+    /// The status of the response generation. One of `completed`, `failed`,<br/>
     /// `in_progress`, `cancelled`, `queued`, or `incomplete`.
     /// </summary>
     public enum ResponseVariant3Status

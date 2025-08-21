@@ -53,6 +53,11 @@ namespace tryAGI.OpenAI
         public ChatClient Chat { get; }
 
         /// <summary>
+        /// Manage conversations and conversation items.
+        /// </summary>
+        public ConversationsClient Conversations { get; }
+
+        /// <summary>
         /// Given a prompt, the model will return one or more predicted completions, and can also return the probabilities of alternative tokens at each position.
         /// </summary>
         public CompletionsClient Completions { get; }

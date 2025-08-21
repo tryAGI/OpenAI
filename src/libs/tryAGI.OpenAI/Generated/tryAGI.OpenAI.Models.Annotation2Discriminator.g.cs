@@ -6,7 +6,7 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class CreateEvalCompletionsRunDataSourceInputMessagesVariant1TemplateItemDiscriminator
+    public sealed partial class Annotation2Discriminator
     {
         /// <summary>
         /// 
@@ -21,22 +21,22 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateEvalCompletionsRunDataSourceInputMessagesVariant1TemplateItemDiscriminator" /> class.
+        /// Initializes a new instance of the <see cref="Annotation2Discriminator" /> class.
         /// </summary>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public CreateEvalCompletionsRunDataSourceInputMessagesVariant1TemplateItemDiscriminator(
+        public Annotation2Discriminator(
             string? type)
         {
             this.Type = type;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateEvalCompletionsRunDataSourceInputMessagesVariant1TemplateItemDiscriminator" /> class.
+        /// Initializes a new instance of the <see cref="Annotation2Discriminator" /> class.
         /// </summary>
-        public CreateEvalCompletionsRunDataSourceInputMessagesVariant1TemplateItemDiscriminator()
+        public Annotation2Discriminator()
         {
         }
     }
