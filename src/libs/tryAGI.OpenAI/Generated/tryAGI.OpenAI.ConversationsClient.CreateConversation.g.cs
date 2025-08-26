@@ -23,7 +23,7 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// Create a conversation<br/>
-        /// Create a conversation with the given ID.
+        /// Create a conversation.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -168,7 +168,7 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// Create a conversation<br/>
-        /// Create a conversation with the given ID.
+        /// Create a conversation.
         /// </summary>
         /// <param name="items">
         /// Initial items to include in the conversation context.<br/>
