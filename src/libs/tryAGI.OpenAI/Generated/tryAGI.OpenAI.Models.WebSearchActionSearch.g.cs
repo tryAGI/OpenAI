@@ -16,6 +16,12 @@ namespace tryAGI.OpenAI
         public required string Query { get; set; }
 
         /// <summary>
+        /// The sources used in the search.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sources")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.WebSearchActionSearchSource>? Sources { get; set; }
+
+        /// <summary>
         /// The action type.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -34,6 +40,9 @@ namespace tryAGI.OpenAI
         /// <param name="query">
         /// The search query.
         /// </param>
+        /// <param name="sources">
+        /// The sources used in the search.
+        /// </param>
         /// <param name="type">
         /// The action type.
         /// </param>
@@ -42,9 +51,11 @@ namespace tryAGI.OpenAI
 #endif
         public WebSearchActionSearch(
             string query,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.WebSearchActionSearchSource>? sources,
             global::tryAGI.OpenAI.WebSearchActionSearchType type)
         {
             this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
+            this.Sources = sources;
             this.Type = type;
         }
 

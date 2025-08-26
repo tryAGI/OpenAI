@@ -1130,7 +1130,7 @@ paths:
       tags:
         - Conversations
       summary: Create a conversation
-      description: Create a conversation with the given ID.
+      description: Create a conversation.
       operationId: createConversation
       requestBody:
         content:
@@ -1157,7 +1157,7 @@ paths:
             python: "from openai import OpenAI\n\nclient = OpenAI(\n    api_key=\"My API Key\",\n)\nconversation = client.conversations.create()\nprint(conversation.id)"
             ruby: "require \"openai\"\n\nopenai = OpenAI::Client.new(api_key: \"My API Key\")\n\nconversation = openai.conversations.create\n\nputs(conversation)"
           response: "{\n  \"id\": \"conv_123\",\n  \"object\": \"conversation\",\n  \"created_at\": 1741900000,\n  \"metadata\": {\"topic\": \"demo\"}\n}\n"
-          title: Create a conversation
+          title: Create a conversation.
         group: conversations
         name: Create a conversation
         path: create
@@ -1319,7 +1319,7 @@ paths:
             type: string
         - name: include
           in: query
-          description: "Specify additional output data to include in the model response. Currently\nsupported values are:\n- `code_interpreter_call.outputs`: Includes the outputs of python code execution\n  in code interpreter tool call items.\n- `computer_call_output.output.image_url`: Include image urls from the computer call output.\n- `file_search_call.results`: Include the search results of\n  the file search tool call.\n- `message.input_image.image_url`: Include image urls from the input message.\n- `message.output_text.logprobs`: Include logprobs with assistant messages.\n- `reasoning.encrypted_content`: Includes an encrypted version of reasoning\n  tokens in reasoning item outputs. This enables reasoning items to be used in\n  multi-turn conversations when using the Responses API statelessly (like\n  when the `store` parameter is set to `false`, or when an organization is\n  enrolled in the zero data retention program).\n"
+          description: "Specify additional output data to include in the model response. Currently\nsupported values are:\n- `web_search_call.action.sources`: Include the sources of the web search tool call.\n- `code_interpreter_call.outputs`: Includes the outputs of python code execution\n  in code interpreter tool call items.\n- `computer_call_output.output.image_url`: Include image urls from the computer call output.\n- `file_search_call.results`: Include the search results of\n  the file search tool call.\n- `message.input_image.image_url`: Include image urls from the input message.\n- `message.output_text.logprobs`: Include logprobs with assistant messages.\n- `reasoning.encrypted_content`: Includes an encrypted version of reasoning\n  tokens in reasoning item outputs. This enables reasoning items to be used in\n  multi-turn conversations when using the Responses API statelessly (like\n  when the `store` parameter is set to `false`, or when an organization is\n  enrolled in the zero data retention program).\n"
           schema:
             type: array
             items:
@@ -12639,7 +12639,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/Includable'
-              description: "Specify additional output data to include in the model response. Currently\nsupported values are:\n- `code_interpreter_call.outputs`: Includes the outputs of python code execution\n  in code interpreter tool call items.\n- `computer_call_output.output.image_url`: Include image urls from the computer call output.\n- `file_search_call.results`: Include the search results of\n  the file search tool call.\n- `message.input_image.image_url`: Include image urls from the input message.\n- `message.output_text.logprobs`: Include logprobs with assistant messages.\n- `reasoning.encrypted_content`: Includes an encrypted version of reasoning\n  tokens in reasoning item outputs. This enables reasoning items to be used in\n  multi-turn conversations when using the Responses API statelessly (like\n  when the `store` parameter is set to `false`, or when an organization is\n  enrolled in the zero data retention program).\n"
+              description: "Specify additional output data to include in the model response. Currently\nsupported values are:\n- `web_search_call.action.sources`: Include the sources of the web search tool call.\n- `code_interpreter_call.outputs`: Includes the outputs of python code execution\n  in code interpreter tool call items.\n- `computer_call_output.output.image_url`: Include image urls from the computer call output.\n- `file_search_call.results`: Include the search results of\n  the file search tool call.\n- `message.input_image.image_url`: Include image urls from the input message.\n- `message.output_text.logprobs`: Include logprobs with assistant messages.\n- `reasoning.encrypted_content`: Includes an encrypted version of reasoning\n  tokens in reasoning item outputs. This enables reasoning items to be used in\n  multi-turn conversations when using the Responses API statelessly (like\n  when the `store` parameter is set to `false`, or when an organization is\n  enrolled in the zero data retention program).\n"
               nullable: true
             input:
               anyOf:
@@ -16601,7 +16601,7 @@ components:
         - message.output_text.logprobs
         - reasoning.encrypted_content
       type: string
-      description: "Specify additional output data to include in the model response. Currently\nsupported values are:\n- `code_interpreter_call.outputs`: Includes the outputs of python code execution\n  in code interpreter tool call items.\n- `computer_call_output.output.image_url`: Include image urls from the computer call output.\n- `file_search_call.results`: Include the search results of\n  the file search tool call.\n- `message.input_image.image_url`: Include image urls from the input message.\n- `message.output_text.logprobs`: Include logprobs with assistant messages.\n- `reasoning.encrypted_content`: Includes an encrypted version of reasoning\n  tokens in reasoning item outputs. This enables reasoning items to be used in\n  multi-turn conversations when using the Responses API statelessly (like\n  when the `store` parameter is set to `false`, or when an organization is\n  enrolled in the zero data retention program).\n"
+      description: "Specify additional output data to include in the model response. Currently\nsupported values are:\n- `web_search_call.action.sources`: Include the sources of the web search tool call.\n- `code_interpreter_call.outputs`: Includes the outputs of python code execution\n  in code interpreter tool call items.\n- `computer_call_output.output.image_url`: Include image urls from the computer call output.\n- `file_search_call.results`: Include the search results of\n  the file search tool call.\n- `message.input_image.image_url`: Include image urls from the input message.\n- `message.output_text.logprobs`: Include logprobs with assistant messages.\n- `reasoning.encrypted_content`: Includes an encrypted version of reasoning\n  tokens in reasoning item outputs. This enables reasoning items to be used in\n  multi-turn conversations when using the Responses API statelessly (like\n  when the `store` parameter is set to `false`, or when an organization is\n  enrolled in the zero data retention program).\n"
     InputAudio:
       title: Audio input
       required:
@@ -25682,13 +25682,14 @@ components:
       anyOf:
         - $ref: '#/components/schemas/FunctionTool'
         - $ref: '#/components/schemas/FileSearchTool'
-        - $ref: '#/components/schemas/WebSearchPreviewTool'
         - $ref: '#/components/schemas/ComputerUsePreviewTool'
+        - $ref: '#/components/schemas/WebSearchTool'
         - $ref: '#/components/schemas/MCPTool'
         - $ref: '#/components/schemas/CodeInterpreterTool'
         - $ref: '#/components/schemas/ImageGenTool'
         - $ref: '#/components/schemas/LocalShellTool'
         - $ref: '#/components/schemas/CustomTool'
+        - $ref: '#/components/schemas/WebSearchPreviewTool'
       description: "A tool that can be used to generate a response.\n"
       discriminator:
         propertyName: type
@@ -27242,6 +27243,27 @@ components:
         query:
           type: string
           description: "The search query.\n"
+        sources:
+          title: Web search sources
+          type: array
+          items:
+            title: Web search source
+            required:
+              - type
+              - url
+            type: object
+            properties:
+              type:
+                enum:
+                  - url
+                type: string
+                description: "The type of source. Always `url`.\n"
+                x-stainless-const: true
+              url:
+                type: string
+                description: "The URL of the source.\n"
+            description: "A source used in the search.\n"
+          description: "The sources used in the search.\n"
         type:
           enum:
             - search
@@ -27249,6 +27271,35 @@ components:
           description: "The action type.\n"
           x-stainless-const: true
       description: "Action type \"search\" - Performs a web search query.\n"
+    WebSearchApproximateLocation:
+      title: Web search approximate location
+      type: object
+      properties:
+        city:
+          type: string
+          description: 'Free text input for the city of the user, e.g. `San Francisco`.'
+          nullable: true
+        country:
+          type: string
+          description: 'The two-letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1) of the user, e.g. `US`.'
+          nullable: true
+        region:
+          type: string
+          description: 'Free text input for the region of the user, e.g. `California`.'
+          nullable: true
+        timezone:
+          type: string
+          description: 'The [IANA timezone](https://timeapi.io/documentation/iana-timezones) of the user, e.g. `America/Los_Angeles`.'
+          nullable: true
+        type:
+          enum:
+            - approximate
+          type: string
+          description: The type of location approximation. Always `approximate`.
+          default: approximate
+          x-stainless-const: true
+      description: "The approximate location of the user.\n"
+      nullable: true
     WebSearchContextSize:
       enum:
         - low
@@ -27299,6 +27350,43 @@ components:
           type: 'null'
           nullable: true
       description: 'This tool searches the web for relevant results to use in a response. Learn more about the [web search tool](https://platform.openai.com/docs/guides/tools-web-search).'
+    WebSearchTool:
+      title: Web search
+      required:
+        - type
+      type: object
+      properties:
+        filters:
+          type: object
+          properties:
+            allowed_domains:
+              title: Allowed domains for the search.
+              type: array
+              items:
+                type: string
+                description: Allowed domain for the search.
+              description: "Allowed domains for the search. If not provided, all domains are allowed.\nSubdomains of the provided domains are allowed as well.\n\nExample: `[\"pubmed.ncbi.nlm.nih.gov\"]`\n"
+              nullable: true
+          description: "Filters for the search.\n"
+          nullable: true
+        search_context_size:
+          enum:
+            - low
+            - medium
+            - high
+          type: string
+          description: 'High level guidance for the amount of context window space to use for the search. One of `low`, `medium`, or `high`. `medium` is the default.'
+          default: medium
+        type:
+          enum:
+            - web_search
+            - web_search_2025_08_26
+          type: string
+          description: The type of the web search tool. One of `web_search` or `web_search_2025_08_26`.
+          default: web_search
+        user_location:
+          $ref: '#/components/schemas/WebSearchApproximateLocation'
+      description: "Search the Internet for sources related to the prompt. Learn more about the \n[web search tool](https://platform.openai.com/docs/guides/tools-web-search).\n"
     WebSearchToolCall:
       title: Web search tool call
       required:

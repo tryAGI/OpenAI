@@ -80,41 +80,6 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// This tool searches the web for relevant results to use in a response. Learn more about the [web search tool](https://platform.openai.com/docs/guides/tools-web-search).
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.WebSearchPreviewTool? WebSearchPreview { get; init; }
-#else
-        public global::tryAGI.OpenAI.WebSearchPreviewTool? WebSearchPreview { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchPreview))]
-#endif
-        public bool IsWebSearchPreview => WebSearchPreview != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Tool(global::tryAGI.OpenAI.WebSearchPreviewTool value) => new Tool((global::tryAGI.OpenAI.WebSearchPreviewTool?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.WebSearchPreviewTool?(Tool @this) => @this.WebSearchPreview;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Tool(global::tryAGI.OpenAI.WebSearchPreviewTool? value)
-        {
-            WebSearchPreview = value;
-        }
-
-        /// <summary>
         /// A tool that controls a virtual computer. Learn more about the [computer tool](https://platform.openai.com/docs/guides/tools-computer-use).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -147,6 +112,42 @@ namespace tryAGI.OpenAI
         public Tool(global::tryAGI.OpenAI.ComputerUsePreviewTool? value)
         {
             ComputerUsePreview = value;
+        }
+
+        /// <summary>
+        /// Search the Internet for sources related to the prompt. Learn more about the <br/>
+        /// [web search tool](https://platform.openai.com/docs/guides/tools-web-search).
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.WebSearchTool? WebSearch { get; init; }
+#else
+        public global::tryAGI.OpenAI.WebSearchTool? WebSearch { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearch))]
+#endif
+        public bool IsWebSearch => WebSearch != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Tool(global::tryAGI.OpenAI.WebSearchTool value) => new Tool((global::tryAGI.OpenAI.WebSearchTool?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.WebSearchTool?(Tool @this) => @this.WebSearch;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Tool(global::tryAGI.OpenAI.WebSearchTool? value)
+        {
+            WebSearch = value;
         }
 
         /// <summary>
@@ -327,42 +328,80 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// This tool searches the web for relevant results to use in a response. Learn more about the [web search tool](https://platform.openai.com/docs/guides/tools-web-search).
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.WebSearchPreviewTool? WebSearchPreview { get; init; }
+#else
+        public global::tryAGI.OpenAI.WebSearchPreviewTool? WebSearchPreview { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchPreview))]
+#endif
+        public bool IsWebSearchPreview => WebSearchPreview != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Tool(global::tryAGI.OpenAI.WebSearchPreviewTool value) => new Tool((global::tryAGI.OpenAI.WebSearchPreviewTool?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.WebSearchPreviewTool?(Tool @this) => @this.WebSearchPreview;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Tool(global::tryAGI.OpenAI.WebSearchPreviewTool? value)
+        {
+            WebSearchPreview = value;
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         public Tool(
             global::tryAGI.OpenAI.FunctionTool? function,
             global::tryAGI.OpenAI.FileSearchTool? fileSearch,
-            global::tryAGI.OpenAI.WebSearchPreviewTool? webSearchPreview,
             global::tryAGI.OpenAI.ComputerUsePreviewTool? computerUsePreview,
+            global::tryAGI.OpenAI.WebSearchTool? webSearch,
             global::tryAGI.OpenAI.MCPTool? mCP,
             global::tryAGI.OpenAI.CodeInterpreterTool? codeInterpreter,
             global::tryAGI.OpenAI.ImageGenTool? imageGen,
             global::tryAGI.OpenAI.LocalShellTool? localShell,
-            global::tryAGI.OpenAI.CustomTool? custom
+            global::tryAGI.OpenAI.CustomTool? custom,
+            global::tryAGI.OpenAI.WebSearchPreviewTool? webSearchPreview
             )
         {
             Function = function;
             FileSearch = fileSearch;
-            WebSearchPreview = webSearchPreview;
             ComputerUsePreview = computerUsePreview;
+            WebSearch = webSearch;
             MCP = mCP;
             CodeInterpreter = codeInterpreter;
             ImageGen = imageGen;
             LocalShell = localShell;
             Custom = custom;
+            WebSearchPreview = webSearchPreview;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            WebSearchPreview as object ??
             Custom as object ??
             LocalShell as object ??
             ImageGen as object ??
             CodeInterpreter as object ??
             MCP as object ??
+            WebSearch as object ??
             ComputerUsePreview as object ??
-            WebSearchPreview as object ??
             FileSearch as object ??
             Function as object 
             ;
@@ -373,13 +412,14 @@ namespace tryAGI.OpenAI
         public override string? ToString() =>
             Function?.ToString() ??
             FileSearch?.ToString() ??
-            WebSearchPreview?.ToString() ??
             ComputerUsePreview?.ToString() ??
+            WebSearch?.ToString() ??
             MCP?.ToString() ??
             CodeInterpreter?.ToString() ??
             ImageGen?.ToString() ??
             LocalShell?.ToString() ??
-            Custom?.ToString() 
+            Custom?.ToString() ??
+            WebSearchPreview?.ToString() 
             ;
 
         /// <summary>
@@ -387,7 +427,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsFunction || IsFileSearch || IsWebSearchPreview || IsComputerUsePreview || IsMCP || IsCodeInterpreter || IsImageGen || IsLocalShell || IsCustom;
+            return IsFunction || IsFileSearch || IsComputerUsePreview || IsWebSearch || IsMCP || IsCodeInterpreter || IsImageGen || IsLocalShell || IsCustom || IsWebSearchPreview;
         }
 
         /// <summary>
@@ -396,13 +436,14 @@ namespace tryAGI.OpenAI
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.FunctionTool?, TResult>? function = null,
             global::System.Func<global::tryAGI.OpenAI.FileSearchTool?, TResult>? fileSearch = null,
-            global::System.Func<global::tryAGI.OpenAI.WebSearchPreviewTool?, TResult>? webSearchPreview = null,
             global::System.Func<global::tryAGI.OpenAI.ComputerUsePreviewTool?, TResult>? computerUsePreview = null,
+            global::System.Func<global::tryAGI.OpenAI.WebSearchTool?, TResult>? webSearch = null,
             global::System.Func<global::tryAGI.OpenAI.MCPTool?, TResult>? mCP = null,
             global::System.Func<global::tryAGI.OpenAI.CodeInterpreterTool?, TResult>? codeInterpreter = null,
             global::System.Func<global::tryAGI.OpenAI.ImageGenTool?, TResult>? imageGen = null,
             global::System.Func<global::tryAGI.OpenAI.LocalShellTool?, TResult>? localShell = null,
             global::System.Func<global::tryAGI.OpenAI.CustomTool?, TResult>? custom = null,
+            global::System.Func<global::tryAGI.OpenAI.WebSearchPreviewTool?, TResult>? webSearchPreview = null,
             bool validate = true)
         {
             if (validate)
@@ -418,13 +459,13 @@ namespace tryAGI.OpenAI
             {
                 return fileSearch(FileSearch!);
             }
-            else if (IsWebSearchPreview && webSearchPreview != null)
-            {
-                return webSearchPreview(WebSearchPreview!);
-            }
             else if (IsComputerUsePreview && computerUsePreview != null)
             {
                 return computerUsePreview(ComputerUsePreview!);
+            }
+            else if (IsWebSearch && webSearch != null)
+            {
+                return webSearch(WebSearch!);
             }
             else if (IsMCP && mCP != null)
             {
@@ -446,6 +487,10 @@ namespace tryAGI.OpenAI
             {
                 return custom(Custom!);
             }
+            else if (IsWebSearchPreview && webSearchPreview != null)
+            {
+                return webSearchPreview(WebSearchPreview!);
+            }
 
             return default(TResult);
         }
@@ -456,13 +501,14 @@ namespace tryAGI.OpenAI
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.FunctionTool?>? function = null,
             global::System.Action<global::tryAGI.OpenAI.FileSearchTool?>? fileSearch = null,
-            global::System.Action<global::tryAGI.OpenAI.WebSearchPreviewTool?>? webSearchPreview = null,
             global::System.Action<global::tryAGI.OpenAI.ComputerUsePreviewTool?>? computerUsePreview = null,
+            global::System.Action<global::tryAGI.OpenAI.WebSearchTool?>? webSearch = null,
             global::System.Action<global::tryAGI.OpenAI.MCPTool?>? mCP = null,
             global::System.Action<global::tryAGI.OpenAI.CodeInterpreterTool?>? codeInterpreter = null,
             global::System.Action<global::tryAGI.OpenAI.ImageGenTool?>? imageGen = null,
             global::System.Action<global::tryAGI.OpenAI.LocalShellTool?>? localShell = null,
             global::System.Action<global::tryAGI.OpenAI.CustomTool?>? custom = null,
+            global::System.Action<global::tryAGI.OpenAI.WebSearchPreviewTool?>? webSearchPreview = null,
             bool validate = true)
         {
             if (validate)
@@ -478,13 +524,13 @@ namespace tryAGI.OpenAI
             {
                 fileSearch?.Invoke(FileSearch!);
             }
-            else if (IsWebSearchPreview)
-            {
-                webSearchPreview?.Invoke(WebSearchPreview!);
-            }
             else if (IsComputerUsePreview)
             {
                 computerUsePreview?.Invoke(ComputerUsePreview!);
+            }
+            else if (IsWebSearch)
+            {
+                webSearch?.Invoke(WebSearch!);
             }
             else if (IsMCP)
             {
@@ -506,6 +552,10 @@ namespace tryAGI.OpenAI
             {
                 custom?.Invoke(Custom!);
             }
+            else if (IsWebSearchPreview)
+            {
+                webSearchPreview?.Invoke(WebSearchPreview!);
+            }
         }
 
         /// <summary>
@@ -519,10 +569,10 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.FunctionTool),
                 FileSearch,
                 typeof(global::tryAGI.OpenAI.FileSearchTool),
-                WebSearchPreview,
-                typeof(global::tryAGI.OpenAI.WebSearchPreviewTool),
                 ComputerUsePreview,
                 typeof(global::tryAGI.OpenAI.ComputerUsePreviewTool),
+                WebSearch,
+                typeof(global::tryAGI.OpenAI.WebSearchTool),
                 MCP,
                 typeof(global::tryAGI.OpenAI.MCPTool),
                 CodeInterpreter,
@@ -533,6 +583,8 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.LocalShellTool),
                 Custom,
                 typeof(global::tryAGI.OpenAI.CustomTool),
+                WebSearchPreview,
+                typeof(global::tryAGI.OpenAI.WebSearchPreviewTool),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -551,13 +603,14 @@ namespace tryAGI.OpenAI
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FunctionTool?>.Default.Equals(Function, other.Function) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FileSearchTool?>.Default.Equals(FileSearch, other.FileSearch) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.WebSearchPreviewTool?>.Default.Equals(WebSearchPreview, other.WebSearchPreview) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ComputerUsePreviewTool?>.Default.Equals(ComputerUsePreview, other.ComputerUsePreview) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.WebSearchTool?>.Default.Equals(WebSearch, other.WebSearch) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.MCPTool?>.Default.Equals(MCP, other.MCP) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CodeInterpreterTool?>.Default.Equals(CodeInterpreter, other.CodeInterpreter) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ImageGenTool?>.Default.Equals(ImageGen, other.ImageGen) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LocalShellTool?>.Default.Equals(LocalShell, other.LocalShell) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CustomTool?>.Default.Equals(Custom, other.Custom) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CustomTool?>.Default.Equals(Custom, other.Custom) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.WebSearchPreviewTool?>.Default.Equals(WebSearchPreview, other.WebSearchPreview) 
                 ;
         }
 
