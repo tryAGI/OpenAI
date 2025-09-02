@@ -4,14 +4,14 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The event type, must be `response.text.delta`.
+    /// The event type, must be `response.output_text.delta`.
     /// </summary>
     public enum RealtimeServerEventResponseTextDeltaType
     {
         /// <summary>
         /// 
         /// </summary>
-        ResponseTextDelta,
+        ResponseOutputTextDelta,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                RealtimeServerEventResponseTextDeltaType.ResponseTextDelta => "response.text.delta",
+                RealtimeServerEventResponseTextDeltaType.ResponseOutputTextDelta => "response.output_text.delta",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "response.text.delta" => RealtimeServerEventResponseTextDeltaType.ResponseTextDelta,
+                "response.output_text.delta" => RealtimeServerEventResponseTextDeltaType.ResponseOutputTextDelta,
                 _ => null,
             };
         }

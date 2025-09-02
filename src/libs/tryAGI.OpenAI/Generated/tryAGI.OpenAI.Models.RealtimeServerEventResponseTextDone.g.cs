@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Returned when the text value of a "text" content part is done streaming. Also<br/>
+    /// Returned when the text value of an "output_text" content part is done streaming. Also<br/>
     /// emitted when a Response is interrupted, incomplete, or cancelled.
     /// </summary>
     public sealed partial class RealtimeServerEventResponseTextDone
@@ -52,7 +52,7 @@ namespace tryAGI.OpenAI
         public required string Text { get; set; }
 
         /// <summary>
-        /// The event type, must be `response.text.done`.
+        /// The event type, must be `response.output_text.done`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventResponseTextDoneTypeJsonConverter))]
@@ -86,7 +86,7 @@ namespace tryAGI.OpenAI
         /// The final text content.
         /// </param>
         /// <param name="type">
-        /// The event type, must be `response.text.done`.
+        /// The event type, must be `response.output_text.done`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

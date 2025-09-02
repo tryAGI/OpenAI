@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         public required string ResponseId { get; set; }
 
         /// <summary>
-        /// The event type, must be `response.audio.done`.
+        /// The event type, must be `response.output_audio.done`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventResponseAudioDoneTypeJsonConverter))]
@@ -76,7 +76,7 @@ namespace tryAGI.OpenAI
         /// The ID of the response.
         /// </param>
         /// <param name="type">
-        /// The event type, must be `response.audio.done`.
+        /// The event type, must be `response.output_audio.done`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

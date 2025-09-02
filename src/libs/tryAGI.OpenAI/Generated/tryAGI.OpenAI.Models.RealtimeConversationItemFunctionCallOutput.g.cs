@@ -1,0 +1,105 @@
+
+#nullable enable
+
+namespace tryAGI.OpenAI
+{
+    /// <summary>
+    /// A function call output item in a Realtime conversation.
+    /// </summary>
+    public sealed partial class RealtimeConversationItemFunctionCallOutput
+    {
+        /// <summary>
+        /// The ID of the function call this output is for.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string CallId { get; set; }
+
+        /// <summary>
+        /// The unique ID of the item.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
+
+        /// <summary>
+        /// Identifier for the API object being returned - always `realtime.item`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeConversationItemFunctionCallOutputObjectJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeConversationItemFunctionCallOutputObject? Object { get; set; }
+
+        /// <summary>
+        /// The output of the function call.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Output { get; set; }
+
+        /// <summary>
+        /// The status of the item. Has no effect on the conversation.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeConversationItemFunctionCallOutputStatusJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeConversationItemFunctionCallOutputStatus? Status { get; set; }
+
+        /// <summary>
+        /// The type of the item. Always `function_call_output`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeConversationItemFunctionCallOutputTypeJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeConversationItemFunctionCallOutputType Type { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RealtimeConversationItemFunctionCallOutput" /> class.
+        /// </summary>
+        /// <param name="callId">
+        /// The ID of the function call this output is for.
+        /// </param>
+        /// <param name="id">
+        /// The unique ID of the item.
+        /// </param>
+        /// <param name="object">
+        /// Identifier for the API object being returned - always `realtime.item`.
+        /// </param>
+        /// <param name="output">
+        /// The output of the function call.
+        /// </param>
+        /// <param name="status">
+        /// The status of the item. Has no effect on the conversation.
+        /// </param>
+        /// <param name="type">
+        /// The type of the item. Always `function_call_output`.
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public RealtimeConversationItemFunctionCallOutput(
+            string callId,
+            string output,
+            string? id,
+            global::tryAGI.OpenAI.RealtimeConversationItemFunctionCallOutputObject? @object,
+            global::tryAGI.OpenAI.RealtimeConversationItemFunctionCallOutputStatus? status,
+            global::tryAGI.OpenAI.RealtimeConversationItemFunctionCallOutputType type)
+        {
+            this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
+            this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
+            this.Id = id;
+            this.Object = @object;
+            this.Status = status;
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RealtimeConversationItemFunctionCallOutput" /> class.
+        /// </summary>
+        public RealtimeConversationItemFunctionCallOutput()
+        {
+        }
+    }
+}

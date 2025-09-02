@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -9,17 +11,11 @@ namespace tryAGI.OpenAI
     public sealed partial class RealtimeTranscriptionSessionCreateRequest
     {
         /// <summary>
-        /// Configuration options for the generated client secret.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("client_secret")]
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestClientSecret? ClientSecret { get; set; }
-
-        /// <summary>
         /// The set of items to include in the transcription. Current available items are:<br/>
         /// - `item.input_audio_transcription.logprobs`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("include")]
-        public global::System.Collections.Generic.IList<string>? Include { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestIncludeItem>? Include { get; set; }
 
         /// <summary>
         /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.<br/>
@@ -46,19 +42,27 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestInputAudioTranscription? InputAudioTranscription { get; set; }
 
         /// <summary>
-        /// The set of modalities the model can respond with. To disable audio,<br/>
-        /// set this to ["text"].
+        /// ID of the model to use. The options are `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, and `whisper-1` (which is powered by our open source Whisper V2 model).<br/>
+        /// Example: gpt-4o-transcribe
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("modalities")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestModalitie>? Modalities { get; set; }
+        /// <example>gpt-4o-transcribe</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestModel?>))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestModel?> Model { get; set; }
 
         /// <summary>
-        /// Configuration for turn detection, ether Server VAD or Semantic VAD. This can be set to `null` to turn off, in which case the client must manually trigger model response.<br/>
-        /// Server VAD means that the model will detect the start and end of speech based on audio volume and respond at the end of user speech.<br/>
-        /// Semantic VAD is more advanced and uses a turn detection model (in conjunction with VAD) to semantically estimate whether the user has finished speaking, then dynamically sets a timeout based on this probability. For example, if user audio trails off with "uhhm", the model will score a low probability of turn end and wait longer for the user to continue speaking. This can be useful for more natural conversations, but may have a higher latency.
+        /// Configuration for turn detection. Can be set to `null` to turn off. Server VAD means that the model will detect the start and end of speech based on audio volume and respond at the end of user speech.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("turn_detection")]
         public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestTurnDetection? TurnDetection { get; set; }
+
+        /// <summary>
+        /// The type of session to create. Always `transcription` for transcription sessions.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranscriptionSessionCreateRequestTypeJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -69,9 +73,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeTranscriptionSessionCreateRequest" /> class.
         /// </summary>
-        /// <param name="clientSecret">
-        /// Configuration options for the generated client secret.
-        /// </param>
         /// <param name="include">
         /// The set of items to include in the transcription. Current available items are:<br/>
         /// - `item.input_audio_transcription.logprobs`
@@ -90,34 +91,35 @@ namespace tryAGI.OpenAI
         /// <param name="inputAudioTranscription">
         /// Configuration for input audio transcription. The client can optionally set the language and prompt for transcription, these offer additional guidance to the transcription service.
         /// </param>
-        /// <param name="modalities">
-        /// The set of modalities the model can respond with. To disable audio,<br/>
-        /// set this to ["text"].
+        /// <param name="model">
+        /// ID of the model to use. The options are `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, and `whisper-1` (which is powered by our open source Whisper V2 model).<br/>
+        /// Example: gpt-4o-transcribe
         /// </param>
         /// <param name="turnDetection">
-        /// Configuration for turn detection, ether Server VAD or Semantic VAD. This can be set to `null` to turn off, in which case the client must manually trigger model response.<br/>
-        /// Server VAD means that the model will detect the start and end of speech based on audio volume and respond at the end of user speech.<br/>
-        /// Semantic VAD is more advanced and uses a turn detection model (in conjunction with VAD) to semantically estimate whether the user has finished speaking, then dynamically sets a timeout based on this probability. For example, if user audio trails off with "uhhm", the model will score a low probability of turn end and wait longer for the user to continue speaking. This can be useful for more natural conversations, but may have a higher latency.
+        /// Configuration for turn detection. Can be set to `null` to turn off. Server VAD means that the model will detect the start and end of speech based on audio volume and respond at the end of user speech.
+        /// </param>
+        /// <param name="type">
+        /// The type of session to create. Always `transcription` for transcription sessions.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeTranscriptionSessionCreateRequest(
-            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestClientSecret? clientSecret,
-            global::System.Collections.Generic.IList<string>? include,
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestModel?> model,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestIncludeItem>? include,
             global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestInputAudioFormat? inputAudioFormat,
             global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction? inputAudioNoiseReduction,
             global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestInputAudioTranscription? inputAudioTranscription,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestModalitie>? modalities,
-            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestTurnDetection? turnDetection)
+            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestTurnDetection? turnDetection,
+            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestType type)
         {
-            this.ClientSecret = clientSecret;
+            this.Model = model;
             this.Include = include;
             this.InputAudioFormat = inputAudioFormat;
             this.InputAudioNoiseReduction = inputAudioNoiseReduction;
             this.InputAudioTranscription = inputAudioTranscription;
-            this.Modalities = modalities;
             this.TurnDetection = turnDetection;
+            this.Type = type;
         }
 
         /// <summary>

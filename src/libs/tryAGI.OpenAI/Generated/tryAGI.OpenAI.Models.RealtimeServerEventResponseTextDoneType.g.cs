@@ -4,14 +4,14 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The event type, must be `response.text.done`.
+    /// The event type, must be `response.output_text.done`.
     /// </summary>
     public enum RealtimeServerEventResponseTextDoneType
     {
         /// <summary>
         /// 
         /// </summary>
-        ResponseTextDone,
+        ResponseOutputTextDone,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                RealtimeServerEventResponseTextDoneType.ResponseTextDone => "response.text.done",
+                RealtimeServerEventResponseTextDoneType.ResponseOutputTextDone => "response.output_text.done",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "response.text.done" => RealtimeServerEventResponseTextDoneType.ResponseTextDone,
+                "response.output_text.done" => RealtimeServerEventResponseTextDoneType.ResponseOutputTextDone,
                 _ => null,
             };
         }

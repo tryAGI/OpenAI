@@ -4,14 +4,14 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The event type, must be `response.audio.delta`.
+    /// The event type, must be `response.output_audio.delta`.
     /// </summary>
     public enum RealtimeServerEventResponseAudioDeltaType
     {
         /// <summary>
         /// 
         /// </summary>
-        ResponseAudioDelta,
+        ResponseOutputAudioDelta,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                RealtimeServerEventResponseAudioDeltaType.ResponseAudioDelta => "response.audio.delta",
+                RealtimeServerEventResponseAudioDeltaType.ResponseOutputAudioDelta => "response.output_audio.delta",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "response.audio.delta" => RealtimeServerEventResponseAudioDeltaType.ResponseAudioDelta,
+                "response.output_audio.delta" => RealtimeServerEventResponseAudioDeltaType.ResponseOutputAudioDelta,
                 _ => null,
             };
         }

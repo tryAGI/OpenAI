@@ -4,14 +4,14 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The event type, must be `response.audio.done`.
+    /// The event type, must be `response.output_audio.done`.
     /// </summary>
     public enum RealtimeServerEventResponseAudioDoneType
     {
         /// <summary>
         /// 
         /// </summary>
-        ResponseAudioDone,
+        ResponseOutputAudioDone,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                RealtimeServerEventResponseAudioDoneType.ResponseAudioDone => "response.audio.done",
+                RealtimeServerEventResponseAudioDoneType.ResponseOutputAudioDone => "response.output_audio.done",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "response.audio.done" => RealtimeServerEventResponseAudioDoneType.ResponseAudioDone,
+                "response.output_audio.done" => RealtimeServerEventResponseAudioDoneType.ResponseOutputAudioDone,
                 _ => null,
             };
         }

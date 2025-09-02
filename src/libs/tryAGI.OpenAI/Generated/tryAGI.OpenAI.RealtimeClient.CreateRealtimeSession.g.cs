@@ -180,62 +180,48 @@ namespace tryAGI.OpenAI
         /// a usable ephemeral API token that can be used to authenticate browser clients<br/>
         /// for the Realtime API.
         /// </summary>
+        /// <param name="audio">
+        /// Configuration for input and output audio.
+        /// </param>
         /// <param name="clientSecret">
         /// Configuration options for the generated client secret.
         /// </param>
-        /// <param name="inputAudioFormat">
-        /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.<br/>
-        /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate,<br/>
-        /// single channel (mono), and little-endian byte order.<br/>
-        /// Default Value: pcm16
-        /// </param>
-        /// <param name="inputAudioNoiseReduction">
-        /// Configuration for input audio noise reduction. This can be set to `null` to turn off.<br/>
-        /// Noise reduction filters audio added to the input audio buffer before it is sent to VAD and the model.<br/>
-        /// Filtering the audio can improve VAD and turn detection accuracy (reducing false positives) and model performance by improving perception of the input audio.
-        /// </param>
-        /// <param name="inputAudioTranscription">
-        /// Configuration for input audio transcription, defaults to off and can be set to `null` to turn off once on. Input audio transcription is not native to the model, since the model consumes audio directly. Transcription runs asynchronously through [the /audio/transcriptions endpoint](https://platform.openai.com/docs/api-reference/audio/createTranscription) and should be treated as guidance of input audio content rather than precisely what the model heard. The client can optionally set the language and prompt for transcription, these offer additional guidance to the transcription service.
+        /// <param name="include">
+        /// Additional fields to include in server outputs.<br/>
+        /// - `item.input_audio_transcription.logprobs`: Include logprobs for input audio transcription.
         /// </param>
         /// <param name="instructions">
         /// The default system instructions (i.e. system message) prepended to model calls. This field allows the client to guide the model on desired responses. The model can be instructed on response content and format, (e.g. "be extremely succinct", "act friendly", "here are examples of good responses") and on audio behavior (e.g. "talk quickly", "inject emotion into your voice", "laugh frequently"). The instructions are not guaranteed to be followed by the model, but they provide guidance to the model on the desired behavior.<br/>
         /// Note that the server sets default instructions which will be used if this field is not set and are visible in the `session.created` event at the start of the session.
         /// </param>
-        /// <param name="maxResponseOutputTokens">
+        /// <param name="maxOutputTokens">
         /// Maximum number of output tokens for a single assistant response,<br/>
         /// inclusive of tool calls. Provide an integer between 1 and 4096 to<br/>
         /// limit output tokens, or `inf` for the maximum available tokens for a<br/>
         /// given model. Defaults to `inf`.
         /// </param>
-        /// <param name="modalities">
-        /// The set of modalities the model can respond with. To disable audio,<br/>
-        /// set this to ["text"].
-        /// </param>
         /// <param name="model">
         /// The Realtime model used for this session.
         /// </param>
-        /// <param name="outputAudioFormat">
-        /// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.<br/>
-        /// For `pcm16`, output audio is sampled at a rate of 24kHz.<br/>
-        /// Default Value: pcm16
+        /// <param name="outputModalities">
+        /// The set of modalities the model can respond with. To disable audio,<br/>
+        /// set this to ["text"].
         /// </param>
-        /// <param name="speed">
-        /// The speed of the model's spoken response. 1.0 is the default speed. 0.25 is<br/>
-        /// the minimum speed. 1.5 is the maximum speed. This value can only be changed<br/>
-        /// in between model turns, not while a response is in progress.<br/>
-        /// Default Value: 1
+        /// <param name="prompt">
+        /// Reference to a prompt template and its variables. <br/>
+        /// [Learn more](https://platform.openai.com/docs/guides/text?api-mode=responses#reusable-prompts).
         /// </param>
         /// <param name="temperature">
         /// Sampling temperature for the model, limited to [0.6, 1.2]. For audio models a temperature of 0.8 is highly recommended for best performance.<br/>
         /// Default Value: 0.8
         /// </param>
         /// <param name="toolChoice">
-        /// How the model chooses tools. Options are `auto`, `none`, `required`, or<br/>
-        /// specify a function.<br/>
+        /// How the model chooses tools. Provide one of the string modes or force a specific<br/>
+        /// function/MCP tool.<br/>
         /// Default Value: auto
         /// </param>
         /// <param name="tools">
-        /// Tools (functions) available to the model.
+        /// Tools available to the model.
         /// </param>
         /// <param name="tracing">
         /// Configuration options for tracing. Set to null to disable tracing. Once<br/>
@@ -243,53 +229,49 @@ namespace tryAGI.OpenAI
         /// `auto` will create a trace for the session with default values for the<br/>
         /// workflow name, group id, and metadata.
         /// </param>
-        /// <param name="turnDetection">
-        /// Configuration for turn detection, ether Server VAD or Semantic VAD. This can be set to `null` to turn off, in which case the client must manually trigger model response.<br/>
-        /// Server VAD means that the model will detect the start and end of speech based on audio volume and respond at the end of user speech.<br/>
-        /// Semantic VAD is more advanced and uses a turn detection model (in conjunction with VAD) to semantically estimate whether the user has finished speaking, then dynamically sets a timeout based on this probability. For example, if user audio trails off with "uhhm", the model will score a low probability of turn end and wait longer for the user to continue speaking. This can be useful for more natural conversations, but may have a higher latency.
+        /// <param name="truncation">
+        /// Controls how the realtime conversation is truncated prior to model inference.<br/>
+        /// The default is `auto`. When set to `retention_ratio`, the server retains a<br/>
+        /// fraction of the conversation tokens prior to the instructions.
         /// </param>
-        /// <param name="voice">
-        /// Example: ash
+        /// <param name="type">
+        /// The type of session to create. Always `realtime` for the Realtime API.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.RealtimeSessionCreateResponse> CreateRealtimeSessionAsync(
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.RealtimeSessionCreateRequestModel?> model,
+            global::tryAGI.OpenAI.RealtimeSessionCreateRequestAudio? audio = default,
             global::tryAGI.OpenAI.RealtimeSessionCreateRequestClientSecret? clientSecret = default,
-            global::tryAGI.OpenAI.RealtimeSessionCreateRequestInputAudioFormat? inputAudioFormat = default,
-            global::tryAGI.OpenAI.RealtimeSessionCreateRequestInputAudioNoiseReduction? inputAudioNoiseReduction = default,
-            global::tryAGI.OpenAI.RealtimeSessionCreateRequestInputAudioTranscription? inputAudioTranscription = default,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateRequestIncludeItem>? include = default,
             string? instructions = default,
-            global::tryAGI.OpenAI.AnyOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestMaxResponseOutputTokens?>? maxResponseOutputTokens = default,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateRequestModalitie>? modalities = default,
-            global::tryAGI.OpenAI.RealtimeSessionCreateRequestModel? model = default,
-            global::tryAGI.OpenAI.RealtimeSessionCreateRequestOutputAudioFormat? outputAudioFormat = default,
-            double? speed = default,
+            global::tryAGI.OpenAI.AnyOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestMaxOutputTokens?>? maxOutputTokens = default,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateRequestOutputModalitie>? outputModalities = default,
+            global::tryAGI.OpenAI.Prompt2? prompt = default,
             double? temperature = default,
-            string? toolChoice = default,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateRequestTool>? tools = default,
+            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP>? toolChoice = default,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem4>? tools = default,
             global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.RealtimeSessionCreateRequestTracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestTracingEnum2>? tracing = default,
-            global::tryAGI.OpenAI.RealtimeSessionCreateRequestTurnDetection? turnDetection = default,
-            global::tryAGI.OpenAI.VoiceIdsShared? voice = default,
+            global::tryAGI.OpenAI.RealtimeTruncation? truncation = default,
+            global::tryAGI.OpenAI.RealtimeSessionCreateRequestType type = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::tryAGI.OpenAI.RealtimeSessionCreateRequest
             {
+                Audio = audio,
                 ClientSecret = clientSecret,
-                InputAudioFormat = inputAudioFormat,
-                InputAudioNoiseReduction = inputAudioNoiseReduction,
-                InputAudioTranscription = inputAudioTranscription,
+                Include = include,
                 Instructions = instructions,
-                MaxResponseOutputTokens = maxResponseOutputTokens,
-                Modalities = modalities,
+                MaxOutputTokens = maxOutputTokens,
                 Model = model,
-                OutputAudioFormat = outputAudioFormat,
-                Speed = speed,
+                OutputModalities = outputModalities,
+                Prompt = prompt,
                 Temperature = temperature,
                 ToolChoice = toolChoice,
                 Tools = tools,
                 Tracing = tracing,
-                TurnDetection = turnDetection,
-                Voice = voice,
+                Truncation = truncation,
+                Type = type,
             };
 
             return await CreateRealtimeSessionAsync(

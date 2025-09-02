@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -76,17 +74,20 @@ namespace tryAGI.OpenAI
         /// the model can call.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceAllowed, global::tryAGI.OpenAI.ToolChoiceTypes, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP, global::tryAGI.OpenAI.ToolChoiceCustom>))]
-        public global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceAllowed, global::tryAGI.OpenAI.ToolChoiceTypes, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP, global::tryAGI.OpenAI.ToolChoiceCustom>? ToolChoice { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ToolChoice3JsonConverter))]
+        public global::tryAGI.OpenAI.ToolChoice3? ToolChoice { get; set; }
 
         /// <summary>
         /// An array of tools the model may call while generating a response. You<br/>
         /// can specify which tool to use by setting the `tool_choice` parameter.<br/>
-        /// The two categories of tools you can provide the model are:<br/>
+        /// We support the following categories of tools:<br/>
         /// - **Built-in tools**: Tools that are provided by OpenAI that extend the<br/>
         ///   model's capabilities, like [web search](https://platform.openai.com/docs/guides/tools-web-search)<br/>
         ///   or [file search](https://platform.openai.com/docs/guides/tools-file-search). Learn more about<br/>
         ///   [built-in tools](https://platform.openai.com/docs/guides/tools).<br/>
+        /// - **MCP Tools**: Integrations with third-party systems via custom MCP servers<br/>
+        ///   or predefined connectors such as Google Drive and Notion. Learn more about<br/>
+        ///   [MCP Tools](https://platform.openai.com/docs/guides/tools-connectors-mcp).<br/>
         /// - **Function calls (custom tools)**: Functions that are defined by you,<br/>
         ///   enabling the model to call your own code with strongly typed arguments<br/>
         ///   and outputs. Learn more about<br/>
@@ -161,11 +162,14 @@ namespace tryAGI.OpenAI
         /// <param name="tools">
         /// An array of tools the model may call while generating a response. You<br/>
         /// can specify which tool to use by setting the `tool_choice` parameter.<br/>
-        /// The two categories of tools you can provide the model are:<br/>
+        /// We support the following categories of tools:<br/>
         /// - **Built-in tools**: Tools that are provided by OpenAI that extend the<br/>
         ///   model's capabilities, like [web search](https://platform.openai.com/docs/guides/tools-web-search)<br/>
         ///   or [file search](https://platform.openai.com/docs/guides/tools-file-search). Learn more about<br/>
         ///   [built-in tools](https://platform.openai.com/docs/guides/tools).<br/>
+        /// - **MCP Tools**: Integrations with third-party systems via custom MCP servers<br/>
+        ///   or predefined connectors such as Google Drive and Notion. Learn more about<br/>
+        ///   [MCP Tools](https://platform.openai.com/docs/guides/tools-connectors-mcp).<br/>
         /// - **Function calls (custom tools)**: Functions that are defined by you,<br/>
         ///   enabling the model to call your own code with strongly typed arguments<br/>
         ///   and outputs. Learn more about<br/>
@@ -194,7 +198,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.Prompt2? prompt,
             global::tryAGI.OpenAI.Reasoning? reasoning,
             global::tryAGI.OpenAI.ResponsePropertiesText? text,
-            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceAllowed, global::tryAGI.OpenAI.ToolChoiceTypes, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP, global::tryAGI.OpenAI.ToolChoiceCustom>? toolChoice,
+            global::tryAGI.OpenAI.ToolChoice3? toolChoice,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Tool>? tools,
             global::tryAGI.OpenAI.ResponsePropertiesTruncation? truncation)
         {

@@ -6,33 +6,34 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// A new Realtime session configuration, with an ephemeral key. Default TTL<br/>
-    /// for keys is one minute.
+    /// A Realtime session configuration object.
     /// </summary>
     public sealed partial class RealtimeSessionCreateResponse
     {
         /// <summary>
-        /// Ephemeral key returned by the API.
+        /// Configuration for input and output audio for the session.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("client_secret")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.RealtimeSessionCreateResponseClientSecret ClientSecret { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("audio")]
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseAudio? Audio { get; set; }
 
         /// <summary>
-        /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
+        /// Expiration timestamp for the session, in seconds since epoch.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input_audio_format")]
-        public string? InputAudioFormat { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
+        public int? ExpiresAt { get; set; }
 
         /// <summary>
-        /// Configuration for input audio transcription, defaults to off and can be<br/>
-        /// set to `null` to turn off once on. Input audio transcription is not native<br/>
-        /// to the model, since the model consumes audio directly. Transcription runs<br/>
-        /// asynchronously and should be treated as rough guidance<br/>
-        /// rather than the representation understood by the model.
+        /// Unique identifier for the session that looks like `sess_1234567890abcdef`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input_audio_transcription")]
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseInputAudioTranscription? InputAudioTranscription { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
+
+        /// <summary>
+        /// Additional fields to include in server outputs.<br/>
+        /// - `item.input_audio_transcription.logprobs`: Include logprobs for input audio transcription.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("include")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateResponseIncludeItem>? Include { get; set; }
 
         /// <summary>
         /// The default system instructions (i.e. system message) prepended to model<br/>
@@ -56,37 +57,28 @@ namespace tryAGI.OpenAI
         /// limit output tokens, or `inf` for the maximum available tokens for a<br/>
         /// given model. Defaults to `inf`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("max_response_output_tokens")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<int?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseMaxResponseOutputTokens?>))]
-        public global::tryAGI.OpenAI.AnyOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseMaxResponseOutputTokens?>? MaxResponseOutputTokens { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_output_tokens")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<int?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseMaxOutputTokens?>))]
+        public global::tryAGI.OpenAI.AnyOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseMaxOutputTokens?>? MaxOutputTokens { get; set; }
+
+        /// <summary>
+        /// The Realtime model used for this session.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        public string? Model { get; set; }
+
+        /// <summary>
+        /// The object type. Always `realtime.session`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        public string? Object { get; set; }
 
         /// <summary>
         /// The set of modalities the model can respond with. To disable audio,<br/>
         /// set this to ["text"].
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("modalities")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateResponseModalitie>? Modalities { get; set; }
-
-        /// <summary>
-        /// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("output_audio_format")]
-        public string? OutputAudioFormat { get; set; }
-
-        /// <summary>
-        /// The speed of the model's spoken response. 1.0 is the default speed. 0.25 is<br/>
-        /// the minimum speed. 1.5 is the maximum speed. This value can only be changed<br/>
-        /// in between model turns, not while a response is in progress.<br/>
-        /// Default Value: 1
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
-        public double? Speed { get; set; }
-
-        /// <summary>
-        /// Sampling temperature for the model, limited to [0.6, 1.2]. Defaults to 0.8.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
-        public double? Temperature { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_modalities")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateResponseOutputModalitie>? OutputModalities { get; set; }
 
         /// <summary>
         /// How the model chooses tools. Options are `auto`, `none`, `required`, or<br/>
@@ -120,14 +112,6 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RealtimeSessionCreateResponseTurnDetection? TurnDetection { get; set; }
 
         /// <summary>
-        /// Example: ash
-        /// </summary>
-        /// <example>ash</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("voice")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VoiceIdsSharedJsonConverter))]
-        public global::tryAGI.OpenAI.VoiceIdsShared? Voice { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -136,18 +120,18 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeSessionCreateResponse" /> class.
         /// </summary>
-        /// <param name="clientSecret">
-        /// Ephemeral key returned by the API.
+        /// <param name="audio">
+        /// Configuration for input and output audio for the session.
         /// </param>
-        /// <param name="inputAudioFormat">
-        /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
+        /// <param name="expiresAt">
+        /// Expiration timestamp for the session, in seconds since epoch.
         /// </param>
-        /// <param name="inputAudioTranscription">
-        /// Configuration for input audio transcription, defaults to off and can be<br/>
-        /// set to `null` to turn off once on. Input audio transcription is not native<br/>
-        /// to the model, since the model consumes audio directly. Transcription runs<br/>
-        /// asynchronously and should be treated as rough guidance<br/>
-        /// rather than the representation understood by the model.
+        /// <param name="id">
+        /// Unique identifier for the session that looks like `sess_1234567890abcdef`.
+        /// </param>
+        /// <param name="include">
+        /// Additional fields to include in server outputs.<br/>
+        /// - `item.input_audio_transcription.logprobs`: Include logprobs for input audio transcription.
         /// </param>
         /// <param name="instructions">
         /// The default system instructions (i.e. system message) prepended to model<br/>
@@ -162,27 +146,21 @@ namespace tryAGI.OpenAI
         /// field is not set and are visible in the `session.created` event at the<br/>
         /// start of the session.
         /// </param>
-        /// <param name="maxResponseOutputTokens">
+        /// <param name="maxOutputTokens">
         /// Maximum number of output tokens for a single assistant response,<br/>
         /// inclusive of tool calls. Provide an integer between 1 and 4096 to<br/>
         /// limit output tokens, or `inf` for the maximum available tokens for a<br/>
         /// given model. Defaults to `inf`.
         /// </param>
-        /// <param name="modalities">
+        /// <param name="model">
+        /// The Realtime model used for this session.
+        /// </param>
+        /// <param name="object">
+        /// The object type. Always `realtime.session`.
+        /// </param>
+        /// <param name="outputModalities">
         /// The set of modalities the model can respond with. To disable audio,<br/>
         /// set this to ["text"].
-        /// </param>
-        /// <param name="outputAudioFormat">
-        /// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
-        /// </param>
-        /// <param name="speed">
-        /// The speed of the model's spoken response. 1.0 is the default speed. 0.25 is<br/>
-        /// the minimum speed. 1.5 is the maximum speed. This value can only be changed<br/>
-        /// in between model turns, not while a response is in progress.<br/>
-        /// Default Value: 1
-        /// </param>
-        /// <param name="temperature">
-        /// Sampling temperature for the model, limited to [0.6, 1.2]. Defaults to 0.8.
         /// </param>
         /// <param name="toolChoice">
         /// How the model chooses tools. Options are `auto`, `none`, `required`, or<br/>
@@ -202,42 +180,37 @@ namespace tryAGI.OpenAI
         /// VAD means that the model will detect the start and end of speech based on<br/>
         /// audio volume and respond at the end of user speech.
         /// </param>
-        /// <param name="voice">
-        /// Example: ash
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeSessionCreateResponse(
-            global::tryAGI.OpenAI.RealtimeSessionCreateResponseClientSecret clientSecret,
-            string? inputAudioFormat,
-            global::tryAGI.OpenAI.RealtimeSessionCreateResponseInputAudioTranscription? inputAudioTranscription,
+            global::tryAGI.OpenAI.RealtimeSessionCreateResponseAudio? audio,
+            int? expiresAt,
+            string? id,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateResponseIncludeItem>? include,
             string? instructions,
-            global::tryAGI.OpenAI.AnyOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseMaxResponseOutputTokens?>? maxResponseOutputTokens,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateResponseModalitie>? modalities,
-            string? outputAudioFormat,
-            double? speed,
-            double? temperature,
+            global::tryAGI.OpenAI.AnyOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseMaxOutputTokens?>? maxOutputTokens,
+            string? model,
+            string? @object,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateResponseOutputModalitie>? outputModalities,
             string? toolChoice,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateResponseTool>? tools,
             global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.RealtimeSessionCreateResponseTracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseTracingEnum2>? tracing,
-            global::tryAGI.OpenAI.RealtimeSessionCreateResponseTurnDetection? turnDetection,
-            global::tryAGI.OpenAI.VoiceIdsShared? voice)
+            global::tryAGI.OpenAI.RealtimeSessionCreateResponseTurnDetection? turnDetection)
         {
-            this.ClientSecret = clientSecret ?? throw new global::System.ArgumentNullException(nameof(clientSecret));
-            this.InputAudioFormat = inputAudioFormat;
-            this.InputAudioTranscription = inputAudioTranscription;
+            this.Audio = audio;
+            this.ExpiresAt = expiresAt;
+            this.Id = id;
+            this.Include = include;
             this.Instructions = instructions;
-            this.MaxResponseOutputTokens = maxResponseOutputTokens;
-            this.Modalities = modalities;
-            this.OutputAudioFormat = outputAudioFormat;
-            this.Speed = speed;
-            this.Temperature = temperature;
+            this.MaxOutputTokens = maxOutputTokens;
+            this.Model = model;
+            this.Object = @object;
+            this.OutputModalities = outputModalities;
             this.ToolChoice = toolChoice;
             this.Tools = tools;
             this.Tracing = tracing;
             this.TurnDetection = turnDetection;
-            this.Voice = voice;
         }
 
         /// <summary>
