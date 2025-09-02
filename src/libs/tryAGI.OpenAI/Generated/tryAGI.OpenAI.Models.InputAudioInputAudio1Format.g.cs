@@ -7,7 +7,7 @@ namespace tryAGI.OpenAI
     /// The format of the audio data. Currently supported formats are `mp3` and<br/>
     /// `wav`.
     /// </summary>
-    public enum InputAudioFormat
+    public enum InputAudioInputAudio1Format
     {
         /// <summary>
         /// 
@@ -22,29 +22,29 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class InputAudioFormatExtensions
+    public static class InputAudioInputAudio1FormatExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this InputAudioFormat value)
+        public static string ToValueString(this InputAudioInputAudio1Format value)
         {
             return value switch
             {
-                InputAudioFormat.Mp3 => "mp3",
-                InputAudioFormat.Wav => "wav",
+                InputAudioInputAudio1Format.Mp3 => "mp3",
+                InputAudioInputAudio1Format.Wav => "wav",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static InputAudioFormat? ToEnum(string value)
+        public static InputAudioInputAudio1Format? ToEnum(string value)
         {
             return value switch
             {
-                "mp3" => InputAudioFormat.Mp3,
-                "wav" => InputAudioFormat.Wav,
+                "mp3" => InputAudioInputAudio1Format.Mp3,
+                "wav" => InputAudioInputAudio1Format.Wav,
                 _ => null,
             };
         }

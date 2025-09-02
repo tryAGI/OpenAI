@@ -115,23 +115,61 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// An audio input to the model.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.InputAudio? Audio { get; init; }
+#else
+        public global::tryAGI.OpenAI.InputAudio? Audio { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Audio))]
+#endif
+        public bool IsAudio => Audio != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator InputContent(global::tryAGI.OpenAI.InputAudio value) => new InputContent((global::tryAGI.OpenAI.InputAudio?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.InputAudio?(InputContent @this) => @this.Audio;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InputContent(global::tryAGI.OpenAI.InputAudio? value)
+        {
+            Audio = value;
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         public InputContent(
             global::tryAGI.OpenAI.InputTextContent? text,
             global::tryAGI.OpenAI.InputImageContent? image,
-            global::tryAGI.OpenAI.InputFileContent? file
+            global::tryAGI.OpenAI.InputFileContent? file,
+            global::tryAGI.OpenAI.InputAudio? audio
             )
         {
             Text = text;
             Image = image;
             File = file;
+            Audio = audio;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            Audio as object ??
             File as object ??
             Image as object ??
             Text as object 
@@ -143,7 +181,8 @@ namespace tryAGI.OpenAI
         public override string? ToString() =>
             Text?.ToString() ??
             Image?.ToString() ??
-            File?.ToString() 
+            File?.ToString() ??
+            Audio?.ToString() 
             ;
 
         /// <summary>
@@ -151,7 +190,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsText || IsImage || IsFile;
+            return IsText || IsImage || IsFile || IsAudio;
         }
 
         /// <summary>
@@ -161,6 +200,7 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.InputTextContent?, TResult>? text = null,
             global::System.Func<global::tryAGI.OpenAI.InputImageContent?, TResult>? image = null,
             global::System.Func<global::tryAGI.OpenAI.InputFileContent?, TResult>? file = null,
+            global::System.Func<global::tryAGI.OpenAI.InputAudio?, TResult>? audio = null,
             bool validate = true)
         {
             if (validate)
@@ -180,6 +220,10 @@ namespace tryAGI.OpenAI
             {
                 return file(File!);
             }
+            else if (IsAudio && audio != null)
+            {
+                return audio(Audio!);
+            }
 
             return default(TResult);
         }
@@ -191,6 +235,7 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.InputTextContent?>? text = null,
             global::System.Action<global::tryAGI.OpenAI.InputImageContent?>? image = null,
             global::System.Action<global::tryAGI.OpenAI.InputFileContent?>? file = null,
+            global::System.Action<global::tryAGI.OpenAI.InputAudio?>? audio = null,
             bool validate = true)
         {
             if (validate)
@@ -210,6 +255,10 @@ namespace tryAGI.OpenAI
             {
                 file?.Invoke(File!);
             }
+            else if (IsAudio)
+            {
+                audio?.Invoke(Audio!);
+            }
         }
 
         /// <summary>
@@ -225,6 +274,8 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.InputImageContent),
                 File,
                 typeof(global::tryAGI.OpenAI.InputFileContent),
+                Audio,
+                typeof(global::tryAGI.OpenAI.InputAudio),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -243,7 +294,8 @@ namespace tryAGI.OpenAI
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputTextContent?>.Default.Equals(Text, other.Text) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputImageContent?>.Default.Equals(Image, other.Image) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputFileContent?>.Default.Equals(File, other.File) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputFileContent?>.Default.Equals(File, other.File) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputAudio?>.Default.Equals(Audio, other.Audio) 
                 ;
         }
 

@@ -52,10 +52,23 @@ namespace tryAGI.OpenAI.JsonConverters
             {
             }
 
+            readerCopy = reader;
+            global::tryAGI.OpenAI.InputAudio? audio = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.InputAudio), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.InputAudio> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.InputAudio).Name}");
+                audio = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+
             var result = new global::tryAGI.OpenAI.InputContent(
                 text,
                 image,
-                file
+                file,
+                audio
                 );
 
             if (text != null)
@@ -74,6 +87,12 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.InputFileContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.InputFileContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.InputFileContent).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            else if (audio != null)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.InputAudio), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.InputAudio> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.InputAudio).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -106,6 +125,12 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.InputFileContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.InputFileContent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.InputFileContent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.File, typeInfo);
+            }
+            else if (value.IsAudio)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.InputAudio), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.InputAudio?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.InputAudio).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Audio, typeInfo);
             }
         }
     }
