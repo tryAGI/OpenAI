@@ -17,10 +17,7 @@ namespace tryAGI.OpenAI
         public required string EventId { get; set; }
 
         /// <summary>
-        /// A new Realtime transcription session configuration.<br/>
-        /// When a session is created on the server via REST API, the session object<br/>
-        /// also contains an ephemeral key. Default TTL for keys is 10 minutes. This <br/>
-        /// property is not present when a session is updated via the WebSocket API.
+        /// A Realtime transcription session configuration object.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -46,10 +43,7 @@ namespace tryAGI.OpenAI
         /// The unique ID of the server event.
         /// </param>
         /// <param name="session">
-        /// A new Realtime transcription session configuration.<br/>
-        /// When a session is created on the server via REST API, the session object<br/>
-        /// also contains an ephemeral key. Default TTL for keys is 10 minutes. This <br/>
-        /// property is not present when a session is updated via the WebSocket API.
+        /// A Realtime transcription session configuration object.
         /// </param>
         /// <param name="type">
         /// The event type, must be `transcription_session.updated`.

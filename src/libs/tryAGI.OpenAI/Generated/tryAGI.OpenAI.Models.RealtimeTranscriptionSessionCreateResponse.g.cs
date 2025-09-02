@@ -4,47 +4,40 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// A new Realtime transcription session configuration.<br/>
-    /// When a session is created on the server via REST API, the session object<br/>
-    /// also contains an ephemeral key. Default TTL for keys is 10 minutes. This <br/>
-    /// property is not present when a session is updated via the WebSocket API.
+    /// A Realtime transcription session configuration object.
     /// </summary>
     public sealed partial class RealtimeTranscriptionSessionCreateResponse
     {
         /// <summary>
-        /// Ephemeral key returned by the API. Only present when the session is<br/>
-        /// created on the server via REST API.
+        /// Configuration for input audio for the session.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("client_secret")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseClientSecret ClientSecret { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("audio")]
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseAudio? Audio { get; set; }
 
         /// <summary>
-        /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
+        /// Expiration timestamp for the session, in seconds since epoch.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input_audio_format")]
-        public string? InputAudioFormat { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
+        public int? ExpiresAt { get; set; }
 
         /// <summary>
-        /// Configuration of the transcription model.
+        /// Unique identifier for the session that looks like `sess_1234567890abcdef`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input_audio_transcription")]
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseInputAudioTranscription? InputAudioTranscription { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
 
         /// <summary>
-        /// The set of modalities the model can respond with. To disable audio,<br/>
-        /// set this to ["text"].
+        /// Additional fields to include in server outputs.<br/>
+        /// - `item.input_audio_transcription.logprobs`: Include logprobs for input audio transcription.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("modalities")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseModalitie>? Modalities { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("include")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseIncludeItem>? Include { get; set; }
 
         /// <summary>
-        /// Configuration for turn detection. Can be set to `null` to turn off. Server <br/>
-        /// VAD means that the model will detect the start and end of speech based on <br/>
-        /// audio volume and respond at the end of user speech.
+        /// The object type. Always `realtime.transcription_session`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("turn_detection")]
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseTurnDetection? TurnDetection { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        public string? Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -55,40 +48,37 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeTranscriptionSessionCreateResponse" /> class.
         /// </summary>
-        /// <param name="clientSecret">
-        /// Ephemeral key returned by the API. Only present when the session is<br/>
-        /// created on the server via REST API.
+        /// <param name="audio">
+        /// Configuration for input audio for the session.
         /// </param>
-        /// <param name="inputAudioFormat">
-        /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
+        /// <param name="expiresAt">
+        /// Expiration timestamp for the session, in seconds since epoch.
         /// </param>
-        /// <param name="inputAudioTranscription">
-        /// Configuration of the transcription model.
+        /// <param name="id">
+        /// Unique identifier for the session that looks like `sess_1234567890abcdef`.
         /// </param>
-        /// <param name="modalities">
-        /// The set of modalities the model can respond with. To disable audio,<br/>
-        /// set this to ["text"].
+        /// <param name="include">
+        /// Additional fields to include in server outputs.<br/>
+        /// - `item.input_audio_transcription.logprobs`: Include logprobs for input audio transcription.
         /// </param>
-        /// <param name="turnDetection">
-        /// Configuration for turn detection. Can be set to `null` to turn off. Server <br/>
-        /// VAD means that the model will detect the start and end of speech based on <br/>
-        /// audio volume and respond at the end of user speech.
+        /// <param name="object">
+        /// The object type. Always `realtime.transcription_session`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeTranscriptionSessionCreateResponse(
-            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseClientSecret clientSecret,
-            string? inputAudioFormat,
-            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseInputAudioTranscription? inputAudioTranscription,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseModalitie>? modalities,
-            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseTurnDetection? turnDetection)
+            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseAudio? audio,
+            int? expiresAt,
+            string? id,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseIncludeItem>? include,
+            string? @object)
         {
-            this.ClientSecret = clientSecret ?? throw new global::System.ArgumentNullException(nameof(clientSecret));
-            this.InputAudioFormat = inputAudioFormat;
-            this.InputAudioTranscription = inputAudioTranscription;
-            this.Modalities = modalities;
-            this.TurnDetection = turnDetection;
+            this.Audio = audio;
+            this.ExpiresAt = expiresAt;
+            this.Id = id;
+            this.Include = include;
+            this.Object = @object;
         }
 
         /// <summary>

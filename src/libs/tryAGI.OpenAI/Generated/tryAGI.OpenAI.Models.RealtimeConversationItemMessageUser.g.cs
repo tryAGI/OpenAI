@@ -1,0 +1,105 @@
+
+#nullable enable
+
+namespace tryAGI.OpenAI
+{
+    /// <summary>
+    /// A user message item in a Realtime conversation.
+    /// </summary>
+    public sealed partial class RealtimeConversationItemMessageUser
+    {
+        /// <summary>
+        /// The content of the message.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeConversationItemMessageUserContentItem> Content { get; set; }
+
+        /// <summary>
+        /// The unique ID of the item.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
+
+        /// <summary>
+        /// Identifier for the API object being returned - always `realtime.item`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeConversationItemMessageUserObjectJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeConversationItemMessageUserObject? Object { get; set; }
+
+        /// <summary>
+        /// The role of the message sender. Always `user`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeConversationItemMessageUserRoleJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeConversationItemMessageUserRole Role { get; set; }
+
+        /// <summary>
+        /// The status of the item. Has no effect on the conversation.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeConversationItemMessageUserStatusJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeConversationItemMessageUserStatus? Status { get; set; }
+
+        /// <summary>
+        /// The type of the item. Always `message`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeConversationItemMessageUserTypeJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeConversationItemMessageUserType Type { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RealtimeConversationItemMessageUser" /> class.
+        /// </summary>
+        /// <param name="content">
+        /// The content of the message.
+        /// </param>
+        /// <param name="id">
+        /// The unique ID of the item.
+        /// </param>
+        /// <param name="object">
+        /// Identifier for the API object being returned - always `realtime.item`.
+        /// </param>
+        /// <param name="role">
+        /// The role of the message sender. Always `user`.
+        /// </param>
+        /// <param name="status">
+        /// The status of the item. Has no effect on the conversation.
+        /// </param>
+        /// <param name="type">
+        /// The type of the item. Always `message`.
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public RealtimeConversationItemMessageUser(
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeConversationItemMessageUserContentItem> content,
+            string? id,
+            global::tryAGI.OpenAI.RealtimeConversationItemMessageUserObject? @object,
+            global::tryAGI.OpenAI.RealtimeConversationItemMessageUserRole role,
+            global::tryAGI.OpenAI.RealtimeConversationItemMessageUserStatus? status,
+            global::tryAGI.OpenAI.RealtimeConversationItemMessageUserType type)
+        {
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
+            this.Id = id;
+            this.Object = @object;
+            this.Role = role;
+            this.Status = status;
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RealtimeConversationItemMessageUser" /> class.
+        /// </summary>
+        public RealtimeConversationItemMessageUser()
+        {
+        }
+    }
+}

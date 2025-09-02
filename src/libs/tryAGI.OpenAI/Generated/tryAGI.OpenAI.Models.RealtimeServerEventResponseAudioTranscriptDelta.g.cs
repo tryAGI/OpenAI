@@ -51,7 +51,7 @@ namespace tryAGI.OpenAI
         public required string ResponseId { get; set; }
 
         /// <summary>
-        /// The event type, must be `response.audio_transcript.delta`.
+        /// The event type, must be `response.output_audio_transcript.delta`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventResponseAudioTranscriptDeltaTypeJsonConverter))]
@@ -85,7 +85,7 @@ namespace tryAGI.OpenAI
         /// The ID of the response.
         /// </param>
         /// <param name="type">
-        /// The event type, must be `response.audio_transcript.delta`.
+        /// The event type, must be `response.output_audio_transcript.delta`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

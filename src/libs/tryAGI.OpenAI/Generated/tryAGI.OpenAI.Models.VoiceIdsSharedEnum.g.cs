@@ -40,6 +40,14 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         Verse,
+        /// <summary>
+        /// 
+        /// </summary>
+        Marin,
+        /// <summary>
+        /// 
+        /// </summary>
+        Cedar,
     }
 
     /// <summary>
@@ -62,6 +70,8 @@ namespace tryAGI.OpenAI
                 VoiceIdsSharedEnum.Sage => "sage",
                 VoiceIdsSharedEnum.Shimmer => "shimmer",
                 VoiceIdsSharedEnum.Verse => "verse",
+                VoiceIdsSharedEnum.Marin => "marin",
+                VoiceIdsSharedEnum.Cedar => "cedar",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -80,6 +90,8 @@ namespace tryAGI.OpenAI
                 "sage" => VoiceIdsSharedEnum.Sage,
                 "shimmer" => VoiceIdsSharedEnum.Shimmer,
                 "verse" => VoiceIdsSharedEnum.Verse,
+                "marin" => VoiceIdsSharedEnum.Marin,
+                "cedar" => VoiceIdsSharedEnum.Cedar,
                 _ => null,
             };
         }

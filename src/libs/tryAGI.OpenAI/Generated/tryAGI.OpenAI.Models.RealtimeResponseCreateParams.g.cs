@@ -28,7 +28,7 @@ namespace tryAGI.OpenAI
         /// Note that this can include references to items from the default conversation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeConversationItemWithReference>? Input { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeConversationItem>? Input { get; set; }
 
         /// <summary>
         /// The default system instructions (i.e. system message) prepended to model <br/>
@@ -52,9 +52,9 @@ namespace tryAGI.OpenAI
         /// limit output tokens, or `inf` for the maximum available tokens for a<br/>
         /// given model. Defaults to `inf`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("max_response_output_tokens")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<int?, global::tryAGI.OpenAI.RealtimeResponseCreateParamsMaxResponseOutputTokens?>))]
-        public global::tryAGI.OpenAI.AnyOf<int?, global::tryAGI.OpenAI.RealtimeResponseCreateParamsMaxResponseOutputTokens?>? MaxResponseOutputTokens { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_output_tokens")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<int?, global::tryAGI.OpenAI.RealtimeResponseCreateParamsMaxOutputTokens?>))]
+        public global::tryAGI.OpenAI.AnyOf<int?, global::tryAGI.OpenAI.RealtimeResponseCreateParamsMaxOutputTokens?>? MaxOutputTokens { get; set; }
 
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
@@ -81,17 +81,26 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RealtimeResponseCreateParamsOutputAudioFormat? OutputAudioFormat { get; set; }
 
         /// <summary>
+        /// Reference to a prompt template and its variables. <br/>
+        /// [Learn more](https://platform.openai.com/docs/guides/text?api-mode=responses#reusable-prompts).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
+        public global::tryAGI.OpenAI.Prompt2? Prompt { get; set; }
+
+        /// <summary>
         /// Sampling temperature for the model, limited to [0.6, 1.2]. Defaults to 0.8.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
         public double? Temperature { get; set; }
 
         /// <summary>
-        /// How the model chooses tools. Options are `auto`, `none`, `required`, or <br/>
-        /// specify a function, like `{"type": "function", "function": {"name": "my_function"}}`.
+        /// How the model chooses tools. Provide one of the string modes or force a specific<br/>
+        /// function/MCP tool.<br/>
+        /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
-        public string? ToolChoice { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP>))]
+        public global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP>? ToolChoice { get; set; }
 
         /// <summary>
         /// Tools (functions) available to the model.
@@ -142,7 +151,7 @@ namespace tryAGI.OpenAI
         /// field is not set and are visible in the `session.created` event at the <br/>
         /// start of the session.
         /// </param>
-        /// <param name="maxResponseOutputTokens">
+        /// <param name="maxOutputTokens">
         /// Maximum number of output tokens for a single assistant response,<br/>
         /// inclusive of tool calls. Provide an integer between 1 and 4096 to<br/>
         /// limit output tokens, or `inf` for the maximum available tokens for a<br/>
@@ -162,12 +171,17 @@ namespace tryAGI.OpenAI
         /// <param name="outputAudioFormat">
         /// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
         /// </param>
+        /// <param name="prompt">
+        /// Reference to a prompt template and its variables. <br/>
+        /// [Learn more](https://platform.openai.com/docs/guides/text?api-mode=responses#reusable-prompts).
+        /// </param>
         /// <param name="temperature">
         /// Sampling temperature for the model, limited to [0.6, 1.2]. Defaults to 0.8.
         /// </param>
         /// <param name="toolChoice">
-        /// How the model chooses tools. Options are `auto`, `none`, `required`, or <br/>
-        /// specify a function, like `{"type": "function", "function": {"name": "my_function"}}`.
+        /// How the model chooses tools. Provide one of the string modes or force a specific<br/>
+        /// function/MCP tool.<br/>
+        /// Default Value: auto
         /// </param>
         /// <param name="tools">
         /// Tools (functions) available to the model.
@@ -180,24 +194,26 @@ namespace tryAGI.OpenAI
 #endif
         public RealtimeResponseCreateParams(
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.RealtimeResponseCreateParamsConversation?>? conversation,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeConversationItemWithReference>? input,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeConversationItem>? input,
             string? instructions,
-            global::tryAGI.OpenAI.AnyOf<int?, global::tryAGI.OpenAI.RealtimeResponseCreateParamsMaxResponseOutputTokens?>? maxResponseOutputTokens,
+            global::tryAGI.OpenAI.AnyOf<int?, global::tryAGI.OpenAI.RealtimeResponseCreateParamsMaxOutputTokens?>? maxOutputTokens,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeResponseCreateParamsModalitie>? modalities,
             global::tryAGI.OpenAI.RealtimeResponseCreateParamsOutputAudioFormat? outputAudioFormat,
+            global::tryAGI.OpenAI.Prompt2? prompt,
             double? temperature,
-            string? toolChoice,
+            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP>? toolChoice,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeResponseCreateParamsTool>? tools,
             global::tryAGI.OpenAI.VoiceIdsShared? voice)
         {
             this.Conversation = conversation;
             this.Input = input;
             this.Instructions = instructions;
-            this.MaxResponseOutputTokens = maxResponseOutputTokens;
+            this.MaxOutputTokens = maxOutputTokens;
             this.Metadata = metadata;
             this.Modalities = modalities;
             this.OutputAudioFormat = outputAudioFormat;
+            this.Prompt = prompt;
             this.Temperature = temperature;
             this.ToolChoice = toolChoice;
             this.Tools = tools;

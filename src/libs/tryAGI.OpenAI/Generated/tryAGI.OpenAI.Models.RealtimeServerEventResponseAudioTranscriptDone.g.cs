@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         public required string Transcript { get; set; }
 
         /// <summary>
-        /// The event type, must be `response.audio_transcript.done`.
+        /// The event type, must be `response.output_audio_transcript.done`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventResponseAudioTranscriptDoneTypeJsonConverter))]
@@ -87,7 +87,7 @@ namespace tryAGI.OpenAI
         /// The final transcript of the audio.
         /// </param>
         /// <param name="type">
-        /// The event type, must be `response.audio_transcript.done`.
+        /// The event type, must be `response.output_audio_transcript.done`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -4,10 +4,18 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The Realtime model used for this session.
+    /// 
     /// </summary>
     public enum RealtimeSessionCreateRequestModel
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt4oRealtime,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt4oMiniRealtime,
         /// <summary>
         /// 
         /// </summary>
@@ -46,6 +54,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                RealtimeSessionCreateRequestModel.Gpt4oRealtime => "gpt-4o-realtime",
+                RealtimeSessionCreateRequestModel.Gpt4oMiniRealtime => "gpt-4o-mini-realtime",
                 RealtimeSessionCreateRequestModel.Gpt4oRealtimePreview => "gpt-4o-realtime-preview",
                 RealtimeSessionCreateRequestModel.Gpt4oRealtimePreview20241001 => "gpt-4o-realtime-preview-2024-10-01",
                 RealtimeSessionCreateRequestModel.Gpt4oRealtimePreview20241217 => "gpt-4o-realtime-preview-2024-12-17",
@@ -62,6 +72,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "gpt-4o-realtime" => RealtimeSessionCreateRequestModel.Gpt4oRealtime,
+                "gpt-4o-mini-realtime" => RealtimeSessionCreateRequestModel.Gpt4oMiniRealtime,
                 "gpt-4o-realtime-preview" => RealtimeSessionCreateRequestModel.Gpt4oRealtimePreview,
                 "gpt-4o-realtime-preview-2024-10-01" => RealtimeSessionCreateRequestModel.Gpt4oRealtimePreview20241001,
                 "gpt-4o-realtime-preview-2024-12-17" => RealtimeSessionCreateRequestModel.Gpt4oRealtimePreview20241217,

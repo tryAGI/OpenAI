@@ -4,8 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Type of turn detection.<br/>
-    /// Default Value: server_vad
+    /// Type of turn detection. Only `server_vad` is currently supported for transcription sessions.
     /// </summary>
     public enum RealtimeTranscriptionSessionCreateRequestTurnDetectionType
     {
@@ -13,10 +12,6 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         ServerVad,
-        /// <summary>
-        /// 
-        /// </summary>
-        SemanticVad,
     }
 
     /// <summary>
@@ -32,7 +27,6 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 RealtimeTranscriptionSessionCreateRequestTurnDetectionType.ServerVad => "server_vad",
-                RealtimeTranscriptionSessionCreateRequestTurnDetectionType.SemanticVad => "semantic_vad",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,7 +38,6 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "server_vad" => RealtimeTranscriptionSessionCreateRequestTurnDetectionType.ServerVad,
-                "semantic_vad" => RealtimeTranscriptionSessionCreateRequestTurnDetectionType.SemanticVad,
                 _ => null,
             };
         }
