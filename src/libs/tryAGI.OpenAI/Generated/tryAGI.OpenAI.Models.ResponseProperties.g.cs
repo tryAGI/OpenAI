@@ -86,7 +86,7 @@ namespace tryAGI.OpenAI
         ///   or [file search](https://platform.openai.com/docs/guides/tools-file-search). Learn more about<br/>
         ///   [built-in tools](https://platform.openai.com/docs/guides/tools).<br/>
         /// - **MCP Tools**: Integrations with third-party systems via custom MCP servers<br/>
-        ///   or predefined connectors such as Google Drive and Notion. Learn more about<br/>
+        ///   or predefined connectors such as Google Drive and SharePoint. Learn more about<br/>
         ///   [MCP Tools](https://platform.openai.com/docs/guides/tools-connectors-mcp).<br/>
         /// - **Function calls (custom tools)**: Functions that are defined by you,<br/>
         ///   enabling the model to call your own code with strongly typed arguments<br/>
@@ -168,7 +168,7 @@ namespace tryAGI.OpenAI
         ///   or [file search](https://platform.openai.com/docs/guides/tools-file-search). Learn more about<br/>
         ///   [built-in tools](https://platform.openai.com/docs/guides/tools).<br/>
         /// - **MCP Tools**: Integrations with third-party systems via custom MCP servers<br/>
-        ///   or predefined connectors such as Google Drive and Notion. Learn more about<br/>
+        ///   or predefined connectors such as Google Drive and SharePoint. Learn more about<br/>
         ///   [MCP Tools](https://platform.openai.com/docs/guides/tools-connectors-mcp).<br/>
         /// - **Function calls (custom tools)**: Functions that are defined by you,<br/>
         ///   enabling the model to call your own code with strongly typed arguments<br/>

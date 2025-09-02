@@ -9,20 +9,11 @@ namespace tryAGI.OpenAI
     public sealed partial class InputAudio
     {
         /// <summary>
-        /// Base64-encoded audio data.
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("input_audio")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Data { get; set; }
-
-        /// <summary>
-        /// The format of the audio data. Currently supported formats are `mp3` and<br/>
-        /// `wav`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.InputAudioFormatJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.InputAudioFormat Format { get; set; }
+        public required global::tryAGI.OpenAI.InputAudioInputAudio1 InputAudio1 { get; set; }
 
         /// <summary>
         /// The type of the input item. Always `input_audio`.
@@ -40,13 +31,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="InputAudio" /> class.
         /// </summary>
-        /// <param name="data">
-        /// Base64-encoded audio data.
-        /// </param>
-        /// <param name="format">
-        /// The format of the audio data. Currently supported formats are `mp3` and<br/>
-        /// `wav`.
-        /// </param>
+        /// <param name="inputAudio1"></param>
         /// <param name="type">
         /// The type of the input item. Always `input_audio`.
         /// </param>
@@ -54,12 +39,10 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public InputAudio(
-            string data,
-            global::tryAGI.OpenAI.InputAudioFormat format,
+            global::tryAGI.OpenAI.InputAudioInputAudio1 inputAudio1,
             global::tryAGI.OpenAI.InputAudioType type)
         {
-            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.Format = format;
+            this.InputAudio1 = inputAudio1 ?? throw new global::System.ArgumentNullException(nameof(inputAudio1));
             this.Type = type;
         }
 
