@@ -182,7 +182,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="include">
         /// The set of items to include in the transcription. Current available items are:<br/>
-        /// - `item.input_audio_transcription.logprobs`
+        /// `item.input_audio_transcription.logprobs`
         /// </param>
         /// <param name="inputAudioFormat">
         /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.<br/>
@@ -195,29 +195,18 @@ namespace tryAGI.OpenAI
         /// Noise reduction filters audio added to the input audio buffer before it is sent to VAD and the model.<br/>
         /// Filtering the audio can improve VAD and turn detection accuracy (reducing false positives) and model performance by improving perception of the input audio.
         /// </param>
-        /// <param name="inputAudioTranscription">
-        /// Configuration for input audio transcription. The client can optionally set the language and prompt for transcription, these offer additional guidance to the transcription service.
-        /// </param>
-        /// <param name="model">
-        /// ID of the model to use. The options are `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, and `whisper-1` (which is powered by our open source Whisper V2 model).<br/>
-        /// Example: gpt-4o-transcribe
-        /// </param>
+        /// <param name="inputAudioTranscription"></param>
         /// <param name="turnDetection">
         /// Configuration for turn detection. Can be set to `null` to turn off. Server VAD means that the model will detect the start and end of speech based on audio volume and respond at the end of user speech.
-        /// </param>
-        /// <param name="type">
-        /// The type of session to create. Always `transcription` for transcription sessions.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponse> CreateRealtimeTranscriptionSessionAsync(
-            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestModel?> model,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestIncludeItem>? include = default,
             global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestInputAudioFormat? inputAudioFormat = default,
             global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction? inputAudioNoiseReduction = default,
-            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestInputAudioTranscription? inputAudioTranscription = default,
+            global::tryAGI.OpenAI.AudioTranscription? inputAudioTranscription = default,
             global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestTurnDetection? turnDetection = default,
-            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestType type = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequest
@@ -226,9 +215,7 @@ namespace tryAGI.OpenAI
                 InputAudioFormat = inputAudioFormat,
                 InputAudioNoiseReduction = inputAudioNoiseReduction,
                 InputAudioTranscription = inputAudioTranscription,
-                Model = model,
                 TurnDetection = turnDetection,
-                Type = type,
             };
 
             return await CreateRealtimeTranscriptionSessionAsync(

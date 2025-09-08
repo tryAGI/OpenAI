@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -21,9 +19,9 @@ namespace tryAGI.OpenAI
         /// The session configuration for either a realtime or transcription session.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.RealtimeSessionCreateResponse, global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponse>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.Session2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.RealtimeSessionCreateResponse, global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponse> Session { get; set; }
+        public required global::tryAGI.OpenAI.Session2 Session { get; set; }
 
         /// <summary>
         /// The generated client secret value.
@@ -55,7 +53,7 @@ namespace tryAGI.OpenAI
 #endif
         public RealtimeCreateClientSecretResponse(
             int expiresAt,
-            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.RealtimeSessionCreateResponse, global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponse> session,
+            global::tryAGI.OpenAI.Session2 session,
             string value)
         {
             this.ExpiresAt = expiresAt;

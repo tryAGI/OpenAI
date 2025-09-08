@@ -9,13 +9,21 @@ namespace tryAGI.OpenAI
     /// automatically.<br/>
     /// A Response will include at least one Item, and may have two, in which case <br/>
     /// the second will be a function call. These Items will be appended to the <br/>
-    /// conversation history.<br/>
+    /// conversation history by default.<br/>
     /// The server will respond with a `response.created` event, events for Items <br/>
     /// and content created, and finally a `response.done` event to indicate the <br/>
     /// Response is complete.<br/>
     /// The `response.create` event includes inference configuration like <br/>
-    /// `instructions`, and `temperature`. These fields will override the Session's <br/>
-    /// configuration for this Response only.
+    /// `instructions` and `tools`. If these are set, they will override the Session's <br/>
+    /// configuration for this Response only.<br/>
+    /// Responses can be created out-of-band of the default Conversation, meaning that they can<br/>
+    /// have arbitrary input, and it's possible to disable writing the output to the Conversation.<br/>
+    /// Only one Response can write to the default Conversation at a time, but otherwise multiple<br/>
+    /// Responses can be created in parallel. The `metadata` field is a good way to disambiguate<br/>
+    /// multiple simultaneous Responses.<br/>
+    /// Clients can set `conversation` to `none` to create a Response that does not write to the default<br/>
+    /// Conversation. Arbitrary input can be provided with the `input` field, which is an array accepting<br/>
+    /// raw Items and references to existing Items.
     /// </summary>
     public sealed partial class RealtimeClientEventResponseCreate
     {

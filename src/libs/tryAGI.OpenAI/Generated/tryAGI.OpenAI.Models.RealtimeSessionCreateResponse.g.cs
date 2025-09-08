@@ -6,47 +6,33 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// A Realtime session configuration object.
+    /// A new Realtime session configuration, with an ephemeral key. Default TTL<br/>
+    /// for keys is one minute.
     /// </summary>
     public sealed partial class RealtimeSessionCreateResponse
     {
         /// <summary>
-        /// Configuration for input and output audio for the session.
+        /// Configuration for input and output audio.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio")]
         public global::tryAGI.OpenAI.RealtimeSessionCreateResponseAudio? Audio { get; set; }
 
         /// <summary>
-        /// Expiration timestamp for the session, in seconds since epoch.
+        /// Ephemeral key returned by the API.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
-        public int? ExpiresAt { get; set; }
-
-        /// <summary>
-        /// Unique identifier for the session that looks like `sess_1234567890abcdef`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string? Id { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("client_secret")]
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseClientSecret? ClientSecret { get; set; }
 
         /// <summary>
         /// Additional fields to include in server outputs.<br/>
-        /// - `item.input_audio_transcription.logprobs`: Include logprobs for input audio transcription.
+        /// `item.input_audio_transcription.logprobs`: Include logprobs for input audio transcription.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("include")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateResponseIncludeItem>? Include { get; set; }
 
         /// <summary>
-        /// The default system instructions (i.e. system message) prepended to model<br/>
-        /// calls. This field allows the client to guide the model on desired<br/>
-        /// responses. The model can be instructed on response content and format,<br/>
-        /// (e.g. "be extremely succinct", "act friendly", "here are examples of good<br/>
-        /// responses") and on audio behavior (e.g. "talk quickly", "inject emotion<br/>
-        /// into your voice", "laugh frequently"). The instructions are not guaranteed<br/>
-        /// to be followed by the model, but they provide guidance to the model on the<br/>
-        /// desired behavior.<br/>
-        /// Note that the server sets default instructions which will be used if this<br/>
-        /// field is not set and are visible in the `session.created` event at the<br/>
-        /// start of the session.
+        /// The default system instructions (i.e. system message) prepended to model calls. This field allows the client to guide the model on desired responses. The model can be instructed on response content and format, (e.g. "be extremely succinct", "act friendly", "here are examples of good responses") and on audio behavior (e.g. "talk quickly", "inject emotion into your voice", "laugh frequently"). The instructions are not guaranteed to be followed by the model, but they provide guidance to the model on the desired behavior.<br/>
+        /// Note that the server sets default instructions which will be used if this field is not set and are visible in the `session.created` event at the start of the session.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
         public string? Instructions { get; set; }
@@ -65,36 +51,42 @@ namespace tryAGI.OpenAI
         /// The Realtime model used for this session.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        public string? Model { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.RealtimeSessionCreateResponseModel?>))]
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.RealtimeSessionCreateResponseModel?>? Model { get; set; }
 
         /// <summary>
-        /// The object type. Always `realtime.session`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        public string? Object { get; set; }
-
-        /// <summary>
-        /// The set of modalities the model can respond with. To disable audio,<br/>
-        /// set this to ["text"].
+        /// The set of modalities the model can respond with. It defaults to `["audio"]`, indicating<br/>
+        /// that the model will respond with audio plus a transcript. `["text"]` can be used to make<br/>
+        /// the model respond with text only. It is not possible to request both `text` and `audio` at the same time.<br/>
+        /// Default Value: [audio]
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_modalities")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateResponseOutputModalitie>? OutputModalities { get; set; }
 
         /// <summary>
-        /// How the model chooses tools. Options are `auto`, `none`, `required`, or<br/>
-        /// specify a function.
+        /// Reference to a prompt template and its variables. <br/>
+        /// [Learn more](https://platform.openai.com/docs/guides/text?api-mode=responses#reusable-prompts).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
+        public global::tryAGI.OpenAI.Prompt2? Prompt { get; set; }
+
+        /// <summary>
+        /// How the model chooses tools. Provide one of the string modes or force a specific<br/>
+        /// function/MCP tool.<br/>
+        /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
-        public string? ToolChoice { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP>))]
+        public global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP>? ToolChoice { get; set; }
 
         /// <summary>
-        /// Tools (functions) available to the model.
+        /// Tools available to the model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateResponseTool>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.RealtimeFunctionTool, global::tryAGI.OpenAI.MCPTool>>? Tools { get; set; }
 
         /// <summary>
-        /// Configuration options for tracing. Set to null to disable tracing. Once<br/>
+        /// Realtime API can write session traces to the [Traces Dashboard](/logs?api=traces). Set to null to disable tracing. Once<br/>
         /// tracing is enabled for a session, the configuration cannot be modified.<br/>
         /// `auto` will create a trace for the session with default values for the<br/>
         /// workflow name, group id, and metadata.
@@ -104,12 +96,19 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.RealtimeSessionCreateResponseTracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseTracingEnum2>? Tracing { get; set; }
 
         /// <summary>
-        /// Configuration for turn detection. Can be set to `null` to turn off. Server<br/>
-        /// VAD means that the model will detect the start and end of speech based on<br/>
-        /// audio volume and respond at the end of user speech.
+        /// Controls how the realtime conversation is truncated prior to model inference.<br/>
+        /// The default is `auto`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("turn_detection")]
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseTurnDetection? TurnDetection { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("truncation")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTruncationJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeTruncation? Truncation { get; set; }
+
+        /// <summary>
+        /// The type of session to create. Always `realtime` for the Realtime API.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeSessionCreateResponseTypeJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -121,30 +120,18 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="RealtimeSessionCreateResponse" /> class.
         /// </summary>
         /// <param name="audio">
-        /// Configuration for input and output audio for the session.
+        /// Configuration for input and output audio.
         /// </param>
-        /// <param name="expiresAt">
-        /// Expiration timestamp for the session, in seconds since epoch.
-        /// </param>
-        /// <param name="id">
-        /// Unique identifier for the session that looks like `sess_1234567890abcdef`.
+        /// <param name="clientSecret">
+        /// Ephemeral key returned by the API.
         /// </param>
         /// <param name="include">
         /// Additional fields to include in server outputs.<br/>
-        /// - `item.input_audio_transcription.logprobs`: Include logprobs for input audio transcription.
+        /// `item.input_audio_transcription.logprobs`: Include logprobs for input audio transcription.
         /// </param>
         /// <param name="instructions">
-        /// The default system instructions (i.e. system message) prepended to model<br/>
-        /// calls. This field allows the client to guide the model on desired<br/>
-        /// responses. The model can be instructed on response content and format,<br/>
-        /// (e.g. "be extremely succinct", "act friendly", "here are examples of good<br/>
-        /// responses") and on audio behavior (e.g. "talk quickly", "inject emotion<br/>
-        /// into your voice", "laugh frequently"). The instructions are not guaranteed<br/>
-        /// to be followed by the model, but they provide guidance to the model on the<br/>
-        /// desired behavior.<br/>
-        /// Note that the server sets default instructions which will be used if this<br/>
-        /// field is not set and are visible in the `session.created` event at the<br/>
-        /// start of the session.
+        /// The default system instructions (i.e. system message) prepended to model calls. This field allows the client to guide the model on desired responses. The model can be instructed on response content and format, (e.g. "be extremely succinct", "act friendly", "here are examples of good responses") and on audio behavior (e.g. "talk quickly", "inject emotion into your voice", "laugh frequently"). The instructions are not guaranteed to be followed by the model, but they provide guidance to the model on the desired behavior.<br/>
+        /// Note that the server sets default instructions which will be used if this field is not set and are visible in the `session.created` event at the start of the session.
         /// </param>
         /// <param name="maxOutputTokens">
         /// Maximum number of output tokens for a single assistant response,<br/>
@@ -155,62 +142,68 @@ namespace tryAGI.OpenAI
         /// <param name="model">
         /// The Realtime model used for this session.
         /// </param>
-        /// <param name="object">
-        /// The object type. Always `realtime.session`.
-        /// </param>
         /// <param name="outputModalities">
-        /// The set of modalities the model can respond with. To disable audio,<br/>
-        /// set this to ["text"].
+        /// The set of modalities the model can respond with. It defaults to `["audio"]`, indicating<br/>
+        /// that the model will respond with audio plus a transcript. `["text"]` can be used to make<br/>
+        /// the model respond with text only. It is not possible to request both `text` and `audio` at the same time.<br/>
+        /// Default Value: [audio]
+        /// </param>
+        /// <param name="prompt">
+        /// Reference to a prompt template and its variables. <br/>
+        /// [Learn more](https://platform.openai.com/docs/guides/text?api-mode=responses#reusable-prompts).
         /// </param>
         /// <param name="toolChoice">
-        /// How the model chooses tools. Options are `auto`, `none`, `required`, or<br/>
-        /// specify a function.
+        /// How the model chooses tools. Provide one of the string modes or force a specific<br/>
+        /// function/MCP tool.<br/>
+        /// Default Value: auto
         /// </param>
         /// <param name="tools">
-        /// Tools (functions) available to the model.
+        /// Tools available to the model.
         /// </param>
         /// <param name="tracing">
-        /// Configuration options for tracing. Set to null to disable tracing. Once<br/>
+        /// Realtime API can write session traces to the [Traces Dashboard](/logs?api=traces). Set to null to disable tracing. Once<br/>
         /// tracing is enabled for a session, the configuration cannot be modified.<br/>
         /// `auto` will create a trace for the session with default values for the<br/>
         /// workflow name, group id, and metadata.
         /// </param>
-        /// <param name="turnDetection">
-        /// Configuration for turn detection. Can be set to `null` to turn off. Server<br/>
-        /// VAD means that the model will detect the start and end of speech based on<br/>
-        /// audio volume and respond at the end of user speech.
+        /// <param name="truncation">
+        /// Controls how the realtime conversation is truncated prior to model inference.<br/>
+        /// The default is `auto`.
+        /// </param>
+        /// <param name="type">
+        /// The type of session to create. Always `realtime` for the Realtime API.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeSessionCreateResponse(
             global::tryAGI.OpenAI.RealtimeSessionCreateResponseAudio? audio,
-            int? expiresAt,
-            string? id,
+            global::tryAGI.OpenAI.RealtimeSessionCreateResponseClientSecret? clientSecret,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateResponseIncludeItem>? include,
             string? instructions,
             global::tryAGI.OpenAI.AnyOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseMaxOutputTokens?>? maxOutputTokens,
-            string? model,
-            string? @object,
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.RealtimeSessionCreateResponseModel?>? model,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateResponseOutputModalitie>? outputModalities,
-            string? toolChoice,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateResponseTool>? tools,
+            global::tryAGI.OpenAI.Prompt2? prompt,
+            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP>? toolChoice,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.RealtimeFunctionTool, global::tryAGI.OpenAI.MCPTool>>? tools,
             global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.RealtimeSessionCreateResponseTracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseTracingEnum2>? tracing,
-            global::tryAGI.OpenAI.RealtimeSessionCreateResponseTurnDetection? turnDetection)
+            global::tryAGI.OpenAI.RealtimeTruncation? truncation,
+            global::tryAGI.OpenAI.RealtimeSessionCreateResponseType? type)
         {
             this.Audio = audio;
-            this.ExpiresAt = expiresAt;
-            this.Id = id;
+            this.ClientSecret = clientSecret;
             this.Include = include;
             this.Instructions = instructions;
             this.MaxOutputTokens = maxOutputTokens;
             this.Model = model;
-            this.Object = @object;
             this.OutputModalities = outputModalities;
+            this.Prompt = prompt;
             this.ToolChoice = toolChoice;
             this.Tools = tools;
             this.Tracing = tracing;
-            this.TurnDetection = turnDetection;
+            this.Truncation = truncation;
+            this.Type = type;
         }
 
         /// <summary>

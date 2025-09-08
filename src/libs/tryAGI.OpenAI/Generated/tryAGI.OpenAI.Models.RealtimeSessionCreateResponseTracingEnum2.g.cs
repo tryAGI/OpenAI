@@ -10,21 +10,21 @@ namespace tryAGI.OpenAI
     {
         /// <summary>
         /// The group id to attach to this trace to enable filtering and<br/>
-        /// grouping in the traces dashboard.
+        /// grouping in the Traces Dashboard.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_id")]
         public string? GroupId { get; set; }
 
         /// <summary>
         /// The arbitrary metadata to attach to this trace to enable<br/>
-        /// filtering in the traces dashboard.
+        /// filtering in the Traces Dashboard.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public object? Metadata { get; set; }
 
         /// <summary>
         /// The name of the workflow to attach to this trace. This is used to<br/>
-        /// name the trace in the traces dashboard.
+        /// name the trace in the Traces Dashboard.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workflow_name")]
         public string? WorkflowName { get; set; }
@@ -40,15 +40,15 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="groupId">
         /// The group id to attach to this trace to enable filtering and<br/>
-        /// grouping in the traces dashboard.
+        /// grouping in the Traces Dashboard.
         /// </param>
         /// <param name="metadata">
         /// The arbitrary metadata to attach to this trace to enable<br/>
-        /// filtering in the traces dashboard.
+        /// filtering in the Traces Dashboard.
         /// </param>
         /// <param name="workflowName">
         /// The name of the workflow to attach to this trace. This is used to<br/>
-        /// name the trace in the traces dashboard.
+        /// name the trace in the Traces Dashboard.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

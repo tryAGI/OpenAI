@@ -5,7 +5,7 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// The arbitrary metadata to attach to this trace to enable<br/>
-    /// filtering in the traces dashboard.
+    /// filtering in the Traces Dashboard.
     /// </summary>
     public sealed partial class RealtimeSessionCreateResponseTracingEnumMetadata
     {

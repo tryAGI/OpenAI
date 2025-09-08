@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Returned when a conversation item is finalized.
+    /// Returned when a conversation item is finalized.<br/>
+    /// The event will include the full content of the Item except for audio data, which can be retrieved separately with a `conversation.item.retrieve` event if needed.
     /// </summary>
     public sealed partial class RealtimeServerEventConversationItemDone
     {

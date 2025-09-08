@@ -8,7 +8,7 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// This event is the output of audio transcription for user audio written to the<br/>
     /// user audio buffer. Transcription begins when the input audio buffer is<br/>
-    /// committed by the client or server (in `server_vad` mode). Transcription runs<br/>
+    /// committed by the client or server (when VAD is enabled). Transcription runs<br/>
     /// asynchronously with Response creation, so this event may come before or after<br/>
     /// the Response events.<br/>
     /// Realtime API models accept audio natively, and thus input transcription is a<br/>
@@ -33,7 +33,7 @@ namespace tryAGI.OpenAI
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The ID of the user message item containing the audio.
+        /// The ID of the item containing the audio that is being transcribed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType Type { get; set; }
 
         /// <summary>
-        /// Usage statistics for the transcription.
+        /// Usage statistics for the transcription, this is billed according to the ASR model's pricing rather than the realtime model's pricing.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.TranscriptTextUsageTokens, global::tryAGI.OpenAI.TranscriptTextUsageDuration>))]
@@ -84,7 +84,7 @@ namespace tryAGI.OpenAI
         /// The unique ID of the server event.
         /// </param>
         /// <param name="itemId">
-        /// The ID of the user message item containing the audio.
+        /// The ID of the item containing the audio that is being transcribed.
         /// </param>
         /// <param name="logprobs">
         /// The log probabilities of the transcription.
@@ -97,7 +97,7 @@ namespace tryAGI.OpenAI
         /// `conversation.item.input_audio_transcription.completed`.
         /// </param>
         /// <param name="usage">
-        /// Usage statistics for the transcription.
+        /// Usage statistics for the transcription, this is billed according to the ASR model's pricing rather than the realtime model's pricing.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

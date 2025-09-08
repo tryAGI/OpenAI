@@ -6,13 +6,12 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// Controls how the realtime conversation is truncated prior to model inference.<br/>
-    /// The default is `auto`. When set to `retention_ratio`, the server retains a<br/>
-    /// fraction of the conversation tokens prior to the instructions.
+    /// The default is `auto`.
     /// </summary>
     public readonly partial struct RealtimeTruncation : global::System.IEquatable<RealtimeTruncation>
     {
         /// <summary>
-        /// The truncation strategy to use for the session.
+        /// The truncation strategy to use for the session. `auto` is the default truncation strategy. `disabled` will disable truncation and emit errors when the conversation exceeds the input token limit.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RealtimeTruncationEnum? Value1 { get; init; }
@@ -47,7 +46,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Retain a fraction of the conversation tokens.
+        /// Retain a fraction of the conversation tokens when the conversation exceeds the input token limit. This allows you to amortize truncations across multiple turns, which can help improve cached token usage.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RealtimeTruncationEnum2? Value2 { get; init; }

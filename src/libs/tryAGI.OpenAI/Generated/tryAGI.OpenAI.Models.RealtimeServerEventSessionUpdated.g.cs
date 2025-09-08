@@ -1,10 +1,12 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Returned when a session is updated with a `session.update` event, unless <br/>
+    /// Returned when a session is updated with a `session.update` event, unless<br/>
     /// there is an error.
     /// </summary>
     public sealed partial class RealtimeServerEventSessionUpdated
@@ -17,16 +19,12 @@ namespace tryAGI.OpenAI
         public required string EventId { get; set; }
 
         /// <summary>
-        /// A session refers to a single WebSocket connection between a client and the server.<br/>
-        /// Once a client creates a session, it then sends JSON-formatted events containing text and audio chunks.<br/>
-        /// The server will respond in kind with audio containing voice output, a text transcript of that voice output,<br/>
-        /// and function calls (if functions are provided by the client).<br/>
-        /// A realtime Session represents the overall client-server interaction, and contains default configuration.<br/>
-        /// It has a set of default values which can be updated at any time (via session.update) or on a per-response level (via response.create).
+        /// The session configuration.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA, global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGA>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.RealtimeSession Session { get; set; }
+        public required global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA, global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGA> Session { get; set; }
 
         /// <summary>
         /// The event type, must be `session.updated`.
@@ -48,12 +46,7 @@ namespace tryAGI.OpenAI
         /// The unique ID of the server event.
         /// </param>
         /// <param name="session">
-        /// A session refers to a single WebSocket connection between a client and the server.<br/>
-        /// Once a client creates a session, it then sends JSON-formatted events containing text and audio chunks.<br/>
-        /// The server will respond in kind with audio containing voice output, a text transcript of that voice output,<br/>
-        /// and function calls (if functions are provided by the client).<br/>
-        /// A realtime Session represents the overall client-server interaction, and contains default configuration.<br/>
-        /// It has a set of default values which can be updated at any time (via session.update) or on a per-response level (via response.create).
+        /// The session configuration.
         /// </param>
         /// <param name="type">
         /// The event type, must be `session.updated`.
@@ -63,11 +56,11 @@ namespace tryAGI.OpenAI
 #endif
         public RealtimeServerEventSessionUpdated(
             string eventId,
-            global::tryAGI.OpenAI.RealtimeSession session,
+            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA, global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGA> session,
             global::tryAGI.OpenAI.RealtimeServerEventSessionUpdatedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Session = session ?? throw new global::System.ArgumentNullException(nameof(session));
+            this.Session = session;
             this.Type = type;
         }
 
