@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The content type (`input_text` or `input_audio`).
+    /// The content type (`input_text`, `input_audio`, or `input_image`).
     /// </summary>
     public enum RealtimeConversationItemMessageUserContentItemType
     {
@@ -16,6 +16,10 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         InputAudio,
+        /// <summary>
+        /// 
+        /// </summary>
+        InputImage,
     }
 
     /// <summary>
@@ -32,6 +36,7 @@ namespace tryAGI.OpenAI
             {
                 RealtimeConversationItemMessageUserContentItemType.InputText => "input_text",
                 RealtimeConversationItemMessageUserContentItemType.InputAudio => "input_audio",
+                RealtimeConversationItemMessageUserContentItemType.InputImage => "input_image",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,6 +49,7 @@ namespace tryAGI.OpenAI
             {
                 "input_text" => RealtimeConversationItemMessageUserContentItemType.InputText,
                 "input_audio" => RealtimeConversationItemMessageUserContentItemType.InputAudio,
+                "input_image" => RealtimeConversationItemMessageUserContentItemType.InputImage,
                 _ => null,
             };
         }

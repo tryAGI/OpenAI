@@ -11,7 +11,10 @@ namespace tryAGI.OpenAI
     public sealed partial class RealtimeCreateClientSecretRequest
     {
         /// <summary>
-        /// Configuration for the ephemeral token expiration.
+        /// Configuration for the client secret expiration. Expiration refers to the time after which<br/>
+        /// a client secret will no longer be valid for creating sessions. The session itself may<br/>
+        /// continue after that time once started. A secret can be used to create multiple sessions<br/>
+        /// until it expires.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_after")]
         public global::tryAGI.OpenAI.RealtimeCreateClientSecretRequestExpiresAfter? ExpiresAfter { get; set; }
@@ -34,7 +37,10 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="RealtimeCreateClientSecretRequest" /> class.
         /// </summary>
         /// <param name="expiresAfter">
-        /// Configuration for the ephemeral token expiration.
+        /// Configuration for the client secret expiration. Expiration refers to the time after which<br/>
+        /// a client secret will no longer be valid for creating sessions. The session itself may<br/>
+        /// continue after that time once started. A secret can be used to create multiple sessions<br/>
+        /// until it expires.
         /// </param>
         /// <param name="session">
         /// Session configuration to use for the client secret. Choose either a realtime<br/>

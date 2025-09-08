@@ -74,8 +74,8 @@ namespace tryAGI.OpenAI
         /// the model can call.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ToolChoice3JsonConverter))]
-        public global::tryAGI.OpenAI.ToolChoice3? ToolChoice { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ToolChoice5JsonConverter))]
+        public global::tryAGI.OpenAI.ToolChoice5? ToolChoice { get; set; }
 
         /// <summary>
         /// An array of tools the model may call while generating a response. You<br/>
@@ -198,7 +198,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.Prompt2? prompt,
             global::tryAGI.OpenAI.Reasoning? reasoning,
             global::tryAGI.OpenAI.ResponsePropertiesText? text,
-            global::tryAGI.OpenAI.ToolChoice3? toolChoice,
+            global::tryAGI.OpenAI.ToolChoice5? toolChoice,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Tool>? tools,
             global::tryAGI.OpenAI.ResponsePropertiesTruncation? truncation)
         {

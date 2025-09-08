@@ -6,7 +6,11 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// Returned when a Response is done streaming. Always emitted, no matter the <br/>
     /// final state. The Response object included in the `response.done` event will <br/>
-    /// include all output Items in the Response but will omit the raw audio data.
+    /// include all output Items in the Response but will omit the raw audio data.<br/>
+    /// Clients should check the `status` field of the Response to determine if it was successful<br/>
+    /// (`completed`) or if there was another outcome: `cancelled`, `failed`, or `incomplete`.<br/>
+    /// A response will contain all output items that were generated during the response, excluding<br/>
+    /// any audio content.
     /// </summary>
     public sealed partial class RealtimeServerEventResponseDone
     {

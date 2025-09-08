@@ -170,13 +170,15 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// Send this event to append audio bytes to the input audio buffer. The audio <br/>
-        /// buffer is temporary storage you can write to and later commit. In Server VAD <br/>
-        /// mode, the audio buffer is used to detect speech and the server will decide <br/>
+        /// buffer is temporary storage you can write to and later commit. A "commit" will create a new<br/>
+        /// user message item in the conversation history from the buffer content and clear the buffer.<br/>
+        /// Input audio transcription (if enabled) will be generated when the buffer is committed.<br/>
+        /// If VAD is enabled the audio buffer is used to detect speech and the server will decide <br/>
         /// when to commit. When Server VAD is disabled, you must commit the audio buffer<br/>
-        /// manually.<br/>
+        /// manually. Input audio noise reduction operates on writes to the audio buffer.<br/>
         /// The client may choose how much audio to place in each event up to a maximum <br/>
         /// of 15 MiB, for example streaming smaller chunks from the client may allow the <br/>
-        /// VAD to be more responsive. Unlike made other client events, the server will <br/>
+        /// VAD to be more responsive. Unlike most other client events, the server will <br/>
         /// not send a confirmation response to this event.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -287,15 +289,8 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Send this event to commit the user input audio buffer, which will create a <br/>
-        /// new user message item in the conversation. This event will produce an error <br/>
-        /// if the input audio buffer is empty. When in Server VAD mode, the client does <br/>
-        /// not need to send this event, the server will commit the audio buffer <br/>
-        /// automatically.<br/>
-        /// Committing the input audio buffer will trigger input audio transcription <br/>
-        /// (if enabled in session configuration), but it will not create a response <br/>
-        /// from the model. The server will respond with an `input_audio_buffer.committed` <br/>
-        /// event.
+        /// Send this event to commit the user input audio buffer, which will create a  new user message item in the conversation. This event will produce an error  if the input audio buffer is empty. When in Server VAD mode, the client does  not need to send this event, the server will commit the audio buffer  automatically.<br/>
+        /// Committing the input audio buffer will trigger input audio transcription  (if enabled in session configuration), but it will not create a response  from the model. The server will respond with an `input_audio_buffer.committed` event.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferCommit? InputAudioBufferCommit { get; init; }
@@ -332,7 +327,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Send this event to cancel an in-progress response. The server will respond <br/>
         /// with a `response.done` event with a status of `response.status=cancelled`. If <br/>
-        /// there is no response to cancel, the server will respond with an error.
+        /// there is no response to cancel, the server will respond with an error. It's safe<br/>
+        /// to call `response.cancel` even if no response is in progress, an error will be<br/>
+        /// returned the session will remain unaffected.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RealtimeClientEventResponseCancel? ResponseCancel { get; init; }
@@ -372,13 +369,21 @@ namespace tryAGI.OpenAI
         /// automatically.<br/>
         /// A Response will include at least one Item, and may have two, in which case <br/>
         /// the second will be a function call. These Items will be appended to the <br/>
-        /// conversation history.<br/>
+        /// conversation history by default.<br/>
         /// The server will respond with a `response.created` event, events for Items <br/>
         /// and content created, and finally a `response.done` event to indicate the <br/>
         /// Response is complete.<br/>
         /// The `response.create` event includes inference configuration like <br/>
-        /// `instructions`, and `temperature`. These fields will override the Session's <br/>
-        /// configuration for this Response only.
+        /// `instructions` and `tools`. If these are set, they will override the Session's <br/>
+        /// configuration for this Response only.<br/>
+        /// Responses can be created out-of-band of the default Conversation, meaning that they can<br/>
+        /// have arbitrary input, and it's possible to disable writing the output to the Conversation.<br/>
+        /// Only one Response can write to the default Conversation at a time, but otherwise multiple<br/>
+        /// Responses can be created in parallel. The `metadata` field is a good way to disambiguate<br/>
+        /// multiple simultaneous Responses.<br/>
+        /// Clients can set `conversation` to `none` to create a Response that does not write to the default<br/>
+        /// Conversation. Arbitrary input can be provided with the `input` field, which is an array accepting<br/>
+        /// raw Items and references to existing Items.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RealtimeClientEventResponseCreate? ResponseCreate { get; init; }
@@ -413,15 +418,15 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Send this event to update the session’s default configuration.<br/>
-        /// The client may send this event at any time to update any field,<br/>
-        /// except for `voice`. However, note that once a session has been<br/>
-        /// initialized with a particular `model`, it can’t be changed to<br/>
-        /// another model using `session.update`.<br/>
+        /// Send this event to update the session’s configuration.<br/>
+        /// The client may send this event at any time to update any field<br/>
+        /// except for `voice` and `model`. `voice` can be updated only if there have been no other<br/>
+        /// audio outputs yet. <br/>
         /// When the server receives a `session.update`, it will respond<br/>
         /// with a `session.updated` event showing the full, effective configuration.<br/>
-        /// Only the fields that are present are updated. To clear a field like<br/>
-        /// `instructions`, pass an empty string.
+        /// Only the fields that are present in the `session.update` are updated. To clear a field like<br/>
+        /// `instructions`, pass an empty string. To clear a field like `tools`, pass an empty array.<br/>
+        /// To clear a field like `turn_detection`, pass `null`.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RealtimeClientEventSessionUpdate? SessionUpdate { get; init; }

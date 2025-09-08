@@ -14,98 +14,98 @@ namespace tryAGI.OpenAI
         /// Realtime session object configuration.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeSessionCreateRequest? RealtimeCreateRequest { get; init; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA? RealtimeCreateRequestGA { get; init; }
 #else
-        public global::tryAGI.OpenAI.RealtimeSessionCreateRequest? RealtimeCreateRequest { get; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA? RealtimeCreateRequestGA { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RealtimeCreateRequest))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RealtimeCreateRequestGA))]
 #endif
-        public bool IsRealtimeCreateRequest => RealtimeCreateRequest != null;
+        public bool IsRealtimeCreateRequestGA => RealtimeCreateRequestGA != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Session(global::tryAGI.OpenAI.RealtimeSessionCreateRequest value) => new Session((global::tryAGI.OpenAI.RealtimeSessionCreateRequest?)value);
+        public static implicit operator Session(global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA value) => new Session((global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.RealtimeSessionCreateRequest?(Session @this) => @this.RealtimeCreateRequest;
+        public static implicit operator global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA?(Session @this) => @this.RealtimeCreateRequestGA;
 
         /// <summary>
         /// 
         /// </summary>
-        public Session(global::tryAGI.OpenAI.RealtimeSessionCreateRequest? value)
+        public Session(global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA? value)
         {
-            RealtimeCreateRequest = value;
+            RealtimeCreateRequestGA = value;
         }
 
         /// <summary>
         /// Realtime transcription session object configuration.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequest? RealtimeTranscriptionCreateRequest { get; init; }
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGA? RealtimeTranscriptionCreateRequestGA { get; init; }
 #else
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequest? RealtimeTranscriptionCreateRequest { get; }
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGA? RealtimeTranscriptionCreateRequestGA { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RealtimeTranscriptionCreateRequest))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RealtimeTranscriptionCreateRequestGA))]
 #endif
-        public bool IsRealtimeTranscriptionCreateRequest => RealtimeTranscriptionCreateRequest != null;
+        public bool IsRealtimeTranscriptionCreateRequestGA => RealtimeTranscriptionCreateRequestGA != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Session(global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequest value) => new Session((global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequest?)value);
+        public static implicit operator Session(global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGA value) => new Session((global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGA?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequest?(Session @this) => @this.RealtimeTranscriptionCreateRequest;
+        public static implicit operator global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGA?(Session @this) => @this.RealtimeTranscriptionCreateRequestGA;
 
         /// <summary>
         /// 
         /// </summary>
-        public Session(global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequest? value)
+        public Session(global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGA? value)
         {
-            RealtimeTranscriptionCreateRequest = value;
+            RealtimeTranscriptionCreateRequestGA = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public Session(
-            global::tryAGI.OpenAI.RealtimeSessionCreateRequest? realtimeCreateRequest,
-            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequest? realtimeTranscriptionCreateRequest
+            global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA? realtimeCreateRequestGA,
+            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGA? realtimeTranscriptionCreateRequestGA
             )
         {
-            RealtimeCreateRequest = realtimeCreateRequest;
-            RealtimeTranscriptionCreateRequest = realtimeTranscriptionCreateRequest;
+            RealtimeCreateRequestGA = realtimeCreateRequestGA;
+            RealtimeTranscriptionCreateRequestGA = realtimeTranscriptionCreateRequestGA;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            RealtimeTranscriptionCreateRequest as object ??
-            RealtimeCreateRequest as object 
+            RealtimeTranscriptionCreateRequestGA as object ??
+            RealtimeCreateRequestGA as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            RealtimeCreateRequest?.ToString() ??
-            RealtimeTranscriptionCreateRequest?.ToString() 
+            RealtimeCreateRequestGA?.ToString() ??
+            RealtimeTranscriptionCreateRequestGA?.ToString() 
             ;
 
         /// <summary>
@@ -113,15 +113,15 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsRealtimeCreateRequest || IsRealtimeTranscriptionCreateRequest;
+            return IsRealtimeCreateRequestGA || IsRealtimeTranscriptionCreateRequestGA;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.RealtimeSessionCreateRequest?, TResult>? realtimeCreateRequest = null,
-            global::System.Func<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequest?, TResult>? realtimeTranscriptionCreateRequest = null,
+            global::System.Func<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA?, TResult>? realtimeCreateRequestGA = null,
+            global::System.Func<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGA?, TResult>? realtimeTranscriptionCreateRequestGA = null,
             bool validate = true)
         {
             if (validate)
@@ -129,13 +129,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsRealtimeCreateRequest && realtimeCreateRequest != null)
+            if (IsRealtimeCreateRequestGA && realtimeCreateRequestGA != null)
             {
-                return realtimeCreateRequest(RealtimeCreateRequest!);
+                return realtimeCreateRequestGA(RealtimeCreateRequestGA!);
             }
-            else if (IsRealtimeTranscriptionCreateRequest && realtimeTranscriptionCreateRequest != null)
+            else if (IsRealtimeTranscriptionCreateRequestGA && realtimeTranscriptionCreateRequestGA != null)
             {
-                return realtimeTranscriptionCreateRequest(RealtimeTranscriptionCreateRequest!);
+                return realtimeTranscriptionCreateRequestGA(RealtimeTranscriptionCreateRequestGA!);
             }
 
             return default(TResult);
@@ -145,8 +145,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.RealtimeSessionCreateRequest?>? realtimeCreateRequest = null,
-            global::System.Action<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequest?>? realtimeTranscriptionCreateRequest = null,
+            global::System.Action<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA?>? realtimeCreateRequestGA = null,
+            global::System.Action<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGA?>? realtimeTranscriptionCreateRequestGA = null,
             bool validate = true)
         {
             if (validate)
@@ -154,13 +154,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsRealtimeCreateRequest)
+            if (IsRealtimeCreateRequestGA)
             {
-                realtimeCreateRequest?.Invoke(RealtimeCreateRequest!);
+                realtimeCreateRequestGA?.Invoke(RealtimeCreateRequestGA!);
             }
-            else if (IsRealtimeTranscriptionCreateRequest)
+            else if (IsRealtimeTranscriptionCreateRequestGA)
             {
-                realtimeTranscriptionCreateRequest?.Invoke(RealtimeTranscriptionCreateRequest!);
+                realtimeTranscriptionCreateRequestGA?.Invoke(RealtimeTranscriptionCreateRequestGA!);
             }
         }
 
@@ -171,10 +171,10 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                RealtimeCreateRequest,
-                typeof(global::tryAGI.OpenAI.RealtimeSessionCreateRequest),
-                RealtimeTranscriptionCreateRequest,
-                typeof(global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequest),
+                RealtimeCreateRequestGA,
+                typeof(global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA),
+                RealtimeTranscriptionCreateRequestGA,
+                typeof(global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGA),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -191,8 +191,8 @@ namespace tryAGI.OpenAI
         public bool Equals(Session other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeSessionCreateRequest?>.Default.Equals(RealtimeCreateRequest, other.RealtimeCreateRequest) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequest?>.Default.Equals(RealtimeTranscriptionCreateRequest, other.RealtimeTranscriptionCreateRequest) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA?>.Default.Equals(RealtimeCreateRequestGA, other.RealtimeCreateRequestGA) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGA?>.Default.Equals(RealtimeTranscriptionCreateRequestGA, other.RealtimeTranscriptionCreateRequestGA) 
                 ;
         }
 

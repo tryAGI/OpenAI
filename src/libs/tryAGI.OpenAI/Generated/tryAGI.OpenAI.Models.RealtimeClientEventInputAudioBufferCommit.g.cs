@@ -4,15 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Send this event to commit the user input audio buffer, which will create a <br/>
-    /// new user message item in the conversation. This event will produce an error <br/>
-    /// if the input audio buffer is empty. When in Server VAD mode, the client does <br/>
-    /// not need to send this event, the server will commit the audio buffer <br/>
-    /// automatically.<br/>
-    /// Committing the input audio buffer will trigger input audio transcription <br/>
-    /// (if enabled in session configuration), but it will not create a response <br/>
-    /// from the model. The server will respond with an `input_audio_buffer.committed` <br/>
-    /// event.
+    /// Send this event to commit the user input audio buffer, which will create a  new user message item in the conversation. This event will produce an error  if the input audio buffer is empty. When in Server VAD mode, the client does  not need to send this event, the server will commit the audio buffer  automatically.<br/>
+    /// Committing the input audio buffer will trigger input audio transcription  (if enabled in session configuration), but it will not create a response  from the model. The server will respond with an `input_audio_buffer.committed` event.
     /// </summary>
     public sealed partial class RealtimeClientEventInputAudioBufferCommit
     {

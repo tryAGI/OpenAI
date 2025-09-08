@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The anchor point for the ephemeral token expiration. Only `created_at` is currently supported.<br/>
+    /// The anchor point for the client secret expiration, meaning that `seconds` will be added to the `created_at` time of the client secret to produce an expiration timestamp. Only `created_at` is currently supported.<br/>
     /// Default Value: created_at
     /// </summary>
     public enum RealtimeCreateClientSecretRequestExpiresAfterAnchor

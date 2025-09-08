@@ -4,18 +4,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Retain a fraction of the conversation tokens.
+    /// Retain a fraction of the conversation tokens when the conversation exceeds the input token limit. This allows you to amortize truncations across multiple turns, which can help improve cached token usage.
     /// </summary>
     public sealed partial class RealtimeTruncationEnum2
     {
         /// <summary>
-        /// Optional cap on tokens allowed after the instructions.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("post_instructions_token_limit")]
-        public int? PostInstructionsTokenLimit { get; set; }
-
-        /// <summary>
-        /// Fraction of pre-instruction conversation tokens to retain (0.0 - 1.0).
+        /// Fraction of post-instruction conversation tokens to retain (0.0 - 1.0) when the conversation exceeds the input token limit.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("retention_ratio")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -37,11 +31,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeTruncationEnum2" /> class.
         /// </summary>
-        /// <param name="postInstructionsTokenLimit">
-        /// Optional cap on tokens allowed after the instructions.
-        /// </param>
         /// <param name="retentionRatio">
-        /// Fraction of pre-instruction conversation tokens to retain (0.0 - 1.0).
+        /// Fraction of post-instruction conversation tokens to retain (0.0 - 1.0) when the conversation exceeds the input token limit.
         /// </param>
         /// <param name="type">
         /// Use retention ratio truncation.
@@ -51,11 +42,9 @@ namespace tryAGI.OpenAI
 #endif
         public RealtimeTruncationEnum2(
             double retentionRatio,
-            int? postInstructionsTokenLimit,
             global::tryAGI.OpenAI.RealtimeTruncationEnumType type)
         {
             this.RetentionRatio = retentionRatio;
-            this.PostInstructionsTokenLimit = postInstructionsTokenLimit;
             this.Type = type;
         }
 

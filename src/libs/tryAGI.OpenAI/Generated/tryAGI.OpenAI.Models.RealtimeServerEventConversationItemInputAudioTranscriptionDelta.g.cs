@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Returned when the text value of an input audio transcription content part is updated.
+    /// Returned when the text value of an input audio transcription content part is updated with incremental transcription results.
     /// </summary>
     public sealed partial class RealtimeServerEventConversationItemInputAudioTranscriptionDelta
     {
@@ -28,14 +28,14 @@ namespace tryAGI.OpenAI
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The ID of the item.
+        /// The ID of the item containing the audio that is being transcribed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ItemId { get; set; }
 
         /// <summary>
-        /// The log probabilities of the transcription.
+        /// The log probabilities of the transcription. These can be enabled by configurating the session with `"include": ["item.input_audio_transcription.logprobs"]`. Each entry in the array corresponds a log probability of which token would be selected for this chunk of transcription. This can help to identify if it was possible there were multiple valid options for a given chunk of transcription.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProbProperties>? Logprobs { get; set; }
@@ -66,10 +66,10 @@ namespace tryAGI.OpenAI
         /// The unique ID of the server event.
         /// </param>
         /// <param name="itemId">
-        /// The ID of the item.
+        /// The ID of the item containing the audio that is being transcribed.
         /// </param>
         /// <param name="logprobs">
-        /// The log probabilities of the transcription.
+        /// The log probabilities of the transcription. These can be enabled by configurating the session with `"include": ["item.input_audio_transcription.logprobs"]`. Each entry in the array corresponds a log probability of which token would be selected for this chunk of transcription. This can help to identify if it was possible there were multiple valid options for a given chunk of transcription.
         /// </param>
         /// <param name="type">
         /// The event type, must be `conversation.item.input_audio_transcription.delta`.

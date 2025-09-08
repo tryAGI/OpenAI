@@ -4,14 +4,18 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The content type. Always `text` for assistant messages.
+    /// The content type, `output_text` or `output_audio` depending on the session `output_modalities` configuration.
     /// </summary>
     public enum RealtimeConversationItemMessageAssistantContentItemType
     {
         /// <summary>
         /// 
         /// </summary>
-        Text,
+        OutputText,
+        /// <summary>
+        /// 
+        /// </summary>
+        OutputAudio,
     }
 
     /// <summary>
@@ -26,7 +30,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                RealtimeConversationItemMessageAssistantContentItemType.Text => "text",
+                RealtimeConversationItemMessageAssistantContentItemType.OutputText => "output_text",
+                RealtimeConversationItemMessageAssistantContentItemType.OutputAudio => "output_audio",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +42,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "text" => RealtimeConversationItemMessageAssistantContentItemType.Text,
+                "output_text" => RealtimeConversationItemMessageAssistantContentItemType.OutputText,
+                "output_audio" => RealtimeConversationItemMessageAssistantContentItemType.OutputAudio,
                 _ => null,
             };
         }

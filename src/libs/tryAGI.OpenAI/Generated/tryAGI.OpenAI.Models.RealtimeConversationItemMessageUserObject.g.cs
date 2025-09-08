@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Identifier for the API object being returned - always `realtime.item`.
+    /// Identifier for the API object being returned - always `realtime.item`. Optional when creating a new item.
     /// </summary>
     public enum RealtimeConversationItemMessageUserObject
     {

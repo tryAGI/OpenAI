@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI
         public required int AudioEndMs { get; set; }
 
         /// <summary>
-        /// The index of the content part to truncate. Set this to 0.
+        /// The index of the content part to truncate. Set this to `0`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -68,7 +68,7 @@ namespace tryAGI.OpenAI
         /// will respond with an error.
         /// </param>
         /// <param name="contentIndex">
-        /// The index of the content part to truncate. Set this to 0.
+        /// The index of the content part to truncate. Set this to `0`.
         /// </param>
         /// <param name="eventId">
         /// Optional client-generated ID used to identify this event.

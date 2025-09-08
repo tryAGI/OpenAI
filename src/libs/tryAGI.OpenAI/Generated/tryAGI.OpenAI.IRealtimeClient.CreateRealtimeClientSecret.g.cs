@@ -5,8 +5,8 @@ namespace tryAGI.OpenAI
     public partial interface IRealtimeClient
     {
         /// <summary>
-        /// Create realtime session<br/>
-        /// Create a Realtime session and client secret for either realtime or transcription.
+        /// Create client secret<br/>
+        /// Create a Realtime client secret with an associated session configuration.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -16,11 +16,14 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Create realtime session<br/>
-        /// Create a Realtime session and client secret for either realtime or transcription.
+        /// Create client secret<br/>
+        /// Create a Realtime client secret with an associated session configuration.
         /// </summary>
         /// <param name="expiresAfter">
-        /// Configuration for the ephemeral token expiration.
+        /// Configuration for the client secret expiration. Expiration refers to the time after which<br/>
+        /// a client secret will no longer be valid for creating sessions. The session itself may<br/>
+        /// continue after that time once started. A secret can be used to create multiple sessions<br/>
+        /// until it expires.
         /// </param>
         /// <param name="session">
         /// Session configuration to use for the client secret. Choose either a realtime<br/>

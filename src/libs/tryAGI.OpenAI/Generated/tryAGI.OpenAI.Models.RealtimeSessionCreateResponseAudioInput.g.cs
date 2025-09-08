@@ -9,25 +9,30 @@ namespace tryAGI.OpenAI
     public sealed partial class RealtimeSessionCreateResponseAudioInput
     {
         /// <summary>
-        /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
-        public string? Format { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeAudioFormatsJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeAudioFormats? Format { get; set; }
 
         /// <summary>
-        /// Configuration for input audio noise reduction.
+        /// Configuration for input audio noise reduction. This can be set to `null` to turn off.<br/>
+        /// Noise reduction filters audio added to the input audio buffer before it is sent to VAD and the model.<br/>
+        /// Filtering the audio can improve VAD and turn detection accuracy (reducing false positives) and model performance by improving perception of the input audio.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("noise_reduction")]
         public global::tryAGI.OpenAI.RealtimeSessionCreateResponseAudioInputNoiseReduction? NoiseReduction { get; set; }
 
         /// <summary>
-        /// Configuration for input audio transcription.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transcription")]
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseAudioInputTranscription? Transcription { get; set; }
+        public global::tryAGI.OpenAI.AudioTranscription? Transcription { get; set; }
 
         /// <summary>
-        /// Configuration for turn detection.
+        /// Configuration for turn detection, ether Server VAD or Semantic VAD. This can be set to `null` to turn off, in which case the client must manually trigger model response.<br/>
+        /// Server VAD means that the model will detect the start and end of speech based on audio volume and respond at the end of user speech.<br/>
+        /// Semantic VAD is more advanced and uses a turn detection model (in conjunction with VAD) to semantically estimate whether the user has finished speaking, then dynamically sets a timeout based on this probability. For example, if user audio trails off with "uhhm", the model will score a low probability of turn end and wait longer for the user to continue speaking. This can be useful for more natural conversations, but may have a higher latency.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("turn_detection")]
         public global::tryAGI.OpenAI.RealtimeSessionCreateResponseAudioInputTurnDetection? TurnDetection { get; set; }
@@ -41,25 +46,25 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeSessionCreateResponseAudioInput" /> class.
         /// </summary>
-        /// <param name="format">
-        /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
-        /// </param>
+        /// <param name="format"></param>
         /// <param name="noiseReduction">
-        /// Configuration for input audio noise reduction.
+        /// Configuration for input audio noise reduction. This can be set to `null` to turn off.<br/>
+        /// Noise reduction filters audio added to the input audio buffer before it is sent to VAD and the model.<br/>
+        /// Filtering the audio can improve VAD and turn detection accuracy (reducing false positives) and model performance by improving perception of the input audio.
         /// </param>
-        /// <param name="transcription">
-        /// Configuration for input audio transcription.
-        /// </param>
+        /// <param name="transcription"></param>
         /// <param name="turnDetection">
-        /// Configuration for turn detection.
+        /// Configuration for turn detection, ether Server VAD or Semantic VAD. This can be set to `null` to turn off, in which case the client must manually trigger model response.<br/>
+        /// Server VAD means that the model will detect the start and end of speech based on audio volume and respond at the end of user speech.<br/>
+        /// Semantic VAD is more advanced and uses a turn detection model (in conjunction with VAD) to semantically estimate whether the user has finished speaking, then dynamically sets a timeout based on this probability. For example, if user audio trails off with "uhhm", the model will score a low probability of turn end and wait longer for the user to continue speaking. This can be useful for more natural conversations, but may have a higher latency.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeSessionCreateResponseAudioInput(
-            string? format,
+            global::tryAGI.OpenAI.RealtimeAudioFormats? format,
             global::tryAGI.OpenAI.RealtimeSessionCreateResponseAudioInputNoiseReduction? noiseReduction,
-            global::tryAGI.OpenAI.RealtimeSessionCreateResponseAudioInputTranscription? transcription,
+            global::tryAGI.OpenAI.AudioTranscription? transcription,
             global::tryAGI.OpenAI.RealtimeSessionCreateResponseAudioInputTurnDetection? turnDetection)
         {
             this.Format = format;
