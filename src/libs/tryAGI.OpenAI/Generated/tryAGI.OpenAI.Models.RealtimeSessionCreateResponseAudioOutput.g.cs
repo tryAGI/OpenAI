@@ -16,11 +16,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RealtimeAudioFormats? Format { get; set; }
 
         /// <summary>
-        /// The speed of the model's spoken response as a multiple of the original speed.<br/>
-        /// 1.0 is the default speed. 0.25 is the minimum speed. 1.5 is the maximum speed. This value can only be changed in between model turns, not while a response is in progress.<br/>
-        /// This parameter is a post-processing adjustment to the audio after it is generated, it's<br/>
-        /// also possible to prompt the model to speak faster or slower.<br/>
-        /// Default Value: 1
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
         public double? Speed { get; set; }
@@ -43,13 +39,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="RealtimeSessionCreateResponseAudioOutput" /> class.
         /// </summary>
         /// <param name="format"></param>
-        /// <param name="speed">
-        /// The speed of the model's spoken response as a multiple of the original speed.<br/>
-        /// 1.0 is the default speed. 0.25 is the minimum speed. 1.5 is the maximum speed. This value can only be changed in between model turns, not while a response is in progress.<br/>
-        /// This parameter is a post-processing adjustment to the audio after it is generated, it's<br/>
-        /// also possible to prompt the model to speak faster or slower.<br/>
-        /// Default Value: 1
-        /// </param>
+        /// <param name="speed"></param>
         /// <param name="voice">
         /// Example: ash
         /// </param>

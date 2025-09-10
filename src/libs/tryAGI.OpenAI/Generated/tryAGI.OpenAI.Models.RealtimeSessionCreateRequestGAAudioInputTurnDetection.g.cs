@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// Optional idle timeout after which turn detection will auto-timeout when<br/>
-        /// no additional audio is received.
+        /// no additional audio is received and emits a `timeout_triggered` event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("idle_timeout_ms")]
         public int? IdleTimeoutMs { get; set; }
@@ -90,7 +90,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="idleTimeoutMs">
         /// Optional idle timeout after which turn detection will auto-timeout when<br/>
-        /// no additional audio is received.
+        /// no additional audio is received and emits a `timeout_triggered` event.
         /// </param>
         /// <param name="interruptResponse">
         /// Whether or not to automatically interrupt any ongoing response with output to the default<br/>

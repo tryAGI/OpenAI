@@ -420,8 +420,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Send this event to update the session’s configuration.<br/>
         /// The client may send this event at any time to update any field<br/>
-        /// except for `voice` and `model`. `voice` can be updated only if there have been no other<br/>
-        /// audio outputs yet. <br/>
+        /// except for `voice` and `model`. `voice` can be updated only if there have been no other audio outputs yet.<br/>
         /// When the server receives a `session.update`, it will respond<br/>
         /// with a `session.updated` event showing the full, effective configuration.<br/>
         /// Only the fields that are present in the `session.update` are updated. To clear a field like<br/>
@@ -461,41 +460,6 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Send this event to update a transcription session.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeClientEventTranscriptionSessionUpdate? TranscriptionSessionUpdate { get; init; }
-#else
-        public global::tryAGI.OpenAI.RealtimeClientEventTranscriptionSessionUpdate? TranscriptionSessionUpdate { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TranscriptionSessionUpdate))]
-#endif
-        public bool IsTranscriptionSessionUpdate => TranscriptionSessionUpdate != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventTranscriptionSessionUpdate value) => new RealtimeClientEvent((global::tryAGI.OpenAI.RealtimeClientEventTranscriptionSessionUpdate?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.RealtimeClientEventTranscriptionSessionUpdate?(RealtimeClientEvent @this) => @this.TranscriptionSessionUpdate;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventTranscriptionSessionUpdate? value)
-        {
-            TranscriptionSessionUpdate = value;
-        }
-
-        /// <summary>
         /// 
         /// </summary>
         public RealtimeClientEvent(
@@ -509,8 +473,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferCommit? inputAudioBufferCommit,
             global::tryAGI.OpenAI.RealtimeClientEventResponseCancel? responseCancel,
             global::tryAGI.OpenAI.RealtimeClientEventResponseCreate? responseCreate,
-            global::tryAGI.OpenAI.RealtimeClientEventSessionUpdate? sessionUpdate,
-            global::tryAGI.OpenAI.RealtimeClientEventTranscriptionSessionUpdate? transcriptionSessionUpdate
+            global::tryAGI.OpenAI.RealtimeClientEventSessionUpdate? sessionUpdate
             )
         {
             ConversationItemCreate = conversationItemCreate;
@@ -524,14 +487,12 @@ namespace tryAGI.OpenAI
             ResponseCancel = responseCancel;
             ResponseCreate = responseCreate;
             SessionUpdate = sessionUpdate;
-            TranscriptionSessionUpdate = transcriptionSessionUpdate;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            TranscriptionSessionUpdate as object ??
             SessionUpdate as object ??
             ResponseCreate as object ??
             ResponseCancel as object ??
@@ -559,8 +520,7 @@ namespace tryAGI.OpenAI
             InputAudioBufferCommit?.ToString() ??
             ResponseCancel?.ToString() ??
             ResponseCreate?.ToString() ??
-            SessionUpdate?.ToString() ??
-            TranscriptionSessionUpdate?.ToString() 
+            SessionUpdate?.ToString() 
             ;
 
         /// <summary>
@@ -568,7 +528,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsConversationItemCreate || IsConversationItemDelete || IsConversationItemRetrieve || IsConversationItemTruncate || IsInputAudioBufferAppend || IsInputAudioBufferClear || IsOutputAudioBufferClear || IsInputAudioBufferCommit || IsResponseCancel || IsResponseCreate || IsSessionUpdate || IsTranscriptionSessionUpdate;
+            return IsConversationItemCreate || IsConversationItemDelete || IsConversationItemRetrieve || IsConversationItemTruncate || IsInputAudioBufferAppend || IsInputAudioBufferClear || IsOutputAudioBufferClear || IsInputAudioBufferCommit || IsResponseCancel || IsResponseCreate || IsSessionUpdate;
         }
 
         /// <summary>
@@ -586,7 +546,6 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.RealtimeClientEventResponseCancel?, TResult>? responseCancel = null,
             global::System.Func<global::tryAGI.OpenAI.RealtimeClientEventResponseCreate?, TResult>? responseCreate = null,
             global::System.Func<global::tryAGI.OpenAI.RealtimeClientEventSessionUpdate?, TResult>? sessionUpdate = null,
-            global::System.Func<global::tryAGI.OpenAI.RealtimeClientEventTranscriptionSessionUpdate?, TResult>? transcriptionSessionUpdate = null,
             bool validate = true)
         {
             if (validate)
@@ -638,10 +597,6 @@ namespace tryAGI.OpenAI
             {
                 return sessionUpdate(SessionUpdate!);
             }
-            else if (IsTranscriptionSessionUpdate && transcriptionSessionUpdate != null)
-            {
-                return transcriptionSessionUpdate(TranscriptionSessionUpdate!);
-            }
 
             return default(TResult);
         }
@@ -661,7 +616,6 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.RealtimeClientEventResponseCancel?>? responseCancel = null,
             global::System.Action<global::tryAGI.OpenAI.RealtimeClientEventResponseCreate?>? responseCreate = null,
             global::System.Action<global::tryAGI.OpenAI.RealtimeClientEventSessionUpdate?>? sessionUpdate = null,
-            global::System.Action<global::tryAGI.OpenAI.RealtimeClientEventTranscriptionSessionUpdate?>? transcriptionSessionUpdate = null,
             bool validate = true)
         {
             if (validate)
@@ -713,10 +667,6 @@ namespace tryAGI.OpenAI
             {
                 sessionUpdate?.Invoke(SessionUpdate!);
             }
-            else if (IsTranscriptionSessionUpdate)
-            {
-                transcriptionSessionUpdate?.Invoke(TranscriptionSessionUpdate!);
-            }
         }
 
         /// <summary>
@@ -748,8 +698,6 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.RealtimeClientEventResponseCreate),
                 SessionUpdate,
                 typeof(global::tryAGI.OpenAI.RealtimeClientEventSessionUpdate),
-                TranscriptionSessionUpdate,
-                typeof(global::tryAGI.OpenAI.RealtimeClientEventTranscriptionSessionUpdate),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -776,8 +724,7 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferCommit?>.Default.Equals(InputAudioBufferCommit, other.InputAudioBufferCommit) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeClientEventResponseCancel?>.Default.Equals(ResponseCancel, other.ResponseCancel) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeClientEventResponseCreate?>.Default.Equals(ResponseCreate, other.ResponseCreate) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeClientEventSessionUpdate?>.Default.Equals(SessionUpdate, other.SessionUpdate) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeClientEventTranscriptionSessionUpdate?>.Default.Equals(TranscriptionSessionUpdate, other.TranscriptionSessionUpdate) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeClientEventSessionUpdate?>.Default.Equals(SessionUpdate, other.SessionUpdate) 
                 ;
         }
 
