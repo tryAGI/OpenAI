@@ -8,8 +8,7 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// Send this event to update the session’s configuration.<br/>
     /// The client may send this event at any time to update any field<br/>
-    /// except for `voice` and `model`. `voice` can be updated only if there have been no other<br/>
-    /// audio outputs yet. <br/>
+    /// except for `voice` and `model`. `voice` can be updated only if there have been no other audio outputs yet.<br/>
     /// When the server receives a `session.update`, it will respond<br/>
     /// with a `session.updated` event showing the full, effective configuration.<br/>
     /// Only the fields that are present in the `session.update` are updated. To clear a field like<br/>

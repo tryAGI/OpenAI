@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Configuration for input and output audio.
+    /// Configuration for input and output audio for the session.
     /// </summary>
     public sealed partial class RealtimeSessionCreateResponseAudio
     {

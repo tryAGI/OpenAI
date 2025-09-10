@@ -14,101 +14,98 @@ namespace tryAGI.OpenAI
         /// for keys is one minute.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponse? RealtimeSessionCreateResponse { get; init; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA? RealtimeSessionCreateResponseGA { get; init; }
 #else
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponse? RealtimeSessionCreateResponse { get; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA? RealtimeSessionCreateResponseGA { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RealtimeSessionCreateResponse))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RealtimeSessionCreateResponseGA))]
 #endif
-        public bool IsRealtimeSessionCreateResponse => RealtimeSessionCreateResponse != null;
+        public bool IsRealtimeSessionCreateResponseGA => RealtimeSessionCreateResponseGA != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Session2(global::tryAGI.OpenAI.RealtimeSessionCreateResponse value) => new Session2((global::tryAGI.OpenAI.RealtimeSessionCreateResponse?)value);
+        public static implicit operator Session2(global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA value) => new Session2((global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.RealtimeSessionCreateResponse?(Session2 @this) => @this.RealtimeSessionCreateResponse;
+        public static implicit operator global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA?(Session2 @this) => @this.RealtimeSessionCreateResponseGA;
 
         /// <summary>
         /// 
         /// </summary>
-        public Session2(global::tryAGI.OpenAI.RealtimeSessionCreateResponse? value)
+        public Session2(global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA? value)
         {
-            RealtimeSessionCreateResponse = value;
+            RealtimeSessionCreateResponseGA = value;
         }
 
         /// <summary>
-        /// A new Realtime transcription session configuration.<br/>
-        /// When a session is created on the server via REST API, the session object<br/>
-        /// also contains an ephemeral key. Default TTL for keys is 10 minutes. This<br/>
-        /// property is not present when a session is updated via the WebSocket API.
+        /// A Realtime transcription session configuration object.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponse? RealtimeTranscriptionSessionCreateResponse { get; init; }
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA? RealtimeTranscriptionSessionCreateResponseGA { get; init; }
 #else
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponse? RealtimeTranscriptionSessionCreateResponse { get; }
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA? RealtimeTranscriptionSessionCreateResponseGA { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RealtimeTranscriptionSessionCreateResponse))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RealtimeTranscriptionSessionCreateResponseGA))]
 #endif
-        public bool IsRealtimeTranscriptionSessionCreateResponse => RealtimeTranscriptionSessionCreateResponse != null;
+        public bool IsRealtimeTranscriptionSessionCreateResponseGA => RealtimeTranscriptionSessionCreateResponseGA != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Session2(global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponse value) => new Session2((global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponse?)value);
+        public static implicit operator Session2(global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA value) => new Session2((global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponse?(Session2 @this) => @this.RealtimeTranscriptionSessionCreateResponse;
+        public static implicit operator global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA?(Session2 @this) => @this.RealtimeTranscriptionSessionCreateResponseGA;
 
         /// <summary>
         /// 
         /// </summary>
-        public Session2(global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponse? value)
+        public Session2(global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA? value)
         {
-            RealtimeTranscriptionSessionCreateResponse = value;
+            RealtimeTranscriptionSessionCreateResponseGA = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public Session2(
-            global::tryAGI.OpenAI.RealtimeSessionCreateResponse? realtimeSessionCreateResponse,
-            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponse? realtimeTranscriptionSessionCreateResponse
+            global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA? realtimeSessionCreateResponseGA,
+            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA? realtimeTranscriptionSessionCreateResponseGA
             )
         {
-            RealtimeSessionCreateResponse = realtimeSessionCreateResponse;
-            RealtimeTranscriptionSessionCreateResponse = realtimeTranscriptionSessionCreateResponse;
+            RealtimeSessionCreateResponseGA = realtimeSessionCreateResponseGA;
+            RealtimeTranscriptionSessionCreateResponseGA = realtimeTranscriptionSessionCreateResponseGA;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            RealtimeTranscriptionSessionCreateResponse as object ??
-            RealtimeSessionCreateResponse as object 
+            RealtimeTranscriptionSessionCreateResponseGA as object ??
+            RealtimeSessionCreateResponseGA as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            RealtimeSessionCreateResponse?.ToString() ??
-            RealtimeTranscriptionSessionCreateResponse?.ToString() 
+            RealtimeSessionCreateResponseGA?.ToString() ??
+            RealtimeTranscriptionSessionCreateResponseGA?.ToString() 
             ;
 
         /// <summary>
@@ -116,15 +113,15 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsRealtimeSessionCreateResponse || IsRealtimeTranscriptionSessionCreateResponse;
+            return IsRealtimeSessionCreateResponseGA || IsRealtimeTranscriptionSessionCreateResponseGA;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.RealtimeSessionCreateResponse?, TResult>? realtimeSessionCreateResponse = null,
-            global::System.Func<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponse?, TResult>? realtimeTranscriptionSessionCreateResponse = null,
+            global::System.Func<global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA?, TResult>? realtimeSessionCreateResponseGA = null,
+            global::System.Func<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA?, TResult>? realtimeTranscriptionSessionCreateResponseGA = null,
             bool validate = true)
         {
             if (validate)
@@ -132,13 +129,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsRealtimeSessionCreateResponse && realtimeSessionCreateResponse != null)
+            if (IsRealtimeSessionCreateResponseGA && realtimeSessionCreateResponseGA != null)
             {
-                return realtimeSessionCreateResponse(RealtimeSessionCreateResponse!);
+                return realtimeSessionCreateResponseGA(RealtimeSessionCreateResponseGA!);
             }
-            else if (IsRealtimeTranscriptionSessionCreateResponse && realtimeTranscriptionSessionCreateResponse != null)
+            else if (IsRealtimeTranscriptionSessionCreateResponseGA && realtimeTranscriptionSessionCreateResponseGA != null)
             {
-                return realtimeTranscriptionSessionCreateResponse(RealtimeTranscriptionSessionCreateResponse!);
+                return realtimeTranscriptionSessionCreateResponseGA(RealtimeTranscriptionSessionCreateResponseGA!);
             }
 
             return default(TResult);
@@ -148,8 +145,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.RealtimeSessionCreateResponse?>? realtimeSessionCreateResponse = null,
-            global::System.Action<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponse?>? realtimeTranscriptionSessionCreateResponse = null,
+            global::System.Action<global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA?>? realtimeSessionCreateResponseGA = null,
+            global::System.Action<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA?>? realtimeTranscriptionSessionCreateResponseGA = null,
             bool validate = true)
         {
             if (validate)
@@ -157,13 +154,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsRealtimeSessionCreateResponse)
+            if (IsRealtimeSessionCreateResponseGA)
             {
-                realtimeSessionCreateResponse?.Invoke(RealtimeSessionCreateResponse!);
+                realtimeSessionCreateResponseGA?.Invoke(RealtimeSessionCreateResponseGA!);
             }
-            else if (IsRealtimeTranscriptionSessionCreateResponse)
+            else if (IsRealtimeTranscriptionSessionCreateResponseGA)
             {
-                realtimeTranscriptionSessionCreateResponse?.Invoke(RealtimeTranscriptionSessionCreateResponse!);
+                realtimeTranscriptionSessionCreateResponseGA?.Invoke(RealtimeTranscriptionSessionCreateResponseGA!);
             }
         }
 
@@ -174,10 +171,10 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                RealtimeSessionCreateResponse,
-                typeof(global::tryAGI.OpenAI.RealtimeSessionCreateResponse),
-                RealtimeTranscriptionSessionCreateResponse,
-                typeof(global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponse),
+                RealtimeSessionCreateResponseGA,
+                typeof(global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA),
+                RealtimeTranscriptionSessionCreateResponseGA,
+                typeof(global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -194,8 +191,8 @@ namespace tryAGI.OpenAI
         public bool Equals(Session2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeSessionCreateResponse?>.Default.Equals(RealtimeSessionCreateResponse, other.RealtimeSessionCreateResponse) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponse?>.Default.Equals(RealtimeTranscriptionSessionCreateResponse, other.RealtimeTranscriptionSessionCreateResponse) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA?>.Default.Equals(RealtimeSessionCreateResponseGA, other.RealtimeSessionCreateResponseGA) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA?>.Default.Equals(RealtimeTranscriptionSessionCreateResponseGA, other.RealtimeTranscriptionSessionCreateResponseGA) 
                 ;
         }
 

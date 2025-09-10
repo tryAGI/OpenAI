@@ -148,18 +148,6 @@ namespace tryAGI.OpenAI.JsonConverters
             {
             }
 
-            readerCopy = reader;
-            global::tryAGI.OpenAI.RealtimeClientEventTranscriptionSessionUpdate? transcriptionSessionUpdate = default;
-            try
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeClientEventTranscriptionSessionUpdate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeClientEventTranscriptionSessionUpdate> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeClientEventTranscriptionSessionUpdate).Name}");
-                transcriptionSessionUpdate = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
-            }
-            catch (global::System.Text.Json.JsonException)
-            {
-            }
-
             var result = new global::tryAGI.OpenAI.RealtimeClientEvent(
                 conversationItemCreate,
                 conversationItemDelete,
@@ -171,8 +159,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 inputAudioBufferCommit,
                 responseCancel,
                 responseCreate,
-                sessionUpdate,
-                transcriptionSessionUpdate
+                sessionUpdate
                 );
 
             if (conversationItemCreate != null)
@@ -239,12 +226,6 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeClientEventSessionUpdate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeClientEventSessionUpdate> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeClientEventSessionUpdate).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            else if (transcriptionSessionUpdate != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeClientEventTranscriptionSessionUpdate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeClientEventTranscriptionSessionUpdate> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeClientEventTranscriptionSessionUpdate).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -325,12 +306,6 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeClientEventSessionUpdate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeClientEventSessionUpdate?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeClientEventSessionUpdate).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionUpdate, typeInfo);
-            }
-            else if (value.IsTranscriptionSessionUpdate)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeClientEventTranscriptionSessionUpdate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeClientEventTranscriptionSessionUpdate?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeClientEventTranscriptionSessionUpdate).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TranscriptionSessionUpdate, typeInfo);
             }
         }
     }
