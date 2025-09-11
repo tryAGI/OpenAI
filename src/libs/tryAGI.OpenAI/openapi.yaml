@@ -5465,7 +5465,7 @@ paths:
             node.js: "import OpenAI from 'openai';\n\nconst client = new OpenAI({\n  apiKey: 'My API Key',\n});\n\nconst clientSecret = await client.realtime.clientSecrets.create();\n\nconsole.log(clientSecret.expires_at);"
             python: "from openai import OpenAI\n\nclient = OpenAI(\n    api_key=\"My API Key\",\n)\nclient_secret = client.realtime.client_secrets.create()\nprint(client_secret.expires_at)"
             ruby: "require \"openai\"\n\nopenai = OpenAI::Client.new(api_key: \"My API Key\")\n\nclient_secret = openai.realtime.client_secrets.create\n\nputs(client_secret)"
-          response: "{\n  \"value\": \"ek_68af296e8e408191a1120ab6383263c2\",\n  \"expires_at\": 1756310470,\n  \"session\": {\n    \"type\": \"realtime\",\n    \"object\": \"realtime.session\",\n    \"id\": \"sess_C9CiUVUzUzYIssh3ELY1d\",\n    \"model\": \"gpt-realtime\",\n    \"output_modalities\": [\n      \"audio\"\n    ],\n    \"instructions\": \"You are a friendly assistant.\",\n    \"tools\": [],\n    \"tool_choice\": \"auto\",\n    \"max_output_tokens\": \"inf\",\n    \"tracing\": null,\n    \"truncation\": \"auto\",\n    \"prompt\": null,\n    \"expires_at\": 0,\n    \"audio\": {\n      \"input\": {\n        \"format\": {\n          \"type\": \"audio/pcm\",\n          \"rate\": 24000\n        },\n        \"transcription\": null,\n        \"noise_reduction\": null,\n        \"turn_detection\": {\n          \"type\": \"server_vad\",\n          \"threshold\": 0.5,\n          \"prefix_padding_ms\": 300,\n          \"silence_duration_ms\": 200,\n          \"idle_timeout_ms\": null,\n          \"create_response\": true,\n          \"interrupt_response\": true\n        }\n      },\n      \"output\": {\n        \"format\": {\n          \"type\": \"audio/pcm\",\n          \"rate\": 24000\n        },\n        \"voice\": \"alloy\",\n        \"speed\": 1.0\n      }\n    },\n    \"include\": null\n  }\n}\n"
+          response: "{\n  \"value\": \"ek_68af296e8e408191a1120ab6383263c2\",\n  \"expires_at\": 1756310470,\n  \"session\": {\n    \"type\": \"realtime\",\n    \"object\": \"realtime.session\",\n    \"id\": \"sess_C9CiUVUzUzYIssh3ELY1d\",\n    \"model\": \"gpt-realtime\",\n    \"output_modalities\": [\n      \"audio\"\n    ],\n    \"instructions\": \"You are a friendly assistant.\",\n    \"tools\": [],\n    \"tool_choice\": \"auto\",\n    \"max_output_tokens\": \"inf\",\n    \"tracing\": null,\n    \"truncation\": \"auto\",\n    \"prompt\": null,\n    \"expires_at\": 0,\n    \"audio\": {\n      \"input\": {\n        \"format\": {\n          \"type\": \"audio/pcm\",\n          \"rate\": 24000\n        },\n        \"transcription\": null,\n        \"noise_reduction\": null,\n        \"turn_detection\": {\n          \"type\": \"server_vad\",\n        }\n      },\n      \"output\": {\n        \"format\": {\n          \"type\": \"audio/pcm\",\n          \"rate\": 24000\n        },\n        \"voice\": \"alloy\",\n        \"speed\": 1.0\n      }\n    },\n    \"include\": null\n  }\n}\n"
         group: realtime
         name: Create client secret
         returns: The created client secret and the effective session object. The client secret is a string that looks like `ek_1234`.
@@ -20558,37 +20558,6 @@ components:
         example: "{\n    \"event_id\": \"event_1718\",\n    \"type\": \"input_audio_buffer.speech_stopped\",\n    \"audio_end_ms\": 2000,\n    \"item_id\": \"msg_003\"\n}\n"
         group: realtime
         name: input_audio_buffer.speech_stopped
-    RealtimeBetaServerEventInputAudioBufferTimeoutTriggered:
-      required:
-        - event_id
-        - type
-        - audio_start_ms
-        - audio_end_ms
-        - item_id
-      type: object
-      properties:
-        audio_end_ms:
-          type: integer
-          description: Millisecond offset where speech ended within the buffered audio.
-        audio_start_ms:
-          type: integer
-          description: Millisecond offset where speech started within the buffered audio.
-        event_id:
-          type: string
-          description: The unique ID of the server event.
-        item_id:
-          type: string
-          description: The ID of the item associated with this segment.
-        type:
-          enum:
-            - input_audio_buffer.timeout_triggered
-          description: 'The event type, must be `input_audio_buffer.timeout_triggered`.'
-          x-stainless-const: true
-      description: "Returned when the server VAD timeout is triggered for the input audio buffer.\n"
-      x-oaiMeta:
-        example: "{\n    \"event_id\": \"event_6401\",\n    \"type\": \"input_audio_buffer.timeout_triggered\",\n    \"audio_start_ms\": 1200,\n    \"audio_end_ms\": 2150,\n    \"item_id\": \"msg_010\"\n}\n"
-        group: realtime
-        name: input_audio_buffer.timeout_triggered
     RealtimeBetaServerEventMCPListToolsCompleted:
       required:
         - event_id
@@ -23078,10 +23047,10 @@ components:
       properties:
         audio_end_ms:
           type: integer
-          description: Millisecond offset where speech ended within the buffered audio.
+          description: Millisecond offset of audio written to the input audio buffer at the time the timeout was triggered.
         audio_start_ms:
           type: integer
-          description: Millisecond offset where speech started within the buffered audio.
+          description: Millisecond offset of audio written to the input audio buffer that was after the playback time of the last model response.
         event_id:
           type: string
           description: The unique ID of the server event.
@@ -23093,9 +23062,9 @@ components:
             - input_audio_buffer.timeout_triggered
           description: 'The event type, must be `input_audio_buffer.timeout_triggered`.'
           x-stainless-const: true
-      description: "Returned when the server VAD timeout is triggered for the input audio buffer.\n"
+      description: "Returned when the Server VAD timeout is triggered for the input audio buffer. This is configured\nwith `idle_timeout_ms` in the `turn_detection` settings of the session, and it indicates that\nthere hasn't been any speech detected for the configured duration.\n\nThe `audio_start_ms` and `audio_end_ms` fields indicate the segment of audio after the last\nmodel response up to the triggering time, as an offset from the beginning of audio written\nto the input audio buffer. This means it demarcates the segment of audio that was silent and\nthe difference between the start and end values will roughly match the configured timeout.\n\nThe empty audio will be committed to the conversation as an `input_audio` item (there will be a\n`input_audio_buffer.committed` event) and a model response will be generated. There may be speech\nthat didn't trigger VAD but is still detected by the model, so the model may respond with\nsomething relevant to the conversation or a prompt to continue speaking.\n"
       x-oaiMeta:
-        example: "{\n    \"event_id\": \"event_6401\",\n    \"type\": \"input_audio_buffer.timeout_triggered\",\n    \"audio_start_ms\": 1200,\n    \"audio_end_ms\": 2150,\n    \"item_id\": \"msg_010\"\n}\n"
+        example: "{\n    \"type\":\"input_audio_buffer.timeout_triggered\",\n    \"event_id\":\"event_CEKKrf1KTGvemCPyiJTJ2\",\n    \"audio_start_ms\":13216,\n    \"audio_end_ms\":19232,\n    \"item_id\":\"item_CEKKrWH0GiwN0ET97NUZc\"\n}\n"
         group: realtime
         name: input_audio_buffer.timeout_triggered
     RealtimeServerEventMCPListToolsCompleted:
@@ -24299,46 +24268,7 @@ components:
                 transcription:
                   $ref: '#/components/schemas/AudioTranscription'
                 turn_detection:
-                  type: object
-                  properties:
-                    create_response:
-                      type: boolean
-                      description: "Whether or not to automatically generate a response when a VAD stop event occurs.\n"
-                      default: true
-                    eagerness:
-                      enum:
-                        - low
-                        - medium
-                        - high
-                        - auto
-                      type: string
-                      description: "Used only for `semantic_vad` mode. The eagerness of the model to respond. `low` will wait longer for the user to continue speaking, `high` will respond more quickly. `auto` is the default and is equivalent to `medium`. `low`, `medium`, and `high` have max timeouts of 8s, 4s, and 2s respectively.\n"
-                      default: auto
-                    idle_timeout_ms:
-                      type: integer
-                      description: "Optional idle timeout after which turn detection will auto-timeout when\nno additional audio is received and emits a `timeout_triggered` event.\n"
-                      nullable: true
-                    interrupt_response:
-                      type: boolean
-                      description: "Whether or not to automatically interrupt any ongoing response with output to the default\nconversation (i.e. `conversation` of `auto`) when a VAD start event occurs.\n"
-                      default: true
-                    prefix_padding_ms:
-                      type: integer
-                      description: "Used only for `server_vad` mode. Amount of audio to include before the VAD detected speech (in\nmilliseconds). Defaults to 300ms.\n"
-                    silence_duration_ms:
-                      type: integer
-                      description: "Used only for `server_vad` mode. Duration of silence to detect speech stop (in milliseconds). Defaults\nto 500ms. With shorter values the model will respond more quickly,\nbut may jump in on short pauses from the user.\n"
-                    threshold:
-                      type: number
-                      description: "Used only for `server_vad` mode. Activation threshold for VAD (0.0 to 1.0), this defaults to 0.5. A\nhigher threshold will require louder audio to activate the model, and\nthus might perform better in noisy environments.\n"
-                    type:
-                      enum:
-                        - server_vad
-                        - semantic_vad
-                      type: string
-                      description: "Type of turn detection.\n"
-                      default: server_vad
-                  description: "Configuration for turn detection, ether Server VAD or Semantic VAD. This can be set to `null` to turn off, in which case the client must manually trigger model response.\nServer VAD means that the model will detect the start and end of speech based on audio volume and respond at the end of user speech.\nSemantic VAD is more advanced and uses a turn detection model (in conjunction with VAD) to semantically estimate whether the user has finished speaking, then dynamically sets a timeout based on this probability. For example, if user audio trails off with \"uhhm\", the model will score a low probability of turn end and wait longer for the user to continue speaking. This can be useful for more natural conversations, but may have a higher latency.\n"
+                  $ref: '#/components/schemas/RealtimeTurnDetection'
             output:
               type: object
               properties:
@@ -24602,46 +24532,7 @@ components:
                 transcription:
                   $ref: '#/components/schemas/AudioTranscription'
                 turn_detection:
-                  type: object
-                  properties:
-                    create_response:
-                      type: boolean
-                      description: "Whether or not to automatically generate a response when a VAD stop event occurs.\n"
-                      default: true
-                    eagerness:
-                      enum:
-                        - low
-                        - medium
-                        - high
-                        - auto
-                      type: string
-                      description: "Used only for `semantic_vad` mode. The eagerness of the model to respond. `low` will wait longer for the user to continue speaking, `high` will respond more quickly. `auto` is the default and is equivalent to `medium`. `low`, `medium`, and `high` have max timeouts of 8s, 4s, and 2s respectively.\n"
-                      default: auto
-                    idle_timeout_ms:
-                      type: integer
-                      description: "Optional idle timeout after which turn detection will auto-timeout when\nno additional audio is received and emits a `timeout_triggered` event.\n"
-                      nullable: true
-                    interrupt_response:
-                      type: boolean
-                      description: "Whether or not to automatically interrupt any ongoing response with output to the default\nconversation (i.e. `conversation` of `auto`) when a VAD start event occurs.\n"
-                      default: true
-                    prefix_padding_ms:
-                      type: integer
-                      description: "Used only for `server_vad` mode. Amount of audio to include before the VAD detected speech (in\nmilliseconds). Defaults to 300ms.\n"
-                    silence_duration_ms:
-                      type: integer
-                      description: "Used only for `server_vad` mode. Duration of silence to detect speech stop (in milliseconds). Defaults\nto 500ms. With shorter values the model will respond more quickly,\nbut may jump in on short pauses from the user.\n"
-                    threshold:
-                      type: number
-                      description: "Used only for `server_vad` mode. Activation threshold for VAD (0.0 to 1.0), this defaults to 0.5. A\nhigher threshold will require louder audio to activate the model, and\nthus might perform better in noisy environments.\n"
-                    type:
-                      enum:
-                        - server_vad
-                        - semantic_vad
-                      type: string
-                      description: "Type of turn detection.\n"
-                      default: server_vad
-                  description: "Configuration for turn detection, ether Server VAD or Semantic VAD. This can be set to `null` to turn off, in which case the client must manually trigger model response.\nServer VAD means that the model will detect the start and end of speech based on audio volume and respond at the end of user speech.\nSemantic VAD is more advanced and uses a turn detection model (in conjunction with VAD) to semantically estimate whether the user has finished speaking, then dynamically sets a timeout based on this probability. For example, if user audio trails off with \"uhhm\", the model will score a low probability of turn end and wait longer for the user to continue speaking. This can be useful for more natural conversations, but may have a higher latency.\n"
+                  $ref: '#/components/schemas/RealtimeTurnDetection'
             output:
               type: object
               properties:
@@ -24832,46 +24723,7 @@ components:
                 transcription:
                   $ref: '#/components/schemas/AudioTranscription'
                 turn_detection:
-                  type: object
-                  properties:
-                    create_response:
-                      type: boolean
-                      description: "Whether or not to automatically generate a response when a VAD stop event occurs.\n"
-                      default: true
-                    eagerness:
-                      enum:
-                        - low
-                        - medium
-                        - high
-                        - auto
-                      type: string
-                      description: "Used only for `semantic_vad` mode. The eagerness of the model to respond. `low` will wait longer for the user to continue speaking, `high` will respond more quickly. `auto` is the default and is equivalent to `medium`.\n"
-                      default: auto
-                    idle_timeout_ms:
-                      type: integer
-                      description: "Optional idle timeout after which turn detection will auto-timeout when\nno additional audio is received.\n"
-                      nullable: true
-                    interrupt_response:
-                      type: boolean
-                      description: "Whether or not to automatically interrupt any ongoing response with output to the default\nconversation (i.e. `conversation` of `auto`) when a VAD start event occurs.\n"
-                      default: true
-                    prefix_padding_ms:
-                      type: integer
-                      description: "Used only for `server_vad` mode. Amount of audio to include before the VAD detected speech (in\nmilliseconds). Defaults to 300ms.\n"
-                    silence_duration_ms:
-                      type: integer
-                      description: "Used only for `server_vad` mode. Duration of silence to detect speech stop (in milliseconds). Defaults\nto 500ms. With shorter values the model will respond more quickly,\nbut may jump in on short pauses from the user.\n"
-                    threshold:
-                      type: number
-                      description: "Used only for `server_vad` mode. Activation threshold for VAD (0.0 to 1.0), this defaults to 0.5. A\nhigher threshold will require louder audio to activate the model, and\nthus might perform better in noisy environments.\n"
-                    type:
-                      enum:
-                        - server_vad
-                        - semantic_vad
-                      type: string
-                      description: "Type of turn detection.\n"
-                      default: server_vad
-                  description: "Configuration for turn detection, ether Server VAD or Semantic VAD. This can be set to `null` to turn off, in which case the client must manually trigger model response.\nServer VAD means that the model will detect the start and end of speech based on audio volume and respond at the end of user speech.\nSemantic VAD is more advanced and uses a turn detection model (in conjunction with VAD) to semantically estimate whether the user has finished speaking, then dynamically sets a timeout based on this probability. For example, if user audio trails off with \"uhhm\", the model will score a low probability of turn end and wait longer for the user to continue speaking. This can be useful for more natural conversations, but may have a higher latency.\n"
+                  $ref: '#/components/schemas/RealtimeTurnDetection'
           description: "Configuration for input and output audio.\n"
         include:
           type: array
@@ -25034,6 +24886,76 @@ components:
               x-stainless-const: true
           description: 'Retain a fraction of the conversation tokens when the conversation exceeds the input token limit. This allows you to amortize truncations across multiple turns, which can help improve cached token usage.'
       description: "Controls how the realtime conversation is truncated prior to model inference.\nThe default is `auto`.\n"
+    RealtimeTurnDetection:
+      title: Realtime Turn Detection
+      anyOf:
+        - title: Server VAD
+          required:
+            - type
+          type: object
+          properties:
+            create_response:
+              type: boolean
+              description: "Whether or not to automatically generate a response when a VAD stop event occurs.\n"
+              default: true
+            idle_timeout_ms:
+              maximum: 30000
+              minimum: 5000
+              type: integer
+              description: "Optional timeout after which a model response will be triggered automatically. This is\nuseful for situations in which a long pause from the user is unexpected, such as a phone\ncall. The model will effectively prompt the user to continue the conversation based\non the current context.\n\nThe timeout value will be applied after the last model response's audio has finished playing,\ni.e. it's set to the `response.done` time plus audio playback duration.\n\nAn `input_audio_buffer.timeout_triggered` event (plus events\nassociated with the Response) will be emitted when the timeout is reached.\nIdle timeout is currently only supported for `server_vad` mode.\n"
+              nullable: true
+            interrupt_response:
+              type: boolean
+              description: "Whether or not to automatically interrupt any ongoing response with output to the default\nconversation (i.e. `conversation` of `auto`) when a VAD start event occurs.\n"
+              default: true
+            prefix_padding_ms:
+              type: integer
+              description: "Used only for `server_vad` mode. Amount of audio to include before the VAD detected speech (in\nmilliseconds). Defaults to 300ms.\n"
+            silence_duration_ms:
+              type: integer
+              description: "Used only for `server_vad` mode. Duration of silence to detect speech stop (in milliseconds). Defaults\nto 500ms. With shorter values the model will respond more quickly,\nbut may jump in on short pauses from the user.\n"
+            threshold:
+              type: number
+              description: "Used only for `server_vad` mode. Activation threshold for VAD (0.0 to 1.0), this defaults to 0.5. A\nhigher threshold will require louder audio to activate the model, and\nthus might perform better in noisy environments.\n"
+            type:
+              enum:
+                - server_vad
+              type: string
+              description: "Type of turn detection, `server_vad` to turn on simple Server VAD.\n"
+              default: server_vad
+          description: Server-side voice activity detection (VAD) which flips on when user speech is detected and off after a period of silence.
+        - title: Semantic VAD
+          required:
+            - type
+          type: object
+          properties:
+            create_response:
+              type: boolean
+              description: "Whether or not to automatically generate a response when a VAD stop event occurs.\n"
+              default: true
+            eagerness:
+              enum:
+                - low
+                - medium
+                - high
+                - auto
+              type: string
+              description: "Used only for `semantic_vad` mode. The eagerness of the model to respond. `low` will wait longer for the user to continue speaking, `high` will respond more quickly. `auto` is the default and is equivalent to `medium`. `low`, `medium`, and `high` have max timeouts of 8s, 4s, and 2s respectively.\n"
+              default: auto
+            interrupt_response:
+              type: boolean
+              description: "Whether or not to automatically interrupt any ongoing response with output to the default\nconversation (i.e. `conversation` of `auto`) when a VAD start event occurs.\n"
+              default: true
+            type:
+              enum:
+                - semantic_vad
+              type: string
+              description: "Type of turn detection, `semantic_vad` to turn on Semantic VAD.\n"
+          description: Server-side semantic turn detection which uses a model to determine when the user has finished speaking.
+      description: "Configuration for turn detection, ether Server VAD or Semantic VAD. This can be set to `null` to turn off, in which case the client must manually trigger model response.\n\nServer VAD means that the model will detect the start and end of speech based on audio volume and respond at the end of user speech.\n\nSemantic VAD is more advanced and uses a turn detection model (in conjunction with VAD) to semantically estimate whether the user has finished speaking, then dynamically sets a timeout based on this probability. For example, if user audio trails off with \"uhhm\", the model will score a low probability of turn end and wait longer for the user to continue speaking. This can be useful for more natural conversations, but may have a higher latency.\n"
+      nullable: true
+      discriminator:
+        propertyName: type
     Reasoning:
       title: Reasoning
       type: object
@@ -26653,7 +26575,7 @@ components:
             - auto
             - disabled
           type: string
-          description: "The truncation strategy to use for the model response.\n- `auto`: If the context of this response and previous ones exceeds\n  the model's context window size, the model will truncate the\n  response to fit the context window by dropping input items in the\n  middle of the conversation.\n- `disabled` (default): If a model response will exceed the context window\n  size for a model, the request will fail with a 400 error.\n"
+          description: "The truncation strategy to use for the model response.\n- `auto`: If the input to this Response exceeds\n  the model's context window size, the model will truncate the\n  response to fit the context window by dropping items from the beginning of the conversation.\n- `disabled` (default): If the input size will exceed the context window\n  size for a model, the request will fail with a 400 error.\n"
           default: disabled
           nullable: true
     ResponseQueuedEvent:
@@ -34032,7 +33954,7 @@ x-oaiMeta:
         - key: RealtimeBetaServerEventInputAudioBufferSpeechStopped
           path: <auto>
           type: object
-        - key: RealtimeBetaServerEventInputAudioBufferTimeoutTriggered
+        - key: RealtimeServerEventInputAudioBufferTimeoutTriggered
           path: <auto>
           type: object
         - key: RealtimeBetaServerEventResponseCreated

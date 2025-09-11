@@ -3,10 +3,10 @@
 namespace tryAGI.OpenAI.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetectionEagernessJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetectionEagerness>
+    public sealed class RealtimeTurnDetectionVariant2TypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::tryAGI.OpenAI.RealtimeTurnDetectionVariant2Type>
     {
         /// <inheritdoc />
-        public override global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetectionEagerness Read(
+        public override global::tryAGI.OpenAI.RealtimeTurnDetectionVariant2Type Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetectionEagernessExtensions.ToEnum(stringValue) ?? default;
+                        return global::tryAGI.OpenAI.RealtimeTurnDetectionVariant2TypeExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace tryAGI.OpenAI.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetectionEagerness)numValue;
+                    return (global::tryAGI.OpenAI.RealtimeTurnDetectionVariant2Type)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetectionEagerness);
+                    return default(global::tryAGI.OpenAI.RealtimeTurnDetectionVariant2Type);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,12 @@ namespace tryAGI.OpenAI.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetectionEagerness value,
+            global::tryAGI.OpenAI.RealtimeTurnDetectionVariant2Type value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetectionEagernessExtensions.ToValueString(value));
+            writer.WriteStringValue(global::tryAGI.OpenAI.RealtimeTurnDetectionVariant2TypeExtensions.ToValueString(value));
         }
     }
 }
