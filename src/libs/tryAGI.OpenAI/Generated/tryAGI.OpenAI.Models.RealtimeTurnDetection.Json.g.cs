@@ -2,7 +2,7 @@
 
 namespace tryAGI.OpenAI
 {
-    public sealed partial class RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetection
+    public readonly partial struct RealtimeTurnDetection
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -34,14 +34,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetection? FromJson(
+        public static global::tryAGI.OpenAI.RealtimeTurnDetection? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetection),
-                jsonSerializerContext) as global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetection;
+                typeof(global::tryAGI.OpenAI.RealtimeTurnDetection),
+                jsonSerializerContext) as global::tryAGI.OpenAI.RealtimeTurnDetection?;
         }
 
         /// <summary>
@@ -51,11 +51,11 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetection? FromJson(
+        public static global::tryAGI.OpenAI.RealtimeTurnDetection? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetection>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeTurnDetection>(
                 json,
                 jsonSerializerOptions);
         }
@@ -63,14 +63,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetection?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::tryAGI.OpenAI.RealtimeTurnDetection?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetection),
-                jsonSerializerContext).ConfigureAwait(false)) as global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetection;
+                typeof(global::tryAGI.OpenAI.RealtimeTurnDetection),
+                jsonSerializerContext).ConfigureAwait(false)) as global::tryAGI.OpenAI.RealtimeTurnDetection?;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetection?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::tryAGI.OpenAI.RealtimeTurnDetection?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetection?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::tryAGI.OpenAI.RealtimeTurnDetection?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

@@ -4,11 +4,9 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Configuration for turn detection, ether Server VAD or Semantic VAD. This can be set to `null` to turn off, in which case the client must manually trigger model response.<br/>
-    /// Server VAD means that the model will detect the start and end of speech based on audio volume and respond at the end of user speech.<br/>
-    /// Semantic VAD is more advanced and uses a turn detection model (in conjunction with VAD) to semantically estimate whether the user has finished speaking, then dynamically sets a timeout based on this probability. For example, if user audio trails off with "uhhm", the model will score a low probability of turn end and wait longer for the user to continue speaking. This can be useful for more natural conversations, but may have a higher latency.
+    /// Server-side voice activity detection (VAD) which flips on when user speech is detected and off after a period of silence.
     /// </summary>
-    public sealed partial class RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetection
+    public sealed partial class RealtimeTurnDetectionVariant1
     {
         /// <summary>
         /// Whether or not to automatically generate a response when a VAD stop event occurs.<br/>
@@ -18,16 +16,15 @@ namespace tryAGI.OpenAI
         public bool? CreateResponse { get; set; }
 
         /// <summary>
-        /// Used only for `semantic_vad` mode. The eagerness of the model to respond. `low` will wait longer for the user to continue speaking, `high` will respond more quickly. `auto` is the default and is equivalent to `medium`.<br/>
-        /// Default Value: auto
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("eagerness")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetectionEagernessJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetectionEagerness? Eagerness { get; set; }
-
-        /// <summary>
-        /// Optional idle timeout after which turn detection will auto-timeout when<br/>
-        /// no additional audio is received.
+        /// Optional timeout after which a model response will be triggered automatically. This is<br/>
+        /// useful for situations in which a long pause from the user is unexpected, such as a phone<br/>
+        /// call. The model will effectively prompt the user to continue the conversation based<br/>
+        /// on the current context.<br/>
+        /// The timeout value will be applied after the last model response's audio has finished playing,<br/>
+        /// i.e. it's set to the `response.done` time plus audio playback duration.<br/>
+        /// An `input_audio_buffer.timeout_triggered` event (plus events<br/>
+        /// associated with the Response) will be emitted when the timeout is reached.<br/>
+        /// Idle timeout is currently only supported for `server_vad` mode.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("idle_timeout_ms")]
         public int? IdleTimeoutMs { get; set; }
@@ -64,12 +61,13 @@ namespace tryAGI.OpenAI
         public double? Threshold { get; set; }
 
         /// <summary>
-        /// Type of turn detection.<br/>
+        /// Type of turn detection, `server_vad` to turn on simple Server VAD.<br/>
         /// Default Value: server_vad
         /// </summary>
+        /// <default>global::tryAGI.OpenAI.RealtimeTurnDetectionVariant1Type.ServerVad</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetectionTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetectionType? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTurnDetectionVariant1TypeJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeTurnDetectionVariant1Type Type { get; set; } = global::tryAGI.OpenAI.RealtimeTurnDetectionVariant1Type.ServerVad;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -78,19 +76,22 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetection" /> class.
+        /// Initializes a new instance of the <see cref="RealtimeTurnDetectionVariant1" /> class.
         /// </summary>
         /// <param name="createResponse">
         /// Whether or not to automatically generate a response when a VAD stop event occurs.<br/>
         /// Default Value: true
         /// </param>
-        /// <param name="eagerness">
-        /// Used only for `semantic_vad` mode. The eagerness of the model to respond. `low` will wait longer for the user to continue speaking, `high` will respond more quickly. `auto` is the default and is equivalent to `medium`.<br/>
-        /// Default Value: auto
-        /// </param>
         /// <param name="idleTimeoutMs">
-        /// Optional idle timeout after which turn detection will auto-timeout when<br/>
-        /// no additional audio is received.
+        /// Optional timeout after which a model response will be triggered automatically. This is<br/>
+        /// useful for situations in which a long pause from the user is unexpected, such as a phone<br/>
+        /// call. The model will effectively prompt the user to continue the conversation based<br/>
+        /// on the current context.<br/>
+        /// The timeout value will be applied after the last model response's audio has finished playing,<br/>
+        /// i.e. it's set to the `response.done` time plus audio playback duration.<br/>
+        /// An `input_audio_buffer.timeout_triggered` event (plus events<br/>
+        /// associated with the Response) will be emitted when the timeout is reached.<br/>
+        /// Idle timeout is currently only supported for `server_vad` mode.
         /// </param>
         /// <param name="interruptResponse">
         /// Whether or not to automatically interrupt any ongoing response with output to the default<br/>
@@ -112,24 +113,22 @@ namespace tryAGI.OpenAI
         /// thus might perform better in noisy environments.
         /// </param>
         /// <param name="type">
-        /// Type of turn detection.<br/>
+        /// Type of turn detection, `server_vad` to turn on simple Server VAD.<br/>
         /// Default Value: server_vad
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetection(
+        public RealtimeTurnDetectionVariant1(
             bool? createResponse,
-            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetectionEagerness? eagerness,
             int? idleTimeoutMs,
             bool? interruptResponse,
             int? prefixPaddingMs,
             int? silenceDurationMs,
             double? threshold,
-            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetectionType? type)
+            global::tryAGI.OpenAI.RealtimeTurnDetectionVariant1Type type = global::tryAGI.OpenAI.RealtimeTurnDetectionVariant1Type.ServerVad)
         {
             this.CreateResponse = createResponse;
-            this.Eagerness = eagerness;
             this.IdleTimeoutMs = idleTimeoutMs;
             this.InterruptResponse = interruptResponse;
             this.PrefixPaddingMs = prefixPaddingMs;
@@ -139,9 +138,9 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetection" /> class.
+        /// Initializes a new instance of the <see cref="RealtimeTurnDetectionVariant1" /> class.
         /// </summary>
-        public RealtimeTranscriptionSessionCreateRequestGAAudioInputTurnDetection()
+        public RealtimeTurnDetectionVariant1()
         {
         }
     }
