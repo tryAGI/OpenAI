@@ -7,7 +7,7 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// Multi-modal input and output contents.
     /// </summary>
-    public readonly partial struct Content6 : global::System.IEquatable<Content6>
+    public readonly partial struct Content5 : global::System.IEquatable<Content5>
     {
         /// <summary>
         /// 
@@ -29,17 +29,17 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Content6(global::tryAGI.OpenAI.InputContent value) => new Content6((global::tryAGI.OpenAI.InputContent?)value);
+        public static implicit operator Content5(global::tryAGI.OpenAI.InputContent value) => new Content5((global::tryAGI.OpenAI.InputContent?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.InputContent?(Content6 @this) => @this.InputContent;
+        public static implicit operator global::tryAGI.OpenAI.InputContent?(Content5 @this) => @this.InputContent;
 
         /// <summary>
         /// 
         /// </summary>
-        public Content6(global::tryAGI.OpenAI.InputContent? value)
+        public Content5(global::tryAGI.OpenAI.InputContent? value)
         {
             InputContent = value;
         }
@@ -64,17 +64,17 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Content6(global::tryAGI.OpenAI.OutputContent value) => new Content6((global::tryAGI.OpenAI.OutputContent?)value);
+        public static implicit operator Content5(global::tryAGI.OpenAI.OutputContent value) => new Content5((global::tryAGI.OpenAI.OutputContent?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.OutputContent?(Content6 @this) => @this.OutputContent;
+        public static implicit operator global::tryAGI.OpenAI.OutputContent?(Content5 @this) => @this.OutputContent;
 
         /// <summary>
         /// 
         /// </summary>
-        public Content6(global::tryAGI.OpenAI.OutputContent? value)
+        public Content5(global::tryAGI.OpenAI.OutputContent? value)
         {
             OutputContent = value;
         }
@@ -82,7 +82,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public Content6(
+        public Content5(
             global::tryAGI.OpenAI.InputContent? inputContent,
             global::tryAGI.OpenAI.OutputContent? outputContent
             )
@@ -187,7 +187,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public bool Equals(Content6 other)
+        public bool Equals(Content5 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputContent?>.Default.Equals(InputContent, other.InputContent) &&
@@ -198,15 +198,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator ==(Content6 obj1, Content6 obj2)
+        public static bool operator ==(Content5 obj1, Content5 obj2)
         {
-            return global::System.Collections.Generic.EqualityComparer<Content6>.Default.Equals(obj1, obj2);
+            return global::System.Collections.Generic.EqualityComparer<Content5>.Default.Equals(obj1, obj2);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator !=(Content6 obj1, Content6 obj2)
+        public static bool operator !=(Content5 obj1, Content5 obj2)
         {
             return !(obj1 == obj2);
         }
@@ -216,7 +216,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public override bool Equals(object? obj)
         {
-            return obj is Content6 o && Equals(o);
+            return obj is Content5 o && Equals(o);
         }
     }
 }

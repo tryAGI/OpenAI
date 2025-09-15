@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
     public sealed partial class ChatCompletionMessageListDataItem
     {
         /// <summary>
-        /// If a content parts array was provided, this is an array of `text` and `image_url` parts. <br/>
+        /// If a content parts array was provided, this is an array of `text` and `image_url` parts.<br/>
         /// Otherwise, null.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_parts")]
@@ -34,7 +34,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="ChatCompletionMessageListDataItem" /> class.
         /// </summary>
         /// <param name="contentParts">
-        /// If a content parts array was provided, this is an array of `text` and `image_url` parts. <br/>
+        /// If a content parts array was provided, this is an array of `text` and `image_url` parts.<br/>
         /// Otherwise, null.
         /// </param>
         /// <param name="id">

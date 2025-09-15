@@ -11,12 +11,10 @@ namespace tryAGI.OpenAI
     public sealed partial class FineTuningJobHyperparameters
     {
         /// <summary>
-        /// Number of examples in each batch. A larger batch size means that model parameters<br/>
-        /// are updated less frequently, but with lower variance.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("batch_size")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.FineTuningJobHyperparametersBatchSize?, int?>))]
-        public global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.FineTuningJobHyperparametersBatchSize?, int?>? BatchSize { get; set; }
+        public object? BatchSize { get; set; }
 
         /// <summary>
         /// Scaling factor for the learning rate. A smaller learning rate may be useful to avoid<br/>
@@ -44,10 +42,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="FineTuningJobHyperparameters" /> class.
         /// </summary>
-        /// <param name="batchSize">
-        /// Number of examples in each batch. A larger batch size means that model parameters<br/>
-        /// are updated less frequently, but with lower variance.
-        /// </param>
+        /// <param name="batchSize"></param>
         /// <param name="learningRateMultiplier">
         /// Scaling factor for the learning rate. A smaller learning rate may be useful to avoid<br/>
         /// overfitting.
@@ -61,7 +56,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FineTuningJobHyperparameters(
-            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.FineTuningJobHyperparametersBatchSize?, int?>? batchSize,
+            object? batchSize,
             global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.FineTuningJobHyperparametersLearningRateMultiplier?, double?>? learningRateMultiplier,
             global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.FineTuningJobHyperparametersNEpochs?, int?>? nEpochs)
         {

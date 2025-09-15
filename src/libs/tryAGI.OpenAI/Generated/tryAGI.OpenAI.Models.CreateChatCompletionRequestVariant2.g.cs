@@ -102,8 +102,8 @@ namespace tryAGI.OpenAI
         /// Output types that you would like the model to generate.<br/>
         /// Most models are capable of generating text, which is the default:<br/>
         /// `["text"]`<br/>
-        /// The `gpt-4o-audio-preview` model can also be used to <br/>
-        /// [generate audio](https://platform.openai.com/docs/guides/audio). To request that this model generate <br/>
+        /// The `gpt-4o-audio-preview` model can also be used to<br/>
+        /// [generate audio](https://platform.openai.com/docs/guides/audio). To request that this model generate<br/>
         /// both text and audio responses, you can use:<br/>
         /// `["text", "audio"]`
         /// </summary>
@@ -153,7 +153,7 @@ namespace tryAGI.OpenAI
         public double? PresencePenalty { get; set; }
 
         /// <summary>
-        /// Constrains effort on reasoning for <br/>
+        /// Constrains effort on reasoning for<br/>
         /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
         /// Currently supported values are `minimal`, `low`, `medium`, and `high`. Reducing<br/>
         /// reasoning effort can result in faster responses and fewer tokens used<br/>
@@ -315,8 +315,8 @@ namespace tryAGI.OpenAI
         /// Output types that you would like the model to generate.<br/>
         /// Most models are capable of generating text, which is the default:<br/>
         /// `["text"]`<br/>
-        /// The `gpt-4o-audio-preview` model can also be used to <br/>
-        /// [generate audio](https://platform.openai.com/docs/guides/audio). To request that this model generate <br/>
+        /// The `gpt-4o-audio-preview` model can also be used to<br/>
+        /// [generate audio](https://platform.openai.com/docs/guides/audio). To request that this model generate<br/>
         /// both text and audio responses, you can use:<br/>
         /// `["text", "audio"]`
         /// </param>
@@ -344,7 +344,7 @@ namespace tryAGI.OpenAI
         /// Default Value: 0
         /// </param>
         /// <param name="reasoningEffort">
-        /// Constrains effort on reasoning for <br/>
+        /// Constrains effort on reasoning for<br/>
         /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
         /// Currently supported values are `minimal`, `low`, `medium`, and `high`. Reducing<br/>
         /// reasoning effort can result in faster responses and fewer tokens used<br/>

@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
         /// useful for storing additional information about the object in a structured<br/>
-        /// format, and querying for objects via API or the dashboard. <br/>
+        /// format, and querying for objects via API or the dashboard.<br/>
         /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
         /// with a maximum length of 512 characters.
         /// </summary>
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public string? PromptCacheKey { get; set; }
 
         /// <summary>
-        /// A stable identifier used to help detect users of your application that may be violating OpenAI's usage policies. <br/>
+        /// A stable identifier used to help detect users of your application that may be violating OpenAI's usage policies.<br/>
         /// The IDs should be a string that uniquely identifies each user. We recommend hashing their username or email address, in order to avoid sending us any identifying information. [Learn more](https://platform.openai.com/docs/guides/safety-best-practices#safety-identifiers).<br/>
         /// Example: safety-identifier-1234
         /// </summary>
@@ -80,7 +80,7 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// This field is being replaced by `safety_identifier` and `prompt_cache_key`. Use `prompt_cache_key` instead to maintain caching optimizations.<br/>
-        /// A stable identifier for your end-users. <br/>
+        /// A stable identifier for your end-users.<br/>
         /// Used to boost cache hit rates by better bucketing similar requests and  to help OpenAI detect and prevent abuse. [Learn more](https://platform.openai.com/docs/guides/safety-best-practices#safety-identifiers).<br/>
         /// Example: user-1234
         /// </summary>
@@ -101,7 +101,7 @@ namespace tryAGI.OpenAI
         /// <param name="metadata">
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
         /// useful for storing additional information about the object in a structured<br/>
-        /// format, and querying for objects via API or the dashboard. <br/>
+        /// format, and querying for objects via API or the dashboard.<br/>
         /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
         /// with a maximum length of 512 characters.
         /// </param>
@@ -110,7 +110,7 @@ namespace tryAGI.OpenAI
         /// Example: prompt-cache-key-1234
         /// </param>
         /// <param name="safetyIdentifier">
-        /// A stable identifier used to help detect users of your application that may be violating OpenAI's usage policies. <br/>
+        /// A stable identifier used to help detect users of your application that may be violating OpenAI's usage policies.<br/>
         /// The IDs should be a string that uniquely identifies each user. We recommend hashing their username or email address, in order to avoid sending us any identifying information. [Learn more](https://platform.openai.com/docs/guides/safety-best-practices#safety-identifiers).<br/>
         /// Example: safety-identifier-1234
         /// </param>

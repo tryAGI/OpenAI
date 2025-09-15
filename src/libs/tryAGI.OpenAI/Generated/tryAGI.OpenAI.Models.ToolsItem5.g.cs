@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Give the model access to additional tools via remote Model Context Protocol <br/>
+        /// Give the model access to additional tools via remote Model Context Protocol<br/>
         /// (MCP) servers. [Learn more about MCP](https://platform.openai.com/docs/guides/tools-remote-mcp).
         /// </summary>
 #if NET6_0_OR_GREATER

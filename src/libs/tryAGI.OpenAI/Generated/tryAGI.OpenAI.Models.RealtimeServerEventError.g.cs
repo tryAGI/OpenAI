@@ -4,8 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Returned when an error occurs, which could be a client problem or a server <br/>
-    /// problem. Most errors are recoverable and the session will stay open, we <br/>
+    /// Returned when an error occurs, which could be a client problem or a server<br/>
+    /// problem. Most errors are recoverable and the session will stay open, we<br/>
     /// recommend to implementors to monitor and log error messages by default.
     /// </summary>
     public sealed partial class RealtimeServerEventError

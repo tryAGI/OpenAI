@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Search the Internet for sources related to the prompt. Learn more about the <br/>
+    /// Search the Internet for sources related to the prompt. Learn more about the<br/>
     /// [web search tool](https://platform.openai.com/docs/guides/tools-web-search).
     /// </summary>
     public sealed partial class WebSearchTool

@@ -71,7 +71,7 @@ namespace tryAGI.OpenAI
             if (request.ChunkingStrategy != default)
             {
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent(request.ChunkingStrategy?.ToString() ?? string.Empty),
+                    content: new global::System.Net.Http.StringContent($"{request.ChunkingStrategy}"),
                     name: "chunking_strategy");
             } 
             __httpRequestContent.Add(
@@ -221,9 +221,7 @@ namespace tryAGI.OpenAI
         /// Create transcription<br/>
         /// Transcribes audio into the input language.
         /// </summary>
-        /// <param name="chunkingStrategy">
-        /// Controls how the audio is cut into chunks. When set to `"auto"`, the server first normalizes loudness and then uses voice activity detection (VAD) to choose boundaries. `server_vad` object can be provided to tweak VAD detection parameters manually. If unset, the audio is transcribed as a single block. 
-        /// </param>
+        /// <param name="chunkingStrategy"></param>
         /// <param name="file">
         /// The audio file object (not file name) to transcribe, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
         /// </param>
@@ -231,10 +229,10 @@ namespace tryAGI.OpenAI
         /// The audio file object (not file name) to transcribe, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
         /// </param>
         /// <param name="include">
-        /// Additional information to include in the transcription response. <br/>
-        /// `logprobs` will return the log probabilities of the tokens in the <br/>
-        /// response to understand the model's confidence in the transcription. <br/>
-        /// `logprobs` only works with response_format set to `json` and only with <br/>
+        /// Additional information to include in the transcription response.<br/>
+        /// `logprobs` will return the log probabilities of the tokens in the<br/>
+        /// response to understand the model's confidence in the transcription.<br/>
+        /// `logprobs` only works with response_format set to `json` and only with<br/>
         /// the models `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`.
         /// </param>
         /// <param name="language">
@@ -253,7 +251,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="stream">
         /// If set to true, the model response data will be streamed to the client<br/>
-        /// as it is generated using [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format). <br/>
+        /// as it is generated using [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format).<br/>
         /// See the [Streaming section of the Speech-to-Text guide](https://platform.openai.com/docs/guides/speech-to-text?lang=curl#streaming-transcriptions)<br/>
         /// for more information.<br/>
         /// Note: Streaming is not supported for the `whisper-1` model and will be ignored.<br/>
@@ -273,7 +271,7 @@ namespace tryAGI.OpenAI
             byte[] file,
             string filename,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateTranscriptionRequestModel?> model,
-            global::tryAGI.OpenAI.TranscriptionChunkingStrategy? chunkingStrategy = default,
+            object? chunkingStrategy = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionInclude>? include = default,
             string? language = default,
             string? prompt = default,

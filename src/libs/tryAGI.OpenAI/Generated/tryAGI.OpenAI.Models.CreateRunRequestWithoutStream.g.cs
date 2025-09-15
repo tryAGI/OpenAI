@@ -50,7 +50,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
         /// useful for storing additional information about the object in a structured<br/>
-        /// format, and querying for objects via API or the dashboard. <br/>
+        /// format, and querying for objects via API or the dashboard.<br/>
         /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
         /// with a maximum length of 512 characters.
         /// </summary>
@@ -71,7 +71,7 @@ namespace tryAGI.OpenAI
         public bool? ParallelToolCalls { get; set; }
 
         /// <summary>
-        /// Constrains effort on reasoning for <br/>
+        /// Constrains effort on reasoning for<br/>
         /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
         /// Currently supported values are `minimal`, `low`, `medium`, and `high`. Reducing<br/>
         /// reasoning effort can result in faster responses and fewer tokens used<br/>
@@ -164,7 +164,7 @@ namespace tryAGI.OpenAI
         /// <param name="metadata">
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
         /// useful for storing additional information about the object in a structured<br/>
-        /// format, and querying for objects via API or the dashboard. <br/>
+        /// format, and querying for objects via API or the dashboard.<br/>
         /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
         /// with a maximum length of 512 characters.
         /// </param>
@@ -175,7 +175,7 @@ namespace tryAGI.OpenAI
         /// Whether to enable [parallel function calling](https://platform.openai.com/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.
         /// </param>
         /// <param name="reasoningEffort">
-        /// Constrains effort on reasoning for <br/>
+        /// Constrains effort on reasoning for<br/>
         /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
         /// Currently supported values are `minimal`, `low`, `medium`, and `high`. Reducing<br/>
         /// reasoning effort can result in faster responses and fewer tokens used<br/>

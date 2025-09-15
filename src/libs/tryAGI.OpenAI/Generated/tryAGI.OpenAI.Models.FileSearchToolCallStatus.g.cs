@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The status of the file search tool call. One of `in_progress`, <br/>
+    /// The status of the file search tool call. One of `in_progress`,<br/>
     /// `searching`, `incomplete` or `failed`,
     /// </summary>
     public enum FileSearchToolCallStatus

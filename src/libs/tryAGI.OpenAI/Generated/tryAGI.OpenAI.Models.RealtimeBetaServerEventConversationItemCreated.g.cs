@@ -5,13 +5,13 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// Returned when a conversation item is created. There are several scenarios that produce this event:<br/>
-    ///   - The server is generating a Response, which if successful will produce <br/>
-    ///     either one or two Items, which will be of type `message` <br/>
+    ///   - The server is generating a Response, which if successful will produce<br/>
+    ///     either one or two Items, which will be of type `message`<br/>
     ///     (role `assistant`) or type `function_call`.<br/>
-    ///   - The input audio buffer has been committed, either by the client or the <br/>
-    ///     server (in `server_vad` mode). The server will take the content of the <br/>
+    ///   - The input audio buffer has been committed, either by the client or the<br/>
+    ///     server (in `server_vad` mode). The server will take the content of the<br/>
     ///     input audio buffer and add it to a new user message Item.<br/>
-    ///   - The client has sent a `conversation.item.create` event to add a new Item <br/>
+    ///   - The client has sent a `conversation.item.create` event to add a new Item<br/>
     ///     to the Conversation.
     /// </summary>
     public sealed partial class RealtimeBetaServerEventConversationItemCreated
@@ -35,8 +35,8 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.RealtimeConversationItem Item { get; set; }
 
         /// <summary>
-        /// The ID of the preceding item in the Conversation context, allows the <br/>
-        /// client to understand the order of the conversation. Can be `null` if the <br/>
+        /// The ID of the preceding item in the Conversation context, allows the<br/>
+        /// client to understand the order of the conversation. Can be `null` if the<br/>
         /// item has no predecessor.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("previous_item_id")]
@@ -69,8 +69,8 @@ namespace tryAGI.OpenAI
         /// The client may add and remove message and function_call_output Items using conversation.item.create and conversation.item.delete.
         /// </param>
         /// <param name="previousItemId">
-        /// The ID of the preceding item in the Conversation context, allows the <br/>
-        /// client to understand the order of the conversation. Can be `null` if the <br/>
+        /// The ID of the preceding item in the Conversation context, allows the<br/>
+        /// client to understand the order of the conversation. Can be `null` if the<br/>
         /// item has no predecessor.
         /// </param>
         /// <param name="type">
