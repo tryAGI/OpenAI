@@ -65,7 +65,7 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAOutputModalitie>? OutputModalities { get; set; }
 
         /// <summary>
-        /// Reference to a prompt template and its variables. <br/>
+        /// Reference to a prompt template and its variables.<br/>
         /// [Learn more](https://platform.openai.com/docs/guides/text?api-mode=responses#reusable-prompts).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
@@ -87,14 +87,10 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.RealtimeFunctionTool, global::tryAGI.OpenAI.MCPTool>>? Tools { get; set; }
 
         /// <summary>
-        /// Realtime API can write session traces to the [Traces Dashboard](/logs?api=traces). Set to null to disable tracing. Once<br/>
-        /// tracing is enabled for a session, the configuration cannot be modified.<br/>
-        /// `auto` will create a trace for the session with default values for the<br/>
-        /// workflow name, group id, and metadata.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tracing")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.RealtimeSessionCreateResponseGATracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseGATracingEnum2>))]
-        public global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.RealtimeSessionCreateResponseGATracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseGATracingEnum2>? Tracing { get; set; }
+        public object? Tracing { get; set; }
 
         /// <summary>
         /// Controls how the realtime conversation is truncated prior to model inference.<br/>
@@ -150,7 +146,7 @@ namespace tryAGI.OpenAI
         /// Default Value: [audio]
         /// </param>
         /// <param name="prompt">
-        /// Reference to a prompt template and its variables. <br/>
+        /// Reference to a prompt template and its variables.<br/>
         /// [Learn more](https://platform.openai.com/docs/guides/text?api-mode=responses#reusable-prompts).
         /// </param>
         /// <param name="toolChoice">
@@ -161,12 +157,7 @@ namespace tryAGI.OpenAI
         /// <param name="tools">
         /// Tools available to the model.
         /// </param>
-        /// <param name="tracing">
-        /// Realtime API can write session traces to the [Traces Dashboard](/logs?api=traces). Set to null to disable tracing. Once<br/>
-        /// tracing is enabled for a session, the configuration cannot be modified.<br/>
-        /// `auto` will create a trace for the session with default values for the<br/>
-        /// workflow name, group id, and metadata.
-        /// </param>
+        /// <param name="tracing"></param>
         /// <param name="truncation">
         /// Controls how the realtime conversation is truncated prior to model inference.<br/>
         /// The default is `auto`.
@@ -188,7 +179,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.Prompt2? prompt,
             global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP>? toolChoice,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.RealtimeFunctionTool, global::tryAGI.OpenAI.MCPTool>>? tools,
-            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.RealtimeSessionCreateResponseGATracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseGATracingEnum2>? tracing,
+            object? tracing,
             global::tryAGI.OpenAI.RealtimeTruncation? truncation,
             global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAType type)
         {

@@ -1,25 +1,22 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Give the model access to additional tools via remote Model Context Protocol <br/>
+    /// Give the model access to additional tools via remote Model Context Protocol<br/>
     /// (MCP) servers. [Learn more about MCP](https://platform.openai.com/docs/guides/tools-remote-mcp).
     /// </summary>
     public sealed partial class MCPTool
     {
         /// <summary>
-        /// List of allowed tool names or a filter object.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_tools")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, global::tryAGI.OpenAI.MCPToolFilter>))]
-        public global::tryAGI.OpenAI.AnyOf<global::System.Collections.Generic.IList<string>, global::tryAGI.OpenAI.MCPToolFilter>? AllowedTools { get; set; }
+        public object? AllowedTools { get; set; }
 
         /// <summary>
-        /// An OAuth access token that can be used with a remote MCP server, either <br/>
+        /// An OAuth access token that can be used with a remote MCP server, either<br/>
         /// with a custom MCP server URL or a service connector. Your application<br/>
         /// must handle the OAuth authorization flow and provide the token here.
         /// </summary>
@@ -52,11 +49,10 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.Dictionary<string, string>? Headers { get; set; }
 
         /// <summary>
-        /// Specify which of the MCP server's tools require approval.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("require_approval")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.MCPToolRequireApprovalEnum, global::tryAGI.OpenAI.MCPToolRequireApprovalEnum2?>))]
-        public global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.MCPToolRequireApprovalEnum, global::tryAGI.OpenAI.MCPToolRequireApprovalEnum2?>? RequireApproval { get; set; }
+        public object? RequireApproval { get; set; }
 
         /// <summary>
         /// Optional description of the MCP server, used to provide more context.
@@ -72,7 +68,7 @@ namespace tryAGI.OpenAI
         public required string ServerLabel { get; set; }
 
         /// <summary>
-        /// The URL for the MCP server. One of `server_url` or `connector_id` must be <br/>
+        /// The URL for the MCP server. One of `server_url` or `connector_id` must be<br/>
         /// provided.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("server_url")]
@@ -94,11 +90,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="MCPTool" /> class.
         /// </summary>
-        /// <param name="allowedTools">
-        /// List of allowed tool names or a filter object.
-        /// </param>
+        /// <param name="allowedTools"></param>
         /// <param name="authorization">
-        /// An OAuth access token that can be used with a remote MCP server, either <br/>
+        /// An OAuth access token that can be used with a remote MCP server, either<br/>
         /// with a custom MCP server URL or a service connector. Your application<br/>
         /// must handle the OAuth authorization flow and provide the token here.
         /// </param>
@@ -120,9 +114,7 @@ namespace tryAGI.OpenAI
         /// Optional HTTP headers to send to the MCP server. Use for authentication<br/>
         /// or other purposes.
         /// </param>
-        /// <param name="requireApproval">
-        /// Specify which of the MCP server's tools require approval.
-        /// </param>
+        /// <param name="requireApproval"></param>
         /// <param name="serverDescription">
         /// Optional description of the MCP server, used to provide more context.
         /// </param>
@@ -130,7 +122,7 @@ namespace tryAGI.OpenAI
         /// A label for this MCP server, used to identify it in tool calls.
         /// </param>
         /// <param name="serverUrl">
-        /// The URL for the MCP server. One of `server_url` or `connector_id` must be <br/>
+        /// The URL for the MCP server. One of `server_url` or `connector_id` must be<br/>
         /// provided.
         /// </param>
         /// <param name="type">
@@ -141,11 +133,11 @@ namespace tryAGI.OpenAI
 #endif
         public MCPTool(
             string serverLabel,
-            global::tryAGI.OpenAI.AnyOf<global::System.Collections.Generic.IList<string>, global::tryAGI.OpenAI.MCPToolFilter>? allowedTools,
+            object? allowedTools,
             string? authorization,
             global::tryAGI.OpenAI.MCPToolConnectorId? connectorId,
             global::System.Collections.Generic.Dictionary<string, string>? headers,
-            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.MCPToolRequireApprovalEnum, global::tryAGI.OpenAI.MCPToolRequireApprovalEnum2?>? requireApproval,
+            object? requireApproval,
             string? serverDescription,
             string? serverUrl,
             global::tryAGI.OpenAI.MCPToolType type)

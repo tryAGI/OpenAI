@@ -6,7 +6,7 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// A description of the chain of thought used by a reasoning model while generating<br/>
     /// a response. Be sure to include these items in your `input` to the Responses API<br/>
-    /// for subsequent turns of a conversation if you are manually <br/>
+    /// for subsequent turns of a conversation if you are manually<br/>
     /// [managing context](https://platform.openai.com/docs/guides/conversation-state).
     /// </summary>
     public sealed partial class ReasoningItem

@@ -4,10 +4,10 @@
 namespace tryAGI.OpenAI.JsonConverters
 {
     /// <inheritdoc />
-    public class Content6JsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::tryAGI.OpenAI.Content6>
+    public class Content5JsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::tryAGI.OpenAI.Content5>
     {
         /// <inheritdoc />
-        public override global::tryAGI.OpenAI.Content6 Read(
+        public override global::tryAGI.OpenAI.Content5 Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI.JsonConverters
             {
             }
 
-            var result = new global::tryAGI.OpenAI.Content6(
+            var result = new global::tryAGI.OpenAI.Content5(
                 inputContent,
                 outputContent
                 );
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::tryAGI.OpenAI.Content6 value,
+            global::tryAGI.OpenAI.Content5 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));

@@ -57,7 +57,7 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAOutputModalitie>? OutputModalities { get; set; }
 
         /// <summary>
-        /// Reference to a prompt template and its variables. <br/>
+        /// Reference to a prompt template and its variables.<br/>
         /// [Learn more](https://platform.openai.com/docs/guides/text?api-mode=responses#reusable-prompts).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
@@ -139,7 +139,7 @@ namespace tryAGI.OpenAI
         /// Default Value: [audio]
         /// </param>
         /// <param name="prompt">
-        /// Reference to a prompt template and its variables. <br/>
+        /// Reference to a prompt template and its variables.<br/>
         /// [Learn more](https://platform.openai.com/docs/guides/text?api-mode=responses#reusable-prompts).
         /// </param>
         /// <param name="toolChoice">

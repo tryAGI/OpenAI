@@ -211,7 +211,7 @@ namespace tryAGI.OpenAI
         /// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
         /// </param>
         /// <param name="prompt">
-        /// Reference to a prompt template and its variables. <br/>
+        /// Reference to a prompt template and its variables.<br/>
         /// [Learn more](https://platform.openai.com/docs/guides/text?api-mode=responses#reusable-prompts).
         /// </param>
         /// <param name="speed">

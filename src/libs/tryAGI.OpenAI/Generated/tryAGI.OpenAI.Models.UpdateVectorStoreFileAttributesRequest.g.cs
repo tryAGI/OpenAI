@@ -9,10 +9,10 @@ namespace tryAGI.OpenAI
     public sealed partial class UpdateVectorStoreFileAttributesRequest
     {
         /// <summary>
-        /// Set of 16 key-value pairs that can be attached to an object. This can be <br/>
-        /// useful for storing additional information about the object in a structured <br/>
-        /// format, and querying for objects via API or the dashboard. Keys are strings <br/>
-        /// with a maximum length of 64 characters. Values are strings with a maximum <br/>
+        /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
+        /// useful for storing additional information about the object in a structured<br/>
+        /// format, and querying for objects via API or the dashboard. Keys are strings<br/>
+        /// with a maximum length of 64 characters. Values are strings with a maximum<br/>
         /// length of 512 characters, booleans, or numbers.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attributes")]
@@ -29,10 +29,10 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="UpdateVectorStoreFileAttributesRequest" /> class.
         /// </summary>
         /// <param name="attributes">
-        /// Set of 16 key-value pairs that can be attached to an object. This can be <br/>
-        /// useful for storing additional information about the object in a structured <br/>
-        /// format, and querying for objects via API or the dashboard. Keys are strings <br/>
-        /// with a maximum length of 64 characters. Values are strings with a maximum <br/>
+        /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
+        /// useful for storing additional information about the object in a structured<br/>
+        /// format, and querying for objects via API or the dashboard. Keys are strings<br/>
+        /// with a maximum length of 64 characters. Values are strings with a maximum<br/>
         /// length of 512 characters, booleans, or numbers.
         /// </param>
 #if NET7_0_OR_GREATER

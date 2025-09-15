@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Reference to a prompt template and its variables. <br/>
+    /// Reference to a prompt template and its variables.<br/>
     /// [Learn more](https://platform.openai.com/docs/guides/text?api-mode=responses#reusable-prompts).
     /// </summary>
     public sealed partial class Prompt2

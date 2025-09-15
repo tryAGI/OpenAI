@@ -74,7 +74,7 @@ namespace tryAGI.OpenAI
         /// The number of partial images to generate. This parameter is used for<br/>
         /// streaming responses that return partial images. Value must be between 0 and 3.<br/>
         /// When set to 0, the response will be a single image sent in one streaming event.<br/>
-        /// Note that the final image may be sent before the full number of partial images <br/>
+        /// Note that the final image may be sent before the full number of partial images<br/>
         /// are generated if the full image is generated more quickly.<br/>
         /// Default Value: 0<br/>
         /// Example: 1
@@ -201,7 +201,7 @@ namespace tryAGI.OpenAI
         /// The number of partial images to generate. This parameter is used for<br/>
         /// streaming responses that return partial images. Value must be between 0 and 3.<br/>
         /// When set to 0, the response will be a single image sent in one streaming event.<br/>
-        /// Note that the final image may be sent before the full number of partial images <br/>
+        /// Note that the final image may be sent before the full number of partial images<br/>
         /// are generated if the full image is generated more quickly.<br/>
         /// Default Value: 0<br/>
         /// Example: 1

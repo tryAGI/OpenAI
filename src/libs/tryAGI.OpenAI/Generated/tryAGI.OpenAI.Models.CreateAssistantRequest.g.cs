@@ -25,7 +25,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
         /// useful for storing additional information about the object in a structured<br/>
-        /// format, and querying for objects via API or the dashboard. <br/>
+        /// format, and querying for objects via API or the dashboard.<br/>
         /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
         /// with a maximum length of 512 characters.
         /// </summary>
@@ -49,7 +49,7 @@ namespace tryAGI.OpenAI
         public string? Name { get; set; }
 
         /// <summary>
-        /// Constrains effort on reasoning for <br/>
+        /// Constrains effort on reasoning for<br/>
         /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
         /// Currently supported values are `minimal`, `low`, `medium`, and `high`. Reducing<br/>
         /// reasoning effort can result in faster responses and fewer tokens used<br/>
@@ -61,14 +61,10 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ReasoningEffort? ReasoningEffort { get; set; }
 
         /// <summary>
-        /// Specifies the format that the model must output. Compatible with [GPT-4o](https://platform.openai.com/docs/models#gpt-4o), [GPT-4 Turbo](https://platform.openai.com/docs/models#gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.<br/>
-        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](https://platform.openai.com/docs/guides/structured-outputs).<br/>
-        /// Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.<br/>
-        /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AssistantsApiResponseFormatOptionJsonConverter))]
-        public global::tryAGI.OpenAI.AssistantsApiResponseFormatOption? ResponseFormat { get; set; }
+        public object? ResponseFormat { get; set; }
 
         /// <summary>
         /// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.<br/>
@@ -119,7 +115,7 @@ namespace tryAGI.OpenAI
         /// <param name="metadata">
         /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
         /// useful for storing additional information about the object in a structured<br/>
-        /// format, and querying for objects via API or the dashboard. <br/>
+        /// format, and querying for objects via API or the dashboard.<br/>
         /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
         /// with a maximum length of 512 characters.
         /// </param>
@@ -131,19 +127,14 @@ namespace tryAGI.OpenAI
         /// The name of the assistant. The maximum length is 256 characters.
         /// </param>
         /// <param name="reasoningEffort">
-        /// Constrains effort on reasoning for <br/>
+        /// Constrains effort on reasoning for<br/>
         /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
         /// Currently supported values are `minimal`, `low`, `medium`, and `high`. Reducing<br/>
         /// reasoning effort can result in faster responses and fewer tokens used<br/>
         /// on reasoning in a response.<br/>
         /// Default Value: medium
         /// </param>
-        /// <param name="responseFormat">
-        /// Specifies the format that the model must output. Compatible with [GPT-4o](https://platform.openai.com/docs/models#gpt-4o), [GPT-4 Turbo](https://platform.openai.com/docs/models#gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.<br/>
-        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](https://platform.openai.com/docs/guides/structured-outputs).<br/>
-        /// Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.<br/>
-        /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
-        /// </param>
+        /// <param name="responseFormat"></param>
         /// <param name="temperature">
         /// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.<br/>
         /// Default Value: 1<br/>
@@ -171,7 +162,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             string? name,
             global::tryAGI.OpenAI.ReasoningEffort? reasoningEffort,
-            global::tryAGI.OpenAI.AssistantsApiResponseFormatOption? responseFormat,
+            object? responseFormat,
             double? temperature,
             global::tryAGI.OpenAI.CreateAssistantRequestToolResources? toolResources,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AssistantTool>? tools,

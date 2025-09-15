@@ -22,11 +22,10 @@ namespace tryAGI.OpenAI
         public required string Arguments { get; set; }
 
         /// <summary>
-        /// The error from the tool call, if any.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.Error2JsonConverter))]
-        public global::tryAGI.OpenAI.Error2? Error { get; set; }
+        public object? Error { get; set; }
 
         /// <summary>
         /// The unique ID of the tool call.
@@ -77,9 +76,7 @@ namespace tryAGI.OpenAI
         /// <param name="arguments">
         /// A JSON string of the arguments passed to the tool.
         /// </param>
-        /// <param name="error">
-        /// The error from the tool call, if any.
-        /// </param>
+        /// <param name="error"></param>
         /// <param name="id">
         /// The unique ID of the tool call.
         /// </param>
@@ -104,7 +101,7 @@ namespace tryAGI.OpenAI
             string name,
             string serverLabel,
             string? approvalRequestId,
-            global::tryAGI.OpenAI.Error2? error,
+            object? error,
             string? output,
             global::tryAGI.OpenAI.RealtimeMCPToolCallType type)
         {

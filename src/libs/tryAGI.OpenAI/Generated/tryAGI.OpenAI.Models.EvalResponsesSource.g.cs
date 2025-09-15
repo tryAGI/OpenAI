@@ -39,16 +39,10 @@ namespace tryAGI.OpenAI
         public string? Model { get; set; }
 
         /// <summary>
-        /// Constrains effort on reasoning for <br/>
-        /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
-        /// Currently supported values are `minimal`, `low`, `medium`, and `high`. Reducing<br/>
-        /// reasoning effort can result in faster responses and fewer tokens used<br/>
-        /// on reasoning in a response.<br/>
-        /// Default Value: medium
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reasoning_effort")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ReasoningEffortJsonConverter))]
-        public global::tryAGI.OpenAI.ReasoningEffort? ReasoningEffort { get; set; }
+        public object? ReasoningEffort { get; set; }
 
         /// <summary>
         /// Sampling temperature. This is a query parameter used to select responses.
@@ -105,14 +99,7 @@ namespace tryAGI.OpenAI
         /// <param name="model">
         /// The name of the model to find responses for. This is a query parameter used to select responses.
         /// </param>
-        /// <param name="reasoningEffort">
-        /// Constrains effort on reasoning for <br/>
-        /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
-        /// Currently supported values are `minimal`, `low`, `medium`, and `high`. Reducing<br/>
-        /// reasoning effort can result in faster responses and fewer tokens used<br/>
-        /// on reasoning in a response.<br/>
-        /// Default Value: medium
-        /// </param>
+        /// <param name="reasoningEffort"></param>
         /// <param name="temperature">
         /// Sampling temperature. This is a query parameter used to select responses.
         /// </param>
@@ -137,7 +124,7 @@ namespace tryAGI.OpenAI
             string? instructionsSearch,
             object? metadata,
             string? model,
-            global::tryAGI.OpenAI.ReasoningEffort? reasoningEffort,
+            object? reasoningEffort,
             double? temperature,
             global::System.Collections.Generic.IList<string>? tools,
             double? topP,

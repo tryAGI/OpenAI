@@ -115,7 +115,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Search the Internet for sources related to the prompt. Learn more about the <br/>
+        /// Search the Internet for sources related to the prompt. Learn more about the<br/>
         /// [web search tool](https://platform.openai.com/docs/guides/tools-web-search).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -151,7 +151,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Give the model access to additional tools via remote Model Context Protocol <br/>
+        /// Give the model access to additional tools via remote Model Context Protocol<br/>
         /// (MCP) servers. [Learn more about MCP](https://platform.openai.com/docs/guides/tools-remote-mcp).
         /// </summary>
 #if NET6_0_OR_GREATER

@@ -45,19 +45,17 @@ namespace tryAGI.OpenAI
         public string? PreviousResponseId { get; set; }
 
         /// <summary>
-        /// Reference to a prompt template and its variables. <br/>
+        /// Reference to a prompt template and its variables.<br/>
         /// [Learn more](https://platform.openai.com/docs/guides/text?api-mode=responses#reusable-prompts).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         public global::tryAGI.OpenAI.Prompt2? Prompt { get; set; }
 
         /// <summary>
-        /// **gpt-5 and o-series models only**<br/>
-        /// Configuration options for<br/>
-        /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reasoning")]
-        public global::tryAGI.OpenAI.Reasoning? Reasoning { get; set; }
+        public object? Reasoning { get; set; }
 
         /// <summary>
         /// Configuration options for a text response from the model. Can be plain<br/>
@@ -139,14 +137,10 @@ namespace tryAGI.OpenAI
         /// [conversation state](https://platform.openai.com/docs/guides/conversation-state). Cannot be used in conjunction with `conversation`.
         /// </param>
         /// <param name="prompt">
-        /// Reference to a prompt template and its variables. <br/>
+        /// Reference to a prompt template and its variables.<br/>
         /// [Learn more](https://platform.openai.com/docs/guides/text?api-mode=responses#reusable-prompts).
         /// </param>
-        /// <param name="reasoning">
-        /// **gpt-5 and o-series models only**<br/>
-        /// Configuration options for<br/>
-        /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).
-        /// </param>
+        /// <param name="reasoning"></param>
         /// <param name="text">
         /// Configuration options for a text response from the model. Can be plain<br/>
         /// text or structured JSON data. Learn more:<br/>
@@ -194,7 +188,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ModelIdsResponses? model,
             string? previousResponseId,
             global::tryAGI.OpenAI.Prompt2? prompt,
-            global::tryAGI.OpenAI.Reasoning? reasoning,
+            object? reasoning,
             global::tryAGI.OpenAI.ResponsePropertiesText? text,
             global::tryAGI.OpenAI.ToolChoice5? toolChoice,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Tool>? tools,

@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -11,10 +9,10 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseVariant3
     {
         /// <summary>
-        /// The conversation that this response belongs to. Input items and output items from this response are automatically added to this conversation.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conversation")]
-        public global::tryAGI.OpenAI.Conversation2? Conversation { get; set; }
+        public object? Conversation { get; set; }
 
         /// <summary>
         /// Unix timestamp (in seconds) of when this Response was created.
@@ -45,15 +43,11 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.ResponseVariant3IncompleteDetails? IncompleteDetails { get; set; }
 
         /// <summary>
-        /// A system (or developer) message inserted into the model's context.<br/>
-        /// When using along with `previous_response_id`, the instructions from a previous<br/>
-        /// response will not be carried over to the next response. This makes it simple<br/>
-        /// to swap out system (or developer) messages in new responses.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.AnyOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>? Instructions { get; set; }
+        public required object? Instructions { get; set; }
 
         /// <summary>
         /// The object type of this resource - always set to `response`.
@@ -116,9 +110,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseVariant3" /> class.
         /// </summary>
-        /// <param name="conversation">
-        /// The conversation that this response belongs to. Input items and output items from this response are automatically added to this conversation.
-        /// </param>
+        /// <param name="conversation"></param>
         /// <param name="createdAt">
         /// Unix timestamp (in seconds) of when this Response was created.
         /// </param>
@@ -131,12 +123,7 @@ namespace tryAGI.OpenAI
         /// <param name="incompleteDetails">
         /// Details about why the response is incomplete.
         /// </param>
-        /// <param name="instructions">
-        /// A system (or developer) message inserted into the model's context.<br/>
-        /// When using along with `previous_response_id`, the instructions from a previous<br/>
-        /// response will not be carried over to the next response. This makes it simple<br/>
-        /// to swap out system (or developer) messages in new responses.
-        /// </param>
+        /// <param name="instructions"></param>
         /// <param name="object">
         /// The object type of this resource - always set to `response`.
         /// </param>
@@ -174,10 +161,10 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ResponseError? error,
             string id,
             global::tryAGI.OpenAI.ResponseVariant3IncompleteDetails? incompleteDetails,
-            global::tryAGI.OpenAI.AnyOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>? instructions,
+            object? instructions,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputItem> output,
             bool parallelToolCalls,
-            global::tryAGI.OpenAI.Conversation2? conversation,
+            object? conversation,
             global::tryAGI.OpenAI.ResponseVariant3Object @object,
             string? outputText,
             global::tryAGI.OpenAI.ResponseVariant3Status? status,
@@ -187,7 +174,7 @@ namespace tryAGI.OpenAI
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.IncompleteDetails = incompleteDetails ?? throw new global::System.ArgumentNullException(nameof(incompleteDetails));
-            this.Instructions = instructions;
+            this.Instructions = instructions ?? throw new global::System.ArgumentNullException(nameof(instructions));
             this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
             this.ParallelToolCalls = parallelToolCalls;
             this.Conversation = conversation;

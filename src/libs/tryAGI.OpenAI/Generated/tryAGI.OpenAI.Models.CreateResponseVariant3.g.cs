@@ -11,12 +11,10 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateResponseVariant3
     {
         /// <summary>
-        /// The conversation that this response belongs to. Items from this conversation are prepended to `input_items` for this response request.<br/>
-        /// Input items and output items from this response are automatically added to this conversation after this response completes.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conversation")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.ConversationParam>))]
-        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.ConversationParam>? Conversation { get; set; }
+        public object? Conversation { get; set; }
 
         /// <summary>
         /// Specify additional output data to include in the model response. Currently<br/>
@@ -100,10 +98,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateResponseVariant3" /> class.
         /// </summary>
-        /// <param name="conversation">
-        /// The conversation that this response belongs to. Items from this conversation are prepended to `input_items` for this response request.<br/>
-        /// Input items and output items from this response are automatically added to this conversation after this response completes.
-        /// </param>
+        /// <param name="conversation"></param>
         /// <param name="include">
         /// Specify additional output data to include in the model response. Currently<br/>
         /// supported values are:<br/>
@@ -159,7 +154,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateResponseVariant3(
-            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.ConversationParam>? conversation,
+            object? conversation,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include,
             global::tryAGI.OpenAI.AnyOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>? input,
             string? instructions,

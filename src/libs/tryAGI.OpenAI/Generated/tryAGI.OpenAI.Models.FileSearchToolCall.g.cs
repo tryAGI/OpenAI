@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The results of a file search tool call. See the <br/>
+    /// The results of a file search tool call. See the<br/>
     /// [file search guide](https://platform.openai.com/docs/guides/tools-file-search) for more information.
     /// </summary>
     public sealed partial class FileSearchToolCall
@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FileSearchToolCallResult>? Results { get; set; }
 
         /// <summary>
-        /// The status of the file search tool call. One of `in_progress`, <br/>
+        /// The status of the file search tool call. One of `in_progress`,<br/>
         /// `searching`, `incomplete` or `failed`,
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         /// The results of the file search tool call.
         /// </param>
         /// <param name="status">
-        /// The status of the file search tool call. One of `in_progress`, <br/>
+        /// The status of the file search tool call. One of `in_progress`,<br/>
         /// `searching`, `incomplete` or `failed`,
         /// </param>
         /// <param name="type">

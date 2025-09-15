@@ -4,9 +4,9 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Returned when an input audio buffer is committed, either by the client or <br/>
+    /// Returned when an input audio buffer is committed, either by the client or<br/>
     /// automatically in server VAD mode. The `item_id` property is the ID of the user<br/>
-    /// message item that will be created, thus a `conversation.item.created` event <br/>
+    /// message item that will be created, thus a `conversation.item.created` event<br/>
     /// will also be sent to the client.
     /// </summary>
     public sealed partial class RealtimeBetaServerEventInputAudioBufferCommitted

@@ -80,7 +80,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// The results of a file search tool call. See the <br/>
+        /// The results of a file search tool call. See the<br/>
         /// [file search guide](https://platform.openai.com/docs/guides/tools-file-search) for more information.
         /// </summary>
 #if NET6_0_OR_GREATER
