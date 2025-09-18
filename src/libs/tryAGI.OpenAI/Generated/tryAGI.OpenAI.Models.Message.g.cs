@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    /// A message to or from the model.
     /// </summary>
     public sealed partial class Message
     {
@@ -23,7 +23,7 @@ namespace tryAGI.OpenAI
         public required string Id { get; set; }
 
         /// <summary>
-        /// The role of the message. One of `unknown`, `user`, `assistant`, `system`, `critic`, `discriminator`, `developer`, or `tool`.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageRoleJsonConverter))]
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.MessageRole Role { get; set; }
 
         /// <summary>
-        /// The status of item. One of `in_progress`, `completed`, or `incomplete`. Populated when items are returned via API.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageStatusJsonConverter))]
@@ -62,12 +62,8 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// The unique ID of the message.
         /// </param>
-        /// <param name="role">
-        /// The role of the message. One of `unknown`, `user`, `assistant`, `system`, `critic`, `discriminator`, `developer`, or `tool`.
-        /// </param>
-        /// <param name="status">
-        /// The status of item. One of `in_progress`, `completed`, or `incomplete`. Populated when items are returned via API.
-        /// </param>
+        /// <param name="role"></param>
+        /// <param name="status"></param>
         /// <param name="type">
         /// The type of the message. Always set to `message`.<br/>
         /// Default Value: message

@@ -6,50 +6,44 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// 
     /// </summary>
-    public enum MessageStatus
+    public enum RankerVersionType
     {
         /// <summary>
         /// 
         /// </summary>
-        InProgress,
+        Auto,
         /// <summary>
         /// 
         /// </summary>
-        Completed,
-        /// <summary>
-        /// 
-        /// </summary>
-        Incomplete,
+        Default20241115,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class MessageStatusExtensions
+    public static class RankerVersionTypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this MessageStatus value)
+        public static string ToValueString(this RankerVersionType value)
         {
             return value switch
             {
-                MessageStatus.InProgress => "in_progress",
-                MessageStatus.Completed => "completed",
-                MessageStatus.Incomplete => "incomplete",
+                RankerVersionType.Auto => "auto",
+                RankerVersionType.Default20241115 => "default-2024-11-15",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static MessageStatus? ToEnum(string value)
+        public static RankerVersionType? ToEnum(string value)
         {
             return value switch
             {
-                "in_progress" => MessageStatus.InProgress,
-                "completed" => MessageStatus.Completed,
-                "incomplete" => MessageStatus.Incomplete,
+                "auto" => RankerVersionType.Auto,
+                "default-2024-11-15" => RankerVersionType.Default20241115,
                 _ => null,
             };
         }

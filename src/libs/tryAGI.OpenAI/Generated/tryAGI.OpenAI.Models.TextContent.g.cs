@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    /// A text content.
     /// </summary>
     public sealed partial class TextContent
     {

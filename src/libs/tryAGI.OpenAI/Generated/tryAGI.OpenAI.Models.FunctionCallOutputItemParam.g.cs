@@ -29,11 +29,10 @@ namespace tryAGI.OpenAI
         public required string Output { get; set; }
 
         /// <summary>
-        /// The status of the item. One of `in_progress`, `completed`, or `incomplete`. Populated when items are returned via API.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.FunctionCallOutputItemParamStatusJsonConverter))]
-        public global::tryAGI.OpenAI.FunctionCallOutputItemParamStatus? Status { get; set; }
+        public object? Status { get; set; }
 
         /// <summary>
         /// The type of the function tool call output. Always `function_call_output`.<br/>
@@ -62,9 +61,7 @@ namespace tryAGI.OpenAI
         /// <param name="output">
         /// A JSON string of the output of the function tool call.
         /// </param>
-        /// <param name="status">
-        /// The status of the item. One of `in_progress`, `completed`, or `incomplete`. Populated when items are returned via API.
-        /// </param>
+        /// <param name="status"></param>
         /// <param name="type">
         /// The type of the function tool call output. Always `function_call_output`.<br/>
         /// Default Value: function_call_output
@@ -76,7 +73,7 @@ namespace tryAGI.OpenAI
             string callId,
             string output,
             string? id,
-            global::tryAGI.OpenAI.FunctionCallOutputItemParamStatus? status,
+            object? status,
             global::tryAGI.OpenAI.FunctionCallOutputItemParamType type = global::tryAGI.OpenAI.FunctionCallOutputItemParamType.FunctionCallOutput)
         {
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));

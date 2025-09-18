@@ -9,12 +9,12 @@ namespace tryAGI.OpenAI
     public sealed partial class InputImageContent
     {
         /// <summary>
-        /// The detail level of the image to be sent to the model. One of `high`, `low`, or `auto`. Defaults to `auto`.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.InputImageContentDetailJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImageDetailJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.InputImageContentDetail Detail { get; set; }
+        public required global::tryAGI.OpenAI.ImageDetail Detail { get; set; }
 
         /// <summary>
         /// The ID of the file to be sent to the model.
@@ -46,9 +46,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="InputImageContent" /> class.
         /// </summary>
-        /// <param name="detail">
-        /// The detail level of the image to be sent to the model. One of `high`, `low`, or `auto`. Defaults to `auto`.
-        /// </param>
+        /// <param name="detail"></param>
         /// <param name="fileId">
         /// The ID of the file to be sent to the model.
         /// </param>
@@ -63,7 +61,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public InputImageContent(
-            global::tryAGI.OpenAI.InputImageContentDetail detail,
+            global::tryAGI.OpenAI.ImageDetail detail,
             string? fileId,
             string? imageUrl,
             global::tryAGI.OpenAI.InputImageContentType type = global::tryAGI.OpenAI.InputImageContentType.InputImage)

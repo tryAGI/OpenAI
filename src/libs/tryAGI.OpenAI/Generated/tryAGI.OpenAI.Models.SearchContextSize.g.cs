@@ -6,50 +6,50 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// 
     /// </summary>
-    public enum MessageStatus
+    public enum SearchContextSize
     {
         /// <summary>
         /// 
         /// </summary>
-        InProgress,
+        Low,
         /// <summary>
         /// 
         /// </summary>
-        Completed,
+        Medium,
         /// <summary>
         /// 
         /// </summary>
-        Incomplete,
+        High,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class MessageStatusExtensions
+    public static class SearchContextSizeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this MessageStatus value)
+        public static string ToValueString(this SearchContextSize value)
         {
             return value switch
             {
-                MessageStatus.InProgress => "in_progress",
-                MessageStatus.Completed => "completed",
-                MessageStatus.Incomplete => "incomplete",
+                SearchContextSize.Low => "low",
+                SearchContextSize.Medium => "medium",
+                SearchContextSize.High => "high",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static MessageStatus? ToEnum(string value)
+        public static SearchContextSize? ToEnum(string value)
         {
             return value switch
             {
-                "in_progress" => MessageStatus.InProgress,
-                "completed" => MessageStatus.Completed,
-                "incomplete" => MessageStatus.Incomplete,
+                "low" => SearchContextSize.Low,
+                "medium" => SearchContextSize.Medium,
+                "high" => SearchContextSize.High,
                 _ => null,
             };
         }

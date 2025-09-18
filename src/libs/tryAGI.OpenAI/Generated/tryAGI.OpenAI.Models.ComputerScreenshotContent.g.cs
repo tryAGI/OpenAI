@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    /// A screenshot of a computer.
     /// </summary>
     public sealed partial class ComputerScreenshotContent
     {

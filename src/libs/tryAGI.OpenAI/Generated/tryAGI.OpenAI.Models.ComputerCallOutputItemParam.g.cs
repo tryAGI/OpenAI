@@ -35,11 +35,10 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.ComputerScreenshotImage Output { get; set; }
 
         /// <summary>
-        /// The status of the message input. One of `in_progress`, `completed`, or `incomplete`. Populated when input items are returned via API.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ComputerCallOutputItemParamStatusJsonConverter))]
-        public global::tryAGI.OpenAI.ComputerCallOutputItemParamStatus? Status { get; set; }
+        public object? Status { get; set; }
 
         /// <summary>
         /// The type of the computer tool call output. Always `computer_call_output`.<br/>
@@ -71,9 +70,7 @@ namespace tryAGI.OpenAI
         /// <param name="output">
         /// A computer screenshot image used with the computer use tool.
         /// </param>
-        /// <param name="status">
-        /// The status of the message input. One of `in_progress`, `completed`, or `incomplete`. Populated when input items are returned via API.
-        /// </param>
+        /// <param name="status"></param>
         /// <param name="type">
         /// The type of the computer tool call output. Always `computer_call_output`.<br/>
         /// Default Value: computer_call_output
@@ -86,7 +83,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ComputerScreenshotImage output,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ComputerCallSafetyCheckParam>? acknowledgedSafetyChecks,
             string? id,
-            global::tryAGI.OpenAI.ComputerCallOutputItemParamStatus? status,
+            object? status,
             global::tryAGI.OpenAI.ComputerCallOutputItemParamType type = global::tryAGI.OpenAI.ComputerCallOutputItemParamType.ComputerCallOutput)
         {
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
