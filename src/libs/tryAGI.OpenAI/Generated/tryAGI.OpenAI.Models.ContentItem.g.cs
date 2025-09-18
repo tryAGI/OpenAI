@@ -10,77 +10,77 @@ namespace tryAGI.OpenAI
     public readonly partial struct ContentItem : global::System.IEquatable<ContentItem>
     {
         /// <summary>
-        /// 
+        /// A text input to the model.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.InputTextContent2? InputTextContent2 { get; init; }
+        public global::tryAGI.OpenAI.InputTextContent? InputText { get; init; }
 #else
-        public global::tryAGI.OpenAI.InputTextContent2? InputTextContent2 { get; }
+        public global::tryAGI.OpenAI.InputTextContent? InputText { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputTextContent2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputText))]
 #endif
-        public bool IsInputTextContent2 => InputTextContent2 != null;
+        public bool IsInputText => InputText != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentItem(global::tryAGI.OpenAI.InputTextContent2 value) => new ContentItem((global::tryAGI.OpenAI.InputTextContent2?)value);
+        public static implicit operator ContentItem(global::tryAGI.OpenAI.InputTextContent value) => new ContentItem((global::tryAGI.OpenAI.InputTextContent?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.InputTextContent2?(ContentItem @this) => @this.InputTextContent2;
+        public static implicit operator global::tryAGI.OpenAI.InputTextContent?(ContentItem @this) => @this.InputText;
 
         /// <summary>
         /// 
         /// </summary>
-        public ContentItem(global::tryAGI.OpenAI.InputTextContent2? value)
+        public ContentItem(global::tryAGI.OpenAI.InputTextContent? value)
         {
-            InputTextContent2 = value;
+            InputText = value;
         }
 
         /// <summary>
-        /// 
+        /// A text output from the model.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.OutputTextContent2? OutputTextContent2 { get; init; }
+        public global::tryAGI.OpenAI.OutputTextContent? OutputText { get; init; }
 #else
-        public global::tryAGI.OpenAI.OutputTextContent2? OutputTextContent2 { get; }
+        public global::tryAGI.OpenAI.OutputTextContent? OutputText { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputTextContent2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputText))]
 #endif
-        public bool IsOutputTextContent2 => OutputTextContent2 != null;
+        public bool IsOutputText => OutputText != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentItem(global::tryAGI.OpenAI.OutputTextContent2 value) => new ContentItem((global::tryAGI.OpenAI.OutputTextContent2?)value);
+        public static implicit operator ContentItem(global::tryAGI.OpenAI.OutputTextContent value) => new ContentItem((global::tryAGI.OpenAI.OutputTextContent?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.OutputTextContent2?(ContentItem @this) => @this.OutputTextContent2;
+        public static implicit operator global::tryAGI.OpenAI.OutputTextContent?(ContentItem @this) => @this.OutputText;
 
         /// <summary>
         /// 
         /// </summary>
-        public ContentItem(global::tryAGI.OpenAI.OutputTextContent2? value)
+        public ContentItem(global::tryAGI.OpenAI.OutputTextContent? value)
         {
-            OutputTextContent2 = value;
+            OutputText = value;
         }
 
         /// <summary>
-        /// 
+        /// A text content.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.TextContent? Text { get; init; }
@@ -115,7 +115,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        /// A summary text from the model.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.SummaryTextContent? SummaryText { get; init; }
@@ -150,77 +150,77 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        /// A refusal from the model.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RefusalContent2? RefusalContent2 { get; init; }
+        public global::tryAGI.OpenAI.RefusalContent? Refusal { get; init; }
 #else
-        public global::tryAGI.OpenAI.RefusalContent2? RefusalContent2 { get; }
+        public global::tryAGI.OpenAI.RefusalContent? Refusal { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RefusalContent2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Refusal))]
 #endif
-        public bool IsRefusalContent2 => RefusalContent2 != null;
+        public bool IsRefusal => Refusal != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentItem(global::tryAGI.OpenAI.RefusalContent2 value) => new ContentItem((global::tryAGI.OpenAI.RefusalContent2?)value);
+        public static implicit operator ContentItem(global::tryAGI.OpenAI.RefusalContent value) => new ContentItem((global::tryAGI.OpenAI.RefusalContent?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.RefusalContent2?(ContentItem @this) => @this.RefusalContent2;
+        public static implicit operator global::tryAGI.OpenAI.RefusalContent?(ContentItem @this) => @this.Refusal;
 
         /// <summary>
         /// 
         /// </summary>
-        public ContentItem(global::tryAGI.OpenAI.RefusalContent2? value)
+        public ContentItem(global::tryAGI.OpenAI.RefusalContent? value)
         {
-            RefusalContent2 = value;
+            Refusal = value;
         }
 
         /// <summary>
-        /// 
+        /// An image input to the model. Learn about [image inputs](https://platform.openai.com/docs/guides/vision).
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.InputImageContent2? InputImageContent2 { get; init; }
+        public global::tryAGI.OpenAI.InputImageContent? InputImage { get; init; }
 #else
-        public global::tryAGI.OpenAI.InputImageContent2? InputImageContent2 { get; }
+        public global::tryAGI.OpenAI.InputImageContent? InputImage { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputImageContent2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputImage))]
 #endif
-        public bool IsInputImageContent2 => InputImageContent2 != null;
+        public bool IsInputImage => InputImage != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentItem(global::tryAGI.OpenAI.InputImageContent2 value) => new ContentItem((global::tryAGI.OpenAI.InputImageContent2?)value);
+        public static implicit operator ContentItem(global::tryAGI.OpenAI.InputImageContent value) => new ContentItem((global::tryAGI.OpenAI.InputImageContent?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.InputImageContent2?(ContentItem @this) => @this.InputImageContent2;
+        public static implicit operator global::tryAGI.OpenAI.InputImageContent?(ContentItem @this) => @this.InputImage;
 
         /// <summary>
         /// 
         /// </summary>
-        public ContentItem(global::tryAGI.OpenAI.InputImageContent2? value)
+        public ContentItem(global::tryAGI.OpenAI.InputImageContent? value)
         {
-            InputImageContent2 = value;
+            InputImage = value;
         }
 
         /// <summary>
-        /// 
+        /// A screenshot of a computer.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ComputerScreenshotContent? ComputerScreenshot { get; init; }
@@ -255,90 +255,90 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        /// A file input to the model.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.InputFileContent2? InputFileContent2 { get; init; }
+        public global::tryAGI.OpenAI.InputFileContent? InputFile { get; init; }
 #else
-        public global::tryAGI.OpenAI.InputFileContent2? InputFileContent2 { get; }
+        public global::tryAGI.OpenAI.InputFileContent? InputFile { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputFileContent2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputFile))]
 #endif
-        public bool IsInputFileContent2 => InputFileContent2 != null;
+        public bool IsInputFile => InputFile != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentItem(global::tryAGI.OpenAI.InputFileContent2 value) => new ContentItem((global::tryAGI.OpenAI.InputFileContent2?)value);
+        public static implicit operator ContentItem(global::tryAGI.OpenAI.InputFileContent value) => new ContentItem((global::tryAGI.OpenAI.InputFileContent?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.InputFileContent2?(ContentItem @this) => @this.InputFileContent2;
+        public static implicit operator global::tryAGI.OpenAI.InputFileContent?(ContentItem @this) => @this.InputFile;
 
         /// <summary>
         /// 
         /// </summary>
-        public ContentItem(global::tryAGI.OpenAI.InputFileContent2? value)
+        public ContentItem(global::tryAGI.OpenAI.InputFileContent? value)
         {
-            InputFileContent2 = value;
+            InputFile = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ContentItem(
-            global::tryAGI.OpenAI.InputTextContent2? inputTextContent2,
-            global::tryAGI.OpenAI.OutputTextContent2? outputTextContent2,
+            global::tryAGI.OpenAI.InputTextContent? inputText,
+            global::tryAGI.OpenAI.OutputTextContent? outputText,
             global::tryAGI.OpenAI.TextContent? text,
             global::tryAGI.OpenAI.SummaryTextContent? summaryText,
-            global::tryAGI.OpenAI.RefusalContent2? refusalContent2,
-            global::tryAGI.OpenAI.InputImageContent2? inputImageContent2,
+            global::tryAGI.OpenAI.RefusalContent? refusal,
+            global::tryAGI.OpenAI.InputImageContent? inputImage,
             global::tryAGI.OpenAI.ComputerScreenshotContent? computerScreenshot,
-            global::tryAGI.OpenAI.InputFileContent2? inputFileContent2
+            global::tryAGI.OpenAI.InputFileContent? inputFile
             )
         {
-            InputTextContent2 = inputTextContent2;
-            OutputTextContent2 = outputTextContent2;
+            InputText = inputText;
+            OutputText = outputText;
             Text = text;
             SummaryText = summaryText;
-            RefusalContent2 = refusalContent2;
-            InputImageContent2 = inputImageContent2;
+            Refusal = refusal;
+            InputImage = inputImage;
             ComputerScreenshot = computerScreenshot;
-            InputFileContent2 = inputFileContent2;
+            InputFile = inputFile;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            InputFileContent2 as object ??
+            InputFile as object ??
             ComputerScreenshot as object ??
-            InputImageContent2 as object ??
-            RefusalContent2 as object ??
+            InputImage as object ??
+            Refusal as object ??
             SummaryText as object ??
             Text as object ??
-            OutputTextContent2 as object ??
-            InputTextContent2 as object 
+            OutputText as object ??
+            InputText as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            InputTextContent2?.ToString() ??
-            OutputTextContent2?.ToString() ??
+            InputText?.ToString() ??
+            OutputText?.ToString() ??
             Text?.ToString() ??
             SummaryText?.ToString() ??
-            RefusalContent2?.ToString() ??
-            InputImageContent2?.ToString() ??
+            Refusal?.ToString() ??
+            InputImage?.ToString() ??
             ComputerScreenshot?.ToString() ??
-            InputFileContent2?.ToString() 
+            InputFile?.ToString() 
             ;
 
         /// <summary>
@@ -346,21 +346,21 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsInputTextContent2 || IsOutputTextContent2 || IsText || IsSummaryText || IsRefusalContent2 || IsInputImageContent2 || IsComputerScreenshot || IsInputFileContent2;
+            return IsInputText || IsOutputText || IsText || IsSummaryText || IsRefusal || IsInputImage || IsComputerScreenshot || IsInputFile;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.InputTextContent2?, TResult>? inputTextContent2 = null,
-            global::System.Func<global::tryAGI.OpenAI.OutputTextContent2?, TResult>? outputTextContent2 = null,
+            global::System.Func<global::tryAGI.OpenAI.InputTextContent?, TResult>? inputText = null,
+            global::System.Func<global::tryAGI.OpenAI.OutputTextContent?, TResult>? outputText = null,
             global::System.Func<global::tryAGI.OpenAI.TextContent?, TResult>? text = null,
             global::System.Func<global::tryAGI.OpenAI.SummaryTextContent?, TResult>? summaryText = null,
-            global::System.Func<global::tryAGI.OpenAI.RefusalContent2?, TResult>? refusalContent2 = null,
-            global::System.Func<global::tryAGI.OpenAI.InputImageContent2?, TResult>? inputImageContent2 = null,
+            global::System.Func<global::tryAGI.OpenAI.RefusalContent?, TResult>? refusal = null,
+            global::System.Func<global::tryAGI.OpenAI.InputImageContent?, TResult>? inputImage = null,
             global::System.Func<global::tryAGI.OpenAI.ComputerScreenshotContent?, TResult>? computerScreenshot = null,
-            global::System.Func<global::tryAGI.OpenAI.InputFileContent2?, TResult>? inputFileContent2 = null,
+            global::System.Func<global::tryAGI.OpenAI.InputFileContent?, TResult>? inputFile = null,
             bool validate = true)
         {
             if (validate)
@@ -368,13 +368,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsInputTextContent2 && inputTextContent2 != null)
+            if (IsInputText && inputText != null)
             {
-                return inputTextContent2(InputTextContent2!);
+                return inputText(InputText!);
             }
-            else if (IsOutputTextContent2 && outputTextContent2 != null)
+            else if (IsOutputText && outputText != null)
             {
-                return outputTextContent2(OutputTextContent2!);
+                return outputText(OutputText!);
             }
             else if (IsText && text != null)
             {
@@ -384,21 +384,21 @@ namespace tryAGI.OpenAI
             {
                 return summaryText(SummaryText!);
             }
-            else if (IsRefusalContent2 && refusalContent2 != null)
+            else if (IsRefusal && refusal != null)
             {
-                return refusalContent2(RefusalContent2!);
+                return refusal(Refusal!);
             }
-            else if (IsInputImageContent2 && inputImageContent2 != null)
+            else if (IsInputImage && inputImage != null)
             {
-                return inputImageContent2(InputImageContent2!);
+                return inputImage(InputImage!);
             }
             else if (IsComputerScreenshot && computerScreenshot != null)
             {
                 return computerScreenshot(ComputerScreenshot!);
             }
-            else if (IsInputFileContent2 && inputFileContent2 != null)
+            else if (IsInputFile && inputFile != null)
             {
-                return inputFileContent2(InputFileContent2!);
+                return inputFile(InputFile!);
             }
 
             return default(TResult);
@@ -408,14 +408,14 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.InputTextContent2?>? inputTextContent2 = null,
-            global::System.Action<global::tryAGI.OpenAI.OutputTextContent2?>? outputTextContent2 = null,
+            global::System.Action<global::tryAGI.OpenAI.InputTextContent?>? inputText = null,
+            global::System.Action<global::tryAGI.OpenAI.OutputTextContent?>? outputText = null,
             global::System.Action<global::tryAGI.OpenAI.TextContent?>? text = null,
             global::System.Action<global::tryAGI.OpenAI.SummaryTextContent?>? summaryText = null,
-            global::System.Action<global::tryAGI.OpenAI.RefusalContent2?>? refusalContent2 = null,
-            global::System.Action<global::tryAGI.OpenAI.InputImageContent2?>? inputImageContent2 = null,
+            global::System.Action<global::tryAGI.OpenAI.RefusalContent?>? refusal = null,
+            global::System.Action<global::tryAGI.OpenAI.InputImageContent?>? inputImage = null,
             global::System.Action<global::tryAGI.OpenAI.ComputerScreenshotContent?>? computerScreenshot = null,
-            global::System.Action<global::tryAGI.OpenAI.InputFileContent2?>? inputFileContent2 = null,
+            global::System.Action<global::tryAGI.OpenAI.InputFileContent?>? inputFile = null,
             bool validate = true)
         {
             if (validate)
@@ -423,13 +423,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsInputTextContent2)
+            if (IsInputText)
             {
-                inputTextContent2?.Invoke(InputTextContent2!);
+                inputText?.Invoke(InputText!);
             }
-            else if (IsOutputTextContent2)
+            else if (IsOutputText)
             {
-                outputTextContent2?.Invoke(OutputTextContent2!);
+                outputText?.Invoke(OutputText!);
             }
             else if (IsText)
             {
@@ -439,21 +439,21 @@ namespace tryAGI.OpenAI
             {
                 summaryText?.Invoke(SummaryText!);
             }
-            else if (IsRefusalContent2)
+            else if (IsRefusal)
             {
-                refusalContent2?.Invoke(RefusalContent2!);
+                refusal?.Invoke(Refusal!);
             }
-            else if (IsInputImageContent2)
+            else if (IsInputImage)
             {
-                inputImageContent2?.Invoke(InputImageContent2!);
+                inputImage?.Invoke(InputImage!);
             }
             else if (IsComputerScreenshot)
             {
                 computerScreenshot?.Invoke(ComputerScreenshot!);
             }
-            else if (IsInputFileContent2)
+            else if (IsInputFile)
             {
-                inputFileContent2?.Invoke(InputFileContent2!);
+                inputFile?.Invoke(InputFile!);
             }
         }
 
@@ -464,22 +464,22 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                InputTextContent2,
-                typeof(global::tryAGI.OpenAI.InputTextContent2),
-                OutputTextContent2,
-                typeof(global::tryAGI.OpenAI.OutputTextContent2),
+                InputText,
+                typeof(global::tryAGI.OpenAI.InputTextContent),
+                OutputText,
+                typeof(global::tryAGI.OpenAI.OutputTextContent),
                 Text,
                 typeof(global::tryAGI.OpenAI.TextContent),
                 SummaryText,
                 typeof(global::tryAGI.OpenAI.SummaryTextContent),
-                RefusalContent2,
-                typeof(global::tryAGI.OpenAI.RefusalContent2),
-                InputImageContent2,
-                typeof(global::tryAGI.OpenAI.InputImageContent2),
+                Refusal,
+                typeof(global::tryAGI.OpenAI.RefusalContent),
+                InputImage,
+                typeof(global::tryAGI.OpenAI.InputImageContent),
                 ComputerScreenshot,
                 typeof(global::tryAGI.OpenAI.ComputerScreenshotContent),
-                InputFileContent2,
-                typeof(global::tryAGI.OpenAI.InputFileContent2),
+                InputFile,
+                typeof(global::tryAGI.OpenAI.InputFileContent),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -496,14 +496,14 @@ namespace tryAGI.OpenAI
         public bool Equals(ContentItem other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputTextContent2?>.Default.Equals(InputTextContent2, other.InputTextContent2) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.OutputTextContent2?>.Default.Equals(OutputTextContent2, other.OutputTextContent2) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputTextContent?>.Default.Equals(InputText, other.InputText) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.OutputTextContent?>.Default.Equals(OutputText, other.OutputText) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.TextContent?>.Default.Equals(Text, other.Text) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SummaryTextContent?>.Default.Equals(SummaryText, other.SummaryText) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RefusalContent2?>.Default.Equals(RefusalContent2, other.RefusalContent2) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputImageContent2?>.Default.Equals(InputImageContent2, other.InputImageContent2) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RefusalContent?>.Default.Equals(Refusal, other.Refusal) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputImageContent?>.Default.Equals(InputImage, other.InputImage) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ComputerScreenshotContent?>.Default.Equals(ComputerScreenshot, other.ComputerScreenshot) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputFileContent2?>.Default.Equals(InputFileContent2, other.InputFileContent2) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputFileContent?>.Default.Equals(InputFile, other.InputFile) 
                 ;
         }
 

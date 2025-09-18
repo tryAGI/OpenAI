@@ -39,7 +39,7 @@ namespace tryAGI.OpenAI
         /// The sampling parameters for the model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sampling_params")]
-        public object? SamplingParams { get; set; }
+        public global::tryAGI.OpenAI.GraderScoreModelSamplingParams? SamplingParams { get; set; }
 
         /// <summary>
         /// The object type, which is always `score_model`.
@@ -83,7 +83,7 @@ namespace tryAGI.OpenAI
             string model,
             string name,
             global::System.Collections.Generic.IList<double>? range,
-            object? samplingParams,
+            global::tryAGI.OpenAI.GraderScoreModelSamplingParams? samplingParams,
             global::tryAGI.OpenAI.GraderScoreModelType type)
         {
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));

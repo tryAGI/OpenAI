@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct ConversationItem : global::System.IEquatable<ConversationItem>
     {
         /// <summary>
-        /// 
+        /// A message to or from the model.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.Message? Message { get; init; }

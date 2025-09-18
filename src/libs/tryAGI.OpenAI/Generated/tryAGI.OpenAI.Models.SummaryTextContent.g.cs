@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    /// A summary text from the model.
     /// </summary>
     public sealed partial class SummaryTextContent
     {

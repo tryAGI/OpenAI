@@ -6,50 +6,50 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// 
     /// </summary>
-    public enum MessageStatus
+    public enum DetailEnum
     {
         /// <summary>
         /// 
         /// </summary>
-        InProgress,
+        Low,
         /// <summary>
         /// 
         /// </summary>
-        Completed,
+        High,
         /// <summary>
         /// 
         /// </summary>
-        Incomplete,
+        Auto,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class MessageStatusExtensions
+    public static class DetailEnumExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this MessageStatus value)
+        public static string ToValueString(this DetailEnum value)
         {
             return value switch
             {
-                MessageStatus.InProgress => "in_progress",
-                MessageStatus.Completed => "completed",
-                MessageStatus.Incomplete => "incomplete",
+                DetailEnum.Low => "low",
+                DetailEnum.High => "high",
+                DetailEnum.Auto => "auto",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static MessageStatus? ToEnum(string value)
+        public static DetailEnum? ToEnum(string value)
         {
             return value switch
             {
-                "in_progress" => MessageStatus.InProgress,
-                "completed" => MessageStatus.Completed,
-                "incomplete" => MessageStatus.Incomplete,
+                "low" => DetailEnum.Low,
+                "high" => DetailEnum.High,
+                "auto" => DetailEnum.Auto,
                 _ => null,
             };
         }

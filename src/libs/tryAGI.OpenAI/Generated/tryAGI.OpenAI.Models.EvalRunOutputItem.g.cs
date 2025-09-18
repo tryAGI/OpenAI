@@ -54,11 +54,11 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.EvalRunOutputItemObject Object { get; set; } = global::tryAGI.OpenAI.EvalRunOutputItemObject.EvalRunOutputItem;
 
         /// <summary>
-        /// A list of results from the evaluation run.
+        /// A list of grader results for this output item.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("results")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<object> Results { get; set; }
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunOutputItemResult> Results { get; set; }
 
         /// <summary>
         /// The identifier of the evaluation run associated with this output item.
@@ -110,7 +110,7 @@ namespace tryAGI.OpenAI
         /// Default Value: eval.run.output_item
         /// </param>
         /// <param name="results">
-        /// A list of results from the evaluation run.
+        /// A list of grader results for this output item.
         /// </param>
         /// <param name="runId">
         /// The identifier of the evaluation run associated with this output item.
@@ -130,7 +130,7 @@ namespace tryAGI.OpenAI
             int datasourceItemId,
             string evalId,
             string id,
-            global::System.Collections.Generic.IList<object> results,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunOutputItemResult> results,
             string runId,
             global::tryAGI.OpenAI.EvalRunOutputItemSample sample,
             string status,

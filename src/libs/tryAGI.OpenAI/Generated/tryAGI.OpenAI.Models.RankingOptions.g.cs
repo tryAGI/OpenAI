@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public sealed partial class RankingOptions
     {
         /// <summary>
-        /// The ranker to use for the file search.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ranker")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RankingOptionsRankerJsonConverter))]
-        public global::tryAGI.OpenAI.RankingOptionsRanker? Ranker { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RankerVersionTypeJsonConverter))]
+        public global::tryAGI.OpenAI.RankerVersionType? Ranker { get; set; }
 
         /// <summary>
         /// The score threshold for the file search, a number between 0 and 1. Numbers closer to 1 will attempt to return only the most relevant results, but may return fewer results.
@@ -30,9 +30,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RankingOptions" /> class.
         /// </summary>
-        /// <param name="ranker">
-        /// The ranker to use for the file search.
-        /// </param>
+        /// <param name="ranker"></param>
         /// <param name="scoreThreshold">
         /// The score threshold for the file search, a number between 0 and 1. Numbers closer to 1 will attempt to return only the most relevant results, but may return fewer results.
         /// </param>
@@ -40,7 +38,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RankingOptions(
-            global::tryAGI.OpenAI.RankingOptionsRanker? ranker,
+            global::tryAGI.OpenAI.RankerVersionType? ranker,
             double? scoreThreshold)
         {
             this.Ranker = ranker;
