@@ -15,7 +15,7 @@ namespace tryAGI.OpenAI
         /// Reasoning text content.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ReasoningItemContentItem>? Content { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ReasoningTextContent>? Content { get; set; }
 
         /// <summary>
         /// The encrypted content of the reasoning item - populated when a response is<br/>
@@ -44,7 +44,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ReasoningItemSummaryItem> Summary { get; set; }
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Summary> Summary { get; set; }
 
         /// <summary>
         /// The type of the object. Always `reasoning`.
@@ -87,8 +87,8 @@ namespace tryAGI.OpenAI
 #endif
         public ReasoningItem(
             string id,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ReasoningItemSummaryItem> summary,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ReasoningItemContentItem>? content,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Summary> summary,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ReasoningTextContent>? content,
             string? encryptedContent,
             global::tryAGI.OpenAI.ReasoningItemStatus? status,
             global::tryAGI.OpenAI.ReasoningItemType type)

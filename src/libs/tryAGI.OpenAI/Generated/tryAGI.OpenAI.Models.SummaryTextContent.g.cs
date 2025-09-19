@@ -9,13 +9,14 @@ namespace tryAGI.OpenAI
     public sealed partial class SummaryTextContent
     {
         /// <summary>
-        /// 
+        /// A summary of the reasoning output from the model so far.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Text { get; set; }
 
         /// <summary>
+        /// The type of the object. Always `summary_text`.<br/>
         /// Default Value: summary_text
         /// </summary>
         /// <default>global::tryAGI.OpenAI.SummaryTextContentType.SummaryText</default>
@@ -32,8 +33,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="SummaryTextContent" /> class.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">
+        /// A summary of the reasoning output from the model so far.
+        /// </param>
         /// <param name="type">
+        /// The type of the object. Always `summary_text`.<br/>
         /// Default Value: summary_text
         /// </param>
 #if NET7_0_OR_GREATER

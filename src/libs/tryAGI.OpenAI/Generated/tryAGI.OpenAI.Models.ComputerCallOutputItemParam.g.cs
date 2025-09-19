@@ -22,8 +22,10 @@ namespace tryAGI.OpenAI
         public required string CallId { get; set; }
 
         /// <summary>
-        /// The ID of the computer tool call output.
+        /// The ID of the computer tool call output.<br/>
+        /// Example: cuo_123
         /// </summary>
+        /// <example>cuo_123</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
 
@@ -65,7 +67,8 @@ namespace tryAGI.OpenAI
         /// The ID of the computer tool call that produced the output.
         /// </param>
         /// <param name="id">
-        /// The ID of the computer tool call output.
+        /// The ID of the computer tool call output.<br/>
+        /// Example: cuo_123
         /// </param>
         /// <param name="output">
         /// A computer screenshot image used with the computer use tool.

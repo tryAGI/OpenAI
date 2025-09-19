@@ -4,6 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
+    /// The type of the object. Always `summary_text`.<br/>
     /// Default Value: summary_text
     /// </summary>
     public enum SummaryTextContentType

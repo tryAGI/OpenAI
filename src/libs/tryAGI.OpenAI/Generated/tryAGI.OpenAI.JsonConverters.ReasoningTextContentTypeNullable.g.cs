@@ -3,10 +3,10 @@
 namespace tryAGI.OpenAI.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class ReasoningItemContentItemTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::tryAGI.OpenAI.ReasoningItemContentItemType?>
+    public sealed class ReasoningTextContentTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::tryAGI.OpenAI.ReasoningTextContentType?>
     {
         /// <inheritdoc />
-        public override global::tryAGI.OpenAI.ReasoningItemContentItemType? Read(
+        public override global::tryAGI.OpenAI.ReasoningTextContentType? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::tryAGI.OpenAI.ReasoningItemContentItemTypeExtensions.ToEnum(stringValue);
+                        return global::tryAGI.OpenAI.ReasoningTextContentTypeExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace tryAGI.OpenAI.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::tryAGI.OpenAI.ReasoningItemContentItemType)numValue;
+                    return (global::tryAGI.OpenAI.ReasoningTextContentType)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::tryAGI.OpenAI.ReasoningItemContentItemType?);
+                    return default(global::tryAGI.OpenAI.ReasoningTextContentType?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::tryAGI.OpenAI.ReasoningItemContentItemType? value,
+            global::tryAGI.OpenAI.ReasoningTextContentType? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI.JsonConverters
             }
             else
             {
-                writer.WriteStringValue(global::tryAGI.OpenAI.ReasoningItemContentItemTypeExtensions.ToValueString(value.Value));
+                writer.WriteStringValue(global::tryAGI.OpenAI.ReasoningTextContentTypeExtensions.ToValueString(value.Value));
             }
         }
     }

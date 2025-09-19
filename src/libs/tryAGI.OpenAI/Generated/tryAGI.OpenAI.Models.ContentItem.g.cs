@@ -150,6 +150,41 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// Reasoning text from the model.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ReasoningTextContent? ReasoningText { get; init; }
+#else
+        public global::tryAGI.OpenAI.ReasoningTextContent? ReasoningText { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningText))]
+#endif
+        public bool IsReasoningText => ReasoningText != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ContentItem(global::tryAGI.OpenAI.ReasoningTextContent value) => new ContentItem((global::tryAGI.OpenAI.ReasoningTextContent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.ReasoningTextContent?(ContentItem @this) => @this.ReasoningText;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentItem(global::tryAGI.OpenAI.ReasoningTextContent? value)
+        {
+            ReasoningText = value;
+        }
+
+        /// <summary>
         /// A refusal from the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -297,6 +332,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.OutputTextContent? outputText,
             global::tryAGI.OpenAI.TextContent? text,
             global::tryAGI.OpenAI.SummaryTextContent? summaryText,
+            global::tryAGI.OpenAI.ReasoningTextContent? reasoningText,
             global::tryAGI.OpenAI.RefusalContent? refusal,
             global::tryAGI.OpenAI.InputImageContent? inputImage,
             global::tryAGI.OpenAI.ComputerScreenshotContent? computerScreenshot,
@@ -307,6 +343,7 @@ namespace tryAGI.OpenAI
             OutputText = outputText;
             Text = text;
             SummaryText = summaryText;
+            ReasoningText = reasoningText;
             Refusal = refusal;
             InputImage = inputImage;
             ComputerScreenshot = computerScreenshot;
@@ -321,6 +358,7 @@ namespace tryAGI.OpenAI
             ComputerScreenshot as object ??
             InputImage as object ??
             Refusal as object ??
+            ReasoningText as object ??
             SummaryText as object ??
             Text as object ??
             OutputText as object ??
@@ -335,6 +373,7 @@ namespace tryAGI.OpenAI
             OutputText?.ToString() ??
             Text?.ToString() ??
             SummaryText?.ToString() ??
+            ReasoningText?.ToString() ??
             Refusal?.ToString() ??
             InputImage?.ToString() ??
             ComputerScreenshot?.ToString() ??
@@ -346,7 +385,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsInputText || IsOutputText || IsText || IsSummaryText || IsRefusal || IsInputImage || IsComputerScreenshot || IsInputFile;
+            return IsInputText || IsOutputText || IsText || IsSummaryText || IsReasoningText || IsRefusal || IsInputImage || IsComputerScreenshot || IsInputFile;
         }
 
         /// <summary>
@@ -357,6 +396,7 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.OutputTextContent?, TResult>? outputText = null,
             global::System.Func<global::tryAGI.OpenAI.TextContent?, TResult>? text = null,
             global::System.Func<global::tryAGI.OpenAI.SummaryTextContent?, TResult>? summaryText = null,
+            global::System.Func<global::tryAGI.OpenAI.ReasoningTextContent?, TResult>? reasoningText = null,
             global::System.Func<global::tryAGI.OpenAI.RefusalContent?, TResult>? refusal = null,
             global::System.Func<global::tryAGI.OpenAI.InputImageContent?, TResult>? inputImage = null,
             global::System.Func<global::tryAGI.OpenAI.ComputerScreenshotContent?, TResult>? computerScreenshot = null,
@@ -383,6 +423,10 @@ namespace tryAGI.OpenAI
             else if (IsSummaryText && summaryText != null)
             {
                 return summaryText(SummaryText!);
+            }
+            else if (IsReasoningText && reasoningText != null)
+            {
+                return reasoningText(ReasoningText!);
             }
             else if (IsRefusal && refusal != null)
             {
@@ -412,6 +456,7 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.OutputTextContent?>? outputText = null,
             global::System.Action<global::tryAGI.OpenAI.TextContent?>? text = null,
             global::System.Action<global::tryAGI.OpenAI.SummaryTextContent?>? summaryText = null,
+            global::System.Action<global::tryAGI.OpenAI.ReasoningTextContent?>? reasoningText = null,
             global::System.Action<global::tryAGI.OpenAI.RefusalContent?>? refusal = null,
             global::System.Action<global::tryAGI.OpenAI.InputImageContent?>? inputImage = null,
             global::System.Action<global::tryAGI.OpenAI.ComputerScreenshotContent?>? computerScreenshot = null,
@@ -438,6 +483,10 @@ namespace tryAGI.OpenAI
             else if (IsSummaryText)
             {
                 summaryText?.Invoke(SummaryText!);
+            }
+            else if (IsReasoningText)
+            {
+                reasoningText?.Invoke(ReasoningText!);
             }
             else if (IsRefusal)
             {
@@ -472,6 +521,8 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.TextContent),
                 SummaryText,
                 typeof(global::tryAGI.OpenAI.SummaryTextContent),
+                ReasoningText,
+                typeof(global::tryAGI.OpenAI.ReasoningTextContent),
                 Refusal,
                 typeof(global::tryAGI.OpenAI.RefusalContent),
                 InputImage,
@@ -500,6 +551,7 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.OutputTextContent?>.Default.Equals(OutputText, other.OutputText) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.TextContent?>.Default.Equals(Text, other.Text) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SummaryTextContent?>.Default.Equals(SummaryText, other.SummaryText) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ReasoningTextContent?>.Default.Equals(ReasoningText, other.ReasoningText) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RefusalContent?>.Default.Equals(Refusal, other.Refusal) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputImageContent?>.Default.Equals(InputImage, other.InputImage) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ComputerScreenshotContent?>.Default.Equals(ComputerScreenshot, other.ComputerScreenshot) &&
