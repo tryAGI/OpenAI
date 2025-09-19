@@ -7,7 +7,7 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// 
     /// </summary>
-    public readonly partial struct OutputContent : global::System.IEquatable<OutputContent>
+    public readonly partial struct OutputMessageContent : global::System.IEquatable<OutputMessageContent>
     {
         /// <summary>
         /// A text output from the model.
@@ -29,17 +29,17 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OutputContent(global::tryAGI.OpenAI.OutputTextContent value) => new OutputContent((global::tryAGI.OpenAI.OutputTextContent?)value);
+        public static implicit operator OutputMessageContent(global::tryAGI.OpenAI.OutputTextContent value) => new OutputMessageContent((global::tryAGI.OpenAI.OutputTextContent?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.OutputTextContent?(OutputContent @this) => @this.Text;
+        public static implicit operator global::tryAGI.OpenAI.OutputTextContent?(OutputMessageContent @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
-        public OutputContent(global::tryAGI.OpenAI.OutputTextContent? value)
+        public OutputMessageContent(global::tryAGI.OpenAI.OutputTextContent? value)
         {
             Text = value;
         }
@@ -64,75 +64,37 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OutputContent(global::tryAGI.OpenAI.RefusalContent value) => new OutputContent((global::tryAGI.OpenAI.RefusalContent?)value);
+        public static implicit operator OutputMessageContent(global::tryAGI.OpenAI.RefusalContent value) => new OutputMessageContent((global::tryAGI.OpenAI.RefusalContent?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.RefusalContent?(OutputContent @this) => @this.Refusal;
+        public static implicit operator global::tryAGI.OpenAI.RefusalContent?(OutputMessageContent @this) => @this.Refusal;
 
         /// <summary>
         /// 
         /// </summary>
-        public OutputContent(global::tryAGI.OpenAI.RefusalContent? value)
+        public OutputMessageContent(global::tryAGI.OpenAI.RefusalContent? value)
         {
             Refusal = value;
         }
 
         /// <summary>
-        /// Reasoning text from the model.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ReasoningTextContent? ReasoningText { get; init; }
-#else
-        public global::tryAGI.OpenAI.ReasoningTextContent? ReasoningText { get; }
-#endif
-
-        /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningText))]
-#endif
-        public bool IsReasoningText => ReasoningText != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator OutputContent(global::tryAGI.OpenAI.ReasoningTextContent value) => new OutputContent((global::tryAGI.OpenAI.ReasoningTextContent?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.ReasoningTextContent?(OutputContent @this) => @this.ReasoningText;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public OutputContent(global::tryAGI.OpenAI.ReasoningTextContent? value)
-        {
-            ReasoningText = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public OutputContent(
+        public OutputMessageContent(
             global::tryAGI.OpenAI.OutputTextContent? text,
-            global::tryAGI.OpenAI.RefusalContent? refusal,
-            global::tryAGI.OpenAI.ReasoningTextContent? reasoningText
+            global::tryAGI.OpenAI.RefusalContent? refusal
             )
         {
             Text = text;
             Refusal = refusal;
-            ReasoningText = reasoningText;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            ReasoningText as object ??
             Refusal as object ??
             Text as object 
             ;
@@ -142,8 +104,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public override string? ToString() =>
             Text?.ToString() ??
-            Refusal?.ToString() ??
-            ReasoningText?.ToString() 
+            Refusal?.ToString() 
             ;
 
         /// <summary>
@@ -151,7 +112,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsText || IsRefusal || IsReasoningText;
+            return IsText || IsRefusal;
         }
 
         /// <summary>
@@ -160,7 +121,6 @@ namespace tryAGI.OpenAI
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.OutputTextContent?, TResult>? text = null,
             global::System.Func<global::tryAGI.OpenAI.RefusalContent?, TResult>? refusal = null,
-            global::System.Func<global::tryAGI.OpenAI.ReasoningTextContent?, TResult>? reasoningText = null,
             bool validate = true)
         {
             if (validate)
@@ -176,10 +136,6 @@ namespace tryAGI.OpenAI
             {
                 return refusal(Refusal!);
             }
-            else if (IsReasoningText && reasoningText != null)
-            {
-                return reasoningText(ReasoningText!);
-            }
 
             return default(TResult);
         }
@@ -190,7 +146,6 @@ namespace tryAGI.OpenAI
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.OutputTextContent?>? text = null,
             global::System.Action<global::tryAGI.OpenAI.RefusalContent?>? refusal = null,
-            global::System.Action<global::tryAGI.OpenAI.ReasoningTextContent?>? reasoningText = null,
             bool validate = true)
         {
             if (validate)
@@ -206,10 +161,6 @@ namespace tryAGI.OpenAI
             {
                 refusal?.Invoke(Refusal!);
             }
-            else if (IsReasoningText)
-            {
-                reasoningText?.Invoke(ReasoningText!);
-            }
         }
 
         /// <summary>
@@ -223,8 +174,6 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.OutputTextContent),
                 Refusal,
                 typeof(global::tryAGI.OpenAI.RefusalContent),
-                ReasoningText,
-                typeof(global::tryAGI.OpenAI.ReasoningTextContent),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -238,27 +187,26 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public bool Equals(OutputContent other)
+        public bool Equals(OutputMessageContent other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.OutputTextContent?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RefusalContent?>.Default.Equals(Refusal, other.Refusal) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ReasoningTextContent?>.Default.Equals(ReasoningText, other.ReasoningText) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RefusalContent?>.Default.Equals(Refusal, other.Refusal) 
                 ;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator ==(OutputContent obj1, OutputContent obj2)
+        public static bool operator ==(OutputMessageContent obj1, OutputMessageContent obj2)
         {
-            return global::System.Collections.Generic.EqualityComparer<OutputContent>.Default.Equals(obj1, obj2);
+            return global::System.Collections.Generic.EqualityComparer<OutputMessageContent>.Default.Equals(obj1, obj2);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator !=(OutputContent obj1, OutputContent obj2)
+        public static bool operator !=(OutputMessageContent obj1, OutputMessageContent obj2)
         {
             return !(obj1 == obj2);
         }
@@ -268,7 +216,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public override bool Equals(object? obj)
         {
-            return obj is OutputContent o && Equals(o);
+            return obj is OutputMessageContent o && Equals(o);
         }
     }
 }

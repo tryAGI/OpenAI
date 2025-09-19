@@ -2,7 +2,7 @@
 
 namespace tryAGI.OpenAI
 {
-    public sealed partial class ReasoningItemSummaryItem
+    public readonly partial struct OutputMessageContent
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -34,14 +34,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::tryAGI.OpenAI.ReasoningItemSummaryItem? FromJson(
+        public static global::tryAGI.OpenAI.OutputMessageContent? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::tryAGI.OpenAI.ReasoningItemSummaryItem),
-                jsonSerializerContext) as global::tryAGI.OpenAI.ReasoningItemSummaryItem;
+                typeof(global::tryAGI.OpenAI.OutputMessageContent),
+                jsonSerializerContext) as global::tryAGI.OpenAI.OutputMessageContent?;
         }
 
         /// <summary>
@@ -51,11 +51,11 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::tryAGI.OpenAI.ReasoningItemSummaryItem? FromJson(
+        public static global::tryAGI.OpenAI.OutputMessageContent? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ReasoningItemSummaryItem>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.OutputMessageContent>(
                 json,
                 jsonSerializerOptions);
         }
@@ -63,14 +63,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::tryAGI.OpenAI.ReasoningItemSummaryItem?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::tryAGI.OpenAI.OutputMessageContent?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::tryAGI.OpenAI.ReasoningItemSummaryItem),
-                jsonSerializerContext).ConfigureAwait(false)) as global::tryAGI.OpenAI.ReasoningItemSummaryItem;
+                typeof(global::tryAGI.OpenAI.OutputMessageContent),
+                jsonSerializerContext).ConfigureAwait(false)) as global::tryAGI.OpenAI.OutputMessageContent?;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::tryAGI.OpenAI.ReasoningItemSummaryItem?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::tryAGI.OpenAI.OutputMessageContent?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::tryAGI.OpenAI.ReasoningItemSummaryItem?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::tryAGI.OpenAI.OutputMessageContent?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

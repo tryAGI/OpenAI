@@ -9,8 +9,10 @@ namespace tryAGI.OpenAI
     public sealed partial class ConversationParam
     {
         /// <summary>
-        /// The unique ID of the conversation.
+        /// The unique ID of the conversation.<br/>
+        /// Example: conv_123
         /// </summary>
+        /// <example>conv_123</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
@@ -25,7 +27,8 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="ConversationParam" /> class.
         /// </summary>
         /// <param name="id">
-        /// The unique ID of the conversation.
+        /// The unique ID of the conversation.<br/>
+        /// Example: conv_123
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

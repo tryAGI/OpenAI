@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputContent> Content { get; set; }
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputMessageContent> Content { get; set; }
 
         /// <summary>
         /// The unique ID of the output message.
@@ -74,7 +74,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputMessage(
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputContent> content,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputMessageContent> content,
             string id,
             global::tryAGI.OpenAI.OutputMessageStatus status,
             global::tryAGI.OpenAI.OutputMessageRole role,
