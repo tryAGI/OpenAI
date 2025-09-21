@@ -4,14 +4,14 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The type of the item. Always `mcp_tool_call`.
+    /// The type of the item. Always `mcp_call`.
     /// </summary>
     public enum RealtimeMCPToolCallType
     {
         /// <summary>
         /// 
         /// </summary>
-        McpToolCall,
+        McpCall,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                RealtimeMCPToolCallType.McpToolCall => "mcp_tool_call",
+                RealtimeMCPToolCallType.McpCall => "mcp_call",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "mcp_tool_call" => RealtimeMCPToolCallType.McpToolCall,
+                "mcp_call" => RealtimeMCPToolCallType.McpCall,
                 _ => null,
             };
         }

@@ -55,7 +55,7 @@ namespace tryAGI.OpenAI
         public required string ServerLabel { get; set; }
 
         /// <summary>
-        /// The type of the item. Always `mcp_tool_call`.
+        /// The type of the item. Always `mcp_call`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeMCPToolCallTypeJsonConverter))]
@@ -90,7 +90,7 @@ namespace tryAGI.OpenAI
         /// The label of the MCP server running the tool.
         /// </param>
         /// <param name="type">
-        /// The type of the item. Always `mcp_tool_call`.
+        /// The type of the item. Always `mcp_call`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
