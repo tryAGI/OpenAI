@@ -22195,9 +22195,9 @@ components:
           description: The label of the MCP server running the tool.
         type:
           enum:
-            - mcp_tool_call
+            - mcp_call
           type: string
-          description: The type of the item. Always `mcp_tool_call`.
+          description: The type of the item. Always `mcp_call`.
           x-stainless-const: true
       description: "A Realtime item representing an invocation of a tool on an MCP server.\n"
     RealtimeMCPToolExecutionError:
@@ -32990,6 +32990,15 @@ x-oaiMeta:
           path: <auto>
           type: object
         - key: RealtimeServerEventInputAudioBufferTimeoutTriggered
+          path: <auto>
+          type: object
+        - key: RealtimeServerEventOutputAudioBufferStarted
+          path: <auto>
+          type: object
+        - key: RealtimeServerEventOutputAudioBufferStopped
+          path: <auto>
+          type: object
+        - key: RealtimeServerEventOutputAudioBufferCleared
           path: <auto>
           type: object
         - key: RealtimeServerEventResponseCreated
