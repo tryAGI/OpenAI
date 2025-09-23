@@ -2178,7 +2178,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ComputerEnvironment1? Type538 { get; set; }
+        public global::tryAGI.OpenAI.ComputerEnvironment? Type538 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -3062,7 +3062,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateConversationRequest? Type759 { get; set; }
+        public global::tryAGI.OpenAI.CreateConversationBody? Type759 { get; set; }
         /// <summary>
         /// 
         /// </summary>
