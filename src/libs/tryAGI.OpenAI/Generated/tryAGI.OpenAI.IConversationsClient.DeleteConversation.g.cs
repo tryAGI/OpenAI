@@ -6,7 +6,7 @@ namespace tryAGI.OpenAI
     {
         /// <summary>
         /// Delete a conversation<br/>
-        /// Delete a conversation with the given ID.
+        /// Delete a conversation. Items in the conversation will not be deleted.
         /// </summary>
         /// <param name="conversationId">
         /// Example: conv_123

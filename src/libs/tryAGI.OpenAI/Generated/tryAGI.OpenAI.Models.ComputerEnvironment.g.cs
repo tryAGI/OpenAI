@@ -6,7 +6,7 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// 
     /// </summary>
-    public enum ComputerEnvironment1
+    public enum ComputerEnvironment
     {
         /// <summary>
         /// 
@@ -33,35 +33,35 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class ComputerEnvironment1Extensions
+    public static class ComputerEnvironmentExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this ComputerEnvironment1 value)
+        public static string ToValueString(this ComputerEnvironment value)
         {
             return value switch
             {
-                ComputerEnvironment1.Windows => "windows",
-                ComputerEnvironment1.Mac => "mac",
-                ComputerEnvironment1.Linux => "linux",
-                ComputerEnvironment1.Ubuntu => "ubuntu",
-                ComputerEnvironment1.Browser => "browser",
+                ComputerEnvironment.Windows => "windows",
+                ComputerEnvironment.Mac => "mac",
+                ComputerEnvironment.Linux => "linux",
+                ComputerEnvironment.Ubuntu => "ubuntu",
+                ComputerEnvironment.Browser => "browser",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ComputerEnvironment1? ToEnum(string value)
+        public static ComputerEnvironment? ToEnum(string value)
         {
             return value switch
             {
-                "windows" => ComputerEnvironment1.Windows,
-                "mac" => ComputerEnvironment1.Mac,
-                "linux" => ComputerEnvironment1.Linux,
-                "ubuntu" => ComputerEnvironment1.Ubuntu,
-                "browser" => ComputerEnvironment1.Browser,
+                "windows" => ComputerEnvironment.Windows,
+                "mac" => ComputerEnvironment.Mac,
+                "linux" => ComputerEnvironment.Linux,
+                "ubuntu" => ComputerEnvironment.Ubuntu,
+                "browser" => ComputerEnvironment.Browser,
                 _ => null,
             };
         }

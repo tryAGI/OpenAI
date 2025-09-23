@@ -6,7 +6,7 @@ namespace tryAGI.OpenAI
     {
         /// <summary>
         /// Retrieve a conversation<br/>
-        /// Get a conversation with the given ID.
+        /// Get a conversation
         /// </summary>
         /// <param name="conversationId">
         /// Example: conv_123

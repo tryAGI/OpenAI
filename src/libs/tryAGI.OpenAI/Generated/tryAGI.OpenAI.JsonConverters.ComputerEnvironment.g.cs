@@ -3,10 +3,10 @@
 namespace tryAGI.OpenAI.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class ComputerEnvironment1NullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::tryAGI.OpenAI.ComputerEnvironment1?>
+    public sealed class ComputerEnvironmentJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::tryAGI.OpenAI.ComputerEnvironment>
     {
         /// <inheritdoc />
-        public override global::tryAGI.OpenAI.ComputerEnvironment1? Read(
+        public override global::tryAGI.OpenAI.ComputerEnvironment Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::tryAGI.OpenAI.ComputerEnvironment1Extensions.ToEnum(stringValue);
+                        return global::tryAGI.OpenAI.ComputerEnvironmentExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace tryAGI.OpenAI.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::tryAGI.OpenAI.ComputerEnvironment1)numValue;
+                    return (global::tryAGI.OpenAI.ComputerEnvironment)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::tryAGI.OpenAI.ComputerEnvironment1?);
+                    return default(global::tryAGI.OpenAI.ComputerEnvironment);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,19 +42,12 @@ namespace tryAGI.OpenAI.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::tryAGI.OpenAI.ComputerEnvironment1? value,
+            global::tryAGI.OpenAI.ComputerEnvironment value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            if (value == null)
-            {
-                writer.WriteNullValue();
-            }
-            else
-            {
-                writer.WriteStringValue(global::tryAGI.OpenAI.ComputerEnvironment1Extensions.ToValueString(value.Value));
-            }
+            writer.WriteStringValue(global::tryAGI.OpenAI.ComputerEnvironmentExtensions.ToValueString(value));
         }
     }
 }

@@ -26,9 +26,9 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("environment")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ComputerEnvironment1JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ComputerEnvironmentJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ComputerEnvironment1 Environment { get; set; }
+        public required global::tryAGI.OpenAI.ComputerEnvironment Environment { get; set; }
 
         /// <summary>
         /// The type of the computer use tool. Always `computer_use_preview`.<br/>
@@ -65,7 +65,7 @@ namespace tryAGI.OpenAI
         public ComputerUsePreviewTool(
             int displayHeight,
             int displayWidth,
-            global::tryAGI.OpenAI.ComputerEnvironment1 environment,
+            global::tryAGI.OpenAI.ComputerEnvironment environment,
             global::tryAGI.OpenAI.ComputerUsePreviewToolType type = global::tryAGI.OpenAI.ComputerUsePreviewToolType.ComputerUsePreview)
         {
             this.DisplayHeight = displayHeight;
