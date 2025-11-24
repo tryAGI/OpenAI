@@ -28,9 +28,9 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="System.Net.ServerSentEvents" Version="9.0.10" />
+    <PackageReference Include="System.Net.ServerSentEvents" Version="10.0.0" />
     <PackageReference Include="Tiktoken" Version="2.2.0" />
-    <PackageReference Include="System.Text.Json" Version="9.0.10" />
+    <PackageReference Include="System.Text.Json" Version="10.0.0" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net4.6.2'">
