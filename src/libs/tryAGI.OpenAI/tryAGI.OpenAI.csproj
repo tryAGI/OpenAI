@@ -34,7 +34,7 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net4.6.2'">
-    <PackageReference Include="Microsoft.NET.ILLink.Tasks" Version="8.0.19" />
+    <PackageReference Include="Microsoft.NET.ILLink.Tasks" Version="10.0.2" />
     <Reference Include="System.Net.Http" />
   </ItemGroup>
 
