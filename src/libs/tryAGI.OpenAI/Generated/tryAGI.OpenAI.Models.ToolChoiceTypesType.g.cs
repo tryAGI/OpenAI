@@ -5,11 +5,13 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// The type of hosted tool the model should to use. Learn more about<br/>
-    /// [built-in tools](https://platform.openai.com/docs/guides/tools).<br/>
+    /// [built-in tools](/docs/guides/tools).<br/>
     /// Allowed values are:<br/>
     /// - `file_search`<br/>
     /// - `web_search_preview`<br/>
+    /// - `computer`<br/>
     /// - `computer_use_preview`<br/>
+    /// - `computer_use`<br/>
     /// - `code_interpreter`<br/>
     /// - `image_generation`
     /// </summary>
@@ -26,7 +28,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Computer,
+        /// <summary>
+        /// 
+        /// </summary>
         ComputerUsePreview,
+        /// <summary>
+        /// 
+        /// </summary>
+        ComputerUse,
         /// <summary>
         /// 
         /// </summary>
@@ -55,7 +65,9 @@ namespace tryAGI.OpenAI
             {
                 ToolChoiceTypesType.FileSearch => "file_search",
                 ToolChoiceTypesType.WebSearchPreview => "web_search_preview",
+                ToolChoiceTypesType.Computer => "computer",
                 ToolChoiceTypesType.ComputerUsePreview => "computer_use_preview",
+                ToolChoiceTypesType.ComputerUse => "computer_use",
                 ToolChoiceTypesType.WebSearchPreview20250311 => "web_search_preview_2025_03_11",
                 ToolChoiceTypesType.ImageGeneration => "image_generation",
                 ToolChoiceTypesType.CodeInterpreter => "code_interpreter",
@@ -71,7 +83,9 @@ namespace tryAGI.OpenAI
             {
                 "file_search" => ToolChoiceTypesType.FileSearch,
                 "web_search_preview" => ToolChoiceTypesType.WebSearchPreview,
+                "computer" => ToolChoiceTypesType.Computer,
                 "computer_use_preview" => ToolChoiceTypesType.ComputerUsePreview,
+                "computer_use" => ToolChoiceTypesType.ComputerUse,
                 "web_search_preview_2025_03_11" => ToolChoiceTypesType.WebSearchPreview20250311,
                 "image_generation" => ToolChoiceTypesType.ImageGeneration,
                 "code_interpreter" => ToolChoiceTypesType.CodeInterpreter,

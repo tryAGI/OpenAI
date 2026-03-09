@@ -5,7 +5,8 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// The intended purpose of the uploaded file.<br/>
-    /// See the [documentation on File purposes](https://platform.openai.com/docs/api-reference/files/create#files-create-purpose).
+    /// See the [documentation on File<br/>
+    /// purposes](/docs/api-reference/files/create#files-create-purpose).
     /// </summary>
     public enum CreateUploadRequestPurpose
     {

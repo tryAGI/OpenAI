@@ -10,22 +10,72 @@ namespace tryAGI.OpenAI
     public readonly partial struct ChatCompletionRequestUserMessageContentPart : global::System.IEquatable<ChatCompletionRequestUserMessageContentPart>
     {
         /// <summary>
-        /// Learn about [text inputs](https://platform.openai.com/docs/guides/text-generation).
+        /// Learn about [text inputs](/docs/guides/text-generation).
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText? Text { get; init; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText? TextContentPart { get; init; }
 #else
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText? Text { get; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText? TextContentPart { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextContentPart))]
 #endif
-        public bool IsText => Text != null;
+        public bool IsTextContentPart => TextContentPart != null;
 
+        /// <summary>
+        /// Learn about [image inputs](/docs/guides/vision).
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImage? ImageContentPart { get; init; }
+#else
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImage? ImageContentPart { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageContentPart))]
+#endif
+        public bool IsImageContentPart => ImageContentPart != null;
+
+        /// <summary>
+        /// Learn about [audio inputs](/docs/guides/audio).
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudio? AudioContentPart { get; init; }
+#else
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudio? AudioContentPart { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AudioContentPart))]
+#endif
+        public bool IsAudioContentPart => AudioContentPart != null;
+
+        /// <summary>
+        /// Learn about [file inputs](/docs/guides/text) for text generation.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFile? FileContentPart { get; init; }
+#else
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFile? FileContentPart { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileContentPart))]
+#endif
+        public bool IsFileContentPart => FileContentPart != null;
         /// <summary>
         /// 
         /// </summary>
@@ -34,32 +84,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText?(ChatCompletionRequestUserMessageContentPart @this) => @this.Text;
+        public static implicit operator global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText?(ChatCompletionRequestUserMessageContentPart @this) => @this.TextContentPart;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionRequestUserMessageContentPart(global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText? value)
         {
-            Text = value;
+            TextContentPart = value;
         }
-
-        /// <summary>
-        /// Learn about [image inputs](https://platform.openai.com/docs/guides/vision).
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImage? Image { get; init; }
-#else
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImage? Image { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
-#endif
-        public bool IsImage => Image != null;
 
         /// <summary>
         /// 
@@ -69,32 +102,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImage?(ChatCompletionRequestUserMessageContentPart @this) => @this.Image;
+        public static implicit operator global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImage?(ChatCompletionRequestUserMessageContentPart @this) => @this.ImageContentPart;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionRequestUserMessageContentPart(global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImage? value)
         {
-            Image = value;
+            ImageContentPart = value;
         }
-
-        /// <summary>
-        /// Learn about [audio inputs](https://platform.openai.com/docs/guides/audio).
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudio? Audio { get; init; }
-#else
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudio? Audio { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Audio))]
-#endif
-        public bool IsAudio => Audio != null;
 
         /// <summary>
         /// 
@@ -104,32 +120,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudio?(ChatCompletionRequestUserMessageContentPart @this) => @this.Audio;
+        public static implicit operator global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudio?(ChatCompletionRequestUserMessageContentPart @this) => @this.AudioContentPart;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionRequestUserMessageContentPart(global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudio? value)
         {
-            Audio = value;
+            AudioContentPart = value;
         }
-
-        /// <summary>
-        /// Learn about [file inputs](https://platform.openai.com/docs/guides/text) for text generation.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFile? File { get; init; }
-#else
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFile? File { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
-#endif
-        public bool IsFile => File != null;
 
         /// <summary>
         /// 
@@ -139,50 +138,50 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFile?(ChatCompletionRequestUserMessageContentPart @this) => @this.File;
+        public static implicit operator global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFile?(ChatCompletionRequestUserMessageContentPart @this) => @this.FileContentPart;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionRequestUserMessageContentPart(global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFile? value)
         {
-            File = value;
+            FileContentPart = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionRequestUserMessageContentPart(
-            global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText? text,
-            global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImage? image,
-            global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudio? audio,
-            global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFile? file
+            global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText? textContentPart,
+            global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImage? imageContentPart,
+            global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudio? audioContentPart,
+            global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFile? fileContentPart
             )
         {
-            Text = text;
-            Image = image;
-            Audio = audio;
-            File = file;
+            TextContentPart = textContentPart;
+            ImageContentPart = imageContentPart;
+            AudioContentPart = audioContentPart;
+            FileContentPart = fileContentPart;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            File as object ??
-            Audio as object ??
-            Image as object ??
-            Text as object 
+            FileContentPart as object ??
+            AudioContentPart as object ??
+            ImageContentPart as object ??
+            TextContentPart as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Text?.ToString() ??
-            Image?.ToString() ??
-            Audio?.ToString() ??
-            File?.ToString() 
+            TextContentPart?.ToString() ??
+            ImageContentPart?.ToString() ??
+            AudioContentPart?.ToString() ??
+            FileContentPart?.ToString() 
             ;
 
         /// <summary>
@@ -190,17 +189,17 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsText || IsImage || IsAudio || IsFile;
+            return IsTextContentPart && !IsImageContentPart && !IsAudioContentPart && !IsFileContentPart || !IsTextContentPart && IsImageContentPart && !IsAudioContentPart && !IsFileContentPart || !IsTextContentPart && !IsImageContentPart && IsAudioContentPart && !IsFileContentPart || !IsTextContentPart && !IsImageContentPart && !IsAudioContentPart && IsFileContentPart;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText?, TResult>? text = null,
-            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImage?, TResult>? image = null,
-            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudio?, TResult>? audio = null,
-            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFile?, TResult>? file = null,
+            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText?, TResult>? textContentPart = null,
+            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImage?, TResult>? imageContentPart = null,
+            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudio?, TResult>? audioContentPart = null,
+            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFile?, TResult>? fileContentPart = null,
             bool validate = true)
         {
             if (validate)
@@ -208,21 +207,21 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (IsTextContentPart && textContentPart != null)
             {
-                return text(Text!);
+                return textContentPart(TextContentPart!);
             }
-            else if (IsImage && image != null)
+            else if (IsImageContentPart && imageContentPart != null)
             {
-                return image(Image!);
+                return imageContentPart(ImageContentPart!);
             }
-            else if (IsAudio && audio != null)
+            else if (IsAudioContentPart && audioContentPart != null)
             {
-                return audio(Audio!);
+                return audioContentPart(AudioContentPart!);
             }
-            else if (IsFile && file != null)
+            else if (IsFileContentPart && fileContentPart != null)
             {
-                return file(File!);
+                return fileContentPart(FileContentPart!);
             }
 
             return default(TResult);
@@ -232,10 +231,10 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText?>? text = null,
-            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImage?>? image = null,
-            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudio?>? audio = null,
-            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFile?>? file = null,
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText?>? textContentPart = null,
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImage?>? imageContentPart = null,
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudio?>? audioContentPart = null,
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFile?>? fileContentPart = null,
             bool validate = true)
         {
             if (validate)
@@ -243,21 +242,21 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsText)
+            if (IsTextContentPart)
             {
-                text?.Invoke(Text!);
+                textContentPart?.Invoke(TextContentPart!);
             }
-            else if (IsImage)
+            else if (IsImageContentPart)
             {
-                image?.Invoke(Image!);
+                imageContentPart?.Invoke(ImageContentPart!);
             }
-            else if (IsAudio)
+            else if (IsAudioContentPart)
             {
-                audio?.Invoke(Audio!);
+                audioContentPart?.Invoke(AudioContentPart!);
             }
-            else if (IsFile)
+            else if (IsFileContentPart)
             {
-                file?.Invoke(File!);
+                fileContentPart?.Invoke(FileContentPart!);
             }
         }
 
@@ -268,13 +267,13 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                Text,
+                TextContentPart,
                 typeof(global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText),
-                Image,
+                ImageContentPart,
                 typeof(global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImage),
-                Audio,
+                AudioContentPart,
                 typeof(global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudio),
-                File,
+                FileContentPart,
                 typeof(global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFile),
             };
             const int offset = unchecked((int)2166136261);
@@ -292,10 +291,10 @@ namespace tryAGI.OpenAI
         public bool Equals(ChatCompletionRequestUserMessageContentPart other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImage?>.Default.Equals(Image, other.Image) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudio?>.Default.Equals(Audio, other.Audio) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFile?>.Default.Equals(File, other.File) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText?>.Default.Equals(TextContentPart, other.TextContentPart) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImage?>.Default.Equals(ImageContentPart, other.ImageContentPart) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudio?>.Default.Equals(AudioContentPart, other.AudioContentPart) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFile?>.Default.Equals(FileContentPart, other.FileContentPart) 
                 ;
         }
 

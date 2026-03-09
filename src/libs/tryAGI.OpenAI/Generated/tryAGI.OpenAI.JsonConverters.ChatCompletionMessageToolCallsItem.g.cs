@@ -17,41 +17,41 @@ namespace tryAGI.OpenAI.JsonConverters
 
             var
             readerCopy = reader;
-            global::tryAGI.OpenAI.ChatCompletionMessageToolCall? call = default;
+            global::tryAGI.OpenAI.ChatCompletionMessageToolCall? function = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ChatCompletionMessageToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ChatCompletionMessageToolCall> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ChatCompletionMessageToolCall).Name}");
-                call = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                function = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall? customCall = default;
+            global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall? custom = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall).Name}");
-                customCall = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                custom = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             var result = new global::tryAGI.OpenAI.ChatCompletionMessageToolCallsItem(
-                call,
-                customCall
+                function,
+                custom
                 );
 
-            if (call != null)
+            if (function != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ChatCompletionMessageToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ChatCompletionMessageToolCall> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ChatCompletionMessageToolCall).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            else if (customCall != null)
+            else if (custom != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall).Name}");
@@ -70,17 +70,17 @@ namespace tryAGI.OpenAI.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsCall)
+            if (value.IsFunction)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ChatCompletionMessageToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ChatCompletionMessageToolCall?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ChatCompletionMessageToolCall).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Call, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Function, typeInfo);
             }
-            else if (value.IsCustomCall)
+            else if (value.IsCustom)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomCall, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Custom, typeInfo);
             }
         }
     }

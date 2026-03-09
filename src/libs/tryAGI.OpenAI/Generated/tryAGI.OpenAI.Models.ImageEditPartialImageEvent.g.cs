@@ -9,19 +9,18 @@ namespace tryAGI.OpenAI
     public sealed partial class ImageEditPartialImageEvent
     {
         /// <summary>
+        /// The type of the event. Always `image_edit.partial_image`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImageEditPartialImageEventTypeJsonConverter))]
+        public global::tryAGI.OpenAI.ImageEditPartialImageEventType Type { get; set; }
+
+        /// <summary>
         /// Base64-encoded partial image data, suitable for rendering as an image.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("b64_json")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string B64Json { get; set; }
-
-        /// <summary>
-        /// The background setting for the requested edited image.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("background")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImageEditPartialImageEventBackgroundJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ImageEditPartialImageEventBackground Background { get; set; }
 
         /// <summary>
         /// The Unix timestamp when the event was created.
@@ -30,6 +29,30 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTimeOffset CreatedAt { get; set; }
+
+        /// <summary>
+        /// The size of the requested edited image.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("size")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImageEditPartialImageEventSizeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.ImageEditPartialImageEventSize Size { get; set; }
+
+        /// <summary>
+        /// The quality setting for the requested edited image.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("quality")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImageEditPartialImageEventQualityJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.ImageEditPartialImageEventQuality Quality { get; set; }
+
+        /// <summary>
+        /// The background setting for the requested edited image.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("background")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImageEditPartialImageEventBackgroundJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.ImageEditPartialImageEventBackground Background { get; set; }
 
         /// <summary>
         /// The output format for the requested edited image.
@@ -47,29 +70,6 @@ namespace tryAGI.OpenAI
         public required int PartialImageIndex { get; set; }
 
         /// <summary>
-        /// The quality setting for the requested edited image.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("quality")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImageEditPartialImageEventQualityJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ImageEditPartialImageEventQuality Quality { get; set; }
-
-        /// <summary>
-        /// The size of the requested edited image.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("size")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImageEditPartialImageEventSizeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ImageEditPartialImageEventSize Size { get; set; }
-
-        /// <summary>
-        /// The type of the event. Always `image_edit.partial_image`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImageEditPartialImageEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ImageEditPartialImageEventType Type { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -78,14 +78,23 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageEditPartialImageEvent" /> class.
         /// </summary>
+        /// <param name="type">
+        /// The type of the event. Always `image_edit.partial_image`.
+        /// </param>
         /// <param name="b64Json">
         /// Base64-encoded partial image data, suitable for rendering as an image.
         /// </param>
-        /// <param name="background">
-        /// The background setting for the requested edited image.
-        /// </param>
         /// <param name="createdAt">
         /// The Unix timestamp when the event was created.
+        /// </param>
+        /// <param name="size">
+        /// The size of the requested edited image.
+        /// </param>
+        /// <param name="quality">
+        /// The quality setting for the requested edited image.
+        /// </param>
+        /// <param name="background">
+        /// The background setting for the requested edited image.
         /// </param>
         /// <param name="outputFormat">
         /// The output format for the requested edited image.
@@ -93,35 +102,26 @@ namespace tryAGI.OpenAI
         /// <param name="partialImageIndex">
         /// 0-based index for the partial image (streaming).
         /// </param>
-        /// <param name="quality">
-        /// The quality setting for the requested edited image.
-        /// </param>
-        /// <param name="size">
-        /// The size of the requested edited image.
-        /// </param>
-        /// <param name="type">
-        /// The type of the event. Always `image_edit.partial_image`.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ImageEditPartialImageEvent(
             string b64Json,
-            global::tryAGI.OpenAI.ImageEditPartialImageEventBackground background,
             global::System.DateTimeOffset createdAt,
+            global::tryAGI.OpenAI.ImageEditPartialImageEventSize size,
+            global::tryAGI.OpenAI.ImageEditPartialImageEventQuality quality,
+            global::tryAGI.OpenAI.ImageEditPartialImageEventBackground background,
             global::tryAGI.OpenAI.ImageEditPartialImageEventOutputFormat outputFormat,
             int partialImageIndex,
-            global::tryAGI.OpenAI.ImageEditPartialImageEventQuality quality,
-            global::tryAGI.OpenAI.ImageEditPartialImageEventSize size,
             global::tryAGI.OpenAI.ImageEditPartialImageEventType type)
         {
             this.B64Json = b64Json ?? throw new global::System.ArgumentNullException(nameof(b64Json));
-            this.Background = background;
             this.CreatedAt = createdAt;
+            this.Size = size;
+            this.Quality = quality;
+            this.Background = background;
             this.OutputFormat = outputFormat;
             this.PartialImageIndex = partialImageIndex;
-            this.Quality = quality;
-            this.Size = size;
             this.Type = type;
         }
 

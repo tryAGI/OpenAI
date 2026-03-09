@@ -30,7 +30,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// List checkpoint permissions<br/>
         /// **NOTE:** This endpoint requires an [admin API key](../admin-api-keys).<br/>
         /// Organization owners can use this endpoint to view all permissions for a fine-tuned model checkpoint.
         /// </summary>
@@ -68,10 +67,10 @@ namespace tryAGI.OpenAI
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/fine_tuning/checkpoints/{fineTunedModelCheckpoint}/permissions",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("project_id", projectId) 
-                .AddOptionalParameter("after", after) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("project_id", projectId)
+                .AddOptionalParameter("after", after)
+                .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("order", order?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

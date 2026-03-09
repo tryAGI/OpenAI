@@ -22,7 +22,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Upload certificate<br/>
         /// Upload a certificate to the organization. This does **not** automatically activate the certificate.<br/>
         /// Organizations can upload up to 50 certificates.
         /// </summary>
@@ -30,6 +29,7 @@ namespace tryAGI.OpenAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Certificate> UploadCertificateAsync(
+
             global::tryAGI.OpenAI.UploadCertificateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -168,15 +168,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Upload certificate<br/>
         /// Upload a certificate to the organization. This does **not** automatically activate the certificate.<br/>
         /// Organizations can upload up to 50 certificates.
         /// </summary>
-        /// <param name="content">
-        /// The certificate content in PEM format
-        /// </param>
         /// <param name="name">
         /// An optional name for the certificate
+        /// </param>
+        /// <param name="content">
+        /// The certificate content in PEM format
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -187,8 +186,8 @@ namespace tryAGI.OpenAI
         {
             var __request = new global::tryAGI.OpenAI.UploadCertificateRequest
             {
-                Content = content,
                 Name = name,
+                Content = content,
             };
 
             return await UploadCertificateAsync(

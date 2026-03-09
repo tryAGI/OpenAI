@@ -5,7 +5,6 @@ namespace tryAGI.OpenAI
     public partial interface IConversationsClient
     {
         /// <summary>
-        /// Delete a conversation<br/>
         /// Delete a conversation. Items in the conversation will not be deleted.
         /// </summary>
         /// <param name="conversationId">

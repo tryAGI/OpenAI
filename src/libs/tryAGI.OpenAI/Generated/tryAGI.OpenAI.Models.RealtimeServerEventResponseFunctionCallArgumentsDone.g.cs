@@ -10,25 +10,25 @@ namespace tryAGI.OpenAI
     public sealed partial class RealtimeServerEventResponseFunctionCallArgumentsDone
     {
         /// <summary>
-        /// The final arguments as a JSON string.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Arguments { get; set; }
-
-        /// <summary>
-        /// The ID of the function call.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string CallId { get; set; }
-
-        /// <summary>
         /// The unique ID of the server event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string EventId { get; set; }
+
+        /// <summary>
+        /// The event type, must be `response.function_call_arguments.done`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventResponseFunctionCallArgumentsDoneTypeJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDoneType Type { get; set; }
+
+        /// <summary>
+        /// The ID of the response.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("response_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ResponseId { get; set; }
 
         /// <summary>
         /// The ID of the function call item.
@@ -45,18 +45,25 @@ namespace tryAGI.OpenAI
         public required int OutputIndex { get; set; }
 
         /// <summary>
-        /// The ID of the response.
+        /// The ID of the function call.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("response_id")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ResponseId { get; set; }
+        public required string CallId { get; set; }
 
         /// <summary>
-        /// The event type, must be `response.function_call_arguments.done`.
+        /// The name of the function that was called.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventResponseFunctionCallArgumentsDoneTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDoneType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
+
+        /// <summary>
+        /// The final arguments as a JSON string.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Arguments { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -67,14 +74,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeServerEventResponseFunctionCallArgumentsDone" /> class.
         /// </summary>
-        /// <param name="arguments">
-        /// The final arguments as a JSON string.
-        /// </param>
-        /// <param name="callId">
-        /// The ID of the function call.
-        /// </param>
         /// <param name="eventId">
         /// The unique ID of the server event.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `response.function_call_arguments.done`.
+        /// </param>
+        /// <param name="responseId">
+        /// The ID of the response.
         /// </param>
         /// <param name="itemId">
         /// The ID of the function call item.
@@ -82,30 +89,35 @@ namespace tryAGI.OpenAI
         /// <param name="outputIndex">
         /// The index of the output item in the response.
         /// </param>
-        /// <param name="responseId">
-        /// The ID of the response.
+        /// <param name="callId">
+        /// The ID of the function call.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `response.function_call_arguments.done`.
+        /// <param name="name">
+        /// The name of the function that was called.
+        /// </param>
+        /// <param name="arguments">
+        /// The final arguments as a JSON string.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeServerEventResponseFunctionCallArgumentsDone(
-            string arguments,
-            string callId,
             string eventId,
+            string responseId,
             string itemId,
             int outputIndex,
-            string responseId,
+            string callId,
+            string name,
+            string arguments,
             global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDoneType type)
         {
-            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
-            this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
+            this.ResponseId = responseId ?? throw new global::System.ArgumentNullException(nameof(responseId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
-            this.ResponseId = responseId ?? throw new global::System.ArgumentNullException(nameof(responseId));
+            this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
             this.Type = type;
         }
 

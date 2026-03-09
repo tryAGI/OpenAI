@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
             ref int? limit,
             ref global::tryAGI.OpenAI.ListInputItemsOrder? order,
             ref string? after,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include);
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.IncludeEnum>? include);
         partial void PrepareListInputItemsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
             int? limit,
             global::tryAGI.OpenAI.ListInputItemsOrder? order,
             string? after,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include);
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.IncludeEnum>? include);
         partial void ProcessListInputItemsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -30,7 +30,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// List input items<br/>
         /// Returns a list of input items for a given response.
         /// </summary>
         /// <param name="responseId"></param>
@@ -47,7 +46,7 @@ namespace tryAGI.OpenAI
             int? limit = default,
             global::tryAGI.OpenAI.ListInputItemsOrder? order = default,
             string? after = default,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include = default,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.IncludeEnum>? include = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -63,10 +62,10 @@ namespace tryAGI.OpenAI
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/responses/{responseId}/input_items",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("order", order?.ToValueString()) 
-                .AddOptionalParameter("after", after) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("order", order?.ToValueString())
+                .AddOptionalParameter("after", after)
                 .AddOptionalParameter("include", include, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();

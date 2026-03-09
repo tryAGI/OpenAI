@@ -17,41 +17,41 @@ namespace tryAGI.OpenAI.JsonConverters
 
             var
             readerCopy = reader;
-            global::tryAGI.OpenAI.SpeechAudioDeltaEvent? audioDelta = default;
+            global::tryAGI.OpenAI.SpeechAudioDeltaEvent? speechAudioDelta = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SpeechAudioDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SpeechAudioDeltaEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.SpeechAudioDeltaEvent).Name}");
-                audioDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                speechAudioDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::tryAGI.OpenAI.SpeechAudioDoneEvent? audioDone = default;
+            global::tryAGI.OpenAI.SpeechAudioDoneEvent? speechAudioDone = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SpeechAudioDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SpeechAudioDoneEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.SpeechAudioDoneEvent).Name}");
-                audioDone = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                speechAudioDone = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             var result = new global::tryAGI.OpenAI.CreateSpeechResponseStreamEvent(
-                audioDelta,
-                audioDone
+                speechAudioDelta,
+                speechAudioDone
                 );
 
-            if (audioDelta != null)
+            if (speechAudioDelta != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SpeechAudioDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SpeechAudioDeltaEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.SpeechAudioDeltaEvent).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            else if (audioDone != null)
+            else if (speechAudioDone != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SpeechAudioDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SpeechAudioDoneEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.SpeechAudioDoneEvent).Name}");
@@ -70,17 +70,17 @@ namespace tryAGI.OpenAI.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsAudioDelta)
+            if (value.IsSpeechAudioDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SpeechAudioDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SpeechAudioDeltaEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.SpeechAudioDeltaEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AudioDelta, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SpeechAudioDelta, typeInfo);
             }
-            else if (value.IsAudioDone)
+            else if (value.IsSpeechAudioDone)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SpeechAudioDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SpeechAudioDoneEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.SpeechAudioDoneEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AudioDone, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SpeechAudioDone, typeInfo);
             }
         }
     }

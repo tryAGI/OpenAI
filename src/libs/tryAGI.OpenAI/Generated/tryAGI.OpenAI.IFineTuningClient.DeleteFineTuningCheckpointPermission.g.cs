@@ -5,7 +5,6 @@ namespace tryAGI.OpenAI
     public partial interface IFineTuningClient
     {
         /// <summary>
-        /// Delete checkpoint permission<br/>
         /// **NOTE:** This endpoint requires an [admin API key](../admin-api-keys).<br/>
         /// Organization owners can use this endpoint to delete a permission for a fine-tuned model checkpoint.
         /// </summary>

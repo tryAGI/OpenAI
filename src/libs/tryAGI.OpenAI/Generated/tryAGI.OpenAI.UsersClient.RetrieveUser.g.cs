@@ -22,7 +22,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Retrieve user<br/>
         /// Retrieves a user by their identifier.
         /// </summary>
         /// <param name="userId"></param>

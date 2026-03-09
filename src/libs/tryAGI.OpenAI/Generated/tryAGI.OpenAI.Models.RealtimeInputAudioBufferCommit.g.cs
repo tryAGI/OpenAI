@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Send this event to commit audio bytes to a user message.
+    /// Send this event to commit audio bytes to a user message.<br/>
+    /// Example: {"event_id":"event_789","type":"input_audio_buffer.commit"}
     /// </summary>
     public sealed partial class RealtimeInputAudioBufferCommit
     {

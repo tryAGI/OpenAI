@@ -16,16 +16,16 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RealtimeAudioFormats? Format { get; set; }
 
         /// <summary>
+        /// Configuration of the transcription model.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("transcription")]
+        public global::tryAGI.OpenAI.AudioTranscription? Transcription { get; set; }
+
+        /// <summary>
         /// Configuration for input audio noise reduction.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("noise_reduction")]
         public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAAudioInputNoiseReduction? NoiseReduction { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("transcription")]
-        public global::tryAGI.OpenAI.AudioTranscription? Transcription { get; set; }
 
         /// <summary>
         /// Configuration for turn detection. Can be set to `null` to turn off. Server<br/>
@@ -45,10 +45,12 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="RealtimeTranscriptionSessionCreateResponseGAAudioInput" /> class.
         /// </summary>
         /// <param name="format"></param>
+        /// <param name="transcription">
+        /// Configuration of the transcription model.
+        /// </param>
         /// <param name="noiseReduction">
         /// Configuration for input audio noise reduction.
         /// </param>
-        /// <param name="transcription"></param>
         /// <param name="turnDetection">
         /// Configuration for turn detection. Can be set to `null` to turn off. Server<br/>
         /// VAD means that the model will detect the start and end of speech based on<br/>
@@ -59,13 +61,13 @@ namespace tryAGI.OpenAI
 #endif
         public RealtimeTranscriptionSessionCreateResponseGAAudioInput(
             global::tryAGI.OpenAI.RealtimeAudioFormats? format,
-            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAAudioInputNoiseReduction? noiseReduction,
             global::tryAGI.OpenAI.AudioTranscription? transcription,
+            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAAudioInputNoiseReduction? noiseReduction,
             global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAAudioInputTurnDetection? turnDetection)
         {
             this.Format = format;
-            this.NoiseReduction = noiseReduction;
             this.Transcription = transcription;
+            this.NoiseReduction = noiseReduction;
             this.TurnDetection = turnDetection;
         }
 

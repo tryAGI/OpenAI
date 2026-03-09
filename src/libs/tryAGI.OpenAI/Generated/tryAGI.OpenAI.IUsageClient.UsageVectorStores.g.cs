@@ -5,7 +5,6 @@ namespace tryAGI.OpenAI
     public partial interface IUsageClient
     {
         /// <summary>
-        /// Vector stores<br/>
         /// Get vector stores usage details for the organization.
         /// </summary>
         /// <param name="startTime"></param>

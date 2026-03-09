@@ -9,25 +9,11 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseCustomToolCallInputDoneEvent
     {
         /// <summary>
-        /// The complete input data for the custom tool call.
+        /// The event type identifier.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Input { get; set; }
-
-        /// <summary>
-        /// Unique identifier for the API item associated with this event.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ItemId { get; set; }
-
-        /// <summary>
-        /// The index of the output this event applies to.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("output_index")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int OutputIndex { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseCustomToolCallInputDoneEventTypeJsonConverter))]
+        public global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEventType Type { get; set; }
 
         /// <summary>
         /// The sequence number of this event.
@@ -37,11 +23,25 @@ namespace tryAGI.OpenAI
         public required int SequenceNumber { get; set; }
 
         /// <summary>
-        /// The event type identifier.
+        /// The index of the output this event applies to.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseCustomToolCallInputDoneEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEventType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_index")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int OutputIndex { get; set; }
+
+        /// <summary>
+        /// Unique identifier for the API item associated with this event.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ItemId { get; set; }
+
+        /// <summary>
+        /// The complete input data for the custom tool call.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("input")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Input { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,35 +52,35 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseCustomToolCallInputDoneEvent" /> class.
         /// </summary>
-        /// <param name="input">
-        /// The complete input data for the custom tool call.
-        /// </param>
-        /// <param name="itemId">
-        /// Unique identifier for the API item associated with this event.
-        /// </param>
-        /// <param name="outputIndex">
-        /// The index of the output this event applies to.
+        /// <param name="type">
+        /// The event type identifier.
         /// </param>
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
         /// </param>
-        /// <param name="type">
-        /// The event type identifier.
+        /// <param name="outputIndex">
+        /// The index of the output this event applies to.
+        /// </param>
+        /// <param name="itemId">
+        /// Unique identifier for the API item associated with this event.
+        /// </param>
+        /// <param name="input">
+        /// The complete input data for the custom tool call.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseCustomToolCallInputDoneEvent(
-            string input,
-            string itemId,
-            int outputIndex,
             int sequenceNumber,
+            int outputIndex,
+            string itemId,
+            string input,
             global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEventType type)
         {
-            this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
-            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
-            this.OutputIndex = outputIndex;
             this.SequenceNumber = sequenceNumber;
+            this.OutputIndex = outputIndex;
+            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
+            this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Type = type;
         }
 

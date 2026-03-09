@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Returned when the text value of a "text" content part is done streaming. Also emitted when a Response is interrupted, incomplete, or cancelled.
+    /// Returned when the text value of a "text" content part is done streaming. Also emitted when a Response is interrupted, incomplete, or cancelled.<br/>
+    /// Example: {"event_id":"event_4344","type":"response.text.done","response_id":"resp_001","item_id":"msg_007","output_index":0,"content_index":0,"text":"Sure, I can help with that."}
     /// </summary>
     public sealed partial class RealtimeResponseTextDone
     {

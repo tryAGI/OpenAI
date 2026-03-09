@@ -4,9 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Optional map of values to substitute in for variables in your<br/>
-    /// prompt. The substitution values can either be strings, or other<br/>
-    /// Response input types like images or files.
+    /// 
     /// </summary>
     public sealed partial class ResponsePromptVariables
     {

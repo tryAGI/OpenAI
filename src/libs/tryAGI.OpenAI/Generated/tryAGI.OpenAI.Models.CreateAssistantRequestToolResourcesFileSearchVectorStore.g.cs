@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -9,24 +11,20 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateAssistantRequestToolResourcesFileSearchVectorStore
     {
         /// <summary>
-        /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("chunking_strategy")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyJsonConverter))]
-        public global::tryAGI.OpenAI.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategy? ChunkingStrategy { get; set; }
-
-        /// <summary>
-        /// A list of [file](https://platform.openai.com/docs/api-reference/files) IDs to add to the vector store. There can be a maximum of 10000 files in a vector store.
+        /// A list of [file](/docs/api-reference/files) IDs to add to the vector store. For vector stores created before Nov 2025, there can be a maximum of 10,000 files in a vector store. For vector stores created starting in Nov 2025, the limit is 100,000,000 files.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_ids")]
         public global::System.Collections.Generic.IList<string>? FileIds { get; set; }
 
         /// <summary>
-        /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
-        /// useful for storing additional information about the object in a structured<br/>
-        /// format, and querying for objects via API or the dashboard.<br/>
-        /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
-        /// with a maximum length of 512 characters.
+        /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("chunking_strategy")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyAutoChunkingStrategy, global::tryAGI.OpenAI.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyStaticChunkingStrategy>))]
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyAutoChunkingStrategy, global::tryAGI.OpenAI.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyStaticChunkingStrategy>? ChunkingStrategy { get; set; }
+
+        /// <summary>
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
@@ -40,29 +38,23 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateAssistantRequestToolResourcesFileSearchVectorStore" /> class.
         /// </summary>
+        /// <param name="fileIds">
+        /// A list of [file](/docs/api-reference/files) IDs to add to the vector store. For vector stores created before Nov 2025, there can be a maximum of 10,000 files in a vector store. For vector stores created starting in Nov 2025, the limit is 100,000,000 files.
+        /// </param>
         /// <param name="chunkingStrategy">
         /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
         /// </param>
-        /// <param name="fileIds">
-        /// A list of [file](https://platform.openai.com/docs/api-reference/files) IDs to add to the vector store. There can be a maximum of 10000 files in a vector store.
-        /// </param>
-        /// <param name="metadata">
-        /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
-        /// useful for storing additional information about the object in a structured<br/>
-        /// format, and querying for objects via API or the dashboard.<br/>
-        /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
-        /// with a maximum length of 512 characters.
-        /// </param>
+        /// <param name="metadata"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateAssistantRequestToolResourcesFileSearchVectorStore(
-            global::tryAGI.OpenAI.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategy? chunkingStrategy,
             global::System.Collections.Generic.IList<string>? fileIds,
+            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyAutoChunkingStrategy, global::tryAGI.OpenAI.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyStaticChunkingStrategy>? chunkingStrategy,
             global::System.Collections.Generic.Dictionary<string, string>? metadata)
         {
-            this.ChunkingStrategy = chunkingStrategy;
             this.FileIds = fileIds;
+            this.ChunkingStrategy = chunkingStrategy;
             this.Metadata = metadata;
         }
 

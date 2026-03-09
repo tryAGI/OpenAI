@@ -9,6 +9,12 @@ namespace tryAGI.OpenAI
     public sealed partial class RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError
     {
         /// <summary>
+        /// The type of error.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        public string? Type { get; set; }
+
+        /// <summary>
         /// Error code, if any.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code")]
@@ -27,12 +33,6 @@ namespace tryAGI.OpenAI
         public string? Param { get; set; }
 
         /// <summary>
-        /// The type of error.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -41,6 +41,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError" /> class.
         /// </summary>
+        /// <param name="type">
+        /// The type of error.
+        /// </param>
         /// <param name="code">
         /// Error code, if any.
         /// </param>
@@ -50,22 +53,19 @@ namespace tryAGI.OpenAI
         /// <param name="param">
         /// Parameter related to the error, if any.
         /// </param>
-        /// <param name="type">
-        /// The type of error.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError(
+            string? type,
             string? code,
             string? message,
-            string? param,
-            string? type)
+            string? param)
         {
+            this.Type = type;
             this.Code = code;
             this.Message = message;
             this.Param = param;
-            this.Type = type;
         }
 
         /// <summary>

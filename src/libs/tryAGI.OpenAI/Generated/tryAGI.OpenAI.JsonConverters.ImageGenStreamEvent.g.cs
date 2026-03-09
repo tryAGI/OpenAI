@@ -17,41 +17,41 @@ namespace tryAGI.OpenAI.JsonConverters
 
             var
             readerCopy = reader;
-            global::tryAGI.OpenAI.ImageGenPartialImageEvent? partial = default;
+            global::tryAGI.OpenAI.ImageGenPartialImageEvent? imageGenerationPartialImage = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ImageGenPartialImageEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ImageGenPartialImageEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ImageGenPartialImageEvent).Name}");
-                partial = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                imageGenerationPartialImage = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::tryAGI.OpenAI.ImageGenCompletedEvent? completed = default;
+            global::tryAGI.OpenAI.ImageGenCompletedEvent? imageGenerationCompleted = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ImageGenCompletedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ImageGenCompletedEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ImageGenCompletedEvent).Name}");
-                completed = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                imageGenerationCompleted = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             var result = new global::tryAGI.OpenAI.ImageGenStreamEvent(
-                partial,
-                completed
+                imageGenerationPartialImage,
+                imageGenerationCompleted
                 );
 
-            if (partial != null)
+            if (imageGenerationPartialImage != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ImageGenPartialImageEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ImageGenPartialImageEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ImageGenPartialImageEvent).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            else if (completed != null)
+            else if (imageGenerationCompleted != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ImageGenCompletedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ImageGenCompletedEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ImageGenCompletedEvent).Name}");
@@ -70,17 +70,17 @@ namespace tryAGI.OpenAI.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsPartial)
+            if (value.IsImageGenerationPartialImage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ImageGenPartialImageEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ImageGenPartialImageEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ImageGenPartialImageEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Partial, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageGenerationPartialImage, typeInfo);
             }
-            else if (value.IsCompleted)
+            else if (value.IsImageGenerationCompleted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ImageGenCompletedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ImageGenCompletedEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ImageGenCompletedEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Completed, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageGenerationCompleted, typeInfo);
             }
         }
     }

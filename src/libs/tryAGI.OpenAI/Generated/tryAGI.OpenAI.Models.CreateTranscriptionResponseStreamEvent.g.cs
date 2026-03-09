@@ -10,7 +10,24 @@ namespace tryAGI.OpenAI
     public readonly partial struct CreateTranscriptionResponseStreamEvent : global::System.IEquatable<CreateTranscriptionResponseStreamEvent>
     {
         /// <summary>
-        /// Emitted when there is an additional text delta. This is also the first event emitted when the transcription starts. Only emitted when you [create a transcription](https://platform.openai.com/docs/api-reference/audio/create-transcription) with the `Stream` parameter set to `true`.
+        /// Emitted when a diarized transcription returns a completed segment with speaker information. Only emitted when you [create a transcription](/docs/api-reference/audio/create-transcription) with `stream` set to `true` and `response_format` set to `diarized_json`.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.TranscriptTextSegmentEvent? TranscriptTextSegment { get; init; }
+#else
+        public global::tryAGI.OpenAI.TranscriptTextSegmentEvent? TranscriptTextSegment { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TranscriptTextSegment))]
+#endif
+        public bool IsTranscriptTextSegment => TranscriptTextSegment != null;
+
+        /// <summary>
+        /// Emitted when there is an additional text delta. This is also the first event emitted when the transcription starts. Only emitted when you [create a transcription](/docs/api-reference/audio/create-transcription) with the `Stream` parameter set to `true`.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.TranscriptTextDeltaEvent? TranscriptTextDelta { get; init; }
@@ -25,6 +42,40 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TranscriptTextDelta))]
 #endif
         public bool IsTranscriptTextDelta => TranscriptTextDelta != null;
+
+        /// <summary>
+        /// Emitted when the transcription is complete. Contains the complete transcription text. Only emitted when you [create a transcription](/docs/api-reference/audio/create-transcription) with the `Stream` parameter set to `true`.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.TranscriptTextDoneEvent? TranscriptTextDone { get; init; }
+#else
+        public global::tryAGI.OpenAI.TranscriptTextDoneEvent? TranscriptTextDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TranscriptTextDone))]
+#endif
+        public bool IsTranscriptTextDone => TranscriptTextDone != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator CreateTranscriptionResponseStreamEvent(global::tryAGI.OpenAI.TranscriptTextSegmentEvent value) => new CreateTranscriptionResponseStreamEvent((global::tryAGI.OpenAI.TranscriptTextSegmentEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.TranscriptTextSegmentEvent?(CreateTranscriptionResponseStreamEvent @this) => @this.TranscriptTextSegment;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public CreateTranscriptionResponseStreamEvent(global::tryAGI.OpenAI.TranscriptTextSegmentEvent? value)
+        {
+            TranscriptTextSegment = value;
+        }
 
         /// <summary>
         /// 
@@ -43,23 +94,6 @@ namespace tryAGI.OpenAI
         {
             TranscriptTextDelta = value;
         }
-
-        /// <summary>
-        /// Emitted when the transcription is complete. Contains the complete transcription text. Only emitted when you [create a transcription](https://platform.openai.com/docs/api-reference/audio/create-transcription) with the `Stream` parameter set to `true`.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.TranscriptTextDoneEvent? TranscriptTextDone { get; init; }
-#else
-        public global::tryAGI.OpenAI.TranscriptTextDoneEvent? TranscriptTextDone { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TranscriptTextDone))]
-#endif
-        public bool IsTranscriptTextDone => TranscriptTextDone != null;
 
         /// <summary>
         /// 
@@ -83,10 +117,12 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public CreateTranscriptionResponseStreamEvent(
+            global::tryAGI.OpenAI.TranscriptTextSegmentEvent? transcriptTextSegment,
             global::tryAGI.OpenAI.TranscriptTextDeltaEvent? transcriptTextDelta,
             global::tryAGI.OpenAI.TranscriptTextDoneEvent? transcriptTextDone
             )
         {
+            TranscriptTextSegment = transcriptTextSegment;
             TranscriptTextDelta = transcriptTextDelta;
             TranscriptTextDone = transcriptTextDone;
         }
@@ -96,13 +132,15 @@ namespace tryAGI.OpenAI
         /// </summary>
         public object? Object =>
             TranscriptTextDone as object ??
-            TranscriptTextDelta as object 
+            TranscriptTextDelta as object ??
+            TranscriptTextSegment as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
+            TranscriptTextSegment?.ToString() ??
             TranscriptTextDelta?.ToString() ??
             TranscriptTextDone?.ToString() 
             ;
@@ -112,13 +150,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsTranscriptTextDelta || IsTranscriptTextDone;
+            return IsTranscriptTextSegment || IsTranscriptTextDelta || IsTranscriptTextDone;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
+            global::System.Func<global::tryAGI.OpenAI.TranscriptTextSegmentEvent?, TResult>? transcriptTextSegment = null,
             global::System.Func<global::tryAGI.OpenAI.TranscriptTextDeltaEvent?, TResult>? transcriptTextDelta = null,
             global::System.Func<global::tryAGI.OpenAI.TranscriptTextDoneEvent?, TResult>? transcriptTextDone = null,
             bool validate = true)
@@ -128,7 +167,11 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsTranscriptTextDelta && transcriptTextDelta != null)
+            if (IsTranscriptTextSegment && transcriptTextSegment != null)
+            {
+                return transcriptTextSegment(TranscriptTextSegment!);
+            }
+            else if (IsTranscriptTextDelta && transcriptTextDelta != null)
             {
                 return transcriptTextDelta(TranscriptTextDelta!);
             }
@@ -144,6 +187,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::tryAGI.OpenAI.TranscriptTextSegmentEvent?>? transcriptTextSegment = null,
             global::System.Action<global::tryAGI.OpenAI.TranscriptTextDeltaEvent?>? transcriptTextDelta = null,
             global::System.Action<global::tryAGI.OpenAI.TranscriptTextDoneEvent?>? transcriptTextDone = null,
             bool validate = true)
@@ -153,7 +197,11 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsTranscriptTextDelta)
+            if (IsTranscriptTextSegment)
+            {
+                transcriptTextSegment?.Invoke(TranscriptTextSegment!);
+            }
+            else if (IsTranscriptTextDelta)
             {
                 transcriptTextDelta?.Invoke(TranscriptTextDelta!);
             }
@@ -170,6 +218,8 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
+                TranscriptTextSegment,
+                typeof(global::tryAGI.OpenAI.TranscriptTextSegmentEvent),
                 TranscriptTextDelta,
                 typeof(global::tryAGI.OpenAI.TranscriptTextDeltaEvent),
                 TranscriptTextDone,
@@ -190,6 +240,7 @@ namespace tryAGI.OpenAI
         public bool Equals(CreateTranscriptionResponseStreamEvent other)
         {
             return
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.TranscriptTextSegmentEvent?>.Default.Equals(TranscriptTextSegment, other.TranscriptTextSegment) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.TranscriptTextDeltaEvent?>.Default.Equals(TranscriptTextDelta, other.TranscriptTextDelta) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.TranscriptTextDoneEvent?>.Default.Equals(TranscriptTextDone, other.TranscriptTextDone) 
                 ;

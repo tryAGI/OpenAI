@@ -13,36 +13,18 @@ namespace tryAGI.OpenAI
         /// A ScoreModelGrader object that uses a model to assign a score to the input.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.GraderScoreModel? Value1 { get; init; }
+        public global::tryAGI.OpenAI.GraderScoreModel? ScoreModelGrader { get; init; }
 #else
-        public global::tryAGI.OpenAI.GraderScoreModel? Value1 { get; }
+        public global::tryAGI.OpenAI.GraderScoreModel? ScoreModelGrader { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ScoreModelGrader))]
 #endif
-        public bool IsValue1 => Value1 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator EvalGraderScoreModel(global::tryAGI.OpenAI.GraderScoreModel value) => new EvalGraderScoreModel((global::tryAGI.OpenAI.GraderScoreModel?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.GraderScoreModel?(EvalGraderScoreModel @this) => @this.Value1;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public EvalGraderScoreModel(global::tryAGI.OpenAI.GraderScoreModel? value)
-        {
-            Value1 = value;
-        }
+        public bool IsScoreModelGrader => ScoreModelGrader != null;
 
         /// <summary>
         /// 
@@ -60,6 +42,23 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
 #endif
         public bool IsValue2 => Value2 != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator EvalGraderScoreModel(global::tryAGI.OpenAI.GraderScoreModel value) => new EvalGraderScoreModel((global::tryAGI.OpenAI.GraderScoreModel?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.GraderScoreModel?(EvalGraderScoreModel @this) => @this.ScoreModelGrader;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public EvalGraderScoreModel(global::tryAGI.OpenAI.GraderScoreModel? value)
+        {
+            ScoreModelGrader = value;
+        }
 
         /// <summary>
         /// 
@@ -83,11 +82,11 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public EvalGraderScoreModel(
-            global::tryAGI.OpenAI.GraderScoreModel? value1,
+            global::tryAGI.OpenAI.GraderScoreModel? scoreModelGrader,
             global::tryAGI.OpenAI.EvalGraderScoreModelVariant2? value2
             )
         {
-            Value1 = value1;
+            ScoreModelGrader = scoreModelGrader;
             Value2 = value2;
         }
 
@@ -96,14 +95,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         public object? Object =>
             Value2 as object ??
-            Value1 as object 
+            ScoreModelGrader as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            ScoreModelGrader?.ToString() ??
             Value2?.ToString() 
             ;
 
@@ -112,14 +111,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsScoreModelGrader && IsValue2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.GraderScoreModel?, TResult>? value1 = null,
+            global::System.Func<global::tryAGI.OpenAI.GraderScoreModel?, TResult>? scoreModelGrader = null,
             global::System.Func<global::tryAGI.OpenAI.EvalGraderScoreModelVariant2?, TResult>? value2 = null,
             bool validate = true)
         {
@@ -128,9 +127,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsScoreModelGrader && scoreModelGrader != null)
             {
-                return value1(Value1!);
+                return scoreModelGrader(ScoreModelGrader!);
             }
             else if (IsValue2 && value2 != null)
             {
@@ -144,7 +143,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.GraderScoreModel?>? value1 = null,
+            global::System.Action<global::tryAGI.OpenAI.GraderScoreModel?>? scoreModelGrader = null,
             global::System.Action<global::tryAGI.OpenAI.EvalGraderScoreModelVariant2?>? value2 = null,
             bool validate = true)
         {
@@ -153,9 +152,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsScoreModelGrader)
             {
-                value1?.Invoke(Value1!);
+                scoreModelGrader?.Invoke(ScoreModelGrader!);
             }
             else if (IsValue2)
             {
@@ -170,7 +169,7 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                Value1,
+                ScoreModelGrader,
                 typeof(global::tryAGI.OpenAI.GraderScoreModel),
                 Value2,
                 typeof(global::tryAGI.OpenAI.EvalGraderScoreModelVariant2),
@@ -190,7 +189,7 @@ namespace tryAGI.OpenAI
         public bool Equals(EvalGraderScoreModel other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.GraderScoreModel?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.GraderScoreModel?>.Default.Equals(ScoreModelGrader, other.ScoreModelGrader) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.EvalGraderScoreModelVariant2?>.Default.Equals(Value2, other.Value2) 
                 ;
         }

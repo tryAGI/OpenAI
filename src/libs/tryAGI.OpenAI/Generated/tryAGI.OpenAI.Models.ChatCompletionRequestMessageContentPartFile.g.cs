@@ -4,23 +4,23 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Learn about [file inputs](https://platform.openai.com/docs/guides/text) for text generation.
+    /// Learn about [file inputs](/docs/guides/text) for text generation.
     /// </summary>
     public sealed partial class ChatCompletionRequestMessageContentPartFile
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("file")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFileFile File { get; set; }
-
         /// <summary>
         /// The type of the content part. Always `file`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatCompletionRequestMessageContentPartFileTypeJsonConverter))]
         public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFileType Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("file")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFileFile File { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,10 +31,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionRequestMessageContentPartFile" /> class.
         /// </summary>
-        /// <param name="file"></param>
         /// <param name="type">
         /// The type of the content part. Always `file`.
         /// </param>
+        /// <param name="file"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

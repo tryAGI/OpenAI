@@ -9,14 +9,13 @@ namespace tryAGI.OpenAI
     public sealed partial class AdminApiKey
     {
         /// <summary>
-        /// The Unix timestamp (in seconds) of when the API key was created<br/>
-        /// Example: 1711471533L
+        /// The object type, which is always `organization.admin_api_key`<br/>
+        /// Example: organization.admin_api_key
         /// </summary>
-        /// <example>1711471533L</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
+        /// <example>organization.admin_api_key</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
+        public required string Object { get; set; }
 
         /// <summary>
         /// The identifier, which can be referenced in API endpoints<br/>
@@ -28,16 +27,6 @@ namespace tryAGI.OpenAI
         public required string Id { get; set; }
 
         /// <summary>
-        /// The Unix timestamp (in seconds) of when the API key was last used<br/>
-        /// Example: 1711471534L
-        /// </summary>
-        /// <example>1711471534L</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("last_used_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset? LastUsedAt { get; set; }
-
-        /// <summary>
         /// The name of the API key<br/>
         /// Example: Administration Key
         /// </summary>
@@ -45,22 +34,6 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
-
-        /// <summary>
-        /// The object type, which is always `organization.admin_api_key`<br/>
-        /// Example: organization.admin_api_key
-        /// </summary>
-        /// <example>organization.admin_api_key</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Object { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.AdminApiKeyOwner Owner { get; set; }
 
         /// <summary>
         /// The redacted value of the API key<br/>
@@ -80,6 +53,30 @@ namespace tryAGI.OpenAI
         public string? Value { get; set; }
 
         /// <summary>
+        /// The Unix timestamp (in seconds) of when the API key was created<br/>
+        /// Example: 1711471533
+        /// </summary>
+        /// <example>1711471533</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.DateTimeOffset CreatedAt { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("last_used_at")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.DateTimeOffset? LastUsedAt { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.AdminApiKeyOwner Owner { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -88,27 +85,18 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="AdminApiKey" /> class.
         /// </summary>
-        /// <param name="createdAt">
-        /// The Unix timestamp (in seconds) of when the API key was created<br/>
-        /// Example: 1711471533L
+        /// <param name="object">
+        /// The object type, which is always `organization.admin_api_key`<br/>
+        /// Example: organization.admin_api_key
         /// </param>
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints<br/>
         /// Example: key_abc
         /// </param>
-        /// <param name="lastUsedAt">
-        /// The Unix timestamp (in seconds) of when the API key was last used<br/>
-        /// Example: 1711471534L
-        /// </param>
         /// <param name="name">
         /// The name of the API key<br/>
         /// Example: Administration Key
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `organization.admin_api_key`<br/>
-        /// Example: organization.admin_api_key
-        /// </param>
-        /// <param name="owner"></param>
         /// <param name="redactedValue">
         /// The redacted value of the API key<br/>
         /// Example: sk-admin...def
@@ -117,26 +105,32 @@ namespace tryAGI.OpenAI
         /// The value of the API key. Only shown on create.<br/>
         /// Example: sk-admin-1234abcd
         /// </param>
+        /// <param name="createdAt">
+        /// The Unix timestamp (in seconds) of when the API key was created<br/>
+        /// Example: 1711471533
+        /// </param>
+        /// <param name="lastUsedAt"></param>
+        /// <param name="owner"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AdminApiKey(
-            global::System.DateTimeOffset createdAt,
-            string id,
-            global::System.DateTimeOffset? lastUsedAt,
-            string name,
             string @object,
-            global::tryAGI.OpenAI.AdminApiKeyOwner owner,
+            string id,
+            string name,
             string redactedValue,
+            global::System.DateTimeOffset createdAt,
+            global::System.DateTimeOffset? lastUsedAt,
+            global::tryAGI.OpenAI.AdminApiKeyOwner owner,
             string? value)
         {
-            this.CreatedAt = createdAt;
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.LastUsedAt = lastUsedAt;
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Object = @object ?? throw new global::System.ArgumentNullException(nameof(@object));
-            this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.RedactedValue = redactedValue ?? throw new global::System.ArgumentNullException(nameof(redactedValue));
+            this.CreatedAt = createdAt;
+            this.LastUsedAt = lastUsedAt ?? throw new global::System.ArgumentNullException(nameof(lastUsedAt));
+            this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
             this.Value = value;
         }
 

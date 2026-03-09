@@ -28,6 +28,10 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         Batch,
+        /// <summary>
+        /// 
+        /// </summary>
+        ServiceTier,
     }
 
     /// <summary>
@@ -47,6 +51,7 @@ namespace tryAGI.OpenAI
                 UsageCompletionsGroupByItem.ApiKeyId => "api_key_id",
                 UsageCompletionsGroupByItem.Model => "model",
                 UsageCompletionsGroupByItem.Batch => "batch",
+                UsageCompletionsGroupByItem.ServiceTier => "service_tier",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,6 +67,7 @@ namespace tryAGI.OpenAI
                 "api_key_id" => UsageCompletionsGroupByItem.ApiKeyId,
                 "model" => UsageCompletionsGroupByItem.Model,
                 "batch" => UsageCompletionsGroupByItem.Batch,
+                "service_tier" => UsageCompletionsGroupByItem.ServiceTier,
                 _ => null,
             };
         }

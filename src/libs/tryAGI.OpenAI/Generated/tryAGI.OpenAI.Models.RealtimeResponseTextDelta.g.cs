@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Returned when the text value of a "text" content part is updated.
+    /// Returned when the text value of a "text" content part is updated.<br/>
+    /// Example: {"event_id":"event_4142","type":"response.text.delta","response_id":"resp_001","item_id":"msg_007","output_index":0,"content_index":0,"delta":"Sure, I can h"}
     /// </summary>
     public sealed partial class RealtimeResponseTextDelta
     {

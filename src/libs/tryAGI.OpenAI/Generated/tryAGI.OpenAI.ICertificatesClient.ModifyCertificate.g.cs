@@ -5,7 +5,6 @@ namespace tryAGI.OpenAI
     public partial interface ICertificatesClient
     {
         /// <summary>
-        /// Modify certificate<br/>
         /// Modify a certificate. Note that only the name can be modified.
         /// </summary>
         /// <param name="certificateId"></param>
@@ -14,11 +13,11 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Certificate> ModifyCertificateAsync(
             string certificateId,
+
             global::tryAGI.OpenAI.ModifyCertificateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Modify certificate<br/>
         /// Modify a certificate. Note that only the name can be modified.
         /// </summary>
         /// <param name="certificateId"></param>

@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Returned when input audio transcription is enabled and a transcription succeeds.
+    /// Returned when input audio transcription is enabled and a transcription succeeds.<br/>
+    /// Example: {"event_id":"event_2122","type":"conversation.item.input_audio_transcription.completed","item_id":"msg_003","content_index":0,"transcript":"Hello, how are you?"}
     /// </summary>
     public sealed partial class RealtimeConversationItemInputAudioTranscriptionCompleted
     {

@@ -26,7 +26,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Modify project user<br/>
         /// Modifies a user's role in the project.
         /// </summary>
         /// <param name="projectId"></param>
@@ -37,6 +36,7 @@ namespace tryAGI.OpenAI
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ProjectUser> ModifyProjectUserAsync(
             string projectId,
             string userId,
+
             global::tryAGI.OpenAI.ProjectUserUpdateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -216,7 +216,6 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Modify project user<br/>
         /// Modifies a user's role in the project.
         /// </summary>
         /// <param name="projectId"></param>

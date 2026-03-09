@@ -5,7 +5,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// A single item within a conversation. The set of possible types are the same as the `output` type of a [Response object](https://platform.openai.com/docs/api-reference/responses/object#responses/object-output).
+    /// A single item within a conversation. The set of possible types are the same as the `output` type of a [Response object](/docs/api-reference/responses/object#responses/object-output).
     /// </summary>
     public readonly partial struct ConversationItem : global::System.IEquatable<ConversationItem>
     {
@@ -29,6 +29,402 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.FunctionToolCallResource? FunctionToolCallResource { get; init; }
+#else
+        public global::tryAGI.OpenAI.FunctionToolCallResource? FunctionToolCallResource { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionToolCallResource))]
+#endif
+        public bool IsFunctionToolCallResource => FunctionToolCallResource != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.FunctionToolCallOutputResource? FunctionToolCallOutputResource { get; init; }
+#else
+        public global::tryAGI.OpenAI.FunctionToolCallOutputResource? FunctionToolCallOutputResource { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionToolCallOutputResource))]
+#endif
+        public bool IsFunctionToolCallOutputResource => FunctionToolCallOutputResource != null;
+
+        /// <summary>
+        /// The results of a file search tool call. See the<br/>
+        /// [file search guide](/docs/guides/tools-file-search) for more information.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.FileSearchToolCall? FileSearchCall { get; init; }
+#else
+        public global::tryAGI.OpenAI.FileSearchToolCall? FileSearchCall { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchCall))]
+#endif
+        public bool IsFileSearchCall => FileSearchCall != null;
+
+        /// <summary>
+        /// The results of a web search tool call. See the<br/>
+        /// [web search guide](/docs/guides/tools-web-search) for more information.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.WebSearchToolCall? WebSearchCall { get; init; }
+#else
+        public global::tryAGI.OpenAI.WebSearchToolCall? WebSearchCall { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchCall))]
+#endif
+        public bool IsWebSearchCall => WebSearchCall != null;
+
+        /// <summary>
+        /// An image generation request made by the model.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ImageGenToolCall? ImageGenerationCall { get; init; }
+#else
+        public global::tryAGI.OpenAI.ImageGenToolCall? ImageGenerationCall { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenerationCall))]
+#endif
+        public bool IsImageGenerationCall => ImageGenerationCall != null;
+
+        /// <summary>
+        /// A tool call to a computer use tool. See the<br/>
+        /// [computer use guide](/docs/guides/tools-computer-use) for more information.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ComputerToolCall? ComputerCall { get; init; }
+#else
+        public global::tryAGI.OpenAI.ComputerToolCall? ComputerCall { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerCall))]
+#endif
+        public bool IsComputerCall => ComputerCall != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ComputerToolCallOutputResource? ComputerToolCallOutputResource { get; init; }
+#else
+        public global::tryAGI.OpenAI.ComputerToolCallOutputResource? ComputerToolCallOutputResource { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerToolCallOutputResource))]
+#endif
+        public bool IsComputerToolCallOutputResource => ComputerToolCallOutputResource != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ToolSearchCall? ToolSearchCall { get; init; }
+#else
+        public global::tryAGI.OpenAI.ToolSearchCall? ToolSearchCall { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolSearchCall))]
+#endif
+        public bool IsToolSearchCall => ToolSearchCall != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ToolSearchOutput? ToolSearchOutput { get; init; }
+#else
+        public global::tryAGI.OpenAI.ToolSearchOutput? ToolSearchOutput { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolSearchOutput))]
+#endif
+        public bool IsToolSearchOutput => ToolSearchOutput != null;
+
+        /// <summary>
+        /// A description of the chain of thought used by a reasoning model while generating<br/>
+        /// a response. Be sure to include these items in your `input` to the Responses API<br/>
+        /// for subsequent turns of a conversation if you are manually<br/>
+        /// [managing context](/docs/guides/conversation-state).
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ReasoningItem? Reasoning { get; init; }
+#else
+        public global::tryAGI.OpenAI.ReasoningItem? Reasoning { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Reasoning))]
+#endif
+        public bool IsReasoning => Reasoning != null;
+
+        /// <summary>
+        /// A tool call to run code.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.CodeInterpreterToolCall? CodeInterpreterCall { get; init; }
+#else
+        public global::tryAGI.OpenAI.CodeInterpreterToolCall? CodeInterpreterCall { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterCall))]
+#endif
+        public bool IsCodeInterpreterCall => CodeInterpreterCall != null;
+
+        /// <summary>
+        /// A tool call to run a command on the local shell.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.LocalShellToolCall? LocalShellCall { get; init; }
+#else
+        public global::tryAGI.OpenAI.LocalShellToolCall? LocalShellCall { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LocalShellCall))]
+#endif
+        public bool IsLocalShellCall => LocalShellCall != null;
+
+        /// <summary>
+        /// The output of a local shell tool call.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.LocalShellToolCallOutput? LocalShellCallOutput { get; init; }
+#else
+        public global::tryAGI.OpenAI.LocalShellToolCallOutput? LocalShellCallOutput { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LocalShellCallOutput))]
+#endif
+        public bool IsLocalShellCallOutput => LocalShellCallOutput != null;
+
+        /// <summary>
+        /// A tool call that executes one or more shell commands in a managed environment.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.FunctionShellCall? ShellCall { get; init; }
+#else
+        public global::tryAGI.OpenAI.FunctionShellCall? ShellCall { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ShellCall))]
+#endif
+        public bool IsShellCall => ShellCall != null;
+
+        /// <summary>
+        /// The output of a shell tool call that was emitted.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.FunctionShellCallOutput? ShellCallOutput { get; init; }
+#else
+        public global::tryAGI.OpenAI.FunctionShellCallOutput? ShellCallOutput { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ShellCallOutput))]
+#endif
+        public bool IsShellCallOutput => ShellCallOutput != null;
+
+        /// <summary>
+        /// A tool call that applies file diffs by creating, deleting, or updating files.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ApplyPatchToolCall? ApplyPatchCall { get; init; }
+#else
+        public global::tryAGI.OpenAI.ApplyPatchToolCall? ApplyPatchCall { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApplyPatchCall))]
+#endif
+        public bool IsApplyPatchCall => ApplyPatchCall != null;
+
+        /// <summary>
+        /// The output emitted by an apply patch tool call.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ApplyPatchToolCallOutput? ApplyPatchCallOutput { get; init; }
+#else
+        public global::tryAGI.OpenAI.ApplyPatchToolCallOutput? ApplyPatchCallOutput { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApplyPatchCallOutput))]
+#endif
+        public bool IsApplyPatchCallOutput => ApplyPatchCallOutput != null;
+
+        /// <summary>
+        /// A list of tools available on an MCP server.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.MCPListTools? McpListTools { get; init; }
+#else
+        public global::tryAGI.OpenAI.MCPListTools? McpListTools { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpListTools))]
+#endif
+        public bool IsMcpListTools => McpListTools != null;
+
+        /// <summary>
+        /// A request for human approval of a tool invocation.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.MCPApprovalRequest? McpApprovalRequest { get; init; }
+#else
+        public global::tryAGI.OpenAI.MCPApprovalRequest? McpApprovalRequest { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpApprovalRequest))]
+#endif
+        public bool IsMcpApprovalRequest => McpApprovalRequest != null;
+
+        /// <summary>
+        /// A response to an MCP approval request.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.MCPApprovalResponseResource? McpApprovalResponse { get; init; }
+#else
+        public global::tryAGI.OpenAI.MCPApprovalResponseResource? McpApprovalResponse { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpApprovalResponse))]
+#endif
+        public bool IsMcpApprovalResponse => McpApprovalResponse != null;
+
+        /// <summary>
+        /// An invocation of a tool on an MCP server.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.MCPToolCall? McpCall { get; init; }
+#else
+        public global::tryAGI.OpenAI.MCPToolCall? McpCall { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpCall))]
+#endif
+        public bool IsMcpCall => McpCall != null;
+
+        /// <summary>
+        /// A call to a custom tool created by the model.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.CustomToolCall? CustomToolCall { get; init; }
+#else
+        public global::tryAGI.OpenAI.CustomToolCall? CustomToolCall { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomToolCall))]
+#endif
+        public bool IsCustomToolCall => CustomToolCall != null;
+
+        /// <summary>
+        /// The output of a custom tool call from your code, being sent back to the model.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.CustomToolCallOutput? CustomToolCallOutput { get; init; }
+#else
+        public global::tryAGI.OpenAI.CustomToolCallOutput? CustomToolCallOutput { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomToolCallOutput))]
+#endif
+        public bool IsCustomToolCallOutput => CustomToolCallOutput != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationItem(global::tryAGI.OpenAI.Message value) => new ConversationItem((global::tryAGI.OpenAI.Message?)value);
 
         /// <summary>
@@ -43,23 +439,6 @@ namespace tryAGI.OpenAI
         {
             Message = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.FunctionToolCallResource? FunctionToolCallResource { get; init; }
-#else
-        public global::tryAGI.OpenAI.FunctionToolCallResource? FunctionToolCallResource { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionToolCallResource))]
-#endif
-        public bool IsFunctionToolCallResource => FunctionToolCallResource != null;
 
         /// <summary>
         /// 
@@ -82,23 +461,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.FunctionToolCallOutputResource? FunctionToolCallOutputResource { get; init; }
-#else
-        public global::tryAGI.OpenAI.FunctionToolCallOutputResource? FunctionToolCallOutputResource { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionToolCallOutputResource))]
-#endif
-        public bool IsFunctionToolCallOutputResource => FunctionToolCallOutputResource != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator ConversationItem(global::tryAGI.OpenAI.FunctionToolCallOutputResource value) => new ConversationItem((global::tryAGI.OpenAI.FunctionToolCallOutputResource?)value);
 
         /// <summary>
@@ -115,24 +477,6 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// The results of a file search tool call. See the<br/>
-        /// [file search guide](https://platform.openai.com/docs/guides/tools-file-search) for more information.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.FileSearchToolCall? FileSearchToolCall { get; init; }
-#else
-        public global::tryAGI.OpenAI.FileSearchToolCall? FileSearchToolCall { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchToolCall))]
-#endif
-        public bool IsFileSearchToolCall => FileSearchToolCall != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ConversationItem(global::tryAGI.OpenAI.FileSearchToolCall value) => new ConversationItem((global::tryAGI.OpenAI.FileSearchToolCall?)value);
@@ -140,33 +484,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.FileSearchToolCall?(ConversationItem @this) => @this.FileSearchToolCall;
+        public static implicit operator global::tryAGI.OpenAI.FileSearchToolCall?(ConversationItem @this) => @this.FileSearchCall;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationItem(global::tryAGI.OpenAI.FileSearchToolCall? value)
         {
-            FileSearchToolCall = value;
+            FileSearchCall = value;
         }
-
-        /// <summary>
-        /// The results of a web search tool call. See the <br/>
-        /// [web search guide](https://platform.openai.com/docs/guides/tools-web-search) for more information.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.WebSearchToolCall? WebSearchToolCall { get; init; }
-#else
-        public global::tryAGI.OpenAI.WebSearchToolCall? WebSearchToolCall { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchToolCall))]
-#endif
-        public bool IsWebSearchToolCall => WebSearchToolCall != null;
 
         /// <summary>
         /// 
@@ -176,32 +502,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.WebSearchToolCall?(ConversationItem @this) => @this.WebSearchToolCall;
+        public static implicit operator global::tryAGI.OpenAI.WebSearchToolCall?(ConversationItem @this) => @this.WebSearchCall;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationItem(global::tryAGI.OpenAI.WebSearchToolCall? value)
         {
-            WebSearchToolCall = value;
+            WebSearchCall = value;
         }
-
-        /// <summary>
-        /// An image generation request made by the model.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ImageGenToolCall? ImageGenToolCall { get; init; }
-#else
-        public global::tryAGI.OpenAI.ImageGenToolCall? ImageGenToolCall { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenToolCall))]
-#endif
-        public bool IsImageGenToolCall => ImageGenToolCall != null;
 
         /// <summary>
         /// 
@@ -211,33 +520,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.ImageGenToolCall?(ConversationItem @this) => @this.ImageGenToolCall;
+        public static implicit operator global::tryAGI.OpenAI.ImageGenToolCall?(ConversationItem @this) => @this.ImageGenerationCall;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationItem(global::tryAGI.OpenAI.ImageGenToolCall? value)
         {
-            ImageGenToolCall = value;
+            ImageGenerationCall = value;
         }
-
-        /// <summary>
-        /// A tool call to a computer use tool. See the <br/>
-        /// [computer use guide](https://platform.openai.com/docs/guides/tools-computer-use) for more information.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ComputerToolCall? ComputerToolCall { get; init; }
-#else
-        public global::tryAGI.OpenAI.ComputerToolCall? ComputerToolCall { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerToolCall))]
-#endif
-        public bool IsComputerToolCall => ComputerToolCall != null;
 
         /// <summary>
         /// 
@@ -247,32 +538,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.ComputerToolCall?(ConversationItem @this) => @this.ComputerToolCall;
+        public static implicit operator global::tryAGI.OpenAI.ComputerToolCall?(ConversationItem @this) => @this.ComputerCall;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationItem(global::tryAGI.OpenAI.ComputerToolCall? value)
         {
-            ComputerToolCall = value;
+            ComputerCall = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ComputerToolCallOutputResource? ComputerToolCallOutputResource { get; init; }
-#else
-        public global::tryAGI.OpenAI.ComputerToolCallOutputResource? ComputerToolCallOutputResource { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerToolCallOutputResource))]
-#endif
-        public bool IsComputerToolCallOutputResource => ComputerToolCallOutputResource != null;
 
         /// <summary>
         /// 
@@ -293,24 +567,40 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// A description of the chain of thought used by a reasoning model while generating<br/>
-        /// a response. Be sure to include these items in your `input` to the Responses API<br/>
-        /// for subsequent turns of a conversation if you are manually<br/>
-        /// [managing context](https://platform.openai.com/docs/guides/conversation-state).
+        /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ReasoningItem? Reasoning { get; init; }
-#else
-        public global::tryAGI.OpenAI.ReasoningItem? Reasoning { get; }
-#endif
+        public static implicit operator ConversationItem(global::tryAGI.OpenAI.ToolSearchCall value) => new ConversationItem((global::tryAGI.OpenAI.ToolSearchCall?)value);
 
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Reasoning))]
-#endif
-        public bool IsReasoning => Reasoning != null;
+        public static implicit operator global::tryAGI.OpenAI.ToolSearchCall?(ConversationItem @this) => @this.ToolSearchCall;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ConversationItem(global::tryAGI.OpenAI.ToolSearchCall? value)
+        {
+            ToolSearchCall = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ConversationItem(global::tryAGI.OpenAI.ToolSearchOutput value) => new ConversationItem((global::tryAGI.OpenAI.ToolSearchOutput?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.ToolSearchOutput?(ConversationItem @this) => @this.ToolSearchOutput;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ConversationItem(global::tryAGI.OpenAI.ToolSearchOutput? value)
+        {
+            ToolSearchOutput = value;
+        }
 
         /// <summary>
         /// 
@@ -331,23 +621,6 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// A tool call to run code.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.CodeInterpreterToolCall? CodeInterpreterToolCall { get; init; }
-#else
-        public global::tryAGI.OpenAI.CodeInterpreterToolCall? CodeInterpreterToolCall { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterToolCall))]
-#endif
-        public bool IsCodeInterpreterToolCall => CodeInterpreterToolCall != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ConversationItem(global::tryAGI.OpenAI.CodeInterpreterToolCall value) => new ConversationItem((global::tryAGI.OpenAI.CodeInterpreterToolCall?)value);
@@ -355,32 +628,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.CodeInterpreterToolCall?(ConversationItem @this) => @this.CodeInterpreterToolCall;
+        public static implicit operator global::tryAGI.OpenAI.CodeInterpreterToolCall?(ConversationItem @this) => @this.CodeInterpreterCall;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationItem(global::tryAGI.OpenAI.CodeInterpreterToolCall? value)
         {
-            CodeInterpreterToolCall = value;
+            CodeInterpreterCall = value;
         }
-
-        /// <summary>
-        /// A tool call to run a command on the local shell.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.LocalShellToolCall? LocalShellToolCall { get; init; }
-#else
-        public global::tryAGI.OpenAI.LocalShellToolCall? LocalShellToolCall { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LocalShellToolCall))]
-#endif
-        public bool IsLocalShellToolCall => LocalShellToolCall != null;
 
         /// <summary>
         /// 
@@ -390,32 +646,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.LocalShellToolCall?(ConversationItem @this) => @this.LocalShellToolCall;
+        public static implicit operator global::tryAGI.OpenAI.LocalShellToolCall?(ConversationItem @this) => @this.LocalShellCall;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationItem(global::tryAGI.OpenAI.LocalShellToolCall? value)
         {
-            LocalShellToolCall = value;
+            LocalShellCall = value;
         }
-
-        /// <summary>
-        /// The output of a local shell tool call.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.LocalShellToolCallOutput? LocalShellToolCallOutput { get; init; }
-#else
-        public global::tryAGI.OpenAI.LocalShellToolCallOutput? LocalShellToolCallOutput { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LocalShellToolCallOutput))]
-#endif
-        public bool IsLocalShellToolCallOutput => LocalShellToolCallOutput != null;
 
         /// <summary>
         /// 
@@ -425,32 +664,87 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.LocalShellToolCallOutput?(ConversationItem @this) => @this.LocalShellToolCallOutput;
+        public static implicit operator global::tryAGI.OpenAI.LocalShellToolCallOutput?(ConversationItem @this) => @this.LocalShellCallOutput;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationItem(global::tryAGI.OpenAI.LocalShellToolCallOutput? value)
         {
-            LocalShellToolCallOutput = value;
+            LocalShellCallOutput = value;
         }
-
-        /// <summary>
-        /// A list of tools available on an MCP server.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.MCPListTools? MCPListTools { get; init; }
-#else
-        public global::tryAGI.OpenAI.MCPListTools? MCPListTools { get; }
-#endif
 
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPListTools))]
-#endif
-        public bool IsMCPListTools => MCPListTools != null;
+        public static implicit operator ConversationItem(global::tryAGI.OpenAI.FunctionShellCall value) => new ConversationItem((global::tryAGI.OpenAI.FunctionShellCall?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.FunctionShellCall?(ConversationItem @this) => @this.ShellCall;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ConversationItem(global::tryAGI.OpenAI.FunctionShellCall? value)
+        {
+            ShellCall = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ConversationItem(global::tryAGI.OpenAI.FunctionShellCallOutput value) => new ConversationItem((global::tryAGI.OpenAI.FunctionShellCallOutput?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.FunctionShellCallOutput?(ConversationItem @this) => @this.ShellCallOutput;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ConversationItem(global::tryAGI.OpenAI.FunctionShellCallOutput? value)
+        {
+            ShellCallOutput = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ConversationItem(global::tryAGI.OpenAI.ApplyPatchToolCall value) => new ConversationItem((global::tryAGI.OpenAI.ApplyPatchToolCall?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.ApplyPatchToolCall?(ConversationItem @this) => @this.ApplyPatchCall;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ConversationItem(global::tryAGI.OpenAI.ApplyPatchToolCall? value)
+        {
+            ApplyPatchCall = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ConversationItem(global::tryAGI.OpenAI.ApplyPatchToolCallOutput value) => new ConversationItem((global::tryAGI.OpenAI.ApplyPatchToolCallOutput?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.ApplyPatchToolCallOutput?(ConversationItem @this) => @this.ApplyPatchCallOutput;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ConversationItem(global::tryAGI.OpenAI.ApplyPatchToolCallOutput? value)
+        {
+            ApplyPatchCallOutput = value;
+        }
 
         /// <summary>
         /// 
@@ -460,32 +754,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.MCPListTools?(ConversationItem @this) => @this.MCPListTools;
+        public static implicit operator global::tryAGI.OpenAI.MCPListTools?(ConversationItem @this) => @this.McpListTools;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationItem(global::tryAGI.OpenAI.MCPListTools? value)
         {
-            MCPListTools = value;
+            McpListTools = value;
         }
-
-        /// <summary>
-        /// A request for human approval of a tool invocation.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.MCPApprovalRequest? MCPApprovalRequest { get; init; }
-#else
-        public global::tryAGI.OpenAI.MCPApprovalRequest? MCPApprovalRequest { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPApprovalRequest))]
-#endif
-        public bool IsMCPApprovalRequest => MCPApprovalRequest != null;
 
         /// <summary>
         /// 
@@ -495,32 +772,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.MCPApprovalRequest?(ConversationItem @this) => @this.MCPApprovalRequest;
+        public static implicit operator global::tryAGI.OpenAI.MCPApprovalRequest?(ConversationItem @this) => @this.McpApprovalRequest;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationItem(global::tryAGI.OpenAI.MCPApprovalRequest? value)
         {
-            MCPApprovalRequest = value;
+            McpApprovalRequest = value;
         }
-
-        /// <summary>
-        /// A response to an MCP approval request.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.MCPApprovalResponseResource? MCPApprovalResponseResource { get; init; }
-#else
-        public global::tryAGI.OpenAI.MCPApprovalResponseResource? MCPApprovalResponseResource { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPApprovalResponseResource))]
-#endif
-        public bool IsMCPApprovalResponseResource => MCPApprovalResponseResource != null;
 
         /// <summary>
         /// 
@@ -530,32 +790,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.MCPApprovalResponseResource?(ConversationItem @this) => @this.MCPApprovalResponseResource;
+        public static implicit operator global::tryAGI.OpenAI.MCPApprovalResponseResource?(ConversationItem @this) => @this.McpApprovalResponse;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationItem(global::tryAGI.OpenAI.MCPApprovalResponseResource? value)
         {
-            MCPApprovalResponseResource = value;
+            McpApprovalResponse = value;
         }
-
-        /// <summary>
-        /// An invocation of a tool on an MCP server.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.MCPToolCall? MCPToolCall { get; init; }
-#else
-        public global::tryAGI.OpenAI.MCPToolCall? MCPToolCall { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPToolCall))]
-#endif
-        public bool IsMCPToolCall => MCPToolCall != null;
 
         /// <summary>
         /// 
@@ -565,32 +808,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.MCPToolCall?(ConversationItem @this) => @this.MCPToolCall;
+        public static implicit operator global::tryAGI.OpenAI.MCPToolCall?(ConversationItem @this) => @this.McpCall;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationItem(global::tryAGI.OpenAI.MCPToolCall? value)
         {
-            MCPToolCall = value;
+            McpCall = value;
         }
-
-        /// <summary>
-        /// A call to a custom tool created by the model.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.CustomToolCall? CustomToolCall { get; init; }
-#else
-        public global::tryAGI.OpenAI.CustomToolCall? CustomToolCall { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomToolCall))]
-#endif
-        public bool IsCustomToolCall => CustomToolCall != null;
 
         /// <summary>
         /// 
@@ -609,23 +835,6 @@ namespace tryAGI.OpenAI
         {
             CustomToolCall = value;
         }
-
-        /// <summary>
-        /// The output of a custom tool call from your code, being sent back to the model.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.CustomToolCallOutput? CustomToolCallOutput { get; init; }
-#else
-        public global::tryAGI.OpenAI.CustomToolCallOutput? CustomToolCallOutput { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomToolCallOutput))]
-#endif
-        public bool IsCustomToolCallOutput => CustomToolCallOutput != null;
 
         /// <summary>
         /// 
@@ -652,19 +861,25 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.Message? message,
             global::tryAGI.OpenAI.FunctionToolCallResource? functionToolCallResource,
             global::tryAGI.OpenAI.FunctionToolCallOutputResource? functionToolCallOutputResource,
-            global::tryAGI.OpenAI.FileSearchToolCall? fileSearchToolCall,
-            global::tryAGI.OpenAI.WebSearchToolCall? webSearchToolCall,
-            global::tryAGI.OpenAI.ImageGenToolCall? imageGenToolCall,
-            global::tryAGI.OpenAI.ComputerToolCall? computerToolCall,
+            global::tryAGI.OpenAI.FileSearchToolCall? fileSearchCall,
+            global::tryAGI.OpenAI.WebSearchToolCall? webSearchCall,
+            global::tryAGI.OpenAI.ImageGenToolCall? imageGenerationCall,
+            global::tryAGI.OpenAI.ComputerToolCall? computerCall,
             global::tryAGI.OpenAI.ComputerToolCallOutputResource? computerToolCallOutputResource,
+            global::tryAGI.OpenAI.ToolSearchCall? toolSearchCall,
+            global::tryAGI.OpenAI.ToolSearchOutput? toolSearchOutput,
             global::tryAGI.OpenAI.ReasoningItem? reasoning,
-            global::tryAGI.OpenAI.CodeInterpreterToolCall? codeInterpreterToolCall,
-            global::tryAGI.OpenAI.LocalShellToolCall? localShellToolCall,
-            global::tryAGI.OpenAI.LocalShellToolCallOutput? localShellToolCallOutput,
-            global::tryAGI.OpenAI.MCPListTools? mCPListTools,
-            global::tryAGI.OpenAI.MCPApprovalRequest? mCPApprovalRequest,
-            global::tryAGI.OpenAI.MCPApprovalResponseResource? mCPApprovalResponseResource,
-            global::tryAGI.OpenAI.MCPToolCall? mCPToolCall,
+            global::tryAGI.OpenAI.CodeInterpreterToolCall? codeInterpreterCall,
+            global::tryAGI.OpenAI.LocalShellToolCall? localShellCall,
+            global::tryAGI.OpenAI.LocalShellToolCallOutput? localShellCallOutput,
+            global::tryAGI.OpenAI.FunctionShellCall? shellCall,
+            global::tryAGI.OpenAI.FunctionShellCallOutput? shellCallOutput,
+            global::tryAGI.OpenAI.ApplyPatchToolCall? applyPatchCall,
+            global::tryAGI.OpenAI.ApplyPatchToolCallOutput? applyPatchCallOutput,
+            global::tryAGI.OpenAI.MCPListTools? mcpListTools,
+            global::tryAGI.OpenAI.MCPApprovalRequest? mcpApprovalRequest,
+            global::tryAGI.OpenAI.MCPApprovalResponseResource? mcpApprovalResponse,
+            global::tryAGI.OpenAI.MCPToolCall? mcpCall,
             global::tryAGI.OpenAI.CustomToolCall? customToolCall,
             global::tryAGI.OpenAI.CustomToolCallOutput? customToolCallOutput
             )
@@ -672,19 +887,25 @@ namespace tryAGI.OpenAI
             Message = message;
             FunctionToolCallResource = functionToolCallResource;
             FunctionToolCallOutputResource = functionToolCallOutputResource;
-            FileSearchToolCall = fileSearchToolCall;
-            WebSearchToolCall = webSearchToolCall;
-            ImageGenToolCall = imageGenToolCall;
-            ComputerToolCall = computerToolCall;
+            FileSearchCall = fileSearchCall;
+            WebSearchCall = webSearchCall;
+            ImageGenerationCall = imageGenerationCall;
+            ComputerCall = computerCall;
             ComputerToolCallOutputResource = computerToolCallOutputResource;
+            ToolSearchCall = toolSearchCall;
+            ToolSearchOutput = toolSearchOutput;
             Reasoning = reasoning;
-            CodeInterpreterToolCall = codeInterpreterToolCall;
-            LocalShellToolCall = localShellToolCall;
-            LocalShellToolCallOutput = localShellToolCallOutput;
-            MCPListTools = mCPListTools;
-            MCPApprovalRequest = mCPApprovalRequest;
-            MCPApprovalResponseResource = mCPApprovalResponseResource;
-            MCPToolCall = mCPToolCall;
+            CodeInterpreterCall = codeInterpreterCall;
+            LocalShellCall = localShellCall;
+            LocalShellCallOutput = localShellCallOutput;
+            ShellCall = shellCall;
+            ShellCallOutput = shellCallOutput;
+            ApplyPatchCall = applyPatchCall;
+            ApplyPatchCallOutput = applyPatchCallOutput;
+            McpListTools = mcpListTools;
+            McpApprovalRequest = mcpApprovalRequest;
+            McpApprovalResponse = mcpApprovalResponse;
+            McpCall = mcpCall;
             CustomToolCall = customToolCall;
             CustomToolCallOutput = customToolCallOutput;
         }
@@ -695,19 +916,25 @@ namespace tryAGI.OpenAI
         public object? Object =>
             CustomToolCallOutput as object ??
             CustomToolCall as object ??
-            MCPToolCall as object ??
-            MCPApprovalResponseResource as object ??
-            MCPApprovalRequest as object ??
-            MCPListTools as object ??
-            LocalShellToolCallOutput as object ??
-            LocalShellToolCall as object ??
-            CodeInterpreterToolCall as object ??
+            McpCall as object ??
+            McpApprovalResponse as object ??
+            McpApprovalRequest as object ??
+            McpListTools as object ??
+            ApplyPatchCallOutput as object ??
+            ApplyPatchCall as object ??
+            ShellCallOutput as object ??
+            ShellCall as object ??
+            LocalShellCallOutput as object ??
+            LocalShellCall as object ??
+            CodeInterpreterCall as object ??
             Reasoning as object ??
+            ToolSearchOutput as object ??
+            ToolSearchCall as object ??
             ComputerToolCallOutputResource as object ??
-            ComputerToolCall as object ??
-            ImageGenToolCall as object ??
-            WebSearchToolCall as object ??
-            FileSearchToolCall as object ??
+            ComputerCall as object ??
+            ImageGenerationCall as object ??
+            WebSearchCall as object ??
+            FileSearchCall as object ??
             FunctionToolCallOutputResource as object ??
             FunctionToolCallResource as object ??
             Message as object 
@@ -720,19 +947,25 @@ namespace tryAGI.OpenAI
             Message?.ToString() ??
             FunctionToolCallResource?.ToString() ??
             FunctionToolCallOutputResource?.ToString() ??
-            FileSearchToolCall?.ToString() ??
-            WebSearchToolCall?.ToString() ??
-            ImageGenToolCall?.ToString() ??
-            ComputerToolCall?.ToString() ??
+            FileSearchCall?.ToString() ??
+            WebSearchCall?.ToString() ??
+            ImageGenerationCall?.ToString() ??
+            ComputerCall?.ToString() ??
             ComputerToolCallOutputResource?.ToString() ??
+            ToolSearchCall?.ToString() ??
+            ToolSearchOutput?.ToString() ??
             Reasoning?.ToString() ??
-            CodeInterpreterToolCall?.ToString() ??
-            LocalShellToolCall?.ToString() ??
-            LocalShellToolCallOutput?.ToString() ??
-            MCPListTools?.ToString() ??
-            MCPApprovalRequest?.ToString() ??
-            MCPApprovalResponseResource?.ToString() ??
-            MCPToolCall?.ToString() ??
+            CodeInterpreterCall?.ToString() ??
+            LocalShellCall?.ToString() ??
+            LocalShellCallOutput?.ToString() ??
+            ShellCall?.ToString() ??
+            ShellCallOutput?.ToString() ??
+            ApplyPatchCall?.ToString() ??
+            ApplyPatchCallOutput?.ToString() ??
+            McpListTools?.ToString() ??
+            McpApprovalRequest?.ToString() ??
+            McpApprovalResponse?.ToString() ??
+            McpCall?.ToString() ??
             CustomToolCall?.ToString() ??
             CustomToolCallOutput?.ToString() 
             ;
@@ -742,7 +975,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsMessage || IsFunctionToolCallResource || IsFunctionToolCallOutputResource || IsFileSearchToolCall || IsWebSearchToolCall || IsImageGenToolCall || IsComputerToolCall || IsComputerToolCallOutputResource || IsReasoning || IsCodeInterpreterToolCall || IsLocalShellToolCall || IsLocalShellToolCallOutput || IsMCPListTools || IsMCPApprovalRequest || IsMCPApprovalResponseResource || IsMCPToolCall || IsCustomToolCall || IsCustomToolCallOutput;
+            return IsMessage && !IsFunctionToolCallResource && !IsFunctionToolCallOutputResource && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsToolSearchCall && !IsToolSearchOutput && !IsReasoning && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && IsFunctionToolCallResource && !IsFunctionToolCallOutputResource && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsToolSearchCall && !IsToolSearchOutput && !IsReasoning && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionToolCallResource && IsFunctionToolCallOutputResource && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsToolSearchCall && !IsToolSearchOutput && !IsReasoning && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionToolCallResource && !IsFunctionToolCallOutputResource && IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsToolSearchCall && !IsToolSearchOutput && !IsReasoning && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionToolCallResource && !IsFunctionToolCallOutputResource && !IsFileSearchCall && IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsToolSearchCall && !IsToolSearchOutput && !IsReasoning && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionToolCallResource && !IsFunctionToolCallOutputResource && !IsFileSearchCall && !IsWebSearchCall && IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsToolSearchCall && !IsToolSearchOutput && !IsReasoning && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionToolCallResource && !IsFunctionToolCallOutputResource && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && IsComputerCall && !IsComputerToolCallOutputResource && !IsToolSearchCall && !IsToolSearchOutput && !IsReasoning && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionToolCallResource && !IsFunctionToolCallOutputResource && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && IsComputerToolCallOutputResource && !IsToolSearchCall && !IsToolSearchOutput && !IsReasoning && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionToolCallResource && !IsFunctionToolCallOutputResource && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && IsToolSearchCall && !IsToolSearchOutput && !IsReasoning && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionToolCallResource && !IsFunctionToolCallOutputResource && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsToolSearchCall && IsToolSearchOutput && !IsReasoning && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionToolCallResource && !IsFunctionToolCallOutputResource && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsToolSearchCall && !IsToolSearchOutput && IsReasoning && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionToolCallResource && !IsFunctionToolCallOutputResource && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsToolSearchCall && !IsToolSearchOutput && !IsReasoning && IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionToolCallResource && !IsFunctionToolCallOutputResource && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsToolSearchCall && !IsToolSearchOutput && !IsReasoning && !IsCodeInterpreterCall && IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionToolCallResource && !IsFunctionToolCallOutputResource && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsToolSearchCall && !IsToolSearchOutput && !IsReasoning && !IsCodeInterpreterCall && !IsLocalShellCall && IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionToolCallResource && !IsFunctionToolCallOutputResource && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsToolSearchCall && !IsToolSearchOutput && !IsReasoning && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionToolCallResource && !IsFunctionToolCallOutputResource && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsToolSearchCall && !IsToolSearchOutput && !IsReasoning && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionToolCallResource && !IsFunctionToolCallOutputResource && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsToolSearchCall && !IsToolSearchOutput && !IsReasoning && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionToolCallResource && !IsFunctionToolCallOutputResource && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsToolSearchCall && !IsToolSearchOutput && !IsReasoning && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionToolCallResource && !IsFunctionToolCallOutputResource && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsToolSearchCall && !IsToolSearchOutput && !IsReasoning && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionToolCallResource && !IsFunctionToolCallOutputResource && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsToolSearchCall && !IsToolSearchOutput && !IsReasoning && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionToolCallResource && !IsFunctionToolCallOutputResource && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsToolSearchCall && !IsToolSearchOutput && !IsReasoning && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionToolCallResource && !IsFunctionToolCallOutputResource && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsToolSearchCall && !IsToolSearchOutput && !IsReasoning && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionToolCallResource && !IsFunctionToolCallOutputResource && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsToolSearchCall && !IsToolSearchOutput && !IsReasoning && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionToolCallResource && !IsFunctionToolCallOutputResource && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsToolSearchCall && !IsToolSearchOutput && !IsReasoning && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && IsCustomToolCallOutput;
         }
 
         /// <summary>
@@ -752,19 +985,25 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.Message?, TResult>? message = null,
             global::System.Func<global::tryAGI.OpenAI.FunctionToolCallResource?, TResult>? functionToolCallResource = null,
             global::System.Func<global::tryAGI.OpenAI.FunctionToolCallOutputResource?, TResult>? functionToolCallOutputResource = null,
-            global::System.Func<global::tryAGI.OpenAI.FileSearchToolCall?, TResult>? fileSearchToolCall = null,
-            global::System.Func<global::tryAGI.OpenAI.WebSearchToolCall?, TResult>? webSearchToolCall = null,
-            global::System.Func<global::tryAGI.OpenAI.ImageGenToolCall?, TResult>? imageGenToolCall = null,
-            global::System.Func<global::tryAGI.OpenAI.ComputerToolCall?, TResult>? computerToolCall = null,
+            global::System.Func<global::tryAGI.OpenAI.FileSearchToolCall?, TResult>? fileSearchCall = null,
+            global::System.Func<global::tryAGI.OpenAI.WebSearchToolCall?, TResult>? webSearchCall = null,
+            global::System.Func<global::tryAGI.OpenAI.ImageGenToolCall?, TResult>? imageGenerationCall = null,
+            global::System.Func<global::tryAGI.OpenAI.ComputerToolCall?, TResult>? computerCall = null,
             global::System.Func<global::tryAGI.OpenAI.ComputerToolCallOutputResource?, TResult>? computerToolCallOutputResource = null,
+            global::System.Func<global::tryAGI.OpenAI.ToolSearchCall?, TResult>? toolSearchCall = null,
+            global::System.Func<global::tryAGI.OpenAI.ToolSearchOutput?, TResult>? toolSearchOutput = null,
             global::System.Func<global::tryAGI.OpenAI.ReasoningItem?, TResult>? reasoning = null,
-            global::System.Func<global::tryAGI.OpenAI.CodeInterpreterToolCall?, TResult>? codeInterpreterToolCall = null,
-            global::System.Func<global::tryAGI.OpenAI.LocalShellToolCall?, TResult>? localShellToolCall = null,
-            global::System.Func<global::tryAGI.OpenAI.LocalShellToolCallOutput?, TResult>? localShellToolCallOutput = null,
-            global::System.Func<global::tryAGI.OpenAI.MCPListTools?, TResult>? mCPListTools = null,
-            global::System.Func<global::tryAGI.OpenAI.MCPApprovalRequest?, TResult>? mCPApprovalRequest = null,
-            global::System.Func<global::tryAGI.OpenAI.MCPApprovalResponseResource?, TResult>? mCPApprovalResponseResource = null,
-            global::System.Func<global::tryAGI.OpenAI.MCPToolCall?, TResult>? mCPToolCall = null,
+            global::System.Func<global::tryAGI.OpenAI.CodeInterpreterToolCall?, TResult>? codeInterpreterCall = null,
+            global::System.Func<global::tryAGI.OpenAI.LocalShellToolCall?, TResult>? localShellCall = null,
+            global::System.Func<global::tryAGI.OpenAI.LocalShellToolCallOutput?, TResult>? localShellCallOutput = null,
+            global::System.Func<global::tryAGI.OpenAI.FunctionShellCall?, TResult>? shellCall = null,
+            global::System.Func<global::tryAGI.OpenAI.FunctionShellCallOutput?, TResult>? shellCallOutput = null,
+            global::System.Func<global::tryAGI.OpenAI.ApplyPatchToolCall?, TResult>? applyPatchCall = null,
+            global::System.Func<global::tryAGI.OpenAI.ApplyPatchToolCallOutput?, TResult>? applyPatchCallOutput = null,
+            global::System.Func<global::tryAGI.OpenAI.MCPListTools?, TResult>? mcpListTools = null,
+            global::System.Func<global::tryAGI.OpenAI.MCPApprovalRequest?, TResult>? mcpApprovalRequest = null,
+            global::System.Func<global::tryAGI.OpenAI.MCPApprovalResponseResource?, TResult>? mcpApprovalResponse = null,
+            global::System.Func<global::tryAGI.OpenAI.MCPToolCall?, TResult>? mcpCall = null,
             global::System.Func<global::tryAGI.OpenAI.CustomToolCall?, TResult>? customToolCall = null,
             global::System.Func<global::tryAGI.OpenAI.CustomToolCallOutput?, TResult>? customToolCallOutput = null,
             bool validate = true)
@@ -786,57 +1025,81 @@ namespace tryAGI.OpenAI
             {
                 return functionToolCallOutputResource(FunctionToolCallOutputResource!);
             }
-            else if (IsFileSearchToolCall && fileSearchToolCall != null)
+            else if (IsFileSearchCall && fileSearchCall != null)
             {
-                return fileSearchToolCall(FileSearchToolCall!);
+                return fileSearchCall(FileSearchCall!);
             }
-            else if (IsWebSearchToolCall && webSearchToolCall != null)
+            else if (IsWebSearchCall && webSearchCall != null)
             {
-                return webSearchToolCall(WebSearchToolCall!);
+                return webSearchCall(WebSearchCall!);
             }
-            else if (IsImageGenToolCall && imageGenToolCall != null)
+            else if (IsImageGenerationCall && imageGenerationCall != null)
             {
-                return imageGenToolCall(ImageGenToolCall!);
+                return imageGenerationCall(ImageGenerationCall!);
             }
-            else if (IsComputerToolCall && computerToolCall != null)
+            else if (IsComputerCall && computerCall != null)
             {
-                return computerToolCall(ComputerToolCall!);
+                return computerCall(ComputerCall!);
             }
             else if (IsComputerToolCallOutputResource && computerToolCallOutputResource != null)
             {
                 return computerToolCallOutputResource(ComputerToolCallOutputResource!);
             }
+            else if (IsToolSearchCall && toolSearchCall != null)
+            {
+                return toolSearchCall(ToolSearchCall!);
+            }
+            else if (IsToolSearchOutput && toolSearchOutput != null)
+            {
+                return toolSearchOutput(ToolSearchOutput!);
+            }
             else if (IsReasoning && reasoning != null)
             {
                 return reasoning(Reasoning!);
             }
-            else if (IsCodeInterpreterToolCall && codeInterpreterToolCall != null)
+            else if (IsCodeInterpreterCall && codeInterpreterCall != null)
             {
-                return codeInterpreterToolCall(CodeInterpreterToolCall!);
+                return codeInterpreterCall(CodeInterpreterCall!);
             }
-            else if (IsLocalShellToolCall && localShellToolCall != null)
+            else if (IsLocalShellCall && localShellCall != null)
             {
-                return localShellToolCall(LocalShellToolCall!);
+                return localShellCall(LocalShellCall!);
             }
-            else if (IsLocalShellToolCallOutput && localShellToolCallOutput != null)
+            else if (IsLocalShellCallOutput && localShellCallOutput != null)
             {
-                return localShellToolCallOutput(LocalShellToolCallOutput!);
+                return localShellCallOutput(LocalShellCallOutput!);
             }
-            else if (IsMCPListTools && mCPListTools != null)
+            else if (IsShellCall && shellCall != null)
             {
-                return mCPListTools(MCPListTools!);
+                return shellCall(ShellCall!);
             }
-            else if (IsMCPApprovalRequest && mCPApprovalRequest != null)
+            else if (IsShellCallOutput && shellCallOutput != null)
             {
-                return mCPApprovalRequest(MCPApprovalRequest!);
+                return shellCallOutput(ShellCallOutput!);
             }
-            else if (IsMCPApprovalResponseResource && mCPApprovalResponseResource != null)
+            else if (IsApplyPatchCall && applyPatchCall != null)
             {
-                return mCPApprovalResponseResource(MCPApprovalResponseResource!);
+                return applyPatchCall(ApplyPatchCall!);
             }
-            else if (IsMCPToolCall && mCPToolCall != null)
+            else if (IsApplyPatchCallOutput && applyPatchCallOutput != null)
             {
-                return mCPToolCall(MCPToolCall!);
+                return applyPatchCallOutput(ApplyPatchCallOutput!);
+            }
+            else if (IsMcpListTools && mcpListTools != null)
+            {
+                return mcpListTools(McpListTools!);
+            }
+            else if (IsMcpApprovalRequest && mcpApprovalRequest != null)
+            {
+                return mcpApprovalRequest(McpApprovalRequest!);
+            }
+            else if (IsMcpApprovalResponse && mcpApprovalResponse != null)
+            {
+                return mcpApprovalResponse(McpApprovalResponse!);
+            }
+            else if (IsMcpCall && mcpCall != null)
+            {
+                return mcpCall(McpCall!);
             }
             else if (IsCustomToolCall && customToolCall != null)
             {
@@ -857,19 +1120,25 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.Message?>? message = null,
             global::System.Action<global::tryAGI.OpenAI.FunctionToolCallResource?>? functionToolCallResource = null,
             global::System.Action<global::tryAGI.OpenAI.FunctionToolCallOutputResource?>? functionToolCallOutputResource = null,
-            global::System.Action<global::tryAGI.OpenAI.FileSearchToolCall?>? fileSearchToolCall = null,
-            global::System.Action<global::tryAGI.OpenAI.WebSearchToolCall?>? webSearchToolCall = null,
-            global::System.Action<global::tryAGI.OpenAI.ImageGenToolCall?>? imageGenToolCall = null,
-            global::System.Action<global::tryAGI.OpenAI.ComputerToolCall?>? computerToolCall = null,
+            global::System.Action<global::tryAGI.OpenAI.FileSearchToolCall?>? fileSearchCall = null,
+            global::System.Action<global::tryAGI.OpenAI.WebSearchToolCall?>? webSearchCall = null,
+            global::System.Action<global::tryAGI.OpenAI.ImageGenToolCall?>? imageGenerationCall = null,
+            global::System.Action<global::tryAGI.OpenAI.ComputerToolCall?>? computerCall = null,
             global::System.Action<global::tryAGI.OpenAI.ComputerToolCallOutputResource?>? computerToolCallOutputResource = null,
+            global::System.Action<global::tryAGI.OpenAI.ToolSearchCall?>? toolSearchCall = null,
+            global::System.Action<global::tryAGI.OpenAI.ToolSearchOutput?>? toolSearchOutput = null,
             global::System.Action<global::tryAGI.OpenAI.ReasoningItem?>? reasoning = null,
-            global::System.Action<global::tryAGI.OpenAI.CodeInterpreterToolCall?>? codeInterpreterToolCall = null,
-            global::System.Action<global::tryAGI.OpenAI.LocalShellToolCall?>? localShellToolCall = null,
-            global::System.Action<global::tryAGI.OpenAI.LocalShellToolCallOutput?>? localShellToolCallOutput = null,
-            global::System.Action<global::tryAGI.OpenAI.MCPListTools?>? mCPListTools = null,
-            global::System.Action<global::tryAGI.OpenAI.MCPApprovalRequest?>? mCPApprovalRequest = null,
-            global::System.Action<global::tryAGI.OpenAI.MCPApprovalResponseResource?>? mCPApprovalResponseResource = null,
-            global::System.Action<global::tryAGI.OpenAI.MCPToolCall?>? mCPToolCall = null,
+            global::System.Action<global::tryAGI.OpenAI.CodeInterpreterToolCall?>? codeInterpreterCall = null,
+            global::System.Action<global::tryAGI.OpenAI.LocalShellToolCall?>? localShellCall = null,
+            global::System.Action<global::tryAGI.OpenAI.LocalShellToolCallOutput?>? localShellCallOutput = null,
+            global::System.Action<global::tryAGI.OpenAI.FunctionShellCall?>? shellCall = null,
+            global::System.Action<global::tryAGI.OpenAI.FunctionShellCallOutput?>? shellCallOutput = null,
+            global::System.Action<global::tryAGI.OpenAI.ApplyPatchToolCall?>? applyPatchCall = null,
+            global::System.Action<global::tryAGI.OpenAI.ApplyPatchToolCallOutput?>? applyPatchCallOutput = null,
+            global::System.Action<global::tryAGI.OpenAI.MCPListTools?>? mcpListTools = null,
+            global::System.Action<global::tryAGI.OpenAI.MCPApprovalRequest?>? mcpApprovalRequest = null,
+            global::System.Action<global::tryAGI.OpenAI.MCPApprovalResponseResource?>? mcpApprovalResponse = null,
+            global::System.Action<global::tryAGI.OpenAI.MCPToolCall?>? mcpCall = null,
             global::System.Action<global::tryAGI.OpenAI.CustomToolCall?>? customToolCall = null,
             global::System.Action<global::tryAGI.OpenAI.CustomToolCallOutput?>? customToolCallOutput = null,
             bool validate = true)
@@ -891,57 +1160,81 @@ namespace tryAGI.OpenAI
             {
                 functionToolCallOutputResource?.Invoke(FunctionToolCallOutputResource!);
             }
-            else if (IsFileSearchToolCall)
+            else if (IsFileSearchCall)
             {
-                fileSearchToolCall?.Invoke(FileSearchToolCall!);
+                fileSearchCall?.Invoke(FileSearchCall!);
             }
-            else if (IsWebSearchToolCall)
+            else if (IsWebSearchCall)
             {
-                webSearchToolCall?.Invoke(WebSearchToolCall!);
+                webSearchCall?.Invoke(WebSearchCall!);
             }
-            else if (IsImageGenToolCall)
+            else if (IsImageGenerationCall)
             {
-                imageGenToolCall?.Invoke(ImageGenToolCall!);
+                imageGenerationCall?.Invoke(ImageGenerationCall!);
             }
-            else if (IsComputerToolCall)
+            else if (IsComputerCall)
             {
-                computerToolCall?.Invoke(ComputerToolCall!);
+                computerCall?.Invoke(ComputerCall!);
             }
             else if (IsComputerToolCallOutputResource)
             {
                 computerToolCallOutputResource?.Invoke(ComputerToolCallOutputResource!);
             }
+            else if (IsToolSearchCall)
+            {
+                toolSearchCall?.Invoke(ToolSearchCall!);
+            }
+            else if (IsToolSearchOutput)
+            {
+                toolSearchOutput?.Invoke(ToolSearchOutput!);
+            }
             else if (IsReasoning)
             {
                 reasoning?.Invoke(Reasoning!);
             }
-            else if (IsCodeInterpreterToolCall)
+            else if (IsCodeInterpreterCall)
             {
-                codeInterpreterToolCall?.Invoke(CodeInterpreterToolCall!);
+                codeInterpreterCall?.Invoke(CodeInterpreterCall!);
             }
-            else if (IsLocalShellToolCall)
+            else if (IsLocalShellCall)
             {
-                localShellToolCall?.Invoke(LocalShellToolCall!);
+                localShellCall?.Invoke(LocalShellCall!);
             }
-            else if (IsLocalShellToolCallOutput)
+            else if (IsLocalShellCallOutput)
             {
-                localShellToolCallOutput?.Invoke(LocalShellToolCallOutput!);
+                localShellCallOutput?.Invoke(LocalShellCallOutput!);
             }
-            else if (IsMCPListTools)
+            else if (IsShellCall)
             {
-                mCPListTools?.Invoke(MCPListTools!);
+                shellCall?.Invoke(ShellCall!);
             }
-            else if (IsMCPApprovalRequest)
+            else if (IsShellCallOutput)
             {
-                mCPApprovalRequest?.Invoke(MCPApprovalRequest!);
+                shellCallOutput?.Invoke(ShellCallOutput!);
             }
-            else if (IsMCPApprovalResponseResource)
+            else if (IsApplyPatchCall)
             {
-                mCPApprovalResponseResource?.Invoke(MCPApprovalResponseResource!);
+                applyPatchCall?.Invoke(ApplyPatchCall!);
             }
-            else if (IsMCPToolCall)
+            else if (IsApplyPatchCallOutput)
             {
-                mCPToolCall?.Invoke(MCPToolCall!);
+                applyPatchCallOutput?.Invoke(ApplyPatchCallOutput!);
+            }
+            else if (IsMcpListTools)
+            {
+                mcpListTools?.Invoke(McpListTools!);
+            }
+            else if (IsMcpApprovalRequest)
+            {
+                mcpApprovalRequest?.Invoke(McpApprovalRequest!);
+            }
+            else if (IsMcpApprovalResponse)
+            {
+                mcpApprovalResponse?.Invoke(McpApprovalResponse!);
+            }
+            else if (IsMcpCall)
+            {
+                mcpCall?.Invoke(McpCall!);
             }
             else if (IsCustomToolCall)
             {
@@ -966,31 +1259,43 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.FunctionToolCallResource),
                 FunctionToolCallOutputResource,
                 typeof(global::tryAGI.OpenAI.FunctionToolCallOutputResource),
-                FileSearchToolCall,
+                FileSearchCall,
                 typeof(global::tryAGI.OpenAI.FileSearchToolCall),
-                WebSearchToolCall,
+                WebSearchCall,
                 typeof(global::tryAGI.OpenAI.WebSearchToolCall),
-                ImageGenToolCall,
+                ImageGenerationCall,
                 typeof(global::tryAGI.OpenAI.ImageGenToolCall),
-                ComputerToolCall,
+                ComputerCall,
                 typeof(global::tryAGI.OpenAI.ComputerToolCall),
                 ComputerToolCallOutputResource,
                 typeof(global::tryAGI.OpenAI.ComputerToolCallOutputResource),
+                ToolSearchCall,
+                typeof(global::tryAGI.OpenAI.ToolSearchCall),
+                ToolSearchOutput,
+                typeof(global::tryAGI.OpenAI.ToolSearchOutput),
                 Reasoning,
                 typeof(global::tryAGI.OpenAI.ReasoningItem),
-                CodeInterpreterToolCall,
+                CodeInterpreterCall,
                 typeof(global::tryAGI.OpenAI.CodeInterpreterToolCall),
-                LocalShellToolCall,
+                LocalShellCall,
                 typeof(global::tryAGI.OpenAI.LocalShellToolCall),
-                LocalShellToolCallOutput,
+                LocalShellCallOutput,
                 typeof(global::tryAGI.OpenAI.LocalShellToolCallOutput),
-                MCPListTools,
+                ShellCall,
+                typeof(global::tryAGI.OpenAI.FunctionShellCall),
+                ShellCallOutput,
+                typeof(global::tryAGI.OpenAI.FunctionShellCallOutput),
+                ApplyPatchCall,
+                typeof(global::tryAGI.OpenAI.ApplyPatchToolCall),
+                ApplyPatchCallOutput,
+                typeof(global::tryAGI.OpenAI.ApplyPatchToolCallOutput),
+                McpListTools,
                 typeof(global::tryAGI.OpenAI.MCPListTools),
-                MCPApprovalRequest,
+                McpApprovalRequest,
                 typeof(global::tryAGI.OpenAI.MCPApprovalRequest),
-                MCPApprovalResponseResource,
+                McpApprovalResponse,
                 typeof(global::tryAGI.OpenAI.MCPApprovalResponseResource),
-                MCPToolCall,
+                McpCall,
                 typeof(global::tryAGI.OpenAI.MCPToolCall),
                 CustomToolCall,
                 typeof(global::tryAGI.OpenAI.CustomToolCall),
@@ -1015,19 +1320,25 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.Message?>.Default.Equals(Message, other.Message) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FunctionToolCallResource?>.Default.Equals(FunctionToolCallResource, other.FunctionToolCallResource) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FunctionToolCallOutputResource?>.Default.Equals(FunctionToolCallOutputResource, other.FunctionToolCallOutputResource) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FileSearchToolCall?>.Default.Equals(FileSearchToolCall, other.FileSearchToolCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.WebSearchToolCall?>.Default.Equals(WebSearchToolCall, other.WebSearchToolCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ImageGenToolCall?>.Default.Equals(ImageGenToolCall, other.ImageGenToolCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ComputerToolCall?>.Default.Equals(ComputerToolCall, other.ComputerToolCall) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FileSearchToolCall?>.Default.Equals(FileSearchCall, other.FileSearchCall) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.WebSearchToolCall?>.Default.Equals(WebSearchCall, other.WebSearchCall) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ImageGenToolCall?>.Default.Equals(ImageGenerationCall, other.ImageGenerationCall) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ComputerToolCall?>.Default.Equals(ComputerCall, other.ComputerCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ComputerToolCallOutputResource?>.Default.Equals(ComputerToolCallOutputResource, other.ComputerToolCallOutputResource) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ToolSearchCall?>.Default.Equals(ToolSearchCall, other.ToolSearchCall) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ToolSearchOutput?>.Default.Equals(ToolSearchOutput, other.ToolSearchOutput) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ReasoningItem?>.Default.Equals(Reasoning, other.Reasoning) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CodeInterpreterToolCall?>.Default.Equals(CodeInterpreterToolCall, other.CodeInterpreterToolCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LocalShellToolCall?>.Default.Equals(LocalShellToolCall, other.LocalShellToolCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LocalShellToolCallOutput?>.Default.Equals(LocalShellToolCallOutput, other.LocalShellToolCallOutput) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.MCPListTools?>.Default.Equals(MCPListTools, other.MCPListTools) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.MCPApprovalRequest?>.Default.Equals(MCPApprovalRequest, other.MCPApprovalRequest) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.MCPApprovalResponseResource?>.Default.Equals(MCPApprovalResponseResource, other.MCPApprovalResponseResource) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.MCPToolCall?>.Default.Equals(MCPToolCall, other.MCPToolCall) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CodeInterpreterToolCall?>.Default.Equals(CodeInterpreterCall, other.CodeInterpreterCall) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LocalShellToolCall?>.Default.Equals(LocalShellCall, other.LocalShellCall) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LocalShellToolCallOutput?>.Default.Equals(LocalShellCallOutput, other.LocalShellCallOutput) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FunctionShellCall?>.Default.Equals(ShellCall, other.ShellCall) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FunctionShellCallOutput?>.Default.Equals(ShellCallOutput, other.ShellCallOutput) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ApplyPatchToolCall?>.Default.Equals(ApplyPatchCall, other.ApplyPatchCall) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ApplyPatchToolCallOutput?>.Default.Equals(ApplyPatchCallOutput, other.ApplyPatchCallOutput) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.MCPListTools?>.Default.Equals(McpListTools, other.McpListTools) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.MCPApprovalRequest?>.Default.Equals(McpApprovalRequest, other.McpApprovalRequest) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.MCPApprovalResponseResource?>.Default.Equals(McpApprovalResponse, other.McpApprovalResponse) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.MCPToolCall?>.Default.Equals(McpCall, other.McpCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CustomToolCall?>.Default.Equals(CustomToolCall, other.CustomToolCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CustomToolCallOutput?>.Default.Equals(CustomToolCallOutput, other.CustomToolCallOutput) 
                 ;

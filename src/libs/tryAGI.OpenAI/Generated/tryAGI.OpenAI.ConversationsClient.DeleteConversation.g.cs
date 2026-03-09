@@ -22,7 +22,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Delete a conversation<br/>
         /// Delete a conversation. Items in the conversation will not be deleted.
         /// </summary>
         /// <param name="conversationId">

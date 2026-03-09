@@ -26,7 +26,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Modify run<br/>
         /// Modifies a run.
         /// </summary>
         /// <param name="threadId"></param>
@@ -34,12 +33,10 @@ namespace tryAGI.OpenAI
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "TRYAGI_OPENAI_BETA_001")]
-#endif
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.RunObject> ModifyRunAsync(
             string threadId,
             string runId,
+
             global::tryAGI.OpenAI.ModifyRunRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -182,23 +179,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Modify run<br/>
         /// Modifies a run.
         /// </summary>
         /// <param name="threadId"></param>
         /// <param name="runId"></param>
-        /// <param name="metadata">
-        /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
-        /// useful for storing additional information about the object in a structured<br/>
-        /// format, and querying for objects via API or the dashboard.<br/>
-        /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
-        /// with a maximum length of 512 characters.
-        /// </param>
+        /// <param name="metadata"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "TRYAGI_OPENAI_BETA_001")]
-#endif
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.RunObject> ModifyRunAsync(
             string threadId,
             string runId,

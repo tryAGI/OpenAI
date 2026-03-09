@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -9,10 +11,32 @@ namespace tryAGI.OpenAI
     public sealed partial class RealtimeMCPToolCall
     {
         /// <summary>
-        /// The ID of an associated approval request, if any.
+        /// The type of the item. Always `mcp_call`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("approval_request_id")]
-        public string? ApprovalRequestId { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeMCPToolCallTypeJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeMCPToolCallType Type { get; set; }
+
+        /// <summary>
+        /// The unique ID of the tool call.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Id { get; set; }
+
+        /// <summary>
+        /// The label of the MCP server running the tool.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("server_label")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ServerLabel { get; set; }
+
+        /// <summary>
+        /// The name of the tool that was run.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
 
         /// <summary>
         /// A JSON string of the arguments passed to the tool.
@@ -24,42 +48,20 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        public object? Error { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("approval_request_id")]
+        public string? ApprovalRequestId { get; set; }
 
         /// <summary>
-        /// The unique ID of the tool call.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
-
-        /// <summary>
-        /// The name of the tool that was run.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
-
-        /// <summary>
-        /// The output from the tool call.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
         public string? Output { get; set; }
 
         /// <summary>
-        /// The label of the MCP server running the tool.
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("server_label")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ServerLabel { get; set; }
-
-        /// <summary>
-        /// The type of the item. Always `mcp_call`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeMCPToolCallTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeMCPToolCallType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeMCPProtocolError, global::tryAGI.OpenAI.RealtimeMCPToolExecutionError, global::tryAGI.OpenAI.RealtimeMCPHTTPError>? Error { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -70,49 +72,45 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeMCPToolCall" /> class.
         /// </summary>
-        /// <param name="approvalRequestId">
-        /// The ID of an associated approval request, if any.
+        /// <param name="type">
+        /// The type of the item. Always `mcp_call`.
         /// </param>
-        /// <param name="arguments">
-        /// A JSON string of the arguments passed to the tool.
-        /// </param>
-        /// <param name="error"></param>
         /// <param name="id">
         /// The unique ID of the tool call.
-        /// </param>
-        /// <param name="name">
-        /// The name of the tool that was run.
-        /// </param>
-        /// <param name="output">
-        /// The output from the tool call.
         /// </param>
         /// <param name="serverLabel">
         /// The label of the MCP server running the tool.
         /// </param>
-        /// <param name="type">
-        /// The type of the item. Always `mcp_call`.
+        /// <param name="name">
+        /// The name of the tool that was run.
         /// </param>
+        /// <param name="arguments">
+        /// A JSON string of the arguments passed to the tool.
+        /// </param>
+        /// <param name="approvalRequestId"></param>
+        /// <param name="output"></param>
+        /// <param name="error"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeMCPToolCall(
-            string arguments,
             string id,
-            string name,
             string serverLabel,
+            string name,
+            string arguments,
+            global::tryAGI.OpenAI.RealtimeMCPToolCallType type,
             string? approvalRequestId,
-            object? error,
             string? output,
-            global::tryAGI.OpenAI.RealtimeMCPToolCallType type)
+            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeMCPProtocolError, global::tryAGI.OpenAI.RealtimeMCPToolExecutionError, global::tryAGI.OpenAI.RealtimeMCPHTTPError>? error)
         {
-            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.ServerLabel = serverLabel ?? throw new global::System.ArgumentNullException(nameof(serverLabel));
-            this.ApprovalRequestId = approvalRequestId;
-            this.Error = error;
-            this.Output = output;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
             this.Type = type;
+            this.ApprovalRequestId = approvalRequestId;
+            this.Output = output;
+            this.Error = error;
         }
 
         /// <summary>

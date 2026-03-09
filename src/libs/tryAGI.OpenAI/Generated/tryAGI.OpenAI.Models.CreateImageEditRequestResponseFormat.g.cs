@@ -4,8 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated. This parameter is only supported for `dall-e-2`, as `gpt-image-1` will always return base64-encoded images.<br/>
-    /// Default Value: url<br/>
+    /// The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated. This parameter is only supported for `dall-e-2` (default is `url` for `dall-e-2`), as GPT image models always return base64-encoded images.<br/>
     /// Example: url
     /// </summary>
     public enum CreateImageEditRequestResponseFormat

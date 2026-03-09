@@ -5,7 +5,6 @@ namespace tryAGI.OpenAI
     public partial interface IProjectsClient
     {
         /// <summary>
-        /// Create project service account<br/>
         /// Creates a new service account in the project. This also returns an unredacted API key for the service account.
         /// </summary>
         /// <param name="projectId"></param>
@@ -14,11 +13,11 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ProjectServiceAccountCreateResponse> CreateProjectServiceAccountAsync(
             string projectId,
+
             global::tryAGI.OpenAI.ProjectServiceAccountCreateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Create project service account<br/>
         /// Creates a new service account in the project. This also returns an unredacted API key for the service account.
         /// </summary>
         /// <param name="projectId"></param>

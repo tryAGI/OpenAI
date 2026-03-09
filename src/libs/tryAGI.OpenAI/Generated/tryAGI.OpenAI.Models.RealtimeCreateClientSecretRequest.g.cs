@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -6,7 +8,7 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// Create a session and client secret for the Realtime API. The request can specify<br/>
     /// either a realtime or a transcription session configuration.<br/>
-    /// [Learn more about the Realtime API](https://platform.openai.com/docs/guides/realtime).
+    /// [Learn more about the Realtime API](/docs/guides/realtime).
     /// </summary>
     public sealed partial class RealtimeCreateClientSecretRequest
     {
@@ -24,8 +26,8 @@ namespace tryAGI.OpenAI
         /// session or a transcription session.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.SessionJsonConverter))]
-        public global::tryAGI.OpenAI.Session? Session { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA, global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGA>))]
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA, global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGA>? Session { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -51,7 +53,7 @@ namespace tryAGI.OpenAI
 #endif
         public RealtimeCreateClientSecretRequest(
             global::tryAGI.OpenAI.RealtimeCreateClientSecretRequestExpiresAfter? expiresAfter,
-            global::tryAGI.OpenAI.Session? session)
+            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA, global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGA>? session)
         {
             this.ExpiresAfter = expiresAfter;
             this.Session = session;

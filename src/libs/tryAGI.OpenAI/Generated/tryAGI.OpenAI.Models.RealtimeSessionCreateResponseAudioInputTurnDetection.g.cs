@@ -9,6 +9,18 @@ namespace tryAGI.OpenAI
     public sealed partial class RealtimeSessionCreateResponseAudioInputTurnDetection
     {
         /// <summary>
+        /// Type of turn detection, only `server_vad` is currently supported.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        public string? Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("threshold")]
+        public double? Threshold { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prefix_padding_ms")]
@@ -21,18 +33,6 @@ namespace tryAGI.OpenAI
         public int? SilenceDurationMs { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("threshold")]
-        public double? Threshold { get; set; }
-
-        /// <summary>
-        /// Type of turn detection, only `server_vad` is currently supported.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -41,25 +41,25 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeSessionCreateResponseAudioInputTurnDetection" /> class.
         /// </summary>
-        /// <param name="prefixPaddingMs"></param>
-        /// <param name="silenceDurationMs"></param>
-        /// <param name="threshold"></param>
         /// <param name="type">
         /// Type of turn detection, only `server_vad` is currently supported.
         /// </param>
+        /// <param name="threshold"></param>
+        /// <param name="prefixPaddingMs"></param>
+        /// <param name="silenceDurationMs"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeSessionCreateResponseAudioInputTurnDetection(
-            int? prefixPaddingMs,
-            int? silenceDurationMs,
+            string? type,
             double? threshold,
-            string? type)
+            int? prefixPaddingMs,
+            int? silenceDurationMs)
         {
+            this.Type = type;
+            this.Threshold = threshold;
             this.PrefixPaddingMs = prefixPaddingMs;
             this.SilenceDurationMs = silenceDurationMs;
-            this.Threshold = threshold;
-            this.Type = type;
         }
 
         /// <summary>

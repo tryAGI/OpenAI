@@ -9,19 +9,19 @@ namespace tryAGI.OpenAI
     public sealed partial class TextContent
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Text { get; set; }
-
-        /// <summary>
         /// Default Value: text
         /// </summary>
         /// <default>global::tryAGI.OpenAI.TextContentType.Text</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.TextContentTypeJsonConverter))]
         public global::tryAGI.OpenAI.TextContentType Type { get; set; } = global::tryAGI.OpenAI.TextContentType.Text;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Text { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,10 +32,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="TextContent" /> class.
         /// </summary>
-        /// <param name="text"></param>
         /// <param name="type">
         /// Default Value: text
         /// </param>
+        /// <param name="text"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

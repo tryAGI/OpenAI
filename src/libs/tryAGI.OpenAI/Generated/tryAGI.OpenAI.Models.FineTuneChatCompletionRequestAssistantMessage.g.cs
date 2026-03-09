@@ -13,53 +13,52 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessageVariant1? Value1 { get; init; }
+        public global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessageAssistantMessage? AssistantMessage1 { get; init; }
 #else
-        public global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessageVariant1? Value1 { get; }
+        public global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessageAssistantMessage? AssistantMessage1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AssistantMessage1))]
 #endif
-        public bool IsValue1 => Value1 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator FineTuneChatCompletionRequestAssistantMessage(global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessageVariant1 value) => new FineTuneChatCompletionRequestAssistantMessage((global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessageVariant1?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessageVariant1?(FineTuneChatCompletionRequestAssistantMessage @this) => @this.Value1;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public FineTuneChatCompletionRequestAssistantMessage(global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessageVariant1? value)
-        {
-            Value1 = value;
-        }
+        public bool IsAssistantMessage1 => AssistantMessage1 != null;
 
         /// <summary>
         /// Messages sent by the model in response to user messages.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage? Value2 { get; init; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage? AssistantMessage2 { get; init; }
 #else
-        public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage? Value2 { get; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage? AssistantMessage2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AssistantMessage2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsAssistantMessage2 => AssistantMessage2 != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator FineTuneChatCompletionRequestAssistantMessage(global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessageAssistantMessage value) => new FineTuneChatCompletionRequestAssistantMessage((global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessageAssistantMessage?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessageAssistantMessage?(FineTuneChatCompletionRequestAssistantMessage @this) => @this.AssistantMessage1;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public FineTuneChatCompletionRequestAssistantMessage(global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessageAssistantMessage? value)
+        {
+            AssistantMessage1 = value;
+        }
 
         /// <summary>
         /// 
@@ -69,42 +68,42 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage?(FineTuneChatCompletionRequestAssistantMessage @this) => @this.Value2;
+        public static implicit operator global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage?(FineTuneChatCompletionRequestAssistantMessage @this) => @this.AssistantMessage2;
 
         /// <summary>
         /// 
         /// </summary>
         public FineTuneChatCompletionRequestAssistantMessage(global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage? value)
         {
-            Value2 = value;
+            AssistantMessage2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public FineTuneChatCompletionRequestAssistantMessage(
-            global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessageVariant1? value1,
-            global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage? value2
+            global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessageAssistantMessage? assistantMessage1,
+            global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage? assistantMessage2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            AssistantMessage1 = assistantMessage1;
+            AssistantMessage2 = assistantMessage2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            AssistantMessage2 as object ??
+            AssistantMessage1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            AssistantMessage1?.ToString() ??
+            AssistantMessage2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +111,15 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsAssistantMessage1 && IsAssistantMessage2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessageVariant1?, TResult>? value1 = null,
-            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage?, TResult>? value2 = null,
+            global::System.Func<global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessageAssistantMessage?, TResult>? assistantMessage1 = null,
+            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage?, TResult>? assistantMessage2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +127,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsAssistantMessage1 && assistantMessage1 != null)
             {
-                return value1(Value1!);
+                return assistantMessage1(AssistantMessage1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsAssistantMessage2 && assistantMessage2 != null)
             {
-                return value2(Value2!);
+                return assistantMessage2(AssistantMessage2!);
             }
 
             return default(TResult);
@@ -144,8 +143,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessageVariant1?>? value1 = null,
-            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage?>? value2 = null,
+            global::System.Action<global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessageAssistantMessage?>? assistantMessage1 = null,
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage?>? assistantMessage2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +152,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsAssistantMessage1)
             {
-                value1?.Invoke(Value1!);
+                assistantMessage1?.Invoke(AssistantMessage1!);
             }
-            else if (IsValue2)
+            else if (IsAssistantMessage2)
             {
-                value2?.Invoke(Value2!);
+                assistantMessage2?.Invoke(AssistantMessage2!);
             }
         }
 
@@ -170,9 +169,9 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                Value1,
-                typeof(global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessageVariant1),
-                Value2,
+                AssistantMessage1,
+                typeof(global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessageAssistantMessage),
+                AssistantMessage2,
                 typeof(global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +189,8 @@ namespace tryAGI.OpenAI
         public bool Equals(FineTuneChatCompletionRequestAssistantMessage other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessageVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessageAssistantMessage?>.Default.Equals(AssistantMessage1, other.AssistantMessage1) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage?>.Default.Equals(AssistantMessage2, other.AssistantMessage2) 
                 ;
         }
 

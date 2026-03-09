@@ -24,8 +24,9 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Delete project service account<br/>
-        /// Deletes a service account from the project.
+        /// Deletes a service account from the project.<br/>
+        /// Returns confirmation of service account deletion, or an error if the project<br/>
+        /// is archived (archived projects have no service accounts).
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="serviceAccountId"></param>

@@ -9,13 +9,6 @@ namespace tryAGI.OpenAI
     public sealed partial class WebSearchPreviewTool
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("search_context_size")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.SearchContextSizeJsonConverter))]
-        public global::tryAGI.OpenAI.SearchContextSize? SearchContextSize { get; set; }
-
-        /// <summary>
         /// The type of the web search tool. One of `web_search_preview` or `web_search_preview_2025_03_11`.<br/>
         /// Default Value: web_search_preview
         /// </summary>
@@ -29,7 +22,20 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_location")]
-        public object? UserLocation { get; set; }
+        public global::tryAGI.OpenAI.ApproximateLocation? UserLocation { get; set; }
+
+        /// <summary>
+        /// High level guidance for the amount of context window space to use for the search. One of `low`, `medium`, or `high`. `medium` is the default.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("search_context_size")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.SearchContextSizeJsonConverter))]
+        public global::tryAGI.OpenAI.SearchContextSize? SearchContextSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("search_content_types")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SearchContentType>? SearchContentTypes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,23 +46,28 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="WebSearchPreviewTool" /> class.
         /// </summary>
-        /// <param name="searchContextSize"></param>
         /// <param name="type">
         /// The type of the web search tool. One of `web_search_preview` or `web_search_preview_2025_03_11`.<br/>
         /// Default Value: web_search_preview
         /// </param>
         /// <param name="userLocation"></param>
+        /// <param name="searchContextSize">
+        /// High level guidance for the amount of context window space to use for the search. One of `low`, `medium`, or `high`. `medium` is the default.
+        /// </param>
+        /// <param name="searchContentTypes"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebSearchPreviewTool(
             global::tryAGI.OpenAI.WebSearchPreviewToolType type,
+            global::tryAGI.OpenAI.ApproximateLocation? userLocation,
             global::tryAGI.OpenAI.SearchContextSize? searchContextSize,
-            object? userLocation)
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SearchContentType>? searchContentTypes)
         {
             this.Type = type;
-            this.SearchContextSize = searchContextSize;
             this.UserLocation = userLocation;
+            this.SearchContextSize = searchContextSize;
+            this.SearchContentTypes = searchContentTypes;
         }
 
         /// <summary>

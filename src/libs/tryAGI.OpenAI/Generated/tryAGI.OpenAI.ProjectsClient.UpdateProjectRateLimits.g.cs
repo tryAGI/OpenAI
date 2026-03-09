@@ -26,7 +26,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Modify project rate limit<br/>
         /// Updates a project rate limit.
         /// </summary>
         /// <param name="projectId"></param>
@@ -37,6 +36,7 @@ namespace tryAGI.OpenAI
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ProjectRateLimit> UpdateProjectRateLimitsAsync(
             string projectId,
             string rateLimitId,
+
             global::tryAGI.OpenAI.ProjectRateLimitUpdateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -216,50 +216,49 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Modify project rate limit<br/>
         /// Updates a project rate limit.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="rateLimitId"></param>
-        /// <param name="batch1DayMaxInputTokens">
-        /// The maximum batch input tokens per day. Only relevant for certain models.
-        /// </param>
-        /// <param name="maxAudioMegabytesPer1Minute">
-        /// The maximum audio megabytes per minute. Only relevant for certain models.
-        /// </param>
-        /// <param name="maxImagesPer1Minute">
-        /// The maximum images per minute. Only relevant for certain models.
-        /// </param>
-        /// <param name="maxRequestsPer1Day">
-        /// The maximum requests per day. Only relevant for certain models.
-        /// </param>
         /// <param name="maxRequestsPer1Minute">
         /// The maximum requests per minute.
         /// </param>
         /// <param name="maxTokensPer1Minute">
         /// The maximum tokens per minute.
         /// </param>
+        /// <param name="maxImagesPer1Minute">
+        /// The maximum images per minute. Only relevant for certain models.
+        /// </param>
+        /// <param name="maxAudioMegabytesPer1Minute">
+        /// The maximum audio megabytes per minute. Only relevant for certain models.
+        /// </param>
+        /// <param name="maxRequestsPer1Day">
+        /// The maximum requests per day. Only relevant for certain models.
+        /// </param>
+        /// <param name="batch1DayMaxInputTokens">
+        /// The maximum batch input tokens per day. Only relevant for certain models.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ProjectRateLimit> UpdateProjectRateLimitsAsync(
             string projectId,
             string rateLimitId,
-            int? batch1DayMaxInputTokens = default,
-            int? maxAudioMegabytesPer1Minute = default,
-            int? maxImagesPer1Minute = default,
-            int? maxRequestsPer1Day = default,
             int? maxRequestsPer1Minute = default,
             int? maxTokensPer1Minute = default,
+            int? maxImagesPer1Minute = default,
+            int? maxAudioMegabytesPer1Minute = default,
+            int? maxRequestsPer1Day = default,
+            int? batch1DayMaxInputTokens = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::tryAGI.OpenAI.ProjectRateLimitUpdateRequest
             {
-                Batch1DayMaxInputTokens = batch1DayMaxInputTokens,
-                MaxAudioMegabytesPer1Minute = maxAudioMegabytesPer1Minute,
-                MaxImagesPer1Minute = maxImagesPer1Minute,
-                MaxRequestsPer1Day = maxRequestsPer1Day,
                 MaxRequestsPer1Minute = maxRequestsPer1Minute,
                 MaxTokensPer1Minute = maxTokensPer1Minute,
+                MaxImagesPer1Minute = maxImagesPer1Minute,
+                MaxAudioMegabytesPer1Minute = maxAudioMegabytesPer1Minute,
+                MaxRequestsPer1Day = maxRequestsPer1Day,
+                Batch1DayMaxInputTokens = batch1DayMaxInputTokens,
             };
 
             return await UpdateProjectRateLimitsAsync(

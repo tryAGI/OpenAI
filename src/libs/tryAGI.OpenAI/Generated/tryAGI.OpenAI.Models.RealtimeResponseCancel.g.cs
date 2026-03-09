@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Send this event to cancel an in-progress response.
+    /// Send this event to cancel an in-progress response.<br/>
+    /// Example: {"event_id":"event_567","type":"response.cancel"}
     /// </summary>
     public sealed partial class RealtimeResponseCancel
     {

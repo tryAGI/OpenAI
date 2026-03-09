@@ -32,24 +32,6 @@ namespace tryAGI.OpenAI
         public bool IsConversationItemCreate => ConversationItemCreate != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventConversationItemCreate value) => new RealtimeClientEvent((global::tryAGI.OpenAI.RealtimeClientEventConversationItemCreate?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.RealtimeClientEventConversationItemCreate?(RealtimeClientEvent @this) => @this.ConversationItemCreate;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventConversationItemCreate? value)
-        {
-            ConversationItemCreate = value;
-        }
-
-        /// <summary>
         /// Send this event when you want to remove any item from the conversation <br/>
         /// history. The server will respond with a `conversation.item.deleted` event, <br/>
         /// unless the item does not exist in the conversation history, in which case the <br/>
@@ -70,24 +52,6 @@ namespace tryAGI.OpenAI
         public bool IsConversationItemDelete => ConversationItemDelete != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventConversationItemDelete value) => new RealtimeClientEvent((global::tryAGI.OpenAI.RealtimeClientEventConversationItemDelete?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.RealtimeClientEventConversationItemDelete?(RealtimeClientEvent @this) => @this.ConversationItemDelete;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventConversationItemDelete? value)
-        {
-            ConversationItemDelete = value;
-        }
-
-        /// <summary>
         /// Send this event when you want to retrieve the server's representation of a specific item in the conversation history. This is useful, for example, to inspect user audio after noise cancellation and VAD.<br/>
         /// The server will respond with a `conversation.item.retrieved` event, <br/>
         /// unless the item does not exist in the conversation history, in which case the <br/>
@@ -106,24 +70,6 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemRetrieve))]
 #endif
         public bool IsConversationItemRetrieve => ConversationItemRetrieve != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventConversationItemRetrieve value) => new RealtimeClientEvent((global::tryAGI.OpenAI.RealtimeClientEventConversationItemRetrieve?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.RealtimeClientEventConversationItemRetrieve?(RealtimeClientEvent @this) => @this.ConversationItemRetrieve;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventConversationItemRetrieve? value)
-        {
-            ConversationItemRetrieve = value;
-        }
 
         /// <summary>
         /// Send this event to truncate a previous assistant message’s audio. The server <br/>
@@ -149,24 +95,6 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemTruncate))]
 #endif
         public bool IsConversationItemTruncate => ConversationItemTruncate != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventConversationItemTruncate value) => new RealtimeClientEvent((global::tryAGI.OpenAI.RealtimeClientEventConversationItemTruncate?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.RealtimeClientEventConversationItemTruncate?(RealtimeClientEvent @this) => @this.ConversationItemTruncate;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventConversationItemTruncate? value)
-        {
-            ConversationItemTruncate = value;
-        }
 
         /// <summary>
         /// Send this event to append audio bytes to the input audio buffer. The audio <br/>
@@ -196,24 +124,6 @@ namespace tryAGI.OpenAI
         public bool IsInputAudioBufferAppend => InputAudioBufferAppend != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferAppend value) => new RealtimeClientEvent((global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferAppend?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferAppend?(RealtimeClientEvent @this) => @this.InputAudioBufferAppend;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferAppend? value)
-        {
-            InputAudioBufferAppend = value;
-        }
-
-        /// <summary>
         /// Send this event to clear the audio bytes in the buffer. The server will <br/>
         /// respond with an `input_audio_buffer.cleared` event.
         /// </summary>
@@ -232,29 +142,11 @@ namespace tryAGI.OpenAI
         public bool IsInputAudioBufferClear => InputAudioBufferClear != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferClear value) => new RealtimeClientEvent((global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferClear?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferClear?(RealtimeClientEvent @this) => @this.InputAudioBufferClear;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferClear? value)
-        {
-            InputAudioBufferClear = value;
-        }
-
-        /// <summary>
-        /// **WebRTC Only:** Emit to cut off the current audio response. This will trigger the server to<br/>
-        /// stop generating audio and emit a `output_audio_buffer.cleared` event. This <br/>
-        /// event should be preceded by a `response.cancel` client event to stop the <br/>
+        /// **WebRTC/SIP Only:** Emit to cut off the current audio response. This will trigger the server to<br/>
+        /// stop generating audio and emit a `output_audio_buffer.cleared` event. This<br/>
+        /// event should be preceded by a `response.cancel` client event to stop the<br/>
         /// generation of the current response.<br/>
-        /// [Learn more](https://platform.openai.com/docs/guides/realtime-conversations#client-and-server-events-for-audio-in-webrtc).
+        /// [Learn more](/docs/guides/realtime-conversations#client-and-server-events-for-audio-in-webrtc).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RealtimeClientEventOutputAudioBufferClear? OutputAudioBufferClear { get; init; }
@@ -269,24 +161,6 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputAudioBufferClear))]
 #endif
         public bool IsOutputAudioBufferClear => OutputAudioBufferClear != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventOutputAudioBufferClear value) => new RealtimeClientEvent((global::tryAGI.OpenAI.RealtimeClientEventOutputAudioBufferClear?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.RealtimeClientEventOutputAudioBufferClear?(RealtimeClientEvent @this) => @this.OutputAudioBufferClear;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventOutputAudioBufferClear? value)
-        {
-            OutputAudioBufferClear = value;
-        }
 
         /// <summary>
         /// Send this event to commit the user input audio buffer, which will create a  new user message item in the conversation. This event will produce an error  if the input audio buffer is empty. When in Server VAD mode, the client does  not need to send this event, the server will commit the audio buffer  automatically.<br/>
@@ -305,24 +179,6 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioBufferCommit))]
 #endif
         public bool IsInputAudioBufferCommit => InputAudioBufferCommit != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferCommit value) => new RealtimeClientEvent((global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferCommit?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferCommit?(RealtimeClientEvent @this) => @this.InputAudioBufferCommit;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferCommit? value)
-        {
-            InputAudioBufferCommit = value;
-        }
 
         /// <summary>
         /// Send this event to cancel an in-progress response. The server will respond <br/>
@@ -344,24 +200,6 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseCancel))]
 #endif
         public bool IsResponseCancel => ResponseCancel != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventResponseCancel value) => new RealtimeClientEvent((global::tryAGI.OpenAI.RealtimeClientEventResponseCancel?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.RealtimeClientEventResponseCancel?(RealtimeClientEvent @this) => @this.ResponseCancel;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventResponseCancel? value)
-        {
-            ResponseCancel = value;
-        }
 
         /// <summary>
         /// This event instructs the server to create a Response, which means triggering <br/>
@@ -400,24 +238,6 @@ namespace tryAGI.OpenAI
         public bool IsResponseCreate => ResponseCreate != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventResponseCreate value) => new RealtimeClientEvent((global::tryAGI.OpenAI.RealtimeClientEventResponseCreate?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.RealtimeClientEventResponseCreate?(RealtimeClientEvent @this) => @this.ResponseCreate;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventResponseCreate? value)
-        {
-            ResponseCreate = value;
-        }
-
-        /// <summary>
         /// Send this event to update the session’s configuration.<br/>
         /// The client may send this event at any time to update any field<br/>
         /// except for `voice` and `model`. `voice` can be updated only if there have been no other audio outputs yet.<br/>
@@ -440,6 +260,185 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionUpdate))]
 #endif
         public bool IsSessionUpdate => SessionUpdate != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventConversationItemCreate value) => new RealtimeClientEvent((global::tryAGI.OpenAI.RealtimeClientEventConversationItemCreate?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.RealtimeClientEventConversationItemCreate?(RealtimeClientEvent @this) => @this.ConversationItemCreate;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventConversationItemCreate? value)
+        {
+            ConversationItemCreate = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventConversationItemDelete value) => new RealtimeClientEvent((global::tryAGI.OpenAI.RealtimeClientEventConversationItemDelete?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.RealtimeClientEventConversationItemDelete?(RealtimeClientEvent @this) => @this.ConversationItemDelete;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventConversationItemDelete? value)
+        {
+            ConversationItemDelete = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventConversationItemRetrieve value) => new RealtimeClientEvent((global::tryAGI.OpenAI.RealtimeClientEventConversationItemRetrieve?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.RealtimeClientEventConversationItemRetrieve?(RealtimeClientEvent @this) => @this.ConversationItemRetrieve;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventConversationItemRetrieve? value)
+        {
+            ConversationItemRetrieve = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventConversationItemTruncate value) => new RealtimeClientEvent((global::tryAGI.OpenAI.RealtimeClientEventConversationItemTruncate?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.RealtimeClientEventConversationItemTruncate?(RealtimeClientEvent @this) => @this.ConversationItemTruncate;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventConversationItemTruncate? value)
+        {
+            ConversationItemTruncate = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferAppend value) => new RealtimeClientEvent((global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferAppend?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferAppend?(RealtimeClientEvent @this) => @this.InputAudioBufferAppend;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferAppend? value)
+        {
+            InputAudioBufferAppend = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferClear value) => new RealtimeClientEvent((global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferClear?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferClear?(RealtimeClientEvent @this) => @this.InputAudioBufferClear;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferClear? value)
+        {
+            InputAudioBufferClear = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventOutputAudioBufferClear value) => new RealtimeClientEvent((global::tryAGI.OpenAI.RealtimeClientEventOutputAudioBufferClear?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.RealtimeClientEventOutputAudioBufferClear?(RealtimeClientEvent @this) => @this.OutputAudioBufferClear;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventOutputAudioBufferClear? value)
+        {
+            OutputAudioBufferClear = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferCommit value) => new RealtimeClientEvent((global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferCommit?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferCommit?(RealtimeClientEvent @this) => @this.InputAudioBufferCommit;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferCommit? value)
+        {
+            InputAudioBufferCommit = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventResponseCancel value) => new RealtimeClientEvent((global::tryAGI.OpenAI.RealtimeClientEventResponseCancel?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.RealtimeClientEventResponseCancel?(RealtimeClientEvent @this) => @this.ResponseCancel;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventResponseCancel? value)
+        {
+            ResponseCancel = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventResponseCreate value) => new RealtimeClientEvent((global::tryAGI.OpenAI.RealtimeClientEventResponseCreate?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.RealtimeClientEventResponseCreate?(RealtimeClientEvent @this) => @this.ResponseCreate;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeClientEvent(global::tryAGI.OpenAI.RealtimeClientEventResponseCreate? value)
+        {
+            ResponseCreate = value;
+        }
 
         /// <summary>
         /// 

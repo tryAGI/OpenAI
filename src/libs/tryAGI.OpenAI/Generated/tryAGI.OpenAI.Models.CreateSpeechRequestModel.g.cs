@@ -20,6 +20,10 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         Gpt4oMiniTts,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt4oMiniTts20251215,
     }
 
     /// <summary>
@@ -37,6 +41,7 @@ namespace tryAGI.OpenAI
                 CreateSpeechRequestModel.Tts1 => "tts-1",
                 CreateSpeechRequestModel.Tts1Hd => "tts-1-hd",
                 CreateSpeechRequestModel.Gpt4oMiniTts => "gpt-4o-mini-tts",
+                CreateSpeechRequestModel.Gpt4oMiniTts20251215 => "gpt-4o-mini-tts-2025-12-15",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,6 +55,7 @@ namespace tryAGI.OpenAI
                 "tts-1" => CreateSpeechRequestModel.Tts1,
                 "tts-1-hd" => CreateSpeechRequestModel.Tts1Hd,
                 "gpt-4o-mini-tts" => CreateSpeechRequestModel.Gpt4oMiniTts,
+                "gpt-4o-mini-tts-2025-12-15" => CreateSpeechRequestModel.Gpt4oMiniTts20251215,
                 _ => null,
             };
         }

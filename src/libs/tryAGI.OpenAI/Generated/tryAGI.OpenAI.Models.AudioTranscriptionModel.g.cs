@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The model to use for transcription. Current options are `whisper-1`, `gpt-4o-transcribe-latest`, `gpt-4o-mini-transcribe`, and `gpt-4o-transcribe`.
+    /// 
     /// </summary>
     public enum AudioTranscriptionModel
     {
@@ -15,15 +15,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Gpt4oTranscribeLatest,
-        /// <summary>
-        /// 
-        /// </summary>
         Gpt4oMiniTranscribe,
         /// <summary>
         /// 
         /// </summary>
+        Gpt4oMiniTranscribe20251215,
+        /// <summary>
+        /// 
+        /// </summary>
         Gpt4oTranscribe,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt4oTranscribeDiarize,
     }
 
     /// <summary>
@@ -39,9 +43,10 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 AudioTranscriptionModel.Whisper1 => "whisper-1",
-                AudioTranscriptionModel.Gpt4oTranscribeLatest => "gpt-4o-transcribe-latest",
                 AudioTranscriptionModel.Gpt4oMiniTranscribe => "gpt-4o-mini-transcribe",
+                AudioTranscriptionModel.Gpt4oMiniTranscribe20251215 => "gpt-4o-mini-transcribe-2025-12-15",
                 AudioTranscriptionModel.Gpt4oTranscribe => "gpt-4o-transcribe",
+                AudioTranscriptionModel.Gpt4oTranscribeDiarize => "gpt-4o-transcribe-diarize",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,9 +58,10 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "whisper-1" => AudioTranscriptionModel.Whisper1,
-                "gpt-4o-transcribe-latest" => AudioTranscriptionModel.Gpt4oTranscribeLatest,
                 "gpt-4o-mini-transcribe" => AudioTranscriptionModel.Gpt4oMiniTranscribe,
+                "gpt-4o-mini-transcribe-2025-12-15" => AudioTranscriptionModel.Gpt4oMiniTranscribe20251215,
                 "gpt-4o-transcribe" => AudioTranscriptionModel.Gpt4oTranscribe,
+                "gpt-4o-transcribe-diarize" => AudioTranscriptionModel.Gpt4oTranscribeDiarize,
                 _ => null,
             };
         }

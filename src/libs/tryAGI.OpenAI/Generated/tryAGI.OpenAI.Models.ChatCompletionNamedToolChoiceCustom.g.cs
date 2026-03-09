@@ -9,18 +9,18 @@ namespace tryAGI.OpenAI
     public sealed partial class ChatCompletionNamedToolChoiceCustom
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("custom")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustomCustom Custom { get; set; }
-
-        /// <summary>
         /// For custom tool calling, the type is always `custom`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatCompletionNamedToolChoiceCustomTypeJsonConverter))]
         public global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustomType Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("custom")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustomCustom Custom { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,10 +31,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionNamedToolChoiceCustom" /> class.
         /// </summary>
-        /// <param name="custom"></param>
         /// <param name="type">
         /// For custom tool calling, the type is always `custom`.
         /// </param>
+        /// <param name="custom"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

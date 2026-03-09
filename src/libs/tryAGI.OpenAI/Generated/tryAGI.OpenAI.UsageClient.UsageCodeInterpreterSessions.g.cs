@@ -34,7 +34,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Code interpreter sessions<br/>
         /// Get code interpreter sessions usage details for the organization.
         /// </summary>
         /// <param name="startTime"></param>
@@ -73,13 +72,13 @@ namespace tryAGI.OpenAI
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: "/organization/usage/code_interpreter_sessions",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("start_time", startTime.ToString()) 
-                .AddOptionalParameter("end_time", endTime?.ToString()) 
-                .AddOptionalParameter("bucket_width", bucketWidth?.ToValueString()) 
-                .AddOptionalParameter("project_ids", projectIds, delimiter: ",", explode: true) 
-                .AddOptionalParameter("group_by", groupBy, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
+            __pathBuilder
+                .AddRequiredParameter("start_time", startTime.ToString())
+                .AddOptionalParameter("end_time", endTime?.ToString())
+                .AddOptionalParameter("bucket_width", bucketWidth?.ToValueString())
+                .AddOptionalParameter("project_ids", projectIds, delimiter: ",", explode: true)
+                .AddOptionalParameter("group_by", groupBy, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("page", page) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -9,6 +9,13 @@ namespace tryAGI.OpenAI
     public sealed partial class VectorStoreFileContentResponse
     {
         /// <summary>
+        /// The object type, which is always `vector_store.file_content.page`
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VectorStoreFileContentResponseObjectJsonConverter))]
+        public global::tryAGI.OpenAI.VectorStoreFileContentResponseObject Object { get; set; }
+
+        /// <summary>
         /// Parsed content of the file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
@@ -23,18 +30,11 @@ namespace tryAGI.OpenAI
         public required bool HasMore { get; set; }
 
         /// <summary>
-        /// The token for the next page, if any.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("next_page")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? NextPage { get; set; }
-
-        /// <summary>
-        /// The object type, which is always `vector_store.file_content.page`
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VectorStoreFileContentResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.VectorStoreFileContentResponseObject Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,18 +45,16 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="VectorStoreFileContentResponse" /> class.
         /// </summary>
+        /// <param name="object">
+        /// The object type, which is always `vector_store.file_content.page`
+        /// </param>
         /// <param name="data">
         /// Parsed content of the file.
         /// </param>
         /// <param name="hasMore">
         /// Indicates if there are more content pages to fetch.
         /// </param>
-        /// <param name="nextPage">
-        /// The token for the next page, if any.
-        /// </param>
-        /// <param name="object">
-        /// The object type, which is always `vector_store.file_content.page`
-        /// </param>
+        /// <param name="nextPage"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

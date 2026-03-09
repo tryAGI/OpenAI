@@ -11,11 +11,51 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateChatCompletionRequestVariant2
     {
         /// <summary>
-        /// Parameters for audio output. Required when audio output is requested with<br/>
-        /// `modalities: ["audio"]`. [Learn more](https://platform.openai.com/docs/guides/audio).
+        /// A list of messages comprising the conversation so far. Depending on the<br/>
+        /// [model](/docs/models) you use, different message types (modalities) are<br/>
+        /// supported, like [text](/docs/guides/text-generation),<br/>
+        /// [images](/docs/guides/vision), and [audio](/docs/guides/audio).
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("audio")]
-        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2Audio? Audio { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestMessage> Messages { get; set; }
+
+        /// <summary>
+        /// Model ID used to generate the response, like `gpt-4o` or `o3`. OpenAI<br/>
+        /// offers a wide range of models with different capabilities, performance<br/>
+        /// characteristics, and price points. Refer to the [model guide](/docs/models)<br/>
+        /// to browse and compare available models.<br/>
+        /// Example: gpt-5.4
+        /// </summary>
+        /// <example>gpt-5.4</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ModelIdsSharedJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.ModelIdsShared Model { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("modalities")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResponseModalitiesVariant1Item>? Modalities { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("verbosity")]
+        public global::tryAGI.OpenAI.VerbosityEnum? Verbosity { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reasoning_effort")]
+        public global::tryAGI.OpenAI.ReasoningEffortEnum? ReasoningEffort { get; set; }
+
+        /// <summary>
+        /// An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and [reasoning tokens](/docs/guides/reasoning).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_completion_tokens")]
+        public int? MaxCompletionTokens { get; set; }
 
         /// <summary>
         /// Number between -2.0 and 2.0. Positive values penalize new tokens based on<br/>
@@ -27,28 +67,80 @@ namespace tryAGI.OpenAI
         public double? FrequencyPenalty { get; set; }
 
         /// <summary>
-        /// Deprecated in favor of `tool_choice`.<br/>
-        /// Controls which (if any) function is called by the model.<br/>
-        /// `none` means the model will not call a function and instead generates a<br/>
-        /// message.<br/>
-        /// `auto` means the model can pick between generating a message or calling a<br/>
-        /// function.<br/>
-        /// Specifying a particular function via `{"name": "my_function"}` forces the<br/>
-        /// model to call that function.<br/>
-        /// `none` is the default when no functions are present. `auto` is the default<br/>
-        /// if functions are present.
+        /// Number between -2.0 and 2.0. Positive values penalize new tokens based on<br/>
+        /// whether they appear in the text so far, increasing the model's likelihood<br/>
+        /// to talk about new topics.<br/>
+        /// Default Value: 0
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("function_call")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2FunctionCall?, global::tryAGI.OpenAI.ChatCompletionFunctionCallOption>))]
-        public global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2FunctionCall?, global::tryAGI.OpenAI.ChatCompletionFunctionCallOption>? FunctionCall { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("presence_penalty")]
+        public double? PresencePenalty { get; set; }
 
         /// <summary>
-        /// Deprecated in favor of `tools`.<br/>
-        /// A list of functions the model may generate JSON inputs for.
+        /// This tool searches the web for relevant results to use in a response.<br/>
+        /// Learn more about the [web search tool](/docs/guides/tools-web-search?api-mode=chat).
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("functions")]
-        [global::System.Obsolete("This property marked as deprecated.")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionFunctions>? Functions { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("web_search_options")]
+        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2WebSearchOptions? WebSearchOptions { get; set; }
+
+        /// <summary>
+        /// An integer between 0 and 20 specifying the number of most likely tokens to<br/>
+        /// return at each token position, each with an associated log probability.<br/>
+        /// `logprobs` must be set to `true` if this parameter is used.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("top_logprobs")]
+        public int? TopLogprobs { get; set; }
+
+        /// <summary>
+        /// An object specifying the format that the model must output.<br/>
+        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables<br/>
+        /// Structured Outputs which ensures the model will match your supplied JSON<br/>
+        /// schema. Learn more in the [Structured Outputs<br/>
+        /// guide](/docs/guides/structured-outputs).<br/>
+        /// Setting to `{ "type": "json_object" }` enables the older JSON mode, which<br/>
+        /// ensures the message the model generates is valid JSON. Using `json_schema`<br/>
+        /// is preferred for models that support it.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseFormatJsonConverter))]
+        public global::tryAGI.OpenAI.ResponseFormat? ResponseFormat { get; set; }
+
+        /// <summary>
+        /// Parameters for audio output. Required when audio output is requested with<br/>
+        /// `modalities: ["audio"]`. [Learn more](/docs/guides/audio).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("audio")]
+        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2Audio? Audio { get; set; }
+
+        /// <summary>
+        /// Whether or not to store the output of this chat completion request for<br/>
+        /// use in our [model distillation](/docs/guides/distillation) or<br/>
+        /// [evals](/docs/guides/evals) products.<br/>
+        /// Supports text and image inputs. Note: image inputs over 8MB will be dropped.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("store")]
+        public bool? Store { get; set; }
+
+        /// <summary>
+        /// If set to true, the model response data will be streamed to the client<br/>
+        /// as it is generated using [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format).<br/>
+        /// See the [Streaming section below](/docs/api-reference/chat/streaming)<br/>
+        /// for more information, along with the [streaming responses](/docs/guides/streaming-responses)<br/>
+        /// guide for more information on how to handle the streaming events.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("stream")]
+        public bool? Stream { get; set; }
+
+        /// <summary>
+        /// Not supported with latest reasoning models `o3` and `o4-mini`.<br/>
+        /// Up to 4 sequences where the API will stop generating further tokens. The<br/>
+        /// returned text will not contain the stop sequence.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("stop")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.StopConfigurationJsonConverter))]
+        public global::tryAGI.OpenAI.StopConfiguration? Stop { get; set; }
 
         /// <summary>
         /// Modify the likelihood of specified tokens appearing in the completion.<br/>
@@ -57,7 +149,8 @@ namespace tryAGI.OpenAI
         /// the bias is added to the logits generated by the model prior to sampling.<br/>
         /// The exact effect will vary per model, but values between -1 and 1 should<br/>
         /// decrease or increase likelihood of selection; values like -100 or 100<br/>
-        /// should result in a ban or exclusive selection of the relevant token.
+        /// should result in a ban or exclusive selection of the relevant token.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logit_bias")]
         public global::System.Collections.Generic.Dictionary<string, int>? LogitBias { get; set; }
@@ -72,52 +165,15 @@ namespace tryAGI.OpenAI
         public bool? Logprobs { get; set; }
 
         /// <summary>
-        /// An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and [reasoning tokens](https://platform.openai.com/docs/guides/reasoning).
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("max_completion_tokens")]
-        public int? MaxCompletionTokens { get; set; }
-
-        /// <summary>
         /// The maximum number of [tokens](/tokenizer) that can be generated in the<br/>
         /// chat completion. This value can be used to control<br/>
         /// [costs](https://openai.com/api/pricing/) for text generated via API.<br/>
         /// This value is now deprecated in favor of `max_completion_tokens`, and is<br/>
-        /// not compatible with [o-series models](https://platform.openai.com/docs/guides/reasoning).
+        /// not compatible with [o-series models](/docs/guides/reasoning).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_tokens")]
         [global::System.Obsolete("This property marked as deprecated.")]
         public int? MaxTokens { get; set; }
-
-        /// <summary>
-        /// A list of messages comprising the conversation so far. Depending on the<br/>
-        /// [model](https://platform.openai.com/docs/models) you use, different message types (modalities) are<br/>
-        /// supported, like [text](https://platform.openai.com/docs/guides/text-generation),<br/>
-        /// [images](https://platform.openai.com/docs/guides/vision), and [audio](https://platform.openai.com/docs/guides/audio).
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestMessage> Messages { get; set; }
-
-        /// <summary>
-        /// Output types that you would like the model to generate.<br/>
-        /// Most models are capable of generating text, which is the default:<br/>
-        /// `["text"]`<br/>
-        /// The `gpt-4o-audio-preview` model can also be used to<br/>
-        /// [generate audio](https://platform.openai.com/docs/guides/audio). To request that this model generate<br/>
-        /// both text and audio responses, you can use:<br/>
-        /// `["text", "audio"]`
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("modalities")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResponseModalitie>? Modalities { get; set; }
-
-        /// <summary>
-        /// Example: gpt-4o
-        /// </summary>
-        /// <example>gpt-4o</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ModelIdsSharedJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ModelIdsShared Model { get; set; }
 
         /// <summary>
         /// How many chat completion choices to generate for each input message. Note that you will be charged based on the number of generated tokens across all of the choices. Keep `n` as `1` to minimize costs.<br/>
@@ -129,54 +185,13 @@ namespace tryAGI.OpenAI
         public int? N { get; set; }
 
         /// <summary>
-        /// Whether to enable [parallel function calling](https://platform.openai.com/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("parallel_tool_calls")]
-        public bool? ParallelToolCalls { get; set; }
-
-        /// <summary>
-        /// Configuration for a [Predicted Output](https://platform.openai.com/docs/guides/predicted-outputs),<br/>
+        /// Configuration for a [Predicted Output](/docs/guides/predicted-outputs),<br/>
         /// which can greatly improve response times when large parts of the model<br/>
         /// response are known ahead of time. This is most common when you are<br/>
         /// regenerating a file with only minor changes to most of the content.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prediction")]
         public global::tryAGI.OpenAI.PredictionContent? Prediction { get; set; }
-
-        /// <summary>
-        /// Number between -2.0 and 2.0. Positive values penalize new tokens based on<br/>
-        /// whether they appear in the text so far, increasing the model's likelihood<br/>
-        /// to talk about new topics.<br/>
-        /// Default Value: 0
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("presence_penalty")]
-        public double? PresencePenalty { get; set; }
-
-        /// <summary>
-        /// Constrains effort on reasoning for<br/>
-        /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
-        /// Currently supported values are `minimal`, `low`, `medium`, and `high`. Reducing<br/>
-        /// reasoning effort can result in faster responses and fewer tokens used<br/>
-        /// on reasoning in a response.<br/>
-        /// Default Value: medium
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("reasoning_effort")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ReasoningEffortJsonConverter))]
-        public global::tryAGI.OpenAI.ReasoningEffort? ReasoningEffort { get; set; }
-
-        /// <summary>
-        /// An object specifying the format that the model must output.<br/>
-        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables<br/>
-        /// Structured Outputs which ensures the model will match your supplied JSON<br/>
-        /// schema. Learn more in the [Structured Outputs<br/>
-        /// guide](https://platform.openai.com/docs/guides/structured-outputs).<br/>
-        /// Setting to `{ "type": "json_object" }` enables the older JSON mode, which<br/>
-        /// ensures the message the model generates is valid JSON. Using `json_schema`<br/>
-        /// is preferred for models that support it.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.ResponseFormatText, global::tryAGI.OpenAI.ResponseFormatJsonSchema, global::tryAGI.OpenAI.ResponseFormatJsonObject>))]
-        public global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ResponseFormatText, global::tryAGI.OpenAI.ResponseFormatJsonSchema, global::tryAGI.OpenAI.ResponseFormatJsonObject>? ResponseFormat { get; set; }
 
         /// <summary>
         /// This feature is in Beta.<br/>
@@ -188,40 +203,18 @@ namespace tryAGI.OpenAI
         public int? Seed { get; set; }
 
         /// <summary>
-        /// Not supported with latest reasoning models `o3` and `o4-mini`.<br/>
-        /// Up to 4 sequences where the API will stop generating further tokens. The<br/>
-        /// returned text will not contain the stop sequence.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("stop")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.StopConfigurationJsonConverter))]
-        public global::tryAGI.OpenAI.StopConfiguration? Stop { get; set; }
-
-        /// <summary>
-        /// Whether or not to store the output of this chat completion request for<br/>
-        /// use in our [model distillation](https://platform.openai.com/docs/guides/distillation) or<br/>
-        /// [evals](https://platform.openai.com/docs/guides/evals) products.<br/>
-        /// Supports text and image inputs. Note: image inputs over 8MB will be dropped.<br/>
-        /// Default Value: false
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("store")]
-        public bool? Store { get; set; }
-
-        /// <summary>
-        /// If set to true, the model response data will be streamed to the client<br/>
-        /// as it is generated using [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format).<br/>
-        /// See the [Streaming section below](https://platform.openai.com/docs/api-reference/chat/streaming)<br/>
-        /// for more information, along with the [streaming responses](https://platform.openai.com/docs/guides/streaming-responses)<br/>
-        /// guide for more information on how to handle the streaming events.<br/>
-        /// Default Value: false
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("stream")]
-        public bool? Stream { get; set; }
-
-        /// <summary>
-        /// Options for streaming response. Only set this when you set `stream: true`.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream_options")]
-        public global::tryAGI.OpenAI.ChatCompletionStreamOptions? StreamOptions { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionStreamOptionsVariant1? StreamOptions { get; set; }
+
+        /// <summary>
+        /// A list of tools the model may call. You can provide either<br/>
+        /// [custom tools](/docs/guides/function-calling#custom-tools) or<br/>
+        /// [function tools](/docs/guides/function-calling).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ChatCompletionTool, global::tryAGI.OpenAI.CustomToolChatCompletions>>? Tools { get; set; }
 
         /// <summary>
         /// Controls which (if any) tool is called by the model.<br/>
@@ -236,37 +229,34 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ChatCompletionToolChoiceOption? ToolChoice { get; set; }
 
         /// <summary>
-        /// A list of tools the model may call. You can provide either<br/>
-        /// [custom tools](https://platform.openai.com/docs/guides/function-calling#custom-tools) or<br/>
-        /// [function tools](https://platform.openai.com/docs/guides/function-calling).
+        /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem>? Tools { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("parallel_tool_calls")]
+        public bool? ParallelToolCalls { get; set; }
 
         /// <summary>
-        /// An integer between 0 and 20 specifying the number of most likely tokens to<br/>
-        /// return at each token position, each with an associated log probability.<br/>
-        /// `logprobs` must be set to `true` if this parameter is used.
+        /// Deprecated in favor of `tool_choice`.<br/>
+        /// Controls which (if any) function is called by the model.<br/>
+        /// `none` means the model will not call a function and instead generates a<br/>
+        /// message.<br/>
+        /// `auto` means the model can pick between generating a message or calling a<br/>
+        /// function.<br/>
+        /// Specifying a particular function via `{"name": "my_function"}` forces the<br/>
+        /// model to call that function.<br/>
+        /// `none` is the default when no functions are present. `auto` is the default<br/>
+        /// if functions are present.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("top_logprobs")]
-        public int? TopLogprobs { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("function_call")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2FunctionCall?, global::tryAGI.OpenAI.ChatCompletionFunctionCallOption>))]
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2FunctionCall?, global::tryAGI.OpenAI.ChatCompletionFunctionCallOption>? FunctionCall { get; set; }
 
         /// <summary>
-        /// Constrains the verbosity of the model's response. Lower values will result in<br/>
-        /// more concise responses, while higher values will result in more verbose responses.<br/>
-        /// Currently supported values are `low`, `medium`, and `high`.<br/>
-        /// Default Value: medium
+        /// Deprecated in favor of `tools`.<br/>
+        /// A list of functions the model may generate JSON inputs for.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("verbosity")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VerbosityJsonConverter))]
-        public global::tryAGI.OpenAI.Verbosity? Verbosity { get; set; }
-
-        /// <summary>
-        /// This tool searches the web for relevant results to use in a response.<br/>
-        /// Learn more about the [web search tool](https://platform.openai.com/docs/guides/tools-web-search?api-mode=chat).
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("web_search_options")]
-        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2WebSearchOptions? WebSearchOptions { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("functions")]
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionFunctions>? Functions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -277,15 +267,80 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateChatCompletionRequestVariant2" /> class.
         /// </summary>
-        /// <param name="audio">
-        /// Parameters for audio output. Required when audio output is requested with<br/>
-        /// `modalities: ["audio"]`. [Learn more](https://platform.openai.com/docs/guides/audio).
+        /// <param name="messages">
+        /// A list of messages comprising the conversation so far. Depending on the<br/>
+        /// [model](/docs/models) you use, different message types (modalities) are<br/>
+        /// supported, like [text](/docs/guides/text-generation),<br/>
+        /// [images](/docs/guides/vision), and [audio](/docs/guides/audio).
+        /// </param>
+        /// <param name="model">
+        /// Model ID used to generate the response, like `gpt-4o` or `o3`. OpenAI<br/>
+        /// offers a wide range of models with different capabilities, performance<br/>
+        /// characteristics, and price points. Refer to the [model guide](/docs/models)<br/>
+        /// to browse and compare available models.<br/>
+        /// Example: gpt-5.4
+        /// </param>
+        /// <param name="modalities"></param>
+        /// <param name="verbosity"></param>
+        /// <param name="reasoningEffort"></param>
+        /// <param name="maxCompletionTokens">
+        /// An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and [reasoning tokens](/docs/guides/reasoning).
         /// </param>
         /// <param name="frequencyPenalty">
         /// Number between -2.0 and 2.0. Positive values penalize new tokens based on<br/>
         /// their existing frequency in the text so far, decreasing the model's<br/>
         /// likelihood to repeat the same line verbatim.<br/>
         /// Default Value: 0
+        /// </param>
+        /// <param name="presencePenalty">
+        /// Number between -2.0 and 2.0. Positive values penalize new tokens based on<br/>
+        /// whether they appear in the text so far, increasing the model's likelihood<br/>
+        /// to talk about new topics.<br/>
+        /// Default Value: 0
+        /// </param>
+        /// <param name="webSearchOptions">
+        /// This tool searches the web for relevant results to use in a response.<br/>
+        /// Learn more about the [web search tool](/docs/guides/tools-web-search?api-mode=chat).
+        /// </param>
+        /// <param name="topLogprobs">
+        /// An integer between 0 and 20 specifying the number of most likely tokens to<br/>
+        /// return at each token position, each with an associated log probability.<br/>
+        /// `logprobs` must be set to `true` if this parameter is used.
+        /// </param>
+        /// <param name="responseFormat">
+        /// An object specifying the format that the model must output.<br/>
+        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables<br/>
+        /// Structured Outputs which ensures the model will match your supplied JSON<br/>
+        /// schema. Learn more in the [Structured Outputs<br/>
+        /// guide](/docs/guides/structured-outputs).<br/>
+        /// Setting to `{ "type": "json_object" }` enables the older JSON mode, which<br/>
+        /// ensures the message the model generates is valid JSON. Using `json_schema`<br/>
+        /// is preferred for models that support it.
+        /// </param>
+        /// <param name="audio">
+        /// Parameters for audio output. Required when audio output is requested with<br/>
+        /// `modalities: ["audio"]`. [Learn more](/docs/guides/audio).
+        /// </param>
+        /// <param name="store">
+        /// Whether or not to store the output of this chat completion request for<br/>
+        /// use in our [model distillation](/docs/guides/distillation) or<br/>
+        /// [evals](/docs/guides/evals) products.<br/>
+        /// Supports text and image inputs. Note: image inputs over 8MB will be dropped.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="stream">
+        /// If set to true, the model response data will be streamed to the client<br/>
+        /// as it is generated using [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format).<br/>
+        /// See the [Streaming section below](/docs/api-reference/chat/streaming)<br/>
+        /// for more information, along with the [streaming responses](/docs/guides/streaming-responses)<br/>
+        /// guide for more information on how to handle the streaming events.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="stop">
+        /// Not supported with latest reasoning models `o3` and `o4-mini`.<br/>
+        /// Up to 4 sequences where the API will stop generating further tokens. The<br/>
+        /// returned text will not contain the stop sequence.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="logitBias">
         /// Modify the likelihood of specified tokens appearing in the completion.<br/>
@@ -294,7 +349,8 @@ namespace tryAGI.OpenAI
         /// the bias is added to the logits generated by the model prior to sampling.<br/>
         /// The exact effect will vary per model, but values between -1 and 1 should<br/>
         /// decrease or increase likelihood of selection; values like -100 or 100<br/>
-        /// should result in a ban or exclusive selection of the relevant token.
+        /// should result in a ban or exclusive selection of the relevant token.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="logprobs">
         /// Whether to return log probabilities of the output tokens or not. If true,<br/>
@@ -302,87 +358,22 @@ namespace tryAGI.OpenAI
         /// `content` of `message`.<br/>
         /// Default Value: false
         /// </param>
-        /// <param name="maxCompletionTokens">
-        /// An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and [reasoning tokens](https://platform.openai.com/docs/guides/reasoning).
-        /// </param>
-        /// <param name="messages">
-        /// A list of messages comprising the conversation so far. Depending on the<br/>
-        /// [model](https://platform.openai.com/docs/models) you use, different message types (modalities) are<br/>
-        /// supported, like [text](https://platform.openai.com/docs/guides/text-generation),<br/>
-        /// [images](https://platform.openai.com/docs/guides/vision), and [audio](https://platform.openai.com/docs/guides/audio).
-        /// </param>
-        /// <param name="modalities">
-        /// Output types that you would like the model to generate.<br/>
-        /// Most models are capable of generating text, which is the default:<br/>
-        /// `["text"]`<br/>
-        /// The `gpt-4o-audio-preview` model can also be used to<br/>
-        /// [generate audio](https://platform.openai.com/docs/guides/audio). To request that this model generate<br/>
-        /// both text and audio responses, you can use:<br/>
-        /// `["text", "audio"]`
-        /// </param>
-        /// <param name="model">
-        /// Example: gpt-4o
-        /// </param>
         /// <param name="n">
         /// How many chat completion choices to generate for each input message. Note that you will be charged based on the number of generated tokens across all of the choices. Keep `n` as `1` to minimize costs.<br/>
         /// Default Value: 1<br/>
         /// Example: 1
         /// </param>
-        /// <param name="parallelToolCalls">
-        /// Whether to enable [parallel function calling](https://platform.openai.com/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.
-        /// </param>
         /// <param name="prediction">
-        /// Configuration for a [Predicted Output](https://platform.openai.com/docs/guides/predicted-outputs),<br/>
+        /// Configuration for a [Predicted Output](/docs/guides/predicted-outputs),<br/>
         /// which can greatly improve response times when large parts of the model<br/>
         /// response are known ahead of time. This is most common when you are<br/>
         /// regenerating a file with only minor changes to most of the content.
         /// </param>
-        /// <param name="presencePenalty">
-        /// Number between -2.0 and 2.0. Positive values penalize new tokens based on<br/>
-        /// whether they appear in the text so far, increasing the model's likelihood<br/>
-        /// to talk about new topics.<br/>
-        /// Default Value: 0
-        /// </param>
-        /// <param name="reasoningEffort">
-        /// Constrains effort on reasoning for<br/>
-        /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
-        /// Currently supported values are `minimal`, `low`, `medium`, and `high`. Reducing<br/>
-        /// reasoning effort can result in faster responses and fewer tokens used<br/>
-        /// on reasoning in a response.<br/>
-        /// Default Value: medium
-        /// </param>
-        /// <param name="responseFormat">
-        /// An object specifying the format that the model must output.<br/>
-        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables<br/>
-        /// Structured Outputs which ensures the model will match your supplied JSON<br/>
-        /// schema. Learn more in the [Structured Outputs<br/>
-        /// guide](https://platform.openai.com/docs/guides/structured-outputs).<br/>
-        /// Setting to `{ "type": "json_object" }` enables the older JSON mode, which<br/>
-        /// ensures the message the model generates is valid JSON. Using `json_schema`<br/>
-        /// is preferred for models that support it.
-        /// </param>
-        /// <param name="stop">
-        /// Not supported with latest reasoning models `o3` and `o4-mini`.<br/>
-        /// Up to 4 sequences where the API will stop generating further tokens. The<br/>
-        /// returned text will not contain the stop sequence.
-        /// </param>
-        /// <param name="store">
-        /// Whether or not to store the output of this chat completion request for<br/>
-        /// use in our [model distillation](https://platform.openai.com/docs/guides/distillation) or<br/>
-        /// [evals](https://platform.openai.com/docs/guides/evals) products.<br/>
-        /// Supports text and image inputs. Note: image inputs over 8MB will be dropped.<br/>
-        /// Default Value: false
-        /// </param>
-        /// <param name="stream">
-        /// If set to true, the model response data will be streamed to the client<br/>
-        /// as it is generated using [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format).<br/>
-        /// See the [Streaming section below](https://platform.openai.com/docs/api-reference/chat/streaming)<br/>
-        /// for more information, along with the [streaming responses](https://platform.openai.com/docs/guides/streaming-responses)<br/>
-        /// guide for more information on how to handle the streaming events.<br/>
-        /// Default Value: false
-        /// </param>
-        /// <param name="streamOptions">
-        /// Options for streaming response. Only set this when you set `stream: true`.
+        /// <param name="streamOptions"></param>
+        /// <param name="tools">
+        /// A list of tools the model may call. You can provide either<br/>
+        /// [custom tools](/docs/guides/function-calling#custom-tools) or<br/>
+        /// [function tools](/docs/guides/function-calling).
         /// </param>
         /// <param name="toolChoice">
         /// Controls which (if any) tool is called by the model.<br/>
@@ -392,25 +383,8 @@ namespace tryAGI.OpenAI
         /// Specifying a particular tool via `{"type": "function", "function": {"name": "my_function"}}` forces the model to call that tool.<br/>
         /// `none` is the default when no tools are present. `auto` is the default if tools are present.
         /// </param>
-        /// <param name="tools">
-        /// A list of tools the model may call. You can provide either<br/>
-        /// [custom tools](https://platform.openai.com/docs/guides/function-calling#custom-tools) or<br/>
-        /// [function tools](https://platform.openai.com/docs/guides/function-calling).
-        /// </param>
-        /// <param name="topLogprobs">
-        /// An integer between 0 and 20 specifying the number of most likely tokens to<br/>
-        /// return at each token position, each with an associated log probability.<br/>
-        /// `logprobs` must be set to `true` if this parameter is used.
-        /// </param>
-        /// <param name="verbosity">
-        /// Constrains the verbosity of the model's response. Lower values will result in<br/>
-        /// more concise responses, while higher values will result in more verbose responses.<br/>
-        /// Currently supported values are `low`, `medium`, and `high`.<br/>
-        /// Default Value: medium
-        /// </param>
-        /// <param name="webSearchOptions">
-        /// This tool searches the web for relevant results to use in a response.<br/>
-        /// Learn more about the [web search tool](https://platform.openai.com/docs/guides/tools-web-search?api-mode=chat).
+        /// <param name="parallelToolCalls">
+        /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -418,51 +392,51 @@ namespace tryAGI.OpenAI
         public CreateChatCompletionRequestVariant2(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestMessage> messages,
             global::tryAGI.OpenAI.ModelIdsShared model,
-            global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2Audio? audio,
-            double? frequencyPenalty,
-            global::System.Collections.Generic.Dictionary<string, int>? logitBias,
-            bool? logprobs,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResponseModalitiesVariant1Item>? modalities,
+            global::tryAGI.OpenAI.VerbosityEnum? verbosity,
+            global::tryAGI.OpenAI.ReasoningEffortEnum? reasoningEffort,
             int? maxCompletionTokens,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResponseModalitie>? modalities,
-            int? n,
-            bool? parallelToolCalls,
-            global::tryAGI.OpenAI.PredictionContent? prediction,
+            double? frequencyPenalty,
             double? presencePenalty,
-            global::tryAGI.OpenAI.ReasoningEffort? reasoningEffort,
-            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.ResponseFormatText, global::tryAGI.OpenAI.ResponseFormatJsonSchema, global::tryAGI.OpenAI.ResponseFormatJsonObject>? responseFormat,
-            global::tryAGI.OpenAI.StopConfiguration? stop,
+            global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2WebSearchOptions? webSearchOptions,
+            int? topLogprobs,
+            global::tryAGI.OpenAI.ResponseFormat? responseFormat,
+            global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2Audio? audio,
             bool? store,
             bool? stream,
-            global::tryAGI.OpenAI.ChatCompletionStreamOptions? streamOptions,
+            global::tryAGI.OpenAI.StopConfiguration? stop,
+            global::System.Collections.Generic.Dictionary<string, int>? logitBias,
+            bool? logprobs,
+            int? n,
+            global::tryAGI.OpenAI.PredictionContent? prediction,
+            global::tryAGI.OpenAI.ChatCompletionStreamOptionsVariant1? streamOptions,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ChatCompletionTool, global::tryAGI.OpenAI.CustomToolChatCompletions>>? tools,
             global::tryAGI.OpenAI.ChatCompletionToolChoiceOption? toolChoice,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem>? tools,
-            int? topLogprobs,
-            global::tryAGI.OpenAI.Verbosity? verbosity,
-            global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2WebSearchOptions? webSearchOptions)
+            bool? parallelToolCalls)
         {
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
             this.Model = model;
-            this.Audio = audio;
-            this.FrequencyPenalty = frequencyPenalty;
-            this.LogitBias = logitBias;
-            this.Logprobs = logprobs;
-            this.MaxCompletionTokens = maxCompletionTokens;
             this.Modalities = modalities;
-            this.N = n;
-            this.ParallelToolCalls = parallelToolCalls;
-            this.Prediction = prediction;
-            this.PresencePenalty = presencePenalty;
+            this.Verbosity = verbosity;
             this.ReasoningEffort = reasoningEffort;
+            this.MaxCompletionTokens = maxCompletionTokens;
+            this.FrequencyPenalty = frequencyPenalty;
+            this.PresencePenalty = presencePenalty;
+            this.WebSearchOptions = webSearchOptions;
+            this.TopLogprobs = topLogprobs;
             this.ResponseFormat = responseFormat;
-            this.Stop = stop;
+            this.Audio = audio;
             this.Store = store;
             this.Stream = stream;
+            this.Stop = stop;
+            this.LogitBias = logitBias;
+            this.Logprobs = logprobs;
+            this.N = n;
+            this.Prediction = prediction;
             this.StreamOptions = streamOptions;
-            this.ToolChoice = toolChoice;
             this.Tools = tools;
-            this.TopLogprobs = topLogprobs;
-            this.Verbosity = verbosity;
-            this.WebSearchOptions = webSearchOptions;
+            this.ToolChoice = toolChoice;
+            this.ParallelToolCalls = parallelToolCalls;
         }
 
         /// <summary>

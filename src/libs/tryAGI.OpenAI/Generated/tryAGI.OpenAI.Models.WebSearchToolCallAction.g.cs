@@ -6,7 +6,7 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// An object describing the specific action taken in this web search call.<br/>
-    /// Includes details on how the model used the web (search, open_page, find).
+    /// Includes details on how the model used the web (search, open_page, find_in_page).
     /// </summary>
     public readonly partial struct WebSearchToolCallAction : global::System.IEquatable<WebSearchToolCallAction>
     {
@@ -14,19 +14,52 @@ namespace tryAGI.OpenAI
         /// Action type "search" - Performs a web search query.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.WebSearchActionSearch? Value1 { get; init; }
+        public global::tryAGI.OpenAI.WebSearchActionSearch? Search { get; init; }
 #else
-        public global::tryAGI.OpenAI.WebSearchActionSearch? Value1 { get; }
+        public global::tryAGI.OpenAI.WebSearchActionSearch? Search { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Search))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsSearch => Search != null;
 
+        /// <summary>
+        /// Action type "open_page" - Opens a specific URL from search results.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.WebSearchActionOpenPage? OpenPage { get; init; }
+#else
+        public global::tryAGI.OpenAI.WebSearchActionOpenPage? OpenPage { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenPage))]
+#endif
+        public bool IsOpenPage => OpenPage != null;
+
+        /// <summary>
+        /// Action type "find_in_page": Searches for a pattern within a loaded page.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.WebSearchActionFind? FindInPage { get; init; }
+#else
+        public global::tryAGI.OpenAI.WebSearchActionFind? FindInPage { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FindInPage))]
+#endif
+        public bool IsFindInPage => FindInPage != null;
         /// <summary>
         /// 
         /// </summary>
@@ -35,32 +68,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.WebSearchActionSearch?(WebSearchToolCallAction @this) => @this.Value1;
+        public static implicit operator global::tryAGI.OpenAI.WebSearchActionSearch?(WebSearchToolCallAction @this) => @this.Search;
 
         /// <summary>
         /// 
         /// </summary>
         public WebSearchToolCallAction(global::tryAGI.OpenAI.WebSearchActionSearch? value)
         {
-            Value1 = value;
+            Search = value;
         }
-
-        /// <summary>
-        /// Action type "open_page" - Opens a specific URL from search results.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.WebSearchActionOpenPage? Value2 { get; init; }
-#else
-        public global::tryAGI.OpenAI.WebSearchActionOpenPage? Value2 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
-#endif
-        public bool IsValue2 => Value2 != null;
 
         /// <summary>
         /// 
@@ -70,32 +86,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.WebSearchActionOpenPage?(WebSearchToolCallAction @this) => @this.Value2;
+        public static implicit operator global::tryAGI.OpenAI.WebSearchActionOpenPage?(WebSearchToolCallAction @this) => @this.OpenPage;
 
         /// <summary>
         /// 
         /// </summary>
         public WebSearchToolCallAction(global::tryAGI.OpenAI.WebSearchActionOpenPage? value)
         {
-            Value2 = value;
+            OpenPage = value;
         }
-
-        /// <summary>
-        /// Action type "find": Searches for a pattern within a loaded page.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.WebSearchActionFind? Value3 { get; init; }
-#else
-        public global::tryAGI.OpenAI.WebSearchActionFind? Value3 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
-#endif
-        public bool IsValue3 => Value3 != null;
 
         /// <summary>
         /// 
@@ -105,46 +104,46 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.WebSearchActionFind?(WebSearchToolCallAction @this) => @this.Value3;
+        public static implicit operator global::tryAGI.OpenAI.WebSearchActionFind?(WebSearchToolCallAction @this) => @this.FindInPage;
 
         /// <summary>
         /// 
         /// </summary>
         public WebSearchToolCallAction(global::tryAGI.OpenAI.WebSearchActionFind? value)
         {
-            Value3 = value;
+            FindInPage = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public WebSearchToolCallAction(
-            global::tryAGI.OpenAI.WebSearchActionSearch? value1,
-            global::tryAGI.OpenAI.WebSearchActionOpenPage? value2,
-            global::tryAGI.OpenAI.WebSearchActionFind? value3
+            global::tryAGI.OpenAI.WebSearchActionSearch? search,
+            global::tryAGI.OpenAI.WebSearchActionOpenPage? openPage,
+            global::tryAGI.OpenAI.WebSearchActionFind? findInPage
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            Search = search;
+            OpenPage = openPage;
+            FindInPage = findInPage;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            FindInPage as object ??
+            OpenPage as object ??
+            Search as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() 
+            Search?.ToString() ??
+            OpenPage?.ToString() ??
+            FindInPage?.ToString() 
             ;
 
         /// <summary>
@@ -152,16 +151,16 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3;
+            return IsSearch && !IsOpenPage && !IsFindInPage || !IsSearch && IsOpenPage && !IsFindInPage || !IsSearch && !IsOpenPage && IsFindInPage;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.WebSearchActionSearch?, TResult>? value1 = null,
-            global::System.Func<global::tryAGI.OpenAI.WebSearchActionOpenPage?, TResult>? value2 = null,
-            global::System.Func<global::tryAGI.OpenAI.WebSearchActionFind?, TResult>? value3 = null,
+            global::System.Func<global::tryAGI.OpenAI.WebSearchActionSearch?, TResult>? search = null,
+            global::System.Func<global::tryAGI.OpenAI.WebSearchActionOpenPage?, TResult>? openPage = null,
+            global::System.Func<global::tryAGI.OpenAI.WebSearchActionFind?, TResult>? findInPage = null,
             bool validate = true)
         {
             if (validate)
@@ -169,17 +168,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsSearch && search != null)
             {
-                return value1(Value1!);
+                return search(Search!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsOpenPage && openPage != null)
             {
-                return value2(Value2!);
+                return openPage(OpenPage!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsFindInPage && findInPage != null)
             {
-                return value3(Value3!);
+                return findInPage(FindInPage!);
             }
 
             return default(TResult);
@@ -189,9 +188,9 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.WebSearchActionSearch?>? value1 = null,
-            global::System.Action<global::tryAGI.OpenAI.WebSearchActionOpenPage?>? value2 = null,
-            global::System.Action<global::tryAGI.OpenAI.WebSearchActionFind?>? value3 = null,
+            global::System.Action<global::tryAGI.OpenAI.WebSearchActionSearch?>? search = null,
+            global::System.Action<global::tryAGI.OpenAI.WebSearchActionOpenPage?>? openPage = null,
+            global::System.Action<global::tryAGI.OpenAI.WebSearchActionFind?>? findInPage = null,
             bool validate = true)
         {
             if (validate)
@@ -199,17 +198,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsSearch)
             {
-                value1?.Invoke(Value1!);
+                search?.Invoke(Search!);
             }
-            else if (IsValue2)
+            else if (IsOpenPage)
             {
-                value2?.Invoke(Value2!);
+                openPage?.Invoke(OpenPage!);
             }
-            else if (IsValue3)
+            else if (IsFindInPage)
             {
-                value3?.Invoke(Value3!);
+                findInPage?.Invoke(FindInPage!);
             }
         }
 
@@ -220,11 +219,11 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                Value1,
+                Search,
                 typeof(global::tryAGI.OpenAI.WebSearchActionSearch),
-                Value2,
+                OpenPage,
                 typeof(global::tryAGI.OpenAI.WebSearchActionOpenPage),
-                Value3,
+                FindInPage,
                 typeof(global::tryAGI.OpenAI.WebSearchActionFind),
             };
             const int offset = unchecked((int)2166136261);
@@ -242,9 +241,9 @@ namespace tryAGI.OpenAI
         public bool Equals(WebSearchToolCallAction other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.WebSearchActionSearch?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.WebSearchActionOpenPage?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.WebSearchActionFind?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.WebSearchActionSearch?>.Default.Equals(Search, other.Search) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.WebSearchActionOpenPage?>.Default.Equals(OpenPage, other.OpenPage) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.WebSearchActionFind?>.Default.Equals(FindInPage, other.FindInPage) 
                 ;
         }
 

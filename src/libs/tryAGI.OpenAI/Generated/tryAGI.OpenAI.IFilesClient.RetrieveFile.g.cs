@@ -5,7 +5,6 @@ namespace tryAGI.OpenAI
     public partial interface IFilesClient
     {
         /// <summary>
-        /// Retrieve file<br/>
         /// Returns information about a specific file.
         /// </summary>
         /// <param name="fileId"></param>

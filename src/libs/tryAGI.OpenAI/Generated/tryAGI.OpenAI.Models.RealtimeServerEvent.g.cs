@@ -10,7 +10,8 @@ namespace tryAGI.OpenAI
     public readonly partial struct RealtimeServerEvent : global::System.IEquatable<RealtimeServerEvent>
     {
         /// <summary>
-        /// Returned when an error occurs.
+        /// Returned when an error occurs.<br/>
+        /// Example: {"event_id":"event_890","type":"error","error":{"type":"invalid_request_error","code":"invalid_event","message":"The \u0027type\u0027 field is missing.","param":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","event_id":"event_567"}}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RealtimeError? Error { get; init; }
@@ -25,24 +26,6 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
 #endif
         public bool IsError => Error != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator RealtimeServerEvent(global::tryAGI.OpenAI.RealtimeError value) => new RealtimeServerEvent((global::tryAGI.OpenAI.RealtimeError?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.RealtimeError?(RealtimeServerEvent @this) => @this.Error;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RealtimeServerEvent(global::tryAGI.OpenAI.RealtimeError? value)
-        {
-            Error = value;
-        }
 
         /// <summary>
         /// Returned when a session is created. Emitted automatically when a new connection is established.
@@ -60,6 +43,490 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionCreated))]
 #endif
         public bool IsSessionCreated => SessionCreated != null;
+
+        /// <summary>
+        /// Returned when a session is updated.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RealtimeSessionUpdated? SessionUpdated { get; init; }
+#else
+        public global::tryAGI.OpenAI.RealtimeSessionUpdated? SessionUpdated { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionUpdated))]
+#endif
+        public bool IsSessionUpdated => SessionUpdated != null;
+
+        /// <summary>
+        /// Returned when a conversation is created. Emitted right after session creation.<br/>
+        /// Example: {"event_id":"event_9101","type":"conversation.created","conversation":{"id":"conv_001","object":"realtime.conversation"}}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RealtimeConversationCreated? ConversationCreated { get; init; }
+#else
+        public global::tryAGI.OpenAI.RealtimeConversationCreated? ConversationCreated { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationCreated))]
+#endif
+        public bool IsConversationCreated => ConversationCreated != null;
+
+        /// <summary>
+        /// Returned when a conversation item is created.<br/>
+        /// Example: {"event_id":"event_1920","type":"conversation.item.created","previous_item_id":"msg_002","item":{"id":"msg_003","object":"realtime.item","type":"message","status":"completed","role":"user","content":[{"type":"input_audio","transcript":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464"}]}}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RealtimeConversationItemCreated? ConversationItemCreated { get; init; }
+#else
+        public global::tryAGI.OpenAI.RealtimeConversationItemCreated? ConversationItemCreated { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemCreated))]
+#endif
+        public bool IsConversationItemCreated => ConversationItemCreated != null;
+
+        /// <summary>
+        /// Returned when input audio transcription is enabled and a transcription succeeds.<br/>
+        /// Example: {"event_id":"event_2122","type":"conversation.item.input_audio_transcription.completed","item_id":"msg_003","content_index":0,"transcript":"Hello, how are you?"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RealtimeConversationItemInputAudioTranscriptionCompleted? ConversationItemInputAudioTranscriptionCompleted { get; init; }
+#else
+        public global::tryAGI.OpenAI.RealtimeConversationItemInputAudioTranscriptionCompleted? ConversationItemInputAudioTranscriptionCompleted { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemInputAudioTranscriptionCompleted))]
+#endif
+        public bool IsConversationItemInputAudioTranscriptionCompleted => ConversationItemInputAudioTranscriptionCompleted != null;
+
+        /// <summary>
+        /// Returned when input audio transcription is configured, and a transcription request for a user message failed.<br/>
+        /// Example: {"event_id":"event_2324","type":"conversation.item.input_audio_transcription.failed","item_id":"msg_003","content_index":0,"error":{"type":"transcription_error","code":"audio_unintelligible","message":"The audio could not be transcribed.","param":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464"}}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RealtimeConversationItemInputAudioTranscriptionFailed? ConversationItemInputAudioTranscriptionFailed { get; init; }
+#else
+        public global::tryAGI.OpenAI.RealtimeConversationItemInputAudioTranscriptionFailed? ConversationItemInputAudioTranscriptionFailed { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemInputAudioTranscriptionFailed))]
+#endif
+        public bool IsConversationItemInputAudioTranscriptionFailed => ConversationItemInputAudioTranscriptionFailed != null;
+
+        /// <summary>
+        /// Returned when an earlier assistant audio message item is truncated by the client.<br/>
+        /// Example: {"event_id":"event_2526","type":"conversation.item.truncated","item_id":"msg_004","content_index":0,"audio_end_ms":1500}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RealtimeConversationItemTruncated? ConversationItemTruncated { get; init; }
+#else
+        public global::tryAGI.OpenAI.RealtimeConversationItemTruncated? ConversationItemTruncated { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemTruncated))]
+#endif
+        public bool IsConversationItemTruncated => ConversationItemTruncated != null;
+
+        /// <summary>
+        /// Returned when an item in the conversation is deleted.<br/>
+        /// Example: {"event_id":"event_2728","type":"conversation.item.deleted","item_id":"msg_005"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RealtimeConversationItemDeleted? ConversationItemDeleted { get; init; }
+#else
+        public global::tryAGI.OpenAI.RealtimeConversationItemDeleted? ConversationItemDeleted { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemDeleted))]
+#endif
+        public bool IsConversationItemDeleted => ConversationItemDeleted != null;
+
+        /// <summary>
+        /// Returned when an input audio buffer is committed, either by the client or automatically in server VAD mode.<br/>
+        /// Example: {"event_id":"event_1121","type":"input_audio_buffer.committed","previous_item_id":"msg_001","item_id":"msg_002"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RealtimeInputAudioBufferCommitted? InputAudioBufferCommitted { get; init; }
+#else
+        public global::tryAGI.OpenAI.RealtimeInputAudioBufferCommitted? InputAudioBufferCommitted { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioBufferCommitted))]
+#endif
+        public bool IsInputAudioBufferCommitted => InputAudioBufferCommitted != null;
+
+        /// <summary>
+        /// Returned when the input audio buffer is cleared by the client.<br/>
+        /// Example: {"event_id":"event_1314","type":"input_audio_buffer.cleared"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RealtimeInputAudioBufferCleared? InputAudioBufferCleared { get; init; }
+#else
+        public global::tryAGI.OpenAI.RealtimeInputAudioBufferCleared? InputAudioBufferCleared { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioBufferCleared))]
+#endif
+        public bool IsInputAudioBufferCleared => InputAudioBufferCleared != null;
+
+        /// <summary>
+        /// Returned in server turn detection mode when speech is detected.<br/>
+        /// Example: {"event_id":"event_1516","type":"input_audio_buffer.speech_started","audio_start_ms":1000,"item_id":"msg_003"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RealtimeInputAudioBufferSpeechStarted? InputAudioBufferSpeechStarted { get; init; }
+#else
+        public global::tryAGI.OpenAI.RealtimeInputAudioBufferSpeechStarted? InputAudioBufferSpeechStarted { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioBufferSpeechStarted))]
+#endif
+        public bool IsInputAudioBufferSpeechStarted => InputAudioBufferSpeechStarted != null;
+
+        /// <summary>
+        /// Returned in server turn detection mode when speech stops.<br/>
+        /// Example: {"event_id":"event_1718","type":"input_audio_buffer.speech_stopped","audio_end_ms":2000,"item_id":"msg_003"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RealtimeInputAudioBufferSpeechStopped? InputAudioBufferSpeechStopped { get; init; }
+#else
+        public global::tryAGI.OpenAI.RealtimeInputAudioBufferSpeechStopped? InputAudioBufferSpeechStopped { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioBufferSpeechStopped))]
+#endif
+        public bool IsInputAudioBufferSpeechStopped => InputAudioBufferSpeechStopped != null;
+
+        /// <summary>
+        /// Returned when a new Response is created. The first event of response creation, where the response is in an initial state of "in_progress".<br/>
+        /// Example: {"event_id":"event_2930","type":"response.created","response":{"id":"resp_001","object":"realtime.response","status":"in_progress","status_details":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","output":[],"usage":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464"}}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RealtimeResponseCreated? ResponseCreated { get; init; }
+#else
+        public global::tryAGI.OpenAI.RealtimeResponseCreated? ResponseCreated { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseCreated))]
+#endif
+        public bool IsResponseCreated => ResponseCreated != null;
+
+        /// <summary>
+        /// Returned when a Response is done streaming. Always emitted, no matter the final state.<br/>
+        /// Example: {"event_id":"event_3132","type":"response.done","response":{"id":"resp_001","object":"realtime.response","status":"completed","status_details":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","output":[{"id":"msg_006","object":"realtime.item","type":"message","status":"completed","role":"assistant","content":[{"type":"text","text":"Sure, how can I assist you today?"}]}],"usage":{"total_tokens":50,"input_tokens":20,"output_tokens":30}}}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RealtimeResponseDone? ResponseDone { get; init; }
+#else
+        public global::tryAGI.OpenAI.RealtimeResponseDone? ResponseDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseDone))]
+#endif
+        public bool IsResponseDone => ResponseDone != null;
+
+        /// <summary>
+        /// Returned when a new Item is created during response generation.<br/>
+        /// Example: {"event_id":"event_3334","type":"response.output_item.added","response_id":"resp_001","output_index":0,"item":{"id":"msg_007","object":"realtime.item","type":"message","status":"in_progress","role":"assistant","content":[]}}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RealtimeResponseOutputItemAdded? ResponseOutputItemAdded { get; init; }
+#else
+        public global::tryAGI.OpenAI.RealtimeResponseOutputItemAdded? ResponseOutputItemAdded { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputItemAdded))]
+#endif
+        public bool IsResponseOutputItemAdded => ResponseOutputItemAdded != null;
+
+        /// <summary>
+        /// Returned when an Item is done streaming. Also emitted when a Response is interrupted, incomplete, or cancelled.<br/>
+        /// Example: {"event_id":"event_3536","type":"response.output_item.done","response_id":"resp_001","output_index":0,"item":{"id":"msg_007","object":"realtime.item","type":"message","status":"completed","role":"assistant","content":[{"type":"text","text":"Sure, I can help with that."}]}}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RealtimeResponseOutputItemDone? ResponseOutputItemDone { get; init; }
+#else
+        public global::tryAGI.OpenAI.RealtimeResponseOutputItemDone? ResponseOutputItemDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputItemDone))]
+#endif
+        public bool IsResponseOutputItemDone => ResponseOutputItemDone != null;
+
+        /// <summary>
+        /// Returned when a new content part is added to an assistant message item during response generation.<br/>
+        /// Example: {"event_id":"event_3738","type":"response.content_part.added","response_id":"resp_001","item_id":"msg_007","output_index":0,"content_index":0,"part":{"type":"text","text":""}}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RealtimeResponseContentPartAdded? ResponseContentPartAdded { get; init; }
+#else
+        public global::tryAGI.OpenAI.RealtimeResponseContentPartAdded? ResponseContentPartAdded { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseContentPartAdded))]
+#endif
+        public bool IsResponseContentPartAdded => ResponseContentPartAdded != null;
+
+        /// <summary>
+        /// Returned when a content part is done streaming in an assistant message item. Also emitted when a Response is interrupted, incomplete, or cancelled.<br/>
+        /// Example: {"event_id":"event_3940","type":"response.content_part.done","response_id":"resp_001","item_id":"msg_007","output_index":0,"content_index":0,"part":{"type":"text","text":"Sure, I can help with that."}}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RealtimeResponseContentPartDone? ResponseContentPartDone { get; init; }
+#else
+        public global::tryAGI.OpenAI.RealtimeResponseContentPartDone? ResponseContentPartDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseContentPartDone))]
+#endif
+        public bool IsResponseContentPartDone => ResponseContentPartDone != null;
+
+        /// <summary>
+        /// Returned when the text value of a "text" content part is updated.<br/>
+        /// Example: {"event_id":"event_4142","type":"response.text.delta","response_id":"resp_001","item_id":"msg_007","output_index":0,"content_index":0,"delta":"Sure, I can h"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RealtimeResponseTextDelta? ResponseTextDelta { get; init; }
+#else
+        public global::tryAGI.OpenAI.RealtimeResponseTextDelta? ResponseTextDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseTextDelta))]
+#endif
+        public bool IsResponseTextDelta => ResponseTextDelta != null;
+
+        /// <summary>
+        /// Returned when the text value of a "text" content part is done streaming. Also emitted when a Response is interrupted, incomplete, or cancelled.<br/>
+        /// Example: {"event_id":"event_4344","type":"response.text.done","response_id":"resp_001","item_id":"msg_007","output_index":0,"content_index":0,"text":"Sure, I can help with that."}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RealtimeResponseTextDone? ResponseTextDone { get; init; }
+#else
+        public global::tryAGI.OpenAI.RealtimeResponseTextDone? ResponseTextDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseTextDone))]
+#endif
+        public bool IsResponseTextDone => ResponseTextDone != null;
+
+        /// <summary>
+        /// Returned when the model-generated transcription of audio output is updated.<br/>
+        /// Example: {"event_id":"event_4546","type":"response.audio_transcript.delta","response_id":"resp_001","item_id":"msg_008","output_index":0,"content_index":0,"delta":"Hello, how can I a"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RealtimeResponseAudioTranscriptDelta? ResponseAudioTranscriptDelta { get; init; }
+#else
+        public global::tryAGI.OpenAI.RealtimeResponseAudioTranscriptDelta? ResponseAudioTranscriptDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseAudioTranscriptDelta))]
+#endif
+        public bool IsResponseAudioTranscriptDelta => ResponseAudioTranscriptDelta != null;
+
+        /// <summary>
+        /// Returned when the model-generated transcription of audio output is done streaming. Also emitted when a Response is interrupted, incomplete, or cancelled.<br/>
+        /// Example: {"event_id":"event_4748","type":"response.audio_transcript.done","response_id":"resp_001","item_id":"msg_008","output_index":0,"content_index":0,"transcript":"Hello, how can I assist you today?"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RealtimeResponseAudioTranscriptDone? ResponseAudioTranscriptDone { get; init; }
+#else
+        public global::tryAGI.OpenAI.RealtimeResponseAudioTranscriptDone? ResponseAudioTranscriptDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseAudioTranscriptDone))]
+#endif
+        public bool IsResponseAudioTranscriptDone => ResponseAudioTranscriptDone != null;
+
+        /// <summary>
+        /// Returned when the model-generated audio is updated.<br/>
+        /// Example: {"event_id":"event_4950","type":"response.audio.delta","response_id":"resp_001","item_id":"msg_008","output_index":0,"content_index":0,"delta":"Base64EncodedAudioDelta"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RealtimeResponseAudioDelta? ResponseAudioDelta { get; init; }
+#else
+        public global::tryAGI.OpenAI.RealtimeResponseAudioDelta? ResponseAudioDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseAudioDelta))]
+#endif
+        public bool IsResponseAudioDelta => ResponseAudioDelta != null;
+
+        /// <summary>
+        /// Returned when the model-generated audio is done. Also emitted when a Response is interrupted, incomplete, or cancelled.<br/>
+        /// Example: {"event_id":"event_5152","type":"response.audio.done","response_id":"resp_001","item_id":"msg_008","output_index":0,"content_index":0}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RealtimeResponseAudioDone? ResponseAudioDone { get; init; }
+#else
+        public global::tryAGI.OpenAI.RealtimeResponseAudioDone? ResponseAudioDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseAudioDone))]
+#endif
+        public bool IsResponseAudioDone => ResponseAudioDone != null;
+
+        /// <summary>
+        /// Returned when the model-generated function call arguments are updated.<br/>
+        /// Example: {"event_id":"event_5354","type":"response.function_call_arguments.delta","response_id":"resp_002","item_id":"fc_001","output_index":0,"call_id":"call_001","delta":"{\u0022location\u0022: \u0022San\u0022"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RealtimeResponseFunctionCallArgumentsDelta? ResponseFunctionCallArgumentsDelta { get; init; }
+#else
+        public global::tryAGI.OpenAI.RealtimeResponseFunctionCallArgumentsDelta? ResponseFunctionCallArgumentsDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseFunctionCallArgumentsDelta))]
+#endif
+        public bool IsResponseFunctionCallArgumentsDelta => ResponseFunctionCallArgumentsDelta != null;
+
+        /// <summary>
+        /// Returned when the model-generated function call arguments are done streaming. Also emitted when a Response is interrupted, incomplete, or cancelled.<br/>
+        /// Example: {"event_id":"event_5556","type":"response.function_call_arguments.done","response_id":"resp_002","item_id":"fc_001","output_index":0,"call_id":"call_001","arguments":"{\u0022location\u0022: \u0022San Francisco\u0022}"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RealtimeResponseFunctionCallArgumentsDone? ResponseFunctionCallArgumentsDone { get; init; }
+#else
+        public global::tryAGI.OpenAI.RealtimeResponseFunctionCallArgumentsDone? ResponseFunctionCallArgumentsDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseFunctionCallArgumentsDone))]
+#endif
+        public bool IsResponseFunctionCallArgumentsDone => ResponseFunctionCallArgumentsDone != null;
+
+        /// <summary>
+        /// Emitted after every "response.done" event to indicate the updated rate limits.<br/>
+        /// Example: {"event_id":"event_5758","type":"rate_limits.updated","rate_limits":[{"name":"requests","limit":1000,"remaining":999,"reset_seconds":60},{"name":"tokens","limit":50000,"remaining":49950,"reset_seconds":60}]}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RealtimeRateLimitsUpdated? RateLimitsUpdated { get; init; }
+#else
+        public global::tryAGI.OpenAI.RealtimeRateLimitsUpdated? RateLimitsUpdated { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RateLimitsUpdated))]
+#endif
+        public bool IsRateLimitsUpdated => RateLimitsUpdated != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator RealtimeServerEvent(global::tryAGI.OpenAI.RealtimeError value) => new RealtimeServerEvent((global::tryAGI.OpenAI.RealtimeError?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.RealtimeError?(RealtimeServerEvent @this) => @this.Error;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RealtimeServerEvent(global::tryAGI.OpenAI.RealtimeError? value)
+        {
+            Error = value;
+        }
 
         /// <summary>
         /// 
@@ -80,23 +547,6 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Returned when a session is updated.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeSessionUpdated? SessionUpdated { get; init; }
-#else
-        public global::tryAGI.OpenAI.RealtimeSessionUpdated? SessionUpdated { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionUpdated))]
-#endif
-        public bool IsSessionUpdated => SessionUpdated != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator RealtimeServerEvent(global::tryAGI.OpenAI.RealtimeSessionUpdated value) => new RealtimeServerEvent((global::tryAGI.OpenAI.RealtimeSessionUpdated?)value);
@@ -113,23 +563,6 @@ namespace tryAGI.OpenAI
         {
             SessionUpdated = value;
         }
-
-        /// <summary>
-        /// Returned when a conversation is created. Emitted right after session creation.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeConversationCreated? ConversationCreated { get; init; }
-#else
-        public global::tryAGI.OpenAI.RealtimeConversationCreated? ConversationCreated { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationCreated))]
-#endif
-        public bool IsConversationCreated => ConversationCreated != null;
 
         /// <summary>
         /// 
@@ -150,23 +583,6 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Returned when a conversation item is created.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeConversationItemCreated? ConversationItemCreated { get; init; }
-#else
-        public global::tryAGI.OpenAI.RealtimeConversationItemCreated? ConversationItemCreated { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemCreated))]
-#endif
-        public bool IsConversationItemCreated => ConversationItemCreated != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator RealtimeServerEvent(global::tryAGI.OpenAI.RealtimeConversationItemCreated value) => new RealtimeServerEvent((global::tryAGI.OpenAI.RealtimeConversationItemCreated?)value);
@@ -183,23 +599,6 @@ namespace tryAGI.OpenAI
         {
             ConversationItemCreated = value;
         }
-
-        /// <summary>
-        /// Returned when input audio transcription is enabled and a transcription succeeds.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeConversationItemInputAudioTranscriptionCompleted? ConversationItemInputAudioTranscriptionCompleted { get; init; }
-#else
-        public global::tryAGI.OpenAI.RealtimeConversationItemInputAudioTranscriptionCompleted? ConversationItemInputAudioTranscriptionCompleted { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemInputAudioTranscriptionCompleted))]
-#endif
-        public bool IsConversationItemInputAudioTranscriptionCompleted => ConversationItemInputAudioTranscriptionCompleted != null;
 
         /// <summary>
         /// 
@@ -220,23 +619,6 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Returned when input audio transcription is configured, and a transcription request for a user message failed.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeConversationItemInputAudioTranscriptionFailed? ConversationItemInputAudioTranscriptionFailed { get; init; }
-#else
-        public global::tryAGI.OpenAI.RealtimeConversationItemInputAudioTranscriptionFailed? ConversationItemInputAudioTranscriptionFailed { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemInputAudioTranscriptionFailed))]
-#endif
-        public bool IsConversationItemInputAudioTranscriptionFailed => ConversationItemInputAudioTranscriptionFailed != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator RealtimeServerEvent(global::tryAGI.OpenAI.RealtimeConversationItemInputAudioTranscriptionFailed value) => new RealtimeServerEvent((global::tryAGI.OpenAI.RealtimeConversationItemInputAudioTranscriptionFailed?)value);
@@ -253,23 +635,6 @@ namespace tryAGI.OpenAI
         {
             ConversationItemInputAudioTranscriptionFailed = value;
         }
-
-        /// <summary>
-        /// Returned when an earlier assistant audio message item is truncated by the client.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeConversationItemTruncated? ConversationItemTruncated { get; init; }
-#else
-        public global::tryAGI.OpenAI.RealtimeConversationItemTruncated? ConversationItemTruncated { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemTruncated))]
-#endif
-        public bool IsConversationItemTruncated => ConversationItemTruncated != null;
 
         /// <summary>
         /// 
@@ -290,23 +655,6 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Returned when an item in the conversation is deleted.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeConversationItemDeleted? ConversationItemDeleted { get; init; }
-#else
-        public global::tryAGI.OpenAI.RealtimeConversationItemDeleted? ConversationItemDeleted { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemDeleted))]
-#endif
-        public bool IsConversationItemDeleted => ConversationItemDeleted != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator RealtimeServerEvent(global::tryAGI.OpenAI.RealtimeConversationItemDeleted value) => new RealtimeServerEvent((global::tryAGI.OpenAI.RealtimeConversationItemDeleted?)value);
@@ -323,23 +671,6 @@ namespace tryAGI.OpenAI
         {
             ConversationItemDeleted = value;
         }
-
-        /// <summary>
-        /// Returned when an input audio buffer is committed, either by the client or automatically in server VAD mode.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeInputAudioBufferCommitted? InputAudioBufferCommitted { get; init; }
-#else
-        public global::tryAGI.OpenAI.RealtimeInputAudioBufferCommitted? InputAudioBufferCommitted { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioBufferCommitted))]
-#endif
-        public bool IsInputAudioBufferCommitted => InputAudioBufferCommitted != null;
 
         /// <summary>
         /// 
@@ -360,23 +691,6 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Returned when the input audio buffer is cleared by the client.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeInputAudioBufferCleared? InputAudioBufferCleared { get; init; }
-#else
-        public global::tryAGI.OpenAI.RealtimeInputAudioBufferCleared? InputAudioBufferCleared { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioBufferCleared))]
-#endif
-        public bool IsInputAudioBufferCleared => InputAudioBufferCleared != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator RealtimeServerEvent(global::tryAGI.OpenAI.RealtimeInputAudioBufferCleared value) => new RealtimeServerEvent((global::tryAGI.OpenAI.RealtimeInputAudioBufferCleared?)value);
@@ -393,23 +707,6 @@ namespace tryAGI.OpenAI
         {
             InputAudioBufferCleared = value;
         }
-
-        /// <summary>
-        /// Returned in server turn detection mode when speech is detected.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeInputAudioBufferSpeechStarted? InputAudioBufferSpeechStarted { get; init; }
-#else
-        public global::tryAGI.OpenAI.RealtimeInputAudioBufferSpeechStarted? InputAudioBufferSpeechStarted { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioBufferSpeechStarted))]
-#endif
-        public bool IsInputAudioBufferSpeechStarted => InputAudioBufferSpeechStarted != null;
 
         /// <summary>
         /// 
@@ -430,23 +727,6 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Returned in server turn detection mode when speech stops.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeInputAudioBufferSpeechStopped? InputAudioBufferSpeechStopped { get; init; }
-#else
-        public global::tryAGI.OpenAI.RealtimeInputAudioBufferSpeechStopped? InputAudioBufferSpeechStopped { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioBufferSpeechStopped))]
-#endif
-        public bool IsInputAudioBufferSpeechStopped => InputAudioBufferSpeechStopped != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator RealtimeServerEvent(global::tryAGI.OpenAI.RealtimeInputAudioBufferSpeechStopped value) => new RealtimeServerEvent((global::tryAGI.OpenAI.RealtimeInputAudioBufferSpeechStopped?)value);
@@ -463,23 +743,6 @@ namespace tryAGI.OpenAI
         {
             InputAudioBufferSpeechStopped = value;
         }
-
-        /// <summary>
-        /// Returned when a new Response is created. The first event of response creation, where the response is in an initial state of "in_progress".
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeResponseCreated? ResponseCreated { get; init; }
-#else
-        public global::tryAGI.OpenAI.RealtimeResponseCreated? ResponseCreated { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseCreated))]
-#endif
-        public bool IsResponseCreated => ResponseCreated != null;
 
         /// <summary>
         /// 
@@ -500,23 +763,6 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Returned when a Response is done streaming. Always emitted, no matter the final state.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeResponseDone? ResponseDone { get; init; }
-#else
-        public global::tryAGI.OpenAI.RealtimeResponseDone? ResponseDone { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseDone))]
-#endif
-        public bool IsResponseDone => ResponseDone != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator RealtimeServerEvent(global::tryAGI.OpenAI.RealtimeResponseDone value) => new RealtimeServerEvent((global::tryAGI.OpenAI.RealtimeResponseDone?)value);
@@ -533,23 +779,6 @@ namespace tryAGI.OpenAI
         {
             ResponseDone = value;
         }
-
-        /// <summary>
-        /// Returned when a new Item is created during response generation.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeResponseOutputItemAdded? ResponseOutputItemAdded { get; init; }
-#else
-        public global::tryAGI.OpenAI.RealtimeResponseOutputItemAdded? ResponseOutputItemAdded { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputItemAdded))]
-#endif
-        public bool IsResponseOutputItemAdded => ResponseOutputItemAdded != null;
 
         /// <summary>
         /// 
@@ -570,23 +799,6 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Returned when an Item is done streaming. Also emitted when a Response is interrupted, incomplete, or cancelled.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeResponseOutputItemDone? ResponseOutputItemDone { get; init; }
-#else
-        public global::tryAGI.OpenAI.RealtimeResponseOutputItemDone? ResponseOutputItemDone { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputItemDone))]
-#endif
-        public bool IsResponseOutputItemDone => ResponseOutputItemDone != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator RealtimeServerEvent(global::tryAGI.OpenAI.RealtimeResponseOutputItemDone value) => new RealtimeServerEvent((global::tryAGI.OpenAI.RealtimeResponseOutputItemDone?)value);
@@ -603,23 +815,6 @@ namespace tryAGI.OpenAI
         {
             ResponseOutputItemDone = value;
         }
-
-        /// <summary>
-        /// Returned when a new content part is added to an assistant message item during response generation.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeResponseContentPartAdded? ResponseContentPartAdded { get; init; }
-#else
-        public global::tryAGI.OpenAI.RealtimeResponseContentPartAdded? ResponseContentPartAdded { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseContentPartAdded))]
-#endif
-        public bool IsResponseContentPartAdded => ResponseContentPartAdded != null;
 
         /// <summary>
         /// 
@@ -640,23 +835,6 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Returned when a content part is done streaming in an assistant message item. Also emitted when a Response is interrupted, incomplete, or cancelled.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeResponseContentPartDone? ResponseContentPartDone { get; init; }
-#else
-        public global::tryAGI.OpenAI.RealtimeResponseContentPartDone? ResponseContentPartDone { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseContentPartDone))]
-#endif
-        public bool IsResponseContentPartDone => ResponseContentPartDone != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator RealtimeServerEvent(global::tryAGI.OpenAI.RealtimeResponseContentPartDone value) => new RealtimeServerEvent((global::tryAGI.OpenAI.RealtimeResponseContentPartDone?)value);
@@ -673,23 +851,6 @@ namespace tryAGI.OpenAI
         {
             ResponseContentPartDone = value;
         }
-
-        /// <summary>
-        /// Returned when the text value of a "text" content part is updated.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeResponseTextDelta? ResponseTextDelta { get; init; }
-#else
-        public global::tryAGI.OpenAI.RealtimeResponseTextDelta? ResponseTextDelta { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseTextDelta))]
-#endif
-        public bool IsResponseTextDelta => ResponseTextDelta != null;
 
         /// <summary>
         /// 
@@ -710,23 +871,6 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Returned when the text value of a "text" content part is done streaming. Also emitted when a Response is interrupted, incomplete, or cancelled.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeResponseTextDone? ResponseTextDone { get; init; }
-#else
-        public global::tryAGI.OpenAI.RealtimeResponseTextDone? ResponseTextDone { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseTextDone))]
-#endif
-        public bool IsResponseTextDone => ResponseTextDone != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator RealtimeServerEvent(global::tryAGI.OpenAI.RealtimeResponseTextDone value) => new RealtimeServerEvent((global::tryAGI.OpenAI.RealtimeResponseTextDone?)value);
@@ -743,23 +887,6 @@ namespace tryAGI.OpenAI
         {
             ResponseTextDone = value;
         }
-
-        /// <summary>
-        /// Returned when the model-generated transcription of audio output is updated.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeResponseAudioTranscriptDelta? ResponseAudioTranscriptDelta { get; init; }
-#else
-        public global::tryAGI.OpenAI.RealtimeResponseAudioTranscriptDelta? ResponseAudioTranscriptDelta { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseAudioTranscriptDelta))]
-#endif
-        public bool IsResponseAudioTranscriptDelta => ResponseAudioTranscriptDelta != null;
 
         /// <summary>
         /// 
@@ -780,23 +907,6 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Returned when the model-generated transcription of audio output is done streaming. Also emitted when a Response is interrupted, incomplete, or cancelled.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeResponseAudioTranscriptDone? ResponseAudioTranscriptDone { get; init; }
-#else
-        public global::tryAGI.OpenAI.RealtimeResponseAudioTranscriptDone? ResponseAudioTranscriptDone { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseAudioTranscriptDone))]
-#endif
-        public bool IsResponseAudioTranscriptDone => ResponseAudioTranscriptDone != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator RealtimeServerEvent(global::tryAGI.OpenAI.RealtimeResponseAudioTranscriptDone value) => new RealtimeServerEvent((global::tryAGI.OpenAI.RealtimeResponseAudioTranscriptDone?)value);
@@ -813,23 +923,6 @@ namespace tryAGI.OpenAI
         {
             ResponseAudioTranscriptDone = value;
         }
-
-        /// <summary>
-        /// Returned when the model-generated audio is updated.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeResponseAudioDelta? ResponseAudioDelta { get; init; }
-#else
-        public global::tryAGI.OpenAI.RealtimeResponseAudioDelta? ResponseAudioDelta { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseAudioDelta))]
-#endif
-        public bool IsResponseAudioDelta => ResponseAudioDelta != null;
 
         /// <summary>
         /// 
@@ -850,23 +943,6 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Returned when the model-generated audio is done. Also emitted when a Response is interrupted, incomplete, or cancelled.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeResponseAudioDone? ResponseAudioDone { get; init; }
-#else
-        public global::tryAGI.OpenAI.RealtimeResponseAudioDone? ResponseAudioDone { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseAudioDone))]
-#endif
-        public bool IsResponseAudioDone => ResponseAudioDone != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator RealtimeServerEvent(global::tryAGI.OpenAI.RealtimeResponseAudioDone value) => new RealtimeServerEvent((global::tryAGI.OpenAI.RealtimeResponseAudioDone?)value);
@@ -883,23 +959,6 @@ namespace tryAGI.OpenAI
         {
             ResponseAudioDone = value;
         }
-
-        /// <summary>
-        /// Returned when the model-generated function call arguments are updated.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeResponseFunctionCallArgumentsDelta? ResponseFunctionCallArgumentsDelta { get; init; }
-#else
-        public global::tryAGI.OpenAI.RealtimeResponseFunctionCallArgumentsDelta? ResponseFunctionCallArgumentsDelta { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseFunctionCallArgumentsDelta))]
-#endif
-        public bool IsResponseFunctionCallArgumentsDelta => ResponseFunctionCallArgumentsDelta != null;
 
         /// <summary>
         /// 
@@ -920,23 +979,6 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Returned when the model-generated function call arguments are done streaming. Also emitted when a Response is interrupted, incomplete, or cancelled.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeResponseFunctionCallArgumentsDone? ResponseFunctionCallArgumentsDone { get; init; }
-#else
-        public global::tryAGI.OpenAI.RealtimeResponseFunctionCallArgumentsDone? ResponseFunctionCallArgumentsDone { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseFunctionCallArgumentsDone))]
-#endif
-        public bool IsResponseFunctionCallArgumentsDone => ResponseFunctionCallArgumentsDone != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator RealtimeServerEvent(global::tryAGI.OpenAI.RealtimeResponseFunctionCallArgumentsDone value) => new RealtimeServerEvent((global::tryAGI.OpenAI.RealtimeResponseFunctionCallArgumentsDone?)value);
@@ -953,23 +995,6 @@ namespace tryAGI.OpenAI
         {
             ResponseFunctionCallArgumentsDone = value;
         }
-
-        /// <summary>
-        /// Emitted after every "response.done" event to indicate the updated rate limits.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeRateLimitsUpdated? RateLimitsUpdated { get; init; }
-#else
-        public global::tryAGI.OpenAI.RealtimeRateLimitsUpdated? RateLimitsUpdated { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RateLimitsUpdated))]
-#endif
-        public bool IsRateLimitsUpdated => RateLimitsUpdated != null;
 
         /// <summary>
         /// 

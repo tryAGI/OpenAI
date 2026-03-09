@@ -31,6 +31,22 @@ namespace tryAGI.OpenAI
         public bool IsValue1 => Value1 != null;
 
         /// <summary>
+        /// Specifies a tool the model should use. Use to force the model to call a specific tool.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.AssistantsNamedToolChoice? Value2 { get; init; }
+#else
+        public global::tryAGI.OpenAI.AssistantsNamedToolChoice? Value2 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+#endif
+        public bool IsValue2 => Value2 != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator AssistantsApiToolChoiceOption(global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum value) => new AssistantsApiToolChoiceOption((global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum?)value);
@@ -47,23 +63,6 @@ namespace tryAGI.OpenAI
         {
             Value1 = value;
         }
-
-        /// <summary>
-        /// Specifies a tool the model should use. Use to force the model to call a specific tool.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.AssistantsNamedToolChoice? Value2 { get; init; }
-#else
-        public global::tryAGI.OpenAI.AssistantsNamedToolChoice? Value2 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
-#endif
-        public bool IsValue2 => Value2 != null;
 
         /// <summary>
         /// 
@@ -116,7 +115,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
         }
 
         /// <summary>

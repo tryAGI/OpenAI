@@ -13,36 +13,18 @@ namespace tryAGI.OpenAI
         /// The output of a computer tool call.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ComputerToolCallOutput? Value1 { get; init; }
+        public global::tryAGI.OpenAI.ComputerToolCallOutput? ComputerToolCallOutput { get; init; }
 #else
-        public global::tryAGI.OpenAI.ComputerToolCallOutput? Value1 { get; }
+        public global::tryAGI.OpenAI.ComputerToolCallOutput? ComputerToolCallOutput { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerToolCallOutput))]
 #endif
-        public bool IsValue1 => Value1 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator ComputerToolCallOutputResource(global::tryAGI.OpenAI.ComputerToolCallOutput value) => new ComputerToolCallOutputResource((global::tryAGI.OpenAI.ComputerToolCallOutput?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.ComputerToolCallOutput?(ComputerToolCallOutputResource @this) => @this.Value1;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ComputerToolCallOutputResource(global::tryAGI.OpenAI.ComputerToolCallOutput? value)
-        {
-            Value1 = value;
-        }
+        public bool IsComputerToolCallOutput => ComputerToolCallOutput != null;
 
         /// <summary>
         /// 
@@ -60,6 +42,23 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
 #endif
         public bool IsValue2 => Value2 != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ComputerToolCallOutputResource(global::tryAGI.OpenAI.ComputerToolCallOutput value) => new ComputerToolCallOutputResource((global::tryAGI.OpenAI.ComputerToolCallOutput?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.ComputerToolCallOutput?(ComputerToolCallOutputResource @this) => @this.ComputerToolCallOutput;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ComputerToolCallOutputResource(global::tryAGI.OpenAI.ComputerToolCallOutput? value)
+        {
+            ComputerToolCallOutput = value;
+        }
 
         /// <summary>
         /// 
@@ -83,11 +82,11 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public ComputerToolCallOutputResource(
-            global::tryAGI.OpenAI.ComputerToolCallOutput? value1,
+            global::tryAGI.OpenAI.ComputerToolCallOutput? computerToolCallOutput,
             global::tryAGI.OpenAI.ComputerToolCallOutputResourceVariant2? value2
             )
         {
-            Value1 = value1;
+            ComputerToolCallOutput = computerToolCallOutput;
             Value2 = value2;
         }
 
@@ -96,14 +95,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         public object? Object =>
             Value2 as object ??
-            Value1 as object 
+            ComputerToolCallOutput as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            ComputerToolCallOutput?.ToString() ??
             Value2?.ToString() 
             ;
 
@@ -112,14 +111,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsComputerToolCallOutput && IsValue2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.ComputerToolCallOutput?, TResult>? value1 = null,
+            global::System.Func<global::tryAGI.OpenAI.ComputerToolCallOutput?, TResult>? computerToolCallOutput = null,
             global::System.Func<global::tryAGI.OpenAI.ComputerToolCallOutputResourceVariant2?, TResult>? value2 = null,
             bool validate = true)
         {
@@ -128,9 +127,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsComputerToolCallOutput && computerToolCallOutput != null)
             {
-                return value1(Value1!);
+                return computerToolCallOutput(ComputerToolCallOutput!);
             }
             else if (IsValue2 && value2 != null)
             {
@@ -144,7 +143,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.ComputerToolCallOutput?>? value1 = null,
+            global::System.Action<global::tryAGI.OpenAI.ComputerToolCallOutput?>? computerToolCallOutput = null,
             global::System.Action<global::tryAGI.OpenAI.ComputerToolCallOutputResourceVariant2?>? value2 = null,
             bool validate = true)
         {
@@ -153,9 +152,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsComputerToolCallOutput)
             {
-                value1?.Invoke(Value1!);
+                computerToolCallOutput?.Invoke(ComputerToolCallOutput!);
             }
             else if (IsValue2)
             {
@@ -170,7 +169,7 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                Value1,
+                ComputerToolCallOutput,
                 typeof(global::tryAGI.OpenAI.ComputerToolCallOutput),
                 Value2,
                 typeof(global::tryAGI.OpenAI.ComputerToolCallOutputResourceVariant2),
@@ -190,7 +189,7 @@ namespace tryAGI.OpenAI
         public bool Equals(ComputerToolCallOutputResource other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ComputerToolCallOutput?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ComputerToolCallOutput?>.Default.Equals(ComputerToolCallOutput, other.ComputerToolCallOutput) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ComputerToolCallOutputResourceVariant2?>.Default.Equals(Value2, other.Value2) 
                 ;
         }

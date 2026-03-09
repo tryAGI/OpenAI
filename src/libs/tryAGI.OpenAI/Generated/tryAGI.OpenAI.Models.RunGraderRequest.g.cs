@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -12,20 +14,20 @@ namespace tryAGI.OpenAI
         /// The grader used for the fine-tuning job.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("grader")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RunGraderRequestGraderJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.GraderStringCheck, global::tryAGI.OpenAI.GraderTextSimilarity, global::tryAGI.OpenAI.GraderPython, global::tryAGI.OpenAI.GraderScoreModel, global::tryAGI.OpenAI.GraderMulti>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.RunGraderRequestGrader Grader { get; set; }
+        public required global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.GraderStringCheck, global::tryAGI.OpenAI.GraderTextSimilarity, global::tryAGI.OpenAI.GraderPython, global::tryAGI.OpenAI.GraderScoreModel, global::tryAGI.OpenAI.GraderMulti> Grader { get; set; }
 
         /// <summary>
         /// The dataset item provided to the grader. This will be used to populate <br/>
-        /// the `item` namespace. See [the guide](https://platform.openai.com/docs/guides/graders) for more details. 
+        /// the `item` namespace. See [the guide](/docs/guides/graders) for more details. 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item")]
         public object? Item { get; set; }
 
         /// <summary>
         /// The model sample to be evaluated. This value will be used to populate <br/>
-        /// the `sample` namespace. See [the guide](https://platform.openai.com/docs/guides/graders) for more details.<br/>
+        /// the `sample` namespace. See [the guide](/docs/guides/graders) for more details.<br/>
         /// The `output_json` variable will be populated if the model sample is a <br/>
         /// valid JSON string.<br/>
         ///  
@@ -48,11 +50,11 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="item">
         /// The dataset item provided to the grader. This will be used to populate <br/>
-        /// the `item` namespace. See [the guide](https://platform.openai.com/docs/guides/graders) for more details. 
+        /// the `item` namespace. See [the guide](/docs/guides/graders) for more details. 
         /// </param>
         /// <param name="modelSample">
         /// The model sample to be evaluated. This value will be used to populate <br/>
-        /// the `sample` namespace. See [the guide](https://platform.openai.com/docs/guides/graders) for more details.<br/>
+        /// the `sample` namespace. See [the guide](/docs/guides/graders) for more details.<br/>
         /// The `output_json` variable will be populated if the model sample is a <br/>
         /// valid JSON string.<br/>
         ///  
@@ -61,7 +63,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RunGraderRequest(
-            global::tryAGI.OpenAI.RunGraderRequestGrader grader,
+            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.GraderStringCheck, global::tryAGI.OpenAI.GraderTextSimilarity, global::tryAGI.OpenAI.GraderPython, global::tryAGI.OpenAI.GraderScoreModel, global::tryAGI.OpenAI.GraderMulti> grader,
             string modelSample,
             object? item)
         {

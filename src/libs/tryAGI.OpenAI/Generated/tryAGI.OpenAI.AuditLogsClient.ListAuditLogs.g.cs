@@ -38,7 +38,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// List audit logs<br/>
         /// List user actions and configuration changes within this organization.
         /// </summary>
         /// <param name="effectiveAt"></param>
@@ -83,18 +82,18 @@ namespace tryAGI.OpenAI
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: "/organization/audit_logs",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("gt", effectiveAt?.Gt?.ToString()) 
-                .AddOptionalParameter("gte", effectiveAt?.Gte?.ToString()) 
-                .AddOptionalParameter("lt", effectiveAt?.Lt?.ToString()) 
-                .AddOptionalParameter("lte", effectiveAt?.Lte?.ToString()) 
-                .AddOptionalParameter("project_ids[]", projectIds, delimiter: ",", explode: true) 
-                .AddOptionalParameter("event_types[]", eventTypes, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
-                .AddOptionalParameter("actor_ids[]", actorIds, delimiter: ",", explode: true) 
-                .AddOptionalParameter("actor_emails[]", actorEmails, delimiter: ",", explode: true) 
-                .AddOptionalParameter("resource_ids[]", resourceIds, delimiter: ",", explode: true) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("after", after) 
+            __pathBuilder
+                .AddOptionalParameter("gt", effectiveAt?.Gt?.ToString())
+                .AddOptionalParameter("gte", effectiveAt?.Gte?.ToString())
+                .AddOptionalParameter("lt", effectiveAt?.Lt?.ToString())
+                .AddOptionalParameter("lte", effectiveAt?.Lte?.ToString())
+                .AddOptionalParameter("project_ids[]", projectIds, delimiter: ",", explode: true)
+                .AddOptionalParameter("event_types[]", eventTypes, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("actor_ids[]", actorIds, delimiter: ",", explode: true)
+                .AddOptionalParameter("actor_emails[]", actorEmails, delimiter: ",", explode: true)
+                .AddOptionalParameter("resource_ids[]", resourceIds, delimiter: ",", explode: true)
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("after", after)
                 .AddOptionalParameter("before", before) 
                 ; 
             var __path = __pathBuilder.ToString();

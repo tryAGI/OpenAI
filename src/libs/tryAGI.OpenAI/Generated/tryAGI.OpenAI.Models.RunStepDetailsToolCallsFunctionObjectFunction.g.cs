@@ -9,13 +9,6 @@ namespace tryAGI.OpenAI
     public sealed partial class RunStepDetailsToolCallsFunctionObjectFunction
     {
         /// <summary>
-        /// The arguments passed to the function.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Arguments { get; set; }
-
-        /// <summary>
         /// The name of the function.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
@@ -23,7 +16,14 @@ namespace tryAGI.OpenAI
         public required string Name { get; set; }
 
         /// <summary>
-        /// The output of the function. This will be `null` if the outputs have not been [submitted](https://platform.openai.com/docs/api-reference/runs/submitToolOutputs) yet.
+        /// The arguments passed to the function.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Arguments { get; set; }
+
+        /// <summary>
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -38,25 +38,23 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RunStepDetailsToolCallsFunctionObjectFunction" /> class.
         /// </summary>
-        /// <param name="arguments">
-        /// The arguments passed to the function.
-        /// </param>
         /// <param name="name">
         /// The name of the function.
         /// </param>
-        /// <param name="output">
-        /// The output of the function. This will be `null` if the outputs have not been [submitted](https://platform.openai.com/docs/api-reference/runs/submitToolOutputs) yet.
+        /// <param name="arguments">
+        /// The arguments passed to the function.
         /// </param>
+        /// <param name="output"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RunStepDetailsToolCallsFunctionObjectFunction(
-            string arguments,
             string name,
+            string arguments,
             string? output)
         {
-            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
             this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
         }
 

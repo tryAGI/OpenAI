@@ -4,9 +4,9 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The quality of the image that will be generated. <br/>
+    /// The quality of the image that will be generated.<br/>
     /// - `auto` (default value) will automatically select the best quality for the given model.<br/>
-    /// - `high`, `medium` and `low` are supported for `gpt-image-1`.<br/>
+    /// - `high`, `medium` and `low` are supported for the GPT image models.<br/>
     /// - `hd` and `standard` are supported for `dall-e-3`.<br/>
     /// - `standard` is the only option for `dall-e-2`.<br/>
     /// Default Value: auto<br/>

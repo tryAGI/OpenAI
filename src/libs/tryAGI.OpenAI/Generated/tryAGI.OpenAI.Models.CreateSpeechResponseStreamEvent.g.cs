@@ -13,19 +13,35 @@ namespace tryAGI.OpenAI
         /// Emitted for each chunk of audio data generated during speech synthesis.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.SpeechAudioDeltaEvent? AudioDelta { get; init; }
+        public global::tryAGI.OpenAI.SpeechAudioDeltaEvent? SpeechAudioDelta { get; init; }
 #else
-        public global::tryAGI.OpenAI.SpeechAudioDeltaEvent? AudioDelta { get; }
+        public global::tryAGI.OpenAI.SpeechAudioDeltaEvent? SpeechAudioDelta { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AudioDelta))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SpeechAudioDelta))]
 #endif
-        public bool IsAudioDelta => AudioDelta != null;
+        public bool IsSpeechAudioDelta => SpeechAudioDelta != null;
 
+        /// <summary>
+        /// Emitted when the speech synthesis is complete and all audio has been streamed.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.SpeechAudioDoneEvent? SpeechAudioDone { get; init; }
+#else
+        public global::tryAGI.OpenAI.SpeechAudioDoneEvent? SpeechAudioDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SpeechAudioDone))]
+#endif
+        public bool IsSpeechAudioDone => SpeechAudioDone != null;
         /// <summary>
         /// 
         /// </summary>
@@ -34,32 +50,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.SpeechAudioDeltaEvent?(CreateSpeechResponseStreamEvent @this) => @this.AudioDelta;
+        public static implicit operator global::tryAGI.OpenAI.SpeechAudioDeltaEvent?(CreateSpeechResponseStreamEvent @this) => @this.SpeechAudioDelta;
 
         /// <summary>
         /// 
         /// </summary>
         public CreateSpeechResponseStreamEvent(global::tryAGI.OpenAI.SpeechAudioDeltaEvent? value)
         {
-            AudioDelta = value;
+            SpeechAudioDelta = value;
         }
-
-        /// <summary>
-        /// Emitted when the speech synthesis is complete and all audio has been streamed.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.SpeechAudioDoneEvent? AudioDone { get; init; }
-#else
-        public global::tryAGI.OpenAI.SpeechAudioDoneEvent? AudioDone { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AudioDone))]
-#endif
-        public bool IsAudioDone => AudioDone != null;
 
         /// <summary>
         /// 
@@ -69,42 +68,42 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.SpeechAudioDoneEvent?(CreateSpeechResponseStreamEvent @this) => @this.AudioDone;
+        public static implicit operator global::tryAGI.OpenAI.SpeechAudioDoneEvent?(CreateSpeechResponseStreamEvent @this) => @this.SpeechAudioDone;
 
         /// <summary>
         /// 
         /// </summary>
         public CreateSpeechResponseStreamEvent(global::tryAGI.OpenAI.SpeechAudioDoneEvent? value)
         {
-            AudioDone = value;
+            SpeechAudioDone = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public CreateSpeechResponseStreamEvent(
-            global::tryAGI.OpenAI.SpeechAudioDeltaEvent? audioDelta,
-            global::tryAGI.OpenAI.SpeechAudioDoneEvent? audioDone
+            global::tryAGI.OpenAI.SpeechAudioDeltaEvent? speechAudioDelta,
+            global::tryAGI.OpenAI.SpeechAudioDoneEvent? speechAudioDone
             )
         {
-            AudioDelta = audioDelta;
-            AudioDone = audioDone;
+            SpeechAudioDelta = speechAudioDelta;
+            SpeechAudioDone = speechAudioDone;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            AudioDone as object ??
-            AudioDelta as object 
+            SpeechAudioDone as object ??
+            SpeechAudioDelta as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            AudioDelta?.ToString() ??
-            AudioDone?.ToString() 
+            SpeechAudioDelta?.ToString() ??
+            SpeechAudioDone?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +111,15 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsAudioDelta || IsAudioDone;
+            return IsSpeechAudioDelta || IsSpeechAudioDone;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.SpeechAudioDeltaEvent?, TResult>? audioDelta = null,
-            global::System.Func<global::tryAGI.OpenAI.SpeechAudioDoneEvent?, TResult>? audioDone = null,
+            global::System.Func<global::tryAGI.OpenAI.SpeechAudioDeltaEvent?, TResult>? speechAudioDelta = null,
+            global::System.Func<global::tryAGI.OpenAI.SpeechAudioDoneEvent?, TResult>? speechAudioDone = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +127,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsAudioDelta && audioDelta != null)
+            if (IsSpeechAudioDelta && speechAudioDelta != null)
             {
-                return audioDelta(AudioDelta!);
+                return speechAudioDelta(SpeechAudioDelta!);
             }
-            else if (IsAudioDone && audioDone != null)
+            else if (IsSpeechAudioDone && speechAudioDone != null)
             {
-                return audioDone(AudioDone!);
+                return speechAudioDone(SpeechAudioDone!);
             }
 
             return default(TResult);
@@ -144,8 +143,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.SpeechAudioDeltaEvent?>? audioDelta = null,
-            global::System.Action<global::tryAGI.OpenAI.SpeechAudioDoneEvent?>? audioDone = null,
+            global::System.Action<global::tryAGI.OpenAI.SpeechAudioDeltaEvent?>? speechAudioDelta = null,
+            global::System.Action<global::tryAGI.OpenAI.SpeechAudioDoneEvent?>? speechAudioDone = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +152,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsAudioDelta)
+            if (IsSpeechAudioDelta)
             {
-                audioDelta?.Invoke(AudioDelta!);
+                speechAudioDelta?.Invoke(SpeechAudioDelta!);
             }
-            else if (IsAudioDone)
+            else if (IsSpeechAudioDone)
             {
-                audioDone?.Invoke(AudioDone!);
+                speechAudioDone?.Invoke(SpeechAudioDone!);
             }
         }
 
@@ -170,9 +169,9 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                AudioDelta,
+                SpeechAudioDelta,
                 typeof(global::tryAGI.OpenAI.SpeechAudioDeltaEvent),
-                AudioDone,
+                SpeechAudioDone,
                 typeof(global::tryAGI.OpenAI.SpeechAudioDoneEvent),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +189,8 @@ namespace tryAGI.OpenAI
         public bool Equals(CreateSpeechResponseStreamEvent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SpeechAudioDeltaEvent?>.Default.Equals(AudioDelta, other.AudioDelta) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SpeechAudioDoneEvent?>.Default.Equals(AudioDone, other.AudioDone) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SpeechAudioDeltaEvent?>.Default.Equals(SpeechAudioDelta, other.SpeechAudioDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SpeechAudioDoneEvent?>.Default.Equals(SpeechAudioDone, other.SpeechAudioDone) 
                 ;
         }
 

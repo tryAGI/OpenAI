@@ -20,6 +20,10 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         Auto,
+        /// <summary>
+        /// 
+        /// </summary>
+        Original,
     }
 
     /// <summary>
@@ -37,6 +41,7 @@ namespace tryAGI.OpenAI
                 ImageDetail.Low => "low",
                 ImageDetail.High => "high",
                 ImageDetail.Auto => "auto",
+                ImageDetail.Original => "original",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,6 +55,7 @@ namespace tryAGI.OpenAI
                 "low" => ImageDetail.Low,
                 "high" => ImageDetail.High,
                 "auto" => ImageDetail.Auto,
+                "original" => ImageDetail.Original,
                 _ => null,
             };
         }

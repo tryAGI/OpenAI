@@ -31,12 +31,7 @@ namespace tryAGI.OpenAI
         public object? Schema { get; set; }
 
         /// <summary>
-        /// Whether to enable strict schema adherence when generating the output.<br/>
-        /// If set to true, the model will always follow the exact schema defined<br/>
-        /// in the `schema` field. Only a subset of JSON Schema is supported when<br/>
-        /// `strict` is `true`. To learn more, read the [Structured Outputs<br/>
-        /// guide](https://platform.openai.com/docs/guides/structured-outputs).<br/>
-        /// Default Value: false
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("strict")]
         public bool? Strict { get; set; }
@@ -62,14 +57,7 @@ namespace tryAGI.OpenAI
         /// The schema for the response format, described as a JSON Schema object.<br/>
         /// Learn how to build JSON schemas [here](https://json-schema.org/).
         /// </param>
-        /// <param name="strict">
-        /// Whether to enable strict schema adherence when generating the output.<br/>
-        /// If set to true, the model will always follow the exact schema defined<br/>
-        /// in the `schema` field. Only a subset of JSON Schema is supported when<br/>
-        /// `strict` is `true`. To learn more, read the [Structured Outputs<br/>
-        /// guide](https://platform.openai.com/docs/guides/structured-outputs).<br/>
-        /// Default Value: false
-        /// </param>
+        /// <param name="strict"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

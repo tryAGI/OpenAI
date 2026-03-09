@@ -9,19 +9,6 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateUploadRequest
     {
         /// <summary>
-        /// The number of bytes in the file you are uploading.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Bytes { get; set; }
-
-        /// <summary>
-        /// The expiration policy for a file. By default, files with `purpose=batch` expire after 30 days and all other files are persisted until they are manually deleted.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("expires_after")]
-        public global::tryAGI.OpenAI.FileExpirationAfter? ExpiresAfter { get; set; }
-
-        /// <summary>
         /// The name of the file to upload.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
@@ -29,21 +16,36 @@ namespace tryAGI.OpenAI
         public required string Filename { get; set; }
 
         /// <summary>
+        /// The intended purpose of the uploaded file.<br/>
+        /// See the [documentation on File<br/>
+        /// purposes](/docs/api-reference/files/create#files-create-purpose).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("purpose")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateUploadRequestPurposeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.CreateUploadRequestPurpose Purpose { get; set; }
+
+        /// <summary>
+        /// The number of bytes in the file you are uploading.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int Bytes { get; set; }
+
+        /// <summary>
         /// The MIME type of the file.<br/>
-        /// This must fall within the supported MIME types for your file purpose. See the supported MIME types for assistants and vision.
+        /// This must fall within the supported MIME types for your file purpose. See<br/>
+        /// the supported MIME types for assistants and vision.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mime_type")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string MimeType { get; set; }
 
         /// <summary>
-        /// The intended purpose of the uploaded file.<br/>
-        /// See the [documentation on File purposes](https://platform.openai.com/docs/api-reference/files/create#files-create-purpose).
+        /// The expiration policy for a file. By default, files with `purpose=batch` expire after 30 days and all other files are persisted until they are manually deleted.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("purpose")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateUploadRequestPurposeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.CreateUploadRequestPurpose Purpose { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_after")]
+        public global::tryAGI.OpenAI.FileExpirationAfter? ExpiresAfter { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,37 +56,39 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateUploadRequest" /> class.
         /// </summary>
-        /// <param name="bytes">
-        /// The number of bytes in the file you are uploading.
-        /// </param>
-        /// <param name="expiresAfter">
-        /// The expiration policy for a file. By default, files with `purpose=batch` expire after 30 days and all other files are persisted until they are manually deleted.
-        /// </param>
         /// <param name="filename">
         /// The name of the file to upload.
         /// </param>
-        /// <param name="mimeType">
-        /// The MIME type of the file.<br/>
-        /// This must fall within the supported MIME types for your file purpose. See the supported MIME types for assistants and vision.
-        /// </param>
         /// <param name="purpose">
         /// The intended purpose of the uploaded file.<br/>
-        /// See the [documentation on File purposes](https://platform.openai.com/docs/api-reference/files/create#files-create-purpose).
+        /// See the [documentation on File<br/>
+        /// purposes](/docs/api-reference/files/create#files-create-purpose).
+        /// </param>
+        /// <param name="bytes">
+        /// The number of bytes in the file you are uploading.
+        /// </param>
+        /// <param name="mimeType">
+        /// The MIME type of the file.<br/>
+        /// This must fall within the supported MIME types for your file purpose. See<br/>
+        /// the supported MIME types for assistants and vision.
+        /// </param>
+        /// <param name="expiresAfter">
+        /// The expiration policy for a file. By default, files with `purpose=batch` expire after 30 days and all other files are persisted until they are manually deleted.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateUploadRequest(
-            int bytes,
             string filename,
-            string mimeType,
             global::tryAGI.OpenAI.CreateUploadRequestPurpose purpose,
+            int bytes,
+            string mimeType,
             global::tryAGI.OpenAI.FileExpirationAfter? expiresAfter)
         {
-            this.Bytes = bytes;
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
-            this.MimeType = mimeType ?? throw new global::System.ArgumentNullException(nameof(mimeType));
             this.Purpose = purpose;
+            this.Bytes = bytes;
+            this.MimeType = mimeType ?? throw new global::System.ArgumentNullException(nameof(mimeType));
             this.ExpiresAfter = expiresAfter;
         }
 

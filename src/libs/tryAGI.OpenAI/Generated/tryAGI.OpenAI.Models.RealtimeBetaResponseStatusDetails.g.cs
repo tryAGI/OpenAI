@@ -9,11 +9,13 @@ namespace tryAGI.OpenAI
     public sealed partial class RealtimeBetaResponseStatusDetails
     {
         /// <summary>
-        /// A description of the error that caused the response to fail, <br/>
-        /// populated when the `status` is `failed`.
+        /// The type of error that caused the response to fail, corresponding <br/>
+        /// with the `status` field (`completed`, `cancelled`, `incomplete`, <br/>
+        /// `failed`).
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        public global::tryAGI.OpenAI.RealtimeBetaResponseStatusDetailsError? Error { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeBetaResponseStatusDetailsTypeJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeBetaResponseStatusDetailsType? Type { get; set; }
 
         /// <summary>
         /// The reason the Response did not complete. For a `cancelled` Response, <br/>
@@ -27,13 +29,11 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RealtimeBetaResponseStatusDetailsReason? Reason { get; set; }
 
         /// <summary>
-        /// The type of error that caused the response to fail, corresponding <br/>
-        /// with the `status` field (`completed`, `cancelled`, `incomplete`, <br/>
-        /// `failed`).
+        /// A description of the error that caused the response to fail, <br/>
+        /// populated when the `status` is `failed`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeBetaResponseStatusDetailsTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeBetaResponseStatusDetailsType? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
+        public global::tryAGI.OpenAI.RealtimeBetaResponseStatusDetailsError? Error { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,9 +44,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeBetaResponseStatusDetails" /> class.
         /// </summary>
-        /// <param name="error">
-        /// A description of the error that caused the response to fail, <br/>
-        /// populated when the `status` is `failed`.
+        /// <param name="type">
+        /// The type of error that caused the response to fail, corresponding <br/>
+        /// with the `status` field (`completed`, `cancelled`, `incomplete`, <br/>
+        /// `failed`).
         /// </param>
         /// <param name="reason">
         /// The reason the Response did not complete. For a `cancelled` Response, <br/>
@@ -55,22 +56,21 @@ namespace tryAGI.OpenAI
         /// `incomplete` Response, one of `max_output_tokens` or `content_filter` <br/>
         /// (the server-side safety filter activated and cut off the response).
         /// </param>
-        /// <param name="type">
-        /// The type of error that caused the response to fail, corresponding <br/>
-        /// with the `status` field (`completed`, `cancelled`, `incomplete`, <br/>
-        /// `failed`).
+        /// <param name="error">
+        /// A description of the error that caused the response to fail, <br/>
+        /// populated when the `status` is `failed`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeBetaResponseStatusDetails(
-            global::tryAGI.OpenAI.RealtimeBetaResponseStatusDetailsError? error,
+            global::tryAGI.OpenAI.RealtimeBetaResponseStatusDetailsType? type,
             global::tryAGI.OpenAI.RealtimeBetaResponseStatusDetailsReason? reason,
-            global::tryAGI.OpenAI.RealtimeBetaResponseStatusDetailsType? type)
+            global::tryAGI.OpenAI.RealtimeBetaResponseStatusDetailsError? error)
         {
-            this.Error = error;
-            this.Reason = reason;
             this.Type = type;
+            this.Reason = reason;
+            this.Error = error;
         }
 
         /// <summary>

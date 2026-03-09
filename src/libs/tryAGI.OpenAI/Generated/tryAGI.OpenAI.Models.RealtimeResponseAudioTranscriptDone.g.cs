@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Returned when the model-generated transcription of audio output is done streaming. Also emitted when a Response is interrupted, incomplete, or cancelled.
+    /// Returned when the model-generated transcription of audio output is done streaming. Also emitted when a Response is interrupted, incomplete, or cancelled.<br/>
+    /// Example: {"event_id":"event_4748","type":"response.audio_transcript.done","response_id":"resp_001","item_id":"msg_008","output_index":0,"content_index":0,"transcript":"Hello, how can I assist you today?"}
     /// </summary>
     public sealed partial class RealtimeResponseAudioTranscriptDone
     {

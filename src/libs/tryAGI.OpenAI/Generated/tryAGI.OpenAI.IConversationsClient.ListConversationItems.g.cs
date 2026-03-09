@@ -5,7 +5,6 @@ namespace tryAGI.OpenAI
     public partial interface IConversationsClient
     {
         /// <summary>
-        /// List items<br/>
         /// List all items for a conversation with the given ID.
         /// </summary>
         /// <param name="conversationId">
@@ -24,7 +23,7 @@ namespace tryAGI.OpenAI
             int? limit = default,
             global::tryAGI.OpenAI.ListConversationItemsOrder? order = default,
             string? after = default,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include = default,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.IncludeEnum>? include = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

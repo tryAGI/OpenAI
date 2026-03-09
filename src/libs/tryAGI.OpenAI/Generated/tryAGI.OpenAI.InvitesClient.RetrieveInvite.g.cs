@@ -22,7 +22,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Retrieve invite<br/>
         /// Retrieves an invite.
         /// </summary>
         /// <param name="inviteId"></param>

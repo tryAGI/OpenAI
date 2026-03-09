@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Returned when a new Response is created. The first event of response creation, where the response is in an initial state of "in_progress".
+    /// Returned when a new Response is created. The first event of response creation, where the response is in an initial state of "in_progress".<br/>
+    /// Example: {"event_id":"event_2930","type":"response.created","response":{"id":"resp_001","object":"realtime.response","status":"in_progress","status_details":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","output":[],"usage":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464"}}
     /// </summary>
     public sealed partial class RealtimeResponseCreated
     {

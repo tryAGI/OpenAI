@@ -5,7 +5,6 @@ namespace tryAGI.OpenAI
     public partial interface ICertificatesClient
     {
         /// <summary>
-        /// List organization certificates<br/>
         /// List uploaded certificates for this organization.
         /// </summary>
         /// <param name="limit">

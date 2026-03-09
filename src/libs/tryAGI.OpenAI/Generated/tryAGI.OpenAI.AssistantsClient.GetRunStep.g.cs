@@ -28,7 +28,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Retrieve run step<br/>
         /// Retrieves a run step.
         /// </summary>
         /// <param name="threadId"></param>
@@ -37,9 +36,6 @@ namespace tryAGI.OpenAI
         /// <param name="include"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "TRYAGI_OPENAI_BETA_001")]
-#endif
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.RunStepObject> GetRunStepAsync(
             string threadId,
             string runId,
@@ -59,7 +55,7 @@ namespace tryAGI.OpenAI
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/threads/{threadId}/runs/{runId}/steps/{stepId}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("include[]", include, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();

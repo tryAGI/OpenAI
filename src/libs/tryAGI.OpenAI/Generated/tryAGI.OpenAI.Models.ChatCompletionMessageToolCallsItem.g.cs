@@ -13,19 +13,35 @@ namespace tryAGI.OpenAI
         /// A call to a function tool created by the model.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ChatCompletionMessageToolCall? Call { get; init; }
+        public global::tryAGI.OpenAI.ChatCompletionMessageToolCall? Function { get; init; }
 #else
-        public global::tryAGI.OpenAI.ChatCompletionMessageToolCall? Call { get; }
+        public global::tryAGI.OpenAI.ChatCompletionMessageToolCall? Function { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Call))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Function))]
 #endif
-        public bool IsCall => Call != null;
+        public bool IsFunction => Function != null;
 
+        /// <summary>
+        /// A call to a custom tool created by the model.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall? Custom { get; init; }
+#else
+        public global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall? Custom { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Custom))]
+#endif
+        public bool IsCustom => Custom != null;
         /// <summary>
         /// 
         /// </summary>
@@ -34,32 +50,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.ChatCompletionMessageToolCall?(ChatCompletionMessageToolCallsItem @this) => @this.Call;
+        public static implicit operator global::tryAGI.OpenAI.ChatCompletionMessageToolCall?(ChatCompletionMessageToolCallsItem @this) => @this.Function;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionMessageToolCallsItem(global::tryAGI.OpenAI.ChatCompletionMessageToolCall? value)
         {
-            Call = value;
+            Function = value;
         }
-
-        /// <summary>
-        /// A call to a custom tool created by the model.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall? CustomCall { get; init; }
-#else
-        public global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall? CustomCall { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomCall))]
-#endif
-        public bool IsCustomCall => CustomCall != null;
 
         /// <summary>
         /// 
@@ -69,42 +68,42 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall?(ChatCompletionMessageToolCallsItem @this) => @this.CustomCall;
+        public static implicit operator global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall?(ChatCompletionMessageToolCallsItem @this) => @this.Custom;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionMessageToolCallsItem(global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall? value)
         {
-            CustomCall = value;
+            Custom = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionMessageToolCallsItem(
-            global::tryAGI.OpenAI.ChatCompletionMessageToolCall? call,
-            global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall? customCall
+            global::tryAGI.OpenAI.ChatCompletionMessageToolCall? function,
+            global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall? custom
             )
         {
-            Call = call;
-            CustomCall = customCall;
+            Function = function;
+            Custom = custom;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            CustomCall as object ??
-            Call as object 
+            Custom as object ??
+            Function as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Call?.ToString() ??
-            CustomCall?.ToString() 
+            Function?.ToString() ??
+            Custom?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +111,15 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsCall || IsCustomCall;
+            return IsFunction && !IsCustom || !IsFunction && IsCustom;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.ChatCompletionMessageToolCall?, TResult>? call = null,
-            global::System.Func<global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall?, TResult>? customCall = null,
+            global::System.Func<global::tryAGI.OpenAI.ChatCompletionMessageToolCall?, TResult>? function = null,
+            global::System.Func<global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall?, TResult>? custom = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +127,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsCall && call != null)
+            if (IsFunction && function != null)
             {
-                return call(Call!);
+                return function(Function!);
             }
-            else if (IsCustomCall && customCall != null)
+            else if (IsCustom && custom != null)
             {
-                return customCall(CustomCall!);
+                return custom(Custom!);
             }
 
             return default(TResult);
@@ -144,8 +143,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.ChatCompletionMessageToolCall?>? call = null,
-            global::System.Action<global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall?>? customCall = null,
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionMessageToolCall?>? function = null,
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall?>? custom = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +152,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsCall)
+            if (IsFunction)
             {
-                call?.Invoke(Call!);
+                function?.Invoke(Function!);
             }
-            else if (IsCustomCall)
+            else if (IsCustom)
             {
-                customCall?.Invoke(CustomCall!);
+                custom?.Invoke(Custom!);
             }
         }
 
@@ -170,9 +169,9 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                Call,
+                Function,
                 typeof(global::tryAGI.OpenAI.ChatCompletionMessageToolCall),
-                CustomCall,
+                Custom,
                 typeof(global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +189,8 @@ namespace tryAGI.OpenAI
         public bool Equals(ChatCompletionMessageToolCallsItem other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ChatCompletionMessageToolCall?>.Default.Equals(Call, other.Call) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall?>.Default.Equals(CustomCall, other.CustomCall) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ChatCompletionMessageToolCall?>.Default.Equals(Function, other.Function) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall?>.Default.Equals(Custom, other.Custom) 
                 ;
         }
 

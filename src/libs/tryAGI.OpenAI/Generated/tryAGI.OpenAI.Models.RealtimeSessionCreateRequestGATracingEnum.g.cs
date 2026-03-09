@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Default tracing mode for the session.<br/>
+    /// Enables tracing and sets default values for tracing configuration options. Always `auto`.<br/>
     /// Default Value: auto
     /// </summary>
     public enum RealtimeSessionCreateRequestGATracingEnum

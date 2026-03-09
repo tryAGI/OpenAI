@@ -5,7 +5,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy. Only applicable if `file_ids` is non-empty.
+    /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
     /// </summary>
     public readonly partial struct ChunkingStrategyRequestParam : global::System.IEquatable<ChunkingStrategyRequestParam>
     {
@@ -27,6 +27,22 @@ namespace tryAGI.OpenAI
         public bool IsAuto => Auto != null;
 
         /// <summary>
+        /// Customize your own chunking strategy by setting chunk size and chunk overlap.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam? Static { get; init; }
+#else
+        public global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam? Static { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Static))]
+#endif
+        public bool IsStatic => Static != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ChunkingStrategyRequestParam(global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam value) => new ChunkingStrategyRequestParam((global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam?)value);
@@ -43,23 +59,6 @@ namespace tryAGI.OpenAI
         {
             Auto = value;
         }
-
-        /// <summary>
-        /// Customize your own chunking strategy by setting chunk size and chunk overlap.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam? Static { get; init; }
-#else
-        public global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam? Static { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Static))]
-#endif
-        public bool IsStatic => Static != null;
 
         /// <summary>
         /// 
@@ -112,7 +111,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsAuto || IsStatic;
+            return IsAuto && !IsStatic || !IsAuto && IsStatic;
         }
 
         /// <summary>

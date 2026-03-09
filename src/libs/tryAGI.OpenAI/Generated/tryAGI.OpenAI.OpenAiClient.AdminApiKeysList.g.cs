@@ -26,8 +26,8 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// List all organization and project API keys.<br/>
-        /// List organization API keys
+        /// List organization API keys<br/>
+        /// Retrieve a paginated list of organization admin API keys.
         /// </summary>
         /// <param name="after">
         /// Return keys with IDs that come after this ID in the pagination order.
@@ -59,9 +59,9 @@ namespace tryAGI.OpenAI
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: "/organization/admin_api_keys",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("after", after) 
-                .AddOptionalParameter("order", order?.ToValueString()) 
+            __pathBuilder
+                .AddOptionalParameter("after", after)
+                .AddOptionalParameter("order", order?.ToValueString())
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -13,98 +13,97 @@ namespace tryAGI.OpenAI
         /// Unconstrained free-form text.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatVariant1? Value1 { get; init; }
+        public global::tryAGI.OpenAI.CustomTextFormatParam? Text { get; init; }
 #else
-        public global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatVariant1? Value1 { get; }
+        public global::tryAGI.OpenAI.CustomTextFormatParam? Text { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
-        public bool IsValue1 => Value1 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Format2(global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatVariant1 value) => new Format2((global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatVariant1?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatVariant1?(Format2 @this) => @this.Value1;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Format2(global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatVariant1? value)
-        {
-            Value1 = value;
-        }
+        public bool IsText => Text != null;
 
         /// <summary>
         /// A grammar defined by the user.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatVariant2? Value2 { get; init; }
+        public global::tryAGI.OpenAI.CustomGrammarFormatParam? Grammar { get; init; }
 #else
-        public global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatVariant2? Value2 { get; }
+        public global::tryAGI.OpenAI.CustomGrammarFormatParam? Grammar { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Grammar))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsGrammar => Grammar != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Format2(global::tryAGI.OpenAI.CustomTextFormatParam value) => new Format2((global::tryAGI.OpenAI.CustomTextFormatParam?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Format2(global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatVariant2 value) => new Format2((global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatVariant2?)value);
+        public static implicit operator global::tryAGI.OpenAI.CustomTextFormatParam?(Format2 @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatVariant2?(Format2 @this) => @this.Value2;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Format2(global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatVariant2? value)
+        public Format2(global::tryAGI.OpenAI.CustomTextFormatParam? value)
         {
-            Value2 = value;
+            Text = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Format2(global::tryAGI.OpenAI.CustomGrammarFormatParam value) => new Format2((global::tryAGI.OpenAI.CustomGrammarFormatParam?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.CustomGrammarFormatParam?(Format2 @this) => @this.Grammar;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Format2(global::tryAGI.OpenAI.CustomGrammarFormatParam? value)
+        {
+            Grammar = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public Format2(
-            global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatVariant1? value1,
-            global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatVariant2? value2
+            global::tryAGI.OpenAI.CustomTextFormatParam? text,
+            global::tryAGI.OpenAI.CustomGrammarFormatParam? grammar
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Text = text;
+            Grammar = grammar;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            Grammar as object ??
+            Text as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Text?.ToString() ??
+            Grammar?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +111,15 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsText && !IsGrammar || !IsText && IsGrammar;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatVariant1?, TResult>? value1 = null,
-            global::System.Func<global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatVariant2?, TResult>? value2 = null,
+            global::System.Func<global::tryAGI.OpenAI.CustomTextFormatParam?, TResult>? text = null,
+            global::System.Func<global::tryAGI.OpenAI.CustomGrammarFormatParam?, TResult>? grammar = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +127,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsText && text != null)
             {
-                return value1(Value1!);
+                return text(Text!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsGrammar && grammar != null)
             {
-                return value2(Value2!);
+                return grammar(Grammar!);
             }
 
             return default(TResult);
@@ -144,8 +143,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatVariant1?>? value1 = null,
-            global::System.Action<global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatVariant2?>? value2 = null,
+            global::System.Action<global::tryAGI.OpenAI.CustomTextFormatParam?>? text = null,
+            global::System.Action<global::tryAGI.OpenAI.CustomGrammarFormatParam?>? grammar = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +152,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsText)
             {
-                value1?.Invoke(Value1!);
+                text?.Invoke(Text!);
             }
-            else if (IsValue2)
+            else if (IsGrammar)
             {
-                value2?.Invoke(Value2!);
+                grammar?.Invoke(Grammar!);
             }
         }
 
@@ -170,10 +169,10 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                Value1,
-                typeof(global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatVariant1),
-                Value2,
-                typeof(global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatVariant2),
+                Text,
+                typeof(global::tryAGI.OpenAI.CustomTextFormatParam),
+                Grammar,
+                typeof(global::tryAGI.OpenAI.CustomGrammarFormatParam),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -190,8 +189,8 @@ namespace tryAGI.OpenAI
         public bool Equals(Format2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CustomTextFormatParam?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CustomGrammarFormatParam?>.Default.Equals(Grammar, other.Grammar) 
                 ;
         }
 

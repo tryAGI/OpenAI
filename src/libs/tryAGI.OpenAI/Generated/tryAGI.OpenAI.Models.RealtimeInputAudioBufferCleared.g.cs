@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Returned when the input audio buffer is cleared by the client.
+    /// Returned when the input audio buffer is cleared by the client.<br/>
+    /// Example: {"event_id":"event_1314","type":"input_audio_buffer.cleared"}
     /// </summary>
     public sealed partial class RealtimeInputAudioBufferCleared
     {

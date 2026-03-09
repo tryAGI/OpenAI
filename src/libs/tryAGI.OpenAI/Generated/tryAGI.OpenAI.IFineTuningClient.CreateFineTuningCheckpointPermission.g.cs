@@ -5,7 +5,6 @@ namespace tryAGI.OpenAI
     public partial interface IFineTuningClient
     {
         /// <summary>
-        /// Create checkpoint permissions<br/>
         /// **NOTE:** Calling this endpoint requires an [admin API key](../admin-api-keys).<br/>
         /// This enables organization owners to share fine-tuned models with other projects in their organization.
         /// </summary>
@@ -17,11 +16,11 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ListFineTuningCheckpointPermissionResponse> CreateFineTuningCheckpointPermissionAsync(
             string fineTunedModelCheckpoint,
+
             global::tryAGI.OpenAI.CreateFineTuningCheckpointPermissionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Create checkpoint permissions<br/>
         /// **NOTE:** Calling this endpoint requires an [admin API key](../admin-api-keys).<br/>
         /// This enables organization owners to share fine-tuned models with other projects in their organization.
         /// </summary>

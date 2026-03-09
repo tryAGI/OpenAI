@@ -28,8 +28,8 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// List container files<br/>
-        /// List Container files
+        /// List Container files<br/>
+        /// Lists container files.
         /// </summary>
         /// <param name="containerId"></param>
         /// <param name="limit">
@@ -60,9 +60,9 @@ namespace tryAGI.OpenAI
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/containers/{containerId}/files",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("order", order?.ToValueString()) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("order", order?.ToValueString())
                 .AddOptionalParameter("after", after) 
                 ; 
             var __path = __pathBuilder.ToString();

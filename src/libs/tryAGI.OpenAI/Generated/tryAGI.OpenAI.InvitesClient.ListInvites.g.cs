@@ -24,7 +24,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// List invites<br/>
         /// Returns a list of invites in the organization.
         /// </summary>
         /// <param name="limit">
@@ -48,8 +47,8 @@ namespace tryAGI.OpenAI
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: "/organization/invites",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("after", after) 
                 ; 
             var __path = __pathBuilder.ToString();

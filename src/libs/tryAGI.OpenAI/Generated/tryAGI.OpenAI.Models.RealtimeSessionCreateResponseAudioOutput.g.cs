@@ -16,18 +16,18 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RealtimeAudioFormats? Format { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
-        public double? Speed { get; set; }
-
-        /// <summary>
         /// Example: ash
         /// </summary>
         /// <example>ash</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VoiceIdsSharedJsonConverter))]
         public global::tryAGI.OpenAI.VoiceIdsShared? Voice { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
+        public double? Speed { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,21 +39,21 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="RealtimeSessionCreateResponseAudioOutput" /> class.
         /// </summary>
         /// <param name="format"></param>
-        /// <param name="speed"></param>
         /// <param name="voice">
         /// Example: ash
         /// </param>
+        /// <param name="speed"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeSessionCreateResponseAudioOutput(
             global::tryAGI.OpenAI.RealtimeAudioFormats? format,
-            double? speed,
-            global::tryAGI.OpenAI.VoiceIdsShared? voice)
+            global::tryAGI.OpenAI.VoiceIdsShared? voice,
+            double? speed)
         {
             this.Format = format;
-            this.Speed = speed;
             this.Voice = voice;
+            this.Speed = speed;
         }
 
         /// <summary>

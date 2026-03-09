@@ -16,16 +16,16 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RealtimeAudioFormats? Format { get; set; }
 
         /// <summary>
+        /// Configuration for input audio transcription.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("transcription")]
+        public global::tryAGI.OpenAI.AudioTranscription? Transcription { get; set; }
+
+        /// <summary>
         /// Configuration for input audio noise reduction.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("noise_reduction")]
         public global::tryAGI.OpenAI.RealtimeSessionCreateResponseAudioInputNoiseReduction? NoiseReduction { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("transcription")]
-        public global::tryAGI.OpenAI.AudioTranscription? Transcription { get; set; }
 
         /// <summary>
         /// Configuration for turn detection.
@@ -43,10 +43,12 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="RealtimeSessionCreateResponseAudioInput" /> class.
         /// </summary>
         /// <param name="format"></param>
+        /// <param name="transcription">
+        /// Configuration for input audio transcription.
+        /// </param>
         /// <param name="noiseReduction">
         /// Configuration for input audio noise reduction.
         /// </param>
-        /// <param name="transcription"></param>
         /// <param name="turnDetection">
         /// Configuration for turn detection.
         /// </param>
@@ -55,13 +57,13 @@ namespace tryAGI.OpenAI
 #endif
         public RealtimeSessionCreateResponseAudioInput(
             global::tryAGI.OpenAI.RealtimeAudioFormats? format,
-            global::tryAGI.OpenAI.RealtimeSessionCreateResponseAudioInputNoiseReduction? noiseReduction,
             global::tryAGI.OpenAI.AudioTranscription? transcription,
+            global::tryAGI.OpenAI.RealtimeSessionCreateResponseAudioInputNoiseReduction? noiseReduction,
             global::tryAGI.OpenAI.RealtimeSessionCreateResponseAudioInputTurnDetection? turnDetection)
         {
             this.Format = format;
-            this.NoiseReduction = noiseReduction;
             this.Transcription = transcription;
+            this.NoiseReduction = noiseReduction;
             this.TurnDetection = turnDetection;
         }
 

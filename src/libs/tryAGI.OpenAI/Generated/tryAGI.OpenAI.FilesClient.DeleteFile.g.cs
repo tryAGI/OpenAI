@@ -22,8 +22,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Delete file<br/>
-        /// Delete a file.
+        /// Delete a file and remove it from all vector stores.
         /// </summary>
         /// <param name="fileId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

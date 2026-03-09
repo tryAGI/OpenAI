@@ -4,23 +4,23 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// For `gpt-image-1` only, the token usage information for the image generation.
+    /// For the GPT image models only, the token usage information for the image generation.
     /// </summary>
     public sealed partial class ImagesUsage
     {
+        /// <summary>
+        /// The total number of tokens (images and text) used for the image generation.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int TotalTokens { get; set; }
+
         /// <summary>
         /// The number of tokens (images and text) in the input prompt.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int InputTokens { get; set; }
-
-        /// <summary>
-        /// The input tokens detailed information for the image generation.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens_details")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ImagesUsageInputTokensDetails InputTokensDetails { get; set; }
 
         /// <summary>
         /// The number of image tokens in the output image.
@@ -30,11 +30,11 @@ namespace tryAGI.OpenAI
         public required int OutputTokens { get; set; }
 
         /// <summary>
-        /// The total number of tokens (images and text) used for the image generation.
+        /// The input tokens detailed information for the image generation.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens_details")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int TotalTokens { get; set; }
+        public required global::tryAGI.OpenAI.ImagesUsageInputTokensDetails InputTokensDetails { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,31 +45,31 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ImagesUsage" /> class.
         /// </summary>
+        /// <param name="totalTokens">
+        /// The total number of tokens (images and text) used for the image generation.
+        /// </param>
         /// <param name="inputTokens">
         /// The number of tokens (images and text) in the input prompt.
-        /// </param>
-        /// <param name="inputTokensDetails">
-        /// The input tokens detailed information for the image generation.
         /// </param>
         /// <param name="outputTokens">
         /// The number of image tokens in the output image.
         /// </param>
-        /// <param name="totalTokens">
-        /// The total number of tokens (images and text) used for the image generation.
+        /// <param name="inputTokensDetails">
+        /// The input tokens detailed information for the image generation.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ImagesUsage(
+            int totalTokens,
             int inputTokens,
-            global::tryAGI.OpenAI.ImagesUsageInputTokensDetails inputTokensDetails,
             int outputTokens,
-            int totalTokens)
+            global::tryAGI.OpenAI.ImagesUsageInputTokensDetails inputTokensDetails)
         {
-            this.InputTokens = inputTokens;
-            this.InputTokensDetails = inputTokensDetails ?? throw new global::System.ArgumentNullException(nameof(inputTokensDetails));
-            this.OutputTokens = outputTokens;
             this.TotalTokens = totalTokens;
+            this.InputTokens = inputTokens;
+            this.OutputTokens = outputTokens;
+            this.InputTokensDetails = inputTokensDetails ?? throw new global::System.ArgumentNullException(nameof(inputTokensDetails));
         }
 
         /// <summary>

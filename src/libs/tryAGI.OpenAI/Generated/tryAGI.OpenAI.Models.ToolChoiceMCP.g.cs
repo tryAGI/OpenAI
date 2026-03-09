@@ -9,10 +9,11 @@ namespace tryAGI.OpenAI
     public sealed partial class ToolChoiceMCP
     {
         /// <summary>
-        /// The name of the tool to call on the server.
+        /// For MCP tools, the type is always `mcp`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string? Name { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ToolChoiceMCPTypeJsonConverter))]
+        public global::tryAGI.OpenAI.ToolChoiceMCPType Type { get; set; }
 
         /// <summary>
         /// The label of the MCP server to use.
@@ -22,11 +23,10 @@ namespace tryAGI.OpenAI
         public required string ServerLabel { get; set; }
 
         /// <summary>
-        /// For MCP tools, the type is always `mcp`.
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ToolChoiceMCPTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ToolChoiceMCPType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string? Name { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,26 +37,24 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolChoiceMCP" /> class.
         /// </summary>
-        /// <param name="name">
-        /// The name of the tool to call on the server.
+        /// <param name="type">
+        /// For MCP tools, the type is always `mcp`.
         /// </param>
         /// <param name="serverLabel">
         /// The label of the MCP server to use.
         /// </param>
-        /// <param name="type">
-        /// For MCP tools, the type is always `mcp`.
-        /// </param>
+        /// <param name="name"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ToolChoiceMCP(
             string serverLabel,
-            string? name,
-            global::tryAGI.OpenAI.ToolChoiceMCPType type)
+            global::tryAGI.OpenAI.ToolChoiceMCPType type,
+            string? name)
         {
             this.ServerLabel = serverLabel ?? throw new global::System.ArgumentNullException(nameof(serverLabel));
-            this.Name = name;
             this.Type = type;
+            this.Name = name;
         }
 
         /// <summary>

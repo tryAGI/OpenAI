@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Metadata filter for the responses. This is a query parameter used to select responses.
+    /// 
     /// </summary>
     public sealed partial class EvalResponsesSourceMetadata
     {

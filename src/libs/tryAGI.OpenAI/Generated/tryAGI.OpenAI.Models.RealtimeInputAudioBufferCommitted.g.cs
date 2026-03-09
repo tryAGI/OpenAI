@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Returned when an input audio buffer is committed, either by the client or automatically in server VAD mode.
+    /// Returned when an input audio buffer is committed, either by the client or automatically in server VAD mode.<br/>
+    /// Example: {"event_id":"event_1121","type":"input_audio_buffer.committed","previous_item_id":"msg_001","item_id":"msg_002"}
     /// </summary>
     public sealed partial class RealtimeInputAudioBufferCommitted
     {

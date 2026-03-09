@@ -10,13 +10,6 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateEvalStoredCompletionsDataSourceConfig
     {
         /// <summary>
-        /// Metadata filters for the stored completions data source.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        [global::System.Obsolete("This property marked as deprecated.")]
-        public object? Metadata { get; set; }
-
-        /// <summary>
         /// The type of data source. Always `stored_completions`.<br/>
         /// Default Value: stored_completions
         /// </summary>
@@ -27,6 +20,21 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CreateEvalStoredCompletionsDataSourceConfigType Type { get; set; } = global::tryAGI.OpenAI.CreateEvalStoredCompletionsDataSourceConfigType.StoredCompletions;
 
         /// <summary>
+        /// Metadata filters for the stored completions data source.<br/>
+        /// Example: {<br/>
+        ///   "use_case": "customer_support_agent"<br/>
+        /// }
+        /// </summary>
+        /// <example>
+        /// {<br/>
+        ///   "use_case": "customer_support_agent"<br/>
+        /// }
+        /// </example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public object? Metadata { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -35,12 +43,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateEvalStoredCompletionsDataSourceConfig" /> class.
         /// </summary>
-        /// <param name="metadata">
-        /// Metadata filters for the stored completions data source.
-        /// </param>
         /// <param name="type">
         /// The type of data source. Always `stored_completions`.<br/>
         /// Default Value: stored_completions
+        /// </param>
+        /// <param name="metadata">
+        /// Metadata filters for the stored completions data source.<br/>
+        /// Example: {<br/>
+        ///   "use_case": "customer_support_agent"<br/>
+        /// }
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -49,8 +60,8 @@ namespace tryAGI.OpenAI
             object? metadata,
             global::tryAGI.OpenAI.CreateEvalStoredCompletionsDataSourceConfigType type = global::tryAGI.OpenAI.CreateEvalStoredCompletionsDataSourceConfigType.StoredCompletions)
         {
-            this.Metadata = metadata;
             this.Type = type;
+            this.Metadata = metadata;
         }
 
         /// <summary>

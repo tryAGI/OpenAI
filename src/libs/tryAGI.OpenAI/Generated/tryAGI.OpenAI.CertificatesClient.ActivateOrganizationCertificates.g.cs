@@ -22,7 +22,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Activate certificates for organization<br/>
         /// Activate certificates at the organization level.<br/>
         /// You can atomically and idempotently activate up to 10 certificates at a time.
         /// </summary>
@@ -30,6 +29,7 @@ namespace tryAGI.OpenAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ListCertificatesResponse> ActivateOrganizationCertificatesAsync(
+
             global::tryAGI.OpenAI.ToggleCertificatesRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -168,7 +168,6 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Activate certificates for organization<br/>
         /// Activate certificates at the organization level.<br/>
         /// You can atomically and idempotently activate up to 10 certificates at a time.
         /// </summary>

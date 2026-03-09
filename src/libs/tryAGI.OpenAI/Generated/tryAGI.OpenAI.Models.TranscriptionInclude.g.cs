@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    /// Default Value: []
     /// </summary>
     public enum TranscriptionInclude
     {

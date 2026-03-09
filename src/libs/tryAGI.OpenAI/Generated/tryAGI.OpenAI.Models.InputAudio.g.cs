@@ -9,18 +9,18 @@ namespace tryAGI.OpenAI
     public sealed partial class InputAudio
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input_audio")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.InputAudioInputAudio1 InputAudio1 { get; set; }
-
-        /// <summary>
         /// The type of the input item. Always `input_audio`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.InputAudioTypeJsonConverter))]
         public global::tryAGI.OpenAI.InputAudioType Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("input_audio")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.InputAudioInputAudio1 InputAudio1 { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,10 +31,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="InputAudio" /> class.
         /// </summary>
-        /// <param name="inputAudio1"></param>
         /// <param name="type">
         /// The type of the input item. Always `input_audio`.
         /// </param>
+        /// <param name="inputAudio1"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

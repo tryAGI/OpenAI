@@ -16,18 +16,18 @@ namespace tryAGI.OpenAI
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The ID of the MCP list tools item.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ItemId { get; set; }
-
-        /// <summary>
         /// The event type, must be `mcp_list_tools.failed`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeBetaServerEventMCPListToolsFailedTypeJsonConverter))]
         public global::tryAGI.OpenAI.RealtimeBetaServerEventMCPListToolsFailedType Type { get; set; }
+
+        /// <summary>
+        /// The ID of the MCP list tools item.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ItemId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,11 +41,11 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="itemId">
-        /// The ID of the MCP list tools item.
-        /// </param>
         /// <param name="type">
         /// The event type, must be `mcp_list_tools.failed`.
+        /// </param>
+        /// <param name="itemId">
+        /// The ID of the MCP list tools item.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

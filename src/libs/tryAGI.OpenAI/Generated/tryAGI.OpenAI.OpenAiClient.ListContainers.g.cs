@@ -9,13 +9,15 @@ namespace tryAGI.OpenAI
             global::System.Net.Http.HttpClient httpClient,
             ref int? limit,
             ref global::tryAGI.OpenAI.ListContainersOrder? order,
-            ref string? after);
+            ref string? after,
+            ref string? name);
         partial void PrepareListContainersRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int? limit,
             global::tryAGI.OpenAI.ListContainersOrder? order,
-            string? after);
+            string? after,
+            string? name);
         partial void ProcessListContainersResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -26,8 +28,8 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// List containers<br/>
-        /// List Containers
+        /// List Containers<br/>
+        /// Lists containers.
         /// </summary>
         /// <param name="limit">
         /// Default Value: 20
@@ -36,12 +38,14 @@ namespace tryAGI.OpenAI
         /// Default Value: desc
         /// </param>
         /// <param name="after"></param>
+        /// <param name="name"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ContainerListResource> ListContainersAsync(
             int? limit = default,
             global::tryAGI.OpenAI.ListContainersOrder? order = default,
             string? after = default,
+            string? name = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -50,15 +54,17 @@ namespace tryAGI.OpenAI
                 httpClient: HttpClient,
                 limit: ref limit,
                 order: ref order,
-                after: ref after);
+                after: ref after,
+                name: ref name);
 
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: "/containers",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("order", order?.ToValueString()) 
-                .AddOptionalParameter("after", after) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("order", order?.ToValueString())
+                .AddOptionalParameter("after", after)
+                .AddOptionalParameter("name", name) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -93,7 +99,8 @@ namespace tryAGI.OpenAI
                 httpRequestMessage: __httpRequest,
                 limit: limit,
                 order: order,
-                after: after);
+                after: after,
+                name: name);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

@@ -4,17 +4,10 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Action type "find": Searches for a pattern within a loaded page.
+    /// Action type "find_in_page": Searches for a pattern within a loaded page.
     /// </summary>
     public sealed partial class WebSearchActionFind
     {
-        /// <summary>
-        /// The pattern or text to search for within the page.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("pattern")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Pattern { get; set; }
-
         /// <summary>
         /// The action type.
         /// </summary>
@@ -30,6 +23,13 @@ namespace tryAGI.OpenAI
         public required string Url { get; set; }
 
         /// <summary>
+        /// The pattern or text to search for within the page.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("pattern")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Pattern { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -38,25 +38,25 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="WebSearchActionFind" /> class.
         /// </summary>
-        /// <param name="pattern">
-        /// The pattern or text to search for within the page.
-        /// </param>
         /// <param name="type">
         /// The action type.
         /// </param>
         /// <param name="url">
         /// The URL of the page searched for the pattern.
         /// </param>
+        /// <param name="pattern">
+        /// The pattern or text to search for within the page.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebSearchActionFind(
-            string pattern,
             string url,
+            string pattern,
             global::tryAGI.OpenAI.WebSearchActionFindType type)
         {
-            this.Pattern = pattern ?? throw new global::System.ArgumentNullException(nameof(pattern));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Pattern = pattern ?? throw new global::System.ArgumentNullException(nameof(pattern));
             this.Type = type;
         }
 

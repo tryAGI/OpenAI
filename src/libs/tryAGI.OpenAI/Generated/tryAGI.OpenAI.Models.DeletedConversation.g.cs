@@ -25,7 +25,6 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Resource))]
 #endif
         public bool IsResource => Resource != null;
-
         /// <summary>
         /// 
         /// </summary>

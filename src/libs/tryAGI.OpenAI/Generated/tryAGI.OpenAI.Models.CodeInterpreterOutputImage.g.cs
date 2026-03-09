@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class CodeInterpreterOutputImage
     {
         /// <summary>
-        /// The type of the output. Always 'image'.<br/>
+        /// The type of the output. Always `image`.<br/>
         /// Default Value: image
         /// </summary>
         /// <default>global::tryAGI.OpenAI.CodeInterpreterOutputImageType.Image</default>
@@ -34,7 +34,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="CodeInterpreterOutputImage" /> class.
         /// </summary>
         /// <param name="type">
-        /// The type of the output. Always 'image'.<br/>
+        /// The type of the output. Always `image`.<br/>
         /// Default Value: image
         /// </param>
         /// <param name="url">

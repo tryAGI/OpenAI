@@ -22,7 +22,6 @@ namespace tryAGI.OpenAI
             ref byte[] content);
 
         /// <summary>
-        /// Retrieve file content<br/>
         /// Returns the contents of the specified file.
         /// </summary>
         /// <param name="fileId"></param>

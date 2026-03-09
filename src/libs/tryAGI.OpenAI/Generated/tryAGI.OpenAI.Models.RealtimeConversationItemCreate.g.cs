@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Send this event when adding an item to the conversation.
+    /// Send this event when adding an item to the conversation.<br/>
+    /// Example: {"event_id":"event_345","type":"conversation.item.create","previous_item_id":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","item":{"id":"msg_001","type":"message","status":"completed","role":"user","content":[{"type":"input_text","text":"Hello, how are you?"}]}}
     /// </summary>
     public sealed partial class RealtimeConversationItemCreate
     {
@@ -26,8 +27,10 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RealtimeConversationItemCreateType? Type { get; set; }
 
         /// <summary>
-        /// The ID of the preceding item after which the new item will be inserted.
+        /// The ID of the preceding item after which the new item will be inserted.<br/>
+        /// Example: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
+        /// <example>openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("previous_item_id")]
         public string? PreviousItemId { get; set; }
 
@@ -59,7 +62,8 @@ namespace tryAGI.OpenAI
         /// Example: conversation.item.create
         /// </param>
         /// <param name="previousItemId">
-        /// The ID of the preceding item after which the new item will be inserted.
+        /// The ID of the preceding item after which the new item will be inserted.<br/>
+        /// Example: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="item">
         /// A realtime Item is of three types: message, function_call, or function_call_output.<br/>

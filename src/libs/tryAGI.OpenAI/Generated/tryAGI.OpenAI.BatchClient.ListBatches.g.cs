@@ -24,7 +24,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// List batch<br/>
         /// List your organization's batches.
         /// </summary>
         /// <param name="after"></param>
@@ -48,8 +47,8 @@ namespace tryAGI.OpenAI
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: "/batches",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("after", after) 
+            __pathBuilder
+                .AddOptionalParameter("after", after)
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        DONE,
+        done,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                DoneEventData.DONE => "[DONE]",
+                DoneEventData.done => "[DONE]",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "[DONE]" => DoneEventData.DONE,
+                "[DONE]" => DoneEventData.done,
                 _ => null,
             };
         }

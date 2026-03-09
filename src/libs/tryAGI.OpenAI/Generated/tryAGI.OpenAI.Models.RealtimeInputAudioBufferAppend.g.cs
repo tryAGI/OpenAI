@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Send this event to append audio bytes to the input audio buffer.
+    /// Send this event to append audio bytes to the input audio buffer.<br/>
+    /// Example: {"event_id":"event_456","type":"input_audio_buffer.append","audio":"Base64EncodedAudioData"}
     /// </summary>
     public sealed partial class RealtimeInputAudioBufferAppend
     {

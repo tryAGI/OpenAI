@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Returned when a conversation item is created.
+    /// Returned when a conversation item is created.<br/>
+    /// Example: {"event_id":"event_1920","type":"conversation.item.created","previous_item_id":"msg_002","item":{"id":"msg_003","object":"realtime.item","type":"message","status":"completed","role":"user","content":[{"type":"input_audio","transcript":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464"}]}}
     /// </summary>
     public sealed partial class RealtimeConversationItemCreated
     {

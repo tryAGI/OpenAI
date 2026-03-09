@@ -4,17 +4,10 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Occurs when a new [thread](https://platform.openai.com/docs/api-reference/threads/object) is created.
+    /// Occurs when a new [thread](/docs/api-reference/threads/object) is created.
     /// </summary>
     public sealed partial class ThreadStreamEventVariant1
     {
-        /// <summary>
-        /// Represents a thread that contains [messages](https://platform.openai.com/docs/api-reference/messages).
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ThreadObject Data { get; set; }
-
         /// <summary>
         /// Whether to enable input audio transcription.
         /// </summary>
@@ -29,6 +22,13 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ThreadStreamEventVariant1Event Event { get; set; }
 
         /// <summary>
+        /// Represents a thread that contains [messages](/docs/api-reference/messages).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.ThreadObject Data { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -37,13 +37,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ThreadStreamEventVariant1" /> class.
         /// </summary>
-        /// <param name="data">
-        /// Represents a thread that contains [messages](https://platform.openai.com/docs/api-reference/messages).
-        /// </param>
         /// <param name="enabled">
         /// Whether to enable input audio transcription.
         /// </param>
         /// <param name="event"></param>
+        /// <param name="data">
+        /// Represents a thread that contains [messages](/docs/api-reference/messages).
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

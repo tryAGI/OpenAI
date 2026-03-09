@@ -15,15 +15,18 @@ namespace tryAGI.OpenAI
         /// an array of multi-modal input objects similar to other models.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputVariant3Item>>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1, global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2>>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputVariant3Item>> Input { get; set; }
+        public required global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1, global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2>>> Input { get; set; }
 
         /// <summary>
         /// The content moderation model you would like to use. Learn more in<br/>
-        /// [the moderation guide](https://platform.openai.com/docs/guides/moderation), and learn about<br/>
-        /// available models [here](https://platform.openai.com/docs/models#moderation).
+        /// [the moderation guide](/docs/guides/moderation), and learn about<br/>
+        /// available models [here](/docs/models#moderation).<br/>
+        /// Default Value: omni-moderation-latest<br/>
+        /// Example: omni-moderation-2024-09-26
         /// </summary>
+        /// <example>omni-moderation-2024-09-26</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.CreateModerationRequestModel?>))]
         public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateModerationRequestModel?>? Model { get; set; }
@@ -43,14 +46,16 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="model">
         /// The content moderation model you would like to use. Learn more in<br/>
-        /// [the moderation guide](https://platform.openai.com/docs/guides/moderation), and learn about<br/>
-        /// available models [here](https://platform.openai.com/docs/models#moderation).
+        /// [the moderation guide](/docs/guides/moderation), and learn about<br/>
+        /// available models [here](/docs/models#moderation).<br/>
+        /// Default Value: omni-moderation-latest<br/>
+        /// Example: omni-moderation-2024-09-26
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateModerationRequest(
-            global::tryAGI.OpenAI.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputVariant3Item>> input,
+            global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1, global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2>>> input,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateModerationRequestModel?>? model)
         {
             this.Input = input;

@@ -21,11 +21,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Incomplete,
+        Failed,
         /// <summary>
         /// 
         /// </summary>
-        Failed,
+        Incomplete,
     }
 
     /// <summary>
@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
             {
                 RealtimeBetaResponseStatusDetailsType.Completed => "completed",
                 RealtimeBetaResponseStatusDetailsType.Cancelled => "cancelled",
-                RealtimeBetaResponseStatusDetailsType.Incomplete => "incomplete",
                 RealtimeBetaResponseStatusDetailsType.Failed => "failed",
+                RealtimeBetaResponseStatusDetailsType.Incomplete => "incomplete",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -56,8 +56,8 @@ namespace tryAGI.OpenAI
             {
                 "completed" => RealtimeBetaResponseStatusDetailsType.Completed,
                 "cancelled" => RealtimeBetaResponseStatusDetailsType.Cancelled,
-                "incomplete" => RealtimeBetaResponseStatusDetailsType.Incomplete,
                 "failed" => RealtimeBetaResponseStatusDetailsType.Failed,
+                "incomplete" => RealtimeBetaResponseStatusDetailsType.Incomplete,
                 _ => null,
             };
         }

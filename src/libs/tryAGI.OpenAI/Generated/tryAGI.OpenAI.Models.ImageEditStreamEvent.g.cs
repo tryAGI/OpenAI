@@ -13,19 +13,35 @@ namespace tryAGI.OpenAI
         /// Emitted when a partial image is available during image editing streaming.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ImageEditPartialImageEvent? Partial { get; init; }
+        public global::tryAGI.OpenAI.ImageEditPartialImageEvent? ImageEditPartialImage { get; init; }
 #else
-        public global::tryAGI.OpenAI.ImageEditPartialImageEvent? Partial { get; }
+        public global::tryAGI.OpenAI.ImageEditPartialImageEvent? ImageEditPartialImage { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Partial))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageEditPartialImage))]
 #endif
-        public bool IsPartial => Partial != null;
+        public bool IsImageEditPartialImage => ImageEditPartialImage != null;
 
+        /// <summary>
+        /// Emitted when image editing has completed and the final image is available.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ImageEditCompletedEvent? ImageEditCompleted { get; init; }
+#else
+        public global::tryAGI.OpenAI.ImageEditCompletedEvent? ImageEditCompleted { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageEditCompleted))]
+#endif
+        public bool IsImageEditCompleted => ImageEditCompleted != null;
         /// <summary>
         /// 
         /// </summary>
@@ -34,32 +50,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.ImageEditPartialImageEvent?(ImageEditStreamEvent @this) => @this.Partial;
+        public static implicit operator global::tryAGI.OpenAI.ImageEditPartialImageEvent?(ImageEditStreamEvent @this) => @this.ImageEditPartialImage;
 
         /// <summary>
         /// 
         /// </summary>
         public ImageEditStreamEvent(global::tryAGI.OpenAI.ImageEditPartialImageEvent? value)
         {
-            Partial = value;
+            ImageEditPartialImage = value;
         }
-
-        /// <summary>
-        /// Emitted when image editing has completed and the final image is available.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ImageEditCompletedEvent? Completed { get; init; }
-#else
-        public global::tryAGI.OpenAI.ImageEditCompletedEvent? Completed { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Completed))]
-#endif
-        public bool IsCompleted => Completed != null;
 
         /// <summary>
         /// 
@@ -69,42 +68,42 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.ImageEditCompletedEvent?(ImageEditStreamEvent @this) => @this.Completed;
+        public static implicit operator global::tryAGI.OpenAI.ImageEditCompletedEvent?(ImageEditStreamEvent @this) => @this.ImageEditCompleted;
 
         /// <summary>
         /// 
         /// </summary>
         public ImageEditStreamEvent(global::tryAGI.OpenAI.ImageEditCompletedEvent? value)
         {
-            Completed = value;
+            ImageEditCompleted = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ImageEditStreamEvent(
-            global::tryAGI.OpenAI.ImageEditPartialImageEvent? partial,
-            global::tryAGI.OpenAI.ImageEditCompletedEvent? completed
+            global::tryAGI.OpenAI.ImageEditPartialImageEvent? imageEditPartialImage,
+            global::tryAGI.OpenAI.ImageEditCompletedEvent? imageEditCompleted
             )
         {
-            Partial = partial;
-            Completed = completed;
+            ImageEditPartialImage = imageEditPartialImage;
+            ImageEditCompleted = imageEditCompleted;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Completed as object ??
-            Partial as object 
+            ImageEditCompleted as object ??
+            ImageEditPartialImage as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Partial?.ToString() ??
-            Completed?.ToString() 
+            ImageEditPartialImage?.ToString() ??
+            ImageEditCompleted?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +111,15 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsPartial || IsCompleted;
+            return IsImageEditPartialImage || IsImageEditCompleted;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.ImageEditPartialImageEvent?, TResult>? partial = null,
-            global::System.Func<global::tryAGI.OpenAI.ImageEditCompletedEvent?, TResult>? completed = null,
+            global::System.Func<global::tryAGI.OpenAI.ImageEditPartialImageEvent?, TResult>? imageEditPartialImage = null,
+            global::System.Func<global::tryAGI.OpenAI.ImageEditCompletedEvent?, TResult>? imageEditCompleted = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +127,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsPartial && partial != null)
+            if (IsImageEditPartialImage && imageEditPartialImage != null)
             {
-                return partial(Partial!);
+                return imageEditPartialImage(ImageEditPartialImage!);
             }
-            else if (IsCompleted && completed != null)
+            else if (IsImageEditCompleted && imageEditCompleted != null)
             {
-                return completed(Completed!);
+                return imageEditCompleted(ImageEditCompleted!);
             }
 
             return default(TResult);
@@ -144,8 +143,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.ImageEditPartialImageEvent?>? partial = null,
-            global::System.Action<global::tryAGI.OpenAI.ImageEditCompletedEvent?>? completed = null,
+            global::System.Action<global::tryAGI.OpenAI.ImageEditPartialImageEvent?>? imageEditPartialImage = null,
+            global::System.Action<global::tryAGI.OpenAI.ImageEditCompletedEvent?>? imageEditCompleted = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +152,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsPartial)
+            if (IsImageEditPartialImage)
             {
-                partial?.Invoke(Partial!);
+                imageEditPartialImage?.Invoke(ImageEditPartialImage!);
             }
-            else if (IsCompleted)
+            else if (IsImageEditCompleted)
             {
-                completed?.Invoke(Completed!);
+                imageEditCompleted?.Invoke(ImageEditCompleted!);
             }
         }
 
@@ -170,9 +169,9 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                Partial,
+                ImageEditPartialImage,
                 typeof(global::tryAGI.OpenAI.ImageEditPartialImageEvent),
-                Completed,
+                ImageEditCompleted,
                 typeof(global::tryAGI.OpenAI.ImageEditCompletedEvent),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +189,8 @@ namespace tryAGI.OpenAI
         public bool Equals(ImageEditStreamEvent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ImageEditPartialImageEvent?>.Default.Equals(Partial, other.Partial) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ImageEditCompletedEvent?>.Default.Equals(Completed, other.Completed) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ImageEditPartialImageEvent?>.Default.Equals(ImageEditPartialImage, other.ImageEditPartialImage) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ImageEditCompletedEvent?>.Default.Equals(ImageEditCompleted, other.ImageEditCompleted) 
                 ;
         }
 

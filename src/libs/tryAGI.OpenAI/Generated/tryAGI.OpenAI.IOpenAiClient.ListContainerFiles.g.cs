@@ -5,8 +5,8 @@ namespace tryAGI.OpenAI
     public partial interface IOpenAiClient
     {
         /// <summary>
-        /// List container files<br/>
-        /// List Container files
+        /// List Container files<br/>
+        /// Lists container files.
         /// </summary>
         /// <param name="containerId"></param>
         /// <param name="limit">

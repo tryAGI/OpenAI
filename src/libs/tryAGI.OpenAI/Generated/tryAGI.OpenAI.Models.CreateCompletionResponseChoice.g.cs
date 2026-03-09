@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.CreateCompletionResponseChoiceLogprobs? Logprobs { get; set; }
+        public required global::tryAGI.OpenAI.CreateCompletionResponseChoiceLogprobs2? Logprobs { get; set; }
 
         /// <summary>
         /// 
@@ -62,7 +62,7 @@ namespace tryAGI.OpenAI
         public CreateCompletionResponseChoice(
             global::tryAGI.OpenAI.CreateCompletionResponseChoiceFinishReason finishReason,
             int index,
-            global::tryAGI.OpenAI.CreateCompletionResponseChoiceLogprobs? logprobs,
+            global::tryAGI.OpenAI.CreateCompletionResponseChoiceLogprobs2? logprobs,
             string text)
         {
             this.FinishReason = finishReason;

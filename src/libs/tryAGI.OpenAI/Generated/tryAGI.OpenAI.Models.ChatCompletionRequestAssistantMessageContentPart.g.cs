@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct ChatCompletionRequestAssistantMessageContentPart : global::System.IEquatable<ChatCompletionRequestAssistantMessageContentPart>
     {
         /// <summary>
-        /// Learn about [text inputs](https://platform.openai.com/docs/guides/text-generation).
+        /// Learn about [text inputs](/docs/guides/text-generation).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText? Text { get; init; }
@@ -29,6 +29,22 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartRefusal? Refusal { get; init; }
+#else
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartRefusal? Refusal { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Refusal))]
+#endif
+        public bool IsRefusal => Refusal != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionRequestAssistantMessageContentPart(global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText value) => new ChatCompletionRequestAssistantMessageContentPart((global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText?)value);
 
         /// <summary>
@@ -43,23 +59,6 @@ namespace tryAGI.OpenAI
         {
             Text = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartRefusal? Refusal { get; init; }
-#else
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartRefusal? Refusal { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Refusal))]
-#endif
-        public bool IsRefusal => Refusal != null;
 
         /// <summary>
         /// 
@@ -112,7 +111,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsText || IsRefusal;
+            return IsText && !IsRefusal || !IsText && IsRefusal;
         }
 
         /// <summary>

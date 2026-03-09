@@ -4,10 +4,17 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Emitted when there is an additional text delta. This is also the first event emitted when the transcription starts. Only emitted when you [create a transcription](https://platform.openai.com/docs/api-reference/audio/create-transcription) with the `Stream` parameter set to `true`.
+    /// Emitted when there is an additional text delta. This is also the first event emitted when the transcription starts. Only emitted when you [create a transcription](/docs/api-reference/audio/create-transcription) with the `Stream` parameter set to `true`.
     /// </summary>
     public sealed partial class TranscriptTextDeltaEvent
     {
+        /// <summary>
+        /// The type of the event. Always `transcript.text.delta`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.TranscriptTextDeltaEventTypeJsonConverter))]
+        public global::tryAGI.OpenAI.TranscriptTextDeltaEventType Type { get; set; }
+
         /// <summary>
         /// The text delta that was additionally transcribed.
         /// </summary>
@@ -16,17 +23,16 @@ namespace tryAGI.OpenAI
         public required string Delta { get; set; }
 
         /// <summary>
-        /// The log probabilities of the delta. Only included if you [create a transcription](https://platform.openai.com/docs/api-reference/audio/create-transcription) with the `include[]` parameter set to `logprobs`.
+        /// The log probabilities of the delta. Only included if you [create a transcription](/docs/api-reference/audio/create-transcription) with the `include[]` parameter set to `logprobs`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptTextDeltaEventLogprob>? Logprobs { get; set; }
 
         /// <summary>
-        /// The type of the event. Always `transcript.text.delta`.
+        /// Identifier of the diarized segment that this delta belongs to. Only present when using `gpt-4o-transcribe-diarize`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.TranscriptTextDeltaEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.TranscriptTextDeltaEventType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("segment_id")]
+        public string? SegmentId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,26 +43,31 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="TranscriptTextDeltaEvent" /> class.
         /// </summary>
+        /// <param name="type">
+        /// The type of the event. Always `transcript.text.delta`.
+        /// </param>
         /// <param name="delta">
         /// The text delta that was additionally transcribed.
         /// </param>
         /// <param name="logprobs">
-        /// The log probabilities of the delta. Only included if you [create a transcription](https://platform.openai.com/docs/api-reference/audio/create-transcription) with the `include[]` parameter set to `logprobs`.
+        /// The log probabilities of the delta. Only included if you [create a transcription](/docs/api-reference/audio/create-transcription) with the `include[]` parameter set to `logprobs`.
         /// </param>
-        /// <param name="type">
-        /// The type of the event. Always `transcript.text.delta`.
+        /// <param name="segmentId">
+        /// Identifier of the diarized segment that this delta belongs to. Only present when using `gpt-4o-transcribe-diarize`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TranscriptTextDeltaEvent(
             string delta,
+            global::tryAGI.OpenAI.TranscriptTextDeltaEventType type,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptTextDeltaEventLogprob>? logprobs,
-            global::tryAGI.OpenAI.TranscriptTextDeltaEventType type)
+            string? segmentId)
         {
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
-            this.Logprobs = logprobs;
             this.Type = type;
+            this.Logprobs = logprobs;
+            this.SegmentId = segmentId;
         }
 
         /// <summary>

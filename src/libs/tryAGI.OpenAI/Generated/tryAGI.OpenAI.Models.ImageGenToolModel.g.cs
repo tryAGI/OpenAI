@@ -13,6 +13,14 @@ namespace tryAGI.OpenAI
         /// `gpt-image-1`.
         /// </summary>
         GptImage1,
+        /// <summary>
+        /// 
+        /// </summary>
+        GptImage1Mini,
+        /// <summary>
+        /// 
+        /// </summary>
+        GptImage15,
     }
 
     /// <summary>
@@ -28,6 +36,8 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 ImageGenToolModel.GptImage1 => "gpt-image-1",
+                ImageGenToolModel.GptImage1Mini => "gpt-image-1-mini",
+                ImageGenToolModel.GptImage15 => "gpt-image-1.5",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -39,6 +49,8 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "gpt-image-1" => ImageGenToolModel.GptImage1,
+                "gpt-image-1-mini" => ImageGenToolModel.GptImage1Mini,
+                "gpt-image-1.5" => ImageGenToolModel.GptImage15,
                 _ => null,
             };
         }

@@ -24,7 +24,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Modify project<br/>
         /// Modifies a project in the organization.
         /// </summary>
         /// <param name="projectId"></param>
@@ -33,6 +32,7 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Project> ModifyProjectAsync(
             string projectId,
+
             global::tryAGI.OpenAI.ProjectUpdateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -210,7 +210,6 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Modify project<br/>
         /// Modifies a project in the organization.
         /// </summary>
         /// <param name="projectId"></param>

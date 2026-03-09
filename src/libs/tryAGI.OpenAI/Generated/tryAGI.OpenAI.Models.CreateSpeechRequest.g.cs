@@ -11,6 +11,14 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateSpeechRequest
     {
         /// <summary>
+        /// One of the available [TTS models](/docs/models#tts): `tts-1`, `tts-1-hd`, `gpt-4o-mini-tts`, or `gpt-4o-mini-tts-2025-12-15`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.CreateSpeechRequestModel?>))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateSpeechRequestModel?> Model { get; set; }
+
+        /// <summary>
         /// The text to generate audio for. The maximum length is 4096 characters.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
@@ -24,12 +32,12 @@ namespace tryAGI.OpenAI
         public string? Instructions { get; set; }
 
         /// <summary>
-        /// One of the available [TTS models](https://platform.openai.com/docs/models#tts): `tts-1`, `tts-1-hd` or `gpt-4o-mini-tts`.
+        /// The voice to use when generating the audio. Supported built-in voices are `alloy`, `ash`, `ballad`, `coral`, `echo`, `fable`, `onyx`, `nova`, `sage`, `shimmer`, `verse`, `marin`, and `cedar`. You may also provide a custom voice object with an `id`, for example `{ "id": "voice_1234" }`. Previews of the voices are available in the [Text to speech guide](/docs/guides/text-to-speech#voice-options).
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.CreateSpeechRequestModel?>))]
+        [global::System.Text.Json.Serialization.JsonPropertyName("voice")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VoiceIdsOrCustomVoiceJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateSpeechRequestModel?> Model { get; set; }
+        public required global::tryAGI.OpenAI.VoiceIdsOrCustomVoice Voice { get; set; }
 
         /// <summary>
         /// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.<br/>
@@ -55,15 +63,6 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CreateSpeechRequestStreamFormat? StreamFormat { get; set; }
 
         /// <summary>
-        /// Example: ash
-        /// </summary>
-        /// <example>ash</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("voice")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VoiceIdsSharedJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.VoiceIdsShared Voice { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -72,14 +71,17 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateSpeechRequest" /> class.
         /// </summary>
+        /// <param name="model">
+        /// One of the available [TTS models](/docs/models#tts): `tts-1`, `tts-1-hd`, `gpt-4o-mini-tts`, or `gpt-4o-mini-tts-2025-12-15`.
+        /// </param>
         /// <param name="input">
         /// The text to generate audio for. The maximum length is 4096 characters.
         /// </param>
         /// <param name="instructions">
         /// Control the voice of your generated audio with additional instructions. Does not work with `tts-1` or `tts-1-hd`.
         /// </param>
-        /// <param name="model">
-        /// One of the available [TTS models](https://platform.openai.com/docs/models#tts): `tts-1`, `tts-1-hd` or `gpt-4o-mini-tts`.
+        /// <param name="voice">
+        /// The voice to use when generating the audio. Supported built-in voices are `alloy`, `ash`, `ballad`, `coral`, `echo`, `fable`, `onyx`, `nova`, `sage`, `shimmer`, `verse`, `marin`, and `cedar`. You may also provide a custom voice object with an `id`, for example `{ "id": "voice_1234" }`. Previews of the voices are available in the [Text to speech guide](/docs/guides/text-to-speech#voice-options).
         /// </param>
         /// <param name="responseFormat">
         /// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.<br/>
@@ -93,23 +95,20 @@ namespace tryAGI.OpenAI
         /// The format to stream the audio in. Supported formats are `sse` and `audio`. `sse` is not supported for `tts-1` or `tts-1-hd`.<br/>
         /// Default Value: audio
         /// </param>
-        /// <param name="voice">
-        /// Example: ash
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateSpeechRequest(
-            string input,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateSpeechRequestModel?> model,
-            global::tryAGI.OpenAI.VoiceIdsShared voice,
+            string input,
+            global::tryAGI.OpenAI.VoiceIdsOrCustomVoice voice,
             string? instructions,
             global::tryAGI.OpenAI.CreateSpeechRequestResponseFormat? responseFormat,
             double? speed,
             global::tryAGI.OpenAI.CreateSpeechRequestStreamFormat? streamFormat)
         {
-            this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Model = model;
+            this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Voice = voice;
             this.Instructions = instructions;
             this.ResponseFormat = responseFormat;

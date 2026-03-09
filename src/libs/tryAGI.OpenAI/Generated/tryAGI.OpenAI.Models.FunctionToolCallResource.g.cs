@@ -11,39 +11,21 @@ namespace tryAGI.OpenAI
     {
         /// <summary>
         /// A tool call to run a function. See the <br/>
-        /// [function calling guide](https://platform.openai.com/docs/guides/function-calling) for more information.
+        /// [function calling guide](/docs/guides/function-calling) for more information.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.FunctionToolCall? Value1 { get; init; }
+        public global::tryAGI.OpenAI.FunctionToolCall? FunctionToolCall { get; init; }
 #else
-        public global::tryAGI.OpenAI.FunctionToolCall? Value1 { get; }
+        public global::tryAGI.OpenAI.FunctionToolCall? FunctionToolCall { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionToolCall))]
 #endif
-        public bool IsValue1 => Value1 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator FunctionToolCallResource(global::tryAGI.OpenAI.FunctionToolCall value) => new FunctionToolCallResource((global::tryAGI.OpenAI.FunctionToolCall?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.FunctionToolCall?(FunctionToolCallResource @this) => @this.Value1;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public FunctionToolCallResource(global::tryAGI.OpenAI.FunctionToolCall? value)
-        {
-            Value1 = value;
-        }
+        public bool IsFunctionToolCall => FunctionToolCall != null;
 
         /// <summary>
         /// 
@@ -61,6 +43,23 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
 #endif
         public bool IsValue2 => Value2 != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator FunctionToolCallResource(global::tryAGI.OpenAI.FunctionToolCall value) => new FunctionToolCallResource((global::tryAGI.OpenAI.FunctionToolCall?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.FunctionToolCall?(FunctionToolCallResource @this) => @this.FunctionToolCall;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public FunctionToolCallResource(global::tryAGI.OpenAI.FunctionToolCall? value)
+        {
+            FunctionToolCall = value;
+        }
 
         /// <summary>
         /// 
@@ -84,11 +83,11 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public FunctionToolCallResource(
-            global::tryAGI.OpenAI.FunctionToolCall? value1,
+            global::tryAGI.OpenAI.FunctionToolCall? functionToolCall,
             global::tryAGI.OpenAI.FunctionToolCallResourceVariant2? value2
             )
         {
-            Value1 = value1;
+            FunctionToolCall = functionToolCall;
             Value2 = value2;
         }
 
@@ -97,14 +96,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         public object? Object =>
             Value2 as object ??
-            Value1 as object 
+            FunctionToolCall as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            FunctionToolCall?.ToString() ??
             Value2?.ToString() 
             ;
 
@@ -113,14 +112,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsFunctionToolCall && IsValue2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.FunctionToolCall?, TResult>? value1 = null,
+            global::System.Func<global::tryAGI.OpenAI.FunctionToolCall?, TResult>? functionToolCall = null,
             global::System.Func<global::tryAGI.OpenAI.FunctionToolCallResourceVariant2?, TResult>? value2 = null,
             bool validate = true)
         {
@@ -129,9 +128,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsFunctionToolCall && functionToolCall != null)
             {
-                return value1(Value1!);
+                return functionToolCall(FunctionToolCall!);
             }
             else if (IsValue2 && value2 != null)
             {
@@ -145,7 +144,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.FunctionToolCall?>? value1 = null,
+            global::System.Action<global::tryAGI.OpenAI.FunctionToolCall?>? functionToolCall = null,
             global::System.Action<global::tryAGI.OpenAI.FunctionToolCallResourceVariant2?>? value2 = null,
             bool validate = true)
         {
@@ -154,9 +153,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsFunctionToolCall)
             {
-                value1?.Invoke(Value1!);
+                functionToolCall?.Invoke(FunctionToolCall!);
             }
             else if (IsValue2)
             {
@@ -171,7 +170,7 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                Value1,
+                FunctionToolCall,
                 typeof(global::tryAGI.OpenAI.FunctionToolCall),
                 Value2,
                 typeof(global::tryAGI.OpenAI.FunctionToolCallResourceVariant2),
@@ -191,7 +190,7 @@ namespace tryAGI.OpenAI
         public bool Equals(FunctionToolCallResource other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FunctionToolCall?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FunctionToolCall?>.Default.Equals(FunctionToolCall, other.FunctionToolCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FunctionToolCallResourceVariant2?>.Default.Equals(Value2, other.Value2) 
                 ;
         }

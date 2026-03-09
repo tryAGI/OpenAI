@@ -4,8 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Optional HTTP headers to send to the MCP server. Use for authentication<br/>
-    /// or other purposes.
+    /// 
     /// </summary>
     public sealed partial class MCPToolHeaders
     {

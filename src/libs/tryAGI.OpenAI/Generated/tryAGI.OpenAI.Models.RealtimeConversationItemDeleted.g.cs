@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Returned when an item in the conversation is deleted.
+    /// Returned when an item in the conversation is deleted.<br/>
+    /// Example: {"event_id":"event_2728","type":"conversation.item.deleted","item_id":"msg_005"}
     /// </summary>
     public sealed partial class RealtimeConversationItemDeleted
     {

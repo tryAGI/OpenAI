@@ -9,13 +9,20 @@ namespace tryAGI.OpenAI
     public sealed partial class AdminApiKeyOwner
     {
         /// <summary>
-        /// The Unix timestamp (in seconds) of when the user was created<br/>
-        /// Example: 1711471533L
+        /// Always `user`<br/>
+        /// Example: user
         /// </summary>
-        /// <example>1711471533L</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        public global::System.DateTimeOffset? CreatedAt { get; set; }
+        /// <example>user</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        public string? Type { get; set; }
+
+        /// <summary>
+        /// The object type, which is always organization.user<br/>
+        /// Example: organization.user
+        /// </summary>
+        /// <example>organization.user</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        public string? Object { get; set; }
 
         /// <summary>
         /// The identifier, which can be referenced in API endpoints<br/>
@@ -34,12 +41,13 @@ namespace tryAGI.OpenAI
         public string? Name { get; set; }
 
         /// <summary>
-        /// The object type, which is always organization.user<br/>
-        /// Example: organization.user
+        /// The Unix timestamp (in seconds) of when the user was created<br/>
+        /// Example: 1711471533
         /// </summary>
-        /// <example>organization.user</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        public string? Object { get; set; }
+        /// <example>1711471533</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
+        public global::System.DateTimeOffset? CreatedAt { get; set; }
 
         /// <summary>
         /// Always `owner`<br/>
@@ -50,14 +58,6 @@ namespace tryAGI.OpenAI
         public string? Role { get; set; }
 
         /// <summary>
-        /// Always `user`<br/>
-        /// Example: user
-        /// </summary>
-        /// <example>user</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -66,9 +66,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="AdminApiKeyOwner" /> class.
         /// </summary>
-        /// <param name="createdAt">
-        /// The Unix timestamp (in seconds) of when the user was created<br/>
-        /// Example: 1711471533L
+        /// <param name="type">
+        /// Always `user`<br/>
+        /// Example: user
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always organization.user<br/>
+        /// Example: organization.user
         /// </param>
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints<br/>
@@ -78,35 +82,31 @@ namespace tryAGI.OpenAI
         /// The name of the user<br/>
         /// Example: My Service Account
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always organization.user<br/>
-        /// Example: organization.user
+        /// <param name="createdAt">
+        /// The Unix timestamp (in seconds) of when the user was created<br/>
+        /// Example: 1711471533
         /// </param>
         /// <param name="role">
         /// Always `owner`<br/>
         /// Example: owner
         /// </param>
-        /// <param name="type">
-        /// Always `user`<br/>
-        /// Example: user
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AdminApiKeyOwner(
-            global::System.DateTimeOffset? createdAt,
+            string? type,
+            string? @object,
             string? id,
             string? name,
-            string? @object,
-            string? role,
-            string? type)
+            global::System.DateTimeOffset? createdAt,
+            string? role)
         {
-            this.CreatedAt = createdAt;
+            this.Type = type;
+            this.Object = @object;
             this.Id = id;
             this.Name = name;
-            this.Object = @object;
+            this.CreatedAt = createdAt;
             this.Role = role;
-            this.Type = type;
         }
 
         /// <summary>

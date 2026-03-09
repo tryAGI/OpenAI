@@ -28,7 +28,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Get chat messages<br/>
         /// Get the messages in a stored chat completion. Only Chat Completions that<br/>
         /// have been created with the `store` parameter set to `true` will be<br/>
         /// returned.
@@ -62,9 +61,9 @@ namespace tryAGI.OpenAI
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/chat/completions/{completionId}/messages",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("after", after) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("after", after)
+                .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("order", order?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -5,7 +5,7 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// Configure the model to generate valid Python code. See the<br/>
-    /// [custom grammars guide](https://platform.openai.com/docs/guides/custom-grammars) for more details.
+    /// [custom grammars guide](/docs/guides/custom-grammars) for more details.
     /// </summary>
     public sealed partial class ResponseFormatTextPython
     {

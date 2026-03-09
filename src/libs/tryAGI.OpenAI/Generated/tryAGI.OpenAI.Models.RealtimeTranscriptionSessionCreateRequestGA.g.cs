@@ -9,6 +9,13 @@ namespace tryAGI.OpenAI
     public sealed partial class RealtimeTranscriptionSessionCreateRequestGA
     {
         /// <summary>
+        /// The type of session to create. Always `transcription` for transcription sessions.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranscriptionSessionCreateRequestGATypeJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAType Type { get; set; }
+
+        /// <summary>
         /// Configuration for input and output audio.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio")]
@@ -22,13 +29,6 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAIncludeItem>? Include { get; set; }
 
         /// <summary>
-        /// The type of session to create. Always `transcription` for transcription sessions.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranscriptionSessionCreateRequestGATypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAType Type { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -37,6 +37,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeTranscriptionSessionCreateRequestGA" /> class.
         /// </summary>
+        /// <param name="type">
+        /// The type of session to create. Always `transcription` for transcription sessions.
+        /// </param>
         /// <param name="audio">
         /// Configuration for input and output audio.
         /// </param>
@@ -44,20 +47,17 @@ namespace tryAGI.OpenAI
         /// Additional fields to include in server outputs.<br/>
         /// `item.input_audio_transcription.logprobs`: Include logprobs for input audio transcription.
         /// </param>
-        /// <param name="type">
-        /// The type of session to create. Always `transcription` for transcription sessions.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeTranscriptionSessionCreateRequestGA(
+            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAType type,
             global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAAudio? audio,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAIncludeItem>? include,
-            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAType type)
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAIncludeItem>? include)
         {
+            this.Type = type;
             this.Audio = audio;
             this.Include = include;
-            this.Type = type;
         }
 
         /// <summary>

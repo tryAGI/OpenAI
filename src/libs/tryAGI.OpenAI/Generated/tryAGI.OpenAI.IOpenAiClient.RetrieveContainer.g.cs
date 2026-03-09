@@ -5,8 +5,8 @@ namespace tryAGI.OpenAI
     public partial interface IOpenAiClient
     {
         /// <summary>
-        /// Retrieve container<br/>
-        /// Retrieve Container
+        /// Retrieve Container<br/>
+        /// Retrieves a container.
         /// </summary>
         /// <param name="containerId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

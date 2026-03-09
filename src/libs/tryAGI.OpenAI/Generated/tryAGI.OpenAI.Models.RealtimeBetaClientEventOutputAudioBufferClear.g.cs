@@ -4,11 +4,11 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// **WebRTC Only:** Emit to cut off the current audio response. This will trigger the server to<br/>
-    /// stop generating audio and emit a `output_audio_buffer.cleared` event. This <br/>
-    /// event should be preceded by a `response.cancel` client event to stop the <br/>
+    /// **WebRTC/SIP Only:** Emit to cut off the current audio response. This will trigger the server to<br/>
+    /// stop generating audio and emit a `output_audio_buffer.cleared` event. This<br/>
+    /// event should be preceded by a `response.cancel` client event to stop the<br/>
     /// generation of the current response.<br/>
-    /// [Learn more](https://platform.openai.com/docs/guides/realtime-conversations#client-and-server-events-for-audio-in-webrtc).
+    /// [Learn more](/docs/guides/realtime-conversations#client-and-server-events-for-audio-in-webrtc).
     /// </summary>
     public sealed partial class RealtimeBetaClientEventOutputAudioBufferClear
     {

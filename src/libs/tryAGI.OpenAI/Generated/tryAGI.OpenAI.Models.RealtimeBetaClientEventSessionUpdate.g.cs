@@ -23,19 +23,19 @@ namespace tryAGI.OpenAI
         public string? EventId { get; set; }
 
         /// <summary>
+        /// The event type, must be `session.update`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeBetaClientEventSessionUpdateTypeJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeBetaClientEventSessionUpdateType Type { get; set; }
+
+        /// <summary>
         /// A new Realtime session configuration, with an ephemeral key. Default TTL<br/>
         /// for keys is one minute.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::tryAGI.OpenAI.RealtimeSessionCreateRequest Session { get; set; }
-
-        /// <summary>
-        /// The event type, must be `session.update`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeBetaClientEventSessionUpdateTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventSessionUpdateType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -49,12 +49,12 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// Optional client-generated ID used to identify this event.
         /// </param>
+        /// <param name="type">
+        /// The event type, must be `session.update`.
+        /// </param>
         /// <param name="session">
         /// A new Realtime session configuration, with an ephemeral key. Default TTL<br/>
         /// for keys is one minute.
-        /// </param>
-        /// <param name="type">
-        /// The event type, must be `session.update`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

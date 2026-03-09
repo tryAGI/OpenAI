@@ -26,7 +26,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// List project users<br/>
         /// Returns a list of users in the project.
         /// </summary>
         /// <param name="projectId"></param>
@@ -53,8 +52,8 @@ namespace tryAGI.OpenAI
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/organization/projects/{projectId}/users",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("after", after) 
                 ; 
             var __path = __pathBuilder.ToString();

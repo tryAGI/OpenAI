@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The size of the generated image. One of `1024x1024`, `1024x1536`, <br/>
+    /// The size of the generated image. One of `1024x1024`, `1024x1536`,<br/>
     /// `1536x1024`, or `auto`. Default: `auto`.<br/>
     /// Default Value: auto
     /// </summary>

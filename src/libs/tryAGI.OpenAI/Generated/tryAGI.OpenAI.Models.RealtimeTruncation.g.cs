@@ -5,8 +5,10 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Controls how the realtime conversation is truncated prior to model inference.<br/>
-    /// The default is `auto`.
+    /// When the number of tokens in a conversation exceeds the model's input token limit, the conversation be truncated, meaning messages (starting from the oldest) will not be included in the model's context. A 32k context model with 4,096 max output tokens can only include 28,224 tokens in the context before truncation occurs.<br/>
+    /// Clients can configure truncation behavior to truncate with a lower max token limit, which is an effective way to control token usage and cost.<br/>
+    /// Truncation will reduce the number of cached tokens on the next turn (busting the cache), since messages are dropped from the beginning of the context. However, clients can also configure truncation to retain messages up to a fraction of the maximum context size, which will reduce the need for future truncations and thus improve the cache rate.<br/>
+    /// Truncation can be disabled entirely, which means the server will never truncate but would instead return an error if the conversation exceeds the model's input token limit.
     /// </summary>
     public readonly partial struct RealtimeTruncation : global::System.IEquatable<RealtimeTruncation>
     {
@@ -28,6 +30,22 @@ namespace tryAGI.OpenAI
         public bool IsValue1 => Value1 != null;
 
         /// <summary>
+        /// Retain a fraction of the conversation tokens when the conversation exceeds the input token limit. This allows you to amortize truncations across multiple turns, which can help improve cached token usage.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RealtimeTruncationEnum2? RetentionRatioTruncation { get; init; }
+#else
+        public global::tryAGI.OpenAI.RealtimeTruncationEnum2? RetentionRatioTruncation { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RetentionRatioTruncation))]
+#endif
+        public bool IsRetentionRatioTruncation => RetentionRatioTruncation != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator RealtimeTruncation(global::tryAGI.OpenAI.RealtimeTruncationEnum value) => new RealtimeTruncation((global::tryAGI.OpenAI.RealtimeTruncationEnum?)value);
@@ -46,23 +64,6 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Retain a fraction of the conversation tokens when the conversation exceeds the input token limit. This allows you to amortize truncations across multiple turns, which can help improve cached token usage.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeTruncationEnum2? Value2 { get; init; }
-#else
-        public global::tryAGI.OpenAI.RealtimeTruncationEnum2? Value2 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
-#endif
-        public bool IsValue2 => Value2 != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator RealtimeTruncation(global::tryAGI.OpenAI.RealtimeTruncationEnum2 value) => new RealtimeTruncation((global::tryAGI.OpenAI.RealtimeTruncationEnum2?)value);
@@ -70,14 +71,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.RealtimeTruncationEnum2?(RealtimeTruncation @this) => @this.Value2;
+        public static implicit operator global::tryAGI.OpenAI.RealtimeTruncationEnum2?(RealtimeTruncation @this) => @this.RetentionRatioTruncation;
 
         /// <summary>
         /// 
         /// </summary>
         public RealtimeTruncation(global::tryAGI.OpenAI.RealtimeTruncationEnum2? value)
         {
-            Value2 = value;
+            RetentionRatioTruncation = value;
         }
 
         /// <summary>
@@ -85,18 +86,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public RealtimeTruncation(
             global::tryAGI.OpenAI.RealtimeTruncationEnum? value1,
-            global::tryAGI.OpenAI.RealtimeTruncationEnum2? value2
+            global::tryAGI.OpenAI.RealtimeTruncationEnum2? retentionRatioTruncation
             )
         {
             Value1 = value1;
-            Value2 = value2;
+            RetentionRatioTruncation = retentionRatioTruncation;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
+            RetentionRatioTruncation as object ??
             Value1 as object 
             ;
 
@@ -105,7 +106,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public override string? ToString() =>
             Value1?.ToValueString() ??
-            Value2?.ToString() 
+            RetentionRatioTruncation?.ToString() 
             ;
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsValue1 && !IsRetentionRatioTruncation || !IsValue1 && IsRetentionRatioTruncation;
         }
 
         /// <summary>
@@ -121,7 +122,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.RealtimeTruncationEnum?, TResult>? value1 = null,
-            global::System.Func<global::tryAGI.OpenAI.RealtimeTruncationEnum2?, TResult>? value2 = null,
+            global::System.Func<global::tryAGI.OpenAI.RealtimeTruncationEnum2?, TResult>? retentionRatioTruncation = null,
             bool validate = true)
         {
             if (validate)
@@ -133,9 +134,9 @@ namespace tryAGI.OpenAI
             {
                 return value1(Value1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsRetentionRatioTruncation && retentionRatioTruncation != null)
             {
-                return value2(Value2!);
+                return retentionRatioTruncation(RetentionRatioTruncation!);
             }
 
             return default(TResult);
@@ -146,7 +147,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.RealtimeTruncationEnum?>? value1 = null,
-            global::System.Action<global::tryAGI.OpenAI.RealtimeTruncationEnum2?>? value2 = null,
+            global::System.Action<global::tryAGI.OpenAI.RealtimeTruncationEnum2?>? retentionRatioTruncation = null,
             bool validate = true)
         {
             if (validate)
@@ -158,9 +159,9 @@ namespace tryAGI.OpenAI
             {
                 value1?.Invoke(Value1!);
             }
-            else if (IsValue2)
+            else if (IsRetentionRatioTruncation)
             {
-                value2?.Invoke(Value2!);
+                retentionRatioTruncation?.Invoke(RetentionRatioTruncation!);
             }
         }
 
@@ -173,7 +174,7 @@ namespace tryAGI.OpenAI
             {
                 Value1,
                 typeof(global::tryAGI.OpenAI.RealtimeTruncationEnum),
-                Value2,
+                RetentionRatioTruncation,
                 typeof(global::tryAGI.OpenAI.RealtimeTruncationEnum2),
             };
             const int offset = unchecked((int)2166136261);
@@ -192,7 +193,7 @@ namespace tryAGI.OpenAI
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeTruncationEnum?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeTruncationEnum2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeTruncationEnum2?>.Default.Equals(RetentionRatioTruncation, other.RetentionRatioTruncation) 
                 ;
         }
 

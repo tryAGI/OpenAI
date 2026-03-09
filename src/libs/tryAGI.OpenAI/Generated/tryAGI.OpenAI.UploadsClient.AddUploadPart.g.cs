@@ -24,10 +24,9 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Add upload part<br/>
-        /// Adds a [Part](https://platform.openai.com/docs/api-reference/uploads/part-object) to an [Upload](https://platform.openai.com/docs/api-reference/uploads/object) object. A Part represents a chunk of bytes from the file you are trying to upload. <br/>
+        /// Adds a [Part](/docs/api-reference/uploads/part-object) to an [Upload](/docs/api-reference/uploads/object) object. A Part represents a chunk of bytes from the file you are trying to upload. <br/>
         /// Each Part can be at most 64 MB, and you can add Parts until you hit the Upload maximum of 8 GB.<br/>
-        /// It is possible to add multiple Parts in parallel. You can decide the intended order of the Parts when you [complete the Upload](https://platform.openai.com/docs/api-reference/uploads/complete).
+        /// It is possible to add multiple Parts in parallel. You can decide the intended order of the Parts when you [complete the Upload](/docs/api-reference/uploads/complete).
         /// </summary>
         /// <param name="uploadId">
         /// Example: upload_abc123
@@ -37,6 +36,7 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.UploadPart> AddUploadPartAsync(
             string uploadId,
+
             global::tryAGI.OpenAI.AddUploadPartRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -79,11 +79,16 @@ namespace tryAGI.OpenAI
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{uploadId}"),
-                name: "upload_id");
+                name: "\"upload_id\"");
+            var __contentData = new global::System.Net.Http.ByteArrayContent(request.Data ?? global::System.Array.Empty<byte>());
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.Data ?? global::System.Array.Empty<byte>()),
-                name: "data",
-                fileName: request.Dataname ?? string.Empty);
+                content: __contentData,
+                name: "\"data\"",
+                fileName: request.Dataname != null ? $"\"{request.Dataname}\"" : string.Empty);
+            if (__contentData.Headers.ContentDisposition != null)
+            {
+                __contentData.Headers.ContentDisposition.FileNameStar = null;
+            }
             __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
@@ -180,10 +185,9 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Add upload part<br/>
-        /// Adds a [Part](https://platform.openai.com/docs/api-reference/uploads/part-object) to an [Upload](https://platform.openai.com/docs/api-reference/uploads/object) object. A Part represents a chunk of bytes from the file you are trying to upload. <br/>
+        /// Adds a [Part](/docs/api-reference/uploads/part-object) to an [Upload](/docs/api-reference/uploads/object) object. A Part represents a chunk of bytes from the file you are trying to upload. <br/>
         /// Each Part can be at most 64 MB, and you can add Parts until you hit the Upload maximum of 8 GB.<br/>
-        /// It is possible to add multiple Parts in parallel. You can decide the intended order of the Parts when you [complete the Upload](https://platform.openai.com/docs/api-reference/uploads/complete).
+        /// It is possible to add multiple Parts in parallel. You can decide the intended order of the Parts when you [complete the Upload](/docs/api-reference/uploads/complete).
         /// </summary>
         /// <param name="uploadId">
         /// Example: upload_abc123

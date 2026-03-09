@@ -7,7 +7,8 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// Not supported with latest reasoning models `o3` and `o4-mini`.<br/>
     /// Up to 4 sequences where the API will stop generating further tokens. The<br/>
-    /// returned text will not contain the stop sequence.
+    /// returned text will not contain the stop sequence.<br/>
+    /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
     /// </summary>
     public readonly partial struct StopConfiguration : global::System.IEquatable<StopConfiguration>
     {
@@ -31,24 +32,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator StopConfiguration(string value) => new StopConfiguration((string?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator string?(StopConfiguration @this) => @this.Value1;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public StopConfiguration(string? value)
-        {
-            Value1 = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? Value2 { get; init; }
 #else
@@ -62,13 +45,22 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
 #endif
         public bool IsValue2 => Value2 != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator StopConfiguration(string value) => new StopConfiguration((string?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public StopConfiguration(global::System.Collections.Generic.IList<string>? value)
+        public static implicit operator string?(StopConfiguration @this) => @this.Value1;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public StopConfiguration(string? value)
         {
-            Value2 = value;
+            Value1 = value;
         }
 
         /// <summary>
@@ -104,7 +96,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
         }
 
         /// <summary>

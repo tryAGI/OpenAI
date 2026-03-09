@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct RunStepStreamEvent : global::System.IEquatable<RunStepStreamEvent>
     {
         /// <summary>
-        /// Occurs when a [run step](https://platform.openai.com/docs/api-reference/run-steps/step-object) is created.
+        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is created.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RunStepStreamEventVariant1? Value1 { get; init; }
@@ -26,6 +26,107 @@ namespace tryAGI.OpenAI
 #endif
         public bool IsValue1 => Value1 != null;
 
+        /// <summary>
+        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) moves to an `in_progress` state.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant2? Value2 { get; init; }
+#else
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant2? Value2 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+#endif
+        public bool IsValue2 => Value2 != null;
+
+        /// <summary>
+        /// Occurs when parts of a [run step](/docs/api-reference/run-steps/step-object) are being streamed.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant3? Value3 { get; init; }
+#else
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant3? Value3 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+#endif
+        public bool IsValue3 => Value3 != null;
+
+        /// <summary>
+        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is completed.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant4? Value4 { get; init; }
+#else
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant4? Value4 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+#endif
+        public bool IsValue4 => Value4 != null;
+
+        /// <summary>
+        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) fails.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant5? Value5 { get; init; }
+#else
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant5? Value5 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
+#endif
+        public bool IsValue5 => Value5 != null;
+
+        /// <summary>
+        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is cancelled.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant6? Value6 { get; init; }
+#else
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant6? Value6 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value6))]
+#endif
+        public bool IsValue6 => Value6 != null;
+
+        /// <summary>
+        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) expires.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant7? Value7 { get; init; }
+#else
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant7? Value7 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value7))]
+#endif
+        public bool IsValue7 => Value7 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -43,23 +144,6 @@ namespace tryAGI.OpenAI
         {
             Value1 = value;
         }
-
-        /// <summary>
-        /// Occurs when a [run step](https://platform.openai.com/docs/api-reference/run-steps/step-object) moves to an `in_progress` state.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant2? Value2 { get; init; }
-#else
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant2? Value2 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
-#endif
-        public bool IsValue2 => Value2 != null;
 
         /// <summary>
         /// 
@@ -80,23 +164,6 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Occurs when parts of a [run step](https://platform.openai.com/docs/api-reference/run-steps/step-object) are being streamed.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant3? Value3 { get; init; }
-#else
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant3? Value3 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
-#endif
-        public bool IsValue3 => Value3 != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator RunStepStreamEvent(global::tryAGI.OpenAI.RunStepStreamEventVariant3 value) => new RunStepStreamEvent((global::tryAGI.OpenAI.RunStepStreamEventVariant3?)value);
@@ -113,23 +180,6 @@ namespace tryAGI.OpenAI
         {
             Value3 = value;
         }
-
-        /// <summary>
-        /// Occurs when a [run step](https://platform.openai.com/docs/api-reference/run-steps/step-object) is completed.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant4? Value4 { get; init; }
-#else
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant4? Value4 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
-#endif
-        public bool IsValue4 => Value4 != null;
 
         /// <summary>
         /// 
@@ -150,23 +200,6 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Occurs when a [run step](https://platform.openai.com/docs/api-reference/run-steps/step-object) fails.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant5? Value5 { get; init; }
-#else
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant5? Value5 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
-#endif
-        public bool IsValue5 => Value5 != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator RunStepStreamEvent(global::tryAGI.OpenAI.RunStepStreamEventVariant5 value) => new RunStepStreamEvent((global::tryAGI.OpenAI.RunStepStreamEventVariant5?)value);
@@ -185,23 +218,6 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Occurs when a [run step](https://platform.openai.com/docs/api-reference/run-steps/step-object) is cancelled.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant6? Value6 { get; init; }
-#else
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant6? Value6 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value6))]
-#endif
-        public bool IsValue6 => Value6 != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator RunStepStreamEvent(global::tryAGI.OpenAI.RunStepStreamEventVariant6 value) => new RunStepStreamEvent((global::tryAGI.OpenAI.RunStepStreamEventVariant6?)value);
@@ -218,23 +234,6 @@ namespace tryAGI.OpenAI
         {
             Value6 = value;
         }
-
-        /// <summary>
-        /// Occurs when a [run step](https://platform.openai.com/docs/api-reference/run-steps/step-object) expires.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant7? Value7 { get; init; }
-#else
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant7? Value7 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value7))]
-#endif
-        public bool IsValue7 => Value7 != null;
 
         /// <summary>
         /// 
@@ -307,7 +306,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3 || IsValue4 || IsValue5 || IsValue6 || IsValue7;
+            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && IsValue5 && !IsValue6 && !IsValue7 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && IsValue6 && !IsValue7 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && IsValue7;
         }
 
         /// <summary>

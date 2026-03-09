@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The output format of the generated image. One of `png`, `webp`, or <br/>
+    /// The output format of the generated image. One of `png`, `webp`, or<br/>
     /// `jpeg`. Default: `png`.<br/>
     /// Default Value: png
     /// </summary>

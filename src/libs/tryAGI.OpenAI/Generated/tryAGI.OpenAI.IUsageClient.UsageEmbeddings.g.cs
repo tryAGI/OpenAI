@@ -5,7 +5,6 @@ namespace tryAGI.OpenAI
     public partial interface IUsageClient
     {
         /// <summary>
-        /// Embeddings<br/>
         /// Get embeddings usage details for the organization.
         /// </summary>
         /// <param name="startTime"></param>

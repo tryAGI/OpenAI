@@ -9,10 +9,11 @@ namespace tryAGI.OpenAI
     public sealed partial class MCPListTools
     {
         /// <summary>
-        /// Error message if the server could not list tools.
+        /// The type of the item. Always `mcp_list_tools`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        public string? Error { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MCPListToolsTypeJsonConverter))]
+        public global::tryAGI.OpenAI.MCPListToolsType Type { get; set; }
 
         /// <summary>
         /// The unique ID of the list.
@@ -36,11 +37,10 @@ namespace tryAGI.OpenAI
         public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.MCPListToolsTool> Tools { get; set; }
 
         /// <summary>
-        /// The type of the item. Always `mcp_list_tools`.
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MCPListToolsTypeJsonConverter))]
-        public global::tryAGI.OpenAI.MCPListToolsType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
+        public string? Error { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -51,8 +51,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="MCPListTools" /> class.
         /// </summary>
-        /// <param name="error">
-        /// Error message if the server could not list tools.
+        /// <param name="type">
+        /// The type of the item. Always `mcp_list_tools`.
         /// </param>
         /// <param name="id">
         /// The unique ID of the list.
@@ -63,9 +63,7 @@ namespace tryAGI.OpenAI
         /// <param name="tools">
         /// The tools available on the server.
         /// </param>
-        /// <param name="type">
-        /// The type of the item. Always `mcp_list_tools`.
-        /// </param>
+        /// <param name="error"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -73,14 +71,14 @@ namespace tryAGI.OpenAI
             string id,
             string serverLabel,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.MCPListToolsTool> tools,
-            string? error,
-            global::tryAGI.OpenAI.MCPListToolsType type)
+            global::tryAGI.OpenAI.MCPListToolsType type,
+            string? error)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.ServerLabel = serverLabel ?? throw new global::System.ArgumentNullException(nameof(serverLabel));
             this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
-            this.Error = error;
             this.Type = type;
+            this.Error = error;
         }
 
         /// <summary>

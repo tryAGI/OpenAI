@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Send this event to clear the audio bytes in the buffer.
+    /// Send this event to clear the audio bytes in the buffer.<br/>
+    /// Example: {"event_id":"event_012","type":"input_audio_buffer.clear"}
     /// </summary>
     public sealed partial class RealtimeInputAudioBufferClear
     {

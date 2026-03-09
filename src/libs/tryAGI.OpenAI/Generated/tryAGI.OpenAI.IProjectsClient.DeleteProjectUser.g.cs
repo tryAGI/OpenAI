@@ -5,8 +5,9 @@ namespace tryAGI.OpenAI
     public partial interface IProjectsClient
     {
         /// <summary>
-        /// Delete project user<br/>
-        /// Deletes a user from the project.
+        /// Deletes a user from the project.<br/>
+        /// Returns confirmation of project user deletion, or an error if the project is<br/>
+        /// archived (archived projects have no users).
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="userId"></param>

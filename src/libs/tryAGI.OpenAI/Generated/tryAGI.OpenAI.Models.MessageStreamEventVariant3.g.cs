@@ -4,23 +4,23 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Occurs when parts of a [Message](https://platform.openai.com/docs/api-reference/messages/object) are being streamed.
+    /// Occurs when parts of a [Message](/docs/api-reference/messages/object) are being streamed.
     /// </summary>
     public sealed partial class MessageStreamEventVariant3
     {
-        /// <summary>
-        /// Represents a message delta i.e. any changed fields on a message during streaming.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.MessageDeltaObject Data { get; set; }
-
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageStreamEventVariant3EventJsonConverter))]
         public global::tryAGI.OpenAI.MessageStreamEventVariant3Event Event { get; set; }
+
+        /// <summary>
+        /// Represents a message delta i.e. any changed fields on a message during streaming.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.MessageDeltaObject Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,10 +31,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageStreamEventVariant3" /> class.
         /// </summary>
+        /// <param name="event"></param>
         /// <param name="data">
         /// Represents a message delta i.e. any changed fields on a message during streaming.
         /// </param>
-        /// <param name="event"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

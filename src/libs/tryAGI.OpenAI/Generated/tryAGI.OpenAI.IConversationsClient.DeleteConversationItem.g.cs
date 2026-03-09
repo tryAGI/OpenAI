@@ -5,7 +5,6 @@ namespace tryAGI.OpenAI
     public partial interface IConversationsClient
     {
         /// <summary>
-        /// Delete an item<br/>
         /// Delete an item from a conversation with the given IDs.
         /// </summary>
         /// <param name="conversationId">

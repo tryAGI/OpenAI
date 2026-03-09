@@ -9,13 +9,6 @@ namespace tryAGI.OpenAI
     public sealed partial class SummaryTextContent
     {
         /// <summary>
-        /// A summary of the reasoning output from the model so far.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Text { get; set; }
-
-        /// <summary>
         /// The type of the object. Always `summary_text`.<br/>
         /// Default Value: summary_text
         /// </summary>
@@ -23,6 +16,13 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.SummaryTextContentTypeJsonConverter))]
         public global::tryAGI.OpenAI.SummaryTextContentType Type { get; set; } = global::tryAGI.OpenAI.SummaryTextContentType.SummaryText;
+
+        /// <summary>
+        /// A summary of the reasoning output from the model so far.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Text { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,12 +33,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="SummaryTextContent" /> class.
         /// </summary>
-        /// <param name="text">
-        /// A summary of the reasoning output from the model so far.
-        /// </param>
         /// <param name="type">
         /// The type of the object. Always `summary_text`.<br/>
         /// Default Value: summary_text
+        /// </param>
+        /// <param name="text">
+        /// A summary of the reasoning output from the model so far.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

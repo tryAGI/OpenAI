@@ -32,7 +32,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// List vector store files<br/>
         /// Returns a list of vector store files.
         /// </summary>
         /// <param name="vectorStoreId"></param>
@@ -70,11 +69,11 @@ namespace tryAGI.OpenAI
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/vector_stores/{vectorStoreId}/files",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("order", order?.ToValueString()) 
-                .AddOptionalParameter("after", after) 
-                .AddOptionalParameter("before", before) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("order", order?.ToValueString())
+                .AddOptionalParameter("after", after)
+                .AddOptionalParameter("before", before)
                 .AddOptionalParameter("filter", filter?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

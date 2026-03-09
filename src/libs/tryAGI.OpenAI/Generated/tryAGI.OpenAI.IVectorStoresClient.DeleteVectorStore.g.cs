@@ -5,7 +5,6 @@ namespace tryAGI.OpenAI
     public partial interface IVectorStoresClient
     {
         /// <summary>
-        /// Delete vector store<br/>
         /// Delete a vector store.
         /// </summary>
         /// <param name="vectorStoreId"></param>
