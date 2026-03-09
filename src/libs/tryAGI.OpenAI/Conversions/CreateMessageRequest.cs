@@ -49,7 +49,7 @@ public partial class CreateMessageRequest
         return new CreateMessageRequest
         {
             Role = role,
-            Content = new List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageContentImageFileObject, global::tryAGI.OpenAI.MessageContentImageUrlObject, global::tryAGI.OpenAI.MessageRequestContentTextObject>>
+            Content = new List<global::tryAGI.OpenAI.ContentVariant2Item>
             {
                 MessageContentImageFileObject.FromOpenAIFile(file, detail),
             },
@@ -90,7 +90,7 @@ public partial class CreateMessageRequest
         return new CreateMessageRequest
         {
             Role = role,
-            Content = new List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageContentImageFileObject, global::tryAGI.OpenAI.MessageContentImageUrlObject, global::tryAGI.OpenAI.MessageRequestContentTextObject>>
+            Content = new List<global::tryAGI.OpenAI.ContentVariant2Item>
             {
                 MessageContentImageUrlObject.FromUri(uri, detail),
             },

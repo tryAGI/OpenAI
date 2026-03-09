@@ -19,10 +19,10 @@ public partial class Examples
             name: "Example: Function Calling",
             instructions: "Don't make assumptions about what values to plug into functions."
                           + " Ask for clarification if a user request is ambiguous.",
-            tools: tools.Select(x => new OneOf<AssistantToolsCode, AssistantToolsFileSearch, AssistantToolsFunction>(new AssistantToolsFunction
+            tools: tools.Select(x => (AssistantTool)new AssistantToolsFunction
             {
                 Function = x.Function,
-            })).ToArray());
+            }).ToArray());
 
         ThreadObject thread = await api.Assistants.CreateThreadAsync(new CreateThreadRequest
         {
@@ -65,21 +65,21 @@ public partial class Examples
                 {
                     foreach (var deltaVariation in delta.Data.Delta.Content ?? [])
                     {
-                        if (deltaVariation.Value1?.ImageFile is {} imageFile)
+                        if (deltaVariation.ImageFileObject?.ImageFile is {} imageFile)
                         {
                             Console.WriteLine();
                             Console.WriteLine(imageFile.FileId);
                         }
-                        if (deltaVariation.Value2?.Text is {} text)
+                        if (deltaVariation.TextObject?.Text is {} text)
                         {
                             Console.Write(text?.Value);
                         }
-                        if (deltaVariation.Value3?.Refusal is {} refusal)
+                        if (deltaVariation.RefusalObject?.Refusal is {} refusal)
                         {
                             Console.WriteLine();
                             Console.WriteLine(refusal);
                         }
-                        if (deltaVariation.Value4?.ImageUrl is {} imageUrl)
+                        if (deltaVariation.ImageUrlObject?.ImageUrl is {} imageUrl)
                         {
                             Console.WriteLine();
                             Console.WriteLine(imageUrl.Url);
@@ -96,7 +96,7 @@ public partial class Examples
                 //     outputsToSubmit);
             }
         }
-        while (currentRun?.Status is RunObjectStatus.Queued or RunObjectStatus.InProgress or RunObjectStatus.RequiresAction);
+        while (currentRun?.Status is RunStatus.Queued or RunStatus.InProgress or RunStatus.RequiresAction);
         
         _ = await api.Assistants.DeleteThreadAsync(thread.Id);
         _ = await api.Assistants.DeleteAssistantAsync(assistant.Id);

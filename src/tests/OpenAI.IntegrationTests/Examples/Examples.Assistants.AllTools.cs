@@ -20,7 +20,7 @@ public partial class Examples
                   Jane Doe: 44
                   """u8.ToArray(),
             filename: "favorite_numbers.txt",
-            purpose: CreateFileRequestPurpose.Assistants);
+            purpose: FilePurpose.Assistants);
         
         var service = new AllToolsService();
         IList<ChatCompletionTool> tools = service.AsTools().AsOpenAiTools();
@@ -30,10 +30,10 @@ public partial class Examples
             instructions: "Use functions to resolve family relations into the names of people. Use file search to "
                           + " look up the favorite numbers of people. Use code interpreter to create graphs of lines.",
             tools: tools
-                .Select(x => new OneOf<global::tryAGI.OpenAI.AssistantToolsCode, global::tryAGI.OpenAI.AssistantToolsFileSearch, global::tryAGI.OpenAI.AssistantToolsFunction>(new AssistantToolsFunction
+                .Select(x => (AssistantTool)new AssistantToolsFunction
                 {
                     Function = x.Function,
-                }))
+                })
                 .Concat([
                     new AssistantToolsFileSearch(),
                     new AssistantToolsCode()
@@ -65,13 +65,13 @@ public partial class Examples
             });
         
         // Poll the run until it is no longer queued or in progress.
-        while (run.Status is RunObjectStatus.Queued or RunObjectStatus.InProgress or RunObjectStatus.RequiresAction)
+        while (run.Status is RunStatus.Queued or RunStatus.InProgress or RunStatus.RequiresAction)
         {
             await Task.Delay(TimeSpan.FromSeconds(1));
             run = await api.Assistants.GetRunAsync(run.ThreadId, run.Id);
 
             // If the run requires action, resolve them.
-            if (run.Status == RunObjectStatus.RequiresAction)
+            if (run.Status == RunStatus.RequiresAction)
             {
                 List<SubmitToolOutputsRunRequestToolOutput> toolOutputs = [];
 
@@ -96,7 +96,7 @@ public partial class Examples
         }
         
         // With the run complete, list the messages and display their content
-        if (run.Status == RunObjectStatus.Completed)
+        if (run.Status == RunStatus.Completed)
         {
             ListMessagesResponse messages
                 = await api.Assistants.ListMessagesAsync(run.ThreadId, order: ListMessagesOrder.Asc);
@@ -104,40 +104,40 @@ public partial class Examples
             foreach (MessageObject message in messages.Data)
             {
                 Console.WriteLine($"[{message.Role.ToString().ToUpper()}]: ");
-                foreach (global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageContentImageFileObject, global::tryAGI.OpenAI.MessageContentImageUrlObject, global::tryAGI.OpenAI.MessageContentTextObject, global::tryAGI.OpenAI.MessageContentRefusalObject> contentItem in message.Content)
+                foreach (MessageContent contentItem in message.Content)
                 {
-                    if (contentItem.Value1?.ImageFile is {} imageFile)
+                    if (contentItem.ImageFileObject?.ImageFile is {} imageFile)
                     {
                         OpenAIFile imageInfo = await api.Files.RetrieveFileAsync(imageFile.FileId);
                         byte[] imageBytes = await api.Files.DownloadFileAsync(imageFile.FileId);
-        
+
                         FileInfo fileInfo = new($"{imageInfo.Filename}.png");
-        
+
                         await File.WriteAllBytesAsync(fileInfo.FullName, imageBytes);
-        
+
                         Console.WriteLine($"<image: {new Uri(fileInfo.FullName).AbsoluteUri}>");
                     }
-                    if (contentItem.Value2?.ImageUrl is {} imageUrl)
+                    if (contentItem.ImageUrlObject?.ImageUrl is {} imageUrl)
                     {
                         Console.WriteLine($" <Image URL> {imageUrl.Url}");
                     }
-                    if (contentItem.Value3?.Text is {} text)
+                    if (contentItem.TextObject?.Text is {} text)
                     {
                         Console.WriteLine($"{text.Value}");
-                        
+
                         // Include annotations, if any.
                         if (text.Annotations.Count > 0)
                         {
                             Console.WriteLine();
-                            foreach (global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageContentTextAnnotationsFileCitationObject, global::tryAGI.OpenAI.MessageContentTextAnnotationsFilePathObject> annotation in text.Annotations)
+                            foreach (TextAnnotation annotation in text.Annotations)
                             {
-                                if (annotation.Value1?.FileCitation is {} fileCitation)
+                                if (annotation.MessageContentAnnotationsFileCitationObject?.FileCitation is {} fileCitation)
                                 {
                                     Console.WriteLine($"* File citation, file ID: {fileCitation.FileId}");
                                     //Console.WriteLine($"* Text to replace: {fileCitation}");
                                     //Console.WriteLine($"* Message content index range: {fileCitation.StartIndex}-{fileCitation.EndIndex}");
                                 }
-                                if (annotation.Value2?.FilePath is {} filePath)
+                                if (annotation.MessageContentAnnotationsFilePathObject?.FilePath is {} filePath)
                                 {
                                     Console.WriteLine($"* File output, new file ID: {filePath.FileId}");
                                     //Console.WriteLine($"* Text to replace: {filePath.Text}");
@@ -146,7 +146,7 @@ public partial class Examples
                             }
                         }
                     }
-                    if (contentItem.Value4?.Refusal is {} refusal)
+                    if (contentItem.RefusalObject?.Refusal is {} refusal)
                     {
                         Console.WriteLine($"Refusal: {refusal}");
                     }
@@ -163,24 +163,24 @@ public partial class Examples
             foreach (RunStepObject step in runSteps.Data)
             {
                 Console.WriteLine($"Run step: {step.Status}");
-                foreach (var toolCall in step.StepDetails.Value2?.ToolCalls ?? [])
+                foreach (var toolCall in step.StepDetails.ToolCalls?.ToolCalls ?? [])
                 {
-                    if (toolCall.Value1?.CodeInterpreter is {} codeInterpreter)
+                    if (toolCall.CallsCodeObject?.CodeInterpreter is {} codeInterpreter)
                     {
                         //Console.WriteLine($" --> Tool call: {codeInterpreter.Type}");
                         foreach (var output in codeInterpreter.Outputs)
                         {
-                            if (output.Value1?.Logs is {} logs)
+                            if (output.Logs?.Logs is {} logs)
                             {
                                 Console.WriteLine($"    --> Output: {logs}");
                             }
-                            if (output.Value2?.Image is {} image)
+                            if (output.Image?.Image is {} image)
                             {
                                 Console.WriteLine($"    --> Output: {image.FileId}");
                             }
                         }
                     }
-                    if (toolCall.Value2?.FileSearch is {} fileSearch)
+                    if (toolCall.CallsFileSearchObject?.FileSearch is {} fileSearch)
                     {
                         //Console.WriteLine($" --> Tool call: {fileSearch.Type}");
                         foreach (var output in fileSearch.Results ?? [])
@@ -188,7 +188,7 @@ public partial class Examples
                             Console.WriteLine($"    --> Output: {output.FileId}");
                         }
                     }
-                    if (toolCall.Value3?.Function is {} tool)
+                    if (toolCall.CallsFunctionObject?.Function is {} tool)
                     {
                         //Console.WriteLine($" --> Tool call: {tool.Type}");
                     }

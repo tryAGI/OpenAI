@@ -27,7 +27,7 @@ public partial class Examples
         OpenAIFile pictureOfAppleFile = await api.Files.CreateFileAsync(
             file: appleBytes,
             filename: appleFileInfo.Name,
-            purpose: CreateFileRequestPurpose.Vision);
+            purpose: FilePurpose.Vision);
 
         AssistantObject assistant = await api.Assistants.CreateAssistantAsync(
             model: AssistantSupportedModels.Gpt4o,
@@ -65,21 +65,21 @@ public partial class Examples
             {
                 foreach (var deltaVariation in delta.Data.Delta.Content ?? [])
                 {
-                    if (deltaVariation.Value1?.ImageFile is {} imageFile)
+                    if (deltaVariation.ImageFileObject?.ImageFile is {} imageFile)
                     {
                         Console.WriteLine();
                         Console.WriteLine(imageFile?.FileId);
                     }
-                    if (deltaVariation.Value2?.Text is {} text)
+                    if (deltaVariation.TextObject?.Text is {} text)
                     {
                         Console.Write(text.Value);
                     }
-                    if (deltaVariation.Value3?.Refusal is {} refusal)
+                    if (deltaVariation.RefusalObject?.Refusal is {} refusal)
                     {
                         Console.WriteLine();
                         Console.WriteLine(refusal);
                     }
-                    if (deltaVariation.Value4?.ImageUrl is {} imageUrl)
+                    if (deltaVariation.ImageUrlObject?.ImageUrl is {} imageUrl)
                     {
                         Console.WriteLine();
                         Console.WriteLine(imageUrl.Url);

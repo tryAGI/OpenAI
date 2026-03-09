@@ -10,7 +10,7 @@ public partial class Examples
         
         int count = 0;
         
-        ListFilesResponse files = await api.Files.ListFilesAsync(purpose: CreateFileRequestPurpose.Assistants.ToValueString());
+        ListFilesResponse files = await api.Files.ListFilesAsync(purpose: FilePurpose.Assistants.ToValueString());
         foreach (OpenAIFile file in files.Data)
         {
             Console.WriteLine($"[{count,3}] {file.Id} {file.CreatedAt:s} {file.Filename}");
