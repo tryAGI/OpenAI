@@ -26,7 +26,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// List fine-tuning checkpoints<br/>
         /// List checkpoints for a fine-tuning job.
         /// </summary>
         /// <param name="fineTuningJobId">
@@ -55,8 +54,8 @@ namespace tryAGI.OpenAI
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/fine_tuning/jobs/{fineTuningJobId}/checkpoints",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("after", after) 
+            __pathBuilder
+                .AddOptionalParameter("after", after)
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseTextDoneEvent
     {
         /// <summary>
-        /// The index of the content part that the text content is finalized.
+        /// The type of the event. Always `response.output_text.done`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content_index")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ContentIndex { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseTextDoneEventTypeJsonConverter))]
+        public global::tryAGI.OpenAI.ResponseTextDoneEventType Type { get; set; }
 
         /// <summary>
         /// The ID of the output item that the text content is finalized.
@@ -23,13 +23,6 @@ namespace tryAGI.OpenAI
         public required string ItemId { get; set; }
 
         /// <summary>
-        /// The log probabilities of the tokens in the delta.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResponseLogProb> Logprobs { get; set; }
-
-        /// <summary>
         /// The index of the output item that the text content is finalized.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_index")]
@@ -37,11 +30,11 @@ namespace tryAGI.OpenAI
         public required int OutputIndex { get; set; }
 
         /// <summary>
-        /// The sequence number for this event.
+        /// The index of the content part that the text content is finalized.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("content_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int SequenceNumber { get; set; }
+        public required int ContentIndex { get; set; }
 
         /// <summary>
         /// The text content that is finalized.
@@ -51,11 +44,18 @@ namespace tryAGI.OpenAI
         public required string Text { get; set; }
 
         /// <summary>
-        /// The type of the event. Always `response.output_text.done`.
+        /// The sequence number for this event.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseTextDoneEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseTextDoneEventType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int SequenceNumber { get; set; }
+
+        /// <summary>
+        /// The log probabilities of the tokens in the delta.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResponseLogProb> Logprobs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -66,45 +66,45 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseTextDoneEvent" /> class.
         /// </summary>
-        /// <param name="contentIndex">
-        /// The index of the content part that the text content is finalized.
+        /// <param name="type">
+        /// The type of the event. Always `response.output_text.done`.
         /// </param>
         /// <param name="itemId">
         /// The ID of the output item that the text content is finalized.
         /// </param>
-        /// <param name="logprobs">
-        /// The log probabilities of the tokens in the delta.
-        /// </param>
         /// <param name="outputIndex">
         /// The index of the output item that the text content is finalized.
         /// </param>
-        /// <param name="sequenceNumber">
-        /// The sequence number for this event.
+        /// <param name="contentIndex">
+        /// The index of the content part that the text content is finalized.
         /// </param>
         /// <param name="text">
         /// The text content that is finalized.
         /// </param>
-        /// <param name="type">
-        /// The type of the event. Always `response.output_text.done`.
+        /// <param name="sequenceNumber">
+        /// The sequence number for this event.
+        /// </param>
+        /// <param name="logprobs">
+        /// The log probabilities of the tokens in the delta.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseTextDoneEvent(
-            int contentIndex,
             string itemId,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResponseLogProb> logprobs,
             int outputIndex,
-            int sequenceNumber,
+            int contentIndex,
             string text,
+            int sequenceNumber,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResponseLogProb> logprobs,
             global::tryAGI.OpenAI.ResponseTextDoneEventType type)
         {
-            this.ContentIndex = contentIndex;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
-            this.Logprobs = logprobs ?? throw new global::System.ArgumentNullException(nameof(logprobs));
             this.OutputIndex = outputIndex;
-            this.SequenceNumber = sequenceNumber;
+            this.ContentIndex = contentIndex;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.SequenceNumber = sequenceNumber;
+            this.Logprobs = logprobs ?? throw new global::System.ArgumentNullException(nameof(logprobs));
             this.Type = type;
         }
 

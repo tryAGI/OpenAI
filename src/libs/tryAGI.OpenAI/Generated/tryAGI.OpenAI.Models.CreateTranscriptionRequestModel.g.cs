@@ -20,6 +20,14 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         Gpt4oMiniTranscribe,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt4oMiniTranscribe20251215,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt4oTranscribeDiarize,
     }
 
     /// <summary>
@@ -37,6 +45,8 @@ namespace tryAGI.OpenAI
                 CreateTranscriptionRequestModel.Whisper1 => "whisper-1",
                 CreateTranscriptionRequestModel.Gpt4oTranscribe => "gpt-4o-transcribe",
                 CreateTranscriptionRequestModel.Gpt4oMiniTranscribe => "gpt-4o-mini-transcribe",
+                CreateTranscriptionRequestModel.Gpt4oMiniTranscribe20251215 => "gpt-4o-mini-transcribe-2025-12-15",
+                CreateTranscriptionRequestModel.Gpt4oTranscribeDiarize => "gpt-4o-transcribe-diarize",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,6 +60,8 @@ namespace tryAGI.OpenAI
                 "whisper-1" => CreateTranscriptionRequestModel.Whisper1,
                 "gpt-4o-transcribe" => CreateTranscriptionRequestModel.Gpt4oTranscribe,
                 "gpt-4o-mini-transcribe" => CreateTranscriptionRequestModel.Gpt4oMiniTranscribe,
+                "gpt-4o-mini-transcribe-2025-12-15" => CreateTranscriptionRequestModel.Gpt4oMiniTranscribe20251215,
+                "gpt-4o-transcribe-diarize" => CreateTranscriptionRequestModel.Gpt4oTranscribeDiarize,
                 _ => null,
             };
         }

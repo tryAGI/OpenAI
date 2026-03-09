@@ -16,11 +16,11 @@ namespace tryAGI.OpenAI
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The ID of the MCP tool call item.
+        /// The event type, must be `response.mcp_call.completed`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ItemId { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventResponseMCPCallCompletedTypeJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallCompletedType Type { get; set; }
 
         /// <summary>
         /// The index of the output item in the response.
@@ -30,11 +30,11 @@ namespace tryAGI.OpenAI
         public required int OutputIndex { get; set; }
 
         /// <summary>
-        /// The event type, must be `response.mcp_call.completed`.
+        /// The ID of the MCP tool call item.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventResponseMCPCallCompletedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallCompletedType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ItemId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,27 +48,27 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="itemId">
-        /// The ID of the MCP tool call item.
+        /// <param name="type">
+        /// The event type, must be `response.mcp_call.completed`.
         /// </param>
         /// <param name="outputIndex">
         /// The index of the output item in the response.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `response.mcp_call.completed`.
+        /// <param name="itemId">
+        /// The ID of the MCP tool call item.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeServerEventResponseMCPCallCompleted(
             string eventId,
-            string itemId,
             int outputIndex,
+            string itemId,
             global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallCompletedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
+            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.Type = type;
         }
 

@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Additional annotations about the tool.
+    /// 
     /// </summary>
     public sealed partial class MCPListToolsToolAnnotations
     {

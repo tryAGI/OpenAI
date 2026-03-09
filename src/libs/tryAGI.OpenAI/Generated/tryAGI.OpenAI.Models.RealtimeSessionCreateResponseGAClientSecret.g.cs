@@ -9,19 +9,19 @@ namespace tryAGI.OpenAI
     public sealed partial class RealtimeSessionCreateResponseGAClientSecret
     {
         /// <summary>
+        /// Ephemeral key usable in client environments to authenticate connections to the Realtime API. Use this in client-side environments rather than a standard API token, which should only be used server-side.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("value")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Value { get; set; }
+
+        /// <summary>
         /// Timestamp for when the token expires. Currently, all tokens expire<br/>
         /// after one minute.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int ExpiresAt { get; set; }
-
-        /// <summary>
-        /// Ephemeral key usable in client environments to authenticate connections to the Realtime API. Use this in client-side environments rather than a standard API token, which should only be used server-side.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Value { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,22 +32,22 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeSessionCreateResponseGAClientSecret" /> class.
         /// </summary>
+        /// <param name="value">
+        /// Ephemeral key usable in client environments to authenticate connections to the Realtime API. Use this in client-side environments rather than a standard API token, which should only be used server-side.
+        /// </param>
         /// <param name="expiresAt">
         /// Timestamp for when the token expires. Currently, all tokens expire<br/>
         /// after one minute.
-        /// </param>
-        /// <param name="value">
-        /// Ephemeral key usable in client environments to authenticate connections to the Realtime API. Use this in client-side environments rather than a standard API token, which should only be used server-side.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeSessionCreateResponseGAClientSecret(
-            int expiresAt,
-            string value)
+            string value,
+            int expiresAt)
         {
-            this.ExpiresAt = expiresAt;
             this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+            this.ExpiresAt = expiresAt;
         }
 
         /// <summary>

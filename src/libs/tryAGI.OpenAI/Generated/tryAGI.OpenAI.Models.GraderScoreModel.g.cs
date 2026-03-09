@@ -9,18 +9,11 @@ namespace tryAGI.OpenAI
     public sealed partial class GraderScoreModel
     {
         /// <summary>
-        /// The input text. This may include template strings.
+        /// The object type, which is always `score_model`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItem> Input { get; set; }
-
-        /// <summary>
-        /// The model to use for the evaluation.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Model { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.GraderScoreModelTypeJsonConverter))]
+        public global::tryAGI.OpenAI.GraderScoreModelType Type { get; set; }
 
         /// <summary>
         /// The name of the grader.
@@ -30,10 +23,11 @@ namespace tryAGI.OpenAI
         public required string Name { get; set; }
 
         /// <summary>
-        /// The range of the score. Defaults to `[0, 1]`.
+        /// The model to use for the evaluation.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("range")]
-        public global::System.Collections.Generic.IList<double>? Range { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Model { get; set; }
 
         /// <summary>
         /// The sampling parameters for the model.
@@ -42,11 +36,17 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.GraderScoreModelSamplingParams? SamplingParams { get; set; }
 
         /// <summary>
-        /// The object type, which is always `score_model`.
+        /// The input messages evaluated by the grader. Supports text, output text, input image, and input audio content blocks, and may include template strings.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.GraderScoreModelTypeJsonConverter))]
-        public global::tryAGI.OpenAI.GraderScoreModelType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("input")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItem> Input { get; set; }
+
+        /// <summary>
+        /// The range of the score. Defaults to `[0, 1]`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("range")]
+        public global::System.Collections.Generic.IList<double>? Range { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -57,41 +57,41 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="GraderScoreModel" /> class.
         /// </summary>
-        /// <param name="input">
-        /// The input text. This may include template strings.
-        /// </param>
-        /// <param name="model">
-        /// The model to use for the evaluation.
+        /// <param name="type">
+        /// The object type, which is always `score_model`.
         /// </param>
         /// <param name="name">
         /// The name of the grader.
         /// </param>
-        /// <param name="range">
-        /// The range of the score. Defaults to `[0, 1]`.
+        /// <param name="model">
+        /// The model to use for the evaluation.
         /// </param>
         /// <param name="samplingParams">
         /// The sampling parameters for the model.
         /// </param>
-        /// <param name="type">
-        /// The object type, which is always `score_model`.
+        /// <param name="input">
+        /// The input messages evaluated by the grader. Supports text, output text, input image, and input audio content blocks, and may include template strings.
+        /// </param>
+        /// <param name="range">
+        /// The range of the score. Defaults to `[0, 1]`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GraderScoreModel(
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItem> input,
-            string model,
             string name,
-            global::System.Collections.Generic.IList<double>? range,
+            string model,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItem> input,
+            global::tryAGI.OpenAI.GraderScoreModelType type,
             global::tryAGI.OpenAI.GraderScoreModelSamplingParams? samplingParams,
-            global::tryAGI.OpenAI.GraderScoreModelType type)
+            global::System.Collections.Generic.IList<double>? range)
         {
-            this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Range = range;
-            this.SamplingParams = samplingParams;
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Type = type;
+            this.SamplingParams = samplingParams;
+            this.Range = range;
         }
 
         /// <summary>

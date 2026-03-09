@@ -9,13 +9,13 @@ namespace tryAGI.OpenAI
             global::System.Net.Http.HttpClient httpClient,
             ref string conversationId,
             ref string itemId,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include);
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.IncludeEnum>? include);
         partial void PrepareGetConversationItemRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string conversationId,
             string itemId,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include);
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.IncludeEnum>? include);
         partial void ProcessGetConversationItemResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -26,7 +26,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Retrieve an item<br/>
         /// Get a single item from a conversation with the given IDs.
         /// </summary>
         /// <param name="conversationId">
@@ -41,7 +40,7 @@ namespace tryAGI.OpenAI
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ConversationItem> GetConversationItemAsync(
             string conversationId,
             string itemId,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include = default,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.IncludeEnum>? include = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -55,7 +54,7 @@ namespace tryAGI.OpenAI
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/conversations/{conversationId}/items/{itemId}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("include", include, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();

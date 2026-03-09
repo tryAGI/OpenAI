@@ -13,36 +13,18 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.CreateEvalItemVariant1? Value1 { get; init; }
+        public global::tryAGI.OpenAI.CreateEvalItemSimpleInputMessage? SimpleInputMessage { get; init; }
 #else
-        public global::tryAGI.OpenAI.CreateEvalItemVariant1? Value1 { get; }
+        public global::tryAGI.OpenAI.CreateEvalItemSimpleInputMessage? SimpleInputMessage { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SimpleInputMessage))]
 #endif
-        public bool IsValue1 => Value1 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator CreateEvalItem(global::tryAGI.OpenAI.CreateEvalItemVariant1 value) => new CreateEvalItem((global::tryAGI.OpenAI.CreateEvalItemVariant1?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.CreateEvalItemVariant1?(CreateEvalItem @this) => @this.Value1;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public CreateEvalItem(global::tryAGI.OpenAI.CreateEvalItemVariant1? value)
-        {
-            Value1 = value;
-        }
+        public bool IsSimpleInputMessage => SimpleInputMessage != null;
 
         /// <summary>
         /// A message input to the model with a role indicating instruction following<br/>
@@ -52,18 +34,35 @@ namespace tryAGI.OpenAI
         /// interactions.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.EvalItem? Value2 { get; init; }
+        public global::tryAGI.OpenAI.EvalItem? EvalMessageObject { get; init; }
 #else
-        public global::tryAGI.OpenAI.EvalItem? Value2 { get; }
+        public global::tryAGI.OpenAI.EvalItem? EvalMessageObject { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EvalMessageObject))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsEvalMessageObject => EvalMessageObject != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator CreateEvalItem(global::tryAGI.OpenAI.CreateEvalItemSimpleInputMessage value) => new CreateEvalItem((global::tryAGI.OpenAI.CreateEvalItemSimpleInputMessage?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.CreateEvalItemSimpleInputMessage?(CreateEvalItem @this) => @this.SimpleInputMessage;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public CreateEvalItem(global::tryAGI.OpenAI.CreateEvalItemSimpleInputMessage? value)
+        {
+            SimpleInputMessage = value;
+        }
 
         /// <summary>
         /// 
@@ -73,42 +72,42 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.EvalItem?(CreateEvalItem @this) => @this.Value2;
+        public static implicit operator global::tryAGI.OpenAI.EvalItem?(CreateEvalItem @this) => @this.EvalMessageObject;
 
         /// <summary>
         /// 
         /// </summary>
         public CreateEvalItem(global::tryAGI.OpenAI.EvalItem? value)
         {
-            Value2 = value;
+            EvalMessageObject = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public CreateEvalItem(
-            global::tryAGI.OpenAI.CreateEvalItemVariant1? value1,
-            global::tryAGI.OpenAI.EvalItem? value2
+            global::tryAGI.OpenAI.CreateEvalItemSimpleInputMessage? simpleInputMessage,
+            global::tryAGI.OpenAI.EvalItem? evalMessageObject
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            SimpleInputMessage = simpleInputMessage;
+            EvalMessageObject = evalMessageObject;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            EvalMessageObject as object ??
+            SimpleInputMessage as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            SimpleInputMessage?.ToString() ??
+            EvalMessageObject?.ToString() 
             ;
 
         /// <summary>
@@ -116,15 +115,15 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsSimpleInputMessage && !IsEvalMessageObject || !IsSimpleInputMessage && IsEvalMessageObject;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.CreateEvalItemVariant1?, TResult>? value1 = null,
-            global::System.Func<global::tryAGI.OpenAI.EvalItem?, TResult>? value2 = null,
+            global::System.Func<global::tryAGI.OpenAI.CreateEvalItemSimpleInputMessage?, TResult>? simpleInputMessage = null,
+            global::System.Func<global::tryAGI.OpenAI.EvalItem?, TResult>? evalMessageObject = null,
             bool validate = true)
         {
             if (validate)
@@ -132,13 +131,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsSimpleInputMessage && simpleInputMessage != null)
             {
-                return value1(Value1!);
+                return simpleInputMessage(SimpleInputMessage!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsEvalMessageObject && evalMessageObject != null)
             {
-                return value2(Value2!);
+                return evalMessageObject(EvalMessageObject!);
             }
 
             return default(TResult);
@@ -148,8 +147,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.CreateEvalItemVariant1?>? value1 = null,
-            global::System.Action<global::tryAGI.OpenAI.EvalItem?>? value2 = null,
+            global::System.Action<global::tryAGI.OpenAI.CreateEvalItemSimpleInputMessage?>? simpleInputMessage = null,
+            global::System.Action<global::tryAGI.OpenAI.EvalItem?>? evalMessageObject = null,
             bool validate = true)
         {
             if (validate)
@@ -157,13 +156,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsSimpleInputMessage)
             {
-                value1?.Invoke(Value1!);
+                simpleInputMessage?.Invoke(SimpleInputMessage!);
             }
-            else if (IsValue2)
+            else if (IsEvalMessageObject)
             {
-                value2?.Invoke(Value2!);
+                evalMessageObject?.Invoke(EvalMessageObject!);
             }
         }
 
@@ -174,9 +173,9 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                Value1,
-                typeof(global::tryAGI.OpenAI.CreateEvalItemVariant1),
-                Value2,
+                SimpleInputMessage,
+                typeof(global::tryAGI.OpenAI.CreateEvalItemSimpleInputMessage),
+                EvalMessageObject,
                 typeof(global::tryAGI.OpenAI.EvalItem),
             };
             const int offset = unchecked((int)2166136261);
@@ -194,8 +193,8 @@ namespace tryAGI.OpenAI
         public bool Equals(CreateEvalItem other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CreateEvalItemVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.EvalItem?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CreateEvalItemSimpleInputMessage?>.Default.Equals(SimpleInputMessage, other.SimpleInputMessage) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.EvalItem?>.Default.Equals(EvalMessageObject, other.EvalMessageObject) 
                 ;
         }
 

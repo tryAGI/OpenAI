@@ -22,7 +22,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Retrieve batch<br/>
         /// Retrieves a batch.
         /// </summary>
         /// <param name="batchId"></param>

@@ -28,7 +28,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// List project certificates<br/>
         /// List certificates for this project.
         /// </summary>
         /// <param name="projectId"></param>
@@ -60,9 +59,9 @@ namespace tryAGI.OpenAI
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/organization/projects/{projectId}/certificates",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("after", after) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("after", after)
                 .AddOptionalParameter("order", order?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

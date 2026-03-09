@@ -29,6 +29,39 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ResponseProperties? Value2 { get; init; }
+#else
+        public global::tryAGI.OpenAI.ResponseProperties? Value2 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+#endif
+        public bool IsValue2 => Value2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.CreateResponseVariant3? Value3 { get; init; }
+#else
+        public global::tryAGI.OpenAI.CreateResponseVariant3? Value3 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+#endif
+        public bool IsValue3 => Value3 != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateResponse(global::tryAGI.OpenAI.CreateModelResponseProperties value) => new CreateResponse((global::tryAGI.OpenAI.CreateModelResponseProperties?)value);
 
         /// <summary>
@@ -47,23 +80,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ResponseProperties? Value2 { get; init; }
-#else
-        public global::tryAGI.OpenAI.ResponseProperties? Value2 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
-#endif
-        public bool IsValue2 => Value2 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator CreateResponse(global::tryAGI.OpenAI.ResponseProperties value) => new CreateResponse((global::tryAGI.OpenAI.ResponseProperties?)value);
 
         /// <summary>
@@ -78,23 +94,6 @@ namespace tryAGI.OpenAI
         {
             Value2 = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.CreateResponseVariant3? Value3 { get; init; }
-#else
-        public global::tryAGI.OpenAI.CreateResponseVariant3? Value3 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
-#endif
-        public bool IsValue3 => Value3 != null;
 
         /// <summary>
         /// 

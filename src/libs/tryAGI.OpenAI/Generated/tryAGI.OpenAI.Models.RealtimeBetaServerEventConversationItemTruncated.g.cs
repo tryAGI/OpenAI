@@ -13,25 +13,18 @@ namespace tryAGI.OpenAI
     public sealed partial class RealtimeBetaServerEventConversationItemTruncated
     {
         /// <summary>
-        /// The duration up to which the audio was truncated, in milliseconds.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("audio_end_ms")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int AudioEndMs { get; set; }
-
-        /// <summary>
-        /// The index of the content part that was truncated.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content_index")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ContentIndex { get; set; }
-
-        /// <summary>
         /// The unique ID of the server event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string EventId { get; set; }
+
+        /// <summary>
+        /// The event type, must be `conversation.item.truncated`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeBetaServerEventConversationItemTruncatedTypeJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemTruncatedType Type { get; set; }
 
         /// <summary>
         /// The ID of the assistant message item that was truncated.
@@ -41,11 +34,18 @@ namespace tryAGI.OpenAI
         public required string ItemId { get; set; }
 
         /// <summary>
-        /// The event type, must be `conversation.item.truncated`.
+        /// The index of the content part that was truncated.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeBetaServerEventConversationItemTruncatedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemTruncatedType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("content_index")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int ContentIndex { get; set; }
+
+        /// <summary>
+        /// The duration up to which the audio was truncated, in milliseconds.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("audio_end_ms")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int AudioEndMs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -56,35 +56,35 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeBetaServerEventConversationItemTruncated" /> class.
         /// </summary>
-        /// <param name="audioEndMs">
-        /// The duration up to which the audio was truncated, in milliseconds.
-        /// </param>
-        /// <param name="contentIndex">
-        /// The index of the content part that was truncated.
-        /// </param>
         /// <param name="eventId">
         /// The unique ID of the server event.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `conversation.item.truncated`.
         /// </param>
         /// <param name="itemId">
         /// The ID of the assistant message item that was truncated.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `conversation.item.truncated`.
+        /// <param name="contentIndex">
+        /// The index of the content part that was truncated.
+        /// </param>
+        /// <param name="audioEndMs">
+        /// The duration up to which the audio was truncated, in milliseconds.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeBetaServerEventConversationItemTruncated(
-            int audioEndMs,
-            int contentIndex,
             string eventId,
             string itemId,
+            int contentIndex,
+            int audioEndMs,
             global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemTruncatedType type)
         {
-            this.AudioEndMs = audioEndMs;
-            this.ContentIndex = contentIndex;
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
+            this.ContentIndex = contentIndex;
+            this.AudioEndMs = audioEndMs;
             this.Type = type;
         }
 

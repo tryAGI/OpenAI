@@ -5,7 +5,6 @@ namespace tryAGI.OpenAI
     public partial interface IEvalsClient
     {
         /// <summary>
-        /// List evals<br/>
         /// List evaluations for a project.
         /// </summary>
         /// <param name="after"></param>

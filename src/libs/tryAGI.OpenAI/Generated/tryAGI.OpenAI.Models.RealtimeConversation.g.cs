@@ -6,7 +6,8 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// A realtime Conversation consists of a list of Items.<br/>
     /// By default, there is only one Conversation, and it gets created at the beginning of the Session.<br/>
-    /// In the future, we may add support for additional conversations.
+    /// In the future, we may add support for additional conversations.<br/>
+    /// Example: {"id":"conv_001","object":"realtime.conversation"}
     /// </summary>
     public sealed partial class RealtimeConversation
     {

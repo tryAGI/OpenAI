@@ -9,6 +9,13 @@ namespace tryAGI.OpenAI
     public sealed partial class RealtimeCreateClientSecretResponse
     {
         /// <summary>
+        /// The generated client secret value.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("value")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Value { get; set; }
+
+        /// <summary>
         /// Expiration timestamp for the client secret, in seconds since epoch.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
@@ -24,13 +31,6 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.Session2 Session { get; set; }
 
         /// <summary>
-        /// The generated client secret value.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Value { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -39,26 +39,26 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeCreateClientSecretResponse" /> class.
         /// </summary>
+        /// <param name="value">
+        /// The generated client secret value.
+        /// </param>
         /// <param name="expiresAt">
         /// Expiration timestamp for the client secret, in seconds since epoch.
         /// </param>
         /// <param name="session">
         /// The session configuration for either a realtime or transcription session.
         /// </param>
-        /// <param name="value">
-        /// The generated client secret value.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeCreateClientSecretResponse(
+            string value,
             int expiresAt,
-            global::tryAGI.OpenAI.Session2 session,
-            string value)
+            global::tryAGI.OpenAI.Session2 session)
         {
+            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
             this.ExpiresAt = expiresAt;
             this.Session = session;
-            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
         }
 
         /// <summary>

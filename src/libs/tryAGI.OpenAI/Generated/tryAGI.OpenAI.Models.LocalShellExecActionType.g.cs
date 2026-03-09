@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The type of the local shell action. Always `exec`.
+    /// The type of the local shell action. Always `exec`.<br/>
+    /// Default Value: exec
     /// </summary>
     public enum LocalShellExecActionType
     {

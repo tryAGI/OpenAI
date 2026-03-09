@@ -5,7 +5,6 @@ namespace tryAGI.OpenAI
     public partial interface IResponsesClient
     {
         /// <summary>
-        /// List input items<br/>
         /// Returns a list of input items for a given response.
         /// </summary>
         /// <param name="responseId"></param>
@@ -22,7 +21,7 @@ namespace tryAGI.OpenAI
             int? limit = default,
             global::tryAGI.OpenAI.ListInputItemsOrder? order = default,
             string? after = default,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include = default,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.IncludeEnum>? include = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

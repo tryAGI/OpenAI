@@ -30,7 +30,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// List runs<br/>
         /// Returns a list of runs belonging to a thread.
         /// </summary>
         /// <param name="threadId"></param>
@@ -44,9 +43,6 @@ namespace tryAGI.OpenAI
         /// <param name="before"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "TRYAGI_OPENAI_BETA_001")]
-#endif
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ListRunsResponse> ListRunsAsync(
             string threadId,
             int? limit = default,
@@ -68,10 +64,10 @@ namespace tryAGI.OpenAI
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/threads/{threadId}/runs",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("order", order?.ToValueString()) 
-                .AddOptionalParameter("after", after) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("order", order?.ToValueString())
+                .AddOptionalParameter("after", after)
                 .AddOptionalParameter("before", before) 
                 ; 
             var __path = __pathBuilder.ToString();

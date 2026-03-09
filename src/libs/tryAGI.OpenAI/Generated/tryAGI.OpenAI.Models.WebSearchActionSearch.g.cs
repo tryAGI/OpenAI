@@ -9,24 +9,30 @@ namespace tryAGI.OpenAI
     public sealed partial class WebSearchActionSearch
     {
         /// <summary>
-        /// The search query.
+        /// The action type.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebSearchActionSearchTypeJsonConverter))]
+        public global::tryAGI.OpenAI.WebSearchActionSearchType Type { get; set; }
+
+        /// <summary>
+        /// [DEPRECATED] The search query.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("query")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Query { get; set; }
 
         /// <summary>
+        /// The search queries.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("queries")]
+        public global::System.Collections.Generic.IList<string>? Queries { get; set; }
+
+        /// <summary>
         /// The sources used in the search.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sources")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.WebSearchActionSearchSource>? Sources { get; set; }
-
-        /// <summary>
-        /// The action type.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebSearchActionSearchTypeJsonConverter))]
-        public global::tryAGI.OpenAI.WebSearchActionSearchType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,26 +43,31 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="WebSearchActionSearch" /> class.
         /// </summary>
+        /// <param name="type">
+        /// The action type.
+        /// </param>
         /// <param name="query">
-        /// The search query.
+        /// [DEPRECATED] The search query.
+        /// </param>
+        /// <param name="queries">
+        /// The search queries.
         /// </param>
         /// <param name="sources">
         /// The sources used in the search.
-        /// </param>
-        /// <param name="type">
-        /// The action type.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebSearchActionSearch(
             string query,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.WebSearchActionSearchSource>? sources,
-            global::tryAGI.OpenAI.WebSearchActionSearchType type)
+            global::tryAGI.OpenAI.WebSearchActionSearchType type,
+            global::System.Collections.Generic.IList<string>? queries,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.WebSearchActionSearchSource>? sources)
         {
             this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
-            this.Sources = sources;
             this.Type = type;
+            this.Queries = queries;
+            this.Sources = sources;
         }
 
         /// <summary>

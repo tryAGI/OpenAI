@@ -9,16 +9,16 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateConversationBody
     {
         /// <summary>
-        /// Initial items to include in the conversation context. You may add up to 20 items at a time.
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("items")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>? Items { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public object? Metadata { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("items")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>? Items { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,19 +29,17 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateConversationBody" /> class.
         /// </summary>
-        /// <param name="items">
-        /// Initial items to include in the conversation context. You may add up to 20 items at a time.
-        /// </param>
         /// <param name="metadata"></param>
+        /// <param name="items"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateConversationBody(
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>? items,
-            object? metadata)
+            global::System.Collections.Generic.Dictionary<string, string>? metadata,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>? items)
         {
-            this.Items = items;
             this.Metadata = metadata;
+            this.Items = items;
         }
 
         /// <summary>

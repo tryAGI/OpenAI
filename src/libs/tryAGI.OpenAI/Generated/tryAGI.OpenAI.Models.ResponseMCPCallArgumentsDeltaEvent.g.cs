@@ -9,18 +9,11 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseMCPCallArgumentsDeltaEvent
     {
         /// <summary>
-        /// A JSON string containing the partial update to the arguments for the MCP tool call.
+        /// The type of the event. Always 'response.mcp_call_arguments.delta'.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Delta { get; set; }
-
-        /// <summary>
-        /// The unique identifier of the MCP tool call item being processed.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ItemId { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseMCPCallArgumentsDeltaEventTypeJsonConverter))]
+        public global::tryAGI.OpenAI.ResponseMCPCallArgumentsDeltaEventType Type { get; set; }
 
         /// <summary>
         /// The index of the output item in the response's output array.
@@ -30,18 +23,25 @@ namespace tryAGI.OpenAI
         public required int OutputIndex { get; set; }
 
         /// <summary>
+        /// The unique identifier of the MCP tool call item being processed.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ItemId { get; set; }
+
+        /// <summary>
+        /// A JSON string containing the partial update to the arguments for the MCP tool call.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Delta { get; set; }
+
+        /// <summary>
         /// The sequence number of this event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int SequenceNumber { get; set; }
-
-        /// <summary>
-        /// The type of the event. Always 'response.mcp_call_arguments.delta'.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseMCPCallArgumentsDeltaEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseMCPCallArgumentsDeltaEventType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,34 +52,34 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseMCPCallArgumentsDeltaEvent" /> class.
         /// </summary>
-        /// <param name="delta">
-        /// A JSON string containing the partial update to the arguments for the MCP tool call.
-        /// </param>
-        /// <param name="itemId">
-        /// The unique identifier of the MCP tool call item being processed.
+        /// <param name="type">
+        /// The type of the event. Always 'response.mcp_call_arguments.delta'.
         /// </param>
         /// <param name="outputIndex">
         /// The index of the output item in the response's output array.
         /// </param>
+        /// <param name="itemId">
+        /// The unique identifier of the MCP tool call item being processed.
+        /// </param>
+        /// <param name="delta">
+        /// A JSON string containing the partial update to the arguments for the MCP tool call.
+        /// </param>
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
-        /// </param>
-        /// <param name="type">
-        /// The type of the event. Always 'response.mcp_call_arguments.delta'.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseMCPCallArgumentsDeltaEvent(
-            string delta,
-            string itemId,
             int outputIndex,
+            string itemId,
+            string delta,
             int sequenceNumber,
             global::tryAGI.OpenAI.ResponseMCPCallArgumentsDeltaEventType type)
         {
-            this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
-            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
+            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
+            this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.SequenceNumber = sequenceNumber;
             this.Type = type;
         }

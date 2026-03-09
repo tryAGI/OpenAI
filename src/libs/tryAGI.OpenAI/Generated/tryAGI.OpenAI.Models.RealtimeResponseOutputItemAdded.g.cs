@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Returned when a new Item is created during response generation.
+    /// Returned when a new Item is created during response generation.<br/>
+    /// Example: {"event_id":"event_3334","type":"response.output_item.added","response_id":"resp_001","output_index":0,"item":{"id":"msg_007","object":"realtime.item","type":"message","status":"in_progress","role":"assistant","content":[]}}
     /// </summary>
     public sealed partial class RealtimeResponseOutputItemAdded
     {

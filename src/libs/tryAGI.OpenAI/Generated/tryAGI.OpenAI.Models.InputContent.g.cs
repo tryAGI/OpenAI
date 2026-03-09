@@ -13,19 +13,52 @@ namespace tryAGI.OpenAI
         /// A text input to the model.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.InputTextContent? Text { get; init; }
+        public global::tryAGI.OpenAI.InputTextContent? InputText { get; init; }
 #else
-        public global::tryAGI.OpenAI.InputTextContent? Text { get; }
+        public global::tryAGI.OpenAI.InputTextContent? InputText { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputText))]
 #endif
-        public bool IsText => Text != null;
+        public bool IsInputText => InputText != null;
 
+        /// <summary>
+        /// An image input to the model. Learn about [image inputs](/docs/guides/vision).
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.InputImageContent? InputImage { get; init; }
+#else
+        public global::tryAGI.OpenAI.InputImageContent? InputImage { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputImage))]
+#endif
+        public bool IsInputImage => InputImage != null;
+
+        /// <summary>
+        /// A file input to the model.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.InputFileContent? InputFile { get; init; }
+#else
+        public global::tryAGI.OpenAI.InputFileContent? InputFile { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputFile))]
+#endif
+        public bool IsInputFile => InputFile != null;
         /// <summary>
         /// 
         /// </summary>
@@ -34,32 +67,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.InputTextContent?(InputContent @this) => @this.Text;
+        public static implicit operator global::tryAGI.OpenAI.InputTextContent?(InputContent @this) => @this.InputText;
 
         /// <summary>
         /// 
         /// </summary>
         public InputContent(global::tryAGI.OpenAI.InputTextContent? value)
         {
-            Text = value;
+            InputText = value;
         }
-
-        /// <summary>
-        /// An image input to the model. Learn about [image inputs](https://platform.openai.com/docs/guides/vision).
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.InputImageContent? Image { get; init; }
-#else
-        public global::tryAGI.OpenAI.InputImageContent? Image { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
-#endif
-        public bool IsImage => Image != null;
 
         /// <summary>
         /// 
@@ -69,32 +85,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.InputImageContent?(InputContent @this) => @this.Image;
+        public static implicit operator global::tryAGI.OpenAI.InputImageContent?(InputContent @this) => @this.InputImage;
 
         /// <summary>
         /// 
         /// </summary>
         public InputContent(global::tryAGI.OpenAI.InputImageContent? value)
         {
-            Image = value;
+            InputImage = value;
         }
-
-        /// <summary>
-        /// A file input to the model.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.InputFileContent? File { get; init; }
-#else
-        public global::tryAGI.OpenAI.InputFileContent? File { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
-#endif
-        public bool IsFile => File != null;
 
         /// <summary>
         /// 
@@ -104,85 +103,46 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.InputFileContent?(InputContent @this) => @this.File;
+        public static implicit operator global::tryAGI.OpenAI.InputFileContent?(InputContent @this) => @this.InputFile;
 
         /// <summary>
         /// 
         /// </summary>
         public InputContent(global::tryAGI.OpenAI.InputFileContent? value)
         {
-            File = value;
-        }
-
-        /// <summary>
-        /// An audio input to the model.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.InputAudio? Audio { get; init; }
-#else
-        public global::tryAGI.OpenAI.InputAudio? Audio { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Audio))]
-#endif
-        public bool IsAudio => Audio != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator InputContent(global::tryAGI.OpenAI.InputAudio value) => new InputContent((global::tryAGI.OpenAI.InputAudio?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.InputAudio?(InputContent @this) => @this.Audio;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public InputContent(global::tryAGI.OpenAI.InputAudio? value)
-        {
-            Audio = value;
+            InputFile = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public InputContent(
-            global::tryAGI.OpenAI.InputTextContent? text,
-            global::tryAGI.OpenAI.InputImageContent? image,
-            global::tryAGI.OpenAI.InputFileContent? file,
-            global::tryAGI.OpenAI.InputAudio? audio
+            global::tryAGI.OpenAI.InputTextContent? inputText,
+            global::tryAGI.OpenAI.InputImageContent? inputImage,
+            global::tryAGI.OpenAI.InputFileContent? inputFile
             )
         {
-            Text = text;
-            Image = image;
-            File = file;
-            Audio = audio;
+            InputText = inputText;
+            InputImage = inputImage;
+            InputFile = inputFile;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Audio as object ??
-            File as object ??
-            Image as object ??
-            Text as object 
+            InputFile as object ??
+            InputImage as object ??
+            InputText as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Text?.ToString() ??
-            Image?.ToString() ??
-            File?.ToString() ??
-            Audio?.ToString() 
+            InputText?.ToString() ??
+            InputImage?.ToString() ??
+            InputFile?.ToString() 
             ;
 
         /// <summary>
@@ -190,17 +150,16 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsText || IsImage || IsFile || IsAudio;
+            return IsInputText && !IsInputImage && !IsInputFile || !IsInputText && IsInputImage && !IsInputFile || !IsInputText && !IsInputImage && IsInputFile;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.InputTextContent?, TResult>? text = null,
-            global::System.Func<global::tryAGI.OpenAI.InputImageContent?, TResult>? image = null,
-            global::System.Func<global::tryAGI.OpenAI.InputFileContent?, TResult>? file = null,
-            global::System.Func<global::tryAGI.OpenAI.InputAudio?, TResult>? audio = null,
+            global::System.Func<global::tryAGI.OpenAI.InputTextContent?, TResult>? inputText = null,
+            global::System.Func<global::tryAGI.OpenAI.InputImageContent?, TResult>? inputImage = null,
+            global::System.Func<global::tryAGI.OpenAI.InputFileContent?, TResult>? inputFile = null,
             bool validate = true)
         {
             if (validate)
@@ -208,21 +167,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (IsInputText && inputText != null)
             {
-                return text(Text!);
+                return inputText(InputText!);
             }
-            else if (IsImage && image != null)
+            else if (IsInputImage && inputImage != null)
             {
-                return image(Image!);
+                return inputImage(InputImage!);
             }
-            else if (IsFile && file != null)
+            else if (IsInputFile && inputFile != null)
             {
-                return file(File!);
-            }
-            else if (IsAudio && audio != null)
-            {
-                return audio(Audio!);
+                return inputFile(InputFile!);
             }
 
             return default(TResult);
@@ -232,10 +187,9 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.InputTextContent?>? text = null,
-            global::System.Action<global::tryAGI.OpenAI.InputImageContent?>? image = null,
-            global::System.Action<global::tryAGI.OpenAI.InputFileContent?>? file = null,
-            global::System.Action<global::tryAGI.OpenAI.InputAudio?>? audio = null,
+            global::System.Action<global::tryAGI.OpenAI.InputTextContent?>? inputText = null,
+            global::System.Action<global::tryAGI.OpenAI.InputImageContent?>? inputImage = null,
+            global::System.Action<global::tryAGI.OpenAI.InputFileContent?>? inputFile = null,
             bool validate = true)
         {
             if (validate)
@@ -243,21 +197,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsText)
+            if (IsInputText)
             {
-                text?.Invoke(Text!);
+                inputText?.Invoke(InputText!);
             }
-            else if (IsImage)
+            else if (IsInputImage)
             {
-                image?.Invoke(Image!);
+                inputImage?.Invoke(InputImage!);
             }
-            else if (IsFile)
+            else if (IsInputFile)
             {
-                file?.Invoke(File!);
-            }
-            else if (IsAudio)
-            {
-                audio?.Invoke(Audio!);
+                inputFile?.Invoke(InputFile!);
             }
         }
 
@@ -268,14 +218,12 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                Text,
+                InputText,
                 typeof(global::tryAGI.OpenAI.InputTextContent),
-                Image,
+                InputImage,
                 typeof(global::tryAGI.OpenAI.InputImageContent),
-                File,
+                InputFile,
                 typeof(global::tryAGI.OpenAI.InputFileContent),
-                Audio,
-                typeof(global::tryAGI.OpenAI.InputAudio),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -292,10 +240,9 @@ namespace tryAGI.OpenAI
         public bool Equals(InputContent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputTextContent?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputImageContent?>.Default.Equals(Image, other.Image) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputFileContent?>.Default.Equals(File, other.File) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputAudio?>.Default.Equals(Audio, other.Audio) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputTextContent?>.Default.Equals(InputText, other.InputText) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputImageContent?>.Default.Equals(InputImage, other.InputImage) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputFileContent?>.Default.Equals(InputFile, other.InputFile) 
                 ;
         }
 

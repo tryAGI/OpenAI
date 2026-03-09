@@ -5,7 +5,6 @@ namespace tryAGI.OpenAI
     public partial interface IConversationsClient
     {
         /// <summary>
-        /// Retrieve an item<br/>
         /// Get a single item from a conversation with the given IDs.
         /// </summary>
         /// <param name="conversationId">
@@ -20,7 +19,7 @@ namespace tryAGI.OpenAI
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ConversationItem> GetConversationItemAsync(
             string conversationId,
             string itemId,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include = default,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.IncludeEnum>? include = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

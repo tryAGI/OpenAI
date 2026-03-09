@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -9,16 +11,16 @@ namespace tryAGI.OpenAI
     public sealed partial class MessageDeltaContentTextObjectText
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("annotations")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TextAnnotationDelta>? Annotations { get; set; }
-
-        /// <summary>
         /// The data that makes up the text.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         public string? Value { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("annotations")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject, global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFilePathObject>>? Annotations { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,19 +31,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageDeltaContentTextObjectText" /> class.
         /// </summary>
-        /// <param name="annotations"></param>
         /// <param name="value">
         /// The data that makes up the text.
         /// </param>
+        /// <param name="annotations"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessageDeltaContentTextObjectText(
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TextAnnotationDelta>? annotations,
-            string? value)
+            string? value,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject, global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFilePathObject>>? annotations)
         {
-            this.Annotations = annotations;
             this.Value = value;
+            this.Annotations = annotations;
         }
 
         /// <summary>

@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Returned when an earlier assistant audio message item is truncated by the client.
+    /// Returned when an earlier assistant audio message item is truncated by the client.<br/>
+    /// Example: {"event_id":"event_2526","type":"conversation.item.truncated","item_id":"msg_004","content_index":0,"audio_end_ms":1500}
     /// </summary>
     public sealed partial class RealtimeConversationItemTruncated
     {

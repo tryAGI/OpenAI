@@ -24,7 +24,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Create project user<br/>
         /// Adds a user to the project. Users must already be members of the organization to be added to a project.
         /// </summary>
         /// <param name="projectId"></param>
@@ -33,6 +32,7 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ProjectUser> CreateProjectUserAsync(
             string projectId,
+
             global::tryAGI.OpenAI.ProjectUserCreateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -210,28 +210,27 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Create project user<br/>
         /// Adds a user to the project. Users must already be members of the organization to be added to a project.
         /// </summary>
         /// <param name="projectId"></param>
-        /// <param name="role">
-        /// `owner` or `member`
-        /// </param>
         /// <param name="userId">
         /// The ID of the user.
+        /// </param>
+        /// <param name="role">
+        /// `owner` or `member`
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ProjectUser> CreateProjectUserAsync(
             string projectId,
-            global::tryAGI.OpenAI.ProjectUserCreateRequestRole role,
             string userId,
+            global::tryAGI.OpenAI.ProjectUserCreateRequestRole role,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::tryAGI.OpenAI.ProjectUserCreateRequest
             {
-                Role = role,
                 UserId = userId,
+                Role = role,
             };
 
             return await CreateProjectUserAsync(

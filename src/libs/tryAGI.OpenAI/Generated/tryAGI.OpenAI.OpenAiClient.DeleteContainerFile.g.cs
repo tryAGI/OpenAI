@@ -19,8 +19,8 @@ namespace tryAGI.OpenAI
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
-        /// Delete a container file<br/>
-        /// Delete Container File
+        /// Delete Container File<br/>
+        /// Delete a container file.
         /// </summary>
         /// <param name="containerId"></param>
         /// <param name="fileId"></param>

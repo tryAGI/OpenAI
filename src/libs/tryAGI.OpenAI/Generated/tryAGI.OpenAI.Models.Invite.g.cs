@@ -9,26 +9,11 @@ namespace tryAGI.OpenAI
     public sealed partial class Invite
     {
         /// <summary>
-        /// The Unix timestamp (in seconds) of when the invite was accepted.
+        /// The object type, which is always `organization.invite`
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("accepted_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        public global::System.DateTimeOffset? AcceptedAt { get; set; }
-
-        /// <summary>
-        /// The email address of the individual to whom the invite was sent
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("email")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Email { get; set; }
-
-        /// <summary>
-        /// The Unix timestamp (in seconds) of when the invite expires.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset ExpiresAt { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.InviteObjectJsonConverter))]
+        public global::tryAGI.OpenAI.InviteObject Object { get; set; }
 
         /// <summary>
         /// The identifier, which can be referenced in API endpoints
@@ -38,25 +23,11 @@ namespace tryAGI.OpenAI
         public required string Id { get; set; }
 
         /// <summary>
-        /// The Unix timestamp (in seconds) of when the invite was sent.
+        /// The email address of the individual to whom the invite was sent
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("invited_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset InvitedAt { get; set; }
-
-        /// <summary>
-        /// The object type, which is always `organization.invite`
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.InviteObjectJsonConverter))]
-        public global::tryAGI.OpenAI.InviteObject Object { get; set; }
-
-        /// <summary>
-        /// The projects that were granted membership upon acceptance of the invite.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("projects")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InviteProject>? Projects { get; set; }
+        public required string Email { get; set; }
 
         /// <summary>
         /// `owner` or `reader`
@@ -75,6 +46,35 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.InviteStatus Status { get; set; }
 
         /// <summary>
+        /// The Unix timestamp (in seconds) of when the invite was sent.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("invited_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.DateTimeOffset InvitedAt { get; set; }
+
+        /// <summary>
+        /// The Unix timestamp (in seconds) of when the invite expires.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.DateTimeOffset ExpiresAt { get; set; }
+
+        /// <summary>
+        /// The Unix timestamp (in seconds) of when the invite was accepted.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("accepted_at")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
+        public global::System.DateTimeOffset? AcceptedAt { get; set; }
+
+        /// <summary>
+        /// The projects that were granted membership upon acceptance of the invite.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("projects")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InviteProject>? Projects { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -83,26 +83,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="Invite" /> class.
         /// </summary>
-        /// <param name="acceptedAt">
-        /// The Unix timestamp (in seconds) of when the invite was accepted.
-        /// </param>
-        /// <param name="email">
-        /// The email address of the individual to whom the invite was sent
-        /// </param>
-        /// <param name="expiresAt">
-        /// The Unix timestamp (in seconds) of when the invite expires.
+        /// <param name="object">
+        /// The object type, which is always `organization.invite`
         /// </param>
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints
         /// </param>
-        /// <param name="invitedAt">
-        /// The Unix timestamp (in seconds) of when the invite was sent.
-        /// </param>
-        /// <param name="object">
-        /// The object type, which is always `organization.invite`
-        /// </param>
-        /// <param name="projects">
-        /// The projects that were granted membership upon acceptance of the invite.
+        /// <param name="email">
+        /// The email address of the individual to whom the invite was sent
         /// </param>
         /// <param name="role">
         /// `owner` or `reader`
@@ -110,28 +98,40 @@ namespace tryAGI.OpenAI
         /// <param name="status">
         /// `accepted`,`expired`, or `pending`
         /// </param>
+        /// <param name="invitedAt">
+        /// The Unix timestamp (in seconds) of when the invite was sent.
+        /// </param>
+        /// <param name="expiresAt">
+        /// The Unix timestamp (in seconds) of when the invite expires.
+        /// </param>
+        /// <param name="acceptedAt">
+        /// The Unix timestamp (in seconds) of when the invite was accepted.
+        /// </param>
+        /// <param name="projects">
+        /// The projects that were granted membership upon acceptance of the invite.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Invite(
-            string email,
-            global::System.DateTimeOffset expiresAt,
             string id,
-            global::System.DateTimeOffset invitedAt,
+            string email,
             global::tryAGI.OpenAI.InviteRole role,
             global::tryAGI.OpenAI.InviteStatus status,
-            global::System.DateTimeOffset? acceptedAt,
+            global::System.DateTimeOffset invitedAt,
+            global::System.DateTimeOffset expiresAt,
             global::tryAGI.OpenAI.InviteObject @object,
+            global::System.DateTimeOffset? acceptedAt,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InviteProject>? projects)
         {
-            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
-            this.ExpiresAt = expiresAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.InvitedAt = invitedAt;
+            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
             this.Role = role;
             this.Status = status;
-            this.AcceptedAt = acceptedAt;
+            this.InvitedAt = invitedAt;
+            this.ExpiresAt = expiresAt;
             this.Object = @object;
+            this.AcceptedAt = acceptedAt;
             this.Projects = projects;
         }
 

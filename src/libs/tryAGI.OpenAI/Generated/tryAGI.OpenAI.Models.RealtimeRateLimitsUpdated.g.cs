@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Emitted after every "response.done" event to indicate the updated rate limits.
+    /// Emitted after every "response.done" event to indicate the updated rate limits.<br/>
+    /// Example: {"event_id":"event_5758","type":"rate_limits.updated","rate_limits":[{"name":"requests","limit":1000,"remaining":999,"reset_seconds":60},{"name":"tokens","limit":50000,"remaining":49950,"reset_seconds":60}]}
     /// </summary>
     public sealed partial class RealtimeRateLimitsUpdated
     {

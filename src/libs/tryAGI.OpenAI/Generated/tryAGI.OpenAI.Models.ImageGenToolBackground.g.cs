@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Background type for the generated image. One of `transparent`, <br/>
+    /// Background type for the generated image. One of `transparent`,<br/>
     /// `opaque`, or `auto`. Default: `auto`.<br/>
     /// Default Value: auto
     /// </summary>

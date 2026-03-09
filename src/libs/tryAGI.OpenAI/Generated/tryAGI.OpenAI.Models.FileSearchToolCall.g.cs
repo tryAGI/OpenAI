@@ -5,7 +5,7 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// The results of a file search tool call. See the<br/>
-    /// [file search guide](https://platform.openai.com/docs/guides/tools-file-search) for more information.
+    /// [file search guide](/docs/guides/tools-file-search) for more information.
     /// </summary>
     public sealed partial class FileSearchToolCall
     {
@@ -17,17 +17,11 @@ namespace tryAGI.OpenAI
         public required string Id { get; set; }
 
         /// <summary>
-        /// The queries used to search for files.
+        /// The type of the file search tool call. Always `file_search_call`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("queries")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> Queries { get; set; }
-
-        /// <summary>
-        /// The results of the file search tool call.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("results")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FileSearchToolCallResult>? Results { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.FileSearchToolCallTypeJsonConverter))]
+        public global::tryAGI.OpenAI.FileSearchToolCallType Type { get; set; }
 
         /// <summary>
         /// The status of the file search tool call. One of `in_progress`,<br/>
@@ -39,11 +33,17 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.FileSearchToolCallStatus Status { get; set; }
 
         /// <summary>
-        /// The type of the file search tool call. Always `file_search_call`.
+        /// The queries used to search for files.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.FileSearchToolCallTypeJsonConverter))]
-        public global::tryAGI.OpenAI.FileSearchToolCallType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("queries")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<string> Queries { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("results")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FileSearchToolCallResultsVariant1Item>? Results { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -57,34 +57,32 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// The unique ID of the file search tool call.
         /// </param>
-        /// <param name="queries">
-        /// The queries used to search for files.
-        /// </param>
-        /// <param name="results">
-        /// The results of the file search tool call.
+        /// <param name="type">
+        /// The type of the file search tool call. Always `file_search_call`.
         /// </param>
         /// <param name="status">
         /// The status of the file search tool call. One of `in_progress`,<br/>
         /// `searching`, `incomplete` or `failed`,
         /// </param>
-        /// <param name="type">
-        /// The type of the file search tool call. Always `file_search_call`.
+        /// <param name="queries">
+        /// The queries used to search for files.
         /// </param>
+        /// <param name="results"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FileSearchToolCall(
             string id,
-            global::System.Collections.Generic.IList<string> queries,
             global::tryAGI.OpenAI.FileSearchToolCallStatus status,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FileSearchToolCallResult>? results,
-            global::tryAGI.OpenAI.FileSearchToolCallType type)
+            global::System.Collections.Generic.IList<string> queries,
+            global::tryAGI.OpenAI.FileSearchToolCallType type,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FileSearchToolCallResultsVariant1Item>? results)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Queries = queries ?? throw new global::System.ArgumentNullException(nameof(queries));
             this.Status = status;
-            this.Results = results;
+            this.Queries = queries ?? throw new global::System.ArgumentNullException(nameof(queries));
             this.Type = type;
+            this.Results = results;
         }
 
         /// <summary>

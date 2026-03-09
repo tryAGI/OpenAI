@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI
     /// `thread.message.in_progress` event, many `thread.message.delta` events, and finally a<br/>
     /// `thread.message.completed` event.<br/>
     /// We may add additional events over time, so we recommend handling unknown events gracefully<br/>
-    /// in your code. See the [Assistants API quickstart](https://platform.openai.com/docs/assistants/overview) to learn how to<br/>
+    /// in your code. See the [Assistants API quickstart](/docs/assistants/overview) to learn how to<br/>
     /// integrate the Assistants API with streaming.
     /// </summary>
     public readonly partial struct AssistantStreamEvent : global::System.IEquatable<AssistantStreamEvent>
@@ -43,6 +43,90 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RunStreamEvent? Run { get; init; }
+#else
+        public global::tryAGI.OpenAI.RunStreamEvent? Run { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Run))]
+#endif
+        public bool IsRun => Run != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.RunStepStreamEvent? RunStep { get; init; }
+#else
+        public global::tryAGI.OpenAI.RunStepStreamEvent? RunStep { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStep))]
+#endif
+        public bool IsRunStep => RunStep != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.MessageStreamEvent? Message { get; init; }
+#else
+        public global::tryAGI.OpenAI.MessageStreamEvent? Message { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Message))]
+#endif
+        public bool IsMessage => Message != null;
+
+        /// <summary>
+        /// Occurs when an [error](/docs/guides/error-codes#api-errors) occurs. This can happen due to an internal server error or a timeout.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ErrorEvent? Error { get; init; }
+#else
+        public global::tryAGI.OpenAI.ErrorEvent? Error { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
+#endif
+        public bool IsError => Error != null;
+
+        /// <summary>
+        /// Occurs when a stream ends.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.DoneEvent? Done { get; init; }
+#else
+        public global::tryAGI.OpenAI.DoneEvent? Done { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Done))]
+#endif
+        public bool IsDone => Done != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AssistantStreamEvent(global::tryAGI.OpenAI.ThreadStreamEvent value) => new AssistantStreamEvent((global::tryAGI.OpenAI.ThreadStreamEvent?)value);
 
         /// <summary>
@@ -57,23 +141,6 @@ namespace tryAGI.OpenAI
         {
             Thread = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RunStreamEvent? Run { get; init; }
-#else
-        public global::tryAGI.OpenAI.RunStreamEvent? Run { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Run))]
-#endif
-        public bool IsRun => Run != null;
 
         /// <summary>
         /// 
@@ -96,23 +163,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RunStepStreamEvent? RunStep { get; init; }
-#else
-        public global::tryAGI.OpenAI.RunStepStreamEvent? RunStep { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStep))]
-#endif
-        public bool IsRunStep => RunStep != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator AssistantStreamEvent(global::tryAGI.OpenAI.RunStepStreamEvent value) => new AssistantStreamEvent((global::tryAGI.OpenAI.RunStepStreamEvent?)value);
 
         /// <summary>
@@ -131,23 +181,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.MessageStreamEvent? Message { get; init; }
-#else
-        public global::tryAGI.OpenAI.MessageStreamEvent? Message { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Message))]
-#endif
-        public bool IsMessage => Message != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator AssistantStreamEvent(global::tryAGI.OpenAI.MessageStreamEvent value) => new AssistantStreamEvent((global::tryAGI.OpenAI.MessageStreamEvent?)value);
 
         /// <summary>
@@ -162,23 +195,6 @@ namespace tryAGI.OpenAI
         {
             Message = value;
         }
-
-        /// <summary>
-        /// Occurs when an [error](https://platform.openai.com/docs/guides/error-codes#api-errors) occurs. This can happen due to an internal server error or a timeout.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ErrorEvent? Error { get; init; }
-#else
-        public global::tryAGI.OpenAI.ErrorEvent? Error { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
-#endif
-        public bool IsError => Error != null;
 
         /// <summary>
         /// 
@@ -201,12 +217,31 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator AssistantStreamEvent(global::tryAGI.OpenAI.DoneEvent value) => new AssistantStreamEvent((global::tryAGI.OpenAI.DoneEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.DoneEvent?(AssistantStreamEvent @this) => @this.Done;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public AssistantStreamEvent(global::tryAGI.OpenAI.DoneEvent? value)
+        {
+            Done = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public AssistantStreamEvent(
             global::tryAGI.OpenAI.ThreadStreamEvent? thread,
             global::tryAGI.OpenAI.RunStreamEvent? run,
             global::tryAGI.OpenAI.RunStepStreamEvent? runStep,
             global::tryAGI.OpenAI.MessageStreamEvent? message,
-            global::tryAGI.OpenAI.ErrorEvent? error
+            global::tryAGI.OpenAI.ErrorEvent? error,
+            global::tryAGI.OpenAI.DoneEvent? done
             )
         {
             Thread = thread;
@@ -214,12 +249,14 @@ namespace tryAGI.OpenAI
             RunStep = runStep;
             Message = message;
             Error = error;
+            Done = done;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            Done as object ??
             Error as object ??
             Message as object ??
             RunStep as object ??
@@ -235,7 +272,8 @@ namespace tryAGI.OpenAI
             Run?.ToString() ??
             RunStep?.ToString() ??
             Message?.ToString() ??
-            Error?.ToString() 
+            Error?.ToString() ??
+            Done?.ToString() 
             ;
 
         /// <summary>
@@ -243,7 +281,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsThread || IsRun || IsRunStep || IsMessage || IsError;
+            return IsThread && !IsRun && !IsRunStep && !IsMessage && !IsError && !IsDone || !IsThread && IsRun && !IsRunStep && !IsMessage && !IsError && !IsDone || !IsThread && !IsRun && IsRunStep && !IsMessage && !IsError && !IsDone || !IsThread && !IsRun && !IsRunStep && IsMessage && !IsError && !IsDone || !IsThread && !IsRun && !IsRunStep && !IsMessage && IsError && !IsDone || !IsThread && !IsRun && !IsRunStep && !IsMessage && !IsError && IsDone;
         }
 
         /// <summary>
@@ -255,6 +293,7 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.RunStepStreamEvent?, TResult>? runStep = null,
             global::System.Func<global::tryAGI.OpenAI.MessageStreamEvent?, TResult>? message = null,
             global::System.Func<global::tryAGI.OpenAI.ErrorEvent?, TResult>? error = null,
+            global::System.Func<global::tryAGI.OpenAI.DoneEvent?, TResult>? done = null,
             bool validate = true)
         {
             if (validate)
@@ -282,6 +321,10 @@ namespace tryAGI.OpenAI
             {
                 return error(Error!);
             }
+            else if (IsDone && done != null)
+            {
+                return done(Done!);
+            }
 
             return default(TResult);
         }
@@ -295,6 +338,7 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.RunStepStreamEvent?>? runStep = null,
             global::System.Action<global::tryAGI.OpenAI.MessageStreamEvent?>? message = null,
             global::System.Action<global::tryAGI.OpenAI.ErrorEvent?>? error = null,
+            global::System.Action<global::tryAGI.OpenAI.DoneEvent?>? done = null,
             bool validate = true)
         {
             if (validate)
@@ -322,6 +366,10 @@ namespace tryAGI.OpenAI
             {
                 error?.Invoke(Error!);
             }
+            else if (IsDone)
+            {
+                done?.Invoke(Done!);
+            }
         }
 
         /// <summary>
@@ -341,6 +389,8 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.MessageStreamEvent),
                 Error,
                 typeof(global::tryAGI.OpenAI.ErrorEvent),
+                Done,
+                typeof(global::tryAGI.OpenAI.DoneEvent),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -361,7 +411,8 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RunStreamEvent?>.Default.Equals(Run, other.Run) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RunStepStreamEvent?>.Default.Equals(RunStep, other.RunStep) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.MessageStreamEvent?>.Default.Equals(Message, other.Message) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ErrorEvent?>.Default.Equals(Error, other.Error) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ErrorEvent?>.Default.Equals(Error, other.Error) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.DoneEvent?>.Default.Equals(Done, other.Done) 
                 ;
         }
 

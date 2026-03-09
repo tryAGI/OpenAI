@@ -5,7 +5,6 @@ namespace tryAGI.OpenAI
     public partial interface IResponsesClient
     {
         /// <summary>
-        /// Get a model response<br/>
         /// Retrieves a model response with the given ID.
         /// </summary>
         /// <param name="responseId">
@@ -19,7 +18,7 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Response> GetResponseAsync(
             string responseId,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include = default,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.IncludeEnum>? include = default,
             bool? stream = default,
             int? startingAfter = default,
             bool? includeObfuscation = default,

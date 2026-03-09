@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -9,12 +11,6 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateTranscriptionResponseJson
     {
         /// <summary>
-        /// The log probabilities of the tokens in the transcription. Only returned with the models `gpt-4o-transcribe` and `gpt-4o-mini-transcribe` if `logprobs` is added to the `include` array.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateTranscriptionResponseJsonLogprob>? Logprobs { get; set; }
-
-        /// <summary>
         /// The transcribed text.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
@@ -22,11 +18,17 @@ namespace tryAGI.OpenAI
         public required string Text { get; set; }
 
         /// <summary>
+        /// The log probabilities of the tokens in the transcription. Only returned with the models `gpt-4o-transcribe` and `gpt-4o-mini-transcribe` if `logprobs` is added to the `include` array.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateTranscriptionResponseJsonLogprob>? Logprobs { get; set; }
+
+        /// <summary>
         /// Token usage statistics for the request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateTranscriptionResponseJsonUsageJsonConverter))]
-        public global::tryAGI.OpenAI.CreateTranscriptionResponseJsonUsage? Usage { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.TranscriptTextUsageTokens, global::tryAGI.OpenAI.TranscriptTextUsageDuration>))]
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.TranscriptTextUsageTokens, global::tryAGI.OpenAI.TranscriptTextUsageDuration>? Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,11 +39,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateTranscriptionResponseJson" /> class.
         /// </summary>
-        /// <param name="logprobs">
-        /// The log probabilities of the tokens in the transcription. Only returned with the models `gpt-4o-transcribe` and `gpt-4o-mini-transcribe` if `logprobs` is added to the `include` array.
-        /// </param>
         /// <param name="text">
         /// The transcribed text.
+        /// </param>
+        /// <param name="logprobs">
+        /// The log probabilities of the tokens in the transcription. Only returned with the models `gpt-4o-transcribe` and `gpt-4o-mini-transcribe` if `logprobs` is added to the `include` array.
         /// </param>
         /// <param name="usage">
         /// Token usage statistics for the request.
@@ -52,7 +54,7 @@ namespace tryAGI.OpenAI
         public CreateTranscriptionResponseJson(
             string text,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateTranscriptionResponseJsonLogprob>? logprobs,
-            global::tryAGI.OpenAI.CreateTranscriptionResponseJsonUsage? usage)
+            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.TranscriptTextUsageTokens, global::tryAGI.OpenAI.TranscriptTextUsageDuration>? usage)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Logprobs = logprobs;

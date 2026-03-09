@@ -9,11 +9,18 @@ namespace tryAGI.OpenAI
     public sealed partial class ContainerFileResource
     {
         /// <summary>
-        /// Size of the file in bytes.
+        /// Unique identifier for the file.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Bytes { get; set; }
+        public required string Id { get; set; }
+
+        /// <summary>
+        /// The type of this object (`container.file`).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Object { get; set; }
 
         /// <summary>
         /// The container this file belongs to.
@@ -31,18 +38,11 @@ namespace tryAGI.OpenAI
         public required global::System.DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
-        /// Unique identifier for the file.
+        /// Size of the file in bytes.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
-
-        /// <summary>
-        /// The type of this object (`container.file`).
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ContainerFileResourceObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ContainerFileResourceObject Object { get; set; }
+        public required int Bytes { get; set; }
 
         /// <summary>
         /// Path of the file in the container.
@@ -67,8 +67,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ContainerFileResource" /> class.
         /// </summary>
-        /// <param name="bytes">
-        /// Size of the file in bytes.
+        /// <param name="id">
+        /// Unique identifier for the file.
+        /// </param>
+        /// <param name="object">
+        /// The type of this object (`container.file`).
         /// </param>
         /// <param name="containerId">
         /// The container this file belongs to.
@@ -76,11 +79,8 @@ namespace tryAGI.OpenAI
         /// <param name="createdAt">
         /// Unix timestamp (in seconds) when the file was created.
         /// </param>
-        /// <param name="id">
-        /// Unique identifier for the file.
-        /// </param>
-        /// <param name="object">
-        /// The type of this object (`container.file`).
+        /// <param name="bytes">
+        /// Size of the file in bytes.
         /// </param>
         /// <param name="path">
         /// Path of the file in the container.
@@ -92,21 +92,21 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ContainerFileResource(
-            int bytes,
+            string id,
+            string @object,
             string containerId,
             global::System.DateTimeOffset createdAt,
-            string id,
+            int bytes,
             string path,
-            string source,
-            global::tryAGI.OpenAI.ContainerFileResourceObject @object)
+            string source)
         {
-            this.Bytes = bytes;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object ?? throw new global::System.ArgumentNullException(nameof(@object));
             this.ContainerId = containerId ?? throw new global::System.ArgumentNullException(nameof(containerId));
             this.CreatedAt = createdAt;
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Bytes = bytes;
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
             this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
-            this.Object = @object;
         }
 
         /// <summary>

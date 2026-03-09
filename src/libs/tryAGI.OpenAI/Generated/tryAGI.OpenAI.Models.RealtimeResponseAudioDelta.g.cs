@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Returned when the model-generated audio is updated.
+    /// Returned when the model-generated audio is updated.<br/>
+    /// Example: {"event_id":"event_4950","type":"response.audio.delta","response_id":"resp_001","item_id":"msg_008","output_index":0,"content_index":0,"delta":"Base64EncodedAudioDelta"}
     /// </summary>
     public sealed partial class RealtimeResponseAudioDelta
     {

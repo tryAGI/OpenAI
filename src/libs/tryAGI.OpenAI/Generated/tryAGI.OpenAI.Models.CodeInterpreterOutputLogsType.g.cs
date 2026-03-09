@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The type of the output. Always 'logs'.<br/>
+    /// The type of the output. Always `logs`.<br/>
     /// Default Value: logs
     /// </summary>
     public enum CodeInterpreterOutputLogsType

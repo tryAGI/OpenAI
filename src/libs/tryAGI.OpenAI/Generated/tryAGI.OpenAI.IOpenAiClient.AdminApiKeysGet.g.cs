@@ -5,8 +5,8 @@ namespace tryAGI.OpenAI
     public partial interface IOpenAiClient
     {
         /// <summary>
-        /// Retrieve admin API key<br/>
-        /// Retrieve a single organization API key
+        /// Retrieve a single organization API key<br/>
+        /// Get details for a specific organization API key by its ID.
         /// </summary>
         /// <param name="keyId">
         /// The ID of the API key.

@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Returned when a content part is done streaming in an assistant message item. Also emitted when a Response is interrupted, incomplete, or cancelled.
+    /// Returned when a content part is done streaming in an assistant message item. Also emitted when a Response is interrupted, incomplete, or cancelled.<br/>
+    /// Example: {"event_id":"event_3940","type":"response.content_part.done","response_id":"resp_001","item_id":"msg_007","output_index":0,"content_index":0,"part":{"type":"text","text":"Sure, I can help with that."}}
     /// </summary>
     public sealed partial class RealtimeResponseContentPartDone
     {

@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The endpoint to be used for all requests in the batch. Currently `/v1/responses`, `/v1/chat/completions`, `/v1/embeddings`, and `/v1/completions` are supported. Note that `/v1/embeddings` batches are also restricted to a maximum of 50,000 embedding inputs across all requests in the batch.
+    /// The endpoint to be used for all requests in the batch. Currently `/v1/responses`, `/v1/chat/completions`, `/v1/embeddings`, `/v1/completions`, `/v1/moderations`, `/v1/images/generations`, and `/v1/images/edits` are supported. Note that `/v1/embeddings` batches are also restricted to a maximum of 50,000 embedding inputs across all requests in the batch.
     /// </summary>
     public enum CreateBatchRequestEndpoint
     {
@@ -24,6 +24,18 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         V1Completions,
+        /// <summary>
+        /// 
+        /// </summary>
+        V1Moderations,
+        /// <summary>
+        /// 
+        /// </summary>
+        V1ImagesGenerations,
+        /// <summary>
+        /// 
+        /// </summary>
+        V1ImagesEdits,
     }
 
     /// <summary>
@@ -42,6 +54,9 @@ namespace tryAGI.OpenAI
                 CreateBatchRequestEndpoint.V1ChatCompletions => "/v1/chat/completions",
                 CreateBatchRequestEndpoint.V1Embeddings => "/v1/embeddings",
                 CreateBatchRequestEndpoint.V1Completions => "/v1/completions",
+                CreateBatchRequestEndpoint.V1Moderations => "/v1/moderations",
+                CreateBatchRequestEndpoint.V1ImagesGenerations => "/v1/images/generations",
+                CreateBatchRequestEndpoint.V1ImagesEdits => "/v1/images/edits",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -56,6 +71,9 @@ namespace tryAGI.OpenAI
                 "/v1/chat/completions" => CreateBatchRequestEndpoint.V1ChatCompletions,
                 "/v1/embeddings" => CreateBatchRequestEndpoint.V1Embeddings,
                 "/v1/completions" => CreateBatchRequestEndpoint.V1Completions,
+                "/v1/moderations" => CreateBatchRequestEndpoint.V1Moderations,
+                "/v1/images/generations" => CreateBatchRequestEndpoint.V1ImagesGenerations,
+                "/v1/images/edits" => CreateBatchRequestEndpoint.V1ImagesEdits,
                 _ => null,
             };
         }

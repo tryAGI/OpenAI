@@ -5,7 +5,6 @@ namespace tryAGI.OpenAI
     public partial interface IUsersClient
     {
         /// <summary>
-        /// Modify user<br/>
         /// Modifies a user's role in the organization.
         /// </summary>
         /// <param name="userId"></param>
@@ -14,11 +13,11 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.User> ModifyUserAsync(
             string userId,
+
             global::tryAGI.OpenAI.UserRoleUpdateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Modify user<br/>
         /// Modifies a user's role in the organization.
         /// </summary>
         /// <param name="userId"></param>

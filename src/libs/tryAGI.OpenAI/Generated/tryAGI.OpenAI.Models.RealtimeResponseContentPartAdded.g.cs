@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Returned when a new content part is added to an assistant message item during response generation.
+    /// Returned when a new content part is added to an assistant message item during response generation.<br/>
+    /// Example: {"event_id":"event_3738","type":"response.content_part.added","response_id":"resp_001","item_id":"msg_007","output_index":0,"content_index":0,"part":{"type":"text","text":""}}
     /// </summary>
     public sealed partial class RealtimeResponseContentPartAdded
     {

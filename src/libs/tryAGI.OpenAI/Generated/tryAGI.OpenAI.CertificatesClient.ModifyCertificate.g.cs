@@ -24,7 +24,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Modify certificate<br/>
         /// Modify a certificate. Note that only the name can be modified.
         /// </summary>
         /// <param name="certificateId"></param>
@@ -33,6 +32,7 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Certificate> ModifyCertificateAsync(
             string certificateId,
+
             global::tryAGI.OpenAI.ModifyCertificateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -173,7 +173,6 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Modify certificate<br/>
         /// Modify a certificate. Note that only the name can be modified.
         /// </summary>
         /// <param name="certificateId"></param>

@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The type of the output. Always 'image'.<br/>
+    /// The type of the output. Always `image`.<br/>
     /// Default Value: image
     /// </summary>
     public enum CodeInterpreterOutputImageType

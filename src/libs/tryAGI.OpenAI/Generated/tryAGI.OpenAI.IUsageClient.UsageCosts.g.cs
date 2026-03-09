@@ -5,7 +5,6 @@ namespace tryAGI.OpenAI
     public partial interface IUsageClient
     {
         /// <summary>
-        /// Costs<br/>
         /// Get costs details for the organization.
         /// </summary>
         /// <param name="startTime"></param>

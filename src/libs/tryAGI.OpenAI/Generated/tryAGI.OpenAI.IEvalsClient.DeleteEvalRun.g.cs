@@ -5,7 +5,6 @@ namespace tryAGI.OpenAI
     public partial interface IEvalsClient
     {
         /// <summary>
-        /// Delete eval run<br/>
         /// Delete an eval run.
         /// </summary>
         /// <param name="evalId"></param>

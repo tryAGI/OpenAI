@@ -5,10 +5,17 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// JSON Schema response format. Used to generate structured JSON responses.<br/>
-    /// Learn more about [Structured Outputs](https://platform.openai.com/docs/guides/structured-outputs).
+    /// Learn more about [Structured Outputs](/docs/guides/structured-outputs).
     /// </summary>
     public sealed partial class TextResponseFormatJsonSchema
     {
+        /// <summary>
+        /// The type of response format being defined. Always `json_schema`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.TextResponseFormatJsonSchemaTypeJsonConverter))]
+        public global::tryAGI.OpenAI.TextResponseFormatJsonSchemaType Type { get; set; }
+
         /// <summary>
         /// A description of what the response format is for, used by the model to<br/>
         /// determine how to respond in the format.
@@ -33,22 +40,10 @@ namespace tryAGI.OpenAI
         public required object Schema { get; set; }
 
         /// <summary>
-        /// Whether to enable strict schema adherence when generating the output.<br/>
-        /// If set to true, the model will always follow the exact schema defined<br/>
-        /// in the `schema` field. Only a subset of JSON Schema is supported when<br/>
-        /// `strict` is `true`. To learn more, read the [Structured Outputs<br/>
-        /// guide](https://platform.openai.com/docs/guides/structured-outputs).<br/>
-        /// Default Value: false
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("strict")]
         public bool? Strict { get; set; }
-
-        /// <summary>
-        /// The type of response format being defined. Always `json_schema`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.TextResponseFormatJsonSchemaTypeJsonConverter))]
-        public global::tryAGI.OpenAI.TextResponseFormatJsonSchemaType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -59,6 +54,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="TextResponseFormatJsonSchema" /> class.
         /// </summary>
+        /// <param name="type">
+        /// The type of response format being defined. Always `json_schema`.
+        /// </param>
         /// <param name="description">
         /// A description of what the response format is for, used by the model to<br/>
         /// determine how to respond in the format.
@@ -71,32 +69,22 @@ namespace tryAGI.OpenAI
         /// The schema for the response format, described as a JSON Schema object.<br/>
         /// Learn how to build JSON schemas [here](https://json-schema.org/).
         /// </param>
-        /// <param name="strict">
-        /// Whether to enable strict schema adherence when generating the output.<br/>
-        /// If set to true, the model will always follow the exact schema defined<br/>
-        /// in the `schema` field. Only a subset of JSON Schema is supported when<br/>
-        /// `strict` is `true`. To learn more, read the [Structured Outputs<br/>
-        /// guide](https://platform.openai.com/docs/guides/structured-outputs).<br/>
-        /// Default Value: false
-        /// </param>
-        /// <param name="type">
-        /// The type of response format being defined. Always `json_schema`.
-        /// </param>
+        /// <param name="strict"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TextResponseFormatJsonSchema(
             string name,
             object schema,
+            global::tryAGI.OpenAI.TextResponseFormatJsonSchemaType type,
             string? description,
-            bool? strict,
-            global::tryAGI.OpenAI.TextResponseFormatJsonSchemaType type)
+            bool? strict)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Schema = schema ?? throw new global::System.ArgumentNullException(nameof(schema));
+            this.Type = type;
             this.Description = description;
             this.Strict = strict;
-            this.Type = type;
         }
 
         /// <summary>

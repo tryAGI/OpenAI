@@ -9,18 +9,18 @@ namespace tryAGI.OpenAI
     public sealed partial class ToolChoiceCustom
     {
         /// <summary>
-        /// The name of the custom tool to call.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
-
-        /// <summary>
         /// For custom tool calling, the type is always `custom`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ToolChoiceCustomTypeJsonConverter))]
         public global::tryAGI.OpenAI.ToolChoiceCustomType Type { get; set; }
+
+        /// <summary>
+        /// The name of the custom tool to call.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,11 +31,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolChoiceCustom" /> class.
         /// </summary>
-        /// <param name="name">
-        /// The name of the custom tool to call.
-        /// </param>
         /// <param name="type">
         /// For custom tool calling, the type is always `custom`.
+        /// </param>
+        /// <param name="name">
+        /// The name of the custom tool to call.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

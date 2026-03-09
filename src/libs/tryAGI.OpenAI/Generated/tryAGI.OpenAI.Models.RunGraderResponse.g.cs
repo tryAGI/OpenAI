@@ -11,20 +11,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.RunGraderResponseMetadata Metadata { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("model_grader_token_usage_per_model")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object ModelGraderTokenUsagePerModel { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reward")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Reward { get; set; }
@@ -32,9 +18,23 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.RunGraderResponseMetadata Metadata { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sub_rewards")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required object SubRewards { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("model_grader_token_usage_per_model")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required object ModelGraderTokenUsagePerModel { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,23 +45,23 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RunGraderResponse" /> class.
         /// </summary>
-        /// <param name="metadata"></param>
-        /// <param name="modelGraderTokenUsagePerModel"></param>
         /// <param name="reward"></param>
+        /// <param name="metadata"></param>
         /// <param name="subRewards"></param>
+        /// <param name="modelGraderTokenUsagePerModel"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RunGraderResponse(
-            global::tryAGI.OpenAI.RunGraderResponseMetadata metadata,
-            object modelGraderTokenUsagePerModel,
             double reward,
-            object subRewards)
+            global::tryAGI.OpenAI.RunGraderResponseMetadata metadata,
+            object subRewards,
+            object modelGraderTokenUsagePerModel)
         {
-            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
-            this.ModelGraderTokenUsagePerModel = modelGraderTokenUsagePerModel ?? throw new global::System.ArgumentNullException(nameof(modelGraderTokenUsagePerModel));
             this.Reward = reward;
+            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.SubRewards = subRewards ?? throw new global::System.ArgumentNullException(nameof(subRewards));
+            this.ModelGraderTokenUsagePerModel = modelGraderTokenUsagePerModel ?? throw new global::System.ArgumentNullException(nameof(modelGraderTokenUsagePerModel));
         }
 
         /// <summary>

@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// A JSON schema object describing the parameters of the function.
+    /// 
     /// </summary>
     public sealed partial class FunctionToolParameters
     {

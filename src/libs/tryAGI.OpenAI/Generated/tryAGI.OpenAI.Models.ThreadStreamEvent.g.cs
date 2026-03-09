@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct ThreadStreamEvent : global::System.IEquatable<ThreadStreamEvent>
     {
         /// <summary>
-        /// Occurs when a new [thread](https://platform.openai.com/docs/api-reference/threads/object) is created.
+        /// Occurs when a new [thread](/docs/api-reference/threads/object) is created.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ThreadStreamEventVariant1? Value1 { get; init; }
@@ -25,7 +25,6 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
 #endif
         public bool IsValue1 => Value1 != null;
-
         /// <summary>
         /// 
         /// </summary>

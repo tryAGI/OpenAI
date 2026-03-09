@@ -9,12 +9,11 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseOutputItemAddedEvent
     {
         /// <summary>
-        /// 
+        /// The type of the event. Always `response.output_item.added`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("item")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OutputItemJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.OutputItem Item { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseOutputItemAddedEventTypeJsonConverter))]
+        public global::tryAGI.OpenAI.ResponseOutputItemAddedEventType Type { get; set; }
 
         /// <summary>
         /// The index of the output item that was added.
@@ -31,11 +30,12 @@ namespace tryAGI.OpenAI
         public required int SequenceNumber { get; set; }
 
         /// <summary>
-        /// The type of the event. Always `response.output_item.added`.
+        /// The output item that was added.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseOutputItemAddedEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseOutputItemAddedEventType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("item")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OutputItemJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.OutputItem Item { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,28 +46,30 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseOutputItemAddedEvent" /> class.
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="type">
+        /// The type of the event. Always `response.output_item.added`.
+        /// </param>
         /// <param name="outputIndex">
         /// The index of the output item that was added.
         /// </param>
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
         /// </param>
-        /// <param name="type">
-        /// The type of the event. Always `response.output_item.added`.
+        /// <param name="item">
+        /// The output item that was added.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseOutputItemAddedEvent(
-            global::tryAGI.OpenAI.OutputItem item,
             int outputIndex,
             int sequenceNumber,
+            global::tryAGI.OpenAI.OutputItem item,
             global::tryAGI.OpenAI.ResponseOutputItemAddedEventType type)
         {
-            this.Item = item;
             this.OutputIndex = outputIndex;
             this.SequenceNumber = sequenceNumber;
+            this.Item = item;
             this.Type = type;
         }
 

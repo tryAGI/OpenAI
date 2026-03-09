@@ -6,7 +6,7 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// Identifier for service connectors, like those available in ChatGPT. One of<br/>
     /// `server_url` or `connector_id` must be provided. Learn more about service<br/>
-    /// connectors [here](https://platform.openai.com/docs/guides/tools-remote-mcp#connectors).<br/>
+    /// connectors [here](/docs/guides/tools-remote-mcp#connectors).<br/>
     /// Currently supported `connector_id` values are:<br/>
     /// - Dropbox: `connector_dropbox`<br/>
     /// - Gmail: `connector_gmail`<br/>

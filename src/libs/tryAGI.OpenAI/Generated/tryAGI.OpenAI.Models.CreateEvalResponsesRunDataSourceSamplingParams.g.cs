@@ -9,29 +9,10 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateEvalResponsesRunDataSourceSamplingParams
     {
         /// <summary>
-        /// The maximum number of tokens in the generated output.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("max_completion_tokens")]
-        public int? MaxCompletionTokens { get; set; }
-
-        /// <summary>
-        /// Constrains effort on reasoning for<br/>
-        /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
-        /// Currently supported values are `minimal`, `low`, `medium`, and `high`. Reducing<br/>
-        /// reasoning effort can result in faster responses and fewer tokens used<br/>
-        /// on reasoning in a response.<br/>
-        /// Default Value: medium
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reasoning_effort")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ReasoningEffortJsonConverter))]
-        public global::tryAGI.OpenAI.ReasoningEffort? ReasoningEffort { get; set; }
-
-        /// <summary>
-        /// A seed value to initialize the randomness, during sampling.<br/>
-        /// Default Value: 42
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
-        public int? Seed { get; set; }
+        public global::tryAGI.OpenAI.ReasoningEffortEnum? ReasoningEffort { get; set; }
 
         /// <summary>
         /// A higher temperature increases randomness in the outputs.<br/>
@@ -41,28 +22,10 @@ namespace tryAGI.OpenAI
         public double? Temperature { get; set; }
 
         /// <summary>
-        /// Configuration options for a text response from the model. Can be plain<br/>
-        /// text or structured JSON data. Learn more:<br/>
-        /// - [Text inputs and outputs](https://platform.openai.com/docs/guides/text)<br/>
-        /// - [Structured Outputs](https://platform.openai.com/docs/guides/structured-outputs)
+        /// The maximum number of tokens in the generated output.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        public global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceSamplingParamsText? Text { get; set; }
-
-        /// <summary>
-        /// An array of tools the model may call while generating a response. You<br/>
-        /// can specify which tool to use by setting the `tool_choice` parameter.<br/>
-        /// The two categories of tools you can provide the model are:<br/>
-        /// - **Built-in tools**: Tools that are provided by OpenAI that extend the<br/>
-        ///   model's capabilities, like [web search](https://platform.openai.com/docs/guides/tools-web-search)<br/>
-        ///   or [file search](https://platform.openai.com/docs/guides/tools-file-search). Learn more about<br/>
-        ///   [built-in tools](https://platform.openai.com/docs/guides/tools).<br/>
-        /// - **Function calls (custom tools)**: Functions that are defined by you,<br/>
-        ///   enabling the model to call your own code. Learn more about<br/>
-        ///   [function calling](https://platform.openai.com/docs/guides/function-calling).
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Tool>? Tools { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_completion_tokens")]
+        public int? MaxCompletionTokens { get; set; }
 
         /// <summary>
         /// An alternative to temperature for nucleus sampling; 1.0 includes all tokens.<br/>
@@ -70,6 +33,37 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_p")]
         public double? TopP { get; set; }
+
+        /// <summary>
+        /// A seed value to initialize the randomness, during sampling.<br/>
+        /// Default Value: 42
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
+        public int? Seed { get; set; }
+
+        /// <summary>
+        /// An array of tools the model may call while generating a response. You<br/>
+        /// can specify which tool to use by setting the `tool_choice` parameter.<br/>
+        /// The two categories of tools you can provide the model are:<br/>
+        /// - **Built-in tools**: Tools that are provided by OpenAI that extend the<br/>
+        ///   model's capabilities, like [web search](/docs/guides/tools-web-search)<br/>
+        ///   or [file search](/docs/guides/tools-file-search). Learn more about<br/>
+        ///   [built-in tools](/docs/guides/tools).<br/>
+        /// - **Function calls (custom tools)**: Functions that are defined by you,<br/>
+        ///   enabling the model to call your own code. Learn more about<br/>
+        ///   [function calling](/docs/guides/function-calling).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Tool>? Tools { get; set; }
+
+        /// <summary>
+        /// Configuration options for a text response from the model. Can be plain<br/>
+        /// text or structured JSON data. Learn more:<br/>
+        /// - [Text inputs and outputs](/docs/guides/text)<br/>
+        /// - [Structured Outputs](/docs/guides/structured-outputs)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
+        public global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceSamplingParamsText? Text { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -80,66 +74,59 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateEvalResponsesRunDataSourceSamplingParams" /> class.
         /// </summary>
-        /// <param name="maxCompletionTokens">
-        /// The maximum number of tokens in the generated output.
-        /// </param>
-        /// <param name="reasoningEffort">
-        /// Constrains effort on reasoning for<br/>
-        /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
-        /// Currently supported values are `minimal`, `low`, `medium`, and `high`. Reducing<br/>
-        /// reasoning effort can result in faster responses and fewer tokens used<br/>
-        /// on reasoning in a response.<br/>
-        /// Default Value: medium
-        /// </param>
-        /// <param name="seed">
-        /// A seed value to initialize the randomness, during sampling.<br/>
-        /// Default Value: 42
-        /// </param>
+        /// <param name="reasoningEffort"></param>
         /// <param name="temperature">
         /// A higher temperature increases randomness in the outputs.<br/>
         /// Default Value: 1
         /// </param>
-        /// <param name="text">
-        /// Configuration options for a text response from the model. Can be plain<br/>
-        /// text or structured JSON data. Learn more:<br/>
-        /// - [Text inputs and outputs](https://platform.openai.com/docs/guides/text)<br/>
-        /// - [Structured Outputs](https://platform.openai.com/docs/guides/structured-outputs)
+        /// <param name="maxCompletionTokens">
+        /// The maximum number of tokens in the generated output.
+        /// </param>
+        /// <param name="topP">
+        /// An alternative to temperature for nucleus sampling; 1.0 includes all tokens.<br/>
+        /// Default Value: 1
+        /// </param>
+        /// <param name="seed">
+        /// A seed value to initialize the randomness, during sampling.<br/>
+        /// Default Value: 42
         /// </param>
         /// <param name="tools">
         /// An array of tools the model may call while generating a response. You<br/>
         /// can specify which tool to use by setting the `tool_choice` parameter.<br/>
         /// The two categories of tools you can provide the model are:<br/>
         /// - **Built-in tools**: Tools that are provided by OpenAI that extend the<br/>
-        ///   model's capabilities, like [web search](https://platform.openai.com/docs/guides/tools-web-search)<br/>
-        ///   or [file search](https://platform.openai.com/docs/guides/tools-file-search). Learn more about<br/>
-        ///   [built-in tools](https://platform.openai.com/docs/guides/tools).<br/>
+        ///   model's capabilities, like [web search](/docs/guides/tools-web-search)<br/>
+        ///   or [file search](/docs/guides/tools-file-search). Learn more about<br/>
+        ///   [built-in tools](/docs/guides/tools).<br/>
         /// - **Function calls (custom tools)**: Functions that are defined by you,<br/>
         ///   enabling the model to call your own code. Learn more about<br/>
-        ///   [function calling](https://platform.openai.com/docs/guides/function-calling).
+        ///   [function calling](/docs/guides/function-calling).
         /// </param>
-        /// <param name="topP">
-        /// An alternative to temperature for nucleus sampling; 1.0 includes all tokens.<br/>
-        /// Default Value: 1
+        /// <param name="text">
+        /// Configuration options for a text response from the model. Can be plain<br/>
+        /// text or structured JSON data. Learn more:<br/>
+        /// - [Text inputs and outputs](/docs/guides/text)<br/>
+        /// - [Structured Outputs](/docs/guides/structured-outputs)
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateEvalResponsesRunDataSourceSamplingParams(
-            int? maxCompletionTokens,
-            global::tryAGI.OpenAI.ReasoningEffort? reasoningEffort,
-            int? seed,
+            global::tryAGI.OpenAI.ReasoningEffortEnum? reasoningEffort,
             double? temperature,
-            global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceSamplingParamsText? text,
+            int? maxCompletionTokens,
+            double? topP,
+            int? seed,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Tool>? tools,
-            double? topP)
+            global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceSamplingParamsText? text)
         {
-            this.MaxCompletionTokens = maxCompletionTokens;
             this.ReasoningEffort = reasoningEffort;
-            this.Seed = seed;
             this.Temperature = temperature;
-            this.Text = text;
-            this.Tools = tools;
+            this.MaxCompletionTokens = maxCompletionTokens;
             this.TopP = topP;
+            this.Seed = seed;
+            this.Tools = tools;
+            this.Text = text;
         }
 
         /// <summary>

@@ -26,7 +26,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// List fine-tuning jobs<br/>
         /// List your organization's fine-tuning jobs
         /// </summary>
         /// <param name="after"></param>
@@ -53,9 +52,9 @@ namespace tryAGI.OpenAI
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: "/fine_tuning/jobs",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("after", after) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("after", after)
+                .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("metadata", metadata?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

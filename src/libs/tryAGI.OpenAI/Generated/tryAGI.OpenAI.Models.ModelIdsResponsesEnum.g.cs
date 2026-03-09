@@ -48,6 +48,22 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         ComputerUsePreview20250311,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt5Codex,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt5Pro,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt5Pro20251006,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt51CodexMax,
     }
 
     /// <summary>
@@ -72,6 +88,10 @@ namespace tryAGI.OpenAI
                 ModelIdsResponsesEnum.O4MiniDeepResearch20250626 => "o4-mini-deep-research-2025-06-26",
                 ModelIdsResponsesEnum.ComputerUsePreview => "computer-use-preview",
                 ModelIdsResponsesEnum.ComputerUsePreview20250311 => "computer-use-preview-2025-03-11",
+                ModelIdsResponsesEnum.Gpt5Codex => "gpt-5-codex",
+                ModelIdsResponsesEnum.Gpt5Pro => "gpt-5-pro",
+                ModelIdsResponsesEnum.Gpt5Pro20251006 => "gpt-5-pro-2025-10-06",
+                ModelIdsResponsesEnum.Gpt51CodexMax => "gpt-5.1-codex-max",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -92,6 +112,10 @@ namespace tryAGI.OpenAI
                 "o4-mini-deep-research-2025-06-26" => ModelIdsResponsesEnum.O4MiniDeepResearch20250626,
                 "computer-use-preview" => ModelIdsResponsesEnum.ComputerUsePreview,
                 "computer-use-preview-2025-03-11" => ModelIdsResponsesEnum.ComputerUsePreview20250311,
+                "gpt-5-codex" => ModelIdsResponsesEnum.Gpt5Codex,
+                "gpt-5-pro" => ModelIdsResponsesEnum.Gpt5Pro,
+                "gpt-5-pro-2025-10-06" => ModelIdsResponsesEnum.Gpt5Pro20251006,
+                "gpt-5.1-codex-max" => ModelIdsResponsesEnum.Gpt51CodexMax,
                 _ => null,
             };
         }

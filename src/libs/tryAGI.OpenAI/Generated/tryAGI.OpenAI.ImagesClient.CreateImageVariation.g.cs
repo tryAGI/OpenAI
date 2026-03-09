@@ -22,13 +22,13 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Create image variation<br/>
         /// Creates a variation of a given image. This endpoint only supports `dall-e-2`.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ImagesResponse> CreateImageVariationAsync(
+
             global::tryAGI.OpenAI.CreateImageVariationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -68,39 +68,49 @@ namespace tryAGI.OpenAI
                 }
             }
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            var __contentImage = new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>());
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>()),
-                name: "image",
-                fileName: request.Imagename ?? string.Empty);
+                content: __contentImage,
+                name: "\"image\"",
+                fileName: request.Imagename != null ? $"\"{request.Imagename}\"" : string.Empty);
+            if (__contentImage.Headers.ContentDisposition != null)
+            {
+                __contentImage.Headers.ContentDisposition.FileNameStar = null;
+            }
             if (request.Model != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent(request.Model?.ToString() ?? string.Empty),
-                    name: "model");
+                    name: "\"model\"");
             } 
             if (request.N != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.N}"),
-                    name: "n");
+                    name: "\"n\"");
             } 
             if (request.ResponseFormat != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
-                    name: "response_format");
+                    name: "\"response_format\"");
             } 
             if (request.Size != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Size?.ToValueString()}"),
-                    name: "size");
+                    name: "\"size\"");
             } 
             if (request.User != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.User}"),
-                    name: "user");
+                    name: "\"user\"");
             }
             __httpRequest.Content = __httpRequestContent;
 
@@ -197,7 +207,6 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Create image variation<br/>
         /// Creates a variation of a given image. This endpoint only supports `dall-e-2`.
         /// </summary>
         /// <param name="image">
@@ -207,7 +216,9 @@ namespace tryAGI.OpenAI
         /// The image to use as the basis for the variation(s). Must be a valid PNG file, less than 4MB, and square.
         /// </param>
         /// <param name="model">
-        /// The model to use for image generation. Only `dall-e-2` is supported at this time.
+        /// The model to use for image generation. Only `dall-e-2` is supported at this time.<br/>
+        /// Default Value: dall-e-2<br/>
+        /// Example: dall-e-2
         /// </param>
         /// <param name="n">
         /// The number of images to generate. Must be between 1 and 10.<br/>
@@ -225,7 +236,7 @@ namespace tryAGI.OpenAI
         /// Example: 1024x1024
         /// </param>
         /// <param name="user">
-        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](https://platform.openai.com/docs/guides/safety-best-practices#end-user-ids).<br/>
+        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
         /// Example: user-1234
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

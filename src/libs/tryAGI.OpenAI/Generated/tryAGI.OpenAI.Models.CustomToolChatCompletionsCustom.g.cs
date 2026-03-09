@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -9,6 +11,13 @@ namespace tryAGI.OpenAI
     public sealed partial class CustomToolChatCompletionsCustom
     {
         /// <summary>
+        /// The name of the custom tool, used to identify it in tool calls.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
+
+        /// <summary>
         /// Optional description of the custom tool, used to provide more context.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
@@ -18,15 +27,8 @@ namespace tryAGI.OpenAI
         /// The input format for the custom tool. Default is unconstrained text.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.Format2JsonConverter))]
-        public global::tryAGI.OpenAI.Format2? Format { get; set; }
-
-        /// <summary>
-        /// The name of the custom tool, used to identify it in tool calls.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatTextFormat, global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatGrammarFormat>))]
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatTextFormat, global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatGrammarFormat>? Format { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,14 +39,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomToolChatCompletionsCustom" /> class.
         /// </summary>
+        /// <param name="name">
+        /// The name of the custom tool, used to identify it in tool calls.
+        /// </param>
         /// <param name="description">
         /// Optional description of the custom tool, used to provide more context.
         /// </param>
         /// <param name="format">
         /// The input format for the custom tool. Default is unconstrained text.
-        /// </param>
-        /// <param name="name">
-        /// The name of the custom tool, used to identify it in tool calls.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -52,7 +54,7 @@ namespace tryAGI.OpenAI
         public CustomToolChatCompletionsCustom(
             string name,
             string? description,
-            global::tryAGI.OpenAI.Format2? format)
+            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatTextFormat, global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatGrammarFormat>? format)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;

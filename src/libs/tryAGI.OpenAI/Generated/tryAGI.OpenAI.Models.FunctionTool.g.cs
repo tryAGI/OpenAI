@@ -9,10 +9,13 @@ namespace tryAGI.OpenAI
     public sealed partial class FunctionTool
     {
         /// <summary>
-        /// A description of the function. Used by the model to determine whether or not to call the function.
+        /// The type of the function tool. Always `function`.<br/>
+        /// Default Value: function
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string? Description { get; set; }
+        /// <default>global::tryAGI.OpenAI.FunctionToolType.Function</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.FunctionToolTypeJsonConverter))]
+        public global::tryAGI.OpenAI.FunctionToolType Type { get; set; } = global::tryAGI.OpenAI.FunctionToolType.Function;
 
         /// <summary>
         /// The name of the function to call.
@@ -22,27 +25,30 @@ namespace tryAGI.OpenAI
         public required string Name { get; set; }
 
         /// <summary>
-        /// A JSON schema object describing the parameters of the function.
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required object? Parameters { get; set; }
 
         /// <summary>
-        /// Whether to enforce strict parameter validation. Default `true`.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("strict")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool? Strict { get; set; }
 
         /// <summary>
-        /// The type of the function tool. Always `function`.<br/>
-        /// Default Value: function
+        /// Whether this function is deferred and loaded via tool search.
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.FunctionToolType.Function</default>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.FunctionToolTypeJsonConverter))]
-        public global::tryAGI.OpenAI.FunctionToolType Type { get; set; } = global::tryAGI.OpenAI.FunctionToolType.Function;
+        [global::System.Text.Json.Serialization.JsonPropertyName("defer_loading")]
+        public bool? DeferLoading { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -53,21 +59,18 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="FunctionTool" /> class.
         /// </summary>
-        /// <param name="description">
-        /// A description of the function. Used by the model to determine whether or not to call the function.
+        /// <param name="type">
+        /// The type of the function tool. Always `function`.<br/>
+        /// Default Value: function
         /// </param>
         /// <param name="name">
         /// The name of the function to call.
         /// </param>
-        /// <param name="parameters">
-        /// A JSON schema object describing the parameters of the function.
-        /// </param>
-        /// <param name="strict">
-        /// Whether to enforce strict parameter validation. Default `true`.
-        /// </param>
-        /// <param name="type">
-        /// The type of the function tool. Always `function`.<br/>
-        /// Default Value: function
+        /// <param name="description"></param>
+        /// <param name="parameters"></param>
+        /// <param name="strict"></param>
+        /// <param name="deferLoading">
+        /// Whether this function is deferred and loaded via tool search.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -77,13 +80,15 @@ namespace tryAGI.OpenAI
             object? parameters,
             bool? strict,
             string? description,
+            bool? deferLoading,
             global::tryAGI.OpenAI.FunctionToolType type = global::tryAGI.OpenAI.FunctionToolType.Function)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Parameters = parameters ?? throw new global::System.ArgumentNullException(nameof(parameters));
-            this.Strict = strict;
-            this.Description = description;
+            this.Strict = strict ?? throw new global::System.ArgumentNullException(nameof(strict));
             this.Type = type;
+            this.Description = description;
+            this.DeferLoading = deferLoading;
         }
 
         /// <summary>

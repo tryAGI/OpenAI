@@ -9,10 +9,10 @@ namespace tryAGI.OpenAI
     public sealed partial class ComputerCallOutputItemParam
     {
         /// <summary>
-        /// The safety checks reported by the API that have been acknowledged by the developer.
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("acknowledged_safety_checks")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ComputerCallSafetyCheckParam>? AcknowledgedSafetyChecks { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
 
         /// <summary>
         /// The ID of the computer tool call that produced the output.
@@ -20,27 +20,6 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CallId { get; set; }
-
-        /// <summary>
-        /// The ID of the computer tool call output.<br/>
-        /// Example: cuo_123
-        /// </summary>
-        /// <example>cuo_123</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string? Id { get; set; }
-
-        /// <summary>
-        /// A computer screenshot image used with the computer use tool.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("output")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ComputerScreenshotImage Output { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        public object? Status { get; set; }
 
         /// <summary>
         /// The type of the computer tool call output. Always `computer_call_output`.<br/>
@@ -52,6 +31,25 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ComputerCallOutputItemParamType Type { get; set; } = global::tryAGI.OpenAI.ComputerCallOutputItemParamType.ComputerCallOutput;
 
         /// <summary>
+        /// A computer screenshot image used with the computer use tool.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.ComputerScreenshotImage Output { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("acknowledged_safety_checks")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ComputerCallSafetyCheckParam>? AcknowledgedSafetyChecks { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        public global::tryAGI.OpenAI.FunctionCallItemStatus? Status { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -60,41 +58,36 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ComputerCallOutputItemParam" /> class.
         /// </summary>
-        /// <param name="acknowledgedSafetyChecks">
-        /// The safety checks reported by the API that have been acknowledged by the developer.
-        /// </param>
+        /// <param name="id"></param>
         /// <param name="callId">
         /// The ID of the computer tool call that produced the output.
         /// </param>
-        /// <param name="id">
-        /// The ID of the computer tool call output.<br/>
-        /// Example: cuo_123
-        /// </param>
-        /// <param name="output">
-        /// A computer screenshot image used with the computer use tool.
-        /// </param>
-        /// <param name="status"></param>
         /// <param name="type">
         /// The type of the computer tool call output. Always `computer_call_output`.<br/>
         /// Default Value: computer_call_output
         /// </param>
+        /// <param name="output">
+        /// A computer screenshot image used with the computer use tool.
+        /// </param>
+        /// <param name="acknowledgedSafetyChecks"></param>
+        /// <param name="status"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ComputerCallOutputItemParam(
             string callId,
             global::tryAGI.OpenAI.ComputerScreenshotImage output,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ComputerCallSafetyCheckParam>? acknowledgedSafetyChecks,
             string? id,
-            object? status,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ComputerCallSafetyCheckParam>? acknowledgedSafetyChecks,
+            global::tryAGI.OpenAI.FunctionCallItemStatus? status,
             global::tryAGI.OpenAI.ComputerCallOutputItemParamType type = global::tryAGI.OpenAI.ComputerCallOutputItemParamType.ComputerCallOutput)
         {
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
-            this.AcknowledgedSafetyChecks = acknowledgedSafetyChecks;
             this.Id = id;
-            this.Status = status;
             this.Type = type;
+            this.AcknowledgedSafetyChecks = acknowledgedSafetyChecks;
+            this.Status = status;
         }
 
         /// <summary>

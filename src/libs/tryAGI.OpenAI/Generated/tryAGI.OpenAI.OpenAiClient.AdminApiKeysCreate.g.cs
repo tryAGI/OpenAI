@@ -22,13 +22,14 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Create admin API key<br/>
-        /// Create an organization admin API key
+        /// Create an organization admin API key<br/>
+        /// Create a new admin-level API key for the organization.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AdminApiKey> AdminApiKeysCreateAsync(
+
             global::tryAGI.OpenAI.AdminApiKeysCreateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -167,8 +168,8 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Create admin API key<br/>
-        /// Create an organization admin API key
+        /// Create an organization admin API key<br/>
+        /// Create a new admin-level API key for the organization.
         /// </summary>
         /// <param name="name">
         /// Example: New Admin Key

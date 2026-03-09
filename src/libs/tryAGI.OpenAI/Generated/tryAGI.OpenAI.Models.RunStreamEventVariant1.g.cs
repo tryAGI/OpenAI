@@ -4,23 +4,23 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Occurs when a new [run](https://platform.openai.com/docs/api-reference/runs/object) is created.
+    /// Occurs when a new [run](/docs/api-reference/runs/object) is created.
     /// </summary>
     public sealed partial class RunStreamEventVariant1
     {
-        /// <summary>
-        /// Represents an execution run on a [thread](https://platform.openai.com/docs/api-reference/threads).
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.RunObject Data { get; set; }
-
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RunStreamEventVariant1EventJsonConverter))]
         public global::tryAGI.OpenAI.RunStreamEventVariant1Event Event { get; set; }
+
+        /// <summary>
+        /// Represents an execution run on a [thread](/docs/api-reference/threads).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.RunObject Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,10 +31,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RunStreamEventVariant1" /> class.
         /// </summary>
-        /// <param name="data">
-        /// Represents an execution run on a [thread](https://platform.openai.com/docs/api-reference/threads).
-        /// </param>
         /// <param name="event"></param>
+        /// <param name="data">
+        /// Represents an execution run on a [thread](/docs/api-reference/threads).
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

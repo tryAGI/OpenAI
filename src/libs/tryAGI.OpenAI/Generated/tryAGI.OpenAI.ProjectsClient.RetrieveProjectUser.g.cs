@@ -24,7 +24,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Retrieve project user<br/>
         /// Retrieves a user in the project.
         /// </summary>
         /// <param name="projectId"></param>

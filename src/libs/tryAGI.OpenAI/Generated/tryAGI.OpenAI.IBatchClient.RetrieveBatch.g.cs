@@ -5,7 +5,6 @@ namespace tryAGI.OpenAI
     public partial interface IBatchClient
     {
         /// <summary>
-        /// Retrieve batch<br/>
         /// Retrieves a batch.
         /// </summary>
         /// <param name="batchId"></param>

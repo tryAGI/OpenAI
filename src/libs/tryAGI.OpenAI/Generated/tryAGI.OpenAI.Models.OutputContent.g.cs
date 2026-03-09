@@ -13,36 +13,18 @@ namespace tryAGI.OpenAI
         /// A text output from the model.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.OutputTextContent? Text { get; init; }
+        public global::tryAGI.OpenAI.OutputTextContent? OutputText { get; init; }
 #else
-        public global::tryAGI.OpenAI.OutputTextContent? Text { get; }
+        public global::tryAGI.OpenAI.OutputTextContent? OutputText { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputText))]
 #endif
-        public bool IsText => Text != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator OutputContent(global::tryAGI.OpenAI.OutputTextContent value) => new OutputContent((global::tryAGI.OpenAI.OutputTextContent?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.OutputTextContent?(OutputContent @this) => @this.Text;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public OutputContent(global::tryAGI.OpenAI.OutputTextContent? value)
-        {
-            Text = value;
-        }
+        public bool IsOutputText => OutputText != null;
 
         /// <summary>
         /// A refusal from the model.
@@ -62,6 +44,40 @@ namespace tryAGI.OpenAI
         public bool IsRefusal => Refusal != null;
 
         /// <summary>
+        /// Reasoning text from the model.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ReasoningTextContent? ReasoningText { get; init; }
+#else
+        public global::tryAGI.OpenAI.ReasoningTextContent? ReasoningText { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningText))]
+#endif
+        public bool IsReasoningText => ReasoningText != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator OutputContent(global::tryAGI.OpenAI.OutputTextContent value) => new OutputContent((global::tryAGI.OpenAI.OutputTextContent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.OutputTextContent?(OutputContent @this) => @this.OutputText;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OutputContent(global::tryAGI.OpenAI.OutputTextContent? value)
+        {
+            OutputText = value;
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator OutputContent(global::tryAGI.OpenAI.RefusalContent value) => new OutputContent((global::tryAGI.OpenAI.RefusalContent?)value);
@@ -78,23 +94,6 @@ namespace tryAGI.OpenAI
         {
             Refusal = value;
         }
-
-        /// <summary>
-        /// Reasoning text from the model.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ReasoningTextContent? ReasoningText { get; init; }
-#else
-        public global::tryAGI.OpenAI.ReasoningTextContent? ReasoningText { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningText))]
-#endif
-        public bool IsReasoningText => ReasoningText != null;
 
         /// <summary>
         /// 
@@ -118,12 +117,12 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public OutputContent(
-            global::tryAGI.OpenAI.OutputTextContent? text,
+            global::tryAGI.OpenAI.OutputTextContent? outputText,
             global::tryAGI.OpenAI.RefusalContent? refusal,
             global::tryAGI.OpenAI.ReasoningTextContent? reasoningText
             )
         {
-            Text = text;
+            OutputText = outputText;
             Refusal = refusal;
             ReasoningText = reasoningText;
         }
@@ -134,14 +133,14 @@ namespace tryAGI.OpenAI
         public object? Object =>
             ReasoningText as object ??
             Refusal as object ??
-            Text as object 
+            OutputText as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Text?.ToString() ??
+            OutputText?.ToString() ??
             Refusal?.ToString() ??
             ReasoningText?.ToString() 
             ;
@@ -151,14 +150,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsText || IsRefusal || IsReasoningText;
+            return IsOutputText && !IsRefusal && !IsReasoningText || !IsOutputText && IsRefusal && !IsReasoningText || !IsOutputText && !IsRefusal && IsReasoningText;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.OutputTextContent?, TResult>? text = null,
+            global::System.Func<global::tryAGI.OpenAI.OutputTextContent?, TResult>? outputText = null,
             global::System.Func<global::tryAGI.OpenAI.RefusalContent?, TResult>? refusal = null,
             global::System.Func<global::tryAGI.OpenAI.ReasoningTextContent?, TResult>? reasoningText = null,
             bool validate = true)
@@ -168,9 +167,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (IsOutputText && outputText != null)
             {
-                return text(Text!);
+                return outputText(OutputText!);
             }
             else if (IsRefusal && refusal != null)
             {
@@ -188,7 +187,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.OutputTextContent?>? text = null,
+            global::System.Action<global::tryAGI.OpenAI.OutputTextContent?>? outputText = null,
             global::System.Action<global::tryAGI.OpenAI.RefusalContent?>? refusal = null,
             global::System.Action<global::tryAGI.OpenAI.ReasoningTextContent?>? reasoningText = null,
             bool validate = true)
@@ -198,9 +197,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsText)
+            if (IsOutputText)
             {
-                text?.Invoke(Text!);
+                outputText?.Invoke(OutputText!);
             }
             else if (IsRefusal)
             {
@@ -219,7 +218,7 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                Text,
+                OutputText,
                 typeof(global::tryAGI.OpenAI.OutputTextContent),
                 Refusal,
                 typeof(global::tryAGI.OpenAI.RefusalContent),
@@ -241,7 +240,7 @@ namespace tryAGI.OpenAI
         public bool Equals(OutputContent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.OutputTextContent?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.OutputTextContent?>.Default.Equals(OutputText, other.OutputText) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RefusalContent?>.Default.Equals(Refusal, other.Refusal) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ReasoningTextContent?>.Default.Equals(ReasoningText, other.ReasoningText) 
                 ;

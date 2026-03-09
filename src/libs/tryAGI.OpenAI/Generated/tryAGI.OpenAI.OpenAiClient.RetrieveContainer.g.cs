@@ -22,8 +22,8 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Retrieve container<br/>
-        /// Retrieve Container
+        /// Retrieve Container<br/>
+        /// Retrieves a container.
         /// </summary>
         /// <param name="containerId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

@@ -24,11 +24,11 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Complete upload<br/>
-        /// Completes the [Upload](https://platform.openai.com/docs/api-reference/uploads/object). <br/>
-        /// Within the returned Upload object, there is a nested [File](https://platform.openai.com/docs/api-reference/files/object) object that is ready to use in the rest of the platform.<br/>
+        /// Completes the [Upload](/docs/api-reference/uploads/object). <br/>
+        /// Within the returned Upload object, there is a nested [File](/docs/api-reference/files/object) object that is ready to use in the rest of the platform.<br/>
         /// You can specify the order of the Parts by passing in an ordered list of the Part IDs.<br/>
-        /// The number of bytes uploaded upon completion must match the number of bytes initially specified when creating the Upload object. No Parts may be added after an Upload is completed.
+        /// The number of bytes uploaded upon completion must match the number of bytes initially specified when creating the Upload object. No Parts may be added after an Upload is completed.<br/>
+        /// Returns the Upload object with status `completed`, including an additional `file` property containing the created usable File object.
         /// </summary>
         /// <param name="uploadId">
         /// Example: upload_abc123
@@ -38,6 +38,7 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Upload> CompleteUploadAsync(
             string uploadId,
+
             global::tryAGI.OpenAI.CompleteUploadRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -178,20 +179,20 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Complete upload<br/>
-        /// Completes the [Upload](https://platform.openai.com/docs/api-reference/uploads/object). <br/>
-        /// Within the returned Upload object, there is a nested [File](https://platform.openai.com/docs/api-reference/files/object) object that is ready to use in the rest of the platform.<br/>
+        /// Completes the [Upload](/docs/api-reference/uploads/object). <br/>
+        /// Within the returned Upload object, there is a nested [File](/docs/api-reference/files/object) object that is ready to use in the rest of the platform.<br/>
         /// You can specify the order of the Parts by passing in an ordered list of the Part IDs.<br/>
-        /// The number of bytes uploaded upon completion must match the number of bytes initially specified when creating the Upload object. No Parts may be added after an Upload is completed.
+        /// The number of bytes uploaded upon completion must match the number of bytes initially specified when creating the Upload object. No Parts may be added after an Upload is completed.<br/>
+        /// Returns the Upload object with status `completed`, including an additional `file` property containing the created usable File object.
         /// </summary>
         /// <param name="uploadId">
         /// Example: upload_abc123
         /// </param>
-        /// <param name="md5">
-        /// The optional md5 checksum for the file contents to verify if the bytes uploaded matches what you expect.
-        /// </param>
         /// <param name="partIds">
         /// The ordered list of Part IDs.
+        /// </param>
+        /// <param name="md5">
+        /// The optional md5 checksum for the file contents to verify if the bytes uploaded matches what you expect.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -203,8 +204,8 @@ namespace tryAGI.OpenAI
         {
             var __request = new global::tryAGI.OpenAI.CompleteUploadRequest
             {
-                Md5 = md5,
                 PartIds = partIds,
+                Md5 = md5,
             };
 
             return await CompleteUploadAsync(

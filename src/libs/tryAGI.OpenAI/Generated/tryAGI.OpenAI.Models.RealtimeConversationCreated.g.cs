@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Returned when a conversation is created. Emitted right after session creation.
+    /// Returned when a conversation is created. Emitted right after session creation.<br/>
+    /// Example: {"event_id":"event_9101","type":"conversation.created","conversation":{"id":"conv_001","object":"realtime.conversation"}}
     /// </summary>
     public sealed partial class RealtimeConversationCreated
     {
@@ -28,8 +29,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// A realtime Conversation consists of a list of Items.<br/>
         /// By default, there is only one Conversation, and it gets created at the beginning of the Session.<br/>
-        /// In the future, we may add support for additional conversations.
+        /// In the future, we may add support for additional conversations.<br/>
+        /// Example: {"id":"conv_001","object":"realtime.conversation"}
         /// </summary>
+        /// <example>{"id":"conv_001","object":"realtime.conversation"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("conversation")]
         public global::tryAGI.OpenAI.RealtimeConversation? Conversation { get; set; }
 
@@ -53,7 +56,8 @@ namespace tryAGI.OpenAI
         /// <param name="conversation">
         /// A realtime Conversation consists of a list of Items.<br/>
         /// By default, there is only one Conversation, and it gets created at the beginning of the Session.<br/>
-        /// In the future, we may add support for additional conversations.
+        /// In the future, we may add support for additional conversations.<br/>
+        /// Example: {"id":"conv_001","object":"realtime.conversation"}
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

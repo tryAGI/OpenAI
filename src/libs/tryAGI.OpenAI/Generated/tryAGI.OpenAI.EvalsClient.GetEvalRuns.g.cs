@@ -30,7 +30,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Get eval runs<br/>
         /// Get a list of runs for an evaluation.
         /// </summary>
         /// <param name="evalId"></param>
@@ -65,10 +64,10 @@ namespace tryAGI.OpenAI
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/evals/{evalId}/runs",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("after", after) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("order", order?.ToValueString()) 
+            __pathBuilder
+                .AddOptionalParameter("after", after)
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("order", order?.ToValueString())
                 .AddOptionalParameter("status", status?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

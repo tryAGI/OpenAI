@@ -5,8 +5,8 @@ namespace tryAGI.OpenAI
     public partial interface IOpenAiClient
     {
         /// <summary>
-        /// List all organization and project API keys.<br/>
-        /// List organization API keys
+        /// List organization API keys<br/>
+        /// Retrieve a paginated list of organization admin API keys.
         /// </summary>
         /// <param name="after">
         /// Return keys with IDs that come after this ID in the pagination order.

@@ -28,7 +28,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// List project rate limits<br/>
         /// Returns the rate limits per model for a project.
         /// </summary>
         /// <param name="projectId"></param>
@@ -58,9 +57,9 @@ namespace tryAGI.OpenAI
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/organization/projects/{projectId}/rate_limits",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("after", after) 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("after", after)
                 .AddOptionalParameter("before", before) 
                 ; 
             var __path = __pathBuilder.ToString();

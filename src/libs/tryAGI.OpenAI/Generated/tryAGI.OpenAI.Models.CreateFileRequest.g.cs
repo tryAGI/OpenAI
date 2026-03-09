@@ -9,12 +9,6 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateFileRequest
     {
         /// <summary>
-        /// The expiration policy for a file. By default, files with `purpose=batch` expire after 30 days and all other files are persisted until they are manually deleted.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("expires_after")]
-        public global::tryAGI.OpenAI.FileExpirationAfter? ExpiresAfter { get; set; }
-
-        /// <summary>
         /// The File object (not file name) to be uploaded.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file")]
@@ -29,12 +23,24 @@ namespace tryAGI.OpenAI
         public required string Filename { get; set; }
 
         /// <summary>
-        /// The intended purpose of the uploaded file. One of: - `assistants`: Used in the Assistants API - `batch`: Used in the Batch API - `fine-tune`: Used for fine-tuning - `vision`: Images used for vision fine-tuning - `user_data`: Flexible file type for any purpose - `evals`: Used for eval data sets
+        /// The intended purpose of the uploaded file. One of:<br/>
+        /// - `assistants`: Used in the Assistants API<br/>
+        /// - `batch`: Used in the Batch API<br/>
+        /// - `fine-tune`: Used for fine-tuning<br/>
+        /// - `vision`: Images used for vision fine-tuning<br/>
+        /// - `user_data`: Flexible file type for any purpose<br/>
+        /// - `evals`: Used for eval data sets
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("purpose")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.FilePurposeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateFileRequestPurposeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.FilePurpose Purpose { get; set; }
+        public required global::tryAGI.OpenAI.CreateFileRequestPurpose Purpose { get; set; }
+
+        /// <summary>
+        /// The expiration policy for a file. By default, files with `purpose=batch` expire after 30 days and all other files are persisted until they are manually deleted.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_after")]
+        public global::tryAGI.OpenAI.FileExpirationAfter? ExpiresAfter { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,9 +51,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateFileRequest" /> class.
         /// </summary>
-        /// <param name="expiresAfter">
-        /// The expiration policy for a file. By default, files with `purpose=batch` expire after 30 days and all other files are persisted until they are manually deleted.
-        /// </param>
         /// <param name="file">
         /// The File object (not file name) to be uploaded.
         /// </param>
@@ -55,7 +58,16 @@ namespace tryAGI.OpenAI
         /// The File object (not file name) to be uploaded.
         /// </param>
         /// <param name="purpose">
-        /// The intended purpose of the uploaded file. One of: - `assistants`: Used in the Assistants API - `batch`: Used in the Batch API - `fine-tune`: Used for fine-tuning - `vision`: Images used for vision fine-tuning - `user_data`: Flexible file type for any purpose - `evals`: Used for eval data sets
+        /// The intended purpose of the uploaded file. One of:<br/>
+        /// - `assistants`: Used in the Assistants API<br/>
+        /// - `batch`: Used in the Batch API<br/>
+        /// - `fine-tune`: Used for fine-tuning<br/>
+        /// - `vision`: Images used for vision fine-tuning<br/>
+        /// - `user_data`: Flexible file type for any purpose<br/>
+        /// - `evals`: Used for eval data sets
+        /// </param>
+        /// <param name="expiresAfter">
+        /// The expiration policy for a file. By default, files with `purpose=batch` expire after 30 days and all other files are persisted until they are manually deleted.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -63,7 +75,7 @@ namespace tryAGI.OpenAI
         public CreateFileRequest(
             byte[] file,
             string filename,
-            global::tryAGI.OpenAI.FilePurpose purpose,
+            global::tryAGI.OpenAI.CreateFileRequestPurpose purpose,
             global::tryAGI.OpenAI.FileExpirationAfter? expiresAfter)
         {
             this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));

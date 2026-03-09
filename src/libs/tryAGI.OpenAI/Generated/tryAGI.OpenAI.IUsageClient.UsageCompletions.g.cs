@@ -5,7 +5,6 @@ namespace tryAGI.OpenAI
     public partial interface IUsageClient
     {
         /// <summary>
-        /// Completions<br/>
         /// Get completions usage details for the organization.
         /// </summary>
         /// <param name="startTime"></param>

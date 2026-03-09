@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Returned when an Item is done streaming. Also emitted when a Response is interrupted, incomplete, or cancelled.
+    /// Returned when an Item is done streaming. Also emitted when a Response is interrupted, incomplete, or cancelled.<br/>
+    /// Example: {"event_id":"event_3536","type":"response.output_item.done","response_id":"resp_001","output_index":0,"item":{"id":"msg_007","object":"realtime.item","type":"message","status":"completed","role":"assistant","content":[{"type":"text","text":"Sure, I can help with that."}]}}
     /// </summary>
     public sealed partial class RealtimeResponseOutputItemDone
     {

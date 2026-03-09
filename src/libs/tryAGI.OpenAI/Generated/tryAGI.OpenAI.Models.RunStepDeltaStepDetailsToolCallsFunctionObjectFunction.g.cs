@@ -9,19 +9,19 @@ namespace tryAGI.OpenAI
     public sealed partial class RunStepDeltaStepDetailsToolCallsFunctionObjectFunction
     {
         /// <summary>
-        /// The arguments passed to the function.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
-        public string? Arguments { get; set; }
-
-        /// <summary>
         /// The name of the function.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// The output of the function. This will be `null` if the outputs have not been [submitted](https://platform.openai.com/docs/api-reference/runs/submitToolOutputs) yet.
+        /// The arguments passed to the function.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
+        public string? Arguments { get; set; }
+
+        /// <summary>
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
         public string? Output { get; set; }
@@ -35,25 +35,23 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RunStepDeltaStepDetailsToolCallsFunctionObjectFunction" /> class.
         /// </summary>
-        /// <param name="arguments">
-        /// The arguments passed to the function.
-        /// </param>
         /// <param name="name">
         /// The name of the function.
         /// </param>
-        /// <param name="output">
-        /// The output of the function. This will be `null` if the outputs have not been [submitted](https://platform.openai.com/docs/api-reference/runs/submitToolOutputs) yet.
+        /// <param name="arguments">
+        /// The arguments passed to the function.
         /// </param>
+        /// <param name="output"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RunStepDeltaStepDetailsToolCallsFunctionObjectFunction(
-            string? arguments,
             string? name,
+            string? arguments,
             string? output)
         {
-            this.Arguments = arguments;
             this.Name = name;
+            this.Arguments = arguments;
             this.Output = output;
         }
 

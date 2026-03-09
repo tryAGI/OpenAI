@@ -19,38 +19,11 @@ namespace tryAGI.OpenAI
     public sealed partial class RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted
     {
         /// <summary>
-        /// The index of the content part containing the audio.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content_index")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ContentIndex { get; set; }
-
-        /// <summary>
         /// The unique ID of the server event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string EventId { get; set; }
-
-        /// <summary>
-        /// The ID of the user message item containing the audio.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ItemId { get; set; }
-
-        /// <summary>
-        /// The log probabilities of the transcription.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProbProperties>? Logprobs { get; set; }
-
-        /// <summary>
-        /// The transcribed text.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("transcript")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Transcript { get; set; }
 
         /// <summary>
         /// The event type, must be<br/>
@@ -61,12 +34,39 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType Type { get; set; }
 
         /// <summary>
+        /// The ID of the user message item containing the audio.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ItemId { get; set; }
+
+        /// <summary>
+        /// The index of the content part containing the audio.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content_index")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int ContentIndex { get; set; }
+
+        /// <summary>
+        /// The transcribed text.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("transcript")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Transcript { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProbProperties>? Logprobs { get; set; }
+
+        /// <summary>
         /// Usage statistics for the transcription.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.TranscriptTextUsageTokens, global::tryAGI.OpenAI.TranscriptTextUsageDuration>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.TranscriptTextUsageTokens, global::tryAGI.OpenAI.TranscriptTextUsageDuration>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.TranscriptTextUsageTokens, global::tryAGI.OpenAI.TranscriptTextUsageDuration> Usage { get; set; }
+        public required global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.TranscriptTextUsageTokens, global::tryAGI.OpenAI.TranscriptTextUsageDuration> Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -77,25 +77,23 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted" /> class.
         /// </summary>
-        /// <param name="contentIndex">
-        /// The index of the content part containing the audio.
-        /// </param>
         /// <param name="eventId">
         /// The unique ID of the server event.
-        /// </param>
-        /// <param name="itemId">
-        /// The ID of the user message item containing the audio.
-        /// </param>
-        /// <param name="logprobs">
-        /// The log probabilities of the transcription.
-        /// </param>
-        /// <param name="transcript">
-        /// The transcribed text.
         /// </param>
         /// <param name="type">
         /// The event type, must be<br/>
         /// `conversation.item.input_audio_transcription.completed`.
         /// </param>
+        /// <param name="itemId">
+        /// The ID of the user message item containing the audio.
+        /// </param>
+        /// <param name="contentIndex">
+        /// The index of the content part containing the audio.
+        /// </param>
+        /// <param name="transcript">
+        /// The transcribed text.
+        /// </param>
+        /// <param name="logprobs"></param>
         /// <param name="usage">
         /// Usage statistics for the transcription.
         /// </param>
@@ -103,21 +101,21 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted(
-            int contentIndex,
             string eventId,
             string itemId,
+            int contentIndex,
             string transcript,
-            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.TranscriptTextUsageTokens, global::tryAGI.OpenAI.TranscriptTextUsageDuration> usage,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProbProperties>? logprobs,
-            global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType type)
+            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.TranscriptTextUsageTokens, global::tryAGI.OpenAI.TranscriptTextUsageDuration> usage,
+            global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType type,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProbProperties>? logprobs)
         {
-            this.ContentIndex = contentIndex;
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
+            this.ContentIndex = contentIndex;
             this.Transcript = transcript ?? throw new global::System.ArgumentNullException(nameof(transcript));
             this.Usage = usage;
-            this.Logprobs = logprobs;
             this.Type = type;
+            this.Logprobs = logprobs;
         }
 
         /// <summary>

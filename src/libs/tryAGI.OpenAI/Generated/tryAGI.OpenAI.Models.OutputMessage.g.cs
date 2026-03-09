@@ -9,13 +9,6 @@ namespace tryAGI.OpenAI
     public sealed partial class OutputMessage
     {
         /// <summary>
-        /// The content of the output message.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputMessageContent> Content { get; set; }
-
-        /// <summary>
         /// The unique ID of the output message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -23,11 +16,31 @@ namespace tryAGI.OpenAI
         public required string Id { get; set; }
 
         /// <summary>
+        /// The type of the output message. Always `message`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OutputMessageTypeJsonConverter))]
+        public global::tryAGI.OpenAI.OutputMessageType Type { get; set; }
+
+        /// <summary>
         /// The role of the output message. Always `assistant`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OutputMessageRoleJsonConverter))]
         public global::tryAGI.OpenAI.OutputMessageRole Role { get; set; }
+
+        /// <summary>
+        /// The content of the output message.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputMessageContent> Content { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("phase")]
+        public global::tryAGI.OpenAI.MessagePhase? Phase { get; set; }
 
         /// <summary>
         /// The status of the message input. One of `in_progress`, `completed`, or<br/>
@@ -39,13 +52,6 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.OutputMessageStatus Status { get; set; }
 
         /// <summary>
-        /// The type of the output message. Always `message`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OutputMessageTypeJsonConverter))]
-        public global::tryAGI.OpenAI.OutputMessageType Type { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -54,37 +60,40 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputMessage" /> class.
         /// </summary>
-        /// <param name="content">
-        /// The content of the output message.
-        /// </param>
         /// <param name="id">
         /// The unique ID of the output message.
+        /// </param>
+        /// <param name="type">
+        /// The type of the output message. Always `message`.
         /// </param>
         /// <param name="role">
         /// The role of the output message. Always `assistant`.
         /// </param>
+        /// <param name="content">
+        /// The content of the output message.
+        /// </param>
+        /// <param name="phase"></param>
         /// <param name="status">
         /// The status of the message input. One of `in_progress`, `completed`, or<br/>
         /// `incomplete`. Populated when input items are returned via API.
-        /// </param>
-        /// <param name="type">
-        /// The type of the output message. Always `message`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutputMessage(
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputMessageContent> content,
             string id,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputMessageContent> content,
             global::tryAGI.OpenAI.OutputMessageStatus status,
+            global::tryAGI.OpenAI.OutputMessageType type,
             global::tryAGI.OpenAI.OutputMessageRole role,
-            global::tryAGI.OpenAI.OutputMessageType type)
+            global::tryAGI.OpenAI.MessagePhase? phase)
         {
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Status = status;
-            this.Role = role;
             this.Type = type;
+            this.Role = role;
+            this.Phase = phase;
         }
 
         /// <summary>

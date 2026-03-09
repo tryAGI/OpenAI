@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The quality of the generated image. One of `low`, `medium`, `high`, <br/>
+    /// The quality of the generated image. One of `low`, `medium`, `high`,<br/>
     /// or `auto`. Default: `auto`.<br/>
     /// Default Value: auto
     /// </summary>

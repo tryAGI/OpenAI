@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// One of `server_error` or `rate_limit_exceeded`.
+    /// One of `server_error`, `unsupported_file`, or `invalid_file`.
     /// </summary>
     public enum VectorStoreFileObjectLastErrorCode
     {

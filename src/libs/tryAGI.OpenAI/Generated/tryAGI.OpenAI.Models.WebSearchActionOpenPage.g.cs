@@ -19,8 +19,7 @@ namespace tryAGI.OpenAI
         /// The URL opened by the model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Url { get; set; }
+        public string? Url { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,11 +40,11 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebSearchActionOpenPage(
-            string url,
-            global::tryAGI.OpenAI.WebSearchActionOpenPageType type)
+            global::tryAGI.OpenAI.WebSearchActionOpenPageType type,
+            string? url)
         {
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Type = type;
+            this.Url = url;
         }
 
         /// <summary>

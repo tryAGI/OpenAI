@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Details of the error.
+    /// Details of the error.<br/>
+    /// Example: {"type":"invalid_request_error","code":"invalid_event","message":"The \u0027type\u0027 field is missing.","param":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","event_id":"event_567"}
     /// </summary>
     public sealed partial class RealtimeErrorDetails
     {
@@ -33,8 +34,10 @@ namespace tryAGI.OpenAI
         public string? Message { get; set; }
 
         /// <summary>
-        /// Parameter related to the error, if any.
+        /// Parameter related to the error, if any.<br/>
+        /// Example: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
+        /// <example>openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("param")]
         public string? Param { get; set; }
 
@@ -68,7 +71,8 @@ namespace tryAGI.OpenAI
         /// Example: The 'type' field is missing.
         /// </param>
         /// <param name="param">
-        /// Parameter related to the error, if any.
+        /// Parameter related to the error, if any.<br/>
+        /// Example: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="eventId">
         /// The event_id of the client event that caused the error, if applicable.<br/>

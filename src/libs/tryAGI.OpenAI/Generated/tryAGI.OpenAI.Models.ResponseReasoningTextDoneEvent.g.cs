@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseReasoningTextDoneEvent
     {
         /// <summary>
-        /// The index of the reasoning content part.
+        /// The type of the event. Always `response.reasoning_text.done`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content_index")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ContentIndex { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseReasoningTextDoneEventTypeJsonConverter))]
+        public global::tryAGI.OpenAI.ResponseReasoningTextDoneEventType Type { get; set; }
 
         /// <summary>
         /// The ID of the item this reasoning text is associated with.
@@ -30,11 +30,11 @@ namespace tryAGI.OpenAI
         public required int OutputIndex { get; set; }
 
         /// <summary>
-        /// The sequence number of this event.
+        /// The index of the reasoning content part.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("content_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int SequenceNumber { get; set; }
+        public required int ContentIndex { get; set; }
 
         /// <summary>
         /// The full text of the completed reasoning content.
@@ -44,11 +44,11 @@ namespace tryAGI.OpenAI
         public required string Text { get; set; }
 
         /// <summary>
-        /// The type of the event. Always `response.reasoning_text.done`.
+        /// The sequence number of this event.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseReasoningTextDoneEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseReasoningTextDoneEventType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int SequenceNumber { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -59,8 +59,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseReasoningTextDoneEvent" /> class.
         /// </summary>
-        /// <param name="contentIndex">
-        /// The index of the reasoning content part.
+        /// <param name="type">
+        /// The type of the event. Always `response.reasoning_text.done`.
         /// </param>
         /// <param name="itemId">
         /// The ID of the item this reasoning text is associated with.
@@ -68,31 +68,31 @@ namespace tryAGI.OpenAI
         /// <param name="outputIndex">
         /// The index of the output item this reasoning text is associated with.
         /// </param>
-        /// <param name="sequenceNumber">
-        /// The sequence number of this event.
+        /// <param name="contentIndex">
+        /// The index of the reasoning content part.
         /// </param>
         /// <param name="text">
         /// The full text of the completed reasoning content.
         /// </param>
-        /// <param name="type">
-        /// The type of the event. Always `response.reasoning_text.done`.
+        /// <param name="sequenceNumber">
+        /// The sequence number of this event.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseReasoningTextDoneEvent(
-            int contentIndex,
             string itemId,
             int outputIndex,
-            int sequenceNumber,
+            int contentIndex,
             string text,
+            int sequenceNumber,
             global::tryAGI.OpenAI.ResponseReasoningTextDoneEventType type)
         {
-            this.ContentIndex = contentIndex;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
-            this.SequenceNumber = sequenceNumber;
+            this.ContentIndex = contentIndex;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.SequenceNumber = sequenceNumber;
             this.Type = type;
         }
 

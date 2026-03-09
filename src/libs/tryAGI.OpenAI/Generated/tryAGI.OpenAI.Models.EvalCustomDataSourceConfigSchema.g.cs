@@ -5,7 +5,20 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// The json schema for the run data source items.<br/>
-    /// Learn how to build JSON schemas [here](https://json-schema.org/).
+    /// Learn how to build JSON schemas [here](https://json-schema.org/).<br/>
+    /// Example: {<br/>
+    ///   "type": "object",<br/>
+    ///   "properties": {<br/>
+    ///     "item": {<br/>
+    ///       "type": "object",<br/>
+    ///       "properties": {<br/>
+    ///         "label": {"type": "string"},<br/>
+    ///       },<br/>
+    ///       "required": ["label"]<br/>
+    ///     }<br/>
+    ///   },<br/>
+    ///   "required": ["item"]<br/>
+    /// }
     /// </summary>
     public sealed partial class EvalCustomDataSourceConfigSchema
     {

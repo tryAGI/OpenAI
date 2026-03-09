@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Returned when a Response is done streaming. Always emitted, no matter the final state.
+    /// Returned when a Response is done streaming. Always emitted, no matter the final state.<br/>
+    /// Example: {"event_id":"event_3132","type":"response.done","response":{"id":"resp_001","object":"realtime.response","status":"completed","status_details":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","output":[{"id":"msg_006","object":"realtime.item","type":"message","status":"completed","role":"assistant","content":[{"type":"text","text":"Sure, how can I assist you today?"}]}],"usage":{"total_tokens":50,"input_tokens":20,"output_tokens":30}}}
     /// </summary>
     public sealed partial class RealtimeResponseDone
     {

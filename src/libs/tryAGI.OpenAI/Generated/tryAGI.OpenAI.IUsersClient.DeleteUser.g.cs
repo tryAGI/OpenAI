@@ -5,7 +5,6 @@ namespace tryAGI.OpenAI
     public partial interface IUsersClient
     {
         /// <summary>
-        /// Delete user<br/>
         /// Deletes a user from the organization.
         /// </summary>
         /// <param name="userId"></param>

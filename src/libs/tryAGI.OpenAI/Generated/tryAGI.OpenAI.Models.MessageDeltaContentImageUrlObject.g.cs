@@ -9,12 +9,6 @@ namespace tryAGI.OpenAI
     public sealed partial class MessageDeltaContentImageUrlObject
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
-        public global::tryAGI.OpenAI.MessageDeltaContentImageUrlObjectImageUrl? ImageUrl { get; set; }
-
-        /// <summary>
         /// The index of the content part in the message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
@@ -29,6 +23,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.MessageDeltaContentImageUrlObjectType Type { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
+        public global::tryAGI.OpenAI.MessageDeltaContentImageUrlObjectImageUrl? ImageUrl { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -37,24 +37,24 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageDeltaContentImageUrlObject" /> class.
         /// </summary>
-        /// <param name="imageUrl"></param>
         /// <param name="index">
         /// The index of the content part in the message.
         /// </param>
         /// <param name="type">
         /// Always `image_url`.
         /// </param>
+        /// <param name="imageUrl"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessageDeltaContentImageUrlObject(
             int index,
-            global::tryAGI.OpenAI.MessageDeltaContentImageUrlObjectImageUrl? imageUrl,
-            global::tryAGI.OpenAI.MessageDeltaContentImageUrlObjectType type)
+            global::tryAGI.OpenAI.MessageDeltaContentImageUrlObjectType type,
+            global::tryAGI.OpenAI.MessageDeltaContentImageUrlObjectImageUrl? imageUrl)
         {
             this.Index = index;
-            this.ImageUrl = imageUrl;
             this.Type = type;
+            this.ImageUrl = imageUrl;
         }
 
         /// <summary>

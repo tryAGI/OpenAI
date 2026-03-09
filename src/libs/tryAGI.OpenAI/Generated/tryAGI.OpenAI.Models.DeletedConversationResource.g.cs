@@ -9,6 +9,14 @@ namespace tryAGI.OpenAI
     public sealed partial class DeletedConversationResource
     {
         /// <summary>
+        /// Default Value: conversation.deleted
+        /// </summary>
+        /// <default>global::tryAGI.OpenAI.DeletedConversationResourceObject.ConversationDeleted</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.DeletedConversationResourceObjectJsonConverter))]
+        public global::tryAGI.OpenAI.DeletedConversationResourceObject Object { get; set; } = global::tryAGI.OpenAI.DeletedConversationResourceObject.ConversationDeleted;
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
@@ -23,14 +31,6 @@ namespace tryAGI.OpenAI
         public required string Id { get; set; }
 
         /// <summary>
-        /// Default Value: conversation.deleted
-        /// </summary>
-        /// <default>global::tryAGI.OpenAI.DeletedConversationResourceObject.ConversationDeleted</default>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.DeletedConversationResourceObjectJsonConverter))]
-        public global::tryAGI.OpenAI.DeletedConversationResourceObject Object { get; set; } = global::tryAGI.OpenAI.DeletedConversationResourceObject.ConversationDeleted;
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -39,11 +39,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="DeletedConversationResource" /> class.
         /// </summary>
-        /// <param name="deleted"></param>
-        /// <param name="id"></param>
         /// <param name="object">
         /// Default Value: conversation.deleted
         /// </param>
+        /// <param name="deleted"></param>
+        /// <param name="id"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

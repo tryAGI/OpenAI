@@ -9,11 +9,8 @@ namespace tryAGI.OpenAI
     public sealed partial class UpdateConversationBody
     {
         /// <summary>
-        /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
-        /// useful for storing additional information about the object in a structured<br/>
-        /// format, and querying for objects via API or the dashboard.<br/>
-        /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
-        /// with a maximum length of 512 characters.
+        /// Set of 16 key-value pairs that can be attached to an object. This can be         useful for storing additional information about the object in a structured         format, and querying for objects via API or the dashboard.<br/>
+        ///         Keys are strings with a maximum length of 64 characters. Values are strings         with a maximum length of 512 characters.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -29,11 +26,8 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="UpdateConversationBody" /> class.
         /// </summary>
         /// <param name="metadata">
-        /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
-        /// useful for storing additional information about the object in a structured<br/>
-        /// format, and querying for objects via API or the dashboard.<br/>
-        /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
-        /// with a maximum length of 512 characters.
+        /// Set of 16 key-value pairs that can be attached to an object. This can be         useful for storing additional information about the object in a structured         format, and querying for objects via API or the dashboard.<br/>
+        ///         Keys are strings with a maximum length of 64 characters. Values are strings         with a maximum length of 512 characters.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

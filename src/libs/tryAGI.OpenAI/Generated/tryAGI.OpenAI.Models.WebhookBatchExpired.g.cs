@@ -17,18 +17,18 @@ namespace tryAGI.OpenAI
         public required global::System.DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
-        /// Event data payload.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.WebhookBatchExpiredData Data { get; set; }
-
-        /// <summary>
         /// The unique ID of the event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
+
+        /// <summary>
+        /// Event data payload.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.WebhookBatchExpiredData Data { get; set; }
 
         /// <summary>
         /// The object of the event. Always `event`.
@@ -56,11 +56,11 @@ namespace tryAGI.OpenAI
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) of when the batch API request expired.
         /// </param>
-        /// <param name="data">
-        /// Event data payload.
-        /// </param>
         /// <param name="id">
         /// The unique ID of the event.
+        /// </param>
+        /// <param name="data">
+        /// Event data payload.
         /// </param>
         /// <param name="object">
         /// The object of the event. Always `event`.
@@ -73,14 +73,14 @@ namespace tryAGI.OpenAI
 #endif
         public WebhookBatchExpired(
             global::System.DateTimeOffset createdAt,
-            global::tryAGI.OpenAI.WebhookBatchExpiredData data,
             string id,
+            global::tryAGI.OpenAI.WebhookBatchExpiredData data,
             global::tryAGI.OpenAI.WebhookBatchExpiredObject? @object,
             global::tryAGI.OpenAI.WebhookBatchExpiredType type)
         {
             this.CreatedAt = createdAt;
-            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Object = @object;
             this.Type = type;
         }

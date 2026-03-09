@@ -5,7 +5,6 @@ namespace tryAGI.OpenAI
     public partial interface IConversationsClient
     {
         /// <summary>
-        /// Retrieve a conversation<br/>
         /// Get a conversation
         /// </summary>
         /// <param name="conversationId">

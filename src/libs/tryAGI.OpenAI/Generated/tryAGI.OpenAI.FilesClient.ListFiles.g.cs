@@ -28,7 +28,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// List files<br/>
         /// Returns a list of files.
         /// </summary>
         /// <param name="purpose"></param>
@@ -60,10 +59,10 @@ namespace tryAGI.OpenAI
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: "/files",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("purpose", purpose) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("order", order?.ToValueString()) 
+            __pathBuilder
+                .AddOptionalParameter("purpose", purpose)
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("order", order?.ToValueString())
                 .AddOptionalParameter("after", after) 
                 ; 
             var __path = __pathBuilder.ToString();

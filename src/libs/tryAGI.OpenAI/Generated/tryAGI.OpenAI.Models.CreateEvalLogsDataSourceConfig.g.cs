@@ -10,12 +10,6 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateEvalLogsDataSourceConfig
     {
         /// <summary>
-        /// Metadata filters for the logs data source.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public object? Metadata { get; set; }
-
-        /// <summary>
         /// The type of data source. Always `logs`.<br/>
         /// Default Value: logs
         /// </summary>
@@ -23,6 +17,20 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateEvalLogsDataSourceConfigTypeJsonConverter))]
         public global::tryAGI.OpenAI.CreateEvalLogsDataSourceConfigType Type { get; set; } = global::tryAGI.OpenAI.CreateEvalLogsDataSourceConfigType.Logs;
+
+        /// <summary>
+        /// Metadata filters for the logs data source.<br/>
+        /// Example: {<br/>
+        ///   "use_case": "customer_support_agent"<br/>
+        /// }
+        /// </summary>
+        /// <example>
+        /// {<br/>
+        ///   "use_case": "customer_support_agent"<br/>
+        /// }
+        /// </example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        public object? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,12 +41,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateEvalLogsDataSourceConfig" /> class.
         /// </summary>
-        /// <param name="metadata">
-        /// Metadata filters for the logs data source.
-        /// </param>
         /// <param name="type">
         /// The type of data source. Always `logs`.<br/>
         /// Default Value: logs
+        /// </param>
+        /// <param name="metadata">
+        /// Metadata filters for the logs data source.<br/>
+        /// Example: {<br/>
+        ///   "use_case": "customer_support_agent"<br/>
+        /// }
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -47,8 +58,8 @@ namespace tryAGI.OpenAI
             object? metadata,
             global::tryAGI.OpenAI.CreateEvalLogsDataSourceConfigType type = global::tryAGI.OpenAI.CreateEvalLogsDataSourceConfigType.Logs)
         {
-            this.Metadata = metadata;
             this.Type = type;
+            this.Metadata = metadata;
         }
 
         /// <summary>

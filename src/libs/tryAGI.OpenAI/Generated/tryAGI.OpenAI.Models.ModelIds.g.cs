@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct ModelIds : global::System.IEquatable<ModelIds>
     {
         /// <summary>
-        /// Example: gpt-4o
+        /// Example: gpt-5.4
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ModelIdsShared? Shared { get; init; }
@@ -26,6 +26,22 @@ namespace tryAGI.OpenAI
 #endif
         public bool IsShared => Shared != null;
 
+        /// <summary>
+        /// Example: gpt-5.1
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ModelIdsResponses? Responses { get; init; }
+#else
+        public global::tryAGI.OpenAI.ModelIdsResponses? Responses { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Responses))]
+#endif
+        public bool IsResponses => Responses != null;
         /// <summary>
         /// 
         /// </summary>
@@ -43,23 +59,6 @@ namespace tryAGI.OpenAI
         {
             Shared = value;
         }
-
-        /// <summary>
-        /// Example: gpt-4o
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ModelIdsResponses? Responses { get; init; }
-#else
-        public global::tryAGI.OpenAI.ModelIdsResponses? Responses { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Responses))]
-#endif
-        public bool IsResponses => Responses != null;
 
         /// <summary>
         /// 

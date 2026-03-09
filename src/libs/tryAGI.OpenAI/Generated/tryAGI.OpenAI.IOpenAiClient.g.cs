@@ -130,6 +130,21 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public GroupsClient Groups { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public GroupOrganizationRoleAssignmentsClient GroupOrganizationRoleAssignments { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public GroupUsersClient GroupUsers { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public InvitesClient Invites { get; }
 
         /// <summary>
@@ -140,7 +155,32 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public ProjectGroupsClient ProjectGroups { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RolesClient Roles { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public UsersClient Users { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public UserOrganizationRoleAssignmentsClient UserOrganizationRoleAssignments { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ProjectGroupRoleAssignmentsClient ProjectGroupRoleAssignments { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ProjectUserRoleAssignmentsClient ProjectUserRoleAssignments { get; }
 
         /// <summary>
         /// 
@@ -156,6 +196,16 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public VectorStoresClient VectorStores { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public VideosClient Videos { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SkillsClient Skills { get; }
 
     }
 }

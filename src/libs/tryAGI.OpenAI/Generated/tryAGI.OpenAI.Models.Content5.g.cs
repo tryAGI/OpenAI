@@ -13,19 +13,35 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.InputContent? InputContent { get; init; }
+        public global::tryAGI.OpenAI.InputContent? InputContentTypes { get; init; }
 #else
-        public global::tryAGI.OpenAI.InputContent? InputContent { get; }
+        public global::tryAGI.OpenAI.InputContent? InputContentTypes { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputContent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputContentTypes))]
 #endif
-        public bool IsInputContent => InputContent != null;
+        public bool IsInputContentTypes => InputContentTypes != null;
 
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.OutputContent? OutputContentTypes { get; init; }
+#else
+        public global::tryAGI.OpenAI.OutputContent? OutputContentTypes { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputContentTypes))]
+#endif
+        public bool IsOutputContentTypes => OutputContentTypes != null;
         /// <summary>
         /// 
         /// </summary>
@@ -34,32 +50,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.InputContent?(Content5 @this) => @this.InputContent;
+        public static implicit operator global::tryAGI.OpenAI.InputContent?(Content5 @this) => @this.InputContentTypes;
 
         /// <summary>
         /// 
         /// </summary>
         public Content5(global::tryAGI.OpenAI.InputContent? value)
         {
-            InputContent = value;
+            InputContentTypes = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.OutputContent? OutputContent { get; init; }
-#else
-        public global::tryAGI.OpenAI.OutputContent? OutputContent { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputContent))]
-#endif
-        public bool IsOutputContent => OutputContent != null;
 
         /// <summary>
         /// 
@@ -69,42 +68,42 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.OutputContent?(Content5 @this) => @this.OutputContent;
+        public static implicit operator global::tryAGI.OpenAI.OutputContent?(Content5 @this) => @this.OutputContentTypes;
 
         /// <summary>
         /// 
         /// </summary>
         public Content5(global::tryAGI.OpenAI.OutputContent? value)
         {
-            OutputContent = value;
+            OutputContentTypes = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public Content5(
-            global::tryAGI.OpenAI.InputContent? inputContent,
-            global::tryAGI.OpenAI.OutputContent? outputContent
+            global::tryAGI.OpenAI.InputContent? inputContentTypes,
+            global::tryAGI.OpenAI.OutputContent? outputContentTypes
             )
         {
-            InputContent = inputContent;
-            OutputContent = outputContent;
+            InputContentTypes = inputContentTypes;
+            OutputContentTypes = outputContentTypes;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            OutputContent as object ??
-            InputContent as object 
+            OutputContentTypes as object ??
+            InputContentTypes as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            InputContent?.ToString() ??
-            OutputContent?.ToString() 
+            InputContentTypes?.ToString() ??
+            OutputContentTypes?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +111,15 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsInputContent || IsOutputContent;
+            return IsInputContentTypes && !IsOutputContentTypes || !IsInputContentTypes && IsOutputContentTypes;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.InputContent?, TResult>? inputContent = null,
-            global::System.Func<global::tryAGI.OpenAI.OutputContent?, TResult>? outputContent = null,
+            global::System.Func<global::tryAGI.OpenAI.InputContent?, TResult>? inputContentTypes = null,
+            global::System.Func<global::tryAGI.OpenAI.OutputContent?, TResult>? outputContentTypes = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +127,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsInputContent && inputContent != null)
+            if (IsInputContentTypes && inputContentTypes != null)
             {
-                return inputContent(InputContent!);
+                return inputContentTypes(InputContentTypes!);
             }
-            else if (IsOutputContent && outputContent != null)
+            else if (IsOutputContentTypes && outputContentTypes != null)
             {
-                return outputContent(OutputContent!);
+                return outputContentTypes(OutputContentTypes!);
             }
 
             return default(TResult);
@@ -144,8 +143,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.InputContent?>? inputContent = null,
-            global::System.Action<global::tryAGI.OpenAI.OutputContent?>? outputContent = null,
+            global::System.Action<global::tryAGI.OpenAI.InputContent?>? inputContentTypes = null,
+            global::System.Action<global::tryAGI.OpenAI.OutputContent?>? outputContentTypes = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +152,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsInputContent)
+            if (IsInputContentTypes)
             {
-                inputContent?.Invoke(InputContent!);
+                inputContentTypes?.Invoke(InputContentTypes!);
             }
-            else if (IsOutputContent)
+            else if (IsOutputContentTypes)
             {
-                outputContent?.Invoke(OutputContent!);
+                outputContentTypes?.Invoke(OutputContentTypes!);
             }
         }
 
@@ -170,9 +169,9 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                InputContent,
+                InputContentTypes,
                 typeof(global::tryAGI.OpenAI.InputContent),
-                OutputContent,
+                OutputContentTypes,
                 typeof(global::tryAGI.OpenAI.OutputContent),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +189,8 @@ namespace tryAGI.OpenAI
         public bool Equals(Content5 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputContent?>.Default.Equals(InputContent, other.InputContent) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.OutputContent?>.Default.Equals(OutputContent, other.OutputContent) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputContent?>.Default.Equals(InputContentTypes, other.InputContentTypes) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.OutputContent?>.Default.Equals(OutputContentTypes, other.OutputContentTypes) 
                 ;
         }
 

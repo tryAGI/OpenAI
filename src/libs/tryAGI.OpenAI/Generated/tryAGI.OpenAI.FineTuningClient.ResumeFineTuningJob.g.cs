@@ -22,7 +22,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Resume fine-tuning<br/>
         /// Resume a fine-tune job.
         /// </summary>
         /// <param name="fineTuningJobId">

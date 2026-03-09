@@ -5,18 +5,11 @@ namespace tryAGI.OpenAI
     public partial interface IChatClient
     {
         /// <summary>
-        /// List Chat Completions<br/>
         /// List stored Chat Completions. Only Chat Completions that have been stored<br/>
         /// with the `store` parameter set to `true` will be returned.
         /// </summary>
         /// <param name="model"></param>
-        /// <param name="metadata">
-        /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
-        /// useful for storing additional information about the object in a structured<br/>
-        /// format, and querying for objects via API or the dashboard.<br/>
-        /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
-        /// with a maximum length of 512 characters.
-        /// </param>
+        /// <param name="metadata"></param>
         /// <param name="after"></param>
         /// <param name="limit">
         /// Default Value: 20

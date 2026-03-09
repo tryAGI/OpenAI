@@ -5,7 +5,6 @@ namespace tryAGI.OpenAI
     public partial interface IFilesClient
     {
         /// <summary>
-        /// List files<br/>
         /// Returns a list of files.
         /// </summary>
         /// <param name="purpose"></param>

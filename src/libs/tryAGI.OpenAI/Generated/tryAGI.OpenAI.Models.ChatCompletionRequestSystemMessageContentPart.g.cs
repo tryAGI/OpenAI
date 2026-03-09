@@ -10,22 +10,21 @@ namespace tryAGI.OpenAI
     public readonly partial struct ChatCompletionRequestSystemMessageContentPart : global::System.IEquatable<ChatCompletionRequestSystemMessageContentPart>
     {
         /// <summary>
-        /// Learn about [text inputs](https://platform.openai.com/docs/guides/text-generation).
+        /// Learn about [text inputs](/docs/guides/text-generation).
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText? Text { get; init; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText? TextContentPart { get; init; }
 #else
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText? Text { get; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText? TextContentPart { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextContentPart))]
 #endif
-        public bool IsText => Text != null;
-
+        public bool IsTextContentPart => TextContentPart != null;
         /// <summary>
         /// 
         /// </summary>
@@ -34,28 +33,28 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText?(ChatCompletionRequestSystemMessageContentPart @this) => @this.Text;
+        public static implicit operator global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText?(ChatCompletionRequestSystemMessageContentPart @this) => @this.TextContentPart;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionRequestSystemMessageContentPart(global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText? value)
         {
-            Text = value;
+            TextContentPart = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Text as object 
+            TextContentPart as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Text?.ToString() 
+            TextContentPart?.ToString() 
             ;
 
         /// <summary>
@@ -63,14 +62,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsText;
+            return IsTextContentPart;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText?, TResult>? text = null,
+            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText?, TResult>? textContentPart = null,
             bool validate = true)
         {
             if (validate)
@@ -78,9 +77,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (IsTextContentPart && textContentPart != null)
             {
-                return text(Text!);
+                return textContentPart(TextContentPart!);
             }
 
             return default(TResult);
@@ -90,7 +89,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText?>? text = null,
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText?>? textContentPart = null,
             bool validate = true)
         {
             if (validate)
@@ -98,9 +97,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsText)
+            if (IsTextContentPart)
             {
-                text?.Invoke(Text!);
+                textContentPart?.Invoke(TextContentPart!);
             }
         }
 
@@ -111,7 +110,7 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                Text,
+                TextContentPart,
                 typeof(global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText),
             };
             const int offset = unchecked((int)2166136261);
@@ -129,7 +128,7 @@ namespace tryAGI.OpenAI
         public bool Equals(ChatCompletionRequestSystemMessageContentPart other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText?>.Default.Equals(Text, other.Text) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText?>.Default.Equals(TextContentPart, other.TextContentPart) 
                 ;
         }
 

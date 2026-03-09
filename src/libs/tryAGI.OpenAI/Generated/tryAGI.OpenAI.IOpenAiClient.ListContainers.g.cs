@@ -5,8 +5,8 @@ namespace tryAGI.OpenAI
     public partial interface IOpenAiClient
     {
         /// <summary>
-        /// List containers<br/>
-        /// List Containers
+        /// List Containers<br/>
+        /// Lists containers.
         /// </summary>
         /// <param name="limit">
         /// Default Value: 20
@@ -15,12 +15,14 @@ namespace tryAGI.OpenAI
         /// Default Value: desc
         /// </param>
         /// <param name="after"></param>
+        /// <param name="name"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ContainerListResource> ListContainersAsync(
             int? limit = default,
             global::tryAGI.OpenAI.ListContainersOrder? order = default,
             string? after = default,
+            string? name = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

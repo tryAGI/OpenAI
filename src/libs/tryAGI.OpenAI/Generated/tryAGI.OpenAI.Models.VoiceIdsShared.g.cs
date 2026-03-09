@@ -29,6 +29,22 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.VoiceIdsSharedEnum? Value2 { get; init; }
+#else
+        public global::tryAGI.OpenAI.VoiceIdsSharedEnum? Value2 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+#endif
+        public bool IsValue2 => Value2 != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VoiceIdsShared(string value) => new VoiceIdsShared((string?)value);
 
         /// <summary>
@@ -43,23 +59,6 @@ namespace tryAGI.OpenAI
         {
             Value1 = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.VoiceIdsSharedEnum? Value2 { get; init; }
-#else
-        public global::tryAGI.OpenAI.VoiceIdsSharedEnum? Value2 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
-#endif
-        public bool IsValue2 => Value2 != null;
 
         /// <summary>
         /// 

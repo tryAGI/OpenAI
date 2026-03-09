@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Returned when the model-generated function call arguments are updated.
+    /// Returned when the model-generated function call arguments are updated.<br/>
+    /// Example: {"event_id":"event_5354","type":"response.function_call_arguments.delta","response_id":"resp_002","item_id":"fc_001","output_index":0,"call_id":"call_001","delta":"{\u0022location\u0022: \u0022San\u0022"}
     /// </summary>
     public sealed partial class RealtimeResponseFunctionCallArgumentsDelta
     {

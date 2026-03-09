@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Find,
+        FindInPage,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                WebSearchActionFindType.Find => "find",
+                WebSearchActionFindType.FindInPage => "find_in_page",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "find" => WebSearchActionFindType.Find,
+                "find_in_page" => WebSearchActionFindType.FindInPage,
                 _ => null,
             };
         }

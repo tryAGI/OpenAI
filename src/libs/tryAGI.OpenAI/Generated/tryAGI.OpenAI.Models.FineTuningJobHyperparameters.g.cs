@@ -14,15 +14,16 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("batch_size")]
-        public object? BatchSize { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuningJobHyperparametersBatchSizeVariant1?, int?>? BatchSize { get; set; }
 
         /// <summary>
         /// Scaling factor for the learning rate. A smaller learning rate may be useful to avoid<br/>
-        /// overfitting.
+        /// overfitting.<br/>
+        /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("learning_rate_multiplier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.FineTuningJobHyperparametersLearningRateMultiplier?, double?>))]
-        public global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.FineTuningJobHyperparametersLearningRateMultiplier?, double?>? LearningRateMultiplier { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.FineTuningJobHyperparametersLearningRateMultiplier?, double?>))]
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuningJobHyperparametersLearningRateMultiplier?, double?>? LearningRateMultiplier { get; set; }
 
         /// <summary>
         /// The number of epochs to train the model for. An epoch refers to one full cycle<br/>
@@ -30,8 +31,8 @@ namespace tryAGI.OpenAI
         /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("n_epochs")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.FineTuningJobHyperparametersNEpochs?, int?>))]
-        public global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.FineTuningJobHyperparametersNEpochs?, int?>? NEpochs { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.FineTuningJobHyperparametersNEpochs?, int?>))]
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuningJobHyperparametersNEpochs?, int?>? NEpochs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,7 +46,8 @@ namespace tryAGI.OpenAI
         /// <param name="batchSize"></param>
         /// <param name="learningRateMultiplier">
         /// Scaling factor for the learning rate. A smaller learning rate may be useful to avoid<br/>
-        /// overfitting.
+        /// overfitting.<br/>
+        /// Default Value: auto
         /// </param>
         /// <param name="nEpochs">
         /// The number of epochs to train the model for. An epoch refers to one full cycle<br/>
@@ -56,9 +58,9 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FineTuningJobHyperparameters(
-            object? batchSize,
-            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.FineTuningJobHyperparametersLearningRateMultiplier?, double?>? learningRateMultiplier,
-            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.FineTuningJobHyperparametersNEpochs?, int?>? nEpochs)
+            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuningJobHyperparametersBatchSizeVariant1?, int?>? batchSize,
+            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuningJobHyperparametersLearningRateMultiplier?, double?>? learningRateMultiplier,
+            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuningJobHyperparametersNEpochs?, int?>? nEpochs)
         {
             this.BatchSize = batchSize;
             this.LearningRateMultiplier = learningRateMultiplier;

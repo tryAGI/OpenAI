@@ -18,8 +18,7 @@ namespace tryAGI.OpenAI
         /// The object type, must be `realtime.conversation`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventConversationCreatedConversationObjectJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationCreatedConversationObject? Object { get; set; }
+        public string? Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public RealtimeServerEventConversationCreatedConversation(
             string? id,
-            global::tryAGI.OpenAI.RealtimeServerEventConversationCreatedConversationObject? @object)
+            string? @object)
         {
             this.Id = id;
             this.Object = @object;

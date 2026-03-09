@@ -8,7 +8,7 @@ namespace tryAGI.OpenAI
         partial void PrepareGetResponseArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string responseId,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.IncludeEnum>? include,
             ref bool? stream,
             ref int? startingAfter,
             ref bool? includeObfuscation);
@@ -16,7 +16,7 @@ namespace tryAGI.OpenAI
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string responseId,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.IncludeEnum>? include,
             bool? stream,
             int? startingAfter,
             bool? includeObfuscation);
@@ -30,7 +30,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Get a model response<br/>
         /// Retrieves a model response with the given ID.
         /// </summary>
         /// <param name="responseId">
@@ -44,7 +43,7 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Response> GetResponseAsync(
             string responseId,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Includable>? include = default,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.IncludeEnum>? include = default,
             bool? stream = default,
             int? startingAfter = default,
             bool? includeObfuscation = default,
@@ -63,10 +62,10 @@ namespace tryAGI.OpenAI
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/responses/{responseId}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("include", include, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
-                .AddOptionalParameter("stream", stream?.ToString()) 
-                .AddOptionalParameter("starting_after", startingAfter?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("include", include, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("stream", stream?.ToString())
+                .AddOptionalParameter("starting_after", startingAfter?.ToString())
                 .AddOptionalParameter("include_obfuscation", includeObfuscation?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

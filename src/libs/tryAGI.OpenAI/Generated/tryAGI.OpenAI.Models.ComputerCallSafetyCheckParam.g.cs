@@ -9,12 +9,6 @@ namespace tryAGI.OpenAI
     public sealed partial class ComputerCallSafetyCheckParam
     {
         /// <summary>
-        /// The type of the pending safety check.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("code")]
-        public string? Code { get; set; }
-
-        /// <summary>
         /// The ID of the pending safety check.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -22,7 +16,13 @@ namespace tryAGI.OpenAI
         public required string Id { get; set; }
 
         /// <summary>
-        /// Details about the pending safety check.
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("code")]
+        public string? Code { get; set; }
+
+        /// <summary>
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         public string? Message { get; set; }
@@ -36,15 +36,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ComputerCallSafetyCheckParam" /> class.
         /// </summary>
-        /// <param name="code">
-        /// The type of the pending safety check.
-        /// </param>
         /// <param name="id">
         /// The ID of the pending safety check.
         /// </param>
-        /// <param name="message">
-        /// Details about the pending safety check.
-        /// </param>
+        /// <param name="code"></param>
+        /// <param name="message"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

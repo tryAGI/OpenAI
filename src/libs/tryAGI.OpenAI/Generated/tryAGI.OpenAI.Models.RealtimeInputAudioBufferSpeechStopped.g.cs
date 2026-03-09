@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Returned in server turn detection mode when speech stops.
+    /// Returned in server turn detection mode when speech stops.<br/>
+    /// Example: {"event_id":"event_1718","type":"input_audio_buffer.speech_stopped","audio_end_ms":2000,"item_id":"msg_003"}
     /// </summary>
     public sealed partial class RealtimeInputAudioBufferSpeechStopped
     {

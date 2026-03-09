@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Send this event when you want to remove any item from the conversation history.
+    /// Send this event when you want to remove any item from the conversation history.<br/>
+    /// Example: {"event_id":"event_901","type":"conversation.item.delete","item_id":"msg_003"}
     /// </summary>
     public sealed partial class RealtimeConversationItemDelete
     {

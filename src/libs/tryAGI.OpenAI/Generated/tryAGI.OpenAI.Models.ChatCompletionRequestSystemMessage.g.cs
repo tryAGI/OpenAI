@@ -16,15 +16,9 @@ namespace tryAGI.OpenAI
         /// The contents of the system message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestSystemMessageContentPart>>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestSystemMessageContentPart>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.AnyOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestSystemMessageContentPart>> Content { get; set; }
-
-        /// <summary>
-        /// An optional name for the participant. Provides the model information to differentiate between participants of the same role.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string? Name { get; set; }
+        public required global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestSystemMessageContentPart>> Content { get; set; }
 
         /// <summary>
         /// The role of the messages author, in this case `system`.
@@ -32,6 +26,12 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatCompletionRequestSystemMessageRoleJsonConverter))]
         public global::tryAGI.OpenAI.ChatCompletionRequestSystemMessageRole Role { get; set; }
+
+        /// <summary>
+        /// An optional name for the participant. Provides the model information to differentiate between participants of the same role.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string? Name { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,23 +45,23 @@ namespace tryAGI.OpenAI
         /// <param name="content">
         /// The contents of the system message.
         /// </param>
-        /// <param name="name">
-        /// An optional name for the participant. Provides the model information to differentiate between participants of the same role.
-        /// </param>
         /// <param name="role">
         /// The role of the messages author, in this case `system`.
+        /// </param>
+        /// <param name="name">
+        /// An optional name for the participant. Provides the model information to differentiate between participants of the same role.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatCompletionRequestSystemMessage(
-            global::tryAGI.OpenAI.AnyOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestSystemMessageContentPart>> content,
-            string? name,
-            global::tryAGI.OpenAI.ChatCompletionRequestSystemMessageRole role)
+            global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestSystemMessageContentPart>> content,
+            global::tryAGI.OpenAI.ChatCompletionRequestSystemMessageRole role,
+            string? name)
         {
             this.Content = content;
-            this.Name = name;
             this.Role = role;
+            this.Name = name;
         }
 
         /// <summary>

@@ -9,11 +9,32 @@ namespace tryAGI.OpenAI
     public sealed partial class LocalShellExecAction
     {
         /// <summary>
+        /// The type of the local shell action. Always `exec`.<br/>
+        /// Default Value: exec
+        /// </summary>
+        /// <default>global::tryAGI.OpenAI.LocalShellExecActionType.Exec</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.LocalShellExecActionTypeJsonConverter))]
+        public global::tryAGI.OpenAI.LocalShellExecActionType Type { get; set; } = global::tryAGI.OpenAI.LocalShellExecActionType.Exec;
+
+        /// <summary>
         /// The command to run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("command")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<string> Command { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("timeout_ms")]
+        public int? TimeoutMs { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("working_directory")]
+        public string? WorkingDirectory { get; set; }
 
         /// <summary>
         /// Environment variables to set for the command.
@@ -23,29 +44,10 @@ namespace tryAGI.OpenAI
         public required global::System.Collections.Generic.Dictionary<string, string> Env { get; set; }
 
         /// <summary>
-        /// Optional timeout in milliseconds for the command.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("timeout_ms")]
-        public int? TimeoutMs { get; set; }
-
-        /// <summary>
-        /// The type of the local shell action. Always `exec`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.LocalShellExecActionTypeJsonConverter))]
-        public global::tryAGI.OpenAI.LocalShellExecActionType Type { get; set; }
-
-        /// <summary>
-        /// Optional user to run the command as.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         public string? User { get; set; }
-
-        /// <summary>
-        /// Optional working directory to run the command in.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("working_directory")]
-        public string? WorkingDirectory { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -56,24 +58,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="LocalShellExecAction" /> class.
         /// </summary>
+        /// <param name="type">
+        /// The type of the local shell action. Always `exec`.<br/>
+        /// Default Value: exec
+        /// </param>
         /// <param name="command">
         /// The command to run.
         /// </param>
+        /// <param name="timeoutMs"></param>
+        /// <param name="workingDirectory"></param>
         /// <param name="env">
         /// Environment variables to set for the command.
         /// </param>
-        /// <param name="timeoutMs">
-        /// Optional timeout in milliseconds for the command.
-        /// </param>
-        /// <param name="type">
-        /// The type of the local shell action. Always `exec`.
-        /// </param>
-        /// <param name="user">
-        /// Optional user to run the command as.
-        /// </param>
-        /// <param name="workingDirectory">
-        /// Optional working directory to run the command in.
-        /// </param>
+        /// <param name="user"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -81,16 +78,16 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<string> command,
             global::System.Collections.Generic.Dictionary<string, string> env,
             int? timeoutMs,
-            global::tryAGI.OpenAI.LocalShellExecActionType type,
+            string? workingDirectory,
             string? user,
-            string? workingDirectory)
+            global::tryAGI.OpenAI.LocalShellExecActionType type = global::tryAGI.OpenAI.LocalShellExecActionType.Exec)
         {
             this.Command = command ?? throw new global::System.ArgumentNullException(nameof(command));
             this.Env = env ?? throw new global::System.ArgumentNullException(nameof(env));
-            this.TimeoutMs = timeoutMs;
             this.Type = type;
-            this.User = user;
+            this.TimeoutMs = timeoutMs;
             this.WorkingDirectory = workingDirectory;
+            this.User = user;
         }
 
         /// <summary>

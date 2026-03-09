@@ -20,7 +20,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// List models<br/>
         /// Lists the currently available models, and provides basic information about each one such as the owner and availability.
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

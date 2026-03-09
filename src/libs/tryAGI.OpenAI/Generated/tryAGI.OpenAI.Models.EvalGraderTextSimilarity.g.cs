@@ -13,36 +13,18 @@ namespace tryAGI.OpenAI
         /// A TextSimilarityGrader object which grades text based on similarity metrics.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.GraderTextSimilarity? Value1 { get; init; }
+        public global::tryAGI.OpenAI.GraderTextSimilarity? TextSimilarityGrader { get; init; }
 #else
-        public global::tryAGI.OpenAI.GraderTextSimilarity? Value1 { get; }
+        public global::tryAGI.OpenAI.GraderTextSimilarity? TextSimilarityGrader { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextSimilarityGrader))]
 #endif
-        public bool IsValue1 => Value1 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator EvalGraderTextSimilarity(global::tryAGI.OpenAI.GraderTextSimilarity value) => new EvalGraderTextSimilarity((global::tryAGI.OpenAI.GraderTextSimilarity?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.GraderTextSimilarity?(EvalGraderTextSimilarity @this) => @this.Value1;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public EvalGraderTextSimilarity(global::tryAGI.OpenAI.GraderTextSimilarity? value)
-        {
-            Value1 = value;
-        }
+        public bool IsTextSimilarityGrader => TextSimilarityGrader != null;
 
         /// <summary>
         /// 
@@ -60,6 +42,23 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
 #endif
         public bool IsValue2 => Value2 != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator EvalGraderTextSimilarity(global::tryAGI.OpenAI.GraderTextSimilarity value) => new EvalGraderTextSimilarity((global::tryAGI.OpenAI.GraderTextSimilarity?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.GraderTextSimilarity?(EvalGraderTextSimilarity @this) => @this.TextSimilarityGrader;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public EvalGraderTextSimilarity(global::tryAGI.OpenAI.GraderTextSimilarity? value)
+        {
+            TextSimilarityGrader = value;
+        }
 
         /// <summary>
         /// 
@@ -83,11 +82,11 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public EvalGraderTextSimilarity(
-            global::tryAGI.OpenAI.GraderTextSimilarity? value1,
+            global::tryAGI.OpenAI.GraderTextSimilarity? textSimilarityGrader,
             global::tryAGI.OpenAI.EvalGraderTextSimilarityVariant2? value2
             )
         {
-            Value1 = value1;
+            TextSimilarityGrader = textSimilarityGrader;
             Value2 = value2;
         }
 
@@ -96,14 +95,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         public object? Object =>
             Value2 as object ??
-            Value1 as object 
+            TextSimilarityGrader as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            TextSimilarityGrader?.ToString() ??
             Value2?.ToString() 
             ;
 
@@ -112,14 +111,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsTextSimilarityGrader && IsValue2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.GraderTextSimilarity?, TResult>? value1 = null,
+            global::System.Func<global::tryAGI.OpenAI.GraderTextSimilarity?, TResult>? textSimilarityGrader = null,
             global::System.Func<global::tryAGI.OpenAI.EvalGraderTextSimilarityVariant2?, TResult>? value2 = null,
             bool validate = true)
         {
@@ -128,9 +127,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsTextSimilarityGrader && textSimilarityGrader != null)
             {
-                return value1(Value1!);
+                return textSimilarityGrader(TextSimilarityGrader!);
             }
             else if (IsValue2 && value2 != null)
             {
@@ -144,7 +143,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.GraderTextSimilarity?>? value1 = null,
+            global::System.Action<global::tryAGI.OpenAI.GraderTextSimilarity?>? textSimilarityGrader = null,
             global::System.Action<global::tryAGI.OpenAI.EvalGraderTextSimilarityVariant2?>? value2 = null,
             bool validate = true)
         {
@@ -153,9 +152,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsTextSimilarityGrader)
             {
-                value1?.Invoke(Value1!);
+                textSimilarityGrader?.Invoke(TextSimilarityGrader!);
             }
             else if (IsValue2)
             {
@@ -170,7 +169,7 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                Value1,
+                TextSimilarityGrader,
                 typeof(global::tryAGI.OpenAI.GraderTextSimilarity),
                 Value2,
                 typeof(global::tryAGI.OpenAI.EvalGraderTextSimilarityVariant2),
@@ -190,7 +189,7 @@ namespace tryAGI.OpenAI
         public bool Equals(EvalGraderTextSimilarity other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.GraderTextSimilarity?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.GraderTextSimilarity?>.Default.Equals(TextSimilarityGrader, other.TextSimilarityGrader) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.EvalGraderTextSimilarityVariant2?>.Default.Equals(Value2, other.Value2) 
                 ;
         }

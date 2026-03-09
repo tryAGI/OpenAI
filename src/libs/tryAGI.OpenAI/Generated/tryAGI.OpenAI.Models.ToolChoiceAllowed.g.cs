@@ -9,6 +9,13 @@ namespace tryAGI.OpenAI
     public sealed partial class ToolChoiceAllowed
     {
         /// <summary>
+        /// Allowed tool configuration type. Always `allowed_tools`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ToolChoiceAllowedTypeJsonConverter))]
+        public global::tryAGI.OpenAI.ToolChoiceAllowedType Type { get; set; }
+
+        /// <summary>
         /// Constrains the tools available to the model to a pre-defined set.<br/>
         /// `auto` allows the model to pick from among the allowed tools and generate a<br/>
         /// message.<br/>
@@ -35,13 +42,6 @@ namespace tryAGI.OpenAI
         public required global::System.Collections.Generic.IList<object> Tools { get; set; }
 
         /// <summary>
-        /// Allowed tool configuration type. Always `allowed_tools`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ToolChoiceAllowedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ToolChoiceAllowedType Type { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -50,6 +50,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolChoiceAllowed" /> class.
         /// </summary>
+        /// <param name="type">
+        /// Allowed tool configuration type. Always `allowed_tools`.
+        /// </param>
         /// <param name="mode">
         /// Constrains the tools available to the model to a pre-defined set.<br/>
         /// `auto` allows the model to pick from among the allowed tools and generate a<br/>
@@ -66,9 +69,6 @@ namespace tryAGI.OpenAI
         ///   { "type": "image_generation" }<br/>
         /// ]<br/>
         /// ```
-        /// </param>
-        /// <param name="type">
-        /// Allowed tool configuration type. Always `allowed_tools`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

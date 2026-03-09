@@ -22,7 +22,6 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Retrieve a conversation<br/>
         /// Get a conversation
         /// </summary>
         /// <param name="conversationId">

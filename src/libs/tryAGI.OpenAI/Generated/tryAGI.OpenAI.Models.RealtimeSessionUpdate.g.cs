@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Send this event to update the session’s default configuration.
+    /// Send this event to update the session’s default configuration.<br/>
+    /// Example: {"event_id":"event_123","type":"session.update","session":{"modalities":["text","audio"],"instructions":"Your knowledge cutoff is 2023-10. You are a helpful assistant.","voice":"alloy","input_audio_format":"pcm16","output_audio_format":"pcm16","input_audio_transcription":{"enabled":true,"model":"whisper-1"},"turn_detection":{"type":"server_vad","threshold":0.5,"prefix_padding_ms":300,"silence_duration_ms":200},"tools":[{"type":"function","name":"get_weather","description":"Get the current weather for a location.","parameters":{"type":"object","properties":{"location":{"type":"string"}},"required":["location"]}}],"tool_choice":"auto","temperature":0.8,"max_output_tokens":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464"}}
     /// </summary>
     public sealed partial class RealtimeSessionUpdate
     {

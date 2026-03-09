@@ -9,13 +9,14 @@ namespace tryAGI.OpenAI
     public sealed partial class MCPListToolsTool
     {
         /// <summary>
-        /// Additional annotations about the tool.
+        /// The name of the tool.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("annotations")]
-        public object? Annotations { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
 
         /// <summary>
-        /// The description of the tool.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
@@ -28,11 +29,10 @@ namespace tryAGI.OpenAI
         public required object InputSchema { get; set; }
 
         /// <summary>
-        /// The name of the tool.
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("annotations")]
+        public object? Annotations { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -43,31 +43,27 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="MCPListToolsTool" /> class.
         /// </summary>
-        /// <param name="annotations">
-        /// Additional annotations about the tool.
-        /// </param>
-        /// <param name="description">
-        /// The description of the tool.
-        /// </param>
-        /// <param name="inputSchema">
-        /// The JSON schema describing the tool's input.
-        /// </param>
         /// <param name="name">
         /// The name of the tool.
         /// </param>
+        /// <param name="description"></param>
+        /// <param name="inputSchema">
+        /// The JSON schema describing the tool's input.
+        /// </param>
+        /// <param name="annotations"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MCPListToolsTool(
-            object inputSchema,
             string name,
-            object? annotations,
-            string? description)
+            object inputSchema,
+            string? description,
+            object? annotations)
         {
-            this.InputSchema = inputSchema ?? throw new global::System.ArgumentNullException(nameof(inputSchema));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Annotations = annotations;
+            this.InputSchema = inputSchema ?? throw new global::System.ArgumentNullException(nameof(inputSchema));
             this.Description = description;
+            this.Annotations = annotations;
         }
 
         /// <summary>

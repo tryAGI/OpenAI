@@ -4,39 +4,41 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Specifies the comparison operator: `eq`, `ne`, `gt`, `gte`, `lt`, `lte`.<br/>
+    /// Specifies the comparison operator: `eq`, `ne`, `gt`, `gte`, `lt`, `lte`, `in`, `nin`.<br/>
     /// - `eq`: equals<br/>
     /// - `ne`: not equal<br/>
     /// - `gt`: greater than<br/>
     /// - `gte`: greater than or equal<br/>
     /// - `lt`: less than<br/>
     /// - `lte`: less than or equal<br/>
+    /// - `in`: in<br/>
+    /// - `nin`: not in<br/>
     /// Default Value: eq
     /// </summary>
     public enum ComparisonFilterType
     {
         /// <summary>
-        /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`.
+        /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`, `in`, `nin`.
         /// </summary>
         Eq,
         /// <summary>
-        /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`.
+        /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`, `in`, `nin`.
         /// </summary>
         Ne,
         /// <summary>
-        /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`.
+        /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`, `in`, `nin`.
         /// </summary>
         Gt,
         /// <summary>
-        /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`.
+        /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`, `in`, `nin`.
         /// </summary>
         Gte,
         /// <summary>
-        /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`.
+        /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`, `in`, `nin`.
         /// </summary>
         Lt,
         /// <summary>
-        /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`.
+        /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`, `in`, `nin`.
         /// </summary>
         Lte,
     }

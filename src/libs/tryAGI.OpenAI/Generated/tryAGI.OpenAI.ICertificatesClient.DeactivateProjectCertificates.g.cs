@@ -5,7 +5,6 @@ namespace tryAGI.OpenAI
     public partial interface ICertificatesClient
     {
         /// <summary>
-        /// Deactivate certificates for project<br/>
         /// Deactivate certificates at the project level. You can atomically and <br/>
         /// idempotently deactivate up to 10 certificates at a time.
         /// </summary>
@@ -15,11 +14,11 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ListCertificatesResponse> DeactivateProjectCertificatesAsync(
             string projectId,
+
             global::tryAGI.OpenAI.ToggleCertificatesRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Deactivate certificates for project<br/>
         /// Deactivate certificates at the project level. You can atomically and <br/>
         /// idempotently deactivate up to 10 certificates at a time.
         /// </summary>

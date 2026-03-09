@@ -9,6 +9,27 @@ namespace tryAGI.OpenAI
     public sealed partial class RealtimeServerEventConversationItemInputAudioTranscriptionDelta
     {
         /// <summary>
+        /// The unique ID of the server event.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("event_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string EventId { get; set; }
+
+        /// <summary>
+        /// The event type, must be `conversation.item.input_audio_transcription.delta`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventConversationItemInputAudioTranscriptionDeltaTypeJsonConverter))]
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType Type { get; set; }
+
+        /// <summary>
+        /// The ID of the item containing the audio that is being transcribed.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ItemId { get; set; }
+
+        /// <summary>
         /// The index of the content part in the item's content array.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_index")]
@@ -21,31 +42,10 @@ namespace tryAGI.OpenAI
         public string? Delta { get; set; }
 
         /// <summary>
-        /// The unique ID of the server event.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("event_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string EventId { get; set; }
-
-        /// <summary>
-        /// The ID of the item containing the audio that is being transcribed.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ItemId { get; set; }
-
-        /// <summary>
-        /// The log probabilities of the transcription. These can be enabled by configurating the session with `"include": ["item.input_audio_transcription.logprobs"]`. Each entry in the array corresponds a log probability of which token would be selected for this chunk of transcription. This can help to identify if it was possible there were multiple valid options for a given chunk of transcription.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProbProperties>? Logprobs { get; set; }
-
-        /// <summary>
-        /// The event type, must be `conversation.item.input_audio_transcription.delta`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventConversationItemInputAudioTranscriptionDeltaTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -56,41 +56,39 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeServerEventConversationItemInputAudioTranscriptionDelta" /> class.
         /// </summary>
+        /// <param name="eventId">
+        /// The unique ID of the server event.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `conversation.item.input_audio_transcription.delta`.
+        /// </param>
+        /// <param name="itemId">
+        /// The ID of the item containing the audio that is being transcribed.
+        /// </param>
         /// <param name="contentIndex">
         /// The index of the content part in the item's content array.
         /// </param>
         /// <param name="delta">
         /// The text delta.
         /// </param>
-        /// <param name="eventId">
-        /// The unique ID of the server event.
-        /// </param>
-        /// <param name="itemId">
-        /// The ID of the item containing the audio that is being transcribed.
-        /// </param>
-        /// <param name="logprobs">
-        /// The log probabilities of the transcription. These can be enabled by configurating the session with `"include": ["item.input_audio_transcription.logprobs"]`. Each entry in the array corresponds a log probability of which token would be selected for this chunk of transcription. This can help to identify if it was possible there were multiple valid options for a given chunk of transcription.
-        /// </param>
-        /// <param name="type">
-        /// The event type, must be `conversation.item.input_audio_transcription.delta`.
-        /// </param>
+        /// <param name="logprobs"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeServerEventConversationItemInputAudioTranscriptionDelta(
             string eventId,
             string itemId,
+            global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType type,
             int? contentIndex,
             string? delta,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProbProperties>? logprobs,
-            global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType type)
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProbProperties>? logprobs)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
+            this.Type = type;
             this.ContentIndex = contentIndex;
             this.Delta = delta;
             this.Logprobs = logprobs;
-            this.Type = type;
         }
 
         /// <summary>

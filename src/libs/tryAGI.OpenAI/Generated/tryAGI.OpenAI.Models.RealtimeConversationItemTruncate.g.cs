@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Send this event when you want to truncate a previous assistant message’s audio.
+    /// Send this event when you want to truncate a previous assistant message’s audio.<br/>
+    /// Example: {"event_id":"event_678","type":"conversation.item.truncate","item_id":"msg_002","content_index":0,"audio_end_ms":1500}
     /// </summary>
     public sealed partial class RealtimeConversationItemTruncate
     {

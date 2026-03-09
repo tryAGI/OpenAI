@@ -13,9 +13,9 @@ namespace tryAGI.OpenAI
         /// A click action.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.Click? Click { get; init; }
+        public global::tryAGI.OpenAI.ClickParam? Click { get; init; }
 #else
-        public global::tryAGI.OpenAI.Click? Click { get; }
+        public global::tryAGI.OpenAI.ClickParam? Click { get; }
 #endif
 
         /// <summary>
@@ -27,30 +27,12 @@ namespace tryAGI.OpenAI
         public bool IsClick => Click != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator ComputerAction(global::tryAGI.OpenAI.Click value) => new ComputerAction((global::tryAGI.OpenAI.Click?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.Click?(ComputerAction @this) => @this.Click;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ComputerAction(global::tryAGI.OpenAI.Click? value)
-        {
-            Click = value;
-        }
-
-        /// <summary>
         /// A double click action.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.DoubleClick? DoubleClick { get; init; }
+        public global::tryAGI.OpenAI.DoubleClickAction? DoubleClick { get; init; }
 #else
-        public global::tryAGI.OpenAI.DoubleClick? DoubleClick { get; }
+        public global::tryAGI.OpenAI.DoubleClickAction? DoubleClick { get; }
 #endif
 
         /// <summary>
@@ -62,30 +44,12 @@ namespace tryAGI.OpenAI
         public bool IsDoubleClick => DoubleClick != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator ComputerAction(global::tryAGI.OpenAI.DoubleClick value) => new ComputerAction((global::tryAGI.OpenAI.DoubleClick?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.DoubleClick?(ComputerAction @this) => @this.DoubleClick;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ComputerAction(global::tryAGI.OpenAI.DoubleClick? value)
-        {
-            DoubleClick = value;
-        }
-
-        /// <summary>
         /// A drag action.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.Drag? Drag { get; init; }
+        public global::tryAGI.OpenAI.DragParam? Drag { get; init; }
 #else
-        public global::tryAGI.OpenAI.Drag? Drag { get; }
+        public global::tryAGI.OpenAI.DragParam? Drag { get; }
 #endif
 
         /// <summary>
@@ -97,65 +61,29 @@ namespace tryAGI.OpenAI
         public bool IsDrag => Drag != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator ComputerAction(global::tryAGI.OpenAI.Drag value) => new ComputerAction((global::tryAGI.OpenAI.Drag?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.Drag?(ComputerAction @this) => @this.Drag;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ComputerAction(global::tryAGI.OpenAI.Drag? value)
-        {
-            Drag = value;
-        }
-
-        /// <summary>
         /// A collection of keypresses the model would like to perform.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.KeyPress? KeyPress { get; init; }
+        public global::tryAGI.OpenAI.KeyPressAction? Keypress { get; init; }
 #else
-        public global::tryAGI.OpenAI.KeyPress? KeyPress { get; }
+        public global::tryAGI.OpenAI.KeyPressAction? Keypress { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(KeyPress))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Keypress))]
 #endif
-        public bool IsKeyPress => KeyPress != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator ComputerAction(global::tryAGI.OpenAI.KeyPress value) => new ComputerAction((global::tryAGI.OpenAI.KeyPress?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.KeyPress?(ComputerAction @this) => @this.KeyPress;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ComputerAction(global::tryAGI.OpenAI.KeyPress? value)
-        {
-            KeyPress = value;
-        }
+        public bool IsKeypress => Keypress != null;
 
         /// <summary>
         /// A mouse move action.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.Move? Move { get; init; }
+        public global::tryAGI.OpenAI.MoveParam? Move { get; init; }
 #else
-        public global::tryAGI.OpenAI.Move? Move { get; }
+        public global::tryAGI.OpenAI.MoveParam? Move { get; }
 #endif
 
         /// <summary>
@@ -167,30 +95,12 @@ namespace tryAGI.OpenAI
         public bool IsMove => Move != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator ComputerAction(global::tryAGI.OpenAI.Move value) => new ComputerAction((global::tryAGI.OpenAI.Move?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.Move?(ComputerAction @this) => @this.Move;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ComputerAction(global::tryAGI.OpenAI.Move? value)
-        {
-            Move = value;
-        }
-
-        /// <summary>
         /// A screenshot action.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.Screenshot? Screenshot { get; init; }
+        public global::tryAGI.OpenAI.ScreenshotParam? Screenshot { get; init; }
 #else
-        public global::tryAGI.OpenAI.Screenshot? Screenshot { get; }
+        public global::tryAGI.OpenAI.ScreenshotParam? Screenshot { get; }
 #endif
 
         /// <summary>
@@ -202,30 +112,12 @@ namespace tryAGI.OpenAI
         public bool IsScreenshot => Screenshot != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator ComputerAction(global::tryAGI.OpenAI.Screenshot value) => new ComputerAction((global::tryAGI.OpenAI.Screenshot?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.Screenshot?(ComputerAction @this) => @this.Screenshot;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ComputerAction(global::tryAGI.OpenAI.Screenshot? value)
-        {
-            Screenshot = value;
-        }
-
-        /// <summary>
         /// A scroll action.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.Scroll? Scroll { get; init; }
+        public global::tryAGI.OpenAI.ScrollParam? Scroll { get; init; }
 #else
-        public global::tryAGI.OpenAI.Scroll? Scroll { get; }
+        public global::tryAGI.OpenAI.ScrollParam? Scroll { get; }
 #endif
 
         /// <summary>
@@ -237,30 +129,12 @@ namespace tryAGI.OpenAI
         public bool IsScroll => Scroll != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator ComputerAction(global::tryAGI.OpenAI.Scroll value) => new ComputerAction((global::tryAGI.OpenAI.Scroll?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.Scroll?(ComputerAction @this) => @this.Scroll;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ComputerAction(global::tryAGI.OpenAI.Scroll? value)
-        {
-            Scroll = value;
-        }
-
-        /// <summary>
         /// An action to type in text.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.Type? Type { get; init; }
+        public global::tryAGI.OpenAI.TypeParam? Type { get; init; }
 #else
-        public global::tryAGI.OpenAI.Type? Type { get; }
+        public global::tryAGI.OpenAI.TypeParam? Type { get; }
 #endif
 
         /// <summary>
@@ -272,30 +146,12 @@ namespace tryAGI.OpenAI
         public bool IsType => Type != null;
 
         /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator ComputerAction(global::tryAGI.OpenAI.Type value) => new ComputerAction((global::tryAGI.OpenAI.Type?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.Type?(ComputerAction @this) => @this.Type;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ComputerAction(global::tryAGI.OpenAI.Type? value)
-        {
-            Type = value;
-        }
-
-        /// <summary>
         /// A wait action.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.Wait? Wait { get; init; }
+        public global::tryAGI.OpenAI.WaitParam? Wait { get; init; }
 #else
-        public global::tryAGI.OpenAI.Wait? Wait { get; }
+        public global::tryAGI.OpenAI.WaitParam? Wait { get; }
 #endif
 
         /// <summary>
@@ -305,21 +161,164 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Wait))]
 #endif
         public bool IsWait => Wait != null;
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ComputerAction(global::tryAGI.OpenAI.ClickParam value) => new ComputerAction((global::tryAGI.OpenAI.ClickParam?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ComputerAction(global::tryAGI.OpenAI.Wait value) => new ComputerAction((global::tryAGI.OpenAI.Wait?)value);
+        public static implicit operator global::tryAGI.OpenAI.ClickParam?(ComputerAction @this) => @this.Click;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.Wait?(ComputerAction @this) => @this.Wait;
+        public ComputerAction(global::tryAGI.OpenAI.ClickParam? value)
+        {
+            Click = value;
+        }
 
         /// <summary>
         /// 
         /// </summary>
-        public ComputerAction(global::tryAGI.OpenAI.Wait? value)
+        public static implicit operator ComputerAction(global::tryAGI.OpenAI.DoubleClickAction value) => new ComputerAction((global::tryAGI.OpenAI.DoubleClickAction?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.DoubleClickAction?(ComputerAction @this) => @this.DoubleClick;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ComputerAction(global::tryAGI.OpenAI.DoubleClickAction? value)
+        {
+            DoubleClick = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ComputerAction(global::tryAGI.OpenAI.DragParam value) => new ComputerAction((global::tryAGI.OpenAI.DragParam?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.DragParam?(ComputerAction @this) => @this.Drag;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ComputerAction(global::tryAGI.OpenAI.DragParam? value)
+        {
+            Drag = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ComputerAction(global::tryAGI.OpenAI.KeyPressAction value) => new ComputerAction((global::tryAGI.OpenAI.KeyPressAction?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.KeyPressAction?(ComputerAction @this) => @this.Keypress;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ComputerAction(global::tryAGI.OpenAI.KeyPressAction? value)
+        {
+            Keypress = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ComputerAction(global::tryAGI.OpenAI.MoveParam value) => new ComputerAction((global::tryAGI.OpenAI.MoveParam?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.MoveParam?(ComputerAction @this) => @this.Move;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ComputerAction(global::tryAGI.OpenAI.MoveParam? value)
+        {
+            Move = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ComputerAction(global::tryAGI.OpenAI.ScreenshotParam value) => new ComputerAction((global::tryAGI.OpenAI.ScreenshotParam?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.ScreenshotParam?(ComputerAction @this) => @this.Screenshot;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ComputerAction(global::tryAGI.OpenAI.ScreenshotParam? value)
+        {
+            Screenshot = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ComputerAction(global::tryAGI.OpenAI.ScrollParam value) => new ComputerAction((global::tryAGI.OpenAI.ScrollParam?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.ScrollParam?(ComputerAction @this) => @this.Scroll;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ComputerAction(global::tryAGI.OpenAI.ScrollParam? value)
+        {
+            Scroll = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ComputerAction(global::tryAGI.OpenAI.TypeParam value) => new ComputerAction((global::tryAGI.OpenAI.TypeParam?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.TypeParam?(ComputerAction @this) => @this.Type;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ComputerAction(global::tryAGI.OpenAI.TypeParam? value)
+        {
+            Type = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ComputerAction(global::tryAGI.OpenAI.WaitParam value) => new ComputerAction((global::tryAGI.OpenAI.WaitParam?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.WaitParam?(ComputerAction @this) => @this.Wait;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ComputerAction(global::tryAGI.OpenAI.WaitParam? value)
         {
             Wait = value;
         }
@@ -328,21 +327,21 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public ComputerAction(
-            global::tryAGI.OpenAI.Click? click,
-            global::tryAGI.OpenAI.DoubleClick? doubleClick,
-            global::tryAGI.OpenAI.Drag? drag,
-            global::tryAGI.OpenAI.KeyPress? keyPress,
-            global::tryAGI.OpenAI.Move? move,
-            global::tryAGI.OpenAI.Screenshot? screenshot,
-            global::tryAGI.OpenAI.Scroll? scroll,
-            global::tryAGI.OpenAI.Type? type,
-            global::tryAGI.OpenAI.Wait? wait
+            global::tryAGI.OpenAI.ClickParam? click,
+            global::tryAGI.OpenAI.DoubleClickAction? doubleClick,
+            global::tryAGI.OpenAI.DragParam? drag,
+            global::tryAGI.OpenAI.KeyPressAction? keypress,
+            global::tryAGI.OpenAI.MoveParam? move,
+            global::tryAGI.OpenAI.ScreenshotParam? screenshot,
+            global::tryAGI.OpenAI.ScrollParam? scroll,
+            global::tryAGI.OpenAI.TypeParam? type,
+            global::tryAGI.OpenAI.WaitParam? wait
             )
         {
             Click = click;
             DoubleClick = doubleClick;
             Drag = drag;
-            KeyPress = keyPress;
+            Keypress = keypress;
             Move = move;
             Screenshot = screenshot;
             Scroll = scroll;
@@ -359,7 +358,7 @@ namespace tryAGI.OpenAI
             Scroll as object ??
             Screenshot as object ??
             Move as object ??
-            KeyPress as object ??
+            Keypress as object ??
             Drag as object ??
             DoubleClick as object ??
             Click as object 
@@ -372,7 +371,7 @@ namespace tryAGI.OpenAI
             Click?.ToString() ??
             DoubleClick?.ToString() ??
             Drag?.ToString() ??
-            KeyPress?.ToString() ??
+            Keypress?.ToString() ??
             Move?.ToString() ??
             Screenshot?.ToString() ??
             Scroll?.ToString() ??
@@ -385,22 +384,22 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsClick || IsDoubleClick || IsDrag || IsKeyPress || IsMove || IsScreenshot || IsScroll || IsType || IsWait;
+            return IsClick && !IsDoubleClick && !IsDrag && !IsKeypress && !IsMove && !IsScreenshot && !IsScroll && !IsType && !IsWait || !IsClick && IsDoubleClick && !IsDrag && !IsKeypress && !IsMove && !IsScreenshot && !IsScroll && !IsType && !IsWait || !IsClick && !IsDoubleClick && IsDrag && !IsKeypress && !IsMove && !IsScreenshot && !IsScroll && !IsType && !IsWait || !IsClick && !IsDoubleClick && !IsDrag && IsKeypress && !IsMove && !IsScreenshot && !IsScroll && !IsType && !IsWait || !IsClick && !IsDoubleClick && !IsDrag && !IsKeypress && IsMove && !IsScreenshot && !IsScroll && !IsType && !IsWait || !IsClick && !IsDoubleClick && !IsDrag && !IsKeypress && !IsMove && IsScreenshot && !IsScroll && !IsType && !IsWait || !IsClick && !IsDoubleClick && !IsDrag && !IsKeypress && !IsMove && !IsScreenshot && IsScroll && !IsType && !IsWait || !IsClick && !IsDoubleClick && !IsDrag && !IsKeypress && !IsMove && !IsScreenshot && !IsScroll && IsType && !IsWait || !IsClick && !IsDoubleClick && !IsDrag && !IsKeypress && !IsMove && !IsScreenshot && !IsScroll && !IsType && IsWait;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.Click?, TResult>? click = null,
-            global::System.Func<global::tryAGI.OpenAI.DoubleClick?, TResult>? doubleClick = null,
-            global::System.Func<global::tryAGI.OpenAI.Drag?, TResult>? drag = null,
-            global::System.Func<global::tryAGI.OpenAI.KeyPress?, TResult>? keyPress = null,
-            global::System.Func<global::tryAGI.OpenAI.Move?, TResult>? move = null,
-            global::System.Func<global::tryAGI.OpenAI.Screenshot?, TResult>? screenshot = null,
-            global::System.Func<global::tryAGI.OpenAI.Scroll?, TResult>? scroll = null,
-            global::System.Func<global::tryAGI.OpenAI.Type?, TResult>? type = null,
-            global::System.Func<global::tryAGI.OpenAI.Wait?, TResult>? wait = null,
+            global::System.Func<global::tryAGI.OpenAI.ClickParam?, TResult>? click = null,
+            global::System.Func<global::tryAGI.OpenAI.DoubleClickAction?, TResult>? doubleClick = null,
+            global::System.Func<global::tryAGI.OpenAI.DragParam?, TResult>? drag = null,
+            global::System.Func<global::tryAGI.OpenAI.KeyPressAction?, TResult>? keypress = null,
+            global::System.Func<global::tryAGI.OpenAI.MoveParam?, TResult>? move = null,
+            global::System.Func<global::tryAGI.OpenAI.ScreenshotParam?, TResult>? screenshot = null,
+            global::System.Func<global::tryAGI.OpenAI.ScrollParam?, TResult>? scroll = null,
+            global::System.Func<global::tryAGI.OpenAI.TypeParam?, TResult>? type = null,
+            global::System.Func<global::tryAGI.OpenAI.WaitParam?, TResult>? wait = null,
             bool validate = true)
         {
             if (validate)
@@ -420,9 +419,9 @@ namespace tryAGI.OpenAI
             {
                 return drag(Drag!);
             }
-            else if (IsKeyPress && keyPress != null)
+            else if (IsKeypress && keypress != null)
             {
-                return keyPress(KeyPress!);
+                return keypress(Keypress!);
             }
             else if (IsMove && move != null)
             {
@@ -452,15 +451,15 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.Click?>? click = null,
-            global::System.Action<global::tryAGI.OpenAI.DoubleClick?>? doubleClick = null,
-            global::System.Action<global::tryAGI.OpenAI.Drag?>? drag = null,
-            global::System.Action<global::tryAGI.OpenAI.KeyPress?>? keyPress = null,
-            global::System.Action<global::tryAGI.OpenAI.Move?>? move = null,
-            global::System.Action<global::tryAGI.OpenAI.Screenshot?>? screenshot = null,
-            global::System.Action<global::tryAGI.OpenAI.Scroll?>? scroll = null,
-            global::System.Action<global::tryAGI.OpenAI.Type?>? type = null,
-            global::System.Action<global::tryAGI.OpenAI.Wait?>? wait = null,
+            global::System.Action<global::tryAGI.OpenAI.ClickParam?>? click = null,
+            global::System.Action<global::tryAGI.OpenAI.DoubleClickAction?>? doubleClick = null,
+            global::System.Action<global::tryAGI.OpenAI.DragParam?>? drag = null,
+            global::System.Action<global::tryAGI.OpenAI.KeyPressAction?>? keypress = null,
+            global::System.Action<global::tryAGI.OpenAI.MoveParam?>? move = null,
+            global::System.Action<global::tryAGI.OpenAI.ScreenshotParam?>? screenshot = null,
+            global::System.Action<global::tryAGI.OpenAI.ScrollParam?>? scroll = null,
+            global::System.Action<global::tryAGI.OpenAI.TypeParam?>? type = null,
+            global::System.Action<global::tryAGI.OpenAI.WaitParam?>? wait = null,
             bool validate = true)
         {
             if (validate)
@@ -480,9 +479,9 @@ namespace tryAGI.OpenAI
             {
                 drag?.Invoke(Drag!);
             }
-            else if (IsKeyPress)
+            else if (IsKeypress)
             {
-                keyPress?.Invoke(KeyPress!);
+                keypress?.Invoke(Keypress!);
             }
             else if (IsMove)
             {
@@ -514,23 +513,23 @@ namespace tryAGI.OpenAI
             var fields = new object?[]
             {
                 Click,
-                typeof(global::tryAGI.OpenAI.Click),
+                typeof(global::tryAGI.OpenAI.ClickParam),
                 DoubleClick,
-                typeof(global::tryAGI.OpenAI.DoubleClick),
+                typeof(global::tryAGI.OpenAI.DoubleClickAction),
                 Drag,
-                typeof(global::tryAGI.OpenAI.Drag),
-                KeyPress,
-                typeof(global::tryAGI.OpenAI.KeyPress),
+                typeof(global::tryAGI.OpenAI.DragParam),
+                Keypress,
+                typeof(global::tryAGI.OpenAI.KeyPressAction),
                 Move,
-                typeof(global::tryAGI.OpenAI.Move),
+                typeof(global::tryAGI.OpenAI.MoveParam),
                 Screenshot,
-                typeof(global::tryAGI.OpenAI.Screenshot),
+                typeof(global::tryAGI.OpenAI.ScreenshotParam),
                 Scroll,
-                typeof(global::tryAGI.OpenAI.Scroll),
+                typeof(global::tryAGI.OpenAI.ScrollParam),
                 Type,
-                typeof(global::tryAGI.OpenAI.Type),
+                typeof(global::tryAGI.OpenAI.TypeParam),
                 Wait,
-                typeof(global::tryAGI.OpenAI.Wait),
+                typeof(global::tryAGI.OpenAI.WaitParam),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -547,15 +546,15 @@ namespace tryAGI.OpenAI
         public bool Equals(ComputerAction other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.Click?>.Default.Equals(Click, other.Click) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.DoubleClick?>.Default.Equals(DoubleClick, other.DoubleClick) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.Drag?>.Default.Equals(Drag, other.Drag) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.KeyPress?>.Default.Equals(KeyPress, other.KeyPress) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.Move?>.Default.Equals(Move, other.Move) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.Screenshot?>.Default.Equals(Screenshot, other.Screenshot) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.Scroll?>.Default.Equals(Scroll, other.Scroll) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.Type?>.Default.Equals(Type, other.Type) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.Wait?>.Default.Equals(Wait, other.Wait) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ClickParam?>.Default.Equals(Click, other.Click) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.DoubleClickAction?>.Default.Equals(DoubleClick, other.DoubleClick) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.DragParam?>.Default.Equals(Drag, other.Drag) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.KeyPressAction?>.Default.Equals(Keypress, other.Keypress) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.MoveParam?>.Default.Equals(Move, other.Move) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ScreenshotParam?>.Default.Equals(Screenshot, other.Screenshot) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ScrollParam?>.Default.Equals(Scroll, other.Scroll) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.TypeParam?>.Default.Equals(Type, other.Type) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.WaitParam?>.Default.Equals(Wait, other.Wait) 
                 ;
         }
 

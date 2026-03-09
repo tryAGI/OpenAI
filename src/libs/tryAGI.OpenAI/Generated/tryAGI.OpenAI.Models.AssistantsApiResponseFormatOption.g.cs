@@ -5,8 +5,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Specifies the format that the model must output. Compatible with [GPT-4o](https://platform.openai.com/docs/models#gpt-4o), [GPT-4 Turbo](https://platform.openai.com/docs/models#gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.<br/>
-    /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](https://platform.openai.com/docs/guides/structured-outputs).<br/>
+    /// Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models#gpt-4o), [GPT-4 Turbo](/docs/models#gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.<br/>
+    /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).<br/>
     /// Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.<br/>
     /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
     /// </summary>
@@ -30,6 +30,60 @@ namespace tryAGI.OpenAI
         public bool IsValue1 => Value1 != null;
 
         /// <summary>
+        /// Default response format. Used to generate text responses.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ResponseFormatText? Text { get; init; }
+#else
+        public global::tryAGI.OpenAI.ResponseFormatText? Text { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+#endif
+        public bool IsText => Text != null;
+
+        /// <summary>
+        /// JSON object response format. An older method of generating JSON responses.<br/>
+        /// Using `json_schema` is recommended for models that support it. Note that the<br/>
+        /// model will not generate JSON without a system or user message instructing it<br/>
+        /// to do so.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ResponseFormatJsonObject? JsonObject { get; init; }
+#else
+        public global::tryAGI.OpenAI.ResponseFormatJsonObject? JsonObject { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonObject))]
+#endif
+        public bool IsJsonObject => JsonObject != null;
+
+        /// <summary>
+        /// JSON Schema response format. Used to generate structured JSON responses.<br/>
+        /// Learn more about [Structured Outputs](/docs/guides/structured-outputs).
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ResponseFormatJsonSchema? JsonSchema { get; init; }
+#else
+        public global::tryAGI.OpenAI.ResponseFormatJsonSchema? JsonSchema { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonSchema))]
+#endif
+        public bool IsJsonSchema => JsonSchema != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator AssistantsApiResponseFormatOption(global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum value) => new AssistantsApiResponseFormatOption((global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum?)value);
@@ -48,23 +102,6 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Default response format. Used to generate text responses.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ResponseFormatText? Value2 { get; init; }
-#else
-        public global::tryAGI.OpenAI.ResponseFormatText? Value2 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
-#endif
-        public bool IsValue2 => Value2 != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator AssistantsApiResponseFormatOption(global::tryAGI.OpenAI.ResponseFormatText value) => new AssistantsApiResponseFormatOption((global::tryAGI.OpenAI.ResponseFormatText?)value);
@@ -72,35 +109,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.ResponseFormatText?(AssistantsApiResponseFormatOption @this) => @this.Value2;
+        public static implicit operator global::tryAGI.OpenAI.ResponseFormatText?(AssistantsApiResponseFormatOption @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantsApiResponseFormatOption(global::tryAGI.OpenAI.ResponseFormatText? value)
         {
-            Value2 = value;
+            Text = value;
         }
-
-        /// <summary>
-        /// JSON object response format. An older method of generating JSON responses.<br/>
-        /// Using `json_schema` is recommended for models that support it. Note that the<br/>
-        /// model will not generate JSON without a system or user message instructing it<br/>
-        /// to do so.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ResponseFormatJsonObject? Value3 { get; init; }
-#else
-        public global::tryAGI.OpenAI.ResponseFormatJsonObject? Value3 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
-#endif
-        public bool IsValue3 => Value3 != null;
 
         /// <summary>
         /// 
@@ -110,33 +127,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.ResponseFormatJsonObject?(AssistantsApiResponseFormatOption @this) => @this.Value3;
+        public static implicit operator global::tryAGI.OpenAI.ResponseFormatJsonObject?(AssistantsApiResponseFormatOption @this) => @this.JsonObject;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantsApiResponseFormatOption(global::tryAGI.OpenAI.ResponseFormatJsonObject? value)
         {
-            Value3 = value;
+            JsonObject = value;
         }
-
-        /// <summary>
-        /// JSON Schema response format. Used to generate structured JSON responses.<br/>
-        /// Learn more about [Structured Outputs](https://platform.openai.com/docs/guides/structured-outputs).
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ResponseFormatJsonSchema? Value4 { get; init; }
-#else
-        public global::tryAGI.OpenAI.ResponseFormatJsonSchema? Value4 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
-#endif
-        public bool IsValue4 => Value4 != null;
 
         /// <summary>
         /// 
@@ -146,14 +145,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.ResponseFormatJsonSchema?(AssistantsApiResponseFormatOption @this) => @this.Value4;
+        public static implicit operator global::tryAGI.OpenAI.ResponseFormatJsonSchema?(AssistantsApiResponseFormatOption @this) => @this.JsonSchema;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantsApiResponseFormatOption(global::tryAGI.OpenAI.ResponseFormatJsonSchema? value)
         {
-            Value4 = value;
+            JsonSchema = value;
         }
 
         /// <summary>
@@ -161,24 +160,24 @@ namespace tryAGI.OpenAI
         /// </summary>
         public AssistantsApiResponseFormatOption(
             global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum? value1,
-            global::tryAGI.OpenAI.ResponseFormatText? value2,
-            global::tryAGI.OpenAI.ResponseFormatJsonObject? value3,
-            global::tryAGI.OpenAI.ResponseFormatJsonSchema? value4
+            global::tryAGI.OpenAI.ResponseFormatText? text,
+            global::tryAGI.OpenAI.ResponseFormatJsonObject? jsonObject,
+            global::tryAGI.OpenAI.ResponseFormatJsonSchema? jsonSchema
             )
         {
             Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
+            Text = text;
+            JsonObject = jsonObject;
+            JsonSchema = jsonSchema;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
+            JsonSchema as object ??
+            JsonObject as object ??
+            Text as object ??
             Value1 as object 
             ;
 
@@ -187,9 +186,9 @@ namespace tryAGI.OpenAI
         /// </summary>
         public override string? ToString() =>
             Value1?.ToValueString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() ??
-            Value4?.ToString() 
+            Text?.ToString() ??
+            JsonObject?.ToString() ??
+            JsonSchema?.ToString() 
             ;
 
         /// <summary>
@@ -197,7 +196,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3 || IsValue4;
+            return IsValue1 && !IsText && !IsJsonObject && !IsJsonSchema || !IsValue1 && IsText && !IsJsonObject && !IsJsonSchema || !IsValue1 && !IsText && IsJsonObject && !IsJsonSchema || !IsValue1 && !IsText && !IsJsonObject && IsJsonSchema;
         }
 
         /// <summary>
@@ -205,9 +204,9 @@ namespace tryAGI.OpenAI
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum?, TResult>? value1 = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseFormatText?, TResult>? value2 = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseFormatJsonObject?, TResult>? value3 = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseFormatJsonSchema?, TResult>? value4 = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseFormatText?, TResult>? text = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseFormatJsonObject?, TResult>? jsonObject = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseFormatJsonSchema?, TResult>? jsonSchema = null,
             bool validate = true)
         {
             if (validate)
@@ -219,17 +218,17 @@ namespace tryAGI.OpenAI
             {
                 return value1(Value1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsText && text != null)
             {
-                return value2(Value2!);
+                return text(Text!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsJsonObject && jsonObject != null)
             {
-                return value3(Value3!);
+                return jsonObject(JsonObject!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsJsonSchema && jsonSchema != null)
             {
-                return value4(Value4!);
+                return jsonSchema(JsonSchema!);
             }
 
             return default(TResult);
@@ -240,9 +239,9 @@ namespace tryAGI.OpenAI
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum?>? value1 = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseFormatText?>? value2 = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseFormatJsonObject?>? value3 = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseFormatJsonSchema?>? value4 = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseFormatText?>? text = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseFormatJsonObject?>? jsonObject = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseFormatJsonSchema?>? jsonSchema = null,
             bool validate = true)
         {
             if (validate)
@@ -254,17 +253,17 @@ namespace tryAGI.OpenAI
             {
                 value1?.Invoke(Value1!);
             }
-            else if (IsValue2)
+            else if (IsText)
             {
-                value2?.Invoke(Value2!);
+                text?.Invoke(Text!);
             }
-            else if (IsValue3)
+            else if (IsJsonObject)
             {
-                value3?.Invoke(Value3!);
+                jsonObject?.Invoke(JsonObject!);
             }
-            else if (IsValue4)
+            else if (IsJsonSchema)
             {
-                value4?.Invoke(Value4!);
+                jsonSchema?.Invoke(JsonSchema!);
             }
         }
 
@@ -277,11 +276,11 @@ namespace tryAGI.OpenAI
             {
                 Value1,
                 typeof(global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum),
-                Value2,
+                Text,
                 typeof(global::tryAGI.OpenAI.ResponseFormatText),
-                Value3,
+                JsonObject,
                 typeof(global::tryAGI.OpenAI.ResponseFormatJsonObject),
-                Value4,
+                JsonSchema,
                 typeof(global::tryAGI.OpenAI.ResponseFormatJsonSchema),
             };
             const int offset = unchecked((int)2166136261);
@@ -300,9 +299,9 @@ namespace tryAGI.OpenAI
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseFormatText?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseFormatJsonObject?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseFormatJsonSchema?>.Default.Equals(Value4, other.Value4) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseFormatText?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseFormatJsonObject?>.Default.Equals(JsonObject, other.JsonObject) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseFormatJsonSchema?>.Default.Equals(JsonSchema, other.JsonSchema) 
                 ;
         }
 
