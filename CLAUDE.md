@@ -10,10 +10,10 @@ C# SDK for the [OpenAI](https://openai.com/) API, auto-generated from the offici
 
 ```bash
 # Build the solution
-dotnet build OpenAI.sln
+dotnet build OpenAI.slnx
 
 # Build for release (also produces NuGet package)
-dotnet build OpenAI.sln -c Release
+dotnet build OpenAI.slnx -c Release
 
 # Run integration tests (requires OPENAI_API_KEY env var)
 dotnet test src/tests/OpenAI.IntegrationTests/OpenAI.IntegrationTests.csproj
