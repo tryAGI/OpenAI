@@ -52,9 +52,11 @@ namespace tryAGI.OpenAI.JsonConverters
             {
             }
 
-            var result = new global::tryAGI.OpenAI.EnvironmentVariant1(
+            var __value = new global::tryAGI.OpenAI.EnvironmentVariant1(
                 containerAuto,
+
                 local,
+
                 containerReference
                 );
 
@@ -77,7 +79,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

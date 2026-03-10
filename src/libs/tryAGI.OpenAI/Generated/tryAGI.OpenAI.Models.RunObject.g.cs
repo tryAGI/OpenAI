@@ -182,10 +182,12 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.AssistantsApiToolChoiceOption?, object> ToolChoice { get; set; }
 
         /// <summary>
-        /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.
+        /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.<br/>
+        /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parallel_tool_calls")]
-        public bool? ParallelToolCalls { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool ParallelToolCalls { get; set; }
 
         /// <summary>
         /// Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models#gpt-4o), [GPT-4 Turbo](/docs/models#gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.<br/>
@@ -276,7 +278,8 @@ namespace tryAGI.OpenAI
         /// <param name="truncationStrategy"></param>
         /// <param name="toolChoice"></param>
         /// <param name="parallelToolCalls">
-        /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.
+        /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.<br/>
+        /// Default Value: true
         /// </param>
         /// <param name="responseFormat">
         /// Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models#gpt-4o), [GPT-4 Turbo](/docs/models#gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.<br/>
@@ -298,6 +301,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.AssistantToolsCode, global::tryAGI.OpenAI.AssistantToolsFileSearch, global::tryAGI.OpenAI.AssistantToolsFunction>> tools,
             global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.TruncationObject, object> truncationStrategy,
             global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.AssistantsApiToolChoiceOption?, object> toolChoice,
+            bool parallelToolCalls,
             global::tryAGI.OpenAI.AssistantsApiResponseFormatOption responseFormat,
             global::tryAGI.OpenAI.RunObjectObject @object,
             global::tryAGI.OpenAI.RunObjectRequiredAction? requiredAction,
@@ -313,8 +317,7 @@ namespace tryAGI.OpenAI
             double? temperature,
             double? topP,
             int? maxPromptTokens,
-            int? maxCompletionTokens,
-            bool? parallelToolCalls)
+            int? maxCompletionTokens)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;
@@ -326,6 +329,7 @@ namespace tryAGI.OpenAI
             this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
             this.TruncationStrategy = truncationStrategy;
             this.ToolChoice = toolChoice;
+            this.ParallelToolCalls = parallelToolCalls;
             this.ResponseFormat = responseFormat;
             this.Object = @object;
             this.RequiredAction = requiredAction;
@@ -342,7 +346,6 @@ namespace tryAGI.OpenAI
             this.TopP = topP;
             this.MaxPromptTokens = maxPromptTokens;
             this.MaxCompletionTokens = maxCompletionTokens;
-            this.ParallelToolCalls = parallelToolCalls;
         }
 
         /// <summary>

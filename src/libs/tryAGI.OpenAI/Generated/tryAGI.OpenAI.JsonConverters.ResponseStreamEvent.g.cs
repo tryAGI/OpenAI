@@ -652,59 +652,111 @@ namespace tryAGI.OpenAI.JsonConverters
             {
             }
 
-            var result = new global::tryAGI.OpenAI.ResponseStreamEvent(
+            var __value = new global::tryAGI.OpenAI.ResponseStreamEvent(
                 responseAudioDelta,
+
                 responseAudioDone,
+
                 responseAudioTranscriptDelta,
+
                 responseAudioTranscriptDone,
+
                 responseCodeInterpreterCallCodeDelta,
+
                 responseCodeInterpreterCallCodeDone,
+
                 responseCodeInterpreterCallCompleted,
+
                 responseCodeInterpreterCallInProgress,
+
                 responseCodeInterpreterCallInterpreting,
+
                 responseCompleted,
+
                 responseContentPartAdded,
+
                 responseContentPartDone,
+
                 responseCreated,
+
                 error,
+
                 responseFileSearchCallCompleted,
+
                 responseFileSearchCallInProgress,
+
                 responseFileSearchCallSearching,
+
                 responseFunctionCallArgumentsDelta,
+
                 responseFunctionCallArgumentsDone,
+
                 responseInProgress,
+
                 responseFailed,
+
                 responseIncomplete,
+
                 responseOutputItemAdded,
+
                 responseOutputItemDone,
+
                 responseReasoningSummaryPartAdded,
+
                 responseReasoningSummaryPartDone,
+
                 responseReasoningSummaryTextDelta,
+
                 responseReasoningSummaryTextDone,
+
                 responseReasoningTextDelta,
+
                 responseReasoningTextDone,
+
                 responseRefusalDelta,
+
                 responseRefusalDone,
+
                 responseOutputTextDelta,
+
                 responseOutputTextDone,
+
                 responseWebSearchCallCompleted,
+
                 responseWebSearchCallInProgress,
+
                 responseWebSearchCallSearching,
+
                 responseImageGenerationCallCompleted,
+
                 responseImageGenerationCallGenerating,
+
                 responseImageGenerationCallInProgress,
+
                 responseImageGenerationCallPartialImage,
+
                 responseMcpCallArgumentsDelta,
+
                 responseMcpCallArgumentsDone,
+
                 responseMcpCallCompleted,
+
                 responseMcpCallFailed,
+
                 responseMcpCallInProgress,
+
                 responseMcpListToolsCompleted,
+
                 responseMcpListToolsFailed,
+
                 responseMcpListToolsInProgress,
+
                 responseOutputTextAnnotationAdded,
+
                 responseQueued,
+
                 responseCustomToolCallInputDelta,
+
                 responseCustomToolCallInputDone
                 );
 
@@ -1027,7 +1079,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

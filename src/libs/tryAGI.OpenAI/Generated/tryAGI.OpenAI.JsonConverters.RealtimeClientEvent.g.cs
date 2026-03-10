@@ -148,17 +148,27 @@ namespace tryAGI.OpenAI.JsonConverters
             {
             }
 
-            var result = new global::tryAGI.OpenAI.RealtimeClientEvent(
+            var __value = new global::tryAGI.OpenAI.RealtimeClientEvent(
                 conversationItemCreate,
+
                 conversationItemDelete,
+
                 conversationItemRetrieve,
+
                 conversationItemTruncate,
+
                 inputAudioBufferAppend,
+
                 inputAudioBufferClear,
+
                 outputAudioBufferClear,
+
                 inputAudioBufferCommit,
+
                 responseCancel,
+
                 responseCreate,
+
                 sessionUpdate
                 );
 
@@ -229,7 +239,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

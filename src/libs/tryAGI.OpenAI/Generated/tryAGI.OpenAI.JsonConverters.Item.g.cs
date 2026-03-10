@@ -328,32 +328,57 @@ namespace tryAGI.OpenAI.JsonConverters
             {
             }
 
-            var result = new global::tryAGI.OpenAI.Item(
+            var __value = new global::tryAGI.OpenAI.Item(
                 message1,
+
                 message2,
+
                 fileSearchCall,
+
                 computerCall,
+
                 computerCallOutput,
+
                 webSearchCall,
+
                 functionCall,
+
                 functionCallOutput,
+
                 toolSearchCall,
+
                 toolSearchOutput,
+
                 reasoning,
+
                 compaction,
+
                 imageGenerationCall,
+
                 codeInterpreterCall,
+
                 localShellCall,
+
                 localShellCallOutput,
+
                 shellCall,
+
                 shellCallOutput,
+
                 applyPatchCall,
+
                 applyPatchCallOutput,
+
                 mcpListTools,
+
                 mcpApprovalRequest,
+
                 mcpApprovalResponse,
+
                 mcpCall,
+
                 customToolCallOutput,
+
                 customToolCall
                 );
 
@@ -514,7 +539,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />
