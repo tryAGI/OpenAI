@@ -88,12 +88,17 @@ namespace tryAGI.OpenAI.JsonConverters
             {
             }
 
-            var result = new global::tryAGI.OpenAI.ChatCompletionRequestMessage(
+            var __value = new global::tryAGI.OpenAI.ChatCompletionRequestMessage(
                 developer,
+
                 system,
+
                 user,
+
                 assistant,
+
                 tool,
+
                 function
                 );
 
@@ -134,7 +139,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

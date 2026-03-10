@@ -28,7 +28,7 @@ namespace tryAGI.OpenAI.JsonConverters
             {
             }
 
-            var result = new global::tryAGI.OpenAI.ThreadStreamEvent(
+            var __value = new global::tryAGI.OpenAI.ThreadStreamEvent(
                 value1
                 );
 
@@ -39,7 +39,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

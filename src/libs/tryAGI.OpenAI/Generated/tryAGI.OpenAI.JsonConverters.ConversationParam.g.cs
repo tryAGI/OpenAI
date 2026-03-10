@@ -40,8 +40,9 @@ namespace tryAGI.OpenAI.JsonConverters
             {
             }
 
-            var result = new global::tryAGI.OpenAI.ConversationParam(
+            var __value = new global::tryAGI.OpenAI.ConversationParam(
                 conversationId,
+
                 conversationObject
                 );
 
@@ -58,7 +59,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

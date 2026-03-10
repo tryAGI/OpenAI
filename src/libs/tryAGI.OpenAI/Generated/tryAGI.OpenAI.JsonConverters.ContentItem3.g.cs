@@ -124,15 +124,23 @@ namespace tryAGI.OpenAI.JsonConverters
             {
             }
 
-            var result = new global::tryAGI.OpenAI.ContentItem3(
+            var __value = new global::tryAGI.OpenAI.ContentItem3(
                 inputText,
+
                 outputText,
+
                 text,
+
                 summaryText,
+
                 reasoningText,
+
                 refusal,
+
                 inputImage,
+
                 computerScreenshot,
+
                 inputFile
                 );
 
@@ -191,7 +199,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

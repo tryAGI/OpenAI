@@ -40,8 +40,9 @@ namespace tryAGI.OpenAI.JsonConverters
             {
             }
 
-            var result = new global::tryAGI.OpenAI.FiltersItem(
+            var __value = new global::tryAGI.OpenAI.FiltersItem(
                 comparisonFilter,
+
                 value2
                 );
 
@@ -58,7 +59,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

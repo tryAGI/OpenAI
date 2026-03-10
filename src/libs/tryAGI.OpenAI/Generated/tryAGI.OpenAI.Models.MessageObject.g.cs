@@ -44,7 +44,8 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageObjectStatusJsonConverter))]
-        public global::tryAGI.OpenAI.MessageObjectStatus? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.MessageObjectStatus Status { get; set; }
 
         /// <summary>
         /// 
@@ -147,10 +148,10 @@ namespace tryAGI.OpenAI
             string id,
             global::System.DateTimeOffset createdAt,
             string threadId,
+            global::tryAGI.OpenAI.MessageObjectStatus status,
             global::tryAGI.OpenAI.MessageObjectRole role,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageContentImageFileObject, global::tryAGI.OpenAI.MessageContentImageUrlObject, global::tryAGI.OpenAI.MessageContentTextObject, global::tryAGI.OpenAI.MessageContentRefusalObject>> content,
             global::tryAGI.OpenAI.MessageObjectObject @object,
-            global::tryAGI.OpenAI.MessageObjectStatus? status,
             global::tryAGI.OpenAI.MessageObjectIncompleteDetails2? incompleteDetails,
             global::System.DateTimeOffset? completedAt,
             global::System.DateTimeOffset? incompleteAt,
@@ -162,10 +163,10 @@ namespace tryAGI.OpenAI
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;
             this.ThreadId = threadId ?? throw new global::System.ArgumentNullException(nameof(threadId));
+            this.Status = status;
             this.Role = role;
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Object = @object;
-            this.Status = status;
             this.IncompleteDetails = incompleteDetails;
             this.CompletedAt = completedAt;
             this.IncompleteAt = incompleteAt;
