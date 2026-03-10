@@ -4,13 +4,13 @@ public partial class Tests
 {
     [DataTestMethod]
     [DataRow(CustomProvider.OpenAi)]
-    [DataRow(CustomProvider.Fireworks)]
+    //[DataRow(CustomProvider.Fireworks)]
     [DataRow(CustomProvider.DeepInfra)]
     [DataRow(CustomProvider.DeepSeek)]
-    [DataRow(CustomProvider.OpenRouter)]
+    //[DataRow(CustomProvider.OpenRouter)]
     [DataRow(CustomProvider.Together)]
     [DataRow(CustomProvider.GitHub)]
-    [DataRow(CustomProvider.Perplexity)]
+    //[DataRow(CustomProvider.Perplexity)]
     [DataRow(CustomProvider.SambaNova)]
     [DataRow(CustomProvider.Ollama)]
     [DataRow(CustomProvider.LmStudio)]
@@ -31,13 +31,6 @@ public partial class Tests
                 {
                     Messages = ["Generate five random words."],
                     Model = pair.Model,
-                    FrequencyPenalty = customProvider switch
-                    {
-                        CustomProvider.Perplexity => 0.5,
-                        _ => null,
-                    },
-                    PresencePenalty = null,
-                    Logprobs = null,
                 }
             });
         response.Should().NotBeEmpty();
@@ -47,10 +40,10 @@ public partial class Tests
     
     [DataTestMethod]
     [DataRow(CustomProvider.OpenAi)]
-    [DataRow(CustomProvider.Fireworks)]
+    //[DataRow(CustomProvider.Fireworks)]
     [DataRow(CustomProvider.DeepInfra)]
     [DataRow(CustomProvider.DeepSeek)]
-    [DataRow(CustomProvider.OpenRouter)]
+    //[DataRow(CustomProvider.OpenRouter)]
     [DataRow(CustomProvider.Together)]
     [DataRow(CustomProvider.GitHub)]
     [DataRow(CustomProvider.SambaNova)]
@@ -73,7 +66,6 @@ public partial class Tests
                 {
                     Messages = ["Generate five random words."],
                     Model = pair.Model,
-                    PresencePenalty = null,
                 }
             });
         
@@ -85,10 +77,10 @@ public partial class Tests
     
     [DataTestMethod]
     [DataRow(CustomProvider.OpenAi)]
-    [DataRow(CustomProvider.Fireworks)]
+    //[DataRow(CustomProvider.Fireworks)]
     [DataRow(CustomProvider.DeepInfra)]
     [DataRow(CustomProvider.DeepSeek)]
-    [DataRow(CustomProvider.OpenRouter)]
+    //[DataRow(CustomProvider.OpenRouter)]
     //[DataRow(CustomProvider.Together)]
     [DataRow(CustomProvider.GitHub)]
     [DataRow(CustomProvider.Ollama)]

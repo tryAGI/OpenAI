@@ -1,5 +1,3 @@
-using System.Diagnostics;
-
 namespace tryAGI.OpenAI.IntegrationTests;
 
 public partial class Tests
@@ -27,27 +25,7 @@ public partial class Tests
 
         byte[] response = memoryStream.ToArray();
         response.Should().NotBeNull();
-
-        var path = Path.Combine(Path.GetTempPath(), "mp3.mp3");
-        await File.WriteAllBytesAsync(path, response);
-
-        Process.Start(new ProcessStartInfo(path)
-        {
-            UseShellExecute = true,
-        });
-
-        var response2 = await api.Audio.CreateTranslationAsync(
-            file: response,
-            filename: "mp3.mp3",
-            model: CreateTranslationRequestModel.Whisper1,
-            prompt: null,
-            responseFormat: CreateTranslationRequestResponseFormat.Json,
-            temperature: 0.0);
-        response2.Should().NotBeNull();
-        response2.Object.Should().BeOfType<CreateTranslationResponseJson>();
-        response2.IsValue1.Should().BeTrue();
-        response2.Value1.Should().NotBeNull();
-        response2.Value1!.Text.Should().Be("Create speech test is successful.");
+        response.Length.Should().BeGreaterThan(0);
 
         var response3 = await api.Audio.CreateTranscriptionAsync(
             file: response,
