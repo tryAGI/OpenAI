@@ -11,11 +11,12 @@ public partial class Tests
 
         using var memoryStream = new MemoryStream();
         await foreach (var streamEvent in api.Audio.CreateSpeechAsStreamAsync(
-            model: CreateSpeechRequestModel.Tts1,
+            model: CreateSpeechRequestModel.Gpt4oMiniTts,
             input: "Create speech test is successful.",
             voice: (VoiceIdsShared)VoiceIdsSharedEnum.Alloy,
             responseFormat: CreateSpeechRequestResponseFormat.Mp3,
-            speed: 1.0))
+            speed: 1.0,
+            streamFormat: CreateSpeechRequestStreamFormat.Sse))
         {
             if (streamEvent.SpeechAudioDelta is { } delta)
             {

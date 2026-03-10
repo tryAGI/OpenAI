@@ -27,17 +27,6 @@ public partial class Tests
         string response = await api.Chat.CreateChatCompletionAsync(
             new CreateChatCompletionRequest
             {
-                Value1 = new CreateModelResponseProperties
-                {
-                    Value1 = new ModelResponseProperties
-                    {
-                        User = customProvider switch
-                        {
-                            CustomProvider.Mistral or CustomProvider.Codestral => null,
-                            _ => "tryAGI.OpenAI.Tests.GenerateFiveRandomWords",
-                        },
-                    }
-                },
                 Value2 = new CreateChatCompletionRequestVariant2
                 {
                     Messages = ["Generate five random words."],
@@ -51,20 +40,6 @@ public partial class Tests
                     Logprobs = null,
                 }
             });
-            // messages: ["Generate five random words."],
-            // model: pair.Model,
-            // user: customProvider switch
-            // {
-            //     CustomProvider.Mistral or CustomProvider.Codestral => null,
-            //     _ => "tryAGI.OpenAI.Tests.GenerateFiveRandomWords",
-            // },
-            // frequencyPenalty: customProvider switch
-            // {
-            //     CustomProvider.Perplexity => 0.5,
-            //     _ => null,
-            // },
-            // presencePenalty: null,
-            // logprobs: null);
         response.Should().NotBeEmpty();
 
         Console.WriteLine(response);
@@ -94,17 +69,6 @@ public partial class Tests
         var enumerable = api.Chat.CreateChatCompletionAsStreamAsync(
             new CreateChatCompletionRequest
             {
-                Value1 = new CreateModelResponseProperties
-                {
-                    Value1 = new ModelResponseProperties
-                    {
-                        User = customProvider switch
-                        {
-                            CustomProvider.Mistral or CustomProvider.Codestral => null,
-                            _ => "tryAGI.OpenAI.Tests.GenerateFiveRandomWordsAsStream",
-                        },
-                    }
-                },
                 Value2 = new CreateChatCompletionRequestVariant2
                 {
                     Messages = ["Generate five random words."],
@@ -112,14 +76,6 @@ public partial class Tests
                     PresencePenalty = null,
                 }
             });
-            // messages: ["Generate five random words."],
-            // model: pair.Model,
-            // presencePenalty: null,
-            // user: customProvider switch
-            // {
-            //     CustomProvider.Mistral or CustomProvider.Codestral => null,
-            //     _ => "tryAGI.OpenAI.Tests.GenerateFiveRandomWordsAsStream",
-            // });
         
         await foreach (string response in enumerable)
         {
