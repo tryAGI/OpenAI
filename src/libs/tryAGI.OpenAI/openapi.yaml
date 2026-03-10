@@ -12646,7 +12646,8 @@ components:
             oneOf:
               - $ref: '#/components/schemas/ComparisonFilter'
               - unrecognizedKeywords:
-                  $recursiveRef: '#'
+                  unrecognizedKeywords:
+                    $recursiveRef: '#'
             discriminator:
               propertyName: type
           description: Array of filters to combine. Items can be `ComparisonFilter` or `CompoundFilter`.
@@ -12655,7 +12656,8 @@ components:
       x-oaiMeta:
         name: CompoundFilter
       unrecognizedKeywords:
-        $recursiveAnchor: true
+        unrecognizedKeywords:
+          $recursiveAnchor: true
     ComputerAction:
       oneOf:
         - $ref: '#/components/schemas/ClickParam'
@@ -15887,7 +15889,8 @@ components:
                 description: The bytes of the token.
           description: "The log probabilities of the tokens in the transcription. Only returned with the models `gpt-4o-transcribe` and `gpt-4o-mini-transcribe` if `logprobs` is added to the `include` array.\n"
           unrecognizedKeywords:
-            optional: true
+            unrecognizedKeywords:
+              optional: true
         usage:
           type: object
           oneOf:
@@ -18488,8 +18491,9 @@ components:
           items:
             type: number
             unrecognizedKeywords:
-              min_items: 2
-              max_items: 2
+              unrecognizedKeywords:
+                min_items: 2
+                max_items: 2
           description: 'The range of the score. Defaults to `[0, 1]`.'
       description: "A ScoreModelGrader object that uses a model to assign a score to the input.\n"
       x-oaiMeta:
@@ -32787,9 +32791,10 @@ components:
           description: "Set of 16 key-value pairs that can be attached to an object. This can be\nuseful for storing additional information about the object in a structured\nformat, and querying for objects via API or the dashboard. Keys are strings\nwith a maximum length of 64 characters. Values are strings with a maximum\nlength of 512 characters, booleans, or numbers.\n"
           x-oaiTypeLabel: map
           unrecognizedKeywords:
-            propertyNames:
-              type: string
-              maxLength: 64
+            unrecognizedKeywords:
+              propertyNames:
+                type: string
+                maxLength: 64
         - type: 'null'
     VectorStoreFileBatchObject:
       title: Vector store file batch
