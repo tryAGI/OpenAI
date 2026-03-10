@@ -8,7 +8,7 @@ public partial class Examples
     {
         using var api = GetAuthenticatedClient();
         
-        AnyOf<CreateTranscriptionResponseJson, CreateTranscriptionResponseVerboseJson> response = await api.Audio.CreateTranscriptionAsync(
+        OneOf<CreateTranscriptionResponseJson, CreateTranscriptionResponseDiarizedJson, CreateTranscriptionResponseVerboseJson> response = await api.Audio.CreateTranscriptionAsync(
             file: H.Resources.audio_houseplant_care_mp3.AsBytes(),
             filename: H.Resources.audio_houseplant_care_mp3.FileName,
             model: CreateTranscriptionRequestModel.Whisper1);

@@ -8,22 +8,33 @@ public partial class Tests
     public async Task CreateSpeech_Url()
     {
         var api = GetAuthorizedApi();
-        var response = await api.Audio.CreateSpeechAsync(
+
+        using var memoryStream = new MemoryStream();
+        await foreach (var streamEvent in api.Audio.CreateSpeechAsStreamAsync(
             model: CreateSpeechRequestModel.Tts1,
             input: "Create speech test is successful.",
-            voice: VoiceIdsSharedEnum.Alloy,
+            voice: (VoiceIdsShared)VoiceIdsSharedEnum.Alloy,
             responseFormat: CreateSpeechRequestResponseFormat.Mp3,
-            speed: 1.0);
+            speed: 1.0))
+        {
+            if (streamEvent.SpeechAudioDelta is { } delta)
+            {
+                byte[] chunk = Convert.FromBase64String(delta.Audio);
+                memoryStream.Write(chunk, 0, chunk.Length);
+            }
+        }
+
+        byte[] response = memoryStream.ToArray();
         response.Should().NotBeNull();
 
         var path = Path.Combine(Path.GetTempPath(), "mp3.mp3");
         await File.WriteAllBytesAsync(path, response);
-        
+
         Process.Start(new ProcessStartInfo(path)
         {
             UseShellExecute = true,
         });
-        
+
         var response2 = await api.Audio.CreateTranslationAsync(
             file: response,
             filename: "mp3.mp3",
@@ -36,12 +47,12 @@ public partial class Tests
         response2.IsValue1.Should().BeTrue();
         response2.Value1.Should().NotBeNull();
         response2.Value1!.Text.Should().Be("Create speech test is successful.");
-        
+
         var response3 = await api.Audio.CreateTranscriptionAsync(
             file: response,
             filename: "mp3.mp3",
             model: CreateTranscriptionRequestModel.Whisper1,
-            language: "en",   
+            language: "en",
             prompt: null,
             responseFormat: AudioResponseFormat.Json,
             temperature: 0.0);

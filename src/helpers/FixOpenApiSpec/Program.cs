@@ -34,17 +34,27 @@ foreach (var schema in realtimeOpenApiDocument.Components!.Schemas!)
 ((OpenApiSchema)openApiDocument.Components.Schemas["RunStepObject"]!).Required!.Remove("expired_at");
 ((OpenApiSchema)openApiDocument.Components.Schemas["RunStepObject"]!).Required!.Remove("metadata");
 
-openApiDocument.Paths!["/files/{file_id}/content"]!.Operations[System.Net.Http.HttpMethod.Get]!.Responses!["200"]!.Content!.Remove("application/json");
-openApiDocument.Paths["/files/{file_id}/content"]!.Operations[System.Net.Http.HttpMethod.Get]!.Responses!["200"]!.Content!.Add(
-    "application/octet-stream",
-    new OpenApiMediaType
-    {
-        Schema = new OpenApiSchema
+// Fix title with commas that produces invalid C# identifiers in AutoSDK
+if (openApiDocument.Components.Schemas.TryGetValue("EvalItemContentArray", out var evalItemContentArray))
+{
+    ((OpenApiSchema)evalItemContentArray!).Title = "Eval item content array";
+}
+
+var fileContentResponse = openApiDocument.Paths!["/files/{file_id}/content"]!.Operations[System.Net.Http.HttpMethod.Get]!.Responses!["200"]!.Content!;
+fileContentResponse.Remove("application/json");
+if (!fileContentResponse.ContainsKey("application/octet-stream"))
+{
+    fileContentResponse.Add(
+        "application/octet-stream",
+        new OpenApiMediaType
         {
-            Type = JsonSchemaType.String,
-            Format = "binary",
-        }
-    });
+            Schema = new OpenApiSchema
+            {
+                Type = JsonSchemaType.String,
+                Format = "binary",
+            }
+        });
+}
 
 yamlOrJson = await openApiDocument.SerializeAsYamlAsync(OpenApiSpecVersion.OpenApi3_2);
 

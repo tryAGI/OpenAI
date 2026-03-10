@@ -31,18 +31,18 @@ namespace tryAGI.OpenAI
         /// image, or input audio object.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>? AnArrayOfInputText,OutputText,InputImage,AndInputAudio { get; init; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>? EvalItemContentArray { get; init; }
 #else
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>? AnArrayOfInputText,OutputText,InputImage,AndInputAudio { get; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>? EvalItemContentArray { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnArrayOfInputText,OutputText,InputImage,AndInputAudio))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EvalItemContentArray))]
 #endif
-        public bool IsAnArrayOfInputText,OutputText,InputImage,AndInputAudio => AnArrayOfInputText,OutputText,InputImage,AndInputAudio != null;
+        public bool IsEvalItemContentArray => EvalItemContentArray != null;
         /// <summary>
         /// 
         /// </summary>
@@ -66,18 +66,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public EvalItemContent(
             global::tryAGI.OpenAI.EvalItemContentItem? evalContentItem,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>? anArrayOfInputText,OutputText,InputImage,AndInputAudio
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>? evalItemContentArray
             )
         {
             EvalContentItem = evalContentItem;
-            AnArrayOfInputText,OutputText,InputImage,AndInputAudio = anArrayOfInputText,OutputText,InputImage,AndInputAudio;
+            EvalItemContentArray = evalItemContentArray;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            AnArrayOfInputText,OutputText,InputImage,AndInputAudio as object ??
+            EvalItemContentArray as object ??
             EvalContentItem as object 
             ;
 
@@ -86,7 +86,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public override string? ToString() =>
             EvalContentItem?.ToString() ??
-            AnArrayOfInputText,OutputText,InputImage,AndInputAudio?.ToString() 
+            EvalItemContentArray?.ToString() 
             ;
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsEvalContentItem && !IsAnArrayOfInputText,OutputText,InputImage,AndInputAudio || !IsEvalContentItem && IsAnArrayOfInputText,OutputText,InputImage,AndInputAudio;
+            return IsEvalContentItem && !IsEvalItemContentArray || !IsEvalContentItem && IsEvalItemContentArray;
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.EvalItemContentItem?, TResult>? evalContentItem = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>?, TResult>? anArrayOfInputText,OutputText,InputImage,AndInputAudio = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>?, TResult>? evalItemContentArray = null,
             bool validate = true)
         {
             if (validate)
@@ -114,9 +114,9 @@ namespace tryAGI.OpenAI
             {
                 return evalContentItem(EvalContentItem!);
             }
-            else if (IsAnArrayOfInputText,OutputText,InputImage,AndInputAudio && anArrayOfInputText,OutputText,InputImage,AndInputAudio != null)
+            else if (IsEvalItemContentArray && evalItemContentArray != null)
             {
-                return anArrayOfInputText,OutputText,InputImage,AndInputAudio(AnArrayOfInputText,OutputText,InputImage,AndInputAudio!);
+                return evalItemContentArray(EvalItemContentArray!);
             }
 
             return default(TResult);
@@ -127,7 +127,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.EvalItemContentItem?>? evalContentItem = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>?>? anArrayOfInputText,OutputText,InputImage,AndInputAudio = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>?>? evalItemContentArray = null,
             bool validate = true)
         {
             if (validate)
@@ -139,9 +139,9 @@ namespace tryAGI.OpenAI
             {
                 evalContentItem?.Invoke(EvalContentItem!);
             }
-            else if (IsAnArrayOfInputText,OutputText,InputImage,AndInputAudio)
+            else if (IsEvalItemContentArray)
             {
-                anArrayOfInputText,OutputText,InputImage,AndInputAudio?.Invoke(AnArrayOfInputText,OutputText,InputImage,AndInputAudio!);
+                evalItemContentArray?.Invoke(EvalItemContentArray!);
             }
         }
 
@@ -154,7 +154,7 @@ namespace tryAGI.OpenAI
             {
                 EvalContentItem,
                 typeof(global::tryAGI.OpenAI.EvalItemContentItem),
-                AnArrayOfInputText,OutputText,InputImage,AndInputAudio,
+                EvalItemContentArray,
                 typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>),
             };
             const int offset = unchecked((int)2166136261);
@@ -173,7 +173,7 @@ namespace tryAGI.OpenAI
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.EvalItemContentItem?>.Default.Equals(EvalContentItem, other.EvalContentItem) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>?>.Default.Equals(AnArrayOfInputText,OutputText,InputImage,AndInputAudio, other.AnArrayOfInputText,OutputText,InputImage,AndInputAudio) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>?>.Default.Equals(EvalItemContentArray, other.EvalItemContentArray) 
                 ;
         }
 
