@@ -34663,11 +34663,6 @@ components:
           description: 'The detail level of the screenshot image to be sent to the model. One of `high`, `low`, `auto`, or `original`. Defaults to `auto`.'
           $ref: '#/components/schemas/ImageDetail'
       description: A screenshot of a computer.
-    FileInputDetail:
-      enum:
-        - low
-        - high
-      type: string
     InputFileContent:
       title: Input file
       required:
@@ -34695,9 +34690,6 @@ components:
         file_url:
           type: string
           description: The URL of the file to be sent to the model.
-        detail:
-          description: The detail level of the file to be sent to the model. One of `high` or `low`. Defaults to `high`.
-          $ref: '#/components/schemas/FileInputDetail'
       description: A file input to the model.
     Message:
       title: Message
@@ -36189,11 +36181,6 @@ components:
               $ref: '#/components/schemas/DetailEnum'
             - type: 'null'
       description: 'An image input to the model. Learn about [image inputs](/docs/guides/vision)'
-    FileDetailEnum:
-      enum:
-        - high
-        - low
-      type: string
     InputFileContentParam:
       title: Input file
       required:
@@ -36229,9 +36216,6 @@ components:
             - type: string
               description: The URL of the file to be sent to the model.
             - type: 'null'
-        detail:
-          description: The detail level of the file to be sent to the model. One of `high` or `low`. Defaults to `high`.
-          $ref: '#/components/schemas/FileDetailEnum'
       description: A file input to the model.
     FunctionCallOutputItemParam:
       title: Function tool call output
