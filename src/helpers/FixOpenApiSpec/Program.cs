@@ -5,8 +5,6 @@ using Microsoft.OpenApi;
 var path = args[0];
 var yamlOrJson = await File.ReadAllTextAsync(path);
 
-yamlOrJson = yamlOrJson.Replace("minimum: -9223372036854776000", "");
-
 var realtimeText = await File.ReadAllTextAsync(path.Replace(".yaml", ".realtime.yaml"));
 
 var openApiDocument = yamlOrJson.GetOpenApiDocument(Settings.Default);
