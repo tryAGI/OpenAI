@@ -28,8 +28,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? CallId { get; set; }
+        public string? CallId { get; set; }
 
         /// <summary>
         /// Whether tool search was executed by the server or by the client.
@@ -94,19 +93,19 @@ namespace tryAGI.OpenAI
 #endif
         public ToolSearchOutput(
             string id,
-            string? callId,
             global::tryAGI.OpenAI.ToolSearchExecutionType execution,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Tool> tools,
             global::tryAGI.OpenAI.FunctionCallOutputStatusEnum status,
+            string? callId,
             string? createdBy,
             global::tryAGI.OpenAI.ToolSearchOutputType type = global::tryAGI.OpenAI.ToolSearchOutputType.ToolSearchOutput)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Execution = execution;
             this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
             this.Status = status;
             this.Type = type;
+            this.CallId = callId;
             this.CreatedBy = createdBy;
         }
 

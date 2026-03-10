@@ -65,8 +65,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inference_options")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.InferenceOptions? InferenceOptions { get; set; }
+        public global::tryAGI.OpenAI.InferenceOptions? InferenceOptions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -118,9 +117,9 @@ namespace tryAGI.OpenAI
             this.ThreadId = threadId ?? throw new global::System.ArgumentNullException(nameof(threadId));
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Attachments = attachments ?? throw new global::System.ArgumentNullException(nameof(attachments));
-            this.InferenceOptions = inferenceOptions ?? throw new global::System.ArgumentNullException(nameof(inferenceOptions));
             this.Object = @object;
             this.Type = type;
+            this.InferenceOptions = inferenceOptions;
         }
 
         /// <summary>

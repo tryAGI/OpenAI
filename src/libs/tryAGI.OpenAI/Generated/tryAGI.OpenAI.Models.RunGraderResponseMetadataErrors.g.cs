@@ -61,8 +61,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("python_grader_server_error_type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? PythonGraderServerErrorType { get; set; }
+        public string? PythonGraderServerErrorType { get; set; }
 
         /// <summary>
         /// 
@@ -75,8 +74,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("python_grader_runtime_error_details")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? PythonGraderRuntimeErrorDetails { get; set; }
+        public string? PythonGraderRuntimeErrorDetails { get; set; }
 
         /// <summary>
         /// 
@@ -103,8 +101,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model_grader_server_error_details")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? ModelGraderServerErrorDetails { get; set; }
+        public string? ModelGraderServerErrorDetails { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -140,12 +137,12 @@ namespace tryAGI.OpenAI
             bool invalidVariableError,
             bool otherError,
             bool pythonGraderServerError,
-            string? pythonGraderServerErrorType,
             bool pythonGraderRuntimeError,
-            string? pythonGraderRuntimeErrorDetails,
             bool modelGraderServerError,
             bool modelGraderRefusalError,
             bool modelGraderParseError,
+            string? pythonGraderServerErrorType,
+            string? pythonGraderRuntimeErrorDetails,
             string? modelGraderServerErrorDetails)
         {
             this.FormulaParseError = formulaParseError;
@@ -155,13 +152,13 @@ namespace tryAGI.OpenAI
             this.InvalidVariableError = invalidVariableError;
             this.OtherError = otherError;
             this.PythonGraderServerError = pythonGraderServerError;
-            this.PythonGraderServerErrorType = pythonGraderServerErrorType ?? throw new global::System.ArgumentNullException(nameof(pythonGraderServerErrorType));
             this.PythonGraderRuntimeError = pythonGraderRuntimeError;
-            this.PythonGraderRuntimeErrorDetails = pythonGraderRuntimeErrorDetails ?? throw new global::System.ArgumentNullException(nameof(pythonGraderRuntimeErrorDetails));
             this.ModelGraderServerError = modelGraderServerError;
             this.ModelGraderRefusalError = modelGraderRefusalError;
             this.ModelGraderParseError = modelGraderParseError;
-            this.ModelGraderServerErrorDetails = modelGraderServerErrorDetails ?? throw new global::System.ArgumentNullException(nameof(modelGraderServerErrorDetails));
+            this.PythonGraderServerErrorType = pythonGraderServerErrorType;
+            this.PythonGraderRuntimeErrorDetails = pythonGraderRuntimeErrorDetails;
+            this.ModelGraderServerErrorDetails = modelGraderServerErrorDetails;
         }
 
         /// <summary>

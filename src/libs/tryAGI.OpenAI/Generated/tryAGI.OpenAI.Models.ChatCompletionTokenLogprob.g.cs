@@ -26,8 +26,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<int>? Bytes { get; set; }
+        public global::System.Collections.Generic.IList<int>? Bytes { get; set; }
 
         /// <summary>
         /// List of the most likely tokens and their log probability, at this token position. In rare cases, there may be fewer than the number of requested `top_logprobs` returned.
@@ -61,13 +60,13 @@ namespace tryAGI.OpenAI
         public ChatCompletionTokenLogprob(
             string token,
             double logprob,
-            global::System.Collections.Generic.IList<int>? bytes,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionTokenLogprobTopLogprob> topLogprobs)
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionTokenLogprobTopLogprob> topLogprobs,
+            global::System.Collections.Generic.IList<int>? bytes)
         {
             this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
             this.Logprob = logprob;
-            this.Bytes = bytes ?? throw new global::System.ArgumentNullException(nameof(bytes));
             this.TopLogprobs = topLogprobs ?? throw new global::System.ArgumentNullException(nameof(topLogprobs));
+            this.Bytes = bytes;
         }
 
         /// <summary>

@@ -59,22 +59,19 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset? CompletedAt { get; set; }
+        public global::System.DateTimeOffset? CompletedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset? ExpiresAt { get; set; }
+        public global::System.DateTimeOffset? ExpiresAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Prompt { get; set; }
+        public string? Prompt { get; set; }
 
         /// <summary>
         /// The resolution of the generated video.
@@ -95,15 +92,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("remixed_from_video_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? RemixedFromVideoId { get; set; }
+        public string? RemixedFromVideoId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.Error2? Error { get; set; }
+        public global::tryAGI.OpenAI.Error2? Error { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -153,11 +148,11 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.VideoStatus status,
             int progress,
             global::System.DateTimeOffset createdAt,
+            global::tryAGI.OpenAI.VideoSize size,
+            string seconds,
             global::System.DateTimeOffset? completedAt,
             global::System.DateTimeOffset? expiresAt,
             string? prompt,
-            global::tryAGI.OpenAI.VideoSize size,
-            string seconds,
             string? remixedFromVideoId,
             global::tryAGI.OpenAI.Error2? error,
             global::tryAGI.OpenAI.VideoResourceObject @object = global::tryAGI.OpenAI.VideoResourceObject.Video)
@@ -167,14 +162,14 @@ namespace tryAGI.OpenAI
             this.Status = status;
             this.Progress = progress;
             this.CreatedAt = createdAt;
-            this.CompletedAt = completedAt ?? throw new global::System.ArgumentNullException(nameof(completedAt));
-            this.ExpiresAt = expiresAt ?? throw new global::System.ArgumentNullException(nameof(expiresAt));
-            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Size = size;
             this.Seconds = seconds ?? throw new global::System.ArgumentNullException(nameof(seconds));
-            this.RemixedFromVideoId = remixedFromVideoId ?? throw new global::System.ArgumentNullException(nameof(remixedFromVideoId));
-            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
             this.Object = @object;
+            this.CompletedAt = completedAt;
+            this.ExpiresAt = expiresAt;
+            this.Prompt = prompt;
+            this.RemixedFromVideoId = remixedFromVideoId;
+            this.Error = error;
         }
 
         /// <summary>

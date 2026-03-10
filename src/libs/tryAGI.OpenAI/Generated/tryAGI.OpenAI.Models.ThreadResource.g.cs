@@ -37,8 +37,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Title { get; set; }
+        public string? Title { get; set; }
 
         /// <summary>
         /// Current status for the thread. Defaults to `active` for newly created threads.
@@ -87,17 +86,17 @@ namespace tryAGI.OpenAI
         public ThreadResource(
             string id,
             global::System.DateTimeOffset createdAt,
-            string? title,
             global::tryAGI.OpenAI.Status status,
             string user,
+            string? title,
             global::tryAGI.OpenAI.ThreadResourceObject @object = global::tryAGI.OpenAI.ThreadResourceObject.ChatkitThread)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;
-            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Status = status;
             this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
             this.Object = @object;
+            this.Title = title;
         }
 
         /// <summary>

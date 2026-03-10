@@ -19,15 +19,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Version { get; set; }
+        public string? Version { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state_variables")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? StateVariables { get; set; }
+        public object? StateVariables { get; set; }
 
         /// <summary>
         /// Tracing settings applied to the workflow.
@@ -58,14 +56,14 @@ namespace tryAGI.OpenAI
 #endif
         public ChatkitWorkflow(
             string id,
+            global::tryAGI.OpenAI.ChatkitWorkflowTracing tracing,
             string? version,
-            object? stateVariables,
-            global::tryAGI.OpenAI.ChatkitWorkflowTracing tracing)
+            object? stateVariables)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
-            this.StateVariables = stateVariables ?? throw new global::System.ArgumentNullException(nameof(stateVariables));
             this.Tracing = tracing ?? throw new global::System.ArgumentNullException(nameof(tracing));
+            this.Version = version;
+            this.StateVariables = stateVariables;
         }
 
         /// <summary>

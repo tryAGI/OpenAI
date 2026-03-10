@@ -38,7 +38,7 @@ namespace tryAGI.OpenAI
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.VectorStoreFileObject> UpdateVectorStoreFileAttributesAsync(
             string vectorStoreId,
             string fileId,
-            object? attributes,
+            object? attributes = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

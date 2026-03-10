@@ -43,15 +43,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Code { get; set; }
+        public string? Code { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputsVariant1Item>? Outputs { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputsVariant1Item>? Outputs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -91,9 +89,9 @@ namespace tryAGI.OpenAI
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Status = status;
             this.ContainerId = containerId ?? throw new global::System.ArgumentNullException(nameof(containerId));
-            this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
-            this.Outputs = outputs ?? throw new global::System.ArgumentNullException(nameof(outputs));
             this.Type = type;
+            this.Code = code;
+            this.Outputs = outputs;
         }
 
         /// <summary>

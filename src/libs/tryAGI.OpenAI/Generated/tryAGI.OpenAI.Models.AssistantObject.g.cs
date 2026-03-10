@@ -40,17 +40,15 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public required string? Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
@@ -64,9 +62,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
-        [global::System.Text.Json.Serialization.JsonRequired]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public required string? Instructions { get; set; }
+        public string? Instructions { get; set; }
 
         /// <summary>
         /// A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `file_search`, or `function`.<br/>
@@ -88,9 +85,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        [global::System.Text.Json.Serialization.JsonRequired]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public required global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
         /// 
@@ -152,28 +148,28 @@ namespace tryAGI.OpenAI
         public AssistantObject(
             string id,
             global::System.DateTimeOffset createdAt,
+            string model,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.AssistantToolsCode, global::tryAGI.OpenAI.AssistantToolsFileSearch, global::tryAGI.OpenAI.AssistantToolsFunction>> tools,
+            global::tryAGI.OpenAI.AssistantObjectObject @object,
             string? name,
             string? description,
-            string model,
             string? instructions,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.AssistantToolsCode, global::tryAGI.OpenAI.AssistantToolsFileSearch, global::tryAGI.OpenAI.AssistantToolsFunction>> tools,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata,
-            global::tryAGI.OpenAI.AssistantObjectObject @object,
             global::tryAGI.OpenAI.AssistantObjectToolResources2? toolResources,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata,
             double? temperature,
             double? topP,
             global::tryAGI.OpenAI.AssistantsApiResponseFormatOption? responseFormat)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
-            this.Instructions = instructions ?? throw new global::System.ArgumentNullException(nameof(instructions));
             this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
-            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.Object = @object;
+            this.Name = name;
+            this.Description = description;
+            this.Instructions = instructions;
             this.ToolResources = toolResources;
+            this.Metadata = metadata;
             this.Temperature = temperature;
             this.TopP = topP;
             this.ResponseFormat = responseFormat;

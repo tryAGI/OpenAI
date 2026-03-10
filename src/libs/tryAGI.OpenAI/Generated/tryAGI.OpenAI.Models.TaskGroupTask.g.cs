@@ -20,15 +20,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("heading")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Heading { get; set; }
+        public string? Heading { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Summary { get; set; }
+        public string? Summary { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -53,8 +51,8 @@ namespace tryAGI.OpenAI
             string? summary)
         {
             this.Type = type;
-            this.Heading = heading ?? throw new global::System.ArgumentNullException(nameof(heading));
-            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
+            this.Heading = heading;
+            this.Summary = summary;
         }
 
         /// <summary>

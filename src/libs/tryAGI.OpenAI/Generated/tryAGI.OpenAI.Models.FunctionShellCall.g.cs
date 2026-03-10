@@ -50,8 +50,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("environment")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.EnvironmentVariant12? Environment { get; set; }
+        public global::tryAGI.OpenAI.EnvironmentVariant12? Environment { get; set; }
 
         /// <summary>
         /// The ID of the entity that created this tool call.
@@ -104,8 +103,8 @@ namespace tryAGI.OpenAI
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Action = action ?? throw new global::System.ArgumentNullException(nameof(action));
             this.Status = status;
-            this.Environment = environment ?? throw new global::System.ArgumentNullException(nameof(environment));
             this.Type = type;
+            this.Environment = environment;
             this.CreatedBy = createdBy;
         }
 

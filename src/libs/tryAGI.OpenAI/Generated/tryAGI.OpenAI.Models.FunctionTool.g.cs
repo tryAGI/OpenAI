@@ -34,15 +34,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? Parameters { get; set; }
+        public object? Parameters { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("strict")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool? Strict { get; set; }
+        public bool? Strict { get; set; }
 
         /// <summary>
         /// Whether this function is deferred and loaded via tool search.
@@ -77,17 +75,17 @@ namespace tryAGI.OpenAI
 #endif
         public FunctionTool(
             string name,
+            string? description,
             object? parameters,
             bool? strict,
-            string? description,
             bool? deferLoading,
             global::tryAGI.OpenAI.FunctionToolType type = global::tryAGI.OpenAI.FunctionToolType.Function)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Parameters = parameters ?? throw new global::System.ArgumentNullException(nameof(parameters));
-            this.Strict = strict ?? throw new global::System.ArgumentNullException(nameof(strict));
             this.Type = type;
             this.Description = description;
+            this.Parameters = parameters;
+            this.Strict = strict;
             this.DeferLoading = deferLoading;
         }
 

@@ -26,8 +26,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<int>? Bytes { get; set; }
+        public global::System.Collections.Generic.IList<int>? Bytes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -55,7 +54,7 @@ namespace tryAGI.OpenAI
         {
             this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
             this.Logprob = logprob;
-            this.Bytes = bytes ?? throw new global::System.ArgumentNullException(nameof(bytes));
+            this.Bytes = bytes;
         }
 
         /// <summary>

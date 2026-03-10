@@ -81,8 +81,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_error")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.RunStepObjectLastError2? LastError { get; set; }
+        public global::tryAGI.OpenAI.RunStepObjectLastError2? LastError { get; set; }
 
         /// <summary>
         /// 
@@ -94,22 +93,19 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cancelled_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset? CancelledAt { get; set; }
+        public global::System.DateTimeOffset? CancelledAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("failed_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset? FailedAt { get; set; }
+        public global::System.DateTimeOffset? FailedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset? CompletedAt { get; set; }
+        public global::System.DateTimeOffset? CompletedAt { get; set; }
 
         /// <summary>
         /// 
@@ -121,8 +117,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.RunStepCompletionUsageVariant1? Usage { get; set; }
+        public global::tryAGI.OpenAI.RunStepCompletionUsageVariant1? Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -179,14 +174,14 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RunStepObjectType type,
             global::tryAGI.OpenAI.RunStepObjectStatus status,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDetailsMessageCreationObject, global::tryAGI.OpenAI.RunStepDetailsToolCallsObject> stepDetails,
+            global::tryAGI.OpenAI.RunStepObjectObject @object,
             global::tryAGI.OpenAI.RunStepObjectLastError2? lastError,
+            global::System.DateTimeOffset? expiredAt,
             global::System.DateTimeOffset? cancelledAt,
             global::System.DateTimeOffset? failedAt,
             global::System.DateTimeOffset? completedAt,
-            global::tryAGI.OpenAI.RunStepCompletionUsageVariant1? usage,
-            global::tryAGI.OpenAI.RunStepObjectObject @object,
-            global::System.DateTimeOffset? expiredAt,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata)
+            global::System.Collections.Generic.Dictionary<string, string>? metadata,
+            global::tryAGI.OpenAI.RunStepCompletionUsageVariant1? usage)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;
@@ -196,14 +191,14 @@ namespace tryAGI.OpenAI
             this.Type = type;
             this.Status = status;
             this.StepDetails = stepDetails;
-            this.LastError = lastError ?? throw new global::System.ArgumentNullException(nameof(lastError));
-            this.CancelledAt = cancelledAt ?? throw new global::System.ArgumentNullException(nameof(cancelledAt));
-            this.FailedAt = failedAt ?? throw new global::System.ArgumentNullException(nameof(failedAt));
-            this.CompletedAt = completedAt ?? throw new global::System.ArgumentNullException(nameof(completedAt));
-            this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
             this.Object = @object;
+            this.LastError = lastError;
             this.ExpiredAt = expiredAt;
+            this.CancelledAt = cancelledAt;
+            this.FailedAt = failedAt;
+            this.CompletedAt = completedAt;
             this.Metadata = metadata;
+            this.Usage = usage;
         }
 
         /// <summary>

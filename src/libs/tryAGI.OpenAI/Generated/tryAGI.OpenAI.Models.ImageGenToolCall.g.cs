@@ -34,8 +34,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("result")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Result { get; set; }
+        public string? Result { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -62,13 +61,13 @@ namespace tryAGI.OpenAI
         public ImageGenToolCall(
             string id,
             global::tryAGI.OpenAI.ImageGenToolCallStatus status,
-            string? result,
-            global::tryAGI.OpenAI.ImageGenToolCallType type)
+            global::tryAGI.OpenAI.ImageGenToolCallType type,
+            string? result)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Status = status;
-            this.Result = result ?? throw new global::System.ArgumentNullException(nameof(result));
             this.Type = type;
+            this.Result = result;
         }
 
         /// <summary>

@@ -29,8 +29,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateChatCompletionStreamResponseChoiceFinishReasonJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.CreateChatCompletionStreamResponseChoiceFinishReason? FinishReason { get; set; }
+        public global::tryAGI.OpenAI.CreateChatCompletionStreamResponseChoiceFinishReason? FinishReason { get; set; }
 
         /// <summary>
         /// The index of the choice in the list of choices.
@@ -68,14 +67,14 @@ namespace tryAGI.OpenAI
 #endif
         public CreateChatCompletionStreamResponseChoice(
             global::tryAGI.OpenAI.ChatCompletionStreamResponseDelta delta,
-            global::tryAGI.OpenAI.CreateChatCompletionStreamResponseChoiceFinishReason? finishReason,
             int index,
-            global::tryAGI.OpenAI.CreateChatCompletionStreamResponseChoiceLogprobs? logprobs)
+            global::tryAGI.OpenAI.CreateChatCompletionStreamResponseChoiceLogprobs? logprobs,
+            global::tryAGI.OpenAI.CreateChatCompletionStreamResponseChoiceFinishReason? finishReason)
         {
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
-            this.FinishReason = finishReason;
             this.Index = index;
             this.Logprobs = logprobs;
+            this.FinishReason = finishReason;
         }
 
         /// <summary>

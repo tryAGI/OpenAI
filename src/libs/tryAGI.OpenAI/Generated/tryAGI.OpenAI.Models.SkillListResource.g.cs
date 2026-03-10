@@ -28,15 +28,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? FirstId { get; set; }
+        public string? FirstId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? LastId { get; set; }
+        public string? LastId { get; set; }
 
         /// <summary>
         /// Whether there are more items available.
@@ -71,16 +69,16 @@ namespace tryAGI.OpenAI
 #endif
         public SkillListResource(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SkillResource> data,
+            bool hasMore,
             string? firstId,
             string? lastId,
-            bool hasMore,
             global::tryAGI.OpenAI.SkillListResourceObject @object = global::tryAGI.OpenAI.SkillListResourceObject.List)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.FirstId = firstId ?? throw new global::System.ArgumentNullException(nameof(firstId));
-            this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
             this.HasMore = hasMore;
             this.Object = @object;
+            this.FirstId = firstId;
+            this.LastId = lastId;
         }
 
         /// <summary>

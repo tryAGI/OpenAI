@@ -58,8 +58,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_error")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.VectorStoreFileObjectLastError2? LastError { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreFileObjectLastError2? LastError { get; set; }
 
         /// <summary>
         /// The strategy used to chunk the file.
@@ -115,8 +114,8 @@ namespace tryAGI.OpenAI
             global::System.DateTimeOffset createdAt,
             string vectorStoreId,
             global::tryAGI.OpenAI.VectorStoreFileObjectStatus status,
-            global::tryAGI.OpenAI.VectorStoreFileObjectLastError2? lastError,
             global::tryAGI.OpenAI.VectorStoreFileObjectObject @object,
+            global::tryAGI.OpenAI.VectorStoreFileObjectLastError2? lastError,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.StaticChunkingStrategyResponseParam, global::tryAGI.OpenAI.OtherChunkingStrategyResponseParam>? chunkingStrategy,
             object? attributes)
         {
@@ -125,8 +124,8 @@ namespace tryAGI.OpenAI
             this.CreatedAt = createdAt;
             this.VectorStoreId = vectorStoreId ?? throw new global::System.ArgumentNullException(nameof(vectorStoreId));
             this.Status = status;
-            this.LastError = lastError ?? throw new global::System.ArgumentNullException(nameof(lastError));
             this.Object = @object;
+            this.LastError = lastError;
             this.ChunkingStrategy = chunkingStrategy;
             this.Attributes = attributes;
         }

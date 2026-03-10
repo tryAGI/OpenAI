@@ -50,8 +50,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_output_length")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? MaxOutputLength { get; set; }
+        public int? MaxOutputLength { get; set; }
 
         /// <summary>
         /// The identifier of the actor that created the item.
@@ -104,8 +103,8 @@ namespace tryAGI.OpenAI
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Status = status;
             this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
-            this.MaxOutputLength = maxOutputLength ?? throw new global::System.ArgumentNullException(nameof(maxOutputLength));
             this.Type = type;
+            this.MaxOutputLength = maxOutputLength;
             this.CreatedBy = createdBy;
         }
 

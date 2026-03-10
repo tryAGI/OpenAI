@@ -19,8 +19,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("recent_threads")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? RecentThreads { get; set; }
+        public int? RecentThreads { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -43,7 +42,7 @@ namespace tryAGI.OpenAI
             int? recentThreads)
         {
             this.Enabled = enabled;
-            this.RecentThreads = recentThreads ?? throw new global::System.ArgumentNullException(nameof(recentThreads));
+            this.RecentThreads = recentThreads;
         }
 
         /// <summary>

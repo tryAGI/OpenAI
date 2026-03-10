@@ -75,15 +75,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_active_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset? LastActiveAt { get; set; }
+        public global::System.DateTimeOffset? LastActiveAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -129,11 +127,11 @@ namespace tryAGI.OpenAI
             int usageBytes,
             global::tryAGI.OpenAI.VectorStoreObjectFileCounts fileCounts,
             global::tryAGI.OpenAI.VectorStoreObjectStatus status,
-            global::System.DateTimeOffset? lastActiveAt,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::tryAGI.OpenAI.VectorStoreObjectObject @object,
             global::tryAGI.OpenAI.VectorStoreExpirationAfter? expiresAfter,
-            global::System.DateTimeOffset? expiresAt)
+            global::System.DateTimeOffset? expiresAt,
+            global::System.DateTimeOffset? lastActiveAt,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;
@@ -141,11 +139,11 @@ namespace tryAGI.OpenAI
             this.UsageBytes = usageBytes;
             this.FileCounts = fileCounts ?? throw new global::System.ArgumentNullException(nameof(fileCounts));
             this.Status = status;
-            this.LastActiveAt = lastActiveAt ?? throw new global::System.ArgumentNullException(nameof(lastActiveAt));
-            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.Object = @object;
             this.ExpiresAfter = expiresAfter;
             this.ExpiresAt = expiresAt;
+            this.LastActiveAt = lastActiveAt;
+            this.Metadata = metadata;
         }
 
         /// <summary>

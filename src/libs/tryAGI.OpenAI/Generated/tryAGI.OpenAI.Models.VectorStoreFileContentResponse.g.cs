@@ -33,8 +33,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("next_page")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? NextPage { get; set; }
+        public string? NextPage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -61,13 +60,13 @@ namespace tryAGI.OpenAI
         public VectorStoreFileContentResponse(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VectorStoreFileContentResponseDataItem> data,
             bool hasMore,
-            string? nextPage,
-            global::tryAGI.OpenAI.VectorStoreFileContentResponseObject @object)
+            global::tryAGI.OpenAI.VectorStoreFileContentResponseObject @object,
+            string? nextPage)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.HasMore = hasMore;
-            this.NextPage = nextPage ?? throw new global::System.ArgumentNullException(nameof(nextPage));
             this.Object = @object;
+            this.NextPage = nextPage;
         }
 
         /// <summary>

@@ -47,43 +47,37 @@ namespace tryAGI.OpenAI
         /// Description of the role.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// When the role was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required long? CreatedAt { get; set; }
+        public long? CreatedAt { get; set; }
 
         /// <summary>
         /// When the role was last updated.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required long? UpdatedAt { get; set; }
+        public long? UpdatedAt { get; set; }
 
         /// <summary>
         /// Identifier of the actor who created the role.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_by")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? CreatedBy { get; set; }
+        public string? CreatedBy { get; set; }
 
         /// <summary>
         /// User details for the actor that created the role, when available.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_by_user_obj")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? CreatedByUserObj { get; set; }
+        public object? CreatedByUserObj { get; set; }
 
         /// <summary>
         /// Arbitrary metadata stored on the role.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? Metadata { get; set; }
+        public object? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -148,12 +142,12 @@ namespace tryAGI.OpenAI
             this.Permissions = permissions ?? throw new global::System.ArgumentNullException(nameof(permissions));
             this.ResourceType = resourceType ?? throw new global::System.ArgumentNullException(nameof(resourceType));
             this.PredefinedRole = predefinedRole;
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
-            this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
-            this.CreatedBy = createdBy ?? throw new global::System.ArgumentNullException(nameof(createdBy));
-            this.CreatedByUserObj = createdByUserObj ?? throw new global::System.ArgumentNullException(nameof(createdByUserObj));
-            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
+            this.Description = description;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.CreatedBy = createdBy;
+            this.CreatedByUserObj = createdByUserObj;
+            this.Metadata = metadata;
         }
 
         /// <summary>

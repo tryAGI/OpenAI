@@ -58,62 +58,54 @@ namespace tryAGI.OpenAI
         /// Details on the action required to continue the run. Will be `null` if no action is required.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("required_action")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.RunObjectRequiredAction? RequiredAction { get; set; }
+        public global::tryAGI.OpenAI.RunObjectRequiredAction? RequiredAction { get; set; }
 
         /// <summary>
         /// The last error associated with this run. Will be `null` if there are no errors.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_error")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.RunObjectLastError? LastError { get; set; }
+        public global::tryAGI.OpenAI.RunObjectLastError? LastError { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run will expire.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset? ExpiresAt { get; set; }
+        public global::System.DateTimeOffset? ExpiresAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run was started.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("started_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset? StartedAt { get; set; }
+        public global::System.DateTimeOffset? StartedAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run was cancelled.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cancelled_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset? CancelledAt { get; set; }
+        public global::System.DateTimeOffset? CancelledAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run failed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("failed_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset? FailedAt { get; set; }
+        public global::System.DateTimeOffset? FailedAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run was completed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset? CompletedAt { get; set; }
+        public global::System.DateTimeOffset? CompletedAt { get; set; }
 
         /// <summary>
         /// Details on why the run is incomplete. Will be `null` if the run is not incomplete.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("incomplete_details")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.RunObjectIncompleteDetails? IncompleteDetails { get; set; }
+        public global::tryAGI.OpenAI.RunObjectIncompleteDetails? IncompleteDetails { get; set; }
 
         /// <summary>
         /// The model that the [assistant](/docs/api-reference/assistants) used for this run.
@@ -141,15 +133,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.RunCompletionUsageVariant1? Usage { get; set; }
+        public global::tryAGI.OpenAI.RunCompletionUsageVariant1? Usage { get; set; }
 
         /// <summary>
         /// The sampling temperature used for this run. If not set, defaults to 1.
@@ -167,15 +157,13 @@ namespace tryAGI.OpenAI
         /// The maximum number of prompt tokens specified to have been used over the course of the run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_prompt_tokens")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? MaxPromptTokens { get; set; }
+        public int? MaxPromptTokens { get; set; }
 
         /// <summary>
         /// The maximum number of completion tokens specified to have been used over the course of the run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_completion_tokens")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? MaxCompletionTokens { get; set; }
+        public int? MaxCompletionTokens { get; set; }
 
         /// <summary>
         /// 
@@ -197,8 +185,7 @@ namespace tryAGI.OpenAI
         /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parallel_tool_calls")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool? ParallelToolCalls { get; set; }
+        public bool? ParallelToolCalls { get; set; }
 
         /// <summary>
         /// Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models#gpt-4o), [GPT-4 Turbo](/docs/models#gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.<br/>
@@ -306,6 +293,13 @@ namespace tryAGI.OpenAI
             string threadId,
             string assistantId,
             global::tryAGI.OpenAI.RunObjectStatus status,
+            string model,
+            string instructions,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.AssistantToolsCode, global::tryAGI.OpenAI.AssistantToolsFileSearch, global::tryAGI.OpenAI.AssistantToolsFunction>> tools,
+            global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.TruncationObject, object> truncationStrategy,
+            global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.AssistantsApiToolChoiceOption?, object> toolChoice,
+            global::tryAGI.OpenAI.AssistantsApiResponseFormatOption responseFormat,
+            global::tryAGI.OpenAI.RunObjectObject @object,
             global::tryAGI.OpenAI.RunObjectRequiredAction? requiredAction,
             global::tryAGI.OpenAI.RunObjectLastError? lastError,
             global::System.DateTimeOffset? expiresAt,
@@ -314,48 +308,41 @@ namespace tryAGI.OpenAI
             global::System.DateTimeOffset? failedAt,
             global::System.DateTimeOffset? completedAt,
             global::tryAGI.OpenAI.RunObjectIncompleteDetails? incompleteDetails,
-            string model,
-            string instructions,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.AssistantToolsCode, global::tryAGI.OpenAI.AssistantToolsFileSearch, global::tryAGI.OpenAI.AssistantToolsFunction>> tools,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::tryAGI.OpenAI.RunCompletionUsageVariant1? usage,
+            double? temperature,
+            double? topP,
             int? maxPromptTokens,
             int? maxCompletionTokens,
-            global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.TruncationObject, object> truncationStrategy,
-            global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.AssistantsApiToolChoiceOption?, object> toolChoice,
-            bool? parallelToolCalls,
-            global::tryAGI.OpenAI.AssistantsApiResponseFormatOption responseFormat,
-            global::tryAGI.OpenAI.RunObjectObject @object,
-            double? temperature,
-            double? topP)
+            bool? parallelToolCalls)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;
             this.ThreadId = threadId ?? throw new global::System.ArgumentNullException(nameof(threadId));
             this.AssistantId = assistantId ?? throw new global::System.ArgumentNullException(nameof(assistantId));
             this.Status = status;
-            this.RequiredAction = requiredAction ?? throw new global::System.ArgumentNullException(nameof(requiredAction));
-            this.LastError = lastError ?? throw new global::System.ArgumentNullException(nameof(lastError));
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Instructions = instructions ?? throw new global::System.ArgumentNullException(nameof(instructions));
+            this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
+            this.TruncationStrategy = truncationStrategy;
+            this.ToolChoice = toolChoice;
+            this.ResponseFormat = responseFormat;
+            this.Object = @object;
+            this.RequiredAction = requiredAction;
+            this.LastError = lastError;
             this.ExpiresAt = expiresAt;
             this.StartedAt = startedAt;
             this.CancelledAt = cancelledAt;
             this.FailedAt = failedAt;
             this.CompletedAt = completedAt;
-            this.IncompleteDetails = incompleteDetails ?? throw new global::System.ArgumentNullException(nameof(incompleteDetails));
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
-            this.Instructions = instructions ?? throw new global::System.ArgumentNullException(nameof(instructions));
-            this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
-            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
-            this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
-            this.MaxPromptTokens = maxPromptTokens;
-            this.MaxCompletionTokens = maxCompletionTokens;
-            this.TruncationStrategy = truncationStrategy;
-            this.ToolChoice = toolChoice;
-            this.ParallelToolCalls = parallelToolCalls;
-            this.ResponseFormat = responseFormat;
-            this.Object = @object;
+            this.IncompleteDetails = incompleteDetails;
+            this.Metadata = metadata;
+            this.Usage = usage;
             this.Temperature = temperature;
             this.TopP = topP;
+            this.MaxPromptTokens = maxPromptTokens;
+            this.MaxCompletionTokens = maxCompletionTokens;
+            this.ParallelToolCalls = parallelToolCalls;
         }
 
         /// <summary>

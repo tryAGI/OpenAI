@@ -12,8 +12,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,7 +30,7 @@ namespace tryAGI.OpenAI
         public UpdateChatCompletionRequest(
             global::System.Collections.Generic.Dictionary<string, string>? metadata)
         {
-            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
+            this.Metadata = metadata;
         }
 
         /// <summary>

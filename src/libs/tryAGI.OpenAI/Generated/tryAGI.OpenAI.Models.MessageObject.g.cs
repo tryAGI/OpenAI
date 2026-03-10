@@ -83,29 +83,25 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assistant_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? AssistantId { get; set; }
+        public string? AssistantId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? RunId { get; set; }
+        public string? RunId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attachments")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.MessageObjectAttachmentsVariant1Item>? Attachments { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.MessageObjectAttachmentsVariant1Item>? Attachments { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -153,30 +149,30 @@ namespace tryAGI.OpenAI
             string threadId,
             global::tryAGI.OpenAI.MessageObjectRole role,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageContentImageFileObject, global::tryAGI.OpenAI.MessageContentImageUrlObject, global::tryAGI.OpenAI.MessageContentTextObject, global::tryAGI.OpenAI.MessageContentRefusalObject>> content,
-            string? assistantId,
-            string? runId,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.MessageObjectAttachmentsVariant1Item>? attachments,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::tryAGI.OpenAI.MessageObjectObject @object,
             global::tryAGI.OpenAI.MessageObjectStatus? status,
             global::tryAGI.OpenAI.MessageObjectIncompleteDetails2? incompleteDetails,
             global::System.DateTimeOffset? completedAt,
-            global::System.DateTimeOffset? incompleteAt)
+            global::System.DateTimeOffset? incompleteAt,
+            string? assistantId,
+            string? runId,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.MessageObjectAttachmentsVariant1Item>? attachments,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;
             this.ThreadId = threadId ?? throw new global::System.ArgumentNullException(nameof(threadId));
             this.Role = role;
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
-            this.AssistantId = assistantId ?? throw new global::System.ArgumentNullException(nameof(assistantId));
-            this.RunId = runId ?? throw new global::System.ArgumentNullException(nameof(runId));
-            this.Attachments = attachments ?? throw new global::System.ArgumentNullException(nameof(attachments));
-            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.Object = @object;
             this.Status = status;
             this.IncompleteDetails = incompleteDetails;
             this.CompletedAt = completedAt;
             this.IncompleteAt = incompleteAt;
+            this.AssistantId = assistantId;
+            this.RunId = runId;
+            this.Attachments = attachments;
+            this.Metadata = metadata;
         }
 
         /// <summary>

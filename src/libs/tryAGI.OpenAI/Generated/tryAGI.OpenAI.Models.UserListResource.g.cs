@@ -33,8 +33,7 @@ namespace tryAGI.OpenAI
         /// Cursor to fetch the next page of results, or `null` when no further users are available.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("next")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Next { get; set; }
+        public string? Next { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -63,13 +62,13 @@ namespace tryAGI.OpenAI
         public UserListResource(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.User> data,
             bool hasMore,
-            string? next,
-            global::tryAGI.OpenAI.UserListResourceObject @object)
+            global::tryAGI.OpenAI.UserListResourceObject @object,
+            string? next)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.HasMore = hasMore;
-            this.Next = next ?? throw new global::System.ArgumentNullException(nameof(next));
             this.Object = @object;
+            this.Next = next;
         }
 
         /// <summary>

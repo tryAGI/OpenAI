@@ -19,15 +19,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("timeout_ms")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? TimeoutMs { get; set; }
+        public int? TimeoutMs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_output_length")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? MaxOutputLength { get; set; }
+        public int? MaxOutputLength { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -50,8 +48,8 @@ namespace tryAGI.OpenAI
             int? maxOutputLength)
         {
             this.Commands = commands ?? throw new global::System.ArgumentNullException(nameof(commands));
-            this.TimeoutMs = timeoutMs ?? throw new global::System.ArgumentNullException(nameof(timeoutMs));
-            this.MaxOutputLength = maxOutputLength ?? throw new global::System.ArgumentNullException(nameof(maxOutputLength));
+            this.TimeoutMs = timeoutMs;
+            this.MaxOutputLength = maxOutputLength;
         }
 
         /// <summary>

@@ -21,9 +21,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonRequired]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public required string? Content { get; set; }
+        public string? Content { get; set; }
 
         /// <summary>
         /// The name of the function to call.
@@ -53,13 +52,13 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatCompletionRequestFunctionMessage(
-            string? content,
             string name,
-            global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessageRole role)
+            global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessageRole role,
+            string? content)
         {
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Role = role;
+            this.Content = content;
         }
 
         /// <summary>

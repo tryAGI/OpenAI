@@ -19,15 +19,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_file_size")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? MaxFileSize { get; set; }
+        public int? MaxFileSize { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_files")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? MaxFiles { get; set; }
+        public int? MaxFiles { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,8 +50,8 @@ namespace tryAGI.OpenAI
             int? maxFiles)
         {
             this.Enabled = enabled;
-            this.MaxFileSize = maxFileSize ?? throw new global::System.ArgumentNullException(nameof(maxFileSize));
-            this.MaxFiles = maxFiles ?? throw new global::System.ArgumentNullException(nameof(maxFiles));
+            this.MaxFileSize = maxFileSize;
+            this.MaxFiles = maxFiles;
         }
 
         /// <summary>

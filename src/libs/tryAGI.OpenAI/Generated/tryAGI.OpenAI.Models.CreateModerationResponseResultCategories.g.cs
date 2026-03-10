@@ -40,15 +40,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("illicit")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool? Illicit { get; set; }
+        public bool? Illicit { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("illicit/violent")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool? IllicitViolent { get; set; }
+        public bool? IllicitViolent { get; set; }
 
         /// <summary>
         /// Content that promotes, encourages, or depicts acts of self-harm, such as suicide, cutting, and eating disorders.
@@ -151,22 +149,20 @@ namespace tryAGI.OpenAI
             bool hateThreatening,
             bool harassment,
             bool harassmentThreatening,
-            bool? illicit,
-            bool? illicitViolent,
             bool selfHarm,
             bool selfHarmIntent,
             bool selfHarmInstructions,
             bool sexual,
             bool sexualMinors,
             bool violence,
-            bool violenceGraphic)
+            bool violenceGraphic,
+            bool? illicit,
+            bool? illicitViolent)
         {
             this.Hate = hate;
             this.HateThreatening = hateThreatening;
             this.Harassment = harassment;
             this.HarassmentThreatening = harassmentThreatening;
-            this.Illicit = illicit ?? throw new global::System.ArgumentNullException(nameof(illicit));
-            this.IllicitViolent = illicitViolent ?? throw new global::System.ArgumentNullException(nameof(illicitViolent));
             this.SelfHarm = selfHarm;
             this.SelfHarmIntent = selfHarmIntent;
             this.SelfHarmInstructions = selfHarmInstructions;
@@ -174,6 +170,8 @@ namespace tryAGI.OpenAI
             this.SexualMinors = sexualMinors;
             this.Violence = violence;
             this.ViolenceGraphic = violenceGraphic;
+            this.Illicit = illicit;
+            this.IllicitViolent = illicitViolent;
         }
 
         /// <summary>

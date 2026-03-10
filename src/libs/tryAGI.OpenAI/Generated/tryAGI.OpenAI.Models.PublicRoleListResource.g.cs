@@ -33,8 +33,7 @@ namespace tryAGI.OpenAI
         /// Cursor to fetch the next page of results, or `null` when there are no additional roles.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("next")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Next { get; set; }
+        public string? Next { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -63,13 +62,13 @@ namespace tryAGI.OpenAI
         public PublicRoleListResource(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Role> data,
             bool hasMore,
-            string? next,
-            global::tryAGI.OpenAI.PublicRoleListResourceObject @object)
+            global::tryAGI.OpenAI.PublicRoleListResourceObject @object,
+            string? next)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.HasMore = hasMore;
-            this.Next = next ?? throw new global::System.ArgumentNullException(nameof(next));
             this.Object = @object;
+            this.Next = next;
         }
 
         /// <summary>

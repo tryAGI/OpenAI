@@ -12,8 +12,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attributes")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? Attributes { get; set; }
+        public object? Attributes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,7 +30,7 @@ namespace tryAGI.OpenAI
         public UpdateVectorStoreFileAttributesRequest(
             object? attributes)
         {
-            this.Attributes = attributes ?? throw new global::System.ArgumentNullException(nameof(attributes));
+            this.Attributes = attributes;
         }
 
         /// <summary>

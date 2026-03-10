@@ -102,8 +102,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
         /// An object representing an error response from the Eval API.
@@ -177,8 +176,8 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunPerModelUsageItem> perModelUsage,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunPerTestingCriteriaResult> perTestingCriteriaResults,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalJsonlRunDataSource, global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSource, global::tryAGI.OpenAI.CreateEvalResponsesRunDataSource> dataSource,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::tryAGI.OpenAI.EvalApiError error,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::tryAGI.OpenAI.EvalRunObject @object = global::tryAGI.OpenAI.EvalRunObject.EvalRun)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -192,9 +191,9 @@ namespace tryAGI.OpenAI
             this.PerModelUsage = perModelUsage ?? throw new global::System.ArgumentNullException(nameof(perModelUsage));
             this.PerTestingCriteriaResults = perTestingCriteriaResults ?? throw new global::System.ArgumentNullException(nameof(perTestingCriteriaResults));
             this.DataSource = dataSource;
-            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
             this.Object = @object;
+            this.Metadata = metadata;
         }
 
         /// <summary>

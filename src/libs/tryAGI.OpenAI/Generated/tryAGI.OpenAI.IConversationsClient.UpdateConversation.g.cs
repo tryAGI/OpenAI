@@ -33,7 +33,7 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ConversationResource> UpdateConversationAsync(
             string conversationId,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -13,8 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <default>"semantic_vad"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "semantic_vad";
+        public string Type { get; set; } = "semantic_vad";
 
         /// <summary>
         /// Used only for `semantic_vad` mode. The eagerness of the model to respond. `low` will wait longer for the user to continue speaking, `high` will respond more quickly. `auto` is the default and is equivalent to `medium`. `low`, `medium`, and `high` have max timeouts of 8s, 4s, and 2s respectively.<br/>
@@ -68,12 +67,12 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad(
-            string type,
             global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVadEagerness? eagerness,
             bool? createResponse,
-            bool? interruptResponse)
+            bool? interruptResponse,
+            string type = "semantic_vad")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
             this.Eagerness = eagerness;
             this.CreateResponse = createResponse;
             this.InterruptResponse = interruptResponse;

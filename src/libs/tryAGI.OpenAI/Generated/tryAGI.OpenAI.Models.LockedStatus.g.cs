@@ -21,8 +21,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reason")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Reason { get; set; }
+        public string? Reason { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,8 +44,8 @@ namespace tryAGI.OpenAI
             string? reason,
             global::tryAGI.OpenAI.LockedStatusType type = global::tryAGI.OpenAI.LockedStatusType.Locked)
         {
-            this.Reason = reason ?? throw new global::System.ArgumentNullException(nameof(reason));
             this.Type = type;
+            this.Reason = reason;
         }
 
         /// <summary>

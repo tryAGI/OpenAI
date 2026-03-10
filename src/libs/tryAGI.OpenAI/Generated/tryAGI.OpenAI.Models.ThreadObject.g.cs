@@ -34,15 +34,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_resources")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ThreadObjectToolResources2? ToolResources { get; set; }
+        public global::tryAGI.OpenAI.ThreadObjectToolResources2? ToolResources { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -70,15 +68,15 @@ namespace tryAGI.OpenAI
         public ThreadObject(
             string id,
             global::System.DateTimeOffset createdAt,
+            global::tryAGI.OpenAI.ThreadObjectObject @object,
             global::tryAGI.OpenAI.ThreadObjectToolResources2? toolResources,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata,
-            global::tryAGI.OpenAI.ThreadObjectObject @object)
+            global::System.Collections.Generic.Dictionary<string, string>? metadata)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;
-            this.ToolResources = toolResources ?? throw new global::System.ArgumentNullException(nameof(toolResources));
-            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.Object = @object;
+            this.ToolResources = toolResources;
+            this.Metadata = metadata;
         }
 
         /// <summary>

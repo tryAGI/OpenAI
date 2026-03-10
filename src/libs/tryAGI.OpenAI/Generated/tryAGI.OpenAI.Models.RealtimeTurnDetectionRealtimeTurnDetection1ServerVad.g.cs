@@ -14,8 +14,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <default>"server_vad"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "server_vad";
+        public string Type { get; set; } = "server_vad";
 
         /// <summary>
         /// Used only for `server_vad` mode. Activation threshold for VAD (0.0 to 1.0), this defaults to 0.5. A<br/>
@@ -106,15 +105,15 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeTurnDetectionRealtimeTurnDetection1ServerVad(
-            string type,
             double? threshold,
             int? prefixPaddingMs,
             int? silenceDurationMs,
             bool? createResponse,
             bool? interruptResponse,
-            int? idleTimeoutMs)
+            int? idleTimeoutMs,
+            string type = "server_vad")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
             this.Threshold = threshold;
             this.PrefixPaddingMs = prefixPaddingMs;
             this.SilenceDurationMs = silenceDurationMs;

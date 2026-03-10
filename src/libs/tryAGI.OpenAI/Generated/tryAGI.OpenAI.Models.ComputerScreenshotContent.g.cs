@@ -21,15 +21,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? ImageUrl { get; set; }
+        public string? ImageUrl { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? FileId { get; set; }
+        public string? FileId { get; set; }
 
         /// <summary>
         /// The detail level of the screenshot image to be sent to the model. One of `high`, `low`, `auto`, or `original`. Defaults to `auto`.
@@ -61,15 +59,15 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ComputerScreenshotContent(
+            global::tryAGI.OpenAI.ImageDetail detail,
             string? imageUrl,
             string? fileId,
-            global::tryAGI.OpenAI.ImageDetail detail,
             global::tryAGI.OpenAI.ComputerScreenshotContentType type = global::tryAGI.OpenAI.ComputerScreenshotContentType.ComputerScreenshot)
         {
-            this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
-            this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
             this.Detail = detail;
             this.Type = type;
+            this.ImageUrl = imageUrl;
+            this.FileId = fileId;
         }
 
         /// <summary>

@@ -41,8 +41,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("preview_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? PreviewUrl { get; set; }
+        public string? PreviewUrl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -80,7 +79,7 @@ namespace tryAGI.OpenAI
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.MimeType = mimeType ?? throw new global::System.ArgumentNullException(nameof(mimeType));
-            this.PreviewUrl = previewUrl ?? throw new global::System.ArgumentNullException(nameof(previewUrl));
+            this.PreviewUrl = previewUrl;
         }
 
         /// <summary>

@@ -33,8 +33,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attributes")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object? Attributes { get; set; }
+        public object? Attributes { get; set; }
 
         /// <summary>
         /// Content chunks from the file.
@@ -72,14 +71,14 @@ namespace tryAGI.OpenAI
             string fileId,
             string filename,
             double score,
-            object? attributes,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VectorStoreSearchResultContentObject> content)
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VectorStoreSearchResultContentObject> content,
+            object? attributes)
         {
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
             this.Score = score;
-            this.Attributes = attributes ?? throw new global::System.ArgumentNullException(nameof(attributes));
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
+            this.Attributes = attributes;
         }
 
         /// <summary>

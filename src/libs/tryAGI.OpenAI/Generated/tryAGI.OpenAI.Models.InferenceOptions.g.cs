@@ -12,15 +12,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ToolChoice8? ToolChoice { get; set; }
+        public global::tryAGI.OpenAI.ToolChoice8? ToolChoice { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Model { get; set; }
+        public string? Model { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,8 +38,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ToolChoice8? toolChoice,
             string? model)
         {
-            this.ToolChoice = toolChoice ?? throw new global::System.ArgumentNullException(nameof(toolChoice));
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.ToolChoice = toolChoice;
+            this.Model = model;
         }
 
         /// <summary>

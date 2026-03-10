@@ -33,8 +33,7 @@ namespace tryAGI.OpenAI
         /// Optional description of the role.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// Permissions granted by the role.
@@ -93,19 +92,19 @@ namespace tryAGI.OpenAI
         public Role(
             string id,
             string name,
-            string? description,
             global::System.Collections.Generic.IList<string> permissions,
             string resourceType,
             bool predefinedRole,
-            global::tryAGI.OpenAI.RoleObject @object)
+            global::tryAGI.OpenAI.RoleObject @object,
+            string? description)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Permissions = permissions ?? throw new global::System.ArgumentNullException(nameof(permissions));
             this.ResourceType = resourceType ?? throw new global::System.ArgumentNullException(nameof(resourceType));
             this.PredefinedRole = predefinedRole;
             this.Object = @object;
+            this.Description = description;
         }
 
         /// <summary>

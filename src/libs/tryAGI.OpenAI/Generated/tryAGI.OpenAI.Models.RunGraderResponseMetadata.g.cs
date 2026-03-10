@@ -47,15 +47,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("token_usage")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? TokenUsage { get; set; }
+        public int? TokenUsage { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sampled_model_name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? SampledModelName { get; set; }
+        public string? SampledModelName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -90,8 +88,8 @@ namespace tryAGI.OpenAI
             this.Errors = errors ?? throw new global::System.ArgumentNullException(nameof(errors));
             this.ExecutionTime = executionTime;
             this.Scores = scores ?? throw new global::System.ArgumentNullException(nameof(scores));
-            this.TokenUsage = tokenUsage ?? throw new global::System.ArgumentNullException(nameof(tokenUsage));
-            this.SampledModelName = sampledModelName ?? throw new global::System.ArgumentNullException(nameof(sampledModelName));
+            this.TokenUsage = tokenUsage;
+            this.SampledModelName = sampledModelName;
         }
 
         /// <summary>
