@@ -20,13 +20,6 @@ if (openApiDocument.Components!.Schemas!["CreateEmbeddingRequest"]!.Properties![
     dimensionsSchema.Type |= JsonSchemaType.Null;
 }
 
-// Fix title with commas that produces invalid C# identifiers in AutoSDK
-if (openApiDocument.Components.Schemas.TryGetValue("EvalItemContentArray", out var evalItemContentArray)
-    && evalItemContentArray is OpenApiSchema evalSchema)
-{
-    evalSchema.Title = "Eval item content array";
-}
-
 // Fix file download endpoint: spec says application/json but endpoint returns binary
 var fileContentResponse = openApiDocument.Paths!["/files/{file_id}/content"]!.Operations[System.Net.Http.HttpMethod.Get]!.Responses!["200"]!.Content!;
 fileContentResponse.Remove("application/json");
