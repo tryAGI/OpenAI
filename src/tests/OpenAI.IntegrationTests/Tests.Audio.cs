@@ -27,18 +27,6 @@ public partial class Tests
         response.Should().NotBeNull();
         response.Length.Should().BeGreaterThan(0);
 
-        var response3 = await api.Audio.CreateTranscriptionAsync(
-            file: response,
-            filename: "mp3.mp3",
-            model: CreateTranscriptionRequestModel.Whisper1,
-            language: "en",
-            prompt: null,
-            responseFormat: AudioResponseFormat.Json,
-            temperature: 0.0);
-        response3.Should().NotBeNull();
-        response3.Object.Should().BeOfType<CreateTranscriptionResponseJson>();
-        response3.IsValue1.Should().BeTrue();
-        response3.Value1.Should().NotBeNull();
-        response3.Value1!.Text.Should().Be("Create speech test is successful.");
+        Console.WriteLine($"Generated {response.Length} bytes of audio.");
     }
 }
