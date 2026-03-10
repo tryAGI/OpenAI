@@ -14,7 +14,7 @@ ImagesResponse image = await api.Images.CreateImageAsync(
     size: CreateImageRequestSize.x1792x1024,
     style: CreateImageRequestStyle.Vivid,
     responseFormat: CreateImageRequestResponseFormat.B64Json);
-byte[] bytes = image.Data[0].Bytes;
+byte[] bytes = image.Data?[0].Bytes ?? [];
 
 FileInfo fileInfo = new($"{Guid.NewGuid()}.png");
 

@@ -4,6 +4,7 @@
 [![dotnet](https://github.com/tryAGI/OpenAI/actions/workflows/dotnet.yml/badge.svg?branch=main)](https://github.com/tryAGI/OpenAI/actions/workflows/dotnet.yml)
 [![License: MIT](https://img.shields.io/github/license/tryAGI/OpenAI)](https://github.com/tryAGI/OpenAI/blob/main/LICENSE.txt)
 [![Discord](https://img.shields.io/discord/1115206893015662663?label=Discord&logo=discord&logoColor=white&color=d82679)](https://discord.gg/Ca2xhfBf3v)
+![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/tryAGI/OpenAI)
 
 ## Features 🔥
 - Fully generated C# SDK based on [official OpenAI OpenAPI specification](https://raw.githubusercontent.com/openai/openai-openapi/master/openapi.yaml) using [AutoSDK](https://github.com/tryAGI/AutoSDK)
@@ -24,12 +25,12 @@ Examples and documentation can be found here: https://tryagi.github.io/OpenAI/
 using var api = new OpenAiApi("API_KEY");
 string response = await api.Chat.CreateChatCompletionAsync(
     messages: ["Generate five random words."],
-    model: ModelIdsEnum.Gpt4oMini);
+    model: ModelIdsSharedEnum.Gpt4oMini);
 Console.WriteLine(response); // "apple, banana, cherry, date, elderberry"
 
 var enumerable = api.Chat.CreateChatCompletionAsStreamAsync(
     messages: ["Generate five random words."],
-    model: ModelIdsEnum.Gpt4oMini);
+    model: ModelIdsSharedEnum.Gpt4oMini);
 
 await foreach (string response in enumerable)
 {
@@ -96,7 +97,7 @@ var messages = new List<ChatCompletionRequestMessage>
     "You are a helpful weather assistant.".AsSystemMessage(),
     "What is the current temperature in Dubai, UAE in Celsius?".AsUserMessage(),
 };
-var model = ModelIdsEnum.Gpt4oMini;
+var model = ModelIdsSharedEnum.Gpt4oMini;
 var result = await api.Chat.CreateChatCompletionAsync(
     messages,
     model: model,
@@ -141,7 +142,7 @@ using var api = new OpenAiApi("API_KEY");
 
 var response = await api.Chat.CreateChatCompletionAsAsync<Weather>(
     messages: ["Generate random weather."],
-    model: ModelIdsEnum.Gpt4oMini,
+    model: ModelIdsSharedEnum.Gpt4oMini,
     jsonSerializerOptions: new JsonSerializerOptions
     {
         Converters = {new JsonStringEnumConverter()},
@@ -150,7 +151,7 @@ var response = await api.Chat.CreateChatCompletionAsAsync<Weather>(
 var response = await api.Chat.CreateChatCompletionAsAsync(
     jsonTypeInfo: SourceGeneratedContext.Default.Weather,
     messages: ["Generate random weather."],
-    model: ModelIdsEnum.Gpt4oMini);
+    model: ModelIdsSharedEnum.Gpt4oMini);
 
 // response.Value1 contains the structured output
 // response.Value2 contains the CreateChatCompletionResponse object
@@ -179,6 +180,7 @@ using var api = CustomProviders.GitHubModels("GITHUB_TOKEN");
 using var api = CustomProviders.Azure("API_KEY", "ENDPOINT");
 using var api = CustomProviders.DeepInfra("API_KEY");
 using var api = CustomProviders.Groq("API_KEY");
+using var api = CustomProviders.XAi("API_KEY");
 using var api = CustomProviders.DeepSeek("API_KEY");
 using var api = CustomProviders.Fireworks("API_KEY");
 using var api = CustomProviders.OpenRouter("API_KEY");
@@ -187,6 +189,8 @@ using var api = CustomProviders.Perplexity("API_KEY");
 using var api = CustomProviders.SambaNova("API_KEY");
 using var api = CustomProviders.Mistral("API_KEY");
 using var api = CustomProviders.Codestral("API_KEY");
+using var api = CustomProviders.Cerebras("API_KEY");
+using var api = CustomProviders.Cohere("API_KEY");
 using var api = CustomProviders.Ollama();
 using var api = CustomProviders.LmStudio();
 ```
@@ -198,10 +202,10 @@ There also non-try methods that throw an exception if the value is not found.
 using OpenAI;
 
 // You can try to get the enum from string using:
-var model = ModelIdsEnumExtensions.ToEnum("gpt-4o") ?? throw new Exception("Invalid model");
+var model = ModelIdsSharedEnumExtensions.ToEnum("gpt-4o") ?? throw new Exception("Invalid model");
 
 // Chat
-var model = ModelIdsEnum.Gpt4oMini;
+var model = ModelIdsSharedEnum.Gpt4oMini;
 double? priceInUsd = model.TryGetPriceInUsd(
     inputTokens: 500,
     outputTokens: 500)

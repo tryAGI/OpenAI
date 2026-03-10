@@ -20,9 +20,20 @@ foreach (var path in Directory.EnumerateFiles(sampleDirectory, "Examples.*.cs", 
     {
         var start = code.IndexOf("\n    {", StringComparison.Ordinal);
         var end = code.IndexOf("\n    }", StringComparison.Ordinal);
+        if (start == -1 || end == -1 || end <= start)
+        {
+            continue;
+        }
+
         code = code.Substring(start + 4, end - start + 4);
-        
-        var lines = code.Split('\n')[1..^2];
+
+        var lines = code.Split('\n');
+        if (lines.Length < 3)
+        {
+            continue;
+        }
+
+        lines = lines[1..^2];
         code = string.Join('\n', lines.Select(x => x.Length > 8 ? x[8..] : string.Empty));
     }
     else

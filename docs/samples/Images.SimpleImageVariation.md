@@ -13,7 +13,7 @@ ImagesResponse image = await api.Images.CreateImageVariationAsync(
     model: CreateImageVariationRequestModel.DallE2,
     size: CreateImageVariationRequestSize.x256x256,
     responseFormat: CreateImageVariationRequestResponseFormat.B64Json);
-byte[] bytes = image.Data[0].Bytes;
+byte[] bytes = image.Data?[0].Bytes ?? [];
 
 FileInfo fileInfo = new($"{Guid.NewGuid()}.png");
 
