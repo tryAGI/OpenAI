@@ -14,21 +14,21 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
+        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// The unique ID of the event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// Event data payload.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.WebhookFineTuningJobSucceededData Data { get; set; }
+        public global::tryAGI.OpenAI.WebhookFineTuningJobSucceededData Data { get; set; } = default!;
 
         /// <summary>
         /// The object of the event. Always `event`.

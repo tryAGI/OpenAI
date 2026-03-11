@@ -17,7 +17,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("mode")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatCompletionAllowedToolsModeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ChatCompletionAllowedToolsMode Mode { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionAllowedToolsMode Mode { get; set; } = default!;
 
         /// <summary>
         /// A list of tool definitions that the model should be allowed to call.<br/>
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<object> Tools { get; set; }
+        public global::System.Collections.Generic.IList<object> Tools { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

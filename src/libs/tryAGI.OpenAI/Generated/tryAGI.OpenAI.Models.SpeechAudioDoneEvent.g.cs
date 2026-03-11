@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.SpeechAudioDoneEventUsage Usage { get; set; }
+        public global::tryAGI.OpenAI.SpeechAudioDoneEventUsage Usage { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

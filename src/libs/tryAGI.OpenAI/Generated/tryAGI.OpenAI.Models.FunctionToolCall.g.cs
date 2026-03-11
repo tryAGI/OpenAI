@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string CallId { get; set; }
+        public string CallId { get; set; } = default!;
 
         /// <summary>
         /// The namespace of the function to run.
@@ -40,14 +40,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public string Name { get; set; } = default!;
 
         /// <summary>
         /// A JSON string of the arguments to pass to the function.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Arguments { get; set; }
+        public string Arguments { get; set; } = default!;
 
         /// <summary>
         /// The status of the item. One of `in_progress`, `completed`, or<br/>

@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1ImageUrl ImageUrl { get; set; }
+        public global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1ImageUrl ImageUrl { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

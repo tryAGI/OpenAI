@@ -13,14 +13,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required byte[] Data { get; set; }
+        public byte[] Data { get; set; } = default!;
 
         /// <summary>
         /// The chunk of bytes for this Part.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataname")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Dataname { get; set; }
+        public string Dataname { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

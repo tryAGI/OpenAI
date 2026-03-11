@@ -22,14 +22,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("x")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int X { get; set; }
+        public int X { get; set; } = default!;
 
         /// <summary>
         /// The y-coordinate where the double click occurred.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("y")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Y { get; set; }
+        public int Y { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

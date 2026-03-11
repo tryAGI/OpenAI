@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the Part was created.
@@ -21,14 +21,14 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
+        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// The ID of the Upload object that this Part was added to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upload_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string UploadId { get; set; }
+        public string UploadId { get; set; } = default!;
 
         /// <summary>
         /// The object type, which is always `upload.part`.

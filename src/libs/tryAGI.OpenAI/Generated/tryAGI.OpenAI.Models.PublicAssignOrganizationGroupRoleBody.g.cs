@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string RoleId { get; set; }
+        public string RoleId { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

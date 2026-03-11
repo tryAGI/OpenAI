@@ -13,28 +13,28 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int TotalTokens { get; set; }
+        public int TotalTokens { get; set; } = default!;
 
         /// <summary>
         /// The number of completion tokens generated.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int CompletionTokens { get; set; }
+        public int CompletionTokens { get; set; } = default!;
 
         /// <summary>
         /// The number of prompt tokens used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int PromptTokens { get; set; }
+        public int PromptTokens { get; set; } = default!;
 
         /// <summary>
         /// The number of tokens retrieved from cache.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cached_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int CachedTokens { get; set; }
+        public int CachedTokens { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

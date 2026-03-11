@@ -14,7 +14,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.FineTuneMethodTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.FineTuneMethodType Type { get; set; }
+        public global::tryAGI.OpenAI.FineTuneMethodType Type { get; set; } = default!;
 
         /// <summary>
         /// Configuration for the supervised fine-tuning method.

@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("part_ids")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> PartIds { get; set; }
+        public global::System.Collections.Generic.IList<string> PartIds { get; set; } = default!;
 
         /// <summary>
         /// The optional md5 checksum for the file contents to verify if the bytes uploaded matches what you expect.

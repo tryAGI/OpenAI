@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Filename { get; set; }
+        public string Filename { get; set; } = default!;
 
         /// <summary>
         /// The intended purpose of the uploaded file.<br/>
@@ -23,14 +23,14 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("purpose")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateUploadRequestPurposeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.CreateUploadRequestPurpose Purpose { get; set; }
+        public global::tryAGI.OpenAI.CreateUploadRequestPurpose Purpose { get; set; } = default!;
 
         /// <summary>
         /// The number of bytes in the file you are uploading.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Bytes { get; set; }
+        public int Bytes { get; set; } = default!;
 
         /// <summary>
         /// The MIME type of the file.<br/>
@@ -39,7 +39,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mime_type")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string MimeType { get; set; }
+        public string MimeType { get; set; } = default!;
 
         /// <summary>
         /// The expiration policy for a file. By default, files with `purpose=batch` expire after 30 days and all other files are persisted until they are manually deleted.

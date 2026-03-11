@@ -23,7 +23,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.InputMessageRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.InputMessageRole Role { get; set; }
+        public global::tryAGI.OpenAI.InputMessageRole Role { get; set; } = default!;
 
         /// <summary>
         /// The status of item. One of `in_progress`, `completed`, or<br/>
@@ -39,7 +39,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputContent> Content { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputContent> Content { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

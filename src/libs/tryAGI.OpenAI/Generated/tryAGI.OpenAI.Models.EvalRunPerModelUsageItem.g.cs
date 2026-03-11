@@ -13,42 +13,42 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ModelName { get; set; }
+        public string ModelName { get; set; } = default!;
 
         /// <summary>
         /// The number of invocations.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("invocation_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int InvocationCount { get; set; }
+        public int InvocationCount { get; set; } = default!;
 
         /// <summary>
         /// The number of prompt tokens used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int PromptTokens { get; set; }
+        public int PromptTokens { get; set; } = default!;
 
         /// <summary>
         /// The number of completion tokens generated.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int CompletionTokens { get; set; }
+        public int CompletionTokens { get; set; } = default!;
 
         /// <summary>
         /// The total number of tokens used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int TotalTokens { get; set; }
+        public int TotalTokens { get; set; } = default!;
 
         /// <summary>
         /// The number of tokens retrieved from cache.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cached_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int CachedTokens { get; set; }
+        public int CachedTokens { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

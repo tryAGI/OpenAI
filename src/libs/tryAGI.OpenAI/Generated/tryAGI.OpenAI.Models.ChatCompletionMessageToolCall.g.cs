@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// The type of the tool. Currently, only `function` is supported.
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ChatCompletionMessageToolCallFunction Function { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionMessageToolCallFunction Function { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

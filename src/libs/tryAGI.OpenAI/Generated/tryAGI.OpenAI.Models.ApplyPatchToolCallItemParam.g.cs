@@ -28,7 +28,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string CallId { get; set; }
+        public string CallId { get; set; } = default!;
 
         /// <summary>
         /// The status of the apply patch tool call. One of `in_progress` or `completed`.
@@ -36,7 +36,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ApplyPatchCallStatusParamJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ApplyPatchCallStatusParam Status { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchCallStatusParam Status { get; set; } = default!;
 
         /// <summary>
         /// The specific create, delete, or update instruction for the apply_patch tool call.
@@ -44,7 +44,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("operation")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ApplyPatchOperationParamJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ApplyPatchOperationParam Operation { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchOperationParam Operation { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

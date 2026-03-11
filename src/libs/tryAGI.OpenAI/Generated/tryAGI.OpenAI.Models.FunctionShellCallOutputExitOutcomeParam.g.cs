@@ -22,7 +22,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("exit_code")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ExitCode { get; set; }
+        public int ExitCode { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

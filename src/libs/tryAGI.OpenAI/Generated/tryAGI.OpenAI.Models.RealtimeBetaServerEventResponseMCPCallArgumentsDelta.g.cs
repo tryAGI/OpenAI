@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string EventId { get; set; }
+        public string EventId { get; set; } = default!;
 
         /// <summary>
         /// The event type, must be `response.mcp_call_arguments.delta`.
@@ -27,28 +27,28 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ResponseId { get; set; }
+        public string ResponseId { get; set; } = default!;
 
         /// <summary>
         /// The ID of the MCP tool call item.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ItemId { get; set; }
+        public string ItemId { get; set; } = default!;
 
         /// <summary>
         /// The index of the output item in the response.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int OutputIndex { get; set; }
+        public int OutputIndex { get; set; } = default!;
 
         /// <summary>
         /// The JSON-encoded arguments delta.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Delta { get; set; }
+        public string Delta { get; set; } = default!;
 
         /// <summary>
         /// 

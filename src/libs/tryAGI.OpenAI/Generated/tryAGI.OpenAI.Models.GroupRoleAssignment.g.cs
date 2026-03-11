@@ -20,14 +20,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.Group Group { get; set; }
+        public global::tryAGI.OpenAI.Group Group { get; set; } = default!;
 
         /// <summary>
         /// Details about a role that can be assigned through the public Roles API.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.Role Role { get; set; }
+        public global::tryAGI.OpenAI.Role Role { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

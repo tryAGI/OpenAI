@@ -20,28 +20,28 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int SequenceNumber { get; set; }
+        public int SequenceNumber { get; set; } = default!;
 
         /// <summary>
         /// The index of the output this event applies to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int OutputIndex { get; set; }
+        public int OutputIndex { get; set; } = default!;
 
         /// <summary>
         /// Unique identifier for the API item associated with this event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ItemId { get; set; }
+        public string ItemId { get; set; } = default!;
 
         /// <summary>
         /// The complete input data for the custom tool call.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Input { get; set; }
+        public string Input { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -22,7 +22,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vector_store_ids")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> VectorStoreIds { get; set; }
+        public global::System.Collections.Generic.IList<string> VectorStoreIds { get; set; } = default!;
 
         /// <summary>
         /// The maximum number of results to return. This number should be between 1 and 50 inclusive.

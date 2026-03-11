@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("approximate")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.WebSearchLocation Approximate { get; set; }
+        public global::tryAGI.OpenAI.WebSearchLocation Approximate { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

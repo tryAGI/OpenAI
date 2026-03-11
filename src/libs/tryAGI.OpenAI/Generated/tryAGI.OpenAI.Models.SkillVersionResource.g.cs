@@ -22,21 +22,21 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// Identifier of the skill for this version.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("skill_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string SkillId { get; set; }
+        public string SkillId { get; set; } = default!;
 
         /// <summary>
         /// Version number for this skill.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Version { get; set; }
+        public string Version { get; set; } = default!;
 
         /// <summary>
         /// Unix timestamp (seconds) for when the version was created.
@@ -44,21 +44,21 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
+        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// Name of the skill version.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public string Name { get; set; } = default!;
 
         /// <summary>
         /// Description of the skill version.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Description { get; set; }
+        public string Description { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

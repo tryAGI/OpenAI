@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("server_label")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ServerLabel { get; set; }
+        public string ServerLabel { get; set; } = default!;
 
         /// <summary>
         /// 

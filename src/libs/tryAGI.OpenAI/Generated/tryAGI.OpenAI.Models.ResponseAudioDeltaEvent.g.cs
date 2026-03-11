@@ -20,14 +20,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int SequenceNumber { get; set; }
+        public int SequenceNumber { get; set; } = default!;
 
         /// <summary>
         /// A chunk of Base64 encoded response audio bytes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Delta { get; set; }
+        public string Delta { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

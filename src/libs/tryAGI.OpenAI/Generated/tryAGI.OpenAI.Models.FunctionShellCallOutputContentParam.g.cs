@@ -13,14 +13,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stdout")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Stdout { get; set; }
+        public string Stdout { get; set; } = default!;
 
         /// <summary>
         /// Captured stderr output for the shell call.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stderr")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Stderr { get; set; }
+        public string Stderr { get; set; } = default!;
 
         /// <summary>
         /// The exit or timeout outcome associated with this shell call.
@@ -28,7 +28,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("outcome")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.FunctionShellCallOutputOutcomeParamJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.FunctionShellCallOutputOutcomeParam Outcome { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallOutputOutcomeParam Outcome { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -15,7 +15,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
         [global::System.Text.Json.Serialization.JsonRequired]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public required string Arguments { get; set; }
+        public string Arguments { get; set; } = default!;
 
         /// <summary>
         /// The name of the function to call.
@@ -23,7 +23,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public required string Name { get; set; }
+        public string Name { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

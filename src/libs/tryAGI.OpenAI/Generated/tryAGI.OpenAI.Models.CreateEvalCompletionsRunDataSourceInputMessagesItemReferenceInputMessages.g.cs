@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item_reference")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ItemReference { get; set; }
+        public string ItemReference { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

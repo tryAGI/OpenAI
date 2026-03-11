@@ -16,7 +16,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string EventId { get; set; }
+        public string EventId { get; set; } = default!;
 
         /// <summary>
         /// The event type, must be `output_audio_buffer.stopped`.
@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ResponseId { get; set; }
+        public string ResponseId { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

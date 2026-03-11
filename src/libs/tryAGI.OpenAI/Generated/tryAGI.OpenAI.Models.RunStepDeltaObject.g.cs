@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// The object type, which is always `thread.run.step.delta`.
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.RunStepDeltaObjectDelta Delta { get; set; }
+        public global::tryAGI.OpenAI.RunStepDeltaObjectDelta Delta { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

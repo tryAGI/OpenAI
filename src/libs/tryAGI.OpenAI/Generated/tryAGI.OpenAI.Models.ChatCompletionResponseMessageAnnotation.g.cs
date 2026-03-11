@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url_citation")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ChatCompletionResponseMessageAnnotationUrlCitation UrlCitation { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionResponseMessageAnnotationUrlCitation UrlCitation { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

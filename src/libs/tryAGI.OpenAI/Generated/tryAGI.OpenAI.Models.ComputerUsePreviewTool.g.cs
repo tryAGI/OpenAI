@@ -23,21 +23,21 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("environment")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ComputerEnvironmentJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ComputerEnvironment Environment { get; set; }
+        public global::tryAGI.OpenAI.ComputerEnvironment Environment { get; set; } = default!;
 
         /// <summary>
         /// The width of the computer display.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_width")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int DisplayWidth { get; set; }
+        public int DisplayWidth { get; set; } = default!;
 
         /// <summary>
         /// The height of the computer display.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_height")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int DisplayHeight { get; set; }
+        public int DisplayHeight { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

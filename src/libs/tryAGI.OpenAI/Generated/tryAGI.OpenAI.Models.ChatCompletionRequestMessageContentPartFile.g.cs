@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFileFile File { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFileFile File { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

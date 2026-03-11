@@ -13,70 +13,70 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Id { get; set; }
+        public int Id { get; set; } = default!;
 
         /// <summary>
         /// Seek offset of the segment.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("seek")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Seek { get; set; }
+        public int Seek { get; set; } = default!;
 
         /// <summary>
         /// Start time of the segment in seconds.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required float Start { get; set; }
+        public float Start { get; set; } = default!;
 
         /// <summary>
         /// End time of the segment in seconds.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required float End { get; set; }
+        public float End { get; set; } = default!;
 
         /// <summary>
         /// Text content of the segment.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Text { get; set; }
+        public string Text { get; set; } = default!;
 
         /// <summary>
         /// Array of token IDs for the text content.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<int> Tokens { get; set; }
+        public global::System.Collections.Generic.IList<int> Tokens { get; set; } = default!;
 
         /// <summary>
         /// Temperature parameter used for generating the segment.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required float Temperature { get; set; }
+        public float Temperature { get; set; } = default!;
 
         /// <summary>
         /// Average logprob of the segment. If the value is lower than -1, consider the logprobs failed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("avg_logprob")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required float AvgLogprob { get; set; }
+        public float AvgLogprob { get; set; } = default!;
 
         /// <summary>
         /// Compression ratio of the segment. If the value is greater than 2.4, consider the compression failed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("compression_ratio")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required float CompressionRatio { get; set; }
+        public float CompressionRatio { get; set; } = default!;
 
         /// <summary>
         /// Probability of no speech in the segment. If the value is higher than 1.0 and the `avg_logprob` is below -1, consider this segment silent.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("no_speech_prob")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required float NoSpeechProb { get; set; }
+        public float NoSpeechProb { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

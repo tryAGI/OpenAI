@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("query")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Query { get; set; }
+        public string Query { get; set; } = default!;
 
         /// <summary>
         /// The search queries.

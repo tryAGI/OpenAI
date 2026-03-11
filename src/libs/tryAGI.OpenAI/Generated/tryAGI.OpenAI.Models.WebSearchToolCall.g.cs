@@ -14,7 +14,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// The type of the web search tool call. Always `web_search_call`.
@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebSearchToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.WebSearchToolCallStatus Status { get; set; }
+        public global::tryAGI.OpenAI.WebSearchToolCallStatus Status { get; set; } = default!;
 
         /// <summary>
         /// An object describing the specific action taken in this web search call.<br/>
@@ -38,7 +38,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebSearchToolCallActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.WebSearchToolCallAction Action { get; set; }
+        public global::tryAGI.OpenAI.WebSearchToolCallAction Action { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ImageUrl { get; set; }
+        public string ImageUrl { get; set; } = default!;
 
         /// <summary>
         /// The detail level of the image to be sent to the model. One of `high`, `low`, or `auto`. Defaults to `auto`.

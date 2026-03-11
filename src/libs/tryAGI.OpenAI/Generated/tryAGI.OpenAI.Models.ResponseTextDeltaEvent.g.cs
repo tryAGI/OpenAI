@@ -20,42 +20,42 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ItemId { get; set; }
+        public string ItemId { get; set; } = default!;
 
         /// <summary>
         /// The index of the output item that the text delta was added to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int OutputIndex { get; set; }
+        public int OutputIndex { get; set; } = default!;
 
         /// <summary>
         /// The index of the content part that the text delta was added to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ContentIndex { get; set; }
+        public int ContentIndex { get; set; } = default!;
 
         /// <summary>
         /// The text delta that was added.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Delta { get; set; }
+        public string Delta { get; set; } = default!;
 
         /// <summary>
         /// The sequence number for this event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int SequenceNumber { get; set; }
+        public int SequenceNumber { get; set; } = default!;
 
         /// <summary>
         /// The log probabilities of the tokens in the delta.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResponseLogProb> Logprobs { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResponseLogProb> Logprobs { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

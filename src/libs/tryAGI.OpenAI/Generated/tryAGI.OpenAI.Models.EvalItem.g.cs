@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EvalItemRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.EvalItemRole Role { get; set; }
+        public global::tryAGI.OpenAI.EvalItemRole Role { get; set; } = default!;
 
         /// <summary>
         /// Inputs to the model - can contain template strings. Supports text, output text, input images, and input audio, either as a single item or an array of items.
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EvalItemContentJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.EvalItemContent Content { get; set; }
+        public global::tryAGI.OpenAI.EvalItemContent Content { get; set; } = default!;
 
         /// <summary>
         /// The type of the message input. Always `message`.

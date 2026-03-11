@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("grammar")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatGrammarFormatGrammar Grammar { get; set; }
+        public global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatGrammarFormatGrammar Grammar { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

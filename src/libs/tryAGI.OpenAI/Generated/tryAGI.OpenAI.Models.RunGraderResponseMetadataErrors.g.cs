@@ -13,49 +13,49 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("formula_parse_error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool FormulaParseError { get; set; }
+        public bool FormulaParseError { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sample_parse_error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool SampleParseError { get; set; }
+        public bool SampleParseError { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("truncated_observation_error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool TruncatedObservationError { get; set; }
+        public bool TruncatedObservationError { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("unresponsive_reward_error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool UnresponsiveRewardError { get; set; }
+        public bool UnresponsiveRewardError { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("invalid_variable_error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool InvalidVariableError { get; set; }
+        public bool InvalidVariableError { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("other_error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool OtherError { get; set; }
+        public bool OtherError { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("python_grader_server_error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool PythonGraderServerError { get; set; }
+        public bool PythonGraderServerError { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -68,7 +68,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("python_grader_runtime_error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool PythonGraderRuntimeError { get; set; }
+        public bool PythonGraderRuntimeError { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -81,21 +81,21 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model_grader_server_error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool ModelGraderServerError { get; set; }
+        public bool ModelGraderServerError { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model_grader_refusal_error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool ModelGraderRefusalError { get; set; }
+        public bool ModelGraderRefusalError { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model_grader_parse_error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool ModelGraderParseError { get; set; }
+        public bool ModelGraderParseError { get; set; } = default!;
 
         /// <summary>
         /// 

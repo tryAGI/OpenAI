@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// The type of tool call. This is always going to be `code_interpreter` for this type of tool call.
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code_interpreter")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeObjectCodeInterpreter CodeInterpreter { get; set; }
+        public global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeObjectCodeInterpreter CodeInterpreter { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

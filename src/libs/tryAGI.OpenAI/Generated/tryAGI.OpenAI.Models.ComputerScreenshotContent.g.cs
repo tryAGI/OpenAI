@@ -35,7 +35,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImageDetailJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ImageDetail Detail { get; set; }
+        public global::tryAGI.OpenAI.ImageDetail Detail { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

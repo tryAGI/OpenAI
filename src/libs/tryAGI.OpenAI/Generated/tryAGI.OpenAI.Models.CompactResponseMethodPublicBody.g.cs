@@ -16,7 +16,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ModelIdsCompactionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ModelIdsCompaction Model { get; set; }
+        public global::tryAGI.OpenAI.ModelIdsCompaction Model { get; set; } = default!;
 
         /// <summary>
         /// 

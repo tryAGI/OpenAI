@@ -13,28 +13,28 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Total { get; set; }
+        public int Total { get; set; } = default!;
 
         /// <summary>
         /// Number of output items that resulted in an error.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("errored")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Errored { get; set; }
+        public int Errored { get; set; } = default!;
 
         /// <summary>
         /// Number of output items that failed to pass the evaluation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("failed")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Failed { get; set; }
+        public int Failed { get; set; } = default!;
 
         /// <summary>
         /// Number of output items that passed the evaluation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("passed")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Passed { get; set; }
+        public int Passed { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

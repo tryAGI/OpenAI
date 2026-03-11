@@ -20,21 +20,21 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// The ID of the approval request being answered.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("approval_request_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ApprovalRequestId { get; set; }
+        public string ApprovalRequestId { get; set; } = default!;
 
         /// <summary>
         /// Whether the request was approved.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("approve")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool Approve { get; set; }
+        public bool Approve { get; set; } = default!;
 
         /// <summary>
         /// 

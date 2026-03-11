@@ -13,35 +13,35 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("in_progress")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int InProgress { get; set; }
+        public int InProgress { get; set; } = default!;
 
         /// <summary>
         /// The number of files that have been processed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Completed { get; set; }
+        public int Completed { get; set; } = default!;
 
         /// <summary>
         /// The number of files that have failed to process.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("failed")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Failed { get; set; }
+        public int Failed { get; set; } = default!;
 
         /// <summary>
         /// The number of files that where cancelled.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cancelled")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Cancelled { get; set; }
+        public int Cancelled { get; set; } = default!;
 
         /// <summary>
         /// The total number of files.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Total { get; set; }
+        public int Total { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

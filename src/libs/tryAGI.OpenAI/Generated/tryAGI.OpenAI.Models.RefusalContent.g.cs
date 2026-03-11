@@ -22,7 +22,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("refusal")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Refusal { get; set; }
+        public string Refusal { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

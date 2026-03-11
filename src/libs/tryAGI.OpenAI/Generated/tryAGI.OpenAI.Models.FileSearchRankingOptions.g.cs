@@ -21,7 +21,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("score_threshold")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double ScoreThreshold { get; set; }
+        public double ScoreThreshold { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

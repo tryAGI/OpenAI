@@ -9,7 +9,7 @@ rm -rf Generated
 autosdk generate openapi.yaml \
   --namespace tryAGI.OpenAI \
   --clientClassName OpenAiClient \
-  --targetFramework net8.0 \
+  --targetFramework net10.0 \
   --output Generated \
   --exclude-deprecated-operations \
   --ignore-openapi-errors

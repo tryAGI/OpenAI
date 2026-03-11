@@ -22,35 +22,35 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("container_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ContainerId { get; set; }
+        public string ContainerId { get; set; } = default!;
 
         /// <summary>
         /// The ID of the file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string FileId { get; set; }
+        public string FileId { get; set; } = default!;
 
         /// <summary>
         /// The index of the first character of the container file citation in the message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int StartIndex { get; set; }
+        public int StartIndex { get; set; } = default!;
 
         /// <summary>
         /// The index of the last character of the container file citation in the message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int EndIndex { get; set; }
+        public int EndIndex { get; set; } = default!;
 
         /// <summary>
         /// The filename of the container file cited.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Filename { get; set; }
+        public string Filename { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

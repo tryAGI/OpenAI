@@ -22,21 +22,21 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// The identifier of the evaluation run associated with this output item.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string RunId { get; set; }
+        public string RunId { get; set; } = default!;
 
         /// <summary>
         /// The identifier of the evaluation group.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("eval_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string EvalId { get; set; }
+        public string EvalId { get; set; } = default!;
 
         /// <summary>
         /// Unix timestamp (in seconds) when the evaluation run was created.
@@ -44,42 +44,42 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
+        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// The status of the evaluation run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Status { get; set; }
+        public string Status { get; set; } = default!;
 
         /// <summary>
         /// The identifier for the data source item.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("datasource_item_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int DatasourceItemId { get; set; }
+        public int DatasourceItemId { get; set; } = default!;
 
         /// <summary>
         /// Details of the input data source item.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("datasource_item")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object DatasourceItem { get; set; }
+        public object DatasourceItem { get; set; } = default!;
 
         /// <summary>
         /// A list of grader results for this output item.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("results")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunOutputItemResult> Results { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunOutputItemResult> Results { get; set; } = default!;
 
         /// <summary>
         /// A sample containing the input and output of the evaluation run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sample")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.EvalRunOutputItemSample Sample { get; set; }
+        public global::tryAGI.OpenAI.EvalRunOutputItemSample Sample { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

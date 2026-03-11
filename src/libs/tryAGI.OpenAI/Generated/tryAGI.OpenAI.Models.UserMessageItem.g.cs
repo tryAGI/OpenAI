@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// Type discriminator that is always `chatkit.thread_item`.<br/>
@@ -30,14 +30,14 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
+        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// Identifier of the parent thread.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("thread_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ThreadId { get; set; }
+        public string ThreadId { get; set; } = default!;
 
         /// <summary>
         /// Default Value: chatkit.user_message
@@ -52,14 +52,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentItem4> Content { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentItem4> Content { get; set; } = default!;
 
         /// <summary>
         /// Attachments associated with the user message. Defaults to an empty list.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attachments")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Attachment> Attachments { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Attachment> Attachments { get; set; } = default!;
 
         /// <summary>
         /// 

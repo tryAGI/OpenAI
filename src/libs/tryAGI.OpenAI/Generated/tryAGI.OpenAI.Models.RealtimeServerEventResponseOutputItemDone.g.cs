@@ -14,7 +14,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string EventId { get; set; }
+        public string EventId { get; set; } = default!;
 
         /// <summary>
         /// The event type, must be `response.output_item.done`.
@@ -28,14 +28,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ResponseId { get; set; }
+        public string ResponseId { get; set; } = default!;
 
         /// <summary>
         /// The index of the output item in the Response.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int OutputIndex { get; set; }
+        public int OutputIndex { get; set; } = default!;
 
         /// <summary>
         /// A realtime Item is of three types: message, function_call, or function_call_output.<br/>
@@ -46,7 +46,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.RealtimeConversationItem Item { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItem Item { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

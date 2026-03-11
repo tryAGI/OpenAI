@@ -13,21 +13,21 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("testing_criteria")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string TestingCriteria { get; set; }
+        public string TestingCriteria { get; set; } = default!;
 
         /// <summary>
         /// Number of tests passed for this criteria.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("passed")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Passed { get; set; }
+        public int Passed { get; set; } = default!;
 
         /// <summary>
         /// Number of tests failed for this criteria.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("failed")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Failed { get; set; }
+        public int Failed { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

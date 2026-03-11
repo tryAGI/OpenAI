@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string CallId { get; set; }
+        public string CallId { get; set; } = default!;
 
         /// <summary>
         /// The type of the item. Always `shell_call`.<br/>
@@ -35,7 +35,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.FunctionShellActionParam Action { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellActionParam Action { get; set; } = default!;
 
         /// <summary>
         /// 

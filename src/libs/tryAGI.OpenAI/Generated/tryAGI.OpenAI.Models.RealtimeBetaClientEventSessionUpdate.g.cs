@@ -35,7 +35,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.RealtimeSessionCreateRequest Session { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateRequest Session { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

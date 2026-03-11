@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Item { get; set; }
+        public object Item { get; set; } = default!;
 
         /// <summary>
         /// 

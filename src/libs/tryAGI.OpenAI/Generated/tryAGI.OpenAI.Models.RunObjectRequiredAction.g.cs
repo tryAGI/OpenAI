@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("submit_tool_outputs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.RunObjectRequiredActionSubmitToolOutputs SubmitToolOutputs { get; set; }
+        public global::tryAGI.OpenAI.RunObjectRequiredActionSubmitToolOutputs SubmitToolOutputs { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

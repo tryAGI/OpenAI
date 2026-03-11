@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Invite> Data { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Invite> Data { get; set; } = default!;
 
         /// <summary>
         /// The first `invite_id` in the retrieved `list`

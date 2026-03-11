@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.Error Error { get; set; }
+        public global::tryAGI.OpenAI.Error Error { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

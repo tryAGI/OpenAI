@@ -24,35 +24,35 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// The identifier of the associated evaluation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("eval_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string EvalId { get; set; }
+        public string EvalId { get; set; } = default!;
 
         /// <summary>
         /// The status of the evaluation run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Status { get; set; }
+        public string Status { get; set; } = default!;
 
         /// <summary>
         /// The model that is evaluated, if applicable.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Model { get; set; }
+        public string Model { get; set; } = default!;
 
         /// <summary>
         /// The name of the evaluation run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public string Name { get; set; } = default!;
 
         /// <summary>
         /// Unix timestamp (in seconds) when the evaluation run was created.
@@ -60,35 +60,35 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
+        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// The URL to the rendered evaluation run report on the UI dashboard.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("report_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ReportUrl { get; set; }
+        public string ReportUrl { get; set; } = default!;
 
         /// <summary>
         /// Counters summarizing the outcomes of the evaluation run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("result_counts")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.EvalRunResultCounts ResultCounts { get; set; }
+        public global::tryAGI.OpenAI.EvalRunResultCounts ResultCounts { get; set; } = default!;
 
         /// <summary>
         /// Usage statistics for each model during the evaluation run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("per_model_usage")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunPerModelUsageItem> PerModelUsage { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunPerModelUsageItem> PerModelUsage { get; set; } = default!;
 
         /// <summary>
         /// Results per testing criteria applied during the evaluation run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("per_testing_criteria_results")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunPerTestingCriteriaResult> PerTestingCriteriaResults { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunPerTestingCriteriaResult> PerTestingCriteriaResults { get; set; } = default!;
 
         /// <summary>
         /// Information about the run's data source.
@@ -96,7 +96,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("data_source")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.CreateEvalJsonlRunDataSource, global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSource, global::tryAGI.OpenAI.CreateEvalResponsesRunDataSource>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalJsonlRunDataSource, global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSource, global::tryAGI.OpenAI.CreateEvalResponsesRunDataSource> DataSource { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalJsonlRunDataSource, global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSource, global::tryAGI.OpenAI.CreateEvalResponsesRunDataSource> DataSource { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -109,7 +109,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.EvalApiError Error { get; set; }
+        public global::tryAGI.OpenAI.EvalApiError Error { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

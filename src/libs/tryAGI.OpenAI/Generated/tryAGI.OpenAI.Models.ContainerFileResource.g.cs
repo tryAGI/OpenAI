@@ -13,21 +13,21 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// The type of this object (`container.file`).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Object { get; set; }
+        public string Object { get; set; } = default!;
 
         /// <summary>
         /// The container this file belongs to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("container_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ContainerId { get; set; }
+        public string ContainerId { get; set; } = default!;
 
         /// <summary>
         /// Unix timestamp (in seconds) when the file was created.
@@ -35,28 +35,28 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
+        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// Size of the file in bytes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Bytes { get; set; }
+        public int Bytes { get; set; } = default!;
 
         /// <summary>
         /// Path of the file in the container.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Path { get; set; }
+        public string Path { get; set; } = default!;
 
         /// <summary>
         /// Source of the file (e.g., `user`, `assistant`).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Source { get; set; }
+        public string Source { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

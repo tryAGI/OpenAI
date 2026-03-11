@@ -13,14 +13,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Object { get; set; }
+        public string Object { get; set; } = default!;
 
         /// <summary>
         /// Whether the assignment was removed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool Deleted { get; set; }
+        public bool Deleted { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public string Name { get; set; } = default!;
 
         /// <summary>
         /// The grader type (for example, "string-check-grader").
@@ -26,14 +26,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("score")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Score { get; set; }
+        public double Score { get; set; } = default!;
 
         /// <summary>
         /// Whether the grader considered the output a pass.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("passed")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool Passed { get; set; }
+        public bool Passed { get; set; } = default!;
 
         /// <summary>
         /// Optional sample or intermediate data produced by the grader.

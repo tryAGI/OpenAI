@@ -28,7 +28,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string CallId { get; set; }
+        public string CallId { get; set; } = default!;
 
         /// <summary>
         /// The safety checks reported by the API that have been acknowledged by the<br/>
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ComputerScreenshotImage Output { get; set; }
+        public global::tryAGI.OpenAI.ComputerScreenshotImage Output { get; set; } = default!;
 
         /// <summary>
         /// The status of the message input. One of `in_progress`, `completed`, or<br/>

@@ -20,14 +20,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string UserId { get; set; }
+        public string UserId { get; set; } = default!;
 
         /// <summary>
         /// Identifier of the group the user was added to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string GroupId { get; set; }
+        public string GroupId { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,28 +13,28 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("flagged")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool Flagged { get; set; }
+        public bool Flagged { get; set; } = default!;
 
         /// <summary>
         /// A list of the categories, and whether they are flagged or not.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("categories")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.CreateModerationResponseResultCategories Categories { get; set; }
+        public global::tryAGI.OpenAI.CreateModerationResponseResultCategories Categories { get; set; } = default!;
 
         /// <summary>
         /// A list of the categories along with their scores as predicted by model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("category_scores")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.CreateModerationResponseResultCategoryScores CategoryScores { get; set; }
+        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryScores CategoryScores { get; set; } = default!;
 
         /// <summary>
         /// A list of the categories along with the input type(s) that the score applies to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("category_applied_input_types")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypes CategoryAppliedInputTypes { get; set; }
+        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypes CategoryAppliedInputTypes { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

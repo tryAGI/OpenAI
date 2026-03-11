@@ -15,7 +15,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Value { get; set; }
+        public string Value { get; set; } = default!;
 
         /// <summary>
         /// Timestamp for when the token expires. Currently, all tokens expire<br/>
@@ -23,7 +23,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ExpiresAt { get; set; }
+        public int ExpiresAt { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

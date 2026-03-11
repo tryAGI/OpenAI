@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("b64_json")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string B64Json { get; set; }
+        public string B64Json { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp when the event was created.
@@ -28,7 +28,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
+        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// The size of the generated image.
@@ -36,7 +36,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImageGenCompletedEventSizeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ImageGenCompletedEventSize Size { get; set; }
+        public global::tryAGI.OpenAI.ImageGenCompletedEventSize Size { get; set; } = default!;
 
         /// <summary>
         /// The quality setting for the generated image.
@@ -44,7 +44,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("quality")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImageGenCompletedEventQualityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ImageGenCompletedEventQuality Quality { get; set; }
+        public global::tryAGI.OpenAI.ImageGenCompletedEventQuality Quality { get; set; } = default!;
 
         /// <summary>
         /// The background setting for the generated image.
@@ -52,7 +52,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("background")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImageGenCompletedEventBackgroundJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ImageGenCompletedEventBackground Background { get; set; }
+        public global::tryAGI.OpenAI.ImageGenCompletedEventBackground Background { get; set; } = default!;
 
         /// <summary>
         /// The output format for the generated image.
@@ -60,14 +60,14 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("output_format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImageGenCompletedEventOutputFormatJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ImageGenCompletedEventOutputFormat OutputFormat { get; set; }
+        public global::tryAGI.OpenAI.ImageGenCompletedEventOutputFormat OutputFormat { get; set; } = default!;
 
         /// <summary>
         /// For the GPT image models only, the token usage information for the image generation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ImagesUsage Usage { get; set; }
+        public global::tryAGI.OpenAI.ImagesUsage Usage { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

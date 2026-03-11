@@ -41,7 +41,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Arguments { get; set; }
+        public object Arguments { get; set; } = default!;
 
         /// <summary>
         /// 

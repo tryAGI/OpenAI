@@ -13,70 +13,70 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunOutputItemSampleInputItem> Input { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunOutputItemSampleInputItem> Input { get; set; } = default!;
 
         /// <summary>
         /// An array of output messages.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunOutputItemSampleOutputItem> Output { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunOutputItemSampleOutputItem> Output { get; set; } = default!;
 
         /// <summary>
         /// The reason why the sample generation was finished.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string FinishReason { get; set; }
+        public string FinishReason { get; set; } = default!;
 
         /// <summary>
         /// The model used for generating the sample.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Model { get; set; }
+        public string Model { get; set; } = default!;
 
         /// <summary>
         /// Token usage details for the sample.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.EvalRunOutputItemSampleUsage Usage { get; set; }
+        public global::tryAGI.OpenAI.EvalRunOutputItemSampleUsage Usage { get; set; } = default!;
 
         /// <summary>
         /// An object representing an error response from the Eval API.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.EvalApiError Error { get; set; }
+        public global::tryAGI.OpenAI.EvalApiError Error { get; set; } = default!;
 
         /// <summary>
         /// The sampling temperature used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Temperature { get; set; }
+        public double Temperature { get; set; } = default!;
 
         /// <summary>
         /// The maximum number of tokens allowed for completion.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_completion_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int MaxCompletionTokens { get; set; }
+        public int MaxCompletionTokens { get; set; } = default!;
 
         /// <summary>
         /// The top_p value used for sampling.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_p")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double TopP { get; set; }
+        public double TopP { get; set; } = default!;
 
         /// <summary>
         /// The seed used for generating the sample.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Seed { get; set; }
+        public int Seed { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

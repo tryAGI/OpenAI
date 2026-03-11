@@ -20,14 +20,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.User User { get; set; }
+        public global::tryAGI.OpenAI.User User { get; set; } = default!;
 
         /// <summary>
         /// Details about a role that can be assigned through the public Roles API.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.Role Role { get; set; }
+        public global::tryAGI.OpenAI.Role Role { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

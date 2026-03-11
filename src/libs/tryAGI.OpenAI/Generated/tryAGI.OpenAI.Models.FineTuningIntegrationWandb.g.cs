@@ -17,7 +17,7 @@ namespace tryAGI.OpenAI
         /// <example>my-wandb-project</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("project")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Project { get; set; }
+        public string Project { get; set; } = default!;
 
         /// <summary>
         /// 

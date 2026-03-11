@@ -22,14 +22,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Path { get; set; }
+        public string Path { get; set; } = default!;
 
         /// <summary>
         /// Unified diff content to apply when creating the file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("diff")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Diff { get; set; }
+        public string Diff { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

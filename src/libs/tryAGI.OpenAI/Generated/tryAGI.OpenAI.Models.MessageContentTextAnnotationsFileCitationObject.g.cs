@@ -20,28 +20,28 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Text { get; set; }
+        public string Text { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_citation")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.MessageContentTextAnnotationsFileCitationObjectFileCitation FileCitation { get; set; }
+        public global::tryAGI.OpenAI.MessageContentTextAnnotationsFileCitationObjectFileCitation FileCitation { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int StartIndex { get; set; }
+        public int StartIndex { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int EndIndex { get; set; }
+        public int EndIndex { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

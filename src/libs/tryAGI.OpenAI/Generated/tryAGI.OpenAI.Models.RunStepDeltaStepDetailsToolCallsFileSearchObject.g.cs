@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Index { get; set; }
+        public int Index { get; set; } = default!;
 
         /// <summary>
         /// The ID of the tool call object.
@@ -33,7 +33,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_search")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object FileSearch { get; set; }
+        public object FileSearch { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

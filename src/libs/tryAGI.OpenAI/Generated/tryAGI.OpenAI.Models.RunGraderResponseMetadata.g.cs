@@ -13,35 +13,35 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public string Name { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public string Type { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("errors")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.RunGraderResponseMetadataErrors Errors { get; set; }
+        public global::tryAGI.OpenAI.RunGraderResponseMetadataErrors Errors { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("execution_time")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double ExecutionTime { get; set; }
+        public double ExecutionTime { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scores")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Scores { get; set; }
+        public object Scores { get; set; } = default!;
 
         /// <summary>
         /// 

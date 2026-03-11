@@ -20,42 +20,42 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ItemId { get; set; }
+        public string ItemId { get; set; } = default!;
 
         /// <summary>
         /// The index of the output item in the response's output array.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int OutputIndex { get; set; }
+        public int OutputIndex { get; set; } = default!;
 
         /// <summary>
         /// The index of the content part within the output item.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ContentIndex { get; set; }
+        public int ContentIndex { get; set; } = default!;
 
         /// <summary>
         /// The index of the annotation within the content part.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("annotation_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int AnnotationIndex { get; set; }
+        public int AnnotationIndex { get; set; } = default!;
 
         /// <summary>
         /// The sequence number of this event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int SequenceNumber { get; set; }
+        public int SequenceNumber { get; set; } = default!;
 
         /// <summary>
         /// The annotation object being added. (See annotation schema for details.)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("annotation")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Annotation { get; set; }
+        public object Annotation { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

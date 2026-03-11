@@ -33,7 +33,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("schema")]
         [global::System.Text.Json.Serialization.JsonRequired]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public required object Schema { get; set; }
+        public object Schema { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

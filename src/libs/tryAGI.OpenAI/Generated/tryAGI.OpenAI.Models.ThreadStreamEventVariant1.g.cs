@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ThreadObject Data { get; set; }
+        public global::tryAGI.OpenAI.ThreadObject Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

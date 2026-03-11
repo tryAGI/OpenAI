@@ -43,7 +43,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.RealtimeConversationItem Item { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItem Item { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

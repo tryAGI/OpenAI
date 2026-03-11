@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string UserId { get; set; }
+        public string UserId { get; set; } = default!;
 
         /// <summary>
         /// `owner` or `member`
@@ -21,7 +21,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectUserCreateRequestRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ProjectUserCreateRequestRole Role { get; set; }
+        public global::tryAGI.OpenAI.ProjectUserCreateRequestRole Role { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

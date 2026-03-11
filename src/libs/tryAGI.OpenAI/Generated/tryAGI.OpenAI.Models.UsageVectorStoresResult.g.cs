@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int UsageBytes { get; set; }
+        public int UsageBytes { get; set; } = default!;
 
         /// <summary>
         /// 

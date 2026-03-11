@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("b64_json")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string B64Json { get; set; }
+        public string B64Json { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp when the event was created.
@@ -28,7 +28,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
+        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// The size of the edited image.
@@ -36,7 +36,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImageEditCompletedEventSizeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ImageEditCompletedEventSize Size { get; set; }
+        public global::tryAGI.OpenAI.ImageEditCompletedEventSize Size { get; set; } = default!;
 
         /// <summary>
         /// The quality setting for the edited image.
@@ -44,7 +44,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("quality")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImageEditCompletedEventQualityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ImageEditCompletedEventQuality Quality { get; set; }
+        public global::tryAGI.OpenAI.ImageEditCompletedEventQuality Quality { get; set; } = default!;
 
         /// <summary>
         /// The background setting for the edited image.
@@ -52,7 +52,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("background")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImageEditCompletedEventBackgroundJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ImageEditCompletedEventBackground Background { get; set; }
+        public global::tryAGI.OpenAI.ImageEditCompletedEventBackground Background { get; set; } = default!;
 
         /// <summary>
         /// The output format for the edited image.
@@ -60,14 +60,14 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("output_format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImageEditCompletedEventOutputFormatJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ImageEditCompletedEventOutputFormat OutputFormat { get; set; }
+        public global::tryAGI.OpenAI.ImageEditCompletedEventOutputFormat OutputFormat { get; set; } = default!;
 
         /// <summary>
         /// For the GPT image models only, the token usage information for the image generation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ImagesUsage Usage { get; set; }
+        public global::tryAGI.OpenAI.ImagesUsage Usage { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

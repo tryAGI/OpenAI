@@ -20,28 +20,28 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ItemResource> Data { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ItemResource> Data { get; set; } = default!;
 
         /// <summary>
         /// Whether there are more items available.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool HasMore { get; set; }
+        public bool HasMore { get; set; } = default!;
 
         /// <summary>
         /// The ID of the first item in the list.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string FirstId { get; set; }
+        public string FirstId { get; set; } = default!;
 
         /// <summary>
         /// The ID of the last item in the list.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string LastId { get; set; }
+        public string LastId { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

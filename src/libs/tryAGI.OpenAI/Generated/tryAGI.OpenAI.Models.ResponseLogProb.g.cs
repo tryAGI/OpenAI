@@ -15,14 +15,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("token")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Token { get; set; }
+        public string Token { get; set; } = default!;
 
         /// <summary>
         /// The log probability of this token.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprob")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Logprob { get; set; }
+        public double Logprob { get; set; } = default!;
 
         /// <summary>
         /// The log probability of the top 20 most likely tokens.

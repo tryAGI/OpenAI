@@ -43,7 +43,7 @@ namespace tryAGI.OpenAI
         /// </example>
         [global::System.Text.Json.Serialization.JsonPropertyName("item_schema")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object ItemSchema { get; set; }
+        public object ItemSchema { get; set; } = default!;
 
         /// <summary>
         /// Whether the eval should expect you to populate the sample namespace (ie, by generating responses off of your data source)<br/>

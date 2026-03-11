@@ -22,7 +22,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_domains")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> AllowedDomains { get; set; }
+        public global::System.Collections.Generic.IList<string> AllowedDomains { get; set; } = default!;
 
         /// <summary>
         /// Optional domain-scoped secrets for allowlisted domains.

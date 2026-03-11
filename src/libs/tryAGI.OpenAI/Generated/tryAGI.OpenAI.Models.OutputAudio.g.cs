@@ -20,14 +20,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Data { get; set; }
+        public string Data { get; set; } = default!;
 
         /// <summary>
         /// The transcript of the audio data from the model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transcript")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Transcript { get; set; }
+        public string Transcript { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

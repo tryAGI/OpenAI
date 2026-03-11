@@ -13,14 +13,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stdout")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Stdout { get; set; }
+        public string Stdout { get; set; } = default!;
 
         /// <summary>
         /// The standard error output that was captured.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stderr")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Stderr { get; set; }
+        public string Stderr { get; set; } = default!;
 
         /// <summary>
         /// Represents either an exit outcome (with an exit code) or a timeout outcome for a shell call output chunk.
@@ -28,7 +28,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("outcome")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OutcomeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.Outcome Outcome { get; set; }
+        public global::tryAGI.OpenAI.Outcome Outcome { get; set; } = default!;
 
         /// <summary>
         /// The identifier of the actor that created the item.

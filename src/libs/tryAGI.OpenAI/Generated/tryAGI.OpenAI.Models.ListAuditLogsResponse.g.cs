@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AuditLog> Data { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AuditLog> Data { get; set; } = default!;
 
         /// <summary>
         /// Example: audit_log-defb456h8dks
@@ -28,7 +28,7 @@ namespace tryAGI.OpenAI
         /// <example>audit_log-defb456h8dks</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string FirstId { get; set; }
+        public string FirstId { get; set; } = default!;
 
         /// <summary>
         /// Example: audit_log-hnbkd8s93s
@@ -36,14 +36,14 @@ namespace tryAGI.OpenAI
         /// <example>audit_log-hnbkd8s93s</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string LastId { get; set; }
+        public string LastId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool HasMore { get; set; }
+        public bool HasMore { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

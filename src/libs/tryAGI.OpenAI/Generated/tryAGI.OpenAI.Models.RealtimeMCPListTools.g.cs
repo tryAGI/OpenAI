@@ -26,14 +26,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("server_label")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ServerLabel { get; set; }
+        public string ServerLabel { get; set; } = default!;
 
         /// <summary>
         /// The tools available on the server.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.MCPListToolsTool> Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.MCPListToolsTool> Tools { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ChatCompletionStreamResponseDelta Delta { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionStreamResponseDelta Delta { get; set; } = default!;
 
         /// <summary>
         /// Log probability information for the choice.
@@ -36,7 +36,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Index { get; set; }
+        public int Index { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

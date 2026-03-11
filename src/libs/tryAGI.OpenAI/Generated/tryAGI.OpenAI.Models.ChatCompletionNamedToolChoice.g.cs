@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceFunction Function { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceFunction Function { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

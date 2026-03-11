@@ -15,7 +15,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// The object type, which is always `vector_store.file`.
@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int UsageBytes { get; set; }
+        public int UsageBytes { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the vector store file was created.
@@ -37,14 +37,14 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
+        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// The ID of the [vector store](/docs/api-reference/vector-stores/object) that the [File](/docs/api-reference/files) is attached to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vector_store_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string VectorStoreId { get; set; }
+        public string VectorStoreId { get; set; } = default!;
 
         /// <summary>
         /// The status of the vector store file, which can be either `in_progress`, `completed`, `cancelled`, or `failed`. The status `completed` indicates that the vector store file is ready for use.
@@ -52,7 +52,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VectorStoreFileObjectStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.VectorStoreFileObjectStatus Status { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreFileObjectStatus Status { get; set; } = default!;
 
         /// <summary>
         /// 

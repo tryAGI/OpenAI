@@ -22,14 +22,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// The encrypted content that was produced by compaction.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("encrypted_content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string EncryptedContent { get; set; }
+        public string EncryptedContent { get; set; } = default!;
 
         /// <summary>
         /// The identifier of the actor that created the item.

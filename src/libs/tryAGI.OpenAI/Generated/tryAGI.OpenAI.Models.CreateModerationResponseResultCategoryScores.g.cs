@@ -13,91 +13,91 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hate")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Hate { get; set; }
+        public double Hate { get; set; } = default!;
 
         /// <summary>
         /// The score for the category 'hate/threatening'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hate/threatening")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double HateThreatening { get; set; }
+        public double HateThreatening { get; set; } = default!;
 
         /// <summary>
         /// The score for the category 'harassment'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("harassment")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Harassment { get; set; }
+        public double Harassment { get; set; } = default!;
 
         /// <summary>
         /// The score for the category 'harassment/threatening'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("harassment/threatening")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double HarassmentThreatening { get; set; }
+        public double HarassmentThreatening { get; set; } = default!;
 
         /// <summary>
         /// The score for the category 'illicit'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("illicit")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Illicit { get; set; }
+        public double Illicit { get; set; } = default!;
 
         /// <summary>
         /// The score for the category 'illicit/violent'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("illicit/violent")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double IllicitViolent { get; set; }
+        public double IllicitViolent { get; set; } = default!;
 
         /// <summary>
         /// The score for the category 'self-harm'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("self-harm")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double SelfHarm { get; set; }
+        public double SelfHarm { get; set; } = default!;
 
         /// <summary>
         /// The score for the category 'self-harm/intent'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("self-harm/intent")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double SelfHarmIntent { get; set; }
+        public double SelfHarmIntent { get; set; } = default!;
 
         /// <summary>
         /// The score for the category 'self-harm/instructions'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("self-harm/instructions")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double SelfHarmInstructions { get; set; }
+        public double SelfHarmInstructions { get; set; } = default!;
 
         /// <summary>
         /// The score for the category 'sexual'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sexual")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Sexual { get; set; }
+        public double Sexual { get; set; } = default!;
 
         /// <summary>
         /// The score for the category 'sexual/minors'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sexual/minors")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double SexualMinors { get; set; }
+        public double SexualMinors { get; set; } = default!;
 
         /// <summary>
         /// The score for the category 'violence'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("violence")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Violence { get; set; }
+        public double Violence { get; set; } = default!;
 
         /// <summary>
         /// The score for the category 'violence/graphic'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("violence/graphic")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double ViolenceGraphic { get; set; }
+        public double ViolenceGraphic { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

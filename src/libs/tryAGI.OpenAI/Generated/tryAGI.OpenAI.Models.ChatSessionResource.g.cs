@@ -14,7 +14,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// Type discriminator that is always `chatkit.session`.<br/>
@@ -31,42 +31,42 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset ExpiresAt { get; set; }
+        public global::System.DateTimeOffset ExpiresAt { get; set; } = default!;
 
         /// <summary>
         /// Ephemeral client secret that authenticates session requests.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("client_secret")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ClientSecret { get; set; }
+        public string ClientSecret { get; set; } = default!;
 
         /// <summary>
         /// Workflow metadata for the session.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workflow")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ChatkitWorkflow Workflow { get; set; }
+        public global::tryAGI.OpenAI.ChatkitWorkflow Workflow { get; set; } = default!;
 
         /// <summary>
         /// User identifier associated with the session.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string User { get; set; }
+        public string User { get; set; } = default!;
 
         /// <summary>
         /// Resolved rate limit values.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rate_limits")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ChatSessionRateLimits RateLimits { get; set; }
+        public global::tryAGI.OpenAI.ChatSessionRateLimits RateLimits { get; set; } = default!;
 
         /// <summary>
         /// Convenience copy of the per-minute request limit.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_requests_per_1_minute")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int MaxRequestsPer1Minute { get; set; }
+        public int MaxRequestsPer1Minute { get; set; } = default!;
 
         /// <summary>
         /// Current lifecycle state of the session.
@@ -74,14 +74,14 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatSessionStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ChatSessionStatus Status { get; set; }
+        public global::tryAGI.OpenAI.ChatSessionStatus Status { get; set; } = default!;
 
         /// <summary>
         /// Resolved ChatKit feature configuration for the session.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chatkit_configuration")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ChatSessionChatkitConfiguration ChatkitConfiguration { get; set; }
+        public global::tryAGI.OpenAI.ChatSessionChatkitConfiguration ChatkitConfiguration { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,14 +13,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embedding_weight")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double EmbeddingWeight { get; set; }
+        public double EmbeddingWeight { get; set; } = default!;
 
         /// <summary>
         /// The weight of the text in the reciprocal ranking fusion.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text_weight")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double TextWeight { get; set; }
+        public double TextWeight { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

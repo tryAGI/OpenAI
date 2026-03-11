@@ -22,28 +22,28 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRun> Data { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRun> Data { get; set; } = default!;
 
         /// <summary>
         /// The identifier of the first eval run in the data array.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string FirstId { get; set; }
+        public string FirstId { get; set; } = default!;
 
         /// <summary>
         /// The identifier of the last eval run in the data array.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string LastId { get; set; }
+        public string LastId { get; set; } = default!;
 
         /// <summary>
         /// Indicates whether there are more evals available.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool HasMore { get; set; }
+        public bool HasMore { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -15,7 +15,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// The object type of this resource - always set to `response`.
@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double CreatedAt { get; set; }
+        public double CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -68,7 +68,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputItem> Output { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputItem> Output { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -95,7 +95,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parallel_tool_calls")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool ParallelToolCalls { get; set; }
+        public bool ParallelToolCalls { get; set; } = default!;
 
         /// <summary>
         /// 

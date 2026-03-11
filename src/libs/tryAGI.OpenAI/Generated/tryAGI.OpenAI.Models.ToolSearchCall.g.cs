@@ -22,7 +22,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -36,14 +36,14 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("execution")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ToolSearchExecutionTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ToolSearchExecutionType Execution { get; set; }
+        public global::tryAGI.OpenAI.ToolSearchExecutionType Execution { get; set; } = default!;
 
         /// <summary>
         /// Arguments used for the tool search call.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Arguments { get; set; }
+        public object Arguments { get; set; } = default!;
 
         /// <summary>
         /// The status of the tool search call item that was recorded.
@@ -51,7 +51,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.FunctionCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.FunctionCallStatus Status { get; set; }
+        public global::tryAGI.OpenAI.FunctionCallStatus Status { get; set; } = default!;
 
         /// <summary>
         /// The identifier of the actor that created the item.

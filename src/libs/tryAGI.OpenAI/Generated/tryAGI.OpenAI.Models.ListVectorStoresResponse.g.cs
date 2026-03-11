@@ -14,14 +14,14 @@ namespace tryAGI.OpenAI
         /// <example>list</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Object { get; set; }
+        public string Object { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VectorStoreObject> Data { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VectorStoreObject> Data { get; set; } = default!;
 
         /// <summary>
         /// Example: vs_abc123
@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         /// <example>vs_abc123</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string FirstId { get; set; }
+        public string FirstId { get; set; } = default!;
 
         /// <summary>
         /// Example: vs_abc456
@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         /// <example>vs_abc456</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string LastId { get; set; }
+        public string LastId { get; set; } = default!;
 
         /// <summary>
         /// Example: false
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool HasMore { get; set; }
+        public bool HasMore { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

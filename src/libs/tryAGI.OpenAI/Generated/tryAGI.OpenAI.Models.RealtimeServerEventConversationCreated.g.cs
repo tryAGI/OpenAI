@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string EventId { get; set; }
+        public string EventId { get; set; } = default!;
 
         /// <summary>
         /// The event type, must be `conversation.created`.
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conversation")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.RealtimeServerEventConversationCreatedConversation Conversation { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationCreatedConversation Conversation { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

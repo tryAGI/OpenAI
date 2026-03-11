@@ -15,7 +15,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assistant_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string AssistantId { get; set; }
+        public string AssistantId { get; set; } = default!;
 
         /// <summary>
         /// Options to create a new thread. If no thread is provided when running a<br/>

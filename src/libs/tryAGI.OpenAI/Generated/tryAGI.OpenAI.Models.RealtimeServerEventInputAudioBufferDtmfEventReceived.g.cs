@@ -23,7 +23,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Event { get; set; }
+        public string Event { get; set; } = default!;
 
         /// <summary>
         /// UTC Unix Timestamp when DTMF Event was received by server.
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("received_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset ReceivedAt { get; set; }
+        public global::System.DateTimeOffset ReceivedAt { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

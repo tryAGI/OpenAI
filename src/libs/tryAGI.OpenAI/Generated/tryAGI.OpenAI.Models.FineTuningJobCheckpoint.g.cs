@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the checkpoint was created.
@@ -21,35 +21,35 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
+        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// The name of the fine-tuned checkpoint model that is created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fine_tuned_model_checkpoint")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string FineTunedModelCheckpoint { get; set; }
+        public string FineTunedModelCheckpoint { get; set; } = default!;
 
         /// <summary>
         /// The step number that the checkpoint was created at.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("step_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int StepNumber { get; set; }
+        public int StepNumber { get; set; } = default!;
 
         /// <summary>
         /// Metrics at the step number during the fine-tuning job.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metrics")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.FineTuningJobCheckpointMetrics Metrics { get; set; }
+        public global::tryAGI.OpenAI.FineTuningJobCheckpointMetrics Metrics { get; set; } = default!;
 
         /// <summary>
         /// The name of the fine-tuning job that this checkpoint was created from.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fine_tuning_job_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string FineTuningJobId { get; set; }
+        public string FineTuningJobId { get; set; } = default!;
 
         /// <summary>
         /// The object type, which is always "fine_tuning.job.checkpoint".

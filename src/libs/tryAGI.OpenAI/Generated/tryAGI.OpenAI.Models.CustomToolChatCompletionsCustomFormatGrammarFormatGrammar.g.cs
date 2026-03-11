@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("definition")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Definition { get; set; }
+        public string Definition { get; set; } = default!;
 
         /// <summary>
         /// The syntax of the grammar definition. One of `lark` or `regex`.
@@ -21,7 +21,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("syntax")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CustomToolChatCompletionsCustomFormatGrammarFormatGrammarSyntaxJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatGrammarFormatGrammarSyntax Syntax { get; set; }
+        public global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatGrammarFormatGrammarSyntax Syntax { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
