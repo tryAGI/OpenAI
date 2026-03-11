@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commands")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<string> Commands { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<string> Commands { get; set; }
 
         /// <summary>
         /// 

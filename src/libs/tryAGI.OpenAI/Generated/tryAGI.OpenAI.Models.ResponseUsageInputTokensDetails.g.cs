@@ -14,7 +14,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cached_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int CachedTokens { get; set; } = default!;
+        public required int CachedTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

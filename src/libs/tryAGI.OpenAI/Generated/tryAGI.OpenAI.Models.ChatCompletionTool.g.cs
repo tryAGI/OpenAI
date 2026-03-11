@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.FunctionObject Function { get; set; } = default!;
+        public required global::tryAGI.OpenAI.FunctionObject Function { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -23,14 +23,14 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("syntax")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.GrammarSyntax1JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.GrammarSyntax1 Syntax { get; set; } = default!;
+        public required global::tryAGI.OpenAI.GrammarSyntax1 Syntax { get; set; }
 
         /// <summary>
         /// The grammar definition.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("definition")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Definition { get; set; } = default!;
+        public required string Definition { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

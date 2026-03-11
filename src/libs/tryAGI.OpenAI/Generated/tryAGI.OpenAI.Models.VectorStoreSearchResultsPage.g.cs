@@ -20,21 +20,21 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("search_query")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<string> SearchQuery { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<string> SearchQuery { get; set; }
 
         /// <summary>
         /// The list of search result items.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VectorStoreSearchResultItem> Data { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VectorStoreSearchResultItem> Data { get; set; }
 
         /// <summary>
         /// Indicates if there are more results to fetch.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool HasMore { get; set; } = default!;
+        public required bool HasMore { get; set; }
 
         /// <summary>
         /// 

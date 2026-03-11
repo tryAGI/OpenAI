@@ -13,35 +13,35 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// Name of the role.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Name { get; set; } = default!;
+        public required string Name { get; set; }
 
         /// <summary>
         /// Permissions associated with the role.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<string> Permissions { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<string> Permissions { get; set; }
 
         /// <summary>
         /// Resource type the role applies to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resource_type")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string ResourceType { get; set; } = default!;
+        public required string ResourceType { get; set; }
 
         /// <summary>
         /// Whether the role is predefined by OpenAI.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("predefined_role")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool PredefinedRole { get; set; } = default!;
+        public required bool PredefinedRole { get; set; }
 
         /// <summary>
         /// Description of the role.

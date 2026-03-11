@@ -13,21 +13,21 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("automatic_thread_titling")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.ChatSessionAutomaticThreadTitling AutomaticThreadTitling { get; set; } = default!;
+        public required global::tryAGI.OpenAI.ChatSessionAutomaticThreadTitling AutomaticThreadTitling { get; set; }
 
         /// <summary>
         /// Upload settings for the session.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_upload")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.ChatSessionFileUpload FileUpload { get; set; } = default!;
+        public required global::tryAGI.OpenAI.ChatSessionFileUpload FileUpload { get; set; }
 
         /// <summary>
         /// History retention configuration.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("history")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.ChatSessionHistory History { get; set; } = default!;
+        public required global::tryAGI.OpenAI.ChatSessionHistory History { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

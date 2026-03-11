@@ -23,7 +23,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string EventId { get; set; } = default!;
+        public required string EventId { get; set; }
 
         /// <summary>
         /// The event type, must be `input_audio_buffer.timeout_triggered`.
@@ -37,21 +37,21 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio_start_ms")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int AudioStartMs { get; set; } = default!;
+        public required int AudioStartMs { get; set; }
 
         /// <summary>
         /// Millisecond offset of audio written to the input audio buffer at the time the timeout was triggered.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio_end_ms")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int AudioEndMs { get; set; } = default!;
+        public required int AudioEndMs { get; set; }
 
         /// <summary>
         /// The ID of the item associated with this segment.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string ItemId { get; set; } = default!;
+        public required string ItemId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

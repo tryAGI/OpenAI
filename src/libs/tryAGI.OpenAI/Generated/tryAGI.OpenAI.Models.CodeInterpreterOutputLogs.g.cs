@@ -22,7 +22,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Logs { get; set; } = default!;
+        public required string Logs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

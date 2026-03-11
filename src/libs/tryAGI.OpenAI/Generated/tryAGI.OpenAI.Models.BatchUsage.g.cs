@@ -15,35 +15,35 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int InputTokens { get; set; } = default!;
+        public required int InputTokens { get; set; }
 
         /// <summary>
         /// A detailed breakdown of the input tokens.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens_details")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.BatchUsageInputTokensDetails InputTokensDetails { get; set; } = default!;
+        public required global::tryAGI.OpenAI.BatchUsageInputTokensDetails InputTokensDetails { get; set; }
 
         /// <summary>
         /// The number of output tokens.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int OutputTokens { get; set; } = default!;
+        public required int OutputTokens { get; set; }
 
         /// <summary>
         /// A detailed breakdown of the output tokens.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens_details")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.BatchUsageOutputTokensDetails OutputTokensDetails { get; set; } = default!;
+        public required global::tryAGI.OpenAI.BatchUsageOutputTokensDetails OutputTokensDetails { get; set; }
 
         /// <summary>
         /// The total number of tokens used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int TotalTokens { get; set; } = default!;
+        public required int TotalTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

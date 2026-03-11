@@ -20,35 +20,35 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// Start timestamp of the segment in seconds.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public float Start { get; set; } = default!;
+        public required float Start { get; set; }
 
         /// <summary>
         /// End timestamp of the segment in seconds.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public float End { get; set; } = default!;
+        public required float End { get; set; }
 
         /// <summary>
         /// Transcript text for this segment.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Text { get; set; } = default!;
+        public required string Text { get; set; }
 
         /// <summary>
         /// Speaker label for this segment.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speaker")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Speaker { get; set; } = default!;
+        public required string Speaker { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

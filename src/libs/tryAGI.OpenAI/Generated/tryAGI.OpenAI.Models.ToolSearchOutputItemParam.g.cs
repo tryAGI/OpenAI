@@ -41,7 +41,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Tool> Tools { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Tool> Tools { get; set; }
 
         /// <summary>
         /// 

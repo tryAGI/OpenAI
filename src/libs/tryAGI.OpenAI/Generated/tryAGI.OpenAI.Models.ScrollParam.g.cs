@@ -22,28 +22,28 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("x")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int X { get; set; } = default!;
+        public required int X { get; set; }
 
         /// <summary>
         /// The y-coordinate where the scroll occurred.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("y")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int Y { get; set; } = default!;
+        public required int Y { get; set; }
 
         /// <summary>
         /// The horizontal scroll distance.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scroll_x")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int ScrollX { get; set; } = default!;
+        public required int ScrollX { get; set; }
 
         /// <summary>
         /// The vertical scroll distance.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scroll_y")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int ScrollY { get; set; } = default!;
+        public required int ScrollY { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

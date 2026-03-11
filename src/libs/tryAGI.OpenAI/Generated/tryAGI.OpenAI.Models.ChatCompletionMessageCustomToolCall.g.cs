@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// The type of the tool. Always `custom`.
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("custom")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCallCustom Custom { get; set; } = default!;
+        public required global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCallCustom Custom { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

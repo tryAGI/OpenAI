@@ -20,35 +20,35 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int OutputIndex { get; set; } = default!;
+        public required int OutputIndex { get; set; }
 
         /// <summary>
         /// The unique identifier of the image generation item being processed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string ItemId { get; set; } = default!;
+        public required string ItemId { get; set; }
 
         /// <summary>
         /// The sequence number of the image generation item being processed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int SequenceNumber { get; set; } = default!;
+        public required int SequenceNumber { get; set; }
 
         /// <summary>
         /// 0-based index for the partial image (backend is 1-based, but this is 0-based for the user).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("partial_image_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int PartialImageIndex { get; set; } = default!;
+        public required int PartialImageIndex { get; set; }
 
         /// <summary>
         /// Base64-encoded partial image data, suitable for rendering as an image.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("partial_image_b64")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string PartialImageB64 { get; set; } = default!;
+        public required string PartialImageB64 { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

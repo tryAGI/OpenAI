@@ -23,14 +23,14 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("response")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.Response Response { get; set; } = default!;
+        public required global::tryAGI.OpenAI.Response Response { get; set; }
 
         /// <summary>
         /// The sequence number for this event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int SequenceNumber { get; set; } = default!;
+        public required int SequenceNumber { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

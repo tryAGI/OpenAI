@@ -22,28 +22,28 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Url { get; set; } = default!;
+        public required string Url { get; set; }
 
         /// <summary>
         /// The index of the first character of the URL citation in the message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int StartIndex { get; set; } = default!;
+        public required int StartIndex { get; set; }
 
         /// <summary>
         /// The index of the last character of the URL citation in the message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int EndIndex { get; set; } = default!;
+        public required int EndIndex { get; set; }
 
         /// <summary>
         /// The title of the web resource.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Title { get; set; } = default!;
+        public required string Title { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

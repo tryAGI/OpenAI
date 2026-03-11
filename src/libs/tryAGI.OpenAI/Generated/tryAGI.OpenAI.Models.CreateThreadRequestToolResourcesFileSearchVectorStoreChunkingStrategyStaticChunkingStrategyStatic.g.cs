@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_chunk_size_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int MaxChunkSizeTokens { get; set; } = default!;
+        public required int MaxChunkSizeTokens { get; set; }
 
         /// <summary>
         /// The number of tokens that overlap between chunks. The default value is `400`.<br/>
@@ -21,7 +21,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chunk_overlap_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int ChunkOverlapTokens { get; set; } = default!;
+        public required int ChunkOverlapTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

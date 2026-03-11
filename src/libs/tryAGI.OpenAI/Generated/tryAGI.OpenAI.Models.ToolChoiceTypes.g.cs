@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ToolChoiceTypesTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.ToolChoiceTypesType Type { get; set; } = default!;
+        public required global::tryAGI.OpenAI.ToolChoiceTypesType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

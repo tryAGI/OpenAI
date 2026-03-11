@@ -20,28 +20,28 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int OutputIndex { get; set; } = default!;
+        public required int OutputIndex { get; set; }
 
         /// <summary>
         /// The unique identifier of the MCP tool call item being processed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string ItemId { get; set; } = default!;
+        public required string ItemId { get; set; }
 
         /// <summary>
         /// A JSON string containing the finalized arguments for the MCP tool call.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Arguments { get; set; } = default!;
+        public required string Arguments { get; set; }
 
         /// <summary>
         /// The sequence number of this event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int SequenceNumber { get; set; } = default!;
+        public required int SequenceNumber { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

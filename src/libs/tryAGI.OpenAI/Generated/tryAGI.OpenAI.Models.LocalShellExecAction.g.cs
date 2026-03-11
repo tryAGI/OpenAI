@@ -22,7 +22,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("command")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<string> Command { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<string> Command { get; set; }
 
         /// <summary>
         /// 
@@ -41,7 +41,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("env")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.Dictionary<string, string> Env { get; set; } = default!;
+        public required global::System.Collections.Generic.Dictionary<string, string> Env { get; set; }
 
         /// <summary>
         /// 

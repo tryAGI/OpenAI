@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// The type of tool call. This is always going to be `file_search` for this type of tool call.
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_search")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchObjectFileSearch FileSearch { get; set; } = default!;
+        public required global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchObjectFileSearch FileSearch { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

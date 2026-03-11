@@ -13,14 +13,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workflow")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.WorkflowParam Workflow { get; set; } = default!;
+        public required global::tryAGI.OpenAI.WorkflowParam Workflow { get; set; }
 
         /// <summary>
         /// A free-form string that identifies your end user; ensures this Session can access other objects that have the same `user` scope.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string User { get; set; } = default!;
+        public required string User { get; set; }
 
         /// <summary>
         /// Optional override for session expiration timing in seconds from creation. Defaults to 10 minutes.

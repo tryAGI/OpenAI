@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("images")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ImageRefParam> Images { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ImageRefParam> Images { get; set; }
 
         /// <summary>
         /// Reference an input image by either URL or uploaded file ID.<br/>
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         /// <example>Add a watercolor effect and keep the subject centered</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Prompt { get; set; } = default!;
+        public required string Prompt { get; set; }
 
         /// <summary>
         /// The number of edited images to generate.<br/>

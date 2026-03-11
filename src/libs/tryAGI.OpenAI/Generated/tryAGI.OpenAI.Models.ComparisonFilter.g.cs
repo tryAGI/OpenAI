@@ -26,14 +26,14 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ComparisonFilterTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.ComparisonFilterType Type { get; set; } = default!;
+        public required global::tryAGI.OpenAI.ComparisonFilterType Type { get; set; } = global::tryAGI.OpenAI.ComparisonFilterType.Eq;
 
         /// <summary>
         /// The key to compare against the value.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("key")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Key { get; set; } = default!;
+        public required string Key { get; set; }
 
         /// <summary>
         /// The value to compare against the attribute key; supports string, number, or boolean types.
@@ -41,7 +41,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, double?, bool?, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<string, double?>>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.OneOf<string, double?, bool?, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<string, double?>>> Value { get; set; } = default!;
+        public required global::tryAGI.OpenAI.OneOf<string, double?, bool?, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<string, double?>>> Value { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

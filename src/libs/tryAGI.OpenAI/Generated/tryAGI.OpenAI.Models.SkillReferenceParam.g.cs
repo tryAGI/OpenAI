@@ -22,7 +22,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("skill_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string SkillId { get; set; } = default!;
+        public required string SkillId { get; set; }
 
         /// <summary>
         /// Optional skill version. Use a positive integer or 'latest'. Omit for default.

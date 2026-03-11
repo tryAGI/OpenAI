@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_tools")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.ChatCompletionAllowedTools AllowedTools { get; set; } = default!;
+        public required global::tryAGI.OpenAI.ChatCompletionAllowedTools AllowedTools { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

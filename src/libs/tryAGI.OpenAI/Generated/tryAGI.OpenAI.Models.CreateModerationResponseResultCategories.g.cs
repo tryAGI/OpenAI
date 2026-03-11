@@ -13,28 +13,28 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hate")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool Hate { get; set; } = default!;
+        public required bool Hate { get; set; }
 
         /// <summary>
         /// Hateful content that also includes violence or serious harm towards the targeted group based on race, gender, ethnicity, religion, nationality, sexual orientation, disability status, or caste.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hate/threatening")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool HateThreatening { get; set; } = default!;
+        public required bool HateThreatening { get; set; }
 
         /// <summary>
         /// Content that expresses, incites, or promotes harassing language towards any target.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("harassment")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool Harassment { get; set; } = default!;
+        public required bool Harassment { get; set; }
 
         /// <summary>
         /// Harassment content that also includes violence or serious harm towards any target.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("harassment/threatening")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool HarassmentThreatening { get; set; } = default!;
+        public required bool HarassmentThreatening { get; set; }
 
         /// <summary>
         /// 
@@ -53,49 +53,49 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("self-harm")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool SelfHarm { get; set; } = default!;
+        public required bool SelfHarm { get; set; }
 
         /// <summary>
         /// Content where the speaker expresses that they are engaging or intend to engage in acts of self-harm, such as suicide, cutting, and eating disorders.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("self-harm/intent")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool SelfHarmIntent { get; set; } = default!;
+        public required bool SelfHarmIntent { get; set; }
 
         /// <summary>
         /// Content that encourages performing acts of self-harm, such as suicide, cutting, and eating disorders, or that gives instructions or advice on how to commit such acts.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("self-harm/instructions")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool SelfHarmInstructions { get; set; } = default!;
+        public required bool SelfHarmInstructions { get; set; }
 
         /// <summary>
         /// Content meant to arouse sexual excitement, such as the description of sexual activity, or that promotes sexual services (excluding sex education and wellness).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sexual")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool Sexual { get; set; } = default!;
+        public required bool Sexual { get; set; }
 
         /// <summary>
         /// Sexual content that includes an individual who is under 18 years old.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sexual/minors")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool SexualMinors { get; set; } = default!;
+        public required bool SexualMinors { get; set; }
 
         /// <summary>
         /// Content that depicts death, violence, or physical injury.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("violence")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool Violence { get; set; } = default!;
+        public required bool Violence { get; set; }
 
         /// <summary>
         /// Content that depicts death, violence, or physical injury in graphic detail.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("violence/graphic")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool ViolenceGraphic { get; set; } = default!;
+        public required bool ViolenceGraphic { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// The object type, which is always `batch`.
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("endpoint")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Endpoint { get; set; } = default!;
+        public required string Endpoint { get; set; }
 
         /// <summary>
         /// Model ID used to process the batch, like `gpt-5-2025-08-07`. OpenAI<br/>
@@ -49,14 +49,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_file_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string InputFileId { get; set; } = default!;
+        public required string InputFileId { get; set; }
 
         /// <summary>
         /// The time frame within which the batch should be processed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_window")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string CompletionWindow { get; set; } = default!;
+        public required string CompletionWindow { get; set; }
 
         /// <summary>
         /// The current status of the batch.
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BatchStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.BatchStatus Status { get; set; } = default!;
+        public required global::tryAGI.OpenAI.BatchStatus Status { get; set; }
 
         /// <summary>
         /// The ID of the file containing the outputs of successfully executed requests.
@@ -84,7 +84,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
+        public required global::System.DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the batch started processing.

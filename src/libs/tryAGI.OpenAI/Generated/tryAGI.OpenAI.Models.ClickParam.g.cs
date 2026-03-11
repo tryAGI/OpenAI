@@ -23,21 +23,21 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("button")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ClickButtonTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.ClickButtonType Button { get; set; } = default!;
+        public required global::tryAGI.OpenAI.ClickButtonType Button { get; set; }
 
         /// <summary>
         /// The x-coordinate where the click occurred.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("x")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int X { get; set; } = default!;
+        public required int X { get; set; }
 
         /// <summary>
         /// The y-coordinate where the click occurred.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("y")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int Y { get; set; } = default!;
+        public required int Y { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

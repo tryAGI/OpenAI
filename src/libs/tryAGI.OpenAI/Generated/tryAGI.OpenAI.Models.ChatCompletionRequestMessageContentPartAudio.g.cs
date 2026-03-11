@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_audio")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudioInputAudio InputAudio { get; set; } = default!;
+        public required global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudioInputAudio InputAudio { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

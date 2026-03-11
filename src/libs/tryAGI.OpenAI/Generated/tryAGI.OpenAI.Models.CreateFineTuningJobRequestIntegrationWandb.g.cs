@@ -17,7 +17,7 @@ namespace tryAGI.OpenAI
         /// <example>my-wandb-project</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("project")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Project { get; set; } = default!;
+        public required string Project { get; set; }
 
         /// <summary>
         /// A display name to set for the run. If not set, we will use the Job ID as the name.

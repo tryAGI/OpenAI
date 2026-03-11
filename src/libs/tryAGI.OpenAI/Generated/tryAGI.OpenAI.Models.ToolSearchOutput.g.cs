@@ -22,7 +22,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// 
@@ -36,14 +36,14 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("execution")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ToolSearchExecutionTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.ToolSearchExecutionType Execution { get; set; } = default!;
+        public required global::tryAGI.OpenAI.ToolSearchExecutionType Execution { get; set; }
 
         /// <summary>
         /// The loaded tool definitions returned by tool search.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Tool> Tools { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Tool> Tools { get; set; }
 
         /// <summary>
         /// The status of the tool search output item that was recorded.
@@ -51,7 +51,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.FunctionCallOutputStatusEnumJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.FunctionCallOutputStatusEnum Status { get; set; } = default!;
+        public required global::tryAGI.OpenAI.FunctionCallOutputStatusEnum Status { get; set; }
 
         /// <summary>
         /// The identifier of the actor that created the item.

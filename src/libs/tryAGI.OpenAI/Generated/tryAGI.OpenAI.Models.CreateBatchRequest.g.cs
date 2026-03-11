@@ -15,7 +15,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_file_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string InputFileId { get; set; } = default!;
+        public required string InputFileId { get; set; }
 
         /// <summary>
         /// The endpoint to be used for all requests in the batch. Currently `/v1/responses`, `/v1/chat/completions`, `/v1/embeddings`, `/v1/completions`, `/v1/moderations`, `/v1/images/generations`, and `/v1/images/edits` are supported. Note that `/v1/embeddings` batches are also restricted to a maximum of 50,000 embedding inputs across all requests in the batch.
@@ -23,7 +23,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("endpoint")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateBatchRequestEndpointJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.CreateBatchRequestEndpoint Endpoint { get; set; } = default!;
+        public required global::tryAGI.OpenAI.CreateBatchRequestEndpoint Endpoint { get; set; }
 
         /// <summary>
         /// The time frame within which the batch should be processed. Currently only `24h` is supported.

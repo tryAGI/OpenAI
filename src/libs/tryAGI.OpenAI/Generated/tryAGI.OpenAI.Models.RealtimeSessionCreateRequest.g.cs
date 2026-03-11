@@ -16,7 +16,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("client_secret")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestClientSecret ClientSecret { get; set; } = default!;
+        public required global::tryAGI.OpenAI.RealtimeSessionCreateRequestClientSecret ClientSecret { get; set; }
 
         /// <summary>
         /// The set of modalities the model can respond with. To disable audio,<br/>

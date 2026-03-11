@@ -14,14 +14,14 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("ranker")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.FileSearchRankerJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.FileSearchRanker Ranker { get; set; } = default!;
+        public required global::tryAGI.OpenAI.FileSearchRanker Ranker { get; set; }
 
         /// <summary>
         /// The score threshold for the file search. All values must be a floating point number between 0 and 1.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("score_threshold")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public double ScoreThreshold { get; set; } = default!;
+        public required double ScoreThreshold { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

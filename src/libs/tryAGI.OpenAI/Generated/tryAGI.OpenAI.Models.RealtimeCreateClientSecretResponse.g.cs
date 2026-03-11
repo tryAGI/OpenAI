@@ -13,14 +13,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Value { get; set; } = default!;
+        public required string Value { get; set; }
 
         /// <summary>
         /// Expiration timestamp for the client secret, in seconds since epoch.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int ExpiresAt { get; set; } = default!;
+        public required int ExpiresAt { get; set; }
 
         /// <summary>
         /// The session configuration for either a realtime or transcription session.
@@ -28,7 +28,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("session")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.Session2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.Session2 Session { get; set; } = default!;
+        public required global::tryAGI.OpenAI.Session2 Session { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

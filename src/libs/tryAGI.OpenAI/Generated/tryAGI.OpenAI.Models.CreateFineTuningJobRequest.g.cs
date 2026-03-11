@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.CreateFineTuningJobRequestModel?>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateFineTuningJobRequestModel?> Model { get; set; } = default!;
+        public required global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateFineTuningJobRequestModel?> Model { get; set; }
 
         /// <summary>
         /// The ID of an uploaded file that contains training data.<br/>
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         /// <example>file-abc123</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("training_file")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string TrainingFile { get; set; } = default!;
+        public required string TrainingFile { get; set; }
 
         /// <summary>
         /// The hyperparameters used for the fine-tuning job.<br/>

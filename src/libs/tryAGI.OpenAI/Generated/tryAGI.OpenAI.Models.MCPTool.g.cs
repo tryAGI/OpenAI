@@ -23,7 +23,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("server_label")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string ServerLabel { get; set; } = default!;
+        public required string ServerLabel { get; set; }
 
         /// <summary>
         /// The URL for the MCP server. One of `server_url` or `connector_id` must be<br/>

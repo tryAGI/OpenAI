@@ -40,14 +40,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string CallId { get; set; } = default!;
+        public required string CallId { get; set; }
 
         /// <summary>
         /// The output of the function call, this is free text and can contain any information or simply be empty.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Output { get; set; } = default!;
+        public required string Output { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

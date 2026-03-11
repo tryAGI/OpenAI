@@ -14,7 +14,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ContainerResourceNetworkPolicyTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.ContainerResourceNetworkPolicyType Type { get; set; } = default!;
+        public required global::tryAGI.OpenAI.ContainerResourceNetworkPolicyType Type { get; set; }
 
         /// <summary>
         /// Allowed outbound domains when `type` is `allowlist`.

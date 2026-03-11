@@ -20,28 +20,28 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// The model this rate limit applies to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Model { get; set; } = default!;
+        public required string Model { get; set; }
 
         /// <summary>
         /// The maximum requests per minute.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_requests_per_1_minute")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int MaxRequestsPer1Minute { get; set; } = default!;
+        public required int MaxRequestsPer1Minute { get; set; }
 
         /// <summary>
         /// The maximum tokens per minute.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_tokens_per_1_minute")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int MaxTokensPer1Minute { get; set; } = default!;
+        public required int MaxTokensPer1Minute { get; set; }
 
         /// <summary>
         /// The maximum images per minute. Only present for relevant models.

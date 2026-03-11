@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestMessage> Messages { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestMessage> Messages { get; set; }
 
         /// <summary>
         /// Model ID used to generate the response, like `gpt-4o` or `o3`. OpenAI<br/>
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ModelIdsSharedJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.ModelIdsShared Model { get; set; } = default!;
+        public required global::tryAGI.OpenAI.ModelIdsShared Model { get; set; }
 
         /// <summary>
         /// 

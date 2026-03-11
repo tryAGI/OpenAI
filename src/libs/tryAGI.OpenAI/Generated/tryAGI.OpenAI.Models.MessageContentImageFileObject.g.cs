@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_file")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.MessageContentImageFileObjectImageFile ImageFile { get; set; } = default!;
+        public required global::tryAGI.OpenAI.MessageContentImageFileObjectImageFile ImageFile { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

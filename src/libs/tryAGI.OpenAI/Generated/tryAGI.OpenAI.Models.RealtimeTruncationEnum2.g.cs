@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("retention_ratio")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public double RetentionRatio { get; set; } = default!;
+        public required double RetentionRatio { get; set; }
 
         /// <summary>
         /// Optional custom token limits for this truncation strategy. If not provided, the model's default token limits will be used.

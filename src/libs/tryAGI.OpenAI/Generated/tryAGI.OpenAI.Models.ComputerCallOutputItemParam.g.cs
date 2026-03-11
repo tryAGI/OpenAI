@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string CallId { get; set; } = default!;
+        public required string CallId { get; set; }
 
         /// <summary>
         /// The type of the computer tool call output. Always `computer_call_output`.<br/>
@@ -35,7 +35,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.ComputerScreenshotImage Output { get; set; } = default!;
+        public required global::tryAGI.OpenAI.ComputerScreenshotImage Output { get; set; }
 
         /// <summary>
         /// 

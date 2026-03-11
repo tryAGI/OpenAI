@@ -20,21 +20,21 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string ProjectId { get; set; } = default!;
+        public required string ProjectId { get; set; }
 
         /// <summary>
         /// Identifier of the group that has access to the project.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string GroupId { get; set; } = default!;
+        public required string GroupId { get; set; }
 
         /// <summary>
         /// Display name of the group.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string GroupName { get; set; } = default!;
+        public required string GroupName { get; set; }
 
         /// <summary>
         /// Unix timestamp (in seconds) when the group was granted project access.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
+        public required global::System.DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,14 +13,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int TextTokens { get; set; } = default!;
+        public required int TextTokens { get; set; }
 
         /// <summary>
         /// The number of image tokens in the input prompt.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int ImageTokens { get; set; } = default!;
+        public required int ImageTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,14 +13,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string GroupId { get; set; } = default!;
+        public required string GroupId { get; set; }
 
         /// <summary>
         /// Identifier of the project role to grant to the group.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Role { get; set; } = default!;
+        public required string Role { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

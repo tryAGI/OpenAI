@@ -21,7 +21,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("grammar")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Grammar { get; set; } = default!;
+        public required string Grammar { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -20,14 +20,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Url { get; set; } = default!;
+        public required string Url { get; set; }
 
         /// <summary>
         /// The pattern or text to search for within the page.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pattern")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Pattern { get; set; } = default!;
+        public required string Pattern { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
