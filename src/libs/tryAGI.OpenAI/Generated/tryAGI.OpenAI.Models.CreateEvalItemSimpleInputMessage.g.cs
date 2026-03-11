@@ -13,14 +13,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Role { get; set; } = default!;
+        public required string Role { get; set; }
 
         /// <summary>
         /// The content of the message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Content { get; set; } = default!;
+        public required string Content { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

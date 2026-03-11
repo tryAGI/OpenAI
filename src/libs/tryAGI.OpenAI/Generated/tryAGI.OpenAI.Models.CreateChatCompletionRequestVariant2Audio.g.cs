@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("voice")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VoiceIdsOrCustomVoiceJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.VoiceIdsOrCustomVoice Voice { get; set; } = default!;
+        public required global::tryAGI.OpenAI.VoiceIdsOrCustomVoice Voice { get; set; }
 
         /// <summary>
         /// Specifies the output audio format. Must be one of `wav`, `mp3`, `flac`,<br/>
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateChatCompletionRequestVariant2AudioFormatJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2AudioFormat Format { get; set; } = default!;
+        public required global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2AudioFormat Format { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

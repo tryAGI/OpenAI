@@ -13,21 +13,21 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string FileId { get; set; } = default!;
+        public required string FileId { get; set; }
 
         /// <summary>
         /// The name of the vector store file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Filename { get; set; } = default!;
+        public required string Filename { get; set; }
 
         /// <summary>
         /// The similarity score for the result.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("score")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public double Score { get; set; } = default!;
+        public required double Score { get; set; }
 
         /// <summary>
         /// 
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VectorStoreSearchResultContentObject> Content { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VectorStoreSearchResultContentObject> Content { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

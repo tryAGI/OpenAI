@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// Project membership role
@@ -21,7 +21,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.InviteRequestProjectRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.InviteRequestProjectRole Role { get; set; } = default!;
+        public required global::tryAGI.OpenAI.InviteRequestProjectRole Role { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

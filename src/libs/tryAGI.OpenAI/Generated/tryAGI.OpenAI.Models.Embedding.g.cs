@@ -13,14 +13,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int Index { get; set; } = default!;
+        public required int Index { get; set; }
 
         /// <summary>
         /// The embedding vector, which is a list of floats. The length of vector depends on the model as listed in the [embedding guide](/docs/guides/embeddings).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embedding")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<float> Embedding1 { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<float> Embedding1 { get; set; }
 
         /// <summary>
         /// The object type, which is always "embedding".

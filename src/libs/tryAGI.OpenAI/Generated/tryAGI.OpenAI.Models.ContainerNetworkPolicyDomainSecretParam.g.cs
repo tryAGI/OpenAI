@@ -13,21 +13,21 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("domain")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Domain { get; set; } = default!;
+        public required string Domain { get; set; }
 
         /// <summary>
         /// The name of the secret to inject for the domain.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Name { get; set; } = default!;
+        public required string Name { get; set; }
 
         /// <summary>
         /// The secret value to inject for the domain.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Value { get; set; } = default!;
+        public required string Value { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

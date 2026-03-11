@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string EventId { get; set; } = default!;
+        public required string EventId { get; set; }
 
         /// <summary>
         /// The event type, must be `conversation.item.input_audio_transcription.segment`.
@@ -27,49 +27,49 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string ItemId { get; set; } = default!;
+        public required string ItemId { get; set; }
 
         /// <summary>
         /// The index of the input audio content part within the item.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int ContentIndex { get; set; } = default!;
+        public required int ContentIndex { get; set; }
 
         /// <summary>
         /// The text for this segment.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Text { get; set; } = default!;
+        public required string Text { get; set; }
 
         /// <summary>
         /// The segment identifier.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// The detected speaker label for this segment.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speaker")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Speaker { get; set; } = default!;
+        public required string Speaker { get; set; }
 
         /// <summary>
         /// Start time of the segment in seconds.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public float Start { get; set; } = default!;
+        public required float Start { get; set; }
 
         /// <summary>
         /// End time of the segment in seconds.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public float End { get; set; } = default!;
+        public required float End { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

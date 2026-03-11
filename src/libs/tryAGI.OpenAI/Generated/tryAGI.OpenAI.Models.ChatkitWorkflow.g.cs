@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// 
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tracing")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.ChatkitWorkflowTracing Tracing { get; set; } = default!;
+        public required global::tryAGI.OpenAI.ChatkitWorkflowTracing Tracing { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

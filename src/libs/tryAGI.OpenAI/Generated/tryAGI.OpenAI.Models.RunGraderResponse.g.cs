@@ -13,28 +13,28 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reward")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public double Reward { get; set; } = default!;
+        public required double Reward { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.RunGraderResponseMetadata Metadata { get; set; } = default!;
+        public required global::tryAGI.OpenAI.RunGraderResponseMetadata Metadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sub_rewards")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public object SubRewards { get; set; } = default!;
+        public required object SubRewards { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model_grader_token_usage_per_model")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public object ModelGraderTokenUsagePerModel { get; set; } = default!;
+        public required object ModelGraderTokenUsagePerModel { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reasoning_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int ReasoningTokens { get; set; } = default!;
+        public required int ReasoningTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

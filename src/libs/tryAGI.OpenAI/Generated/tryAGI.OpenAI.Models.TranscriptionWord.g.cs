@@ -13,21 +13,21 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("word")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Word { get; set; } = default!;
+        public required string Word { get; set; }
 
         /// <summary>
         /// Start time of the word in seconds.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public float Start { get; set; } = default!;
+        public required float Start { get; set; }
 
         /// <summary>
         /// End time of the word in seconds.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public float End { get; set; } = default!;
+        public required float End { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

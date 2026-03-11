@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int InputTokens { get; set; } = default!;
+        public required int InputTokens { get; set; }
 
         /// <summary>
         /// The aggregated number of text input tokens that has been cached from previous requests. For customers subscribe to scale tier, this includes scale tier tokens.
@@ -33,7 +33,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int OutputTokens { get; set; } = default!;
+        public required int OutputTokens { get; set; }
 
         /// <summary>
         /// The aggregated number of audio input tokens used, including cached tokens.
@@ -52,7 +52,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_model_requests")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int NumModelRequests { get; set; } = default!;
+        public required int NumModelRequests { get; set; }
 
         /// <summary>
         /// 

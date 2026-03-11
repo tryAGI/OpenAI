@@ -17,7 +17,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebSearchToolTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.WebSearchToolType Type { get; set; } = default!;
+        public required global::tryAGI.OpenAI.WebSearchToolType Type { get; set; } = global::tryAGI.OpenAI.WebSearchToolType.WebSearch;
 
         /// <summary>
         /// 

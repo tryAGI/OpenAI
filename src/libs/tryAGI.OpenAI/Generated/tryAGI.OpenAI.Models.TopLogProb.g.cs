@@ -13,21 +13,21 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("token")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Token { get; set; } = default!;
+        public required string Token { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprob")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public double Logprob { get; set; } = default!;
+        public required double Logprob { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<int> Bytes { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<int> Bytes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

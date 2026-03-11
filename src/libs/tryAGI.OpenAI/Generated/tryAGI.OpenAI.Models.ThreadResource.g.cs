@@ -14,7 +14,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// Type discriminator that is always `chatkit.thread`.<br/>
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
+        public required global::System.DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
         /// 
@@ -45,14 +45,14 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.StatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.Status Status { get; set; } = default!;
+        public required global::tryAGI.OpenAI.Status Status { get; set; }
 
         /// <summary>
         /// Free-form string that identifies your end user who owns the thread.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string User { get; set; } = default!;
+        public required string User { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

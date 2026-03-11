@@ -20,14 +20,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// Display name of the group.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Name { get; set; } = default!;
+        public required string Name { get; set; }
 
         /// <summary>
         /// Unix timestamp (in seconds) when the group was created.
@@ -35,14 +35,14 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
+        public required global::System.DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
         /// Whether the group is managed through SCIM.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scim_managed")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool ScimManaged { get; set; } = default!;
+        public required bool ScimManaged { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

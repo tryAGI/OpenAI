@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enabled")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool Enabled { get; set; } = default!;
+        public required bool Enabled { get; set; }
 
         /// <summary>
         /// 

@@ -13,21 +13,21 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Name { get; set; } = default!;
+        public required string Name { get; set; }
 
         /// <summary>
         /// The description of the skill.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Description { get; set; } = default!;
+        public required string Description { get; set; }
 
         /// <summary>
         /// The path to the directory containing the skill.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Path { get; set; } = default!;
+        public required string Path { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

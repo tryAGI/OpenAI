@@ -23,14 +23,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// An identifier used when responding to the tool call with output.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string CallId { get; set; } = default!;
+        public required string CallId { get; set; }
 
         /// <summary>
         /// 
@@ -51,7 +51,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pending_safety_checks")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ComputerCallSafetyCheckParam> PendingSafetyChecks { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ComputerCallSafetyCheckParam> PendingSafetyChecks { get; set; }
 
         /// <summary>
         /// The status of the item. One of `in_progress`, `completed`, or<br/>
@@ -60,7 +60,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ComputerToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.ComputerToolCallStatus Status { get; set; } = default!;
+        public required global::tryAGI.OpenAI.ComputerToolCallStatus Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

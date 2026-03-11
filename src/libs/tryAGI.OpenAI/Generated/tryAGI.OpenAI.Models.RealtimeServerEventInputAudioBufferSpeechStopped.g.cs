@@ -15,7 +15,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string EventId { get; set; } = default!;
+        public required string EventId { get; set; }
 
         /// <summary>
         /// The event type, must be `input_audio_buffer.speech_stopped`.
@@ -31,14 +31,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio_end_ms")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int AudioEndMs { get; set; } = default!;
+        public required int AudioEndMs { get; set; }
 
         /// <summary>
         /// The ID of the user message item that will be created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string ItemId { get; set; } = default!;
+        public required string ItemId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

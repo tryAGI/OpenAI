@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string ItemId { get; set; } = default!;
+        public required string ItemId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

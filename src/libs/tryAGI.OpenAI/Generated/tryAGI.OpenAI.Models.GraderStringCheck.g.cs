@@ -20,21 +20,21 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Name { get; set; } = default!;
+        public required string Name { get; set; }
 
         /// <summary>
         /// The input text. This may include template strings.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Input { get; set; } = default!;
+        public required string Input { get; set; }
 
         /// <summary>
         /// The reference text. This may include template strings.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reference")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Reference { get; set; } = default!;
+        public required string Reference { get; set; }
 
         /// <summary>
         /// The string check operation to perform. One of `eq`, `ne`, `like`, or `ilike`.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("operation")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.GraderStringCheckOperationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.GraderStringCheckOperation Operation { get; set; } = default!;
+        public required global::tryAGI.OpenAI.GraderStringCheckOperation Operation { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

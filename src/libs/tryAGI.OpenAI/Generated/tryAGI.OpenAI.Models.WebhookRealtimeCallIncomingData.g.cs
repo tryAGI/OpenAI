@@ -13,14 +13,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string CallId { get; set; } = default!;
+        public required string CallId { get; set; }
 
         /// <summary>
         /// Headers from the SIP Invite.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sip_headers")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.WebhookRealtimeCallIncomingDataSipHeader> SipHeaders { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.WebhookRealtimeCallIncomingDataSipHeader> SipHeaders { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

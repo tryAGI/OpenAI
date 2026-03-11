@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pass_threshold")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public double PassThreshold { get; set; } = default!;
+        public required double PassThreshold { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

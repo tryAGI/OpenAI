@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string FileId { get; set; } = default!;
+        public required string FileId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

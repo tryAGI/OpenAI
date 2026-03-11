@@ -22,14 +22,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("x")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int X { get; set; } = default!;
+        public required int X { get; set; }
 
         /// <summary>
         /// The y-coordinate to move to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("y")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int Y { get; set; } = default!;
+        public required int Y { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

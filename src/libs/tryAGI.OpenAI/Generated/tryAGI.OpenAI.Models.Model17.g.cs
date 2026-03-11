@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) when the model was created.
@@ -21,7 +21,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("created")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTimeOffset Created { get; set; } = default!;
+        public required global::System.DateTimeOffset Created { get; set; }
 
         /// <summary>
         /// The object type, which is always "model".
@@ -35,7 +35,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owned_by")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string OwnedBy { get; set; } = default!;
+        public required string OwnedBy { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

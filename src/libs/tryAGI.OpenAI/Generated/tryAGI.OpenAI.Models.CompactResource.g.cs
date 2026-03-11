@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// The object type. Always `response.compaction`.<br/>
@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ItemField> Output { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ItemField> Output { get; set; }
 
         /// <summary>
         /// Unix timestamp (in seconds) when the compacted conversation was created.
@@ -37,14 +37,14 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
+        public required global::System.DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
         /// Token accounting for the compaction pass, including cached, reasoning, and total tokens.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.ResponseUsage Usage { get; set; } = default!;
+        public required global::tryAGI.OpenAI.ResponseUsage Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -20,14 +20,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// The email address of the individual to whom the invite was sent
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Email { get; set; } = default!;
+        public required string Email { get; set; }
 
         /// <summary>
         /// `owner` or `reader`
@@ -35,7 +35,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.InviteRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.InviteRole Role { get; set; } = default!;
+        public required global::tryAGI.OpenAI.InviteRole Role { get; set; }
 
         /// <summary>
         /// `accepted`,`expired`, or `pending`
@@ -43,7 +43,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.InviteStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.InviteStatus Status { get; set; } = default!;
+        public required global::tryAGI.OpenAI.InviteStatus Status { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the invite was sent.
@@ -51,7 +51,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("invited_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTimeOffset InvitedAt { get; set; } = default!;
+        public required global::System.DateTimeOffset InvitedAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the invite expires.
@@ -59,7 +59,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTimeOffset ExpiresAt { get; set; } = default!;
+        public required global::System.DateTimeOffset ExpiresAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the invite was accepted.

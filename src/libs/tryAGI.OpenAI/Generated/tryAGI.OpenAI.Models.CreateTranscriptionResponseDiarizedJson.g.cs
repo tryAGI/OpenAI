@@ -20,21 +20,21 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("duration")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public double Duration { get; set; } = default!;
+        public required double Duration { get; set; }
 
         /// <summary>
         /// The concatenated transcript text for the entire audio input.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Text { get; set; } = default!;
+        public required string Text { get; set; }
 
         /// <summary>
         /// Segments of the transcript annotated with timestamps and speaker labels.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("segments")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionDiarizedSegment> Segments { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionDiarizedSegment> Segments { get; set; }
 
         /// <summary>
         /// Token or duration usage statistics for the request.

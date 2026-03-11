@@ -16,7 +16,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("client_secret")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAClientSecret ClientSecret { get; set; } = default!;
+        public required global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAClientSecret ClientSecret { get; set; }
 
         /// <summary>
         /// The type of session to create. Always `realtime` for the Realtime API.

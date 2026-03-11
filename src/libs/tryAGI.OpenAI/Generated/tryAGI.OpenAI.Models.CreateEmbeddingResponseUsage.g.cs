@@ -13,14 +13,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int PromptTokens { get; set; } = default!;
+        public required int PromptTokens { get; set; }
 
         /// <summary>
         /// The total number of tokens used by the request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int TotalTokens { get; set; } = default!;
+        public required int TotalTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

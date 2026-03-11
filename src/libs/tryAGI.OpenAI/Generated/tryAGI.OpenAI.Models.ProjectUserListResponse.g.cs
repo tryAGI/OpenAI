@@ -13,35 +13,35 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Object { get; set; } = default!;
+        public required string Object { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ProjectUser> Data { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ProjectUser> Data { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string FirstId { get; set; } = default!;
+        public required string FirstId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string LastId { get; set; } = default!;
+        public required string LastId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool HasMore { get; set; } = default!;
+        public required bool HasMore { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

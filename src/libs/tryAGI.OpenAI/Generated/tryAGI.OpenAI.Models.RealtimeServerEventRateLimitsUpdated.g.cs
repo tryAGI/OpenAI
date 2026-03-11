@@ -16,7 +16,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string EventId { get; set; } = default!;
+        public required string EventId { get; set; }
 
         /// <summary>
         /// The event type, must be `rate_limits.updated`.
@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rate_limits")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdatedRateLimit> RateLimits { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdatedRateLimit> RateLimits { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

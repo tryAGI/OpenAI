@@ -20,35 +20,35 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string ItemId { get; set; } = default!;
+        public required string ItemId { get; set; }
 
         /// <summary>
         /// The index of the output item this summary text is associated with.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int OutputIndex { get; set; } = default!;
+        public required int OutputIndex { get; set; }
 
         /// <summary>
         /// The index of the summary part within the reasoning summary.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int SummaryIndex { get; set; } = default!;
+        public required int SummaryIndex { get; set; }
 
         /// <summary>
         /// The full text of the completed reasoning summary.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Text { get; set; } = default!;
+        public required string Text { get; set; }
 
         /// <summary>
         /// The sequence number of this event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int SequenceNumber { get; set; } = default!;
+        public required int SequenceNumber { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

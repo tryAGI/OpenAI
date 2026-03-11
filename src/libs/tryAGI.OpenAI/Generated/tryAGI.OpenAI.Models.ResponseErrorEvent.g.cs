@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Message { get; set; } = default!;
+        public required string Message { get; set; }
 
         /// <summary>
         /// 
@@ -39,7 +39,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int SequenceNumber { get; set; } = default!;
+        public required int SequenceNumber { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

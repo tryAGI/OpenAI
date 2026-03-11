@@ -13,14 +13,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mime_type")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string MimeType { get; set; } = default!;
+        public required string MimeType { get; set; }
 
         /// <summary>
         /// The ID of the file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string FileId { get; set; } = default!;
+        public required string FileId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

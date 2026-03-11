@@ -21,35 +21,35 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Name { get; set; } = default!;
+        public required string Name { get; set; }
 
         /// <summary>
         /// The model to use for the evaluation. Must support structured outputs.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Model { get; set; } = default!;
+        public required string Model { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItem> Input { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItem> Input { get; set; }
 
         /// <summary>
         /// The labels to assign to each item in the evaluation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<string> Labels { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<string> Labels { get; set; }
 
         /// <summary>
         /// The labels that indicate a passing result. Must be a subset of labels.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("passing_labels")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<string> PassingLabels { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<string> PassingLabels { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

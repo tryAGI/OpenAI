@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_ids")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<string> ProjectIds { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<string> ProjectIds { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

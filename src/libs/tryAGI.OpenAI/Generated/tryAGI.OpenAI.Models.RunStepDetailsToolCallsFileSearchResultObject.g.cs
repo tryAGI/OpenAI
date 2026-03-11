@@ -13,21 +13,21 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string FileId { get; set; } = default!;
+        public required string FileId { get; set; }
 
         /// <summary>
         /// The name of the file that result was found in.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string FileName { get; set; } = default!;
+        public required string FileName { get; set; }
 
         /// <summary>
         /// The score of the result. All values must be a floating point number between 0 and 1.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("score")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public double Score { get; set; } = default!;
+        public required double Score { get; set; }
 
         /// <summary>
         /// The content of the result that was found. The content is only included if requested via the include query parameter.

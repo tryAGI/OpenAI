@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string EventId { get; set; } = default!;
+        public required string EventId { get; set; }
 
         /// <summary>
         /// The event type, must be `transcription_session.created`.
@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponse Session { get; set; } = default!;
+        public required global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponse Session { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

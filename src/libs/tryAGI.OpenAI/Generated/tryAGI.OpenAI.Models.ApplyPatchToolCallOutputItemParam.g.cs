@@ -28,7 +28,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string CallId { get; set; } = default!;
+        public required string CallId { get; set; }
 
         /// <summary>
         /// The status of the apply patch tool call output. One of `completed` or `failed`.
@@ -36,7 +36,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ApplyPatchCallOutputStatusParamJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.ApplyPatchCallOutputStatusParam Status { get; set; } = default!;
+        public required global::tryAGI.OpenAI.ApplyPatchCallOutputStatusParam Status { get; set; }
 
         /// <summary>
         /// 

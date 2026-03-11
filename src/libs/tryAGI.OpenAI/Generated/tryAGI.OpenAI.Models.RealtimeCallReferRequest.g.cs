@@ -17,7 +17,7 @@ namespace tryAGI.OpenAI
         /// <example>tel:+14155550123</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("target_uri")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string TargetUri { get; set; } = default!;
+        public required string TargetUri { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

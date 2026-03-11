@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("minutes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int Minutes { get; set; } = default!;
+        public required int Minutes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

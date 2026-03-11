@@ -15,7 +15,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sdp")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Sdp { get; set; } = default!;
+        public required string Sdp { get; set; }
 
         /// <summary>
         /// Optional session configuration to apply before the realtime session is<br/>

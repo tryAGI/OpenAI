@@ -13,14 +13,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Embedding> Data { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Embedding> Data { get; set; }
 
         /// <summary>
         /// The name of the model used to generate the embedding.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Model { get; set; } = default!;
+        public required string Model { get; set; }
 
         /// <summary>
         /// The object type, which is always "list".
@@ -34,7 +34,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.CreateEmbeddingResponseUsage Usage { get; set; } = default!;
+        public required global::tryAGI.OpenAI.CreateEmbeddingResponseUsage Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

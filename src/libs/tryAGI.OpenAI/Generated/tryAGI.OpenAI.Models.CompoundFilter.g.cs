@@ -14,14 +14,14 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CompoundFilterTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.CompoundFilterType Type { get; set; } = default!;
+        public required global::tryAGI.OpenAI.CompoundFilterType Type { get; set; }
 
         /// <summary>
         /// Array of filters to combine. Items can be `ComparisonFilter` or `CompoundFilter`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FiltersItem> Filters { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FiltersItem> Filters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

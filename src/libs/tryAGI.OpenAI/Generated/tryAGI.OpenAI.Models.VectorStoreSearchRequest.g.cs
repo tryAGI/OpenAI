@@ -16,7 +16,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("query")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>> Query { get; set; } = default!;
+        public required global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>> Query { get; set; }
 
         /// <summary>
         /// Whether to rewrite the natural language query for vector search.<br/>

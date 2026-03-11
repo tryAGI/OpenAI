@@ -35,14 +35,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string ItemId { get; set; } = default!;
+        public required string ItemId { get; set; }
 
         /// <summary>
         /// The index of the content part to truncate. Set this to 0.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int ContentIndex { get; set; } = default!;
+        public required int ContentIndex { get; set; }
 
         /// <summary>
         /// Inclusive duration up to which audio is truncated, in milliseconds. If <br/>
@@ -51,7 +51,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio_end_ms")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int AudioEndMs { get; set; } = default!;
+        public required int AudioEndMs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

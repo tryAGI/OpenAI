@@ -14,7 +14,7 @@ namespace tryAGI.OpenAI
         /// <example>eval.deleted</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Object { get; set; } = default!;
+        public required string Object { get; set; }
 
         /// <summary>
         /// Example: true
@@ -22,7 +22,7 @@ namespace tryAGI.OpenAI
         /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool Deleted { get; set; } = default!;
+        public required bool Deleted { get; set; }
 
         /// <summary>
         /// Example: eval_abc123
@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
         /// <example>eval_abc123</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("eval_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string EvalId { get; set; } = default!;
+        public required string EvalId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Data { get; set; } = default!;
+        public required string Data { get; set; }
 
         /// <summary>
         /// The format of the encoded audio data. Currently supports "wav" and "mp3".
@@ -21,7 +21,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatCompletionRequestMessageContentPartAudioInputAudioFormatJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudioInputAudioFormat Format { get; set; } = default!;
+        public required global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudioInputAudioFormat Format { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

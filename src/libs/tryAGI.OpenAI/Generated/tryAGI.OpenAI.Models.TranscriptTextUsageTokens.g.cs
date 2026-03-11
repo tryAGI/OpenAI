@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int InputTokens { get; set; } = default!;
+        public required int InputTokens { get; set; }
 
         /// <summary>
         /// Details about the input tokens billed for this request.
@@ -33,14 +33,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int OutputTokens { get; set; } = default!;
+        public required int OutputTokens { get; set; }
 
         /// <summary>
         /// Total number of tokens used (input + output).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int TotalTokens { get; set; } = default!;
+        public required int TotalTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// The object type, which is `skill`.<br/>
@@ -29,14 +29,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Name { get; set; } = default!;
+        public required string Name { get; set; }
 
         /// <summary>
         /// Description of the skill.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Description { get; set; } = default!;
+        public required string Description { get; set; }
 
         /// <summary>
         /// Unix timestamp (seconds) for when the skill was created.
@@ -44,21 +44,21 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
+        public required global::System.DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
         /// Default version for the skill.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_version")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string DefaultVersion { get; set; } = default!;
+        public required string DefaultVersion { get; set; }
 
         /// <summary>
         /// Latest version for the skill.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("latest_version")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string LatestVersion { get; set; } = default!;
+        public required string LatestVersion { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

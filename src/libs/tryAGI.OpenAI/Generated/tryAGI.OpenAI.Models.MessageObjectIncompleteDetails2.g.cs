@@ -14,7 +14,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageObjectIncompleteDetailsReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.MessageObjectIncompleteDetailsReason Reason { get; set; } = default!;
+        public required global::tryAGI.OpenAI.MessageObjectIncompleteDetailsReason Reason { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

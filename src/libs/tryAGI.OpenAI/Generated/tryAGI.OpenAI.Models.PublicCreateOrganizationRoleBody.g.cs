@@ -13,14 +13,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string RoleName { get; set; } = default!;
+        public required string RoleName { get; set; }
 
         /// <summary>
         /// Permissions to grant to the role.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<string> Permissions { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<string> Permissions { get; set; }
 
         /// <summary>
         /// Optional description of the role.

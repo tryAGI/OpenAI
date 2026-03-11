@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Name { get; set; } = default!;
+        public required string Name { get; set; }
 
         /// <summary>
         /// The sample audio recording file. Maximum size is 10 MiB.<br/>
@@ -22,7 +22,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio_sample")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public byte[] AudioSample { get; set; } = default!;
+        public required byte[] AudioSample { get; set; }
 
         /// <summary>
         /// The sample audio recording file. Maximum size is 10 MiB.<br/>
@@ -31,14 +31,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio_samplename")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string AudioSamplename { get; set; } = default!;
+        public required string AudioSamplename { get; set; }
 
         /// <summary>
         /// The consent recording ID (for example, `cons_1234`).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("consent")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Consent { get; set; } = default!;
+        public required string Consent { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

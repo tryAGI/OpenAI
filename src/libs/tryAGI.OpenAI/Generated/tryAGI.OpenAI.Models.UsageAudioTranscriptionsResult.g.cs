@@ -20,14 +20,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("seconds")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int Seconds { get; set; } = default!;
+        public required int Seconds { get; set; }
 
         /// <summary>
         /// The count of requests made to the model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_model_requests")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int NumModelRequests { get; set; } = default!;
+        public required int NumModelRequests { get; set; }
 
         /// <summary>
         /// 

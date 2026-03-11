@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.MessageContentTextObjectText Text { get; set; } = default!;
+        public required global::tryAGI.OpenAI.MessageContentTextObjectText Text { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -14,7 +14,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// The type of the file search tool call. Always `file_search_call`.
@@ -30,14 +30,14 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.FileSearchToolCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.FileSearchToolCallStatus Status { get; set; } = default!;
+        public required global::tryAGI.OpenAI.FileSearchToolCallStatus Status { get; set; }
 
         /// <summary>
         /// The queries used to search for files.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("queries")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<string> Queries { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<string> Queries { get; set; }
 
         /// <summary>
         /// 

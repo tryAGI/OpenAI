@@ -14,7 +14,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int CompletionTokens { get; set; } = default!;
+        public required int CompletionTokens { get; set; }
 
         /// <summary>
         /// Number of tokens in the prompt.<br/>
@@ -22,7 +22,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int PromptTokens { get; set; } = default!;
+        public required int PromptTokens { get; set; }
 
         /// <summary>
         /// Total number of tokens used in the request (prompt + completion).<br/>
@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int TotalTokens { get; set; } = default!;
+        public required int TotalTokens { get; set; }
 
         /// <summary>
         /// Breakdown of tokens used in a completion.

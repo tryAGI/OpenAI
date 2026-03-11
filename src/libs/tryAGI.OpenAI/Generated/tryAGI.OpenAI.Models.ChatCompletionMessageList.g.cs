@@ -24,28 +24,28 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ChatCompletionResponseMessage, global::tryAGI.OpenAI.ChatCompletionMessageListDataItem>> Data { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ChatCompletionResponseMessage, global::tryAGI.OpenAI.ChatCompletionMessageListDataItem>> Data { get; set; }
 
         /// <summary>
         /// The identifier of the first chat message in the data array.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string FirstId { get; set; } = default!;
+        public required string FirstId { get; set; }
 
         /// <summary>
         /// The identifier of the last chat message in the data array.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string LastId { get; set; } = default!;
+        public required string LastId { get; set; }
 
         /// <summary>
         /// Indicates whether there are more chat messages available.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool HasMore { get; set; } = default!;
+        public required bool HasMore { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -15,7 +15,7 @@ namespace tryAGI.OpenAI
         /// <example>organization.admin_api_key</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Object { get; set; } = default!;
+        public required string Object { get; set; }
 
         /// <summary>
         /// The identifier, which can be referenced in API endpoints<br/>
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
         /// <example>key_abc</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// The name of the API key<br/>
@@ -33,7 +33,7 @@ namespace tryAGI.OpenAI
         /// <example>Administration Key</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Name { get; set; } = default!;
+        public required string Name { get; set; }
 
         /// <summary>
         /// The redacted value of the API key<br/>
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
         /// <example>sk-admin...def</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("redacted_value")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string RedactedValue { get; set; } = default!;
+        public required string RedactedValue { get; set; }
 
         /// <summary>
         /// The value of the API key. Only shown on create.<br/>
@@ -60,7 +60,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
+        public required global::System.DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
         /// 
@@ -73,7 +73,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.AdminApiKeyOwner Owner { get; set; } = default!;
+        public required global::tryAGI.OpenAI.AdminApiKeyOwner Owner { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

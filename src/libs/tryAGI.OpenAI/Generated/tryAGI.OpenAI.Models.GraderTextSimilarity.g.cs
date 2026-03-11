@@ -22,21 +22,21 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Name { get; set; } = default!;
+        public required string Name { get; set; }
 
         /// <summary>
         /// The text being graded.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Input { get; set; } = default!;
+        public required string Input { get; set; }
 
         /// <summary>
         /// The text being graded against.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reference")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Reference { get; set; } = default!;
+        public required string Reference { get; set; }
 
         /// <summary>
         /// The evaluation metric to use. One of `cosine`, `fuzzy_match`, `bleu`, <br/>
@@ -46,7 +46,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("evaluation_metric")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.GraderTextSimilarityEvaluationMetricJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.GraderTextSimilarityEvaluationMetric EvaluationMetric { get; set; } = default!;
+        public required global::tryAGI.OpenAI.GraderTextSimilarityEvaluationMetric EvaluationMetric { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

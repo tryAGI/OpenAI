@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the fine-tuning job was created.
@@ -21,7 +21,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
+        public required global::System.DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
         /// 
@@ -46,14 +46,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hyperparameters")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.FineTuningJobHyperparameters Hyperparameters { get; set; } = default!;
+        public required global::tryAGI.OpenAI.FineTuningJobHyperparameters Hyperparameters { get; set; }
 
         /// <summary>
         /// The base model that is being fine-tuned.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Model { get; set; } = default!;
+        public required string Model { get; set; }
 
         /// <summary>
         /// The object type, which is always "fine_tuning.job".
@@ -67,14 +67,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string OrganizationId { get; set; } = default!;
+        public required string OrganizationId { get; set; }
 
         /// <summary>
         /// The compiled results file ID(s) for the fine-tuning job. You can retrieve the results with the [Files API](/docs/api-reference/files/retrieve-contents).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("result_files")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<string> ResultFiles { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<string> ResultFiles { get; set; }
 
         /// <summary>
         /// The current status of the fine-tuning job, which can be either `validating_files`, `queued`, `running`, `succeeded`, `failed`, or `cancelled`.
@@ -82,7 +82,7 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.FineTuningJobStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::tryAGI.OpenAI.FineTuningJobStatus Status { get; set; } = default!;
+        public required global::tryAGI.OpenAI.FineTuningJobStatus Status { get; set; }
 
         /// <summary>
         /// 
@@ -95,7 +95,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("training_file")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string TrainingFile { get; set; } = default!;
+        public required string TrainingFile { get; set; }
 
         /// <summary>
         /// 
@@ -114,7 +114,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int Seed { get; set; } = default!;
+        public required int Seed { get; set; }
 
         /// <summary>
         /// 
