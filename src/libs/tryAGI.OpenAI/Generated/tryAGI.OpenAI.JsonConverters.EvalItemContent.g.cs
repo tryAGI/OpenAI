@@ -29,12 +29,12 @@ namespace tryAGI.OpenAI.JsonConverters
             }
 
             readerCopy = reader;
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>? evalItemContentArray = default;
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>? anArrayOfInputTextOutputTextInputImageAndInputAudio = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>).Name}");
-                evalItemContentArray = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                anArrayOfInputTextOutputTextInputImageAndInputAudio = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -43,7 +43,7 @@ namespace tryAGI.OpenAI.JsonConverters
             var __value = new global::tryAGI.OpenAI.EvalItemContent(
                 evalContentItem,
 
-                evalItemContentArray
+                anArrayOfInputTextOutputTextInputImageAndInputAudio
                 );
 
             if (evalContentItem != null)
@@ -52,7 +52,7 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.EvalItemContentItem).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            else if (evalItemContentArray != null)
+            else if (anArrayOfInputTextOutputTextInputImageAndInputAudio != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>).Name}");
@@ -77,11 +77,11 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.EvalItemContentItem).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.EvalContentItem, typeInfo);
             }
-            else if (value.IsEvalItemContentArray)
+            else if (value.IsAnArrayOfInputTextOutputTextInputImageAndInputAudio)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EvalItemContentArray, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnArrayOfInputTextOutputTextInputImageAndInputAudio, typeInfo);
             }
         }
     }
