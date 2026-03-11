@@ -16874,7 +16874,7 @@ components:
         - $ref: '#/components/schemas/EvalItemContentArray'
       description: "Inputs to the model - can contain template strings. Supports text, output text, input images, and input audio, either as a single item or an array of items.\n"
     EvalItemContentArray:
-      title: Eval item content array
+      title: 'An array of Input text, Output text, Input image, and Input audio'
       type: array
       items:
         $ref: '#/components/schemas/EvalItemContentItem'
