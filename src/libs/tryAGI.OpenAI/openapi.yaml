@@ -13366,8 +13366,6 @@ components:
                 - $ref: '#/components/schemas/PredictionContent'
               description: "Configuration for a [Predicted Output](/docs/guides/predicted-outputs),\nwhich can greatly improve response times when large parts of the model\nresponse are known ahead of time. This is most common when you are\nregenerating a file with only minor changes to most of the content.\n"
             seed:
-              maximum: 9223372036854776000
-              minimum: -9223372036854776000
               type:
                 - 'null'
                 - integer
