@@ -12,7 +12,7 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.VideoResource> CreateVideoAsync(
 
-            global::tryAGI.OpenAI.CreateVideoBody request,
+            global::tryAGI.OpenAI.CreateVideoMultipartBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -24,15 +24,7 @@ namespace tryAGI.OpenAI
         /// <param name="prompt">
         /// Text prompt that describes the video to generate.
         /// </param>
-        /// <param name="inputReference">
-        /// Optional multipart reference asset that guides generation.
-        /// </param>
-        /// <param name="inputReferencename">
-        /// Optional multipart reference asset that guides generation.
-        /// </param>
-        /// <param name="imageReference">
-        /// Optional JSON-safe image reference that guides generation. Provide exactly one of `image_url` or `file_id`.
-        /// </param>
+        /// <param name="inputReference"></param>
         /// <param name="seconds">
         /// Clip duration in seconds (allowed values: 4, 8, 12). Defaults to 4 seconds.
         /// </param>
@@ -44,9 +36,7 @@ namespace tryAGI.OpenAI
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.VideoResource> CreateVideoAsync(
             string prompt,
             global::tryAGI.OpenAI.VideoModel? model = default,
-            byte[]? inputReference = default,
-            string? inputReferencename = default,
-            global::tryAGI.OpenAI.ImageRefParam2? imageReference = default,
+            global::tryAGI.OpenAI.OneOf<byte[], global::tryAGI.OpenAI.ImageRefParam2>? inputReference = default,
             global::tryAGI.OpenAI.VideoSeconds? seconds = default,
             global::tryAGI.OpenAI.VideoSize? size = default,
             global::System.Threading.CancellationToken cancellationToken = default);

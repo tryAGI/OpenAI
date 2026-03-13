@@ -4,9 +4,9 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Parameters for creating a new video generation job.
+    /// JSON parameters for creating a new video generation job.
     /// </summary>
-    public sealed partial class CreateVideoBody
+    public sealed partial class CreateVideoJsonBody
     {
         /// <summary>
         /// The video generation model to use (allowed values: sora-2, sora-2-pro). Defaults to `sora-2`.
@@ -23,22 +23,10 @@ namespace tryAGI.OpenAI
         public required string Prompt { get; set; }
 
         /// <summary>
-        /// Optional multipart reference asset that guides generation.
+        /// Optional reference object that guides generation. Provide exactly one of `image_url` or `file_id`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_reference")]
-        public byte[]? InputReference { get; set; }
-
-        /// <summary>
-        /// Optional multipart reference asset that guides generation.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input_referencename")]
-        public string? InputReferencename { get; set; }
-
-        /// <summary>
-        /// Optional JSON-safe image reference that guides generation. Provide exactly one of `image_url` or `file_id`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("image_reference")]
-        public global::tryAGI.OpenAI.ImageRefParam2? ImageReference { get; set; }
+        public global::tryAGI.OpenAI.ImageRefParam2? InputReference { get; set; }
 
         /// <summary>
         /// Clip duration in seconds (allowed values: 4, 8, 12). Defaults to 4 seconds.
@@ -61,7 +49,7 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateVideoBody" /> class.
+        /// Initializes a new instance of the <see cref="CreateVideoJsonBody" /> class.
         /// </summary>
         /// <param name="model">
         /// The video generation model to use (allowed values: sora-2, sora-2-pro). Defaults to `sora-2`.
@@ -70,13 +58,7 @@ namespace tryAGI.OpenAI
         /// Text prompt that describes the video to generate.
         /// </param>
         /// <param name="inputReference">
-        /// Optional multipart reference asset that guides generation.
-        /// </param>
-        /// <param name="inputReferencename">
-        /// Optional multipart reference asset that guides generation.
-        /// </param>
-        /// <param name="imageReference">
-        /// Optional JSON-safe image reference that guides generation. Provide exactly one of `image_url` or `file_id`.
+        /// Optional reference object that guides generation. Provide exactly one of `image_url` or `file_id`.
         /// </param>
         /// <param name="seconds">
         /// Clip duration in seconds (allowed values: 4, 8, 12). Defaults to 4 seconds.
@@ -87,28 +69,24 @@ namespace tryAGI.OpenAI
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public CreateVideoBody(
+        public CreateVideoJsonBody(
             string prompt,
             global::tryAGI.OpenAI.VideoModel? model,
-            byte[]? inputReference,
-            string? inputReferencename,
-            global::tryAGI.OpenAI.ImageRefParam2? imageReference,
+            global::tryAGI.OpenAI.ImageRefParam2? inputReference,
             global::tryAGI.OpenAI.VideoSeconds? seconds,
             global::tryAGI.OpenAI.VideoSize? size)
         {
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Model = model;
             this.InputReference = inputReference;
-            this.InputReferencename = inputReferencename;
-            this.ImageReference = imageReference;
             this.Seconds = seconds;
             this.Size = size;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateVideoBody" /> class.
+        /// Initializes a new instance of the <see cref="CreateVideoJsonBody" /> class.
         /// </summary>
-        public CreateVideoBody()
+        public CreateVideoJsonBody()
         {
         }
     }

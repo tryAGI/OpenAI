@@ -5,43 +5,43 @@ namespace tryAGI.OpenAI
 {
     public partial class VideosClient
     {
-        partial void PrepareCreateVideoArguments(
+        partial void PrepareCreateVideoCharacterArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::tryAGI.OpenAI.CreateVideoMultipartBody request);
-        partial void PrepareCreateVideoRequest(
+            global::tryAGI.OpenAI.CreateVideoCharacterBody request);
+        partial void PrepareCreateVideoCharacterRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::tryAGI.OpenAI.CreateVideoMultipartBody request);
-        partial void ProcessCreateVideoResponse(
+            global::tryAGI.OpenAI.CreateVideoCharacterBody request);
+        partial void ProcessCreateVideoCharacterResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateVideoResponseContent(
+        partial void ProcessCreateVideoCharacterResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Create a new video generation job from a prompt and optional reference assets.
+        /// Create a character from an uploaded video.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.VideoResource> CreateVideoAsync(
+        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.VideoCharacterResource> CreateVideoCharacterAsync(
 
-            global::tryAGI.OpenAI.CreateVideoMultipartBody request,
+            global::tryAGI.OpenAI.CreateVideoCharacterBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateVideoArguments(
+            PrepareCreateVideoCharacterArguments(
                 httpClient: HttpClient,
                 request: request);
 
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
-                path: "/videos",
+                path: "/videos/characters",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -68,43 +68,24 @@ namespace tryAGI.OpenAI
                 }
             }
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-            if (request.Model != default)
+            var __contentVideo = new global::System.Net.Http.ByteArrayContent(request.Video ?? global::System.Array.Empty<byte>());
+            __httpRequestContent.Add(
+                content: __contentVideo,
+                name: "\"video\"",
+                fileName: request.Videoname != null ? $"\"{request.Videoname}\"" : string.Empty);
+            if (__contentVideo.Headers.ContentDisposition != null)
             {
-
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent(request.Model?.ToString() ?? string.Empty),
-                    name: "\"model\"");
+                __contentVideo.Headers.ContentDisposition.FileNameStar = null;
             }
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
-                name: "\"prompt\"");
-            if (request.InputReference != default)
-            {
-
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent(request.InputReference?.ToString() ?? string.Empty),
-                    name: "\"input_reference\"");
-            } 
-            if (request.Seconds != default)
-            {
-
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Seconds?.ToValueString()}"),
-                    name: "\"seconds\"");
-            } 
-            if (request.Size != default)
-            {
-
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Size?.ToValueString()}"),
-                    name: "\"size\"");
-            }
+                content: new global::System.Net.Http.StringContent($"{request.Name}"),
+                name: "\"name\"");
             __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareCreateVideoRequest(
+            PrepareCreateVideoCharacterRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 request: request);
@@ -117,7 +98,7 @@ namespace tryAGI.OpenAI
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessCreateVideoResponse(
+            ProcessCreateVideoCharacterResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
 
@@ -133,7 +114,7 @@ namespace tryAGI.OpenAI
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessCreateVideoResponseContent(
+                ProcessCreateVideoCharacterResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -143,7 +124,7 @@ namespace tryAGI.OpenAI
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::tryAGI.OpenAI.VideoResource.FromJson(__content, JsonSerializerContext) ??
+                        global::tryAGI.OpenAI.VideoCharacterResource.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -174,7 +155,7 @@ namespace tryAGI.OpenAI
                     ).ConfigureAwait(false);
 
                     return
-                        await global::tryAGI.OpenAI.VideoResource.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::tryAGI.OpenAI.VideoCharacterResource.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -194,41 +175,33 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Create a new video generation job from a prompt and optional reference assets.
+        /// Create a character from an uploaded video.
         /// </summary>
-        /// <param name="model">
-        /// The video generation model to use (allowed values: sora-2, sora-2-pro). Defaults to `sora-2`.
+        /// <param name="video">
+        /// Video file used to create a character.
         /// </param>
-        /// <param name="prompt">
-        /// Text prompt that describes the video to generate.
+        /// <param name="videoname">
+        /// Video file used to create a character.
         /// </param>
-        /// <param name="inputReference"></param>
-        /// <param name="seconds">
-        /// Clip duration in seconds (allowed values: 4, 8, 12). Defaults to 4 seconds.
-        /// </param>
-        /// <param name="size">
-        /// Output resolution formatted as width x height (allowed values: 720x1280, 1280x720, 1024x1792, 1792x1024). Defaults to 720x1280.
+        /// <param name="name">
+        /// Display name for this API character.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.VideoResource> CreateVideoAsync(
-            string prompt,
-            global::tryAGI.OpenAI.VideoModel? model = default,
-            global::tryAGI.OpenAI.OneOf<byte[], global::tryAGI.OpenAI.ImageRefParam2>? inputReference = default,
-            global::tryAGI.OpenAI.VideoSeconds? seconds = default,
-            global::tryAGI.OpenAI.VideoSize? size = default,
+        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.VideoCharacterResource> CreateVideoCharacterAsync(
+            byte[] video,
+            string videoname,
+            string name,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::tryAGI.OpenAI.CreateVideoMultipartBody
+            var __request = new global::tryAGI.OpenAI.CreateVideoCharacterBody
             {
-                Model = model,
-                Prompt = prompt,
-                InputReference = inputReference,
-                Seconds = seconds,
-                Size = size,
+                Video = video,
+                Videoname = videoname,
+                Name = name,
             };
 
-            return await CreateVideoAsync(
+            return await CreateVideoCharacterAsync(
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }
