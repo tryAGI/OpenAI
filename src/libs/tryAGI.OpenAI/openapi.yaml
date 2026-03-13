@@ -9094,10 +9094,10 @@ paths:
         content:
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/CreateVideoBody'
+              $ref: '#/components/schemas/CreateVideoMultipartBody'
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateVideoBody'
+              $ref: '#/components/schemas/CreateVideoJsonBody'
       responses:
         '200':
           description: Success
@@ -9164,6 +9164,123 @@ paths:
             java: "package com.openai.example;\n\nimport com.openai.client.OpenAIClient;\nimport com.openai.client.okhttp.OpenAIOkHttpClient;\nimport com.openai.models.videos.VideoListPage;\nimport com.openai.models.videos.VideoListParams;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        OpenAIClient client = OpenAIOkHttpClient.fromEnv();\n\n        VideoListPage page = client.videos().list();\n    }\n}"
             node.js: "import OpenAI from 'openai';\n\nconst client = new OpenAI({\n  apiKey: process.env['OPENAI_API_KEY'], // This is the default and can be omitted\n});\n\n// Automatically fetches more pages as needed.\nfor await (const video of client.videos.list()) {\n  console.log(video.id);\n}"
           response: "{\n  \"data\": [\n    {\n      \"id\": \"video_123\",\n      \"object\": \"video\",\n      \"model\": \"sora-2\",\n      \"status\": \"completed\"\n    }\n  ],\n  \"object\": \"list\"\n}\n"
+  /videos/characters:
+    post:
+      tags:
+        - Videos
+      summary: Create a character from an uploaded video.
+      operationId: CreateVideoCharacter
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CreateVideoCharacterBody'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VideoCharacterResource'
+      x-oaiMeta:
+        examples:
+          response: ''
+          request:
+            node.js: "import OpenAI from 'openai';\n\nconst client = new OpenAI({\n  apiKey: process.env['OPENAI_API_KEY'], // This is the default and can be omitted\n});\n\nconst character = await client.videos.character.create({\n  name: 'x',\n  video: fs.createReadStream('path/to/file'),\n});\n\nconsole.log(character.id);"
+            python: "import os\nfrom openai import OpenAI\n\nclient = OpenAI(\n    api_key=os.environ.get(\"OPENAI_API_KEY\"),  # This is the default and can be omitted\n)\ncharacter = client.videos.character.create(\n    name=\"x\",\n    video=b\"Example data\",\n)\nprint(character.id)"
+            go: "package main\n\nimport (\n\t\"bytes\"\n\t\"context\"\n\t\"fmt\"\n\t\"io\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAPIKey(\"My API Key\"),\n\t)\n\tcharacter, err := client.Videos.Character.New(context.TODO(), openai.VideoCharacterNewParams{\n\t\tName:  \"x\",\n\t\tVideo: io.Reader(bytes.NewBuffer([]byte(\"Example data\"))),\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", character.ID)\n}\n"
+            java: "package com.openai.example;\n\nimport com.openai.client.OpenAIClient;\nimport com.openai.client.okhttp.OpenAIOkHttpClient;\nimport com.openai.models.videos.character.CharacterCreateParams;\nimport com.openai.models.videos.character.CharacterCreateResponse;\nimport java.io.ByteArrayInputStream;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        OpenAIClient client = OpenAIOkHttpClient.fromEnv();\n\n        CharacterCreateParams params = CharacterCreateParams.builder()\n            .name(\"x\")\n            .video(ByteArrayInputStream(\"Example data\".getBytes()))\n            .build();\n        CharacterCreateResponse character = client.videos().character().create(params);\n    }\n}"
+            ruby: "require \"openai\"\n\nopenai = OpenAI::Client.new(api_key: \"My API Key\")\n\ncharacter = openai.videos.character.create(name: \"x\", video: StringIO.new(\"Example data\"))\n\nputs(character)"
+  '/videos/characters/{character_id}':
+    get:
+      tags:
+        - Videos
+      summary: Fetch a character.
+      operationId: GetVideoCharacter
+      parameters:
+        - name: character_id
+          in: path
+          description: The identifier of the character to retrieve.
+          required: true
+          schema:
+            type: string
+            example: char_123
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VideoCharacterResource'
+      x-oaiMeta:
+        examples:
+          response: ''
+          request:
+            node.js: "import OpenAI from 'openai';\n\nconst client = new OpenAI({\n  apiKey: process.env['OPENAI_API_KEY'], // This is the default and can be omitted\n});\n\nconst character = await client.videos.character.get('char_123');\n\nconsole.log(character.id);"
+            python: "import os\nfrom openai import OpenAI\n\nclient = OpenAI(\n    api_key=os.environ.get(\"OPENAI_API_KEY\"),  # This is the default and can be omitted\n)\ncharacter = client.videos.character.get(\n    \"char_123\",\n)\nprint(character.id)"
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAPIKey(\"My API Key\"),\n\t)\n\tcharacter, err := client.Videos.Character.Get(context.TODO(), \"char_123\")\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", character.ID)\n}\n"
+            java: "package com.openai.example;\n\nimport com.openai.client.OpenAIClient;\nimport com.openai.client.okhttp.OpenAIOkHttpClient;\nimport com.openai.models.videos.character.CharacterGetParams;\nimport com.openai.models.videos.character.CharacterGetResponse;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        OpenAIClient client = OpenAIOkHttpClient.fromEnv();\n\n        CharacterGetResponse character = client.videos().character().get(\"char_123\");\n    }\n}"
+            ruby: "require \"openai\"\n\nopenai = OpenAI::Client.new(api_key: \"My API Key\")\n\ncharacter = openai.videos.character.get(\"char_123\")\n\nputs(character)"
+  /videos/edits:
+    post:
+      tags:
+        - Videos
+      summary: Create a new video generation job by editing a source video or existing generated video.
+      operationId: CreateVideoEdit
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CreateVideoEditMultipartBody'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateVideoEditJsonBody'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VideoResource'
+      x-oaiMeta:
+        examples:
+          response: ''
+          request:
+            node.js: "import OpenAI from 'openai';\n\nconst client = new OpenAI({\n  apiKey: process.env['OPENAI_API_KEY'], // This is the default and can be omitted\n});\n\nconst video = await client.videos.edit({ prompt: 'x', video: fs.createReadStream('path/to/file') });\n\nconsole.log(video.id);"
+            python: "import os\nfrom openai import OpenAI\n\nclient = OpenAI(\n    api_key=os.environ.get(\"OPENAI_API_KEY\"),  # This is the default and can be omitted\n)\nvideo = client.videos.edit(\n    prompt=\"x\",\n    video=b\"Example data\",\n)\nprint(video.id)"
+            go: "package main\n\nimport (\n\t\"bytes\"\n\t\"context\"\n\t\"fmt\"\n\t\"io\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAPIKey(\"My API Key\"),\n\t)\n\tvideo, err := client.Videos.Edit(context.TODO(), openai.VideoEditParams{\n\t\tPrompt: \"x\",\n\t\tVideo: openai.VideoEditParamsVideoUnion{\n\t\t\tOfFile: io.Reader(bytes.NewBuffer([]byte(\"Example data\"))),\n\t\t},\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", video.ID)\n}\n"
+            java: "package com.openai.example;\n\nimport com.openai.client.OpenAIClient;\nimport com.openai.client.okhttp.OpenAIOkHttpClient;\nimport com.openai.models.videos.Video;\nimport com.openai.models.videos.VideoEditParams;\nimport java.io.ByteArrayInputStream;\nimport java.io.InputStream;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        OpenAIClient client = OpenAIOkHttpClient.fromEnv();\n\n        VideoEditParams params = VideoEditParams.builder()\n            .prompt(\"x\")\n            .video(ByteArrayInputStream(\"Example data\".getBytes()))\n            .build();\n        Video video = client.videos().edit(params);\n    }\n}"
+            ruby: "require \"openai\"\n\nopenai = OpenAI::Client.new(api_key: \"My API Key\")\n\nvideo = openai.videos.edit(prompt: \"x\", video: StringIO.new(\"Example data\"))\n\nputs(video)"
+  /videos/extensions:
+    post:
+      tags:
+        - Videos
+      summary: Create an extension of a completed video.
+      operationId: CreateVideoExtend
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CreateVideoExtendMultipartBody'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateVideoExtendJsonBody'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VideoResource'
+      x-oaiMeta:
+        examples:
+          response: ''
+          request:
+            node.js: "import OpenAI from 'openai';\n\nconst client = new OpenAI({\n  apiKey: process.env['OPENAI_API_KEY'], // This is the default and can be omitted\n});\n\nconst video = await client.videos.extend({\n  prompt: 'x',\n  seconds: '4',\n  video: { id: 'video_123' },\n});\n\nconsole.log(video.id);"
+            python: "import os\nfrom openai import OpenAI\n\nclient = OpenAI(\n    api_key=os.environ.get(\"OPENAI_API_KEY\"),  # This is the default and can be omitted\n)\nvideo = client.videos.extend(\n    prompt=\"x\",\n    seconds=\"4\",\n    video={\n        \"id\": \"video_123\"\n    },\n)\nprint(video.id)"
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAPIKey(\"My API Key\"),\n\t)\n\tvideo, err := client.Videos.Extend(context.TODO(), openai.VideoExtendParams{\n\t\tPrompt:  \"x\",\n\t\tSeconds: openai.VideoSeconds4,\n\t\tVideo: openai.VideoExtendParamsVideoUnion{\n\t\t\tOfVideoExtendsVideoVideoReferenceInputParam: &openai.VideoExtendParamsVideoVideoReferenceInputParam{\n\t\t\t\tID: \"video_123\",\n\t\t\t},\n\t\t},\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", video.ID)\n}\n"
+            java: "package com.openai.example;\n\nimport com.openai.client.OpenAIClient;\nimport com.openai.client.okhttp.OpenAIOkHttpClient;\nimport com.openai.models.videos.Video;\nimport com.openai.models.videos.VideoExtendParams;\nimport com.openai.models.videos.VideoSeconds;\n\npublic final class Main {\n    private Main() {}\n\n    public static void main(String[] args) {\n        OpenAIClient client = OpenAIOkHttpClient.fromEnv();\n\n        VideoExtendParams params = VideoExtendParams.builder()\n            .prompt(\"x\")\n            .seconds(VideoSeconds._4)\n            .video(VideoExtendParams.Video.VideoReferenceInputParam.builder()\n                .id(\"video_123\")\n                .build())\n            .build();\n        Video video = client.videos().extend(params);\n    }\n}"
+            ruby: "require \"openai\"\n\nopenai = OpenAI::Client.new(api_key: \"My API Key\")\n\nvideo = openai.videos.extend_(prompt: \"x\", seconds: :\"4\", video: {id: \"video_123\"})\n\nputs(video)"
   '/videos/{video_id}':
     get:
       tags:
@@ -37096,8 +37213,8 @@ components:
         - '8'
         - '12'
       type: string
-    CreateVideoBody:
-      title: Create video request
+    CreateVideoMultipartBody:
+      title: Create video multipart request
       required:
         - prompt
       type: object
@@ -37111,11 +37228,34 @@ components:
           type: string
           description: Text prompt that describes the video to generate.
         input_reference:
+          oneOf:
+            - type: string
+              description: Optional reference asset upload or reference object that guides generation.
+              format: binary
+            - $ref: '#/components/schemas/ImageRefParam-2'
+        seconds:
+          description: 'Clip duration in seconds (allowed values: 4, 8, 12). Defaults to 4 seconds.'
+          $ref: '#/components/schemas/VideoSeconds'
+        size:
+          description: 'Output resolution formatted as width x height (allowed values: 720x1280, 1280x720, 1024x1792, 1792x1024). Defaults to 720x1280.'
+          $ref: '#/components/schemas/VideoSize'
+      description: Multipart parameters for creating a new video generation job.
+    CreateVideoJsonBody:
+      title: Create video JSON request
+      required:
+        - prompt
+      type: object
+      properties:
+        model:
+          description: 'The video generation model to use (allowed values: sora-2, sora-2-pro). Defaults to `sora-2`.'
+          $ref: '#/components/schemas/VideoModel'
+        prompt:
+          maxLength: 32000
+          minLength: 1
           type: string
-          description: Optional multipart reference asset that guides generation.
-          format: binary
-        image_reference:
-          description: Optional JSON-safe image reference that guides generation. Provide exactly one of `image_url` or `file_id`.
+          description: Text prompt that describes the video to generate.
+        input_reference:
+          description: Optional reference object that guides generation. Provide exactly one of `image_url` or `file_id`.
           $ref: '#/components/schemas/ImageRefParam-2'
         seconds:
           description: 'Clip duration in seconds (allowed values: 4, 8, 12). Defaults to 4 seconds.'
@@ -37123,7 +37263,132 @@ components:
         size:
           description: 'Output resolution formatted as width x height (allowed values: 720x1280, 1280x720, 1024x1792, 1792x1024). Defaults to 720x1280.'
           $ref: '#/components/schemas/VideoSize'
-      description: Parameters for creating a new video generation job.
+      description: JSON parameters for creating a new video generation job.
+    CreateVideoCharacterBody:
+      title: Create character request
+      required:
+        - video
+        - name
+      type: object
+      properties:
+        video:
+          type: string
+          description: Video file used to create a character.
+          format: binary
+        name:
+          maxLength: 80
+          minLength: 1
+          type: string
+          description: Display name for this API character.
+      description: Parameters for creating a character from an uploaded video.
+    VideoCharacterResource:
+      required:
+        - id
+        - name
+        - created_at
+      type: object
+      properties:
+        id:
+          anyOf:
+            - type: string
+              description: Identifier for the character creation cameo.
+            - type: 'null'
+        name:
+          anyOf:
+            - type: string
+              description: Display name for the character.
+            - type: 'null'
+        created_at:
+          type: integer
+          description: Unix timestamp (in seconds) when the character was created.
+    VideoReferenceInputParam:
+      required:
+        - id
+      type: object
+      properties:
+        id:
+          type: string
+          description: The identifier of the completed video.
+          example: video_123
+      description: Reference to the completed video.
+    CreateVideoEditMultipartBody:
+      title: Create video edit multipart request
+      required:
+        - video
+        - prompt
+      type: object
+      properties:
+        video:
+          oneOf:
+            - type: string
+              description: Reference to the completed video to edit.
+              format: binary
+            - $ref: '#/components/schemas/VideoReferenceInputParam'
+        prompt:
+          maxLength: 32000
+          minLength: 1
+          type: string
+          description: Text prompt that describes how to edit the source video.
+      description: Parameters for editing an existing generated video.
+    CreateVideoEditJsonBody:
+      title: Create video edit JSON request
+      required:
+        - video
+        - prompt
+      type: object
+      properties:
+        video:
+          description: Reference to the completed video to edit.
+          $ref: '#/components/schemas/VideoReferenceInputParam'
+        prompt:
+          maxLength: 32000
+          minLength: 1
+          type: string
+          description: Text prompt that describes how to edit the source video.
+      description: JSON parameters for editing an existing generated video.
+    CreateVideoExtendMultipartBody:
+      title: Create video extension multipart request
+      required:
+        - video
+        - prompt
+        - seconds
+      type: object
+      properties:
+        video:
+          oneOf:
+            - $ref: '#/components/schemas/VideoReferenceInputParam'
+            - type: string
+              description: Reference to the completed video to extend.
+              format: binary
+        prompt:
+          maxLength: 32000
+          minLength: 1
+          type: string
+          description: Updated text prompt that directs the extension generation.
+        seconds:
+          description: 'Length of the newly generated extension segment in seconds (allowed values: 4, 8, 12, 16, 20).'
+          $ref: '#/components/schemas/VideoSeconds'
+      description: Multipart parameters for extending an existing generated video.
+    CreateVideoExtendJsonBody:
+      title: Create video extension JSON request
+      required:
+        - video
+        - prompt
+        - seconds
+      type: object
+      properties:
+        video:
+          description: Reference to the completed video to extend.
+          $ref: '#/components/schemas/VideoReferenceInputParam'
+        prompt:
+          maxLength: 32000
+          minLength: 1
+          type: string
+          description: Updated text prompt that directs the extension generation.
+        seconds:
+          description: 'Length of the newly generated extension segment in seconds (allowed values: 4, 8, 12, 16, 20).'
+          $ref: '#/components/schemas/VideoSeconds'
+      description: JSON parameters for extending an existing generated video.
     DeletedVideoResource:
       title: Deleted video response
       required:
