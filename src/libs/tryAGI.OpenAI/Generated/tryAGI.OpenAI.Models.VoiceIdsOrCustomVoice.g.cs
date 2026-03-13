@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct VoiceIdsOrCustomVoice : global::System.IEquatable<VoiceIdsOrCustomVoice>
     {
         /// <summary>
-        /// 
+        /// Example: ash
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.VoiceIdsShared? Value1 { get; init; }
