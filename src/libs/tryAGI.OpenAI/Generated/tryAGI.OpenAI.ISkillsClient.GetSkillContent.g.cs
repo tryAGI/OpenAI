@@ -12,7 +12,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        global::System.Threading.Tasks.Task<byte[]> GetSkillContentAsync(
+        global::System.Threading.Tasks.Task<string> GetSkillContentAsync(
             string skillId,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

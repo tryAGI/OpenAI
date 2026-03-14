@@ -34,6 +34,24 @@ namespace tryAGI.OpenAI
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
+
+            request = new global::tryAGI.OpenAI.CreateImageRequest
+            {
+                Prompt = request.Prompt,
+                Model = request.Model,
+                N = request.N,
+                Quality = request.Quality,
+                ResponseFormat = request.ResponseFormat,
+                OutputFormat = request.OutputFormat,
+                OutputCompression = request.OutputCompression,
+                Stream = false,
+                PartialImages = request.PartialImages,
+                Size = request.Size,
+                Moderation = request.Moderation,
+                Background = request.Background,
+                Style = request.Style,
+                User = request.User,
+            };
             PrepareArguments(
                 client: HttpClient);
             PrepareCreateImageArguments(
@@ -207,13 +225,6 @@ namespace tryAGI.OpenAI
         /// Default Value: 100<br/>
         /// Example: 100
         /// </param>
-        /// <param name="stream">
-        /// Generate the image in streaming mode. Defaults to `false`. See the<br/>
-        /// [Image generation guide](/docs/guides/image-generation) for more information.<br/>
-        /// This parameter is only supported for the GPT image models.<br/>
-        /// Default Value: false<br/>
-        /// Example: false
-        /// </param>
         /// <param name="partialImages"></param>
         /// <param name="size">
         /// The size of the generated images. Must be one of `1024x1024`, `1536x1024` (landscape), `1024x1536` (portrait), or `auto` (default value) for the GPT image models, one of `256x256`, `512x512`, or `1024x1024` for `dall-e-2`, and one of `1024x1024`, `1792x1024`, or `1024x1792` for `dall-e-3`.<br/>
@@ -254,7 +265,6 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.CreateImageRequestResponseFormat? responseFormat = default,
             global::tryAGI.OpenAI.CreateImageRequestOutputFormat? outputFormat = default,
             int? outputCompression = default,
-            bool? stream = default,
             int? partialImages = default,
             global::tryAGI.OpenAI.CreateImageRequestSize? size = default,
             global::tryAGI.OpenAI.CreateImageRequestModeration? moderation = default,
@@ -272,7 +282,7 @@ namespace tryAGI.OpenAI
                 ResponseFormat = responseFormat,
                 OutputFormat = outputFormat,
                 OutputCompression = outputCompression,
-                Stream = stream,
+                Stream = false,
                 PartialImages = partialImages,
                 Size = size,
                 Moderation = moderation,

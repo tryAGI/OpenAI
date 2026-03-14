@@ -58,7 +58,6 @@ namespace tryAGI.OpenAI
         /// This option is not available for `gpt-4o-transcribe-diarize`.<br/>
         /// Default Value: [segment]
         /// </param>
-        /// <param name="stream"></param>
         /// <param name="chunkingStrategy"></param>
         /// <param name="knownSpeakerNames">
         /// Optional list of speaker names that correspond to the audio samples provided in `known_speaker_references[]`. Each entry should be a short identifier (for example `customer` or `agent`). Up to 4 speakers are supported.
@@ -78,7 +77,6 @@ namespace tryAGI.OpenAI
             double? temperature = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionInclude>? include = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateTranscriptionRequestTimestampGranularitie>? timestampGranularities = default,
-            bool? stream = default,
             global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.CreateTranscriptionRequestChunkingStrategyVariant1?, global::tryAGI.OpenAI.VadConfig>? chunkingStrategy = default,
             global::System.Collections.Generic.IList<string>? knownSpeakerNames = default,
             global::System.Collections.Generic.IList<string>? knownSpeakerReferences = default,
