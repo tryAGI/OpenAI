@@ -92,12 +92,6 @@ namespace tryAGI.OpenAI
         /// Example: user-1234
         /// </param>
         /// <param name="inputFidelity"></param>
-        /// <param name="stream">
-        /// Edit the image in streaming mode. Defaults to `false`. See the<br/>
-        /// [Image generation guide](/docs/guides/image-generation) for more information.<br/>
-        /// Default Value: false<br/>
-        /// Example: false
-        /// </param>
         /// <param name="partialImages"></param>
         /// <param name="quality">
         /// The quality of the image that will be generated for GPT image models. Defaults to `auto`.<br/>
@@ -120,7 +114,6 @@ namespace tryAGI.OpenAI
             int? outputCompression = default,
             string? user = default,
             global::tryAGI.OpenAI.InputFidelity? inputFidelity = default,
-            bool? stream = default,
             int? partialImages = default,
             global::tryAGI.OpenAI.CreateImageEditRequestQuality? quality = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.CreateSpeechResponseStreamEvent> CreateSpeechAsStreamAsync(
+        global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.CreateSpeechResponseStreamEvent> CreateSpeechAsync(
 
             global::tryAGI.OpenAI.CreateSpeechRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -46,7 +46,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.CreateSpeechResponseStreamEvent> CreateSpeechAsStreamAsync(
+        global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.CreateSpeechResponseStreamEvent> CreateSpeechAsync(
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateSpeechRequestModel?> model,
             string input,
             global::tryAGI.OpenAI.VoiceIdsOrCustomVoice voice,
