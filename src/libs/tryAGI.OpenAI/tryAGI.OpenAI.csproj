@@ -24,8 +24,7 @@
   
   <ItemGroup>
     <PackageReference Include="CSharpToJsonSchema" Version="3.10.1" />
-    <PackageReference Include="System.Net.ServerSentEvents" Version="10.0.3" />
     <PackageReference Include="Tiktoken" Version="2.2.0" />
-</ItemGroup>
+  </ItemGroup>
 
 </Project>

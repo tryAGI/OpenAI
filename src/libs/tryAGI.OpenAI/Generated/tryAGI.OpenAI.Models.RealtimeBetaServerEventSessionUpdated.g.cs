@@ -24,12 +24,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RealtimeBetaServerEventSessionUpdatedType Type { get; set; }
 
         /// <summary>
-        /// A session refers to a single WebSocket connection between a client and the server.<br/>
-        /// Once a client creates a session, it then sends JSON-formatted events containing text and audio chunks.<br/>
-        /// The server will respond in kind with audio containing voice output, a text transcript of that voice output,<br/>
-        /// and function calls (if functions are provided by the client).<br/>
-        /// A realtime Session represents the overall client-server interaction, and contains default configuration.<br/>
-        /// It has a set of default values which can be updated at any time (via session.update) or on a per-response level (via response.create).
+        /// Realtime session object for the beta interface.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -51,12 +46,7 @@ namespace tryAGI.OpenAI
         /// The event type, must be `session.updated`.
         /// </param>
         /// <param name="session">
-        /// A session refers to a single WebSocket connection between a client and the server.<br/>
-        /// Once a client creates a session, it then sends JSON-formatted events containing text and audio chunks.<br/>
-        /// The server will respond in kind with audio containing voice output, a text transcript of that voice output,<br/>
-        /// and function calls (if functions are provided by the client).<br/>
-        /// A realtime Session represents the overall client-server interaction, and contains default configuration.<br/>
-        /// It has a set of default values which can be updated at any time (via session.update) or on a per-response level (via response.create).
+        /// Realtime session object for the beta interface.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

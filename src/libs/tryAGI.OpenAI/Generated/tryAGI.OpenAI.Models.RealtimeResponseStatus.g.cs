@@ -4,8 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The status of the response.<br/>
-    /// Example: in_progress
+    /// The final status of the response (`completed`, `cancelled`, `failed`, or <br/>
+    /// `incomplete`, `in_progress`).
     /// </summary>
     public enum RealtimeResponseStatus
     {
@@ -13,10 +13,6 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         Completed,
-        /// <summary>
-        /// 
-        /// </summary>
-        InProgress,
         /// <summary>
         /// 
         /// </summary>
@@ -29,6 +25,10 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         Incomplete,
+        /// <summary>
+        /// 
+        /// </summary>
+        InProgress,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 RealtimeResponseStatus.Completed => "completed",
-                RealtimeResponseStatus.InProgress => "in_progress",
                 RealtimeResponseStatus.Cancelled => "cancelled",
                 RealtimeResponseStatus.Failed => "failed",
                 RealtimeResponseStatus.Incomplete => "incomplete",
+                RealtimeResponseStatus.InProgress => "in_progress",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,10 +59,10 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "completed" => RealtimeResponseStatus.Completed,
-                "in_progress" => RealtimeResponseStatus.InProgress,
                 "cancelled" => RealtimeResponseStatus.Cancelled,
                 "failed" => RealtimeResponseStatus.Failed,
                 "incomplete" => RealtimeResponseStatus.Incomplete,
+                "in_progress" => RealtimeResponseStatus.InProgress,
                 _ => null,
             };
         }

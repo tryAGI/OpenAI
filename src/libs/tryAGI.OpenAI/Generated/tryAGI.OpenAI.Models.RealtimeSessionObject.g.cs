@@ -4,8 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The object type, must be "realtime.session".<br/>
-    /// Example: realtime.session
+    /// The object type. Always `realtime.session`.
     /// </summary>
     public enum RealtimeSessionObject
     {

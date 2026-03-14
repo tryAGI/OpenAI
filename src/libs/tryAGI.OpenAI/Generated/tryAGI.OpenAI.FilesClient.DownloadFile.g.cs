@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
         partial void ProcessDownloadFileResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref byte[] content);
+            ref string content);
 
         /// <summary>
         /// Returns the contents of the specified file.
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         /// <param name="fileId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<byte[]> DownloadFileAsync(
+        public async global::System.Threading.Tasks.Task<string> DownloadFileAsync(
             string fileId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -87,12 +87,16 @@ namespace tryAGI.OpenAI
 
             if (ReadResponseAsString)
             {
-                var __content = await __response.Content.ReadAsByteArrayAsync(
+                var __content = await __response.Content.ReadAsStringAsync(
 #if NET5_0_OR_GREATER
                     cancellationToken
 #endif
                 ).ConfigureAwait(false);
 
+                ProcessResponseContent(
+                    client: HttpClient,
+                    response: __response,
+                    content: ref __content);
                 ProcessDownloadFileResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
@@ -107,10 +111,11 @@ namespace tryAGI.OpenAI
                 catch (global::System.Exception __ex)
                 {
                     throw new global::tryAGI.OpenAI.ApiException(
-                        message: __response.ReasonPhrase ?? string.Empty,
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
                         innerException: __ex,
                         statusCode: __response.StatusCode)
                     {
+                        ResponseBody = __content,
                         ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                             __response.Headers,
                             h => h.Key,
@@ -124,7 +129,7 @@ namespace tryAGI.OpenAI
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    var __content = await __response.Content.ReadAsByteArrayAsync(
+                    var __content = await __response.Content.ReadAsStringAsync(
 #if NET5_0_OR_GREATER
                         cancellationToken
 #endif

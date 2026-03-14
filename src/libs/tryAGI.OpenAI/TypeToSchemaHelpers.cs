@@ -39,6 +39,12 @@ public static class TypeToSchemaHelpers2
     /// <param name="strict"></param>
     /// <returns></returns>
     /// <exception cref="ArgumentNullException"></exception>
+#if NET6_0_OR_GREATER
+    [UnconditionalSuppressMessage(
+        "Trimming",
+        "IL2026",
+        Justification = "This path uses JsonTypeInfo metadata and a resolver; the upstream API is annotated conservatively.")]
+#endif
     public static ResponseFormatJsonSchemaJsonSchema AsResponseFormat(JsonTypeInfo typeInfo, bool strict)
     {
         typeInfo = typeInfo ?? throw new ArgumentNullException(nameof(typeInfo));
@@ -49,9 +55,7 @@ public static class TypeToSchemaHelpers2
             Description = string.Empty,
             Name = typeInfo.Type.Name,
             Strict = strict,
-#pragma warning disable IL2026
             Schema = TypeToSchemaHelpers.AsJsonSchema(typeInfo.Type, strict, resolver, typeInfo.Options),
-#pragma warning restore IL2026
         };
     }
 }

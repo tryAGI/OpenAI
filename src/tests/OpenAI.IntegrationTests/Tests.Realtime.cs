@@ -10,12 +10,12 @@ public partial class Tests
         using var cancellationTokenSource = new CancellationTokenSource(TimeSpan.FromSeconds(15));
         var cancellationToken = cancellationTokenSource.Token;
         
-        await realtimeConversationClient.SendAsync(new RealtimeResponseCreate
+        await realtimeConversationClient.SendAsync(new RealtimeClientEventResponseCreate
         {
-            Type = RealtimeResponseCreateType.ResponseCreate,
-            Response = new RealtimeResponseCreateResponse
+            Type = RealtimeClientEventResponseCreateType.ResponseCreate,
+            Response = new RealtimeResponseCreateParams
             {
-                Modalities = [RealtimeResponseCreateResponseModalitie.Text],
+                OutputModalities = [RealtimeResponseCreateParamsOutputModalitie.Text],
                 Instructions = "Please assist the user.",
             }
         }.ToJson(realtimeConversationClient.JsonSerializerContext), cancellationToken);
@@ -25,12 +25,12 @@ public partial class Tests
             if (receivedMessage.IsSessionCreated)
             {
                 Console.WriteLine($"Session created. ID: {receivedMessage.SessionCreated.EventId}");
-                Console.WriteLine(receivedMessage.SessionCreated.Session?.ToJson(realtimeConversationClient.JsonSerializerContext));
+                Console.WriteLine(receivedMessage.SessionCreated.ToJson(realtimeConversationClient.JsonSerializerContext));
             }
             else if (receivedMessage.IsResponseCreated)
             {
                 Console.WriteLine($"Response created. ID: {receivedMessage.ResponseCreated.EventId}");
-                Console.WriteLine(receivedMessage.ResponseCreated.Response?.ToJson(realtimeConversationClient.JsonSerializerContext));
+                Console.WriteLine(receivedMessage.ResponseCreated.Response.ToJson(realtimeConversationClient.JsonSerializerContext));
             }
             else if (receivedMessage.IsRateLimitsUpdated)
             {

@@ -4,8 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The object type, must be "realtime.response".<br/>
-    /// Example: realtime.response
+    /// The object type, must be `realtime.response`.
     /// </summary>
     public enum RealtimeResponseObject
     {

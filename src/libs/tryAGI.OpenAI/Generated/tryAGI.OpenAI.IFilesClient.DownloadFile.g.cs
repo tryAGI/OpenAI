@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
         /// <param name="fileId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        global::System.Threading.Tasks.Task<byte[]> DownloadFileAsync(
+        global::System.Threading.Tasks.Task<string> DownloadFileAsync(
             string fileId,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

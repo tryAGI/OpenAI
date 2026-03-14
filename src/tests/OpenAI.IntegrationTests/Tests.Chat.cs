@@ -2,7 +2,7 @@ namespace tryAGI.OpenAI.IntegrationTests;
 
 public partial class Tests
 {
-    [DataTestMethod]
+    [TestMethod]
     [DataRow(CustomProvider.OpenAi)]
     //[DataRow(CustomProvider.Fireworks)]
     [DataRow(CustomProvider.DeepInfra)]
@@ -38,7 +38,7 @@ public partial class Tests
         Console.WriteLine(response);
     }
     
-    [DataTestMethod]
+    [TestMethod]
     [DataRow(CustomProvider.OpenAi)]
     //[DataRow(CustomProvider.Fireworks)]
     [DataRow(CustomProvider.DeepInfra)]
@@ -75,7 +75,7 @@ public partial class Tests
         }
     }
     
-    [DataTestMethod]
+    [TestMethod]
     [DataRow(CustomProvider.OpenAi)]
     //[DataRow(CustomProvider.Fireworks)]
     [DataRow(CustomProvider.DeepInfra)]
@@ -118,7 +118,7 @@ public partial class Tests
         Console.WriteLine(response);
     }
     
-    [DataTestMethod]
+    [TestMethod]
     [DataRow(CustomProvider.OpenAi)]
     [DataRow(CustomProvider.Ollama)]
     [DataRow(CustomProvider.Groq)]

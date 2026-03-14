@@ -33,13 +33,10 @@ namespace tryAGI.OpenAI
         public string? PreviousItemId { get; set; }
 
         /// <summary>
-        /// A realtime Item is of three types: message, function_call, or function_call_output.<br/>
-        /// A message item can contain text or audio.<br/>
-        /// A function_call item indicates a model's desire to call a function, which is the only tool supported for now<br/>
-        /// A function_call_output item indicates a function response.<br/>
-        /// The client may add and remove message and function_call_output Items using conversation.item.create and conversation.item.delete.
+        /// A single item within a Realtime conversation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeConversationItemJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::tryAGI.OpenAI.RealtimeConversationItem Item { get; set; }
 
@@ -60,11 +57,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="previousItemId"></param>
         /// <param name="item">
-        /// A realtime Item is of three types: message, function_call, or function_call_output.<br/>
-        /// A message item can contain text or audio.<br/>
-        /// A function_call item indicates a model's desire to call a function, which is the only tool supported for now<br/>
-        /// A function_call_output item indicates a function response.<br/>
-        /// The client may add and remove message and function_call_output Items using conversation.item.create and conversation.item.delete.
+        /// A single item within a Realtime conversation.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -76,7 +69,7 @@ namespace tryAGI.OpenAI
             string? previousItemId)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Item = item ?? throw new global::System.ArgumentNullException(nameof(item));
+            this.Item = item;
             this.Type = type;
             this.PreviousItemId = previousItemId;
         }

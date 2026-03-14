@@ -4,33 +4,45 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Usage statistics for the response.
+    /// Usage statistics for the Response, this will correspond to billing. A <br/>
+    /// Realtime API session will maintain a conversation context and append new <br/>
+    /// Items to the Conversation, thus output from previous turns (text and <br/>
+    /// audio tokens) will become the input for later turns.
     /// </summary>
     public sealed partial class RealtimeResponseUsage
     {
         /// <summary>
-        /// The total number of tokens used.<br/>
-        /// Example: 50
+        /// The total number of tokens in the Response including input and output <br/>
+        /// text and audio tokens.
         /// </summary>
-        /// <example>50</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
         public int? TotalTokens { get; set; }
 
         /// <summary>
-        /// The number of input tokens used.<br/>
-        /// Example: 20
+        /// The number of input tokens used in the Response, including text and <br/>
+        /// audio tokens.
         /// </summary>
-        /// <example>20</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens")]
         public int? InputTokens { get; set; }
 
         /// <summary>
-        /// The number of output tokens used.<br/>
-        /// Example: 30
+        /// The number of output tokens sent in the Response, including text and <br/>
+        /// audio tokens.
         /// </summary>
-        /// <example>30</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens")]
         public int? OutputTokens { get; set; }
+
+        /// <summary>
+        /// Details about the input tokens used in the Response. Cached tokens are tokens from previous turns in the conversation that are included as context for the current response. Cached tokens here are counted as a subset of input tokens, meaning input tokens will include cached and uncached tokens.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("input_token_details")]
+        public global::tryAGI.OpenAI.RealtimeResponseUsageInputTokenDetails? InputTokenDetails { get; set; }
+
+        /// <summary>
+        /// Details about the output tokens used in the Response.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_token_details")]
+        public global::tryAGI.OpenAI.RealtimeResponseUsageOutputTokenDetails? OutputTokenDetails { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,16 +54,22 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="RealtimeResponseUsage" /> class.
         /// </summary>
         /// <param name="totalTokens">
-        /// The total number of tokens used.<br/>
-        /// Example: 50
+        /// The total number of tokens in the Response including input and output <br/>
+        /// text and audio tokens.
         /// </param>
         /// <param name="inputTokens">
-        /// The number of input tokens used.<br/>
-        /// Example: 20
+        /// The number of input tokens used in the Response, including text and <br/>
+        /// audio tokens.
         /// </param>
         /// <param name="outputTokens">
-        /// The number of output tokens used.<br/>
-        /// Example: 30
+        /// The number of output tokens sent in the Response, including text and <br/>
+        /// audio tokens.
+        /// </param>
+        /// <param name="inputTokenDetails">
+        /// Details about the input tokens used in the Response. Cached tokens are tokens from previous turns in the conversation that are included as context for the current response. Cached tokens here are counted as a subset of input tokens, meaning input tokens will include cached and uncached tokens.
+        /// </param>
+        /// <param name="outputTokenDetails">
+        /// Details about the output tokens used in the Response.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -59,11 +77,15 @@ namespace tryAGI.OpenAI
         public RealtimeResponseUsage(
             int? totalTokens,
             int? inputTokens,
-            int? outputTokens)
+            int? outputTokens,
+            global::tryAGI.OpenAI.RealtimeResponseUsageInputTokenDetails? inputTokenDetails,
+            global::tryAGI.OpenAI.RealtimeResponseUsageOutputTokenDetails? outputTokenDetails)
         {
             this.TotalTokens = totalTokens;
             this.InputTokens = inputTokens;
             this.OutputTokens = outputTokens;
+            this.InputTokenDetails = inputTokenDetails;
+            this.OutputTokenDetails = outputTokenDetails;
         }
 
         /// <summary>

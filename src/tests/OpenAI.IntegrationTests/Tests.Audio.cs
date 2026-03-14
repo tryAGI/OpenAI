@@ -8,7 +8,7 @@ public partial class Tests
         var api = GetAuthorizedApi();
 
         using var memoryStream = new MemoryStream();
-        await foreach (var streamEvent in api.Audio.CreateSpeechAsStreamAsync(
+        await foreach (var streamEvent in api.Audio.CreateSpeechAsync(
             model: CreateSpeechRequestModel.Gpt4oMiniTts,
             input: "Create speech test is successful.",
             voice: (VoiceIdsShared)VoiceIdsSharedEnum.Alloy,
