@@ -42,6 +42,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.FunctionToolParamType Type { get; set; } = global::tryAGI.OpenAI.FunctionToolParamType.Function;
 
         /// <summary>
+        /// Whether this function should be deferred and discovered via tool search.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("defer_loading")]
+        public bool? DeferLoading { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -57,6 +63,9 @@ namespace tryAGI.OpenAI
         /// <param name="type">
         /// Default Value: function
         /// </param>
+        /// <param name="deferLoading">
+        /// Whether this function should be deferred and discovered via tool search.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -65,6 +74,7 @@ namespace tryAGI.OpenAI
             string? description,
             object? parameters,
             bool? strict,
+            bool? deferLoading,
             global::tryAGI.OpenAI.FunctionToolParamType type = global::tryAGI.OpenAI.FunctionToolParamType.Function)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -72,6 +82,7 @@ namespace tryAGI.OpenAI
             this.Parameters = parameters;
             this.Strict = strict;
             this.Type = type;
+            this.DeferLoading = deferLoading;
         }
 
         /// <summary>

@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The endpoint to be used for all requests in the batch. Currently `/v1/responses`, `/v1/chat/completions`, `/v1/embeddings`, `/v1/completions`, `/v1/moderations`, `/v1/images/generations`, and `/v1/images/edits` are supported. Note that `/v1/embeddings` batches are also restricted to a maximum of 50,000 embedding inputs across all requests in the batch.
+    /// The endpoint to be used for all requests in the batch. Currently `/v1/responses`, `/v1/chat/completions`, `/v1/embeddings`, `/v1/completions`, `/v1/moderations`, `/v1/images/generations`, `/v1/images/edits`, and `/v1/videos` are supported. Note that `/v1/embeddings` batches are also restricted to a maximum of 50,000 embedding inputs across all requests in the batch.
     /// </summary>
     public enum CreateBatchRequestEndpoint
     {
@@ -36,6 +36,10 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         V1ImagesEdits,
+        /// <summary>
+        /// 
+        /// </summary>
+        V1Videos,
     }
 
     /// <summary>
@@ -57,6 +61,7 @@ namespace tryAGI.OpenAI
                 CreateBatchRequestEndpoint.V1Moderations => "/v1/moderations",
                 CreateBatchRequestEndpoint.V1ImagesGenerations => "/v1/images/generations",
                 CreateBatchRequestEndpoint.V1ImagesEdits => "/v1/images/edits",
+                CreateBatchRequestEndpoint.V1Videos => "/v1/videos",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -74,6 +79,7 @@ namespace tryAGI.OpenAI
                 "/v1/moderations" => CreateBatchRequestEndpoint.V1Moderations,
                 "/v1/images/generations" => CreateBatchRequestEndpoint.V1ImagesGenerations,
                 "/v1/images/edits" => CreateBatchRequestEndpoint.V1ImagesEdits,
+                "/v1/videos" => CreateBatchRequestEndpoint.V1Videos,
                 _ => null,
             };
         }
