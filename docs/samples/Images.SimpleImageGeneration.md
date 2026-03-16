@@ -1,5 +1,5 @@
 ```csharp
-using var api = GetAuthenticatedClient();
+using var api = new OpenAiClient(apiKey);
 
 ImagesResponse image = await api.Images.CreateImageAsync(
     prompt: "The concept for a living room that blends Scandinavian simplicity with Japanese minimalism for"

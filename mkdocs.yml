@@ -1,43 +1,39 @@
 site_name: OpenAI .NET Documentation
 nav:
 - Overview: index.md
-# START EXAMPLES #
+# EXAMPLES:START
 - Examples:
-  - Chat:
-    - FunctionCallingStreaming: samples/Chat.FunctionCallingStreaming.md
-    - SimpleChat: samples/Chat.SimpleChat.md
-    - StructuredOutputsClasses: samples/Chat.StructuredOutputsClasses.md
-    - SimpleChatStreaming: samples/Chat.SimpleChatStreaming.md
-    - ChatWithVision: samples/Chat.ChatWithVision.md
-    - FunctionCalling: samples/Chat.FunctionCalling.md
-    - FunctionCallingService: samples/Chat.FunctionCallingService.md
-    - StructuredOutputs: samples/Chat.StructuredOutputs.md
   - Assistants:
-    - AssistantsWithVision: samples/Assistants.AssistantsWithVision.md
-    - FunctionCalling: samples/Assistants.FunctionCalling.md
     - AllToolsService: samples/Assistants.AllToolsService.md
+    - FunctionCalling: samples/Assistants.FunctionCalling.md
     - ListFiles: samples/Assistants.ListFiles.md
-    - ListAssistantsWithPagination: samples/Assistants.ListAssistantsWithPagination.md
     - RetrievalAugmentedGeneration: samples/Assistants.RetrievalAugmentedGeneration.md
-    - AllTools: samples/Assistants.AllTools.md
-    - FunctionCallingStreaming: samples/Assistants.FunctionCallingStreaming.md
-  - Images:
-    - SimpleImageEdit: samples/Images.SimpleImageEdit.md
-    - SimpleImageVariation: samples/Images.SimpleImageVariation.md
-    - SimpleImageGeneration: samples/Images.SimpleImageGeneration.md
-  - Embeddings:
-    - MultipleEmbeddings: samples/Embeddings.MultipleEmbeddings.md
-    - SimpleEmbedding: samples/Embeddings.SimpleEmbedding.md
-    - EmbeddingWithOptions: samples/Embeddings.EmbeddingWithOptions.md
   - Audio:
+    - SimpleTextToSpeech: samples/Audio.SimpleTextToSpeech.md
     - SimpleTranscription: samples/Audio.SimpleTranscription.md
     - SimpleTranslation: samples/Audio.SimpleTranslation.md
     - VerboseTranscription: samples/Audio.VerboseTranscription.md
-    - SimpleTextToSpeech: samples/Audio.SimpleTextToSpeech.md
+  - Chat:
+    - ChatWithVision: samples/Chat.ChatWithVision.md
+    - FunctionCalling: samples/Chat.FunctionCalling.md
+    - FunctionCallingService: samples/Chat.FunctionCallingService.md
+    - FunctionCallingStreaming: samples/Chat.FunctionCallingStreaming.md
+    - SimpleChat: samples/Chat.SimpleChat.md
+    - SimpleChatStreaming: samples/Chat.SimpleChatStreaming.md
+    - StructuredOutputs: samples/Chat.StructuredOutputs.md
+    - StructuredOutputsClasses: samples/Chat.StructuredOutputsClasses.md
   - Combination:
-    - CuriousCreatureCreator: samples/Combination.CuriousCreatureCreator.md
     - AlpacaArtAssessor: samples/Combination.AlpacaArtAssessor.md
-# END EXAMPLES #
+    - CuriousCreatureCreator: samples/Combination.CuriousCreatureCreator.md
+  - Embeddings:
+    - EmbeddingWithOptions: samples/Embeddings.EmbeddingWithOptions.md
+    - MultipleEmbeddings: samples/Embeddings.MultipleEmbeddings.md
+    - SimpleEmbedding: samples/Embeddings.SimpleEmbedding.md
+  - Images:
+    - SimpleImageEdit: samples/Images.SimpleImageEdit.md
+    - SimpleImageGeneration: samples/Images.SimpleImageGeneration.md
+    - SimpleImageVariation: samples/Images.SimpleImageVariation.md
+# EXAMPLES:END
 
 #  - Quick Start: QuickStart.md
 #  - Architecture: Architecture.md

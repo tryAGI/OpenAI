@@ -7,7 +7,7 @@ on:
       - 'docs/**'
       - 'mkdocs.yml'
       - 'examples/**'
-      - 'src/helpers/GenerateDocs/**'
+      - 'autosdk.docs.json'
       - 'src/tests/OpenAI.IntegrationTests/Examples/**'
       - '.github/workflows/mkdocs.yml'
 
@@ -33,8 +33,16 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Install AutoSDK CLI
+        run: dotnet tool install --global autosdk.cli --prerelease
+
       - name: Generate docs
-        run: dotnet run --project src/helpers/GenerateDocs/GenerateDocs.csproj .
+        run: autosdk docs sync .
 
       - name: Build with MkDocs
         run: |

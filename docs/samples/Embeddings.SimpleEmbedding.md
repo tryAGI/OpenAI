@@ -1,5 +1,5 @@
 ```csharp
-using var api = GetAuthenticatedClient();
+using var api = new OpenAiClient(apiKey);
 
 CreateEmbeddingResponse embedding = await api.Embeddings.CreateEmbeddingAsync(
     input: "Best hotel in town if you like luxury hotels. They have an amazing infinity pool, a spa,"

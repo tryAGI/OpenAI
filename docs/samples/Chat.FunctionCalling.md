@@ -1,5 +1,5 @@
 ```csharp
-using var api = GetAuthenticatedClient();
+using var api = new OpenAiClient(apiKey);
 
 List<ChatCompletionRequestMessage> messages = [
     "What's the weather like today?",

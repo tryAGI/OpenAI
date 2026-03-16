@@ -1,9 +1,9 @@
 ```csharp
-using var api = GetAuthenticatedClient();
+using var api = new OpenAiClient(apiKey);
 
 IAsyncEnumerable<CreateChatCompletionStreamResponse> enumerable = api.Chat.CreateChatCompletionAsStreamAsync(
     messages: ["Say 'this is a test.'"],
-    model: ModelIdsEnum.Gpt4o);
+    model: ModelIdsSharedEnum.Gpt4o);
 
 Console.WriteLine("[ASSISTANT]:");
 await foreach (CreateChatCompletionStreamResponse chatUpdate in enumerable)

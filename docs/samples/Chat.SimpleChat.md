@@ -1,5 +1,5 @@
 ```csharp
-using var api = GetAuthenticatedClient();
+using var api = new OpenAiClient(apiKey);
 
 CreateChatCompletionResponse response = await api.Chat.CreateChatCompletionAsync(
     messages: ["Say 'this is a test.'"],

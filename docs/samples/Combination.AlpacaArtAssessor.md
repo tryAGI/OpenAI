@@ -1,5 +1,5 @@
 ```csharp
-using var api = GetAuthenticatedClient();
+using var api = new OpenAiClient(apiKey);
 
 // First, we create an image using dall-e-3:
 ImagesResponse imageResult = await api.Images.CreateImageAsync(

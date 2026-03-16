@@ -1,5 +1,5 @@
 ```csharp
-using var api = GetAuthenticatedClient();
+using var api = new OpenAiClient(apiKey);
 
 FileInfo originalFileInfo = new($"{Guid.NewGuid()}.png");
 

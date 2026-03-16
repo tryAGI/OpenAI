@@ -29,7 +29,7 @@ public class FunctionCallingService : IFunctionCallingService
         // Call the location API here.
         return Task.FromResult("San Francisco");
     }
-    
+
     public Task<string> GetCurrentWeatherAsync(
         string location,
         WeatherUnit unit = WeatherUnit.Celsius,

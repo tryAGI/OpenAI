@@ -1,15 +1,15 @@
 ```csharp
-using var api = GetAuthenticatedClient();
+using var api = new OpenAiClient(apiKey);
 
 var service = new FunctionCallingService();
 IList<ChatCompletionTool> tools = service.AsTools().AsOpenAiTools();
 
 AssistantObject assistant = await api.Assistants.CreateAssistantAsync(
-    model: CreateAssistantRequestModel.Gpt4o,
+    model: AssistantSupportedModels.Gpt4o,
     name: "Example: Function Calling",
     instructions: "Don't make assumptions about what values to plug into functions."
                   + " Ask for clarification if a user request is ambiguous.",
-    tools: tools.Select(x => new ToolsItem2(new AssistantToolsFunction
+    tools: tools.Select(x => new global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.AssistantToolsCode, global::tryAGI.OpenAI.AssistantToolsFileSearch, global::tryAGI.OpenAI.AssistantToolsFunction>(new AssistantToolsFunction
     {
         Function = x.Function,
     })).ToArray());
@@ -61,33 +61,33 @@ if (run.Status == RunObjectStatus.Completed)
     foreach (MessageObject message in messages.Data)
     {
         Console.WriteLine($"[{message.Role.ToString().ToUpper()}]: ");
-        foreach (ContentItem2 contentItem in message.Content)
+        foreach (global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageContentImageFileObject, global::tryAGI.OpenAI.MessageContentImageUrlObject, global::tryAGI.OpenAI.MessageContentTextObject, global::tryAGI.OpenAI.MessageContentRefusalObject> contentItem in message.Content)
         {
-            if (contentItem.MessageImageFileObject is {} imageFile)
+            if (contentItem.ImageFile is {} imageFile)
             {
                 Console.WriteLine($" <Image File ID> {imageFile.ImageFile.FileId}");
             }
-            if (contentItem.MessageImageUrlObject is {} imageUrl)
+            if (contentItem.ImageUrl is {} imageUrl)
             {
                 Console.WriteLine($" <Image URL> {imageUrl.ImageUrl.Url}");
             }
-            if (contentItem.MessageTextObject is {} text)
+            if (contentItem.Text is {} text)
             {
                 Console.WriteLine($"{text.Text.Value}");
-                
+
                 // Include annotations, if any.
                 if (text.Text.Annotations.Count > 0)
                 {
                     Console.WriteLine();
                     foreach (AnnotationsItem annotation in text.Text.Annotations)
                     {
-                        if (annotation.MessageContentTextFileCitationObject is {} fileCitation)
+                        if (annotation.FileCitation is {} fileCitation)
                         {
                             Console.WriteLine($"* File citation, file ID: {fileCitation.FileCitation.FileId}");
                             Console.WriteLine($"* Text to replace: {fileCitation.Text}");
                             Console.WriteLine($"* Message content index range: {fileCitation.StartIndex}-{fileCitation.EndIndex}");
                         }
-                        if (annotation.MessageContentTextFilePathObject is {} filePath)
+                        if (annotation.FilePath is {} filePath)
                         {
                             Console.WriteLine($"* File output, new file ID: {filePath.FilePath.FileId}");
                             Console.WriteLine($"* Text to replace: {filePath.Text}");
@@ -96,7 +96,7 @@ if (run.Status == RunObjectStatus.Completed)
                     }
                 }
             }
-            if (contentItem.MessageRefusalObject is {} refusal)
+            if (contentItem.Refusal is {} refusal)
             {
                 Console.WriteLine($"Refusal: {refusal.Refusal}");
             }

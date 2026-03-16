@@ -1,8 +1,8 @@
 ```csharp
-using var api = GetAuthenticatedClient();
+using var api = new OpenAiClient(apiKey);
 
 using var memoryStream = new MemoryStream();
-await foreach (var streamEvent in api.Audio.CreateSpeechAsStreamAsync(
+await foreach (var streamEvent in api.Audio.CreateSpeechAsync(
     model: CreateSpeechRequestModel.Tts1,
     input: "Overwatering is a common issue for those taking care of houseplants. To prevent it, it is"
            + " crucial to allow the soil to dry out between waterings. Instead of watering on a fixed schedule,"

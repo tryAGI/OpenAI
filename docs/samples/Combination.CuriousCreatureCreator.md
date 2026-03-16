@@ -1,9 +1,9 @@
 ```csharp
-using var api = GetAuthenticatedClient();
+using var api = new OpenAiClient(apiKey);
 
 // First, we'll use gpt-4o to have a creative helper imagine a twist on a household pet
 CreateChatCompletionResponse creativeWriterResult = await api.Chat.CreateChatCompletionAsync(
-    model: ModelIdsEnum.Gpt4o,
+    model: ModelIdsSharedEnum.Gpt4o,
     messages:
     [
         "You're a creative helper that specializes in brainstorming designs for concepts that fuse ordinary, mundane items with a fantastical touch. In particular, you can provide good one-paragraph descriptions of concept images.".AsSystemMessage(),
@@ -17,7 +17,7 @@ Console.WriteLine($"Creative helper's creature description:\n{description}");
 byte[] imageDescriptionAudio = await api.Audio.CreateSpeechAsync(
     model: CreateSpeechRequestModel.Tts1Hd,
     input: description,
-    voice: CreateSpeechRequestVoice.Onyx,
+    voice: VoiceIdsSharedEnum.Onyx,
     speed: 1.1f,
     responseFormat: CreateSpeechRequestResponseFormat.Opus);
 FileInfo audioFileInfo = new FileInfo($"{creativeWriterResult.Id}-description.opus");

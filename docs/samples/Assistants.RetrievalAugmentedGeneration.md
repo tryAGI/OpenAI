@@ -1,5 +1,5 @@
 ```csharp
-using var api = GetAuthenticatedClient();
+using var api = new OpenAiClient(apiKey);
 
 // First, let's contrive a document we'll use retrieval with and upload it.
 string document = /* language=json */
@@ -38,7 +38,7 @@ OpenAIFile salesFile = await api.Files.CreateFileAsync(
     purpose: CreateFileRequestPurpose.Assistants);
 
 AssistantObject assistant = await api.Assistants.CreateAssistantAsync(
-    model: CreateAssistantRequestModel.Gpt4o,
+    model: AssistantSupportedModels.Gpt4o,
     name: "Example: Contoso sales RAG",
     instructions: "You are an assistant that looks up sales data and helps visualize the information based"
                   + " on user queries. When asked to generate a graph, chart, or other visualization, use"
@@ -81,7 +81,7 @@ RunObject threadRun = await api.Assistants.CreateThreadAndRunAsync(
 do
 {
     await Task.Delay(TimeSpan.FromSeconds(1));
-    
+
     threadRun = await api.Assistants.GetRunAsync(
         threadId: threadRun.ThreadId,
         runId: threadRun.Id);
@@ -98,7 +98,7 @@ foreach (MessageObject message in messages.Data)
     Console.Write($"[{message.Role.ToString().ToUpper()}]: ");
     foreach (ContentItem2 contentItem in message.Content)
     {
-        if (contentItem.MessageTextObject is {} text)
+        if (contentItem.Text is {} text)
         {
             Console.WriteLine($"{text.Text.Value}");
 
@@ -110,19 +110,19 @@ foreach (MessageObject message in messages.Data)
             // Include annotations, if any.
             foreach (AnnotationsItem annotation in text.Text.Annotations)
             {
-                if (annotation.MessageContentTextFileCitationObject is {} citation &&
+                if (annotation.FileCitation is {} citation &&
                     !string.IsNullOrEmpty(citation.FileCitation.FileId))
                 {
                     Console.WriteLine($"* File citation, file ID: {citation.FileCitation.FileId}");
                 }
-                if (annotation.MessageContentTextFilePathObject is {} path &&
+                if (annotation.FilePath is {} path &&
                     !string.IsNullOrEmpty(path.FilePath.FileId))
                 {
                     Console.WriteLine($"* File output, new file ID: {path.FilePath.FileId}");
                 }
             }
         }
-        if (contentItem.MessageImageFileObject is {} imageFile)
+        if (contentItem.ImageFile is {} imageFile)
         {
             OpenAIFile imageInfo = await api.Files.RetrieveFileAsync(imageFile.ImageFile.FileId);
             byte[] imageBytes = await api.Files.DownloadFileAsync(imageFile.ImageFile.FileId);
