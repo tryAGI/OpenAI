@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI
         /// Maximum size in megabytes for each uploaded file. Defaults to 512 MB, which is the maximum allowable size.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_file_size")]
-        public int? MaxFileSize { get; set; }
+        public long? MaxFileSize { get; set; }
 
         /// <summary>
         /// Maximum number of files that can be uploaded to the session. Defaults to 10.
@@ -49,7 +49,7 @@ namespace tryAGI.OpenAI
 #endif
         public FileUploadParam(
             bool? enabled,
-            int? maxFileSize,
+            long? maxFileSize,
             int? maxFiles)
         {
             this.Enabled = enabled;

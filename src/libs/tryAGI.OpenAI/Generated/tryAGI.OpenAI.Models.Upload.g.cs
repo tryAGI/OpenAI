@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Bytes { get; set; }
+        public required long Bytes { get; set; }
 
         /// <summary>
         /// The intended purpose of the file. [Please refer here](/docs/api-reference/files/object#files/object-purpose) for acceptable values.
@@ -117,7 +117,7 @@ namespace tryAGI.OpenAI
             string id,
             global::System.DateTimeOffset createdAt,
             string filename,
-            int bytes,
+            long bytes,
             string purpose,
             global::tryAGI.OpenAI.UploadStatus status,
             global::System.DateTimeOffset expiresAt,

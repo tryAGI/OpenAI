@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int UsageBytes { get; set; }
+        public required long UsageBytes { get; set; }
 
         /// <summary>
         /// 
@@ -46,7 +46,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UsageVectorStoresResult(
-            int usageBytes,
+            long usageBytes,
             global::tryAGI.OpenAI.UsageVectorStoresResultObject @object,
             string? projectId)
         {

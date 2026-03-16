@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Bytes { get; set; }
+        public required long Bytes { get; set; }
 
         /// <summary>
         /// The MIME type of the file.<br/>
@@ -81,7 +81,7 @@ namespace tryAGI.OpenAI
         public CreateUploadRequest(
             string filename,
             global::tryAGI.OpenAI.CreateUploadRequestPurpose purpose,
-            int bytes,
+            long bytes,
             string mimeType,
             global::tryAGI.OpenAI.FileExpirationAfter? expiresAfter)
         {
