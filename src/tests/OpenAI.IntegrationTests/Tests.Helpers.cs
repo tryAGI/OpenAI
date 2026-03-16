@@ -53,7 +53,9 @@ public partial class Tests
             return (CustomProviders.Groq(apiKey:
                     Environment.GetEnvironmentVariable("GROQ_API_KEY") ??
                     throw new AssertInconclusiveException("GROQ_API_KEY environment variable is not found.")),
-                model ?? "llama3-8b-8192");
+                model ??
+                Environment.GetEnvironmentVariable("GROQ_CHAT_MODEL") ??
+                "llama-3.3-70b-versatile");
         }
         if (customProvider == CustomProvider.DeepSeek)
         {
@@ -118,7 +120,9 @@ public partial class Tests
             return (CustomProviders.Hyperbolic(apiKey:
                     Environment.GetEnvironmentVariable("HYPERBOLIC_API_KEY") ??
                     throw new AssertInconclusiveException("HYPERBOLIC_API_KEY environment variable is not found.")),
-                model ?? "meta-llama/Llama-3.2-3B-Instruct");
+                model ??
+                Environment.GetEnvironmentVariable("HYPERBOLIC_CHAT_MODEL") ??
+                "meta-llama/Llama-3.3-70B-Instruct");
         }
 
         if (customProvider == CustomProvider.Ollama)
@@ -149,7 +153,9 @@ public partial class Tests
             return (CustomProviders.XAi(apiKey:
                 Environment.GetEnvironmentVariable("XAI_API_KEY") ??
                 throw new AssertInconclusiveException("XAI_API_KEY environment variable is not found.")),
-                model ?? "grok-beta");
+                model ??
+                Environment.GetEnvironmentVariable("XAI_CHAT_MODEL") ??
+                "grok-3-mini");
         }
         if (customProvider == CustomProvider.Cohere)
         {
