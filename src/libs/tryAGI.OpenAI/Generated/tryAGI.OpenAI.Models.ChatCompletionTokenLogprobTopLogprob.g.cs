@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
-        public global::System.Collections.Generic.IList<int>? Bytes { get; set; }
+        public global::System.Collections.Generic.IList<long>? Bytes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -50,7 +50,7 @@ namespace tryAGI.OpenAI
         public ChatCompletionTokenLogprobTopLogprob(
             string token,
             double logprob,
-            global::System.Collections.Generic.IList<int>? bytes)
+            global::System.Collections.Generic.IList<long>? bytes)
         {
             this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
             this.Logprob = logprob;

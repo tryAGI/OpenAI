@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int UsageBytes { get; set; }
+        public required long UsageBytes { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the vector store file was created.
@@ -110,7 +110,7 @@ namespace tryAGI.OpenAI
 #endif
         public VectorStoreFileObject(
             string id,
-            int usageBytes,
+            long usageBytes,
             global::System.DateTimeOffset createdAt,
             string vectorStoreId,
             global::tryAGI.OpenAI.VectorStoreFileObjectStatus status,

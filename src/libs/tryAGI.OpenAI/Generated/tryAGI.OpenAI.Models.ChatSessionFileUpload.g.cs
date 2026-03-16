@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_file_size")]
-        public int? MaxFileSize { get; set; }
+        public long? MaxFileSize { get; set; }
 
         /// <summary>
         /// 
@@ -46,7 +46,7 @@ namespace tryAGI.OpenAI
 #endif
         public ChatSessionFileUpload(
             bool enabled,
-            int? maxFileSize,
+            long? maxFileSize,
             int? maxFiles)
         {
             this.Enabled = enabled;

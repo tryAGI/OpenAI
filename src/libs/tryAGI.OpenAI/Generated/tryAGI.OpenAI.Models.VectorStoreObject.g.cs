@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int UsageBytes { get; set; }
+        public required long UsageBytes { get; set; }
 
         /// <summary>
         /// 
@@ -124,7 +124,7 @@ namespace tryAGI.OpenAI
             string id,
             global::System.DateTimeOffset createdAt,
             string name,
-            int usageBytes,
+            long usageBytes,
             global::tryAGI.OpenAI.VectorStoreObjectFileCounts fileCounts,
             global::tryAGI.OpenAI.VectorStoreObjectStatus status,
             global::tryAGI.OpenAI.VectorStoreObjectObject @object,

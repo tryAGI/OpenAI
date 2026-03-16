@@ -70,7 +70,7 @@ namespace tryAGI.OpenAI
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Upload> CreateUploadAsync(
             string filename,
             global::tryAGI.OpenAI.CreateUploadRequestPurpose purpose,
-            int bytes,
+            long bytes,
             string mimeType,
             global::tryAGI.OpenAI.FileExpirationAfter? expiresAfter = default,
             global::System.Threading.CancellationToken cancellationToken = default);

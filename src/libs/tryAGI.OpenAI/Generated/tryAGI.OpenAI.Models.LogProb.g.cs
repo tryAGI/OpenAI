@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<int> Bytes { get; set; }
+        public required global::System.Collections.Generic.IList<long> Bytes { get; set; }
 
         /// <summary>
         /// 
@@ -55,7 +55,7 @@ namespace tryAGI.OpenAI
         public LogProb(
             string token,
             double logprob,
-            global::System.Collections.Generic.IList<int> bytes,
+            global::System.Collections.Generic.IList<long> bytes,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TopLogProb> topLogprobs)
         {
             this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
