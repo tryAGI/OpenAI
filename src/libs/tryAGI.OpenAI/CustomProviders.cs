@@ -44,7 +44,7 @@ public static class CustomProviders
     /// <summary>
     /// 
     /// </summary>
-    public const string TogetherBaseUrl = "https://api.together.xyz/";
+    public const string TogetherBaseUrl = "https://api.together.xyz/v1";
     
     /// <summary>
     /// 

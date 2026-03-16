@@ -74,7 +74,9 @@ public partial class Tests
             return (CustomProviders.Together(apiKey:
                 Environment.GetEnvironmentVariable("TOGETHER_API_KEY") ??
                 throw new AssertInconclusiveException("TOGETHER_API_KEY environment variable is not found.")),
-                model ?? "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo");
+                model ??
+                Environment.GetEnvironmentVariable("TOGETHER_CHAT_MODEL") ??
+                "meta-llama/Llama-3.3-70B-Instruct-Turbo");
         }
         if (customProvider == CustomProvider.GitHub)
         {
