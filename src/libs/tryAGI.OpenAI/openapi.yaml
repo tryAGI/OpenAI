@@ -35968,6 +35968,8 @@ components:
             - gte
             - lt
             - lte
+            - in
+            - nin
           description: >
             Specifies the comparison operator: `eq`, `ne`, `gt`, `gte`, `lt`,
             `lte`, `in`, `nin`.
