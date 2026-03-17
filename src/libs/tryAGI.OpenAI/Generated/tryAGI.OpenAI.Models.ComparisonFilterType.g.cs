@@ -41,6 +41,14 @@ namespace tryAGI.OpenAI
         /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`, `in`, `nin`.
         /// </summary>
         Lte,
+        /// <summary>
+        /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`, `in`, `nin`.
+        /// </summary>
+        In,
+        /// <summary>
+        /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`, `in`, `nin`.
+        /// </summary>
+        Nin,
     }
 
     /// <summary>
@@ -61,6 +69,8 @@ namespace tryAGI.OpenAI
                 ComparisonFilterType.Gte => "gte",
                 ComparisonFilterType.Lt => "lt",
                 ComparisonFilterType.Lte => "lte",
+                ComparisonFilterType.In => "in",
+                ComparisonFilterType.Nin => "nin",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -77,6 +87,8 @@ namespace tryAGI.OpenAI
                 "gte" => ComparisonFilterType.Gte,
                 "lt" => ComparisonFilterType.Lt,
                 "lte" => ComparisonFilterType.Lte,
+                "in" => ComparisonFilterType.In,
+                "nin" => ComparisonFilterType.Nin,
                 _ => null,
             };
         }
