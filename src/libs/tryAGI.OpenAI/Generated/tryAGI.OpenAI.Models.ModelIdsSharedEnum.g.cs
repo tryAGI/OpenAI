@@ -15,6 +15,22 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Gpt54Mini,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt54Nano,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt54Mini20260317,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt54Nano20260317,
+        /// <summary>
+        /// 
+        /// </summary>
         Gpt53ChatLatest,
         /// <summary>
         /// 
@@ -319,6 +335,10 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 ModelIdsSharedEnum.Gpt54 => "gpt-5.4",
+                ModelIdsSharedEnum.Gpt54Mini => "gpt-5.4-mini",
+                ModelIdsSharedEnum.Gpt54Nano => "gpt-5.4-nano",
+                ModelIdsSharedEnum.Gpt54Mini20260317 => "gpt-5.4-mini-2026-03-17",
+                ModelIdsSharedEnum.Gpt54Nano20260317 => "gpt-5.4-nano-2026-03-17",
                 ModelIdsSharedEnum.Gpt53ChatLatest => "gpt-5.3-chat-latest",
                 ModelIdsSharedEnum.Gpt52 => "gpt-5.2",
                 ModelIdsSharedEnum.Gpt5220251211 => "gpt-5.2-2025-12-11",
@@ -403,6 +423,10 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "gpt-5.4" => ModelIdsSharedEnum.Gpt54,
+                "gpt-5.4-mini" => ModelIdsSharedEnum.Gpt54Mini,
+                "gpt-5.4-nano" => ModelIdsSharedEnum.Gpt54Nano,
+                "gpt-5.4-mini-2026-03-17" => ModelIdsSharedEnum.Gpt54Mini20260317,
+                "gpt-5.4-nano-2026-03-17" => ModelIdsSharedEnum.Gpt54Nano20260317,
                 "gpt-5.3-chat-latest" => ModelIdsSharedEnum.Gpt53ChatLatest,
                 "gpt-5.2" => ModelIdsSharedEnum.Gpt52,
                 "gpt-5.2-2025-12-11" => ModelIdsSharedEnum.Gpt5220251211,
