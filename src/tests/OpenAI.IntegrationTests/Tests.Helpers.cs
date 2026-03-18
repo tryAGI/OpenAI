@@ -164,6 +164,13 @@ public partial class Tests
                 throw new AssertInconclusiveException("COHERE_API_KEY environment variable is not found.")),
                 model ?? "command-r-08-2024");
         }
+        if (customProvider == CustomProvider.Nebius)
+        {
+            return (CustomProviders.Nebius(apiKey:
+                Environment.GetEnvironmentVariable("NEBIUS_API_KEY") ??
+                throw new AssertInconclusiveException("NEBIUS_API_KEY environment variable is not found.")),
+                model ?? "meta-llama/Meta-Llama-3.1-8B-Instruct");
+        }
 
         var apiKey =
             Environment.GetEnvironmentVariable("OPENAI_API_KEY") ??

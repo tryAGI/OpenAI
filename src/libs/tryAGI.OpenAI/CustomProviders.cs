@@ -92,6 +92,11 @@ public static class CustomProviders
     public const string CerebrasBaseUrl = "https://api.cerebras.ai/v1";
 
     /// <summary>
+    /// https://docs.nebius.com/studio/inference/api
+    /// </summary>
+    public const string NebiusBaseUrl = "https://api.studio.nebius.ai/v1/";
+
+    /// <summary>
     /// Creates an API to use for GitHub Models: https://github.com/marketplace/models
     /// </summary>
     /// <returns></returns>
@@ -251,5 +256,14 @@ public static class CustomProviders
     public static OpenAiClient Cerebras(string apiKey)
     {
         return new OpenAiClient(apiKey, baseUri: new Uri(CerebrasBaseUrl));
+    }
+
+    /// <summary>
+    /// Create an API to use for Nebius AI Studio.
+    /// </summary>
+    /// <returns></returns>
+    public static OpenAiClient Nebius(string apiKey)
+    {
+        return new OpenAiClient(apiKey, baseUri: new Uri(NebiusBaseUrl));
     }
 }

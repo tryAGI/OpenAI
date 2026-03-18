@@ -21,4 +21,5 @@ public enum CustomProvider
     Hyperbolic,
     Cerebras,
     Cohere,
+    Nebius,
 }
