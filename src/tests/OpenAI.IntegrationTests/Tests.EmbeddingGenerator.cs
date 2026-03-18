@@ -1,4 +1,5 @@
 using Meai = Microsoft.Extensions.AI;
+using Retry = Microsoft.VisualStudio.TestTools.UnitTesting.RetryAttribute;
 
 namespace tryAGI.OpenAI.IntegrationTests;
 
@@ -15,6 +16,7 @@ public partial class Tests
     }
 
     [TestMethod]
+    [Retry(2)]
     public async Task EmbeddingGenerator_SingleInput()
     {
         using var client = GetAuthorizedApi();
@@ -34,6 +36,7 @@ public partial class Tests
     }
 
     [TestMethod]
+    [Retry(2)]
     public async Task EmbeddingGenerator_BatchInput()
     {
         using var client = GetAuthorizedApi();
@@ -65,6 +68,7 @@ public partial class Tests
     }
 
     [TestMethod]
+    [Retry(2)]
     public async Task EmbeddingGenerator_ReturnsUsage()
     {
         using var client = GetAuthorizedApi();
@@ -84,6 +88,7 @@ public partial class Tests
     }
 
     [TestMethod]
+    [Retry(2)]
     public async Task EmbeddingGenerator_WithDimensions()
     {
         using var client = GetAuthorizedApi();

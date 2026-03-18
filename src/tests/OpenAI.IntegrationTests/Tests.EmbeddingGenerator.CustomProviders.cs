@@ -1,4 +1,5 @@
 using Meai = Microsoft.Extensions.AI;
+using Retry = Microsoft.VisualStudio.TestTools.UnitTesting.RetryAttribute;
 
 namespace tryAGI.OpenAI.IntegrationTests;
 
@@ -47,13 +48,13 @@ public partial class Tests
     // --- DeepInfra ---
 
     [TestMethod]
-    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
+    [Retry(2)]
     public Task EmbeddingGenerator_DeepInfra_Generate() =>
         EmbeddingGenerator_CustomProvider_GenerateAsync(
             CustomProvider.DeepInfra, "BAAI/bge-en-icl");
 
     [TestMethod]
-    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
+    [Retry(2)]
     public Task EmbeddingGenerator_DeepInfra_Batch() =>
         EmbeddingGenerator_CustomProvider_BatchAsync(
             CustomProvider.DeepInfra, "BAAI/bge-en-icl");
@@ -61,13 +62,13 @@ public partial class Tests
     // --- Together ---
 
     [TestMethod]
-    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
+    [Retry(2)]
     public Task EmbeddingGenerator_Together_Generate() =>
         EmbeddingGenerator_CustomProvider_GenerateAsync(
             CustomProvider.Together, "BAAI/bge-large-en-v1.5");
 
     [TestMethod]
-    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
+    [Retry(2)]
     public Task EmbeddingGenerator_Together_Batch() =>
         EmbeddingGenerator_CustomProvider_BatchAsync(
             CustomProvider.Together, "BAAI/bge-large-en-v1.5");
@@ -75,13 +76,13 @@ public partial class Tests
     // --- Mistral ---
 
     [TestMethod]
-    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
+    [Retry(2)]
     public Task EmbeddingGenerator_Mistral_Generate() =>
         EmbeddingGenerator_CustomProvider_GenerateAsync(
             CustomProvider.Mistral, "mistral-embed");
 
     [TestMethod]
-    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
+    [Retry(2)]
     public Task EmbeddingGenerator_Mistral_Batch() =>
         EmbeddingGenerator_CustomProvider_BatchAsync(
             CustomProvider.Mistral, "mistral-embed");
@@ -89,13 +90,13 @@ public partial class Tests
     // --- Cohere ---
 
     [TestMethod]
-    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
+    [Retry(2)]
     public Task EmbeddingGenerator_Cohere_Generate() =>
         EmbeddingGenerator_CustomProvider_GenerateAsync(
             CustomProvider.Cohere, "embed-english-v3.0");
 
     [TestMethod]
-    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
+    [Retry(2)]
     public Task EmbeddingGenerator_Cohere_Batch() =>
         EmbeddingGenerator_CustomProvider_BatchAsync(
             CustomProvider.Cohere, "embed-english-v3.0");
@@ -103,13 +104,13 @@ public partial class Tests
     // --- Fireworks ---
 
     [TestMethod]
-    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
+    [Retry(2)]
     public Task EmbeddingGenerator_Fireworks_Generate() =>
         EmbeddingGenerator_CustomProvider_GenerateAsync(
             CustomProvider.Fireworks, "nomic-ai/nomic-embed-text-v1.5");
 
     [TestMethod]
-    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
+    [Retry(2)]
     public Task EmbeddingGenerator_Fireworks_Batch() =>
         EmbeddingGenerator_CustomProvider_BatchAsync(
             CustomProvider.Fireworks, "nomic-ai/nomic-embed-text-v1.5");
@@ -117,13 +118,13 @@ public partial class Tests
     // --- Nebius ---
 
     [TestMethod]
-    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
+    [Retry(2)]
     public Task EmbeddingGenerator_Nebius_Generate() =>
         EmbeddingGenerator_CustomProvider_GenerateAsync(
             CustomProvider.Nebius, "BAAI/bge-en-icl");
 
     [TestMethod]
-    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
+    [Retry(2)]
     public Task EmbeddingGenerator_Nebius_Batch() =>
         EmbeddingGenerator_CustomProvider_BatchAsync(
             CustomProvider.Nebius, "BAAI/bge-en-icl");
@@ -131,7 +132,7 @@ public partial class Tests
     // --- Azure ---
 
     [TestMethod]
-    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
+    [Retry(2)]
     public async Task EmbeddingGenerator_Azure_Generate()
     {
         var (api, _) = GetAuthorizedChatApi(CustomProvider.Azure);
@@ -154,13 +155,13 @@ public partial class Tests
     // --- GitHub Models ---
 
     [TestMethod]
-    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
+    [Retry(2)]
     public Task EmbeddingGenerator_GitHub_Generate() =>
         EmbeddingGenerator_CustomProvider_GenerateAsync(
             CustomProvider.GitHub, "text-embedding-3-small");
 
     [TestMethod]
-    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
+    [Retry(2)]
     public Task EmbeddingGenerator_GitHub_Batch() =>
         EmbeddingGenerator_CustomProvider_BatchAsync(
             CustomProvider.GitHub, "text-embedding-3-small");

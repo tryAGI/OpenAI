@@ -1,10 +1,12 @@
 using Meai = Microsoft.Extensions.AI;
+using Retry = Microsoft.VisualStudio.TestTools.UnitTesting.RetryAttribute;
 
 namespace tryAGI.OpenAI.IntegrationTests;
 
 public partial class Tests
 {
     [TestMethod]
+    [Retry(2)]
     public async Task ChatClient_ToolCalling_SingleTurn()
     {
         using var client = GetAuthorizedApi();
@@ -47,6 +49,7 @@ public partial class Tests
     }
 
     [TestMethod]
+    [Retry(2)]
     public async Task ChatClient_ToolCalling_Streaming()
     {
         using var client = GetAuthorizedApi();
@@ -98,6 +101,7 @@ public partial class Tests
     }
 
     [TestMethod]
+    [Retry(2)]
     public async Task ChatClient_ToolCalling_MultiTurn()
     {
         using var client = GetAuthorizedApi();
@@ -155,6 +159,7 @@ public partial class Tests
     }
 
     [TestMethod]
+    [Retry(2)]
     public async Task ChatClient_ToolCalling_StreamingMultiTurn()
     {
         using var client = GetAuthorizedApi();

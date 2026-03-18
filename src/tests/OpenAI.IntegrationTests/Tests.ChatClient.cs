@@ -1,4 +1,5 @@
 using Meai = Microsoft.Extensions.AI;
+using Retry = Microsoft.VisualStudio.TestTools.UnitTesting.RetryAttribute;
 
 namespace tryAGI.OpenAI.IntegrationTests;
 
@@ -15,6 +16,7 @@ public partial class Tests
     }
 
     [TestMethod]
+    [Retry(2)]
     public async Task ChatClient_GetResponseAsync()
     {
         using var client = GetAuthorizedApi();
@@ -38,6 +40,7 @@ public partial class Tests
     }
 
     [TestMethod]
+    [Retry(2)]
     public async Task ChatClient_GetStreamingResponseAsync()
     {
         using var client = GetAuthorizedApi();
@@ -66,6 +69,7 @@ public partial class Tests
     }
 
     [TestMethod]
+    [Retry(2)]
     public async Task ChatClient_WithSystemMessage()
     {
         using var client = GetAuthorizedApi();
@@ -88,6 +92,7 @@ public partial class Tests
     }
 
     [TestMethod]
+    [Retry(2)]
     public async Task ChatClient_ReturnsUsage()
     {
         using var client = GetAuthorizedApi();
@@ -110,6 +115,7 @@ public partial class Tests
     }
 
     [TestMethod]
+    [Retry(2)]
     public async Task ChatClient_WithTemperatureAndTopP()
     {
         using var client = GetAuthorizedApi();
@@ -137,6 +143,7 @@ public partial class Tests
     }
 
     [TestMethod]
+    [Retry(2)]
     public async Task ChatClient_StreamingWithTemperatureAndTopP()
     {
         using var client = GetAuthorizedApi();
@@ -170,6 +177,7 @@ public partial class Tests
     }
 
     [TestMethod]
+    [Retry(2)]
     public async Task ChatClient_JsonResponseFormat()
     {
         using var client = GetAuthorizedApi();
@@ -200,6 +208,7 @@ public partial class Tests
     }
 
     [TestMethod]
+    [Retry(2)]
     public async Task ChatClient_JsonSchemaResponseFormat()
     {
         using var client = GetAuthorizedApi();
@@ -241,6 +250,7 @@ public partial class Tests
     }
 
     [TestMethod]
+    [Retry(2)]
     public async Task ChatClient_WithAdditionalProperties()
     {
         using var client = GetAuthorizedApi();
@@ -269,6 +279,7 @@ public partial class Tests
     }
 
     [TestMethod]
+    [Retry(2)]
     public async Task ChatClient_StreamingJsonSchemaResponseFormat()
     {
         using var client = GetAuthorizedApi();
@@ -316,6 +327,7 @@ public partial class Tests
     }
 
     [TestMethod]
+    [Retry(2)]
     public async Task ChatClient_TextResponseFormat()
     {
         using var client = GetAuthorizedApi();
@@ -341,6 +353,7 @@ public partial class Tests
     }
 
     [TestMethod]
+    [Retry(2)]
     public async Task ChatClient_WithImageContent()
     {
         using var client = GetAuthorizedApi();
@@ -365,6 +378,7 @@ public partial class Tests
     }
 
     [TestMethod]
+    [Retry(2)]
     public async Task ChatClient_WithStopSequences()
     {
         using var client = GetAuthorizedApi();

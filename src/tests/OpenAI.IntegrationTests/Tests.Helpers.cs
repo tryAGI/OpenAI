@@ -110,7 +110,7 @@ public partial class Tests
             return (CustomProviders.SambaNova(apiKey:
                     Environment.GetEnvironmentVariable("SAMBANOVA_API_KEY") ??
                     throw new AssertInconclusiveException("SAMBANOVA_API_KEY environment variable is not found.")),
-                model ?? "Meta-Llama-3.1-8B-Instruct");
+                model ?? "Meta-Llama-3.3-70B-Instruct");
         }
         if (customProvider == CustomProvider.Mistral)
         {
@@ -180,7 +180,7 @@ public partial class Tests
             return (CustomProviders.Nebius(apiKey:
                 Environment.GetEnvironmentVariable("NEBIUS_API_KEY") ??
                 throw new AssertInconclusiveException("NEBIUS_API_KEY environment variable is not found.")),
-                model ?? "meta-llama/Meta-Llama-3.1-8B-Instruct");
+                model ?? "Qwen/Qwen2.5-72B-Instruct");
         }
 
         var apiKey =
