@@ -348,7 +348,7 @@ public partial class Tests
 
         var message = new Meai.ChatMessage(Meai.ChatRole.User, []);
         message.Contents.Add(new Meai.TextContent("What is in this image? Answer in one word."));
-        message.Contents.Add(new Meai.DataContent(
+        message.Contents.Add(new Meai.UriContent(
             new Uri("https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/PNG_transparency_demonstration_1.png/280px-PNG_transparency_demonstration_1.png"),
             mediaType: "image/png"));
 

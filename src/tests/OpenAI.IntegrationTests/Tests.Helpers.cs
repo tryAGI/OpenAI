@@ -50,7 +50,7 @@ public partial class Tests
             return (CustomProviders.Fireworks(apiKey:
                 Environment.GetEnvironmentVariable("FIREWORKS_API_KEY") ??
                 throw new AssertInconclusiveException("FIREWORKS_API_KEY environment variable is not found.")),
-                model ?? "accounts/fireworks/models/llama-v3p1-8b-instruct");
+                model ?? "accounts/fireworks/models/llama-v3p2-3b-instruct");
         }
         if (customProvider == CustomProvider.DeepInfra)
         {
@@ -80,7 +80,7 @@ public partial class Tests
             return (CustomProviders.OpenRouter(apiKey:
                 Environment.GetEnvironmentVariable("OPENROUTER_API_KEY") ??
                 throw new AssertInconclusiveException("OPENROUTER_API_KEY environment variable is not found.")),
-                model ?? "meta-llama/llama-3.1-8b-instruct:free");
+                model ?? "meta-llama/llama-3.2-3b-instruct:free");
         }
         if (customProvider == CustomProvider.Together)
         {
@@ -103,7 +103,7 @@ public partial class Tests
             return (CustomProviders.Perplexity(apiKey:
                     Environment.GetEnvironmentVariable("PERPLEXITY_API_KEY") ??
                     throw new AssertInconclusiveException("PERPLEXITY_API_KEY environment variable is not found.")),
-                model ?? "llama-3.1-sonar-small-128k-online");
+                model ?? "sonar");
         }
         if (customProvider == CustomProvider.SambaNova)
         {

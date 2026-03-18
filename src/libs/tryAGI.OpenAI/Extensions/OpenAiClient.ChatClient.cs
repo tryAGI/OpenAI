@@ -285,7 +285,7 @@ public sealed partial class OpenAiClient : Meai.IChatClient
         }
         else if (message.Role == Meai.ChatRole.User)
         {
-            var hasNonText = message.Contents.Any(c => c is Meai.DataContent);
+            var hasNonText = message.Contents.Any(c => c is Meai.DataContent or Meai.UriContent);
             if (hasNonText)
             {
                 var parts = new List<ChatCompletionRequestUserMessageContentPart>();
@@ -299,18 +299,22 @@ public sealed partial class OpenAiClient : Meai.IChatClient
                             Text = textContent.Text ?? string.Empty,
                         });
                     }
+                    else if (content is Meai.UriContent uriContent &&
+                             uriContent.HasTopLevelMediaType("image"))
+                    {
+                        parts.Add(new ChatCompletionRequestMessageContentPartImage
+                        {
+                            Type = ChatCompletionRequestMessageContentPartImageType.ImageUrl,
+                            ImageUrl = new ChatCompletionRequestMessageContentPartImageImageUrl
+                            {
+                                Url = uriContent.Uri.ToString(),
+                            },
+                        });
+                    }
                     else if (content is Meai.DataContent dataContent &&
                              dataContent.HasTopLevelMediaType("image"))
                     {
-                        string url;
-                        if (dataContent.Uri is not null)
-                        {
-                            url = dataContent.Uri.ToString();
-                        }
-                        else
-                        {
-                            url = $"data:{dataContent.MediaType};base64,{Convert.ToBase64String(dataContent.Data.ToArray())}";
-                        }
+                        var url = $"data:{dataContent.MediaType};base64,{Convert.ToBase64String(dataContent.Data.ToArray())}";
 
                         parts.Add(new ChatCompletionRequestMessageContentPartImage
                         {

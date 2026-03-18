@@ -107,12 +107,12 @@ Each custom provider requires specific environment variables to run its integrat
 | **Azure** | `AZURE_OPENAI_API_KEY`, `AZURE_OPENAI_ENDPOINT`, `AZURE_OPENAI_MODEL` (optional), `AZURE_OPENAI_EMBEDDING_MODEL` (optional) | `gpt-4o-mini` | Chat, streaming, tools, embeddings |
 | **DeepInfra** | `DEEPINFRA_API_KEY` | `meta-llama/Meta-Llama-3.1-8B-Instruct` | Chat, streaming, tools, embeddings (`BAAI/bge-en-icl`) |
 | **Groq** | `GROQ_API_KEY`, `GROQ_CHAT_MODEL` (optional) | `llama-3.3-70b-versatile` | Chat, streaming, tools |
-| **OpenRouter** | `OPENROUTER_API_KEY` | `meta-llama/llama-3.1-8b-instruct:free` | Chat, streaming, tools |
-| **Fireworks** | `FIREWORKS_API_KEY` | `accounts/fireworks/models/llama-v3p1-8b-instruct` | Chat, streaming, tools, embeddings (`nomic-ai/nomic-embed-text-v1.5`) |
+| **OpenRouter** | `OPENROUTER_API_KEY` | `meta-llama/llama-3.2-3b-instruct:free` | Chat, streaming, tools |
+| **Fireworks** | `FIREWORKS_API_KEY` | `accounts/fireworks/models/llama-v3p2-3b-instruct` | Chat, streaming, tools, embeddings (`nomic-ai/nomic-embed-text-v1.5`) |
 | **Together** | `TOGETHER_API_KEY`, `TOGETHER_CHAT_MODEL` (optional) | `meta-llama/Llama-3.3-70B-Instruct-Turbo` | Chat, streaming, tools, embeddings (`BAAI/bge-large-en-v1.5`) |
 | **DeepSeek** | `DEEPSEEK_API_KEY` | `deepseek-chat` | Chat, streaming, tools |
 | **XAi** | `XAI_API_KEY`, `XAI_CHAT_MODEL` (optional) | `grok-3-mini` | Chat, streaming, tools |
-| **Perplexity** | `PERPLEXITY_API_KEY` | `llama-3.1-sonar-small-128k-online` | Chat, streaming (no tools) |
+| **Perplexity** | `PERPLEXITY_API_KEY` | `sonar` | Chat, streaming (no tools) |
 | **SambaNova** | `SAMBANOVA_API_KEY` | `Meta-Llama-3.1-8B-Instruct` | Chat, streaming, tools |
 | **Mistral** | `MISTRAL_API_KEY` | `mistral-large-latest` | Chat, streaming, tools, embeddings (`mistral-embed`) |
 | **Codestral** | `CODESTRAL_API_KEY` | `codestral-latest` | Chat, streaming |
