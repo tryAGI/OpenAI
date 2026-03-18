@@ -67,7 +67,6 @@ Unlike most other tryAGI SDKs, this repo has significant **hand-written code** a
 | `src/tests/CSharpToJsonSchema.UnitTests/` | Unit tests for schema generation |
 | `src/helpers/FixOpenApiSpec/` | OpenAPI spec fixer tool |
 | `src/helpers/GenerateDocs/` | Documentation generator from integration tests |
-| `src/helpers/TrimmingHelper/` | NativeAOT/trimming compatibility validator |
 
 ### Key Dependencies
 
