@@ -50,7 +50,7 @@ public partial class Tests
             return (CustomProviders.Fireworks(apiKey:
                 Environment.GetEnvironmentVariable("FIREWORKS_API_KEY") ??
                 throw new AssertInconclusiveException("FIREWORKS_API_KEY environment variable is not found.")),
-                model ?? "accounts/fireworks/models/llama-v3p2-3b-instruct");
+                model ?? "accounts/fireworks/models/llama-v3p3-70b-instruct");
         }
         if (customProvider == CustomProvider.DeepInfra)
         {

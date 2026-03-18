@@ -362,7 +362,7 @@ public partial class Tests
         var message = new Meai.ChatMessage(Meai.ChatRole.User, []);
         message.Contents.Add(new Meai.TextContent("What is in this image? Answer in one word."));
         message.Contents.Add(new Meai.UriContent(
-            new Uri("https://raw.githubusercontent.com/tryAGI/OpenAI/main/assets/openai-logo.png"),
+            new Uri("https://raw.githubusercontent.com/tryAGI/OpenAI/main/assets/orange.png"),
             mediaType: "image/png"));
 
         var messages = new List<Meai.ChatMessage> { message };
