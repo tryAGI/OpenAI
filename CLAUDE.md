@@ -35,7 +35,6 @@ cd src/libs/tryAGI.OpenAI && ./generate.sh
 The SDK code in `Generated/` is **auto-generated** -- do not manually edit files in `src/libs/tryAGI.OpenAI/Generated/`.
 
 1. `src/libs/tryAGI.OpenAI/openapi.yaml` -- the OpenAI OpenAPI spec (fetched from Stainless)
-2. `src/helpers/FixOpenApiSpec/` -- converts OpenAPI 3.1 to 3.0 format for compatibility
 3. `src/libs/tryAGI.OpenAI/generate.sh` -- orchestrates: download spec, fix spec, run AutoSDK CLI, output to `Generated/`
 4. CI auto-updates the spec and creates PRs if changes are detected
 
@@ -65,8 +64,6 @@ Unlike most other tryAGI SDKs, this repo has significant **hand-written code** a
 | `src/tests/OpenAI.IntegrationTests/` | Integration tests against real OpenAI API and custom providers |
 | `src/tests/CSharpToJsonSchema.SnapshotTests/` | Snapshot tests for schema generation |
 | `src/tests/CSharpToJsonSchema.UnitTests/` | Unit tests for schema generation |
-| `src/helpers/FixOpenApiSpec/` | OpenAPI spec fixer tool |
-| `src/helpers/GenerateDocs/` | Documentation generator from integration tests |
 
 ### Key Dependencies
 
