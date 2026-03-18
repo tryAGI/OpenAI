@@ -96,3 +96,38 @@ Unlike most other tryAGI SDKs, this repo has significant **hand-written code** a
 - The NuGet package name is `tryAGI.OpenAI` (not just `OpenAI`) to avoid conflicts with the official OpenAI package
 - The main client class is `OpenAiApi` (for backward compatibility) with `OpenAiClient` as the generated variant
 - Custom providers are accessed via static factory methods on `CustomProviders` class (e.g., `CustomProviders.Azure(...)`)
+
+## CustomProviders — Environment Variables for Tests
+
+Each custom provider requires specific environment variables to run its integration tests. Tests skip (not fail) if the key is unset.
+
+| Provider | Env Var(s) | Default Model | Capabilities |
+|----------|-----------|---------------|--------------|
+| **OpenAI** | `OPENAI_API_KEY` | `gpt-4o-mini` | Chat, streaming, tools, embeddings, images, audio |
+| **Azure** | `AZURE_OPENAI_API_KEY`, `AZURE_OPENAI_ENDPOINT`, `AZURE_OPENAI_MODEL` (optional), `AZURE_OPENAI_EMBEDDING_MODEL` (optional) | `gpt-4o-mini` | Chat, streaming, tools, embeddings |
+| **DeepInfra** | `DEEPINFRA_API_KEY` | `meta-llama/Meta-Llama-3.1-8B-Instruct` | Chat, streaming, tools, embeddings (`BAAI/bge-en-icl`) |
+| **Groq** | `GROQ_API_KEY`, `GROQ_CHAT_MODEL` (optional) | `llama-3.3-70b-versatile` | Chat, streaming, tools |
+| **OpenRouter** | `OPENROUTER_API_KEY` | `meta-llama/llama-3.1-8b-instruct:free` | Chat, streaming, tools |
+| **Fireworks** | `FIREWORKS_API_KEY` | `accounts/fireworks/models/llama-v3p1-8b-instruct` | Chat, streaming, tools, embeddings (`nomic-ai/nomic-embed-text-v1.5`) |
+| **Together** | `TOGETHER_API_KEY`, `TOGETHER_CHAT_MODEL` (optional) | `meta-llama/Llama-3.3-70B-Instruct-Turbo` | Chat, streaming, tools, embeddings (`BAAI/bge-large-en-v1.5`) |
+| **DeepSeek** | `DEEPSEEK_API_KEY` | `deepseek-chat` | Chat, streaming, tools |
+| **XAi** | `XAI_API_KEY`, `XAI_CHAT_MODEL` (optional) | `grok-3-mini` | Chat, streaming, tools |
+| **Perplexity** | `PERPLEXITY_API_KEY` | `llama-3.1-sonar-small-128k-online` | Chat, streaming (no tools) |
+| **SambaNova** | `SAMBANOVA_API_KEY` | `Meta-Llama-3.1-8B-Instruct` | Chat, streaming, tools |
+| **Mistral** | `MISTRAL_API_KEY` | `mistral-large-latest` | Chat, streaming, tools, embeddings (`mistral-embed`) |
+| **Codestral** | `CODESTRAL_API_KEY` | `codestral-latest` | Chat, streaming |
+| **Cerebras** | `CEREBRAS_API_KEY` | `llama3.1-70b` | Chat, streaming, tools |
+| **Cohere** | `COHERE_API_KEY` | `command-r-08-2024` | Chat, streaming, tools, embeddings (`embed-english-v3.0`) |
+| **Nebius** | `NEBIUS_API_KEY` | `meta-llama/Meta-Llama-3.1-8B-Instruct` | Chat, streaming, tools, embeddings (`BAAI/bge-en-icl`) |
+| **GitHub Models** | `TOKEN_FOR_GITHUB_MODELS` | `gpt-4o` | Chat, streaming, tools, embeddings (`text-embedding-3-small`) |
+| **Hyperbolic** | `HYPERBOLIC_API_KEY`, `HYPERBOLIC_CHAT_MODEL` (optional) | `meta-llama/Llama-3.3-70B-Instruct` | Chat, streaming |
+| **Ollama** | *(local, no key)* | `llama3.2` | Chat, streaming (local only) |
+| **LM Studio** | *(local, no key)* | `lmstudio-community/Llama-3.2-3B-Instruct-GGUF` | Chat, streaming (local only) |
+
+### MEAI Namespace Conflict
+
+The generated SDK has its own `IChatClient` interface that shadows `Microsoft.Extensions.AI.IChatClient`. In tests, use the alias pattern:
+```csharp
+using Meai = Microsoft.Extensions.AI;
+Meai.IChatClient chatClient = client;
+```
