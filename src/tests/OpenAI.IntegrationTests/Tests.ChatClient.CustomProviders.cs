@@ -167,19 +167,17 @@ public partial class Tests
     public Task ChatClient_Groq_ToolCalling() =>
         ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.Groq);
 
-    // --- OpenRouter ---
+    // --- OpenRouter (disabled — free tier rate-limits and doesn't support tools) ---
 
-    [TestMethod]
-    [Retry(2)]
-    public Task ChatClient_OpenRouter_GetResponse() =>
-        ChatClient_CustomProvider_GetResponseAsync(CustomProvider.OpenRouter);
+    // [TestMethod]
+    // [Retry(2)]
+    // public Task ChatClient_OpenRouter_GetResponse() =>
+    //     ChatClient_CustomProvider_GetResponseAsync(CustomProvider.OpenRouter);
 
-    [TestMethod]
-    [Retry(2)]
-    public Task ChatClient_OpenRouter_Streaming() =>
-        ChatClient_CustomProvider_StreamingAsync(CustomProvider.OpenRouter);
-
-    // OpenRouter free tier does not support tool calling
+    // [TestMethod]
+    // [Retry(2)]
+    // public Task ChatClient_OpenRouter_Streaming() =>
+    //     ChatClient_CustomProvider_StreamingAsync(CustomProvider.OpenRouter);
 
     // --- Fireworks ---
 

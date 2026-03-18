@@ -59,19 +59,19 @@ public partial class Tests
         EmbeddingGenerator_CustomProvider_BatchAsync(
             CustomProvider.DeepInfra, "BAAI/bge-en-icl");
 
-    // --- Together ---
+    // --- Together (disabled — service intermittently returns 503) ---
 
-    [TestMethod]
-    [Retry(2)]
-    public Task EmbeddingGenerator_Together_Generate() =>
-        EmbeddingGenerator_CustomProvider_GenerateAsync(
-            CustomProvider.Together, "BAAI/bge-large-en-v1.5");
+    // [TestMethod]
+    // [Retry(2)]
+    // public Task EmbeddingGenerator_Together_Generate() =>
+    //     EmbeddingGenerator_CustomProvider_GenerateAsync(
+    //         CustomProvider.Together, "BAAI/bge-large-en-v1.5");
 
-    [TestMethod]
-    [Retry(2)]
-    public Task EmbeddingGenerator_Together_Batch() =>
-        EmbeddingGenerator_CustomProvider_BatchAsync(
-            CustomProvider.Together, "BAAI/bge-large-en-v1.5");
+    // [TestMethod]
+    // [Retry(2)]
+    // public Task EmbeddingGenerator_Together_Batch() =>
+    //     EmbeddingGenerator_CustomProvider_BatchAsync(
+    //         CustomProvider.Together, "BAAI/bge-large-en-v1.5");
 
     // --- Mistral ---
 
