@@ -167,7 +167,9 @@ public sealed partial class OpenAiClient : Meai.IChatClient
 
             if (options.StopSequences is { Count: > 0 } stops)
             {
-                variant2.Stop = string.Join(",", stops);
+                variant2.Stop = stops.Count == 1
+                    ? new StopConfiguration(stops[0])
+                    : new StopConfiguration(value1: null, value2: stops.ToList());
             }
 
             if (options.Tools is { Count: > 0 } tools)
@@ -175,12 +177,38 @@ public sealed partial class OpenAiClient : Meai.IChatClient
                 variant2.Tools = ConvertTools(tools);
             }
 
-            if (options.ResponseFormat is Meai.ChatResponseFormatJson)
+            if (options.ResponseFormat is Meai.ChatResponseFormatText)
             {
-                variant2.ResponseFormat = new ResponseFormatJsonObject
+                variant2.ResponseFormat = new ResponseFormatText
                 {
-                    Type = ResponseFormatJsonObjectType.JsonObject,
+                    Type = ResponseFormatTextType.Text,
                 };
+            }
+            else if (options.ResponseFormat is Meai.ChatResponseFormatJson jsonFormat)
+            {
+                if (jsonFormat.Schema is System.Text.Json.JsonElement schema &&
+                    schema.ValueKind is not System.Text.Json.JsonValueKind.Null
+                                    and not System.Text.Json.JsonValueKind.Undefined)
+                {
+                    variant2.ResponseFormat = new ResponseFormatJsonSchema
+                    {
+                        Type = ResponseFormatJsonSchemaType.JsonSchema,
+                        JsonSchema = new ResponseFormatJsonSchemaJsonSchema
+                        {
+                            Name = jsonFormat.SchemaName ?? "response",
+                            Description = jsonFormat.SchemaDescription,
+                            Schema = JsonSerializer.Deserialize<object>(schema.GetRawText()),
+                            Strict = true,
+                        },
+                    };
+                }
+                else
+                {
+                    variant2.ResponseFormat = new ResponseFormatJsonObject
+                    {
+                        Type = ResponseFormatJsonObjectType.JsonObject,
+                    };
+                }
             }
 
             if (options.Temperature is { } temperature)
@@ -199,6 +227,31 @@ public sealed partial class OpenAiClient : Meai.IChatClient
             {
                 variant2.AdditionalProperties ??= new Dictionary<string, object>();
                 variant2.AdditionalProperties["seed"] = seed;
+            }
+
+            if (options.AdditionalProperties is { Count: > 0 } additionalProps)
+            {
+                // Map known properties to native typed fields
+                if (additionalProps.TryGetValue("logprobs", out var logprobsVal) && logprobsVal is bool logprobs)
+                {
+                    variant2.Logprobs = logprobs;
+                }
+
+                if (additionalProps.TryGetValue("top_logprobs", out var topLogprobsVal) && topLogprobsVal is int topLogprobs)
+                {
+                    variant2.TopLogprobs = topLogprobs;
+                }
+
+                // Forward remaining properties
+                variant2.AdditionalProperties ??= new Dictionary<string, object>();
+                foreach (var kvp in additionalProps)
+                {
+                    if (kvp.Value is not null &&
+                        kvp.Key is not "logprobs" and not "top_logprobs")
+                    {
+                        variant2.AdditionalProperties[kvp.Key] = kvp.Value;
+                    }
+                }
             }
         }
 
