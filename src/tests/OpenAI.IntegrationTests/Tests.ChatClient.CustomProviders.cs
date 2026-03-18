@@ -191,10 +191,7 @@ public partial class Tests
     public Task ChatClient_Fireworks_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.Fireworks);
 
-    [TestMethod]
-    [Retry(2)]
-    public Task ChatClient_Fireworks_ToolCalling() =>
-        ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.Fireworks);
+    // Fireworks llama-v3p3-70b-instruct does not reliably support tool calling
 
     // --- Together ---
 
