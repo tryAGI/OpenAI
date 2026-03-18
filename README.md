@@ -195,6 +195,39 @@ using var api = CustomProviders.Ollama();
 using var api = CustomProviders.LmStudio();
 ```
 
+### Microsoft.Extensions.AI
+
+The client natively implements [`IChatClient`](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.ai.ichatclient) and [`IEmbeddingGenerator<string, Embedding<float>>`](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.ai.iembeddinggenerator-2) from [Microsoft.Extensions.AI](https://www.nuget.org/packages/Microsoft.Extensions.AI.Abstractions), providing a unified interface across 15+ providers:
+```csharp
+using OpenAI;
+using Microsoft.Extensions.AI;
+
+// Works with OpenAI and all CustomProviders (Azure, DeepSeek, Groq, etc.)
+using var client = new OpenAiClient("API_KEY");
+// or: using var client = CustomProviders.Groq("API_KEY");
+
+// IChatClient
+IChatClient chatClient = client;
+var response = await chatClient.GetResponseAsync(
+    "Say hello!",
+    new ChatOptions { ModelId = "gpt-4o-mini" });
+Console.WriteLine(response.Messages[0].Text);
+
+// Streaming
+await foreach (var update in chatClient.GetStreamingResponseAsync(
+    "Count to 5.",
+    new ChatOptions { ModelId = "gpt-4o-mini" }))
+{
+    Console.Write(string.Concat(update.Contents.OfType<TextContent>().Select(c => c.Text)));
+}
+
+// IEmbeddingGenerator
+IEmbeddingGenerator<string, Embedding<float>> generator = client;
+var embeddings = await generator.GenerateAsync(
+    ["Hello, world!"],
+    new EmbeddingGenerationOptions { ModelId = "text-embedding-3-small" });
+```
+
 ### Constants
 All `tryGetXXX` methods return `null` if the value is not found.  
 There also non-try methods that throw an exception if the value is not found.
