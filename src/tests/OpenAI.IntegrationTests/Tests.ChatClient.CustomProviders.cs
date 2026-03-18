@@ -89,6 +89,7 @@ public partial class Tests
     // ═══════════════════════════════════════════════════════════════
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public async Task ChatClient_Azure_GetResponse()
     {
         var (api, model) = GetAuthorizedChatApi(CustomProvider.Azure);
@@ -105,6 +106,7 @@ public partial class Tests
     }
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public async Task ChatClient_Azure_Streaming()
     {
         var (api, model) = GetAuthorizedChatApi(CustomProvider.Azure);
@@ -124,6 +126,7 @@ public partial class Tests
     }
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_Azure_ToolCalling() =>
         ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.Azure);
 
@@ -132,192 +135,233 @@ public partial class Tests
     // ═══════════════════════════════════════════════════════════════
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_DeepInfra_GetResponse() =>
         ChatClient_CustomProvider_GetResponseAsync(CustomProvider.DeepInfra);
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_DeepInfra_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.DeepInfra);
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_DeepInfra_ToolCalling() =>
         ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.DeepInfra);
 
     // --- Groq ---
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_Groq_GetResponse() =>
         ChatClient_CustomProvider_GetResponseAsync(CustomProvider.Groq);
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_Groq_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.Groq);
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_Groq_ToolCalling() =>
         ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.Groq);
 
     // --- OpenRouter ---
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_OpenRouter_GetResponse() =>
         ChatClient_CustomProvider_GetResponseAsync(CustomProvider.OpenRouter);
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_OpenRouter_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.OpenRouter);
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_OpenRouter_ToolCalling() =>
         ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.OpenRouter);
 
     // --- Fireworks ---
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_Fireworks_GetResponse() =>
         ChatClient_CustomProvider_GetResponseAsync(CustomProvider.Fireworks);
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_Fireworks_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.Fireworks);
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_Fireworks_ToolCalling() =>
         ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.Fireworks);
 
     // --- Together ---
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_Together_GetResponse() =>
         ChatClient_CustomProvider_GetResponseAsync(CustomProvider.Together);
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_Together_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.Together);
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_Together_ToolCalling() =>
         ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.Together);
 
     // --- DeepSeek ---
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_DeepSeek_GetResponse() =>
         ChatClient_CustomProvider_GetResponseAsync(CustomProvider.DeepSeek);
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_DeepSeek_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.DeepSeek);
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_DeepSeek_ToolCalling() =>
         ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.DeepSeek);
 
     // --- XAi (Grok) ---
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_XAi_GetResponse() =>
         ChatClient_CustomProvider_GetResponseAsync(CustomProvider.XAi);
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_XAi_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.XAi);
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_XAi_ToolCalling() =>
         ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.XAi);
 
     // --- Perplexity (no tool calling support) ---
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_Perplexity_GetResponse() =>
         ChatClient_CustomProvider_GetResponseAsync(CustomProvider.Perplexity);
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_Perplexity_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.Perplexity);
 
     // --- SambaNova ---
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_SambaNova_GetResponse() =>
         ChatClient_CustomProvider_GetResponseAsync(CustomProvider.SambaNova);
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_SambaNova_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.SambaNova);
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_SambaNova_ToolCalling() =>
         ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.SambaNova);
 
     // --- Mistral ---
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_Mistral_GetResponse() =>
         ChatClient_CustomProvider_GetResponseAsync(CustomProvider.Mistral);
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_Mistral_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.Mistral);
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_Mistral_ToolCalling() =>
         ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.Mistral);
 
     // --- Cerebras ---
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_Cerebras_GetResponse() =>
         ChatClient_CustomProvider_GetResponseAsync(CustomProvider.Cerebras);
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_Cerebras_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.Cerebras);
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_Cerebras_ToolCalling() =>
         ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.Cerebras);
 
     // --- Cohere ---
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_Cohere_GetResponse() =>
         ChatClient_CustomProvider_GetResponseAsync(CustomProvider.Cohere);
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_Cohere_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.Cohere);
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_Cohere_ToolCalling() =>
         ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.Cohere);
 
     // --- Nebius ---
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_Nebius_GetResponse() =>
         ChatClient_CustomProvider_GetResponseAsync(CustomProvider.Nebius);
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_Nebius_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.Nebius);
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_Nebius_ToolCalling() =>
         ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.Nebius);
 
     // --- GitHub Models ---
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_GitHub_GetResponse() =>
         ChatClient_CustomProvider_GetResponseAsync(CustomProvider.GitHub);
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_GitHub_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.GitHub);
 
     [TestMethod]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.Retry(2)]
     public Task ChatClient_GitHub_ToolCalling() =>
         ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.GitHub);
 }

@@ -105,7 +105,7 @@ Each custom provider requires specific environment variables to run its integrat
 |----------|-----------|---------------|--------------|
 | **OpenAI** | `OPENAI_API_KEY` | `gpt-4o-mini` | Chat, streaming, tools, embeddings, images, audio |
 | **Azure** | `AZURE_OPENAI_API_KEY`, `AZURE_OPENAI_ENDPOINT`, `AZURE_OPENAI_MODEL` (optional), `AZURE_OPENAI_EMBEDDING_MODEL` (optional) | `gpt-4o-mini` | Chat, streaming, tools, embeddings |
-| **DeepInfra** | `DEEPINFRA_API_KEY` | `meta-llama/Meta-Llama-3.1-8B-Instruct` | Chat, streaming, tools, embeddings (`BAAI/bge-en-icl`) |
+| **DeepInfra** | `DEEPINFRA_API_KEY` | `Qwen/Qwen2.5-72B-Instruct` | Chat, streaming, tools, embeddings (`BAAI/bge-en-icl`) |
 | **Groq** | `GROQ_API_KEY`, `GROQ_CHAT_MODEL` (optional) | `llama-3.3-70b-versatile` | Chat, streaming, tools |
 | **OpenRouter** | `OPENROUTER_API_KEY` | `meta-llama/llama-3.2-3b-instruct:free` | Chat, streaming, tools |
 | **Fireworks** | `FIREWORKS_API_KEY` | `accounts/fireworks/models/llama-v3p2-3b-instruct` | Chat, streaming, tools, embeddings (`nomic-ai/nomic-embed-text-v1.5`) |

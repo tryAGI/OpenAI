@@ -57,7 +57,7 @@ public partial class Tests
             return (CustomProviders.DeepInfra(apiKey:
                 Environment.GetEnvironmentVariable("DEEPINFRA_API_KEY") ??
                 throw new AssertInconclusiveException("DEEPINFRA_API_KEY environment variable is not found.")),
-                model ?? "meta-llama/Meta-Llama-3.1-8B-Instruct");
+                model ?? "Qwen/Qwen2.5-72B-Instruct");
         }
         if (customProvider == CustomProvider.Groq)
         {
