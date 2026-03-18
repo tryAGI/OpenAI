@@ -8,6 +8,10 @@ namespace tryAGI.OpenAI.IntegrationTests;
 /// </summary>
 public partial class Tests
 {
+    // ═══════════════════════════════════════════════════════════════
+    //  Shared helpers
+    // ═══════════════════════════════════════════════════════════════
+
     private async Task ChatClient_CustomProvider_GetResponseAsync(CustomProvider provider)
     {
         var (api, model) = GetAuthorizedChatApi(provider);
@@ -43,7 +47,89 @@ public partial class Tests
         Console.WriteLine($"[{provider}] Got {updates.Count} streaming updates");
     }
 
-    // --- DeepInfra ---
+    private async Task ChatClient_CustomProvider_ToolCallingAsync(CustomProvider provider)
+    {
+        var (api, model) = GetAuthorizedChatApi(provider);
+        using var _ = api;
+        Meai.IChatClient chatClient = api;
+
+        var tool = Meai.AIFunctionFactory.Create(
+            (string city) => city switch
+            {
+                "Paris" => "22°C, sunny",
+                "London" => "15°C, cloudy",
+                _ => "Unknown",
+            },
+            name: "GetWeather",
+            description: "Gets the current weather for a city");
+
+        var response = await chatClient.GetResponseAsync(
+            [new Meai.ChatMessage(Meai.ChatRole.User, "What's the weather in Paris?")],
+            new Meai.ChatOptions
+            {
+                ModelId = model,
+                Tools = [tool],
+            });
+
+        response.Should().NotBeNull();
+        response.FinishReason.Should().Be(Meai.ChatFinishReason.ToolCalls);
+
+        var functionCall = response.Messages
+            .SelectMany(m => m.Contents)
+            .OfType<Meai.FunctionCallContent>()
+            .FirstOrDefault();
+
+        functionCall.Should().NotBeNull();
+        functionCall!.Name.Should().Be("GetWeather");
+        Console.WriteLine($"[{provider}] Tool call: {functionCall.Name}({string.Join(", ", functionCall.Arguments?.Select(kv => $"{kv.Key}={kv.Value}") ?? [])})");
+    }
+
+    // ═══════════════════════════════════════════════════════════════
+    //  Azure
+    // ═══════════════════════════════════════════════════════════════
+
+    [TestMethod]
+    public async Task ChatClient_Azure_GetResponse()
+    {
+        var (api, model) = GetAuthorizedChatApi(CustomProvider.Azure);
+        using var _ = api;
+        Meai.IChatClient chatClient = api;
+
+        var response = await chatClient.GetResponseAsync(
+            [new Meai.ChatMessage(Meai.ChatRole.User, "Say hello in exactly 3 words.")],
+            new Meai.ChatOptions { ModelId = model });
+
+        response.Should().NotBeNull();
+        response.Messages.Should().NotBeEmpty();
+        Console.WriteLine($"[Azure] {response.Messages[0].Text}");
+    }
+
+    [TestMethod]
+    public async Task ChatClient_Azure_Streaming()
+    {
+        var (api, model) = GetAuthorizedChatApi(CustomProvider.Azure);
+        using var _ = api;
+        Meai.IChatClient chatClient = api;
+
+        var updates = new List<Meai.ChatResponseUpdate>();
+        await foreach (var update in chatClient.GetStreamingResponseAsync(
+            [new Meai.ChatMessage(Meai.ChatRole.User, "Count from 1 to 5.")],
+            new Meai.ChatOptions { ModelId = model }))
+        {
+            updates.Add(update);
+        }
+
+        updates.Should().NotBeEmpty();
+        Console.WriteLine($"[Azure] Got {updates.Count} streaming updates");
+    }
+
+    [TestMethod]
+    public Task ChatClient_Azure_ToolCalling() =>
+        ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.Azure);
+
+    // ═══════════════════════════════════════════════════════════════
+    //  DeepInfra
+    // ═══════════════════════════════════════════════════════════════
 
     [TestMethod]
     public Task ChatClient_DeepInfra_GetResponse() =>
@@ -52,6 +138,10 @@ public partial class Tests
     [TestMethod]
     public Task ChatClient_DeepInfra_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.DeepInfra);
+
+    [TestMethod]
+    public Task ChatClient_DeepInfra_ToolCalling() =>
+        ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.DeepInfra);
 
     // --- Groq ---
 
@@ -63,6 +153,10 @@ public partial class Tests
     public Task ChatClient_Groq_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.Groq);
 
+    [TestMethod]
+    public Task ChatClient_Groq_ToolCalling() =>
+        ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.Groq);
+
     // --- OpenRouter ---
 
     [TestMethod]
@@ -72,6 +166,10 @@ public partial class Tests
     [TestMethod]
     public Task ChatClient_OpenRouter_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.OpenRouter);
+
+    [TestMethod]
+    public Task ChatClient_OpenRouter_ToolCalling() =>
+        ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.OpenRouter);
 
     // --- Fireworks ---
 
@@ -83,6 +181,10 @@ public partial class Tests
     public Task ChatClient_Fireworks_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.Fireworks);
 
+    [TestMethod]
+    public Task ChatClient_Fireworks_ToolCalling() =>
+        ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.Fireworks);
+
     // --- Together ---
 
     [TestMethod]
@@ -92,6 +194,10 @@ public partial class Tests
     [TestMethod]
     public Task ChatClient_Together_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.Together);
+
+    [TestMethod]
+    public Task ChatClient_Together_ToolCalling() =>
+        ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.Together);
 
     // --- DeepSeek ---
 
@@ -103,6 +209,10 @@ public partial class Tests
     public Task ChatClient_DeepSeek_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.DeepSeek);
 
+    [TestMethod]
+    public Task ChatClient_DeepSeek_ToolCalling() =>
+        ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.DeepSeek);
+
     // --- XAi (Grok) ---
 
     [TestMethod]
@@ -113,7 +223,11 @@ public partial class Tests
     public Task ChatClient_XAi_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.XAi);
 
-    // --- Perplexity ---
+    [TestMethod]
+    public Task ChatClient_XAi_ToolCalling() =>
+        ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.XAi);
+
+    // --- Perplexity (no tool calling support) ---
 
     [TestMethod]
     public Task ChatClient_Perplexity_GetResponse() =>
@@ -133,6 +247,10 @@ public partial class Tests
     public Task ChatClient_SambaNova_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.SambaNova);
 
+    [TestMethod]
+    public Task ChatClient_SambaNova_ToolCalling() =>
+        ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.SambaNova);
+
     // --- Mistral ---
 
     [TestMethod]
@@ -142,6 +260,10 @@ public partial class Tests
     [TestMethod]
     public Task ChatClient_Mistral_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.Mistral);
+
+    [TestMethod]
+    public Task ChatClient_Mistral_ToolCalling() =>
+        ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.Mistral);
 
     // --- Cerebras ---
 
@@ -153,6 +275,10 @@ public partial class Tests
     public Task ChatClient_Cerebras_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.Cerebras);
 
+    [TestMethod]
+    public Task ChatClient_Cerebras_ToolCalling() =>
+        ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.Cerebras);
+
     // --- Cohere ---
 
     [TestMethod]
@@ -162,6 +288,10 @@ public partial class Tests
     [TestMethod]
     public Task ChatClient_Cohere_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.Cohere);
+
+    [TestMethod]
+    public Task ChatClient_Cohere_ToolCalling() =>
+        ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.Cohere);
 
     // --- Nebius ---
 
@@ -173,6 +303,10 @@ public partial class Tests
     public Task ChatClient_Nebius_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.Nebius);
 
+    [TestMethod]
+    public Task ChatClient_Nebius_ToolCalling() =>
+        ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.Nebius);
+
     // --- GitHub Models ---
 
     [TestMethod]
@@ -182,4 +316,8 @@ public partial class Tests
     [TestMethod]
     public Task ChatClient_GitHub_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.GitHub);
+
+    [TestMethod]
+    public Task ChatClient_GitHub_ToolCalling() =>
+        ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.GitHub);
 }

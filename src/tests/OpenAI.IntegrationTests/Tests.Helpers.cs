@@ -34,6 +34,17 @@ public partial class Tests
             throw new AssertInconclusiveException("This test only runs on local environment.");
         }
 
+        if (customProvider == CustomProvider.Azure)
+        {
+            var azureKey = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY") ??
+                throw new AssertInconclusiveException("AZURE_OPENAI_API_KEY environment variable is not found.");
+            var endpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT") ??
+                throw new AssertInconclusiveException("AZURE_OPENAI_ENDPOINT environment variable is not found.");
+            return (CustomProviders.Azure(azureKey, endpoint),
+                model ??
+                Environment.GetEnvironmentVariable("AZURE_OPENAI_MODEL") ??
+                "gpt-4o-mini");
+        }
         if (customProvider == CustomProvider.Fireworks)
         {
             return (CustomProviders.Fireworks(apiKey:
