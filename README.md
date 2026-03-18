@@ -16,6 +16,7 @@
 - Support .Net Framework/.Net Standard 2.0
 - Support all OpenAI API endpoints including completions, chat, embeddings, images, assistants and more.
 - Regularly tested for compatibility with popular custom providers like OpenRouter/DeepSeek/Ollama/LM Studio and many others
+- Microsoft.Extensions.AI `IChatClient` and `IEmbeddingGenerator` support for OpenAI and all CustomProviders
 
 ## Documentation
 Examples and documentation can be found here: https://tryagi.github.io/OpenAI/
