@@ -179,10 +179,7 @@ public partial class Tests
     public Task ChatClient_OpenRouter_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.OpenRouter);
 
-    [TestMethod]
-    [Retry(2)]
-    public Task ChatClient_OpenRouter_ToolCalling() =>
-        ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.OpenRouter);
+    // OpenRouter free tier does not support tool calling
 
     // --- Fireworks ---
 
