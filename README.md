@@ -269,6 +269,9 @@ double? priceInUsd = CreateSpeechRequestModel.Tts1Hd.TryGetPriceInUsd(
     characters: 1000)
 ```
 
+<!-- EXAMPLES:START -->
+<!-- EXAMPLES:END -->
+
 ## Support
 
 Priority place for bugs: https://github.com/tryAGI/OpenAI/issues  
