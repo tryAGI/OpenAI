@@ -9,11 +9,16 @@ nav:
   - Chat Completion Streaming: examples/chat-completion-streaming.md
   - Chat With Vision: examples/chat-with-vision.md
   - JSON Response Format: examples/json-response-format.md
+  - Structured Outputs: examples/structured-outputs.md
   - Embeddings: examples/embeddings.md
   - Image Generation: examples/image-generation.md
   - Text To Speech: examples/text-to-speech.md
   - List Models: examples/list-models.md
   - Moderation: examples/moderation.md
+  - MEAI Chat Completion: examples/meai-chat-completion.md
+  - MEAI Chat Streaming: examples/meai-chat-streaming.md
+  - MEAI Tool Calling: examples/meai-tool-calling.md
+  - MEAI Embeddings: examples/meai-embeddings.md
 # EXAMPLES:END
 
 #  - Quick Start: QuickStart.md
