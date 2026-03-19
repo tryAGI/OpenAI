@@ -11,3 +11,11 @@ autosdk generate openapi.yaml \
   --output Generated \
   --exclude-deprecated-operations \
   --ignore-openapi-errors
+
+autosdk generate asyncapi.json \
+  --namespace tryAGI.OpenAI.Realtime \
+  --websocket-class-name OpenAiRealtimeClient \
+  --json-serializer-context RealtimeSourceGenerationContext \
+  --targetFramework net10.0 \
+  --output Generated \
+  --base-url wss://api.openai.com
