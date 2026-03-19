@@ -10,6 +10,7 @@ nav:
   - Chat With Vision: examples/chat-with-vision.md
   - JSON Response Format: examples/json-response-format.md
   - Structured Outputs: examples/structured-outputs.md
+  - Structured Outputs (AOT): examples/structured-outputs-aot.md
   - Embeddings: examples/embeddings.md
   - Image Generation: examples/image-generation.md
   - Text To Speech: examples/text-to-speech.md
