@@ -78,7 +78,7 @@ Unlike most other tryAGI SDKs, this repo has significant **hand-written code** a
 - **Signing:** Strong-named assemblies via `src/key.snk`
 - **Versioning:** Semantic versioning from git tags (`v` prefix) via MinVer
 - **Analysis:** All .NET analyzers enabled, AOT/trimming compatibility enforced
-- **Testing:** MSTest + FluentAssertions
+- **Testing:** MSTest + AwesomeAssertions
 - **CLS Compliant:** Assembly marked as CLS-compliant
 
 ### CI/CD
