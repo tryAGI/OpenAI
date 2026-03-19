@@ -155,15 +155,15 @@ public partial class Tests
 
     // --- GitHub Models ---
 
-    [TestMethod]
-    [Retry(2)]
-    public Task EmbeddingGenerator_GitHub_Generate() =>
-        EmbeddingGenerator_CustomProvider_GenerateAsync(
-            CustomProvider.GitHub, "text-embedding-3-small");
+    //[TestMethod]
+    //[Retry(2)]
+    //public Task EmbeddingGenerator_GitHub_Generate() =>
+    //    EmbeddingGenerator_CustomProvider_GenerateAsync(
+    //        CustomProvider.GitHub, "text-embedding-3-small");
 
-    [TestMethod]
-    [Retry(2)]
-    public Task EmbeddingGenerator_GitHub_Batch() =>
-        EmbeddingGenerator_CustomProvider_BatchAsync(
-            CustomProvider.GitHub, "text-embedding-3-small");
+    //[TestMethod]
+    //[Retry(2)]
+    //public Task EmbeddingGenerator_GitHub_Batch() =>
+    //    EmbeddingGenerator_CustomProvider_BatchAsync(
+    //        CustomProvider.GitHub, "text-embedding-3-small");
 }

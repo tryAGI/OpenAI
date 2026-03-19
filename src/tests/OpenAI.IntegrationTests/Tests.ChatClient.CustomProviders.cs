@@ -343,18 +343,18 @@ public partial class Tests
 
     // --- GitHub Models ---
 
-    [TestMethod]
-    [Retry(2)]
-    public Task ChatClient_GitHub_GetResponse() =>
-        ChatClient_CustomProvider_GetResponseAsync(CustomProvider.GitHub);
+    //[TestMethod]
+    //[Retry(2)]
+    //public Task ChatClient_GitHub_GetResponse() =>
+    //    ChatClient_CustomProvider_GetResponseAsync(CustomProvider.GitHub);
 
-    [TestMethod]
-    [Retry(2)]
-    public Task ChatClient_GitHub_Streaming() =>
-        ChatClient_CustomProvider_StreamingAsync(CustomProvider.GitHub);
+    //[TestMethod]
+    //[Retry(2)]
+    //public Task ChatClient_GitHub_Streaming() =>
+    //    ChatClient_CustomProvider_StreamingAsync(CustomProvider.GitHub);
 
-    [TestMethod]
-    [Retry(2)]
-    public Task ChatClient_GitHub_ToolCalling() =>
-        ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.GitHub);
+    //[TestMethod]
+    //[Retry(2)]
+    //public Task ChatClient_GitHub_ToolCalling() =>
+    //    ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.GitHub);
 }

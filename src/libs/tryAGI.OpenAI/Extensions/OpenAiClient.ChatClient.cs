@@ -270,7 +270,7 @@ public sealed partial class OpenAiClient : Meai.IChatClient
         };
     }
 
-    private static IList<ChatCompletionRequestMessage> ConvertMessage(Meai.ChatMessage message)
+    private static List<ChatCompletionRequestMessage> ConvertMessage(Meai.ChatMessage message)
     {
         var result = new List<ChatCompletionRequestMessage>();
 
@@ -394,7 +394,7 @@ public sealed partial class OpenAiClient : Meai.IChatClient
         return result;
     }
 
-    private static IList<OneOf<ChatCompletionTool, CustomToolChatCompletions>> ConvertTools(
+    private static List<OneOf<ChatCompletionTool, CustomToolChatCompletions>> ConvertTools(
         IList<Meai.AITool> tools)
     {
         var result = new List<OneOf<ChatCompletionTool, CustomToolChatCompletions>>();
@@ -509,7 +509,7 @@ public sealed partial class OpenAiClient : Meai.IChatClient
         };
     }
 
-    private static IDictionary<string, object?>? ParseArguments(string? json)
+    private static Dictionary<string, object?>? ParseArguments(string? json)
     {
         if (string.IsNullOrEmpty(json))
         {
@@ -520,7 +520,7 @@ public sealed partial class OpenAiClient : Meai.IChatClient
         {
             return JsonSerializer.Deserialize<Dictionary<string, object?>>(json);
         }
-        catch
+        catch (JsonException)
         {
             return null;
         }
