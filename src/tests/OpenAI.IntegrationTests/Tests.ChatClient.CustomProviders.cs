@@ -256,22 +256,22 @@ public partial class Tests
     public Task ChatClient_Perplexity_Streaming() =>
         ChatClient_CustomProvider_StreamingAsync(CustomProvider.Perplexity);
 
-    // --- SambaNova ---
+    // --- SambaNova (disabled — free tier rate-limits) ---
 
-    [TestMethod]
-    [Retry(2)]
-    public Task ChatClient_SambaNova_GetResponse() =>
-        ChatClient_CustomProvider_GetResponseAsync(CustomProvider.SambaNova);
+    // [TestMethod]
+    // [Retry(2)]
+    // public Task ChatClient_SambaNova_GetResponse() =>
+    //     ChatClient_CustomProvider_GetResponseAsync(CustomProvider.SambaNova);
 
-    [TestMethod]
-    [Retry(2)]
-    public Task ChatClient_SambaNova_Streaming() =>
-        ChatClient_CustomProvider_StreamingAsync(CustomProvider.SambaNova);
+    // [TestMethod]
+    // [Retry(2)]
+    // public Task ChatClient_SambaNova_Streaming() =>
+    //     ChatClient_CustomProvider_StreamingAsync(CustomProvider.SambaNova);
 
-    [TestMethod]
-    [Retry(2)]
-    public Task ChatClient_SambaNova_ToolCalling() =>
-        ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.SambaNova);
+    // [TestMethod]
+    // [Retry(2)]
+    // public Task ChatClient_SambaNova_ToolCalling() =>
+    //     ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.SambaNova);
 
     // --- Mistral ---
 
