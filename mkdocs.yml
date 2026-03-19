@@ -4,37 +4,7 @@ nav:
 - Guides:
   - Microsoft.Extensions.AI: guides/meai.md
 # EXAMPLES:START
-- Examples:
-  - Assistants:
-    - AllToolsService: samples/Assistants.AllToolsService.md
-    - FunctionCalling: samples/Assistants.FunctionCalling.md
-    - ListFiles: samples/Assistants.ListFiles.md
-    - RetrievalAugmentedGeneration: samples/Assistants.RetrievalAugmentedGeneration.md
-  - Audio:
-    - SimpleTextToSpeech: samples/Audio.SimpleTextToSpeech.md
-    - SimpleTranscription: samples/Audio.SimpleTranscription.md
-    - SimpleTranslation: samples/Audio.SimpleTranslation.md
-    - VerboseTranscription: samples/Audio.VerboseTranscription.md
-  - Chat:
-    - ChatWithVision: samples/Chat.ChatWithVision.md
-    - FunctionCalling: samples/Chat.FunctionCalling.md
-    - FunctionCallingService: samples/Chat.FunctionCallingService.md
-    - FunctionCallingStreaming: samples/Chat.FunctionCallingStreaming.md
-    - SimpleChat: samples/Chat.SimpleChat.md
-    - SimpleChatStreaming: samples/Chat.SimpleChatStreaming.md
-    - StructuredOutputs: samples/Chat.StructuredOutputs.md
-    - StructuredOutputsClasses: samples/Chat.StructuredOutputsClasses.md
-  - Combination:
-    - AlpacaArtAssessor: samples/Combination.AlpacaArtAssessor.md
-    - CuriousCreatureCreator: samples/Combination.CuriousCreatureCreator.md
-  - Embeddings:
-    - EmbeddingWithOptions: samples/Embeddings.EmbeddingWithOptions.md
-    - MultipleEmbeddings: samples/Embeddings.MultipleEmbeddings.md
-    - SimpleEmbedding: samples/Embeddings.SimpleEmbedding.md
-  - Images:
-    - SimpleImageEdit: samples/Images.SimpleImageEdit.md
-    - SimpleImageGeneration: samples/Images.SimpleImageGeneration.md
-    - SimpleImageVariation: samples/Images.SimpleImageVariation.md
+
 # EXAMPLES:END
 
 #  - Quick Start: QuickStart.md
