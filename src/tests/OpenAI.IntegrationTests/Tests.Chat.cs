@@ -130,8 +130,9 @@ public partial class Tests
         var pair = GetAuthorizedChatApi(customProvider, model: customProvider switch
         {
             CustomProvider.Together => "meta-llama/Llama-Vision-Free",
-            CustomProvider.Groq => Environment.GetEnvironmentVariable("GROQ_VISION_MODEL") ??
-                                   "meta-llama/llama-4-scout-17b-16e-instruct",
+            CustomProvider.Groq => Environment.GetEnvironmentVariable("GROQ_VISION_MODEL") is { Length: > 0 } groqVisionModel
+                                   ? groqVisionModel
+                                   : "meta-llama/llama-4-scout-17b-16e-instruct",
             _ => null,
         });
         using var api = pair.Api;

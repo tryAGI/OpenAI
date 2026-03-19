@@ -139,8 +139,9 @@ public partial class Tests
         using var _ = api;
         Meai.IEmbeddingGenerator<string, Meai.Embedding<float>> generator = api;
 
-        var embeddingModel = Environment.GetEnvironmentVariable("AZURE_OPENAI_EMBEDDING_MODEL")
-            ?? "text-embedding-3-small";
+        var embeddingModel = Environment.GetEnvironmentVariable("AZURE_OPENAI_EMBEDDING_MODEL") is { Length: > 0 } azureEmbeddingModel
+            ? azureEmbeddingModel
+            : "text-embedding-3-small";
 
         var result = await generator.GenerateAsync(
             ["Hello, world!"],

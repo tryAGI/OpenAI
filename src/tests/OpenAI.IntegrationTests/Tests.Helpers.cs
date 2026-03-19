@@ -46,8 +46,9 @@ public partial class Tests
                 : throw new AssertInconclusiveException("AZURE_OPENAI_ENDPOINT environment variable is not found.");
             return (CustomProviders.Azure(azureKey, endpoint),
                 model ??
-                Environment.GetEnvironmentVariable("AZURE_OPENAI_MODEL") ??
-                "gpt-4o-mini");
+                (Environment.GetEnvironmentVariable("AZURE_OPENAI_MODEL") is { Length: > 0 } azureModel
+                    ? azureModel
+                    : "gpt-4o-mini"));
         }
         if (customProvider == CustomProvider.Fireworks)
         {
@@ -72,8 +73,9 @@ public partial class Tests
                     ? groqKeyValue
                     : throw new AssertInconclusiveException("GROQ_API_KEY environment variable is not found.")),
                 model ??
-                Environment.GetEnvironmentVariable("GROQ_CHAT_MODEL") ??
-                "llama-3.3-70b-versatile");
+                (Environment.GetEnvironmentVariable("GROQ_CHAT_MODEL") is { Length: > 0 } groqModel
+                    ? groqModel
+                    : "llama-3.3-70b-versatile"));
         }
         if (customProvider == CustomProvider.DeepSeek)
         {
@@ -98,8 +100,9 @@ public partial class Tests
                 ? togetherKeyValue
                 : throw new AssertInconclusiveException("TOGETHER_API_KEY environment variable is not found.")),
                 model ??
-                Environment.GetEnvironmentVariable("TOGETHER_CHAT_MODEL") ??
-                "meta-llama/Llama-3.3-70B-Instruct-Turbo");
+                (Environment.GetEnvironmentVariable("TOGETHER_CHAT_MODEL") is { Length: > 0 } togetherModel
+                    ? togetherModel
+                    : "meta-llama/Llama-3.3-70B-Instruct-Turbo"));
         }
         if (customProvider == CustomProvider.GitHub)
         {
@@ -148,8 +151,9 @@ public partial class Tests
                     ? hyperbolicKeyValue
                     : throw new AssertInconclusiveException("HYPERBOLIC_API_KEY environment variable is not found.")),
                 model ??
-                Environment.GetEnvironmentVariable("HYPERBOLIC_CHAT_MODEL") ??
-                "meta-llama/Llama-3.3-70B-Instruct");
+                (Environment.GetEnvironmentVariable("HYPERBOLIC_CHAT_MODEL") is { Length: > 0 } hyperbolicModel
+                    ? hyperbolicModel
+                    : "meta-llama/Llama-3.3-70B-Instruct"));
         }
 
         if (customProvider == CustomProvider.Ollama)
@@ -183,8 +187,9 @@ public partial class Tests
                 ? xAiKeyValue
                 : throw new AssertInconclusiveException("XAI_API_KEY environment variable is not found.")),
                 model ??
-                Environment.GetEnvironmentVariable("XAI_CHAT_MODEL") ??
-                "grok-3-mini");
+                (Environment.GetEnvironmentVariable("XAI_CHAT_MODEL") is { Length: > 0 } xAiModel
+                    ? xAiModel
+                    : "grok-3-mini"));
         }
         if (customProvider == CustomProvider.Cohere)
         {
