@@ -8,6 +8,11 @@ namespace tryAGI.OpenAI
 {
     public partial class ChatClient
     {
+        /// <summary>
+        /// Creates a chat completion and deserializes the response into the specified type
+        /// using reflection-based JSON schema generation.
+        /// For AOT/trimming compatibility, use the overload that accepts a <see cref="JsonTypeInfo{T}"/> parameter.
+        /// </summary>
 #if NET6_0_OR_GREATER
         [RequiresUnreferencedCode(
             "This method uses reflection to generate a JSON schema. Use overload with JsonTypeInfo parameter to avoid this.")]
@@ -56,7 +61,9 @@ namespace tryAGI.OpenAI
                         Type = ResponseFormatJsonSchemaType.JsonSchema,
                         JsonSchema = TypeToSchemaHelpers2.AsResponseFormat(typeof(T), strict ?? false),
                     },
+#pragma warning disable CS0618 // Seed is deprecated but still functional
                     Seed = seed,
+#pragma warning restore CS0618
                     Stop = stop,
                     Tools = tools,
                     ToolChoice = toolChoice,
@@ -119,7 +126,9 @@ namespace tryAGI.OpenAI
                         Type = ResponseFormatJsonSchemaType.JsonSchema,
                         JsonSchema = TypeToSchemaHelpers2.AsResponseFormat(jsonTypeInfo, strict ?? false),
                     },
+#pragma warning disable CS0618 // Seed is deprecated but still functional
                     Seed = seed,
+#pragma warning restore CS0618
                     Stop = stop,
                     Tools = tools,
                     ToolChoice = toolChoice,
