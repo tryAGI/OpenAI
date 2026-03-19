@@ -3,6 +3,8 @@ namespace tryAGI.OpenAI.IntegrationTests;
 [TestClass]
 public partial class Tests
 {
+    private static OpenAiClient GetAuthenticatedClient() => GetAuthorizedApi();
+
     private static OpenAiClient GetAuthorizedApi()
     {
         var apiKey =

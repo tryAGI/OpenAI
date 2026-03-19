@@ -4,7 +4,16 @@ nav:
 - Guides:
   - Microsoft.Extensions.AI: guides/meai.md
 # EXAMPLES:START
-
+- Examples:
+  - Chat Completion: examples/chat-completion.md
+  - Chat Completion Streaming: examples/chat-completion-streaming.md
+  - Chat With Vision: examples/chat-with-vision.md
+  - JSON Response Format: examples/json-response-format.md
+  - Embeddings: examples/embeddings.md
+  - Image Generation: examples/image-generation.md
+  - Text To Speech: examples/text-to-speech.md
+  - List Models: examples/list-models.md
+  - Moderation: examples/moderation.md
 # EXAMPLES:END
 
 #  - Quick Start: QuickStart.md
