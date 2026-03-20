@@ -131,6 +131,7 @@ public partial class Tests
     //[DataRow(CustomProvider.XAi)]
     //[DataRow(CustomProvider.Together)]
     //[DataRow(CustomProvider.Hyperbolic)]
+    [DataRow(CustomProvider.Nvidia)]
     public async Task ChatWithVision(CustomProvider customProvider)
     {
         var pair = GetAuthorizedChatApi(customProvider, model: customProvider switch
@@ -139,6 +140,7 @@ public partial class Tests
             CustomProvider.Groq => Environment.GetEnvironmentVariable("GROQ_VISION_MODEL") is { Length: > 0 } groqVisionModel
                                    ? groqVisionModel
                                    : "meta-llama/llama-4-scout-17b-16e-instruct",
+            CustomProvider.Nvidia => "microsoft/phi-3.5-vision-instruct",
             _ => null,
         });
         using var api = pair.Api;
