@@ -15,8 +15,7 @@ namespace tryAGI.OpenAI
         /// <default>global::tryAGI.OpenAI.WebSearchPreviewToolType.WebSearchPreview</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebSearchPreviewToolTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.WebSearchPreviewToolType Type { get; set; } = global::tryAGI.OpenAI.WebSearchPreviewToolType.WebSearchPreview;
+        public global::tryAGI.OpenAI.WebSearchPreviewToolType Type { get; set; } = global::tryAGI.OpenAI.WebSearchPreviewToolType.WebSearchPreview;
 
         /// <summary>
         /// 
@@ -59,10 +58,10 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebSearchPreviewTool(
-            global::tryAGI.OpenAI.WebSearchPreviewToolType type,
             global::tryAGI.OpenAI.ApproximateLocation? userLocation,
             global::tryAGI.OpenAI.SearchContextSize? searchContextSize,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SearchContentType>? searchContentTypes)
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SearchContentType>? searchContentTypes,
+            global::tryAGI.OpenAI.WebSearchPreviewToolType type = global::tryAGI.OpenAI.WebSearchPreviewToolType.WebSearchPreview)
         {
             this.Type = type;
             this.UserLocation = userLocation;

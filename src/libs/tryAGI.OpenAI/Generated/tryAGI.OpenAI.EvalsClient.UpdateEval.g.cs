@@ -185,7 +185,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Update certain properties of an evaluation.
         /// </summary>

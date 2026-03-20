@@ -18,7 +18,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.ProjectUserUpdateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Modifies a user's role in the project.
         /// </summary>

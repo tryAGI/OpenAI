@@ -14,7 +14,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.CreateThreadRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a thread.
         /// </summary>

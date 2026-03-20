@@ -20,7 +20,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create an ephemeral API token for use in client-side applications with the<br/>
         /// Realtime API specifically for realtime transcriptions. <br/>

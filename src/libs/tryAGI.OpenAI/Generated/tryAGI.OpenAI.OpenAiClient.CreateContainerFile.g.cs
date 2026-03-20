@@ -187,7 +187,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Create a Container File<br/>
         /// You can send either a multipart/form-data request with the raw file content, or a JSON request with a file ID.<br/>

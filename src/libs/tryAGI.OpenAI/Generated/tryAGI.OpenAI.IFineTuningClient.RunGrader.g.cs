@@ -14,7 +14,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.RunGraderRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Run a grader.
         /// </summary>

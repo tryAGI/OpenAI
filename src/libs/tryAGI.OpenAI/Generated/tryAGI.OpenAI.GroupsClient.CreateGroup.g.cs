@@ -179,7 +179,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Creates a new group in the organization.
         /// </summary>

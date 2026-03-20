@@ -18,7 +18,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.UpdateVoiceConsentRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Updates a voice consent recording (metadata only).<br/>
         /// Update consent recording metadata used for creating custom voices. This endpoint updates metadata only and does not replace the underlying audio.<br/>

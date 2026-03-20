@@ -192,7 +192,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Upload a voice consent recording.<br/>
         /// Upload a consent recording that authorizes creation of a custom voice.<br/>

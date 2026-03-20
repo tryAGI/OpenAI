@@ -22,7 +22,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.RealtimeCreateClientSecretRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a Realtime client secret with an associated session configuration.<br/>
         /// Client secrets are short-lived tokens that can be passed to a client app,<br/>

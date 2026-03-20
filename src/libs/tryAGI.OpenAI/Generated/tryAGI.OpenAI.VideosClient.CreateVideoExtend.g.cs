@@ -184,7 +184,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Create an extension of a completed video.
         /// </summary>

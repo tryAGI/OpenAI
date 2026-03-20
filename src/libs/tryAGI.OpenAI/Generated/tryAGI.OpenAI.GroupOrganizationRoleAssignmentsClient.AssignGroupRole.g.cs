@@ -185,7 +185,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Assigns an organization role to a group within the organization.
         /// </summary>

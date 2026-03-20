@@ -185,7 +185,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Adds a user to a group.
         /// </summary>

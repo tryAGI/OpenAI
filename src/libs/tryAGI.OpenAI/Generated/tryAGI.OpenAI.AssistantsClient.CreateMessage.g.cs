@@ -185,7 +185,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Create a message.
         /// </summary>

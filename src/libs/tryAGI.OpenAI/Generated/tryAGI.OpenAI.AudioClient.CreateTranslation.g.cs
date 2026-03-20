@@ -208,7 +208,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Translates audio into English.
         /// </summary>

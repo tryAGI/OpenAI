@@ -14,7 +14,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.CreateChatSessionBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a ChatKit session.
         /// </summary>

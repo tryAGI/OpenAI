@@ -16,7 +16,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.UpdateGroupBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Updates a group's information.
         /// </summary>

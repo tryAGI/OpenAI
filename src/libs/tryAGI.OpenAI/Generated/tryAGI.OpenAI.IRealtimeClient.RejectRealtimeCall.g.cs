@@ -16,7 +16,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.RealtimeCallRejectRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Decline an incoming SIP call by returning a SIP status code to the caller.
         /// </summary>

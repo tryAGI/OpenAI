@@ -197,7 +197,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Creates an image given a prompt. [Learn more](/docs/guides/images).
         /// </summary>

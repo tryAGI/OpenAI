@@ -18,7 +18,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.PublicUpdateOrganizationRoleBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Updates an existing project role.
         /// </summary>

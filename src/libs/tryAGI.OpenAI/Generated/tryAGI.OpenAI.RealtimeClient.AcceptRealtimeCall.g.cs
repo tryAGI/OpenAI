@@ -171,7 +171,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Accept an incoming SIP call and configure the realtime session that will<br/>
         /// handle it.

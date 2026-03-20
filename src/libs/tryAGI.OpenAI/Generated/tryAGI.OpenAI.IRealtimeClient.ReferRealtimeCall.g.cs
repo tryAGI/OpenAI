@@ -16,7 +16,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.RealtimeCallReferRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Transfer an active SIP call to a new destination using the SIP REFER verb.
         /// </summary>

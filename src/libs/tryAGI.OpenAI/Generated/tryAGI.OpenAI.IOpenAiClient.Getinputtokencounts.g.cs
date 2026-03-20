@@ -15,7 +15,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.TokenCountsBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Returns input token counts of the request.<br/>
         /// Returns an object with `object` set to `response.input_tokens` and an `input_tokens` count.

@@ -223,7 +223,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Modifies a project in the organization.
         /// </summary>

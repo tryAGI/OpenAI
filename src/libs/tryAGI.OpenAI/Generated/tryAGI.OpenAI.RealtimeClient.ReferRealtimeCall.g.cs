@@ -170,7 +170,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Transfer an active SIP call to a new destination using the SIP REFER verb.
         /// </summary>

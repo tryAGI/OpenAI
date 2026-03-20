@@ -196,7 +196,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Create items in a conversation with the given ID.
         /// </summary>

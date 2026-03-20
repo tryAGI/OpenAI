@@ -179,7 +179,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Creates and executes a batch from an uploaded file of requests
         /// </summary>

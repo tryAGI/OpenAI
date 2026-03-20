@@ -189,7 +189,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Create a remix of a completed video using a refreshed prompt.
         /// </summary>

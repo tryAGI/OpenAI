@@ -15,7 +15,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.AdminApiKeysCreateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create an organization admin API key<br/>
         /// Create a new admin-level API key for the organization.

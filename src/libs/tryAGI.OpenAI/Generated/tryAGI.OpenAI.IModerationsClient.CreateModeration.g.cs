@@ -15,7 +15,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.CreateModerationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Classifies if text and/or image inputs are potentially harmful. Learn<br/>
         /// more in the [moderation guide](/docs/guides/moderation).

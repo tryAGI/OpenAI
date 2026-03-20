@@ -14,7 +14,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.CreateBatchRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Creates and executes a batch from an uploaded file of requests
         /// </summary>

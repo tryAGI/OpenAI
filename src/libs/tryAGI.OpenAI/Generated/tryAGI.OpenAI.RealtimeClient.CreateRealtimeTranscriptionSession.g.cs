@@ -185,7 +185,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Create an ephemeral API token for use in client-side applications with the<br/>
         /// Realtime API specifically for realtime transcriptions. <br/>

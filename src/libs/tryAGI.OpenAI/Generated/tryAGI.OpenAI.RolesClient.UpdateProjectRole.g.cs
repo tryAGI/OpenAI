@@ -191,7 +191,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Updates an existing project role.
         /// </summary>

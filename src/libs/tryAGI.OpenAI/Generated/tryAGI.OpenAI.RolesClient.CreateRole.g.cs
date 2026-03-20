@@ -179,7 +179,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Creates a custom role for the organization.
         /// </summary>

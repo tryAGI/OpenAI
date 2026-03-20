@@ -187,7 +187,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Update the default version pointer for a skill.
         /// </summary>

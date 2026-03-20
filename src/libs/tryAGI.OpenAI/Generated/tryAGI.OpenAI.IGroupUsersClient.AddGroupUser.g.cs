@@ -16,7 +16,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.CreateGroupUserBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Adds a user to a group.
         /// </summary>

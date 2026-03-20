@@ -14,7 +14,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.InviteRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create an invite for a user to the organization. The invite must be accepted by the user before they have access to the organization.
         /// </summary>

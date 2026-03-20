@@ -16,7 +16,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.ProjectServiceAccountCreateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Creates a new service account in the project. This also returns an unredacted API key for the service account.
         /// </summary>

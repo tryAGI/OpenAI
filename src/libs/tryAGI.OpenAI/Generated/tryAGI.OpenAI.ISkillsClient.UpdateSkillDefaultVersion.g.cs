@@ -18,7 +18,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.SetDefaultSkillVersionBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update the default version pointer for a skill.
         /// </summary>

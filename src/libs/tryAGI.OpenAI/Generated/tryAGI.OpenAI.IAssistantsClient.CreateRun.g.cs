@@ -18,7 +18,6 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.CreateRunRequest request,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateRunIncludeItem>? include = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a run.
         /// </summary>

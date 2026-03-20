@@ -18,7 +18,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.PublicAssignOrganizationGroupRoleBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Assigns a project role to a group within a project.
         /// </summary>

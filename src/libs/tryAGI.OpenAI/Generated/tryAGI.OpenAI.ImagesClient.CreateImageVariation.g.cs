@@ -219,7 +219,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Creates a variation of a given image. This endpoint only supports `dall-e-2`.
         /// </summary>

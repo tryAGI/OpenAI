@@ -191,7 +191,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Modifies a run.
         /// </summary>

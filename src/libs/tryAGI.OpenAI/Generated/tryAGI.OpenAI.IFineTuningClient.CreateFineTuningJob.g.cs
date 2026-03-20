@@ -16,7 +16,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.CreateFineTuningJobRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Creates a fine-tuning job which begins the process of creating a new model from a given dataset.<br/>
         /// Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.<br/>

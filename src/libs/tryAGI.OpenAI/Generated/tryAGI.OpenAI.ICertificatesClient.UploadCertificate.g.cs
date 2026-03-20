@@ -15,7 +15,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.UploadCertificateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Upload a certificate to the organization. This does **not** automatically activate the certificate.<br/>
         /// Organizations can upload up to 50 certificates.

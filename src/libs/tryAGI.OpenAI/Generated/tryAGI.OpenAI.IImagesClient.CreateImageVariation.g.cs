@@ -14,7 +14,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.CreateImageVariationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Creates a variation of a given image. This endpoint only supports `dall-e-2`.
         /// </summary>

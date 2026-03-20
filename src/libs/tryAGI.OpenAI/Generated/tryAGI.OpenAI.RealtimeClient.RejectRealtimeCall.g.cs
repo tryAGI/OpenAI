@@ -170,7 +170,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Decline an incoming SIP call by returning a SIP status code to the caller.
         /// </summary>

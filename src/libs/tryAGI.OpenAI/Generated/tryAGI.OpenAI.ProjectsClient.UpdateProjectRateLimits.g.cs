@@ -229,7 +229,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Updates a project rate limit.
         /// </summary>

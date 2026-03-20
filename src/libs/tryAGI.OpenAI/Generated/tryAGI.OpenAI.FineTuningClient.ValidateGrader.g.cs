@@ -179,7 +179,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Validate a grader.
         /// </summary>

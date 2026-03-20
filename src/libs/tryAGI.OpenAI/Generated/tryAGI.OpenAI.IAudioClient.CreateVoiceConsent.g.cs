@@ -16,7 +16,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.CreateVoiceConsentRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Upload a voice consent recording.<br/>
         /// Upload a consent recording that authorizes creation of a custom voice.<br/>

@@ -15,7 +15,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.RealtimeCallCreateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a new Realtime API call over WebRTC and receive the SDP answer needed<br/>
         /// to complete the peer connection.

@@ -162,7 +162,6 @@ namespace tryAGI.OpenAI
                 yield return __streamedResponse;
             }
         }
-
         /// <summary>
         /// **Starting a new project?** We recommend trying [Responses](/docs/api-reference/responses)<br/>
         /// to take advantage of the latest OpenAI platform features. Compare<br/>

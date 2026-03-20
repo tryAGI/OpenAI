@@ -152,7 +152,6 @@ namespace tryAGI.OpenAI
                 yield return __streamedResponse;
             }
         }
-
         /// <summary>
         /// Generates audio from the input text.<br/>
         /// Returns the audio file content, or a stream of audio events.

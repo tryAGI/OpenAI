@@ -180,7 +180,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Deactivate certificates at the organization level.<br/>
         /// You can atomically and idempotently deactivate up to 10 certificates at a time.

@@ -223,7 +223,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Adds a user to the project. Users must already be members of the organization to be added to a project.
         /// </summary>

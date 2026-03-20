@@ -191,7 +191,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Assigns a project role to a user within a project.
         /// </summary>

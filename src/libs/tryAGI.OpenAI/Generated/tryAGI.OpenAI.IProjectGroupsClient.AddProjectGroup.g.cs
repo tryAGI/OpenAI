@@ -16,7 +16,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.InviteProjectGroupBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Grants a group access to a project.
         /// </summary>

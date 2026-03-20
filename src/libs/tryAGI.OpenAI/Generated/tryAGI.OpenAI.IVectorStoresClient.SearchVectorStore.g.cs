@@ -18,7 +18,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.VectorStoreSearchRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Search a vector store for relevant chunks based on a query and file attributes filter.
         /// </summary>

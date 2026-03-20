@@ -208,7 +208,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Upload a file that can be used across various endpoints. Individual files<br/>
         /// can be up to 512 MB, and each project can store up to 2.5 TB of files in<br/>

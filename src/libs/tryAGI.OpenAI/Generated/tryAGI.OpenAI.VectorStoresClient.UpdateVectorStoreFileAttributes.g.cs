@@ -195,7 +195,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Update attributes on a vector store file.
         /// </summary>

@@ -28,7 +28,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.CreateUploadRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Creates an intermediate [Upload](/docs/api-reference/uploads/object) object<br/>
         /// that you can add [Parts](/docs/api-reference/uploads/part-object) to.<br/>
