@@ -97,6 +97,16 @@ public static class CustomProviders
     public const string NebiusBaseUrl = "https://api.studio.nebius.ai/v1/";
 
     /// <summary>
+    /// https://build.nvidia.com/
+    /// </summary>
+    public const string NvidiaBaseUrl = "https://integrate.api.nvidia.com/v1";
+
+    /// <summary>
+    /// https://ollama.com/
+    /// </summary>
+    public const string OllamaCloudBaseUrl = "https://ollama.com/api/v1";
+
+    /// <summary>
     /// Creates an API to use for GitHub Models: https://github.com/marketplace/models
     /// </summary>
     /// <returns></returns>
@@ -265,5 +275,23 @@ public static class CustomProviders
     public static OpenAiClient Nebius(string apiKey)
     {
         return new OpenAiClient(apiKey, baseUri: new Uri(NebiusBaseUrl));
+    }
+
+    /// <summary>
+    /// Create an API to use for Nvidia NIM.
+    /// </summary>
+    /// <returns></returns>
+    public static OpenAiClient Nvidia(string apiKey)
+    {
+        return new OpenAiClient(apiKey, baseUri: new Uri(NvidiaBaseUrl));
+    }
+
+    /// <summary>
+    /// Create an API to use for Ollama Cloud.
+    /// </summary>
+    /// <returns></returns>
+    public static OpenAiClient OllamaCloud(string apiKey)
+    {
+        return new OpenAiClient(apiKey, baseUri: new Uri(OllamaCloudBaseUrl));
     }
 }

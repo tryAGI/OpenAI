@@ -341,6 +341,35 @@ public partial class Tests
     public Task ChatClient_Nebius_ToolCalling() =>
         ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.Nebius);
 
+    // --- Nvidia ---
+
+    [TestMethod]
+    [Retry(2)]
+    public Task ChatClient_Nvidia_GetResponse() =>
+        ChatClient_CustomProvider_GetResponseAsync(CustomProvider.Nvidia);
+
+    [TestMethod]
+    [Retry(2)]
+    public Task ChatClient_Nvidia_Streaming() =>
+        ChatClient_CustomProvider_StreamingAsync(CustomProvider.Nvidia);
+
+    [TestMethod]
+    [Retry(2)]
+    public Task ChatClient_Nvidia_ToolCalling() =>
+        ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.Nvidia);
+
+    // --- Ollama Cloud ---
+
+    [TestMethod]
+    [Retry(2)]
+    public Task ChatClient_OllamaCloud_GetResponse() =>
+        ChatClient_CustomProvider_GetResponseAsync(CustomProvider.OllamaCloud);
+
+    [TestMethod]
+    [Retry(2)]
+    public Task ChatClient_OllamaCloud_Streaming() =>
+        ChatClient_CustomProvider_StreamingAsync(CustomProvider.OllamaCloud);
+
     // --- GitHub Models ---
 
     //[TestMethod]

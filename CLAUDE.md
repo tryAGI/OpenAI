@@ -124,6 +124,8 @@ Each custom provider requires specific environment variables to run its integrat
 | **Nebius** | `NEBIUS_API_KEY` | `Qwen/Qwen2.5-72B-Instruct` | Chat, streaming, tools, embeddings (`BAAI/bge-en-icl`) |
 | **GitHub Models** | `TOKEN_FOR_GITHUB_MODELS` | `gpt-4o` | Chat, streaming, tools, embeddings (`text-embedding-3-small`) |
 | **Hyperbolic** | `HYPERBOLIC_API_KEY`, `HYPERBOLIC_CHAT_MODEL` (optional) | `meta-llama/Llama-3.3-70B-Instruct` | Chat, streaming |
+| **Nvidia** | `NVIDIA_API_KEY`, `NVIDIA_CHAT_MODEL` (optional) | `meta/llama-3.3-70b-instruct` | Chat, streaming, tools, embeddings (`nvidia/nv-embedqa-e5-v5`) |
+| **Ollama Cloud** | `OLLAMA_API_KEY`, `OLLAMA_CLOUD_CHAT_MODEL` (optional) | `llama3.2` | Chat, streaming, embeddings (`nomic-embed-text`) |
 | **Ollama** | *(local, no key)* | `llama3.2` | Chat, streaming (local only) |
 | **LM Studio** | *(local, no key)* | `lmstudio-community/Llama-3.2-3B-Instruct-GGUF` | Chat, streaming (local only) |
 

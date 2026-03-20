@@ -129,6 +129,34 @@ public partial class Tests
         EmbeddingGenerator_CustomProvider_BatchAsync(
             CustomProvider.Nebius, "BAAI/bge-en-icl");
 
+    // --- Nvidia ---
+
+    [TestMethod]
+    [Retry(2)]
+    public Task EmbeddingGenerator_Nvidia_Generate() =>
+        EmbeddingGenerator_CustomProvider_GenerateAsync(
+            CustomProvider.Nvidia, "nvidia/nv-embedqa-e5-v5");
+
+    [TestMethod]
+    [Retry(2)]
+    public Task EmbeddingGenerator_Nvidia_Batch() =>
+        EmbeddingGenerator_CustomProvider_BatchAsync(
+            CustomProvider.Nvidia, "nvidia/nv-embedqa-e5-v5");
+
+    // --- Ollama Cloud ---
+
+    [TestMethod]
+    [Retry(2)]
+    public Task EmbeddingGenerator_OllamaCloud_Generate() =>
+        EmbeddingGenerator_CustomProvider_GenerateAsync(
+            CustomProvider.OllamaCloud, "nomic-embed-text");
+
+    [TestMethod]
+    [Retry(2)]
+    public Task EmbeddingGenerator_OllamaCloud_Batch() =>
+        EmbeddingGenerator_CustomProvider_BatchAsync(
+            CustomProvider.OllamaCloud, "nomic-embed-text");
+
     // --- Azure ---
 
     [TestMethod]

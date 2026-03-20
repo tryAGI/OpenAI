@@ -19,6 +19,8 @@ public partial class Tests
     [DataRow(CustomProvider.Mistral)]
     [DataRow(CustomProvider.Codestral)]
     [DataRow(CustomProvider.Hyperbolic)]
+    [DataRow(CustomProvider.Nvidia)]
+    [DataRow(CustomProvider.OllamaCloud)]
     public async Task GenerateFiveRandomWords(CustomProvider customProvider)
     {
         var pair = GetAuthorizedChatApi(customProvider);
@@ -54,6 +56,8 @@ public partial class Tests
     [DataRow(CustomProvider.Mistral)]
     //[DataRow(CustomProvider.Codestral)]
     [DataRow(CustomProvider.Hyperbolic)]
+    [DataRow(CustomProvider.Nvidia)]
+    [DataRow(CustomProvider.OllamaCloud)]
     public async Task GenerateFiveRandomWordsAsStream(CustomProvider customProvider)
     {
         var pair = GetAuthorizedChatApi(customProvider);
@@ -88,6 +92,8 @@ public partial class Tests
     [DataRow(CustomProvider.Groq)]
     //[DataRow(CustomProvider.XAi)]
     [DataRow(CustomProvider.Hyperbolic)]
+    [DataRow(CustomProvider.Nvidia)]
+    [DataRow(CustomProvider.OllamaCloud)]
     public async Task GenerateFiveRandomWordsAsJsonObject(CustomProvider customProvider)
     {
         var pair = GetAuthorizedChatApi(customProvider);

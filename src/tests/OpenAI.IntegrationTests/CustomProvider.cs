@@ -22,4 +22,6 @@ public enum CustomProvider
     Cerebras,
     Cohere,
     Nebius,
+    Nvidia,
+    OllamaCloud,
 }

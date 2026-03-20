@@ -209,6 +209,28 @@ public partial class Tests
                 : throw new AssertInconclusiveException("NEBIUS_API_KEY environment variable is not found.")),
                 model ?? "Qwen/Qwen2.5-72B-Instruct");
         }
+        if (customProvider == CustomProvider.Nvidia)
+        {
+            return (CustomProviders.Nvidia(apiKey:
+                Environment.GetEnvironmentVariable("NVIDIA_API_KEY") is { Length: > 0 } nvidiaKeyValue
+                ? nvidiaKeyValue
+                : throw new AssertInconclusiveException("NVIDIA_API_KEY environment variable is not found.")),
+                model ??
+                (Environment.GetEnvironmentVariable("NVIDIA_CHAT_MODEL") is { Length: > 0 } nvidiaModel
+                    ? nvidiaModel
+                    : "meta/llama-3.3-70b-instruct"));
+        }
+        if (customProvider == CustomProvider.OllamaCloud)
+        {
+            return (CustomProviders.OllamaCloud(apiKey:
+                Environment.GetEnvironmentVariable("OLLAMA_API_KEY") is { Length: > 0 } ollamaCloudKeyValue
+                ? ollamaCloudKeyValue
+                : throw new AssertInconclusiveException("OLLAMA_API_KEY environment variable is not found.")),
+                model ??
+                (Environment.GetEnvironmentVariable("OLLAMA_CLOUD_CHAT_MODEL") is { Length: > 0 } ollamaCloudModel
+                    ? ollamaCloudModel
+                    : "llama3.2"));
+        }
 
         var apiKey =
             Environment.GetEnvironmentVariable("OPENAI_API_KEY") is { Length: > 0 } openAiKeyValue
