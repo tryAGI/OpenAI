@@ -270,6 +270,339 @@ double? priceInUsd = CreateSpeechRequestModel.Tts1Hd.TryGetPriceInUsd(
 ```
 
 <!-- EXAMPLES:START -->
+### Chat Completion
+Send a simple chat completion request.
+
+```csharp
+using var client = new OpenAiClient(apiKey);
+
+string response = await client.Chat.CreateChatCompletionAsync(
+    new CreateChatCompletionRequest
+    {
+        Value2 = new CreateChatCompletionRequestVariant2
+        {
+            Messages = ["Generate five random words."],
+            Model = "gpt-4o-mini",
+        }
+    });
+
+Console.WriteLine(response);
+```
+
+### Chat Completion Streaming
+Stream a chat completion response token by token.
+
+```csharp
+using var client = new OpenAiClient(apiKey);
+
+var enumerable = client.Chat.CreateChatCompletionAsStreamAsync(
+    new CreateChatCompletionRequest
+    {
+        Value2 = new CreateChatCompletionRequestVariant2
+        {
+            Messages = ["Generate five random words."],
+            Model = "gpt-4o-mini",
+        }
+    });
+
+await foreach (string response in enumerable)
+{
+    Console.Write(response);
+}
+```
+
+### Chat With Vision
+Send an image to the model for analysis.
+
+```csharp
+using var client = new OpenAiClient(apiKey);
+
+CreateChatCompletionResponse response = await client.Chat.CreateChatCompletionAsync(
+    new CreateChatCompletionRequest
+    {
+        Value2 = new CreateChatCompletionRequestVariant2
+        {
+            Messages = [
+                "Please describe the following image.",
+                H.Resources.images_dog_and_cat_png.AsBytes().AsUserMessage(mimeType: "image/png"),
+            ],
+            Model = "gpt-4o-mini",
+        }
+    });
+
+Console.WriteLine(response.Choices[0].Message.Content);
+```
+
+### JSON Response Format
+Request a response in JSON format.
+
+```csharp
+using var client = new OpenAiClient(apiKey);
+
+string response = await client.Chat.CreateChatCompletionAsync(
+    new CreateChatCompletionRequest
+    {
+        Value2 = new CreateChatCompletionRequestVariant2
+        {
+            Messages = ["Generate five random words as json."],
+            Model = "gpt-4o-mini",
+            ResponseFormat = new ResponseFormatJsonObject
+            {
+                Type = ResponseFormatJsonObjectType.JsonObject,
+            },
+        }
+    });
+
+Console.WriteLine(response);
+```
+
+### Structured Outputs
+Get structured JSON responses using a C# type as the schema.
+
+```csharp
+using var client = new OpenAiClient(apiKey);
+
+var response = await client.Chat.CreateChatCompletionAsAsync<WordsResponse>(
+    messages: ["Generate five random words as json."],
+    model: "gpt-4o-mini");
+
+Console.WriteLine("Words:");
+foreach (var word in response.Value1!.Words)
+{
+    Console.WriteLine(word);
+}
+```
+
+### Structured Outputs (AOT)
+Get structured JSON responses using a JsonTypeInfo for AOT/trimming compatibility.
+
+```csharp
+using var client = new OpenAiClient(apiKey);
+
+var response = await client.Chat.CreateChatCompletionAsAsync(
+    jsonTypeInfo: SourceGeneratedContext.Default.WordsResponse,
+    messages: ["Generate five random words."],
+    model: "gpt-4o-mini");
+
+Console.WriteLine("Words:");
+foreach (var word in response.Value1!.Words)
+{
+    Console.WriteLine(word);
+}
+```
+
+### Embeddings
+Create a text embedding vector.
+
+```csharp
+using var client = new OpenAiClient(apiKey);
+
+var response = await client.Embeddings.CreateEmbeddingAsync(
+    input: "Hello, world",
+    model: CreateEmbeddingRequestModel.TextEmbedding3Small);
+
+foreach (var data in response.Data.ElementAt(0).Embedding1)
+{
+    Console.WriteLine($"{data}");
+}
+```
+
+### Image Generation
+Generate an image from a text prompt.
+
+```csharp
+using var client = new OpenAiClient(apiKey);
+
+var response = await client.Images.CreateImageAsync(
+    prompt: "a white siamese cat",
+    model: CreateImageRequestModel.GptImage1Mini,
+    n: 1,
+    quality: CreateImageRequestQuality.Low,
+    size: CreateImageRequestSize.x1024x1024,
+    outputFormat: CreateImageRequestOutputFormat.Png);
+
+var base64 = response.Data?.ElementAt(0).B64Json;
+
+Console.WriteLine($"Generated image ({base64?.Length} base64 chars)");
+```
+
+### Text To Speech
+Convert text to speech audio using streaming.
+
+```csharp
+using var client = new OpenAiClient(apiKey);
+
+using var memoryStream = new MemoryStream();
+await foreach (var streamEvent in client.Audio.CreateSpeechAsync(
+    model: CreateSpeechRequestModel.Gpt4oMiniTts,
+    input: "Hello! This is a text-to-speech test.",
+    voice: (VoiceIdsShared)VoiceIdsSharedEnum.Alloy,
+    responseFormat: CreateSpeechRequestResponseFormat.Mp3,
+    speed: 1.0,
+    streamFormat: CreateSpeechRequestStreamFormat.Sse))
+{
+    if (streamEvent.SpeechAudioDelta is { } delta)
+    {
+        byte[] chunk = Convert.FromBase64String(delta.Audio);
+        memoryStream.Write(chunk, 0, chunk.Length);
+    }
+}
+
+byte[] audio = memoryStream.ToArray();
+
+Console.WriteLine($"Generated {audio.Length} bytes of audio.");
+```
+
+### List Models
+List all available models.
+
+```csharp
+using var client = new OpenAiClient(apiKey);
+
+var models = await client.Models.ListModelsAsync();
+
+foreach (var model in models.Data)
+{
+    Console.WriteLine(model.Id);
+}
+```
+
+### Moderation
+Check text for policy violations using the moderation endpoint.
+
+```csharp
+using var client = new OpenAiClient(apiKey);
+
+var response = await client.Moderations.CreateModerationAsync(
+    input: "Hello, world",
+    model: CreateModerationRequestModel.OmniModerationLatest);
+
+Console.WriteLine($"Flagged: {response.Results.First().Flagged}");
+```
+
+### MEAI Chat Completion
+Use the Microsoft.Extensions.AI IChatClient interface for chat completions.
+
+```csharp
+using var client = new OpenAiClient(apiKey);
+
+// using Meai = Microsoft.Extensions.AI;
+Meai.IChatClient chatClient = client;
+
+var messages = new List<Meai.ChatMessage>
+{
+    new(Meai.ChatRole.User, "Say hello in exactly 3 words."),
+};
+
+var response = await chatClient.GetResponseAsync(
+    messages,
+    new Meai.ChatOptions { ModelId = "gpt-4o-mini" });
+
+Console.WriteLine(response.Messages[0].Text);
+```
+
+### MEAI Chat Streaming
+Stream a chat completion using the Microsoft.Extensions.AI IChatClient interface.
+
+```csharp
+using var client = new OpenAiClient(apiKey);
+
+// using Meai = Microsoft.Extensions.AI;
+Meai.IChatClient chatClient = client;
+
+var messages = new List<Meai.ChatMessage>
+{
+    new(Meai.ChatRole.User, "Count from 1 to 5."),
+};
+
+await foreach (var update in chatClient.GetStreamingResponseAsync(
+    messages,
+    new Meai.ChatOptions { ModelId = "gpt-4o-mini" }))
+{
+    var text = string.Concat(update.Contents.OfType<Meai.TextContent>().Select(c => c.Text));
+    if (!string.IsNullOrEmpty(text))
+    {
+        Console.Write(text);
+    }
+}
+```
+
+### MEAI Tool Calling
+Use function/tool calling via the Microsoft.Extensions.AI IChatClient interface.
+
+```csharp
+using var client = new OpenAiClient(apiKey);
+
+// using Meai = Microsoft.Extensions.AI;
+Meai.IChatClient chatClient = client;
+
+var tool = Meai.AIFunctionFactory.Create(
+    (string city) => city switch
+    {
+        "Paris" => "22C, sunny",
+        "London" => "15C, cloudy",
+        _ => "Unknown",
+    },
+    name: "GetWeather",
+    description: "Gets the current weather for a city");
+
+var chatOptions = new Meai.ChatOptions
+{
+    ModelId = "gpt-4o-mini",
+    Tools = [tool],
+};
+
+var messages = new List<Meai.ChatMessage>
+{
+    new(Meai.ChatRole.User, "What's the weather in Paris? Respond with the temperature only."),
+};
+
+// First turn: get tool call
+var response = await chatClient.GetResponseAsync(
+    (IEnumerable<Meai.ChatMessage>)messages, chatOptions);
+
+var functionCall = response.Messages
+    .SelectMany(m => m.Contents)
+    .OfType<Meai.FunctionCallContent>()
+    .First();
+
+// Execute tool and add result
+var toolResult = await tool.InvokeAsync(
+    functionCall.Arguments is { } args
+        ? new Meai.AIFunctionArguments(args)
+        : null);
+messages.AddRange(response.Messages);
+messages.Add(new Meai.ChatMessage(Meai.ChatRole.Tool,
+    new Meai.AIContent[]
+    {
+        new Meai.FunctionResultContent(functionCall.CallId, toolResult),
+    }));
+
+// Second turn: get final response
+var finalResponse = await chatClient.GetResponseAsync(
+    (IEnumerable<Meai.ChatMessage>)messages, chatOptions);
+
+Console.WriteLine(finalResponse.Messages[0].Text);
+```
+
+### MEAI Embeddings
+Generate embeddings using the Microsoft.Extensions.AI IEmbeddingGenerator interface.
+
+```csharp
+using var client = new OpenAiClient(apiKey);
+
+// using Meai = Microsoft.Extensions.AI;
+Meai.IEmbeddingGenerator<string, Meai.Embedding<float>> generator = client;
+
+var result = await generator.GenerateAsync(
+    new List<string> { "Hello, world!" },
+    new Meai.EmbeddingGenerationOptions
+    {
+        ModelId = "text-embedding-3-small",
+    });
+
+Console.WriteLine($"Embedding dimension: {result[0].Vector.Length}");
+```
 <!-- EXAMPLES:END -->
 
 ## Support
