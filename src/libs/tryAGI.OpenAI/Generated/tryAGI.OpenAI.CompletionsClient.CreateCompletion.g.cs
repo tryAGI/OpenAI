@@ -180,7 +180,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Creates a completion for the provided prompt and parameters.<br/>
         /// Returns a completion object, or a sequence of completion objects if the request is streamed.

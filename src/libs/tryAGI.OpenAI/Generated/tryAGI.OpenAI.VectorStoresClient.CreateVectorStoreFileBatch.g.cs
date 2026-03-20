@@ -188,7 +188,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Create a vector store file batch.<br/>
         /// The maximum number of files in a single batch request is 2000.

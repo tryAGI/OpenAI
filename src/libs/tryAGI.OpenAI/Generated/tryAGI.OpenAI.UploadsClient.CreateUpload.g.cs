@@ -193,7 +193,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Creates an intermediate [Upload](/docs/api-reference/uploads/object) object<br/>
         /// that you can add [Parts](/docs/api-reference/uploads/part-object) to.<br/>

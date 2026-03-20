@@ -19,7 +19,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.CreateVectorStoreFileBatchRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a vector store file batch.<br/>
         /// The maximum number of files in a single batch request is 2000.

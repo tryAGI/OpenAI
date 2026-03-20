@@ -15,7 +15,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.CreateCompletionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Creates a completion for the provided prompt and parameters.<br/>
         /// Returns a completion object, or a sequence of completion objects if the request is streamed.

@@ -20,7 +20,6 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.CreateConversationItemsRequest request,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.IncludeEnum>? include = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create items in a conversation with the given ID.
         /// </summary>

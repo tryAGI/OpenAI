@@ -17,7 +17,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Accept an incoming SIP call and configure the realtime session that will<br/>
         /// handle it.

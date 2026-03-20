@@ -196,7 +196,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Create a new immutable skill version.
         /// </summary>

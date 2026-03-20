@@ -206,7 +206,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Create a new video generation job from a prompt and optional reference assets.
         /// </summary>

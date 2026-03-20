@@ -187,7 +187,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Create a character from an uploaded video.
         /// </summary>

@@ -185,7 +185,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Modify a certificate. Note that only the name can be modified.
         /// </summary>

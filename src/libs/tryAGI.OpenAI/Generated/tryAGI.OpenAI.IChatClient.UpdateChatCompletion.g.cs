@@ -18,7 +18,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.UpdateChatCompletionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Modify a stored chat completion. Only Chat Completions that have been<br/>
         /// created with the `store` parameter set to `true` can be modified. Currently,<br/>

@@ -20,7 +20,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.RealtimeSessionCreateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create an ephemeral API token for use in client-side applications with the<br/>
         /// Realtime API. Can be configured with the same session parameters as the<br/>

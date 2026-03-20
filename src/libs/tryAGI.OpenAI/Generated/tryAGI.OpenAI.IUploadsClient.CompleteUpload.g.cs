@@ -22,7 +22,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.CompleteUploadRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Completes the [Upload](/docs/api-reference/uploads/object). <br/>
         /// Within the returned Upload object, there is a nested [File](/docs/api-reference/files/object) object that is ready to use in the rest of the platform.<br/>

@@ -18,7 +18,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.UpdateConversationBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update a conversation
         /// </summary>

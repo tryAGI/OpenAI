@@ -169,7 +169,6 @@ namespace tryAGI.OpenAI
                 yield return __streamedResponse;
             }
         }
-
         /// <summary>
         /// Creates an image given a prompt. [Learn more](/docs/guides/images).
         /// </summary>

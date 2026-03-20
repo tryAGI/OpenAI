@@ -20,7 +20,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.CreateResponse request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Creates a model response. Provide [text](/docs/guides/text) or<br/>
         /// [image](/docs/guides/images) inputs to generate [text](/docs/guides/text)<br/>

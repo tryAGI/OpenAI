@@ -276,7 +276,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Transcribes audio into the input language.<br/>
         /// Returns a transcription object in `json`, `diarized_json`, or `verbose_json`<br/>

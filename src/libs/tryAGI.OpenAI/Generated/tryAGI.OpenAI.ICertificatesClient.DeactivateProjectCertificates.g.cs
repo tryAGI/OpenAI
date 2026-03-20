@@ -17,7 +17,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.ToggleCertificatesRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Deactivate certificates at the project level. You can atomically and <br/>
         /// idempotently deactivate up to 10 certificates at a time.

@@ -186,7 +186,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Activate certificates at the project level.<br/>
         /// You can atomically and idempotently activate up to 10 certificates at a time.

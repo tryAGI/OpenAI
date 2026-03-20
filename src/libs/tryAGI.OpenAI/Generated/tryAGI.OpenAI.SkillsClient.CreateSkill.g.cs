@@ -178,7 +178,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Create a new skill.
         /// </summary>

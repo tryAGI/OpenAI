@@ -223,7 +223,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Creates a new service account in the project. This also returns an unredacted API key for the service account.
         /// </summary>

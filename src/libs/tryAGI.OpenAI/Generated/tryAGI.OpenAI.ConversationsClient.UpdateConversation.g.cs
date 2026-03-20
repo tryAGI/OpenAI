@@ -187,7 +187,6 @@ namespace tryAGI.OpenAI
                 }
             }
         }
-
         /// <summary>
         /// Update a conversation
         /// </summary>

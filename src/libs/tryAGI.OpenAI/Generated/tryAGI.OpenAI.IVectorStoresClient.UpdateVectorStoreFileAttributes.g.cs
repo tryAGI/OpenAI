@@ -22,7 +22,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.UpdateVectorStoreFileAttributesRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update attributes on a vector store file.
         /// </summary>

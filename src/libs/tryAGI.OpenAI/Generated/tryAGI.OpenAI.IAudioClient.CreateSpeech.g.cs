@@ -15,7 +15,6 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.CreateSpeechRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Generates audio from the input text.<br/>
         /// Returns the audio file content, or a stream of audio events.
