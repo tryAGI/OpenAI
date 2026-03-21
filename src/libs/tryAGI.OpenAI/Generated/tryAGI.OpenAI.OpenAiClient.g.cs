@@ -56,6 +56,33 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
+        /// List user actions and configuration changes within this organization.
+        /// </summary>
+        public AuditLogsClient AuditLogs => new AuditLogsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// Create large batches of API requests to run asynchronously.
+        /// </summary>
+        public BatchClient Batch => new BatchClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public CertificatesClient Certificates => new CertificatesClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
         /// Given a list of messages comprising a conversation, the model will return a response.
         /// </summary>
         public ChatClient Chat => new ChatClient(HttpClient, authorizations: Authorizations)
@@ -65,18 +92,18 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
-        /// Manage conversations and conversation items.
+        /// Given a prompt, the model will return one or more predicted completions, and can also return the probabilities of alternative tokens at each position.
         /// </summary>
-        public ConversationsClient Conversations => new ConversationsClient(HttpClient, authorizations: Authorizations)
+        public CompletionsClient Completions => new CompletionsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
         };
 
         /// <summary>
-        /// Given a prompt, the model will return one or more predicted completions, and can also return the probabilities of alternative tokens at each position.
+        /// Manage conversations and conversation items.
         /// </summary>
-        public CompletionsClient Completions => new CompletionsClient(HttpClient, authorizations: Authorizations)
+        public ConversationsClient Conversations => new ConversationsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -101,24 +128,6 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
-        /// Manage fine-tuning jobs to tailor a model to your specific training data.
-        /// </summary>
-        public FineTuningClient FineTuning => new FineTuningClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
-        /// Create large batches of API requests to run asynchronously.
-        /// </summary>
-        public BatchClient Batch => new BatchClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
         /// Files are used to upload documents that can be used with features like Assistants and Fine-tuning.
         /// </summary>
         public FilesClient Files => new FilesClient(HttpClient, authorizations: Authorizations)
@@ -128,72 +137,9 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
-        /// Use Uploads to upload large files in multiple parts.
+        /// Manage fine-tuning jobs to tailor a model to your specific training data.
         /// </summary>
-        public UploadsClient Uploads => new UploadsClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
-        /// Given a prompt and/or an input image, the model will generate a new image.
-        /// </summary>
-        public ImagesClient Images => new ImagesClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
-        /// List and describe the various models available in the API.
-        /// </summary>
-        public ModelsClient Models => new ModelsClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
-        /// Given text and/or image inputs, classifies if those inputs are potentially harmful.
-        /// </summary>
-        public ModerationsClient Moderations => new ModerationsClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
-        /// List user actions and configuration changes within this organization.
-        /// </summary>
-        public AuditLogsClient AuditLogs => new AuditLogsClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public CertificatesClient Certificates => new CertificatesClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public UsageClient Usage => new UsageClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public GroupsClient Groups => new GroupsClient(HttpClient, authorizations: Authorizations)
+        public FineTuningClient FineTuning => new FineTuningClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -220,6 +166,24 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public GroupsClient Groups => new GroupsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// Given a prompt and/or an input image, the model will generate a new image.
+        /// </summary>
+        public ImagesClient Images => new ImagesClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public InvitesClient Invites => new InvitesClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
@@ -227,45 +191,18 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
-        /// 
+        /// List and describe the various models available in the API.
         /// </summary>
-        public ProjectsClient Projects => new ProjectsClient(HttpClient, authorizations: Authorizations)
+        public ModelsClient Models => new ModelsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
         };
 
         /// <summary>
-        /// 
+        /// Given text and/or image inputs, classifies if those inputs are potentially harmful.
         /// </summary>
-        public ProjectGroupsClient ProjectGroups => new ProjectGroupsClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RolesClient Roles => new RolesClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public UsersClient Users => new UsersClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public UserOrganizationRoleAssignmentsClient UserOrganizationRoleAssignments => new UserOrganizationRoleAssignmentsClient(HttpClient, authorizations: Authorizations)
+        public ModerationsClient Moderations => new ModerationsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -283,7 +220,25 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public ProjectGroupsClient ProjectGroups => new ProjectGroupsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ProjectUserRoleAssignmentsClient ProjectUserRoleAssignments => new ProjectUserRoleAssignmentsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ProjectsClient Projects => new ProjectsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -310,6 +265,60 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public RolesClient Roles => new RolesClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SkillsClient Skills => new SkillsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// Use Uploads to upload large files in multiple parts.
+        /// </summary>
+        public UploadsClient Uploads => new UploadsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public UsageClient Usage => new UsageClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public UserOrganizationRoleAssignmentsClient UserOrganizationRoleAssignments => new UserOrganizationRoleAssignmentsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public UsersClient Users => new UsersClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public VectorStoresClient VectorStores => new VectorStoresClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
@@ -320,15 +329,6 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public VideosClient Videos => new VideosClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public SkillsClient Skills => new SkillsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
