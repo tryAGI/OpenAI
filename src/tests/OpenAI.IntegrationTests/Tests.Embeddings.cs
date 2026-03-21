@@ -6,7 +6,7 @@ public partial class Tests
     public async Task CreateEmbedding()
     {
         var api = GetAuthorizedApi();
-        var response = await api.Embeddings.CreateEmbeddingAsync(
+        var response = await api.Embeddings.CreateEmbeddingsAsync(
             input: "Hello, world",
             model: CreateEmbeddingRequestModel.TextEmbedding3Small,
             user: "tryAGI.OpenAI.IntegrationTests.Tests.CreateEmbedding");

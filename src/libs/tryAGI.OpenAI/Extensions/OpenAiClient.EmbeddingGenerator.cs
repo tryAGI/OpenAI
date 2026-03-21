@@ -51,7 +51,7 @@ public sealed partial class OpenAiClient : Meai.IEmbeddingGenerator<string, Meai
             request.Dimensions = dimensions;
         }
 
-        var response = await Embeddings.CreateEmbeddingAsync(
+        var response = await Embeddings.CreateEmbeddingsAsync(
             request: request,
             cancellationToken: cancellationToken).ConfigureAwait(false);
 

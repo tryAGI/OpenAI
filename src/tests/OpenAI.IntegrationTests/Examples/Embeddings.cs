@@ -15,7 +15,7 @@ public partial class Tests
     {
         using var client = GetAuthenticatedClient();
 
-        var response = await client.Embeddings.CreateEmbeddingAsync(
+        var response = await client.Embeddings.CreateEmbeddingsAsync(
             input: "Hello, world",
             model: CreateEmbeddingRequestModel.TextEmbedding3Small);
 
