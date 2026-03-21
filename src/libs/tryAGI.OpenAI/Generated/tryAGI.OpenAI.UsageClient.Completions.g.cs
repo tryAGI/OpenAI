@@ -100,7 +100,7 @@ namespace tryAGI.OpenAI
                 .AddOptionalParameter("user_ids", userIds, delimiter: ",", explode: true)
                 .AddOptionalParameter("api_key_ids", apiKeyIds, delimiter: ",", explode: true)
                 .AddOptionalParameter("models", models, delimiter: ",", explode: true)
-                .AddOptionalParameter("batch", batch?.ToString())
+                .AddOptionalParameter("batch", batch?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("group_by", groupBy, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("page", page) 

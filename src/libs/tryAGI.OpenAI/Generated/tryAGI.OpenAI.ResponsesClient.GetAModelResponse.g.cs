@@ -64,9 +64,9 @@ namespace tryAGI.OpenAI
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("include", include, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
-                .AddOptionalParameter("stream", stream?.ToString())
+                .AddOptionalParameter("stream", stream?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("starting_after", startingAfter?.ToString())
-                .AddOptionalParameter("include_obfuscation", includeObfuscation?.ToString()) 
+                .AddOptionalParameter("include_obfuscation", includeObfuscation?.ToString().ToLowerInvariant()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
