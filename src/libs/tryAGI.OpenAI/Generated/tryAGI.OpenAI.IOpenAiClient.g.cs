@@ -51,19 +51,34 @@ namespace tryAGI.OpenAI
         public AudioClient Audio { get; }
 
         /// <summary>
+        /// List user actions and configuration changes within this organization.
+        /// </summary>
+        public AuditLogsClient AuditLogs { get; }
+
+        /// <summary>
+        /// Create large batches of API requests to run asynchronously.
+        /// </summary>
+        public BatchClient Batch { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public CertificatesClient Certificates { get; }
+
+        /// <summary>
         /// Given a list of messages comprising a conversation, the model will return a response.
         /// </summary>
         public ChatClient Chat { get; }
 
         /// <summary>
-        /// Manage conversations and conversation items.
-        /// </summary>
-        public ConversationsClient Conversations { get; }
-
-        /// <summary>
         /// Given a prompt, the model will return one or more predicted completions, and can also return the probabilities of alternative tokens at each position.
         /// </summary>
         public CompletionsClient Completions { get; }
+
+        /// <summary>
+        /// Manage conversations and conversation items.
+        /// </summary>
+        public ConversationsClient Conversations { get; }
 
         /// <summary>
         /// Get a vector representation of a given input that can be easily consumed by machine learning models and algorithms.
@@ -76,59 +91,14 @@ namespace tryAGI.OpenAI
         public EvalsClient Evals { get; }
 
         /// <summary>
-        /// Manage fine-tuning jobs to tailor a model to your specific training data.
-        /// </summary>
-        public FineTuningClient FineTuning { get; }
-
-        /// <summary>
-        /// Create large batches of API requests to run asynchronously.
-        /// </summary>
-        public BatchClient Batch { get; }
-
-        /// <summary>
         /// Files are used to upload documents that can be used with features like Assistants and Fine-tuning.
         /// </summary>
         public FilesClient Files { get; }
 
         /// <summary>
-        /// Use Uploads to upload large files in multiple parts.
+        /// Manage fine-tuning jobs to tailor a model to your specific training data.
         /// </summary>
-        public UploadsClient Uploads { get; }
-
-        /// <summary>
-        /// Given a prompt and/or an input image, the model will generate a new image.
-        /// </summary>
-        public ImagesClient Images { get; }
-
-        /// <summary>
-        /// List and describe the various models available in the API.
-        /// </summary>
-        public ModelsClient Models { get; }
-
-        /// <summary>
-        /// Given text and/or image inputs, classifies if those inputs are potentially harmful.
-        /// </summary>
-        public ModerationsClient Moderations { get; }
-
-        /// <summary>
-        /// List user actions and configuration changes within this organization.
-        /// </summary>
-        public AuditLogsClient AuditLogs { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public CertificatesClient Certificates { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public UsageClient Usage { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public GroupsClient Groups { get; }
+        public FineTuningClient FineTuning { get; }
 
         /// <summary>
         /// 
@@ -143,32 +113,27 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public GroupsClient Groups { get; }
+
+        /// <summary>
+        /// Given a prompt and/or an input image, the model will generate a new image.
+        /// </summary>
+        public ImagesClient Images { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public InvitesClient Invites { get; }
 
         /// <summary>
-        /// 
+        /// List and describe the various models available in the API.
         /// </summary>
-        public ProjectsClient Projects { get; }
+        public ModelsClient Models { get; }
 
         /// <summary>
-        /// 
+        /// Given text and/or image inputs, classifies if those inputs are potentially harmful.
         /// </summary>
-        public ProjectGroupsClient ProjectGroups { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RolesClient Roles { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public UsersClient Users { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public UserOrganizationRoleAssignmentsClient UserOrganizationRoleAssignments { get; }
+        public ModerationsClient Moderations { get; }
 
         /// <summary>
         /// 
@@ -178,7 +143,17 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public ProjectGroupsClient ProjectGroups { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ProjectUserRoleAssignmentsClient ProjectUserRoleAssignments { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ProjectsClient Projects { get; }
 
         /// <summary>
         /// 
@@ -193,17 +168,42 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public RolesClient Roles { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SkillsClient Skills { get; }
+
+        /// <summary>
+        /// Use Uploads to upload large files in multiple parts.
+        /// </summary>
+        public UploadsClient Uploads { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public UsageClient Usage { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public UserOrganizationRoleAssignmentsClient UserOrganizationRoleAssignments { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public UsersClient Users { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public VectorStoresClient VectorStores { get; }
 
         /// <summary>
         /// 
         /// </summary>
         public VideosClient Videos { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public SkillsClient Skills { get; }
 
     }
 }
