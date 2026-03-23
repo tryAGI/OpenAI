@@ -11,11 +11,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Reader,
+        Owner,
         /// <summary>
         /// 
         /// </summary>
-        Owner,
+        Reader,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                InviteRequestRole.Reader => "reader",
                 InviteRequestRole.Owner => "owner",
+                InviteRequestRole.Reader => "reader",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "reader" => InviteRequestRole.Reader,
                 "owner" => InviteRequestRole.Owner,
+                "reader" => InviteRequestRole.Reader,
                 _ => null,
             };
         }

@@ -11,19 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        ProjectId,
-        /// <summary>
-        /// 
-        /// </summary>
-        UserId,
-        /// <summary>
-        /// 
-        /// </summary>
         ApiKeyId,
-        /// <summary>
-        /// 
-        /// </summary>
-        Model,
         /// <summary>
         /// 
         /// </summary>
@@ -31,7 +19,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Model,
+        /// <summary>
+        /// 
+        /// </summary>
+        ProjectId,
+        /// <summary>
+        /// 
+        /// </summary>
         ServiceTier,
+        /// <summary>
+        /// 
+        /// </summary>
+        UserId,
     }
 
     /// <summary>
@@ -46,12 +46,12 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                UsageCompletionsGroupByItem.ProjectId => "project_id",
-                UsageCompletionsGroupByItem.UserId => "user_id",
                 UsageCompletionsGroupByItem.ApiKeyId => "api_key_id",
-                UsageCompletionsGroupByItem.Model => "model",
                 UsageCompletionsGroupByItem.Batch => "batch",
+                UsageCompletionsGroupByItem.Model => "model",
+                UsageCompletionsGroupByItem.ProjectId => "project_id",
                 UsageCompletionsGroupByItem.ServiceTier => "service_tier",
+                UsageCompletionsGroupByItem.UserId => "user_id",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,12 +62,12 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "project_id" => UsageCompletionsGroupByItem.ProjectId,
-                "user_id" => UsageCompletionsGroupByItem.UserId,
                 "api_key_id" => UsageCompletionsGroupByItem.ApiKeyId,
-                "model" => UsageCompletionsGroupByItem.Model,
                 "batch" => UsageCompletionsGroupByItem.Batch,
+                "model" => UsageCompletionsGroupByItem.Model,
+                "project_id" => UsageCompletionsGroupByItem.ProjectId,
                 "service_tier" => UsageCompletionsGroupByItem.ServiceTier,
+                "user_id" => UsageCompletionsGroupByItem.UserId,
                 _ => null,
             };
         }

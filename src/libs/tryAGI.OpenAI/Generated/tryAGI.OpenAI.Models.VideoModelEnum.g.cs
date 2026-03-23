@@ -15,19 +15,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Sora2Pro,
-        /// <summary>
-        /// 
-        /// </summary>
         Sora220251006,
         /// <summary>
         /// 
         /// </summary>
-        Sora2Pro20251006,
+        Sora220251208,
         /// <summary>
         /// 
         /// </summary>
-        Sora220251208,
+        Sora2Pro,
+        /// <summary>
+        /// 
+        /// </summary>
+        Sora2Pro20251006,
     }
 
     /// <summary>
@@ -43,10 +43,10 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 VideoModelEnum.Sora2 => "sora-2",
-                VideoModelEnum.Sora2Pro => "sora-2-pro",
                 VideoModelEnum.Sora220251006 => "sora-2-2025-10-06",
-                VideoModelEnum.Sora2Pro20251006 => "sora-2-pro-2025-10-06",
                 VideoModelEnum.Sora220251208 => "sora-2-2025-12-08",
+                VideoModelEnum.Sora2Pro => "sora-2-pro",
+                VideoModelEnum.Sora2Pro20251006 => "sora-2-pro-2025-10-06",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "sora-2" => VideoModelEnum.Sora2,
-                "sora-2-pro" => VideoModelEnum.Sora2Pro,
                 "sora-2-2025-10-06" => VideoModelEnum.Sora220251006,
-                "sora-2-pro-2025-10-06" => VideoModelEnum.Sora2Pro20251006,
                 "sora-2-2025-12-08" => VideoModelEnum.Sora220251208,
+                "sora-2-pro" => VideoModelEnum.Sora2Pro,
+                "sora-2-pro-2025-10-06" => VideoModelEnum.Sora2Pro20251006,
                 _ => null,
             };
         }

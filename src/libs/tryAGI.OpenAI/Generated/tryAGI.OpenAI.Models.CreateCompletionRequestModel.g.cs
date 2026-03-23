@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Gpt35TurboInstruct,
+        Babbage002,
         /// <summary>
         /// 
         /// </summary>
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Babbage002,
+        Gpt35TurboInstruct,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                CreateCompletionRequestModel.Gpt35TurboInstruct => "gpt-3.5-turbo-instruct",
-                CreateCompletionRequestModel.Davinci002 => "davinci-002",
                 CreateCompletionRequestModel.Babbage002 => "babbage-002",
+                CreateCompletionRequestModel.Davinci002 => "davinci-002",
+                CreateCompletionRequestModel.Gpt35TurboInstruct => "gpt-3.5-turbo-instruct",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "gpt-3.5-turbo-instruct" => CreateCompletionRequestModel.Gpt35TurboInstruct,
-                "davinci-002" => CreateCompletionRequestModel.Davinci002,
                 "babbage-002" => CreateCompletionRequestModel.Babbage002,
+                "davinci-002" => CreateCompletionRequestModel.Davinci002,
+                "gpt-3.5-turbo-instruct" => CreateCompletionRequestModel.Gpt35TurboInstruct,
                 _ => null,
             };
         }

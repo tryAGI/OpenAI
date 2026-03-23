@@ -12,19 +12,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Wav,
-        /// <summary>
-        /// 
-        /// </summary>
         Aac,
         /// <summary>
         /// 
         /// </summary>
-        Mp3,
+        Flac,
         /// <summary>
         /// 
         /// </summary>
-        Flac,
+        Mp3,
         /// <summary>
         /// 
         /// </summary>
@@ -33,6 +29,10 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         Pcm16,
+        /// <summary>
+        /// 
+        /// </summary>
+        Wav,
     }
 
     /// <summary>
@@ -47,12 +47,12 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                CreateChatCompletionRequestVariant2AudioFormat.Wav => "wav",
                 CreateChatCompletionRequestVariant2AudioFormat.Aac => "aac",
-                CreateChatCompletionRequestVariant2AudioFormat.Mp3 => "mp3",
                 CreateChatCompletionRequestVariant2AudioFormat.Flac => "flac",
+                CreateChatCompletionRequestVariant2AudioFormat.Mp3 => "mp3",
                 CreateChatCompletionRequestVariant2AudioFormat.Opus => "opus",
                 CreateChatCompletionRequestVariant2AudioFormat.Pcm16 => "pcm16",
+                CreateChatCompletionRequestVariant2AudioFormat.Wav => "wav",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,12 +63,12 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "wav" => CreateChatCompletionRequestVariant2AudioFormat.Wav,
                 "aac" => CreateChatCompletionRequestVariant2AudioFormat.Aac,
-                "mp3" => CreateChatCompletionRequestVariant2AudioFormat.Mp3,
                 "flac" => CreateChatCompletionRequestVariant2AudioFormat.Flac,
+                "mp3" => CreateChatCompletionRequestVariant2AudioFormat.Mp3,
                 "opus" => CreateChatCompletionRequestVariant2AudioFormat.Opus,
                 "pcm16" => CreateChatCompletionRequestVariant2AudioFormat.Pcm16,
+                "wav" => CreateChatCompletionRequestVariant2AudioFormat.Wav,
                 _ => null,
             };
         }

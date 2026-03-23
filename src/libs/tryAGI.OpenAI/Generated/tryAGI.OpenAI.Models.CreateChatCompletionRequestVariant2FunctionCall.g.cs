@@ -11,11 +11,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        None,
+        Auto,
         /// <summary>
         /// 
         /// </summary>
-        Auto,
+        None,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                CreateChatCompletionRequestVariant2FunctionCall.None => "none",
                 CreateChatCompletionRequestVariant2FunctionCall.Auto => "auto",
+                CreateChatCompletionRequestVariant2FunctionCall.None => "none",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "none" => CreateChatCompletionRequestVariant2FunctionCall.None,
                 "auto" => CreateChatCompletionRequestVariant2FunctionCall.Auto,
+                "none" => CreateChatCompletionRequestVariant2FunctionCall.None,
                 _ => null,
             };
         }

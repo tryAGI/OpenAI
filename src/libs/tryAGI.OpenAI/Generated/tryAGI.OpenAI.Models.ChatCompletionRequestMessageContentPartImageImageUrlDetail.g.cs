@@ -16,11 +16,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Low,
+        High,
         /// <summary>
         /// 
         /// </summary>
-        High,
+        Low,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 ChatCompletionRequestMessageContentPartImageImageUrlDetail.Auto => "auto",
-                ChatCompletionRequestMessageContentPartImageImageUrlDetail.Low => "low",
                 ChatCompletionRequestMessageContentPartImageImageUrlDetail.High => "high",
+                ChatCompletionRequestMessageContentPartImageImageUrlDetail.Low => "low",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "auto" => ChatCompletionRequestMessageContentPartImageImageUrlDetail.Auto,
-                "low" => ChatCompletionRequestMessageContentPartImageImageUrlDetail.Low,
                 "high" => ChatCompletionRequestMessageContentPartImageImageUrlDetail.High,
+                "low" => ChatCompletionRequestMessageContentPartImageImageUrlDetail.Low,
                 _ => null,
             };
         }

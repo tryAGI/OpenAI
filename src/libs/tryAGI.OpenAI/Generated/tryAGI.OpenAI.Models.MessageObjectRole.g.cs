@@ -11,11 +11,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Assistant,
         /// <summary>
         /// 
         /// </summary>
-        Assistant,
+        User,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                MessageObjectRole.User => "user",
                 MessageObjectRole.Assistant => "assistant",
+                MessageObjectRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "user" => MessageObjectRole.User,
                 "assistant" => MessageObjectRole.Assistant,
+                "user" => MessageObjectRole.User,
                 _ => null,
             };
         }

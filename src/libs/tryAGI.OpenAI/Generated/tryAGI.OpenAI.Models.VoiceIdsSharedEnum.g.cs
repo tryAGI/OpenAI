@@ -23,11 +23,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Cedar,
+        /// <summary>
+        /// 
+        /// </summary>
         Coral,
         /// <summary>
         /// 
         /// </summary>
         Echo,
+        /// <summary>
+        /// 
+        /// </summary>
+        Marin,
         /// <summary>
         /// 
         /// </summary>
@@ -40,14 +48,6 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         Verse,
-        /// <summary>
-        /// 
-        /// </summary>
-        Marin,
-        /// <summary>
-        /// 
-        /// </summary>
-        Cedar,
     }
 
     /// <summary>
@@ -65,13 +65,13 @@ namespace tryAGI.OpenAI
                 VoiceIdsSharedEnum.Alloy => "alloy",
                 VoiceIdsSharedEnum.Ash => "ash",
                 VoiceIdsSharedEnum.Ballad => "ballad",
+                VoiceIdsSharedEnum.Cedar => "cedar",
                 VoiceIdsSharedEnum.Coral => "coral",
                 VoiceIdsSharedEnum.Echo => "echo",
+                VoiceIdsSharedEnum.Marin => "marin",
                 VoiceIdsSharedEnum.Sage => "sage",
                 VoiceIdsSharedEnum.Shimmer => "shimmer",
                 VoiceIdsSharedEnum.Verse => "verse",
-                VoiceIdsSharedEnum.Marin => "marin",
-                VoiceIdsSharedEnum.Cedar => "cedar",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -85,13 +85,13 @@ namespace tryAGI.OpenAI
                 "alloy" => VoiceIdsSharedEnum.Alloy,
                 "ash" => VoiceIdsSharedEnum.Ash,
                 "ballad" => VoiceIdsSharedEnum.Ballad,
+                "cedar" => VoiceIdsSharedEnum.Cedar,
                 "coral" => VoiceIdsSharedEnum.Coral,
                 "echo" => VoiceIdsSharedEnum.Echo,
+                "marin" => VoiceIdsSharedEnum.Marin,
                 "sage" => VoiceIdsSharedEnum.Sage,
                 "shimmer" => VoiceIdsSharedEnum.Shimmer,
                 "verse" => VoiceIdsSharedEnum.Verse,
-                "marin" => VoiceIdsSharedEnum.Marin,
-                "cedar" => VoiceIdsSharedEnum.Cedar,
                 _ => null,
             };
         }

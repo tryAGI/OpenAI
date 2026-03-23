@@ -11,6 +11,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Back,
+        /// <summary>
+        /// 
+        /// </summary>
+        Forward,
+        /// <summary>
+        /// 
+        /// </summary>
         Left,
         /// <summary>
         /// 
@@ -20,14 +28,6 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         Wheel,
-        /// <summary>
-        /// 
-        /// </summary>
-        Back,
-        /// <summary>
-        /// 
-        /// </summary>
-        Forward,
     }
 
     /// <summary>
@@ -42,11 +42,11 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                ClickButtonType.Back => "back",
+                ClickButtonType.Forward => "forward",
                 ClickButtonType.Left => "left",
                 ClickButtonType.Right => "right",
                 ClickButtonType.Wheel => "wheel",
-                ClickButtonType.Back => "back",
-                ClickButtonType.Forward => "forward",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,11 +57,11 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "back" => ClickButtonType.Back,
+                "forward" => ClickButtonType.Forward,
                 "left" => ClickButtonType.Left,
                 "right" => ClickButtonType.Right,
                 "wheel" => ClickButtonType.Wheel,
-                "back" => ClickButtonType.Back,
-                "forward" => ClickButtonType.Forward,
                 _ => null,
             };
         }

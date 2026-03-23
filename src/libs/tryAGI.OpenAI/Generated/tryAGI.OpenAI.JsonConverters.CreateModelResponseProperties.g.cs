@@ -28,14 +28,14 @@ namespace tryAGI.OpenAI.JsonConverters
 
             var __score0 = 0;
             if (__jsonProps.Contains("metadata")) __score0++;
-            if (__jsonProps.Contains("top_logprobs")) __score0++;
+            if (__jsonProps.Contains("prompt_cache_key")) __score0++;
+            if (__jsonProps.Contains("prompt_cache_retention")) __score0++;
+            if (__jsonProps.Contains("safety_identifier")) __score0++;
+            if (__jsonProps.Contains("service_tier")) __score0++;
             if (__jsonProps.Contains("temperature")) __score0++;
+            if (__jsonProps.Contains("top_logprobs")) __score0++;
             if (__jsonProps.Contains("top_p")) __score0++;
             if (__jsonProps.Contains("user")) __score0++;
-            if (__jsonProps.Contains("safety_identifier")) __score0++;
-            if (__jsonProps.Contains("prompt_cache_key")) __score0++;
-            if (__jsonProps.Contains("service_tier")) __score0++;
-            if (__jsonProps.Contains("prompt_cache_retention")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("top_logprobs")) __score1++;
             var __bestScore = 0;

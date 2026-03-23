@@ -35,11 +35,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Vision,
+        UserData,
         /// <summary>
         /// 
         /// </summary>
-        UserData,
+        Vision,
     }
 
     /// <summary>
@@ -60,8 +60,8 @@ namespace tryAGI.OpenAI
                 OpenAIFilePurpose.BatchOutput => "batch_output",
                 OpenAIFilePurpose.FineTune => "fine-tune",
                 OpenAIFilePurpose.FineTuneResults => "fine-tune-results",
-                OpenAIFilePurpose.Vision => "vision",
                 OpenAIFilePurpose.UserData => "user_data",
+                OpenAIFilePurpose.Vision => "vision",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -78,8 +78,8 @@ namespace tryAGI.OpenAI
                 "batch_output" => OpenAIFilePurpose.BatchOutput,
                 "fine-tune" => OpenAIFilePurpose.FineTune,
                 "fine-tune-results" => OpenAIFilePurpose.FineTuneResults,
-                "vision" => OpenAIFilePurpose.Vision,
                 "user_data" => OpenAIFilePurpose.UserData,
+                "vision" => OpenAIFilePurpose.Vision,
                 _ => null,
             };
         }

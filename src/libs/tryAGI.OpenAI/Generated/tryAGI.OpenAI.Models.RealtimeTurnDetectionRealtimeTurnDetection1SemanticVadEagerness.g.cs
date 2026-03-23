@@ -12,11 +12,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Low,
-        /// <summary>
-        /// 
-        /// </summary>
-        Medium,
+        Auto,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +20,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Auto,
+        Low,
+        /// <summary>
+        /// 
+        /// </summary>
+        Medium,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                RealtimeTurnDetectionRealtimeTurnDetection1SemanticVadEagerness.Auto => "auto",
+                RealtimeTurnDetectionRealtimeTurnDetection1SemanticVadEagerness.High => "high",
                 RealtimeTurnDetectionRealtimeTurnDetection1SemanticVadEagerness.Low => "low",
                 RealtimeTurnDetectionRealtimeTurnDetection1SemanticVadEagerness.Medium => "medium",
-                RealtimeTurnDetectionRealtimeTurnDetection1SemanticVadEagerness.High => "high",
-                RealtimeTurnDetectionRealtimeTurnDetection1SemanticVadEagerness.Auto => "auto",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "auto" => RealtimeTurnDetectionRealtimeTurnDetection1SemanticVadEagerness.Auto,
+                "high" => RealtimeTurnDetectionRealtimeTurnDetection1SemanticVadEagerness.High,
                 "low" => RealtimeTurnDetectionRealtimeTurnDetection1SemanticVadEagerness.Low,
                 "medium" => RealtimeTurnDetectionRealtimeTurnDetection1SemanticVadEagerness.Medium,
-                "high" => RealtimeTurnDetectionRealtimeTurnDetection1SemanticVadEagerness.High,
-                "auto" => RealtimeTurnDetectionRealtimeTurnDetection1SemanticVadEagerness.Auto,
                 _ => null,
             };
         }

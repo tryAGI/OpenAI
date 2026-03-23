@@ -11,11 +11,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Auto,
+        x1024x1024,
         /// <summary>
         /// 
         /// </summary>
-        x1024x1024,
+        x1024x1536,
         /// <summary>
         /// 
         /// </summary>
@@ -23,7 +23,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        x1024x1536,
+        Auto,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                EditImageBodyJsonParamSize2.Auto => "auto",
                 EditImageBodyJsonParamSize2.x1024x1024 => "1024x1024",
-                EditImageBodyJsonParamSize2.x1536x1024 => "1536x1024",
                 EditImageBodyJsonParamSize2.x1024x1536 => "1024x1536",
+                EditImageBodyJsonParamSize2.x1536x1024 => "1536x1024",
+                EditImageBodyJsonParamSize2.Auto => "auto",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "auto" => EditImageBodyJsonParamSize2.Auto,
                 "1024x1024" => EditImageBodyJsonParamSize2.x1024x1024,
-                "1536x1024" => EditImageBodyJsonParamSize2.x1536x1024,
                 "1024x1536" => EditImageBodyJsonParamSize2.x1024x1536,
+                "1536x1024" => EditImageBodyJsonParamSize2.x1536x1024,
+                "auto" => EditImageBodyJsonParamSize2.Auto,
                 _ => null,
             };
         }

@@ -11,19 +11,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        ProjectId,
-        /// <summary>
-        /// 
-        /// </summary>
-        UserId,
-        /// <summary>
-        /// 
-        /// </summary>
         ApiKeyId,
         /// <summary>
         /// 
         /// </summary>
         Model,
+        /// <summary>
+        /// 
+        /// </summary>
+        ProjectId,
+        /// <summary>
+        /// 
+        /// </summary>
+        UserId,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                UsageAudioTranscriptionsGroupByItem.ProjectId => "project_id",
-                UsageAudioTranscriptionsGroupByItem.UserId => "user_id",
                 UsageAudioTranscriptionsGroupByItem.ApiKeyId => "api_key_id",
                 UsageAudioTranscriptionsGroupByItem.Model => "model",
+                UsageAudioTranscriptionsGroupByItem.ProjectId => "project_id",
+                UsageAudioTranscriptionsGroupByItem.UserId => "user_id",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "project_id" => UsageAudioTranscriptionsGroupByItem.ProjectId,
-                "user_id" => UsageAudioTranscriptionsGroupByItem.UserId,
                 "api_key_id" => UsageAudioTranscriptionsGroupByItem.ApiKeyId,
                 "model" => UsageAudioTranscriptionsGroupByItem.Model,
+                "project_id" => UsageAudioTranscriptionsGroupByItem.ProjectId,
+                "user_id" => UsageAudioTranscriptionsGroupByItem.UserId,
                 _ => null,
             };
         }

@@ -27,21 +27,21 @@ namespace tryAGI.OpenAI.JsonConverters
             }
 
             var __score0 = 0;
-            if (__jsonProps.Contains("type")) __score0++;
-            if (__jsonProps.Contains("id")) __score0++;
-            if (__jsonProps.Contains("start")) __score0++;
             if (__jsonProps.Contains("end")) __score0++;
-            if (__jsonProps.Contains("text")) __score0++;
+            if (__jsonProps.Contains("id")) __score0++;
             if (__jsonProps.Contains("speaker")) __score0++;
+            if (__jsonProps.Contains("start")) __score0++;
+            if (__jsonProps.Contains("text")) __score0++;
+            if (__jsonProps.Contains("type")) __score0++;
             var __score1 = 0;
-            if (__jsonProps.Contains("type")) __score1++;
             if (__jsonProps.Contains("delta")) __score1++;
             if (__jsonProps.Contains("logprobs")) __score1++;
             if (__jsonProps.Contains("segment_id")) __score1++;
+            if (__jsonProps.Contains("type")) __score1++;
             var __score2 = 0;
-            if (__jsonProps.Contains("type")) __score2++;
-            if (__jsonProps.Contains("text")) __score2++;
             if (__jsonProps.Contains("logprobs")) __score2++;
+            if (__jsonProps.Contains("text")) __score2++;
+            if (__jsonProps.Contains("type")) __score2++;
             if (__jsonProps.Contains("usage")) __score2++;
             var __bestScore = 0;
             var __bestIndex = -1;

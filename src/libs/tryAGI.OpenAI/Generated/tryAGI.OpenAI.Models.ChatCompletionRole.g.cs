@@ -11,7 +11,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Assistant,
+        /// <summary>
+        /// 
+        /// </summary>
         Developer,
+        /// <summary>
+        /// 
+        /// </summary>
+        Function,
         /// <summary>
         /// 
         /// </summary>
@@ -19,19 +27,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        User,
-        /// <summary>
-        /// 
-        /// </summary>
-        Assistant,
-        /// <summary>
-        /// 
-        /// </summary>
         Tool,
         /// <summary>
         /// 
         /// </summary>
-        Function,
+        User,
     }
 
     /// <summary>
@@ -46,12 +46,12 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                ChatCompletionRole.Developer => "developer",
-                ChatCompletionRole.System => "system",
-                ChatCompletionRole.User => "user",
                 ChatCompletionRole.Assistant => "assistant",
-                ChatCompletionRole.Tool => "tool",
+                ChatCompletionRole.Developer => "developer",
                 ChatCompletionRole.Function => "function",
+                ChatCompletionRole.System => "system",
+                ChatCompletionRole.Tool => "tool",
+                ChatCompletionRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,12 +62,12 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "developer" => ChatCompletionRole.Developer,
-                "system" => ChatCompletionRole.System,
-                "user" => ChatCompletionRole.User,
                 "assistant" => ChatCompletionRole.Assistant,
-                "tool" => ChatCompletionRole.Tool,
+                "developer" => ChatCompletionRole.Developer,
                 "function" => ChatCompletionRole.Function,
+                "system" => ChatCompletionRole.System,
+                "tool" => ChatCompletionRole.Tool,
+                "user" => ChatCompletionRole.User,
                 _ => null,
             };
         }

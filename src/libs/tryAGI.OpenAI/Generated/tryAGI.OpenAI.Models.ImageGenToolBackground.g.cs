@@ -11,17 +11,17 @@ namespace tryAGI.OpenAI
     public enum ImageGenToolBackground
     {
         /// <summary>
-        /// 
+        /// `auto`.
         /// </summary>
-        Transparent,
+        Auto,
         /// <summary>
         /// `auto`.
         /// </summary>
         Opaque,
         /// <summary>
-        /// `auto`.
+        /// 
         /// </summary>
-        Auto,
+        Transparent,
     }
 
     /// <summary>
@@ -36,9 +36,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                ImageGenToolBackground.Transparent => "transparent",
-                ImageGenToolBackground.Opaque => "opaque",
                 ImageGenToolBackground.Auto => "auto",
+                ImageGenToolBackground.Opaque => "opaque",
+                ImageGenToolBackground.Transparent => "transparent",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,9 +49,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "transparent" => ImageGenToolBackground.Transparent,
-                "opaque" => ImageGenToolBackground.Opaque,
                 "auto" => ImageGenToolBackground.Auto,
+                "opaque" => ImageGenToolBackground.Opaque,
+                "transparent" => ImageGenToolBackground.Transparent,
                 _ => null,
             };
         }

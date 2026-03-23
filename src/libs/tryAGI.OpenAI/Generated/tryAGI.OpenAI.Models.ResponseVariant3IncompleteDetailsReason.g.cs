@@ -11,11 +11,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        MaxOutputTokens,
+        ContentFilter,
         /// <summary>
         /// 
         /// </summary>
-        ContentFilter,
+        MaxOutputTokens,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                ResponseVariant3IncompleteDetailsReason.MaxOutputTokens => "max_output_tokens",
                 ResponseVariant3IncompleteDetailsReason.ContentFilter => "content_filter",
+                ResponseVariant3IncompleteDetailsReason.MaxOutputTokens => "max_output_tokens",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "max_output_tokens" => ResponseVariant3IncompleteDetailsReason.MaxOutputTokens,
                 "content_filter" => ResponseVariant3IncompleteDetailsReason.ContentFilter,
+                "max_output_tokens" => ResponseVariant3IncompleteDetailsReason.MaxOutputTokens,
                 _ => null,
             };
         }

@@ -12,11 +12,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Sse,
+        Audio,
         /// <summary>
         /// 
         /// </summary>
-        Audio,
+        Sse,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                CreateSpeechRequestStreamFormat.Sse => "sse",
                 CreateSpeechRequestStreamFormat.Audio => "audio",
+                CreateSpeechRequestStreamFormat.Sse => "sse",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "sse" => CreateSpeechRequestStreamFormat.Sse,
                 "audio" => CreateSpeechRequestStreamFormat.Audio,
+                "sse" => CreateSpeechRequestStreamFormat.Sse,
                 _ => null,
             };
         }

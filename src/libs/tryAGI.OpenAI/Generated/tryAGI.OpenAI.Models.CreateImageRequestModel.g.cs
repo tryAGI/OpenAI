@@ -11,10 +11,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        GptImage15,
-        /// <summary>
-        /// 
-        /// </summary>
         DallE2,
         /// <summary>
         /// 
@@ -28,6 +24,10 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         GptImage1Mini,
+        /// <summary>
+        /// 
+        /// </summary>
+        GptImage15,
     }
 
     /// <summary>
@@ -42,11 +42,11 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                CreateImageRequestModel.GptImage15 => "gpt-image-1.5",
                 CreateImageRequestModel.DallE2 => "dall-e-2",
                 CreateImageRequestModel.DallE3 => "dall-e-3",
                 CreateImageRequestModel.GptImage1 => "gpt-image-1",
                 CreateImageRequestModel.GptImage1Mini => "gpt-image-1-mini",
+                CreateImageRequestModel.GptImage15 => "gpt-image-1.5",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,11 +57,11 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "gpt-image-1.5" => CreateImageRequestModel.GptImage15,
                 "dall-e-2" => CreateImageRequestModel.DallE2,
                 "dall-e-3" => CreateImageRequestModel.DallE3,
                 "gpt-image-1" => CreateImageRequestModel.GptImage1,
                 "gpt-image-1-mini" => CreateImageRequestModel.GptImage1Mini,
+                "gpt-image-1.5" => CreateImageRequestModel.GptImage15,
                 _ => null,
             };
         }

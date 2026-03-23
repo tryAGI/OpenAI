@@ -11,15 +11,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Jpeg,
+        /// <summary>
+        /// 
+        /// </summary>
         Png,
         /// <summary>
         /// 
         /// </summary>
         Webp,
-        /// <summary>
-        /// 
-        /// </summary>
-        Jpeg,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                ImageEditPartialImageEventOutputFormat.Jpeg => "jpeg",
                 ImageEditPartialImageEventOutputFormat.Png => "png",
                 ImageEditPartialImageEventOutputFormat.Webp => "webp",
-                ImageEditPartialImageEventOutputFormat.Jpeg => "jpeg",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "jpeg" => ImageEditPartialImageEventOutputFormat.Jpeg,
                 "png" => ImageEditPartialImageEventOutputFormat.Png,
                 "webp" => ImageEditPartialImageEventOutputFormat.Webp,
-                "jpeg" => ImageEditPartialImageEventOutputFormat.Jpeg,
                 _ => null,
             };
         }

@@ -11,11 +11,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Transparent,
+        Opaque,
         /// <summary>
         /// 
         /// </summary>
-        Opaque,
+        Transparent,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                ImagesResponseBackground.Transparent => "transparent",
                 ImagesResponseBackground.Opaque => "opaque",
+                ImagesResponseBackground.Transparent => "transparent",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "transparent" => ImagesResponseBackground.Transparent,
                 "opaque" => ImagesResponseBackground.Opaque,
+                "transparent" => ImagesResponseBackground.Transparent,
                 _ => null,
             };
         }

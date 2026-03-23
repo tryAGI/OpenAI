@@ -27,13 +27,13 @@ namespace tryAGI.OpenAI.JsonConverters
             }
 
             var __score0 = 0;
-            if (__jsonProps.Contains("id")) __score0++;
-            if (__jsonProps.Contains("type")) __score0++;
-            if (__jsonProps.Contains("call_id")) __score0++;
-            if (__jsonProps.Contains("namespace")) __score0++;
-            if (__jsonProps.Contains("name")) __score0++;
             if (__jsonProps.Contains("arguments")) __score0++;
+            if (__jsonProps.Contains("call_id")) __score0++;
+            if (__jsonProps.Contains("id")) __score0++;
+            if (__jsonProps.Contains("name")) __score0++;
+            if (__jsonProps.Contains("namespace")) __score0++;
             if (__jsonProps.Contains("status")) __score0++;
+            if (__jsonProps.Contains("type")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("id")) __score1++;
             var __bestScore = 0;

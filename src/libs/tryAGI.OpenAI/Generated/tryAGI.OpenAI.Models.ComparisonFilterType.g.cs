@@ -24,15 +24,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`, `in`, `nin`.
         /// </summary>
-        Ne,
-        /// <summary>
-        /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`, `in`, `nin`.
-        /// </summary>
         Gt,
         /// <summary>
         /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`, `in`, `nin`.
         /// </summary>
         Gte,
+        /// <summary>
+        /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`, `in`, `nin`.
+        /// </summary>
+        In,
         /// <summary>
         /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`, `in`, `nin`.
         /// </summary>
@@ -44,7 +44,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`, `in`, `nin`.
         /// </summary>
-        In,
+        Ne,
         /// <summary>
         /// `eq`, `ne`, `gt`, `gte`, `lt`, `lte`, `in`, `nin`.
         /// </summary>
@@ -64,12 +64,12 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 ComparisonFilterType.Eq => "eq",
-                ComparisonFilterType.Ne => "ne",
                 ComparisonFilterType.Gt => "gt",
                 ComparisonFilterType.Gte => "gte",
+                ComparisonFilterType.In => "in",
                 ComparisonFilterType.Lt => "lt",
                 ComparisonFilterType.Lte => "lte",
-                ComparisonFilterType.In => "in",
+                ComparisonFilterType.Ne => "ne",
                 ComparisonFilterType.Nin => "nin",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -82,12 +82,12 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "eq" => ComparisonFilterType.Eq,
-                "ne" => ComparisonFilterType.Ne,
                 "gt" => ComparisonFilterType.Gt,
                 "gte" => ComparisonFilterType.Gte,
+                "in" => ComparisonFilterType.In,
                 "lt" => ComparisonFilterType.Lt,
                 "lte" => ComparisonFilterType.Lte,
-                "in" => ComparisonFilterType.In,
+                "ne" => ComparisonFilterType.Ne,
                 "nin" => ComparisonFilterType.Nin,
                 _ => null,
             };

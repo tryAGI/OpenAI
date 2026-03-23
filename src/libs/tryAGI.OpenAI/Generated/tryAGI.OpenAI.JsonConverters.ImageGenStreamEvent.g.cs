@@ -27,22 +27,22 @@ namespace tryAGI.OpenAI.JsonConverters
             }
 
             var __score0 = 0;
-            if (__jsonProps.Contains("type")) __score0++;
             if (__jsonProps.Contains("b64_json")) __score0++;
-            if (__jsonProps.Contains("created_at")) __score0++;
-            if (__jsonProps.Contains("size")) __score0++;
-            if (__jsonProps.Contains("quality")) __score0++;
             if (__jsonProps.Contains("background")) __score0++;
+            if (__jsonProps.Contains("created_at")) __score0++;
             if (__jsonProps.Contains("output_format")) __score0++;
             if (__jsonProps.Contains("partial_image_index")) __score0++;
+            if (__jsonProps.Contains("quality")) __score0++;
+            if (__jsonProps.Contains("size")) __score0++;
+            if (__jsonProps.Contains("type")) __score0++;
             var __score1 = 0;
-            if (__jsonProps.Contains("type")) __score1++;
             if (__jsonProps.Contains("b64_json")) __score1++;
-            if (__jsonProps.Contains("created_at")) __score1++;
-            if (__jsonProps.Contains("size")) __score1++;
-            if (__jsonProps.Contains("quality")) __score1++;
             if (__jsonProps.Contains("background")) __score1++;
+            if (__jsonProps.Contains("created_at")) __score1++;
             if (__jsonProps.Contains("output_format")) __score1++;
+            if (__jsonProps.Contains("quality")) __score1++;
+            if (__jsonProps.Contains("size")) __score1++;
+            if (__jsonProps.Contains("type")) __score1++;
             if (__jsonProps.Contains("usage")) __score1++;
             var __bestScore = 0;
             var __bestIndex = -1;

@@ -12,14 +12,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Mp3,
-        /// <summary>
-        /// 
-        /// </summary>
-        Opus,
-        /// <summary>
-        /// 
-        /// </summary>
         Aac,
         /// <summary>
         /// 
@@ -28,11 +20,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Wav,
+        Mp3,
+        /// <summary>
+        /// 
+        /// </summary>
+        Opus,
         /// <summary>
         /// 
         /// </summary>
         Pcm,
+        /// <summary>
+        /// 
+        /// </summary>
+        Wav,
     }
 
     /// <summary>
@@ -47,12 +47,12 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                CreateSpeechRequestResponseFormat.Mp3 => "mp3",
-                CreateSpeechRequestResponseFormat.Opus => "opus",
                 CreateSpeechRequestResponseFormat.Aac => "aac",
                 CreateSpeechRequestResponseFormat.Flac => "flac",
-                CreateSpeechRequestResponseFormat.Wav => "wav",
+                CreateSpeechRequestResponseFormat.Mp3 => "mp3",
+                CreateSpeechRequestResponseFormat.Opus => "opus",
                 CreateSpeechRequestResponseFormat.Pcm => "pcm",
+                CreateSpeechRequestResponseFormat.Wav => "wav",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,12 +63,12 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "mp3" => CreateSpeechRequestResponseFormat.Mp3,
-                "opus" => CreateSpeechRequestResponseFormat.Opus,
                 "aac" => CreateSpeechRequestResponseFormat.Aac,
                 "flac" => CreateSpeechRequestResponseFormat.Flac,
-                "wav" => CreateSpeechRequestResponseFormat.Wav,
+                "mp3" => CreateSpeechRequestResponseFormat.Mp3,
+                "opus" => CreateSpeechRequestResponseFormat.Opus,
                 "pcm" => CreateSpeechRequestResponseFormat.Pcm,
+                "wav" => CreateSpeechRequestResponseFormat.Wav,
                 _ => null,
             };
         }

@@ -20,11 +20,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        FileSearch,
-        /// <summary>
-        /// 
-        /// </summary>
-        WebSearchPreview,
+        CodeInterpreter,
         /// <summary>
         /// 
         /// </summary>
@@ -32,15 +28,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        ComputerUsePreview,
-        /// <summary>
-        /// 
-        /// </summary>
         ComputerUse,
         /// <summary>
         /// 
         /// </summary>
-        WebSearchPreview20250311,
+        ComputerUsePreview,
+        /// <summary>
+        /// 
+        /// </summary>
+        FileSearch,
         /// <summary>
         /// 
         /// </summary>
@@ -48,7 +44,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        CodeInterpreter,
+        WebSearchPreview,
+        /// <summary>
+        /// 
+        /// </summary>
+        WebSearchPreview20250311,
     }
 
     /// <summary>
@@ -63,14 +63,14 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                ToolChoiceTypesType.FileSearch => "file_search",
-                ToolChoiceTypesType.WebSearchPreview => "web_search_preview",
-                ToolChoiceTypesType.Computer => "computer",
-                ToolChoiceTypesType.ComputerUsePreview => "computer_use_preview",
-                ToolChoiceTypesType.ComputerUse => "computer_use",
-                ToolChoiceTypesType.WebSearchPreview20250311 => "web_search_preview_2025_03_11",
-                ToolChoiceTypesType.ImageGeneration => "image_generation",
                 ToolChoiceTypesType.CodeInterpreter => "code_interpreter",
+                ToolChoiceTypesType.Computer => "computer",
+                ToolChoiceTypesType.ComputerUse => "computer_use",
+                ToolChoiceTypesType.ComputerUsePreview => "computer_use_preview",
+                ToolChoiceTypesType.FileSearch => "file_search",
+                ToolChoiceTypesType.ImageGeneration => "image_generation",
+                ToolChoiceTypesType.WebSearchPreview => "web_search_preview",
+                ToolChoiceTypesType.WebSearchPreview20250311 => "web_search_preview_2025_03_11",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -81,14 +81,14 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "file_search" => ToolChoiceTypesType.FileSearch,
-                "web_search_preview" => ToolChoiceTypesType.WebSearchPreview,
-                "computer" => ToolChoiceTypesType.Computer,
-                "computer_use_preview" => ToolChoiceTypesType.ComputerUsePreview,
-                "computer_use" => ToolChoiceTypesType.ComputerUse,
-                "web_search_preview_2025_03_11" => ToolChoiceTypesType.WebSearchPreview20250311,
-                "image_generation" => ToolChoiceTypesType.ImageGeneration,
                 "code_interpreter" => ToolChoiceTypesType.CodeInterpreter,
+                "computer" => ToolChoiceTypesType.Computer,
+                "computer_use" => ToolChoiceTypesType.ComputerUse,
+                "computer_use_preview" => ToolChoiceTypesType.ComputerUsePreview,
+                "file_search" => ToolChoiceTypesType.FileSearch,
+                "image_generation" => ToolChoiceTypesType.ImageGeneration,
+                "web_search_preview" => ToolChoiceTypesType.WebSearchPreview,
+                "web_search_preview_2025_03_11" => ToolChoiceTypesType.WebSearchPreview20250311,
                 _ => null,
             };
         }

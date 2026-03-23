@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        ServerError,
+        InvalidPrompt,
         /// <summary>
         /// 
         /// </summary>
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        InvalidPrompt,
+        ServerError,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                RunObjectLastErrorCode.ServerError => "server_error",
-                RunObjectLastErrorCode.RateLimitExceeded => "rate_limit_exceeded",
                 RunObjectLastErrorCode.InvalidPrompt => "invalid_prompt",
+                RunObjectLastErrorCode.RateLimitExceeded => "rate_limit_exceeded",
+                RunObjectLastErrorCode.ServerError => "server_error",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "server_error" => RunObjectLastErrorCode.ServerError,
-                "rate_limit_exceeded" => RunObjectLastErrorCode.RateLimitExceeded,
                 "invalid_prompt" => RunObjectLastErrorCode.InvalidPrompt,
+                "rate_limit_exceeded" => RunObjectLastErrorCode.RateLimitExceeded,
+                "server_error" => RunObjectLastErrorCode.ServerError,
                 _ => null,
             };
         }

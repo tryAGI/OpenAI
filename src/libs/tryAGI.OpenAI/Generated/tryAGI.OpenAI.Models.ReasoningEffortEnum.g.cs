@@ -20,11 +20,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        None,
-        /// <summary>
-        /// 
-        /// </summary>
-        Minimal,
+        High,
         /// <summary>
         /// 
         /// </summary>
@@ -36,7 +32,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        High,
+        Minimal,
+        /// <summary>
+        /// 
+        /// </summary>
+        None,
         /// <summary>
         /// 
         /// </summary>
@@ -55,11 +55,11 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                ReasoningEffortEnum.None => "none",
-                ReasoningEffortEnum.Minimal => "minimal",
+                ReasoningEffortEnum.High => "high",
                 ReasoningEffortEnum.Low => "low",
                 ReasoningEffortEnum.Medium => "medium",
-                ReasoningEffortEnum.High => "high",
+                ReasoningEffortEnum.Minimal => "minimal",
+                ReasoningEffortEnum.None => "none",
                 ReasoningEffortEnum.Xhigh => "xhigh",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -71,11 +71,11 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "none" => ReasoningEffortEnum.None,
-                "minimal" => ReasoningEffortEnum.Minimal,
+                "high" => ReasoningEffortEnum.High,
                 "low" => ReasoningEffortEnum.Low,
                 "medium" => ReasoningEffortEnum.Medium,
-                "high" => ReasoningEffortEnum.High,
+                "minimal" => ReasoningEffortEnum.Minimal,
+                "none" => ReasoningEffortEnum.None,
                 "xhigh" => ReasoningEffortEnum.Xhigh,
                 _ => null,
             };

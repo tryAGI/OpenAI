@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Pcm16,
+        G711Alaw,
         /// <summary>
         /// 
         /// </summary>
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        G711Alaw,
+        Pcm16,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                RealtimeBetaResponseCreateParamsOutputAudioFormat.Pcm16 => "pcm16",
-                RealtimeBetaResponseCreateParamsOutputAudioFormat.G711Ulaw => "g711_ulaw",
                 RealtimeBetaResponseCreateParamsOutputAudioFormat.G711Alaw => "g711_alaw",
+                RealtimeBetaResponseCreateParamsOutputAudioFormat.G711Ulaw => "g711_ulaw",
+                RealtimeBetaResponseCreateParamsOutputAudioFormat.Pcm16 => "pcm16",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "pcm16" => RealtimeBetaResponseCreateParamsOutputAudioFormat.Pcm16,
-                "g711_ulaw" => RealtimeBetaResponseCreateParamsOutputAudioFormat.G711Ulaw,
                 "g711_alaw" => RealtimeBetaResponseCreateParamsOutputAudioFormat.G711Alaw,
+                "g711_ulaw" => RealtimeBetaResponseCreateParamsOutputAudioFormat.G711Ulaw,
+                "pcm16" => RealtimeBetaResponseCreateParamsOutputAudioFormat.Pcm16,
                 _ => null,
             };
         }

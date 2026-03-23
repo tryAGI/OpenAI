@@ -11,6 +11,14 @@ namespace tryAGI.OpenAI
     public enum ImageGenToolQuality
     {
         /// <summary>
+        /// `auto`.
+        /// </summary>
+        Auto,
+        /// <summary>
+        /// 
+        /// </summary>
+        High,
+        /// <summary>
         /// 
         /// </summary>
         Low,
@@ -18,14 +26,6 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         Medium,
-        /// <summary>
-        /// 
-        /// </summary>
-        High,
-        /// <summary>
-        /// `auto`.
-        /// </summary>
-        Auto,
     }
 
     /// <summary>
@@ -40,10 +40,10 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                ImageGenToolQuality.Auto => "auto",
+                ImageGenToolQuality.High => "high",
                 ImageGenToolQuality.Low => "low",
                 ImageGenToolQuality.Medium => "medium",
-                ImageGenToolQuality.High => "high",
-                ImageGenToolQuality.Auto => "auto",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,10 +54,10 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "auto" => ImageGenToolQuality.Auto,
+                "high" => ImageGenToolQuality.High,
                 "low" => ImageGenToolQuality.Low,
                 "medium" => ImageGenToolQuality.Medium,
-                "high" => ImageGenToolQuality.High,
-                "auto" => ImageGenToolQuality.Auto,
                 _ => null,
             };
         }

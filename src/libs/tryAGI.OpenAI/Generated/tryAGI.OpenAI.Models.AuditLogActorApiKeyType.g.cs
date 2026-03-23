@@ -11,11 +11,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        User,
+        ServiceAccount,
         /// <summary>
         /// 
         /// </summary>
-        ServiceAccount,
+        User,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                AuditLogActorApiKeyType.User => "user",
                 AuditLogActorApiKeyType.ServiceAccount => "service_account",
+                AuditLogActorApiKeyType.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "user" => AuditLogActorApiKeyType.User,
                 "service_account" => AuditLogActorApiKeyType.ServiceAccount,
+                "user" => AuditLogActorApiKeyType.User,
                 _ => null,
             };
         }

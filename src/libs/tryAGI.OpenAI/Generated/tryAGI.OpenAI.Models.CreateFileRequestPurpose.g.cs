@@ -23,21 +23,21 @@ namespace tryAGI.OpenAI
         /// </summary>
         Batch,
         /// <summary>
+        /// Used for eval data sets
+        /// </summary>
+        Evals,
+        /// <summary>
         /// Used for fine-tuning
         /// </summary>
         FineTune,
-        /// <summary>
-        /// Images used for vision fine-tuning
-        /// </summary>
-        Vision,
         /// <summary>
         /// Flexible file type for any purpose
         /// </summary>
         UserData,
         /// <summary>
-        /// Used for eval data sets
+        /// Images used for vision fine-tuning
         /// </summary>
-        Evals,
+        Vision,
     }
 
     /// <summary>
@@ -54,10 +54,10 @@ namespace tryAGI.OpenAI
             {
                 CreateFileRequestPurpose.Assistants => "assistants",
                 CreateFileRequestPurpose.Batch => "batch",
-                CreateFileRequestPurpose.FineTune => "fine-tune",
-                CreateFileRequestPurpose.Vision => "vision",
-                CreateFileRequestPurpose.UserData => "user_data",
                 CreateFileRequestPurpose.Evals => "evals",
+                CreateFileRequestPurpose.FineTune => "fine-tune",
+                CreateFileRequestPurpose.UserData => "user_data",
+                CreateFileRequestPurpose.Vision => "vision",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,10 +70,10 @@ namespace tryAGI.OpenAI
             {
                 "assistants" => CreateFileRequestPurpose.Assistants,
                 "batch" => CreateFileRequestPurpose.Batch,
-                "fine-tune" => CreateFileRequestPurpose.FineTune,
-                "vision" => CreateFileRequestPurpose.Vision,
-                "user_data" => CreateFileRequestPurpose.UserData,
                 "evals" => CreateFileRequestPurpose.Evals,
+                "fine-tune" => CreateFileRequestPurpose.FineTune,
+                "user_data" => CreateFileRequestPurpose.UserData,
+                "vision" => CreateFileRequestPurpose.Vision,
                 _ => null,
             };
         }

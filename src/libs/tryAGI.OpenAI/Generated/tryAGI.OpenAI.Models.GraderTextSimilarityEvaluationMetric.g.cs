@@ -13,15 +13,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Bleu,
+        /// <summary>
+        /// 
+        /// </summary>
         Cosine,
         /// <summary>
         /// 
         /// </summary>
         FuzzyMatch,
-        /// <summary>
-        /// 
-        /// </summary>
-        Bleu,
         /// <summary>
         /// 
         /// </summary>
@@ -68,9 +68,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                GraderTextSimilarityEvaluationMetric.Bleu => "bleu",
                 GraderTextSimilarityEvaluationMetric.Cosine => "cosine",
                 GraderTextSimilarityEvaluationMetric.FuzzyMatch => "fuzzy_match",
-                GraderTextSimilarityEvaluationMetric.Bleu => "bleu",
                 GraderTextSimilarityEvaluationMetric.Gleu => "gleu",
                 GraderTextSimilarityEvaluationMetric.Meteor => "meteor",
                 GraderTextSimilarityEvaluationMetric.Rouge1 => "rouge_1",
@@ -89,9 +89,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "bleu" => GraderTextSimilarityEvaluationMetric.Bleu,
                 "cosine" => GraderTextSimilarityEvaluationMetric.Cosine,
                 "fuzzy_match" => GraderTextSimilarityEvaluationMetric.FuzzyMatch,
-                "bleu" => GraderTextSimilarityEvaluationMetric.Bleu,
                 "gleu" => GraderTextSimilarityEvaluationMetric.Gleu,
                 "meteor" => GraderTextSimilarityEvaluationMetric.Meteor,
                 "rouge_1" => GraderTextSimilarityEvaluationMetric.Rouge1,

@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        GptImage15,
+        ChatgptImageLatest,
         /// <summary>
         /// 
         /// </summary>
@@ -23,7 +23,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        ChatgptImageLatest,
+        GptImage15,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                EditImageBodyJsonParamModel.GptImage15 => "gpt-image-1.5",
+                EditImageBodyJsonParamModel.ChatgptImageLatest => "chatgpt-image-latest",
                 EditImageBodyJsonParamModel.GptImage1 => "gpt-image-1",
                 EditImageBodyJsonParamModel.GptImage1Mini => "gpt-image-1-mini",
-                EditImageBodyJsonParamModel.ChatgptImageLatest => "chatgpt-image-latest",
+                EditImageBodyJsonParamModel.GptImage15 => "gpt-image-1.5",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "gpt-image-1.5" => EditImageBodyJsonParamModel.GptImage15,
+                "chatgpt-image-latest" => EditImageBodyJsonParamModel.ChatgptImageLatest,
                 "gpt-image-1" => EditImageBodyJsonParamModel.GptImage1,
                 "gpt-image-1-mini" => EditImageBodyJsonParamModel.GptImage1Mini,
-                "chatgpt-image-latest" => EditImageBodyJsonParamModel.ChatgptImageLatest,
+                "gpt-image-1.5" => EditImageBodyJsonParamModel.GptImage15,
                 _ => null,
             };
         }

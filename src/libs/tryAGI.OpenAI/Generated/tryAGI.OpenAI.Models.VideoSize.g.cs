@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        x720x1280,
+        x1024x1792,
         /// <summary>
         /// 
         /// </summary>
@@ -19,11 +19,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        x1024x1792,
+        x1792x1024,
         /// <summary>
         /// 
         /// </summary>
-        x1792x1024,
+        x720x1280,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                VideoSize.x720x1280 => "720x1280",
-                VideoSize.x1280x720 => "1280x720",
                 VideoSize.x1024x1792 => "1024x1792",
+                VideoSize.x1280x720 => "1280x720",
                 VideoSize.x1792x1024 => "1792x1024",
+                VideoSize.x720x1280 => "720x1280",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "720x1280" => VideoSize.x720x1280,
-                "1280x720" => VideoSize.x1280x720,
                 "1024x1792" => VideoSize.x1024x1792,
+                "1280x720" => VideoSize.x1280x720,
                 "1792x1024" => VideoSize.x1792x1024,
+                "720x1280" => VideoSize.x720x1280,
                 _ => null,
             };
         }

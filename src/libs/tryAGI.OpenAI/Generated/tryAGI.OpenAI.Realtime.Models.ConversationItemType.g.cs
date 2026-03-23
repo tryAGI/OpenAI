@@ -11,15 +11,15 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         /// 
         /// </summary>
-        Message,
-        /// <summary>
-        /// 
-        /// </summary>
         FunctionCall,
         /// <summary>
         /// 
         /// </summary>
         FunctionCallOutput,
+        /// <summary>
+        /// 
+        /// </summary>
+        Message,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace tryAGI.OpenAI.Realtime
         {
             return value switch
             {
-                ConversationItemType.Message => "message",
                 ConversationItemType.FunctionCall => "function_call",
                 ConversationItemType.FunctionCallOutput => "function_call_output",
+                ConversationItemType.Message => "message",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace tryAGI.OpenAI.Realtime
         {
             return value switch
             {
-                "message" => ConversationItemType.Message,
                 "function_call" => ConversationItemType.FunctionCall,
                 "function_call_output" => ConversationItemType.FunctionCallOutput,
+                "message" => ConversationItemType.Message,
                 _ => null,
             };
         }

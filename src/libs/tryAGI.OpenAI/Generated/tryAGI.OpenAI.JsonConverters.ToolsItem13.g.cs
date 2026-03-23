@@ -27,18 +27,18 @@ namespace tryAGI.OpenAI.JsonConverters
             }
 
             var __score0 = 0;
-            if (__jsonProps.Contains("name")) __score0++;
+            if (__jsonProps.Contains("defer_loading")) __score0++;
             if (__jsonProps.Contains("description")) __score0++;
+            if (__jsonProps.Contains("name")) __score0++;
             if (__jsonProps.Contains("parameters")) __score0++;
             if (__jsonProps.Contains("strict")) __score0++;
             if (__jsonProps.Contains("type")) __score0++;
-            if (__jsonProps.Contains("defer_loading")) __score0++;
             var __score1 = 0;
-            if (__jsonProps.Contains("type")) __score1++;
-            if (__jsonProps.Contains("name")) __score1++;
+            if (__jsonProps.Contains("defer_loading")) __score1++;
             if (__jsonProps.Contains("description")) __score1++;
             if (__jsonProps.Contains("format")) __score1++;
-            if (__jsonProps.Contains("defer_loading")) __score1++;
+            if (__jsonProps.Contains("name")) __score1++;
+            if (__jsonProps.Contains("type")) __score1++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }

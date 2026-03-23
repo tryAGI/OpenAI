@@ -16,11 +16,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Low,
+        High,
         /// <summary>
         /// 
         /// </summary>
-        High,
+        Low,
     }
 
     /// <summary>
@@ -36,8 +36,8 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 RealtimeConversationItemMessageUserContentItemDetail.Auto => "auto",
-                RealtimeConversationItemMessageUserContentItemDetail.Low => "low",
                 RealtimeConversationItemMessageUserContentItemDetail.High => "high",
+                RealtimeConversationItemMessageUserContentItemDetail.Low => "low",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,8 +49,8 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "auto" => RealtimeConversationItemMessageUserContentItemDetail.Auto,
-                "low" => RealtimeConversationItemMessageUserContentItemDetail.Low,
                 "high" => RealtimeConversationItemMessageUserContentItemDetail.High,
+                "low" => RealtimeConversationItemMessageUserContentItemDetail.Low,
                 _ => null,
             };
         }

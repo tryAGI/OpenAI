@@ -14,7 +14,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Stop,
+        ContentFilter,
+        /// <summary>
+        /// 
+        /// </summary>
+        FunctionCall,
         /// <summary>
         /// 
         /// </summary>
@@ -22,15 +26,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Stop,
+        /// <summary>
+        /// 
+        /// </summary>
         ToolCalls,
-        /// <summary>
-        /// 
-        /// </summary>
-        ContentFilter,
-        /// <summary>
-        /// 
-        /// </summary>
-        FunctionCall,
     }
 
     /// <summary>
@@ -45,11 +45,11 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                CreateChatCompletionResponseChoiceFinishReason.Stop => "stop",
-                CreateChatCompletionResponseChoiceFinishReason.Length => "length",
-                CreateChatCompletionResponseChoiceFinishReason.ToolCalls => "tool_calls",
                 CreateChatCompletionResponseChoiceFinishReason.ContentFilter => "content_filter",
                 CreateChatCompletionResponseChoiceFinishReason.FunctionCall => "function_call",
+                CreateChatCompletionResponseChoiceFinishReason.Length => "length",
+                CreateChatCompletionResponseChoiceFinishReason.Stop => "stop",
+                CreateChatCompletionResponseChoiceFinishReason.ToolCalls => "tool_calls",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -60,11 +60,11 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "stop" => CreateChatCompletionResponseChoiceFinishReason.Stop,
-                "length" => CreateChatCompletionResponseChoiceFinishReason.Length,
-                "tool_calls" => CreateChatCompletionResponseChoiceFinishReason.ToolCalls,
                 "content_filter" => CreateChatCompletionResponseChoiceFinishReason.ContentFilter,
                 "function_call" => CreateChatCompletionResponseChoiceFinishReason.FunctionCall,
+                "length" => CreateChatCompletionResponseChoiceFinishReason.Length,
+                "stop" => CreateChatCompletionResponseChoiceFinishReason.Stop,
+                "tool_calls" => CreateChatCompletionResponseChoiceFinishReason.ToolCalls,
                 _ => null,
             };
         }

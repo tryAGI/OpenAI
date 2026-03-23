@@ -11,11 +11,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Text,
+        Image,
         /// <summary>
         /// 
         /// </summary>
-        Image,
+        Text,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                CreateModerationResponseResultCategoryAppliedInputTypesViolenceGraphicItem.Text => "text",
                 CreateModerationResponseResultCategoryAppliedInputTypesViolenceGraphicItem.Image => "image",
+                CreateModerationResponseResultCategoryAppliedInputTypesViolenceGraphicItem.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "text" => CreateModerationResponseResultCategoryAppliedInputTypesViolenceGraphicItem.Text,
                 "image" => CreateModerationResponseResultCategoryAppliedInputTypesViolenceGraphicItem.Image,
+                "text" => CreateModerationResponseResultCategoryAppliedInputTypesViolenceGraphicItem.Text,
                 _ => null,
             };
         }

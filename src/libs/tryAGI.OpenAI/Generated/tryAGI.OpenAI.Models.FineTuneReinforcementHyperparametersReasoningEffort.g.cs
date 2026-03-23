@@ -16,15 +16,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        High,
+        /// <summary>
+        /// 
+        /// </summary>
         Low,
         /// <summary>
         /// 
         /// </summary>
         Medium,
-        /// <summary>
-        /// 
-        /// </summary>
-        High,
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 FineTuneReinforcementHyperparametersReasoningEffort.Default => "default",
+                FineTuneReinforcementHyperparametersReasoningEffort.High => "high",
                 FineTuneReinforcementHyperparametersReasoningEffort.Low => "low",
                 FineTuneReinforcementHyperparametersReasoningEffort.Medium => "medium",
-                FineTuneReinforcementHyperparametersReasoningEffort.High => "high",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,9 +54,9 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "default" => FineTuneReinforcementHyperparametersReasoningEffort.Default,
+                "high" => FineTuneReinforcementHyperparametersReasoningEffort.High,
                 "low" => FineTuneReinforcementHyperparametersReasoningEffort.Low,
                 "medium" => FineTuneReinforcementHyperparametersReasoningEffort.Medium,
-                "high" => FineTuneReinforcementHyperparametersReasoningEffort.High,
                 _ => null,
             };
         }

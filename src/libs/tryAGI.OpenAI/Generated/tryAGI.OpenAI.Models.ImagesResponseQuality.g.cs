@@ -11,15 +11,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        High,
+        /// <summary>
+        /// 
+        /// </summary>
         Low,
         /// <summary>
         /// 
         /// </summary>
         Medium,
-        /// <summary>
-        /// 
-        /// </summary>
-        High,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                ImagesResponseQuality.High => "high",
                 ImagesResponseQuality.Low => "low",
                 ImagesResponseQuality.Medium => "medium",
-                ImagesResponseQuality.High => "high",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "high" => ImagesResponseQuality.High,
                 "low" => ImagesResponseQuality.Low,
                 "medium" => ImagesResponseQuality.Medium,
-                "high" => ImagesResponseQuality.High,
                 _ => null,
             };
         }

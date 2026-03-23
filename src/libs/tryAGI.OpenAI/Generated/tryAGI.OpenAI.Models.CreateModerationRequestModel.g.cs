@@ -11,11 +11,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        OmniModerationLatest,
+        OmniModeration20240926,
         /// <summary>
         /// 
         /// </summary>
-        OmniModeration20240926,
+        OmniModerationLatest,
         /// <summary>
         /// 
         /// </summary>
@@ -38,8 +38,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                CreateModerationRequestModel.OmniModerationLatest => "omni-moderation-latest",
                 CreateModerationRequestModel.OmniModeration20240926 => "omni-moderation-2024-09-26",
+                CreateModerationRequestModel.OmniModerationLatest => "omni-moderation-latest",
                 CreateModerationRequestModel.TextModerationLatest => "text-moderation-latest",
                 CreateModerationRequestModel.TextModerationStable => "text-moderation-stable",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -52,8 +52,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "omni-moderation-latest" => CreateModerationRequestModel.OmniModerationLatest,
                 "omni-moderation-2024-09-26" => CreateModerationRequestModel.OmniModeration20240926,
+                "omni-moderation-latest" => CreateModerationRequestModel.OmniModerationLatest,
                 "text-moderation-latest" => CreateModerationRequestModel.TextModerationLatest,
                 "text-moderation-stable" => CreateModerationRequestModel.TextModerationStable,
                 _ => null,

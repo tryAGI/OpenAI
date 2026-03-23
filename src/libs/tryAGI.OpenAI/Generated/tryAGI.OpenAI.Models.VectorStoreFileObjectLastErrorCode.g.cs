@@ -11,15 +11,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        InvalidFile,
+        /// <summary>
+        /// 
+        /// </summary>
         ServerError,
         /// <summary>
         /// 
         /// </summary>
         UnsupportedFile,
-        /// <summary>
-        /// 
-        /// </summary>
-        InvalidFile,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                VectorStoreFileObjectLastErrorCode.InvalidFile => "invalid_file",
                 VectorStoreFileObjectLastErrorCode.ServerError => "server_error",
                 VectorStoreFileObjectLastErrorCode.UnsupportedFile => "unsupported_file",
-                VectorStoreFileObjectLastErrorCode.InvalidFile => "invalid_file",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "invalid_file" => VectorStoreFileObjectLastErrorCode.InvalidFile,
                 "server_error" => VectorStoreFileObjectLastErrorCode.ServerError,
                 "unsupported_file" => VectorStoreFileObjectLastErrorCode.UnsupportedFile,
-                "invalid_file" => VectorStoreFileObjectLastErrorCode.InvalidFile,
                 _ => null,
             };
         }

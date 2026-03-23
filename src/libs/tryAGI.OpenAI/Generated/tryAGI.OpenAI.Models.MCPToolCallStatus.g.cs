@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        InProgress,
+        Calling,
         /// <summary>
         /// 
         /// </summary>
@@ -19,15 +19,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Incomplete,
-        /// <summary>
-        /// 
-        /// </summary>
-        Calling,
-        /// <summary>
-        /// 
-        /// </summary>
         Failed,
+        /// <summary>
+        /// 
+        /// </summary>
+        InProgress,
+        /// <summary>
+        /// 
+        /// </summary>
+        Incomplete,
     }
 
     /// <summary>
@@ -42,11 +42,11 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                MCPToolCallStatus.InProgress => "in_progress",
-                MCPToolCallStatus.Completed => "completed",
-                MCPToolCallStatus.Incomplete => "incomplete",
                 MCPToolCallStatus.Calling => "calling",
+                MCPToolCallStatus.Completed => "completed",
                 MCPToolCallStatus.Failed => "failed",
+                MCPToolCallStatus.InProgress => "in_progress",
+                MCPToolCallStatus.Incomplete => "incomplete",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,11 +57,11 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "in_progress" => MCPToolCallStatus.InProgress,
-                "completed" => MCPToolCallStatus.Completed,
-                "incomplete" => MCPToolCallStatus.Incomplete,
                 "calling" => MCPToolCallStatus.Calling,
+                "completed" => MCPToolCallStatus.Completed,
                 "failed" => MCPToolCallStatus.Failed,
+                "in_progress" => MCPToolCallStatus.InProgress,
+                "incomplete" => MCPToolCallStatus.Incomplete,
                 _ => null,
             };
         }
