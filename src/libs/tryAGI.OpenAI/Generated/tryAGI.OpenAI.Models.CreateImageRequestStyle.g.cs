@@ -13,11 +13,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Vivid,
+        Natural,
         /// <summary>
         /// 
         /// </summary>
-        Natural,
+        Vivid,
     }
 
     /// <summary>
@@ -32,8 +32,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                CreateImageRequestStyle.Vivid => "vivid",
                 CreateImageRequestStyle.Natural => "natural",
+                CreateImageRequestStyle.Vivid => "vivid",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,8 +44,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "vivid" => CreateImageRequestStyle.Vivid,
                 "natural" => CreateImageRequestStyle.Natural,
+                "vivid" => CreateImageRequestStyle.Vivid,
                 _ => null,
             };
         }

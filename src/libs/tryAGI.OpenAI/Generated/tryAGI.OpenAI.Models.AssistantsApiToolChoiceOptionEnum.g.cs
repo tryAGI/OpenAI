@@ -11,11 +11,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        None,
+        Auto,
         /// <summary>
         /// 
         /// </summary>
-        Auto,
+        None,
         /// <summary>
         /// 
         /// </summary>
@@ -34,8 +34,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                AssistantsApiToolChoiceOptionEnum.None => "none",
                 AssistantsApiToolChoiceOptionEnum.Auto => "auto",
+                AssistantsApiToolChoiceOptionEnum.None => "none",
                 AssistantsApiToolChoiceOptionEnum.Required => "required",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "none" => AssistantsApiToolChoiceOptionEnum.None,
                 "auto" => AssistantsApiToolChoiceOptionEnum.Auto,
+                "none" => AssistantsApiToolChoiceOptionEnum.None,
                 "required" => AssistantsApiToolChoiceOptionEnum.Required,
                 _ => null,
             };

@@ -11,19 +11,19 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         /// 
         /// </summary>
-        Completed,
-        /// <summary>
-        /// 
-        /// </summary>
-        InProgress,
-        /// <summary>
-        /// 
-        /// </summary>
         Cancelled,
         /// <summary>
         /// 
         /// </summary>
+        Completed,
+        /// <summary>
+        /// 
+        /// </summary>
         Failed,
+        /// <summary>
+        /// 
+        /// </summary>
+        InProgress,
         /// <summary>
         /// 
         /// </summary>
@@ -42,10 +42,10 @@ namespace tryAGI.OpenAI.Realtime
         {
             return value switch
             {
-                ResponseStatus.Completed => "completed",
-                ResponseStatus.InProgress => "in_progress",
                 ResponseStatus.Cancelled => "cancelled",
+                ResponseStatus.Completed => "completed",
                 ResponseStatus.Failed => "failed",
+                ResponseStatus.InProgress => "in_progress",
                 ResponseStatus.Incomplete => "incomplete",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -57,10 +57,10 @@ namespace tryAGI.OpenAI.Realtime
         {
             return value switch
             {
-                "completed" => ResponseStatus.Completed,
-                "in_progress" => ResponseStatus.InProgress,
                 "cancelled" => ResponseStatus.Cancelled,
+                "completed" => ResponseStatus.Completed,
                 "failed" => ResponseStatus.Failed,
+                "in_progress" => ResponseStatus.InProgress,
                 "incomplete" => ResponseStatus.Incomplete,
                 _ => null,
             };

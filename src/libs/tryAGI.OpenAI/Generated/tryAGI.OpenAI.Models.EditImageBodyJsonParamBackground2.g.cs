@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Transparent,
+        Auto,
         /// <summary>
         /// 
         /// </summary>
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Auto,
+        Transparent,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                EditImageBodyJsonParamBackground2.Transparent => "transparent",
-                EditImageBodyJsonParamBackground2.Opaque => "opaque",
                 EditImageBodyJsonParamBackground2.Auto => "auto",
+                EditImageBodyJsonParamBackground2.Opaque => "opaque",
+                EditImageBodyJsonParamBackground2.Transparent => "transparent",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "transparent" => EditImageBodyJsonParamBackground2.Transparent,
-                "opaque" => EditImageBodyJsonParamBackground2.Opaque,
                 "auto" => EditImageBodyJsonParamBackground2.Auto,
+                "opaque" => EditImageBodyJsonParamBackground2.Opaque,
+                "transparent" => EditImageBodyJsonParamBackground2.Transparent,
                 _ => null,
             };
         }

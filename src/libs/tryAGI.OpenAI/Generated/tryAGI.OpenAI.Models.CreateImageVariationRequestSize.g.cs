@@ -13,15 +13,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        x1024x1024,
+        /// <summary>
+        /// 
+        /// </summary>
         x256x256,
         /// <summary>
         /// 
         /// </summary>
         x512x512,
-        /// <summary>
-        /// 
-        /// </summary>
-        x1024x1024,
     }
 
     /// <summary>
@@ -36,9 +36,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                CreateImageVariationRequestSize.x1024x1024 => "1024x1024",
                 CreateImageVariationRequestSize.x256x256 => "256x256",
                 CreateImageVariationRequestSize.x512x512 => "512x512",
-                CreateImageVariationRequestSize.x1024x1024 => "1024x1024",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,9 +49,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "1024x1024" => CreateImageVariationRequestSize.x1024x1024,
                 "256x256" => CreateImageVariationRequestSize.x256x256,
                 "512x512" => CreateImageVariationRequestSize.x512x512,
-                "1024x1024" => CreateImageVariationRequestSize.x1024x1024,
                 _ => null,
             };
         }

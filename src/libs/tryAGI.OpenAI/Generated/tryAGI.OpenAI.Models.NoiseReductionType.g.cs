@@ -11,11 +11,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        NearField,
+        FarField,
         /// <summary>
         /// 
         /// </summary>
-        FarField,
+        NearField,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                NoiseReductionType.NearField => "near_field",
                 NoiseReductionType.FarField => "far_field",
+                NoiseReductionType.NearField => "near_field",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "near_field" => NoiseReductionType.NearField,
                 "far_field" => NoiseReductionType.FarField,
+                "near_field" => NoiseReductionType.NearField,
                 _ => null,
             };
         }

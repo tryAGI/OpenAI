@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Pending,
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
@@ -19,11 +19,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Cancelled,
+        Expired,
         /// <summary>
         /// 
         /// </summary>
-        Expired,
+        Pending,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                UploadStatus.Pending => "pending",
-                UploadStatus.Completed => "completed",
                 UploadStatus.Cancelled => "cancelled",
+                UploadStatus.Completed => "completed",
                 UploadStatus.Expired => "expired",
+                UploadStatus.Pending => "pending",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "pending" => UploadStatus.Pending,
-                "completed" => UploadStatus.Completed,
                 "cancelled" => UploadStatus.Cancelled,
+                "completed" => UploadStatus.Completed,
                 "expired" => UploadStatus.Expired,
+                "pending" => UploadStatus.Pending,
                 _ => null,
             };
         }

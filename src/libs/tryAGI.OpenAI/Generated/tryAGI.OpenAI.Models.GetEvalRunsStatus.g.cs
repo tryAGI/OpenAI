@@ -11,11 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Queued,
-        /// <summary>
-        /// 
-        /// </summary>
-        InProgress,
+        Canceled,
         /// <summary>
         /// 
         /// </summary>
@@ -23,11 +19,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Canceled,
+        Failed,
         /// <summary>
         /// 
         /// </summary>
-        Failed,
+        InProgress,
+        /// <summary>
+        /// 
+        /// </summary>
+        Queued,
     }
 
     /// <summary>
@@ -42,11 +42,11 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                GetEvalRunsStatus.Queued => "queued",
-                GetEvalRunsStatus.InProgress => "in_progress",
-                GetEvalRunsStatus.Completed => "completed",
                 GetEvalRunsStatus.Canceled => "canceled",
+                GetEvalRunsStatus.Completed => "completed",
                 GetEvalRunsStatus.Failed => "failed",
+                GetEvalRunsStatus.InProgress => "in_progress",
+                GetEvalRunsStatus.Queued => "queued",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,11 +57,11 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "queued" => GetEvalRunsStatus.Queued,
-                "in_progress" => GetEvalRunsStatus.InProgress,
-                "completed" => GetEvalRunsStatus.Completed,
                 "canceled" => GetEvalRunsStatus.Canceled,
+                "completed" => GetEvalRunsStatus.Completed,
                 "failed" => GetEvalRunsStatus.Failed,
+                "in_progress" => GetEvalRunsStatus.InProgress,
+                "queued" => GetEvalRunsStatus.Queued,
                 _ => null,
             };
         }

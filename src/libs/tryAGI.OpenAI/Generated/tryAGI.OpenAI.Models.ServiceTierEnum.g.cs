@@ -27,13 +27,13 @@ namespace tryAGI.OpenAI
         /// </summary>
         Flex,
         /// <summary>
-        /// 
-        /// </summary>
-        Scale,
-        /// <summary>
         /// //openai.com/api-priority-processing/)', then the request will be processed with the corresponding service tier.
         /// </summary>
         Priority,
+        /// <summary>
+        /// 
+        /// </summary>
+        Scale,
     }
 
     /// <summary>
@@ -51,8 +51,8 @@ namespace tryAGI.OpenAI
                 ServiceTierEnum.Auto => "auto",
                 ServiceTierEnum.Default => "default",
                 ServiceTierEnum.Flex => "flex",
-                ServiceTierEnum.Scale => "scale",
                 ServiceTierEnum.Priority => "priority",
+                ServiceTierEnum.Scale => "scale",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -66,8 +66,8 @@ namespace tryAGI.OpenAI
                 "auto" => ServiceTierEnum.Auto,
                 "default" => ServiceTierEnum.Default,
                 "flex" => ServiceTierEnum.Flex,
-                "scale" => ServiceTierEnum.Scale,
                 "priority" => ServiceTierEnum.Priority,
+                "scale" => ServiceTierEnum.Scale,
                 _ => null,
             };
         }

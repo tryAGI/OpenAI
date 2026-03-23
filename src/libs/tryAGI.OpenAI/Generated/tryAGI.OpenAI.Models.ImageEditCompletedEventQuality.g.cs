@@ -11,11 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Low,
-        /// <summary>
-        /// 
-        /// </summary>
-        Medium,
+        Auto,
         /// <summary>
         /// 
         /// </summary>
@@ -23,7 +19,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Auto,
+        Low,
+        /// <summary>
+        /// 
+        /// </summary>
+        Medium,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                ImageEditCompletedEventQuality.Auto => "auto",
+                ImageEditCompletedEventQuality.High => "high",
                 ImageEditCompletedEventQuality.Low => "low",
                 ImageEditCompletedEventQuality.Medium => "medium",
-                ImageEditCompletedEventQuality.High => "high",
-                ImageEditCompletedEventQuality.Auto => "auto",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "auto" => ImageEditCompletedEventQuality.Auto,
+                "high" => ImageEditCompletedEventQuality.High,
                 "low" => ImageEditCompletedEventQuality.Low,
                 "medium" => ImageEditCompletedEventQuality.Medium,
-                "high" => ImageEditCompletedEventQuality.High,
-                "auto" => ImageEditCompletedEventQuality.Auto,
                 _ => null,
             };
         }

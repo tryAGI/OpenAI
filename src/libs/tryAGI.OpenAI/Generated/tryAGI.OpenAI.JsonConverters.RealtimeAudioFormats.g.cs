@@ -27,8 +27,8 @@ namespace tryAGI.OpenAI.JsonConverters
             }
 
             var __score0 = 0;
-            if (__jsonProps.Contains("type")) __score0++;
             if (__jsonProps.Contains("rate")) __score0++;
+            if (__jsonProps.Contains("type")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("type")) __score1++;
             var __score2 = 0;

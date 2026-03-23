@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        InProgress,
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
@@ -23,7 +23,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Cancelled,
+        InProgress,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                ListFilesInVectorStoreBatchFilter.InProgress => "in_progress",
+                ListFilesInVectorStoreBatchFilter.Cancelled => "cancelled",
                 ListFilesInVectorStoreBatchFilter.Completed => "completed",
                 ListFilesInVectorStoreBatchFilter.Failed => "failed",
-                ListFilesInVectorStoreBatchFilter.Cancelled => "cancelled",
+                ListFilesInVectorStoreBatchFilter.InProgress => "in_progress",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "in_progress" => ListFilesInVectorStoreBatchFilter.InProgress,
+                "cancelled" => ListFilesInVectorStoreBatchFilter.Cancelled,
                 "completed" => ListFilesInVectorStoreBatchFilter.Completed,
                 "failed" => ListFilesInVectorStoreBatchFilter.Failed,
-                "cancelled" => ListFilesInVectorStoreBatchFilter.Cancelled,
+                "in_progress" => ListFilesInVectorStoreBatchFilter.InProgress,
                 _ => null,
             };
         }

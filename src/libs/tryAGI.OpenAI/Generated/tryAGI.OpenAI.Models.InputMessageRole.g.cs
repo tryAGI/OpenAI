@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        User,
+        Developer,
         /// <summary>
         /// 
         /// </summary>
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Developer,
+        User,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                InputMessageRole.User => "user",
-                InputMessageRole.System => "system",
                 InputMessageRole.Developer => "developer",
+                InputMessageRole.System => "system",
+                InputMessageRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "user" => InputMessageRole.User,
-                "system" => InputMessageRole.System,
                 "developer" => InputMessageRole.Developer,
+                "system" => InputMessageRole.System,
+                "user" => InputMessageRole.User,
                 _ => null,
             };
         }

@@ -12,11 +12,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        InProgress,
+        Completed,
         /// <summary>
         /// 
         /// </summary>
-        Completed,
+        InProgress,
         /// <summary>
         /// 
         /// </summary>
@@ -35,8 +35,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                FunctionToolCallStatus.InProgress => "in_progress",
                 FunctionToolCallStatus.Completed => "completed",
+                FunctionToolCallStatus.InProgress => "in_progress",
                 FunctionToolCallStatus.Incomplete => "incomplete",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -48,8 +48,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "in_progress" => FunctionToolCallStatus.InProgress,
                 "completed" => FunctionToolCallStatus.Completed,
+                "in_progress" => FunctionToolCallStatus.InProgress,
                 "incomplete" => FunctionToolCallStatus.Incomplete,
                 _ => null,
             };

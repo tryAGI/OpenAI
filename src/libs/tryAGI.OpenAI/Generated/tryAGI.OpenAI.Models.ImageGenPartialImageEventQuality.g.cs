@@ -11,11 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Low,
-        /// <summary>
-        /// 
-        /// </summary>
-        Medium,
+        Auto,
         /// <summary>
         /// 
         /// </summary>
@@ -23,7 +19,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Auto,
+        Low,
+        /// <summary>
+        /// 
+        /// </summary>
+        Medium,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                ImageGenPartialImageEventQuality.Auto => "auto",
+                ImageGenPartialImageEventQuality.High => "high",
                 ImageGenPartialImageEventQuality.Low => "low",
                 ImageGenPartialImageEventQuality.Medium => "medium",
-                ImageGenPartialImageEventQuality.High => "high",
-                ImageGenPartialImageEventQuality.Auto => "auto",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "auto" => ImageGenPartialImageEventQuality.Auto,
+                "high" => ImageGenPartialImageEventQuality.High,
                 "low" => ImageGenPartialImageEventQuality.Low,
                 "medium" => ImageGenPartialImageEventQuality.Medium,
-                "high" => ImageGenPartialImageEventQuality.High,
-                "auto" => ImageGenPartialImageEventQuality.Auto,
                 _ => null,
             };
         }

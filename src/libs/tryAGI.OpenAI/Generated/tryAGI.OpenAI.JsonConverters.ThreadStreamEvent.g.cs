@@ -27,9 +27,9 @@ namespace tryAGI.OpenAI.JsonConverters
             }
 
             var __score0 = 0;
+            if (__jsonProps.Contains("data")) __score0++;
             if (__jsonProps.Contains("enabled")) __score0++;
             if (__jsonProps.Contains("event")) __score0++;
-            if (__jsonProps.Contains("data")) __score0++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }

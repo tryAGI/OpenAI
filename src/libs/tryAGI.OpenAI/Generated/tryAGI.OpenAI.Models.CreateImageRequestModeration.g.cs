@@ -13,11 +13,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Low,
+        Auto,
         /// <summary>
         /// 
         /// </summary>
-        Auto,
+        Low,
     }
 
     /// <summary>
@@ -32,8 +32,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                CreateImageRequestModeration.Low => "low",
                 CreateImageRequestModeration.Auto => "auto",
+                CreateImageRequestModeration.Low => "low",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,8 +44,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "low" => CreateImageRequestModeration.Low,
                 "auto" => CreateImageRequestModeration.Auto,
+                "low" => CreateImageRequestModeration.Low,
                 _ => null,
             };
         }

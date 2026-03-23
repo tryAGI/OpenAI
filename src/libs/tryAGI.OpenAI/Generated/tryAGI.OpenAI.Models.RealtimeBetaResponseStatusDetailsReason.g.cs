@@ -15,11 +15,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        TurnDetected,
+        ClientCancelled,
         /// <summary>
         /// 
         /// </summary>
-        ClientCancelled,
+        ContentFilter,
         /// <summary>
         /// 
         /// </summary>
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        ContentFilter,
+        TurnDetected,
     }
 
     /// <summary>
@@ -42,10 +42,10 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                RealtimeBetaResponseStatusDetailsReason.TurnDetected => "turn_detected",
                 RealtimeBetaResponseStatusDetailsReason.ClientCancelled => "client_cancelled",
-                RealtimeBetaResponseStatusDetailsReason.MaxOutputTokens => "max_output_tokens",
                 RealtimeBetaResponseStatusDetailsReason.ContentFilter => "content_filter",
+                RealtimeBetaResponseStatusDetailsReason.MaxOutputTokens => "max_output_tokens",
+                RealtimeBetaResponseStatusDetailsReason.TurnDetected => "turn_detected",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -56,10 +56,10 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "turn_detected" => RealtimeBetaResponseStatusDetailsReason.TurnDetected,
                 "client_cancelled" => RealtimeBetaResponseStatusDetailsReason.ClientCancelled,
-                "max_output_tokens" => RealtimeBetaResponseStatusDetailsReason.MaxOutputTokens,
                 "content_filter" => RealtimeBetaResponseStatusDetailsReason.ContentFilter,
+                "max_output_tokens" => RealtimeBetaResponseStatusDetailsReason.MaxOutputTokens,
+                "turn_detected" => RealtimeBetaResponseStatusDetailsReason.TurnDetected,
                 _ => null,
             };
         }

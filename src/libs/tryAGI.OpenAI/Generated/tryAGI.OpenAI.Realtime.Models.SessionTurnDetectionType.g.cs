@@ -11,11 +11,11 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         /// 
         /// </summary>
-        ServerVad,
+        None,
         /// <summary>
         /// 
         /// </summary>
-        None,
+        ServerVad,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace tryAGI.OpenAI.Realtime
         {
             return value switch
             {
-                SessionTurnDetectionType.ServerVad => "server_vad",
                 SessionTurnDetectionType.None => "none",
+                SessionTurnDetectionType.ServerVad => "server_vad",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI.Realtime
         {
             return value switch
             {
-                "server_vad" => SessionTurnDetectionType.ServerVad,
                 "none" => SessionTurnDetectionType.None,
+                "server_vad" => SessionTurnDetectionType.ServerVad,
                 _ => null,
             };
         }

@@ -15,7 +15,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Ne,
+        Ilike,
         /// <summary>
         /// 
         /// </summary>
@@ -23,7 +23,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Ilike,
+        Ne,
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 GraderStringCheckOperation.Eq => "eq",
-                GraderStringCheckOperation.Ne => "ne",
-                GraderStringCheckOperation.Like => "like",
                 GraderStringCheckOperation.Ilike => "ilike",
+                GraderStringCheckOperation.Like => "like",
+                GraderStringCheckOperation.Ne => "ne",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,9 +53,9 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "eq" => GraderStringCheckOperation.Eq,
-                "ne" => GraderStringCheckOperation.Ne,
-                "like" => GraderStringCheckOperation.Like,
                 "ilike" => GraderStringCheckOperation.Ilike,
+                "like" => GraderStringCheckOperation.Like,
+                "ne" => GraderStringCheckOperation.Ne,
                 _ => null,
             };
         }

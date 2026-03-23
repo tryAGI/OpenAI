@@ -11,11 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Windows,
-        /// <summary>
-        /// 
-        /// </summary>
-        Mac,
+        Browser,
         /// <summary>
         /// 
         /// </summary>
@@ -23,11 +19,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Mac,
+        /// <summary>
+        /// 
+        /// </summary>
         Ubuntu,
         /// <summary>
         /// 
         /// </summary>
-        Browser,
+        Windows,
     }
 
     /// <summary>
@@ -42,11 +42,11 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                ComputerEnvironment.Windows => "windows",
-                ComputerEnvironment.Mac => "mac",
-                ComputerEnvironment.Linux => "linux",
-                ComputerEnvironment.Ubuntu => "ubuntu",
                 ComputerEnvironment.Browser => "browser",
+                ComputerEnvironment.Linux => "linux",
+                ComputerEnvironment.Mac => "mac",
+                ComputerEnvironment.Ubuntu => "ubuntu",
+                ComputerEnvironment.Windows => "windows",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,11 +57,11 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "windows" => ComputerEnvironment.Windows,
-                "mac" => ComputerEnvironment.Mac,
-                "linux" => ComputerEnvironment.Linux,
-                "ubuntu" => ComputerEnvironment.Ubuntu,
                 "browser" => ComputerEnvironment.Browser,
+                "linux" => ComputerEnvironment.Linux,
+                "mac" => ComputerEnvironment.Mac,
+                "ubuntu" => ComputerEnvironment.Ubuntu,
+                "windows" => ComputerEnvironment.Windows,
                 _ => null,
             };
         }

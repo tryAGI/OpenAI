@@ -11,15 +11,15 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         /// 
         /// </summary>
-        User,
-        /// <summary>
-        /// 
-        /// </summary>
         Assistant,
         /// <summary>
         /// 
         /// </summary>
         System,
+        /// <summary>
+        /// 
+        /// </summary>
+        User,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace tryAGI.OpenAI.Realtime
         {
             return value switch
             {
-                ConversationItemRole.User => "user",
                 ConversationItemRole.Assistant => "assistant",
                 ConversationItemRole.System => "system",
+                ConversationItemRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace tryAGI.OpenAI.Realtime
         {
             return value switch
             {
-                "user" => ConversationItemRole.User,
                 "assistant" => ConversationItemRole.Assistant,
                 "system" => ConversationItemRole.System,
+                "user" => ConversationItemRole.User,
                 _ => null,
             };
         }

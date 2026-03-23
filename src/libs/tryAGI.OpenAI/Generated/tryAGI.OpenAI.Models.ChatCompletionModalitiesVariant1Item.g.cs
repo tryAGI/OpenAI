@@ -11,11 +11,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Text,
+        Audio,
         /// <summary>
         /// 
         /// </summary>
-        Audio,
+        Text,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                ChatCompletionModalitiesVariant1Item.Text => "text",
                 ChatCompletionModalitiesVariant1Item.Audio => "audio",
+                ChatCompletionModalitiesVariant1Item.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "text" => ChatCompletionModalitiesVariant1Item.Text,
                 "audio" => ChatCompletionModalitiesVariant1Item.Audio,
+                "text" => ChatCompletionModalitiesVariant1Item.Text,
                 _ => null,
             };
         }

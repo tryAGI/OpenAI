@@ -15,11 +15,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        ApiKeyUpdated,
+        ApiKeyDeleted,
         /// <summary>
         /// 
         /// </summary>
-        ApiKeyDeleted,
+        ApiKeyUpdated,
         /// <summary>
         /// 
         /// </summary>
@@ -27,11 +27,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        CertificateUpdated,
+        CertificateDeleted,
         /// <summary>
         /// 
         /// </summary>
-        CertificateDeleted,
+        CertificateUpdated,
         /// <summary>
         /// 
         /// </summary>
@@ -63,15 +63,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        GroupUpdated,
-        /// <summary>
-        /// 
-        /// </summary>
         GroupDeleted,
         /// <summary>
         /// 
         /// </summary>
-        InviteSent,
+        GroupUpdated,
         /// <summary>
         /// 
         /// </summary>
@@ -83,15 +79,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        IpAllowlistCreated,
-        /// <summary>
-        /// 
-        /// </summary>
-        IpAllowlistUpdated,
-        /// <summary>
-        /// 
-        /// </summary>
-        IpAllowlistDeleted,
+        InviteSent,
         /// <summary>
         /// 
         /// </summary>
@@ -103,7 +91,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        LoginSucceeded,
+        IpAllowlistCreated,
+        /// <summary>
+        /// 
+        /// </summary>
+        IpAllowlistDeleted,
+        /// <summary>
+        /// 
+        /// </summary>
+        IpAllowlistUpdated,
         /// <summary>
         /// 
         /// </summary>
@@ -111,7 +107,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        LogoutSucceeded,
+        LoginSucceeded,
         /// <summary>
         /// 
         /// </summary>
@@ -119,15 +115,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        LogoutSucceeded,
+        /// <summary>
+        /// 
+        /// </summary>
         OrganizationUpdated,
-        /// <summary>
-        /// 
-        /// </summary>
-        ProjectCreated,
-        /// <summary>
-        /// 
-        /// </summary>
-        ProjectUpdated,
         /// <summary>
         /// 
         /// </summary>
@@ -135,11 +127,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        ProjectCreated,
+        /// <summary>
+        /// 
+        /// </summary>
         ProjectDeleted,
         /// <summary>
         /// 
         /// </summary>
-        RateLimitUpdated,
+        ProjectUpdated,
         /// <summary>
         /// 
         /// </summary>
@@ -147,31 +143,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        RateLimitUpdated,
+        /// <summary>
+        /// 
+        /// </summary>
         ResourceDeleted,
-        /// <summary>
-        /// 
-        /// </summary>
-        TunnelCreated,
-        /// <summary>
-        /// 
-        /// </summary>
-        TunnelUpdated,
-        /// <summary>
-        /// 
-        /// </summary>
-        TunnelDeleted,
-        /// <summary>
-        /// 
-        /// </summary>
-        RoleCreated,
-        /// <summary>
-        /// 
-        /// </summary>
-        RoleUpdated,
-        /// <summary>
-        /// 
-        /// </summary>
-        RoleDeleted,
         /// <summary>
         /// 
         /// </summary>
@@ -183,7 +159,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        ScimEnabled,
+        RoleCreated,
+        /// <summary>
+        /// 
+        /// </summary>
+        RoleDeleted,
+        /// <summary>
+        /// 
+        /// </summary>
+        RoleUpdated,
         /// <summary>
         /// 
         /// </summary>
@@ -191,11 +175,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        ServiceAccountCreated,
+        ScimEnabled,
         /// <summary>
         /// 
         /// </summary>
-        ServiceAccountUpdated,
+        ServiceAccountCreated,
         /// <summary>
         /// 
         /// </summary>
@@ -203,15 +187,31 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        ServiceAccountUpdated,
+        /// <summary>
+        /// 
+        /// </summary>
+        TunnelCreated,
+        /// <summary>
+        /// 
+        /// </summary>
+        TunnelDeleted,
+        /// <summary>
+        /// 
+        /// </summary>
+        TunnelUpdated,
+        /// <summary>
+        /// 
+        /// </summary>
         UserAdded,
         /// <summary>
         /// 
         /// </summary>
-        UserUpdated,
+        UserDeleted,
         /// <summary>
         /// 
         /// </summary>
-        UserDeleted,
+        UserUpdated,
     }
 
     /// <summary>
@@ -227,11 +227,11 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 AuditLogEventType.ApiKeyCreated => "api_key.created",
-                AuditLogEventType.ApiKeyUpdated => "api_key.updated",
                 AuditLogEventType.ApiKeyDeleted => "api_key.deleted",
+                AuditLogEventType.ApiKeyUpdated => "api_key.updated",
                 AuditLogEventType.CertificateCreated => "certificate.created",
-                AuditLogEventType.CertificateUpdated => "certificate.updated",
                 AuditLogEventType.CertificateDeleted => "certificate.deleted",
+                AuditLogEventType.CertificateUpdated => "certificate.updated",
                 AuditLogEventType.CertificatesActivated => "certificates.activated",
                 AuditLogEventType.CertificatesDeactivated => "certificates.deactivated",
                 AuditLogEventType.CheckpointPermissionCreated => "checkpoint.permission.created",
@@ -239,44 +239,44 @@ namespace tryAGI.OpenAI
                 AuditLogEventType.ExternalKeyRegistered => "external_key.registered",
                 AuditLogEventType.ExternalKeyRemoved => "external_key.removed",
                 AuditLogEventType.GroupCreated => "group.created",
-                AuditLogEventType.GroupUpdated => "group.updated",
                 AuditLogEventType.GroupDeleted => "group.deleted",
-                AuditLogEventType.InviteSent => "invite.sent",
+                AuditLogEventType.GroupUpdated => "group.updated",
                 AuditLogEventType.InviteAccepted => "invite.accepted",
                 AuditLogEventType.InviteDeleted => "invite.deleted",
-                AuditLogEventType.IpAllowlistCreated => "ip_allowlist.created",
-                AuditLogEventType.IpAllowlistUpdated => "ip_allowlist.updated",
-                AuditLogEventType.IpAllowlistDeleted => "ip_allowlist.deleted",
+                AuditLogEventType.InviteSent => "invite.sent",
                 AuditLogEventType.IpAllowlistConfigActivated => "ip_allowlist.config.activated",
                 AuditLogEventType.IpAllowlistConfigDeactivated => "ip_allowlist.config.deactivated",
-                AuditLogEventType.LoginSucceeded => "login.succeeded",
+                AuditLogEventType.IpAllowlistCreated => "ip_allowlist.created",
+                AuditLogEventType.IpAllowlistDeleted => "ip_allowlist.deleted",
+                AuditLogEventType.IpAllowlistUpdated => "ip_allowlist.updated",
                 AuditLogEventType.LoginFailed => "login.failed",
-                AuditLogEventType.LogoutSucceeded => "logout.succeeded",
+                AuditLogEventType.LoginSucceeded => "login.succeeded",
                 AuditLogEventType.LogoutFailed => "logout.failed",
+                AuditLogEventType.LogoutSucceeded => "logout.succeeded",
                 AuditLogEventType.OrganizationUpdated => "organization.updated",
-                AuditLogEventType.ProjectCreated => "project.created",
-                AuditLogEventType.ProjectUpdated => "project.updated",
                 AuditLogEventType.ProjectArchived => "project.archived",
+                AuditLogEventType.ProjectCreated => "project.created",
                 AuditLogEventType.ProjectDeleted => "project.deleted",
-                AuditLogEventType.RateLimitUpdated => "rate_limit.updated",
+                AuditLogEventType.ProjectUpdated => "project.updated",
                 AuditLogEventType.RateLimitDeleted => "rate_limit.deleted",
+                AuditLogEventType.RateLimitUpdated => "rate_limit.updated",
                 AuditLogEventType.ResourceDeleted => "resource.deleted",
-                AuditLogEventType.TunnelCreated => "tunnel.created",
-                AuditLogEventType.TunnelUpdated => "tunnel.updated",
-                AuditLogEventType.TunnelDeleted => "tunnel.deleted",
-                AuditLogEventType.RoleCreated => "role.created",
-                AuditLogEventType.RoleUpdated => "role.updated",
-                AuditLogEventType.RoleDeleted => "role.deleted",
                 AuditLogEventType.RoleAssignmentCreated => "role.assignment.created",
                 AuditLogEventType.RoleAssignmentDeleted => "role.assignment.deleted",
-                AuditLogEventType.ScimEnabled => "scim.enabled",
+                AuditLogEventType.RoleCreated => "role.created",
+                AuditLogEventType.RoleDeleted => "role.deleted",
+                AuditLogEventType.RoleUpdated => "role.updated",
                 AuditLogEventType.ScimDisabled => "scim.disabled",
+                AuditLogEventType.ScimEnabled => "scim.enabled",
                 AuditLogEventType.ServiceAccountCreated => "service_account.created",
-                AuditLogEventType.ServiceAccountUpdated => "service_account.updated",
                 AuditLogEventType.ServiceAccountDeleted => "service_account.deleted",
+                AuditLogEventType.ServiceAccountUpdated => "service_account.updated",
+                AuditLogEventType.TunnelCreated => "tunnel.created",
+                AuditLogEventType.TunnelDeleted => "tunnel.deleted",
+                AuditLogEventType.TunnelUpdated => "tunnel.updated",
                 AuditLogEventType.UserAdded => "user.added",
-                AuditLogEventType.UserUpdated => "user.updated",
                 AuditLogEventType.UserDeleted => "user.deleted",
+                AuditLogEventType.UserUpdated => "user.updated",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -288,11 +288,11 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "api_key.created" => AuditLogEventType.ApiKeyCreated,
-                "api_key.updated" => AuditLogEventType.ApiKeyUpdated,
                 "api_key.deleted" => AuditLogEventType.ApiKeyDeleted,
+                "api_key.updated" => AuditLogEventType.ApiKeyUpdated,
                 "certificate.created" => AuditLogEventType.CertificateCreated,
-                "certificate.updated" => AuditLogEventType.CertificateUpdated,
                 "certificate.deleted" => AuditLogEventType.CertificateDeleted,
+                "certificate.updated" => AuditLogEventType.CertificateUpdated,
                 "certificates.activated" => AuditLogEventType.CertificatesActivated,
                 "certificates.deactivated" => AuditLogEventType.CertificatesDeactivated,
                 "checkpoint.permission.created" => AuditLogEventType.CheckpointPermissionCreated,
@@ -300,44 +300,44 @@ namespace tryAGI.OpenAI
                 "external_key.registered" => AuditLogEventType.ExternalKeyRegistered,
                 "external_key.removed" => AuditLogEventType.ExternalKeyRemoved,
                 "group.created" => AuditLogEventType.GroupCreated,
-                "group.updated" => AuditLogEventType.GroupUpdated,
                 "group.deleted" => AuditLogEventType.GroupDeleted,
-                "invite.sent" => AuditLogEventType.InviteSent,
+                "group.updated" => AuditLogEventType.GroupUpdated,
                 "invite.accepted" => AuditLogEventType.InviteAccepted,
                 "invite.deleted" => AuditLogEventType.InviteDeleted,
-                "ip_allowlist.created" => AuditLogEventType.IpAllowlistCreated,
-                "ip_allowlist.updated" => AuditLogEventType.IpAllowlistUpdated,
-                "ip_allowlist.deleted" => AuditLogEventType.IpAllowlistDeleted,
+                "invite.sent" => AuditLogEventType.InviteSent,
                 "ip_allowlist.config.activated" => AuditLogEventType.IpAllowlistConfigActivated,
                 "ip_allowlist.config.deactivated" => AuditLogEventType.IpAllowlistConfigDeactivated,
-                "login.succeeded" => AuditLogEventType.LoginSucceeded,
+                "ip_allowlist.created" => AuditLogEventType.IpAllowlistCreated,
+                "ip_allowlist.deleted" => AuditLogEventType.IpAllowlistDeleted,
+                "ip_allowlist.updated" => AuditLogEventType.IpAllowlistUpdated,
                 "login.failed" => AuditLogEventType.LoginFailed,
-                "logout.succeeded" => AuditLogEventType.LogoutSucceeded,
+                "login.succeeded" => AuditLogEventType.LoginSucceeded,
                 "logout.failed" => AuditLogEventType.LogoutFailed,
+                "logout.succeeded" => AuditLogEventType.LogoutSucceeded,
                 "organization.updated" => AuditLogEventType.OrganizationUpdated,
-                "project.created" => AuditLogEventType.ProjectCreated,
-                "project.updated" => AuditLogEventType.ProjectUpdated,
                 "project.archived" => AuditLogEventType.ProjectArchived,
+                "project.created" => AuditLogEventType.ProjectCreated,
                 "project.deleted" => AuditLogEventType.ProjectDeleted,
-                "rate_limit.updated" => AuditLogEventType.RateLimitUpdated,
+                "project.updated" => AuditLogEventType.ProjectUpdated,
                 "rate_limit.deleted" => AuditLogEventType.RateLimitDeleted,
+                "rate_limit.updated" => AuditLogEventType.RateLimitUpdated,
                 "resource.deleted" => AuditLogEventType.ResourceDeleted,
-                "tunnel.created" => AuditLogEventType.TunnelCreated,
-                "tunnel.updated" => AuditLogEventType.TunnelUpdated,
-                "tunnel.deleted" => AuditLogEventType.TunnelDeleted,
-                "role.created" => AuditLogEventType.RoleCreated,
-                "role.updated" => AuditLogEventType.RoleUpdated,
-                "role.deleted" => AuditLogEventType.RoleDeleted,
                 "role.assignment.created" => AuditLogEventType.RoleAssignmentCreated,
                 "role.assignment.deleted" => AuditLogEventType.RoleAssignmentDeleted,
-                "scim.enabled" => AuditLogEventType.ScimEnabled,
+                "role.created" => AuditLogEventType.RoleCreated,
+                "role.deleted" => AuditLogEventType.RoleDeleted,
+                "role.updated" => AuditLogEventType.RoleUpdated,
                 "scim.disabled" => AuditLogEventType.ScimDisabled,
+                "scim.enabled" => AuditLogEventType.ScimEnabled,
                 "service_account.created" => AuditLogEventType.ServiceAccountCreated,
-                "service_account.updated" => AuditLogEventType.ServiceAccountUpdated,
                 "service_account.deleted" => AuditLogEventType.ServiceAccountDeleted,
+                "service_account.updated" => AuditLogEventType.ServiceAccountUpdated,
+                "tunnel.created" => AuditLogEventType.TunnelCreated,
+                "tunnel.deleted" => AuditLogEventType.TunnelDeleted,
+                "tunnel.updated" => AuditLogEventType.TunnelUpdated,
                 "user.added" => AuditLogEventType.UserAdded,
-                "user.updated" => AuditLogEventType.UserUpdated,
                 "user.deleted" => AuditLogEventType.UserDeleted,
+                "user.updated" => AuditLogEventType.UserUpdated,
                 _ => null,
             };
         }

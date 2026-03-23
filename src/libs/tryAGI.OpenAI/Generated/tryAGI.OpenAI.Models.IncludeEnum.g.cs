@@ -16,37 +16,37 @@ namespace tryAGI.OpenAI
     public enum IncludeEnum
     {
         /// <summary>
-        /// Include the search results of the file search tool call.
+        /// Includes the outputs of python code execution in code interpreter tool call items.
         /// </summary>
-        FileSearchCallResults,
-        /// <summary>
-        /// 
-        /// </summary>
-        WebSearchCallResults,
-        /// <summary>
-        /// Include the sources of the web search tool call.
-        /// </summary>
-        WebSearchCallActionSources,
-        /// <summary>
-        /// Include image urls from the input message.
-        /// </summary>
-        MessageInputImageImageUrl,
+        CodeInterpreterCallOutputs,
         /// <summary>
         /// Include image urls from the computer call output.
         /// </summary>
         ComputerCallOutputOutputImageUrl,
         /// <summary>
-        /// Includes the outputs of python code execution in code interpreter tool call items.
+        /// Include the search results of the file search tool call.
         /// </summary>
-        CodeInterpreterCallOutputs,
+        FileSearchCallResults,
+        /// <summary>
+        /// Include image urls from the input message.
+        /// </summary>
+        MessageInputImageImageUrl,
+        /// <summary>
+        /// Include logprobs with assistant messages.
+        /// </summary>
+        MessageOutputTextLogprobs,
         /// <summary>
         /// Includes an encrypted version of reasoning tokens in reasoning item outputs. This enables reasoning items to be used in multi-turn conversations when using the Responses API statelessly (like when the `store` parameter is set to `false`, or when an organization is enrolled in the zero data retention program).
         /// </summary>
         ReasoningEncryptedContent,
         /// <summary>
-        /// Include logprobs with assistant messages.
+        /// Include the sources of the web search tool call.
         /// </summary>
-        MessageOutputTextLogprobs,
+        WebSearchCallActionSources,
+        /// <summary>
+        /// 
+        /// </summary>
+        WebSearchCallResults,
     }
 
     /// <summary>
@@ -61,14 +61,14 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                IncludeEnum.FileSearchCallResults => "file_search_call.results",
-                IncludeEnum.WebSearchCallResults => "web_search_call.results",
-                IncludeEnum.WebSearchCallActionSources => "web_search_call.action.sources",
-                IncludeEnum.MessageInputImageImageUrl => "message.input_image.image_url",
-                IncludeEnum.ComputerCallOutputOutputImageUrl => "computer_call_output.output.image_url",
                 IncludeEnum.CodeInterpreterCallOutputs => "code_interpreter_call.outputs",
-                IncludeEnum.ReasoningEncryptedContent => "reasoning.encrypted_content",
+                IncludeEnum.ComputerCallOutputOutputImageUrl => "computer_call_output.output.image_url",
+                IncludeEnum.FileSearchCallResults => "file_search_call.results",
+                IncludeEnum.MessageInputImageImageUrl => "message.input_image.image_url",
                 IncludeEnum.MessageOutputTextLogprobs => "message.output_text.logprobs",
+                IncludeEnum.ReasoningEncryptedContent => "reasoning.encrypted_content",
+                IncludeEnum.WebSearchCallActionSources => "web_search_call.action.sources",
+                IncludeEnum.WebSearchCallResults => "web_search_call.results",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -79,14 +79,14 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "file_search_call.results" => IncludeEnum.FileSearchCallResults,
-                "web_search_call.results" => IncludeEnum.WebSearchCallResults,
-                "web_search_call.action.sources" => IncludeEnum.WebSearchCallActionSources,
-                "message.input_image.image_url" => IncludeEnum.MessageInputImageImageUrl,
-                "computer_call_output.output.image_url" => IncludeEnum.ComputerCallOutputOutputImageUrl,
                 "code_interpreter_call.outputs" => IncludeEnum.CodeInterpreterCallOutputs,
-                "reasoning.encrypted_content" => IncludeEnum.ReasoningEncryptedContent,
+                "computer_call_output.output.image_url" => IncludeEnum.ComputerCallOutputOutputImageUrl,
+                "file_search_call.results" => IncludeEnum.FileSearchCallResults,
+                "message.input_image.image_url" => IncludeEnum.MessageInputImageImageUrl,
                 "message.output_text.logprobs" => IncludeEnum.MessageOutputTextLogprobs,
+                "reasoning.encrypted_content" => IncludeEnum.ReasoningEncryptedContent,
+                "web_search_call.action.sources" => IncludeEnum.WebSearchCallActionSources,
+                "web_search_call.results" => IncludeEnum.WebSearchCallResults,
                 _ => null,
             };
         }

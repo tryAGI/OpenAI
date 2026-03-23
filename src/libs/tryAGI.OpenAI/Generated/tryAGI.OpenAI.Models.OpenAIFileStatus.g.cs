@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Uploaded,
+        Error,
         /// <summary>
         /// 
         /// </summary>
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Error,
+        Uploaded,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                OpenAIFileStatus.Uploaded => "uploaded",
-                OpenAIFileStatus.Processed => "processed",
                 OpenAIFileStatus.Error => "error",
+                OpenAIFileStatus.Processed => "processed",
+                OpenAIFileStatus.Uploaded => "uploaded",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "uploaded" => OpenAIFileStatus.Uploaded,
-                "processed" => OpenAIFileStatus.Processed,
                 "error" => OpenAIFileStatus.Error,
+                "processed" => OpenAIFileStatus.Processed,
+                "uploaded" => OpenAIFileStatus.Uploaded,
                 _ => null,
             };
         }

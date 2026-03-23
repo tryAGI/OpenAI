@@ -11,15 +11,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        x12,
+        /// <summary>
+        /// 
+        /// </summary>
         x4,
         /// <summary>
         /// 
         /// </summary>
         x8,
-        /// <summary>
-        /// 
-        /// </summary>
-        x12,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                VideoSeconds.x12 => "12",
                 VideoSeconds.x4 => "4",
                 VideoSeconds.x8 => "8",
-                VideoSeconds.x12 => "12",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "12" => VideoSeconds.x12,
                 "4" => VideoSeconds.x4,
                 "8" => VideoSeconds.x8,
-                "12" => VideoSeconds.x12,
                 _ => null,
             };
         }

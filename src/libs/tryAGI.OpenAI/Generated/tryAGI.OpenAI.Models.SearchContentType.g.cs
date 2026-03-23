@@ -11,11 +11,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Text,
+        Image,
         /// <summary>
         /// 
         /// </summary>
-        Image,
+        Text,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                SearchContentType.Text => "text",
                 SearchContentType.Image => "image",
+                SearchContentType.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "text" => SearchContentType.Text,
                 "image" => SearchContentType.Image,
+                "text" => SearchContentType.Text,
                 _ => null,
             };
         }

@@ -11,15 +11,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        x16g,
+        /// <summary>
+        /// 
+        /// </summary>
         x1g,
         /// <summary>
         /// 
         /// </summary>
         x4g,
-        /// <summary>
-        /// 
-        /// </summary>
-        x16g,
         /// <summary>
         /// 
         /// </summary>
@@ -38,9 +38,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                ContainerMemoryLimit.x16g => "16g",
                 ContainerMemoryLimit.x1g => "1g",
                 ContainerMemoryLimit.x4g => "4g",
-                ContainerMemoryLimit.x16g => "16g",
                 ContainerMemoryLimit.x64g => "64g",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -52,9 +52,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "16g" => ContainerMemoryLimit.x16g,
                 "1g" => ContainerMemoryLimit.x1g,
                 "4g" => ContainerMemoryLimit.x4g,
-                "16g" => ContainerMemoryLimit.x16g,
                 "64g" => ContainerMemoryLimit.x64g,
                 _ => null,
             };

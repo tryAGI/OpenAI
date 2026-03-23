@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Video,
+        Spritesheet,
         /// <summary>
         /// 
         /// </summary>
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Spritesheet,
+        Video,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                VideoContentVariant.Video => "video",
-                VideoContentVariant.Thumbnail => "thumbnail",
                 VideoContentVariant.Spritesheet => "spritesheet",
+                VideoContentVariant.Thumbnail => "thumbnail",
+                VideoContentVariant.Video => "video",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "video" => VideoContentVariant.Video,
-                "thumbnail" => VideoContentVariant.Thumbnail,
                 "spritesheet" => VideoContentVariant.Spritesheet,
+                "thumbnail" => VideoContentVariant.Thumbnail,
+                "video" => VideoContentVariant.Video,
                 _ => null,
             };
         }

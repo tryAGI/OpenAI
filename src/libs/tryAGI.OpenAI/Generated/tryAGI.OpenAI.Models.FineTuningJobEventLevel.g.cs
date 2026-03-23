@@ -11,15 +11,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Error,
+        /// <summary>
+        /// 
+        /// </summary>
         Info,
         /// <summary>
         /// 
         /// </summary>
         Warn,
-        /// <summary>
-        /// 
-        /// </summary>
-        Error,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                FineTuningJobEventLevel.Error => "error",
                 FineTuningJobEventLevel.Info => "info",
                 FineTuningJobEventLevel.Warn => "warn",
-                FineTuningJobEventLevel.Error => "error",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "error" => FineTuningJobEventLevel.Error,
                 "info" => FineTuningJobEventLevel.Info,
                 "warn" => FineTuningJobEventLevel.Warn,
-                "error" => FineTuningJobEventLevel.Error,
                 _ => null,
             };
         }

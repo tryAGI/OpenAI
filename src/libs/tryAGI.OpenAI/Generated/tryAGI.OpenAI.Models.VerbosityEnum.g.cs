@@ -14,15 +14,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        High,
+        /// <summary>
+        /// 
+        /// </summary>
         Low,
         /// <summary>
         /// 
         /// </summary>
         Medium,
-        /// <summary>
-        /// 
-        /// </summary>
-        High,
     }
 
     /// <summary>
@@ -37,9 +37,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                VerbosityEnum.High => "high",
                 VerbosityEnum.Low => "low",
                 VerbosityEnum.Medium => "medium",
-                VerbosityEnum.High => "high",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,9 +50,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "high" => VerbosityEnum.High,
                 "low" => VerbosityEnum.Low,
                 "medium" => VerbosityEnum.Medium,
-                "high" => VerbosityEnum.High,
                 _ => null,
             };
         }

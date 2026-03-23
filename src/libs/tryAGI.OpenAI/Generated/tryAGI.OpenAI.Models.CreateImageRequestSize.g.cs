@@ -13,11 +13,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Auto,
+        x1024x1024,
         /// <summary>
         /// 
         /// </summary>
-        x1024x1024,
+        x1024x1536,
+        /// <summary>
+        /// 
+        /// </summary>
+        x1024x1792,
         /// <summary>
         /// 
         /// </summary>
@@ -25,7 +29,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        x1024x1536,
+        x1792x1024,
         /// <summary>
         /// 
         /// </summary>
@@ -37,11 +41,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        x1792x1024,
-        /// <summary>
-        /// 
-        /// </summary>
-        x1024x1792,
+        Auto,
     }
 
     /// <summary>
@@ -56,14 +56,14 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                CreateImageRequestSize.Auto => "auto",
                 CreateImageRequestSize.x1024x1024 => "1024x1024",
-                CreateImageRequestSize.x1536x1024 => "1536x1024",
                 CreateImageRequestSize.x1024x1536 => "1024x1536",
+                CreateImageRequestSize.x1024x1792 => "1024x1792",
+                CreateImageRequestSize.x1536x1024 => "1536x1024",
+                CreateImageRequestSize.x1792x1024 => "1792x1024",
                 CreateImageRequestSize.x256x256 => "256x256",
                 CreateImageRequestSize.x512x512 => "512x512",
-                CreateImageRequestSize.x1792x1024 => "1792x1024",
-                CreateImageRequestSize.x1024x1792 => "1024x1792",
+                CreateImageRequestSize.Auto => "auto",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -74,14 +74,14 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "auto" => CreateImageRequestSize.Auto,
                 "1024x1024" => CreateImageRequestSize.x1024x1024,
-                "1536x1024" => CreateImageRequestSize.x1536x1024,
                 "1024x1536" => CreateImageRequestSize.x1024x1536,
+                "1024x1792" => CreateImageRequestSize.x1024x1792,
+                "1536x1024" => CreateImageRequestSize.x1536x1024,
+                "1792x1024" => CreateImageRequestSize.x1792x1024,
                 "256x256" => CreateImageRequestSize.x256x256,
                 "512x512" => CreateImageRequestSize.x512x512,
-                "1792x1024" => CreateImageRequestSize.x1792x1024,
-                "1024x1792" => CreateImageRequestSize.x1024x1792,
+                "auto" => CreateImageRequestSize.Auto,
                 _ => null,
             };
         }

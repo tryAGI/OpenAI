@@ -13,11 +13,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Completed,
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
-        Cancelled,
+        Completed,
         /// <summary>
         /// 
         /// </summary>
@@ -40,8 +40,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                RealtimeResponseStatusDetailsType.Completed => "completed",
                 RealtimeResponseStatusDetailsType.Cancelled => "cancelled",
+                RealtimeResponseStatusDetailsType.Completed => "completed",
                 RealtimeResponseStatusDetailsType.Failed => "failed",
                 RealtimeResponseStatusDetailsType.Incomplete => "incomplete",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -54,8 +54,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "completed" => RealtimeResponseStatusDetailsType.Completed,
                 "cancelled" => RealtimeResponseStatusDetailsType.Cancelled,
+                "completed" => RealtimeResponseStatusDetailsType.Completed,
                 "failed" => RealtimeResponseStatusDetailsType.Failed,
                 "incomplete" => RealtimeResponseStatusDetailsType.Incomplete,
                 _ => null,

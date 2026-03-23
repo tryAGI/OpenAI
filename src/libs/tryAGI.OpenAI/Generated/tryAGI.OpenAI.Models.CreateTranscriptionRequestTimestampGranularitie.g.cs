@@ -11,11 +11,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Word,
+        Segment,
         /// <summary>
         /// 
         /// </summary>
-        Segment,
+        Word,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                CreateTranscriptionRequestTimestampGranularitie.Word => "word",
                 CreateTranscriptionRequestTimestampGranularitie.Segment => "segment",
+                CreateTranscriptionRequestTimestampGranularitie.Word => "word",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "word" => CreateTranscriptionRequestTimestampGranularitie.Word,
                 "segment" => CreateTranscriptionRequestTimestampGranularitie.Segment,
+                "word" => CreateTranscriptionRequestTimestampGranularitie.Word,
                 _ => null,
             };
         }

@@ -12,15 +12,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        None,
-        /// <summary>
-        /// 
-        /// </summary>
         Auto,
         /// <summary>
         /// 
         /// </summary>
         Default20241115,
+        /// <summary>
+        /// 
+        /// </summary>
+        None,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                VectorStoreSearchRequestRankingOptionsRanker.None => "none",
                 VectorStoreSearchRequestRankingOptionsRanker.Auto => "auto",
                 VectorStoreSearchRequestRankingOptionsRanker.Default20241115 => "default-2024-11-15",
+                VectorStoreSearchRequestRankingOptionsRanker.None => "none",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "none" => VectorStoreSearchRequestRankingOptionsRanker.None,
                 "auto" => VectorStoreSearchRequestRankingOptionsRanker.Auto,
                 "default-2024-11-15" => VectorStoreSearchRequestRankingOptionsRanker.Default20241115,
+                "none" => VectorStoreSearchRequestRankingOptionsRanker.None,
                 _ => null,
             };
         }

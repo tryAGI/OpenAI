@@ -12,15 +12,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        High,
+        /// <summary>
+        /// 
+        /// </summary>
         Low,
         /// <summary>
         /// 
         /// </summary>
         Medium,
-        /// <summary>
-        /// 
-        /// </summary>
-        High,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                WebSearchToolSearchContextSize.High => "high",
                 WebSearchToolSearchContextSize.Low => "low",
                 WebSearchToolSearchContextSize.Medium => "medium",
-                WebSearchToolSearchContextSize.High => "high",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "high" => WebSearchToolSearchContextSize.High,
                 "low" => WebSearchToolSearchContextSize.Low,
                 "medium" => WebSearchToolSearchContextSize.Medium,
-                "high" => WebSearchToolSearchContextSize.High,
                 _ => null,
             };
         }

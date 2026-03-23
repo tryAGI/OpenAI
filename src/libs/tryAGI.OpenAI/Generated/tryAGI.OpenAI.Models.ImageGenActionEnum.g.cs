@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Generate,
+        Auto,
         /// <summary>
         /// 
         /// </summary>
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Auto,
+        Generate,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                ImageGenActionEnum.Generate => "generate",
-                ImageGenActionEnum.Edit => "edit",
                 ImageGenActionEnum.Auto => "auto",
+                ImageGenActionEnum.Edit => "edit",
+                ImageGenActionEnum.Generate => "generate",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "generate" => ImageGenActionEnum.Generate,
-                "edit" => ImageGenActionEnum.Edit,
                 "auto" => ImageGenActionEnum.Auto,
+                "edit" => ImageGenActionEnum.Edit,
+                "generate" => ImageGenActionEnum.Generate,
                 _ => null,
             };
         }

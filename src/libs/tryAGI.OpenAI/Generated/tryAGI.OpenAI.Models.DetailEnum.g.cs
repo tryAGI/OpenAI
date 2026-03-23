@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Low,
+        Auto,
         /// <summary>
         /// 
         /// </summary>
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Auto,
+        Low,
         /// <summary>
         /// 
         /// </summary>
@@ -38,9 +38,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                DetailEnum.Low => "low",
-                DetailEnum.High => "high",
                 DetailEnum.Auto => "auto",
+                DetailEnum.High => "high",
+                DetailEnum.Low => "low",
                 DetailEnum.Original => "original",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -52,9 +52,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "low" => DetailEnum.Low,
-                "high" => DetailEnum.High,
                 "auto" => DetailEnum.Auto,
+                "high" => DetailEnum.High,
+                "low" => DetailEnum.Low,
                 "original" => DetailEnum.Original,
                 _ => null,
             };

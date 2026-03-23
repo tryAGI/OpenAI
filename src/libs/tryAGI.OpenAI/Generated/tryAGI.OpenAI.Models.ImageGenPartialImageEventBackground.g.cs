@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Transparent,
+        Auto,
         /// <summary>
         /// 
         /// </summary>
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Auto,
+        Transparent,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                ImageGenPartialImageEventBackground.Transparent => "transparent",
-                ImageGenPartialImageEventBackground.Opaque => "opaque",
                 ImageGenPartialImageEventBackground.Auto => "auto",
+                ImageGenPartialImageEventBackground.Opaque => "opaque",
+                ImageGenPartialImageEventBackground.Transparent => "transparent",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "transparent" => ImageGenPartialImageEventBackground.Transparent,
-                "opaque" => ImageGenPartialImageEventBackground.Opaque,
                 "auto" => ImageGenPartialImageEventBackground.Auto,
+                "opaque" => ImageGenPartialImageEventBackground.Opaque,
+                "transparent" => ImageGenPartialImageEventBackground.Transparent,
                 _ => null,
             };
         }

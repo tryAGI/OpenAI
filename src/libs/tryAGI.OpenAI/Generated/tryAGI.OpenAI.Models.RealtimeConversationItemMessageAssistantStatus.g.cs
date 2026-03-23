@@ -15,11 +15,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Incomplete,
+        InProgress,
         /// <summary>
         /// 
         /// </summary>
-        InProgress,
+        Incomplete,
     }
 
     /// <summary>
@@ -35,8 +35,8 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 RealtimeConversationItemMessageAssistantStatus.Completed => "completed",
-                RealtimeConversationItemMessageAssistantStatus.Incomplete => "incomplete",
                 RealtimeConversationItemMessageAssistantStatus.InProgress => "in_progress",
+                RealtimeConversationItemMessageAssistantStatus.Incomplete => "incomplete",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,8 +48,8 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "completed" => RealtimeConversationItemMessageAssistantStatus.Completed,
-                "incomplete" => RealtimeConversationItemMessageAssistantStatus.Incomplete,
                 "in_progress" => RealtimeConversationItemMessageAssistantStatus.InProgress,
+                "incomplete" => RealtimeConversationItemMessageAssistantStatus.Incomplete,
                 _ => null,
             };
         }

@@ -28,21 +28,21 @@ namespace tryAGI.OpenAI.JsonConverters
 
             var __score0 = 0;
             var __score1 = 0;
-            if (__jsonProps.Contains("type")) __score1++;
             if (__jsonProps.Contains("mode")) __score1++;
             if (__jsonProps.Contains("tools")) __score1++;
+            if (__jsonProps.Contains("type")) __score1++;
             var __score2 = 0;
             if (__jsonProps.Contains("type")) __score2++;
             var __score3 = 0;
-            if (__jsonProps.Contains("type")) __score3++;
             if (__jsonProps.Contains("name")) __score3++;
+            if (__jsonProps.Contains("type")) __score3++;
             var __score4 = 0;
-            if (__jsonProps.Contains("type")) __score4++;
-            if (__jsonProps.Contains("server_label")) __score4++;
             if (__jsonProps.Contains("name")) __score4++;
+            if (__jsonProps.Contains("server_label")) __score4++;
+            if (__jsonProps.Contains("type")) __score4++;
             var __score5 = 0;
-            if (__jsonProps.Contains("type")) __score5++;
             if (__jsonProps.Contains("name")) __score5++;
+            if (__jsonProps.Contains("type")) __score5++;
             var __score6 = 0;
             if (__jsonProps.Contains("type")) __score6++;
             var __score7 = 0;

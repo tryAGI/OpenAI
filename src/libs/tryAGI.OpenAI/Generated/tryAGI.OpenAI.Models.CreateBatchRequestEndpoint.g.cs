@@ -11,15 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        V1Responses,
-        /// <summary>
-        /// 
-        /// </summary>
         V1ChatCompletions,
-        /// <summary>
-        /// 
-        /// </summary>
-        V1Embeddings,
         /// <summary>
         /// 
         /// </summary>
@@ -27,7 +19,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        V1Moderations,
+        V1Embeddings,
+        /// <summary>
+        /// 
+        /// </summary>
+        V1ImagesEdits,
         /// <summary>
         /// 
         /// </summary>
@@ -35,7 +31,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        V1ImagesEdits,
+        V1Moderations,
+        /// <summary>
+        /// 
+        /// </summary>
+        V1Responses,
         /// <summary>
         /// 
         /// </summary>
@@ -54,13 +54,13 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                CreateBatchRequestEndpoint.V1Responses => "/v1/responses",
                 CreateBatchRequestEndpoint.V1ChatCompletions => "/v1/chat/completions",
-                CreateBatchRequestEndpoint.V1Embeddings => "/v1/embeddings",
                 CreateBatchRequestEndpoint.V1Completions => "/v1/completions",
-                CreateBatchRequestEndpoint.V1Moderations => "/v1/moderations",
-                CreateBatchRequestEndpoint.V1ImagesGenerations => "/v1/images/generations",
+                CreateBatchRequestEndpoint.V1Embeddings => "/v1/embeddings",
                 CreateBatchRequestEndpoint.V1ImagesEdits => "/v1/images/edits",
+                CreateBatchRequestEndpoint.V1ImagesGenerations => "/v1/images/generations",
+                CreateBatchRequestEndpoint.V1Moderations => "/v1/moderations",
+                CreateBatchRequestEndpoint.V1Responses => "/v1/responses",
                 CreateBatchRequestEndpoint.V1Videos => "/v1/videos",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -72,13 +72,13 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "/v1/responses" => CreateBatchRequestEndpoint.V1Responses,
                 "/v1/chat/completions" => CreateBatchRequestEndpoint.V1ChatCompletions,
-                "/v1/embeddings" => CreateBatchRequestEndpoint.V1Embeddings,
                 "/v1/completions" => CreateBatchRequestEndpoint.V1Completions,
-                "/v1/moderations" => CreateBatchRequestEndpoint.V1Moderations,
-                "/v1/images/generations" => CreateBatchRequestEndpoint.V1ImagesGenerations,
+                "/v1/embeddings" => CreateBatchRequestEndpoint.V1Embeddings,
                 "/v1/images/edits" => CreateBatchRequestEndpoint.V1ImagesEdits,
+                "/v1/images/generations" => CreateBatchRequestEndpoint.V1ImagesGenerations,
+                "/v1/moderations" => CreateBatchRequestEndpoint.V1Moderations,
+                "/v1/responses" => CreateBatchRequestEndpoint.V1Responses,
                 "/v1/videos" => CreateBatchRequestEndpoint.V1Videos,
                 _ => null,
             };

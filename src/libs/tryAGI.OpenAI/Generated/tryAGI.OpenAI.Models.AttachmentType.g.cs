@@ -11,11 +11,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Image,
+        File,
         /// <summary>
         /// 
         /// </summary>
-        File,
+        Image,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                AttachmentType.Image => "image",
                 AttachmentType.File => "file",
+                AttachmentType.Image => "image",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "image" => AttachmentType.Image,
                 "file" => AttachmentType.File,
+                "image" => AttachmentType.Image,
                 _ => null,
             };
         }

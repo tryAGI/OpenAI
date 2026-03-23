@@ -11,11 +11,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        InMemory,
+        x24h,
         /// <summary>
         /// 
         /// </summary>
-        x24h,
+        InMemory,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                ModelResponsePropertiesPromptCacheRetention2.InMemory => "in-memory",
                 ModelResponsePropertiesPromptCacheRetention2.x24h => "24h",
+                ModelResponsePropertiesPromptCacheRetention2.InMemory => "in-memory",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "in-memory" => ModelResponsePropertiesPromptCacheRetention2.InMemory,
                 "24h" => ModelResponsePropertiesPromptCacheRetention2.x24h,
+                "in-memory" => ModelResponsePropertiesPromptCacheRetention2.InMemory,
                 _ => null,
             };
         }

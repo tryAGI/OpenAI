@@ -11,11 +11,11 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         /// 
         /// </summary>
-        Text,
+        Audio,
         /// <summary>
         /// 
         /// </summary>
-        Audio,
+        Text,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace tryAGI.OpenAI.Realtime
         {
             return value switch
             {
-                ResponseConfigModalitie.Text => "text",
                 ResponseConfigModalitie.Audio => "audio",
+                ResponseConfigModalitie.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI.Realtime
         {
             return value switch
             {
-                "text" => ResponseConfigModalitie.Text,
                 "audio" => ResponseConfigModalitie.Audio,
+                "text" => ResponseConfigModalitie.Text,
                 _ => null,
             };
         }

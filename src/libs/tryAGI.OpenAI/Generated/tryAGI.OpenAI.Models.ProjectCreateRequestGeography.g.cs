@@ -11,23 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Us,
-        /// <summary>
-        /// 
-        /// </summary>
-        Eu,
-        /// <summary>
-        /// 
-        /// </summary>
-        Jp,
-        /// <summary>
-        /// 
-        /// </summary>
-        In,
-        /// <summary>
-        /// 
-        /// </summary>
-        Kr,
+        Au,
         /// <summary>
         /// 
         /// </summary>
@@ -35,11 +19,27 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Au,
+        Eu,
+        /// <summary>
+        /// 
+        /// </summary>
+        In,
+        /// <summary>
+        /// 
+        /// </summary>
+        Jp,
+        /// <summary>
+        /// 
+        /// </summary>
+        Kr,
         /// <summary>
         /// 
         /// </summary>
         Sg,
+        /// <summary>
+        /// 
+        /// </summary>
+        Us,
     }
 
     /// <summary>
@@ -54,14 +54,14 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                ProjectCreateRequestGeography.Us => "US",
-                ProjectCreateRequestGeography.Eu => "EU",
-                ProjectCreateRequestGeography.Jp => "JP",
-                ProjectCreateRequestGeography.In => "IN",
-                ProjectCreateRequestGeography.Kr => "KR",
-                ProjectCreateRequestGeography.Ca => "CA",
                 ProjectCreateRequestGeography.Au => "AU",
+                ProjectCreateRequestGeography.Ca => "CA",
+                ProjectCreateRequestGeography.Eu => "EU",
+                ProjectCreateRequestGeography.In => "IN",
+                ProjectCreateRequestGeography.Jp => "JP",
+                ProjectCreateRequestGeography.Kr => "KR",
                 ProjectCreateRequestGeography.Sg => "SG",
+                ProjectCreateRequestGeography.Us => "US",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -72,14 +72,14 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "US" => ProjectCreateRequestGeography.Us,
-                "EU" => ProjectCreateRequestGeography.Eu,
-                "JP" => ProjectCreateRequestGeography.Jp,
-                "IN" => ProjectCreateRequestGeography.In,
-                "KR" => ProjectCreateRequestGeography.Kr,
-                "CA" => ProjectCreateRequestGeography.Ca,
                 "AU" => ProjectCreateRequestGeography.Au,
+                "CA" => ProjectCreateRequestGeography.Ca,
+                "EU" => ProjectCreateRequestGeography.Eu,
+                "IN" => ProjectCreateRequestGeography.In,
+                "JP" => ProjectCreateRequestGeography.Jp,
+                "KR" => ProjectCreateRequestGeography.Kr,
                 "SG" => ProjectCreateRequestGeography.Sg,
+                "US" => ProjectCreateRequestGeography.Us,
                 _ => null,
             };
         }

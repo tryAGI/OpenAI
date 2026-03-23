@@ -11,15 +11,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Completed,
+        /// <summary>
+        /// 
+        /// </summary>
         Expired,
         /// <summary>
         /// 
         /// </summary>
         InProgress,
-        /// <summary>
-        /// 
-        /// </summary>
-        Completed,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                VectorStoreObjectStatus.Completed => "completed",
                 VectorStoreObjectStatus.Expired => "expired",
                 VectorStoreObjectStatus.InProgress => "in_progress",
-                VectorStoreObjectStatus.Completed => "completed",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "completed" => VectorStoreObjectStatus.Completed,
                 "expired" => VectorStoreObjectStatus.Expired,
                 "in_progress" => VectorStoreObjectStatus.InProgress,
-                "completed" => VectorStoreObjectStatus.Completed,
                 _ => null,
             };
         }

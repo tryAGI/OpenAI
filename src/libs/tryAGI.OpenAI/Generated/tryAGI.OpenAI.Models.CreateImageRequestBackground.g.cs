@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Transparent,
+        Auto,
         /// <summary>
         /// 
         /// </summary>
@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Auto,
+        Transparent,
     }
 
     /// <summary>
@@ -41,9 +41,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                CreateImageRequestBackground.Transparent => "transparent",
-                CreateImageRequestBackground.Opaque => "opaque",
                 CreateImageRequestBackground.Auto => "auto",
+                CreateImageRequestBackground.Opaque => "opaque",
+                CreateImageRequestBackground.Transparent => "transparent",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,9 +54,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "transparent" => CreateImageRequestBackground.Transparent,
-                "opaque" => CreateImageRequestBackground.Opaque,
                 "auto" => CreateImageRequestBackground.Auto,
+                "opaque" => CreateImageRequestBackground.Opaque,
+                "transparent" => CreateImageRequestBackground.Transparent,
                 _ => null,
             };
         }

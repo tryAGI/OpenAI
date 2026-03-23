@@ -17,11 +17,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Standard,
+        Auto,
         /// <summary>
         /// 
         /// </summary>
         Hd,
+        /// <summary>
+        /// 
+        /// </summary>
+        High,
         /// <summary>
         /// 
         /// </summary>
@@ -33,11 +37,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        High,
-        /// <summary>
-        /// 
-        /// </summary>
-        Auto,
+        Standard,
     }
 
     /// <summary>
@@ -52,12 +52,12 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                CreateImageRequestQuality.Standard => "standard",
+                CreateImageRequestQuality.Auto => "auto",
                 CreateImageRequestQuality.Hd => "hd",
+                CreateImageRequestQuality.High => "high",
                 CreateImageRequestQuality.Low => "low",
                 CreateImageRequestQuality.Medium => "medium",
-                CreateImageRequestQuality.High => "high",
-                CreateImageRequestQuality.Auto => "auto",
+                CreateImageRequestQuality.Standard => "standard",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -68,12 +68,12 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "standard" => CreateImageRequestQuality.Standard,
+                "auto" => CreateImageRequestQuality.Auto,
                 "hd" => CreateImageRequestQuality.Hd,
+                "high" => CreateImageRequestQuality.High,
                 "low" => CreateImageRequestQuality.Low,
                 "medium" => CreateImageRequestQuality.Medium,
-                "high" => CreateImageRequestQuality.High,
-                "auto" => CreateImageRequestQuality.Auto,
+                "standard" => CreateImageRequestQuality.Standard,
                 _ => null,
             };
         }

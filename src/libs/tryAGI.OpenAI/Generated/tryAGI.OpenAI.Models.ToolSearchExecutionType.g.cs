@@ -11,11 +11,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Server,
+        Client,
         /// <summary>
         /// 
         /// </summary>
-        Client,
+        Server,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                ToolSearchExecutionType.Server => "server",
                 ToolSearchExecutionType.Client => "client",
+                ToolSearchExecutionType.Server => "server",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "server" => ToolSearchExecutionType.Server,
                 "client" => ToolSearchExecutionType.Client,
+                "server" => ToolSearchExecutionType.Server,
                 _ => null,
             };
         }

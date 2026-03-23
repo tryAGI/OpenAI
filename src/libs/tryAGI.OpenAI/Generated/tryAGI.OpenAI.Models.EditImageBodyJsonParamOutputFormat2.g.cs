@@ -11,11 +11,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Png,
+        Jpeg,
         /// <summary>
         /// 
         /// </summary>
-        Jpeg,
+        Png,
         /// <summary>
         /// 
         /// </summary>
@@ -34,8 +34,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                EditImageBodyJsonParamOutputFormat2.Png => "png",
                 EditImageBodyJsonParamOutputFormat2.Jpeg => "jpeg",
+                EditImageBodyJsonParamOutputFormat2.Png => "png",
                 EditImageBodyJsonParamOutputFormat2.Webp => "webp",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "png" => EditImageBodyJsonParamOutputFormat2.Png,
                 "jpeg" => EditImageBodyJsonParamOutputFormat2.Jpeg,
+                "png" => EditImageBodyJsonParamOutputFormat2.Png,
                 "webp" => EditImageBodyJsonParamOutputFormat2.Webp,
                 _ => null,
             };

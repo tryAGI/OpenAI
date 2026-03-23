@@ -11,11 +11,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Session,
+        ApiKey,
         /// <summary>
         /// 
         /// </summary>
-        ApiKey,
+        Session,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                AuditLogActorType.Session => "session",
                 AuditLogActorType.ApiKey => "api_key",
+                AuditLogActorType.Session => "session",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "session" => AuditLogActorType.Session,
                 "api_key" => AuditLogActorType.ApiKey,
+                "session" => AuditLogActorType.Session,
                 _ => null,
             };
         }

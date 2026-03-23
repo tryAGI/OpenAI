@@ -11,19 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Unknown,
-        /// <summary>
-        /// 
-        /// </summary>
-        User,
-        /// <summary>
-        /// 
-        /// </summary>
         Assistant,
-        /// <summary>
-        /// 
-        /// </summary>
-        System,
         /// <summary>
         /// 
         /// </summary>
@@ -31,15 +19,27 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Discriminator,
-        /// <summary>
-        /// 
-        /// </summary>
         Developer,
         /// <summary>
         /// 
         /// </summary>
+        Discriminator,
+        /// <summary>
+        /// 
+        /// </summary>
+        System,
+        /// <summary>
+        /// 
+        /// </summary>
         Tool,
+        /// <summary>
+        /// 
+        /// </summary>
+        Unknown,
+        /// <summary>
+        /// 
+        /// </summary>
+        User,
     }
 
     /// <summary>
@@ -54,14 +54,14 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                MessageRole.Assistant => "assistant",
+                MessageRole.Critic => "critic",
+                MessageRole.Developer => "developer",
+                MessageRole.Discriminator => "discriminator",
+                MessageRole.System => "system",
+                MessageRole.Tool => "tool",
                 MessageRole.Unknown => "unknown",
                 MessageRole.User => "user",
-                MessageRole.Assistant => "assistant",
-                MessageRole.System => "system",
-                MessageRole.Critic => "critic",
-                MessageRole.Discriminator => "discriminator",
-                MessageRole.Developer => "developer",
-                MessageRole.Tool => "tool",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -72,14 +72,14 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "assistant" => MessageRole.Assistant,
+                "critic" => MessageRole.Critic,
+                "developer" => MessageRole.Developer,
+                "discriminator" => MessageRole.Discriminator,
+                "system" => MessageRole.System,
+                "tool" => MessageRole.Tool,
                 "unknown" => MessageRole.Unknown,
                 "user" => MessageRole.User,
-                "assistant" => MessageRole.Assistant,
-                "system" => MessageRole.System,
-                "critic" => MessageRole.Critic,
-                "discriminator" => MessageRole.Discriminator,
-                "developer" => MessageRole.Developer,
-                "tool" => MessageRole.Tool,
                 _ => null,
             };
         }

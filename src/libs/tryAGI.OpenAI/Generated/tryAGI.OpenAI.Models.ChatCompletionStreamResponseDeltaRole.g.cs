@@ -11,6 +11,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Assistant,
+        /// <summary>
+        /// 
+        /// </summary>
         Developer,
         /// <summary>
         /// 
@@ -19,15 +23,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        User,
-        /// <summary>
-        /// 
-        /// </summary>
-        Assistant,
-        /// <summary>
-        /// 
-        /// </summary>
         Tool,
+        /// <summary>
+        /// 
+        /// </summary>
+        User,
     }
 
     /// <summary>
@@ -42,11 +42,11 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                ChatCompletionStreamResponseDeltaRole.Assistant => "assistant",
                 ChatCompletionStreamResponseDeltaRole.Developer => "developer",
                 ChatCompletionStreamResponseDeltaRole.System => "system",
-                ChatCompletionStreamResponseDeltaRole.User => "user",
-                ChatCompletionStreamResponseDeltaRole.Assistant => "assistant",
                 ChatCompletionStreamResponseDeltaRole.Tool => "tool",
+                ChatCompletionStreamResponseDeltaRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,11 +57,11 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "assistant" => ChatCompletionStreamResponseDeltaRole.Assistant,
                 "developer" => ChatCompletionStreamResponseDeltaRole.Developer,
                 "system" => ChatCompletionStreamResponseDeltaRole.System,
-                "user" => ChatCompletionStreamResponseDeltaRole.User,
-                "assistant" => ChatCompletionStreamResponseDeltaRole.Assistant,
                 "tool" => ChatCompletionStreamResponseDeltaRole.Tool,
+                "user" => ChatCompletionStreamResponseDeltaRole.User,
                 _ => null,
             };
         }

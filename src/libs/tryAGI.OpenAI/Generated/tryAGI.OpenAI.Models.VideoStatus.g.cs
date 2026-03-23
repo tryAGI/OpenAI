@@ -11,7 +11,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Queued,
+        Completed,
+        /// <summary>
+        /// 
+        /// </summary>
+        Failed,
         /// <summary>
         /// 
         /// </summary>
@@ -19,11 +23,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Completed,
-        /// <summary>
-        /// 
-        /// </summary>
-        Failed,
+        Queued,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                VideoStatus.Queued => "queued",
-                VideoStatus.InProgress => "in_progress",
                 VideoStatus.Completed => "completed",
                 VideoStatus.Failed => "failed",
+                VideoStatus.InProgress => "in_progress",
+                VideoStatus.Queued => "queued",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "queued" => VideoStatus.Queued,
-                "in_progress" => VideoStatus.InProgress,
                 "completed" => VideoStatus.Completed,
                 "failed" => VideoStatus.Failed,
+                "in_progress" => VideoStatus.InProgress,
+                "queued" => VideoStatus.Queued,
                 _ => null,
             };
         }

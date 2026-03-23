@@ -13,15 +13,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        x256x256,
-        /// <summary>
-        /// 
-        /// </summary>
-        x512x512,
-        /// <summary>
-        /// 
-        /// </summary>
         x1024x1024,
+        /// <summary>
+        /// 
+        /// </summary>
+        x1024x1536,
         /// <summary>
         /// 
         /// </summary>
@@ -29,7 +25,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        x1024x1536,
+        x256x256,
+        /// <summary>
+        /// 
+        /// </summary>
+        x512x512,
         /// <summary>
         /// 
         /// </summary>
@@ -48,11 +48,11 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                CreateImageEditRequestSize.x1024x1024 => "1024x1024",
+                CreateImageEditRequestSize.x1024x1536 => "1024x1536",
+                CreateImageEditRequestSize.x1536x1024 => "1536x1024",
                 CreateImageEditRequestSize.x256x256 => "256x256",
                 CreateImageEditRequestSize.x512x512 => "512x512",
-                CreateImageEditRequestSize.x1024x1024 => "1024x1024",
-                CreateImageEditRequestSize.x1536x1024 => "1536x1024",
-                CreateImageEditRequestSize.x1024x1536 => "1024x1536",
                 CreateImageEditRequestSize.Auto => "auto",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -64,11 +64,11 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "1024x1024" => CreateImageEditRequestSize.x1024x1024,
+                "1024x1536" => CreateImageEditRequestSize.x1024x1536,
+                "1536x1024" => CreateImageEditRequestSize.x1536x1024,
                 "256x256" => CreateImageEditRequestSize.x256x256,
                 "512x512" => CreateImageEditRequestSize.x512x512,
-                "1024x1024" => CreateImageEditRequestSize.x1024x1024,
-                "1536x1024" => CreateImageEditRequestSize.x1536x1024,
-                "1024x1536" => CreateImageEditRequestSize.x1024x1536,
                 "auto" => CreateImageEditRequestSize.Auto,
                 _ => null,
             };

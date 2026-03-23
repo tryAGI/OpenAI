@@ -15,11 +15,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        Expired,
+        Cancelled,
         /// <summary>
         /// 
         /// </summary>
-        Cancelled,
+        Expired,
     }
 
     /// <summary>
@@ -35,8 +35,8 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 ChatSessionStatus.Active => "active",
-                ChatSessionStatus.Expired => "expired",
                 ChatSessionStatus.Cancelled => "cancelled",
+                ChatSessionStatus.Expired => "expired",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,8 +48,8 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "active" => ChatSessionStatus.Active,
-                "expired" => ChatSessionStatus.Expired,
                 "cancelled" => ChatSessionStatus.Cancelled,
+                "expired" => ChatSessionStatus.Expired,
                 _ => null,
             };
         }
