@@ -45937,6 +45937,7 @@ components:
                 The unique ID of the message input.
           required:
             - id
+            - type
     InputParam:
       description: |
         Text, image, or file inputs to the model, used to generate a response.
