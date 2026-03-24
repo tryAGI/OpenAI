@@ -18,8 +18,8 @@
     <PackageReference Include="MSTest.TestFramework" Version="4.1.0" />
     <PackageReference Include="AwesomeAssertions" Version="9.4.0" />
     <PackageReference Include="NUnit" Version="4.5.1" />
-    <PackageReference Include="NUnit3TestAdapter" Version="6.1.0" />
-    <PackageReference Include="Microsoft.Extensions.AI" Version="10.4.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="6.2.0" />
+    <PackageReference Include="Microsoft.Extensions.AI" Version="10.4.1" />
   </ItemGroup>
 
   <ItemGroup Label="GlobalUsings">
