@@ -48,123 +48,137 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("status")) __score2++;
             if (__jsonProps.Contains("type")) __score2++;
             var __score3 = 0;
-            if (__jsonProps.Contains("action")) __score3++;
-            if (__jsonProps.Contains("id")) __score3++;
-            if (__jsonProps.Contains("status")) __score3++;
-            if (__jsonProps.Contains("type")) __score3++;
             var __score4 = 0;
             if (__jsonProps.Contains("action")) __score4++;
-            if (__jsonProps.Contains("actions")) __score4++;
-            if (__jsonProps.Contains("call_id")) __score4++;
             if (__jsonProps.Contains("id")) __score4++;
-            if (__jsonProps.Contains("pending_safety_checks")) __score4++;
             if (__jsonProps.Contains("status")) __score4++;
             if (__jsonProps.Contains("type")) __score4++;
             var __score5 = 0;
-            if (__jsonProps.Contains("content")) __score5++;
-            if (__jsonProps.Contains("encrypted_content")) __score5++;
+            if (__jsonProps.Contains("action")) __score5++;
+            if (__jsonProps.Contains("actions")) __score5++;
+            if (__jsonProps.Contains("call_id")) __score5++;
             if (__jsonProps.Contains("id")) __score5++;
+            if (__jsonProps.Contains("pending_safety_checks")) __score5++;
             if (__jsonProps.Contains("status")) __score5++;
-            if (__jsonProps.Contains("summary")) __score5++;
             if (__jsonProps.Contains("type")) __score5++;
             var __score6 = 0;
-            if (__jsonProps.Contains("arguments")) __score6++;
-            if (__jsonProps.Contains("call_id")) __score6++;
-            if (__jsonProps.Contains("created_by")) __score6++;
-            if (__jsonProps.Contains("execution")) __score6++;
-            if (__jsonProps.Contains("id")) __score6++;
-            if (__jsonProps.Contains("status")) __score6++;
-            if (__jsonProps.Contains("type")) __score6++;
             var __score7 = 0;
-            if (__jsonProps.Contains("call_id")) __score7++;
-            if (__jsonProps.Contains("created_by")) __score7++;
-            if (__jsonProps.Contains("execution")) __score7++;
+            if (__jsonProps.Contains("content")) __score7++;
+            if (__jsonProps.Contains("encrypted_content")) __score7++;
             if (__jsonProps.Contains("id")) __score7++;
             if (__jsonProps.Contains("status")) __score7++;
-            if (__jsonProps.Contains("tools")) __score7++;
+            if (__jsonProps.Contains("summary")) __score7++;
             if (__jsonProps.Contains("type")) __score7++;
             var __score8 = 0;
+            if (__jsonProps.Contains("arguments")) __score8++;
+            if (__jsonProps.Contains("call_id")) __score8++;
             if (__jsonProps.Contains("created_by")) __score8++;
-            if (__jsonProps.Contains("encrypted_content")) __score8++;
+            if (__jsonProps.Contains("execution")) __score8++;
             if (__jsonProps.Contains("id")) __score8++;
+            if (__jsonProps.Contains("status")) __score8++;
             if (__jsonProps.Contains("type")) __score8++;
             var __score9 = 0;
+            if (__jsonProps.Contains("call_id")) __score9++;
+            if (__jsonProps.Contains("created_by")) __score9++;
+            if (__jsonProps.Contains("execution")) __score9++;
             if (__jsonProps.Contains("id")) __score9++;
-            if (__jsonProps.Contains("result")) __score9++;
             if (__jsonProps.Contains("status")) __score9++;
+            if (__jsonProps.Contains("tools")) __score9++;
             if (__jsonProps.Contains("type")) __score9++;
             var __score10 = 0;
-            if (__jsonProps.Contains("code")) __score10++;
-            if (__jsonProps.Contains("container_id")) __score10++;
+            if (__jsonProps.Contains("created_by")) __score10++;
+            if (__jsonProps.Contains("encrypted_content")) __score10++;
             if (__jsonProps.Contains("id")) __score10++;
-            if (__jsonProps.Contains("outputs")) __score10++;
-            if (__jsonProps.Contains("status")) __score10++;
             if (__jsonProps.Contains("type")) __score10++;
             var __score11 = 0;
-            if (__jsonProps.Contains("action")) __score11++;
-            if (__jsonProps.Contains("call_id")) __score11++;
             if (__jsonProps.Contains("id")) __score11++;
+            if (__jsonProps.Contains("result")) __score11++;
             if (__jsonProps.Contains("status")) __score11++;
             if (__jsonProps.Contains("type")) __score11++;
             var __score12 = 0;
-            if (__jsonProps.Contains("action")) __score12++;
-            if (__jsonProps.Contains("call_id")) __score12++;
-            if (__jsonProps.Contains("created_by")) __score12++;
-            if (__jsonProps.Contains("environment")) __score12++;
+            if (__jsonProps.Contains("code")) __score12++;
+            if (__jsonProps.Contains("container_id")) __score12++;
             if (__jsonProps.Contains("id")) __score12++;
+            if (__jsonProps.Contains("outputs")) __score12++;
             if (__jsonProps.Contains("status")) __score12++;
             if (__jsonProps.Contains("type")) __score12++;
             var __score13 = 0;
+            if (__jsonProps.Contains("action")) __score13++;
             if (__jsonProps.Contains("call_id")) __score13++;
-            if (__jsonProps.Contains("created_by")) __score13++;
             if (__jsonProps.Contains("id")) __score13++;
-            if (__jsonProps.Contains("max_output_length")) __score13++;
-            if (__jsonProps.Contains("output")) __score13++;
             if (__jsonProps.Contains("status")) __score13++;
             if (__jsonProps.Contains("type")) __score13++;
             var __score14 = 0;
-            if (__jsonProps.Contains("call_id")) __score14++;
-            if (__jsonProps.Contains("created_by")) __score14++;
             if (__jsonProps.Contains("id")) __score14++;
-            if (__jsonProps.Contains("operation")) __score14++;
+            if (__jsonProps.Contains("output")) __score14++;
             if (__jsonProps.Contains("status")) __score14++;
             if (__jsonProps.Contains("type")) __score14++;
             var __score15 = 0;
+            if (__jsonProps.Contains("action")) __score15++;
             if (__jsonProps.Contains("call_id")) __score15++;
             if (__jsonProps.Contains("created_by")) __score15++;
+            if (__jsonProps.Contains("environment")) __score15++;
             if (__jsonProps.Contains("id")) __score15++;
-            if (__jsonProps.Contains("output")) __score15++;
             if (__jsonProps.Contains("status")) __score15++;
             if (__jsonProps.Contains("type")) __score15++;
             var __score16 = 0;
-            if (__jsonProps.Contains("approval_request_id")) __score16++;
-            if (__jsonProps.Contains("arguments")) __score16++;
-            if (__jsonProps.Contains("error")) __score16++;
+            if (__jsonProps.Contains("call_id")) __score16++;
+            if (__jsonProps.Contains("created_by")) __score16++;
             if (__jsonProps.Contains("id")) __score16++;
-            if (__jsonProps.Contains("name")) __score16++;
+            if (__jsonProps.Contains("max_output_length")) __score16++;
             if (__jsonProps.Contains("output")) __score16++;
-            if (__jsonProps.Contains("server_label")) __score16++;
             if (__jsonProps.Contains("status")) __score16++;
             if (__jsonProps.Contains("type")) __score16++;
             var __score17 = 0;
-            if (__jsonProps.Contains("error")) __score17++;
+            if (__jsonProps.Contains("call_id")) __score17++;
+            if (__jsonProps.Contains("created_by")) __score17++;
             if (__jsonProps.Contains("id")) __score17++;
-            if (__jsonProps.Contains("server_label")) __score17++;
-            if (__jsonProps.Contains("tools")) __score17++;
+            if (__jsonProps.Contains("operation")) __score17++;
+            if (__jsonProps.Contains("status")) __score17++;
             if (__jsonProps.Contains("type")) __score17++;
             var __score18 = 0;
-            if (__jsonProps.Contains("arguments")) __score18++;
+            if (__jsonProps.Contains("call_id")) __score18++;
+            if (__jsonProps.Contains("created_by")) __score18++;
             if (__jsonProps.Contains("id")) __score18++;
-            if (__jsonProps.Contains("name")) __score18++;
-            if (__jsonProps.Contains("server_label")) __score18++;
+            if (__jsonProps.Contains("output")) __score18++;
+            if (__jsonProps.Contains("status")) __score18++;
             if (__jsonProps.Contains("type")) __score18++;
             var __score19 = 0;
-            if (__jsonProps.Contains("call_id")) __score19++;
+            if (__jsonProps.Contains("approval_request_id")) __score19++;
+            if (__jsonProps.Contains("arguments")) __score19++;
+            if (__jsonProps.Contains("error")) __score19++;
             if (__jsonProps.Contains("id")) __score19++;
-            if (__jsonProps.Contains("input")) __score19++;
             if (__jsonProps.Contains("name")) __score19++;
-            if (__jsonProps.Contains("namespace")) __score19++;
+            if (__jsonProps.Contains("output")) __score19++;
+            if (__jsonProps.Contains("server_label")) __score19++;
+            if (__jsonProps.Contains("status")) __score19++;
             if (__jsonProps.Contains("type")) __score19++;
+            var __score20 = 0;
+            if (__jsonProps.Contains("error")) __score20++;
+            if (__jsonProps.Contains("id")) __score20++;
+            if (__jsonProps.Contains("server_label")) __score20++;
+            if (__jsonProps.Contains("tools")) __score20++;
+            if (__jsonProps.Contains("type")) __score20++;
+            var __score21 = 0;
+            if (__jsonProps.Contains("arguments")) __score21++;
+            if (__jsonProps.Contains("id")) __score21++;
+            if (__jsonProps.Contains("name")) __score21++;
+            if (__jsonProps.Contains("server_label")) __score21++;
+            if (__jsonProps.Contains("type")) __score21++;
+            var __score22 = 0;
+            if (__jsonProps.Contains("approval_request_id")) __score22++;
+            if (__jsonProps.Contains("approve")) __score22++;
+            if (__jsonProps.Contains("id")) __score22++;
+            if (__jsonProps.Contains("reason")) __score22++;
+            if (__jsonProps.Contains("type")) __score22++;
+            var __score23 = 0;
+            if (__jsonProps.Contains("call_id")) __score23++;
+            if (__jsonProps.Contains("id")) __score23++;
+            if (__jsonProps.Contains("input")) __score23++;
+            if (__jsonProps.Contains("name")) __score23++;
+            if (__jsonProps.Contains("namespace")) __score23++;
+            if (__jsonProps.Contains("type")) __score23++;
+            var __score24 = 0;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
@@ -187,12 +201,19 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__score17 > __bestScore) { __bestScore = __score17; __bestIndex = 17; }
             if (__score18 > __bestScore) { __bestScore = __score18; __bestIndex = 18; }
             if (__score19 > __bestScore) { __bestScore = __score19; __bestIndex = 19; }
+            if (__score20 > __bestScore) { __bestScore = __score20; __bestIndex = 20; }
+            if (__score21 > __bestScore) { __bestScore = __score21; __bestIndex = 21; }
+            if (__score22 > __bestScore) { __bestScore = __score22; __bestIndex = 22; }
+            if (__score23 > __bestScore) { __bestScore = __score23; __bestIndex = 23; }
+            if (__score24 > __bestScore) { __bestScore = __score24; __bestIndex = 24; }
 
             global::tryAGI.OpenAI.OutputMessage? message = default;
             global::tryAGI.OpenAI.FileSearchToolCall? fileSearchCall = default;
             global::tryAGI.OpenAI.FunctionToolCall? functionCall = default;
+            global::tryAGI.OpenAI.FunctionToolCallOutputResource? functionToolCallResource = default;
             global::tryAGI.OpenAI.WebSearchToolCall? webSearchCall = default;
             global::tryAGI.OpenAI.ComputerToolCall? computerCall = default;
+            global::tryAGI.OpenAI.ComputerToolCallOutputResource? computerToolCallResource = default;
             global::tryAGI.OpenAI.ReasoningItem? reasoning = default;
             global::tryAGI.OpenAI.ToolSearchCall? toolSearchCall = default;
             global::tryAGI.OpenAI.ToolSearchOutput? toolSearchOutput = default;
@@ -200,6 +221,7 @@ namespace tryAGI.OpenAI.JsonConverters
             global::tryAGI.OpenAI.ImageGenToolCall? imageGenerationCall = default;
             global::tryAGI.OpenAI.CodeInterpreterToolCall? codeInterpreterCall = default;
             global::tryAGI.OpenAI.LocalShellToolCall? localShellCall = default;
+            global::tryAGI.OpenAI.LocalShellToolCallOutput? localShellCallOutput = default;
             global::tryAGI.OpenAI.FunctionShellCall? shellCall = default;
             global::tryAGI.OpenAI.FunctionShellCallOutput? shellCallOutput = default;
             global::tryAGI.OpenAI.ApplyPatchToolCall? applyPatchCall = default;
@@ -207,7 +229,9 @@ namespace tryAGI.OpenAI.JsonConverters
             global::tryAGI.OpenAI.MCPToolCall? mcpCall = default;
             global::tryAGI.OpenAI.MCPListTools? mcpListTools = default;
             global::tryAGI.OpenAI.MCPApprovalRequest? mcpApprovalRequest = default;
+            global::tryAGI.OpenAI.MCPApprovalResponseResource? mcpApprovalResponse = default;
             global::tryAGI.OpenAI.CustomToolCall? customToolCall = default;
+            global::tryAGI.OpenAI.CustomToolCallOutputResource? responseCustomToolCallOutputItem = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -259,6 +283,21 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.FunctionToolCallOutputResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.FunctionToolCallOutputResource> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.FunctionToolCallOutputResource).Name}");
+                        functionToolCallResource = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 4)
+                {
+                    try
+                    {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.WebSearchToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.WebSearchToolCall> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.WebSearchToolCall).Name}");
                         webSearchCall = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -270,7 +309,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 4)
+                else if (__bestIndex == 5)
                 {
                     try
                     {
@@ -285,7 +324,22 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 5)
+                else if (__bestIndex == 6)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ComputerToolCallOutputResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ComputerToolCallOutputResource> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ComputerToolCallOutputResource).Name}");
+                        computerToolCallResource = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 7)
                 {
                     try
                     {
@@ -300,7 +354,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 6)
+                else if (__bestIndex == 8)
                 {
                     try
                     {
@@ -315,7 +369,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 7)
+                else if (__bestIndex == 9)
                 {
                     try
                     {
@@ -330,7 +384,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 8)
+                else if (__bestIndex == 10)
                 {
                     try
                     {
@@ -345,7 +399,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 9)
+                else if (__bestIndex == 11)
                 {
                     try
                     {
@@ -360,7 +414,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 10)
+                else if (__bestIndex == 12)
                 {
                     try
                     {
@@ -375,7 +429,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 11)
+                else if (__bestIndex == 13)
                 {
                     try
                     {
@@ -390,7 +444,22 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 12)
+                else if (__bestIndex == 14)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LocalShellToolCallOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LocalShellToolCallOutput> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LocalShellToolCallOutput).Name}");
+                        localShellCallOutput = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 15)
                 {
                     try
                     {
@@ -405,7 +474,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 13)
+                else if (__bestIndex == 16)
                 {
                     try
                     {
@@ -420,7 +489,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 14)
+                else if (__bestIndex == 17)
                 {
                     try
                     {
@@ -435,7 +504,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 15)
+                else if (__bestIndex == 18)
                 {
                     try
                     {
@@ -450,7 +519,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 16)
+                else if (__bestIndex == 19)
                 {
                     try
                     {
@@ -465,7 +534,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 17)
+                else if (__bestIndex == 20)
                 {
                     try
                     {
@@ -480,7 +549,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 18)
+                else if (__bestIndex == 21)
                 {
                     try
                     {
@@ -495,7 +564,22 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 19)
+                else if (__bestIndex == 22)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.MCPApprovalResponseResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.MCPApprovalResponseResource> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.MCPApprovalResponseResource).Name}");
+                        mcpApprovalResponse = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 23)
                 {
                     try
                     {
@@ -510,9 +594,24 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
+                else if (__bestIndex == 24)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.CustomToolCallOutputResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.CustomToolCallOutputResource> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.CustomToolCallOutputResource).Name}");
+                        responseCustomToolCallOutputItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
             }
 
-            if (message == null && fileSearchCall == null && functionCall == null && webSearchCall == null && computerCall == null && reasoning == null && toolSearchCall == null && toolSearchOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpCall == null && mcpListTools == null && mcpApprovalRequest == null && customToolCall == null)
+            if (message == null && fileSearchCall == null && functionCall == null && functionToolCallResource == null && webSearchCall == null && computerCall == null && computerToolCallResource == null && reasoning == null && toolSearchCall == null && toolSearchOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpCall == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && customToolCall == null && responseCustomToolCallOutputItem == null)
             {
                 try
                 {
@@ -555,6 +654,19 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.FunctionToolCallOutputResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.FunctionToolCallOutputResource> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.FunctionToolCallOutputResource).Name}");
+                    functionToolCallResource = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+
+                try
+                {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.WebSearchToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.WebSearchToolCall> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.WebSearchToolCall).Name}");
                     webSearchCall = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -571,6 +683,19 @@ namespace tryAGI.OpenAI.JsonConverters
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ComputerToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ComputerToolCall> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ComputerToolCall).Name}");
                     computerCall = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+
+                try
+                {
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ComputerToolCallOutputResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ComputerToolCallOutputResource> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ComputerToolCallOutputResource).Name}");
+                    computerToolCallResource = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -672,6 +797,19 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LocalShellToolCallOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LocalShellToolCallOutput> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LocalShellToolCallOutput).Name}");
+                    localShellCallOutput = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+
+                try
+                {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.FunctionShellCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.FunctionShellCall> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.FunctionShellCall).Name}");
                     shellCall = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -763,9 +901,35 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.MCPApprovalResponseResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.MCPApprovalResponseResource> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.MCPApprovalResponseResource).Name}");
+                    mcpApprovalResponse = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+
+                try
+                {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.CustomToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.CustomToolCall> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.CustomToolCall).Name}");
                     customToolCall = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+
+                try
+                {
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.CustomToolCallOutputResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.CustomToolCallOutputResource> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.CustomToolCallOutputResource).Name}");
+                    responseCustomToolCallOutputItem = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -782,9 +946,13 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 functionCall,
 
+                functionToolCallResource,
+
                 webSearchCall,
 
                 computerCall,
+
+                computerToolCallResource,
 
                 reasoning,
 
@@ -800,6 +968,8 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 localShellCall,
 
+                localShellCallOutput,
+
                 shellCall,
 
                 shellCallOutput,
@@ -814,7 +984,11 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 mcpApprovalRequest,
 
-                customToolCall
+                mcpApprovalResponse,
+
+                customToolCall,
+
+                responseCustomToolCallOutputItem
                 );
 
             return __value;
@@ -847,6 +1021,12 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.FunctionToolCall).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.FunctionCall, typeInfo);
             }
+            else if (value.IsFunctionToolCallResource)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.FunctionToolCallOutputResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.FunctionToolCallOutputResource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.FunctionToolCallOutputResource).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FunctionToolCallResource, typeInfo);
+            }
             else if (value.IsWebSearchCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.WebSearchToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.WebSearchToolCall?> ??
@@ -858,6 +1038,12 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ComputerToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ComputerToolCall?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ComputerToolCall).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ComputerCall, typeInfo);
+            }
+            else if (value.IsComputerToolCallResource)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ComputerToolCallOutputResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ComputerToolCallOutputResource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ComputerToolCallOutputResource).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ComputerToolCallResource, typeInfo);
             }
             else if (value.IsReasoning)
             {
@@ -901,6 +1087,12 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LocalShellToolCall).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.LocalShellCall, typeInfo);
             }
+            else if (value.IsLocalShellCallOutput)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LocalShellToolCallOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LocalShellToolCallOutput?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LocalShellToolCallOutput).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LocalShellCallOutput, typeInfo);
+            }
             else if (value.IsShellCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.FunctionShellCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.FunctionShellCall?> ??
@@ -943,11 +1135,23 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.MCPApprovalRequest).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpApprovalRequest, typeInfo);
             }
+            else if (value.IsMcpApprovalResponse)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.MCPApprovalResponseResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.MCPApprovalResponseResource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.MCPApprovalResponseResource).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpApprovalResponse, typeInfo);
+            }
             else if (value.IsCustomToolCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.CustomToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.CustomToolCall?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.CustomToolCall).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomToolCall, typeInfo);
+            }
+            else if (value.IsResponseCustomToolCallOutputItem)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.CustomToolCallOutputResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.CustomToolCallOutputResource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.CustomToolCallOutputResource).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseCustomToolCallOutputItem, typeInfo);
             }
         }
     }
