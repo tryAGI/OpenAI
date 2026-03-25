@@ -31,6 +31,12 @@ namespace tryAGI.OpenAI
         public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CoordParam> Path { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("keys")]
+        public global::System.Collections.Generic.IList<string>? Keys { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -52,15 +58,18 @@ namespace tryAGI.OpenAI
         /// ]<br/>
         /// ```
         /// </param>
+        /// <param name="keys"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DragParam(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CoordParam> path,
+            global::System.Collections.Generic.IList<string>? keys,
             global::tryAGI.OpenAI.DragParamType type = global::tryAGI.OpenAI.DragParamType.Drag)
         {
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
             this.Type = type;
+            this.Keys = keys;
         }
 
         /// <summary>

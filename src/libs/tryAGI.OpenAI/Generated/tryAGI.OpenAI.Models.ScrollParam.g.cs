@@ -46,6 +46,12 @@ namespace tryAGI.OpenAI
         public required int ScrollY { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("keys")]
+        public global::System.Collections.Generic.IList<string>? Keys { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -70,6 +76,7 @@ namespace tryAGI.OpenAI
         /// <param name="scrollY">
         /// The vertical scroll distance.
         /// </param>
+        /// <param name="keys"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -78,6 +85,7 @@ namespace tryAGI.OpenAI
             int y,
             int scrollX,
             int scrollY,
+            global::System.Collections.Generic.IList<string>? keys,
             global::tryAGI.OpenAI.ScrollParamType type = global::tryAGI.OpenAI.ScrollParamType.Scroll)
         {
             this.X = x;
@@ -85,6 +93,7 @@ namespace tryAGI.OpenAI
             this.ScrollX = scrollX;
             this.ScrollY = scrollY;
             this.Type = type;
+            this.Keys = keys;
         }
 
         /// <summary>
