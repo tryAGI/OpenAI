@@ -68533,6 +68533,13 @@ components:
         'y':
           type: integer
           description: The y-coordinate where the click occurred.
+        keys:
+          anyOf:
+            - items:
+                type: string
+              type: array
+              description: The keys being held while clicking.
+            - type: 'null'
       type: object
       required:
         - type
@@ -68558,11 +68565,19 @@ components:
         'y':
           type: integer
           description: The y-coordinate where the double click occurred.
+        keys:
+          anyOf:
+            - items:
+                type: string
+              type: array
+              description: The keys being held while double-clicking.
+            - type: 'null'
       type: object
       required:
         - type
         - x
         - 'y'
+        - keys
       title: DoubleClick
       description: A double click action.
     CoordParam:
@@ -68606,6 +68621,13 @@ components:
             ]
 
             ```
+        keys:
+          anyOf:
+            - items:
+                type: string
+              type: array
+              description: The keys being held while dragging the mouse.
+            - type: 'null'
       type: object
       required:
         - type
@@ -68654,6 +68676,13 @@ components:
         'y':
           type: integer
           description: The y-coordinate to move to.
+        keys:
+          anyOf:
+            - items:
+                type: string
+              type: array
+              description: The keys being held while moving the mouse.
+            - type: 'null'
       type: object
       required:
         - type
@@ -68700,6 +68729,13 @@ components:
         scroll_y:
           type: integer
           description: The vertical scroll distance.
+        keys:
+          anyOf:
+            - items:
+                type: string
+              type: array
+              description: The keys being held while scrolling.
+            - type: 'null'
       type: object
       required:
         - type

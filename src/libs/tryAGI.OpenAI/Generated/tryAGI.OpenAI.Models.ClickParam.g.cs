@@ -40,6 +40,12 @@ namespace tryAGI.OpenAI
         public required int Y { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("keys")]
+        public global::System.Collections.Generic.IList<string>? Keys { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -61,6 +67,7 @@ namespace tryAGI.OpenAI
         /// <param name="y">
         /// The y-coordinate where the click occurred.
         /// </param>
+        /// <param name="keys"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -68,12 +75,14 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ClickButtonType button,
             int x,
             int y,
+            global::System.Collections.Generic.IList<string>? keys,
             global::tryAGI.OpenAI.ClickParamType type = global::tryAGI.OpenAI.ClickParamType.Click)
         {
             this.Button = button;
             this.X = x;
             this.Y = y;
             this.Type = type;
+            this.Keys = keys;
         }
 
         /// <summary>
