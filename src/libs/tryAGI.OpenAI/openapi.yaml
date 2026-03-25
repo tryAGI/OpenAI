@@ -36271,8 +36271,20 @@ components:
               type: string
               description: |
                 The unique ID of the computer call tool output.
+            status:
+              description: >
+                The status of the message input. One of `in_progress`,
+                `completed`, or
+
+                `incomplete`. Populated when input items are returned via API.
+              $ref: '#/components/schemas/ComputerCallOutputStatus'
+            created_by:
+              type: string
+              description: |
+                The identifier of the actor that created the item.
           required:
             - id
+            - status
     ContainerFileListResource:
       type: object
       properties:
@@ -36493,6 +36505,7 @@ components:
         - $ref: '#/components/schemas/ToolSearchCall'
         - $ref: '#/components/schemas/ToolSearchOutput'
         - $ref: '#/components/schemas/ReasoningItem'
+        - $ref: '#/components/schemas/CompactionBody'
         - $ref: '#/components/schemas/CodeInterpreterToolCall'
         - $ref: '#/components/schemas/LocalShellToolCall'
         - $ref: '#/components/schemas/LocalShellToolCallOutput'
@@ -41372,6 +41385,50 @@ components:
         - type
         - call_id
         - output
+    CustomToolCallOutputResource:
+      title: ResponseCustomToolCallOutputItem
+      allOf:
+        - $ref: '#/components/schemas/CustomToolCallOutput'
+        - type: object
+          properties:
+            id:
+              type: string
+              description: |
+                The unique ID of the custom tool call output item.
+            status:
+              description: |
+                The status of the item. One of `in_progress`, `completed`, or
+                `incomplete`. Populated when items are returned via API.
+              $ref: '#/components/schemas/FunctionCallOutputStatusEnum'
+            created_by:
+              type: string
+              description: |
+                The identifier of the actor that created the item.
+          required:
+            - id
+            - status
+    CustomToolCallResource:
+      title: ResponseCustomToolCallItem
+      allOf:
+        - $ref: '#/components/schemas/CustomToolCall'
+        - type: object
+          properties:
+            id:
+              type: string
+              description: |
+                The unique ID of the custom tool call item.
+            status:
+              description: |
+                The status of the item. One of `in_progress`, `completed`, or
+                `incomplete`. Populated when items are returned via API.
+              $ref: '#/components/schemas/FunctionCallStatus'
+            created_by:
+              type: string
+              description: |
+                The identifier of the actor that created the item.
+          required:
+            - id
+            - status
     CustomToolChatCompletions:
       type: object
       title: Custom tool
@@ -44456,8 +44513,18 @@ components:
               type: string
               description: |
                 The unique ID of the function call tool output.
+            status:
+              description: |
+                The status of the item. One of `in_progress`, `completed`, or
+                `incomplete`. Populated when items are returned via API.
+              $ref: '#/components/schemas/FunctionCallOutputStatusEnum'
+            created_by:
+              type: string
+              description: |
+                The identifier of the actor that created the item.
           required:
             - id
+            - status
     FunctionToolCallResource:
       allOf:
         - $ref: '#/components/schemas/FunctionToolCall'
@@ -44467,8 +44534,18 @@ components:
               type: string
               description: |
                 The unique ID of the function tool call.
+            status:
+              description: |
+                The status of the item. One of `in_progress`, `completed`, or
+                `incomplete`. Populated when items are returned via API.
+              $ref: '#/components/schemas/FunctionCallStatus'
+            created_by:
+              type: string
+              description: |
+                The identifier of the actor that created the item.
           required:
             - id
+            - status
     GraderLabelModel:
       type: object
       title: LabelModelGrader
@@ -46189,6 +46266,8 @@ components:
         - $ref: '#/components/schemas/FunctionToolCallOutputResource'
         - $ref: '#/components/schemas/ToolSearchCall'
         - $ref: '#/components/schemas/ToolSearchOutput'
+        - $ref: '#/components/schemas/ReasoningItem'
+        - $ref: '#/components/schemas/CompactionBody'
         - $ref: '#/components/schemas/ImageGenToolCall'
         - $ref: '#/components/schemas/CodeInterpreterToolCall'
         - $ref: '#/components/schemas/LocalShellToolCall'
@@ -46201,6 +46280,8 @@ components:
         - $ref: '#/components/schemas/MCPApprovalRequest'
         - $ref: '#/components/schemas/MCPApprovalResponseResource'
         - $ref: '#/components/schemas/MCPToolCall'
+        - $ref: '#/components/schemas/CustomToolCallResource'
+        - $ref: '#/components/schemas/CustomToolCallOutputResource'
       discriminator:
         propertyName: type
     ListAssistantsResponse:
@@ -48436,12 +48517,14 @@ components:
       discriminator:
         propertyName: type
     OutputItem:
-      anyOf:
+      oneOf:
         - $ref: '#/components/schemas/OutputMessage'
         - $ref: '#/components/schemas/FileSearchToolCall'
         - $ref: '#/components/schemas/FunctionToolCall'
+        - $ref: '#/components/schemas/FunctionToolCallOutputResource'
         - $ref: '#/components/schemas/WebSearchToolCall'
         - $ref: '#/components/schemas/ComputerToolCall'
+        - $ref: '#/components/schemas/ComputerToolCallOutputResource'
         - $ref: '#/components/schemas/ReasoningItem'
         - $ref: '#/components/schemas/ToolSearchCall'
         - $ref: '#/components/schemas/ToolSearchOutput'
@@ -48449,6 +48532,7 @@ components:
         - $ref: '#/components/schemas/ImageGenToolCall'
         - $ref: '#/components/schemas/CodeInterpreterToolCall'
         - $ref: '#/components/schemas/LocalShellToolCall'
+        - $ref: '#/components/schemas/LocalShellToolCallOutput'
         - $ref: '#/components/schemas/FunctionShellCall'
         - $ref: '#/components/schemas/FunctionShellCallOutput'
         - $ref: '#/components/schemas/ApplyPatchToolCall'
@@ -48456,7 +48540,9 @@ components:
         - $ref: '#/components/schemas/MCPToolCall'
         - $ref: '#/components/schemas/MCPListTools'
         - $ref: '#/components/schemas/MCPApprovalRequest'
+        - $ref: '#/components/schemas/MCPApprovalResponseResource'
         - $ref: '#/components/schemas/CustomToolCall'
+        - $ref: '#/components/schemas/CustomToolCallOutputResource'
       discriminator:
         propertyName: type
     OutputMessage:
@@ -68503,6 +68589,18 @@ components:
         - content
       title: Message
       description: A message to or from the model.
+    FunctionCallStatus:
+      type: string
+      enum:
+        - in_progress
+        - completed
+        - incomplete
+    FunctionCallOutputStatusEnum:
+      type: string
+      enum:
+        - in_progress
+        - completed
+        - incomplete
     ClickButtonType:
       type: string
       enum:
@@ -68800,17 +68898,17 @@ components:
       required:
         - id
       description: A pending safety check for the computer call.
+    ComputerCallOutputStatus:
+      type: string
+      enum:
+        - completed
+        - incomplete
+        - failed
     ToolSearchExecutionType:
       type: string
       enum:
         - server
         - client
-    FunctionCallStatus:
-      type: string
-      enum:
-        - in_progress
-        - completed
-        - incomplete
     ToolSearchCall:
       properties:
         type:
@@ -69487,12 +69585,6 @@ components:
       description: >-
         Allows the assistant to create, delete, or update files using unified
         diffs.
-    FunctionCallOutputStatusEnum:
-      type: string
-      enum:
-        - in_progress
-        - completed
-        - incomplete
     ToolSearchOutput:
       properties:
         type:
@@ -69532,6 +69624,33 @@ components:
         - execution
         - tools
         - status
+    CompactionBody:
+      properties:
+        type:
+          type: string
+          enum:
+            - compaction
+          description: The type of the item. Always `compaction`.
+          default: compaction
+          x-stainless-const: true
+        id:
+          type: string
+          description: The unique ID of the compaction item.
+        encrypted_content:
+          type: string
+          description: The encrypted content that was produced by compaction.
+        created_by:
+          type: string
+          description: The identifier of the actor that created the item.
+      type: object
+      required:
+        - type
+        - id
+        - encrypted_content
+      title: Compaction item
+      description: >-
+        A compaction item generated by the [`v1/responses/compact`
+        API](/docs/api-reference/responses/compact).
     CodeInterpreterOutputLogs:
       properties:
         type:
@@ -70845,33 +70964,6 @@ components:
       type: object
       required:
         - type
-    CompactionBody:
-      properties:
-        type:
-          type: string
-          enum:
-            - compaction
-          description: The type of the item. Always `compaction`.
-          default: compaction
-          x-stainless-const: true
-        id:
-          type: string
-          description: The unique ID of the compaction item.
-        encrypted_content:
-          type: string
-          description: The encrypted content that was produced by compaction.
-        created_by:
-          type: string
-          description: The identifier of the actor that created the item.
-      type: object
-      required:
-        - type
-        - id
-        - encrypted_content
-      title: Compaction item
-      description: >-
-        A compaction item generated by the [`v1/responses/compact`
-        API](/docs/api-reference/responses/compact).
     Conversation-2:
       properties:
         id:

@@ -6,23 +6,23 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class ComputerToolCallOutputResourceVariant2
+    public sealed partial class CustomToolCallResourceVariant2
     {
         /// <summary>
-        /// The unique ID of the computer call tool output.
+        /// The unique ID of the custom tool call item.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
-        /// The status of the message input. One of `in_progress`, `completed`, or<br/>
-        /// `incomplete`. Populated when input items are returned via API.
+        /// The status of the item. One of `in_progress`, `completed`, or<br/>
+        /// `incomplete`. Populated when items are returned via API.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ComputerCallOutputStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.FunctionCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ComputerCallOutputStatus Status { get; set; }
+        public required global::tryAGI.OpenAI.FunctionCallStatus Status { get; set; }
 
         /// <summary>
         /// The identifier of the actor that created the item.
@@ -37,14 +37,14 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ComputerToolCallOutputResourceVariant2" /> class.
+        /// Initializes a new instance of the <see cref="CustomToolCallResourceVariant2" /> class.
         /// </summary>
         /// <param name="id">
-        /// The unique ID of the computer call tool output.
+        /// The unique ID of the custom tool call item.
         /// </param>
         /// <param name="status">
-        /// The status of the message input. One of `in_progress`, `completed`, or<br/>
-        /// `incomplete`. Populated when input items are returned via API.
+        /// The status of the item. One of `in_progress`, `completed`, or<br/>
+        /// `incomplete`. Populated when items are returned via API.
         /// </param>
         /// <param name="createdBy">
         /// The identifier of the actor that created the item.
@@ -52,9 +52,9 @@ namespace tryAGI.OpenAI
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public ComputerToolCallOutputResourceVariant2(
+        public CustomToolCallResourceVariant2(
             string id,
-            global::tryAGI.OpenAI.ComputerCallOutputStatus status,
+            global::tryAGI.OpenAI.FunctionCallStatus status,
             string? createdBy)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -63,9 +63,9 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ComputerToolCallOutputResourceVariant2" /> class.
+        /// Initializes a new instance of the <see cref="CustomToolCallResourceVariant2" /> class.
         /// </summary>
-        public ComputerToolCallOutputResourceVariant2()
+        public CustomToolCallResourceVariant2()
         {
         }
     }
