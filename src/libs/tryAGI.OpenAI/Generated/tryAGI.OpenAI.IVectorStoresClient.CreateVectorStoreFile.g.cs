@@ -5,7 +5,9 @@ namespace tryAGI.OpenAI
     public partial interface IVectorStoresClient
     {
         /// <summary>
-        /// Create a vector store file by attaching a [File](/docs/api-reference/files) to a [vector store](/docs/api-reference/vector-stores/object).
+        /// Create a vector store file by attaching a [File](/docs/api-reference/files) to a [vector store](/docs/api-reference/vector-stores/object).<br/>
+        /// This endpoint is subject to a per-vector-store write rate limit of 300 requests per minute, shared with `/vector_stores/{vector_store_id}/file_batches`.<br/>
+        /// For uploading multiple files to the same vector store, use the file batches endpoint to reduce request volume.
         /// </summary>
         /// <param name="vectorStoreId">
         /// Example: vs_abc123
@@ -19,13 +21,15 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.CreateVectorStoreFileRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create a vector store file by attaching a [File](/docs/api-reference/files) to a [vector store](/docs/api-reference/vector-stores/object).
+        /// Create a vector store file by attaching a [File](/docs/api-reference/files) to a [vector store](/docs/api-reference/vector-stores/object).<br/>
+        /// This endpoint is subject to a per-vector-store write rate limit of 300 requests per minute, shared with `/vector_stores/{vector_store_id}/file_batches`.<br/>
+        /// For uploading multiple files to the same vector store, use the file batches endpoint to reduce request volume.
         /// </summary>
         /// <param name="vectorStoreId">
         /// Example: vs_abc123
         /// </param>
         /// <param name="fileId">
-        /// A [File](/docs/api-reference/files) ID that the vector store should use. Useful for tools like `file_search` that can access files.
+        /// A [File](/docs/api-reference/files) ID that the vector store should use. Useful for tools like `file_search` that can access files. For multi-file ingestion, we recommend [`file_batches`](/docs/api-reference/vector-stores-file-batches/createBatch) to minimize per-vector-store write requests.
         /// </param>
         /// <param name="chunkingStrategy">
         /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
