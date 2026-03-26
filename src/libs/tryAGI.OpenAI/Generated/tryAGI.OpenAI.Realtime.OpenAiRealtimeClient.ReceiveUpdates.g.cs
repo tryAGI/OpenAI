@@ -46,9 +46,7 @@ namespace tryAGI.OpenAI.Realtime
                 if (result.MessageType == global::System.Net.WebSockets.WebSocketMessageType.Text)
                 {
                     string json = global::System.Text.Encoding.UTF8.GetString(buffer, 0, result.Count);
-                    var @event = (global::tryAGI.OpenAI.Realtime.ServerEvent?)global::System.Text.Json.JsonSerializer.Deserialize(json, typeof(global::tryAGI.OpenAI.Realtime.ServerEvent), JsonSerializerContext) ??
-                                 throw new global::System.InvalidOperationException(
-                                     $"Response deserialization failed for \"{json}\" ");
+                    var @event = (global::tryAGI.OpenAI.Realtime.ServerEvent)global::System.Text.Json.JsonSerializer.Deserialize(json, typeof(global::tryAGI.OpenAI.Realtime.ServerEvent), JsonSerializerContext)!;
 
                     yield return @event;
                 }
