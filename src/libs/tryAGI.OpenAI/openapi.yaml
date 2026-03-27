@@ -57973,7 +57973,8 @@ components:
           default: null
           description: >
             Realtime API can write session traces to the [Traces
-            Dashboard](/logs?api=traces). Set to null to disable tracing. Once
+            Dashboard](https://platform.openai.com/logs?api=traces). Set to null
+            to disable tracing. Once
 
             tracing is enabled for a session, the configuration cannot be
             modified.
@@ -58511,8 +58512,8 @@ components:
               default: null
               description: >
                 Realtime API can write session traces to the [Traces
-                Dashboard](/logs?api=traces). Set to null to disable tracing.
-                Once
+                Dashboard](https://platform.openai.com/logs?api=traces). Set to
+                null to disable tracing. Once
 
                 tracing is enabled for a session, the configuration cannot be
                 modified.
@@ -68157,7 +68158,6 @@ components:
       type: string
       enum:
         - file_search_call.results
-        - web_search_call.results
         - web_search_call.action.sources
         - message.input_image.image_url
         - computer_call_output.output.image_url

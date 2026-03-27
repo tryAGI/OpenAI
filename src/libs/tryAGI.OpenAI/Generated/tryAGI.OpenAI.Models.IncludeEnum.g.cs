@@ -43,10 +43,6 @@ namespace tryAGI.OpenAI
         /// Include the sources of the web search tool call.
         /// </summary>
         WebSearchCallActionSources,
-        /// <summary>
-        /// 
-        /// </summary>
-        WebSearchCallResults,
     }
 
     /// <summary>
@@ -68,7 +64,6 @@ namespace tryAGI.OpenAI
                 IncludeEnum.MessageOutputTextLogprobs => "message.output_text.logprobs",
                 IncludeEnum.ReasoningEncryptedContent => "reasoning.encrypted_content",
                 IncludeEnum.WebSearchCallActionSources => "web_search_call.action.sources",
-                IncludeEnum.WebSearchCallResults => "web_search_call.results",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -86,7 +81,6 @@ namespace tryAGI.OpenAI
                 "message.output_text.logprobs" => IncludeEnum.MessageOutputTextLogprobs,
                 "reasoning.encrypted_content" => IncludeEnum.ReasoningEncryptedContent,
                 "web_search_call.action.sources" => IncludeEnum.WebSearchCallActionSources,
-                "web_search_call.results" => IncludeEnum.WebSearchCallResults,
                 _ => null,
             };
         }
