@@ -107,6 +107,11 @@ public static class CustomProviders
     public const string OllamaCloudBaseUrl = "https://ollama.com/api/v1";
 
     /// <summary>
+    /// https://platform.minimax.io/docs/api-reference
+    /// </summary>
+    public const string MinimaxBaseUrl = "https://api.minimax.io/v1";
+
+    /// <summary>
     /// Creates an API to use for GitHub Models: https://github.com/marketplace/models
     /// </summary>
     /// <returns></returns>
@@ -293,5 +298,14 @@ public static class CustomProviders
     public static OpenAiClient OllamaCloud(string apiKey)
     {
         return new OpenAiClient(apiKey, baseUri: new Uri(OllamaCloudBaseUrl));
+    }
+
+    /// <summary>
+    /// Create an API to use for MiniMax.
+    /// </summary>
+    /// <returns></returns>
+    public static OpenAiClient Minimax(string apiKey)
+    {
+        return new OpenAiClient(apiKey, baseUri: new Uri(MinimaxBaseUrl));
     }
 }
