@@ -231,6 +231,17 @@ public partial class Tests
                     ? ollamaCloudModel
                     : "llama3.2"));
         }
+        if (customProvider == CustomProvider.Minimax)
+        {
+            return (CustomProviders.Minimax(apiKey:
+                Environment.GetEnvironmentVariable("MINIMAX_API_KEY") is { Length: > 0 } minimaxKeyValue
+                ? minimaxKeyValue
+                : throw new AssertInconclusiveException("MINIMAX_API_KEY environment variable is not found.")),
+                model ??
+                (Environment.GetEnvironmentVariable("MINIMAX_CHAT_MODEL") is { Length: > 0 } minimaxModel
+                    ? minimaxModel
+                    : "MiniMax-M1"));
+        }
 
         var apiKey =
             Environment.GetEnvironmentVariable("OPENAI_API_KEY") is { Length: > 0 } openAiKeyValue

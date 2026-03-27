@@ -386,4 +386,21 @@ public partial class Tests
     //[Retry(2)]
     //public Task ChatClient_GitHub_ToolCalling() =>
     //    ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.GitHub);
+
+    // --- Minimax ---
+
+    [TestMethod]
+    [Retry(2)]
+    public Task ChatClient_Minimax_GetResponse() =>
+        ChatClient_CustomProvider_GetResponseAsync(CustomProvider.Minimax);
+
+    [TestMethod]
+    [Retry(2)]
+    public Task ChatClient_Minimax_Streaming() =>
+        ChatClient_CustomProvider_StreamingAsync(CustomProvider.Minimax);
+
+    [TestMethod]
+    [Retry(2)]
+    public Task ChatClient_Minimax_ToolCalling() =>
+        ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.Minimax);
 }

@@ -24,4 +24,5 @@ public enum CustomProvider
     Nebius,
     Nvidia,
     OllamaCloud,
+    Minimax,
 }
