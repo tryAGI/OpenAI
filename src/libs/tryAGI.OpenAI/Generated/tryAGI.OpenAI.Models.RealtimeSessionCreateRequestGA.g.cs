@@ -54,7 +54,7 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAIncludeItem>? Include { get; set; }
 
         /// <summary>
-        /// Realtime API can write session traces to the [Traces Dashboard](/logs?api=traces). Set to null to disable tracing. Once<br/>
+        /// Realtime API can write session traces to the [Traces Dashboard](https://platform.openai.com/logs?api=traces). Set to null to disable tracing. Once<br/>
         /// tracing is enabled for a session, the configuration cannot be modified.<br/>
         /// `auto` will create a trace for the session with default values for the<br/>
         /// workflow name, group id, and metadata.<br/>
@@ -138,7 +138,7 @@ namespace tryAGI.OpenAI
         /// `item.input_audio_transcription.logprobs`: Include logprobs for input audio transcription.
         /// </param>
         /// <param name="tracing">
-        /// Realtime API can write session traces to the [Traces Dashboard](/logs?api=traces). Set to null to disable tracing. Once<br/>
+        /// Realtime API can write session traces to the [Traces Dashboard](https://platform.openai.com/logs?api=traces). Set to null to disable tracing. Once<br/>
         /// tracing is enabled for a session, the configuration cannot be modified.<br/>
         /// `auto` will create a trace for the session with default values for the<br/>
         /// workflow name, group id, and metadata.<br/>
