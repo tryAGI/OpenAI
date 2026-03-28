@@ -41,7 +41,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Arguments { get; set; }
+        public required global::tryAGI.OpenAI.EmptyModelParam Arguments { get; set; }
 
         /// <summary>
         /// 
@@ -75,7 +75,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ToolSearchCallItemParam(
-            object arguments,
+            global::tryAGI.OpenAI.EmptyModelParam arguments,
             string? id,
             string? callId,
             global::tryAGI.OpenAI.ToolSearchExecutionType? execution,

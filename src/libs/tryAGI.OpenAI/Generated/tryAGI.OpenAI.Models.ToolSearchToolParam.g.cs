@@ -34,7 +34,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
-        public object? Parameters { get; set; }
+        public global::tryAGI.OpenAI.EmptyModelParam? Parameters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -60,7 +60,7 @@ namespace tryAGI.OpenAI
         public ToolSearchToolParam(
             global::tryAGI.OpenAI.ToolSearchExecutionType? execution,
             string? description,
-            object? parameters,
+            global::tryAGI.OpenAI.EmptyModelParam? parameters,
             global::tryAGI.OpenAI.ToolSearchToolParamType type = global::tryAGI.OpenAI.ToolSearchToolParamType.ToolSearch)
         {
             this.Type = type;
