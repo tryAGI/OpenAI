@@ -127,6 +127,11 @@ public static class CustomProviders
     public const string LeptonAIBaseUrl = "https://api.lepton.ai/v1";
 
     /// <summary>
+    /// https://cleanlab.ai/docs/
+    /// </summary>
+    public const string CleanlabBaseUrl = "https://api.cleanlab.ai/api/v1/openai_trustworthy_llm/";
+
+    /// <summary>
     /// Creates an API to use for GitHub Models: https://github.com/marketplace/models
     /// </summary>
     /// <returns></returns>
@@ -349,5 +354,14 @@ public static class CustomProviders
     public static OpenAiClient LeptonAI(string apiKey)
     {
         return new OpenAiClient(apiKey, baseUri: new Uri(LeptonAIBaseUrl));
+    }
+
+    /// <summary>
+    /// Create an API to use for Cleanlab TLM.
+    /// </summary>
+    /// <returns></returns>
+    public static OpenAiClient Cleanlab(string apiKey)
+    {
+        return new OpenAiClient(apiKey, baseUri: new Uri(CleanlabBaseUrl));
     }
 }
