@@ -25,7 +25,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
-        public object? Parameters { get; set; }
+        public global::tryAGI.OpenAI.EmptyModelParam? Parameters { get; set; }
 
         /// <summary>
         /// 
@@ -72,7 +72,7 @@ namespace tryAGI.OpenAI
         public FunctionToolParam(
             string name,
             string? description,
-            object? parameters,
+            global::tryAGI.OpenAI.EmptyModelParam? parameters,
             bool? strict,
             bool? deferLoading,
             global::tryAGI.OpenAI.FunctionToolParamType type = global::tryAGI.OpenAI.FunctionToolParamType.Function)

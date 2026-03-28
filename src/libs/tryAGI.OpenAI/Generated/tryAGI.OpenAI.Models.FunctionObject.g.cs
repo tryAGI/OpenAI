@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI
         /// Omitting `parameters` defines a function with an empty parameter list.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
-        public object? Parameters { get; set; }
+        public global::tryAGI.OpenAI.FunctionParameters? Parameters { get; set; }
 
         /// <summary>
         /// 
@@ -60,7 +60,7 @@ namespace tryAGI.OpenAI
         public FunctionObject(
             string name,
             string? description,
-            object? parameters,
+            global::tryAGI.OpenAI.FunctionParameters? parameters,
             bool? strict)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

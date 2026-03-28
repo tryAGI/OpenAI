@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("schema")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Schema { get; set; }
+        public required global::tryAGI.OpenAI.ResponseFormatJsonSchemaSchema Schema { get; set; }
 
         /// <summary>
         /// 
@@ -75,7 +75,7 @@ namespace tryAGI.OpenAI
 #endif
         public TextResponseFormatJsonSchema(
             string name,
-            object schema,
+            global::tryAGI.OpenAI.ResponseFormatJsonSchemaSchema schema,
             global::tryAGI.OpenAI.TextResponseFormatJsonSchemaType type,
             string? description,
             bool? strict)
