@@ -112,6 +112,21 @@ public static class CustomProviders
     public const string MinimaxBaseUrl = "https://api.minimax.io/v1";
 
     /// <summary>
+    /// https://novita.ai/docs
+    /// </summary>
+    public const string NovitaAIBaseUrl = "https://api.novita.ai/v3/openai";
+
+    /// <summary>
+    /// https://help.aliyun.com/zh/model-studio/
+    /// </summary>
+    public const string QwenBaseUrl = "https://dashscope-intl.aliyuncs.com/compatible-mode/v1";
+
+    /// <summary>
+    /// https://www.lepton.ai/docs
+    /// </summary>
+    public const string LeptonAIBaseUrl = "https://api.lepton.ai/v1";
+
+    /// <summary>
     /// Creates an API to use for GitHub Models: https://github.com/marketplace/models
     /// </summary>
     /// <returns></returns>
@@ -307,5 +322,32 @@ public static class CustomProviders
     public static OpenAiClient Minimax(string apiKey)
     {
         return new OpenAiClient(apiKey, baseUri: new Uri(MinimaxBaseUrl));
+    }
+
+    /// <summary>
+    /// Create an API to use for Novita AI.
+    /// </summary>
+    /// <returns></returns>
+    public static OpenAiClient NovitaAI(string apiKey)
+    {
+        return new OpenAiClient(apiKey, baseUri: new Uri(NovitaAIBaseUrl));
+    }
+
+    /// <summary>
+    /// Create an API to use for Qwen (Alibaba).
+    /// </summary>
+    /// <returns></returns>
+    public static OpenAiClient Qwen(string apiKey)
+    {
+        return new OpenAiClient(apiKey, baseUri: new Uri(QwenBaseUrl));
+    }
+
+    /// <summary>
+    /// Create an API to use for Lepton AI.
+    /// </summary>
+    /// <returns></returns>
+    public static OpenAiClient LeptonAI(string apiKey)
+    {
+        return new OpenAiClient(apiKey, baseUri: new Uri(LeptonAIBaseUrl));
     }
 }
