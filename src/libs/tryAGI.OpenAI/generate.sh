@@ -2,7 +2,7 @@
 set -euo pipefail
 
 dotnet tool install --global autosdk.cli --prerelease
-curl --fail --silent --show-error -o openapi.yaml https://app.stainless.com/api/spec/documented/openai/openapi.documented.yml
+curl --fail --silent --show-error -L -o openapi.yaml https://app.stainless.com/api/spec/documented/openai/openapi.documented.yml
 
 rm -rf Generated
 autosdk generate openapi.yaml \
