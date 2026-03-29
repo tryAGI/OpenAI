@@ -33,12 +33,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateModerationRequestInputVariant3ItemVariant2" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Always `text`.
-        /// </param>
         /// <param name="text">
         /// A string of text to classify.<br/>
         /// Example: I want to kill them
+        /// </param>
+        /// <param name="type">
+        /// Always `text`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
             string text,
             global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2Type type)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
         }
 
         /// <summary>

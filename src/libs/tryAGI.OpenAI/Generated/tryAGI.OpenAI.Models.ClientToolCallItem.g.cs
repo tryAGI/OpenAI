@@ -95,19 +95,11 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// Identifier of the thread item.
         /// </param>
-        /// <param name="object">
-        /// Type discriminator that is always `chatkit.thread_item`.<br/>
-        /// Default Value: chatkit.thread_item
-        /// </param>
         /// <param name="createdAt">
         /// Unix timestamp (in seconds) for when the item was created.
         /// </param>
         /// <param name="threadId">
         /// Identifier of the parent thread.
-        /// </param>
-        /// <param name="type">
-        /// Type discriminator that is always `chatkit.client_tool_call`.<br/>
-        /// Default Value: chatkit.client_tool_call
         /// </param>
         /// <param name="status">
         /// Execution status for the tool call.
@@ -122,6 +114,14 @@ namespace tryAGI.OpenAI
         /// JSON-encoded arguments that were sent to the tool.
         /// </param>
         /// <param name="output"></param>
+        /// <param name="object">
+        /// Type discriminator that is always `chatkit.thread_item`.<br/>
+        /// Default Value: chatkit.thread_item
+        /// </param>
+        /// <param name="type">
+        /// Type discriminator that is always `chatkit.client_tool_call`.<br/>
+        /// Default Value: chatkit.client_tool_call
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -138,14 +138,14 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ClientToolCallItemType type = global::tryAGI.OpenAI.ClientToolCallItemType.ChatkitClientToolCall)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object;
             this.CreatedAt = createdAt;
             this.ThreadId = threadId ?? throw new global::System.ArgumentNullException(nameof(threadId));
+            this.Type = type;
             this.Status = status;
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
-            this.Object = @object;
-            this.Type = type;
             this.Output = output;
         }
 

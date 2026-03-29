@@ -45,10 +45,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="DragParam" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Specifies the event type. For a drag action, this property is always set to `drag`.<br/>
-        /// Default Value: drag
-        /// </param>
         /// <param name="path">
         /// An array of coordinates representing the path of the drag action. Coordinates will appear as an array of objects, eg<br/>
         /// ```<br/>
@@ -59,6 +55,10 @@ namespace tryAGI.OpenAI
         /// ```
         /// </param>
         /// <param name="keys"></param>
+        /// <param name="type">
+        /// Specifies the event type. For a drag action, this property is always set to `drag`.<br/>
+        /// Default Value: drag
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -67,8 +67,8 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<string>? keys,
             global::tryAGI.OpenAI.DragParamType type = global::tryAGI.OpenAI.DragParamType.Drag)
         {
-            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
             this.Type = type;
+            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
             this.Keys = keys;
         }
 

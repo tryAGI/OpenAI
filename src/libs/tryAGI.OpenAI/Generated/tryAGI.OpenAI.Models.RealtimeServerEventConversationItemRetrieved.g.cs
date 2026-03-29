@@ -42,11 +42,11 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `conversation.item.retrieved`.
-        /// </param>
         /// <param name="item">
         /// A single item within a Realtime conversation.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `conversation.item.retrieved`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -57,8 +57,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RealtimeServerEventConversationItemRetrievedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Item = item;
             this.Type = type;
+            this.Item = item;
         }
 
         /// <summary>

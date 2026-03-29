@@ -46,14 +46,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ComputerScreenshotContent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Specifies the event type. For a computer screenshot, this property is always set to `computer_screenshot`.<br/>
-        /// Default Value: computer_screenshot
+        /// <param name="detail">
+        /// The detail level of the screenshot image to be sent to the model. One of `high`, `low`, `auto`, or `original`. Defaults to `auto`.
         /// </param>
         /// <param name="imageUrl"></param>
         /// <param name="fileId"></param>
-        /// <param name="detail">
-        /// The detail level of the screenshot image to be sent to the model. One of `high`, `low`, `auto`, or `original`. Defaults to `auto`.
+        /// <param name="type">
+        /// Specifies the event type. For a computer screenshot, this property is always set to `computer_screenshot`.<br/>
+        /// Default Value: computer_screenshot
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -64,10 +64,10 @@ namespace tryAGI.OpenAI
             string? fileId,
             global::tryAGI.OpenAI.ComputerScreenshotContentType type = global::tryAGI.OpenAI.ComputerScreenshotContentType.ComputerScreenshot)
         {
-            this.Detail = detail;
             this.Type = type;
             this.ImageUrl = imageUrl;
             this.FileId = fileId;
+            this.Detail = detail;
         }
 
         /// <summary>

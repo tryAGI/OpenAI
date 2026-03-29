@@ -42,11 +42,11 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `session.updated`.
-        /// </param>
         /// <param name="session">
         /// Realtime session object for the beta interface.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `session.updated`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -57,8 +57,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RealtimeBetaServerEventSessionUpdatedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Session = session ?? throw new global::System.ArgumentNullException(nameof(session));
             this.Type = type;
+            this.Session = session ?? throw new global::System.ArgumentNullException(nameof(session));
         }
 
         /// <summary>

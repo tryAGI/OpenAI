@@ -46,15 +46,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeClientEventSessionUpdate" /> class.
         /// </summary>
+        /// <param name="session">
+        /// Update the Realtime session. Choose either a realtime<br/>
+        /// session or a transcription session.
+        /// </param>
         /// <param name="eventId">
         /// Optional client-generated ID used to identify this event. This is an arbitrary string that a client may assign. It will be passed back if there is an error with the event, but the corresponding `session.updated` event will not include it.
         /// </param>
         /// <param name="type">
         /// The event type, must be `session.update`.
-        /// </param>
-        /// <param name="session">
-        /// Update the Realtime session. Choose either a realtime<br/>
-        /// session or a transcription session.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -64,9 +64,9 @@ namespace tryAGI.OpenAI
             string? eventId,
             global::tryAGI.OpenAI.RealtimeClientEventSessionUpdateType type)
         {
-            this.Session = session;
             this.EventId = eventId;
             this.Type = type;
+            this.Session = session;
         }
 
         /// <summary>

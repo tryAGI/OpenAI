@@ -52,9 +52,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseCustomToolCallInputDeltaEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The event type identifier.
-        /// </param>
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
         /// </param>
@@ -67,6 +64,9 @@ namespace tryAGI.OpenAI
         /// <param name="delta">
         /// The incremental input data (delta) for the custom tool call.
         /// </param>
+        /// <param name="type">
+        /// The event type identifier.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -77,11 +77,11 @@ namespace tryAGI.OpenAI
             string delta,
             global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEventType type)
         {
+            this.Type = type;
             this.SequenceNumber = sequenceNumber;
             this.OutputIndex = outputIndex;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
-            this.Type = type;
         }
 
         /// <summary>

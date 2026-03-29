@@ -59,9 +59,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseReasoningSummaryPartAddedEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `response.reasoning_summary_part.added`.
-        /// </param>
         /// <param name="itemId">
         /// The ID of the item this summary part is associated with.
         /// </param>
@@ -77,6 +74,9 @@ namespace tryAGI.OpenAI
         /// <param name="part">
         /// The summary part that was added.
         /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `response.reasoning_summary_part.added`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -88,12 +88,12 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEventPart part,
             global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEventType type)
         {
+            this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.SummaryIndex = summaryIndex;
             this.SequenceNumber = sequenceNumber;
             this.Part = part ?? throw new global::System.ArgumentNullException(nameof(part));
-            this.Type = type;
         }
 
         /// <summary>

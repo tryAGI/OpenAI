@@ -78,10 +78,6 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be<br/>
-        /// `conversation.item.input_audio_transcription.completed`.
-        /// </param>
         /// <param name="itemId">
         /// The ID of the item containing the audio that is being transcribed.
         /// </param>
@@ -91,10 +87,14 @@ namespace tryAGI.OpenAI
         /// <param name="transcript">
         /// The transcribed text.
         /// </param>
-        /// <param name="logprobs"></param>
         /// <param name="usage">
         /// Usage statistics for the transcription, this is billed according to the ASR model's pricing rather than the realtime model's pricing.
         /// </param>
+        /// <param name="type">
+        /// The event type, must be<br/>
+        /// `conversation.item.input_audio_transcription.completed`.
+        /// </param>
+        /// <param name="logprobs"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -108,12 +108,12 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProbProperties>? logprobs)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
+            this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.ContentIndex = contentIndex;
             this.Transcript = transcript ?? throw new global::System.ArgumentNullException(nameof(transcript));
-            this.Usage = usage;
-            this.Type = type;
             this.Logprobs = logprobs;
+            this.Usage = usage;
         }
 
         /// <summary>

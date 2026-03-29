@@ -31,11 +31,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="FileExpirationAfter" /> class.
         /// </summary>
-        /// <param name="anchor">
-        /// Anchor timestamp after which the expiration policy applies. Supported anchors: `created_at`.
-        /// </param>
         /// <param name="seconds">
         /// The number of seconds after the anchor time that the file will expire. Must be between 3600 (1 hour) and 2592000 (30 days).
+        /// </param>
+        /// <param name="anchor">
+        /// Anchor timestamp after which the expiration policy applies. Supported anchors: `created_at`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -44,8 +44,8 @@ namespace tryAGI.OpenAI
             int seconds,
             global::tryAGI.OpenAI.FileExpirationAfterAnchor anchor)
         {
-            this.Seconds = seconds;
             this.Anchor = anchor;
+            this.Seconds = seconds;
         }
 
         /// <summary>

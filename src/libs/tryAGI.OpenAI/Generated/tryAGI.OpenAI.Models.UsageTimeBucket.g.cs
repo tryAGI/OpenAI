@@ -45,10 +45,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="UsageTimeBucket" /> class.
         /// </summary>
-        /// <param name="object"></param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
         /// <param name="result"></param>
+        /// <param name="object"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -58,10 +58,10 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.UsageCompletionsResult, global::tryAGI.OpenAI.UsageEmbeddingsResult, global::tryAGI.OpenAI.UsageModerationsResult, global::tryAGI.OpenAI.UsageImagesResult, global::tryAGI.OpenAI.UsageAudioSpeechesResult, global::tryAGI.OpenAI.UsageAudioTranscriptionsResult, global::tryAGI.OpenAI.UsageVectorStoresResult, global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult, global::tryAGI.OpenAI.CostsResult>> result,
             global::tryAGI.OpenAI.UsageTimeBucketObject @object)
         {
+            this.Object = @object;
             this.StartTime = startTime;
             this.EndTime = endTime;
             this.Result = result ?? throw new global::System.ArgumentNullException(nameof(result));
-            this.Object = @object;
         }
 
         /// <summary>

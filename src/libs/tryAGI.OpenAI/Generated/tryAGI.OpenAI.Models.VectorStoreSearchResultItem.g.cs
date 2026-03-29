@@ -60,10 +60,10 @@ namespace tryAGI.OpenAI
         /// <param name="score">
         /// The similarity score for the result.
         /// </param>
-        /// <param name="attributes"></param>
         /// <param name="content">
         /// Content chunks from the file.
         /// </param>
+        /// <param name="attributes"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -77,8 +77,8 @@ namespace tryAGI.OpenAI
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
             this.Score = score;
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Attributes = attributes;
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
         }
 
         /// <summary>

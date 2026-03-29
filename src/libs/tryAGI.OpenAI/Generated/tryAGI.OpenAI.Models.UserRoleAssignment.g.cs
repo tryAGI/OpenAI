@@ -38,14 +38,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="UserRoleAssignment" /> class.
         /// </summary>
-        /// <param name="object">
-        /// Always `user.role`.
-        /// </param>
         /// <param name="user">
         /// Represents an individual `user` within an organization.
         /// </param>
         /// <param name="role">
         /// Details about a role that can be assigned through the public Roles API.
+        /// </param>
+        /// <param name="object">
+        /// Always `user.role`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -55,9 +55,9 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.Role role,
             global::tryAGI.OpenAI.UserRoleAssignmentObject @object)
         {
+            this.Object = @object;
             this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
             this.Role = role ?? throw new global::System.ArgumentNullException(nameof(role));
-            this.Object = @object;
         }
 
         /// <summary>

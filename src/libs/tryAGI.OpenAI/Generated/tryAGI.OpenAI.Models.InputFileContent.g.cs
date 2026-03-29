@@ -50,10 +50,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="InputFileContent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the input item. Always `input_file`.<br/>
-        /// Default Value: input_file
-        /// </param>
         /// <param name="fileId"></param>
         /// <param name="filename">
         /// The name of the file to be sent to the model.
@@ -63,6 +59,10 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="fileUrl">
         /// The URL of the file to be sent to the model.
+        /// </param>
+        /// <param name="type">
+        /// The type of the input item. Always `input_file`.<br/>
+        /// Default Value: input_file
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

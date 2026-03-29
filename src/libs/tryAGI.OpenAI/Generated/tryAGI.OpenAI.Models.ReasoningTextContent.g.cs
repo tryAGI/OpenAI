@@ -33,12 +33,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ReasoningTextContent" /> class.
         /// </summary>
+        /// <param name="text">
+        /// The reasoning text from the model.
+        /// </param>
         /// <param name="type">
         /// The type of the reasoning text. Always `reasoning_text`.<br/>
         /// Default Value: reasoning_text
-        /// </param>
-        /// <param name="text">
-        /// The reasoning text from the model.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
             string text,
             global::tryAGI.OpenAI.ReasoningTextContentType type = global::tryAGI.OpenAI.ReasoningTextContentType.ReasoningText)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
         }
 
         /// <summary>

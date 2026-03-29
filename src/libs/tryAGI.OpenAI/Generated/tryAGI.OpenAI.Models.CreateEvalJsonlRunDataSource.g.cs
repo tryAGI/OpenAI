@@ -34,12 +34,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateEvalJsonlRunDataSource" /> class.
         /// </summary>
+        /// <param name="source">
+        /// Determines what populates the `item` namespace in the data source.
+        /// </param>
         /// <param name="type">
         /// The type of data source. Always `jsonl`.<br/>
         /// Default Value: jsonl
-        /// </param>
-        /// <param name="source">
-        /// Determines what populates the `item` namespace in the data source.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -48,8 +48,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalJsonlFileContentSource, global::tryAGI.OpenAI.EvalJsonlFileIdSource> source,
             global::tryAGI.OpenAI.CreateEvalJsonlRunDataSourceType type = global::tryAGI.OpenAI.CreateEvalJsonlRunDataSourceType.Jsonl)
         {
-            this.Source = source;
             this.Type = type;
+            this.Source = source;
         }
 
         /// <summary>

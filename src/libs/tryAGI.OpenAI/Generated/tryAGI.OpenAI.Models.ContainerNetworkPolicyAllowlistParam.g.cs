@@ -39,15 +39,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ContainerNetworkPolicyAllowlistParam" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Allow outbound network access only to specified domains. Always `allowlist`.<br/>
-        /// Default Value: allowlist
-        /// </param>
         /// <param name="allowedDomains">
         /// A list of allowed domains when type is `allowlist`.
         /// </param>
         /// <param name="domainSecrets">
         /// Optional domain-scoped secrets for allowlisted domains.
+        /// </param>
+        /// <param name="type">
+        /// Allow outbound network access only to specified domains. Always `allowlist`.<br/>
+        /// Default Value: allowlist
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -57,8 +57,8 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContainerNetworkPolicyDomainSecretParam>? domainSecrets,
             global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParamType type = global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParamType.Allowlist)
         {
-            this.AllowedDomains = allowedDomains ?? throw new global::System.ArgumentNullException(nameof(allowedDomains));
             this.Type = type;
+            this.AllowedDomains = allowedDomains ?? throw new global::System.ArgumentNullException(nameof(allowedDomains));
             this.DomainSecrets = domainSecrets;
         }
 

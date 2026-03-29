@@ -51,20 +51,20 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="TranscriptTextUsageTokens" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the usage object. Always `tokens` for this variant.
-        /// </param>
         /// <param name="inputTokens">
         /// Number of input tokens billed for this request.
-        /// </param>
-        /// <param name="inputTokenDetails">
-        /// Details about the input tokens billed for this request.
         /// </param>
         /// <param name="outputTokens">
         /// Number of output tokens generated.
         /// </param>
         /// <param name="totalTokens">
         /// Total number of tokens used (input + output).
+        /// </param>
+        /// <param name="type">
+        /// The type of the usage object. Always `tokens` for this variant.
+        /// </param>
+        /// <param name="inputTokenDetails">
+        /// Details about the input tokens billed for this request.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -76,11 +76,11 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.TranscriptTextUsageTokensType type,
             global::tryAGI.OpenAI.TranscriptTextUsageTokensInputTokenDetails? inputTokenDetails)
         {
+            this.Type = type;
             this.InputTokens = inputTokens;
+            this.InputTokenDetails = inputTokenDetails;
             this.OutputTokens = outputTokens;
             this.TotalTokens = totalTokens;
-            this.Type = type;
-            this.InputTokenDetails = inputTokenDetails;
         }
 
         /// <summary>

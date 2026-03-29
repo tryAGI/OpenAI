@@ -38,14 +38,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="FilePath" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the file path. Always `file_path`.
-        /// </param>
         /// <param name="fileId">
         /// The ID of the file.
         /// </param>
         /// <param name="index">
         /// The index of the file in the list of files.
+        /// </param>
+        /// <param name="type">
+        /// The type of the file path. Always `file_path`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -55,9 +55,9 @@ namespace tryAGI.OpenAI
             int index,
             global::tryAGI.OpenAI.FilePathType type)
         {
+            this.Type = type;
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
             this.Index = index;
-            this.Type = type;
         }
 
         /// <summary>

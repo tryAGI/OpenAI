@@ -46,10 +46,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="MoveParam" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Specifies the event type. For a move action, this property is always set to `move`.<br/>
-        /// Default Value: move
-        /// </param>
         /// <param name="x">
         /// The x-coordinate to move to.
         /// </param>
@@ -57,6 +53,10 @@ namespace tryAGI.OpenAI
         /// The y-coordinate to move to.
         /// </param>
         /// <param name="keys"></param>
+        /// <param name="type">
+        /// Specifies the event type. For a move action, this property is always set to `move`.<br/>
+        /// Default Value: move
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -66,9 +66,9 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<string>? keys,
             global::tryAGI.OpenAI.MoveParamType type = global::tryAGI.OpenAI.MoveParamType.Move)
         {
+            this.Type = type;
             this.X = x;
             this.Y = y;
-            this.Type = type;
             this.Keys = keys;
         }
 

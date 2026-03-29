@@ -33,12 +33,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="FunctionShellCallOutputExitOutcome" /> class.
         /// </summary>
+        /// <param name="exitCode">
+        /// Exit code from the shell process.
+        /// </param>
         /// <param name="type">
         /// The outcome type. Always `exit`.<br/>
         /// Default Value: exit
-        /// </param>
-        /// <param name="exitCode">
-        /// Exit code from the shell process.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
             int exitCode,
             global::tryAGI.OpenAI.FunctionShellCallOutputExitOutcomeType type = global::tryAGI.OpenAI.FunctionShellCallOutputExitOutcomeType.Exit)
         {
-            this.ExitCode = exitCode;
             this.Type = type;
+            this.ExitCode = exitCode;
         }
 
         /// <summary>

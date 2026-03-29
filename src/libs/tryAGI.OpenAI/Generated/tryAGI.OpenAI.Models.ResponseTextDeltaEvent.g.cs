@@ -66,9 +66,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseTextDeltaEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `response.output_text.delta`.
-        /// </param>
         /// <param name="itemId">
         /// The ID of the output item that the text delta was added to.
         /// </param>
@@ -87,6 +84,9 @@ namespace tryAGI.OpenAI
         /// <param name="logprobs">
         /// The log probabilities of the tokens in the delta.
         /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `response.output_text.delta`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -99,13 +99,13 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResponseLogProb> logprobs,
             global::tryAGI.OpenAI.ResponseTextDeltaEventType type)
         {
+            this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.ContentIndex = contentIndex;
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.SequenceNumber = sequenceNumber;
             this.Logprobs = logprobs ?? throw new global::System.ArgumentNullException(nameof(logprobs));
-            this.Type = type;
         }
 
         /// <summary>

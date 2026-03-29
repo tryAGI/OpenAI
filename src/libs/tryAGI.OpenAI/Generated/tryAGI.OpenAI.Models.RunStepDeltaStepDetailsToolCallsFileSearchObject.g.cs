@@ -47,14 +47,14 @@ namespace tryAGI.OpenAI
         /// <param name="index">
         /// The index of the tool call in the tool calls array.
         /// </param>
+        /// <param name="fileSearch">
+        /// For now, this is always going to be an empty object.
+        /// </param>
         /// <param name="id">
         /// The ID of the tool call object.
         /// </param>
         /// <param name="type">
         /// The type of tool call. This is always going to be `file_search` for this type of tool call.
-        /// </param>
-        /// <param name="fileSearch">
-        /// For now, this is always going to be an empty object.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -66,9 +66,9 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObjectType type)
         {
             this.Index = index;
-            this.FileSearch = fileSearch ?? throw new global::System.ArgumentNullException(nameof(fileSearch));
             this.Id = id;
             this.Type = type;
+            this.FileSearch = fileSearch ?? throw new global::System.ArgumentNullException(nameof(fileSearch));
         }
 
         /// <summary>

@@ -31,11 +31,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="SpeechAudioDoneEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `speech.audio.done`.
-        /// </param>
         /// <param name="usage">
         /// Token usage statistics for the request.
+        /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `speech.audio.done`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -44,8 +44,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.SpeechAudioDoneEventUsage usage,
             global::tryAGI.OpenAI.SpeechAudioDoneEventType type)
         {
-            this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
             this.Type = type;
+            this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
         }
 
         /// <summary>

@@ -61,9 +61,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectUser" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The object type, which is always `organization.project.user`
-        /// </param>
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints
         /// </param>
@@ -79,6 +76,9 @@ namespace tryAGI.OpenAI
         /// <param name="addedAt">
         /// The Unix timestamp (in seconds) of when the project was added.
         /// </param>
+        /// <param name="object">
+        /// The object type, which is always `organization.project.user`
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -90,12 +90,12 @@ namespace tryAGI.OpenAI
             global::System.DateTimeOffset addedAt,
             global::tryAGI.OpenAI.ProjectUserObject @object)
         {
+            this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
             this.Role = role;
             this.AddedAt = addedAt;
-            this.Object = @object;
         }
 
         /// <summary>

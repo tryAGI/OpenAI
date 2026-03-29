@@ -52,11 +52,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateVideoMultipartBody" /> class.
         /// </summary>
-        /// <param name="model">
-        /// The video generation model to use (allowed values: sora-2, sora-2-pro). Defaults to `sora-2`.
-        /// </param>
         /// <param name="prompt">
         /// Text prompt that describes the video to generate.
+        /// </param>
+        /// <param name="model">
+        /// The video generation model to use (allowed values: sora-2, sora-2-pro). Defaults to `sora-2`.
         /// </param>
         /// <param name="inputReference"></param>
         /// <param name="seconds">
@@ -75,8 +75,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.VideoSeconds? seconds,
             global::tryAGI.OpenAI.VideoSize? size)
         {
-            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Model = model;
+            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.InputReference = inputReference;
             this.Seconds = seconds;
             this.Size = size;

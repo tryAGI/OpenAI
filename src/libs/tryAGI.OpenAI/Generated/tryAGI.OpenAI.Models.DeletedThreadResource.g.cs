@@ -43,12 +43,12 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// Identifier of the deleted thread.
         /// </param>
+        /// <param name="deleted">
+        /// Indicates that the thread has been deleted.
+        /// </param>
         /// <param name="object">
         /// Type discriminator that is always `chatkit.thread.deleted`.<br/>
         /// Default Value: chatkit.thread.deleted
-        /// </param>
-        /// <param name="deleted">
-        /// Indicates that the thread has been deleted.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -59,8 +59,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.DeletedThreadResourceObject @object = global::tryAGI.OpenAI.DeletedThreadResourceObject.ChatkitThreadDeleted)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Deleted = deleted;
             this.Object = @object;
+            this.Deleted = deleted;
         }
 
         /// <summary>

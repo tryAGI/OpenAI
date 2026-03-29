@@ -44,14 +44,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="UserListResource" /> class.
         /// </summary>
-        /// <param name="object">
-        /// Always `list`.
-        /// </param>
         /// <param name="data">
         /// Users in the current page.
         /// </param>
         /// <param name="hasMore">
         /// Whether more users are available when paginating.
+        /// </param>
+        /// <param name="object">
+        /// Always `list`.
         /// </param>
         /// <param name="next">
         /// Cursor to fetch the next page of results, or `null` when no further users are available.
@@ -65,9 +65,9 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.UserListResourceObject @object,
             string? next)
         {
+            this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.HasMore = hasMore;
-            this.Object = @object;
             this.Next = next;
         }
 

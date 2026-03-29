@@ -31,10 +31,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionNamedToolChoiceCustom" /> class.
         /// </summary>
+        /// <param name="custom"></param>
         /// <param name="type">
         /// For custom tool calling, the type is always `custom`.
         /// </param>
-        /// <param name="custom"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustomCustom custom,
             global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustomType type)
         {
-            this.Custom = custom ?? throw new global::System.ArgumentNullException(nameof(custom));
             this.Type = type;
+            this.Custom = custom ?? throw new global::System.ArgumentNullException(nameof(custom));
         }
 
         /// <summary>

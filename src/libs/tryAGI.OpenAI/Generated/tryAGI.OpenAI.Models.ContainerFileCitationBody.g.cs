@@ -61,10 +61,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ContainerFileCitationBody" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the container file citation. Always `container_file_citation`.<br/>
-        /// Default Value: container_file_citation
-        /// </param>
         /// <param name="containerId">
         /// The ID of the container file.
         /// </param>
@@ -80,6 +76,10 @@ namespace tryAGI.OpenAI
         /// <param name="filename">
         /// The filename of the container file cited.
         /// </param>
+        /// <param name="type">
+        /// The type of the container file citation. Always `container_file_citation`.<br/>
+        /// Default Value: container_file_citation
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -91,12 +91,12 @@ namespace tryAGI.OpenAI
             string filename,
             global::tryAGI.OpenAI.ContainerFileCitationBodyType type = global::tryAGI.OpenAI.ContainerFileCitationBodyType.ContainerFileCitation)
         {
+            this.Type = type;
             this.ContainerId = containerId ?? throw new global::System.ArgumentNullException(nameof(containerId));
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
             this.StartIndex = startIndex;
             this.EndIndex = endIndex;
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
-            this.Type = type;
         }
 
         /// <summary>

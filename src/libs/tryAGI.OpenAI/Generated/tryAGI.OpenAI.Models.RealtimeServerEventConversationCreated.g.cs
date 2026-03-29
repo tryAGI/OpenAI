@@ -41,11 +41,11 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `conversation.created`.
-        /// </param>
         /// <param name="conversation">
         /// The conversation resource.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `conversation.created`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -56,8 +56,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RealtimeServerEventConversationCreatedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Conversation = conversation ?? throw new global::System.ArgumentNullException(nameof(conversation));
             this.Type = type;
+            this.Conversation = conversation ?? throw new global::System.ArgumentNullException(nameof(conversation));
         }
 
         /// <summary>

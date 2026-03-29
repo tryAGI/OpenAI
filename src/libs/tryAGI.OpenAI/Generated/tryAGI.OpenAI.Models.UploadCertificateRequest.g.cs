@@ -30,11 +30,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="UploadCertificateRequest" /> class.
         /// </summary>
-        /// <param name="name">
-        /// An optional name for the certificate
-        /// </param>
         /// <param name="content">
         /// The certificate content in PEM format
+        /// </param>
+        /// <param name="name">
+        /// An optional name for the certificate
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -43,8 +43,8 @@ namespace tryAGI.OpenAI
             string content,
             string? name)
         {
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Name = name;
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
         }
 
         /// <summary>

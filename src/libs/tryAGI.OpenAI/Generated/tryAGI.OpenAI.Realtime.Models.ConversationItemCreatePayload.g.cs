@@ -43,6 +43,9 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         /// Initializes a new instance of the <see cref="ConversationItemCreatePayload" /> class.
         /// </summary>
+        /// <param name="item">
+        /// A realtime conversation item.
+        /// </param>
         /// <param name="eventId">
         /// Optional client-generated ID.
         /// </param>
@@ -51,9 +54,6 @@ namespace tryAGI.OpenAI.Realtime
         /// </param>
         /// <param name="previousItemId">
         /// The ID of the preceding item after which the new item will be inserted.
-        /// </param>
-        /// <param name="item">
-        /// A realtime conversation item.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -64,10 +64,10 @@ namespace tryAGI.OpenAI.Realtime
             global::tryAGI.OpenAI.Realtime.ConversationItemCreatePayloadType type,
             string? previousItemId)
         {
-            this.Item = item ?? throw new global::System.ArgumentNullException(nameof(item));
             this.EventId = eventId;
             this.Type = type;
             this.PreviousItemId = previousItemId;
+            this.Item = item ?? throw new global::System.ArgumentNullException(nameof(item));
         }
 
         /// <summary>

@@ -33,11 +33,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ContainerReferenceResource" /> class.
         /// </summary>
+        /// <param name="containerId"></param>
         /// <param name="type">
         /// The environment type. Always `container_reference`.<br/>
         /// Default Value: container_reference
         /// </param>
-        /// <param name="containerId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -45,8 +45,8 @@ namespace tryAGI.OpenAI
             string containerId,
             global::tryAGI.OpenAI.ContainerReferenceResourceType type = global::tryAGI.OpenAI.ContainerReferenceResourceType.ContainerReference)
         {
-            this.ContainerId = containerId ?? throw new global::System.ArgumentNullException(nameof(containerId));
             this.Type = type;
+            this.ContainerId = containerId ?? throw new global::System.ArgumentNullException(nameof(containerId));
         }
 
         /// <summary>

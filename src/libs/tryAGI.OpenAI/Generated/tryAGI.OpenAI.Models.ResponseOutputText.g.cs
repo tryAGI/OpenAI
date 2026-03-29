@@ -40,15 +40,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseOutputText" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Type discriminator that is always `output_text`.<br/>
-        /// Default Value: output_text
-        /// </param>
         /// <param name="text">
         /// Assistant generated text.
         /// </param>
         /// <param name="annotations">
         /// Ordered list of annotations attached to the response text.
+        /// </param>
+        /// <param name="type">
+        /// Type discriminator that is always `output_text`.<br/>
+        /// Default Value: output_text
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -58,9 +58,9 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnnotationsItem3> annotations,
             global::tryAGI.OpenAI.ResponseOutputTextType type = global::tryAGI.OpenAI.ResponseOutputTextType.OutputText)
         {
+            this.Type = type;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Annotations = annotations ?? throw new global::System.ArgumentNullException(nameof(annotations));
-            this.Type = type;
         }
 
         /// <summary>

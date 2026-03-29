@@ -46,13 +46,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="DeletedSkillVersionResource" /> class.
         /// </summary>
-        /// <param name="object">
-        /// Default Value: skill.version.deleted
-        /// </param>
         /// <param name="deleted"></param>
         /// <param name="id"></param>
         /// <param name="version">
         /// The deleted skill version.
+        /// </param>
+        /// <param name="object">
+        /// Default Value: skill.version.deleted
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -63,10 +63,10 @@ namespace tryAGI.OpenAI
             string version,
             global::tryAGI.OpenAI.DeletedSkillVersionResourceObject @object = global::tryAGI.OpenAI.DeletedSkillVersionResourceObject.SkillVersionDeleted)
         {
+            this.Object = @object;
             this.Deleted = deleted;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
-            this.Object = @object;
         }
 
         /// <summary>

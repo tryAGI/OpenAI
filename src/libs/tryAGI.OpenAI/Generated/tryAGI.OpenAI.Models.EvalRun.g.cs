@@ -118,10 +118,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="EvalRun" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The type of the object. Always "eval.run".<br/>
-        /// Default Value: eval.run
-        /// </param>
         /// <param name="id">
         /// Unique identifier for the evaluation run.
         /// </param>
@@ -155,9 +151,13 @@ namespace tryAGI.OpenAI
         /// <param name="dataSource">
         /// Information about the run's data source.
         /// </param>
-        /// <param name="metadata"></param>
         /// <param name="error">
         /// An object representing an error response from the Eval API.
+        /// </param>
+        /// <param name="metadata"></param>
+        /// <param name="object">
+        /// The type of the object. Always "eval.run".<br/>
+        /// Default Value: eval.run
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -178,6 +178,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::tryAGI.OpenAI.EvalRunObject @object = global::tryAGI.OpenAI.EvalRunObject.EvalRun)
         {
+            this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.EvalId = evalId ?? throw new global::System.ArgumentNullException(nameof(evalId));
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
@@ -189,9 +190,8 @@ namespace tryAGI.OpenAI
             this.PerModelUsage = perModelUsage ?? throw new global::System.ArgumentNullException(nameof(perModelUsage));
             this.PerTestingCriteriaResults = perTestingCriteriaResults ?? throw new global::System.ArgumentNullException(nameof(perTestingCriteriaResults));
             this.DataSource = dataSource;
-            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
-            this.Object = @object;
             this.Metadata = metadata;
+            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
         }
 
         /// <summary>

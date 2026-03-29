@@ -33,12 +33,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RefusalContent" /> class.
         /// </summary>
+        /// <param name="refusal">
+        /// The refusal explanation from the model.
+        /// </param>
         /// <param name="type">
         /// The type of the refusal. Always `refusal`.<br/>
         /// Default Value: refusal
-        /// </param>
-        /// <param name="refusal">
-        /// The refusal explanation from the model.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
             string refusal,
             global::tryAGI.OpenAI.RefusalContentType type = global::tryAGI.OpenAI.RefusalContentType.Refusal)
         {
-            this.Refusal = refusal ?? throw new global::System.ArgumentNullException(nameof(refusal));
             this.Type = type;
+            this.Refusal = refusal ?? throw new global::System.ArgumentNullException(nameof(refusal));
         }
 
         /// <summary>

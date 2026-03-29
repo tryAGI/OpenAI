@@ -33,12 +33,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="TypeParam" /> class.
         /// </summary>
+        /// <param name="text">
+        /// The text to type.
+        /// </param>
         /// <param name="type">
         /// Specifies the event type. For a type action, this property is always set to `type`.<br/>
         /// Default Value: type
-        /// </param>
-        /// <param name="text">
-        /// The text to type.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
             string text,
             global::tryAGI.OpenAI.TypeParamType type = global::tryAGI.OpenAI.TypeParamType.Type)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
         }
 
         /// <summary>

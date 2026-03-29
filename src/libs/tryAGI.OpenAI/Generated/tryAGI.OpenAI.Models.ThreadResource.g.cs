@@ -66,19 +66,19 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// Identifier of the thread.
         /// </param>
-        /// <param name="object">
-        /// Type discriminator that is always `chatkit.thread`.<br/>
-        /// Default Value: chatkit.thread
-        /// </param>
         /// <param name="createdAt">
         /// Unix timestamp (in seconds) for when the thread was created.
         /// </param>
-        /// <param name="title"></param>
         /// <param name="status">
         /// Current status for the thread. Defaults to `active` for newly created threads.
         /// </param>
         /// <param name="user">
         /// Free-form string that identifies your end user who owns the thread.
+        /// </param>
+        /// <param name="title"></param>
+        /// <param name="object">
+        /// Type discriminator that is always `chatkit.thread`.<br/>
+        /// Default Value: chatkit.thread
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -92,11 +92,11 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ThreadResourceObject @object = global::tryAGI.OpenAI.ThreadResourceObject.ChatkitThread)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object;
             this.CreatedAt = createdAt;
+            this.Title = title;
             this.Status = status;
             this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
-            this.Object = @object;
-            this.Title = title;
         }
 
         /// <summary>

@@ -43,11 +43,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="TranscriptTextDeltaEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `transcript.text.delta`.
-        /// </param>
         /// <param name="delta">
         /// The text delta that was additionally transcribed.
+        /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `transcript.text.delta`.
         /// </param>
         /// <param name="logprobs">
         /// The log probabilities of the delta. Only included if you [create a transcription](/docs/api-reference/audio/create-transcription) with the `include[]` parameter set to `logprobs`.
@@ -64,8 +64,8 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptTextDeltaEventLogprob>? logprobs,
             string? segmentId)
         {
-            this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.Type = type;
+            this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.Logprobs = logprobs;
             this.SegmentId = segmentId;
         }

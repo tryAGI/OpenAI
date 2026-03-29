@@ -47,10 +47,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="FileCitationBody" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the file citation. Always `file_citation`.<br/>
-        /// Default Value: file_citation
-        /// </param>
         /// <param name="fileId">
         /// The ID of the file.
         /// </param>
@@ -59,6 +55,10 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="filename">
         /// The filename of the file cited.
+        /// </param>
+        /// <param name="type">
+        /// The type of the file citation. Always `file_citation`.<br/>
+        /// Default Value: file_citation
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -69,10 +69,10 @@ namespace tryAGI.OpenAI
             string filename,
             global::tryAGI.OpenAI.FileCitationBodyType type = global::tryAGI.OpenAI.FileCitationBodyType.FileCitation)
         {
+            this.Type = type;
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
             this.Index = index;
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
-            this.Type = type;
         }
 
         /// <summary>

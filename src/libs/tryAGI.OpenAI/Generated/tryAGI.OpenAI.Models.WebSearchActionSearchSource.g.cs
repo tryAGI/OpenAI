@@ -31,11 +31,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="WebSearchActionSearchSource" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of source. Always `url`.
-        /// </param>
         /// <param name="url">
         /// The URL of the source.
+        /// </param>
+        /// <param name="type">
+        /// The type of source. Always `url`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -44,8 +44,8 @@ namespace tryAGI.OpenAI
             string url,
             global::tryAGI.OpenAI.WebSearchActionSearchSourceType type)
         {
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Type = type;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
         }
 
         /// <summary>

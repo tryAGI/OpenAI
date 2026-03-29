@@ -33,12 +33,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="UserMessageInputText" /> class.
         /// </summary>
+        /// <param name="text">
+        /// Plain-text content supplied by the user.
+        /// </param>
         /// <param name="type">
         /// Type discriminator that is always `input_text`.<br/>
         /// Default Value: input_text
-        /// </param>
-        /// <param name="text">
-        /// Plain-text content supplied by the user.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
             string text,
             global::tryAGI.OpenAI.UserMessageInputTextType type = global::tryAGI.OpenAI.UserMessageInputTextType.InputText)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
         }
 
         /// <summary>

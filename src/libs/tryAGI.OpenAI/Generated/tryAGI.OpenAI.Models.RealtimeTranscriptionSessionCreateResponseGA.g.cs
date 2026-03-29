@@ -57,14 +57,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeTranscriptionSessionCreateResponseGA" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of session. Always `transcription` for transcription sessions.
-        /// </param>
         /// <param name="id">
         /// Unique identifier for the session that looks like `sess_1234567890abcdef`.
         /// </param>
         /// <param name="object">
         /// The object type. Always `realtime.transcription_session`.
+        /// </param>
+        /// <param name="type">
+        /// The type of session. Always `transcription` for transcription sessions.
         /// </param>
         /// <param name="expiresAt">
         /// Expiration timestamp for the session, in seconds since epoch.
@@ -87,9 +87,9 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAIncludeItem>? include,
             global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAAudio? audio)
         {
+            this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object ?? throw new global::System.ArgumentNullException(nameof(@object));
-            this.Type = type;
             this.ExpiresAt = expiresAt;
             this.Include = include;
             this.Audio = audio;

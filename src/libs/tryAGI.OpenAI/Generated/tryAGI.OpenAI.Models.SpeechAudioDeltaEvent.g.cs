@@ -31,11 +31,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="SpeechAudioDeltaEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `speech.audio.delta`.
-        /// </param>
         /// <param name="audio">
         /// A chunk of Base64-encoded audio data.
+        /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `speech.audio.delta`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -44,8 +44,8 @@ namespace tryAGI.OpenAI
             string audio,
             global::tryAGI.OpenAI.SpeechAudioDeltaEventType type)
         {
-            this.Audio = audio ?? throw new global::System.ArgumentNullException(nameof(audio));
             this.Type = type;
+            this.Audio = audio ?? throw new global::System.ArgumentNullException(nameof(audio));
         }
 
         /// <summary>

@@ -33,12 +33,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="EvalJsonlFileIdSource" /> class.
         /// </summary>
+        /// <param name="id">
+        /// The identifier of the file.
+        /// </param>
         /// <param name="type">
         /// The type of jsonl source. Always `file_id`.<br/>
         /// Default Value: file_id
-        /// </param>
-        /// <param name="id">
-        /// The identifier of the file.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
             string id,
             global::tryAGI.OpenAI.EvalJsonlFileIdSourceType type = global::tryAGI.OpenAI.EvalJsonlFileIdSourceType.FileId)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
         }
 
         /// <summary>

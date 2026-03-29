@@ -54,10 +54,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ClickParam" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Specifies the event type. For a click action, this property is always `click`.<br/>
-        /// Default Value: click
-        /// </param>
         /// <param name="button">
         /// Indicates which mouse button was pressed during the click. One of `left`, `right`, `wheel`, `back`, or `forward`.
         /// </param>
@@ -68,6 +64,10 @@ namespace tryAGI.OpenAI
         /// The y-coordinate where the click occurred.
         /// </param>
         /// <param name="keys"></param>
+        /// <param name="type">
+        /// Specifies the event type. For a click action, this property is always `click`.<br/>
+        /// Default Value: click
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -78,10 +78,10 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<string>? keys,
             global::tryAGI.OpenAI.ClickParamType type = global::tryAGI.OpenAI.ClickParamType.Click)
         {
+            this.Type = type;
             this.Button = button;
             this.X = x;
             this.Y = y;
-            this.Type = type;
             this.Keys = keys;
         }
 

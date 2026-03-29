@@ -53,9 +53,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="GraderStringCheck" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The object type, which is always `string_check`.
-        /// </param>
         /// <param name="name">
         /// The name of the grader.
         /// </param>
@@ -68,6 +65,9 @@ namespace tryAGI.OpenAI
         /// <param name="operation">
         /// The string check operation to perform. One of `eq`, `ne`, `like`, or `ilike`.
         /// </param>
+        /// <param name="type">
+        /// The object type, which is always `string_check`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -78,11 +78,11 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.GraderStringCheckOperation operation,
             global::tryAGI.OpenAI.GraderStringCheckType type)
         {
+            this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Reference = reference ?? throw new global::System.ArgumentNullException(nameof(reference));
             this.Operation = operation;
-            this.Type = type;
         }
 
         /// <summary>

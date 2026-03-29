@@ -38,14 +38,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="WebSearchActionFind" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The action type.
-        /// </param>
         /// <param name="url">
         /// The URL of the page searched for the pattern.
         /// </param>
         /// <param name="pattern">
         /// The pattern or text to search for within the page.
+        /// </param>
+        /// <param name="type">
+        /// The action type.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -55,9 +55,9 @@ namespace tryAGI.OpenAI
             string pattern,
             global::tryAGI.OpenAI.WebSearchActionFindType type)
         {
+            this.Type = type;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Pattern = pattern ?? throw new global::System.ArgumentNullException(nameof(pattern));
-            this.Type = type;
         }
 
         /// <summary>

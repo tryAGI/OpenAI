@@ -39,13 +39,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CompactionSummaryItemParam" /> class.
         /// </summary>
+        /// <param name="encryptedContent">
+        /// The encrypted content of the compaction summary.
+        /// </param>
         /// <param name="id"></param>
         /// <param name="type">
         /// The type of the item. Always `compaction`.<br/>
         /// Default Value: compaction
-        /// </param>
-        /// <param name="encryptedContent">
-        /// The encrypted content of the compaction summary.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -55,9 +55,9 @@ namespace tryAGI.OpenAI
             string? id,
             global::tryAGI.OpenAI.CompactionSummaryItemParamType type = global::tryAGI.OpenAI.CompactionSummaryItemParamType.Compaction)
         {
-            this.EncryptedContent = encryptedContent ?? throw new global::System.ArgumentNullException(nameof(encryptedContent));
             this.Id = id;
             this.Type = type;
+            this.EncryptedContent = encryptedContent ?? throw new global::System.ArgumentNullException(nameof(encryptedContent));
         }
 
         /// <summary>

@@ -118,8 +118,6 @@ namespace tryAGI.OpenAI
         /// <param name="harassmentThreatening">
         /// Harassment content that also includes violence or serious harm towards any target.
         /// </param>
-        /// <param name="illicit"></param>
-        /// <param name="illicitViolent"></param>
         /// <param name="selfHarm">
         /// Content that promotes, encourages, or depicts acts of self-harm, such as suicide, cutting, and eating disorders.
         /// </param>
@@ -141,6 +139,8 @@ namespace tryAGI.OpenAI
         /// <param name="violenceGraphic">
         /// Content that depicts death, violence, or physical injury in graphic detail.
         /// </param>
+        /// <param name="illicit"></param>
+        /// <param name="illicitViolent"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -163,6 +163,8 @@ namespace tryAGI.OpenAI
             this.HateThreatening = hateThreatening;
             this.Harassment = harassment;
             this.HarassmentThreatening = harassmentThreatening;
+            this.Illicit = illicit;
+            this.IllicitViolent = illicitViolent;
             this.SelfHarm = selfHarm;
             this.SelfHarmIntent = selfHarmIntent;
             this.SelfHarmInstructions = selfHarmInstructions;
@@ -170,8 +172,6 @@ namespace tryAGI.OpenAI
             this.SexualMinors = sexualMinors;
             this.Violence = violence;
             this.ViolenceGraphic = violenceGraphic;
-            this.Illicit = illicit;
-            this.IllicitViolent = illicitViolent;
         }
 
         /// <summary>

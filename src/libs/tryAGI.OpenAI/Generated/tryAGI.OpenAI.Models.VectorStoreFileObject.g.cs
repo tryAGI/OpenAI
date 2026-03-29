@@ -83,9 +83,6 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `vector_store.file`.
-        /// </param>
         /// <param name="usageBytes">
         /// The total vector store usage in bytes. Note that this may be different from the original file size.
         /// </param>
@@ -97,6 +94,9 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="status">
         /// The status of the vector store file, which can be either `in_progress`, `completed`, `cancelled`, or `failed`. The status `completed` indicates that the vector store file is ready for use.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `vector_store.file`.
         /// </param>
         /// <param name="lastError"></param>
         /// <param name="chunkingStrategy">
@@ -118,11 +118,11 @@ namespace tryAGI.OpenAI
             object? attributes)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object;
             this.UsageBytes = usageBytes;
             this.CreatedAt = createdAt;
             this.VectorStoreId = vectorStoreId ?? throw new global::System.ArgumentNullException(nameof(vectorStoreId));
             this.Status = status;
-            this.Object = @object;
             this.LastError = lastError;
             this.ChunkingStrategy = chunkingStrategy;
             this.Attributes = attributes;

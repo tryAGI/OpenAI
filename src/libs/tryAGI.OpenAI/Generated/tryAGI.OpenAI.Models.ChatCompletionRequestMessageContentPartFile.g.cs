@@ -31,10 +31,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionRequestMessageContentPartFile" /> class.
         /// </summary>
+        /// <param name="file"></param>
         /// <param name="type">
         /// The type of the content part. Always `file`.
         /// </param>
-        /// <param name="file"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFileFile file,
             global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFileType type)
         {
-            this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
             this.Type = type;
+            this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
         }
 
         /// <summary>

@@ -69,10 +69,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="SkillVersionResource" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The object type, which is `skill.version`.<br/>
-        /// Default Value: skill.version
-        /// </param>
         /// <param name="id">
         /// Unique identifier for the skill version.
         /// </param>
@@ -91,6 +87,10 @@ namespace tryAGI.OpenAI
         /// <param name="description">
         /// Description of the skill version.
         /// </param>
+        /// <param name="object">
+        /// The object type, which is `skill.version`.<br/>
+        /// Default Value: skill.version
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -103,13 +103,13 @@ namespace tryAGI.OpenAI
             string description,
             global::tryAGI.OpenAI.SkillVersionResourceObject @object = global::tryAGI.OpenAI.SkillVersionResourceObject.SkillVersion)
         {
+            this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.SkillId = skillId ?? throw new global::System.ArgumentNullException(nameof(skillId));
             this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
             this.CreatedAt = createdAt;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.Object = @object;
         }
 
         /// <summary>

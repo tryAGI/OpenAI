@@ -52,17 +52,17 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ThreadItemListResource" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The type of object returned, must be `list`.<br/>
-        /// Default Value: list
-        /// </param>
         /// <param name="data">
         /// A list of items
         /// </param>
-        /// <param name="firstId"></param>
-        /// <param name="lastId"></param>
         /// <param name="hasMore">
         /// Whether there are more items available.
+        /// </param>
+        /// <param name="firstId"></param>
+        /// <param name="lastId"></param>
+        /// <param name="object">
+        /// The type of object returned, must be `list`.<br/>
+        /// Default Value: list
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -74,11 +74,11 @@ namespace tryAGI.OpenAI
             string? lastId,
             global::tryAGI.OpenAI.ThreadItemListResourceObject @object = global::tryAGI.OpenAI.ThreadItemListResourceObject.List)
         {
-            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.HasMore = hasMore;
             this.Object = @object;
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.FirstId = firstId;
             this.LastId = lastId;
+            this.HasMore = hasMore;
         }
 
         /// <summary>

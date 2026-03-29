@@ -31,11 +31,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="GroupUserDeletedResource" /> class.
         /// </summary>
-        /// <param name="object">
-        /// Always `group.user.deleted`.
-        /// </param>
         /// <param name="deleted">
         /// Whether the group membership was removed.
+        /// </param>
+        /// <param name="object">
+        /// Always `group.user.deleted`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -44,8 +44,8 @@ namespace tryAGI.OpenAI
             bool deleted,
             global::tryAGI.OpenAI.GroupUserDeletedResourceObject @object)
         {
-            this.Deleted = deleted;
             this.Object = @object;
+            this.Deleted = deleted;
         }
 
         /// <summary>

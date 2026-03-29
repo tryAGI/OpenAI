@@ -31,11 +31,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateEvalCompletionsRunDataSourceInputMessagesTemplateInputMessages" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of input messages. Always `template`.
-        /// </param>
         /// <param name="template">
         /// A list of chat messages forming the prompt or context. May include variable references to the `item` namespace, ie {{item.name}}.
+        /// </param>
+        /// <param name="type">
+        /// The type of input messages. Always `template`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -44,8 +44,8 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EasyInputMessage, global::tryAGI.OpenAI.EvalItem>> template,
             global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSourceInputMessagesTemplateInputMessagesType type)
         {
-            this.Template = template ?? throw new global::System.ArgumentNullException(nameof(template));
             this.Type = type;
+            this.Template = template ?? throw new global::System.ArgumentNullException(nameof(template));
         }
 
         /// <summary>

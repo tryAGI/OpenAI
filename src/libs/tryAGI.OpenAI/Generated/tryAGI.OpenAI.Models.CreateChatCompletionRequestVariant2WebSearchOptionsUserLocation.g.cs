@@ -31,11 +31,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateChatCompletionRequestVariant2WebSearchOptionsUserLocation" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of location approximation. Always `approximate`.
-        /// </param>
         /// <param name="approximate">
         /// Approximate location parameters for the search.
+        /// </param>
+        /// <param name="type">
+        /// The type of location approximation. Always `approximate`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -44,8 +44,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.WebSearchLocation approximate,
             global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2WebSearchOptionsUserLocationType type)
         {
-            this.Approximate = approximate ?? throw new global::System.ArgumentNullException(nameof(approximate));
             this.Type = type;
+            this.Approximate = approximate ?? throw new global::System.ArgumentNullException(nameof(approximate));
         }
 
         /// <summary>

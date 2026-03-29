@@ -56,10 +56,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="Message" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the message. Always set to `message`.<br/>
-        /// Default Value: message
-        /// </param>
         /// <param name="id">
         /// The unique ID of the message.
         /// </param>
@@ -72,6 +68,10 @@ namespace tryAGI.OpenAI
         /// <param name="content">
         /// The content of the message
         /// </param>
+        /// <param name="type">
+        /// The type of the message. Always set to `message`.<br/>
+        /// Default Value: message
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -82,11 +82,11 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentItem3> content,
             global::tryAGI.OpenAI.MessageType type = global::tryAGI.OpenAI.MessageType.Message)
         {
+            this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Status = status;
             this.Role = role;
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
-            this.Type = type;
         }
 
         /// <summary>

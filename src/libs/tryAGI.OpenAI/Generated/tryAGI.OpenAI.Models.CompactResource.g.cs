@@ -58,10 +58,6 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// The unique identifier for the compacted response.
         /// </param>
-        /// <param name="object">
-        /// The object type. Always `response.compaction`.<br/>
-        /// Default Value: response.compaction
-        /// </param>
         /// <param name="output">
         /// The compacted list of output items.
         /// </param>
@@ -70,6 +66,10 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="usage">
         /// Token accounting for the compaction pass, including cached, reasoning, and total tokens.
+        /// </param>
+        /// <param name="object">
+        /// The object type. Always `response.compaction`.<br/>
+        /// Default Value: response.compaction
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -82,10 +82,10 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.CompactResourceObject @object = global::tryAGI.OpenAI.CompactResourceObject.ResponseCompaction)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object;
             this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
             this.CreatedAt = createdAt;
             this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
-            this.Object = @object;
         }
 
         /// <summary>

@@ -58,19 +58,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolSearchOutputItemParam" /> class.
         /// </summary>
+        /// <param name="tools">
+        /// The loaded tool definitions returned by the tool search output.
+        /// </param>
         /// <param name="id"></param>
         /// <param name="callId"></param>
+        /// <param name="execution">
+        /// Whether tool search was executed by the server or by the client.
+        /// </param>
+        /// <param name="status"></param>
         /// <param name="type">
         /// The item type. Always `tool_search_output`.<br/>
         /// Default Value: tool_search_output
         /// </param>
-        /// <param name="execution">
-        /// Whether tool search was executed by the server or by the client.
-        /// </param>
-        /// <param name="tools">
-        /// The loaded tool definitions returned by the tool search output.
-        /// </param>
-        /// <param name="status"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -82,11 +82,11 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.FunctionCallItemStatus? status,
             global::tryAGI.OpenAI.ToolSearchOutputItemParamType type = global::tryAGI.OpenAI.ToolSearchOutputItemParamType.ToolSearchOutput)
         {
-            this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
             this.Id = id;
             this.CallId = callId;
             this.Type = type;
             this.Execution = execution;
+            this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
             this.Status = status;
         }
 

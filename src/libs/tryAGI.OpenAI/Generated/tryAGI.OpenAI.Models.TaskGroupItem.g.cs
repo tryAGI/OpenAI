@@ -67,22 +67,22 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// Identifier of the thread item.
         /// </param>
-        /// <param name="object">
-        /// Type discriminator that is always `chatkit.thread_item`.<br/>
-        /// Default Value: chatkit.thread_item
-        /// </param>
         /// <param name="createdAt">
         /// Unix timestamp (in seconds) for when the item was created.
         /// </param>
         /// <param name="threadId">
         /// Identifier of the parent thread.
         /// </param>
+        /// <param name="tasks">
+        /// Tasks included in the group.
+        /// </param>
+        /// <param name="object">
+        /// Type discriminator that is always `chatkit.thread_item`.<br/>
+        /// Default Value: chatkit.thread_item
+        /// </param>
         /// <param name="type">
         /// Type discriminator that is always `chatkit.task_group`.<br/>
         /// Default Value: chatkit.task_group
-        /// </param>
-        /// <param name="tasks">
-        /// Tasks included in the group.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -96,11 +96,11 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.TaskGroupItemType type = global::tryAGI.OpenAI.TaskGroupItemType.ChatkitTaskGroup)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object;
             this.CreatedAt = createdAt;
             this.ThreadId = threadId ?? throw new global::System.ArgumentNullException(nameof(threadId));
-            this.Tasks = tasks ?? throw new global::System.ArgumentNullException(nameof(tasks));
-            this.Object = @object;
             this.Type = type;
+            this.Tasks = tasks ?? throw new global::System.ArgumentNullException(nameof(tasks));
         }
 
         /// <summary>

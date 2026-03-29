@@ -52,9 +52,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ContainerFileListResource" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The type of object returned, must be 'list'.
-        /// </param>
         /// <param name="data">
         /// A list of container files.
         /// </param>
@@ -67,6 +64,9 @@ namespace tryAGI.OpenAI
         /// <param name="hasMore">
         /// Whether there are more files available.
         /// </param>
+        /// <param name="object">
+        /// The type of object returned, must be 'list'.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -77,11 +77,11 @@ namespace tryAGI.OpenAI
             bool hasMore,
             global::tryAGI.OpenAI.ContainerFileListResourceObject @object)
         {
+            this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.FirstId = firstId ?? throw new global::System.ArgumentNullException(nameof(firstId));
             this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
             this.HasMore = hasMore;
-            this.Object = @object;
         }
 
         /// <summary>

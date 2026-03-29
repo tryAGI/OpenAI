@@ -95,10 +95,6 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// Identifier for the ChatKit session.
         /// </param>
-        /// <param name="object">
-        /// Type discriminator that is always `chatkit.session`.<br/>
-        /// Default Value: chatkit.session
-        /// </param>
         /// <param name="expiresAt">
         /// Unix timestamp (in seconds) for when the session expires.
         /// </param>
@@ -123,6 +119,10 @@ namespace tryAGI.OpenAI
         /// <param name="chatkitConfiguration">
         /// Resolved ChatKit feature configuration for the session.
         /// </param>
+        /// <param name="object">
+        /// Type discriminator that is always `chatkit.session`.<br/>
+        /// Default Value: chatkit.session
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -139,6 +139,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ChatSessionResourceObject @object = global::tryAGI.OpenAI.ChatSessionResourceObject.ChatkitSession)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object;
             this.ExpiresAt = expiresAt;
             this.ClientSecret = clientSecret ?? throw new global::System.ArgumentNullException(nameof(clientSecret));
             this.Workflow = workflow ?? throw new global::System.ArgumentNullException(nameof(workflow));
@@ -147,7 +148,6 @@ namespace tryAGI.OpenAI
             this.MaxRequestsPer1Minute = maxRequestsPer1Minute;
             this.Status = status;
             this.ChatkitConfiguration = chatkitConfiguration ?? throw new global::System.ArgumentNullException(nameof(chatkitConfiguration));
-            this.Object = @object;
         }
 
         /// <summary>

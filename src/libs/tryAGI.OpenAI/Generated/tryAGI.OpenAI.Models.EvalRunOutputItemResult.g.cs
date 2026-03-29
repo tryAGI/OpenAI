@@ -53,14 +53,14 @@ namespace tryAGI.OpenAI
         /// <param name="name">
         /// The name of the grader.
         /// </param>
-        /// <param name="type">
-        /// The grader type (for example, "string-check-grader").
-        /// </param>
         /// <param name="score">
         /// The numeric score produced by the grader.
         /// </param>
         /// <param name="passed">
         /// Whether the grader considered the output a pass.
+        /// </param>
+        /// <param name="type">
+        /// The grader type (for example, "string-check-grader").
         /// </param>
         /// <param name="sample">
         /// Optional sample or intermediate data produced by the grader.
@@ -76,9 +76,9 @@ namespace tryAGI.OpenAI
             object? sample)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Type = type;
             this.Score = score;
             this.Passed = passed;
-            this.Type = type;
             this.Sample = sample;
         }
 

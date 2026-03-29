@@ -57,9 +57,6 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `response.output_item.done`.
-        /// </param>
         /// <param name="responseId">
         /// The ID of the Response to which the item belongs.
         /// </param>
@@ -68,6 +65,9 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="item">
         /// A single item within a Realtime conversation.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `response.output_item.done`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -80,10 +80,10 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemDoneType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
+            this.Type = type;
             this.ResponseId = responseId ?? throw new global::System.ArgumentNullException(nameof(responseId));
             this.OutputIndex = outputIndex;
             this.Item = item;
-            this.Type = type;
         }
 
         /// <summary>

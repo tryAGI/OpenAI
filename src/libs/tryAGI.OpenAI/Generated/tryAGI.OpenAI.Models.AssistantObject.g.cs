@@ -119,22 +119,22 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `assistant`.
-        /// </param>
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) for when the assistant was created.
         /// </param>
-        /// <param name="name"></param>
-        /// <param name="description"></param>
         /// <param name="model">
         /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
         /// </param>
-        /// <param name="instructions"></param>
         /// <param name="tools">
         /// A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `file_search`, or `function`.<br/>
         /// Default Value: []
         /// </param>
+        /// <param name="object">
+        /// The object type, which is always `assistant`.
+        /// </param>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="instructions"></param>
         /// <param name="toolResources"></param>
         /// <param name="metadata"></param>
         /// <param name="temperature"></param>
@@ -159,13 +159,13 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AssistantsApiResponseFormatOption? responseFormat)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.CreatedAt = createdAt;
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
-            this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
             this.Object = @object;
+            this.CreatedAt = createdAt;
             this.Name = name;
             this.Description = description;
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Instructions = instructions;
+            this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
             this.ToolResources = toolResources;
             this.Metadata = metadata;
             this.Temperature = temperature;

@@ -43,11 +43,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="WebSearchActionSearch" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The action type.
-        /// </param>
         /// <param name="query">
         /// [DEPRECATED] The search query.
+        /// </param>
+        /// <param name="type">
+        /// The action type.
         /// </param>
         /// <param name="queries">
         /// The search queries.
@@ -64,8 +64,8 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<string>? queries,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.WebSearchActionSearchSource>? sources)
         {
-            this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
             this.Type = type;
+            this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
             this.Queries = queries;
             this.Sources = sources;
         }

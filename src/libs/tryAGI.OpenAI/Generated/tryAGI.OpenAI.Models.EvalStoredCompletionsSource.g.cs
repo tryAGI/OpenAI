@@ -56,15 +56,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="EvalStoredCompletionsSource" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of source. Always `stored_completions`.<br/>
-        /// Default Value: stored_completions
-        /// </param>
         /// <param name="metadata"></param>
         /// <param name="model"></param>
         /// <param name="createdAfter"></param>
         /// <param name="createdBefore"></param>
         /// <param name="limit"></param>
+        /// <param name="type">
+        /// The type of source. Always `stored_completions`.<br/>
+        /// Default Value: stored_completions
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

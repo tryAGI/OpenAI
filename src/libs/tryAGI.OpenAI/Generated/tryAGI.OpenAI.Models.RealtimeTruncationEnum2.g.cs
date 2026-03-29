@@ -37,11 +37,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeTruncationEnum2" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Use retention ratio truncation.
-        /// </param>
         /// <param name="retentionRatio">
         /// Fraction of post-instruction conversation tokens to retain (`0.0` - `1.0`) when the conversation exceeds the input token limit. Setting this to `0.8` means that messages will be dropped until 80% of the maximum allowed tokens are used. This helps reduce the frequency of truncations and improve cache rates.
+        /// </param>
+        /// <param name="type">
+        /// Use retention ratio truncation.
         /// </param>
         /// <param name="tokenLimits">
         /// Optional custom token limits for this truncation strategy. If not provided, the model's default token limits will be used.
@@ -54,8 +54,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RealtimeTruncationEnumType type,
             global::tryAGI.OpenAI.RealtimeTruncationEnumTokenLimits? tokenLimits)
         {
-            this.RetentionRatio = retentionRatio;
             this.Type = type;
+            this.RetentionRatio = retentionRatio;
             this.TokenLimits = tokenLimits;
         }
 

@@ -31,11 +31,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseReasoningSummaryPartAddedEventPart" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the summary part. Always `summary_text`.
-        /// </param>
         /// <param name="text">
         /// The text of the summary part.
+        /// </param>
+        /// <param name="type">
+        /// The type of the summary part. Always `summary_text`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -44,8 +44,8 @@ namespace tryAGI.OpenAI
             string text,
             global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEventPartType type)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
         }
 
         /// <summary>

@@ -53,9 +53,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="Group" /> class.
         /// </summary>
-        /// <param name="object">
-        /// Always `group`.
-        /// </param>
         /// <param name="id">
         /// Identifier for the group.
         /// </param>
@@ -68,6 +65,9 @@ namespace tryAGI.OpenAI
         /// <param name="scimManaged">
         /// Whether the group is managed through SCIM.
         /// </param>
+        /// <param name="object">
+        /// Always `group`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -78,11 +78,11 @@ namespace tryAGI.OpenAI
             bool scimManaged,
             global::tryAGI.OpenAI.GroupObject @object)
         {
+            this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.CreatedAt = createdAt;
             this.ScimManaged = scimManaged;
-            this.Object = @object;
         }
 
         /// <summary>

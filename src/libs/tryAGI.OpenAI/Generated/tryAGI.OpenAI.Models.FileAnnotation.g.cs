@@ -33,12 +33,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="FileAnnotation" /> class.
         /// </summary>
+        /// <param name="source">
+        /// File attachment referenced by the annotation.
+        /// </param>
         /// <param name="type">
         /// Type discriminator that is always `file` for this annotation.<br/>
         /// Default Value: file
-        /// </param>
-        /// <param name="source">
-        /// File attachment referenced by the annotation.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.FileAnnotationSource source,
             global::tryAGI.OpenAI.FileAnnotationType type = global::tryAGI.OpenAI.FileAnnotationType.File)
         {
-            this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
             this.Type = type;
+            this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
         }
 
         /// <summary>

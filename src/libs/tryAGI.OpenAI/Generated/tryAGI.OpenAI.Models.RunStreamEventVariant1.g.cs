@@ -31,10 +31,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RunStreamEventVariant1" /> class.
         /// </summary>
-        /// <param name="event"></param>
         /// <param name="data">
         /// Represents an execution run on a [thread](/docs/api-reference/threads).
         /// </param>
+        /// <param name="event"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RunObject data,
             global::tryAGI.OpenAI.RunStreamEventVariant1Event @event)
         {
-            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Event = @event;
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
         }
 
         /// <summary>

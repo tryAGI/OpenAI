@@ -51,9 +51,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="MCPListTools" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the item. Always `mcp_list_tools`.
-        /// </param>
         /// <param name="id">
         /// The unique ID of the list.
         /// </param>
@@ -62,6 +59,9 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="tools">
         /// The tools available on the server.
+        /// </param>
+        /// <param name="type">
+        /// The type of the item. Always `mcp_list_tools`.
         /// </param>
         /// <param name="error"></param>
 #if NET7_0_OR_GREATER
@@ -74,10 +74,10 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.MCPListToolsType type,
             string? error)
         {
+            this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.ServerLabel = serverLabel ?? throw new global::System.ArgumentNullException(nameof(serverLabel));
             this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
-            this.Type = type;
             this.Error = error;
         }
 

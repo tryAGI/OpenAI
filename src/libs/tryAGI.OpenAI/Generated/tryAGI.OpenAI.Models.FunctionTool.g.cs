@@ -57,10 +57,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="FunctionTool" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the function tool. Always `function`.<br/>
-        /// Default Value: function
-        /// </param>
         /// <param name="name">
         /// The name of the function to call.
         /// </param>
@@ -69,6 +65,10 @@ namespace tryAGI.OpenAI
         /// <param name="strict"></param>
         /// <param name="deferLoading">
         /// Whether this function is deferred and loaded via tool search.
+        /// </param>
+        /// <param name="type">
+        /// The type of the function tool. Always `function`.<br/>
+        /// Default Value: function
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -81,8 +81,8 @@ namespace tryAGI.OpenAI
             bool? deferLoading,
             global::tryAGI.OpenAI.FunctionToolType type = global::tryAGI.OpenAI.FunctionToolType.Function)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Type = type;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
             this.Parameters = parameters;
             this.Strict = strict;

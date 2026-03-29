@@ -52,10 +52,10 @@ namespace tryAGI.OpenAI
         /// <param name="type">
         /// The type of error (e.g., "invalid_request_error", "server_error").
         /// </param>
-        /// <param name="code"></param>
         /// <param name="message">
         /// A human-readable error message.
         /// </param>
+        /// <param name="code"></param>
         /// <param name="param"></param>
         /// <param name="eventId"></param>
 #if NET7_0_OR_GREATER
@@ -69,8 +69,8 @@ namespace tryAGI.OpenAI
             string? eventId)
         {
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Code = code;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Param = param;
             this.EventId = eventId;
         }

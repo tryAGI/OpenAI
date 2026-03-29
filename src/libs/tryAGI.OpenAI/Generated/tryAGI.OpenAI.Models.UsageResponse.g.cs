@@ -45,10 +45,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="UsageResponse" /> class.
         /// </summary>
-        /// <param name="object"></param>
         /// <param name="data"></param>
         /// <param name="hasMore"></param>
         /// <param name="nextPage"></param>
+        /// <param name="object"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -58,10 +58,10 @@ namespace tryAGI.OpenAI
             string nextPage,
             global::tryAGI.OpenAI.UsageResponseObject @object)
         {
+            this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.HasMore = hasMore;
             this.NextPage = nextPage ?? throw new global::System.ArgumentNullException(nameof(nextPage));
-            this.Object = @object;
         }
 
         /// <summary>

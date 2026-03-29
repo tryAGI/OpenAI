@@ -71,20 +71,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ComputerToolCall" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the computer call. Always `computer_call`.<br/>
-        /// Default Value: computer_call
-        /// </param>
         /// <param name="id">
         /// The unique ID of the computer call.
         /// </param>
         /// <param name="callId">
         /// An identifier used when responding to the tool call with output.
-        /// </param>
-        /// <param name="action"></param>
-        /// <param name="actions">
-        /// Flattened batched actions for `computer_use`. Each action includes an<br/>
-        /// `type` discriminator and action-specific fields.
         /// </param>
         /// <param name="pendingSafetyChecks">
         /// The pending safety checks for the computer call.
@@ -92,6 +83,15 @@ namespace tryAGI.OpenAI
         /// <param name="status">
         /// The status of the item. One of `in_progress`, `completed`, or<br/>
         /// `incomplete`. Populated when items are returned via API.
+        /// </param>
+        /// <param name="action"></param>
+        /// <param name="actions">
+        /// Flattened batched actions for `computer_use`. Each action includes an<br/>
+        /// `type` discriminator and action-specific fields.
+        /// </param>
+        /// <param name="type">
+        /// The type of the computer call. Always `computer_call`.<br/>
+        /// Default Value: computer_call
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -105,13 +105,13 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ComputerAction>? actions,
             global::tryAGI.OpenAI.ComputerToolCallType type = global::tryAGI.OpenAI.ComputerToolCallType.ComputerCall)
         {
+            this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
-            this.PendingSafetyChecks = pendingSafetyChecks ?? throw new global::System.ArgumentNullException(nameof(pendingSafetyChecks));
-            this.Status = status;
-            this.Type = type;
             this.Action = action;
             this.Actions = actions;
+            this.PendingSafetyChecks = pendingSafetyChecks ?? throw new global::System.ArgumentNullException(nameof(pendingSafetyChecks));
+            this.Status = status;
         }
 
         /// <summary>

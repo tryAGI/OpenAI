@@ -63,20 +63,20 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// The unique ID of the output message.
         /// </param>
+        /// <param name="content">
+        /// The content of the output message.
+        /// </param>
+        /// <param name="status">
+        /// The status of the message input. One of `in_progress`, `completed`, or<br/>
+        /// `incomplete`. Populated when input items are returned via API.
+        /// </param>
         /// <param name="type">
         /// The type of the output message. Always `message`.
         /// </param>
         /// <param name="role">
         /// The role of the output message. Always `assistant`.
         /// </param>
-        /// <param name="content">
-        /// The content of the output message.
-        /// </param>
         /// <param name="phase"></param>
-        /// <param name="status">
-        /// The status of the message input. One of `in_progress`, `completed`, or<br/>
-        /// `incomplete`. Populated when input items are returned via API.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -89,11 +89,11 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.MessagePhase? phase)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
-            this.Status = status;
             this.Type = type;
             this.Role = role;
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Phase = phase;
+            this.Status = status;
         }
 
         /// <summary>

@@ -59,9 +59,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="TranscriptionDiarizedSegment" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the segment. Always `transcript.text.segment`.
-        /// </param>
         /// <param name="id">
         /// Unique identifier for the segment.
         /// </param>
@@ -77,6 +74,9 @@ namespace tryAGI.OpenAI
         /// <param name="speaker">
         /// Speaker label for this segment. When known speakers are provided, the label matches `known_speaker_names[]`. Otherwise speakers are labeled sequentially using capital letters (`A`, `B`, ...).
         /// </param>
+        /// <param name="type">
+        /// The type of the segment. Always `transcript.text.segment`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -88,12 +88,12 @@ namespace tryAGI.OpenAI
             string speaker,
             global::tryAGI.OpenAI.TranscriptionDiarizedSegmentType type)
         {
+            this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Start = start;
             this.End = end;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Speaker = speaker ?? throw new global::System.ArgumentNullException(nameof(speaker));
-            this.Type = type;
         }
 
         /// <summary>

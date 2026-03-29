@@ -11,35 +11,35 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        V1ChatCompletions,
+        Dividev1DividechatDividecompletions,
         /// <summary>
         /// 
         /// </summary>
-        V1Completions,
+        Dividev1Dividecompletions,
         /// <summary>
         /// 
         /// </summary>
-        V1Embeddings,
+        Dividev1Divideembeddings,
         /// <summary>
         /// 
         /// </summary>
-        V1ImagesEdits,
+        Dividev1DivideimagesDivideedits,
         /// <summary>
         /// 
         /// </summary>
-        V1ImagesGenerations,
+        Dividev1DivideimagesDividegenerations,
         /// <summary>
         /// 
         /// </summary>
-        V1Moderations,
+        Dividev1Dividemoderations,
         /// <summary>
         /// 
         /// </summary>
-        V1Responses,
+        Dividev1Divideresponses,
         /// <summary>
         /// 
         /// </summary>
-        V1Videos,
+        Dividev1Dividevideos,
     }
 
     /// <summary>
@@ -54,14 +54,14 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                CreateBatchRequestEndpoint.V1ChatCompletions => "/v1/chat/completions",
-                CreateBatchRequestEndpoint.V1Completions => "/v1/completions",
-                CreateBatchRequestEndpoint.V1Embeddings => "/v1/embeddings",
-                CreateBatchRequestEndpoint.V1ImagesEdits => "/v1/images/edits",
-                CreateBatchRequestEndpoint.V1ImagesGenerations => "/v1/images/generations",
-                CreateBatchRequestEndpoint.V1Moderations => "/v1/moderations",
-                CreateBatchRequestEndpoint.V1Responses => "/v1/responses",
-                CreateBatchRequestEndpoint.V1Videos => "/v1/videos",
+                CreateBatchRequestEndpoint.Dividev1DividechatDividecompletions => "/v1/chat/completions",
+                CreateBatchRequestEndpoint.Dividev1Dividecompletions => "/v1/completions",
+                CreateBatchRequestEndpoint.Dividev1Divideembeddings => "/v1/embeddings",
+                CreateBatchRequestEndpoint.Dividev1DivideimagesDivideedits => "/v1/images/edits",
+                CreateBatchRequestEndpoint.Dividev1DivideimagesDividegenerations => "/v1/images/generations",
+                CreateBatchRequestEndpoint.Dividev1Dividemoderations => "/v1/moderations",
+                CreateBatchRequestEndpoint.Dividev1Divideresponses => "/v1/responses",
+                CreateBatchRequestEndpoint.Dividev1Dividevideos => "/v1/videos",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -72,14 +72,14 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "/v1/chat/completions" => CreateBatchRequestEndpoint.V1ChatCompletions,
-                "/v1/completions" => CreateBatchRequestEndpoint.V1Completions,
-                "/v1/embeddings" => CreateBatchRequestEndpoint.V1Embeddings,
-                "/v1/images/edits" => CreateBatchRequestEndpoint.V1ImagesEdits,
-                "/v1/images/generations" => CreateBatchRequestEndpoint.V1ImagesGenerations,
-                "/v1/moderations" => CreateBatchRequestEndpoint.V1Moderations,
-                "/v1/responses" => CreateBatchRequestEndpoint.V1Responses,
-                "/v1/videos" => CreateBatchRequestEndpoint.V1Videos,
+                "/v1/chat/completions" => CreateBatchRequestEndpoint.Dividev1DividechatDividecompletions,
+                "/v1/completions" => CreateBatchRequestEndpoint.Dividev1Dividecompletions,
+                "/v1/embeddings" => CreateBatchRequestEndpoint.Dividev1Divideembeddings,
+                "/v1/images/edits" => CreateBatchRequestEndpoint.Dividev1DivideimagesDivideedits,
+                "/v1/images/generations" => CreateBatchRequestEndpoint.Dividev1DivideimagesDividegenerations,
+                "/v1/moderations" => CreateBatchRequestEndpoint.Dividev1Dividemoderations,
+                "/v1/responses" => CreateBatchRequestEndpoint.Dividev1Divideresponses,
+                "/v1/videos" => CreateBatchRequestEndpoint.Dividev1Dividevideos,
                 _ => null,
             };
         }

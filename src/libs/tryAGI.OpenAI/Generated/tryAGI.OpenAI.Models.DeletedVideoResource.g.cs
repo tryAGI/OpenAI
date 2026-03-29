@@ -40,15 +40,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="DeletedVideoResource" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The object type that signals the deletion response.<br/>
-        /// Default Value: video.deleted
-        /// </param>
         /// <param name="deleted">
         /// Indicates that the video resource was deleted.
         /// </param>
         /// <param name="id">
         /// Identifier of the deleted video.
+        /// </param>
+        /// <param name="object">
+        /// The object type that signals the deletion response.<br/>
+        /// Default Value: video.deleted
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -58,9 +58,9 @@ namespace tryAGI.OpenAI
             string id,
             global::tryAGI.OpenAI.DeletedVideoResourceObject @object = global::tryAGI.OpenAI.DeletedVideoResourceObject.VideoDeleted)
         {
+            this.Object = @object;
             this.Deleted = deleted;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Object = @object;
         }
 
         /// <summary>

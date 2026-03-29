@@ -37,11 +37,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="VideoCharacterResource" /> class.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="name"></param>
         /// <param name="createdAt">
         /// Unix timestamp (in seconds) when the character was created.
         /// </param>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -50,9 +50,9 @@ namespace tryAGI.OpenAI
             string? id,
             string? name)
         {
-            this.CreatedAt = createdAt;
             this.Id = id;
             this.Name = name;
+            this.CreatedAt = createdAt;
         }
 
         /// <summary>

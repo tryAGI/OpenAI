@@ -46,14 +46,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="InputImageContent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the input item. Always `input_image`.<br/>
-        /// Default Value: input_image
+        /// <param name="detail">
+        /// The detail level of the image to be sent to the model. One of `high`, `low`, `auto`, or `original`. Defaults to `auto`.
         /// </param>
         /// <param name="imageUrl"></param>
         /// <param name="fileId"></param>
-        /// <param name="detail">
-        /// The detail level of the image to be sent to the model. One of `high`, `low`, `auto`, or `original`. Defaults to `auto`.
+        /// <param name="type">
+        /// The type of the input item. Always `input_image`.<br/>
+        /// Default Value: input_image
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -64,10 +64,10 @@ namespace tryAGI.OpenAI
             string? fileId,
             global::tryAGI.OpenAI.InputImageContentType type = global::tryAGI.OpenAI.InputImageContentType.InputImage)
         {
-            this.Detail = detail;
             this.Type = type;
             this.ImageUrl = imageUrl;
             this.FileId = fileId;
+            this.Detail = detail;
         }
 
         /// <summary>

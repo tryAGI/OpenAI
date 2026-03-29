@@ -51,16 +51,16 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// The unique ID of the conversation.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `conversation`.<br/>
-        /// Default Value: conversation
-        /// </param>
         /// <param name="metadata">
         /// Set of 16 key-value pairs that can be attached to an object. This can be         useful for storing additional information about the object in a structured         format, and querying for objects via API or the dashboard.<br/>
         ///         Keys are strings with a maximum length of 64 characters. Values are strings         with a maximum length of 512 characters.
         /// </param>
         /// <param name="createdAt">
         /// The time at which the conversation was created, measured in seconds since the Unix epoch.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `conversation`.<br/>
+        /// Default Value: conversation
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -72,9 +72,9 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ConversationResourceObject @object = global::tryAGI.OpenAI.ConversationResourceObject.Conversation)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object;
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.CreatedAt = createdAt;
-            this.Object = @object;
         }
 
         /// <summary>

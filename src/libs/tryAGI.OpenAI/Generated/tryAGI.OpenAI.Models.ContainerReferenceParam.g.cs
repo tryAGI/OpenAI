@@ -35,13 +35,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ContainerReferenceParam" /> class.
         /// </summary>
-        /// <param name="type">
-        /// References a container created with the /v1/containers endpoint<br/>
-        /// Default Value: container_reference
-        /// </param>
         /// <param name="containerId">
         /// The ID of the referenced container.<br/>
         /// Example: cntr_123
+        /// </param>
+        /// <param name="type">
+        /// References a container created with the /v1/containers endpoint<br/>
+        /// Default Value: container_reference
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -50,8 +50,8 @@ namespace tryAGI.OpenAI
             string containerId,
             global::tryAGI.OpenAI.ContainerReferenceParamType type = global::tryAGI.OpenAI.ContainerReferenceParamType.ContainerReference)
         {
-            this.ContainerId = containerId ?? throw new global::System.ArgumentNullException(nameof(containerId));
             this.Type = type;
+            this.ContainerId = containerId ?? throw new global::System.ArgumentNullException(nameof(containerId));
         }
 
         /// <summary>

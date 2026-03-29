@@ -38,11 +38,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="InviteDeleteResponse" /> class.
         /// </summary>
+        /// <param name="id"></param>
+        /// <param name="deleted"></param>
         /// <param name="object">
         /// The object type, which is always `organization.invite.deleted`
         /// </param>
-        /// <param name="id"></param>
-        /// <param name="deleted"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -51,9 +51,9 @@ namespace tryAGI.OpenAI
             bool deleted,
             global::tryAGI.OpenAI.InviteDeleteResponseObject @object)
         {
+            this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Deleted = deleted;
-            this.Object = @object;
         }
 
         /// <summary>

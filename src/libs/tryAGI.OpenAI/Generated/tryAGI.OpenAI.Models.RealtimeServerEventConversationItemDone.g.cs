@@ -49,13 +49,13 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
+        /// <param name="item">
+        /// A single item within a Realtime conversation.
+        /// </param>
         /// <param name="type">
         /// The event type, must be `conversation.item.done`.
         /// </param>
         /// <param name="previousItemId"></param>
-        /// <param name="item">
-        /// A single item within a Realtime conversation.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -66,9 +66,9 @@ namespace tryAGI.OpenAI
             string? previousItemId)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Item = item;
             this.Type = type;
             this.PreviousItemId = previousItemId;
+            this.Item = item;
         }
 
         /// <summary>

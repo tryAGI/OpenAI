@@ -40,15 +40,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplyPatchCreateFileOperationParam" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The operation type. Always `create_file`.<br/>
-        /// Default Value: create_file
-        /// </param>
         /// <param name="path">
         /// Path of the file to create relative to the workspace root.
         /// </param>
         /// <param name="diff">
         /// Unified diff content to apply when creating the file.
+        /// </param>
+        /// <param name="type">
+        /// The operation type. Always `create_file`.<br/>
+        /// Default Value: create_file
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -58,9 +58,9 @@ namespace tryAGI.OpenAI
             string diff,
             global::tryAGI.OpenAI.ApplyPatchCreateFileOperationParamType type = global::tryAGI.OpenAI.ApplyPatchCreateFileOperationParamType.CreateFile)
         {
+            this.Type = type;
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
             this.Diff = diff ?? throw new global::System.ArgumentNullException(nameof(diff));
-            this.Type = type;
         }
 
         /// <summary>

@@ -60,10 +60,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ScrollParam" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Specifies the event type. For a scroll action, this property is always set to `scroll`.<br/>
-        /// Default Value: scroll
-        /// </param>
         /// <param name="x">
         /// The x-coordinate where the scroll occurred.
         /// </param>
@@ -77,6 +73,10 @@ namespace tryAGI.OpenAI
         /// The vertical scroll distance.
         /// </param>
         /// <param name="keys"></param>
+        /// <param name="type">
+        /// Specifies the event type. For a scroll action, this property is always set to `scroll`.<br/>
+        /// Default Value: scroll
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -88,11 +88,11 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<string>? keys,
             global::tryAGI.OpenAI.ScrollParamType type = global::tryAGI.OpenAI.ScrollParamType.Scroll)
         {
+            this.Type = type;
             this.X = x;
             this.Y = y;
             this.ScrollX = scrollX;
             this.ScrollY = scrollY;
-            this.Type = type;
             this.Keys = keys;
         }
 

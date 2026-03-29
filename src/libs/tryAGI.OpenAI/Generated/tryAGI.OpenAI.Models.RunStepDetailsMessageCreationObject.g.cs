@@ -31,10 +31,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RunStepDetailsMessageCreationObject" /> class.
         /// </summary>
+        /// <param name="messageCreation"></param>
         /// <param name="type">
         /// Always `message_creation`.
         /// </param>
-        /// <param name="messageCreation"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RunStepDetailsMessageCreationObjectMessageCreation messageCreation,
             global::tryAGI.OpenAI.RunStepDetailsMessageCreationObjectType type)
         {
-            this.MessageCreation = messageCreation ?? throw new global::System.ArgumentNullException(nameof(messageCreation));
             this.Type = type;
+            this.MessageCreation = messageCreation ?? throw new global::System.ArgumentNullException(nameof(messageCreation));
         }
 
         /// <summary>

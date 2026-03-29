@@ -52,10 +52,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomToolParam" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the custom tool. Always `custom`.<br/>
-        /// Default Value: custom
-        /// </param>
         /// <param name="name">
         /// The name of the custom tool, used to identify it in tool calls.
         /// </param>
@@ -68,6 +64,10 @@ namespace tryAGI.OpenAI
         /// <param name="deferLoading">
         /// Whether this tool should be deferred and discovered via tool search.
         /// </param>
+        /// <param name="type">
+        /// The type of the custom tool. Always `custom`.<br/>
+        /// Default Value: custom
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -78,8 +78,8 @@ namespace tryAGI.OpenAI
             bool? deferLoading,
             global::tryAGI.OpenAI.CustomToolParamType type = global::tryAGI.OpenAI.CustomToolParamType.Custom)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Type = type;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
             this.Format = format;
             this.DeferLoading = deferLoading;

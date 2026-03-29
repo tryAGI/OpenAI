@@ -67,10 +67,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="FunctionShellCall" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the item. Always `shell_call`.<br/>
-        /// Default Value: shell_call
-        /// </param>
         /// <param name="id">
         /// The unique ID of the shell tool call. Populated when this item is returned via API.
         /// </param>
@@ -87,6 +83,10 @@ namespace tryAGI.OpenAI
         /// <param name="createdBy">
         /// The ID of the entity that created this tool call.
         /// </param>
+        /// <param name="type">
+        /// The type of the item. Always `shell_call`.<br/>
+        /// Default Value: shell_call
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -99,11 +99,11 @@ namespace tryAGI.OpenAI
             string? createdBy,
             global::tryAGI.OpenAI.FunctionShellCallType type = global::tryAGI.OpenAI.FunctionShellCallType.ShellCall)
         {
+            this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Action = action ?? throw new global::System.ArgumentNullException(nameof(action));
             this.Status = status;
-            this.Type = type;
             this.Environment = environment;
             this.CreatedBy = createdBy;
         }

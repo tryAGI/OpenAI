@@ -53,13 +53,13 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="ListBatchesResponse" /> class.
         /// </summary>
         /// <param name="data"></param>
+        /// <param name="hasMore"></param>
         /// <param name="firstId">
         /// Example: batch_abc123
         /// </param>
         /// <param name="lastId">
         /// Example: batch_abc456
         /// </param>
-        /// <param name="hasMore"></param>
         /// <param name="object"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -72,9 +72,9 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ListBatchesResponseObject @object)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.HasMore = hasMore;
             this.FirstId = firstId;
             this.LastId = lastId;
+            this.HasMore = hasMore;
             this.Object = @object;
         }
 

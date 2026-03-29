@@ -33,12 +33,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="InputTextContentParam" /> class.
         /// </summary>
+        /// <param name="text">
+        /// The text input to the model.
+        /// </param>
         /// <param name="type">
         /// The type of the input item. Always `input_text`.<br/>
         /// Default Value: input_text
-        /// </param>
-        /// <param name="text">
-        /// The text input to the model.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
             string text,
             global::tryAGI.OpenAI.InputTextContentParamType type = global::tryAGI.OpenAI.InputTextContentParamType.InputText)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
         }
 
         /// <summary>

@@ -31,11 +31,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionAllowedToolsChoice" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Allowed tool configuration type. Always `allowed_tools`.
-        /// </param>
         /// <param name="allowedTools">
         /// Constrains the tools available to the model to a pre-defined set.
+        /// </param>
+        /// <param name="type">
+        /// Allowed tool configuration type. Always `allowed_tools`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -44,8 +44,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ChatCompletionAllowedTools allowedTools,
             global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoiceType type)
         {
-            this.AllowedTools = allowedTools ?? throw new global::System.ArgumentNullException(nameof(allowedTools));
             this.Type = type;
+            this.AllowedTools = allowedTools ?? throw new global::System.ArgumentNullException(nameof(allowedTools));
         }
 
         /// <summary>

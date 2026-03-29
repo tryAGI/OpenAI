@@ -37,14 +37,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeBetaClientEventTranscriptionSessionUpdate" /> class.
         /// </summary>
+        /// <param name="session">
+        /// Realtime transcription session object configuration.
+        /// </param>
         /// <param name="eventId">
         /// Optional client-generated ID used to identify this event.
         /// </param>
         /// <param name="type">
         /// The event type, must be `transcription_session.update`.
-        /// </param>
-        /// <param name="session">
-        /// Realtime transcription session object configuration.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -54,9 +54,9 @@ namespace tryAGI.OpenAI
             string? eventId,
             global::tryAGI.OpenAI.RealtimeBetaClientEventTranscriptionSessionUpdateType type)
         {
-            this.Session = session ?? throw new global::System.ArgumentNullException(nameof(session));
             this.EventId = eventId;
             this.Type = type;
+            this.Session = session ?? throw new global::System.ArgumentNullException(nameof(session));
         }
 
         /// <summary>

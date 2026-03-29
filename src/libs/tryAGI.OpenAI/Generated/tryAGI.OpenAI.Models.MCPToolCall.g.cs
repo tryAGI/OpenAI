@@ -77,9 +77,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="MCPToolCall" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the item. Always `mcp_call`.
-        /// </param>
         /// <param name="id">
         /// The unique ID of the tool call.
         /// </param>
@@ -91,6 +88,9 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="arguments">
         /// A JSON string of the arguments passed to the tool.
+        /// </param>
+        /// <param name="type">
+        /// The type of the item. Always `mcp_call`.
         /// </param>
         /// <param name="output"></param>
         /// <param name="error"></param>
@@ -112,11 +112,11 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.MCPToolCallStatus? status,
             string? approvalRequestId)
         {
+            this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.ServerLabel = serverLabel ?? throw new global::System.ArgumentNullException(nameof(serverLabel));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
-            this.Type = type;
             this.Output = output;
             this.Error = error;
             this.Status = status;

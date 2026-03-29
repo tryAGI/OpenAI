@@ -65,17 +65,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="Role" /> class.
         /// </summary>
-        /// <param name="object">
-        /// Always `role`.
-        /// </param>
         /// <param name="id">
         /// Identifier for the role.
         /// </param>
         /// <param name="name">
         /// Unique name for the role.
-        /// </param>
-        /// <param name="description">
-        /// Optional description of the role.
         /// </param>
         /// <param name="permissions">
         /// Permissions granted by the role.
@@ -85,6 +79,12 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="predefinedRole">
         /// Whether the role is predefined and managed by OpenAI.
+        /// </param>
+        /// <param name="object">
+        /// Always `role`.
+        /// </param>
+        /// <param name="description">
+        /// Optional description of the role.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -98,13 +98,13 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RoleObject @object,
             string? description)
         {
+            this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Description = description;
             this.Permissions = permissions ?? throw new global::System.ArgumentNullException(nameof(permissions));
             this.ResourceType = resourceType ?? throw new global::System.ArgumentNullException(nameof(resourceType));
             this.PredefinedRole = predefinedRole;
-            this.Object = @object;
-            this.Description = description;
         }
 
         /// <summary>
