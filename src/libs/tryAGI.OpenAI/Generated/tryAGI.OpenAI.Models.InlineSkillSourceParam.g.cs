@@ -21,10 +21,10 @@ namespace tryAGI.OpenAI
         /// The media type of the inline skill payload. Must be `application/zip`.<br/>
         /// Default Value: application/zip
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.InlineSkillSourceParamMediaType.ApplicationDividezip</default>
+        /// <default>global::tryAGI.OpenAI.InlineSkillSourceParamMediaType.ApplicationZip</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("media_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.InlineSkillSourceParamMediaTypeJsonConverter))]
-        public global::tryAGI.OpenAI.InlineSkillSourceParamMediaType MediaType { get; set; } = global::tryAGI.OpenAI.InlineSkillSourceParamMediaType.ApplicationDividezip;
+        public global::tryAGI.OpenAI.InlineSkillSourceParamMediaType MediaType { get; set; } = global::tryAGI.OpenAI.InlineSkillSourceParamMediaType.ApplicationZip;
 
         /// <summary>
         /// Base64-encoded skill zip bundle.
@@ -59,7 +59,7 @@ namespace tryAGI.OpenAI
         public InlineSkillSourceParam(
             string data,
             global::tryAGI.OpenAI.InlineSkillSourceParamType type = global::tryAGI.OpenAI.InlineSkillSourceParamType.Base64,
-            global::tryAGI.OpenAI.InlineSkillSourceParamMediaType mediaType = global::tryAGI.OpenAI.InlineSkillSourceParamMediaType.ApplicationDividezip)
+            global::tryAGI.OpenAI.InlineSkillSourceParamMediaType mediaType = global::tryAGI.OpenAI.InlineSkillSourceParamMediaType.ApplicationZip)
         {
             this.Type = type;
             this.MediaType = mediaType;
