@@ -132,6 +132,11 @@ public static class CustomProviders
     public const string CleanlabBaseUrl = "https://api.cleanlab.ai/api/v1/openai_trustworthy_llm/";
 
     /// <summary>
+    /// https://docs.siliconflow.cn/
+    /// </summary>
+    public const string SiliconFlowBaseUrl = "https://api.siliconflow.cn/v1";
+
+    /// <summary>
     /// Creates an API to use for GitHub Models: https://github.com/marketplace/models
     /// </summary>
     /// <returns></returns>
@@ -363,5 +368,14 @@ public static class CustomProviders
     public static OpenAiClient Cleanlab(string apiKey)
     {
         return new OpenAiClient(apiKey, baseUri: new Uri(CleanlabBaseUrl));
+    }
+
+    /// <summary>
+    /// Create an API to use for SiliconFlow.
+    /// </summary>
+    /// <returns></returns>
+    public static OpenAiClient SiliconFlow(string apiKey)
+    {
+        return new OpenAiClient(apiKey, baseUri: new Uri(SiliconFlowBaseUrl));
     }
 }
