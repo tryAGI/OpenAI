@@ -46,10 +46,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="DoubleClickAction" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Specifies the event type. For a double click action, this property is always set to `double_click`.<br/>
-        /// Default Value: double_click
-        /// </param>
         /// <param name="x">
         /// The x-coordinate where the double click occurred.
         /// </param>
@@ -57,6 +53,10 @@ namespace tryAGI.OpenAI
         /// The y-coordinate where the double click occurred.
         /// </param>
         /// <param name="keys"></param>
+        /// <param name="type">
+        /// Specifies the event type. For a double click action, this property is always set to `double_click`.<br/>
+        /// Default Value: double_click
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -66,9 +66,9 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<string>? keys,
             global::tryAGI.OpenAI.DoubleClickActionType type = global::tryAGI.OpenAI.DoubleClickActionType.DoubleClick)
         {
+            this.Type = type;
             this.X = x;
             this.Y = y;
-            this.Type = type;
             this.Keys = keys;
         }
 

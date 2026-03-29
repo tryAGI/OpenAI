@@ -31,11 +31,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolChoiceCustom" /> class.
         /// </summary>
-        /// <param name="type">
-        /// For custom tool calling, the type is always `custom`.
-        /// </param>
         /// <param name="name">
         /// The name of the custom tool to call.
+        /// </param>
+        /// <param name="type">
+        /// For custom tool calling, the type is always `custom`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -44,8 +44,8 @@ namespace tryAGI.OpenAI
             string name,
             global::tryAGI.OpenAI.ToolChoiceCustomType type)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Type = type;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
         }
 
         /// <summary>

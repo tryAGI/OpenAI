@@ -67,22 +67,22 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// Identifier of the thread item.
         /// </param>
-        /// <param name="object">
-        /// Type discriminator that is always `chatkit.thread_item`.<br/>
-        /// Default Value: chatkit.thread_item
-        /// </param>
         /// <param name="createdAt">
         /// Unix timestamp (in seconds) for when the item was created.
         /// </param>
         /// <param name="threadId">
         /// Identifier of the parent thread.
         /// </param>
+        /// <param name="content">
+        /// Ordered assistant response segments.
+        /// </param>
+        /// <param name="object">
+        /// Type discriminator that is always `chatkit.thread_item`.<br/>
+        /// Default Value: chatkit.thread_item
+        /// </param>
         /// <param name="type">
         /// Type discriminator that is always `chatkit.assistant_message`.<br/>
         /// Default Value: chatkit.assistant_message
-        /// </param>
-        /// <param name="content">
-        /// Ordered assistant response segments.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -96,11 +96,11 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AssistantMessageItemType type = global::tryAGI.OpenAI.AssistantMessageItemType.ChatkitAssistantMessage)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object;
             this.CreatedAt = createdAt;
             this.ThreadId = threadId ?? throw new global::System.ArgumentNullException(nameof(threadId));
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
-            this.Object = @object;
             this.Type = type;
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
         }
 
         /// <summary>

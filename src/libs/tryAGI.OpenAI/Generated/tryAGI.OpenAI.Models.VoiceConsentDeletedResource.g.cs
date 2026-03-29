@@ -44,8 +44,8 @@ namespace tryAGI.OpenAI
         /// The consent recording identifier.<br/>
         /// Example: cons_1234
         /// </param>
-        /// <param name="object"></param>
         /// <param name="deleted"></param>
+        /// <param name="object"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -55,8 +55,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.VoiceConsentDeletedResourceObject @object)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Deleted = deleted;
             this.Object = @object;
+            this.Deleted = deleted;
         }
 
         /// <summary>

@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="FunctionShellToolParam" /> class.
         /// </summary>
+        /// <param name="environment"></param>
         /// <param name="type">
         /// The type of the shell tool. Always `shell`.<br/>
         /// Default Value: shell
         /// </param>
-        /// <param name="environment"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

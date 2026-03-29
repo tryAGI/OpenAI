@@ -53,8 +53,8 @@ namespace tryAGI.OpenAI
         /// or `content_filter` if content was omitted due to a flag from our content filters.
         /// </param>
         /// <param name="index"></param>
-        /// <param name="logprobs"></param>
         /// <param name="text"></param>
+        /// <param name="logprobs"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -66,8 +66,8 @@ namespace tryAGI.OpenAI
         {
             this.FinishReason = finishReason;
             this.Index = index;
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Logprobs = logprobs;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
         }
 
         /// <summary>

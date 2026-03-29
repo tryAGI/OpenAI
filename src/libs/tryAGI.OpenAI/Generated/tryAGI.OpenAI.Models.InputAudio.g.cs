@@ -31,10 +31,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="InputAudio" /> class.
         /// </summary>
+        /// <param name="inputAudio1"></param>
         /// <param name="type">
         /// The type of the input item. Always `input_audio`.
         /// </param>
-        /// <param name="inputAudio1"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.InputAudioInputAudio1 inputAudio1,
             global::tryAGI.OpenAI.InputAudioType type)
         {
-            this.InputAudio1 = inputAudio1 ?? throw new global::System.ArgumentNullException(nameof(inputAudio1));
             this.Type = type;
+            this.InputAudio1 = inputAudio1 ?? throw new global::System.ArgumentNullException(nameof(inputAudio1));
         }
 
         /// <summary>

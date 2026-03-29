@@ -46,10 +46,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CompactionBody" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the item. Always `compaction`.<br/>
-        /// Default Value: compaction
-        /// </param>
         /// <param name="id">
         /// The unique ID of the compaction item.
         /// </param>
@@ -58,6 +54,10 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="createdBy">
         /// The identifier of the actor that created the item.
+        /// </param>
+        /// <param name="type">
+        /// The type of the item. Always `compaction`.<br/>
+        /// Default Value: compaction
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -68,9 +68,9 @@ namespace tryAGI.OpenAI
             string? createdBy,
             global::tryAGI.OpenAI.CompactionBodyType type = global::tryAGI.OpenAI.CompactionBodyType.Compaction)
         {
+            this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.EncryptedContent = encryptedContent ?? throw new global::System.ArgumentNullException(nameof(encryptedContent));
-            this.Type = type;
             this.CreatedBy = createdBy;
         }
 

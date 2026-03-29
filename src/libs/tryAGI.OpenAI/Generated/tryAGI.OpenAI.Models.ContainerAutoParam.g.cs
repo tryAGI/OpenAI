@@ -51,10 +51,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ContainerAutoParam" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Automatically creates a container for this request<br/>
-        /// Default Value: container_auto
-        /// </param>
         /// <param name="fileIds">
         /// An optional list of uploaded files to make available to your code.
         /// </param>
@@ -64,6 +60,10 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="skills">
         /// An optional list of skills referenced by id or inline data.
+        /// </param>
+        /// <param name="type">
+        /// Automatically creates a container for this request<br/>
+        /// Default Value: container_auto
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

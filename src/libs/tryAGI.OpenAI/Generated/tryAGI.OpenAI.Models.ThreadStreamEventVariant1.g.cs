@@ -37,13 +37,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ThreadStreamEventVariant1" /> class.
         /// </summary>
+        /// <param name="data">
+        /// Represents a thread that contains [messages](/docs/api-reference/messages).
+        /// </param>
         /// <param name="enabled">
         /// Whether to enable input audio transcription.
         /// </param>
         /// <param name="event"></param>
-        /// <param name="data">
-        /// Represents a thread that contains [messages](/docs/api-reference/messages).
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -52,9 +52,9 @@ namespace tryAGI.OpenAI
             bool? enabled,
             global::tryAGI.OpenAI.ThreadStreamEventVariant1Event @event)
         {
-            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Enabled = enabled;
             this.Event = @event;
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
         }
 
         /// <summary>

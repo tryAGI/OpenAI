@@ -41,15 +41,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomGrammarFormatParam" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Grammar format. Always `grammar`.<br/>
-        /// Default Value: grammar
-        /// </param>
         /// <param name="syntax">
         /// The syntax of the grammar definition. One of `lark` or `regex`.
         /// </param>
         /// <param name="definition">
         /// The grammar definition.
+        /// </param>
+        /// <param name="type">
+        /// Grammar format. Always `grammar`.<br/>
+        /// Default Value: grammar
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -59,9 +59,9 @@ namespace tryAGI.OpenAI
             string definition,
             global::tryAGI.OpenAI.CustomGrammarFormatParamType type = global::tryAGI.OpenAI.CustomGrammarFormatParamType.Grammar)
         {
+            this.Type = type;
             this.Syntax = syntax;
             this.Definition = definition ?? throw new global::System.ArgumentNullException(nameof(definition));
-            this.Type = type;
         }
 
         /// <summary>

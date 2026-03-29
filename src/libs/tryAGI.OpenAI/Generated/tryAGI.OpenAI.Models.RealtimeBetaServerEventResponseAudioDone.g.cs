@@ -63,9 +63,6 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `response.output_audio.done`.
-        /// </param>
         /// <param name="responseId">
         /// The ID of the response.
         /// </param>
@@ -77,6 +74,9 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="contentIndex">
         /// The index of the content part in the item's content array.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `response.output_audio.done`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -90,11 +90,11 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RealtimeBetaServerEventResponseAudioDoneType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
+            this.Type = type;
             this.ResponseId = responseId ?? throw new global::System.ArgumentNullException(nameof(responseId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.ContentIndex = contentIndex;
-            this.Type = type;
         }
 
         /// <summary>

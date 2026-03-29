@@ -39,15 +39,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="SkillReferenceParam" /> class.
         /// </summary>
-        /// <param name="type">
-        /// References a skill created with the /v1/skills endpoint.<br/>
-        /// Default Value: skill_reference
-        /// </param>
         /// <param name="skillId">
         /// The ID of the referenced skill.
         /// </param>
         /// <param name="version">
         /// Optional skill version. Use a positive integer or 'latest'. Omit for default.
+        /// </param>
+        /// <param name="type">
+        /// References a skill created with the /v1/skills endpoint.<br/>
+        /// Default Value: skill_reference
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -57,8 +57,8 @@ namespace tryAGI.OpenAI
             string? version,
             global::tryAGI.OpenAI.SkillReferenceParamType type = global::tryAGI.OpenAI.SkillReferenceParamType.SkillReference)
         {
-            this.SkillId = skillId ?? throw new global::System.ArgumentNullException(nameof(skillId));
             this.Type = type;
+            this.SkillId = skillId ?? throw new global::System.ArgumentNullException(nameof(skillId));
             this.Version = version;
         }
 

@@ -44,14 +44,14 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `transcription_session.created`.
-        /// </param>
         /// <param name="session">
         /// A new Realtime transcription session configuration.<br/>
         /// When a session is created on the server via REST API, the session object<br/>
         /// also contains an ephemeral key. Default TTL for keys is 10 minutes. This<br/>
         /// property is not present when a session is updated via the WebSocket API.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `transcription_session.created`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -62,8 +62,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RealtimeBetaServerEventTranscriptionSessionCreatedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Session = session ?? throw new global::System.ArgumentNullException(nameof(session));
             this.Type = type;
+            this.Session = session ?? throw new global::System.ArgumentNullException(nameof(session));
         }
 
         /// <summary>

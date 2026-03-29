@@ -44,11 +44,11 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `session.created`.
-        /// </param>
         /// <param name="session">
         /// The session configuration.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `session.created`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -59,8 +59,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RealtimeServerEventSessionCreatedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Session = session;
             this.Type = type;
+            this.Session = session;
         }
 
         /// <summary>

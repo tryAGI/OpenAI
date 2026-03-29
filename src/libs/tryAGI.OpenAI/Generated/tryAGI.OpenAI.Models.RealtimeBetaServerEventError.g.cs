@@ -43,11 +43,11 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `error`.
-        /// </param>
         /// <param name="error">
         /// Details of the error.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `error`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -58,8 +58,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RealtimeBetaServerEventErrorType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
             this.Type = type;
+            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
         }
 
         /// <summary>

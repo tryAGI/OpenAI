@@ -50,14 +50,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="InputFileContentParam" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the input item. Always `input_file`.<br/>
-        /// Default Value: input_file
-        /// </param>
         /// <param name="fileId"></param>
         /// <param name="filename"></param>
         /// <param name="fileData"></param>
         /// <param name="fileUrl"></param>
+        /// <param name="type">
+        /// The type of the input item. Always `input_file`.<br/>
+        /// Default Value: input_file
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

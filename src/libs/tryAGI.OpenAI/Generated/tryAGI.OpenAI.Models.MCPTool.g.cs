@@ -95,11 +95,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="MCPTool" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the MCP tool. Always `mcp`.
-        /// </param>
         /// <param name="serverLabel">
         /// A label for this MCP server, used to identify it in tool calls.
+        /// </param>
+        /// <param name="type">
+        /// The type of the MCP tool. Always `mcp`.
         /// </param>
         /// <param name="serverUrl">
         /// The URL for the MCP server. One of `server_url` or `connector_id` must be<br/>
@@ -148,8 +148,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MCPToolRequireApprovalVariant1Enum, global::tryAGI.OpenAI.MCPToolRequireApprovalVariant1Enum2?>? requireApproval,
             bool? deferLoading)
         {
-            this.ServerLabel = serverLabel ?? throw new global::System.ArgumentNullException(nameof(serverLabel));
             this.Type = type;
+            this.ServerLabel = serverLabel ?? throw new global::System.ArgumentNullException(nameof(serverLabel));
             this.ServerUrl = serverUrl;
             this.ConnectorId = connectorId;
             this.Authorization = authorization;

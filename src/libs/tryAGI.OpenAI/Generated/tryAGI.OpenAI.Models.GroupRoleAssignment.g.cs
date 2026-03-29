@@ -38,14 +38,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="GroupRoleAssignment" /> class.
         /// </summary>
-        /// <param name="object">
-        /// Always `group.role`.
-        /// </param>
         /// <param name="group">
         /// Summary information about a group returned in role assignment responses.
         /// </param>
         /// <param name="role">
         /// Details about a role that can be assigned through the public Roles API.
+        /// </param>
+        /// <param name="object">
+        /// Always `group.role`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -55,9 +55,9 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.Role role,
             global::tryAGI.OpenAI.GroupRoleAssignmentObject @object)
         {
+            this.Object = @object;
             this.Group = group ?? throw new global::System.ArgumentNullException(nameof(group));
             this.Role = role ?? throw new global::System.ArgumentNullException(nameof(role));
-            this.Object = @object;
         }
 
         /// <summary>

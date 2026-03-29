@@ -59,7 +59,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseFunctionCallArgumentsDoneEvent" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="itemId">
         /// The ID of the item.
         /// </param>
@@ -75,6 +74,7 @@ namespace tryAGI.OpenAI
         /// <param name="arguments">
         /// The function-call arguments.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -86,12 +86,12 @@ namespace tryAGI.OpenAI
             string arguments,
             global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEventType type)
         {
+            this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.OutputIndex = outputIndex;
             this.SequenceNumber = sequenceNumber;
             this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
-            this.Type = type;
         }
 
         /// <summary>

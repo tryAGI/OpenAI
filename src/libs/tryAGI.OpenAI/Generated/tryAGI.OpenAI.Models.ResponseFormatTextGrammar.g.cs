@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseFormatTextGrammar" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of response format being defined. Always `grammar`.
-        /// </param>
         /// <param name="grammar">
         /// The custom grammar for the model to follow.
+        /// </param>
+        /// <param name="type">
+        /// The type of response format being defined. Always `grammar`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -45,8 +45,8 @@ namespace tryAGI.OpenAI
             string grammar,
             global::tryAGI.OpenAI.ResponseFormatTextGrammarType type)
         {
-            this.Grammar = grammar ?? throw new global::System.ArgumentNullException(nameof(grammar));
             this.Type = type;
+            this.Grammar = grammar ?? throw new global::System.ArgumentNullException(nameof(grammar));
         }
 
         /// <summary>

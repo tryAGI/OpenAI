@@ -33,12 +33,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="UserMessageQuotedText" /> class.
         /// </summary>
+        /// <param name="text">
+        /// Quoted text content.
+        /// </param>
         /// <param name="type">
         /// Type discriminator that is always `quoted_text`.<br/>
         /// Default Value: quoted_text
-        /// </param>
-        /// <param name="text">
-        /// Quoted text content.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
             string text,
             global::tryAGI.OpenAI.UserMessageQuotedTextType type = global::tryAGI.OpenAI.UserMessageQuotedTextType.QuotedText)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
         }
 
         /// <summary>

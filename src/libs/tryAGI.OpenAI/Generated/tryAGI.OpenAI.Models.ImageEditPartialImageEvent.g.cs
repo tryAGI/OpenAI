@@ -78,9 +78,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageEditPartialImageEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `image_edit.partial_image`.
-        /// </param>
         /// <param name="b64Json">
         /// Base64-encoded partial image data, suitable for rendering as an image.
         /// </param>
@@ -102,6 +99,9 @@ namespace tryAGI.OpenAI
         /// <param name="partialImageIndex">
         /// 0-based index for the partial image (streaming).
         /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `image_edit.partial_image`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -115,6 +115,7 @@ namespace tryAGI.OpenAI
             int partialImageIndex,
             global::tryAGI.OpenAI.ImageEditPartialImageEventType type)
         {
+            this.Type = type;
             this.B64Json = b64Json ?? throw new global::System.ArgumentNullException(nameof(b64Json));
             this.CreatedAt = createdAt;
             this.Size = size;
@@ -122,7 +123,6 @@ namespace tryAGI.OpenAI
             this.Background = background;
             this.OutputFormat = outputFormat;
             this.PartialImageIndex = partialImageIndex;
-            this.Type = type;
         }
 
         /// <summary>

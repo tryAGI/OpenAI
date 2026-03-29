@@ -72,10 +72,6 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// Unique identifier for the skill.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is `skill`.<br/>
-        /// Default Value: skill
-        /// </param>
         /// <param name="name">
         /// Name of the skill.
         /// </param>
@@ -91,6 +87,10 @@ namespace tryAGI.OpenAI
         /// <param name="latestVersion">
         /// Latest version for the skill.
         /// </param>
+        /// <param name="object">
+        /// The object type, which is `skill`.<br/>
+        /// Default Value: skill
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -104,12 +104,12 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.SkillResourceObject @object = global::tryAGI.OpenAI.SkillResourceObject.Skill)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.CreatedAt = createdAt;
             this.DefaultVersion = defaultVersion ?? throw new global::System.ArgumentNullException(nameof(defaultVersion));
             this.LatestVersion = latestVersion ?? throw new global::System.ArgumentNullException(nameof(latestVersion));
-            this.Object = @object;
         }
 
         /// <summary>

@@ -42,14 +42,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeServerEventInputAudioBufferDtmfEventReceived" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The event type, must be `input_audio_buffer.dtmf_event_received`.
-        /// </param>
         /// <param name="event">
         /// The telephone keypad that was pressed by the user.
         /// </param>
         /// <param name="receivedAt">
         /// UTC Unix Timestamp when DTMF Event was received by server.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `input_audio_buffer.dtmf_event_received`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -59,9 +59,9 @@ namespace tryAGI.OpenAI
             global::System.DateTimeOffset receivedAt,
             global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferDtmfEventReceivedType type)
         {
+            this.Type = type;
             this.Event = @event ?? throw new global::System.ArgumentNullException(nameof(@event));
             this.ReceivedAt = receivedAt;
-            this.Type = type;
         }
 
         /// <summary>

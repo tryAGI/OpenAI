@@ -58,19 +58,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="LocalShellExecAction" /> class.
         /// </summary>
+        /// <param name="command">
+        /// The command to run.
+        /// </param>
+        /// <param name="env">
+        /// Environment variables to set for the command.
+        /// </param>
+        /// <param name="timeoutMs"></param>
+        /// <param name="workingDirectory"></param>
+        /// <param name="user"></param>
         /// <param name="type">
         /// The type of the local shell action. Always `exec`.<br/>
         /// Default Value: exec
         /// </param>
-        /// <param name="command">
-        /// The command to run.
-        /// </param>
-        /// <param name="timeoutMs"></param>
-        /// <param name="workingDirectory"></param>
-        /// <param name="env">
-        /// Environment variables to set for the command.
-        /// </param>
-        /// <param name="user"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -82,11 +82,11 @@ namespace tryAGI.OpenAI
             string? user,
             global::tryAGI.OpenAI.LocalShellExecActionType type = global::tryAGI.OpenAI.LocalShellExecActionType.Exec)
         {
-            this.Command = command ?? throw new global::System.ArgumentNullException(nameof(command));
-            this.Env = env ?? throw new global::System.ArgumentNullException(nameof(env));
             this.Type = type;
+            this.Command = command ?? throw new global::System.ArgumentNullException(nameof(command));
             this.TimeoutMs = timeoutMs;
             this.WorkingDirectory = workingDirectory;
+            this.Env = env ?? throw new global::System.ArgumentNullException(nameof(env));
             this.User = user;
         }
 

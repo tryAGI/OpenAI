@@ -33,12 +33,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="SummaryTextContent" /> class.
         /// </summary>
+        /// <param name="text">
+        /// A summary of the reasoning output from the model so far.
+        /// </param>
         /// <param name="type">
         /// The type of the object. Always `summary_text`.<br/>
         /// Default Value: summary_text
-        /// </param>
-        /// <param name="text">
-        /// A summary of the reasoning output from the model so far.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
             string text,
             global::tryAGI.OpenAI.SummaryTextContentType type = global::tryAGI.OpenAI.SummaryTextContentType.SummaryText)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
         }
 
         /// <summary>

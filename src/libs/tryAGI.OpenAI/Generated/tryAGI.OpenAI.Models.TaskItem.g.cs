@@ -80,25 +80,25 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// Identifier of the thread item.
         /// </param>
-        /// <param name="object">
-        /// Type discriminator that is always `chatkit.thread_item`.<br/>
-        /// Default Value: chatkit.thread_item
-        /// </param>
         /// <param name="createdAt">
         /// Unix timestamp (in seconds) for when the item was created.
         /// </param>
         /// <param name="threadId">
         /// Identifier of the parent thread.
         /// </param>
-        /// <param name="type">
-        /// Type discriminator that is always `chatkit.task`.<br/>
-        /// Default Value: chatkit.task
-        /// </param>
         /// <param name="taskType">
         /// Subtype for the task.
         /// </param>
         /// <param name="heading"></param>
         /// <param name="summary"></param>
+        /// <param name="object">
+        /// Type discriminator that is always `chatkit.thread_item`.<br/>
+        /// Default Value: chatkit.thread_item
+        /// </param>
+        /// <param name="type">
+        /// Type discriminator that is always `chatkit.task`.<br/>
+        /// Default Value: chatkit.task
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -113,11 +113,11 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.TaskItemType type = global::tryAGI.OpenAI.TaskItemType.ChatkitTask)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object;
             this.CreatedAt = createdAt;
             this.ThreadId = threadId ?? throw new global::System.ArgumentNullException(nameof(threadId));
-            this.TaskType = taskType;
-            this.Object = @object;
             this.Type = type;
+            this.TaskType = taskType;
             this.Heading = heading;
             this.Summary = summary;
         }

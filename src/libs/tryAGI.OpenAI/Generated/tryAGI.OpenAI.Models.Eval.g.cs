@@ -79,10 +79,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="Eval" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The object type.<br/>
-        /// Default Value: eval
-        /// </param>
         /// <param name="id">
         /// Unique identifier for the evaluation.
         /// </param>
@@ -101,6 +97,10 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) for when the eval was created.
         /// </param>
         /// <param name="metadata"></param>
+        /// <param name="object">
+        /// The object type.<br/>
+        /// Default Value: eval
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -113,12 +113,12 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::tryAGI.OpenAI.EvalObject @object = global::tryAGI.OpenAI.EvalObject.Eval)
         {
+            this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.DataSourceConfig = dataSourceConfig;
             this.TestingCriteria = testingCriteria ?? throw new global::System.ArgumentNullException(nameof(testingCriteria));
             this.CreatedAt = createdAt;
-            this.Object = @object;
             this.Metadata = metadata;
         }
 

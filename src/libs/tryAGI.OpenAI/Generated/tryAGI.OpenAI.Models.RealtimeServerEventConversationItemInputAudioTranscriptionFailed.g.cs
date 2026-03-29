@@ -58,10 +58,6 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be<br/>
-        /// `conversation.item.input_audio_transcription.failed`.
-        /// </param>
         /// <param name="itemId">
         /// The ID of the user message item.
         /// </param>
@@ -70,6 +66,10 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="error">
         /// Details of the transcription error.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be<br/>
+        /// `conversation.item.input_audio_transcription.failed`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -82,10 +82,10 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionFailedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
+            this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.ContentIndex = contentIndex;
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
-            this.Type = type;
         }
 
         /// <summary>

@@ -37,11 +37,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="EvalItemInputImage" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the image input. Always `input_image`.
-        /// </param>
         /// <param name="imageUrl">
         /// The URL of the image input.
+        /// </param>
+        /// <param name="type">
+        /// The type of the image input. Always `input_image`.
         /// </param>
         /// <param name="detail">
         /// The detail level of the image to be sent to the model. One of `high`, `low`, or `auto`. Defaults to `auto`.
@@ -54,8 +54,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.EvalItemInputImageType type,
             string? detail)
         {
-            this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
             this.Type = type;
+            this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
             this.Detail = detail;
         }
 

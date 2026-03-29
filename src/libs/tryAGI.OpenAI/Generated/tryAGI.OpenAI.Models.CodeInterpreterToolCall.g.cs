@@ -60,10 +60,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CodeInterpreterToolCall" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the code interpreter tool call. Always `code_interpreter_call`.<br/>
-        /// Default Value: code_interpreter_call
-        /// </param>
         /// <param name="id">
         /// The unique ID of the code interpreter tool call.
         /// </param>
@@ -75,6 +71,10 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="code"></param>
         /// <param name="outputs"></param>
+        /// <param name="type">
+        /// The type of the code interpreter tool call. Always `code_interpreter_call`.<br/>
+        /// Default Value: code_interpreter_call
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -86,10 +86,10 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputsVariant1Item>? outputs,
             global::tryAGI.OpenAI.CodeInterpreterToolCallType type = global::tryAGI.OpenAI.CodeInterpreterToolCallType.CodeInterpreterCall)
         {
+            this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Status = status;
             this.ContainerId = containerId ?? throw new global::System.ArgumentNullException(nameof(containerId));
-            this.Type = type;
             this.Code = code;
             this.Outputs = outputs;
         }

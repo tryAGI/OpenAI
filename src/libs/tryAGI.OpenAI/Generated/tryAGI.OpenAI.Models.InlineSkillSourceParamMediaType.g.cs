@@ -12,7 +12,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        ApplicationZip,
+        ApplicationDividezip,
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                InlineSkillSourceParamMediaType.ApplicationZip => "application/zip",
+                InlineSkillSourceParamMediaType.ApplicationDividezip => "application/zip",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,7 +38,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "application/zip" => InlineSkillSourceParamMediaType.ApplicationZip,
+                "application/zip" => InlineSkillSourceParamMediaType.ApplicationDividezip,
                 _ => null,
             };
         }

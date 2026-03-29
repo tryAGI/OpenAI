@@ -94,20 +94,20 @@ namespace tryAGI.OpenAI
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) for when the file was created.
         /// </param>
-        /// <param name="expiresAt">
-        /// The Unix timestamp (in seconds) for when the file will expire.
-        /// </param>
         /// <param name="filename">
         /// The name of the file.
-        /// </param>
-        /// <param name="object">
-        /// The object type, which is always `file`.
         /// </param>
         /// <param name="purpose">
         /// The intended purpose of the file. Supported values are `assistants`, `assistants_output`, `batch`, `batch_output`, `fine-tune`, `fine-tune-results`, `vision`, and `user_data`.
         /// </param>
         /// <param name="status">
         /// Deprecated. The current status of the file, which can be either `uploaded`, `processed`, or `error`.
+        /// </param>
+        /// <param name="expiresAt">
+        /// The Unix timestamp (in seconds) for when the file will expire.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `file`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -125,11 +125,11 @@ namespace tryAGI.OpenAI
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Bytes = bytes;
             this.CreatedAt = createdAt;
+            this.ExpiresAt = expiresAt;
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
+            this.Object = @object;
             this.Purpose = purpose;
             this.Status = status;
-            this.ExpiresAt = expiresAt;
-            this.Object = @object;
         }
 
         /// <summary>

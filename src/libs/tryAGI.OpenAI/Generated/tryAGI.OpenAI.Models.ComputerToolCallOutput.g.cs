@@ -61,26 +61,26 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ComputerToolCallOutput" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the computer tool call output. Always `computer_call_output`.<br/>
-        /// Default Value: computer_call_output
+        /// <param name="callId">
+        /// The ID of the computer tool call that produced the output.
+        /// </param>
+        /// <param name="output">
+        /// A computer screenshot image used with the computer use tool.
         /// </param>
         /// <param name="id">
         /// The ID of the computer tool call output.
-        /// </param>
-        /// <param name="callId">
-        /// The ID of the computer tool call that produced the output.
         /// </param>
         /// <param name="acknowledgedSafetyChecks">
         /// The safety checks reported by the API that have been acknowledged by the<br/>
         /// developer.
         /// </param>
-        /// <param name="output">
-        /// A computer screenshot image used with the computer use tool.
-        /// </param>
         /// <param name="status">
         /// The status of the message input. One of `in_progress`, `completed`, or<br/>
         /// `incomplete`. Populated when input items are returned via API.
+        /// </param>
+        /// <param name="type">
+        /// The type of the computer tool call output. Always `computer_call_output`.<br/>
+        /// Default Value: computer_call_output
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -93,11 +93,11 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ComputerToolCallOutputStatus? status,
             global::tryAGI.OpenAI.ComputerToolCallOutputType type = global::tryAGI.OpenAI.ComputerToolCallOutputType.ComputerCallOutput)
         {
-            this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
-            this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
             this.Type = type;
             this.Id = id;
+            this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.AcknowledgedSafetyChecks = acknowledgedSafetyChecks;
+            this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
             this.Status = status;
         }
 

@@ -31,11 +31,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RunStepDetailsToolCallsCodeOutputLogsObject" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Always `logs`.
-        /// </param>
         /// <param name="logs">
         /// The text output from the Code Interpreter tool call.
+        /// </param>
+        /// <param name="type">
+        /// Always `logs`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -44,8 +44,8 @@ namespace tryAGI.OpenAI
             string logs,
             global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputLogsObjectType type)
         {
-            this.Logs = logs ?? throw new global::System.ArgumentNullException(nameof(logs));
             this.Type = type;
+            this.Logs = logs ?? throw new global::System.ArgumentNullException(nameof(logs));
         }
 
         /// <summary>

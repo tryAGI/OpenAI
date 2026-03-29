@@ -55,9 +55,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="VoiceConsentResource" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The object type, which is always `audio.voice_consent`.
-        /// </param>
         /// <param name="id">
         /// The consent recording identifier.<br/>
         /// Example: cons_1234
@@ -71,6 +68,9 @@ namespace tryAGI.OpenAI
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) for when the consent recording was created.
         /// </param>
+        /// <param name="object">
+        /// The object type, which is always `audio.voice_consent`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -81,11 +81,11 @@ namespace tryAGI.OpenAI
             global::System.DateTimeOffset createdAt,
             global::tryAGI.OpenAI.VoiceConsentResourceObject @object)
         {
+            this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
             this.CreatedAt = createdAt;
-            this.Object = @object;
         }
 
         /// <summary>

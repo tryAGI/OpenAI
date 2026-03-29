@@ -51,6 +51,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeClientEventConversationItemCreate" /> class.
         /// </summary>
+        /// <param name="item">
+        /// A single item within a Realtime conversation.
+        /// </param>
         /// <param name="eventId">
         /// Optional client-generated ID used to identify this event.
         /// </param>
@@ -62,9 +65,6 @@ namespace tryAGI.OpenAI
         /// If set to `root`, the new item will be added to the beginning of the conversation.<br/>
         /// If set to an existing ID, it allows an item to be inserted mid-conversation. If the ID cannot be found, an error will be returned and the item will not be added.
         /// </param>
-        /// <param name="item">
-        /// A single item within a Realtime conversation.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -74,10 +74,10 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RealtimeClientEventConversationItemCreateType type,
             string? previousItemId)
         {
-            this.Item = item;
             this.EventId = eventId;
             this.Type = type;
             this.PreviousItemId = previousItemId;
+            this.Item = item;
         }
 
         /// <summary>

@@ -62,13 +62,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="UsageModerationsResult" /> class.
         /// </summary>
-        /// <param name="object"></param>
         /// <param name="inputTokens">
         /// The aggregated number of input tokens used.
         /// </param>
         /// <param name="numModelRequests">
         /// The count of requests made to the model.
         /// </param>
+        /// <param name="object"></param>
         /// <param name="projectId"></param>
         /// <param name="userId"></param>
         /// <param name="apiKeyId"></param>
@@ -85,9 +85,9 @@ namespace tryAGI.OpenAI
             string? apiKeyId,
             string? model)
         {
+            this.Object = @object;
             this.InputTokens = inputTokens;
             this.NumModelRequests = numModelRequests;
-            this.Object = @object;
             this.ProjectId = projectId;
             this.UserId = userId;
             this.ApiKeyId = apiKeyId;

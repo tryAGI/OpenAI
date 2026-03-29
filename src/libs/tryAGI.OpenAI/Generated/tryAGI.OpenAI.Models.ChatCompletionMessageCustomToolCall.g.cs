@@ -41,11 +41,11 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// The ID of the tool call.
         /// </param>
-        /// <param name="type">
-        /// The type of the tool. Always `custom`.
-        /// </param>
         /// <param name="custom">
         /// The custom tool that the model called.
+        /// </param>
+        /// <param name="type">
+        /// The type of the tool. Always `custom`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -56,8 +56,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCallType type)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Custom = custom ?? throw new global::System.ArgumentNullException(nameof(custom));
             this.Type = type;
+            this.Custom = custom ?? throw new global::System.ArgumentNullException(nameof(custom));
         }
 
         /// <summary>

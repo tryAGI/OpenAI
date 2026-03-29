@@ -33,12 +33,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplyPatchDeleteFileOperation" /> class.
         /// </summary>
+        /// <param name="path">
+        /// Path of the file to delete.
+        /// </param>
         /// <param name="type">
         /// Delete the specified file.<br/>
         /// Default Value: delete_file
-        /// </param>
-        /// <param name="path">
-        /// Path of the file to delete.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
             string path,
             global::tryAGI.OpenAI.ApplyPatchDeleteFileOperationType type = global::tryAGI.OpenAI.ApplyPatchDeleteFileOperationType.DeleteFile)
         {
-            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
             this.Type = type;
+            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
         }
 
         /// <summary>

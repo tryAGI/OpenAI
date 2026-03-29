@@ -31,11 +31,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="TranscriptTextUsageDuration" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the usage object. Always `duration` for this variant.
-        /// </param>
         /// <param name="seconds">
         /// Duration of the input audio in seconds.
+        /// </param>
+        /// <param name="type">
+        /// The type of the usage object. Always `duration` for this variant.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -44,8 +44,8 @@ namespace tryAGI.OpenAI
             double seconds,
             global::tryAGI.OpenAI.TranscriptTextUsageDurationType type)
         {
-            this.Seconds = seconds;
             this.Type = type;
+            this.Seconds = seconds;
         }
 
         /// <summary>

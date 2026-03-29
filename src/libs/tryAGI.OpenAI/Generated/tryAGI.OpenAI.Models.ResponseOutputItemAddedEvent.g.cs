@@ -46,9 +46,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseOutputItemAddedEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `response.output_item.added`.
-        /// </param>
         /// <param name="outputIndex">
         /// The index of the output item that was added.
         /// </param>
@@ -57,6 +54,9 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="item">
         /// The output item that was added.
+        /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `response.output_item.added`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -67,10 +67,10 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.OutputItem item,
             global::tryAGI.OpenAI.ResponseOutputItemAddedEventType type)
         {
+            this.Type = type;
             this.OutputIndex = outputIndex;
             this.SequenceNumber = sequenceNumber;
             this.Item = item;
-            this.Type = type;
         }
 
         /// <summary>

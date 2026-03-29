@@ -83,9 +83,6 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `conversation.item.input_audio_transcription.segment`.
-        /// </param>
         /// <param name="itemId">
         /// The ID of the item containing the input audio content.
         /// </param>
@@ -107,6 +104,9 @@ namespace tryAGI.OpenAI
         /// <param name="end">
         /// End time of the segment in seconds.
         /// </param>
+        /// <param name="type">
+        /// The event type, must be `conversation.item.input_audio_transcription.segment`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -122,6 +122,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionSegmentType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
+            this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.ContentIndex = contentIndex;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
@@ -129,7 +130,6 @@ namespace tryAGI.OpenAI
             this.Speaker = speaker ?? throw new global::System.ArgumentNullException(nameof(speaker));
             this.Start = start;
             this.End = end;
-            this.Type = type;
         }
 
         /// <summary>

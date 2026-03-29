@@ -50,16 +50,16 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="MCPApprovalResponse" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the item. Always `mcp_approval_response`.
-        /// </param>
-        /// <param name="id"></param>
         /// <param name="approvalRequestId">
         /// The ID of the approval request being answered.
         /// </param>
         /// <param name="approve">
         /// Whether the request was approved.
         /// </param>
+        /// <param name="type">
+        /// The type of the item. Always `mcp_approval_response`.
+        /// </param>
+        /// <param name="id"></param>
         /// <param name="reason"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -71,10 +71,10 @@ namespace tryAGI.OpenAI
             string? id,
             string? reason)
         {
-            this.ApprovalRequestId = approvalRequestId ?? throw new global::System.ArgumentNullException(nameof(approvalRequestId));
-            this.Approve = approve;
             this.Type = type;
             this.Id = id;
+            this.ApprovalRequestId = approvalRequestId ?? throw new global::System.ArgumentNullException(nameof(approvalRequestId));
+            this.Approve = approve;
             this.Reason = reason;
         }
 

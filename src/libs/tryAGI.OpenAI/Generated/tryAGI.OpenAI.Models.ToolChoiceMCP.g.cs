@@ -37,11 +37,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolChoiceMCP" /> class.
         /// </summary>
-        /// <param name="type">
-        /// For MCP tools, the type is always `mcp`.
-        /// </param>
         /// <param name="serverLabel">
         /// The label of the MCP server to use.
+        /// </param>
+        /// <param name="type">
+        /// For MCP tools, the type is always `mcp`.
         /// </param>
         /// <param name="name"></param>
 #if NET7_0_OR_GREATER
@@ -52,8 +52,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ToolChoiceMCPType type,
             string? name)
         {
-            this.ServerLabel = serverLabel ?? throw new global::System.ArgumentNullException(nameof(serverLabel));
             this.Type = type;
+            this.ServerLabel = serverLabel ?? throw new global::System.ArgumentNullException(nameof(serverLabel));
             this.Name = name;
         }
 

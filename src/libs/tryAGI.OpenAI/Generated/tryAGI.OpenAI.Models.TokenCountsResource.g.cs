@@ -32,10 +32,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="TokenCountsResource" /> class.
         /// </summary>
+        /// <param name="inputTokens"></param>
         /// <param name="object">
         /// Default Value: response.input_tokens
         /// </param>
-        /// <param name="inputTokens"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -43,8 +43,8 @@ namespace tryAGI.OpenAI
             int inputTokens,
             global::tryAGI.OpenAI.TokenCountsResourceObject @object = global::tryAGI.OpenAI.TokenCountsResourceObject.ResponseInputTokens)
         {
-            this.InputTokens = inputTokens;
             this.Object = @object;
+            this.InputTokens = inputTokens;
         }
 
         /// <summary>

@@ -66,9 +66,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseOutputTextAnnotationAddedEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always 'response.output_text.annotation.added'.
-        /// </param>
         /// <param name="itemId">
         /// The unique identifier of the item to which the annotation is being added.
         /// </param>
@@ -87,6 +84,9 @@ namespace tryAGI.OpenAI
         /// <param name="annotation">
         /// The annotation object being added. (See annotation schema for details.)
         /// </param>
+        /// <param name="type">
+        /// The type of the event. Always 'response.output_text.annotation.added'.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -99,13 +99,13 @@ namespace tryAGI.OpenAI
             object annotation,
             global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEventType type)
         {
+            this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.ContentIndex = contentIndex;
             this.AnnotationIndex = annotationIndex;
             this.SequenceNumber = sequenceNumber;
             this.Annotation = annotation ?? throw new global::System.ArgumentNullException(nameof(annotation));
-            this.Type = type;
         }
 
         /// <summary>

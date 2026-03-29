@@ -33,12 +33,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="UrlAnnotationSource" /> class.
         /// </summary>
+        /// <param name="url">
+        /// URL referenced by the annotation.
+        /// </param>
         /// <param name="type">
         /// Type discriminator that is always `url`.<br/>
         /// Default Value: url
-        /// </param>
-        /// <param name="url">
-        /// URL referenced by the annotation.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
             string url,
             global::tryAGI.OpenAI.UrlAnnotationSourceType type = global::tryAGI.OpenAI.UrlAnnotationSourceType.Url)
         {
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Type = type;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
         }
 
         /// <summary>

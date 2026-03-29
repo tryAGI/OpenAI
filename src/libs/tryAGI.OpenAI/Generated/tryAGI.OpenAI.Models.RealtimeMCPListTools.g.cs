@@ -44,17 +44,17 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeMCPListTools" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the item. Always `mcp_list_tools`.
-        /// </param>
-        /// <param name="id">
-        /// The unique ID of the list.
-        /// </param>
         /// <param name="serverLabel">
         /// The label of the MCP server.
         /// </param>
         /// <param name="tools">
         /// The tools available on the server.
+        /// </param>
+        /// <param name="type">
+        /// The type of the item. Always `mcp_list_tools`.
+        /// </param>
+        /// <param name="id">
+        /// The unique ID of the list.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -65,10 +65,10 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RealtimeMCPListToolsType type,
             string? id)
         {
-            this.ServerLabel = serverLabel ?? throw new global::System.ArgumentNullException(nameof(serverLabel));
-            this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
             this.Type = type;
             this.Id = id;
+            this.ServerLabel = serverLabel ?? throw new global::System.ArgumentNullException(nameof(serverLabel));
+            this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
         }
 
         /// <summary>

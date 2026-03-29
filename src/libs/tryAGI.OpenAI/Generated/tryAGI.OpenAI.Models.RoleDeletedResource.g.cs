@@ -38,14 +38,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RoleDeletedResource" /> class.
         /// </summary>
-        /// <param name="object">
-        /// Always `role.deleted`.
-        /// </param>
         /// <param name="id">
         /// Identifier of the deleted role.
         /// </param>
         /// <param name="deleted">
         /// Whether the role was deleted.
+        /// </param>
+        /// <param name="object">
+        /// Always `role.deleted`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -55,9 +55,9 @@ namespace tryAGI.OpenAI
             bool deleted,
             global::tryAGI.OpenAI.RoleDeletedResourceObject @object)
         {
+            this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Deleted = deleted;
-            this.Object = @object;
         }
 
         /// <summary>

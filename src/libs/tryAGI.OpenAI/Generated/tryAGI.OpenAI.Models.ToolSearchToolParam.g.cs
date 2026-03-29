@@ -45,15 +45,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolSearchToolParam" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the tool. Always `tool_search`.<br/>
-        /// Default Value: tool_search
-        /// </param>
         /// <param name="execution">
         /// Whether tool search is executed by the server or by the client.
         /// </param>
         /// <param name="description"></param>
         /// <param name="parameters"></param>
+        /// <param name="type">
+        /// The type of the tool. Always `tool_search`.<br/>
+        /// Default Value: tool_search
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

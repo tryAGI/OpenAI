@@ -48,14 +48,14 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `response.mcp_call.in_progress`.
-        /// </param>
         /// <param name="outputIndex">
         /// The index of the output item in the response.
         /// </param>
         /// <param name="itemId">
         /// The ID of the MCP tool call item.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `response.mcp_call.in_progress`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -67,9 +67,9 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallInProgressType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
+            this.Type = type;
             this.OutputIndex = outputIndex;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
-            this.Type = type;
         }
 
         /// <summary>

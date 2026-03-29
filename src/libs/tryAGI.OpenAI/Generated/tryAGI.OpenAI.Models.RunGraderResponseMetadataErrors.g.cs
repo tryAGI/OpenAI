@@ -119,12 +119,12 @@ namespace tryAGI.OpenAI
         /// <param name="invalidVariableError"></param>
         /// <param name="otherError"></param>
         /// <param name="pythonGraderServerError"></param>
-        /// <param name="pythonGraderServerErrorType"></param>
         /// <param name="pythonGraderRuntimeError"></param>
-        /// <param name="pythonGraderRuntimeErrorDetails"></param>
         /// <param name="modelGraderServerError"></param>
         /// <param name="modelGraderRefusalError"></param>
         /// <param name="modelGraderParseError"></param>
+        /// <param name="pythonGraderServerErrorType"></param>
+        /// <param name="pythonGraderRuntimeErrorDetails"></param>
         /// <param name="modelGraderServerErrorDetails"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -152,12 +152,12 @@ namespace tryAGI.OpenAI
             this.InvalidVariableError = invalidVariableError;
             this.OtherError = otherError;
             this.PythonGraderServerError = pythonGraderServerError;
+            this.PythonGraderServerErrorType = pythonGraderServerErrorType;
             this.PythonGraderRuntimeError = pythonGraderRuntimeError;
+            this.PythonGraderRuntimeErrorDetails = pythonGraderRuntimeErrorDetails;
             this.ModelGraderServerError = modelGraderServerError;
             this.ModelGraderRefusalError = modelGraderRefusalError;
             this.ModelGraderParseError = modelGraderParseError;
-            this.PythonGraderServerErrorType = pythonGraderServerErrorType;
-            this.PythonGraderRuntimeErrorDetails = pythonGraderRuntimeErrorDetails;
             this.ModelGraderServerErrorDetails = modelGraderServerErrorDetails;
         }
 

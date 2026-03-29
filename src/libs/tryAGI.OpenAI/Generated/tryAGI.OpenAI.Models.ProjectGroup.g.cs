@@ -53,9 +53,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectGroup" /> class.
         /// </summary>
-        /// <param name="object">
-        /// Always `project.group`.
-        /// </param>
         /// <param name="projectId">
         /// Identifier of the project.
         /// </param>
@@ -68,6 +65,9 @@ namespace tryAGI.OpenAI
         /// <param name="createdAt">
         /// Unix timestamp (in seconds) when the group was granted project access.
         /// </param>
+        /// <param name="object">
+        /// Always `project.group`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -78,11 +78,11 @@ namespace tryAGI.OpenAI
             global::System.DateTimeOffset createdAt,
             global::tryAGI.OpenAI.ProjectGroupObject @object)
         {
+            this.Object = @object;
             this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
             this.GroupId = groupId ?? throw new global::System.ArgumentNullException(nameof(groupId));
             this.GroupName = groupName ?? throw new global::System.ArgumentNullException(nameof(groupName));
             this.CreatedAt = createdAt;
-            this.Object = @object;
         }
 
         /// <summary>

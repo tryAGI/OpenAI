@@ -46,11 +46,11 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// Identifier of the workflow backing the session.
         /// </param>
-        /// <param name="version"></param>
-        /// <param name="stateVariables"></param>
         /// <param name="tracing">
         /// Tracing settings applied to the workflow.
         /// </param>
+        /// <param name="version"></param>
+        /// <param name="stateVariables"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -61,9 +61,9 @@ namespace tryAGI.OpenAI
             object? stateVariables)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Tracing = tracing ?? throw new global::System.ArgumentNullException(nameof(tracing));
             this.Version = version;
             this.StateVariables = stateVariables;
+            this.Tracing = tracing ?? throw new global::System.ArgumentNullException(nameof(tracing));
         }
 
         /// <summary>

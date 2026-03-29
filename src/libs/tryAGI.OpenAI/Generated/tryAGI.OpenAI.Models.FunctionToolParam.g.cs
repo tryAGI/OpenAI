@@ -60,11 +60,11 @@ namespace tryAGI.OpenAI
         /// <param name="description"></param>
         /// <param name="parameters"></param>
         /// <param name="strict"></param>
-        /// <param name="type">
-        /// Default Value: function
-        /// </param>
         /// <param name="deferLoading">
         /// Whether this function should be deferred and discovered via tool search.
+        /// </param>
+        /// <param name="type">
+        /// Default Value: function
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

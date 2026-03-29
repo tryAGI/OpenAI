@@ -31,11 +31,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomToolChatCompletionsCustomFormatGrammarFormat" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Grammar format. Always `grammar`.
-        /// </param>
         /// <param name="grammar">
         /// Your chosen grammar.
+        /// </param>
+        /// <param name="type">
+        /// Grammar format. Always `grammar`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -44,8 +44,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatGrammarFormatGrammar grammar,
             global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatGrammarFormatType type)
         {
-            this.Grammar = grammar ?? throw new global::System.ArgumentNullException(nameof(grammar));
             this.Type = type;
+            this.Grammar = grammar ?? throw new global::System.ArgumentNullException(nameof(grammar));
         }
 
         /// <summary>

@@ -43,11 +43,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="TranscriptTextDoneEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `transcript.text.done`.
-        /// </param>
         /// <param name="text">
         /// The text that was transcribed.
+        /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `transcript.text.done`.
         /// </param>
         /// <param name="logprobs">
         /// The log probabilities of the individual tokens in the transcription. Only included if you [create a transcription](/docs/api-reference/audio/create-transcription) with the `include[]` parameter set to `logprobs`.
@@ -64,8 +64,8 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptTextDoneEventLogprob>? logprobs,
             global::tryAGI.OpenAI.TranscriptTextUsageTokens? usage)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Logprobs = logprobs;
             this.Usage = usage;
         }

@@ -44,14 +44,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectGroupListResource" /> class.
         /// </summary>
-        /// <param name="object">
-        /// Always `list`.
-        /// </param>
         /// <param name="data">
         /// Project group memberships returned in the current page.
         /// </param>
         /// <param name="hasMore">
         /// Whether additional project group memberships are available.
+        /// </param>
+        /// <param name="object">
+        /// Always `list`.
         /// </param>
         /// <param name="next">
         /// Cursor to fetch the next page of results, or `null` when there are no more results.
@@ -65,9 +65,9 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ProjectGroupListResourceObject @object,
             string? next)
         {
+            this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.HasMore = hasMore;
-            this.Object = @object;
             this.Next = next;
         }
 

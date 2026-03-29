@@ -47,10 +47,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputTextContent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the output text. Always `output_text`.<br/>
-        /// Default Value: output_text
-        /// </param>
         /// <param name="text">
         /// The text output from the model.
         /// </param>
@@ -58,6 +54,10 @@ namespace tryAGI.OpenAI
         /// The annotations of the text output.
         /// </param>
         /// <param name="logprobs"></param>
+        /// <param name="type">
+        /// The type of the output text. Always `output_text`.<br/>
+        /// Default Value: output_text
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -67,10 +67,10 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProb> logprobs,
             global::tryAGI.OpenAI.OutputTextContentType type = global::tryAGI.OpenAI.OutputTextContentType.OutputText)
         {
+            this.Type = type;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Annotations = annotations ?? throw new global::System.ArgumentNullException(nameof(annotations));
             this.Logprobs = logprobs ?? throw new global::System.ArgumentNullException(nameof(logprobs));
-            this.Type = type;
         }
 
         /// <summary>

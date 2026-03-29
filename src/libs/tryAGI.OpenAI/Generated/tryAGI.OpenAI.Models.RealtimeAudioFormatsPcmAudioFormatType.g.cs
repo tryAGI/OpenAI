@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        AudioPcm,
+        AudioDividepcm,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                RealtimeAudioFormatsPcmAudioFormatType.AudioPcm => "audio/pcm",
+                RealtimeAudioFormatsPcmAudioFormatType.AudioDividepcm => "audio/pcm",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "audio/pcm" => RealtimeAudioFormatsPcmAudioFormatType.AudioPcm,
+                "audio/pcm" => RealtimeAudioFormatsPcmAudioFormatType.AudioDividepcm,
                 _ => null,
             };
         }

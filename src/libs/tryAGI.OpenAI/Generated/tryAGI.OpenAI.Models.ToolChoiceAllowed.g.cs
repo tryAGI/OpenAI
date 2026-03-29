@@ -50,9 +50,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolChoiceAllowed" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Allowed tool configuration type. Always `allowed_tools`.
-        /// </param>
         /// <param name="mode">
         /// Constrains the tools available to the model to a pre-defined set.<br/>
         /// `auto` allows the model to pick from among the allowed tools and generate a<br/>
@@ -70,6 +67,9 @@ namespace tryAGI.OpenAI
         /// ]<br/>
         /// ```
         /// </param>
+        /// <param name="type">
+        /// Allowed tool configuration type. Always `allowed_tools`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -78,9 +78,9 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<object> tools,
             global::tryAGI.OpenAI.ToolChoiceAllowedType type)
         {
+            this.Type = type;
             this.Mode = mode;
             this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
-            this.Type = type;
         }
 
         /// <summary>

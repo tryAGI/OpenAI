@@ -45,9 +45,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseFileSearchCallSearchingEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `response.file_search_call.searching`.
-        /// </param>
         /// <param name="outputIndex">
         /// The index of the output item that the file search call is searching.
         /// </param>
@@ -56,6 +53,9 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
+        /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `response.file_search_call.searching`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -66,10 +66,10 @@ namespace tryAGI.OpenAI
             int sequenceNumber,
             global::tryAGI.OpenAI.ResponseFileSearchCallSearchingEventType type)
         {
+            this.Type = type;
             this.OutputIndex = outputIndex;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.SequenceNumber = sequenceNumber;
-            this.Type = type;
         }
 
         /// <summary>

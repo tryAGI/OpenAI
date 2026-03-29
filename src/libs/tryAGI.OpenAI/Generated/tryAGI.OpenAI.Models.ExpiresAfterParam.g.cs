@@ -33,12 +33,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ExpiresAfterParam" /> class.
         /// </summary>
+        /// <param name="seconds">
+        /// Number of seconds after the anchor when the session expires.
+        /// </param>
         /// <param name="anchor">
         /// Base timestamp used to calculate expiration. Currently fixed to `created_at`.<br/>
         /// Default Value: created_at
-        /// </param>
-        /// <param name="seconds">
-        /// Number of seconds after the anchor when the session expires.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
             int seconds,
             global::tryAGI.OpenAI.ExpiresAfterParamAnchor anchor = global::tryAGI.OpenAI.ExpiresAfterParamAnchor.CreatedAt)
         {
-            this.Seconds = seconds;
             this.Anchor = anchor;
+            this.Seconds = seconds;
         }
 
         /// <summary>

@@ -52,11 +52,11 @@ namespace tryAGI.OpenAI
         /// <param name="created">
         /// The Unix timestamp (in seconds) when the model was created.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always "model".
-        /// </param>
         /// <param name="ownedBy">
         /// The organization that owns the model.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always "model".
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -69,8 +69,8 @@ namespace tryAGI.OpenAI
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Created = created;
-            this.OwnedBy = ownedBy ?? throw new global::System.ArgumentNullException(nameof(ownedBy));
             this.Object = @object;
+            this.OwnedBy = ownedBy ?? throw new global::System.ArgumentNullException(nameof(ownedBy));
         }
 
         /// <summary>

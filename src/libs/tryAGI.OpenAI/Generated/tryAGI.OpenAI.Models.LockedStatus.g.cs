@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="LockedStatus" /> class.
         /// </summary>
+        /// <param name="reason"></param>
         /// <param name="type">
         /// Status discriminator that is always `locked`.<br/>
         /// Default Value: locked
         /// </param>
-        /// <param name="reason"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

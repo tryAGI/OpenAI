@@ -71,10 +71,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeTurnDetectionRealtimeTurnDetection1ServerVad" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Type of turn detection, `server_vad` to turn on simple Server VAD.<br/>
-        /// Default Value: server_vad
-        /// </param>
         /// <param name="threshold">
         /// Used only for `server_vad` mode. Activation threshold for VAD (0.0 to 1.0), this defaults to 0.5. A<br/>
         /// higher threshold will require louder audio to activate the model, and<br/>
@@ -101,6 +97,10 @@ namespace tryAGI.OpenAI
         /// Default Value: true
         /// </param>
         /// <param name="idleTimeoutMs"></param>
+        /// <param name="type">
+        /// Type of turn detection, `server_vad` to turn on simple Server VAD.<br/>
+        /// Default Value: server_vad
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

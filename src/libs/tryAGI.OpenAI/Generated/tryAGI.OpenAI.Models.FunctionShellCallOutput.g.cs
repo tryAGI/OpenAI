@@ -67,10 +67,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="FunctionShellCallOutput" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the shell call output. Always `shell_call_output`.<br/>
-        /// Default Value: shell_call_output
-        /// </param>
         /// <param name="id">
         /// The unique ID of the shell call output. Populated when this item is returned via API.
         /// </param>
@@ -87,6 +83,10 @@ namespace tryAGI.OpenAI
         /// <param name="createdBy">
         /// The identifier of the actor that created the item.
         /// </param>
+        /// <param name="type">
+        /// The type of the shell call output. Always `shell_call_output`.<br/>
+        /// Default Value: shell_call_output
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -99,11 +99,11 @@ namespace tryAGI.OpenAI
             string? createdBy,
             global::tryAGI.OpenAI.FunctionShellCallOutputType type = global::tryAGI.OpenAI.FunctionShellCallOutputType.ShellCallOutput)
         {
+            this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Status = status;
             this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
-            this.Type = type;
             this.MaxOutputLength = maxOutputLength;
             this.CreatedBy = createdBy;
         }

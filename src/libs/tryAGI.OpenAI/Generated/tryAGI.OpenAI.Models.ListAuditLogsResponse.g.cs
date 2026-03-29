@@ -54,7 +54,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ListAuditLogsResponse" /> class.
         /// </summary>
-        /// <param name="object"></param>
         /// <param name="data"></param>
         /// <param name="firstId">
         /// Example: audit_log-defb456h8dks
@@ -63,6 +62,7 @@ namespace tryAGI.OpenAI
         /// Example: audit_log-hnbkd8s93s
         /// </param>
         /// <param name="hasMore"></param>
+        /// <param name="object"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -73,11 +73,11 @@ namespace tryAGI.OpenAI
             bool hasMore,
             global::tryAGI.OpenAI.ListAuditLogsResponseObject @object)
         {
+            this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.FirstId = firstId ?? throw new global::System.ArgumentNullException(nameof(firstId));
             this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
             this.HasMore = hasMore;
-            this.Object = @object;
         }
 
         /// <summary>

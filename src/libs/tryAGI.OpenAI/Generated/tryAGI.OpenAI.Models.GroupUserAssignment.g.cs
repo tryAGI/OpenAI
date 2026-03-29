@@ -38,14 +38,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="GroupUserAssignment" /> class.
         /// </summary>
-        /// <param name="object">
-        /// Always `group.user`.
-        /// </param>
         /// <param name="userId">
         /// Identifier of the user that was added.
         /// </param>
         /// <param name="groupId">
         /// Identifier of the group the user was added to.
+        /// </param>
+        /// <param name="object">
+        /// Always `group.user`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -55,9 +55,9 @@ namespace tryAGI.OpenAI
             string groupId,
             global::tryAGI.OpenAI.GroupUserAssignmentObject @object)
         {
+            this.Object = @object;
             this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
             this.GroupId = groupId ?? throw new global::System.ArgumentNullException(nameof(groupId));
-            this.Object = @object;
         }
 
         /// <summary>

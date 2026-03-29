@@ -52,9 +52,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateTranscriptionResponseDiarizedJson" /> class.
         /// </summary>
-        /// <param name="task">
-        /// The type of task that was run. Always `transcribe`.
-        /// </param>
         /// <param name="duration">
         /// Duration of the input audio in seconds.
         /// </param>
@@ -63,6 +60,9 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="segments">
         /// Segments of the transcript annotated with timestamps and speaker labels.
+        /// </param>
+        /// <param name="task">
+        /// The type of task that was run. Always `transcribe`.
         /// </param>
         /// <param name="usage">
         /// Token or duration usage statistics for the request.
@@ -77,10 +77,10 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJsonTask task,
             global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJsonUsage? usage)
         {
+            this.Task = task;
             this.Duration = duration;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Segments = segments ?? throw new global::System.ArgumentNullException(nameof(segments));
-            this.Task = task;
             this.Usage = usage;
         }
 

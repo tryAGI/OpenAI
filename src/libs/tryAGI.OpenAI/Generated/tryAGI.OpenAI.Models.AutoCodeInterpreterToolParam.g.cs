@@ -45,16 +45,16 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="AutoCodeInterpreterToolParam" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Always `auto`.<br/>
-        /// Default Value: auto
-        /// </param>
         /// <param name="fileIds">
         /// An optional list of uploaded files to make available to your code.
         /// </param>
         /// <param name="memoryLimit"></param>
         /// <param name="networkPolicy">
         /// Network access policy for the container.
+        /// </param>
+        /// <param name="type">
+        /// Always `auto`.<br/>
+        /// Default Value: auto
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

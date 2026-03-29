@@ -172,19 +172,9 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="Batch" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="object">
-        /// The object type, which is always `batch`.
-        /// </param>
         /// <param name="endpoint">
         /// The OpenAI API endpoint used by the batch.
         /// </param>
-        /// <param name="model">
-        /// Model ID used to process the batch, like `gpt-5-2025-08-07`. OpenAI<br/>
-        /// offers a wide range of models with different capabilities, performance<br/>
-        /// characteristics, and price points. Refer to the [model<br/>
-        /// guide](/docs/models) to browse and compare available models.
-        /// </param>
-        /// <param name="errors"></param>
         /// <param name="inputFileId">
         /// The ID of the input file for the batch.
         /// </param>
@@ -194,14 +184,24 @@ namespace tryAGI.OpenAI
         /// <param name="status">
         /// The current status of the batch.
         /// </param>
+        /// <param name="createdAt">
+        /// The Unix timestamp (in seconds) for when the batch was created.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `batch`.
+        /// </param>
+        /// <param name="model">
+        /// Model ID used to process the batch, like `gpt-5-2025-08-07`. OpenAI<br/>
+        /// offers a wide range of models with different capabilities, performance<br/>
+        /// characteristics, and price points. Refer to the [model<br/>
+        /// guide](/docs/models) to browse and compare available models.
+        /// </param>
+        /// <param name="errors"></param>
         /// <param name="outputFileId">
         /// The ID of the file containing the outputs of successfully executed requests.
         /// </param>
         /// <param name="errorFileId">
         /// The ID of the file containing the outputs of requests with errors.
-        /// </param>
-        /// <param name="createdAt">
-        /// The Unix timestamp (in seconds) for when the batch was created.
         /// </param>
         /// <param name="inProgressAt">
         /// The Unix timestamp (in seconds) for when the batch started processing.
@@ -264,16 +264,16 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.Dictionary<string, string>? metadata)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object;
             this.Endpoint = endpoint ?? throw new global::System.ArgumentNullException(nameof(endpoint));
+            this.Model = model;
+            this.Errors = errors;
             this.InputFileId = inputFileId ?? throw new global::System.ArgumentNullException(nameof(inputFileId));
             this.CompletionWindow = completionWindow ?? throw new global::System.ArgumentNullException(nameof(completionWindow));
             this.Status = status;
-            this.CreatedAt = createdAt;
-            this.Object = @object;
-            this.Model = model;
-            this.Errors = errors;
             this.OutputFileId = outputFileId;
             this.ErrorFileId = errorFileId;
+            this.CreatedAt = createdAt;
             this.InProgressAt = inProgressAt;
             this.ExpiresAt = expiresAt;
             this.FinalizingAt = finalizingAt;

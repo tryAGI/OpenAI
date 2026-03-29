@@ -53,9 +53,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="LocalShellToolCall" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the local shell call. Always `local_shell_call`.
-        /// </param>
         /// <param name="id">
         /// The unique ID of the local shell call.
         /// </param>
@@ -68,6 +65,9 @@ namespace tryAGI.OpenAI
         /// <param name="status">
         /// The status of the local shell call.
         /// </param>
+        /// <param name="type">
+        /// The type of the local shell call. Always `local_shell_call`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -78,11 +78,11 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.LocalShellToolCallStatus status,
             global::tryAGI.OpenAI.LocalShellToolCallType type)
         {
+            this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Action = action ?? throw new global::System.ArgumentNullException(nameof(action));
             this.Status = status;
-            this.Type = type;
         }
 
         /// <summary>

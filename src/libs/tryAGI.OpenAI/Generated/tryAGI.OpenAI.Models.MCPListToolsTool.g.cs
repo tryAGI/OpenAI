@@ -46,10 +46,10 @@ namespace tryAGI.OpenAI
         /// <param name="name">
         /// The name of the tool.
         /// </param>
-        /// <param name="description"></param>
         /// <param name="inputSchema">
         /// The JSON schema describing the tool's input.
         /// </param>
+        /// <param name="description"></param>
         /// <param name="annotations"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -61,8 +61,8 @@ namespace tryAGI.OpenAI
             object? annotations)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.InputSchema = inputSchema ?? throw new global::System.ArgumentNullException(nameof(inputSchema));
             this.Description = description;
+            this.InputSchema = inputSchema ?? throw new global::System.ArgumentNullException(nameof(inputSchema));
             this.Annotations = annotations;
         }
 

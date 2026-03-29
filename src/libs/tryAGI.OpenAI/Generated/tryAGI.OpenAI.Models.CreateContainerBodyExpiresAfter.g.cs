@@ -31,10 +31,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateContainerBodyExpiresAfter" /> class.
         /// </summary>
+        /// <param name="minutes"></param>
         /// <param name="anchor">
         /// Time anchor for the expiration time. Currently only 'last_active_at' is supported.
         /// </param>
-        /// <param name="minutes"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
             int minutes,
             global::tryAGI.OpenAI.CreateContainerBodyExpiresAfterAnchor anchor)
         {
-            this.Minutes = minutes;
             this.Anchor = anchor;
+            this.Minutes = minutes;
         }
 
         /// <summary>

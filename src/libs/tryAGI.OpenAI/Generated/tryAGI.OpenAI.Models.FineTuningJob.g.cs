@@ -149,17 +149,11 @@ namespace tryAGI.OpenAI
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) for when the fine-tuning job was created.
         /// </param>
-        /// <param name="error"></param>
-        /// <param name="fineTunedModel"></param>
-        /// <param name="finishedAt"></param>
         /// <param name="hyperparameters">
         /// The hyperparameters used for the fine-tuning job. This value will only be returned when running `supervised` jobs.
         /// </param>
         /// <param name="model">
         /// The base model that is being fine-tuned.
-        /// </param>
-        /// <param name="object">
-        /// The object type, which is always "fine_tuning.job".
         /// </param>
         /// <param name="organizationId">
         /// The organization that owns the fine-tuning job.
@@ -170,15 +164,21 @@ namespace tryAGI.OpenAI
         /// <param name="status">
         /// The current status of the fine-tuning job, which can be either `validating_files`, `queued`, `running`, `succeeded`, `failed`, or `cancelled`.
         /// </param>
-        /// <param name="trainedTokens"></param>
         /// <param name="trainingFile">
         /// The file ID used for training. You can retrieve the training data with the [Files API](/docs/api-reference/files/retrieve-contents).
         /// </param>
-        /// <param name="validationFile"></param>
-        /// <param name="integrations"></param>
         /// <param name="seed">
         /// The seed used for the fine-tuning job.
         /// </param>
+        /// <param name="error"></param>
+        /// <param name="fineTunedModel"></param>
+        /// <param name="finishedAt"></param>
+        /// <param name="object">
+        /// The object type, which is always "fine_tuning.job".
+        /// </param>
+        /// <param name="trainedTokens"></param>
+        /// <param name="validationFile"></param>
+        /// <param name="integrations"></param>
         /// <param name="estimatedFinish"></param>
         /// <param name="method">
         /// The method used for fine-tuning.
@@ -210,20 +210,20 @@ namespace tryAGI.OpenAI
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;
-            this.Hyperparameters = hyperparameters ?? throw new global::System.ArgumentNullException(nameof(hyperparameters));
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
-            this.OrganizationId = organizationId ?? throw new global::System.ArgumentNullException(nameof(organizationId));
-            this.ResultFiles = resultFiles ?? throw new global::System.ArgumentNullException(nameof(resultFiles));
-            this.Status = status;
-            this.TrainingFile = trainingFile ?? throw new global::System.ArgumentNullException(nameof(trainingFile));
-            this.Seed = seed;
             this.Error = error;
             this.FineTunedModel = fineTunedModel;
             this.FinishedAt = finishedAt;
+            this.Hyperparameters = hyperparameters ?? throw new global::System.ArgumentNullException(nameof(hyperparameters));
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Object = @object;
+            this.OrganizationId = organizationId ?? throw new global::System.ArgumentNullException(nameof(organizationId));
+            this.ResultFiles = resultFiles ?? throw new global::System.ArgumentNullException(nameof(resultFiles));
+            this.Status = status;
             this.TrainedTokens = trainedTokens;
+            this.TrainingFile = trainingFile ?? throw new global::System.ArgumentNullException(nameof(trainingFile));
             this.ValidationFile = validationFile;
             this.Integrations = integrations;
+            this.Seed = seed;
             this.EstimatedFinish = estimatedFinish;
             this.Method = method;
             this.Metadata = metadata;

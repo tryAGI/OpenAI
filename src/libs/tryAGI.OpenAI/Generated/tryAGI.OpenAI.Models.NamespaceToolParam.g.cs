@@ -47,10 +47,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="NamespaceToolParam" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the tool. Always `namespace`.<br/>
-        /// Default Value: namespace
-        /// </param>
         /// <param name="name">
         /// The namespace name used in tool calls (for example, `crm`).
         /// </param>
@@ -59,6 +55,10 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="tools">
         /// The function/custom tools available inside this namespace.
+        /// </param>
+        /// <param name="type">
+        /// The type of the tool. Always `namespace`.<br/>
+        /// Default Value: namespace
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -69,10 +69,10 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem13> tools,
             global::tryAGI.OpenAI.NamespaceToolParamType type = global::tryAGI.OpenAI.NamespaceToolParamType.Namespace)
         {
+            this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
-            this.Type = type;
         }
 
         /// <summary>

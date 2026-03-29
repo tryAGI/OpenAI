@@ -78,9 +78,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageEditCompletedEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `image_edit.completed`.
-        /// </param>
         /// <param name="b64Json">
         /// Base64-encoded final edited image data, suitable for rendering as an image.
         /// </param>
@@ -102,6 +99,9 @@ namespace tryAGI.OpenAI
         /// <param name="usage">
         /// For the GPT image models only, the token usage information for the image generation.
         /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `image_edit.completed`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -115,6 +115,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ImagesUsage usage,
             global::tryAGI.OpenAI.ImageEditCompletedEventType type)
         {
+            this.Type = type;
             this.B64Json = b64Json ?? throw new global::System.ArgumentNullException(nameof(b64Json));
             this.CreatedAt = createdAt;
             this.Size = size;
@@ -122,7 +123,6 @@ namespace tryAGI.OpenAI
             this.Background = background;
             this.OutputFormat = outputFormat;
             this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
-            this.Type = type;
         }
 
         /// <summary>

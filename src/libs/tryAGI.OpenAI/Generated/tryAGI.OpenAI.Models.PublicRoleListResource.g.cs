@@ -44,14 +44,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="PublicRoleListResource" /> class.
         /// </summary>
-        /// <param name="object">
-        /// Always `list`.
-        /// </param>
         /// <param name="data">
         /// Roles returned in the current page.
         /// </param>
         /// <param name="hasMore">
         /// Whether more roles are available when paginating.
+        /// </param>
+        /// <param name="object">
+        /// Always `list`.
         /// </param>
         /// <param name="next">
         /// Cursor to fetch the next page of results, or `null` when there are no additional roles.
@@ -65,9 +65,9 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.PublicRoleListResourceObject @object,
             string? next)
         {
+            this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.HasMore = hasMore;
-            this.Object = @object;
             this.Next = next;
         }
 

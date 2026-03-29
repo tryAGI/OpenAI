@@ -45,9 +45,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseWebSearchCallSearchingEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always `response.web_search_call.searching`.
-        /// </param>
         /// <param name="outputIndex">
         /// The index of the output item that the web search call is associated with.
         /// </param>
@@ -56,6 +53,9 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="sequenceNumber">
         /// The sequence number of the web search call being processed.
+        /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `response.web_search_call.searching`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -66,10 +66,10 @@ namespace tryAGI.OpenAI
             int sequenceNumber,
             global::tryAGI.OpenAI.ResponseWebSearchCallSearchingEventType type)
         {
+            this.Type = type;
             this.OutputIndex = outputIndex;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.SequenceNumber = sequenceNumber;
-            this.Type = type;
         }
 
         /// <summary>

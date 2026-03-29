@@ -31,10 +31,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="StaticChunkingStrategyRequestParam" /> class.
         /// </summary>
+        /// <param name="static"></param>
         /// <param name="type">
         /// Always `static`.
         /// </param>
-        /// <param name="static"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.StaticChunkingStrategy @static,
             global::tryAGI.OpenAI.StaticChunkingStrategyRequestParamType type)
         {
-            this.Static = @static ?? throw new global::System.ArgumentNullException(nameof(@static));
             this.Type = type;
+            this.Static = @static ?? throw new global::System.ArgumentNullException(nameof(@static));
         }
 
         /// <summary>

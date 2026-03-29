@@ -33,12 +33,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CodeInterpreterOutputImage" /> class.
         /// </summary>
+        /// <param name="url">
+        /// The URL of the image output from the code interpreter.
+        /// </param>
         /// <param name="type">
         /// The type of the output. Always `image`.<br/>
         /// Default Value: image
-        /// </param>
-        /// <param name="url">
-        /// The URL of the image output from the code interpreter.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
             string url,
             global::tryAGI.OpenAI.CodeInterpreterOutputImageType type = global::tryAGI.OpenAI.CodeInterpreterOutputImageType.Image)
         {
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Type = type;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
         }
 
         /// <summary>

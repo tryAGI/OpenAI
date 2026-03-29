@@ -32,12 +32,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="LocalEnvironmentParam" /> class.
         /// </summary>
+        /// <param name="skills">
+        /// An optional list of skills.
+        /// </param>
         /// <param name="type">
         /// Use a local computer environment.<br/>
         /// Default Value: local
-        /// </param>
-        /// <param name="skills">
-        /// An optional list of skills.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

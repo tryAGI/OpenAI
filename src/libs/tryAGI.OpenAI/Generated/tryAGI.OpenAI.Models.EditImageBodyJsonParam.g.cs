@@ -146,22 +146,22 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="EditImageBodyJsonParam" /> class.
         /// </summary>
+        /// <param name="images">
+        /// Input image references to edit.<br/>
+        /// For GPT image models, you can provide up to 16 images.
+        /// </param>
+        /// <param name="prompt">
+        /// A text description of the desired image edit.<br/>
+        /// Example: Add a watercolor effect and keep the subject centered
+        /// </param>
         /// <param name="model">
         /// The model to use for image editing.<br/>
         /// Default Value: gpt-image-1.5<br/>
         /// Example: gpt-image-1.5
         /// </param>
-        /// <param name="images">
-        /// Input image references to edit.<br/>
-        /// For GPT image models, you can provide up to 16 images.
-        /// </param>
         /// <param name="mask">
         /// Reference an input image by either URL or uploaded file ID.<br/>
         /// Provide exactly one of `image_url` or `file_id`.
-        /// </param>
-        /// <param name="prompt">
-        /// A text description of the desired image edit.<br/>
-        /// Example: Add a watercolor effect and keep the subject centered
         /// </param>
         /// <param name="n">
         /// The number of edited images to generate.<br/>
@@ -231,10 +231,10 @@ namespace tryAGI.OpenAI
             bool? stream,
             int? partialImages)
         {
-            this.Images = images ?? throw new global::System.ArgumentNullException(nameof(images));
-            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Model = model;
+            this.Images = images ?? throw new global::System.ArgumentNullException(nameof(images));
             this.Mask = mask;
+            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.N = n;
             this.Quality = quality;
             this.InputFidelity = inputFidelity;

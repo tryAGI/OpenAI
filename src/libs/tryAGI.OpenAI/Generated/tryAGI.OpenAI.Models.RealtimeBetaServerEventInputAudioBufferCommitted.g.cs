@@ -50,13 +50,13 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
+        /// <param name="itemId">
+        /// The ID of the user message item that will be created.
+        /// </param>
         /// <param name="type">
         /// The event type, must be `input_audio_buffer.committed`.
         /// </param>
         /// <param name="previousItemId"></param>
-        /// <param name="itemId">
-        /// The ID of the user message item that will be created.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -67,9 +67,9 @@ namespace tryAGI.OpenAI
             string? previousItemId)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.Type = type;
             this.PreviousItemId = previousItemId;
+            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
         }
 
         /// <summary>

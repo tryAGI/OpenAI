@@ -112,10 +112,6 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// Unique identifier for the video job.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `video`.<br/>
-        /// Default Value: video
-        /// </param>
         /// <param name="model">
         /// The video generation model that produced the job.
         /// </param>
@@ -128,17 +124,21 @@ namespace tryAGI.OpenAI
         /// <param name="createdAt">
         /// Unix timestamp (seconds) for when the job was created.
         /// </param>
-        /// <param name="completedAt"></param>
-        /// <param name="expiresAt"></param>
-        /// <param name="prompt"></param>
         /// <param name="size">
         /// The resolution of the generated video.
         /// </param>
         /// <param name="seconds">
         /// Duration of the generated clip in seconds. For extensions, this is the stitched total duration.
         /// </param>
+        /// <param name="completedAt"></param>
+        /// <param name="expiresAt"></param>
+        /// <param name="prompt"></param>
         /// <param name="remixedFromVideoId"></param>
         /// <param name="error"></param>
+        /// <param name="object">
+        /// The object type, which is always `video`.<br/>
+        /// Default Value: video
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -158,16 +158,16 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.VideoResourceObject @object = global::tryAGI.OpenAI.VideoResourceObject.Video)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object;
             this.Model = model;
             this.Status = status;
             this.Progress = progress;
             this.CreatedAt = createdAt;
-            this.Size = size;
-            this.Seconds = seconds ?? throw new global::System.ArgumentNullException(nameof(seconds));
-            this.Object = @object;
             this.CompletedAt = completedAt;
             this.ExpiresAt = expiresAt;
             this.Prompt = prompt;
+            this.Size = size;
+            this.Seconds = seconds ?? throw new global::System.ArgumentNullException(nameof(seconds));
             this.RemixedFromVideoId = remixedFromVideoId;
             this.Error = error;
         }

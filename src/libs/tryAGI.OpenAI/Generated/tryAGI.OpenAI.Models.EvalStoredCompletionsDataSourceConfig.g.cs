@@ -44,14 +44,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="EvalStoredCompletionsDataSourceConfig" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of data source. Always `stored_completions`.<br/>
-        /// Default Value: stored_completions
-        /// </param>
-        /// <param name="metadata"></param>
         /// <param name="schema">
         /// The json schema for the run data source items.<br/>
         /// Learn how to build JSON schemas [here](https://json-schema.org/).
+        /// </param>
+        /// <param name="metadata"></param>
+        /// <param name="type">
+        /// The type of data source. Always `stored_completions`.<br/>
+        /// Default Value: stored_completions
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -61,9 +61,9 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::tryAGI.OpenAI.EvalStoredCompletionsDataSourceConfigType type = global::tryAGI.OpenAI.EvalStoredCompletionsDataSourceConfigType.StoredCompletions)
         {
-            this.Schema = schema ?? throw new global::System.ArgumentNullException(nameof(schema));
             this.Type = type;
             this.Metadata = metadata;
+            this.Schema = schema ?? throw new global::System.ArgumentNullException(nameof(schema));
         }
 
         /// <summary>

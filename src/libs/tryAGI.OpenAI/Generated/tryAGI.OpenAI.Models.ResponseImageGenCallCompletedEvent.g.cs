@@ -45,9 +45,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseImageGenCallCompletedEvent" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the event. Always 'response.image_generation_call.completed'.
-        /// </param>
         /// <param name="outputIndex">
         /// The index of the output item in the response's output array.
         /// </param>
@@ -56,6 +53,9 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="itemId">
         /// The unique identifier of the image generation item being processed.
+        /// </param>
+        /// <param name="type">
+        /// The type of the event. Always 'response.image_generation_call.completed'.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -66,10 +66,10 @@ namespace tryAGI.OpenAI
             string itemId,
             global::tryAGI.OpenAI.ResponseImageGenCallCompletedEventType type)
         {
+            this.Type = type;
             this.OutputIndex = outputIndex;
             this.SequenceNumber = sequenceNumber;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
-            this.Type = type;
         }
 
         /// <summary>

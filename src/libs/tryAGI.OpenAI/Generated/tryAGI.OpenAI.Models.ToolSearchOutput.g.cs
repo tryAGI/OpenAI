@@ -68,14 +68,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolSearchOutput" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the item. Always `tool_search_output`.<br/>
-        /// Default Value: tool_search_output
-        /// </param>
         /// <param name="id">
         /// The unique ID of the tool search output item.
         /// </param>
-        /// <param name="callId"></param>
         /// <param name="execution">
         /// Whether tool search was executed by the server or by the client.
         /// </param>
@@ -85,8 +80,13 @@ namespace tryAGI.OpenAI
         /// <param name="status">
         /// The status of the tool search output item that was recorded.
         /// </param>
+        /// <param name="callId"></param>
         /// <param name="createdBy">
         /// The identifier of the actor that created the item.
+        /// </param>
+        /// <param name="type">
+        /// The type of the item. Always `tool_search_output`.<br/>
+        /// Default Value: tool_search_output
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -100,12 +100,12 @@ namespace tryAGI.OpenAI
             string? createdBy,
             global::tryAGI.OpenAI.ToolSearchOutputType type = global::tryAGI.OpenAI.ToolSearchOutputType.ToolSearchOutput)
         {
+            this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CallId = callId;
             this.Execution = execution;
             this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
             this.Status = status;
-            this.Type = type;
-            this.CallId = callId;
             this.CreatedBy = createdBy;
         }
 

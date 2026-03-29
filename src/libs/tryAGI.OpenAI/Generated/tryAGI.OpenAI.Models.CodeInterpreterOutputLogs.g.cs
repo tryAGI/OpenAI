@@ -33,12 +33,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CodeInterpreterOutputLogs" /> class.
         /// </summary>
+        /// <param name="logs">
+        /// The logs output from the code interpreter.
+        /// </param>
         /// <param name="type">
         /// The type of the output. Always `logs`.<br/>
         /// Default Value: logs
-        /// </param>
-        /// <param name="logs">
-        /// The logs output from the code interpreter.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
             string logs,
             global::tryAGI.OpenAI.CodeInterpreterOutputLogsType type = global::tryAGI.OpenAI.CodeInterpreterOutputLogsType.Logs)
         {
-            this.Logs = logs ?? throw new global::System.ArgumentNullException(nameof(logs));
             this.Type = type;
+            this.Logs = logs ?? throw new global::System.ArgumentNullException(nameof(logs));
         }
 
         /// <summary>

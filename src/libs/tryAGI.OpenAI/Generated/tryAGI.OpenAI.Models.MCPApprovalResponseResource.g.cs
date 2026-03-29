@@ -51,9 +51,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="MCPApprovalResponseResource" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the item. Always `mcp_approval_response`.
-        /// </param>
         /// <param name="id">
         /// The unique ID of the approval response
         /// </param>
@@ -62,6 +59,9 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="approve">
         /// Whether the request was approved.
+        /// </param>
+        /// <param name="type">
+        /// The type of the item. Always `mcp_approval_response`.
         /// </param>
         /// <param name="reason"></param>
 #if NET7_0_OR_GREATER
@@ -74,10 +74,10 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.MCPApprovalResponseResourceType type,
             string? reason)
         {
+            this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.ApprovalRequestId = approvalRequestId ?? throw new global::System.ArgumentNullException(nameof(approvalRequestId));
             this.Approve = approve;
-            this.Type = type;
             this.Reason = reason;
         }
 

@@ -59,11 +59,11 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `conversation.item.input_audio_transcription.delta`.
-        /// </param>
         /// <param name="itemId">
         /// The ID of the item containing the audio that is being transcribed.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `conversation.item.input_audio_transcription.delta`.
         /// </param>
         /// <param name="contentIndex">
         /// The index of the content part in the item's content array.
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProbProperties>? logprobs)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.Type = type;
+            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.ContentIndex = contentIndex;
             this.Delta = delta;
             this.Logprobs = logprobs;

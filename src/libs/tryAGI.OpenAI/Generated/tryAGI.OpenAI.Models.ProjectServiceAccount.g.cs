@@ -54,9 +54,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectServiceAccount" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The object type, which is always `organization.project.service_account`
-        /// </param>
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints
         /// </param>
@@ -69,6 +66,9 @@ namespace tryAGI.OpenAI
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) of when the service account was created
         /// </param>
+        /// <param name="object">
+        /// The object type, which is always `organization.project.service_account`
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -79,11 +79,11 @@ namespace tryAGI.OpenAI
             global::System.DateTimeOffset createdAt,
             global::tryAGI.OpenAI.ProjectServiceAccountObject @object)
         {
+            this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Role = role;
             this.CreatedAt = createdAt;
-            this.Object = @object;
         }
 
         /// <summary>

@@ -48,10 +48,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ComputerUsePreviewTool" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the computer use tool. Always `computer_use_preview`.<br/>
-        /// Default Value: computer_use_preview
-        /// </param>
         /// <param name="environment">
         /// The type of computer environment to control.
         /// </param>
@@ -60,6 +56,10 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="displayHeight">
         /// The height of the computer display.
+        /// </param>
+        /// <param name="type">
+        /// The type of the computer use tool. Always `computer_use_preview`.<br/>
+        /// Default Value: computer_use_preview
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -70,10 +70,10 @@ namespace tryAGI.OpenAI
             int displayHeight,
             global::tryAGI.OpenAI.ComputerUsePreviewToolType type = global::tryAGI.OpenAI.ComputerUsePreviewToolType.ComputerUsePreview)
         {
+            this.Type = type;
             this.Environment = environment;
             this.DisplayWidth = displayWidth;
             this.DisplayHeight = displayHeight;
-            this.Type = type;
         }
 
         /// <summary>

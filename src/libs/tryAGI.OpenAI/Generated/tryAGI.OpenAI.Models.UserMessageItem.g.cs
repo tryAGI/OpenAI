@@ -79,18 +79,11 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// Identifier of the thread item.
         /// </param>
-        /// <param name="object">
-        /// Type discriminator that is always `chatkit.thread_item`.<br/>
-        /// Default Value: chatkit.thread_item
-        /// </param>
         /// <param name="createdAt">
         /// Unix timestamp (in seconds) for when the item was created.
         /// </param>
         /// <param name="threadId">
         /// Identifier of the parent thread.
-        /// </param>
-        /// <param name="type">
-        /// Default Value: chatkit.user_message
         /// </param>
         /// <param name="content">
         /// Ordered content elements supplied by the user.
@@ -99,6 +92,13 @@ namespace tryAGI.OpenAI
         /// Attachments associated with the user message. Defaults to an empty list.
         /// </param>
         /// <param name="inferenceOptions"></param>
+        /// <param name="object">
+        /// Type discriminator that is always `chatkit.thread_item`.<br/>
+        /// Default Value: chatkit.thread_item
+        /// </param>
+        /// <param name="type">
+        /// Default Value: chatkit.user_message
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -113,12 +113,12 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.UserMessageItemType type = global::tryAGI.OpenAI.UserMessageItemType.ChatkitUserMessage)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object;
             this.CreatedAt = createdAt;
             this.ThreadId = threadId ?? throw new global::System.ArgumentNullException(nameof(threadId));
+            this.Type = type;
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Attachments = attachments ?? throw new global::System.ArgumentNullException(nameof(attachments));
-            this.Object = @object;
-            this.Type = type;
             this.InferenceOptions = inferenceOptions;
         }
 

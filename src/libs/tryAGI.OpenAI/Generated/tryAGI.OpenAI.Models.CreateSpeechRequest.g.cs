@@ -75,11 +75,11 @@ namespace tryAGI.OpenAI
         /// <param name="input">
         /// The text to generate audio for. The maximum length is 4096 characters.
         /// </param>
-        /// <param name="instructions">
-        /// Control the voice of your generated audio with additional instructions. Does not work with `tts-1` or `tts-1-hd`.
-        /// </param>
         /// <param name="voice">
         /// The voice to use when generating the audio. Supported built-in voices are `alloy`, `ash`, `ballad`, `coral`, `echo`, `fable`, `onyx`, `nova`, `sage`, `shimmer`, `verse`, `marin`, and `cedar`. You may also provide a custom voice object with an `id`, for example `{ "id": "voice_1234" }`. Previews of the voices are available in the [Text to speech guide](/docs/guides/text-to-speech#voice-options).
+        /// </param>
+        /// <param name="instructions">
+        /// Control the voice of your generated audio with additional instructions. Does not work with `tts-1` or `tts-1-hd`.
         /// </param>
         /// <param name="responseFormat">
         /// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.<br/>
@@ -107,8 +107,8 @@ namespace tryAGI.OpenAI
         {
             this.Model = model;
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
-            this.Voice = voice;
             this.Instructions = instructions;
+            this.Voice = voice;
             this.ResponseFormat = responseFormat;
             this.Speed = speed;
             this.StreamFormat = streamFormat;

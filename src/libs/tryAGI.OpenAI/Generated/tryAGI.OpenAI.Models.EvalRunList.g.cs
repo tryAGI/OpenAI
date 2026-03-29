@@ -54,10 +54,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="EvalRunList" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The type of this object. It is always set to "list".<br/>
-        /// Default Value: list
-        /// </param>
         /// <param name="data">
         /// An array of eval run objects.
         /// </param>
@@ -70,6 +66,10 @@ namespace tryAGI.OpenAI
         /// <param name="hasMore">
         /// Indicates whether there are more evals available.
         /// </param>
+        /// <param name="object">
+        /// The type of this object. It is always set to "list".<br/>
+        /// Default Value: list
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -80,11 +80,11 @@ namespace tryAGI.OpenAI
             bool hasMore,
             global::tryAGI.OpenAI.EvalRunListObject @object = global::tryAGI.OpenAI.EvalRunListObject.List)
         {
+            this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.FirstId = firstId ?? throw new global::System.ArgumentNullException(nameof(firstId));
             this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
             this.HasMore = hasMore;
-            this.Object = @object;
         }
 
         /// <summary>

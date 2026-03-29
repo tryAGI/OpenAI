@@ -51,10 +51,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="FileSearchTool" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the file search tool. Always `file_search`.<br/>
-        /// Default Value: file_search
-        /// </param>
         /// <param name="vectorStoreIds">
         /// The IDs of the vector stores to search.
         /// </param>
@@ -65,6 +61,10 @@ namespace tryAGI.OpenAI
         /// Ranking options for search.
         /// </param>
         /// <param name="filters"></param>
+        /// <param name="type">
+        /// The type of the file search tool. Always `file_search`.<br/>
+        /// Default Value: file_search
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -75,8 +75,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.Filters2? filters,
             global::tryAGI.OpenAI.FileSearchToolType type = global::tryAGI.OpenAI.FileSearchToolType.FileSearch)
         {
-            this.VectorStoreIds = vectorStoreIds ?? throw new global::System.ArgumentNullException(nameof(vectorStoreIds));
             this.Type = type;
+            this.VectorStoreIds = vectorStoreIds ?? throw new global::System.ArgumentNullException(nameof(vectorStoreIds));
             this.MaxNumResults = maxNumResults;
             this.RankingOptions = rankingOptions;
             this.Filters = filters;

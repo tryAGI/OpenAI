@@ -60,10 +60,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplyPatchToolCallOutput" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the item. Always `apply_patch_call_output`.<br/>
-        /// Default Value: apply_patch_call_output
-        /// </param>
         /// <param name="id">
         /// The unique ID of the apply patch tool call output. Populated when this item is returned via API.
         /// </param>
@@ -77,6 +73,10 @@ namespace tryAGI.OpenAI
         /// <param name="createdBy">
         /// The ID of the entity that created this tool call output.
         /// </param>
+        /// <param name="type">
+        /// The type of the item. Always `apply_patch_call_output`.<br/>
+        /// Default Value: apply_patch_call_output
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -88,10 +88,10 @@ namespace tryAGI.OpenAI
             string? createdBy,
             global::tryAGI.OpenAI.ApplyPatchToolCallOutputType type = global::tryAGI.OpenAI.ApplyPatchToolCallOutputType.ApplyPatchCallOutput)
         {
+            this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Status = status;
-            this.Type = type;
             this.Output = output;
             this.CreatedBy = createdBy;
         }

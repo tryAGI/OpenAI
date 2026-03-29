@@ -37,10 +37,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="UsageVectorStoresResult" /> class.
         /// </summary>
-        /// <param name="object"></param>
         /// <param name="usageBytes">
         /// The vector stores usage in bytes.
         /// </param>
+        /// <param name="object"></param>
         /// <param name="projectId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -50,8 +50,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.UsageVectorStoresResultObject @object,
             string? projectId)
         {
-            this.UsageBytes = usageBytes;
             this.Object = @object;
+            this.UsageBytes = usageBytes;
             this.ProjectId = projectId;
         }
 

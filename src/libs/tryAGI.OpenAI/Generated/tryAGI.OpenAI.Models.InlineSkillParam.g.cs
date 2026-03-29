@@ -47,10 +47,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineSkillParam" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Defines an inline skill for this request.<br/>
-        /// Default Value: inline
-        /// </param>
         /// <param name="name">
         /// The name of the skill.
         /// </param>
@@ -59,6 +55,10 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="source">
         /// Inline skill payload
+        /// </param>
+        /// <param name="type">
+        /// Defines an inline skill for this request.<br/>
+        /// Default Value: inline
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -69,10 +69,10 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.InlineSkillSourceParam source,
             global::tryAGI.OpenAI.InlineSkillParamType type = global::tryAGI.OpenAI.InlineSkillParamType.Inline)
         {
+            this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
-            this.Type = type;
         }
 
         /// <summary>
