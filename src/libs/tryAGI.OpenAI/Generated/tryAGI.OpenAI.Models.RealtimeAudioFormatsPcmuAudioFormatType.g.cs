@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        AudioDividepcmu,
+        AudioPcmu,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                RealtimeAudioFormatsPcmuAudioFormatType.AudioDividepcmu => "audio/pcmu",
+                RealtimeAudioFormatsPcmuAudioFormatType.AudioPcmu => "audio/pcmu",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "audio/pcmu" => RealtimeAudioFormatsPcmuAudioFormatType.AudioDividepcmu,
+                "audio/pcmu" => RealtimeAudioFormatsPcmuAudioFormatType.AudioPcmu,
                 _ => null,
             };
         }
