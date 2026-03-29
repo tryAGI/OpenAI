@@ -23,12 +23,15 @@ public static class TypeToSchemaHelpers2
     {
         type = type ?? throw new ArgumentNullException(nameof(type));
             
+        var openApiSchema = TypeToSchemaHelpers.AsJsonSchema(type, strict);
         return new ResponseFormatJsonSchemaJsonSchema
         {
             Description = string.Empty,
             Name = type.Name,
             Strict = strict,
-            Schema = TypeToSchemaHelpers.AsJsonSchema(type, strict),
+            Schema = System.Text.Json.JsonSerializer.Deserialize(
+                System.Text.Json.JsonSerializer.Serialize(openApiSchema, SourceGenerationContext.Default.OpenApiSchema),
+                SourceGenerationContext.Default.ResponseFormatJsonSchemaSchema),
         };
     }
     
@@ -50,12 +53,15 @@ public static class TypeToSchemaHelpers2
         typeInfo = typeInfo ?? throw new ArgumentNullException(nameof(typeInfo));
         var resolver = typeInfo.OriginatingResolver ?? throw new InvalidOperationException("OriginatingResolver is required.");
         
+        var openApiSchema = TypeToSchemaHelpers.AsJsonSchema(typeInfo.Type, strict, resolver, typeInfo.Options);
         return new ResponseFormatJsonSchemaJsonSchema
         {
             Description = string.Empty,
             Name = typeInfo.Type.Name,
             Strict = strict,
-            Schema = TypeToSchemaHelpers.AsJsonSchema(typeInfo.Type, strict, resolver, typeInfo.Options),
+            Schema = System.Text.Json.JsonSerializer.Deserialize(
+                System.Text.Json.JsonSerializer.Serialize(openApiSchema, SourceGenerationContext.Default.OpenApiSchema),
+                SourceGenerationContext.Default.ResponseFormatJsonSchemaSchema),
         };
     }
 }

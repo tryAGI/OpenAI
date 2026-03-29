@@ -197,7 +197,7 @@ public sealed partial class OpenAiClient : Meai.IChatClient
                         {
                             Name = jsonFormat.SchemaName ?? "response",
                             Description = jsonFormat.SchemaDescription,
-                            Schema = JsonSerializer.Deserialize<object>(schema.GetRawText()),
+                            Schema = JsonSerializer.Deserialize(schema.GetRawText(), SourceGenerationContext.Default.ResponseFormatJsonSchemaSchema),
                             Strict = true,
                         },
                     };
@@ -403,8 +403,8 @@ public sealed partial class OpenAiClient : Meai.IChatClient
             if (tool is Meai.AIFunction function)
             {
                 var parameters = function.JsonSchema is { } schema
-                    ? JsonSerializer.Deserialize<object>(schema.GetRawText())
-                    : new { type = "object", properties = new { } };
+                    ? JsonSerializer.Deserialize(schema.GetRawText(), SourceGenerationContext.Default.FunctionParameters)
+                    : new FunctionParameters();
 
                 result.Add(new ChatCompletionTool
                 {

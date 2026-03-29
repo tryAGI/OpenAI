@@ -150,7 +150,11 @@ public static class StringExtensions
                     Name = x.Name!,
                     Description = x.Description,
                     Strict = x.Strict,
-                    Parameters = x.Parameters,
+                    Parameters = x.Parameters is CSharpToJsonSchema.OpenApiSchema openApiSchema
+                        ? System.Text.Json.JsonSerializer.Deserialize(
+                            System.Text.Json.JsonSerializer.Serialize(openApiSchema, SourceGenerationContext.Default.OpenApiSchema),
+                            SourceGenerationContext.Default.FunctionParameters)
+                        : null,
                 },
             })
             .ToList();
