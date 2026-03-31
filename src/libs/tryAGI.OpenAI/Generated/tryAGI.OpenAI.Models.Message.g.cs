@@ -48,6 +48,12 @@ namespace tryAGI.OpenAI
         public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentItem3> Content { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("phase")]
+        public global::tryAGI.OpenAI.MessagePhase2? Phase { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -68,6 +74,7 @@ namespace tryAGI.OpenAI
         /// <param name="content">
         /// The content of the message
         /// </param>
+        /// <param name="phase"></param>
         /// <param name="type">
         /// The type of the message. Always set to `message`.<br/>
         /// Default Value: message
@@ -80,6 +87,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.MessageStatus status,
             global::tryAGI.OpenAI.MessageRole role,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentItem3> content,
+            global::tryAGI.OpenAI.MessagePhase2? phase,
             global::tryAGI.OpenAI.MessageType type = global::tryAGI.OpenAI.MessageType.Message)
         {
             this.Type = type;
@@ -87,6 +95,7 @@ namespace tryAGI.OpenAI
             this.Status = status;
             this.Role = role;
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
+            this.Phase = phase;
         }
 
         /// <summary>

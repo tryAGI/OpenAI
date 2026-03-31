@@ -3361,6 +3361,10 @@ namespace tryAGI.OpenAI
 
             typeof(global::tryAGI.OpenAI.JsonConverters.InputFileContentTypeNullableJsonConverter),
 
+            typeof(global::tryAGI.OpenAI.JsonConverters.MessagePhase2JsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.MessagePhase2NullableJsonConverter),
+
             typeof(global::tryAGI.OpenAI.JsonConverters.MessageTypeJsonConverter),
 
             typeof(global::tryAGI.OpenAI.JsonConverters.MessageTypeNullableJsonConverter),
@@ -7038,6 +7042,7 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ComputerScreenshotContent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ComputerScreenshotContentType), TypeInfoPropertyName = "ComputerScreenshotContentType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.InputFileContentType), TypeInfoPropertyName = "InputFileContentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.MessagePhase2), TypeInfoPropertyName = "MessagePhase22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.MessageType), TypeInfoPropertyName = "MessageType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentItem3>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ContentItem3), TypeInfoPropertyName = "ContentItem32")]
