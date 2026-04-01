@@ -186,7 +186,6 @@ namespace tryAGI.OpenAI
             string targetUri,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::tryAGI.OpenAI.RealtimeCallReferRequest
             {
                 TargetUri = targetUri,

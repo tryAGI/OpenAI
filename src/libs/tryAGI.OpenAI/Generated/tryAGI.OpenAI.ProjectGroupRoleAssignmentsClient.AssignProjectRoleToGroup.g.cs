@@ -207,7 +207,6 @@ namespace tryAGI.OpenAI
             string roleId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::tryAGI.OpenAI.PublicAssignOrganizationGroupRoleBody
             {
                 RoleId = roleId,

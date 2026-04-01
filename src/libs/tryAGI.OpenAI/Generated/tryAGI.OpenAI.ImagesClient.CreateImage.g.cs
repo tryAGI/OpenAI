@@ -34,7 +34,6 @@ namespace tryAGI.OpenAI
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
-
             request = new global::tryAGI.OpenAI.CreateImageRequest
             {
                 Prompt = request.Prompt,
@@ -286,7 +285,6 @@ namespace tryAGI.OpenAI
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::tryAGI.OpenAI.CreateImageRequest
             {
                 Prompt = prompt,

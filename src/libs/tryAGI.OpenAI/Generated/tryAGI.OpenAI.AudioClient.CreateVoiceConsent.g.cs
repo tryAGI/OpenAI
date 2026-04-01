@@ -222,7 +222,6 @@ namespace tryAGI.OpenAI
             string language,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::tryAGI.OpenAI.CreateVoiceConsentRequest
             {
                 Name = name,

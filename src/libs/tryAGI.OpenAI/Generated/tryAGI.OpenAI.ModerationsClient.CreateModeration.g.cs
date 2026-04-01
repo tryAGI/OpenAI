@@ -202,7 +202,6 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateModerationRequestModel?>? model = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::tryAGI.OpenAI.CreateModerationRequest
             {
                 Input = input,
