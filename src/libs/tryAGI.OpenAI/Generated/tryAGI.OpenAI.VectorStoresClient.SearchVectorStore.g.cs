@@ -221,7 +221,6 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.VectorStoreSearchRequestRankingOptions? rankingOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::tryAGI.OpenAI.VectorStoreSearchRequest
             {
                 Query = query,

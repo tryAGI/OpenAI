@@ -203,7 +203,6 @@ namespace tryAGI.OpenAI
             string role,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::tryAGI.OpenAI.InviteProjectGroupBody
             {
                 GroupId = groupId,

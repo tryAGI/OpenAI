@@ -207,7 +207,6 @@ namespace tryAGI.OpenAI
             string name,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::tryAGI.OpenAI.CreateVideoCharacterBody
             {
                 Video = video,

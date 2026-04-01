@@ -265,7 +265,6 @@ namespace tryAGI.OpenAI
             int? batch1DayMaxInputTokens = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::tryAGI.OpenAI.ProjectRateLimitUpdateRequest
             {
                 MaxRequestsPer1Minute = maxRequestsPer1Minute,

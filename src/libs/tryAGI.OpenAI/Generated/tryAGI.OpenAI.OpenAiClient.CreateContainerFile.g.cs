@@ -211,7 +211,6 @@ namespace tryAGI.OpenAI
             string? filename = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::tryAGI.OpenAI.CreateContainerFileBody
             {
                 FileId = fileId,

@@ -211,7 +211,6 @@ namespace tryAGI.OpenAI
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.CreateChatCompletionResponse> CreateChatCompletionAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::tryAGI.OpenAI.CreateChatCompletionRequest
             {
             };

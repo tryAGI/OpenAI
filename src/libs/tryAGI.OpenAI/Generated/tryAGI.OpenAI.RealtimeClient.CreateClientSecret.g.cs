@@ -215,7 +215,6 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA, global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGA>? session = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::tryAGI.OpenAI.RealtimeCreateClientSecretRequest
             {
                 ExpiresAfter = expiresAfter,

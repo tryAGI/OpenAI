@@ -252,7 +252,6 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.FileExpirationAfter? expiresAfter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::tryAGI.OpenAI.CreateFileRequest
             {
                 File = file,

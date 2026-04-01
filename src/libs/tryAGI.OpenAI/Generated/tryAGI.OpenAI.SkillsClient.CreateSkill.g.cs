@@ -188,7 +188,6 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.OneOf<global::System.Collections.Generic.IList<byte[]>, byte[]> files,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::tryAGI.OpenAI.CreateSkillBody
             {
                 Files = files,

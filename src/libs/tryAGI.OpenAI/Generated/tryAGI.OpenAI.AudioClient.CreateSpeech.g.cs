@@ -192,7 +192,6 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.CreateSpeechRequestStreamFormat? streamFormat = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::tryAGI.OpenAI.CreateSpeechRequest
             {
                 Model = model,

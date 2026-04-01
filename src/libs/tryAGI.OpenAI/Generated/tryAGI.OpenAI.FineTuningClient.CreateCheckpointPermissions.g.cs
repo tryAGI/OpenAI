@@ -205,7 +205,6 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<string> projectIds,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::tryAGI.OpenAI.CreateFineTuningCheckpointPermissionRequest
             {
                 ProjectIds = projectIds,

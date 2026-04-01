@@ -243,7 +243,6 @@ namespace tryAGI.OpenAI
             double? temperature = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::tryAGI.OpenAI.CreateTranslationRequest
             {
                 File = file,
