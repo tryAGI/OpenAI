@@ -5,11 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup Label="Base packages">
-    <PackageReference Include="GitHubActionsTestLogger" Version="3.0.2">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="H.Resources.Generator" Version="1.8.0">
+    <PackageReference Include="GitHubActionsTestLogger" Version="3.0.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -17,20 +13,22 @@
     <PackageReference Include="MSTest.TestAdapter" Version="4.1.0" />
     <PackageReference Include="MSTest.TestFramework" Version="4.1.0" />
     <PackageReference Include="AwesomeAssertions" Version="9.4.0" />
-    <PackageReference Include="NUnit" Version="4.5.1" />
-    <PackageReference Include="NUnit3TestAdapter" Version="6.2.0" />
     <PackageReference Include="Microsoft.Extensions.AI" Version="10.4.1" />
   </ItemGroup>
 
   <ItemGroup Label="GlobalUsings">
     <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
     <Using Include="AwesomeAssertions" />
-    <Using Include="NUnit.Framework" />
-    <Compile Remove="Extended\**\*.*" />
-    <None Include="Extended\**\*.*" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="..\..\..\.env" Link=".env">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\libs\FreeLLM\FreeLLM.csproj" />
     <ProjectReference Include="..\..\libs\tryAGI.OpenAI\tryAGI.OpenAI.csproj" />
   </ItemGroup>
 

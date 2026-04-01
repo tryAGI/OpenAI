@@ -16,6 +16,8 @@
 - Support all OpenAI API endpoints including completions, chat, embeddings, images, assistants and more.
 - Regularly tested for compatibility with popular custom providers like OpenRouter/DeepSeek/Ollama/LM Studio and many others
 - Microsoft.Extensions.AI `IChatClient` and `IEmbeddingGenerator` support for OpenAI and all CustomProviders
+- Alias-aware routed `IChatClient` builder with provider fallback and manual 429 cooldown tracking
+- `FreeLLM` package for free-first chat routing across OpenAI-compatible providers and Gemini with OpenAI-compatible and MEAI surfaces
 
 ## Documentation
 Examples and documentation can be found here: https://tryagi.github.io/OpenAI/
@@ -227,6 +229,111 @@ var embeddings = await generator.GenerateAsync(
     ["Hello, world!"],
     new EmbeddingGenerationOptions { ModelId = "text-embedding-3-small" });
 ```
+
+### Routed chat client
+
+For OpenAI-compatible providers, you can build one routed `IChatClient` with aliases like `smart`, `smart-any`, `fast`, and `cheap`.
+
+```csharp
+using Microsoft.Extensions.AI;
+using tryAGI.OpenAI;
+
+using var routed = new OpenAiRoutedChatClientBuilder()
+    .AddProvider("cerebras", CustomProviders.Cerebras("CEREBRAS_API_KEY"), provider => provider
+        .AddModel("qwen-3-235b-a22b-thinking-2507", model => model
+            .AsSmart(priority: 100)
+            .AsSmartAny(priority: 100)
+            .SupportsToolCalls()
+            .SupportsStructuredOutputs()
+            .IsRecurringFree()))
+    .AddProvider("groq", CustomProviders.Groq("GROQ_API_KEY"), provider => provider
+        .AddModel("llama-3.3-70b-versatile", model => model
+            .AsFast(priority: 100)
+            .AsCheap(priority: 70)
+            .AsSmartAny(priority: 60)
+            .SupportsToolCalls()))
+    .AddProvider("openrouter", CustomProviders.OpenRouter("OPENROUTER_API_KEY"), provider => provider
+        .WithRateLimitCooldown(TimeSpan.FromMinutes(2))
+        .AddModel("openrouter/free", model => model
+            .AsCheap(priority: 100)
+            .AsSmartAny(priority: 40)))
+    .Build();
+
+IChatClient chatClient = routed;
+
+var response = await chatClient.GetResponseAsync(
+    "Explain the tradeoffs of vector search vs keyword search.",
+    new ChatOptions { ModelId = OpenAiModelAliases.Smart });
+
+Console.WriteLine(response.Messages[0].Text);
+```
+
+Notes:
+- This router is for providers exposed through `CustomProviders`, i.e. OpenAI-compatible endpoints.
+- Provider cooldowns are tracked automatically from `429` responses and common rate-limit headers.
+- If `smart` is exhausted, the router also considers models tagged with `smart-any`.
+
+### FreeLLM
+
+`FreeLLM` is a separate package in this repo. It depends on `tryAGI.OpenAI` and `Google_Gemini`, and gives you one routed chat client across OpenAI-compatible providers and Gemini.
+
+```xml
+<PackageReference Include="FreeLLM" Version="x.y.z" />
+```
+
+```csharp
+using Microsoft.Extensions.AI;
+using FreeLLM;
+using tryAGI.OpenAI;
+
+using var client = new FreeLlmClientBuilder()
+    // Curated defaults are applied automatically for popular providers.
+    .AddCerebras("CEREBRAS_API_KEY")
+    .AddGemini("GEMINI_API_KEY", provider => provider
+        .WithPriority(320)
+        .AddModel("gemini-2.5-flash", model => model
+            .AsSmart(priority: 190)
+            .AsSmartAny(priority: 190)
+            .AsFast(priority: 140))
+        .AddModel("gemini-2.5-flash-lite", model => model
+            .AsCheap(priority: 220)))
+    .AddOpenRouter("OPENROUTER_API_KEY", provider => provider
+        .WithPriority(90)
+        .RemoveModel("openrouter/free")
+        .AddModel("openrouter/free", model => model
+            .AsCheap(priority: 250)))
+    .Build();
+
+// OpenAI-compatible chat completions API
+var raw = await client.Chat.CreateChatCompletionAsync(new CreateChatCompletionRequest
+{
+    Value2 = new CreateChatCompletionRequestVariant2
+    {
+        Model = FreeLlmModelAliases.Smart,
+        Messages = ["Explain vector search vs keyword search."],
+    },
+});
+
+// Microsoft.Extensions.AI API
+IChatClient chatClient = client;
+var meai = await chatClient.GetResponseAsync(
+    "Explain vector search vs keyword search.",
+    new ChatOptions { ModelId = FreeLlmModelAliases.SmartAny });
+
+Console.WriteLine(raw.Choices[0].Message.Content);
+Console.WriteLine(meai.Messages[0].Text);
+```
+
+Notes:
+- `FreeLlmModelAliases` includes `smart`, `smart-any`, `fast`, and `cheap`.
+- Convenience methods for Gemini, Cerebras, SambaNova, OpenRouter, GitHub Models, Groq, and NVIDIA register curated default models and priorities.
+- Use `provider.WithPriority(...)` to bias whole providers, and `model.AsSmart(...)`, `model.AsCheap(...)`, `model.AsFast(...)`, and `model.AsSmartAny(...)` to tune alias-specific model priority.
+- Use `provider.ClearModels()` or pass `useDefaultModels: false` to a convenience method if you want a fully manual model list.
+- `provider.AddModel("existing-model", ...)` updates preset models in place, so you can override defaults without duplicating registrations.
+- `client.Chat` preserves raw OpenAI-compatible requests for OpenAI-compatible providers and translates supported chat-completions requests to Gemini when a Gemini model wins routing.
+- Gemini translation currently supports `CreateChatCompletionRequestVariant2`, single-choice text chat, JSON response formats, and data-URI images.
+- Raw OpenAI tool schemas/functions, audio/modalities, logprobs, web search, prediction, and remote image URLs are not translated to Gemini; use the MEAI surface for Gemini tool calling.
+- Provider cooldowns and last-seen rate-limit data are available through `client.GetProviderStatuses()`.
 
 ### Constants
 All `tryGetXXX` methods return `null` if the value is not found.  

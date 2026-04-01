@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/libs/">
     <File Path="src/libs/Directory.Build.props" />
+    <Project Path="src/libs/FreeLLM/FreeLLM.csproj" />
     <Project Path="src/libs/tryAGI.OpenAI/tryAGI.OpenAI.csproj" />
   </Folder>
   <Folder Name="/Solution Items/">
@@ -19,6 +20,7 @@
     <File Path=".github/workflows/pull-request.yml" />
   </Folder>
   <Folder Name="/tests/">
+    <Project Path="src/tests/FreeLLM.IntegrationTests/FreeLLM.IntegrationTests.csproj" />
     <Project Path="src/tests/OpenAI.IntegrationTests/OpenAI.IntegrationTests.csproj" />
   </Folder>
 </Solution>

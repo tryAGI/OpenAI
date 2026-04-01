@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>FreeLLM</AssemblyName>
+    <NoWarn>$(NoWarn);CA1724;CA2227;CA1819;CA1822;CS0618;CS1591</NoWarn>
+    <RootNamespace>FreeLLM</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Nuget">
+    <PackageId>FreeLLM</PackageId>
+    <Description>
+      Free-first chat routing over OpenAI-compatible providers and Google Gemini.
+      Includes model aliases, rate-limit tracking, automatic fallbacks, an OpenAI-compatible chat-completions surface, and Microsoft.Extensions.AI support.</Description>
+    <PackageTags>free;llm;openai;gemini;router;fallback;ratelimit;ichatclient;meai</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google_Gemini" Version="0.10.1" />
+    <PackageReference Include="Microsoft.Extensions.AI.Abstractions" Version="10.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\tryAGI.OpenAI\tryAGI.OpenAI.csproj" />
+  </ItemGroup>
+
+</Project>
