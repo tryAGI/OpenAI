@@ -197,6 +197,7 @@ namespace tryAGI.OpenAI
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Response> CreateAModelResponseAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::tryAGI.OpenAI.CreateResponse
             {
             };

@@ -214,6 +214,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.IncludeEnum>? include = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::tryAGI.OpenAI.CreateConversationItemsRequest
             {
                 Items = items,

@@ -199,6 +199,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InviteRequestProject>? projects = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::tryAGI.OpenAI.InviteRequest
             {
                 Email = email,

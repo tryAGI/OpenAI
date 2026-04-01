@@ -276,6 +276,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AssistantsApiResponseFormatOption? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::tryAGI.OpenAI.CreateRunRequest
             {
                 AssistantId = assistantId,

@@ -93,7 +93,7 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.GraderLabelModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.GraderLabelModel?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.GraderLabelModel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LabelModelGrader, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LabelModelGrader!, typeInfo);
             }
         }
     }

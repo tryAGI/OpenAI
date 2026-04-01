@@ -191,6 +191,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>? items = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::tryAGI.OpenAI.CreateConversationBody
             {
                 Metadata = metadata,

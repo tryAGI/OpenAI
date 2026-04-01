@@ -203,6 +203,7 @@ namespace tryAGI.OpenAI
             string defaultVersion,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::tryAGI.OpenAI.SetDefaultSkillVersionBody
             {
                 DefaultVersion = defaultVersion,

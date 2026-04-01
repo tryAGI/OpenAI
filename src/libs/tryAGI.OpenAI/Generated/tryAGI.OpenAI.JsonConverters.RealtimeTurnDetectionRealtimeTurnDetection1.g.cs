@@ -131,13 +131,13 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ServerVad, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ServerVad!, typeInfo);
             }
             else if (value.IsSemanticVad)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SemanticVad, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SemanticVad!, typeInfo);
             }
         }
     }

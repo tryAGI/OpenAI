@@ -162,19 +162,19 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.WebSearchActionSearch), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.WebSearchActionSearch?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.WebSearchActionSearch).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Search, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Search!, typeInfo);
             }
             else if (value.IsOpenPage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.WebSearchActionOpenPage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.WebSearchActionOpenPage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.WebSearchActionOpenPage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenPage, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenPage!, typeInfo);
             }
             else if (value.IsFindInPage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.WebSearchActionFind), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.WebSearchActionFind?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.WebSearchActionFind).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FindInPage, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FindInPage!, typeInfo);
             }
         }
     }

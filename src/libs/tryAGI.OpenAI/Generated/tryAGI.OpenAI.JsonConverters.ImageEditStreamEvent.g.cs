@@ -136,13 +136,13 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ImageEditPartialImageEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ImageEditPartialImageEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ImageEditPartialImageEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageEditPartialImage, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageEditPartialImage!, typeInfo);
             }
             else if (value.IsImageEditCompleted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ImageEditCompletedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ImageEditCompletedEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ImageEditCompletedEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageEditCompleted, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageEditCompleted!, typeInfo);
             }
         }
     }

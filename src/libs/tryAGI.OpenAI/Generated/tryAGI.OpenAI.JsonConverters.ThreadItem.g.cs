@@ -296,37 +296,37 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.UserMessageItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.UserMessageItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.UserMessageItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatkitUserMessage, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatkitUserMessage!, typeInfo);
             }
             else if (value.IsChatkitAssistantMessage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.AssistantMessageItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.AssistantMessageItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.AssistantMessageItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatkitAssistantMessage, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatkitAssistantMessage!, typeInfo);
             }
             else if (value.IsChatkitWidget)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.WidgetMessageItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.WidgetMessageItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.WidgetMessageItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatkitWidget, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatkitWidget!, typeInfo);
             }
             else if (value.IsChatkitClientToolCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ClientToolCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ClientToolCallItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ClientToolCallItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatkitClientToolCall, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatkitClientToolCall!, typeInfo);
             }
             else if (value.IsChatkitTask)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TaskItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TaskItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TaskItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatkitTask, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatkitTask!, typeInfo);
             }
             else if (value.IsChatkitTaskGroup)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TaskGroupItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TaskGroupItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TaskGroupItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatkitTaskGroup, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatkitTaskGroup!, typeInfo);
             }
         }
     }

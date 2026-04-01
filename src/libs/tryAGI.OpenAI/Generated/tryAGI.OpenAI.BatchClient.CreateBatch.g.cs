@@ -207,6 +207,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.BatchFileExpirationAfter? outputExpiresAfter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::tryAGI.OpenAI.CreateBatchRequest
             {
                 InputFileId = inputFileId,

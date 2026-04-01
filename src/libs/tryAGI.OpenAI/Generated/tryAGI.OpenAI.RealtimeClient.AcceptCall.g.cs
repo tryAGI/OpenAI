@@ -245,6 +245,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.PromptVariant1? prompt = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA
             {
                 Type = type,

@@ -162,19 +162,19 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ContainerAutoParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ContainerAutoParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ContainerAutoParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContainerAuto, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContainerAuto!, typeInfo);
             }
             else if (value.IsLocal)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LocalEnvironmentParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LocalEnvironmentParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LocalEnvironmentParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Local, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Local!, typeInfo);
             }
             else if (value.IsContainerReference)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ContainerReferenceParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ContainerReferenceParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ContainerReferenceParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContainerReference, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContainerReference!, typeInfo);
             }
         }
     }
