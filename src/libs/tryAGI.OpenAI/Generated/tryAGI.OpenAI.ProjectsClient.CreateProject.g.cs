@@ -195,6 +195,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ProjectCreateRequestGeography? geography = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::tryAGI.OpenAI.ProjectCreateRequest
             {
                 Name = name,

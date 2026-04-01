@@ -232,6 +232,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.VideoSize? size = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::tryAGI.OpenAI.CreateVideoMultipartBody
             {
                 Model = model,

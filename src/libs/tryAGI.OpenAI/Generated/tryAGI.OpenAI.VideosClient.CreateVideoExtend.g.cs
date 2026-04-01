@@ -202,6 +202,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.VideoSeconds seconds,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::tryAGI.OpenAI.CreateVideoExtendMultipartBody
             {
                 Video = video,

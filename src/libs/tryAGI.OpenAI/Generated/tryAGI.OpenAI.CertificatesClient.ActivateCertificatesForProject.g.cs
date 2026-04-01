@@ -199,6 +199,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<string> certificateIds,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::tryAGI.OpenAI.ToggleCertificatesRequest
             {
                 CertificateIds = certificateIds,

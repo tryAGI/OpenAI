@@ -241,6 +241,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ProjectUserCreateRequestRole role,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::tryAGI.OpenAI.ProjectUserCreateRequest
             {
                 UserId = userId,

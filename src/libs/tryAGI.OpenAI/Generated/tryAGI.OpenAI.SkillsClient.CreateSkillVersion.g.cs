@@ -214,6 +214,7 @@ namespace tryAGI.OpenAI
             bool? @default = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::tryAGI.OpenAI.CreateSkillVersionBody
             {
                 Files = files,

@@ -146,13 +146,13 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.EvalItemContentItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.EvalItemContentItem> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.EvalItemContentItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EvalContentItem, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EvalContentItem!.Value, typeInfo);
             }
             else if (value.IsAnArrayOfInputTextOutputTextInputImageAndInputAudio)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnArrayOfInputTextOutputTextInputImageAndInputAudio, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnArrayOfInputTextOutputTextInputImageAndInputAudio!, typeInfo);
             }
         }
     }

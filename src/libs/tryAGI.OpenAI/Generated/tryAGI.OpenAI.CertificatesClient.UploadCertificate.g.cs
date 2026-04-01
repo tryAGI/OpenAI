@@ -197,6 +197,7 @@ namespace tryAGI.OpenAI
             string? name = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::tryAGI.OpenAI.UploadCertificateRequest
             {
                 Name = name,
