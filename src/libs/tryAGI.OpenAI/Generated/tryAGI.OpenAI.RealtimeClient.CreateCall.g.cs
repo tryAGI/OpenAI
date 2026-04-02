@@ -33,6 +33,26 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RealtimeCallCreateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await CreateCallAsResponseAsync(
+
+                request: request,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Create a new Realtime API call over WebRTC and receive the SDP answer needed<br/>
+        /// to complete the peer connection.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<string>> CreateCallAsResponseAsync(
+
+            global::tryAGI.OpenAI.RealtimeCallCreateRequest request,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -122,7 +142,10 @@ namespace tryAGI.OpenAI
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return __content;
+                    return new global::tryAGI.OpenAI.AutoSDKHttpResponse<string>(
+                        statusCode: __response.StatusCode,
+                        headers: global::tryAGI.OpenAI.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __content);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -151,7 +174,10 @@ namespace tryAGI.OpenAI
 #endif
                     ).ConfigureAwait(false);
 
-                    return __content;
+                    return new global::tryAGI.OpenAI.AutoSDKHttpResponse<string>(
+                        statusCode: __response.StatusCode,
+                        headers: global::tryAGI.OpenAI.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __content);
                 }
                 catch (global::System.Exception __ex)
                 {
