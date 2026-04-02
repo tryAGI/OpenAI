@@ -12,8 +12,7 @@ namespace tryAGI.OpenAI.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -90,9 +89,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ClickParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ClickParam> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ClickParam).Name}");
-                        click = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        click = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ClickParam>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -105,9 +102,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.DoubleClickAction), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.DoubleClickAction> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.DoubleClickAction).Name}");
-                        doubleClick = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        doubleClick = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.DoubleClickAction>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -120,9 +115,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.DragParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.DragParam> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.DragParam).Name}");
-                        drag = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        drag = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.DragParam>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -135,9 +128,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.KeyPressAction), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.KeyPressAction> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.KeyPressAction).Name}");
-                        keypress = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        keypress = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.KeyPressAction>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -150,9 +141,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.MoveParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.MoveParam> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.MoveParam).Name}");
-                        move = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        move = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.MoveParam>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -165,9 +154,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ScreenshotParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ScreenshotParam> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ScreenshotParam).Name}");
-                        screenshot = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        screenshot = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ScreenshotParam>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -180,9 +167,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ScrollParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ScrollParam> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ScrollParam).Name}");
-                        scroll = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        scroll = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ScrollParam>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -195,9 +180,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TypeParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TypeParam> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TypeParam).Name}");
-                        type = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        type = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.TypeParam>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -210,9 +193,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.WaitParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.WaitParam> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.WaitParam).Name}");
-                        wait = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        wait = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.WaitParam>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -227,9 +208,7 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ClickParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ClickParam> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ClickParam).Name}");
-                    click = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    click = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ClickParam>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -240,9 +219,7 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.DoubleClickAction), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.DoubleClickAction> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.DoubleClickAction).Name}");
-                    doubleClick = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    doubleClick = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.DoubleClickAction>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -253,9 +230,7 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.DragParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.DragParam> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.DragParam).Name}");
-                    drag = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    drag = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.DragParam>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -266,9 +241,7 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.KeyPressAction), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.KeyPressAction> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.KeyPressAction).Name}");
-                    keypress = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    keypress = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.KeyPressAction>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -279,9 +252,7 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.MoveParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.MoveParam> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.MoveParam).Name}");
-                    move = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    move = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.MoveParam>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -292,9 +263,7 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ScreenshotParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ScreenshotParam> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ScreenshotParam).Name}");
-                    screenshot = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    screenshot = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ScreenshotParam>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -305,9 +274,7 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ScrollParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ScrollParam> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ScrollParam).Name}");
-                    scroll = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    scroll = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ScrollParam>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -318,9 +285,7 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TypeParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TypeParam> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TypeParam).Name}");
-                    type = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    type = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.TypeParam>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -331,9 +296,7 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.WaitParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.WaitParam> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.WaitParam).Name}");
-                    wait = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    wait = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.WaitParam>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -372,62 +335,43 @@ namespace tryAGI.OpenAI.JsonConverters
             global::tryAGI.OpenAI.ComputerAction value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsClick)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ClickParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ClickParam?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ClickParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Click!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Click, typeof(global::tryAGI.OpenAI.ClickParam), options);
             }
             else if (value.IsDoubleClick)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.DoubleClickAction), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.DoubleClickAction?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.DoubleClickAction).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DoubleClick!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DoubleClick, typeof(global::tryAGI.OpenAI.DoubleClickAction), options);
             }
             else if (value.IsDrag)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.DragParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.DragParam?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.DragParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Drag!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Drag, typeof(global::tryAGI.OpenAI.DragParam), options);
             }
             else if (value.IsKeypress)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.KeyPressAction), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.KeyPressAction?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.KeyPressAction).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Keypress!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Keypress, typeof(global::tryAGI.OpenAI.KeyPressAction), options);
             }
             else if (value.IsMove)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.MoveParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.MoveParam?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.MoveParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Move!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Move, typeof(global::tryAGI.OpenAI.MoveParam), options);
             }
             else if (value.IsScreenshot)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ScreenshotParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ScreenshotParam?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ScreenshotParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Screenshot!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Screenshot, typeof(global::tryAGI.OpenAI.ScreenshotParam), options);
             }
             else if (value.IsScroll)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ScrollParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ScrollParam?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ScrollParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Scroll!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Scroll, typeof(global::tryAGI.OpenAI.ScrollParam), options);
             }
             else if (value.IsType)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TypeParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TypeParam?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TypeParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Type!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Type, typeof(global::tryAGI.OpenAI.TypeParam), options);
             }
             else if (value.IsWait)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.WaitParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.WaitParam?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.WaitParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Wait!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Wait, typeof(global::tryAGI.OpenAI.WaitParam), options);
             }
         }
     }
