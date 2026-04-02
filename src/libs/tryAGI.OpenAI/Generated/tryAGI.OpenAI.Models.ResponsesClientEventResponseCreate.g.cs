@@ -17,35 +17,35 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1? Value1 { get; init; }
+        public global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1? ResponsesClientEventResponseCreateVariant1 { get; init; }
 #else
-        public global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1? Value1 { get; }
+        public global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1? ResponsesClientEventResponseCreateVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponsesClientEventResponseCreateVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsResponsesClientEventResponseCreateVariant1 => ResponsesClientEventResponseCreateVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.CreateResponse? Value2 { get; init; }
+        public global::tryAGI.OpenAI.CreateResponse? CreateResponse { get; init; }
 #else
-        public global::tryAGI.OpenAI.CreateResponse? Value2 { get; }
+        public global::tryAGI.OpenAI.CreateResponse? CreateResponse { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateResponse))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsCreateResponse => CreateResponse != null;
         /// <summary>
         /// 
         /// </summary>
@@ -54,14 +54,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1?(ResponsesClientEventResponseCreate @this) => @this.Value1;
+        public static implicit operator global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1?(ResponsesClientEventResponseCreate @this) => @this.ResponsesClientEventResponseCreateVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public ResponsesClientEventResponseCreate(global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1? value)
         {
-            Value1 = value;
+            ResponsesClientEventResponseCreateVariant1 = value;
         }
 
         /// <summary>
@@ -72,42 +72,42 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.CreateResponse?(ResponsesClientEventResponseCreate @this) => @this.Value2;
+        public static implicit operator global::tryAGI.OpenAI.CreateResponse?(ResponsesClientEventResponseCreate @this) => @this.CreateResponse;
 
         /// <summary>
         /// 
         /// </summary>
         public ResponsesClientEventResponseCreate(global::tryAGI.OpenAI.CreateResponse? value)
         {
-            Value2 = value;
+            CreateResponse = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ResponsesClientEventResponseCreate(
-            global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1? value1,
-            global::tryAGI.OpenAI.CreateResponse? value2
+            global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1? responsesClientEventResponseCreateVariant1,
+            global::tryAGI.OpenAI.CreateResponse? createResponse
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            ResponsesClientEventResponseCreateVariant1 = responsesClientEventResponseCreateVariant1;
+            CreateResponse = createResponse;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            CreateResponse as object ??
+            ResponsesClientEventResponseCreateVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            ResponsesClientEventResponseCreateVariant1?.ToString() ??
+            CreateResponse?.ToString() 
             ;
 
         /// <summary>
@@ -115,15 +115,15 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsResponsesClientEventResponseCreateVariant1 && IsCreateResponse;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1?, TResult>? value1 = null,
-            global::System.Func<global::tryAGI.OpenAI.CreateResponse?, TResult>? value2 = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1?, TResult>? responsesClientEventResponseCreateVariant1 = null,
+            global::System.Func<global::tryAGI.OpenAI.CreateResponse?, TResult>? createResponse = null,
             bool validate = true)
         {
             if (validate)
@@ -131,13 +131,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsResponsesClientEventResponseCreateVariant1 && responsesClientEventResponseCreateVariant1 != null)
             {
-                return value1(Value1!);
+                return responsesClientEventResponseCreateVariant1(ResponsesClientEventResponseCreateVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsCreateResponse && createResponse != null)
             {
-                return value2(Value2!);
+                return createResponse(CreateResponse!);
             }
 
             return default(TResult);
@@ -147,8 +147,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1?>? value1 = null,
-            global::System.Action<global::tryAGI.OpenAI.CreateResponse?>? value2 = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1?>? responsesClientEventResponseCreateVariant1 = null,
+            global::System.Action<global::tryAGI.OpenAI.CreateResponse?>? createResponse = null,
             bool validate = true)
         {
             if (validate)
@@ -156,13 +156,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsResponsesClientEventResponseCreateVariant1)
             {
-                value1?.Invoke(Value1!);
+                responsesClientEventResponseCreateVariant1?.Invoke(ResponsesClientEventResponseCreateVariant1!);
             }
-            else if (IsValue2)
+            else if (IsCreateResponse)
             {
-                value2?.Invoke(Value2!);
+                createResponse?.Invoke(CreateResponse!);
             }
         }
 
@@ -173,9 +173,9 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                Value1,
+                ResponsesClientEventResponseCreateVariant1,
                 typeof(global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1),
-                Value2,
+                CreateResponse,
                 typeof(global::tryAGI.OpenAI.CreateResponse),
             };
             const int offset = unchecked((int)2166136261);
@@ -193,8 +193,8 @@ namespace tryAGI.OpenAI
         public bool Equals(ResponsesClientEventResponseCreate other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CreateResponse?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1?>.Default.Equals(ResponsesClientEventResponseCreateVariant1, other.ResponsesClientEventResponseCreateVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CreateResponse?>.Default.Equals(CreateResponse, other.CreateResponse) 
                 ;
         }
 

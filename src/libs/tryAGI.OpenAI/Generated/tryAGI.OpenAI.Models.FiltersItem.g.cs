@@ -30,18 +30,18 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value2 { get; init; }
+        public object? CompoundFilterVariant2 { get; init; }
 #else
-        public object? Value2 { get; }
+        public object? CompoundFilterVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CompoundFilterVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsCompoundFilterVariant2 => CompoundFilterVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -65,18 +65,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public FiltersItem(
             global::tryAGI.OpenAI.ComparisonFilter? comparisonFilter,
-            object? value2
+            object? compoundFilterVariant2
             )
         {
             ComparisonFilter = comparisonFilter;
-            Value2 = value2;
+            CompoundFilterVariant2 = compoundFilterVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
+            CompoundFilterVariant2 as object ??
             ComparisonFilter as object 
             ;
 
@@ -85,7 +85,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public override string? ToString() =>
             ComparisonFilter?.ToString() ??
-            Value2?.ToString() 
+            CompoundFilterVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsComparisonFilter && !IsValue2 || !IsComparisonFilter && IsValue2;
+            return IsComparisonFilter && !IsCompoundFilterVariant2 || !IsComparisonFilter && IsCompoundFilterVariant2;
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.ComparisonFilter?, TResult>? comparisonFilter = null,
-            global::System.Func<object?, TResult>? value2 = null,
+            global::System.Func<object?, TResult>? compoundFilterVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -113,9 +113,9 @@ namespace tryAGI.OpenAI
             {
                 return comparisonFilter(ComparisonFilter!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsCompoundFilterVariant2 && compoundFilterVariant2 != null)
             {
-                return value2(Value2!);
+                return compoundFilterVariant2(CompoundFilterVariant2!);
             }
 
             return default(TResult);
@@ -126,7 +126,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.ComparisonFilter?>? comparisonFilter = null,
-            global::System.Action<object?>? value2 = null,
+            global::System.Action<object?>? compoundFilterVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -138,9 +138,9 @@ namespace tryAGI.OpenAI
             {
                 comparisonFilter?.Invoke(ComparisonFilter!);
             }
-            else if (IsValue2)
+            else if (IsCompoundFilterVariant2)
             {
-                value2?.Invoke(Value2!);
+                compoundFilterVariant2?.Invoke(CompoundFilterVariant2!);
             }
         }
 
@@ -153,7 +153,7 @@ namespace tryAGI.OpenAI
             {
                 ComparisonFilter,
                 typeof(global::tryAGI.OpenAI.ComparisonFilter),
-                Value2,
+                CompoundFilterVariant2,
                 typeof(object),
             };
             const int offset = unchecked((int)2166136261);
@@ -172,7 +172,7 @@ namespace tryAGI.OpenAI
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ComparisonFilter?>.Default.Equals(ComparisonFilter, other.ComparisonFilter) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(CompoundFilterVariant2, other.CompoundFilterVariant2) 
                 ;
         }
 

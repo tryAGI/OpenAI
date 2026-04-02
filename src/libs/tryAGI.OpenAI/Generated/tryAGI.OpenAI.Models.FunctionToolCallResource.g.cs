@@ -31,18 +31,18 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.FunctionToolCallResourceVariant2? Value2 { get; init; }
+        public global::tryAGI.OpenAI.FunctionToolCallResourceVariant2? FunctionToolCallResourceVariant2 { get; init; }
 #else
-        public global::tryAGI.OpenAI.FunctionToolCallResourceVariant2? Value2 { get; }
+        public global::tryAGI.OpenAI.FunctionToolCallResourceVariant2? FunctionToolCallResourceVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionToolCallResourceVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsFunctionToolCallResourceVariant2 => FunctionToolCallResourceVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -69,14 +69,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.FunctionToolCallResourceVariant2?(FunctionToolCallResource @this) => @this.Value2;
+        public static implicit operator global::tryAGI.OpenAI.FunctionToolCallResourceVariant2?(FunctionToolCallResource @this) => @this.FunctionToolCallResourceVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public FunctionToolCallResource(global::tryAGI.OpenAI.FunctionToolCallResourceVariant2? value)
         {
-            Value2 = value;
+            FunctionToolCallResourceVariant2 = value;
         }
 
         /// <summary>
@@ -84,18 +84,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public FunctionToolCallResource(
             global::tryAGI.OpenAI.FunctionToolCall? functionToolCall,
-            global::tryAGI.OpenAI.FunctionToolCallResourceVariant2? value2
+            global::tryAGI.OpenAI.FunctionToolCallResourceVariant2? functionToolCallResourceVariant2
             )
         {
             FunctionToolCall = functionToolCall;
-            Value2 = value2;
+            FunctionToolCallResourceVariant2 = functionToolCallResourceVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
+            FunctionToolCallResourceVariant2 as object ??
             FunctionToolCall as object 
             ;
 
@@ -104,7 +104,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public override string? ToString() =>
             FunctionToolCall?.ToString() ??
-            Value2?.ToString() 
+            FunctionToolCallResourceVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsFunctionToolCall && IsValue2;
+            return IsFunctionToolCall && IsFunctionToolCallResourceVariant2;
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.FunctionToolCall?, TResult>? functionToolCall = null,
-            global::System.Func<global::tryAGI.OpenAI.FunctionToolCallResourceVariant2?, TResult>? value2 = null,
+            global::System.Func<global::tryAGI.OpenAI.FunctionToolCallResourceVariant2?, TResult>? functionToolCallResourceVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -132,9 +132,9 @@ namespace tryAGI.OpenAI
             {
                 return functionToolCall(FunctionToolCall!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsFunctionToolCallResourceVariant2 && functionToolCallResourceVariant2 != null)
             {
-                return value2(Value2!);
+                return functionToolCallResourceVariant2(FunctionToolCallResourceVariant2!);
             }
 
             return default(TResult);
@@ -145,7 +145,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.FunctionToolCall?>? functionToolCall = null,
-            global::System.Action<global::tryAGI.OpenAI.FunctionToolCallResourceVariant2?>? value2 = null,
+            global::System.Action<global::tryAGI.OpenAI.FunctionToolCallResourceVariant2?>? functionToolCallResourceVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -157,9 +157,9 @@ namespace tryAGI.OpenAI
             {
                 functionToolCall?.Invoke(FunctionToolCall!);
             }
-            else if (IsValue2)
+            else if (IsFunctionToolCallResourceVariant2)
             {
-                value2?.Invoke(Value2!);
+                functionToolCallResourceVariant2?.Invoke(FunctionToolCallResourceVariant2!);
             }
         }
 
@@ -172,7 +172,7 @@ namespace tryAGI.OpenAI
             {
                 FunctionToolCall,
                 typeof(global::tryAGI.OpenAI.FunctionToolCall),
-                Value2,
+                FunctionToolCallResourceVariant2,
                 typeof(global::tryAGI.OpenAI.FunctionToolCallResourceVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -191,7 +191,7 @@ namespace tryAGI.OpenAI
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FunctionToolCall?>.Default.Equals(FunctionToolCall, other.FunctionToolCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FunctionToolCallResourceVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FunctionToolCallResourceVariant2?>.Default.Equals(FunctionToolCallResourceVariant2, other.FunctionToolCallResourceVariant2) 
                 ;
         }
 

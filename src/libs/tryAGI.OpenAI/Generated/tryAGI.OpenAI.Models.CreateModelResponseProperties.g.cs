@@ -13,35 +13,35 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ModelResponseProperties? Value1 { get; init; }
+        public global::tryAGI.OpenAI.ModelResponseProperties? ModelResponseProperties { get; init; }
 #else
-        public global::tryAGI.OpenAI.ModelResponseProperties? Value1 { get; }
+        public global::tryAGI.OpenAI.ModelResponseProperties? ModelResponseProperties { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelResponseProperties))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsModelResponseProperties => ModelResponseProperties != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.CreateModelResponsePropertiesVariant2? Value2 { get; init; }
+        public global::tryAGI.OpenAI.CreateModelResponsePropertiesVariant2? CreateModelResponsePropertiesVariant2 { get; init; }
 #else
-        public global::tryAGI.OpenAI.CreateModelResponsePropertiesVariant2? Value2 { get; }
+        public global::tryAGI.OpenAI.CreateModelResponsePropertiesVariant2? CreateModelResponsePropertiesVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateModelResponsePropertiesVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsCreateModelResponsePropertiesVariant2 => CreateModelResponsePropertiesVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -50,14 +50,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.ModelResponseProperties?(CreateModelResponseProperties @this) => @this.Value1;
+        public static implicit operator global::tryAGI.OpenAI.ModelResponseProperties?(CreateModelResponseProperties @this) => @this.ModelResponseProperties;
 
         /// <summary>
         /// 
         /// </summary>
         public CreateModelResponseProperties(global::tryAGI.OpenAI.ModelResponseProperties? value)
         {
-            Value1 = value;
+            ModelResponseProperties = value;
         }
 
         /// <summary>
@@ -68,42 +68,42 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.CreateModelResponsePropertiesVariant2?(CreateModelResponseProperties @this) => @this.Value2;
+        public static implicit operator global::tryAGI.OpenAI.CreateModelResponsePropertiesVariant2?(CreateModelResponseProperties @this) => @this.CreateModelResponsePropertiesVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public CreateModelResponseProperties(global::tryAGI.OpenAI.CreateModelResponsePropertiesVariant2? value)
         {
-            Value2 = value;
+            CreateModelResponsePropertiesVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public CreateModelResponseProperties(
-            global::tryAGI.OpenAI.ModelResponseProperties? value1,
-            global::tryAGI.OpenAI.CreateModelResponsePropertiesVariant2? value2
+            global::tryAGI.OpenAI.ModelResponseProperties? modelResponseProperties,
+            global::tryAGI.OpenAI.CreateModelResponsePropertiesVariant2? createModelResponsePropertiesVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            ModelResponseProperties = modelResponseProperties;
+            CreateModelResponsePropertiesVariant2 = createModelResponsePropertiesVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            CreateModelResponsePropertiesVariant2 as object ??
+            ModelResponseProperties as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            ModelResponseProperties?.ToString() ??
+            CreateModelResponsePropertiesVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -111,15 +111,15 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsModelResponseProperties && IsCreateModelResponsePropertiesVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.ModelResponseProperties?, TResult>? value1 = null,
-            global::System.Func<global::tryAGI.OpenAI.CreateModelResponsePropertiesVariant2?, TResult>? value2 = null,
+            global::System.Func<global::tryAGI.OpenAI.ModelResponseProperties?, TResult>? modelResponseProperties = null,
+            global::System.Func<global::tryAGI.OpenAI.CreateModelResponsePropertiesVariant2?, TResult>? createModelResponsePropertiesVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -127,13 +127,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsModelResponseProperties && modelResponseProperties != null)
             {
-                return value1(Value1!);
+                return modelResponseProperties(ModelResponseProperties!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsCreateModelResponsePropertiesVariant2 && createModelResponsePropertiesVariant2 != null)
             {
-                return value2(Value2!);
+                return createModelResponsePropertiesVariant2(CreateModelResponsePropertiesVariant2!);
             }
 
             return default(TResult);
@@ -143,8 +143,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.ModelResponseProperties?>? value1 = null,
-            global::System.Action<global::tryAGI.OpenAI.CreateModelResponsePropertiesVariant2?>? value2 = null,
+            global::System.Action<global::tryAGI.OpenAI.ModelResponseProperties?>? modelResponseProperties = null,
+            global::System.Action<global::tryAGI.OpenAI.CreateModelResponsePropertiesVariant2?>? createModelResponsePropertiesVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -152,13 +152,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsModelResponseProperties)
             {
-                value1?.Invoke(Value1!);
+                modelResponseProperties?.Invoke(ModelResponseProperties!);
             }
-            else if (IsValue2)
+            else if (IsCreateModelResponsePropertiesVariant2)
             {
-                value2?.Invoke(Value2!);
+                createModelResponsePropertiesVariant2?.Invoke(CreateModelResponsePropertiesVariant2!);
             }
         }
 
@@ -169,9 +169,9 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                Value1,
+                ModelResponseProperties,
                 typeof(global::tryAGI.OpenAI.ModelResponseProperties),
-                Value2,
+                CreateModelResponsePropertiesVariant2,
                 typeof(global::tryAGI.OpenAI.CreateModelResponsePropertiesVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -189,8 +189,8 @@ namespace tryAGI.OpenAI
         public bool Equals(CreateModelResponseProperties other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ModelResponseProperties?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CreateModelResponsePropertiesVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ModelResponseProperties?>.Default.Equals(ModelResponseProperties, other.ModelResponseProperties) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CreateModelResponsePropertiesVariant2?>.Default.Equals(CreateModelResponsePropertiesVariant2, other.CreateModelResponsePropertiesVariant2) 
                 ;
         }
 

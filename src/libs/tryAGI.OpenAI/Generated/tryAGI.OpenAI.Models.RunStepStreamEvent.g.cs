@@ -13,120 +13,120 @@ namespace tryAGI.OpenAI
         /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is created.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant1? Value1 { get; init; }
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant1? RunStepStreamEventVariant1 { get; init; }
 #else
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant1? Value1 { get; }
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant1? RunStepStreamEventVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStepStreamEventVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsRunStepStreamEventVariant1 => RunStepStreamEventVariant1 != null;
 
         /// <summary>
         /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) moves to an `in_progress` state.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant2? Value2 { get; init; }
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant2? RunStepStreamEventVariant2 { get; init; }
 #else
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant2? Value2 { get; }
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant2? RunStepStreamEventVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStepStreamEventVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsRunStepStreamEventVariant2 => RunStepStreamEventVariant2 != null;
 
         /// <summary>
         /// Occurs when parts of a [run step](/docs/api-reference/run-steps/step-object) are being streamed.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant3? Value3 { get; init; }
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant3? RunStepStreamEventVariant3 { get; init; }
 #else
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant3? Value3 { get; }
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant3? RunStepStreamEventVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStepStreamEventVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsRunStepStreamEventVariant3 => RunStepStreamEventVariant3 != null;
 
         /// <summary>
         /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant4? Value4 { get; init; }
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant4? RunStepStreamEventVariant4 { get; init; }
 #else
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant4? Value4 { get; }
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant4? RunStepStreamEventVariant4 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStepStreamEventVariant4))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsRunStepStreamEventVariant4 => RunStepStreamEventVariant4 != null;
 
         /// <summary>
         /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) fails.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant5? Value5 { get; init; }
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant5? RunStepStreamEventVariant5 { get; init; }
 #else
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant5? Value5 { get; }
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant5? RunStepStreamEventVariant5 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStepStreamEventVariant5))]
 #endif
-        public bool IsValue5 => Value5 != null;
+        public bool IsRunStepStreamEventVariant5 => RunStepStreamEventVariant5 != null;
 
         /// <summary>
         /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is cancelled.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant6? Value6 { get; init; }
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant6? RunStepStreamEventVariant6 { get; init; }
 #else
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant6? Value6 { get; }
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant6? RunStepStreamEventVariant6 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value6))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStepStreamEventVariant6))]
 #endif
-        public bool IsValue6 => Value6 != null;
+        public bool IsRunStepStreamEventVariant6 => RunStepStreamEventVariant6 != null;
 
         /// <summary>
         /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) expires.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant7? Value7 { get; init; }
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant7? RunStepStreamEventVariant7 { get; init; }
 #else
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant7? Value7 { get; }
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant7? RunStepStreamEventVariant7 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value7))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStepStreamEventVariant7))]
 #endif
-        public bool IsValue7 => Value7 != null;
+        public bool IsRunStepStreamEventVariant7 => RunStepStreamEventVariant7 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -135,14 +135,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.RunStepStreamEventVariant1?(RunStepStreamEvent @this) => @this.Value1;
+        public static implicit operator global::tryAGI.OpenAI.RunStepStreamEventVariant1?(RunStepStreamEvent @this) => @this.RunStepStreamEventVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public RunStepStreamEvent(global::tryAGI.OpenAI.RunStepStreamEventVariant1? value)
         {
-            Value1 = value;
+            RunStepStreamEventVariant1 = value;
         }
 
         /// <summary>
@@ -153,14 +153,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.RunStepStreamEventVariant2?(RunStepStreamEvent @this) => @this.Value2;
+        public static implicit operator global::tryAGI.OpenAI.RunStepStreamEventVariant2?(RunStepStreamEvent @this) => @this.RunStepStreamEventVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public RunStepStreamEvent(global::tryAGI.OpenAI.RunStepStreamEventVariant2? value)
         {
-            Value2 = value;
+            RunStepStreamEventVariant2 = value;
         }
 
         /// <summary>
@@ -171,14 +171,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.RunStepStreamEventVariant3?(RunStepStreamEvent @this) => @this.Value3;
+        public static implicit operator global::tryAGI.OpenAI.RunStepStreamEventVariant3?(RunStepStreamEvent @this) => @this.RunStepStreamEventVariant3;
 
         /// <summary>
         /// 
         /// </summary>
         public RunStepStreamEvent(global::tryAGI.OpenAI.RunStepStreamEventVariant3? value)
         {
-            Value3 = value;
+            RunStepStreamEventVariant3 = value;
         }
 
         /// <summary>
@@ -189,14 +189,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.RunStepStreamEventVariant4?(RunStepStreamEvent @this) => @this.Value4;
+        public static implicit operator global::tryAGI.OpenAI.RunStepStreamEventVariant4?(RunStepStreamEvent @this) => @this.RunStepStreamEventVariant4;
 
         /// <summary>
         /// 
         /// </summary>
         public RunStepStreamEvent(global::tryAGI.OpenAI.RunStepStreamEventVariant4? value)
         {
-            Value4 = value;
+            RunStepStreamEventVariant4 = value;
         }
 
         /// <summary>
@@ -207,14 +207,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.RunStepStreamEventVariant5?(RunStepStreamEvent @this) => @this.Value5;
+        public static implicit operator global::tryAGI.OpenAI.RunStepStreamEventVariant5?(RunStepStreamEvent @this) => @this.RunStepStreamEventVariant5;
 
         /// <summary>
         /// 
         /// </summary>
         public RunStepStreamEvent(global::tryAGI.OpenAI.RunStepStreamEventVariant5? value)
         {
-            Value5 = value;
+            RunStepStreamEventVariant5 = value;
         }
 
         /// <summary>
@@ -225,14 +225,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.RunStepStreamEventVariant6?(RunStepStreamEvent @this) => @this.Value6;
+        public static implicit operator global::tryAGI.OpenAI.RunStepStreamEventVariant6?(RunStepStreamEvent @this) => @this.RunStepStreamEventVariant6;
 
         /// <summary>
         /// 
         /// </summary>
         public RunStepStreamEvent(global::tryAGI.OpenAI.RunStepStreamEventVariant6? value)
         {
-            Value6 = value;
+            RunStepStreamEventVariant6 = value;
         }
 
         /// <summary>
@@ -243,62 +243,62 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.RunStepStreamEventVariant7?(RunStepStreamEvent @this) => @this.Value7;
+        public static implicit operator global::tryAGI.OpenAI.RunStepStreamEventVariant7?(RunStepStreamEvent @this) => @this.RunStepStreamEventVariant7;
 
         /// <summary>
         /// 
         /// </summary>
         public RunStepStreamEvent(global::tryAGI.OpenAI.RunStepStreamEventVariant7? value)
         {
-            Value7 = value;
+            RunStepStreamEventVariant7 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public RunStepStreamEvent(
-            global::tryAGI.OpenAI.RunStepStreamEventVariant1? value1,
-            global::tryAGI.OpenAI.RunStepStreamEventVariant2? value2,
-            global::tryAGI.OpenAI.RunStepStreamEventVariant3? value3,
-            global::tryAGI.OpenAI.RunStepStreamEventVariant4? value4,
-            global::tryAGI.OpenAI.RunStepStreamEventVariant5? value5,
-            global::tryAGI.OpenAI.RunStepStreamEventVariant6? value6,
-            global::tryAGI.OpenAI.RunStepStreamEventVariant7? value7
+            global::tryAGI.OpenAI.RunStepStreamEventVariant1? runStepStreamEventVariant1,
+            global::tryAGI.OpenAI.RunStepStreamEventVariant2? runStepStreamEventVariant2,
+            global::tryAGI.OpenAI.RunStepStreamEventVariant3? runStepStreamEventVariant3,
+            global::tryAGI.OpenAI.RunStepStreamEventVariant4? runStepStreamEventVariant4,
+            global::tryAGI.OpenAI.RunStepStreamEventVariant5? runStepStreamEventVariant5,
+            global::tryAGI.OpenAI.RunStepStreamEventVariant6? runStepStreamEventVariant6,
+            global::tryAGI.OpenAI.RunStepStreamEventVariant7? runStepStreamEventVariant7
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
-            Value5 = value5;
-            Value6 = value6;
-            Value7 = value7;
+            RunStepStreamEventVariant1 = runStepStreamEventVariant1;
+            RunStepStreamEventVariant2 = runStepStreamEventVariant2;
+            RunStepStreamEventVariant3 = runStepStreamEventVariant3;
+            RunStepStreamEventVariant4 = runStepStreamEventVariant4;
+            RunStepStreamEventVariant5 = runStepStreamEventVariant5;
+            RunStepStreamEventVariant6 = runStepStreamEventVariant6;
+            RunStepStreamEventVariant7 = runStepStreamEventVariant7;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value7 as object ??
-            Value6 as object ??
-            Value5 as object ??
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            RunStepStreamEventVariant7 as object ??
+            RunStepStreamEventVariant6 as object ??
+            RunStepStreamEventVariant5 as object ??
+            RunStepStreamEventVariant4 as object ??
+            RunStepStreamEventVariant3 as object ??
+            RunStepStreamEventVariant2 as object ??
+            RunStepStreamEventVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() ??
-            Value4?.ToString() ??
-            Value5?.ToString() ??
-            Value6?.ToString() ??
-            Value7?.ToString() 
+            RunStepStreamEventVariant1?.ToString() ??
+            RunStepStreamEventVariant2?.ToString() ??
+            RunStepStreamEventVariant3?.ToString() ??
+            RunStepStreamEventVariant4?.ToString() ??
+            RunStepStreamEventVariant5?.ToString() ??
+            RunStepStreamEventVariant6?.ToString() ??
+            RunStepStreamEventVariant7?.ToString() 
             ;
 
         /// <summary>
@@ -306,20 +306,20 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && IsValue5 && !IsValue6 && !IsValue7 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && IsValue6 && !IsValue7 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && IsValue7;
+            return IsRunStepStreamEventVariant1 && !IsRunStepStreamEventVariant2 && !IsRunStepStreamEventVariant3 && !IsRunStepStreamEventVariant4 && !IsRunStepStreamEventVariant5 && !IsRunStepStreamEventVariant6 && !IsRunStepStreamEventVariant7 || !IsRunStepStreamEventVariant1 && IsRunStepStreamEventVariant2 && !IsRunStepStreamEventVariant3 && !IsRunStepStreamEventVariant4 && !IsRunStepStreamEventVariant5 && !IsRunStepStreamEventVariant6 && !IsRunStepStreamEventVariant7 || !IsRunStepStreamEventVariant1 && !IsRunStepStreamEventVariant2 && IsRunStepStreamEventVariant3 && !IsRunStepStreamEventVariant4 && !IsRunStepStreamEventVariant5 && !IsRunStepStreamEventVariant6 && !IsRunStepStreamEventVariant7 || !IsRunStepStreamEventVariant1 && !IsRunStepStreamEventVariant2 && !IsRunStepStreamEventVariant3 && IsRunStepStreamEventVariant4 && !IsRunStepStreamEventVariant5 && !IsRunStepStreamEventVariant6 && !IsRunStepStreamEventVariant7 || !IsRunStepStreamEventVariant1 && !IsRunStepStreamEventVariant2 && !IsRunStepStreamEventVariant3 && !IsRunStepStreamEventVariant4 && IsRunStepStreamEventVariant5 && !IsRunStepStreamEventVariant6 && !IsRunStepStreamEventVariant7 || !IsRunStepStreamEventVariant1 && !IsRunStepStreamEventVariant2 && !IsRunStepStreamEventVariant3 && !IsRunStepStreamEventVariant4 && !IsRunStepStreamEventVariant5 && IsRunStepStreamEventVariant6 && !IsRunStepStreamEventVariant7 || !IsRunStepStreamEventVariant1 && !IsRunStepStreamEventVariant2 && !IsRunStepStreamEventVariant3 && !IsRunStepStreamEventVariant4 && !IsRunStepStreamEventVariant5 && !IsRunStepStreamEventVariant6 && IsRunStepStreamEventVariant7;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.RunStepStreamEventVariant1?, TResult>? value1 = null,
-            global::System.Func<global::tryAGI.OpenAI.RunStepStreamEventVariant2?, TResult>? value2 = null,
-            global::System.Func<global::tryAGI.OpenAI.RunStepStreamEventVariant3?, TResult>? value3 = null,
-            global::System.Func<global::tryAGI.OpenAI.RunStepStreamEventVariant4?, TResult>? value4 = null,
-            global::System.Func<global::tryAGI.OpenAI.RunStepStreamEventVariant5?, TResult>? value5 = null,
-            global::System.Func<global::tryAGI.OpenAI.RunStepStreamEventVariant6?, TResult>? value6 = null,
-            global::System.Func<global::tryAGI.OpenAI.RunStepStreamEventVariant7?, TResult>? value7 = null,
+            global::System.Func<global::tryAGI.OpenAI.RunStepStreamEventVariant1?, TResult>? runStepStreamEventVariant1 = null,
+            global::System.Func<global::tryAGI.OpenAI.RunStepStreamEventVariant2?, TResult>? runStepStreamEventVariant2 = null,
+            global::System.Func<global::tryAGI.OpenAI.RunStepStreamEventVariant3?, TResult>? runStepStreamEventVariant3 = null,
+            global::System.Func<global::tryAGI.OpenAI.RunStepStreamEventVariant4?, TResult>? runStepStreamEventVariant4 = null,
+            global::System.Func<global::tryAGI.OpenAI.RunStepStreamEventVariant5?, TResult>? runStepStreamEventVariant5 = null,
+            global::System.Func<global::tryAGI.OpenAI.RunStepStreamEventVariant6?, TResult>? runStepStreamEventVariant6 = null,
+            global::System.Func<global::tryAGI.OpenAI.RunStepStreamEventVariant7?, TResult>? runStepStreamEventVariant7 = null,
             bool validate = true)
         {
             if (validate)
@@ -327,33 +327,33 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsRunStepStreamEventVariant1 && runStepStreamEventVariant1 != null)
             {
-                return value1(Value1!);
+                return runStepStreamEventVariant1(RunStepStreamEventVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsRunStepStreamEventVariant2 && runStepStreamEventVariant2 != null)
             {
-                return value2(Value2!);
+                return runStepStreamEventVariant2(RunStepStreamEventVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsRunStepStreamEventVariant3 && runStepStreamEventVariant3 != null)
             {
-                return value3(Value3!);
+                return runStepStreamEventVariant3(RunStepStreamEventVariant3!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsRunStepStreamEventVariant4 && runStepStreamEventVariant4 != null)
             {
-                return value4(Value4!);
+                return runStepStreamEventVariant4(RunStepStreamEventVariant4!);
             }
-            else if (IsValue5 && value5 != null)
+            else if (IsRunStepStreamEventVariant5 && runStepStreamEventVariant5 != null)
             {
-                return value5(Value5!);
+                return runStepStreamEventVariant5(RunStepStreamEventVariant5!);
             }
-            else if (IsValue6 && value6 != null)
+            else if (IsRunStepStreamEventVariant6 && runStepStreamEventVariant6 != null)
             {
-                return value6(Value6!);
+                return runStepStreamEventVariant6(RunStepStreamEventVariant6!);
             }
-            else if (IsValue7 && value7 != null)
+            else if (IsRunStepStreamEventVariant7 && runStepStreamEventVariant7 != null)
             {
-                return value7(Value7!);
+                return runStepStreamEventVariant7(RunStepStreamEventVariant7!);
             }
 
             return default(TResult);
@@ -363,13 +363,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.RunStepStreamEventVariant1?>? value1 = null,
-            global::System.Action<global::tryAGI.OpenAI.RunStepStreamEventVariant2?>? value2 = null,
-            global::System.Action<global::tryAGI.OpenAI.RunStepStreamEventVariant3?>? value3 = null,
-            global::System.Action<global::tryAGI.OpenAI.RunStepStreamEventVariant4?>? value4 = null,
-            global::System.Action<global::tryAGI.OpenAI.RunStepStreamEventVariant5?>? value5 = null,
-            global::System.Action<global::tryAGI.OpenAI.RunStepStreamEventVariant6?>? value6 = null,
-            global::System.Action<global::tryAGI.OpenAI.RunStepStreamEventVariant7?>? value7 = null,
+            global::System.Action<global::tryAGI.OpenAI.RunStepStreamEventVariant1?>? runStepStreamEventVariant1 = null,
+            global::System.Action<global::tryAGI.OpenAI.RunStepStreamEventVariant2?>? runStepStreamEventVariant2 = null,
+            global::System.Action<global::tryAGI.OpenAI.RunStepStreamEventVariant3?>? runStepStreamEventVariant3 = null,
+            global::System.Action<global::tryAGI.OpenAI.RunStepStreamEventVariant4?>? runStepStreamEventVariant4 = null,
+            global::System.Action<global::tryAGI.OpenAI.RunStepStreamEventVariant5?>? runStepStreamEventVariant5 = null,
+            global::System.Action<global::tryAGI.OpenAI.RunStepStreamEventVariant6?>? runStepStreamEventVariant6 = null,
+            global::System.Action<global::tryAGI.OpenAI.RunStepStreamEventVariant7?>? runStepStreamEventVariant7 = null,
             bool validate = true)
         {
             if (validate)
@@ -377,33 +377,33 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsRunStepStreamEventVariant1)
             {
-                value1?.Invoke(Value1!);
+                runStepStreamEventVariant1?.Invoke(RunStepStreamEventVariant1!);
             }
-            else if (IsValue2)
+            else if (IsRunStepStreamEventVariant2)
             {
-                value2?.Invoke(Value2!);
+                runStepStreamEventVariant2?.Invoke(RunStepStreamEventVariant2!);
             }
-            else if (IsValue3)
+            else if (IsRunStepStreamEventVariant3)
             {
-                value3?.Invoke(Value3!);
+                runStepStreamEventVariant3?.Invoke(RunStepStreamEventVariant3!);
             }
-            else if (IsValue4)
+            else if (IsRunStepStreamEventVariant4)
             {
-                value4?.Invoke(Value4!);
+                runStepStreamEventVariant4?.Invoke(RunStepStreamEventVariant4!);
             }
-            else if (IsValue5)
+            else if (IsRunStepStreamEventVariant5)
             {
-                value5?.Invoke(Value5!);
+                runStepStreamEventVariant5?.Invoke(RunStepStreamEventVariant5!);
             }
-            else if (IsValue6)
+            else if (IsRunStepStreamEventVariant6)
             {
-                value6?.Invoke(Value6!);
+                runStepStreamEventVariant6?.Invoke(RunStepStreamEventVariant6!);
             }
-            else if (IsValue7)
+            else if (IsRunStepStreamEventVariant7)
             {
-                value7?.Invoke(Value7!);
+                runStepStreamEventVariant7?.Invoke(RunStepStreamEventVariant7!);
             }
         }
 
@@ -414,19 +414,19 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                Value1,
+                RunStepStreamEventVariant1,
                 typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant1),
-                Value2,
+                RunStepStreamEventVariant2,
                 typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant2),
-                Value3,
+                RunStepStreamEventVariant3,
                 typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant3),
-                Value4,
+                RunStepStreamEventVariant4,
                 typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant4),
-                Value5,
+                RunStepStreamEventVariant5,
                 typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant5),
-                Value6,
+                RunStepStreamEventVariant6,
                 typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant6),
-                Value7,
+                RunStepStreamEventVariant7,
                 typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant7),
             };
             const int offset = unchecked((int)2166136261);
@@ -444,13 +444,13 @@ namespace tryAGI.OpenAI
         public bool Equals(RunStepStreamEvent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RunStepStreamEventVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RunStepStreamEventVariant2?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RunStepStreamEventVariant3?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RunStepStreamEventVariant4?>.Default.Equals(Value4, other.Value4) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RunStepStreamEventVariant5?>.Default.Equals(Value5, other.Value5) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RunStepStreamEventVariant6?>.Default.Equals(Value6, other.Value6) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RunStepStreamEventVariant7?>.Default.Equals(Value7, other.Value7) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RunStepStreamEventVariant1?>.Default.Equals(RunStepStreamEventVariant1, other.RunStepStreamEventVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RunStepStreamEventVariant2?>.Default.Equals(RunStepStreamEventVariant2, other.RunStepStreamEventVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RunStepStreamEventVariant3?>.Default.Equals(RunStepStreamEventVariant3, other.RunStepStreamEventVariant3) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RunStepStreamEventVariant4?>.Default.Equals(RunStepStreamEventVariant4, other.RunStepStreamEventVariant4) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RunStepStreamEventVariant5?>.Default.Equals(RunStepStreamEventVariant5, other.RunStepStreamEventVariant5) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RunStepStreamEventVariant6?>.Default.Equals(RunStepStreamEventVariant6, other.RunStepStreamEventVariant6) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RunStepStreamEventVariant7?>.Default.Equals(RunStepStreamEventVariant7, other.RunStepStreamEventVariant7) 
                 ;
         }
 

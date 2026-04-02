@@ -16,18 +16,18 @@ namespace tryAGI.OpenAI
         /// The truncation strategy to use for the session. `auto` is the default truncation strategy. `disabled` will disable truncation and emit errors when the conversation exceeds the input token limit.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.RealtimeTruncationEnum? Value1 { get; init; }
+        public global::tryAGI.OpenAI.RealtimeTruncationEnum? Enum { get; init; }
 #else
-        public global::tryAGI.OpenAI.RealtimeTruncationEnum? Value1 { get; }
+        public global::tryAGI.OpenAI.RealtimeTruncationEnum? Enum { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsEnum => Enum != null;
 
         /// <summary>
         /// Retain a fraction of the conversation tokens when the conversation exceeds the input token limit. This allows you to amortize truncations across multiple turns, which can help improve cached token usage.
@@ -53,14 +53,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.RealtimeTruncationEnum?(RealtimeTruncation @this) => @this.Value1;
+        public static implicit operator global::tryAGI.OpenAI.RealtimeTruncationEnum?(RealtimeTruncation @this) => @this.Enum;
 
         /// <summary>
         /// 
         /// </summary>
         public RealtimeTruncation(global::tryAGI.OpenAI.RealtimeTruncationEnum? value)
         {
-            Value1 = value;
+            Enum = value;
         }
 
         /// <summary>
@@ -85,11 +85,11 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public RealtimeTruncation(
-            global::tryAGI.OpenAI.RealtimeTruncationEnum? value1,
+            global::tryAGI.OpenAI.RealtimeTruncationEnum? @enum,
             global::tryAGI.OpenAI.RealtimeTruncationEnum2? retentionRatioTruncation
             )
         {
-            Value1 = value1;
+            Enum = @enum;
             RetentionRatioTruncation = retentionRatioTruncation;
         }
 
@@ -98,14 +98,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         public object? Object =>
             RetentionRatioTruncation as object ??
-            Value1 as object 
+            Enum as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToValueString() ??
+            Enum?.ToValueString() ??
             RetentionRatioTruncation?.ToString() 
             ;
 
@@ -114,14 +114,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsRetentionRatioTruncation || !IsValue1 && IsRetentionRatioTruncation;
+            return IsEnum && !IsRetentionRatioTruncation || !IsEnum && IsRetentionRatioTruncation;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.RealtimeTruncationEnum?, TResult>? value1 = null,
+            global::System.Func<global::tryAGI.OpenAI.RealtimeTruncationEnum?, TResult>? @enum = null,
             global::System.Func<global::tryAGI.OpenAI.RealtimeTruncationEnum2?, TResult>? retentionRatioTruncation = null,
             bool validate = true)
         {
@@ -130,9 +130,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsEnum && @enum != null)
             {
-                return value1(Value1!);
+                return @enum(Enum!);
             }
             else if (IsRetentionRatioTruncation && retentionRatioTruncation != null)
             {
@@ -146,7 +146,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.RealtimeTruncationEnum?>? value1 = null,
+            global::System.Action<global::tryAGI.OpenAI.RealtimeTruncationEnum?>? @enum = null,
             global::System.Action<global::tryAGI.OpenAI.RealtimeTruncationEnum2?>? retentionRatioTruncation = null,
             bool validate = true)
         {
@@ -155,9 +155,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsEnum)
             {
-                value1?.Invoke(Value1!);
+                @enum?.Invoke(Enum!);
             }
             else if (IsRetentionRatioTruncation)
             {
@@ -172,7 +172,7 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                Value1,
+                Enum,
                 typeof(global::tryAGI.OpenAI.RealtimeTruncationEnum),
                 RetentionRatioTruncation,
                 typeof(global::tryAGI.OpenAI.RealtimeTruncationEnum2),
@@ -192,7 +192,7 @@ namespace tryAGI.OpenAI
         public bool Equals(RealtimeTruncation other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeTruncationEnum?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeTruncationEnum?>.Default.Equals(Enum, other.Enum) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeTruncationEnum2?>.Default.Equals(RetentionRatioTruncation, other.RetentionRatioTruncation) 
                 ;
         }

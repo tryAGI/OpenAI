@@ -13,18 +13,18 @@ namespace tryAGI.OpenAI
         /// Example: gpt-5.4
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.ModelIdsShared? Value1 { get; init; }
+        public global::tryAGI.OpenAI.ModelIdsShared? Shared { get; init; }
 #else
-        public global::tryAGI.OpenAI.ModelIdsShared? Value1 { get; }
+        public global::tryAGI.OpenAI.ModelIdsShared? Shared { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Shared))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsShared => Shared != null;
 
         /// <summary>
         /// 
@@ -50,14 +50,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.ModelIdsShared?(ModelIdsResponses @this) => @this.Value1;
+        public static implicit operator global::tryAGI.OpenAI.ModelIdsShared?(ModelIdsResponses @this) => @this.Shared;
 
         /// <summary>
         /// 
         /// </summary>
         public ModelIdsResponses(global::tryAGI.OpenAI.ModelIdsShared? value)
         {
-            Value1 = value;
+            Shared = value;
         }
 
         /// <summary>
@@ -82,11 +82,11 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public ModelIdsResponses(
-            global::tryAGI.OpenAI.ModelIdsShared? value1,
+            global::tryAGI.OpenAI.ModelIdsShared? shared,
             global::tryAGI.OpenAI.ModelIdsResponsesEnum? responsesOnlyModel
             )
         {
-            Value1 = value1;
+            Shared = shared;
             ResponsesOnlyModel = responsesOnlyModel;
         }
 
@@ -95,14 +95,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         public object? Object =>
             ResponsesOnlyModel as object ??
-            Value1 as object 
+            Shared as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            Shared?.ToString() ??
             ResponsesOnlyModel?.ToValueString() 
             ;
 
@@ -111,14 +111,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsResponsesOnlyModel;
+            return IsShared || IsResponsesOnlyModel;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.ModelIdsShared?, TResult>? value1 = null,
+            global::System.Func<global::tryAGI.OpenAI.ModelIdsShared?, TResult>? shared = null,
             global::System.Func<global::tryAGI.OpenAI.ModelIdsResponsesEnum?, TResult>? responsesOnlyModel = null,
             bool validate = true)
         {
@@ -127,9 +127,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsShared && shared != null)
             {
-                return value1(Value1!);
+                return shared(Shared!);
             }
             else if (IsResponsesOnlyModel && responsesOnlyModel != null)
             {
@@ -143,7 +143,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.ModelIdsShared?>? value1 = null,
+            global::System.Action<global::tryAGI.OpenAI.ModelIdsShared?>? shared = null,
             global::System.Action<global::tryAGI.OpenAI.ModelIdsResponsesEnum?>? responsesOnlyModel = null,
             bool validate = true)
         {
@@ -152,9 +152,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsShared)
             {
-                value1?.Invoke(Value1!);
+                shared?.Invoke(Shared!);
             }
             else if (IsResponsesOnlyModel)
             {
@@ -169,7 +169,7 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                Value1,
+                Shared,
                 typeof(global::tryAGI.OpenAI.ModelIdsShared),
                 ResponsesOnlyModel,
                 typeof(global::tryAGI.OpenAI.ModelIdsResponsesEnum),
@@ -189,7 +189,7 @@ namespace tryAGI.OpenAI
         public bool Equals(ModelIdsResponses other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ModelIdsShared?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ModelIdsShared?>.Default.Equals(Shared, other.Shared) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ModelIdsResponsesEnum?>.Default.Equals(ResponsesOnlyModel, other.ResponsesOnlyModel) 
                 ;
         }

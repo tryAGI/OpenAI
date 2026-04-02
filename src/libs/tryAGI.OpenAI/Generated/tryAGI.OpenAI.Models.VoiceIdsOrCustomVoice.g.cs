@@ -13,35 +13,35 @@ namespace tryAGI.OpenAI
         /// Example: ash
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.VoiceIdsShared? Value1 { get; init; }
+        public global::tryAGI.OpenAI.VoiceIdsShared? Shared { get; init; }
 #else
-        public global::tryAGI.OpenAI.VoiceIdsShared? Value1 { get; }
+        public global::tryAGI.OpenAI.VoiceIdsShared? Shared { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Shared))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsShared => Shared != null;
 
         /// <summary>
         /// Custom voice reference.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2? Value2 { get; init; }
+        public global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2? VoiceIdsOrCustomVoiceVariant2 { get; init; }
 #else
-        public global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2? Value2 { get; }
+        public global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2? VoiceIdsOrCustomVoiceVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VoiceIdsOrCustomVoiceVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsVoiceIdsOrCustomVoiceVariant2 => VoiceIdsOrCustomVoiceVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -50,14 +50,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.VoiceIdsShared?(VoiceIdsOrCustomVoice @this) => @this.Value1;
+        public static implicit operator global::tryAGI.OpenAI.VoiceIdsShared?(VoiceIdsOrCustomVoice @this) => @this.Shared;
 
         /// <summary>
         /// 
         /// </summary>
         public VoiceIdsOrCustomVoice(global::tryAGI.OpenAI.VoiceIdsShared? value)
         {
-            Value1 = value;
+            Shared = value;
         }
 
         /// <summary>
@@ -68,42 +68,42 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2?(VoiceIdsOrCustomVoice @this) => @this.Value2;
+        public static implicit operator global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2?(VoiceIdsOrCustomVoice @this) => @this.VoiceIdsOrCustomVoiceVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public VoiceIdsOrCustomVoice(global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2? value)
         {
-            Value2 = value;
+            VoiceIdsOrCustomVoiceVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public VoiceIdsOrCustomVoice(
-            global::tryAGI.OpenAI.VoiceIdsShared? value1,
-            global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2? value2
+            global::tryAGI.OpenAI.VoiceIdsShared? shared,
+            global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2? voiceIdsOrCustomVoiceVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Shared = shared;
+            VoiceIdsOrCustomVoiceVariant2 = voiceIdsOrCustomVoiceVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            VoiceIdsOrCustomVoiceVariant2 as object ??
+            Shared as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Shared?.ToString() ??
+            VoiceIdsOrCustomVoiceVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -111,15 +111,15 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsShared || IsVoiceIdsOrCustomVoiceVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.VoiceIdsShared?, TResult>? value1 = null,
-            global::System.Func<global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2?, TResult>? value2 = null,
+            global::System.Func<global::tryAGI.OpenAI.VoiceIdsShared?, TResult>? shared = null,
+            global::System.Func<global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2?, TResult>? voiceIdsOrCustomVoiceVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -127,13 +127,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsShared && shared != null)
             {
-                return value1(Value1!);
+                return shared(Shared!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsVoiceIdsOrCustomVoiceVariant2 && voiceIdsOrCustomVoiceVariant2 != null)
             {
-                return value2(Value2!);
+                return voiceIdsOrCustomVoiceVariant2(VoiceIdsOrCustomVoiceVariant2!);
             }
 
             return default(TResult);
@@ -143,8 +143,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.VoiceIdsShared?>? value1 = null,
-            global::System.Action<global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2?>? value2 = null,
+            global::System.Action<global::tryAGI.OpenAI.VoiceIdsShared?>? shared = null,
+            global::System.Action<global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2?>? voiceIdsOrCustomVoiceVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -152,13 +152,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsShared)
             {
-                value1?.Invoke(Value1!);
+                shared?.Invoke(Shared!);
             }
-            else if (IsValue2)
+            else if (IsVoiceIdsOrCustomVoiceVariant2)
             {
-                value2?.Invoke(Value2!);
+                voiceIdsOrCustomVoiceVariant2?.Invoke(VoiceIdsOrCustomVoiceVariant2!);
             }
         }
 
@@ -169,9 +169,9 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                Value1,
+                Shared,
                 typeof(global::tryAGI.OpenAI.VoiceIdsShared),
-                Value2,
+                VoiceIdsOrCustomVoiceVariant2,
                 typeof(global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -189,8 +189,8 @@ namespace tryAGI.OpenAI
         public bool Equals(VoiceIdsOrCustomVoice other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.VoiceIdsShared?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.VoiceIdsShared?>.Default.Equals(Shared, other.Shared) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2?>.Default.Equals(VoiceIdsOrCustomVoiceVariant2, other.VoiceIdsOrCustomVoiceVariant2) 
                 ;
         }
 

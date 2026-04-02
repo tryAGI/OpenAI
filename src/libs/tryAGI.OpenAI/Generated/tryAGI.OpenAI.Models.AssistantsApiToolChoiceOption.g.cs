@@ -17,35 +17,35 @@ namespace tryAGI.OpenAI
         /// `none` means the model will not call any tools and instead generates a message. `auto` means the model can pick between generating a message or calling one or more tools. `required` means the model must call one or more tools before responding to the user.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum? Value1 { get; init; }
+        public global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum? Enum { get; init; }
 #else
-        public global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum? Value1 { get; }
+        public global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum? Enum { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsEnum => Enum != null;
 
         /// <summary>
         /// Specifies a tool the model should use. Use to force the model to call a specific tool.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.AssistantsNamedToolChoice? Value2 { get; init; }
+        public global::tryAGI.OpenAI.AssistantsNamedToolChoice? Named { get; init; }
 #else
-        public global::tryAGI.OpenAI.AssistantsNamedToolChoice? Value2 { get; }
+        public global::tryAGI.OpenAI.AssistantsNamedToolChoice? Named { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Named))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsNamed => Named != null;
         /// <summary>
         /// 
         /// </summary>
@@ -54,14 +54,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum?(AssistantsApiToolChoiceOption @this) => @this.Value1;
+        public static implicit operator global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum?(AssistantsApiToolChoiceOption @this) => @this.Enum;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantsApiToolChoiceOption(global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum? value)
         {
-            Value1 = value;
+            Enum = value;
         }
 
         /// <summary>
@@ -72,42 +72,42 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.AssistantsNamedToolChoice?(AssistantsApiToolChoiceOption @this) => @this.Value2;
+        public static implicit operator global::tryAGI.OpenAI.AssistantsNamedToolChoice?(AssistantsApiToolChoiceOption @this) => @this.Named;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantsApiToolChoiceOption(global::tryAGI.OpenAI.AssistantsNamedToolChoice? value)
         {
-            Value2 = value;
+            Named = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantsApiToolChoiceOption(
-            global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum? value1,
-            global::tryAGI.OpenAI.AssistantsNamedToolChoice? value2
+            global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum? @enum,
+            global::tryAGI.OpenAI.AssistantsNamedToolChoice? named
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Enum = @enum;
+            Named = named;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            Named as object ??
+            Enum as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToValueString() ??
-            Value2?.ToString() 
+            Enum?.ToValueString() ??
+            Named?.ToString() 
             ;
 
         /// <summary>
@@ -115,15 +115,15 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsEnum && !IsNamed || !IsEnum && IsNamed;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum?, TResult>? value1 = null,
-            global::System.Func<global::tryAGI.OpenAI.AssistantsNamedToolChoice?, TResult>? value2 = null,
+            global::System.Func<global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum?, TResult>? @enum = null,
+            global::System.Func<global::tryAGI.OpenAI.AssistantsNamedToolChoice?, TResult>? named = null,
             bool validate = true)
         {
             if (validate)
@@ -131,13 +131,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsEnum && @enum != null)
             {
-                return value1(Value1!);
+                return @enum(Enum!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsNamed && named != null)
             {
-                return value2(Value2!);
+                return named(Named!);
             }
 
             return default(TResult);
@@ -147,8 +147,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum?>? value1 = null,
-            global::System.Action<global::tryAGI.OpenAI.AssistantsNamedToolChoice?>? value2 = null,
+            global::System.Action<global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum?>? @enum = null,
+            global::System.Action<global::tryAGI.OpenAI.AssistantsNamedToolChoice?>? named = null,
             bool validate = true)
         {
             if (validate)
@@ -156,13 +156,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsEnum)
             {
-                value1?.Invoke(Value1!);
+                @enum?.Invoke(Enum!);
             }
-            else if (IsValue2)
+            else if (IsNamed)
             {
-                value2?.Invoke(Value2!);
+                named?.Invoke(Named!);
             }
         }
 
@@ -173,9 +173,9 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                Value1,
+                Enum,
                 typeof(global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum),
-                Value2,
+                Named,
                 typeof(global::tryAGI.OpenAI.AssistantsNamedToolChoice),
             };
             const int offset = unchecked((int)2166136261);
@@ -193,8 +193,8 @@ namespace tryAGI.OpenAI
         public bool Equals(AssistantsApiToolChoiceOption other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.AssistantsNamedToolChoice?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum?>.Default.Equals(Enum, other.Enum) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.AssistantsNamedToolChoice?>.Default.Equals(Named, other.Named) 
                 ;
         }
 
