@@ -30,18 +30,18 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.CustomToolCallResourceVariant2? Value2 { get; init; }
+        public global::tryAGI.OpenAI.CustomToolCallResourceVariant2? CustomToolCallResourceVariant2 { get; init; }
 #else
-        public global::tryAGI.OpenAI.CustomToolCallResourceVariant2? Value2 { get; }
+        public global::tryAGI.OpenAI.CustomToolCallResourceVariant2? CustomToolCallResourceVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomToolCallResourceVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsCustomToolCallResourceVariant2 => CustomToolCallResourceVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,14 +68,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.CustomToolCallResourceVariant2?(CustomToolCallResource @this) => @this.Value2;
+        public static implicit operator global::tryAGI.OpenAI.CustomToolCallResourceVariant2?(CustomToolCallResource @this) => @this.CustomToolCallResourceVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public CustomToolCallResource(global::tryAGI.OpenAI.CustomToolCallResourceVariant2? value)
         {
-            Value2 = value;
+            CustomToolCallResourceVariant2 = value;
         }
 
         /// <summary>
@@ -83,18 +83,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public CustomToolCallResource(
             global::tryAGI.OpenAI.CustomToolCall? customToolCall,
-            global::tryAGI.OpenAI.CustomToolCallResourceVariant2? value2
+            global::tryAGI.OpenAI.CustomToolCallResourceVariant2? customToolCallResourceVariant2
             )
         {
             CustomToolCall = customToolCall;
-            Value2 = value2;
+            CustomToolCallResourceVariant2 = customToolCallResourceVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
+            CustomToolCallResourceVariant2 as object ??
             CustomToolCall as object 
             ;
 
@@ -103,7 +103,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public override string? ToString() =>
             CustomToolCall?.ToString() ??
-            Value2?.ToString() 
+            CustomToolCallResourceVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsCustomToolCall && IsValue2;
+            return IsCustomToolCall && IsCustomToolCallResourceVariant2;
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.CustomToolCall?, TResult>? customToolCall = null,
-            global::System.Func<global::tryAGI.OpenAI.CustomToolCallResourceVariant2?, TResult>? value2 = null,
+            global::System.Func<global::tryAGI.OpenAI.CustomToolCallResourceVariant2?, TResult>? customToolCallResourceVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -131,9 +131,9 @@ namespace tryAGI.OpenAI
             {
                 return customToolCall(CustomToolCall!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsCustomToolCallResourceVariant2 && customToolCallResourceVariant2 != null)
             {
-                return value2(Value2!);
+                return customToolCallResourceVariant2(CustomToolCallResourceVariant2!);
             }
 
             return default(TResult);
@@ -144,7 +144,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.CustomToolCall?>? customToolCall = null,
-            global::System.Action<global::tryAGI.OpenAI.CustomToolCallResourceVariant2?>? value2 = null,
+            global::System.Action<global::tryAGI.OpenAI.CustomToolCallResourceVariant2?>? customToolCallResourceVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -156,9 +156,9 @@ namespace tryAGI.OpenAI
             {
                 customToolCall?.Invoke(CustomToolCall!);
             }
-            else if (IsValue2)
+            else if (IsCustomToolCallResourceVariant2)
             {
-                value2?.Invoke(Value2!);
+                customToolCallResourceVariant2?.Invoke(CustomToolCallResourceVariant2!);
             }
         }
 
@@ -171,7 +171,7 @@ namespace tryAGI.OpenAI
             {
                 CustomToolCall,
                 typeof(global::tryAGI.OpenAI.CustomToolCall),
-                Value2,
+                CustomToolCallResourceVariant2,
                 typeof(global::tryAGI.OpenAI.CustomToolCallResourceVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,7 +190,7 @@ namespace tryAGI.OpenAI
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CustomToolCall?>.Default.Equals(CustomToolCall, other.CustomToolCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CustomToolCallResourceVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CustomToolCallResourceVariant2?>.Default.Equals(CustomToolCallResourceVariant2, other.CustomToolCallResourceVariant2) 
                 ;
         }
 

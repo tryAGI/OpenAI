@@ -13,35 +13,35 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? VideoModelVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? VideoModelVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VideoModelVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsVideoModelVariant1 => VideoModelVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.VideoModelEnum? Value2 { get; init; }
+        public global::tryAGI.OpenAI.VideoModelEnum? Enum { get; init; }
 #else
-        public global::tryAGI.OpenAI.VideoModelEnum? Value2 { get; }
+        public global::tryAGI.OpenAI.VideoModelEnum? Enum { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsEnum => Enum != null;
         /// <summary>
         /// 
         /// </summary>
@@ -50,14 +50,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(VideoModel @this) => @this.Value1;
+        public static implicit operator string?(VideoModel @this) => @this.VideoModelVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public VideoModel(string? value)
         {
-            Value1 = value;
+            VideoModelVariant1 = value;
         }
 
         /// <summary>
@@ -68,42 +68,42 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.VideoModelEnum?(VideoModel @this) => @this.Value2;
+        public static implicit operator global::tryAGI.OpenAI.VideoModelEnum?(VideoModel @this) => @this.Enum;
 
         /// <summary>
         /// 
         /// </summary>
         public VideoModel(global::tryAGI.OpenAI.VideoModelEnum? value)
         {
-            Value2 = value;
+            Enum = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public VideoModel(
-            string? value1,
-            global::tryAGI.OpenAI.VideoModelEnum? value2
+            string? videoModelVariant1,
+            global::tryAGI.OpenAI.VideoModelEnum? @enum
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            VideoModelVariant1 = videoModelVariant1;
+            Enum = @enum;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            Enum as object ??
+            VideoModelVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToValueString() 
+            VideoModelVariant1?.ToString() ??
+            Enum?.ToValueString() 
             ;
 
         /// <summary>
@@ -111,15 +111,15 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsVideoModelVariant1 || IsEnum;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<global::tryAGI.OpenAI.VideoModelEnum?, TResult>? value2 = null,
+            global::System.Func<string?, TResult>? videoModelVariant1 = null,
+            global::System.Func<global::tryAGI.OpenAI.VideoModelEnum?, TResult>? @enum = null,
             bool validate = true)
         {
             if (validate)
@@ -127,13 +127,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsVideoModelVariant1 && videoModelVariant1 != null)
             {
-                return value1(Value1!);
+                return videoModelVariant1(VideoModelVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsEnum && @enum != null)
             {
-                return value2(Value2!);
+                return @enum(Enum!);
             }
 
             return default(TResult);
@@ -143,8 +143,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<global::tryAGI.OpenAI.VideoModelEnum?>? value2 = null,
+            global::System.Action<string?>? videoModelVariant1 = null,
+            global::System.Action<global::tryAGI.OpenAI.VideoModelEnum?>? @enum = null,
             bool validate = true)
         {
             if (validate)
@@ -152,13 +152,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsVideoModelVariant1)
             {
-                value1?.Invoke(Value1!);
+                videoModelVariant1?.Invoke(VideoModelVariant1!);
             }
-            else if (IsValue2)
+            else if (IsEnum)
             {
-                value2?.Invoke(Value2!);
+                @enum?.Invoke(Enum!);
             }
         }
 
@@ -169,9 +169,9 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                Value1,
+                VideoModelVariant1,
                 typeof(string),
-                Value2,
+                Enum,
                 typeof(global::tryAGI.OpenAI.VideoModelEnum),
             };
             const int offset = unchecked((int)2166136261);
@@ -189,8 +189,8 @@ namespace tryAGI.OpenAI
         public bool Equals(VideoModel other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.VideoModelEnum?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(VideoModelVariant1, other.VideoModelVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.VideoModelEnum?>.Default.Equals(Enum, other.Enum) 
                 ;
         }
 

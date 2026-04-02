@@ -41,7 +41,7 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
             if (__score3 > __bestScore) { __bestScore = __score3; __bestIndex = 3; }
 
-            global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum? value1 = default;
+            global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum? @enum = default;
             global::tryAGI.OpenAI.ResponseFormatText? text = default;
             global::tryAGI.OpenAI.ResponseFormatJsonObject? jsonObject = default;
             global::tryAGI.OpenAI.ResponseFormatJsonSchema? jsonSchema = default;
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -109,13 +109,13 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (value1 == null && text == null && jsonObject == null && jsonSchema == null)
+            if (@enum == null && text == null && jsonObject == null && jsonSchema == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -165,7 +165,7 @@ namespace tryAGI.OpenAI.JsonConverters
             }
 
             var __value = new global::tryAGI.OpenAI.AssistantsApiResponseFormatOption(
-                value1,
+                @enum,
 
                 text,
 
@@ -186,11 +186,11 @@ namespace tryAGI.OpenAI.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsEnum)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enum!.Value, typeInfo);
             }
             else if (value.IsText)
             {

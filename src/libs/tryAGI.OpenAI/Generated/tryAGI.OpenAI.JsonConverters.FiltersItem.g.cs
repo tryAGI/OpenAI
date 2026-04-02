@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
             global::tryAGI.OpenAI.ComparisonFilter? comparisonFilter = default;
-            object? value2 = default;
+            object? compoundFilterVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        compoundFilterVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -72,7 +72,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (comparisonFilter == null && value2 == null)
+            if (comparisonFilter == null && compoundFilterVariant2 == null)
             {
                 try
                 {
@@ -91,7 +91,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    compoundFilterVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -104,7 +104,7 @@ namespace tryAGI.OpenAI.JsonConverters
             var __value = new global::tryAGI.OpenAI.FiltersItem(
                 comparisonFilter,
 
-                value2
+                compoundFilterVariant2
                 );
 
             return __value;
@@ -125,11 +125,11 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ComparisonFilter).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ComparisonFilter!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsCompoundFilterVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CompoundFilterVariant2!, typeInfo);
             }
         }
     }
