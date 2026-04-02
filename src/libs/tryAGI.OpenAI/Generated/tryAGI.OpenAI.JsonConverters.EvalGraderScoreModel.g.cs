@@ -12,8 +12,7 @@ namespace tryAGI.OpenAI.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -48,9 +47,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.GraderScoreModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.GraderScoreModel> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.GraderScoreModel).Name}");
-                        scoreModelGrader = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        scoreModelGrader = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.GraderScoreModel>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -63,9 +60,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.EvalGraderScoreModelVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.EvalGraderScoreModelVariant2> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.EvalGraderScoreModelVariant2).Name}");
-                        evalGraderScoreModelVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        evalGraderScoreModelVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.EvalGraderScoreModelVariant2>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -80,9 +75,7 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.GraderScoreModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.GraderScoreModel> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.GraderScoreModel).Name}");
-                    scoreModelGrader = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    scoreModelGrader = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.GraderScoreModel>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -93,9 +86,7 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.EvalGraderScoreModelVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.EvalGraderScoreModelVariant2> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.EvalGraderScoreModelVariant2).Name}");
-                    evalGraderScoreModelVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    evalGraderScoreModelVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.EvalGraderScoreModelVariant2>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -120,20 +111,15 @@ namespace tryAGI.OpenAI.JsonConverters
             global::tryAGI.OpenAI.EvalGraderScoreModel value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsScoreModelGrader)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.GraderScoreModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.GraderScoreModel?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.GraderScoreModel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ScoreModelGrader!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ScoreModelGrader, typeof(global::tryAGI.OpenAI.GraderScoreModel), options);
             }
             else if (value.IsEvalGraderScoreModelVariant2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.EvalGraderScoreModelVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.EvalGraderScoreModelVariant2?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.EvalGraderScoreModelVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EvalGraderScoreModelVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EvalGraderScoreModelVariant2, typeof(global::tryAGI.OpenAI.EvalGraderScoreModelVariant2), options);
             }
         }
     }

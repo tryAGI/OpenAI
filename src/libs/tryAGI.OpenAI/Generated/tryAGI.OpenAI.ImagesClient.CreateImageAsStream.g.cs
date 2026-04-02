@@ -79,7 +79,7 @@ namespace tryAGI.OpenAI
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
+            var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -153,7 +153,7 @@ namespace tryAGI.OpenAI
                     yield break;
                 }
 
-                var __streamedResponse = global::tryAGI.OpenAI.ImageGenStreamEvent.FromJson(__content, JsonSerializerContext) ??
+                var __streamedResponse = global::tryAGI.OpenAI.ImageGenStreamEvent.FromJson(__content, JsonSerializerOptions) ??
                                        throw new global::tryAGI.OpenAI.ApiException(
                                            message: $"Response deserialization failed for \"{__content}\" ",
                                            statusCode: __response.StatusCode)

@@ -12,8 +12,7 @@ namespace tryAGI.OpenAI.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -48,9 +47,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmAudioFormat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmAudioFormat> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmAudioFormat).Name}");
-                        pcmAudioFormat = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        pcmAudioFormat = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmAudioFormat>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -63,9 +60,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmuAudioFormat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmuAudioFormat> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmuAudioFormat).Name}");
-                        pcmuAudioFormat = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        pcmuAudioFormat = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmuAudioFormat>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -78,9 +73,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormat> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormat).Name}");
-                        pcmaAudioFormat = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        pcmaAudioFormat = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormat>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -95,9 +88,7 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmAudioFormat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmAudioFormat> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmAudioFormat).Name}");
-                    pcmAudioFormat = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    pcmAudioFormat = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmAudioFormat>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -108,9 +99,7 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmuAudioFormat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmuAudioFormat> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmuAudioFormat).Name}");
-                    pcmuAudioFormat = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    pcmuAudioFormat = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmuAudioFormat>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -121,9 +110,7 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormat> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormat).Name}");
-                    pcmaAudioFormat = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    pcmaAudioFormat = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormat>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -150,26 +137,19 @@ namespace tryAGI.OpenAI.JsonConverters
             global::tryAGI.OpenAI.RealtimeAudioFormats value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsPcmAudioFormat)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmAudioFormat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmAudioFormat?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmAudioFormat).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PcmAudioFormat!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PcmAudioFormat, typeof(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmAudioFormat), options);
             }
             else if (value.IsPcmuAudioFormat)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmuAudioFormat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmuAudioFormat?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmuAudioFormat).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PcmuAudioFormat!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PcmuAudioFormat, typeof(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmuAudioFormat), options);
             }
             else if (value.IsPcmaAudioFormat)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormat?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormat).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PcmaAudioFormat!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PcmaAudioFormat, typeof(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormat), options);
             }
         }
     }

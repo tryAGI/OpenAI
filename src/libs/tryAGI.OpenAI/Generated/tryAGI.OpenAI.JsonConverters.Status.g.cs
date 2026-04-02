@@ -12,8 +12,7 @@ namespace tryAGI.OpenAI.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -49,9 +48,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ActiveStatus), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ActiveStatus> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ActiveStatus).Name}");
-                        active = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        active = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ActiveStatus>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -64,9 +61,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LockedStatus), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LockedStatus> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LockedStatus).Name}");
-                        locked = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        locked = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.LockedStatus>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -79,9 +74,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ClosedStatus), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ClosedStatus> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ClosedStatus).Name}");
-                        closed = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        closed = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ClosedStatus>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -96,9 +89,7 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ActiveStatus), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ActiveStatus> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ActiveStatus).Name}");
-                    active = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    active = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ActiveStatus>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -109,9 +100,7 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LockedStatus), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LockedStatus> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LockedStatus).Name}");
-                    locked = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    locked = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.LockedStatus>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -122,9 +111,7 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ClosedStatus), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ClosedStatus> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ClosedStatus).Name}");
-                    closed = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    closed = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ClosedStatus>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -151,26 +138,19 @@ namespace tryAGI.OpenAI.JsonConverters
             global::tryAGI.OpenAI.Status value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsActive)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ActiveStatus), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ActiveStatus?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ActiveStatus).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Active!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Active, typeof(global::tryAGI.OpenAI.ActiveStatus), options);
             }
             else if (value.IsLocked)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LockedStatus), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LockedStatus?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LockedStatus).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Locked!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Locked, typeof(global::tryAGI.OpenAI.LockedStatus), options);
             }
             else if (value.IsClosed)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ClosedStatus), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ClosedStatus?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ClosedStatus).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Closed!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Closed, typeof(global::tryAGI.OpenAI.ClosedStatus), options);
             }
         }
     }
