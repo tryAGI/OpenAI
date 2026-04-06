@@ -71,7 +71,7 @@ namespace tryAGI.OpenAI
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-            var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
+            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -120,7 +120,7 @@ namespace tryAGI.OpenAI
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::tryAGI.OpenAI.Eval.FromJson(__content, JsonSerializerOptions) ??
+                        global::tryAGI.OpenAI.Eval.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -150,7 +150,7 @@ namespace tryAGI.OpenAI
                     ).ConfigureAwait(false);
 
                     return
-                        await global::tryAGI.OpenAI.Eval.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        await global::tryAGI.OpenAI.Eval.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

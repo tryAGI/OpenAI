@@ -12,7 +12,8 @@ namespace tryAGI.OpenAI.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -43,7 +44,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        auto = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam).Name}");
+                        auto = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -56,7 +59,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        @static = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam).Name}");
+                        @static = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -71,7 +76,9 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 try
                 {
-                    auto = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam).Name}");
+                    auto = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -82,7 +89,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    @static = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam).Name}");
+                    @static = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -107,15 +116,20 @@ namespace tryAGI.OpenAI.JsonConverters
             global::tryAGI.OpenAI.ChunkingStrategyRequestParam value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsAuto)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Auto, typeof(global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Auto!, typeInfo);
             }
             else if (value.IsStatic)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Static, typeof(global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Static!, typeInfo);
             }
         }
     }

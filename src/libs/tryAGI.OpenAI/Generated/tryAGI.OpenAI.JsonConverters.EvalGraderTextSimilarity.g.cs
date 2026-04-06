@@ -12,7 +12,8 @@ namespace tryAGI.OpenAI.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -46,7 +47,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        textSimilarityGrader = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.GraderTextSimilarity>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.GraderTextSimilarity), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.GraderTextSimilarity> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.GraderTextSimilarity).Name}");
+                        textSimilarityGrader = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -59,7 +62,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        evalGraderTextSimilarityVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.EvalGraderTextSimilarityVariant2>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.EvalGraderTextSimilarityVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.EvalGraderTextSimilarityVariant2> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.EvalGraderTextSimilarityVariant2).Name}");
+                        evalGraderTextSimilarityVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -74,7 +79,9 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 try
                 {
-                    textSimilarityGrader = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.GraderTextSimilarity>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.GraderTextSimilarity), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.GraderTextSimilarity> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.GraderTextSimilarity).Name}");
+                    textSimilarityGrader = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -85,7 +92,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    evalGraderTextSimilarityVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.EvalGraderTextSimilarityVariant2>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.EvalGraderTextSimilarityVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.EvalGraderTextSimilarityVariant2> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.EvalGraderTextSimilarityVariant2).Name}");
+                    evalGraderTextSimilarityVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -110,15 +119,20 @@ namespace tryAGI.OpenAI.JsonConverters
             global::tryAGI.OpenAI.EvalGraderTextSimilarity value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsTextSimilarityGrader)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextSimilarityGrader, typeof(global::tryAGI.OpenAI.GraderTextSimilarity), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.GraderTextSimilarity), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.GraderTextSimilarity?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.GraderTextSimilarity).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextSimilarityGrader!, typeInfo);
             }
             else if (value.IsEvalGraderTextSimilarityVariant2)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EvalGraderTextSimilarityVariant2, typeof(global::tryAGI.OpenAI.EvalGraderTextSimilarityVariant2), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.EvalGraderTextSimilarityVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.EvalGraderTextSimilarityVariant2?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.EvalGraderTextSimilarityVariant2).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EvalGraderTextSimilarityVariant2!, typeInfo);
             }
         }
     }

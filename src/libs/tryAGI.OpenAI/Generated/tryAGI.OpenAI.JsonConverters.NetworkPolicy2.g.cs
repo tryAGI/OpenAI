@@ -12,7 +12,8 @@ namespace tryAGI.OpenAI.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -44,7 +45,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        disabled = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParam>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParam> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParam).Name}");
+                        disabled = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -57,7 +60,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        allowlist = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam).Name}");
+                        allowlist = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -72,7 +77,9 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 try
                 {
-                    disabled = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParam>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParam> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParam).Name}");
+                    disabled = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -83,7 +90,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    allowlist = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam).Name}");
+                    allowlist = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -108,15 +117,20 @@ namespace tryAGI.OpenAI.JsonConverters
             global::tryAGI.OpenAI.NetworkPolicy2 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsDisabled)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Disabled, typeof(global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParam), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Disabled!, typeInfo);
             }
             else if (value.IsAllowlist)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Allowlist, typeof(global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Allowlist!, typeInfo);
             }
         }
     }

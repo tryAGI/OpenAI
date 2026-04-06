@@ -12,7 +12,8 @@ namespace tryAGI.OpenAI.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -51,7 +52,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        createFile = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ApplyPatchCreateFileOperation>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ApplyPatchCreateFileOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ApplyPatchCreateFileOperation> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ApplyPatchCreateFileOperation).Name}");
+                        createFile = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -64,7 +67,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        deleteFile = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ApplyPatchDeleteFileOperation>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ApplyPatchDeleteFileOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ApplyPatchDeleteFileOperation> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ApplyPatchDeleteFileOperation).Name}");
+                        deleteFile = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -77,7 +82,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        updateFile = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ApplyPatchUpdateFileOperation>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ApplyPatchUpdateFileOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ApplyPatchUpdateFileOperation> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ApplyPatchUpdateFileOperation).Name}");
+                        updateFile = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -92,7 +99,9 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 try
                 {
-                    createFile = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ApplyPatchCreateFileOperation>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ApplyPatchCreateFileOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ApplyPatchCreateFileOperation> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ApplyPatchCreateFileOperation).Name}");
+                    createFile = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -103,7 +112,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    deleteFile = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ApplyPatchDeleteFileOperation>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ApplyPatchDeleteFileOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ApplyPatchDeleteFileOperation> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ApplyPatchDeleteFileOperation).Name}");
+                    deleteFile = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -114,7 +125,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    updateFile = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ApplyPatchUpdateFileOperation>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ApplyPatchUpdateFileOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ApplyPatchUpdateFileOperation> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ApplyPatchUpdateFileOperation).Name}");
+                    updateFile = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -141,19 +154,26 @@ namespace tryAGI.OpenAI.JsonConverters
             global::tryAGI.OpenAI.Operation value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsCreateFile)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateFile, typeof(global::tryAGI.OpenAI.ApplyPatchCreateFileOperation), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ApplyPatchCreateFileOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ApplyPatchCreateFileOperation?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ApplyPatchCreateFileOperation).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateFile!, typeInfo);
             }
             else if (value.IsDeleteFile)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeleteFile, typeof(global::tryAGI.OpenAI.ApplyPatchDeleteFileOperation), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ApplyPatchDeleteFileOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ApplyPatchDeleteFileOperation?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ApplyPatchDeleteFileOperation).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeleteFile!, typeInfo);
             }
             else if (value.IsUpdateFile)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UpdateFile, typeof(global::tryAGI.OpenAI.ApplyPatchUpdateFileOperation), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ApplyPatchUpdateFileOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ApplyPatchUpdateFileOperation?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ApplyPatchUpdateFileOperation).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UpdateFile!, typeInfo);
             }
         }
     }

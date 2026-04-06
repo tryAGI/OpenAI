@@ -258,7 +258,7 @@ namespace tryAGI.OpenAI
                     yield break;
                 }
 
-                var __streamedResponse = global::tryAGI.OpenAI.ImageEditStreamEvent.FromJson(__content, JsonSerializerOptions) ??
+                var __streamedResponse = global::tryAGI.OpenAI.ImageEditStreamEvent.FromJson(__content, JsonSerializerContext) ??
                                        throw new global::tryAGI.OpenAI.ApiException(
                                            message: $"Response deserialization failed for \"{__content}\" ",
                                            statusCode: __response.StatusCode)

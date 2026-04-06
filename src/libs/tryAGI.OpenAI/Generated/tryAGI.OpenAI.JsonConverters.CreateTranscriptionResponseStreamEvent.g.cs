@@ -12,7 +12,8 @@ namespace tryAGI.OpenAI.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -57,7 +58,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        transcriptTextSegment = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.TranscriptTextSegmentEvent>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TranscriptTextSegmentEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TranscriptTextSegmentEvent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TranscriptTextSegmentEvent).Name}");
+                        transcriptTextSegment = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -70,7 +73,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        transcriptTextDelta = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.TranscriptTextDeltaEvent>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TranscriptTextDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TranscriptTextDeltaEvent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TranscriptTextDeltaEvent).Name}");
+                        transcriptTextDelta = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -83,7 +88,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        transcriptTextDone = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.TranscriptTextDoneEvent>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TranscriptTextDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TranscriptTextDoneEvent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TranscriptTextDoneEvent).Name}");
+                        transcriptTextDone = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -98,7 +105,9 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 try
                 {
-                    transcriptTextSegment = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.TranscriptTextSegmentEvent>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TranscriptTextSegmentEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TranscriptTextSegmentEvent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TranscriptTextSegmentEvent).Name}");
+                    transcriptTextSegment = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -109,7 +118,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    transcriptTextDelta = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.TranscriptTextDeltaEvent>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TranscriptTextDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TranscriptTextDeltaEvent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TranscriptTextDeltaEvent).Name}");
+                    transcriptTextDelta = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -120,7 +131,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    transcriptTextDone = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.TranscriptTextDoneEvent>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TranscriptTextDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TranscriptTextDoneEvent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TranscriptTextDoneEvent).Name}");
+                    transcriptTextDone = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -147,19 +160,26 @@ namespace tryAGI.OpenAI.JsonConverters
             global::tryAGI.OpenAI.CreateTranscriptionResponseStreamEvent value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsTranscriptTextSegment)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TranscriptTextSegment, typeof(global::tryAGI.OpenAI.TranscriptTextSegmentEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TranscriptTextSegmentEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TranscriptTextSegmentEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TranscriptTextSegmentEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TranscriptTextSegment!, typeInfo);
             }
             else if (value.IsTranscriptTextDelta)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TranscriptTextDelta, typeof(global::tryAGI.OpenAI.TranscriptTextDeltaEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TranscriptTextDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TranscriptTextDeltaEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TranscriptTextDeltaEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TranscriptTextDelta!, typeInfo);
             }
             else if (value.IsTranscriptTextDone)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TranscriptTextDone, typeof(global::tryAGI.OpenAI.TranscriptTextDoneEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TranscriptTextDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TranscriptTextDoneEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TranscriptTextDoneEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TranscriptTextDone!, typeInfo);
             }
         }
     }
