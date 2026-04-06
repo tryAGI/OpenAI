@@ -12,7 +12,8 @@ namespace tryAGI.OpenAI.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -49,7 +50,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        customToolCall = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.CustomToolCall>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.CustomToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.CustomToolCall> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.CustomToolCall).Name}");
+                        customToolCall = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -62,7 +65,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        customToolCallResourceVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.CustomToolCallResourceVariant2>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.CustomToolCallResourceVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.CustomToolCallResourceVariant2> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.CustomToolCallResourceVariant2).Name}");
+                        customToolCallResourceVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -77,7 +82,9 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 try
                 {
-                    customToolCall = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.CustomToolCall>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.CustomToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.CustomToolCall> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.CustomToolCall).Name}");
+                    customToolCall = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -88,7 +95,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    customToolCallResourceVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.CustomToolCallResourceVariant2>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.CustomToolCallResourceVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.CustomToolCallResourceVariant2> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.CustomToolCallResourceVariant2).Name}");
+                    customToolCallResourceVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -113,15 +122,20 @@ namespace tryAGI.OpenAI.JsonConverters
             global::tryAGI.OpenAI.CustomToolCallResource value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsCustomToolCall)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomToolCall, typeof(global::tryAGI.OpenAI.CustomToolCall), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.CustomToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.CustomToolCall?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.CustomToolCall).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomToolCall!, typeInfo);
             }
             else if (value.IsCustomToolCallResourceVariant2)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomToolCallResourceVariant2, typeof(global::tryAGI.OpenAI.CustomToolCallResourceVariant2), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.CustomToolCallResourceVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.CustomToolCallResourceVariant2?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.CustomToolCallResourceVariant2).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomToolCallResourceVariant2!, typeInfo);
             }
         }
     }

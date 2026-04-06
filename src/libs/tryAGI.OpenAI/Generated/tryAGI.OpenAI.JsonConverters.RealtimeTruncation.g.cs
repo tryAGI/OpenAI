@@ -12,7 +12,8 @@ namespace tryAGI.OpenAI.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -43,7 +44,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        @enum = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeTruncationEnum>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeTruncationEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeTruncationEnum> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeTruncationEnum).Name}");
+                        @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -56,7 +59,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        retentionRatioTruncation = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeTruncationEnum2>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeTruncationEnum2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeTruncationEnum2> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeTruncationEnum2).Name}");
+                        retentionRatioTruncation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -71,7 +76,9 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 try
                 {
-                    @enum = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeTruncationEnum>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeTruncationEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeTruncationEnum> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeTruncationEnum).Name}");
+                    @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -82,7 +89,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    retentionRatioTruncation = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeTruncationEnum2>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeTruncationEnum2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeTruncationEnum2> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeTruncationEnum2).Name}");
+                    retentionRatioTruncation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -107,15 +116,20 @@ namespace tryAGI.OpenAI.JsonConverters
             global::tryAGI.OpenAI.RealtimeTruncation value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsEnum)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enum, typeof(global::tryAGI.OpenAI.RealtimeTruncationEnum), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeTruncationEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeTruncationEnum> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeTruncationEnum).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enum!.Value, typeInfo);
             }
             else if (value.IsRetentionRatioTruncation)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RetentionRatioTruncation, typeof(global::tryAGI.OpenAI.RealtimeTruncationEnum2), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeTruncationEnum2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeTruncationEnum2?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeTruncationEnum2).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RetentionRatioTruncation!, typeInfo);
             }
         }
     }

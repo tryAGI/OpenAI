@@ -12,7 +12,8 @@ namespace tryAGI.OpenAI.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -96,7 +97,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        chatkitUserMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.UserMessageItem>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.UserMessageItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.UserMessageItem> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.UserMessageItem).Name}");
+                        chatkitUserMessage = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -109,7 +112,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        chatkitAssistantMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.AssistantMessageItem>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.AssistantMessageItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.AssistantMessageItem> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.AssistantMessageItem).Name}");
+                        chatkitAssistantMessage = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -122,7 +127,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        chatkitWidget = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.WidgetMessageItem>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.WidgetMessageItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.WidgetMessageItem> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.WidgetMessageItem).Name}");
+                        chatkitWidget = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -135,7 +142,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        chatkitClientToolCall = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ClientToolCallItem>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ClientToolCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ClientToolCallItem> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ClientToolCallItem).Name}");
+                        chatkitClientToolCall = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -148,7 +157,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        chatkitTask = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.TaskItem>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TaskItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TaskItem> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TaskItem).Name}");
+                        chatkitTask = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -161,7 +172,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        chatkitTaskGroup = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.TaskGroupItem>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TaskGroupItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TaskGroupItem> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TaskGroupItem).Name}");
+                        chatkitTaskGroup = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -176,7 +189,9 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 try
                 {
-                    chatkitUserMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.UserMessageItem>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.UserMessageItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.UserMessageItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.UserMessageItem).Name}");
+                    chatkitUserMessage = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -187,7 +202,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    chatkitAssistantMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.AssistantMessageItem>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.AssistantMessageItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.AssistantMessageItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.AssistantMessageItem).Name}");
+                    chatkitAssistantMessage = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -198,7 +215,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    chatkitWidget = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.WidgetMessageItem>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.WidgetMessageItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.WidgetMessageItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.WidgetMessageItem).Name}");
+                    chatkitWidget = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -209,7 +228,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    chatkitClientToolCall = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ClientToolCallItem>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ClientToolCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ClientToolCallItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ClientToolCallItem).Name}");
+                    chatkitClientToolCall = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -220,7 +241,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    chatkitTask = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.TaskItem>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TaskItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TaskItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TaskItem).Name}");
+                    chatkitTask = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -231,7 +254,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    chatkitTaskGroup = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.TaskGroupItem>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TaskGroupItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TaskGroupItem> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TaskGroupItem).Name}");
+                    chatkitTaskGroup = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -264,31 +289,44 @@ namespace tryAGI.OpenAI.JsonConverters
             global::tryAGI.OpenAI.ThreadItem value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsChatkitUserMessage)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatkitUserMessage, typeof(global::tryAGI.OpenAI.UserMessageItem), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.UserMessageItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.UserMessageItem?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.UserMessageItem).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatkitUserMessage!, typeInfo);
             }
             else if (value.IsChatkitAssistantMessage)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatkitAssistantMessage, typeof(global::tryAGI.OpenAI.AssistantMessageItem), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.AssistantMessageItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.AssistantMessageItem?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.AssistantMessageItem).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatkitAssistantMessage!, typeInfo);
             }
             else if (value.IsChatkitWidget)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatkitWidget, typeof(global::tryAGI.OpenAI.WidgetMessageItem), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.WidgetMessageItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.WidgetMessageItem?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.WidgetMessageItem).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatkitWidget!, typeInfo);
             }
             else if (value.IsChatkitClientToolCall)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatkitClientToolCall, typeof(global::tryAGI.OpenAI.ClientToolCallItem), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ClientToolCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ClientToolCallItem?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ClientToolCallItem).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatkitClientToolCall!, typeInfo);
             }
             else if (value.IsChatkitTask)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatkitTask, typeof(global::tryAGI.OpenAI.TaskItem), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TaskItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TaskItem?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TaskItem).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatkitTask!, typeInfo);
             }
             else if (value.IsChatkitTaskGroup)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatkitTaskGroup, typeof(global::tryAGI.OpenAI.TaskGroupItem), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TaskGroupItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TaskGroupItem?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TaskGroupItem).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatkitTaskGroup!, typeInfo);
             }
         }
     }

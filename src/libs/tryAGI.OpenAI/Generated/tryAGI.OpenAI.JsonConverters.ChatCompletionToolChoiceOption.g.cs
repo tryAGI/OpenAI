@@ -12,7 +12,8 @@ namespace tryAGI.OpenAI.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -52,7 +53,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        toolChoiceMode = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum).Name}");
+                        toolChoiceMode = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -65,7 +68,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        allowedTools = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice).Name}");
+                        allowedTools = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -78,7 +83,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        functionToolChoice = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ChatCompletionNamedToolChoice>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ChatCompletionNamedToolChoice), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ChatCompletionNamedToolChoice> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ChatCompletionNamedToolChoice).Name}");
+                        functionToolChoice = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -91,7 +98,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        customToolChoice = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom).Name}");
+                        customToolChoice = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -106,7 +115,9 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 try
                 {
-                    toolChoiceMode = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum).Name}");
+                    toolChoiceMode = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -117,7 +128,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    allowedTools = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice).Name}");
+                    allowedTools = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -128,7 +141,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    functionToolChoice = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ChatCompletionNamedToolChoice>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ChatCompletionNamedToolChoice), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ChatCompletionNamedToolChoice> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ChatCompletionNamedToolChoice).Name}");
+                    functionToolChoice = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -139,7 +154,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    customToolChoice = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom).Name}");
+                    customToolChoice = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -168,23 +185,32 @@ namespace tryAGI.OpenAI.JsonConverters
             global::tryAGI.OpenAI.ChatCompletionToolChoiceOption value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsToolChoiceMode)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolChoiceMode, typeof(global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolChoiceMode!.Value, typeInfo);
             }
             else if (value.IsAllowedTools)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AllowedTools, typeof(global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AllowedTools!, typeInfo);
             }
             else if (value.IsFunctionToolChoice)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FunctionToolChoice, typeof(global::tryAGI.OpenAI.ChatCompletionNamedToolChoice), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ChatCompletionNamedToolChoice), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ChatCompletionNamedToolChoice?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ChatCompletionNamedToolChoice).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FunctionToolChoice!, typeInfo);
             }
             else if (value.IsCustomToolChoice)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomToolChoice, typeof(global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomToolChoice!, typeInfo);
             }
         }
     }

@@ -12,7 +12,8 @@ namespace tryAGI.OpenAI.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -41,7 +42,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        shared = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.VoiceIdsShared>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.VoiceIdsShared), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.VoiceIdsShared> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.VoiceIdsShared).Name}");
+                        shared = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -54,7 +57,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        voiceIdsOrCustomVoiceVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2).Name}");
+                        voiceIdsOrCustomVoiceVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -69,7 +74,9 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 try
                 {
-                    shared = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.VoiceIdsShared>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.VoiceIdsShared), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.VoiceIdsShared> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.VoiceIdsShared).Name}");
+                    shared = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -80,7 +87,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    voiceIdsOrCustomVoiceVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2).Name}");
+                    voiceIdsOrCustomVoiceVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -105,15 +114,20 @@ namespace tryAGI.OpenAI.JsonConverters
             global::tryAGI.OpenAI.VoiceIdsOrCustomVoice value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsShared)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Shared, typeof(global::tryAGI.OpenAI.VoiceIdsShared), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.VoiceIdsShared), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.VoiceIdsShared> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.VoiceIdsShared).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Shared!.Value, typeInfo);
             }
             else if (value.IsVoiceIdsOrCustomVoiceVariant2)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VoiceIdsOrCustomVoiceVariant2, typeof(global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VoiceIdsOrCustomVoiceVariant2!, typeInfo);
             }
         }
     }

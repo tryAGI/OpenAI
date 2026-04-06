@@ -12,7 +12,8 @@ namespace tryAGI.OpenAI.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -52,7 +53,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        containerAuto = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ContainerAutoParam>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ContainerAutoParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ContainerAutoParam> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ContainerAutoParam).Name}");
+                        containerAuto = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -65,7 +68,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        local = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.LocalEnvironmentParam>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LocalEnvironmentParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LocalEnvironmentParam> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LocalEnvironmentParam).Name}");
+                        local = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -78,7 +83,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        containerReference = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ContainerReferenceParam>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ContainerReferenceParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ContainerReferenceParam> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ContainerReferenceParam).Name}");
+                        containerReference = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -93,7 +100,9 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 try
                 {
-                    containerAuto = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ContainerAutoParam>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ContainerAutoParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ContainerAutoParam> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ContainerAutoParam).Name}");
+                    containerAuto = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -104,7 +113,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    local = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.LocalEnvironmentParam>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LocalEnvironmentParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LocalEnvironmentParam> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LocalEnvironmentParam).Name}");
+                    local = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -115,7 +126,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    containerReference = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ContainerReferenceParam>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ContainerReferenceParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ContainerReferenceParam> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ContainerReferenceParam).Name}");
+                    containerReference = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -142,19 +155,26 @@ namespace tryAGI.OpenAI.JsonConverters
             global::tryAGI.OpenAI.EnvironmentVariant1 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsContainerAuto)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContainerAuto, typeof(global::tryAGI.OpenAI.ContainerAutoParam), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ContainerAutoParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ContainerAutoParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ContainerAutoParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContainerAuto!, typeInfo);
             }
             else if (value.IsLocal)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Local, typeof(global::tryAGI.OpenAI.LocalEnvironmentParam), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LocalEnvironmentParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LocalEnvironmentParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LocalEnvironmentParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Local!, typeInfo);
             }
             else if (value.IsContainerReference)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContainerReference, typeof(global::tryAGI.OpenAI.ContainerReferenceParam), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ContainerReferenceParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ContainerReferenceParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ContainerReferenceParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContainerReference!, typeInfo);
             }
         }
     }

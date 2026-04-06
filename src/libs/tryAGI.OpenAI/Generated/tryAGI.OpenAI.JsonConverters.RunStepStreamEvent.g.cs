@@ -12,7 +12,8 @@ namespace tryAGI.OpenAI.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -69,7 +70,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        runStepStreamEventVariant1 = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RunStepStreamEventVariant1>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RunStepStreamEventVariant1> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant1).Name}");
+                        runStepStreamEventVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -82,7 +85,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        runStepStreamEventVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RunStepStreamEventVariant2>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RunStepStreamEventVariant2> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant2).Name}");
+                        runStepStreamEventVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -95,7 +100,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        runStepStreamEventVariant3 = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RunStepStreamEventVariant3>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RunStepStreamEventVariant3> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant3).Name}");
+                        runStepStreamEventVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -108,7 +115,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        runStepStreamEventVariant4 = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RunStepStreamEventVariant4>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RunStepStreamEventVariant4> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant4).Name}");
+                        runStepStreamEventVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -121,7 +130,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        runStepStreamEventVariant5 = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RunStepStreamEventVariant5>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RunStepStreamEventVariant5> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant5).Name}");
+                        runStepStreamEventVariant5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -134,7 +145,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        runStepStreamEventVariant6 = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RunStepStreamEventVariant6>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant6), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RunStepStreamEventVariant6> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant6).Name}");
+                        runStepStreamEventVariant6 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -147,7 +160,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        runStepStreamEventVariant7 = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RunStepStreamEventVariant7>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant7), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RunStepStreamEventVariant7> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant7).Name}");
+                        runStepStreamEventVariant7 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -162,7 +177,9 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 try
                 {
-                    runStepStreamEventVariant1 = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RunStepStreamEventVariant1>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RunStepStreamEventVariant1> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant1).Name}");
+                    runStepStreamEventVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -173,7 +190,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    runStepStreamEventVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RunStepStreamEventVariant2>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RunStepStreamEventVariant2> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant2).Name}");
+                    runStepStreamEventVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -184,7 +203,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    runStepStreamEventVariant3 = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RunStepStreamEventVariant3>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RunStepStreamEventVariant3> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant3).Name}");
+                    runStepStreamEventVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -195,7 +216,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    runStepStreamEventVariant4 = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RunStepStreamEventVariant4>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RunStepStreamEventVariant4> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant4).Name}");
+                    runStepStreamEventVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -206,7 +229,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    runStepStreamEventVariant5 = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RunStepStreamEventVariant5>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RunStepStreamEventVariant5> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant5).Name}");
+                    runStepStreamEventVariant5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -217,7 +242,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    runStepStreamEventVariant6 = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RunStepStreamEventVariant6>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant6), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RunStepStreamEventVariant6> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant6).Name}");
+                    runStepStreamEventVariant6 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -228,7 +255,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    runStepStreamEventVariant7 = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RunStepStreamEventVariant7>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant7), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RunStepStreamEventVariant7> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant7).Name}");
+                    runStepStreamEventVariant7 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -263,35 +292,50 @@ namespace tryAGI.OpenAI.JsonConverters
             global::tryAGI.OpenAI.RunStepStreamEvent value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsRunStepStreamEventVariant1)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RunStepStreamEventVariant1, typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant1), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RunStepStreamEventVariant1?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant1).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RunStepStreamEventVariant1!, typeInfo);
             }
             else if (value.IsRunStepStreamEventVariant2)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RunStepStreamEventVariant2, typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant2), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RunStepStreamEventVariant2?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant2).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RunStepStreamEventVariant2!, typeInfo);
             }
             else if (value.IsRunStepStreamEventVariant3)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RunStepStreamEventVariant3, typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant3), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RunStepStreamEventVariant3?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant3).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RunStepStreamEventVariant3!, typeInfo);
             }
             else if (value.IsRunStepStreamEventVariant4)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RunStepStreamEventVariant4, typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant4), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RunStepStreamEventVariant4?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant4).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RunStepStreamEventVariant4!, typeInfo);
             }
             else if (value.IsRunStepStreamEventVariant5)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RunStepStreamEventVariant5, typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant5), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RunStepStreamEventVariant5?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant5).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RunStepStreamEventVariant5!, typeInfo);
             }
             else if (value.IsRunStepStreamEventVariant6)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RunStepStreamEventVariant6, typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant6), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant6), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RunStepStreamEventVariant6?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant6).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RunStepStreamEventVariant6!, typeInfo);
             }
             else if (value.IsRunStepStreamEventVariant7)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RunStepStreamEventVariant7, typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant7), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant7), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RunStepStreamEventVariant7?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RunStepStreamEventVariant7).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RunStepStreamEventVariant7!, typeInfo);
             }
         }
     }

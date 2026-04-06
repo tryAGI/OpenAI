@@ -12,7 +12,8 @@ namespace tryAGI.OpenAI.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -56,7 +57,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        imageEditPartialImage = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ImageEditPartialImageEvent>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ImageEditPartialImageEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ImageEditPartialImageEvent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ImageEditPartialImageEvent).Name}");
+                        imageEditPartialImage = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -69,7 +72,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        imageEditCompleted = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ImageEditCompletedEvent>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ImageEditCompletedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ImageEditCompletedEvent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ImageEditCompletedEvent).Name}");
+                        imageEditCompleted = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -84,7 +89,9 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 try
                 {
-                    imageEditPartialImage = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ImageEditPartialImageEvent>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ImageEditPartialImageEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ImageEditPartialImageEvent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ImageEditPartialImageEvent).Name}");
+                    imageEditPartialImage = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -95,7 +102,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    imageEditCompleted = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ImageEditCompletedEvent>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ImageEditCompletedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ImageEditCompletedEvent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ImageEditCompletedEvent).Name}");
+                    imageEditCompleted = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -120,15 +129,20 @@ namespace tryAGI.OpenAI.JsonConverters
             global::tryAGI.OpenAI.ImageEditStreamEvent value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsImageEditPartialImage)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageEditPartialImage, typeof(global::tryAGI.OpenAI.ImageEditPartialImageEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ImageEditPartialImageEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ImageEditPartialImageEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ImageEditPartialImageEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageEditPartialImage!, typeInfo);
             }
             else if (value.IsImageEditCompleted)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageEditCompleted, typeof(global::tryAGI.OpenAI.ImageEditCompletedEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ImageEditCompletedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ImageEditCompletedEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ImageEditCompletedEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageEditCompleted!, typeInfo);
             }
         }
     }

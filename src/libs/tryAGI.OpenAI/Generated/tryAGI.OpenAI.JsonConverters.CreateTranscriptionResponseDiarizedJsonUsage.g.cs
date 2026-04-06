@@ -12,7 +12,8 @@ namespace tryAGI.OpenAI.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -47,7 +48,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        tokens = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.TranscriptTextUsageTokens>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TranscriptTextUsageTokens), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TranscriptTextUsageTokens> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TranscriptTextUsageTokens).Name}");
+                        tokens = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -60,7 +63,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        duration = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.TranscriptTextUsageDuration>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TranscriptTextUsageDuration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TranscriptTextUsageDuration> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TranscriptTextUsageDuration).Name}");
+                        duration = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -75,7 +80,9 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 try
                 {
-                    tokens = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.TranscriptTextUsageTokens>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TranscriptTextUsageTokens), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TranscriptTextUsageTokens> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TranscriptTextUsageTokens).Name}");
+                    tokens = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -86,7 +93,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    duration = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.TranscriptTextUsageDuration>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TranscriptTextUsageDuration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TranscriptTextUsageDuration> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TranscriptTextUsageDuration).Name}");
+                    duration = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -111,15 +120,20 @@ namespace tryAGI.OpenAI.JsonConverters
             global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJsonUsage value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsTokens)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Tokens, typeof(global::tryAGI.OpenAI.TranscriptTextUsageTokens), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TranscriptTextUsageTokens), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TranscriptTextUsageTokens?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TranscriptTextUsageTokens).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Tokens!, typeInfo);
             }
             else if (value.IsDuration)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Duration, typeof(global::tryAGI.OpenAI.TranscriptTextUsageDuration), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TranscriptTextUsageDuration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TranscriptTextUsageDuration?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TranscriptTextUsageDuration).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Duration!, typeInfo);
             }
         }
     }

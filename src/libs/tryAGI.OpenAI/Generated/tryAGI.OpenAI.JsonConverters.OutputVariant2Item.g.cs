@@ -12,7 +12,8 @@ namespace tryAGI.OpenAI.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -54,7 +55,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        inputText = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.InputTextContentParam>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.InputTextContentParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.InputTextContentParam> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.InputTextContentParam).Name}");
+                        inputText = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -67,7 +70,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        inputImage = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.InputImageContentParamAutoParam>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.InputImageContentParamAutoParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.InputImageContentParamAutoParam> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.InputImageContentParamAutoParam).Name}");
+                        inputImage = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -80,7 +85,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        inputFile = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.InputFileContentParam>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.InputFileContentParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.InputFileContentParam> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.InputFileContentParam).Name}");
+                        inputFile = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -95,7 +102,9 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 try
                 {
-                    inputText = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.InputTextContentParam>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.InputTextContentParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.InputTextContentParam> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.InputTextContentParam).Name}");
+                    inputText = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -106,7 +115,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    inputImage = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.InputImageContentParamAutoParam>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.InputImageContentParamAutoParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.InputImageContentParamAutoParam> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.InputImageContentParamAutoParam).Name}");
+                    inputImage = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -117,7 +128,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    inputFile = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.InputFileContentParam>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.InputFileContentParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.InputFileContentParam> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.InputFileContentParam).Name}");
+                    inputFile = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -144,19 +157,26 @@ namespace tryAGI.OpenAI.JsonConverters
             global::tryAGI.OpenAI.OutputVariant2Item value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsInputText)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputText, typeof(global::tryAGI.OpenAI.InputTextContentParam), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.InputTextContentParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.InputTextContentParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.InputTextContentParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputText!, typeInfo);
             }
             else if (value.IsInputImage)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputImage, typeof(global::tryAGI.OpenAI.InputImageContentParamAutoParam), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.InputImageContentParamAutoParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.InputImageContentParamAutoParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.InputImageContentParamAutoParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputImage!, typeInfo);
             }
             else if (value.IsInputFile)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputFile, typeof(global::tryAGI.OpenAI.InputFileContentParam), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.InputFileContentParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.InputFileContentParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.InputFileContentParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputFile!, typeInfo);
             }
         }
     }

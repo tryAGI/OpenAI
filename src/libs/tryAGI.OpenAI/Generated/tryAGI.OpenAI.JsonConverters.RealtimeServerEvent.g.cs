@@ -12,7 +12,8 @@ namespace tryAGI.OpenAI.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -388,7 +389,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        conversationCreated = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventConversationCreated>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationCreated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationCreated> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationCreated).Name}");
+                        conversationCreated = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -401,7 +404,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        conversationItemCreated = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventConversationItemCreated>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemCreated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemCreated> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemCreated).Name}");
+                        conversationItemCreated = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -414,7 +419,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        conversationItemDeleted = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventConversationItemDeleted>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemDeleted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemDeleted> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemDeleted).Name}");
+                        conversationItemDeleted = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -427,7 +434,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        conversationItemInputAudioTranscriptionCompleted = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted).Name}");
+                        conversationItemInputAudioTranscriptionCompleted = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -440,7 +449,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        conversationItemInputAudioTranscriptionDelta = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionDelta>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionDelta> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionDelta).Name}");
+                        conversationItemInputAudioTranscriptionDelta = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -453,7 +464,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        conversationItemInputAudioTranscriptionFailed = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionFailed>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionFailed), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionFailed> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionFailed).Name}");
+                        conversationItemInputAudioTranscriptionFailed = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -466,7 +479,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        conversationItemRetrieved = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventConversationItemRetrieved>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemRetrieved), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemRetrieved> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemRetrieved).Name}");
+                        conversationItemRetrieved = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -479,7 +494,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        conversationItemTruncated = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventConversationItemTruncated>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemTruncated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemTruncated> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemTruncated).Name}");
+                        conversationItemTruncated = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -492,7 +509,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        error = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventError>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventError> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventError).Name}");
+                        error = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -505,7 +524,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        inputAudioBufferCleared = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCleared>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCleared), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCleared> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCleared).Name}");
+                        inputAudioBufferCleared = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -518,7 +539,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        inputAudioBufferCommitted = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCommitted>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCommitted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCommitted> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCommitted).Name}");
+                        inputAudioBufferCommitted = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -531,7 +554,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        inputAudioBufferDtmfEventReceived = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferDtmfEventReceived>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferDtmfEventReceived), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferDtmfEventReceived> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferDtmfEventReceived).Name}");
+                        inputAudioBufferDtmfEventReceived = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -544,7 +569,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        inputAudioBufferSpeechStarted = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStarted>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStarted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStarted> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStarted).Name}");
+                        inputAudioBufferSpeechStarted = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -557,7 +584,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        inputAudioBufferSpeechStopped = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStopped>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStopped), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStopped> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStopped).Name}");
+                        inputAudioBufferSpeechStopped = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -570,7 +599,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        rateLimitsUpdated = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdated>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdated> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdated).Name}");
+                        rateLimitsUpdated = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -583,7 +614,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        responseOutputAudioDelta = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDelta>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDelta> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDelta).Name}");
+                        responseOutputAudioDelta = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -596,7 +629,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        responseOutputAudioDone = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDone>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDone> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDone).Name}");
+                        responseOutputAudioDone = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -609,7 +644,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        responseOutputAudioTranscriptDelta = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDelta>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDelta> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDelta).Name}");
+                        responseOutputAudioTranscriptDelta = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -622,7 +659,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        responseOutputAudioTranscriptDone = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDone>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDone> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDone).Name}");
+                        responseOutputAudioTranscriptDone = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -635,7 +674,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        responseContentPartAdded = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartAdded>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartAdded), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartAdded> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartAdded).Name}");
+                        responseContentPartAdded = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -648,7 +689,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        responseContentPartDone = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartDone>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartDone> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartDone).Name}");
+                        responseContentPartDone = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -661,7 +704,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        responseCreated = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseCreated>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseCreated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseCreated> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseCreated).Name}");
+                        responseCreated = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -674,7 +719,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        responseDone = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseDone>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseDone> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseDone).Name}");
+                        responseDone = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -687,7 +734,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        responseFunctionCallArgumentsDelta = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDelta>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDelta> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDelta).Name}");
+                        responseFunctionCallArgumentsDelta = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -700,7 +749,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        responseFunctionCallArgumentsDone = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDone>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDone> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDone).Name}");
+                        responseFunctionCallArgumentsDone = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -713,7 +764,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        responseOutputItemAdded = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemAdded>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemAdded), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemAdded> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemAdded).Name}");
+                        responseOutputItemAdded = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -726,7 +779,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        responseOutputItemDone = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemDone>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemDone> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemDone).Name}");
+                        responseOutputItemDone = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -739,7 +794,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        responseOutputTextDelta = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseTextDelta>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseTextDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseTextDelta> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseTextDelta).Name}");
+                        responseOutputTextDelta = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -752,7 +809,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        responseOutputTextDone = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseTextDone>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseTextDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseTextDone> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseTextDone).Name}");
+                        responseOutputTextDone = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -765,7 +824,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        sessionCreated = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventSessionCreated>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventSessionCreated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventSessionCreated> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventSessionCreated).Name}");
+                        sessionCreated = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -778,7 +839,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        sessionUpdated = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventSessionUpdated>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventSessionUpdated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventSessionUpdated> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventSessionUpdated).Name}");
+                        sessionUpdated = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -791,7 +854,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        outputAudioBufferStarted = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStarted>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStarted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStarted> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStarted).Name}");
+                        outputAudioBufferStarted = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -804,7 +869,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        outputAudioBufferStopped = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStopped>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStopped), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStopped> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStopped).Name}");
+                        outputAudioBufferStopped = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -817,7 +884,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        outputAudioBufferCleared = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferCleared>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferCleared), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferCleared> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferCleared).Name}");
+                        outputAudioBufferCleared = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -830,7 +899,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        conversationItemAdded = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventConversationItemAdded>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemAdded), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemAdded> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemAdded).Name}");
+                        conversationItemAdded = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -843,7 +914,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        conversationItemDone = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventConversationItemDone>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemDone> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemDone).Name}");
+                        conversationItemDone = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -856,7 +929,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        inputAudioBufferTimeoutTriggered = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferTimeoutTriggered>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferTimeoutTriggered), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferTimeoutTriggered> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferTimeoutTriggered).Name}");
+                        inputAudioBufferTimeoutTriggered = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -869,7 +944,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        conversationItemInputAudioTranscriptionSegment = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionSegment>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionSegment), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionSegment> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionSegment).Name}");
+                        conversationItemInputAudioTranscriptionSegment = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -882,7 +959,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        mcpListToolsInProgress = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsInProgress>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsInProgress), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsInProgress> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsInProgress).Name}");
+                        mcpListToolsInProgress = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -895,7 +974,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        mcpListToolsCompleted = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsCompleted>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsCompleted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsCompleted> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsCompleted).Name}");
+                        mcpListToolsCompleted = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -908,7 +989,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        mcpListToolsFailed = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsFailed>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsFailed), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsFailed> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsFailed).Name}");
+                        mcpListToolsFailed = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -921,7 +1004,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        responseMcpCallArgumentsDelta = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDelta>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDelta> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDelta).Name}");
+                        responseMcpCallArgumentsDelta = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -934,7 +1019,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        responseMcpCallArgumentsDone = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDone>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDone> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDone).Name}");
+                        responseMcpCallArgumentsDone = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -947,7 +1034,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        responseMcpCallInProgress = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallInProgress>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallInProgress), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallInProgress> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallInProgress).Name}");
+                        responseMcpCallInProgress = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -960,7 +1049,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        responseMcpCallCompleted = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallCompleted>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallCompleted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallCompleted> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallCompleted).Name}");
+                        responseMcpCallCompleted = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -973,7 +1064,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        responseMcpCallFailed = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallFailed>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallFailed), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallFailed> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallFailed).Name}");
+                        responseMcpCallFailed = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -988,7 +1081,9 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 try
                 {
-                    conversationCreated = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventConversationCreated>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationCreated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationCreated> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationCreated).Name}");
+                    conversationCreated = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -999,7 +1094,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    conversationItemCreated = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventConversationItemCreated>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemCreated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemCreated> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemCreated).Name}");
+                    conversationItemCreated = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1010,7 +1107,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    conversationItemDeleted = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventConversationItemDeleted>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemDeleted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemDeleted> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemDeleted).Name}");
+                    conversationItemDeleted = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1021,7 +1120,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    conversationItemInputAudioTranscriptionCompleted = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted).Name}");
+                    conversationItemInputAudioTranscriptionCompleted = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1032,7 +1133,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    conversationItemInputAudioTranscriptionDelta = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionDelta>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionDelta> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionDelta).Name}");
+                    conversationItemInputAudioTranscriptionDelta = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1043,7 +1146,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    conversationItemInputAudioTranscriptionFailed = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionFailed>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionFailed), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionFailed> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionFailed).Name}");
+                    conversationItemInputAudioTranscriptionFailed = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1054,7 +1159,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    conversationItemRetrieved = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventConversationItemRetrieved>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemRetrieved), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemRetrieved> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemRetrieved).Name}");
+                    conversationItemRetrieved = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1065,7 +1172,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    conversationItemTruncated = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventConversationItemTruncated>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemTruncated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemTruncated> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemTruncated).Name}");
+                    conversationItemTruncated = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1076,7 +1185,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    error = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventError>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventError> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventError).Name}");
+                    error = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1087,7 +1198,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    inputAudioBufferCleared = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCleared>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCleared), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCleared> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCleared).Name}");
+                    inputAudioBufferCleared = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1098,7 +1211,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    inputAudioBufferCommitted = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCommitted>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCommitted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCommitted> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCommitted).Name}");
+                    inputAudioBufferCommitted = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1109,7 +1224,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    inputAudioBufferDtmfEventReceived = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferDtmfEventReceived>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferDtmfEventReceived), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferDtmfEventReceived> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferDtmfEventReceived).Name}");
+                    inputAudioBufferDtmfEventReceived = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1120,7 +1237,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    inputAudioBufferSpeechStarted = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStarted>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStarted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStarted> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStarted).Name}");
+                    inputAudioBufferSpeechStarted = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1131,7 +1250,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    inputAudioBufferSpeechStopped = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStopped>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStopped), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStopped> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStopped).Name}");
+                    inputAudioBufferSpeechStopped = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1142,7 +1263,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    rateLimitsUpdated = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdated>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdated> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdated).Name}");
+                    rateLimitsUpdated = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1153,7 +1276,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    responseOutputAudioDelta = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDelta>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDelta> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDelta).Name}");
+                    responseOutputAudioDelta = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1164,7 +1289,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    responseOutputAudioDone = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDone>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDone> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDone).Name}");
+                    responseOutputAudioDone = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1175,7 +1302,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    responseOutputAudioTranscriptDelta = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDelta>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDelta> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDelta).Name}");
+                    responseOutputAudioTranscriptDelta = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1186,7 +1315,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    responseOutputAudioTranscriptDone = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDone>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDone> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDone).Name}");
+                    responseOutputAudioTranscriptDone = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1197,7 +1328,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    responseContentPartAdded = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartAdded>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartAdded), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartAdded> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartAdded).Name}");
+                    responseContentPartAdded = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1208,7 +1341,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    responseContentPartDone = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartDone>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartDone> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartDone).Name}");
+                    responseContentPartDone = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1219,7 +1354,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    responseCreated = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseCreated>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseCreated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseCreated> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseCreated).Name}");
+                    responseCreated = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1230,7 +1367,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    responseDone = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseDone>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseDone> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseDone).Name}");
+                    responseDone = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1241,7 +1380,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    responseFunctionCallArgumentsDelta = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDelta>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDelta> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDelta).Name}");
+                    responseFunctionCallArgumentsDelta = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1252,7 +1393,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    responseFunctionCallArgumentsDone = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDone>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDone> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDone).Name}");
+                    responseFunctionCallArgumentsDone = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1263,7 +1406,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    responseOutputItemAdded = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemAdded>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemAdded), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemAdded> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemAdded).Name}");
+                    responseOutputItemAdded = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1274,7 +1419,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    responseOutputItemDone = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemDone>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemDone> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemDone).Name}");
+                    responseOutputItemDone = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1285,7 +1432,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    responseOutputTextDelta = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseTextDelta>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseTextDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseTextDelta> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseTextDelta).Name}");
+                    responseOutputTextDelta = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1296,7 +1445,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    responseOutputTextDone = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseTextDone>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseTextDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseTextDone> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseTextDone).Name}");
+                    responseOutputTextDone = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1307,7 +1458,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    sessionCreated = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventSessionCreated>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventSessionCreated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventSessionCreated> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventSessionCreated).Name}");
+                    sessionCreated = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1318,7 +1471,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    sessionUpdated = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventSessionUpdated>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventSessionUpdated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventSessionUpdated> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventSessionUpdated).Name}");
+                    sessionUpdated = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1329,7 +1484,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    outputAudioBufferStarted = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStarted>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStarted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStarted> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStarted).Name}");
+                    outputAudioBufferStarted = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1340,7 +1497,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    outputAudioBufferStopped = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStopped>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStopped), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStopped> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStopped).Name}");
+                    outputAudioBufferStopped = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1351,7 +1510,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    outputAudioBufferCleared = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferCleared>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferCleared), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferCleared> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferCleared).Name}");
+                    outputAudioBufferCleared = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1362,7 +1523,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    conversationItemAdded = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventConversationItemAdded>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemAdded), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemAdded> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemAdded).Name}");
+                    conversationItemAdded = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1373,7 +1536,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    conversationItemDone = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventConversationItemDone>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemDone> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemDone).Name}");
+                    conversationItemDone = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1384,7 +1549,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    inputAudioBufferTimeoutTriggered = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferTimeoutTriggered>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferTimeoutTriggered), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferTimeoutTriggered> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferTimeoutTriggered).Name}");
+                    inputAudioBufferTimeoutTriggered = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1395,7 +1562,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    conversationItemInputAudioTranscriptionSegment = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionSegment>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionSegment), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionSegment> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionSegment).Name}");
+                    conversationItemInputAudioTranscriptionSegment = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1406,7 +1575,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    mcpListToolsInProgress = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsInProgress>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsInProgress), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsInProgress> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsInProgress).Name}");
+                    mcpListToolsInProgress = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1417,7 +1588,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    mcpListToolsCompleted = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsCompleted>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsCompleted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsCompleted> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsCompleted).Name}");
+                    mcpListToolsCompleted = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1428,7 +1601,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    mcpListToolsFailed = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsFailed>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsFailed), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsFailed> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsFailed).Name}");
+                    mcpListToolsFailed = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1439,7 +1614,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    responseMcpCallArgumentsDelta = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDelta>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDelta> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDelta).Name}");
+                    responseMcpCallArgumentsDelta = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1450,7 +1627,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    responseMcpCallArgumentsDone = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDone>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDone> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDone).Name}");
+                    responseMcpCallArgumentsDone = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1461,7 +1640,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    responseMcpCallInProgress = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallInProgress>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallInProgress), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallInProgress> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallInProgress).Name}");
+                    responseMcpCallInProgress = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1472,7 +1653,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    responseMcpCallCompleted = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallCompleted>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallCompleted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallCompleted> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallCompleted).Name}");
+                    responseMcpCallCompleted = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1483,7 +1666,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    responseMcpCallFailed = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallFailed>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallFailed), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallFailed> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallFailed).Name}");
+                    responseMcpCallFailed = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -1596,191 +1781,284 @@ namespace tryAGI.OpenAI.JsonConverters
             global::tryAGI.OpenAI.RealtimeServerEvent value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsConversationCreated)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationCreated, typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationCreated), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationCreated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationCreated?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationCreated).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationCreated!, typeInfo);
             }
             else if (value.IsConversationItemCreated)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemCreated, typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemCreated), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemCreated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemCreated?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemCreated).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemCreated!, typeInfo);
             }
             else if (value.IsConversationItemDeleted)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemDeleted, typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemDeleted), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemDeleted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemDeleted?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemDeleted).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemDeleted!, typeInfo);
             }
             else if (value.IsConversationItemInputAudioTranscriptionCompleted)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemInputAudioTranscriptionCompleted, typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemInputAudioTranscriptionCompleted!, typeInfo);
             }
             else if (value.IsConversationItemInputAudioTranscriptionDelta)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemInputAudioTranscriptionDelta, typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionDelta), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionDelta?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionDelta).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemInputAudioTranscriptionDelta!, typeInfo);
             }
             else if (value.IsConversationItemInputAudioTranscriptionFailed)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemInputAudioTranscriptionFailed, typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionFailed), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionFailed), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionFailed?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionFailed).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemInputAudioTranscriptionFailed!, typeInfo);
             }
             else if (value.IsConversationItemRetrieved)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemRetrieved, typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemRetrieved), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemRetrieved), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemRetrieved?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemRetrieved).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemRetrieved!, typeInfo);
             }
             else if (value.IsConversationItemTruncated)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemTruncated, typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemTruncated), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemTruncated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemTruncated?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemTruncated).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemTruncated!, typeInfo);
             }
             else if (value.IsError)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Error, typeof(global::tryAGI.OpenAI.RealtimeServerEventError), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventError).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Error!, typeInfo);
             }
             else if (value.IsInputAudioBufferCleared)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudioBufferCleared, typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCleared), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCleared), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCleared?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCleared).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudioBufferCleared!, typeInfo);
             }
             else if (value.IsInputAudioBufferCommitted)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudioBufferCommitted, typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCommitted), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCommitted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCommitted?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCommitted).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudioBufferCommitted!, typeInfo);
             }
             else if (value.IsInputAudioBufferDtmfEventReceived)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudioBufferDtmfEventReceived, typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferDtmfEventReceived), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferDtmfEventReceived), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferDtmfEventReceived?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferDtmfEventReceived).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudioBufferDtmfEventReceived!, typeInfo);
             }
             else if (value.IsInputAudioBufferSpeechStarted)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudioBufferSpeechStarted, typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStarted), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStarted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStarted?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStarted).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudioBufferSpeechStarted!, typeInfo);
             }
             else if (value.IsInputAudioBufferSpeechStopped)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudioBufferSpeechStopped, typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStopped), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStopped), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStopped?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStopped).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudioBufferSpeechStopped!, typeInfo);
             }
             else if (value.IsRateLimitsUpdated)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RateLimitsUpdated, typeof(global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdated), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdated?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdated).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RateLimitsUpdated!, typeInfo);
             }
             else if (value.IsResponseOutputAudioDelta)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseOutputAudioDelta, typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDelta), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDelta?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDelta).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseOutputAudioDelta!, typeInfo);
             }
             else if (value.IsResponseOutputAudioDone)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseOutputAudioDone, typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDone), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDone?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDone).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseOutputAudioDone!, typeInfo);
             }
             else if (value.IsResponseOutputAudioTranscriptDelta)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseOutputAudioTranscriptDelta, typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDelta), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDelta?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDelta).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseOutputAudioTranscriptDelta!, typeInfo);
             }
             else if (value.IsResponseOutputAudioTranscriptDone)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseOutputAudioTranscriptDone, typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDone), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDone?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDone).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseOutputAudioTranscriptDone!, typeInfo);
             }
             else if (value.IsResponseContentPartAdded)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseContentPartAdded, typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartAdded), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartAdded), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartAdded?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartAdded).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseContentPartAdded!, typeInfo);
             }
             else if (value.IsResponseContentPartDone)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseContentPartDone, typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartDone), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartDone?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartDone).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseContentPartDone!, typeInfo);
             }
             else if (value.IsResponseCreated)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseCreated, typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseCreated), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseCreated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseCreated?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseCreated).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseCreated!, typeInfo);
             }
             else if (value.IsResponseDone)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseDone, typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseDone), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseDone?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseDone).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseDone!, typeInfo);
             }
             else if (value.IsResponseFunctionCallArgumentsDelta)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseFunctionCallArgumentsDelta, typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDelta), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDelta?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDelta).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseFunctionCallArgumentsDelta!, typeInfo);
             }
             else if (value.IsResponseFunctionCallArgumentsDone)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseFunctionCallArgumentsDone, typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDone), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDone?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDone).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseFunctionCallArgumentsDone!, typeInfo);
             }
             else if (value.IsResponseOutputItemAdded)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseOutputItemAdded, typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemAdded), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemAdded), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemAdded?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemAdded).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseOutputItemAdded!, typeInfo);
             }
             else if (value.IsResponseOutputItemDone)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseOutputItemDone, typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemDone), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemDone?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemDone).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseOutputItemDone!, typeInfo);
             }
             else if (value.IsResponseOutputTextDelta)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseOutputTextDelta, typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseTextDelta), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseTextDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseTextDelta?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseTextDelta).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseOutputTextDelta!, typeInfo);
             }
             else if (value.IsResponseOutputTextDone)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseOutputTextDone, typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseTextDone), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseTextDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseTextDone?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseTextDone).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseOutputTextDone!, typeInfo);
             }
             else if (value.IsSessionCreated)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionCreated, typeof(global::tryAGI.OpenAI.RealtimeServerEventSessionCreated), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventSessionCreated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventSessionCreated?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventSessionCreated).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionCreated!, typeInfo);
             }
             else if (value.IsSessionUpdated)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionUpdated, typeof(global::tryAGI.OpenAI.RealtimeServerEventSessionUpdated), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventSessionUpdated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventSessionUpdated?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventSessionUpdated).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionUpdated!, typeInfo);
             }
             else if (value.IsOutputAudioBufferStarted)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputAudioBufferStarted, typeof(global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStarted), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStarted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStarted?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStarted).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputAudioBufferStarted!, typeInfo);
             }
             else if (value.IsOutputAudioBufferStopped)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputAudioBufferStopped, typeof(global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStopped), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStopped), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStopped?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStopped).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputAudioBufferStopped!, typeInfo);
             }
             else if (value.IsOutputAudioBufferCleared)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputAudioBufferCleared, typeof(global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferCleared), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferCleared), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferCleared?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferCleared).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputAudioBufferCleared!, typeInfo);
             }
             else if (value.IsConversationItemAdded)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemAdded, typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemAdded), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemAdded), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemAdded?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemAdded).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemAdded!, typeInfo);
             }
             else if (value.IsConversationItemDone)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemDone, typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemDone), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemDone?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemDone).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemDone!, typeInfo);
             }
             else if (value.IsInputAudioBufferTimeoutTriggered)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudioBufferTimeoutTriggered, typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferTimeoutTriggered), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferTimeoutTriggered), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferTimeoutTriggered?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferTimeoutTriggered).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudioBufferTimeoutTriggered!, typeInfo);
             }
             else if (value.IsConversationItemInputAudioTranscriptionSegment)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemInputAudioTranscriptionSegment, typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionSegment), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionSegment), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionSegment?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionSegment).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemInputAudioTranscriptionSegment!, typeInfo);
             }
             else if (value.IsMcpListToolsInProgress)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpListToolsInProgress, typeof(global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsInProgress), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsInProgress), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsInProgress?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsInProgress).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpListToolsInProgress!, typeInfo);
             }
             else if (value.IsMcpListToolsCompleted)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpListToolsCompleted, typeof(global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsCompleted), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsCompleted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsCompleted?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsCompleted).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpListToolsCompleted!, typeInfo);
             }
             else if (value.IsMcpListToolsFailed)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpListToolsFailed, typeof(global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsFailed), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsFailed), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsFailed?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsFailed).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpListToolsFailed!, typeInfo);
             }
             else if (value.IsResponseMcpCallArgumentsDelta)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseMcpCallArgumentsDelta, typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDelta), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDelta?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDelta).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseMcpCallArgumentsDelta!, typeInfo);
             }
             else if (value.IsResponseMcpCallArgumentsDone)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseMcpCallArgumentsDone, typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDone), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDone?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDone).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseMcpCallArgumentsDone!, typeInfo);
             }
             else if (value.IsResponseMcpCallInProgress)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseMcpCallInProgress, typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallInProgress), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallInProgress), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallInProgress?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallInProgress).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseMcpCallInProgress!, typeInfo);
             }
             else if (value.IsResponseMcpCallCompleted)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseMcpCallCompleted, typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallCompleted), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallCompleted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallCompleted?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallCompleted).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseMcpCallCompleted!, typeInfo);
             }
             else if (value.IsResponseMcpCallFailed)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseMcpCallFailed, typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallFailed), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallFailed), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallFailed?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallFailed).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseMcpCallFailed!, typeInfo);
             }
         }
     }

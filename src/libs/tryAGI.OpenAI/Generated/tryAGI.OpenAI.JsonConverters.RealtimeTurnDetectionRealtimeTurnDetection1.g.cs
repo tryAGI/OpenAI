@@ -12,7 +12,8 @@ namespace tryAGI.OpenAI.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -51,7 +52,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        serverVad = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad).Name}");
+                        serverVad = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -64,7 +67,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        semanticVad = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad).Name}");
+                        semanticVad = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -79,7 +84,9 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 try
                 {
-                    serverVad = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad).Name}");
+                    serverVad = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -90,7 +97,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 try
                 {
-                    semanticVad = global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad).Name}");
+                    semanticVad = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -115,15 +124,20 @@ namespace tryAGI.OpenAI.JsonConverters
             global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsServerVad)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ServerVad, typeof(global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ServerVad!, typeInfo);
             }
             else if (value.IsSemanticVad)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SemanticVad, typeof(global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SemanticVad!, typeInfo);
             }
         }
     }
