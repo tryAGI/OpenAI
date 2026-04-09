@@ -5,6 +5,25 @@ namespace tryAGI.OpenAI
 {
     public partial class GroupOrganizationRoleAssignmentsClient
     {
+
+
+        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement s_ListGroupOrganizationRoleAssignmentsSecurityRequirement0 =
+            new global::tryAGI.OpenAI.EndPointSecurityRequirement
+            {
+                Authorizations = new global::tryAGI.OpenAI.EndPointAuthorizationRequirement[]
+                {                    new global::tryAGI.OpenAI.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement[] s_ListGroupOrganizationRoleAssignmentsSecurityRequirements =
+            new global::tryAGI.OpenAI.EndPointSecurityRequirement[]
+            {                s_ListGroupOrganizationRoleAssignmentsSecurityRequirement0,
+            };
         partial void PrepareListGroupOrganizationRoleAssignmentsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string groupId,
@@ -52,6 +71,12 @@ namespace tryAGI.OpenAI
                 after: ref after,
                 order: ref order);
 
+
+            var __authorizations = global::tryAGI.OpenAI.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListGroupOrganizationRoleAssignmentsSecurityRequirements,
+                operationName: "ListGroupOrganizationRoleAssignmentsAsync");
+
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/organization/groups/{groupId}/roles",
                 baseUri: HttpClient.BaseAddress); 
@@ -59,7 +84,7 @@ namespace tryAGI.OpenAI
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("after", after)
                 .AddOptionalParameter("order", order?.ToValueString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -69,7 +94,7 @@ namespace tryAGI.OpenAI
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
