@@ -5,6 +5,25 @@ namespace tryAGI.OpenAI
 {
     public partial class FineTuningClient
     {
+
+
+        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement s_ListCheckpointPermissionsSecurityRequirement0 =
+            new global::tryAGI.OpenAI.EndPointSecurityRequirement
+            {
+                Authorizations = new global::tryAGI.OpenAI.EndPointAuthorizationRequirement[]
+                {                    new global::tryAGI.OpenAI.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement[] s_ListCheckpointPermissionsSecurityRequirements =
+            new global::tryAGI.OpenAI.EndPointSecurityRequirement[]
+            {                s_ListCheckpointPermissionsSecurityRequirement0,
+            };
         partial void PrepareListCheckpointPermissionsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string fineTunedModelCheckpoint,
@@ -64,6 +83,12 @@ namespace tryAGI.OpenAI
                 limit: ref limit,
                 order: ref order);
 
+
+            var __authorizations = global::tryAGI.OpenAI.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListCheckpointPermissionsSecurityRequirements,
+                operationName: "ListCheckpointPermissionsAsync");
+
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: $"/fine_tuning/checkpoints/{fineTunedModelCheckpoint}/permissions",
                 baseUri: HttpClient.BaseAddress); 
@@ -72,7 +97,7 @@ namespace tryAGI.OpenAI
                 .AddOptionalParameter("after", after)
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("order", order?.ToValueString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -82,7 +107,7 @@ namespace tryAGI.OpenAI
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

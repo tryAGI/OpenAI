@@ -6,6 +6,7 @@ namespace tryAGI.OpenAI
     public sealed partial class OpenAiClient
     {
         /// <inheritdoc cref="OpenAiClient(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::tryAGI.OpenAI.EndPointAuthorization}?, bool)"/>
+
         public OpenAiClient(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,

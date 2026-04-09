@@ -5,6 +5,25 @@ namespace tryAGI.OpenAI
 {
     public partial class OpenAiClient
     {
+
+
+        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement s_ListChatKitThreadsSecurityRequirement0 =
+            new global::tryAGI.OpenAI.EndPointSecurityRequirement
+            {
+                Authorizations = new global::tryAGI.OpenAI.EndPointAuthorizationRequirement[]
+                {                    new global::tryAGI.OpenAI.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement[] s_ListChatKitThreadsSecurityRequirements =
+            new global::tryAGI.OpenAI.EndPointSecurityRequirement[]
+            {                s_ListChatKitThreadsSecurityRequirement0,
+            };
         partial void PrepareListChatKitThreadsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? limit,
@@ -63,6 +82,12 @@ namespace tryAGI.OpenAI
                 before: ref before,
                 user: ref user);
 
+
+            var __authorizations = global::tryAGI.OpenAI.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListChatKitThreadsSecurityRequirements,
+                operationName: "ListChatKitThreadsAsync");
+
             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                 path: "/chatkit/threads",
                 baseUri: HttpClient.BaseAddress); 
@@ -72,7 +97,7 @@ namespace tryAGI.OpenAI
                 .AddOptionalParameter("after", after)
                 .AddOptionalParameter("before", before)
                 .AddOptionalParameter("user", user) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -82,7 +107,7 @@ namespace tryAGI.OpenAI
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
