@@ -9,11 +9,13 @@ namespace tryAGI.OpenAI
         /// Returns the audio file content, or a stream of audio events.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.CreateSpeechResponseStreamEvent> CreateSpeechAsync(
 
             global::tryAGI.OpenAI.CreateSpeechRequest request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Generates audio from the input text.<br/>
@@ -43,6 +45,7 @@ namespace tryAGI.OpenAI
         /// The format to stream the audio in. Supported formats are `sse` and `audio`. `sse` is not supported for `tts-1` or `tts-1-hd`.<br/>
         /// Default Value: audio
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.CreateSpeechResponseStreamEvent> CreateSpeechAsync(
@@ -53,6 +56,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.CreateSpeechRequestResponseFormat? responseFormat = default,
             double? speed = default,
             global::tryAGI.OpenAI.CreateSpeechRequestStreamFormat? streamFormat = default,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

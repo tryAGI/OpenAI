@@ -10,6 +10,7 @@ namespace tryAGI.OpenAI
         /// <param name="threadId"></param>
         /// <param name="messageId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.MessageObject> ModifyMessageAsync(
@@ -17,6 +18,7 @@ namespace tryAGI.OpenAI
             string messageId,
 
             global::tryAGI.OpenAI.ModifyMessageRequest request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Modifies a message.
@@ -24,12 +26,14 @@ namespace tryAGI.OpenAI
         /// <param name="threadId"></param>
         /// <param name="messageId"></param>
         /// <param name="metadata"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.MessageObject> ModifyMessageAsync(
             string threadId,
             string messageId,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -9,11 +9,13 @@ namespace tryAGI.OpenAI
         /// Returns an object with `object` set to `response.input_tokens` and an `input_tokens` count.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.TokenCountsResource> GetInputTokenCountsAsync(
 
             global::tryAGI.OpenAI.TokenCountsBody request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Returns input token counts of the request.<br/>
@@ -32,6 +34,7 @@ namespace tryAGI.OpenAI
         /// <param name="conversation"></param>
         /// <param name="toolChoice"></param>
         /// <param name="parallelToolCalls"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.TokenCountsResource> GetInputTokenCountsAsync(
@@ -46,6 +49,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ConversationParam? conversation = default,
             global::tryAGI.OpenAI.ToolChoiceParam? toolChoice = default,
             bool? parallelToolCalls = default,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

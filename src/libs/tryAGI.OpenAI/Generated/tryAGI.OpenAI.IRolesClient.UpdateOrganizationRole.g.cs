@@ -9,12 +9,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="roleId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Role> UpdateOrganizationRoleAsync(
             string roleId,
 
             global::tryAGI.OpenAI.PublicUpdateOrganizationRoleBody request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Updates an existing organization role.
@@ -29,6 +31,7 @@ namespace tryAGI.OpenAI
         /// <param name="roleName">
         /// New name for the role.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Role> UpdateOrganizationRoleAsync(
@@ -36,6 +39,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<string>? permissions = default,
             string? description = default,
             string? roleName = default,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

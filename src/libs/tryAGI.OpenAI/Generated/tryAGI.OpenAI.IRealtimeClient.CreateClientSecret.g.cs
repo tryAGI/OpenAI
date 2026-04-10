@@ -16,11 +16,13 @@ namespace tryAGI.OpenAI
         /// Returns the created client secret and the effective session object. The client secret is a string that looks like `ek_1234`.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.RealtimeCreateClientSecretResponse> CreateClientSecretAsync(
 
             global::tryAGI.OpenAI.RealtimeCreateClientSecretRequest request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a Realtime client secret with an associated session configuration.<br/>
@@ -43,11 +45,13 @@ namespace tryAGI.OpenAI
         /// Session configuration to use for the client secret. Choose either a realtime<br/>
         /// session or a transcription session.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.RealtimeCreateClientSecretResponse> CreateClientSecretAsync(
             global::tryAGI.OpenAI.RealtimeCreateClientSecretRequestExpiresAfter? expiresAfter = default,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA, global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGA>? session = default,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -8,11 +8,13 @@ namespace tryAGI.OpenAI
         /// Creates and executes a batch from an uploaded file of requests
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Batch> CreateBatchAsync(
 
             global::tryAGI.OpenAI.CreateBatchRequest request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Creates and executes a batch from an uploaded file of requests
@@ -32,6 +34,7 @@ namespace tryAGI.OpenAI
         /// <param name="outputExpiresAfter">
         /// The expiration policy for the output and/or error file that are generated for a batch.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Batch> CreateBatchAsync(
@@ -40,6 +43,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.CreateBatchRequestCompletionWindow completionWindow = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             global::tryAGI.OpenAI.BatchFileExpirationAfter? outputExpiresAfter = default,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

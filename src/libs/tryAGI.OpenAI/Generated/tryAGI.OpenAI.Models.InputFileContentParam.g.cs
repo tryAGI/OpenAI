@@ -42,6 +42,13 @@ namespace tryAGI.OpenAI
         public string? FileUrl { get; set; }
 
         /// <summary>
+        /// The detail level of the file to be sent to the model. Use `low` for the default rendering behavior, or `high` to render the file at higher quality. Defaults to `low`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.FileDetailEnumJsonConverter))]
+        public global::tryAGI.OpenAI.FileDetailEnum? Detail { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -54,6 +61,9 @@ namespace tryAGI.OpenAI
         /// <param name="filename"></param>
         /// <param name="fileData"></param>
         /// <param name="fileUrl"></param>
+        /// <param name="detail">
+        /// The detail level of the file to be sent to the model. Use `low` for the default rendering behavior, or `high` to render the file at higher quality. Defaults to `low`.
+        /// </param>
         /// <param name="type">
         /// The type of the input item. Always `input_file`.<br/>
         /// Default Value: input_file
@@ -66,6 +76,7 @@ namespace tryAGI.OpenAI
             string? filename,
             string? fileData,
             string? fileUrl,
+            global::tryAGI.OpenAI.FileDetailEnum? detail,
             global::tryAGI.OpenAI.InputFileContentParamType type = global::tryAGI.OpenAI.InputFileContentParamType.InputFile)
         {
             this.Type = type;
@@ -73,6 +84,7 @@ namespace tryAGI.OpenAI
             this.Filename = filename;
             this.FileData = fileData;
             this.FileUrl = fileUrl;
+            this.Detail = detail;
         }
 
         /// <summary>

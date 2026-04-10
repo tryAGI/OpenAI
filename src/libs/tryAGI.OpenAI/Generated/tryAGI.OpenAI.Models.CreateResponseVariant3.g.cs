@@ -70,6 +70,12 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContextManagementParam>? ContextManagement { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_output_tokens")]
+        public int? MaxOutputTokens { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -95,6 +101,7 @@ namespace tryAGI.OpenAI
         /// <param name="streamOptions"></param>
         /// <param name="conversation"></param>
         /// <param name="contextManagement"></param>
+        /// <param name="maxOutputTokens"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -107,7 +114,8 @@ namespace tryAGI.OpenAI
             bool? stream,
             global::tryAGI.OpenAI.ResponseStreamOptionsVariant1? streamOptions,
             global::tryAGI.OpenAI.ConversationParam? conversation,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContextManagementParam>? contextManagement)
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContextManagementParam>? contextManagement,
+            int? maxOutputTokens)
         {
             this.Input = input;
             this.Include = include;
@@ -118,6 +126,7 @@ namespace tryAGI.OpenAI
             this.StreamOptions = streamOptions;
             this.Conversation = conversation;
             this.ContextManagement = contextManagement;
+            this.MaxOutputTokens = maxOutputTokens;
         }
 
         /// <summary>

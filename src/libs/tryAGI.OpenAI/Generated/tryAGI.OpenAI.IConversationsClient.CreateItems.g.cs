@@ -12,6 +12,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="include"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ConversationItemList> CreateItemsAsync(
@@ -19,6 +20,7 @@ namespace tryAGI.OpenAI
 
             global::tryAGI.OpenAI.CreateConversationItemsRequest request,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.IncludeEnum>? include = default,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create items in a conversation with the given ID.
@@ -30,12 +32,14 @@ namespace tryAGI.OpenAI
         /// <param name="items">
         /// The items to add to the conversation. You may add up to 20 items at a time.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ConversationItemList> CreateItemsAsync(
             string conversationId,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem> items,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.IncludeEnum>? include = default,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -22,11 +22,13 @@ namespace tryAGI.OpenAI
         /// Returns the Upload object with status `pending`.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Upload> CreateUploadAsync(
 
             global::tryAGI.OpenAI.CreateUploadRequest request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Creates an intermediate [Upload](/docs/api-reference/uploads/object) object<br/>
@@ -64,6 +66,7 @@ namespace tryAGI.OpenAI
         /// <param name="expiresAfter">
         /// The expiration policy for a file. By default, files with `purpose=batch` expire after 30 days and all other files are persisted until they are manually deleted.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Upload> CreateUploadAsync(
@@ -72,6 +75,7 @@ namespace tryAGI.OpenAI
             long bytes,
             string mimeType,
             global::tryAGI.OpenAI.FileExpirationAfter? expiresAfter = default,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
