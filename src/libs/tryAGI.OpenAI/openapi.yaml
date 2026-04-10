@@ -891,8 +891,8 @@ paths:
                 )
                 speech = client.audio.speech.create(
                     input="input",
-                    model="string",
-                    voice="string",
+                    model="tts-1",
+                    voice="alloy",
                 )
                 print(speech)
                 content = speech.read()
@@ -944,15 +944,15 @@ paths:
 
                 const speech = await client.audio.speech.create({
                   input: 'input',
-                  model: 'string',
-                  voice: 'string',
+                  model: 'tts-1',
+                  voice: 'alloy',
                 });
 
                 console.log(speech);
 
                 const content = await speech.blob();
                 console.log(content);
-              go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAPIKey(\"My API Key\"),\n\t)\n\tspeech, err := client.Audio.Speech.New(context.TODO(), openai.AudioSpeechNewParams{\n\t\tInput: \"input\",\n\t\tModel: openai.SpeechModelTTS1,\n\t\tVoice: openai.AudioSpeechNewParamsVoiceUnion{\n\t\t\tOfString: openai.String(\"string\"),\n\t\t},\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", speech)\n}\n"
+              go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAPIKey(\"My API Key\"),\n\t)\n\tspeech, err := client.Audio.Speech.New(context.TODO(), openai.AudioSpeechNewParams{\n\t\tInput: \"input\",\n\t\tModel: openai.SpeechModelTTS1,\n\t\tVoice: openai.AudioSpeechNewParamsVoiceUnion{\n\t\t\tOfAudioSpeechNewsVoiceString2: openai.String(\"alloy\"),\n\t\t},\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", speech)\n}\n"
               java: |-
                 package com.openai.example;
 
@@ -971,7 +971,7 @@ paths:
                         SpeechCreateParams params = SpeechCreateParams.builder()
                             .input("input")
                             .model(SpeechModel.TTS_1)
-                            .voice("string")
+                            .voice(SpeechCreateParams.Voice.UnionMember1.ALLOY)
                             .build();
                         HttpResponse speech = client.audio().speech().create(params);
                     }
@@ -984,7 +984,7 @@ paths:
 
 
                 speech = openai.audio.speech.create(input: "input", model:
-                :"tts-1", voice: "string")
+                :"tts-1", voice: :alloy)
 
 
                 puts(speech)
@@ -1009,8 +1009,8 @@ paths:
 
                 const speech = await client.audio.speech.create({
                   input: 'input',
-                  model: 'string',
-                  voice: 'string',
+                  model: 'tts-1',
+                  voice: 'alloy',
                 });
 
                 console.log(speech);
@@ -1026,13 +1026,13 @@ paths:
                 )
                 speech = client.audio.speech.create(
                     input="input",
-                    model="string",
-                    voice="string",
+                    model="tts-1",
+                    voice="alloy",
                 )
                 print(speech)
                 content = speech.read()
                 print(content)
-              go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAPIKey(\"My API Key\"),\n\t)\n\tspeech, err := client.Audio.Speech.New(context.TODO(), openai.AudioSpeechNewParams{\n\t\tInput: \"input\",\n\t\tModel: openai.SpeechModelTTS1,\n\t\tVoice: openai.AudioSpeechNewParamsVoiceUnion{\n\t\t\tOfString: openai.String(\"string\"),\n\t\t},\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", speech)\n}\n"
+              go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAPIKey(\"My API Key\"),\n\t)\n\tspeech, err := client.Audio.Speech.New(context.TODO(), openai.AudioSpeechNewParams{\n\t\tInput: \"input\",\n\t\tModel: openai.SpeechModelTTS1,\n\t\tVoice: openai.AudioSpeechNewParamsVoiceUnion{\n\t\t\tOfAudioSpeechNewsVoiceString2: openai.String(\"alloy\"),\n\t\t},\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", speech)\n}\n"
               java: |-
                 package com.openai.example;
 
@@ -1051,7 +1051,7 @@ paths:
                         SpeechCreateParams params = SpeechCreateParams.builder()
                             .input("input")
                             .model(SpeechModel.TTS_1)
-                            .voice("string")
+                            .voice(SpeechCreateParams.Voice.UnionMember1.ALLOY)
                             .build();
                         HttpResponse speech = client.audio().speech().create(params);
                     }
@@ -1064,7 +1064,7 @@ paths:
 
 
                 speech = openai.audio.speech.create(input: "input", model:
-                :"tts-1", voice: "string")
+                :"tts-1", voice: :alloy)
 
 
                 puts(speech)
@@ -4967,7 +4967,7 @@ paths:
                     api_key=os.environ.get("OPENAI_API_KEY"),  # This is the default and can be omitted
                 )
                 for completion in client.completions.create(
-                    model="string",
+                    model="gpt-3.5-turbo-instruct",
                     prompt="This is a test.",
                 ):
                   print(completion)
@@ -4987,18 +4987,17 @@ paths:
                   console.log(completion);
                 }
                 main();
-              node.js: >-
+              node.js: |-
                 import OpenAI from 'openai';
-
 
                 const client = new OpenAI({
                   apiKey: process.env['OPENAI_API_KEY'], // This is the default and can be omitted
                 });
 
-
-                const completion = await client.completions.create({ model:
-                'string', prompt: 'This is a test.' });
-
+                const completion = await client.completions.create({
+                  model: 'gpt-3.5-turbo-instruct',
+                  prompt: 'This is a test.',
+                });
 
                 console.log(completion);
               go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAPIKey(\"My API Key\"),\n\t)\n\tcompletion, err := client.Completions.New(context.TODO(), openai.CompletionNewParams{\n\t\tModel: openai.CompletionNewParamsModelGPT3_5TurboInstruct,\n\t\tPrompt: openai.CompletionNewParamsPromptUnion{\n\t\t\tOfString: openai.String(\"This is a test.\"),\n\t\t},\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", completion)\n}\n"
@@ -5077,7 +5076,7 @@ paths:
                     api_key=os.environ.get("OPENAI_API_KEY"),  # This is the default and can be omitted
                 )
                 for completion in client.completions.create(
-                    model="string",
+                    model="gpt-3.5-turbo-instruct",
                     prompt="This is a test.",
                 ):
                   print(completion)
@@ -5098,18 +5097,17 @@ paths:
                   }
                 }
                 main();
-              node.js: >-
+              node.js: |-
                 import OpenAI from 'openai';
-
 
                 const client = new OpenAI({
                   apiKey: process.env['OPENAI_API_KEY'], // This is the default and can be omitted
                 });
 
-
-                const completion = await client.completions.create({ model:
-                'string', prompt: 'This is a test.' });
-
+                const completion = await client.completions.create({
+                  model: 'gpt-3.5-turbo-instruct',
+                  prompt: 'This is a test.',
+                });
 
                 console.log(completion);
               go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAPIKey(\"My API Key\"),\n\t)\n\tcompletion, err := client.Completions.New(context.TODO(), openai.CompletionNewParams{\n\t\tModel: openai.CompletionNewParamsModelGPT3_5TurboInstruct,\n\t\tPrompt: openai.CompletionNewParamsPromptUnion{\n\t\t\tOfString: openai.String(\"This is a test.\"),\n\t\t},\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", completion)\n}\n"
