@@ -41,12 +41,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("max_output_tokens")]
-        public int? MaxOutputTokens { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_tool_calls")]
         public int? MaxToolCalls { get; set; }
 
@@ -119,7 +113,6 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="reasoning"></param>
         /// <param name="background"></param>
-        /// <param name="maxOutputTokens"></param>
         /// <param name="maxToolCalls"></param>
         /// <param name="text">
         /// Configuration options for a text response from the model. Can be plain<br/>
@@ -159,7 +152,6 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ModelIdsResponses? model,
             global::tryAGI.OpenAI.Reasoning? reasoning,
             bool? background,
-            int? maxOutputTokens,
             int? maxToolCalls,
             global::tryAGI.OpenAI.ResponseTextParam? text,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Tool>? tools,
@@ -171,7 +163,6 @@ namespace tryAGI.OpenAI
             this.Model = model;
             this.Reasoning = reasoning;
             this.Background = background;
-            this.MaxOutputTokens = maxOutputTokens;
             this.MaxToolCalls = maxToolCalls;
             this.Text = text;
             this.Tools = tools;

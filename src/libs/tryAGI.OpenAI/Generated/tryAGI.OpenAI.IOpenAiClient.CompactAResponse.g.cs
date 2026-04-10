@@ -9,11 +9,13 @@ namespace tryAGI.OpenAI
         /// Learn when and how to compact long-running conversations in the [conversation state guide](/docs/guides/conversation-state#managing-the-context-window). For ZDR-compatible compaction details, see [Compaction (advanced)](/docs/guides/conversation-state#compaction-advanced).
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.CompactResource> CompactAResponseAsync(
 
             global::tryAGI.OpenAI.CompactResponseMethodPublicBody request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Compact a conversation. Returns a compacted response object.<br/>
@@ -26,6 +28,7 @@ namespace tryAGI.OpenAI
         /// <param name="previousResponseId"></param>
         /// <param name="instructions"></param>
         /// <param name="promptCacheKey"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.CompactResource> CompactAResponseAsync(
@@ -34,6 +37,7 @@ namespace tryAGI.OpenAI
             string? previousResponseId = default,
             string? instructions = default,
             string? promptCacheKey = default,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

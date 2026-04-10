@@ -40174,6 +40174,15 @@ components:
                   items:
                     $ref: '#/components/schemas/ContextManagementParam'
                 - type: 'null'
+            max_output_tokens:
+              anyOf:
+                - description: >
+                    An upper bound for the number of tokens that can be
+                    generated for a response, including visible output tokens
+                    and [reasoning tokens](/docs/guides/reasoning).
+                  type: integer
+                  minimum: 16
+                - type: 'null'
     CreateRunRequest:
       type: object
       additionalProperties: false
@@ -59538,6 +59547,14 @@ components:
                 - default: null
                   $ref: '#/components/schemas/Conversation-2'
                 - type: 'null'
+            max_output_tokens:
+              anyOf:
+                - description: >
+                    An upper bound for the number of tokens that can be
+                    generated for a response, including visible output tokens
+                    and [reasoning tokens](/docs/guides/reasoning).
+                  type: integer
+                - type: 'null'
           required:
             - id
             - object
@@ -61669,14 +61686,6 @@ components:
                 Whether to run the model response in the background.
                 [Learn more](/docs/guides/background).
               default: false
-            - type: 'null'
-        max_output_tokens:
-          anyOf:
-            - description: >
-                An upper bound for the number of tokens that can be generated
-                for a response, including visible output tokens and [reasoning
-                tokens](/docs/guides/reasoning).
-              type: integer
             - type: 'null'
         max_tool_calls:
           anyOf:
@@ -68545,6 +68554,11 @@ components:
         - detail
       title: Computer screenshot
       description: A screenshot of a computer.
+    FileInputDetail:
+      type: string
+      enum:
+        - low
+        - high
     InputFileContent:
       properties:
         type:
@@ -68569,6 +68583,12 @@ components:
         file_url:
           type: string
           description: The URL of the file to be sent to the model.
+        detail:
+          $ref: '#/components/schemas/FileInputDetail'
+          description: >-
+            The detail level of the file to be sent to the model. Use `low` for
+            the default rendering behavior, or `high` to render the file at
+            higher quality. Defaults to `low`.
       type: object
       required: &ref_0
         - type
@@ -70286,6 +70306,11 @@ components:
       description: >-
         An image input to the model. Learn about [image
         inputs](/docs/guides/vision)
+    FileDetailEnum:
+      type: string
+      enum:
+        - low
+        - high
     InputFileContentParam:
       properties:
         type:
@@ -70309,7 +70334,7 @@ components:
         file_data:
           anyOf:
             - type: string
-              maxLength: 33554432
+              maxLength: 73400320
               description: The base64-encoded data of the file to be sent to the model.
             - type: 'null'
         file_url:
@@ -70317,6 +70342,12 @@ components:
             - type: string
               description: The URL of the file to be sent to the model.
             - type: 'null'
+        detail:
+          $ref: '#/components/schemas/FileDetailEnum'
+          description: >-
+            The detail level of the file to be sent to the model. Use `low` for
+            the default rendering behavior, or `high` to render the file at
+            higher quality. Defaults to `low`.
       type: object
       required:
         - type

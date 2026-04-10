@@ -29,7 +29,6 @@ namespace tryAGI.OpenAI.JsonConverters
             var __score0 = 0;
             var __score1 = 0;
             if (__jsonProps.Contains("background")) __score1++;
-            if (__jsonProps.Contains("max_output_tokens")) __score1++;
             if (__jsonProps.Contains("max_tool_calls")) __score1++;
             if (__jsonProps.Contains("model")) __score1++;
             if (__jsonProps.Contains("previous_response_id")) __score1++;
@@ -45,6 +44,7 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("include")) __score2++;
             if (__jsonProps.Contains("input")) __score2++;
             if (__jsonProps.Contains("instructions")) __score2++;
+            if (__jsonProps.Contains("max_output_tokens")) __score2++;
             if (__jsonProps.Contains("parallel_tool_calls")) __score2++;
             if (__jsonProps.Contains("store")) __score2++;
             if (__jsonProps.Contains("stream")) __score2++;

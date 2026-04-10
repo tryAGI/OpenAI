@@ -6,7 +6,7 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class ResponsePropertiesMaxOutputTokens
+    public sealed partial class ResponseVariant3MaxOutputTokens
     {
 
         /// <summary>

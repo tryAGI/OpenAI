@@ -21,11 +21,13 @@ namespace tryAGI.OpenAI
         /// chunk objects if the request is streamed.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.CreateChatCompletionStreamResponse> CreateChatCompletionAsStreamAsync(
 
             global::tryAGI.OpenAI.CreateChatCompletionRequest request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// **Starting a new project?** We recommend trying [Responses](/docs/api-reference/responses)<br/>
@@ -43,9 +45,11 @@ namespace tryAGI.OpenAI
         /// Returns a chat completion object, or a streamed sequence of chat completion<br/>
         /// chunk objects if the request is streamed.
         /// </summary>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.CreateChatCompletionStreamResponse> CreateChatCompletionAsStreamAsync(
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -102,6 +102,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.Conversation22? Conversation { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_output_tokens")]
+        public int? MaxOutputTokens { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -146,6 +152,7 @@ namespace tryAGI.OpenAI
         /// a breakdown of output tokens, and the total tokens used.
         /// </param>
         /// <param name="conversation"></param>
+        /// <param name="maxOutputTokens"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -162,7 +169,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>? instructions,
             string? outputText,
             global::tryAGI.OpenAI.ResponseUsage? usage,
-            global::tryAGI.OpenAI.Conversation22? conversation)
+            global::tryAGI.OpenAI.Conversation22? conversation,
+            int? maxOutputTokens)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;
@@ -177,6 +185,7 @@ namespace tryAGI.OpenAI
             this.Usage = usage;
             this.ParallelToolCalls = parallelToolCalls;
             this.Conversation = conversation;
+            this.MaxOutputTokens = maxOutputTokens;
         }
 
         /// <summary>

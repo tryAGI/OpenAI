@@ -14,11 +14,13 @@ namespace tryAGI.OpenAI
         /// Returns the created Realtime session object, plus an ephemeral key.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.RealtimeSessionCreateResponse> CreateSessionAsync(
 
             global::tryAGI.OpenAI.RealtimeSessionCreateRequest request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create an ephemeral API token for use in client-side applications with the<br/>
@@ -100,6 +102,7 @@ namespace tryAGI.OpenAI
         /// Truncation can be disabled entirely, which means the server will never truncate but would instead return an error if the conversation exceeds the model's input token limit.
         /// </param>
         /// <param name="prompt"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.RealtimeSessionCreateResponse> CreateSessionAsync(
@@ -119,6 +122,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestMaxResponseOutputTokens?>? maxResponseOutputTokens = default,
             global::tryAGI.OpenAI.RealtimeTruncation? truncation = default,
             global::tryAGI.OpenAI.PromptVariant1? prompt = default,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

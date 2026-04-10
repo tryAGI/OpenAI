@@ -12,11 +12,13 @@ namespace tryAGI.OpenAI
         /// [Learn more about fine-tuning](/docs/guides/model-optimization)
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.FineTuningJob> CreateFineTuningJobAsync(
 
             global::tryAGI.OpenAI.CreateFineTuningJobRequest request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Creates a fine-tuning job which begins the process of creating a new model from a given dataset.<br/>
@@ -63,6 +65,7 @@ namespace tryAGI.OpenAI
         /// The method used for fine-tuning.
         /// </param>
         /// <param name="metadata"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.FineTuningJob> CreateFineTuningJobAsync(
@@ -74,6 +77,7 @@ namespace tryAGI.OpenAI
             int? seed = default,
             global::tryAGI.OpenAI.FineTuneMethod? method = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

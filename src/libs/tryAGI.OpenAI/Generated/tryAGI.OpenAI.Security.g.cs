@@ -6,6 +6,8 @@ namespace tryAGI.OpenAI
     {
         internal string Type { get; set; } = string.Empty;
 
+        internal string SchemeId { get; set; } = string.Empty;
+
         internal string Location { get; set; } = string.Empty;
 
         internal string Name { get; set; } = string.Empty;
@@ -97,7 +99,18 @@ namespace tryAGI.OpenAI
 
             return requiredAuthorization.Type switch
             {
-                "OAuth2" => true,
+                "OAuth2" => string.Equals(
+                    availableAuthorization.SchemeId,
+                    requiredAuthorization.SchemeId,
+                    global::System.StringComparison.Ordinal),
+                "OpenIdConnect" => string.Equals(
+                    availableAuthorization.SchemeId,
+                    requiredAuthorization.SchemeId,
+                    global::System.StringComparison.Ordinal),
+                "MutualTLS" => string.Equals(
+                    availableAuthorization.SchemeId,
+                    requiredAuthorization.SchemeId,
+                    global::System.StringComparison.Ordinal),
                 "Http" => string.Equals(
                     availableAuthorization.Name,
                     requiredAuthorization.Name,

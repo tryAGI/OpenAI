@@ -10,6 +10,7 @@ namespace tryAGI.OpenAI
         /// <param name="projectId"></param>
         /// <param name="rateLimitId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ProjectRateLimit> ModifyProjectRateLimitAsync(
@@ -17,6 +18,7 @@ namespace tryAGI.OpenAI
             string rateLimitId,
 
             global::tryAGI.OpenAI.ProjectRateLimitUpdateRequest request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Updates a project rate limit.
@@ -41,6 +43,7 @@ namespace tryAGI.OpenAI
         /// <param name="batch1DayMaxInputTokens">
         /// The maximum batch input tokens per day. Only relevant for certain models.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ProjectRateLimit> ModifyProjectRateLimitAsync(
@@ -52,6 +55,7 @@ namespace tryAGI.OpenAI
             long? maxAudioMegabytesPer1Minute = default,
             int? maxRequestsPer1Day = default,
             int? batch1DayMaxInputTokens = default,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

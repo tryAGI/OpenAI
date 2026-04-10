@@ -12,11 +12,13 @@ namespace tryAGI.OpenAI
         /// Note that JSON requests use `images` (array) instead of the multipart `image` field.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.ImageEditStreamEvent> CreateImageEditAsStreamAsync(
 
             global::tryAGI.OpenAI.CreateImageEditRequest request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Creates an edited or extended image given one or more source images and a prompt. This endpoint supports GPT Image models (`gpt-image-1.5`, `gpt-image-1`, `gpt-image-1-mini`, and `chatgpt-image-latest`) and `dall-e-2`.<br/>
@@ -97,6 +99,7 @@ namespace tryAGI.OpenAI
         /// Default Value: auto<br/>
         /// Example: high
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.ImageEditStreamEvent> CreateImageEditAsStreamAsync(
@@ -115,6 +118,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.InputFidelity? inputFidelity = default,
             int? partialImages = default,
             global::tryAGI.OpenAI.CreateImageEditRequestQuality? quality = default,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

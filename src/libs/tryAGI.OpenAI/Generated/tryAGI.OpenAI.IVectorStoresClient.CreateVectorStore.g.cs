@@ -8,11 +8,13 @@ namespace tryAGI.OpenAI
         /// Create a vector store.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.VectorStoreObject> CreateVectorStoreAsync(
 
             global::tryAGI.OpenAI.CreateVectorStoreRequest request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a vector store.
@@ -33,6 +35,7 @@ namespace tryAGI.OpenAI
         /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy. Only applicable if `file_ids` is non-empty.
         /// </param>
         /// <param name="metadata"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.VectorStoreObject> CreateVectorStoreAsync(
@@ -42,6 +45,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.VectorStoreExpirationAfter? expiresAfter = default,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam, global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam>? chunkingStrategy = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -25,6 +25,7 @@ namespace tryAGI.OpenAI
             Authorizations.Add(new global::tryAGI.OpenAI.EndPointAuthorization
             {
                 Type = "Http",
+                SchemeId = "ApiKeyAuth",
                 Location = "Header",
                 Name = "Bearer",
                 Value = apiKey,

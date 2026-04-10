@@ -14,11 +14,13 @@ namespace tryAGI.OpenAI
         /// Returns the created Realtime transcription session object, plus an ephemeral key.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponse> CreateTranscriptionSessionAsync(
 
             global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequest request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create an ephemeral API token for use in client-side applications with the<br/>
@@ -51,6 +53,7 @@ namespace tryAGI.OpenAI
         /// The set of items to include in the transcription. Current available items are:<br/>
         /// `item.input_audio_transcription.logprobs`
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponse> CreateTranscriptionSessionAsync(
@@ -59,6 +62,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestInputAudioFormat? inputAudioFormat = default,
             global::tryAGI.OpenAI.AudioTranscription? inputAudioTranscription = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestIncludeItem>? include = default,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

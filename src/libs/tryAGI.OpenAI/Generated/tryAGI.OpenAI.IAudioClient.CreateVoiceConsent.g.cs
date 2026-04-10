@@ -10,11 +10,13 @@ namespace tryAGI.OpenAI
         /// See the [custom voices guide](/docs/guides/text-to-speech#custom-voices) for requirements and best practices. Custom voices are limited to eligible customers.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.VoiceConsentResource> CreateVoiceConsentAsync(
 
             global::tryAGI.OpenAI.CreateVoiceConsentRequest request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Upload a voice consent recording.<br/>
@@ -37,6 +39,7 @@ namespace tryAGI.OpenAI
         /// <param name="language">
         /// The BCP 47 language tag for the consent phrase (for example, `en-US`).
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.VoiceConsentResource> CreateVoiceConsentAsync(
@@ -44,6 +47,7 @@ namespace tryAGI.OpenAI
             byte[] recording,
             string recordingname,
             string language,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

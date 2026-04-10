@@ -14,6 +14,7 @@ namespace tryAGI.OpenAI
                 {                    new global::tryAGI.OpenAI.EndPointAuthorizationRequirement
                     {
                         Type = "Http",
+                        SchemeId = "ApiKeyAuth",
                         Location = "Header",
                         Name = "Bearer",
                         FriendlyName = "Bearer",
@@ -46,11 +47,13 @@ namespace tryAGI.OpenAI
         /// format, or a stream of transcript events.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>> CreateTranscriptionAsync(
 
             global::tryAGI.OpenAI.CreateTranscriptionRequest request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -83,22 +86,43 @@ namespace tryAGI.OpenAI
                 securityRequirements: s_CreateTranscriptionSecurityRequirements,
                 operationName: "CreateTranscriptionAsync");
 
-            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
-                path: "/audio/transcriptions",
-                baseUri: HttpClient.BaseAddress);
-            var __path = __pathBuilder.ToString();
-            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+            using var __timeoutCancellationTokenSource = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken);
+            var __effectiveCancellationToken = __timeoutCancellationTokenSource?.Token ?? cancellationToken;
+            var __effectiveReadResponseAsString = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.GetReadResponseAsString(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                fallbackValue: ReadResponseAsString);
+            var __maxAttempts = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.GetMaxAttempts(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                supportsRetry: true);
+
+            global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
+            {
+                            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
+                                path: "/audio/transcriptions",
+                                baseUri: HttpClient.BaseAddress);
+                            var __path = __pathBuilder.ToString();
+                __path = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
+                    path: __path,
+                    clientParameters: Options.QueryParameters,
+                    requestParameters: requestOptions?.QueryParameters);
+                var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                    method: global::System.Net.Http.HttpMethod.Post,
+                    requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
-            __httpRequest.Version = global::System.Net.HttpVersion.Version11;
-            __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+                __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+                __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
             foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
-                    __authorization.Type == "OAuth2")
+                    __authorization.Type == "OAuth2" ||
+                    __authorization.Type == "OpenIdConnect")
                 {
                     __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
                         scheme: __authorization.Name,
@@ -108,195 +132,354 @@ namespace tryAGI.OpenAI
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                }
+                } 
             }
-            using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-            var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
-            __httpRequestContent.Add(
-                content: __contentFile,
-                name: "\"file\"",
-                fileName: request.Filename != null ? $"\"{request.Filename}\"" : string.Empty);
-            if (__contentFile.Headers.ContentDisposition != null)
-            {
-                __contentFile.Headers.ContentDisposition.FileNameStar = null;
-            }
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent(request.Model.ToString() ?? string.Empty),
-                name: "\"model\"");
-            if (request.Language != default)
-            {
+                            var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+                            var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
+                            __httpRequestContent.Add(
+                                content: __contentFile,
+                                name: "\"file\"",
+                                fileName: request.Filename != null ? $"\"{request.Filename}\"" : string.Empty);
+                            if (__contentFile.Headers.ContentDisposition != null)
+                            {
+                                __contentFile.Headers.ContentDisposition.FileNameStar = null;
+                            }
+                            __httpRequestContent.Add(
+                                content: new global::System.Net.Http.StringContent(request.Model.ToString() ?? string.Empty),
+                                name: "\"model\"");
+                            if (request.Language != default)
+                            {
 
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Language}"),
-                    name: "\"language\"");
-            } 
-            if (request.Prompt != default)
-            {
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.Language}"),
+                                    name: "\"language\"");
+                            } 
+                            if (request.Prompt != default)
+                            {
 
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
-                    name: "\"prompt\"");
-            } 
-            if (request.ResponseFormat != default)
-            {
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
+                                    name: "\"prompt\"");
+                            } 
+                            if (request.ResponseFormat != default)
+                            {
 
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
-                    name: "\"response_format\"");
-            } 
-            if (request.Temperature != default)
-            {
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
+                                    name: "\"response_format\"");
+                            } 
+                            if (request.Temperature != default)
+                            {
 
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Temperature}"),
-                    name: "\"temperature\"");
-            } 
-            if (request.Include != default)
-            {
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.Temperature}"),
+                                    name: "\"temperature\"");
+                            } 
+                            if (request.Include != default)
+                            {
 
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Include, x => x.ToValueString()))}]"),
-                    name: "\"include\"");
-            } 
-            if (request.TimestampGranularities != default)
-            {
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Include, x => x.ToValueString()))}]"),
+                                    name: "\"include\"");
+                            } 
+                            if (request.TimestampGranularities != default)
+                            {
 
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.TimestampGranularities, x => x.ToValueString()))}]"),
-                    name: "\"timestamp_granularities\"");
-            } 
-            if (request.Stream != default)
-            {
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.TimestampGranularities, x => x.ToValueString()))}]"),
+                                    name: "\"timestamp_granularities\"");
+                            } 
+                            if (request.Stream != default)
+                            {
 
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Stream}"),
-                    name: "\"stream\"");
-            } 
-            if (request.ChunkingStrategy != default)
-            {
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.Stream}"),
+                                    name: "\"stream\"");
+                            } 
+                            if (request.ChunkingStrategy != default)
+                            {
 
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.ChunkingStrategy}"),
-                    name: "\"chunking_strategy\"");
-            } 
-            if (request.KnownSpeakerNames != default)
-            {
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.ChunkingStrategy}"),
+                                    name: "\"chunking_strategy\"");
+                            } 
+                            if (request.KnownSpeakerNames != default)
+                            {
 
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.KnownSpeakerNames, x => x))}]"),
-                    name: "\"known_speaker_names\"");
-            } 
-            if (request.KnownSpeakerReferences != default)
-            {
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.KnownSpeakerNames, x => x))}]"),
+                                    name: "\"known_speaker_names\"");
+                            } 
+                            if (request.KnownSpeakerReferences != default)
+                            {
 
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.KnownSpeakerReferences, x => x))}]"),
-                    name: "\"known_speaker_references\"");
-            }
-            __httpRequest.Content = __httpRequestContent;
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.KnownSpeakerReferences, x => x))}]"),
+                                    name: "\"known_speaker_references\"");
+                            }
+                            __httpRequest.Content = __httpRequestContent;
+                global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.ApplyHeaders(
+                    request: __httpRequest,
+                    clientHeaders: Options.Headers,
+                    requestHeaders: requestOptions?.Headers);
 
-            PrepareRequest(
-                client: HttpClient,
-                request: __httpRequest);
-            PrepareCreateTranscriptionRequest(
-                httpClient: HttpClient,
-                httpRequestMessage: __httpRequest,
-                request: request);
-
-            using var __response = await HttpClient.SendAsync(
-                request: __httpRequest,
-                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
-
-            ProcessResponse(
-                client: HttpClient,
-                response: __response);
-            ProcessCreateTranscriptionResponse(
-                httpClient: HttpClient,
-                httpResponseMessage: __response);
-
-            if (ReadResponseAsString)
-            {
-                var __content = await __response.Content.ReadAsStringAsync(
-#if NET5_0_OR_GREATER
-                    cancellationToken
-#endif
-                ).ConfigureAwait(false);
-
-                ProcessResponseContent(
+                PrepareRequest(
                     client: HttpClient,
-                    response: __response,
-                    content: ref __content);
-                ProcessCreateTranscriptionResponseContent(
+                    request: __httpRequest);
+                PrepareCreateTranscriptionRequest(
                     httpClient: HttpClient,
-                    httpResponseMessage: __response,
-                    content: ref __content);
+                    httpRequestMessage: __httpRequest,
+                    request: request);
 
-                try
-                {
-                    __response.EnsureSuccessStatusCode();
-
-                    return
-                        global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>.FromJson(__content, JsonSerializerContext) ??
-                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                }
-                catch (global::System.Exception __ex)
-                {
-                    throw new global::tryAGI.OpenAI.ApiException(
-                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
-                        innerException: __ex,
-                        statusCode: __response.StatusCode)
-                    {
-                        ResponseBody = __content,
-                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                            __response.Headers,
-                            h => h.Key,
-                            h => h.Value),
-                    };
-                }
+                return __httpRequest;
             }
-            else
-            {
-                try
-                {
-                    __response.EnsureSuccessStatusCode();
-                    using var __content = await __response.Content.ReadAsStreamAsync(
-#if NET5_0_OR_GREATER
-                        cancellationToken
-#endif
-                    ).ConfigureAwait(false);
 
-                    return
-                        await global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
-                        throw new global::System.InvalidOperationException("Response deserialization failed.");
-                }
-                catch (global::System.Exception __ex)
+            global::System.Net.Http.HttpRequestMessage? __httpRequest = null;
+            global::System.Net.Http.HttpResponseMessage? __response = null;
+            var __attemptNumber = 0;
+            try
+            {
+                for (var __attempt = 1; __attempt <= __maxAttempts; __attempt++)
                 {
-                    string? __content = null;
+                    __attemptNumber = __attempt;
+                    __httpRequest = __CreateHttpRequest();
+                    await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
+                            clientOptions: Options,
+                            context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "CreateTranscription",
+                                methodName: "CreateTranscriptionAsync",
+                                pathTemplate: "\"/audio/transcriptions\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: null,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
-                        __content = await __response.Content.ReadAsStringAsync(
-#if NET5_0_OR_GREATER
-                            cancellationToken
-#endif
-                        ).ConfigureAwait(false);
+                        __response = await HttpClient.SendAsync(
+                request: __httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                     }
-                    catch (global::System.Exception)
+                    catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
+                        await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "CreateTranscription",
+                                methodName: "CreateTranscriptionAsync",
+                                pathTemplate: "\"/audio/transcriptions\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: null,
+                                exception: __exception,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: __willRetry,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        if (!__willRetry)
+                        {
+                            throw;
+                        }
+
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
                     }
 
-                    throw new global::tryAGI.OpenAI.ApiException(
-                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
-                        innerException: __ex,
-                        statusCode: __response.StatusCode)
+                    if (__response != null &&
+                        __attempt < __maxAttempts &&
+                        global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
-                        ResponseBody = __content,
-                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                            __response.Headers,
-                            h => h.Key,
-                            h => h.Value),
-                    };
+                        await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "CreateTranscription",
+                                methodName: "CreateTranscriptionAsync",
+                                pathTemplate: "\"/audio/transcriptions\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: true,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        __response.Dispose();
+                        __response = null;
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }
+
+                    break;
                 }
+
+                if (__response == null)
+                {
+                    throw new global::System.InvalidOperationException("No response received.");
+                }
+
+                using (__response)
+                {
+
+                ProcessResponse(
+                    client: HttpClient,
+                    response: __response);
+                ProcessCreateTranscriptionResponse(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response);
+                if (__response.IsSuccessStatusCode)
+                {
+                    await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
+                            clientOptions: Options,
+                            context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "CreateTranscription",
+                                methodName: "CreateTranscriptionAsync",
+                                pathTemplate: "\"/audio/transcriptions\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+                else
+                {
+                    await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "CreateTranscription",
+                                methodName: "CreateTranscriptionAsync",
+                                pathTemplate: "\"/audio/transcriptions\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+
+                            if (__effectiveReadResponseAsString)
+                            {
+                                var __content = await __response.Content.ReadAsStringAsync(
+                #if NET5_0_OR_GREATER
+                                    __effectiveCancellationToken
+                #endif
+                                ).ConfigureAwait(false);
+
+                                ProcessResponseContent(
+                                    client: HttpClient,
+                                    response: __response,
+                                    content: ref __content);
+                                ProcessCreateTranscriptionResponseContent(
+                                    httpClient: HttpClient,
+                                    httpResponseMessage: __response,
+                                    content: ref __content);
+
+                                try
+                                {
+                                    __response.EnsureSuccessStatusCode();
+
+                                    return
+                                        global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>.FromJson(__content, JsonSerializerContext) ??
+                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    throw new global::tryAGI.OpenAI.ApiException(
+                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        innerException: __ex,
+                                        statusCode: __response.StatusCode)
+                                    {
+                                        ResponseBody = __content,
+                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                            __response.Headers,
+                                            h => h.Key,
+                                            h => h.Value),
+                                    };
+                                }
+                            }
+                            else
+                            {
+                                try
+                                {
+                                    __response.EnsureSuccessStatusCode();
+                                    using var __content = await __response.Content.ReadAsStreamAsync(
+                #if NET5_0_OR_GREATER
+                                        __effectiveCancellationToken
+                #endif
+                                    ).ConfigureAwait(false);
+
+                                    return
+                                        await global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                        throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    string? __content = null;
+                                    try
+                                    {
+                                        __content = await __response.Content.ReadAsStringAsync(
+                #if NET5_0_OR_GREATER
+                                            __effectiveCancellationToken
+                #endif
+                                        ).ConfigureAwait(false);
+                                    }
+                                    catch (global::System.Exception)
+                                    {
+                                    }
+
+                                    throw new global::tryAGI.OpenAI.ApiException(
+                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        innerException: __ex,
+                                        statusCode: __response.StatusCode)
+                                    {
+                                        ResponseBody = __content,
+                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                            __response.Headers,
+                                            h => h.Key,
+                                            h => h.Value),
+                                    };
+                                }
+                            }
+
+                }
+            }
+            finally
+            {
+                __httpRequest?.Dispose();
             }
         }
         /// <summary>
@@ -347,6 +530,7 @@ namespace tryAGI.OpenAI
         /// <param name="knownSpeakerReferences">
         /// Optional list of audio samples (as [data URLs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs)) that contain known speaker references matching `known_speaker_names[]`. Each sample must be between 2 and 10 seconds, and can use any of the same input audio formats supported by `file`.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>> CreateTranscriptionAsync(
@@ -362,6 +546,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.CreateTranscriptionRequestChunkingStrategyVariant1?, global::tryAGI.OpenAI.VadConfig>? chunkingStrategy = default,
             global::System.Collections.Generic.IList<string>? knownSpeakerNames = default,
             global::System.Collections.Generic.IList<string>? knownSpeakerReferences = default,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::tryAGI.OpenAI.CreateTranscriptionRequest
@@ -383,6 +568,7 @@ namespace tryAGI.OpenAI
 
             return await CreateTranscriptionAsync(
                 request: __request,
+                requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }

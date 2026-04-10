@@ -35,6 +35,7 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("image_url")) __score1++;
             if (__jsonProps.Contains("type")) __score1++;
             var __score2 = 0;
+            if (__jsonProps.Contains("detail")) __score2++;
             if (__jsonProps.Contains("file_data")) __score2++;
             if (__jsonProps.Contains("file_id")) __score2++;
             if (__jsonProps.Contains("file_url")) __score2++;

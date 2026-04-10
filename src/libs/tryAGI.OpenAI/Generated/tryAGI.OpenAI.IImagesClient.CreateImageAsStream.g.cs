@@ -8,11 +8,13 @@ namespace tryAGI.OpenAI
         /// Creates an image given a prompt. [Learn more](/docs/guides/images).
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.ImageGenStreamEvent> CreateImageAsStreamAsync(
 
             global::tryAGI.OpenAI.CreateImageRequest request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Creates an image given a prompt. [Learn more](/docs/guides/images).
@@ -85,6 +87,7 @@ namespace tryAGI.OpenAI
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
         /// Example: user-1234
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.ImageGenStreamEvent> CreateImageAsStreamAsync(
@@ -101,6 +104,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.CreateImageRequestBackground? background = default,
             global::tryAGI.OpenAI.CreateImageRequestStyle? style = default,
             string? user = default,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
