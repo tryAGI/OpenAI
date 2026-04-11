@@ -1,0 +1,103 @@
+{
+  "Examples": [
+    {
+      "Order": 1,
+      "Title": "Cancel an active ChatKit session and return its most recent metadata.\n\nCancelling prevents new requests from using the issued client secret.",
+      "Slug": "cancelchatsessionmethod",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "http",
+      "Code": "### Cancel an active ChatKit session and return its most recent metadata.\n\nCancelling prevents new requests from using the issued client secret.\n# @name CancelChatSessionMethod\nPOST {{host}}/chatkit/sessions/{{session_id}}/cancel\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Success\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "CancelChatSessionMethod",
+      "Setup": null
+    },
+    {
+      "Order": 2,
+      "Title": "Compact a conversation. Returns a compacted response object.\n\nLearn when and how to compact long-running conversations in the [conversation state guide](/docs/guides/conversation-state#managing-the-context-window). For ZDR-compatible compaction details, see [Compaction (advanced)](/docs/guides/conversation-state#compaction-advanced).",
+      "Slug": "compactconversation",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "http",
+      "Code": "### Compact a conversation. Returns a compacted response object.\n\nLearn when and how to compact long-running conversations in the [conversation state guide](/docs/guides/conversation-state#managing-the-context-window). For ZDR-compatible compaction details, see [Compaction (advanced)](/docs/guides/conversation-state#compaction-advanced).\n# @name Compactconversation\nPOST {{host}}/responses/compact\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022model\u0022: \u0022gpt-5.1\u0022,\n  \u0022input\u0022: \u0022string\u0022,\n  \u0022previous_response_id\u0022: \u0022resp_123\u0022,\n  \u0022instructions\u0022: \u0022string\u0022,\n  \u0022prompt_cache_key\u0022: \u0022string\u0022\n}\n\n## Responses\n# 200\n# Description: Success\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "Compactconversation",
+      "Setup": null
+    },
+    {
+      "Order": 3,
+      "Title": "Create a ChatKit session.",
+      "Slug": "createchatsessionmethod",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "http",
+      "Code": "### Create a ChatKit session.\n# @name CreateChatSessionMethod\nPOST {{host}}/chatkit/sessions\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022workflow\u0022: {\n    \u0022id\u0022: \u0022string\u0022,\n    \u0022version\u0022: \u0022string\u0022,\n    \u0022state_variables\u0022: {},\n    \u0022tracing\u0022: {\n      \u0022enabled\u0022: true\n    }\n  },\n  \u0022user\u0022: \u0022string\u0022,\n  \u0022expires_after\u0022: {\n    \u0022anchor\u0022: \u0022created_at\u0022,\n    \u0022seconds\u0022: 0\n  },\n  \u0022rate_limits\u0022: {\n    \u0022max_requests_per_1_minute\u0022: 0\n  },\n  \u0022chatkit_configuration\u0022: {\n    \u0022automatic_thread_titling\u0022: {\n      \u0022enabled\u0022: true\n    },\n    \u0022file_upload\u0022: {\n      \u0022enabled\u0022: true,\n      \u0022max_file_size\u0022: 0,\n      \u0022max_files\u0022: 0\n    },\n    \u0022history\u0022: {\n      \u0022enabled\u0022: true,\n      \u0022recent_threads\u0022: 0\n    }\n  }\n}\n\n## Responses\n# 200\n# Description: Success\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "CreateChatSessionMethod",
+      "Setup": null
+    },
+    {
+      "Order": 4,
+      "Title": "Returns input token counts of the request.\n\nReturns an object with \u0060object\u0060 set to \u0060response.input_tokens\u0060 and an \u0060input_tokens\u0060 count.",
+      "Slug": "getinputtokencounts",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "http",
+      "Code": "### Returns input token counts of the request.\n\nReturns an object with \u0060object\u0060 set to \u0060response.input_tokens\u0060 and an \u0060input_tokens\u0060 count.\n# @name Getinputtokencounts\nPOST {{host}}/responses/input_tokens\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022model\u0022: \u0022string\u0022,\n  \u0022input\u0022: \u0022string\u0022,\n  \u0022previous_response_id\u0022: \u0022resp_123\u0022,\n  \u0022tools\u0022: [\n    {\n      \u0022type\u0022: \u0022function\u0022,\n      \u0022name\u0022: \u0022string\u0022,\n      \u0022description\u0022: \u0022string\u0022,\n      \u0022parameters\u0022: {},\n      \u0022strict\u0022: true,\n      \u0022defer_loading\u0022: true\n    }\n  ],\n  \u0022text\u0022: {\n    \u0022format\u0022: {\n      \u0022type\u0022: \u0022text\u0022\n    },\n    \u0022verbosity\u0022: \u0022medium\u0022\n  },\n  \u0022reasoning\u0022: {\n    \u0022effort\u0022: \u0022medium\u0022,\n    \u0022summary\u0022: \u0022auto\u0022,\n    \u0022generate_summary\u0022: \u0022auto\u0022\n  },\n  \u0022truncation\u0022: \u0022auto\u0022,\n  \u0022instructions\u0022: \u0022string\u0022,\n  \u0022conversation\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n  \u0022tool_choice\u0022: \u0022none\u0022,\n  \u0022parallel_tool_calls\u0022: true\n}\n\n## Responses\n# 200\n# Description: Success\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "Getinputtokencounts",
+      "Setup": null
+    },
+    {
+      "Order": 5,
+      "Title": "Retrieve a ChatKit thread by its identifier.",
+      "Slug": "getthreadmethod",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "http",
+      "Code": "### Retrieve a ChatKit thread by its identifier.\n# @name GetThreadMethod\nGET {{host}}/chatkit/threads/{{thread_id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Success\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "GetThreadMethod",
+      "Setup": null
+    },
+    {
+      "Order": 6,
+      "Title": "Creates an edited or extended image given one or more source images and a prompt. This endpoint supports GPT Image models (\u0060gpt-image-1.5\u0060, \u0060gpt-image-1\u0060, \u0060gpt-image-1-mini\u0060, and \u0060chatgpt-image-latest\u0060) and \u0060dall-e-2\u0060.",
+      "Slug": "createimageedit",
+      "Description": "You can call this endpoint with either:\n\n- \u0060multipart/form-data\u0060: use binary uploads via \u0060image\u0060 (and optional \u0060mask\u0060).\n- \u0060application/json\u0060: use \u0060images\u0060 (and optional \u0060mask\u0060) as references with either \u0060image_url\u0060 or \u0060file_id\u0060.\n\nNote that JSON requests use \u0060images\u0060 (array) instead of the multipart \u0060image\u0060 field.",
+      "Language": "csharp",
+      "Code": "using var client = new OpenAiClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::tryAGI.OpenAI.CreateImageEditRequest\u003E(\n    @\u0022{\n  \u0022\u0022model\u0022\u0022: \u0022\u0022gpt-image-1.5\u0022\u0022,\n  \u0022\u0022prompt\u0022\u0022: \u0022\u0022Replace the background with a snowy mountain scene\u0022\u0022,\n  \u0022\u0022images\u0022\u0022: [\n    {\n      \u0022\u0022file_id\u0022\u0022: \u0022\u0022file-abc123\u0022\u0022\n    }\n  ],\n  \u0022\u0022mask\u0022\u0022: {\n    \u0022\u0022file_id\u0022\u0022: \u0022\u0022file-mask123\u0022\u0022\n  },\n  \u0022\u0022output_format\u0022\u0022: \u0022\u0022png\u0022\u0022,\n  \u0022\u0022output_compression\u0022\u0022: 100\n}\u0022)!;\n\nvar response = await client.Images.CreateImageEditAsync(\n    request: request\n);",
+      "Format": "sdk",
+      "OperationId": "createImageEdit",
+      "Setup": "This example assumes \u0060using tryAGI.OpenAI;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 7,
+      "Title": "Cancels a model response with the given ID. Only responses created with\nthe \u0060background\u0060 parameter set to \u0060true\u0060 can be cancelled. \n[Learn more](/docs/guides/background).",
+      "Slug": "cancelresponse",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "http",
+      "Code": "### Cancels a model response with the given ID. Only responses created with\nthe \u0060background\u0060 parameter set to \u0060true\u0060 can be cancelled. \n[Learn more](/docs/guides/background).\n\n# @name cancelResponse\nPOST {{host}}/responses/{{response_id}}/cancel\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: OK\n# Content-Type: application/json\n# 404\n# Description: Not Found\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "cancelResponse",
+      "Setup": null
+    },
+    {
+      "Order": 8,
+      "Title": "Creates a model response. Provide [text](/docs/guides/text) or\n[image](/docs/guides/images) inputs to generate [text](/docs/guides/text)\nor [JSON](/docs/guides/structured-outputs) outputs. Have the model call\nyour own [custom code](/docs/guides/function-calling) or use built-in\n[tools](/docs/guides/tools) like [web search](/docs/guides/tools-web-search)\nor [file search](/docs/guides/tools-file-search) to use your own data\nas input for the model\u0027s response.",
+      "Slug": "createresponse",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "http",
+      "Code": "### Creates a model response. Provide [text](/docs/guides/text) or\n[image](/docs/guides/images) inputs to generate [text](/docs/guides/text)\nor [JSON](/docs/guides/structured-outputs) outputs. Have the model call\nyour own [custom code](/docs/guides/function-calling) or use built-in\n[tools](/docs/guides/tools) like [web search](/docs/guides/tools-web-search)\nor [file search](/docs/guides/tools-file-search) to use your own data\nas input for the model\u0027s response.\n\n# @name createResponse\nPOST {{host}}/responses\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json, text/event-stream\n\n{\n  \u0022previous_response_id\u0022: \u0022string\u0022,\n  \u0022model\u0022: \u0022gpt-5.1\u0022,\n  \u0022reasoning\u0022: {\n    \u0022effort\u0022: \u0022medium\u0022,\n    \u0022summary\u0022: \u0022auto\u0022,\n    \u0022generate_summary\u0022: \u0022auto\u0022\n  },\n  \u0022background\u0022: false,\n  \u0022max_tool_calls\u0022: 0,\n  \u0022text\u0022: {\n    \u0022format\u0022: {\n      \u0022type\u0022: \u0022text\u0022\n    },\n    \u0022verbosity\u0022: \u0022medium\u0022\n  },\n  \u0022tools\u0022: [\n    {\n      \u0022type\u0022: \u0022function\u0022,\n      \u0022name\u0022: \u0022string\u0022,\n      \u0022description\u0022: \u0022string\u0022,\n      \u0022parameters\u0022: {},\n      \u0022strict\u0022: true,\n      \u0022defer_loading\u0022: true\n    }\n  ],\n  \u0022tool_choice\u0022: \u0022none\u0022,\n  \u0022prompt\u0022: {\n    \u0022id\u0022: \u0022string\u0022,\n    \u0022version\u0022: \u0022string\u0022,\n    \u0022variables\u0022: {}\n  },\n  \u0022truncation\u0022: \u0022disabled\u0022,\n  \u0022input\u0022: \u0022string\u0022,\n  \u0022include\u0022: [\n    \u0022file_search_call.results\u0022\n  ],\n  \u0022parallel_tool_calls\u0022: true,\n  \u0022store\u0022: true,\n  \u0022instructions\u0022: \u0022string\u0022,\n  \u0022stream\u0022: false,\n  \u0022stream_options\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n  \u0022conversation\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n  \u0022context_management\u0022: [\n    {\n      \u0022type\u0022: \u0022string\u0022,\n      \u0022compact_threshold\u0022: 0\n    }\n  ],\n  \u0022max_output_tokens\u0022: 0\n}\n\n## Responses\n# 200\n# Description: OK\n# Content-Type: application/json, text/event-stream",
+      "Format": "http",
+      "OperationId": "createResponse",
+      "Setup": null
+    },
+    {
+      "Order": 9,
+      "Title": "Retrieves a model response with the given ID.",
+      "Slug": "getresponse",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "http",
+      "Code": "### Retrieves a model response with the given ID.\n\n# @name getResponse\nGET {{host}}/responses/{{response_id}}?include={{include}}\u0026stream={{stream}}\u0026starting_after={{starting_after}}\u0026include_obfuscation={{include_obfuscation}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: OK\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "getResponse",
+      "Setup": null
+    }
+  ]
+}
