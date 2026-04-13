@@ -1162,6 +1162,7 @@ paths:
 
                 Console.WriteLine($"{transcription.Text}");
               node.js: |-
+                import fs from 'fs';
                 import OpenAI from 'openai';
 
                 const client = new OpenAI({
@@ -1284,6 +1285,7 @@ paths:
 
                 console.log(transcript.segments);
               node.js: |-
+                import fs from 'fs';
                 import OpenAI from 'openai';
 
                 const client = new OpenAI({
@@ -1414,6 +1416,7 @@ paths:
                   console.log(event);
                 }
               node.js: |-
+                import fs from 'fs';
                 import OpenAI from 'openai';
 
                 const client = new OpenAI({
@@ -1690,6 +1693,7 @@ paths:
                 }
                 main();
               node.js: |-
+                import fs from 'fs';
                 import OpenAI from 'openai';
 
                 const client = new OpenAI({
@@ -1872,6 +1876,7 @@ paths:
 
                 Console.WriteLine($"{transcription.Text}");
               node.js: |-
+                import fs from 'fs';
                 import OpenAI from 'openai';
 
                 const client = new OpenAI({
@@ -2022,6 +2027,7 @@ paths:
 
                 Console.WriteLine($"{transcription.Text}");
               node.js: |-
+                import fs from 'fs';
                 import OpenAI from 'openai';
 
                 const client = new OpenAI({
@@ -2188,6 +2194,7 @@ paths:
 
               Console.WriteLine($"{transcription.Text}");
             node.js: |-
+              import fs from 'fs';
               import OpenAI from 'openai';
 
               const client = new OpenAI({
@@ -5622,6 +5629,7 @@ paths:
                 -H "Authorization: Bearer $OPENAI_API_KEY" \
                 -F file="@example.txt"
             node.js: |-
+              import fs from 'fs';
               import OpenAI from 'openai';
 
               const client = new OpenAI({
@@ -9537,6 +9545,7 @@ paths:
 
               main();
             node.js: |-
+              import fs from 'fs';
               import OpenAI from 'openai';
 
               const client = new OpenAI({
@@ -12662,6 +12671,7 @@ paths:
                 const image_bytes = Buffer.from(image_base64, "base64");
                 fs.writeFileSync("basket.png", image_bytes);
               node.js: |-
+                import fs from 'fs';
                 import OpenAI from 'openai';
 
                 const client = new OpenAI({
@@ -12767,6 +12777,7 @@ paths:
                     console.log(event);
                 }
               node.js: |-
+                import fs from 'fs';
                 import OpenAI from 'openai';
 
                 const client = new OpenAI({
@@ -13132,6 +13143,7 @@ paths:
 
               Console.WriteLine(image.ImageUri);
             node.js: |-
+              import fs from 'fs';
               import OpenAI from 'openai';
 
               const client = new OpenAI({
@@ -26726,6 +26738,8 @@ paths:
               curl https://api.openai.com/v1/uploads/upload_abc123/parts
                 -F data="aHR0cHM6Ly9hcGkub3BlbmFpLmNvbS92MS91cGxvYWRz..."
             node.js: >-
+              import fs from 'fs';
+
               import OpenAI from 'openai';
 
 
@@ -29721,6 +29735,7 @@ paths:
           response: ''
           request:
             node.js: |-
+              import fs from 'fs';
               import OpenAI from 'openai';
 
               const client = new OpenAI({
