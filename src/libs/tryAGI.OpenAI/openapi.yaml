@@ -71656,6 +71656,11 @@ components:
       example:
         object: response.input_tokens
         input_tokens: 123
+    PromptCacheRetentionEnum:
+      type: string
+      enum:
+        - in_memory
+        - 24h
     CompactResponseMethodPublicBody:
       properties:
         model:
@@ -71705,6 +71710,11 @@ components:
             - type: string
               maxLength: 64
               description: A key to use when reading from or writing to the prompt cache.
+            - type: 'null'
+        prompt_cache_retention:
+          anyOf:
+            - $ref: '#/components/schemas/PromptCacheRetentionEnum'
+              description: How long to retain a prompt cache entry created by this request.
             - type: 'null'
       type: object
       required:
