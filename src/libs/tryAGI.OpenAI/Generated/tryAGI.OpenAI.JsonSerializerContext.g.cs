@@ -3781,6 +3781,10 @@ namespace tryAGI.OpenAI
 
             typeof(global::tryAGI.OpenAI.JsonConverters.TokenCountsResourceObjectNullableJsonConverter),
 
+            typeof(global::tryAGI.OpenAI.JsonConverters.PromptCacheRetentionEnumJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.PromptCacheRetentionEnumNullableJsonConverter),
+
             typeof(global::tryAGI.OpenAI.JsonConverters.CompactResourceObjectJsonConverter),
 
             typeof(global::tryAGI.OpenAI.JsonConverters.CompactResourceObjectNullableJsonConverter),
@@ -7246,6 +7250,7 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.TokenCountsBody))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.TokenCountsResource))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.TokenCountsResourceObject), TypeInfoPropertyName = "TokenCountsResourceObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PromptCacheRetentionEnum), TypeInfoPropertyName = "PromptCacheRetentionEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CompactResponseMethodPublicBody))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ItemField), TypeInfoPropertyName = "ItemField2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ItemFieldDiscriminator))]

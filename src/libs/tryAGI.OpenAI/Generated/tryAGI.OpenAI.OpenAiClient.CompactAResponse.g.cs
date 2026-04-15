@@ -398,6 +398,7 @@ namespace tryAGI.OpenAI
         /// <param name="previousResponseId"></param>
         /// <param name="instructions"></param>
         /// <param name="promptCacheKey"></param>
+        /// <param name="promptCacheRetention"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -407,6 +408,7 @@ namespace tryAGI.OpenAI
             string? previousResponseId = default,
             string? instructions = default,
             string? promptCacheKey = default,
+            global::tryAGI.OpenAI.PromptCacheRetentionEnum? promptCacheRetention = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -417,6 +419,7 @@ namespace tryAGI.OpenAI
                 PreviousResponseId = previousResponseId,
                 Instructions = instructions,
                 PromptCacheKey = promptCacheKey,
+                PromptCacheRetention = promptCacheRetention,
             };
 
             return await CompactAResponseAsync(

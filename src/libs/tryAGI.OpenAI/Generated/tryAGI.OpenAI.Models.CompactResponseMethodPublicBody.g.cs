@@ -41,6 +41,12 @@ namespace tryAGI.OpenAI
         public string? PromptCacheKey { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_retention")]
+        public global::tryAGI.OpenAI.PromptCacheRetentionEnum? PromptCacheRetention { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -56,6 +62,7 @@ namespace tryAGI.OpenAI
         /// <param name="previousResponseId"></param>
         /// <param name="instructions"></param>
         /// <param name="promptCacheKey"></param>
+        /// <param name="promptCacheRetention"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -64,13 +71,15 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>? input,
             string? previousResponseId,
             string? instructions,
-            string? promptCacheKey)
+            string? promptCacheKey,
+            global::tryAGI.OpenAI.PromptCacheRetentionEnum? promptCacheRetention)
         {
             this.Model = model;
             this.Input = input;
             this.PreviousResponseId = previousResponseId;
             this.Instructions = instructions;
             this.PromptCacheKey = promptCacheKey;
+            this.PromptCacheRetention = promptCacheRetention;
         }
 
         /// <summary>
