@@ -23,6 +23,14 @@ namespace tryAGI.OpenAI.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -98,6 +106,12 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("type")) __score13++;
             var __score14 = 0;
             if (__jsonProps.Contains("action")) __score14++;
+            if (__jsonProps.Contains("action.command")) __score14++;
+            if (__jsonProps.Contains("action.env")) __score14++;
+            if (__jsonProps.Contains("action.timeout_ms")) __score14++;
+            if (__jsonProps.Contains("action.type")) __score14++;
+            if (__jsonProps.Contains("action.user")) __score14++;
+            if (__jsonProps.Contains("action.working_directory")) __score14++;
             if (__jsonProps.Contains("call_id")) __score14++;
             if (__jsonProps.Contains("id")) __score14++;
             if (__jsonProps.Contains("status")) __score14++;
@@ -109,6 +123,9 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("type")) __score15++;
             var __score16 = 0;
             if (__jsonProps.Contains("action")) __score16++;
+            if (__jsonProps.Contains("action.commands")) __score16++;
+            if (__jsonProps.Contains("action.max_output_length")) __score16++;
+            if (__jsonProps.Contains("action.timeout_ms")) __score16++;
             if (__jsonProps.Contains("call_id")) __score16++;
             if (__jsonProps.Contains("created_by")) __score16++;
             if (__jsonProps.Contains("environment")) __score16++;

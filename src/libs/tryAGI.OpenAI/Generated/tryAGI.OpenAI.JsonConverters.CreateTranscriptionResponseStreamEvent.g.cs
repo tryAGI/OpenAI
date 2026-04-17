@@ -23,6 +23,14 @@ namespace tryAGI.OpenAI.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -43,6 +51,11 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("text")) __score2++;
             if (__jsonProps.Contains("type")) __score2++;
             if (__jsonProps.Contains("usage")) __score2++;
+            if (__jsonProps.Contains("usage.input_token_details")) __score2++;
+            if (__jsonProps.Contains("usage.input_tokens")) __score2++;
+            if (__jsonProps.Contains("usage.output_tokens")) __score2++;
+            if (__jsonProps.Contains("usage.total_tokens")) __score2++;
+            if (__jsonProps.Contains("usage.type")) __score2++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }

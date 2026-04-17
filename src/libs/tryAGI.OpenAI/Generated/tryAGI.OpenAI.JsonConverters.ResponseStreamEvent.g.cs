@@ -23,6 +23,14 @@ namespace tryAGI.OpenAI.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -149,6 +157,8 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("item_id")) __score24++;
             if (__jsonProps.Contains("output_index")) __score24++;
             if (__jsonProps.Contains("part")) __score24++;
+            if (__jsonProps.Contains("part.text")) __score24++;
+            if (__jsonProps.Contains("part.type")) __score24++;
             if (__jsonProps.Contains("sequence_number")) __score24++;
             if (__jsonProps.Contains("summary_index")) __score24++;
             if (__jsonProps.Contains("type")) __score24++;
@@ -156,6 +166,8 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("item_id")) __score25++;
             if (__jsonProps.Contains("output_index")) __score25++;
             if (__jsonProps.Contains("part")) __score25++;
+            if (__jsonProps.Contains("part.text")) __score25++;
+            if (__jsonProps.Contains("part.type")) __score25++;
             if (__jsonProps.Contains("sequence_number")) __score25++;
             if (__jsonProps.Contains("summary_index")) __score25++;
             if (__jsonProps.Contains("type")) __score25++;

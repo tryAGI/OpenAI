@@ -23,6 +23,14 @@ namespace tryAGI.OpenAI.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -39,6 +47,8 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("type")) __score3++;
             var __score4 = 0;
             if (__jsonProps.Contains("input_audio")) __score4++;
+            if (__jsonProps.Contains("input_audio.data")) __score4++;
+            if (__jsonProps.Contains("input_audio.format")) __score4++;
             if (__jsonProps.Contains("type")) __score4++;
             var __bestScore = 0;
             var __bestIndex = -1;
