@@ -155,7 +155,20 @@ def main() -> int:
                 "pathname": "/v1/realtime",
                 "protocol": "wss",
                 "description": "OpenAI Realtime WebSocket server",
-                "security": [{"$ref": "#/components/securitySchemes/bearer"}],
+                "variables": {
+                    "model": {
+                        "description": (
+                            "Realtime model ID. The generator emits this as a "
+                            "required parameter on ConnectAsync and appends it "
+                            "to the URL as ?model=<id>."
+                        ),
+                        "examples": ["gpt-4o-realtime-preview"],
+                    }
+                },
+                "security": [
+                    {"$ref": "#/components/securitySchemes/bearer"},
+                    {"$ref": "#/components/securitySchemes/subprotocol"},
+                ],
             }
         },
         "channels": {
@@ -168,7 +181,26 @@ def main() -> int:
                     "type": "http",
                     "scheme": "bearer",
                     "description": "OpenAI API key as a Bearer token.",
-                }
+                },
+                "subprotocol": {
+                    "type": "apiKey",
+                    "description": (
+                        "Browser-compatible auth via WebSocket subprotocols. "
+                        "When ConnectAsync is called with useSubprotocolAuth: true, "
+                        "the client advertises `openai-insecure-api-key.<apiKey>`, "
+                        "avoiding the need to set an Authorization header (which "
+                        "browsers disallow on the JS WebSocket constructor).\n\n"
+                        "OpenAI also expects the `realtime` subprotocol on the "
+                        "connection; include it via the `additionalSubProtocols` "
+                        "parameter on ConnectAsync.\n\n"
+                        "NOTE: single template until tryAGI/AutoSDK codegen bug "
+                        "(duplicate __subProtocol locals with >1 template) is "
+                        "fixed."
+                    ),
+                    "x-subprotocol-auth": [
+                        "openai-insecure-api-key.{apiKey}",
+                    ],
+                },
             },
             "messages": component_messages,
             "schemas": inline_schemas,

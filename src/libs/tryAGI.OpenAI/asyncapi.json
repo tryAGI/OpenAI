@@ -11,9 +11,20 @@
       "pathname": "/v1/realtime",
       "protocol": "wss",
       "description": "OpenAI Realtime WebSocket server",
+      "variables": {
+        "model": {
+          "description": "Realtime model ID. The generator emits this as a required parameter on ConnectAsync and appends it to the URL as ?model=<id>.",
+          "examples": [
+            "gpt-4o-realtime-preview"
+          ]
+        }
+      },
       "security": [
         {
           "$ref": "#/components/securitySchemes/bearer"
+        },
+        {
+          "$ref": "#/components/securitySchemes/subprotocol"
         }
       ]
     }
@@ -356,6 +367,13 @@
         "type": "http",
         "scheme": "bearer",
         "description": "OpenAI API key as a Bearer token."
+      },
+      "subprotocol": {
+        "type": "apiKey",
+        "description": "Browser-compatible auth via WebSocket subprotocols. When ConnectAsync is called with useSubprotocolAuth: true, the client advertises `openai-insecure-api-key.<apiKey>`, avoiding the need to set an Authorization header (which browsers disallow on the JS WebSocket constructor).\n\nOpenAI also expects the `realtime` subprotocol on the connection; include it via the `additionalSubProtocols` parameter on ConnectAsync.\n\nNOTE: single template until tryAGI/AutoSDK codegen bug (duplicate __subProtocol locals with >1 template) is fixed.",
+        "x-subprotocol-auth": [
+          "openai-insecure-api-key.{apiKey}"
+        ]
       }
     },
     "messages": {
