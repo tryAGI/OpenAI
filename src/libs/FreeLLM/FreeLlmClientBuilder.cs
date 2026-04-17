@@ -18,6 +18,12 @@ public sealed class FreeLlmClientBuilder
 
     public TimeSpan DefaultTransientFailureCooldown { get; private set; } = TimeSpan.FromSeconds(30);
 
+    public TimeSpan? DefaultCatalogRefreshInterval { get; private set; }
+
+    public bool FilterMissingConfiguredModels { get; private set; } = true;
+
+    public bool RouteDiscoveredModels { get; private set; }
+
     public FreeLlmClientBuilder WithDefaultAlias(string alias)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(alias);
@@ -45,6 +51,18 @@ public sealed class FreeLlmClientBuilder
         return this;
     }
 
+    public FreeLlmClientBuilder WithCatalogRefresh(
+        TimeSpan refreshInterval,
+        bool routeDiscoveredModels = false,
+        bool filterMissingConfiguredModels = true)
+    {
+        ArgumentOutOfRangeException.ThrowIfLessThanOrEqual(refreshInterval, TimeSpan.Zero);
+        DefaultCatalogRefreshInterval = refreshInterval;
+        RouteDiscoveredModels = routeDiscoveredModels;
+        FilterMissingConfiguredModels = filterMissingConfiguredModels;
+        return this;
+    }
+
     public FreeLlmClientBuilder AddOpenAiCompatibleProvider(
         string providerId,
         OpenAiClient client,
@@ -63,6 +81,7 @@ public sealed class FreeLlmClientBuilder
                 client: (OpenAiClient)definition.Client!,
                 models: definition.Models.Select(static model => FreeLlmModel.Create(model)).ToArray(),
                 state: state,
+                catalogState: definition.CatalogState!,
                 disposeClient: definition.DisposeClient),
             client,
             disposeClient);
@@ -86,6 +105,7 @@ public sealed class FreeLlmClientBuilder
                 client: (GeminiClient)definition.Client!,
                 models: definition.Models.Select(static model => FreeLlmModel.Create(model)).ToArray(),
                 state: state,
+                catalogState: definition.CatalogState!,
                 disposeClient: definition.DisposeClient),
             client,
             disposeClient);
@@ -121,6 +141,7 @@ public sealed class FreeLlmClientBuilder
                     client: client,
                     models: definition.Models.Select(static model => FreeLlmModel.Create(model)).ToArray(),
                     state: state,
+                    catalogState: definition.CatalogState!,
                     disposeClient: true);
             },
             client: null,
@@ -160,6 +181,7 @@ public sealed class FreeLlmClientBuilder
                     client: client,
                     models: definition.Models.Select(static model => FreeLlmModel.Create(model)).ToArray(),
                     state: state,
+                    catalogState: definition.CatalogState!,
                     disposeClient: true);
             },
             client: null,
@@ -295,6 +317,7 @@ public sealed class FreeLlmClientBuilder
                     client: client,
                     models: definition.Models.Select(static model => FreeLlmModel.Create(model)).ToArray(),
                     state: state,
+                    catalogState: definition.CatalogState!,
                     disposeClient: true);
             },
             client: null,
@@ -327,6 +350,7 @@ public sealed class FreeLlmClientBuilder
                     client: client,
                     models: definition.Models.Select(static model => FreeLlmModel.Create(model)).ToArray(),
                     state: state,
+                    catalogState: definition.CatalogState!,
                     disposeClient: true);
             },
             client: null,
@@ -355,6 +379,13 @@ public sealed class FreeLlmClientBuilder
                 timeProvider: TimeProvider,
                 rateLimitCooldown: definition.RateLimitCooldown ?? DefaultRateLimitCooldown,
                 transientFailureCooldown: definition.TransientFailureCooldown ?? DefaultTransientFailureCooldown);
+            var catalogState = new FreeLlmProviderCatalogRuntimeState(
+                timeProvider: TimeProvider,
+                refreshInterval: definition.CatalogRefreshInterval ?? DefaultCatalogRefreshInterval,
+                filterMissingConfiguredModels: definition.FilterMissingConfiguredModels ?? FilterMissingConfiguredModels,
+                routeDiscoveredModels: definition.RouteDiscoveredModels ?? RouteDiscoveredModels,
+                discoveredModelFactory: definition.DiscoveredModelFactory);
+            definition.CatalogState = catalogState;
             providers.Add(definition.ProviderFactory(definition, state));
         }
 
@@ -443,6 +474,18 @@ public sealed class FreeLlmProviderBuilder
         return this;
     }
 
+    public FreeLlmProviderBuilder WithCatalogRefresh(
+        TimeSpan refreshInterval,
+        bool routeDiscoveredModels = false,
+        bool filterMissingConfiguredModels = true)
+    {
+        ArgumentOutOfRangeException.ThrowIfLessThanOrEqual(refreshInterval, TimeSpan.Zero);
+        _definition.CatalogRefreshInterval = refreshInterval;
+        _definition.RouteDiscoveredModels = routeDiscoveredModels;
+        _definition.FilterMissingConfiguredModels = filterMissingConfiguredModels;
+        return this;
+    }
+
     public FreeLlmProviderBuilder AddModel(
         string modelId,
         Action<FreeLlmModelBuilder>? configure = null)
@@ -474,6 +517,12 @@ public sealed class FreeLlmProviderBuilder
     public FreeLlmProviderBuilder ClearModels()
     {
         _definition.Models.Clear();
+        return this;
+    }
+
+    internal FreeLlmProviderBuilder WithDiscoveredModelFactory(Func<string, FreeLlmModelDefinition?> discoveredModelFactory)
+    {
+        _definition.DiscoveredModelFactory = discoveredModelFactory ?? throw new ArgumentNullException(nameof(discoveredModelFactory));
         return this;
     }
 }
@@ -595,6 +644,16 @@ internal sealed class FreeLlmProviderDefinition
     public TimeSpan? RateLimitCooldown { get; set; }
 
     public TimeSpan? TransientFailureCooldown { get; set; }
+
+    public TimeSpan? CatalogRefreshInterval { get; set; }
+
+    public bool? FilterMissingConfiguredModels { get; set; }
+
+    public bool? RouteDiscoveredModels { get; set; }
+
+    public Func<string, FreeLlmModelDefinition?>? DiscoveredModelFactory { get; set; }
+
+    public FreeLlmProviderCatalogRuntimeState? CatalogState { get; set; }
 
     public List<FreeLlmModelDefinition> Models { get; } = [];
 }

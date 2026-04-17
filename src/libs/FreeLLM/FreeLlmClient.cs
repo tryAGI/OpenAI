@@ -38,6 +38,22 @@ public sealed class FreeLlmClient : Meai.IChatClient, IDisposable
     public IReadOnlyList<FreeLlmProviderStatus> GetProviderStatuses()
         => _providers.Select(static provider => provider.State.GetStatus(provider.ProviderId)).ToArray();
 
+    /// <summary>
+    /// Returns the latest discovered model catalog snapshot for every registered provider.
+    /// </summary>
+    public IReadOnlyList<FreeLlmProviderCatalog> GetProviderCatalogs()
+        => _providers.Select(static provider => provider.GetCatalogSnapshot()).ToArray();
+
+    /// <summary>
+    /// Refreshes provider model catalogs and returns the latest snapshots.
+    /// </summary>
+    public async Task<IReadOnlyList<FreeLlmProviderCatalog>> RefreshProviderCatalogsAsync(
+        CancellationToken cancellationToken = default)
+    {
+        await Task.WhenAll(_providers.Select(provider => provider.RefreshCatalogAsync(cancellationToken))).ConfigureAwait(false);
+        return GetProviderCatalogs();
+    }
+
     object? Meai.IChatClient.GetService(Type serviceType, object? serviceKey)
     {
         if (serviceKey is not null)
@@ -58,6 +74,7 @@ public sealed class FreeLlmClient : Meai.IChatClient, IDisposable
         Meai.ChatOptions? options,
         CancellationToken cancellationToken)
     {
+        await RefreshProviderCatalogsIfNeededAsync(cancellationToken).ConfigureAwait(false);
         var resolvedRequest = ResolveCandidates(options);
         Exception? lastException = null;
         var attempted = new List<string>();
@@ -103,6 +120,7 @@ public sealed class FreeLlmClient : Meai.IChatClient, IDisposable
         Meai.ChatOptions? options,
         [EnumeratorCancellation] CancellationToken cancellationToken)
     {
+        await RefreshProviderCatalogsIfNeededAsync(cancellationToken).ConfigureAwait(false);
         var resolvedRequest = ResolveCandidates(options, requireStreaming: true);
         Exception? lastException = null;
         var attempted = new List<string>();
@@ -196,6 +214,7 @@ public sealed class FreeLlmClient : Meai.IChatClient, IDisposable
         tryAGI.OpenAI.CreateChatCompletionRequest request,
         CancellationToken cancellationToken)
     {
+        await RefreshProviderCatalogsIfNeededAsync(cancellationToken).ConfigureAwait(false);
         var resolvedRequest = ResolveRawRequest(request);
         Exception? lastException = null;
         var attempted = new List<string>();
@@ -247,6 +266,7 @@ public sealed class FreeLlmClient : Meai.IChatClient, IDisposable
         tryAGI.OpenAI.CreateChatCompletionRequest request,
         [EnumeratorCancellation] CancellationToken cancellationToken)
     {
+        await RefreshProviderCatalogsIfNeededAsync(cancellationToken).ConfigureAwait(false);
         var resolvedRequest = ResolveRawRequest(request, requireStreaming: true);
         Exception? lastException = null;
         var attempted = new List<string>();
@@ -387,7 +407,7 @@ public sealed class FreeLlmClient : Meai.IChatClient, IDisposable
         {
             foreach (var provider in _providers)
             {
-                foreach (var model in provider.Models)
+                foreach (var model in provider.GetRoutingModels())
                 {
                     var isExactMatch = string.Equals(model.ModelId, requestedId, StringComparison.OrdinalIgnoreCase);
                     var isAliasMatch = !isExactMatch && model.Aliases.Contains(requestedId);
@@ -519,6 +539,22 @@ public sealed class FreeLlmClient : Meai.IChatClient, IDisposable
     private static InvalidOperationException CreateNoAvailableProviderException(string requestedModelId, IEnumerable<string> attempted)
         => new InvalidOperationException(
             $"No providers were available for '{requestedModelId}'. Attempted: {string.Join(", ", attempted)}");
+
+    private async Task RefreshProviderCatalogsIfNeededAsync(CancellationToken cancellationToken)
+    {
+        var now = _timeProvider.GetUtcNow();
+        var refreshTasks = _providers
+            .Where(provider => provider.ShouldRefreshCatalog(now))
+            .Select(provider => provider.RefreshCatalogAsync(cancellationToken))
+            .ToArray();
+
+        if (refreshTasks.Length == 0)
+        {
+            return;
+        }
+
+        await Task.WhenAll(refreshTasks).ConfigureAwait(false);
+    }
 }
 
 /// <summary>
@@ -655,12 +691,14 @@ internal abstract class FreeLlmProvider : IDisposable
         string providerId,
         int priority,
         IReadOnlyList<FreeLlmModel> models,
-        FreeLlmProviderRuntimeState state)
+        FreeLlmProviderRuntimeState state,
+        FreeLlmProviderCatalogRuntimeState catalogState)
     {
         ProviderId = providerId;
         Priority = priority;
         Models = models;
         State = state;
+        CatalogState = catalogState;
     }
 
     public string ProviderId { get; }
@@ -670,6 +708,20 @@ internal abstract class FreeLlmProvider : IDisposable
     public IReadOnlyList<FreeLlmModel> Models { get; }
 
     public FreeLlmProviderRuntimeState State { get; }
+
+    public FreeLlmProviderCatalogRuntimeState CatalogState { get; }
+
+    public IReadOnlyList<FreeLlmModel> GetRoutingModels()
+        => CatalogState.GetRoutingModels(Models);
+
+    public bool ShouldRefreshCatalog(DateTimeOffset now)
+        => CatalogState.ShouldRefresh(now);
+
+    public Task RefreshCatalogAsync(CancellationToken cancellationToken)
+        => CatalogState.RefreshAsync(ListModelIdsAsync, cancellationToken);
+
+    public FreeLlmProviderCatalog GetCatalogSnapshot()
+        => CatalogState.GetSnapshot(ProviderId, Models);
 
     public abstract Task<Meai.ChatResponse> GetResponseAsync(
         IEnumerable<Meai.ChatMessage> messages,
@@ -696,6 +748,8 @@ internal abstract class FreeLlmProvider : IDisposable
         string modelId,
         CancellationToken cancellationToken);
 
+    protected abstract Task<IReadOnlyList<string>> ListModelIdsAsync(CancellationToken cancellationToken);
+
     public abstract void Dispose();
 }
 
@@ -710,8 +764,9 @@ internal sealed class FreeLlmOpenAiProvider : FreeLlmProvider
         tryAGI.OpenAI.OpenAiClient client,
         IReadOnlyList<FreeLlmModel> models,
         FreeLlmProviderRuntimeState state,
+        FreeLlmProviderCatalogRuntimeState catalogState,
         bool disposeClient)
-        : base(providerId, priority, models, state)
+        : base(providerId, priority, models, state, catalogState)
     {
         _client = client;
         _disposeClient = disposeClient;
@@ -762,8 +817,12 @@ internal sealed class FreeLlmOpenAiProvider : FreeLlmProvider
             request: FreeLlmOpenAiCompat.CloneRequestWithModel(request, modelId),
             cancellationToken: cancellationToken);
 
+    protected override Task<IReadOnlyList<string>> ListModelIdsAsync(CancellationToken cancellationToken)
+        => FreeLlmModelCatalogClient.ListOpenAiCompatibleModelsAsync(_client, cancellationToken);
+
     public override void Dispose()
     {
+        CatalogState.Dispose();
         if (_disposeClient)
         {
             _client.Dispose();
@@ -782,8 +841,9 @@ internal sealed class FreeLlmGeminiProvider : FreeLlmProvider
         GeminiClient client,
         IReadOnlyList<FreeLlmModel> models,
         FreeLlmProviderRuntimeState state,
+        FreeLlmProviderCatalogRuntimeState catalogState,
         bool disposeClient)
-        : base(providerId, priority, models, state)
+        : base(providerId, priority, models, state, catalogState)
     {
         _client = client;
         _disposeClient = disposeClient;
@@ -852,8 +912,12 @@ internal sealed class FreeLlmGeminiProvider : FreeLlmProvider
         }
     }
 
+    protected override Task<IReadOnlyList<string>> ListModelIdsAsync(CancellationToken cancellationToken)
+        => FreeLlmModelCatalogClient.ListGeminiModelsAsync(_client, cancellationToken);
+
     public override void Dispose()
     {
+        CatalogState.Dispose();
         if (_disposeClient)
         {
             _client.Dispose();

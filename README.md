@@ -240,7 +240,7 @@ using tryAGI.OpenAI;
 
 using var routed = new OpenAiRoutedChatClientBuilder()
     .AddProvider("cerebras", CustomProviders.Cerebras("CEREBRAS_API_KEY"), provider => provider
-        .AddModel("qwen-3-235b-a22b-thinking-2507", model => model
+        .AddModel("qwen-3-235b-a22b-instruct-2507", model => model
             .AsSmart(priority: 100)
             .AsSmartAny(priority: 100)
             .SupportsToolCalls()
@@ -287,6 +287,7 @@ using FreeLLM;
 using tryAGI.OpenAI;
 
 using var client = new FreeLlmClientBuilder()
+    .WithCatalogRefresh(TimeSpan.FromHours(6), routeDiscoveredModels: true)
     // Curated defaults are applied automatically for popular providers.
     .AddCerebras("CEREBRAS_API_KEY")
     .AddGemini("GEMINI_API_KEY", provider => provider
@@ -322,12 +323,20 @@ var meai = await chatClient.GetResponseAsync(
 
 Console.WriteLine(raw.Choices[0].Message.Content);
 Console.WriteLine(meai.Messages[0].Text);
+
+var catalogs = client.GetProviderCatalogs();
+foreach (var catalog in catalogs)
+{
+    Console.WriteLine($"{catalog.ProviderId}: refreshed={catalog.RefreshedAt:O}, missing={string.Join(", ", catalog.MissingConfiguredModelIds)}");
+}
 ```
 
 Notes:
 - `FreeLlmModelAliases` includes `smart`, `smart-any`, `fast`, and `cheap`.
 - Convenience methods for Gemini, Cerebras, SambaNova, OpenRouter, GitHub Models, Groq, and NVIDIA register curated default models and priorities.
 - Use `provider.WithPriority(...)` to bias whole providers, and `model.AsSmart(...)`, `model.AsCheap(...)`, `model.AsFast(...)`, and `model.AsSmartAny(...)` to tune alias-specific model priority.
+- Use `builder.WithCatalogRefresh(...)` or `provider.WithCatalogRefresh(...)` to periodically call provider model catalogs, mark configured models as missing when they disappear, and optionally route newly discovered models when `routeDiscoveredModels: true`.
+- Use `client.RefreshProviderCatalogsAsync()` to force a catalog refresh and `client.GetProviderCatalogs()` to inspect configured, discovered, present, missing, and routable models per provider.
 - Use `provider.ClearModels()` or pass `useDefaultModels: false` to a convenience method if you want a fully manual model list.
 - `provider.AddModel("existing-model", ...)` updates preset models in place, so you can override defaults without duplicating registrations.
 - `client.Chat` preserves raw OpenAI-compatible requests for OpenAI-compatible providers and translates supported chat-completions requests to Gemini when a Gemini model wins routing.

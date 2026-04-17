@@ -15,7 +15,8 @@ public sealed class FreeLlmRateLimitSnapshot
         long? remainingRequests,
         long? limitRequests,
         long? remainingTokens,
-        long? limitTokens)
+        long? limitTokens,
+        IReadOnlyDictionary<string, IReadOnlyList<string>> observedHeaders)
     {
         ObservedAt = observedAt;
         RetryAfter = retryAfter;
@@ -24,6 +25,7 @@ public sealed class FreeLlmRateLimitSnapshot
         LimitRequests = limitRequests;
         RemainingTokens = remainingTokens;
         LimitTokens = limitTokens;
+        ObservedHeaders = observedHeaders;
     }
 
     public DateTimeOffset ObservedAt { get; }
@@ -39,6 +41,13 @@ public sealed class FreeLlmRateLimitSnapshot
     public long? RemainingTokens { get; }
 
     public long? LimitTokens { get; }
+
+    /// <summary>
+    /// Rate-limit related response headers observed on the provider response.
+    /// This includes known parsed headers and any additional rate-limit-like headers
+    /// so callers can inspect provider-specific quota signals.
+    /// </summary>
+    public IReadOnlyDictionary<string, IReadOnlyList<string>> ObservedHeaders { get; }
 }
 
 /// <summary>
@@ -252,19 +261,31 @@ internal static class FreeLlmRateLimitParser
         DateTimeOffset observedAt)
     {
         var headerList = headers.ToArray();
+        var observedHeaders = GetObservedHeaders(headerList);
 
-        var retryAfter = TryParseRetryAfter(GetFirstHeaderValue(headerList, "Retry-After"), observedAt);
+        var retryAfter =
+            TryParseRetryAfter(GetFirstHeaderValue(headerList, "Retry-After"), observedAt) ??
+            TryParseMillisecondsAsRetryAfter(GetFirstHeaderValue(headerList, "retry-after-ms"));
         var resetAt =
             TryParseReset(GetFirstHeaderValue(headerList, "x-ratelimit-reset-requests"), observedAt) ??
             TryParseReset(GetFirstHeaderValue(headerList, "x-ratelimit-reset"), observedAt) ??
+            TryParseReset(GetFirstHeaderValue(headerList, "ratelimit-reset"), observedAt) ??
+            TryParseResetAfter(GetFirstHeaderValue(headerList, "x-ratelimit-reset-after"), observedAt) ??
+            TryParseResetAfter(GetFirstHeaderValue(headerList, "ratelimit-reset-after"), observedAt) ??
+            TryParseMillisecondsAsReset(GetFirstHeaderValue(headerList, "x-ratelimit-reset-after-ms"), observedAt) ??
+            TryParseMillisecondsAsReset(GetFirstHeaderValue(headerList, "ratelimit-reset-after-ms"), observedAt) ??
             TryParseReset(GetFirstHeaderValue(headerList, "x-ratelimit-reset-tokens"), observedAt);
 
         var remainingRequests =
             TryParseInt64(GetFirstHeaderValue(headerList, "x-ratelimit-remaining-requests")) ??
-            TryParseInt64(GetFirstHeaderValue(headerList, "ratelimit-remaining-requests"));
+            TryParseInt64(GetFirstHeaderValue(headerList, "ratelimit-remaining-requests")) ??
+            TryParseInt64(GetFirstHeaderValue(headerList, "x-ratelimit-remaining")) ??
+            TryParseInt64(GetFirstHeaderValue(headerList, "ratelimit-remaining"));
         var limitRequests =
             TryParseInt64(GetFirstHeaderValue(headerList, "x-ratelimit-limit-requests")) ??
-            TryParseInt64(GetFirstHeaderValue(headerList, "ratelimit-limit-requests"));
+            TryParseInt64(GetFirstHeaderValue(headerList, "ratelimit-limit-requests")) ??
+            TryParseInt64(GetFirstHeaderValue(headerList, "x-ratelimit-limit")) ??
+            TryParseInt64(GetFirstHeaderValue(headerList, "ratelimit-limit"));
         var remainingTokens =
             TryParseInt64(GetFirstHeaderValue(headerList, "x-ratelimit-remaining-tokens")) ??
             TryParseInt64(GetFirstHeaderValue(headerList, "ratelimit-remaining-tokens"));
@@ -277,7 +298,8 @@ internal static class FreeLlmRateLimitParser
             remainingRequests is null &&
             limitRequests is null &&
             remainingTokens is null &&
-            limitTokens is null)
+            limitTokens is null &&
+            observedHeaders.Count == 0)
         {
             return null;
         }
@@ -289,7 +311,26 @@ internal static class FreeLlmRateLimitParser
             remainingRequests: remainingRequests,
             limitRequests: limitRequests,
             remainingTokens: remainingTokens,
-            limitTokens: limitTokens);
+            limitTokens: limitTokens,
+            observedHeaders: observedHeaders);
+    }
+
+    private static Dictionary<string, IReadOnlyList<string>> GetObservedHeaders(
+        IEnumerable<KeyValuePair<string, IEnumerable<string>>> headers)
+    {
+        var observedHeaders = new Dictionary<string, IReadOnlyList<string>>(StringComparer.OrdinalIgnoreCase);
+
+        foreach (var header in headers)
+        {
+            if (!IsRateLimitHeaderName(header.Key))
+            {
+                continue;
+            }
+
+            observedHeaders[header.Key] = header.Value.ToArray();
+        }
+
+        return observedHeaders;
     }
 
     private static string? GetFirstHeaderValue(
@@ -316,6 +357,21 @@ internal static class FreeLlmRateLimitParser
         {
             var retryAfter = retryAt - observedAt;
             return retryAfter > TimeSpan.Zero ? retryAfter : TimeSpan.Zero;
+        }
+
+        return null;
+    }
+
+    private static TimeSpan? TryParseMillisecondsAsRetryAfter(string? value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return null;
+        }
+
+        if (double.TryParse(value, out var milliseconds))
+        {
+            return TimeSpan.FromMilliseconds(milliseconds);
         }
 
         return null;
@@ -356,6 +412,40 @@ internal static class FreeLlmRateLimitParser
         return null;
     }
 
+    private static DateTimeOffset? TryParseResetAfter(string? value, DateTimeOffset observedAt)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return null;
+        }
+
+        if (double.TryParse(value, out var seconds))
+        {
+            return observedAt.AddSeconds(seconds);
+        }
+
+        return null;
+    }
+
+    private static DateTimeOffset? TryParseMillisecondsAsReset(string? value, DateTimeOffset observedAt)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return null;
+        }
+
+        if (double.TryParse(value, out var milliseconds))
+        {
+            return observedAt.AddMilliseconds(milliseconds);
+        }
+
+        return null;
+    }
+
     private static long? TryParseInt64(string? value)
         => long.TryParse(value, out var parsed) ? parsed : null;
+
+    private static bool IsRateLimitHeaderName(string headerName)
+        => headerName.Contains("ratelimit", StringComparison.OrdinalIgnoreCase) ||
+           headerName.Contains("retry-after", StringComparison.OrdinalIgnoreCase);
 }
