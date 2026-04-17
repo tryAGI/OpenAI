@@ -23,6 +23,14 @@ namespace tryAGI.OpenAI.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -65,6 +73,16 @@ namespace tryAGI.OpenAI.JsonConverters
             var __score9 = 0;
             if (__jsonProps.Contains("event_id")) __score9++;
             if (__jsonProps.Contains("response")) __score9++;
+            if (__jsonProps.Contains("response.audio")) __score9++;
+            if (__jsonProps.Contains("response.conversation")) __score9++;
+            if (__jsonProps.Contains("response.input")) __score9++;
+            if (__jsonProps.Contains("response.instructions")) __score9++;
+            if (__jsonProps.Contains("response.max_output_tokens")) __score9++;
+            if (__jsonProps.Contains("response.metadata")) __score9++;
+            if (__jsonProps.Contains("response.output_modalities")) __score9++;
+            if (__jsonProps.Contains("response.prompt")) __score9++;
+            if (__jsonProps.Contains("response.tool_choice")) __score9++;
+            if (__jsonProps.Contains("response.tools")) __score9++;
             if (__jsonProps.Contains("type")) __score9++;
             var __score10 = 0;
             if (__jsonProps.Contains("event_id")) __score10++;

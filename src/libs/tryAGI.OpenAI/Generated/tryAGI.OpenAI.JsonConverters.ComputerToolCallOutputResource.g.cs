@@ -23,6 +23,14 @@ namespace tryAGI.OpenAI.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -31,6 +39,9 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("call_id")) __score0++;
             if (__jsonProps.Contains("id")) __score0++;
             if (__jsonProps.Contains("output")) __score0++;
+            if (__jsonProps.Contains("output.file_id")) __score0++;
+            if (__jsonProps.Contains("output.image_url")) __score0++;
+            if (__jsonProps.Contains("output.type")) __score0++;
             if (__jsonProps.Contains("status")) __score0++;
             if (__jsonProps.Contains("type")) __score0++;
             var __score1 = 0;

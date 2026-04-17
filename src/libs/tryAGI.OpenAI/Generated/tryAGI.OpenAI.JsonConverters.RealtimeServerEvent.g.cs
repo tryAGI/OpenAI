@@ -23,11 +23,21 @@ namespace tryAGI.OpenAI.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
             var __score0 = 0;
             if (__jsonProps.Contains("conversation")) __score0++;
+            if (__jsonProps.Contains("conversation.id")) __score0++;
+            if (__jsonProps.Contains("conversation.object")) __score0++;
             if (__jsonProps.Contains("event_id")) __score0++;
             if (__jsonProps.Contains("type")) __score0++;
             var __score1 = 0;
@@ -57,6 +67,10 @@ namespace tryAGI.OpenAI.JsonConverters
             var __score5 = 0;
             if (__jsonProps.Contains("content_index")) __score5++;
             if (__jsonProps.Contains("error")) __score5++;
+            if (__jsonProps.Contains("error.code")) __score5++;
+            if (__jsonProps.Contains("error.message")) __score5++;
+            if (__jsonProps.Contains("error.param")) __score5++;
+            if (__jsonProps.Contains("error.type")) __score5++;
             if (__jsonProps.Contains("event_id")) __score5++;
             if (__jsonProps.Contains("item_id")) __score5++;
             if (__jsonProps.Contains("type")) __score5++;
@@ -72,6 +86,11 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("type")) __score7++;
             var __score8 = 0;
             if (__jsonProps.Contains("error")) __score8++;
+            if (__jsonProps.Contains("error.code")) __score8++;
+            if (__jsonProps.Contains("error.event_id")) __score8++;
+            if (__jsonProps.Contains("error.message")) __score8++;
+            if (__jsonProps.Contains("error.param")) __score8++;
+            if (__jsonProps.Contains("error.type")) __score8++;
             if (__jsonProps.Contains("event_id")) __score8++;
             if (__jsonProps.Contains("type")) __score8++;
             var __score9 = 0;
@@ -137,6 +156,10 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("item_id")) __score19++;
             if (__jsonProps.Contains("output_index")) __score19++;
             if (__jsonProps.Contains("part")) __score19++;
+            if (__jsonProps.Contains("part.audio")) __score19++;
+            if (__jsonProps.Contains("part.text")) __score19++;
+            if (__jsonProps.Contains("part.transcript")) __score19++;
+            if (__jsonProps.Contains("part.type")) __score19++;
             if (__jsonProps.Contains("response_id")) __score19++;
             if (__jsonProps.Contains("type")) __score19++;
             var __score20 = 0;
@@ -145,15 +168,41 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("item_id")) __score20++;
             if (__jsonProps.Contains("output_index")) __score20++;
             if (__jsonProps.Contains("part")) __score20++;
+            if (__jsonProps.Contains("part.audio")) __score20++;
+            if (__jsonProps.Contains("part.text")) __score20++;
+            if (__jsonProps.Contains("part.transcript")) __score20++;
+            if (__jsonProps.Contains("part.type")) __score20++;
             if (__jsonProps.Contains("response_id")) __score20++;
             if (__jsonProps.Contains("type")) __score20++;
             var __score21 = 0;
             if (__jsonProps.Contains("event_id")) __score21++;
             if (__jsonProps.Contains("response")) __score21++;
+            if (__jsonProps.Contains("response.audio")) __score21++;
+            if (__jsonProps.Contains("response.conversation_id")) __score21++;
+            if (__jsonProps.Contains("response.id")) __score21++;
+            if (__jsonProps.Contains("response.max_output_tokens")) __score21++;
+            if (__jsonProps.Contains("response.metadata")) __score21++;
+            if (__jsonProps.Contains("response.object")) __score21++;
+            if (__jsonProps.Contains("response.output")) __score21++;
+            if (__jsonProps.Contains("response.output_modalities")) __score21++;
+            if (__jsonProps.Contains("response.status")) __score21++;
+            if (__jsonProps.Contains("response.status_details")) __score21++;
+            if (__jsonProps.Contains("response.usage")) __score21++;
             if (__jsonProps.Contains("type")) __score21++;
             var __score22 = 0;
             if (__jsonProps.Contains("event_id")) __score22++;
             if (__jsonProps.Contains("response")) __score22++;
+            if (__jsonProps.Contains("response.audio")) __score22++;
+            if (__jsonProps.Contains("response.conversation_id")) __score22++;
+            if (__jsonProps.Contains("response.id")) __score22++;
+            if (__jsonProps.Contains("response.max_output_tokens")) __score22++;
+            if (__jsonProps.Contains("response.metadata")) __score22++;
+            if (__jsonProps.Contains("response.object")) __score22++;
+            if (__jsonProps.Contains("response.output")) __score22++;
+            if (__jsonProps.Contains("response.output_modalities")) __score22++;
+            if (__jsonProps.Contains("response.status")) __score22++;
+            if (__jsonProps.Contains("response.status_details")) __score22++;
+            if (__jsonProps.Contains("response.usage")) __score22++;
             if (__jsonProps.Contains("type")) __score22++;
             var __score23 = 0;
             if (__jsonProps.Contains("call_id")) __score23++;

@@ -40,6 +40,10 @@ namespace tryAGI.OpenAI.Realtime
         }
 
 
+        private string? _storedAuthorizationHeaderName;
+        private string? _storedAuthorizationHeaderScheme;
+        private string? _storedAuthorizationApiKey;
+
         /// <summary>
         /// Authorize using bearer authentication.
         /// </summary>
@@ -49,7 +53,9 @@ namespace tryAGI.OpenAI.Realtime
         {
             apiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
 
-            _clientWebSocket.Options.SetRequestHeader("Authorization", $"bearer {apiKey}");
+            _storedAuthorizationApiKey = apiKey;
+            _storedAuthorizationHeaderName = "Authorization";
+            _storedAuthorizationHeaderScheme = "bearer";
         }
 
         /// <summary>
@@ -70,14 +76,99 @@ namespace tryAGI.OpenAI.Realtime
 
 
 
+
+
+        private void ApplyStoredAuthorization(
+            bool useSubprotocolAuth)
+        {
+
+            if (_storedAuthorizationApiKey is not null &&
+                _storedAuthorizationHeaderName is not null)
+            {
+                var __authorizationValue = _storedAuthorizationHeaderScheme is not null
+                    ? $"{_storedAuthorizationHeaderScheme} {_storedAuthorizationApiKey}"
+                    : _storedAuthorizationApiKey;
+                _clientWebSocket.Options.SetRequestHeader(_storedAuthorizationHeaderName, __authorizationValue);
+            }
+        }
+        private void ApplyConnectionOptions(
+            global::System.Collections.Generic.IDictionary<string, string>? additionalHeaders,
+            global::System.Collections.Generic.IEnumerable<string>? additionalSubProtocols,
+            global::System.TimeSpan? keepAliveInterval)
+        {
+            if (keepAliveInterval is not null)
+            {
+                _clientWebSocket.Options.KeepAliveInterval = keepAliveInterval.Value;
+            }
+
+            ApplyStoredAuthorization(false);
+
+            if (additionalHeaders is not null)
+            {
+                foreach (var header in additionalHeaders)
+                {
+                    _clientWebSocket.Options.SetRequestHeader(header.Key, header.Value);
+                }
+            }
+
+            if (additionalSubProtocols is not null)
+            {
+                foreach (var subProtocol in additionalSubProtocols)
+                {
+                    _clientWebSocket.Options.AddSubProtocol(subProtocol);
+                }
+            }
+        }
+
+        private async global::System.Threading.Tasks.Task ConnectAsyncCore(
+            global::System.Uri uri,
+            global::System.TimeSpan? connectTimeout,
+            global::System.Threading.CancellationToken cancellationToken)
+        {
+            global::System.Threading.CancellationTokenSource? __timeoutCancellationTokenSource = null;
+            var __effectiveCancellationToken = cancellationToken;
+
+            if (connectTimeout is not null)
+            {
+                __timeoutCancellationTokenSource = global::System.Threading.CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+                __timeoutCancellationTokenSource.CancelAfter(connectTimeout.Value);
+                __effectiveCancellationToken = __timeoutCancellationTokenSource.Token;
+            }
+
+            try
+            {
+                await _clientWebSocket.ConnectAsync(uri, __effectiveCancellationToken).ConfigureAwait(false);
+            }
+            finally
+            {
+                __timeoutCancellationTokenSource?.Dispose();
+            }
+        }
+
         /// <inheritdoc cref="global::System.Net.WebSockets.ClientWebSocket.ConnectAsync(global::System.Uri, global::System.Threading.CancellationToken)"/>
         public async global::System.Threading.Tasks.Task ConnectAsync(
             global::System.Uri? uri = null,
+            global::System.Collections.Generic.IDictionary<string, string>? additionalHeaders = null,
+            global::System.Collections.Generic.IEnumerable<string>? additionalSubProtocols = null,
+            global::System.TimeSpan? keepAliveInterval = null,
+            global::System.TimeSpan? connectTimeout = null,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            uri ??= new global::System.Uri(DefaultBaseUrl);
+            global::System.Uri __uri;
+            if (uri is not null)
+            {
+                __uri = uri;
+            }
+            else
+            {
+                var __pathBuilder = new global::tryAGI.OpenAI.Realtime.PathBuilder(
+                    path: DefaultBaseUrl);
 
-            await _clientWebSocket.ConnectAsync(uri, cancellationToken).ConfigureAwait(false);
+                __uri = new global::System.Uri(__pathBuilder.ToString());
+            }
+
+            ApplyConnectionOptions(additionalHeaders, additionalSubProtocols, keepAliveInterval);
+            await ConnectAsyncCore(__uri, connectTimeout, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -165,5 +256,8 @@ namespace tryAGI.OpenAI.Realtime
             global::System.Net.WebSockets.ClientWebSocket client,
             global::System.Net.Http.HttpResponseMessage response,
             ref string content);
+        partial void OnReceiveException(
+            global::System.Exception exception,
+            ref bool rethrow);
     }
 }
