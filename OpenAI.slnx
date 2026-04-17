@@ -3,6 +3,7 @@
     <File Path="src/libs/Directory.Build.props" />
     <Project Path="src/libs/FreeLLM/FreeLLM.csproj" />
     <Project Path="src/libs/tryAGI.OpenAI/tryAGI.OpenAI.csproj" />
+    <Project Path="src/libs/tryAGI.OpenAI.CLI/tryAGI.OpenAI.CLI.csproj" />
   </Folder>
   <Folder Name="/Solution Items/">
     <File Path=".gitignore" />

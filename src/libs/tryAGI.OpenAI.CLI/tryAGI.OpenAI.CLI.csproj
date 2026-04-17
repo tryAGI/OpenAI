@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>tryAGI.OpenAI.Cli</RootNamespace>
+    <AssemblyName>tryAGI.OpenAI.CLI</AssemblyName>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <UserSecretsId>tryAGI.OpenAI.CLI</UserSecretsId>
+    <NoWarn>$(NoWarn);CA1724;CA1303;CA1054;CA1055;CA1848;CA1308</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Label="NuGet">
+    <PackageId>tryAGI.OpenAI.CLI</PackageId>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>tryagi-openai</ToolCommandName>
+    <Description>Command-line interface for the OpenAI API. Run any chat, image, embedding, audio, or model endpoint from the shell. Invoke without install via `dnx tryAGI.OpenAI.CLI &lt;command&gt;`. Built on the tryAGI.OpenAI SDK.</Description>
+    <PackageTags>openai;cli;dnx;tool;chat;completions;embeddings;images;audio;tts;whisper;api;sdk;skill;claude;ai</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.CommandLine" Version="2.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\tryAGI.OpenAI\tryAGI.OpenAI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Label="Claude Skill Bundle">
+    <Content Include="..\..\..\.claude\skills\tryagi-openai\SKILL.md"
+             Link="SKILL.md"
+             Pack="true"
+             PackagePath="claude-skill\SKILL.md"
+             CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>
