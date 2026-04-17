@@ -137,6 +137,13 @@ public static class CustomProviders
     public const string SiliconFlowBaseUrl = "https://api.siliconflow.cn/v1";
 
     /// <summary>
+    /// https://docs.inworld.ai/api-reference/routerAPI/
+    /// Inworld LLM Router exposes OpenAI-compatible chat completions over many upstream models.
+    /// Expects `Authorization: Basic &lt;base64-api-key&gt;` — the Inworld Portal already Base64-encodes the key.
+    /// </summary>
+    public const string InworldBaseUrl = "https://api.inworld.ai/v1";
+
+    /// <summary>
     /// Creates an API to use for GitHub Models: https://github.com/marketplace/models
     /// </summary>
     /// <returns></returns>
@@ -377,5 +384,20 @@ public static class CustomProviders
     public static OpenAiClient SiliconFlow(string apiKey)
     {
         return new OpenAiClient(apiKey, baseUri: new Uri(SiliconFlowBaseUrl));
+    }
+
+    /// <summary>
+    /// Create an API to use for Inworld's LLM Router. Accepts either the
+    /// Base64 Basic API key or a JWT Bearer token; the shipped OpenAI SDK
+    /// sends the raw value as `Authorization: Bearer &lt;value&gt;`, so for
+    /// server-side Basic usage callers should either supply a pre-minted JWT
+    /// (see <c>InworldJwt.GenerateAsync</c> in <c>tryAGI.Inworld</c>) or
+    /// configure a <see cref="System.Net.Http.HttpClient"/> that rewrites the
+    /// scheme to `Basic`.
+    /// </summary>
+    /// <returns></returns>
+    public static OpenAiClient Inworld(string apiKeyOrJwt)
+    {
+        return new OpenAiClient(apiKeyOrJwt, baseUri: new Uri(InworldBaseUrl));
     }
 }
