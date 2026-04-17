@@ -310,6 +310,7 @@ public sealed class FreeLlmClientBuilder
                 var client = new OpenAiClient(
                     httpClient: httpClient,
                     baseUri: definition.BaseUri,
+                    options: null,
                     disposeHttpClient: true);
                 return new FreeLlmOpenAiProvider(
                     providerId: definition.ProviderId,
@@ -343,6 +344,7 @@ public sealed class FreeLlmClientBuilder
                 var client = new OpenAiClient(
                     httpClient: httpClient,
                     baseUri: definition.BaseUri,
+                    options: null,
                     disposeHttpClient: true);
                 return new FreeLlmOpenAiProvider(
                     providerId: definition.ProviderId,

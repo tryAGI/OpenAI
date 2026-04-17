@@ -44,7 +44,7 @@ namespace tryAGI.OpenAI
         {
             var request = new global::tryAGI.OpenAI.CreateChatCompletionRequest
             {
-                Value2 = new global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2
+                CreateChatCompletionRequestVariant2 = new global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2
                 {
                     Messages = messages,
                     Model = model,
@@ -109,7 +109,7 @@ namespace tryAGI.OpenAI
         {
             var request = new global::tryAGI.OpenAI.CreateChatCompletionRequest
             {
-                Value2 = new global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2
+                CreateChatCompletionRequestVariant2 = new global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2
                 {
                     Messages = messages,
                     Model = model,

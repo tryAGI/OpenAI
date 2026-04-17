@@ -18,7 +18,7 @@ public partial class Tests
         string response = await client.Chat.CreateChatCompletionAsync(
             new CreateChatCompletionRequest
             {
-                Value2 = new CreateChatCompletionRequestVariant2
+                CreateChatCompletionRequestVariant2 = new CreateChatCompletionRequestVariant2
                 {
                     Messages = ["Generate five random words."],
                     Model = "gpt-4o-mini",

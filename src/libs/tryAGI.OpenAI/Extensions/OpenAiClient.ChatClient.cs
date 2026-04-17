@@ -169,7 +169,7 @@ public sealed partial class OpenAiClient : Meai.IChatClient
             {
                 variant2.Stop = stops.Count == 1
                     ? new StopConfiguration(stops[0])
-                    : new StopConfiguration(value1: null, value2: stops.ToList());
+                    : new StopConfiguration(stopConfigurationVariant1: null, stopConfigurationVariant2: stops.ToList());
             }
 
             if (options.Tools is { Count: > 0 } tools)
@@ -266,7 +266,7 @@ public sealed partial class OpenAiClient : Meai.IChatClient
 
         return new CreateChatCompletionRequest
         {
-            Value2 = variant2,
+            CreateChatCompletionRequestVariant2 = variant2,
         };
     }
 

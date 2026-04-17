@@ -18,7 +18,7 @@ public partial class Tests
         CreateChatCompletionResponse response = await client.Chat.CreateChatCompletionAsync(
             new CreateChatCompletionRequest
             {
-                Value2 = new CreateChatCompletionRequestVariant2
+                CreateChatCompletionRequestVariant2 = new CreateChatCompletionRequestVariant2
                 {
                     Messages = [
                         "Please describe the following image.",

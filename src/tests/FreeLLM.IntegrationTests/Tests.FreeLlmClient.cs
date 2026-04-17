@@ -266,7 +266,7 @@ public partial class Tests
     private static tryAGI.OpenAI.CreateChatCompletionRequest CreateRawRequest(string modelId, string prompt)
         => new()
         {
-            Value2 = new tryAGI.OpenAI.CreateChatCompletionRequestVariant2
+            CreateChatCompletionRequestVariant2 = new tryAGI.OpenAI.CreateChatCompletionRequestVariant2
             {
                 Model = modelId,
                 Messages =
@@ -305,7 +305,7 @@ public partial class Tests
             BaseAddress = new Uri("https://example.test/v1/"),
         };
 
-        return new tryAGI.OpenAI.OpenAiClient(httpClient: httpClient, disposeHttpClient: true);
+        return new tryAGI.OpenAI.OpenAiClient(httpClient: httpClient, options: null, disposeHttpClient: true);
     }
 
     private static GeminiClient CreateFakeGeminiClient(HttpMessageHandler handler)

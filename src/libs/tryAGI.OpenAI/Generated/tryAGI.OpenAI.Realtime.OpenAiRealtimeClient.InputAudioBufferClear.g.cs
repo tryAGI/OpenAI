@@ -11,12 +11,12 @@ namespace tryAGI.OpenAI.Realtime
         /// <param name="message">The message to send.</param>
         /// <param name="cancellationToken">A cancellation token.</param>
         public async global::System.Threading.Tasks.Task SendInputAudioBufferClearAsync(
-            global::tryAGI.OpenAI.Realtime.InputAudioBufferClearPayload message,
+            global::tryAGI.OpenAI.Realtime.RealtimeClientEventInputAudioBufferClear message,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             message = message ?? throw new global::System.ArgumentNullException(nameof(message));
 
-            var json = global::System.Text.Json.JsonSerializer.Serialize(message, typeof(global::tryAGI.OpenAI.Realtime.InputAudioBufferClearPayload), JsonSerializerContext);
+            var json = global::System.Text.Json.JsonSerializer.Serialize(message, typeof(global::tryAGI.OpenAI.Realtime.RealtimeClientEventInputAudioBufferClear), JsonSerializerContext);
 
             await SendAsync(json, cancellationToken).ConfigureAwait(false);
         }

@@ -374,7 +374,7 @@ public sealed class FreeLlmClient : Meai.IChatClient, IDisposable
         tryAGI.OpenAI.CreateChatCompletionRequest request,
         bool requireStreaming = false)
     {
-        if (request.Value2 is not { } variant)
+        if (request.CreateChatCompletionRequestVariant2 is not { } variant)
         {
             throw new NotSupportedException(
                 $"Only {nameof(tryAGI.OpenAI.CreateChatCompletionRequestVariant2)} is currently supported by {nameof(FreeLlmClient)}.");
@@ -795,7 +795,7 @@ internal sealed class FreeLlmOpenAiProvider : FreeLlmProvider
         bool requireStreaming,
         out string? reason)
     {
-        reason = request.Value2 is null
+        reason = request.CreateChatCompletionRequestVariant2 is null
             ? $"Only {nameof(tryAGI.OpenAI.CreateChatCompletionRequestVariant2)} is currently supported."
             : null;
         return reason is null;
@@ -951,7 +951,7 @@ internal static class FreeLlmOpenAiCompat
     {
         translated = null;
 
-        if (request.Value2 is not { } variant)
+        if (request.CreateChatCompletionRequestVariant2 is not { } variant)
         {
             reason = $"Only {nameof(tryAGI.OpenAI.CreateChatCompletionRequestVariant2)} is currently supported.";
             return false;
@@ -1005,11 +1005,11 @@ internal static class FreeLlmOpenAiCompat
             Seed = variant.Seed,
         };
 
-        if (variant.Stop is { IsValue1: true, Value1: { } stopSequence })
+        if (variant.Stop is { IsStopConfigurationVariant1: true, StopConfigurationVariant1: { } stopSequence })
         {
             options.StopSequences = [stopSequence];
         }
-        else if (variant.Stop is { IsValue2: true, Value2: { Count: > 0 } stopSequences })
+        else if (variant.Stop is { IsStopConfigurationVariant2: true, StopConfigurationVariant2: { Count: > 0 } stopSequences })
         {
             options.StopSequences = stopSequences.ToList();
         }
@@ -1058,7 +1058,7 @@ internal static class FreeLlmOpenAiCompat
         tryAGI.OpenAI.CreateChatCompletionRequest request,
         string modelId)
     {
-        if (request.Value2 is not { } variant)
+        if (request.CreateChatCompletionRequestVariant2 is not { } variant)
         {
             throw new NotSupportedException(
                 $"Only {nameof(tryAGI.OpenAI.CreateChatCompletionRequestVariant2)} is currently supported.");
@@ -1071,7 +1071,7 @@ internal static class FreeLlmOpenAiCompat
 
         return new tryAGI.OpenAI.CreateChatCompletionRequest
         {
-            Value2 = clone,
+            CreateChatCompletionRequestVariant2 = clone,
         };
     }
 

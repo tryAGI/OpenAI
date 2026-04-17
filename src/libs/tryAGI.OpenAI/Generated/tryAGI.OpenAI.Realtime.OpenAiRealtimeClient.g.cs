@@ -4,7 +4,8 @@
 namespace tryAGI.OpenAI.Realtime
 {
     /// <summary>
-    /// OpenAI Realtime API for bidirectional audio/text conversations over WebSocket.
+    /// OpenAI Realtime API for bidirectional audio/text conversations over WebSocket.<br/>
+    /// Auto-generated from openapi.yaml by build-asyncapi.py — do not edit by hand.
     /// </summary>
     public sealed partial class OpenAiRealtimeClient : global::System.IDisposable, global::System.IAsyncDisposable
     {

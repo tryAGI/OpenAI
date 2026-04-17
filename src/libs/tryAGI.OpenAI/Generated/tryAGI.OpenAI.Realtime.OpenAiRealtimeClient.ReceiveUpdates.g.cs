@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI.Realtime
         /// </summary>
         /// <param name="cancellationToken">A cancellation token.</param>
         /// <returns>An async enumerable of server events.</returns>
-        public async global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.Realtime.ServerEvent> ReceiveUpdatesAsync(
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.Realtime.RealtimeServerEvent> ReceiveUpdatesAsync(
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
             if (!IsConnected)
@@ -93,7 +93,7 @@ namespace tryAGI.OpenAI.Realtime
                 }
 
                 string json = global::System.Text.Encoding.UTF8.GetString(__messageBuffer.ToArray());
-                    var @event = (global::tryAGI.OpenAI.Realtime.ServerEvent)global::System.Text.Json.JsonSerializer.Deserialize(json, typeof(global::tryAGI.OpenAI.Realtime.ServerEvent), JsonSerializerContext)!;
+                    var @event = (global::tryAGI.OpenAI.Realtime.RealtimeServerEvent)global::System.Text.Json.JsonSerializer.Deserialize(json, typeof(global::tryAGI.OpenAI.Realtime.RealtimeServerEvent), JsonSerializerContext)!;
 
                     yield return @event;
             }

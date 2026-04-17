@@ -29,7 +29,7 @@ public partial class Tests
         string response = await api.Chat.CreateChatCompletionAsync(
             new CreateChatCompletionRequest
             {
-                Value2 = new CreateChatCompletionRequestVariant2
+                CreateChatCompletionRequestVariant2 = new CreateChatCompletionRequestVariant2
                 {
                     Messages = ["Generate five random words."],
                     Model = pair.Model,
@@ -66,7 +66,7 @@ public partial class Tests
         var enumerable = api.Chat.CreateChatCompletionAsStreamAsync(
             new CreateChatCompletionRequest
             {
-                Value2 = new CreateChatCompletionRequestVariant2
+                CreateChatCompletionRequestVariant2 = new CreateChatCompletionRequestVariant2
                 {
                     Messages = ["Generate five random words."],
                     Model = pair.Model,
@@ -102,7 +102,7 @@ public partial class Tests
         string response = await api.Chat.CreateChatCompletionAsync(
             new CreateChatCompletionRequest
             {
-                Value2 = new CreateChatCompletionRequestVariant2
+                CreateChatCompletionRequestVariant2 = new CreateChatCompletionRequestVariant2
                 {
                     Messages = ["Generate five random words as json."],
                     Model = pair.Model,
@@ -148,7 +148,7 @@ public partial class Tests
         CreateChatCompletionResponse response = await api.Chat.CreateChatCompletionAsync(
             new CreateChatCompletionRequest
             {
-                Value2 = new CreateChatCompletionRequestVariant2
+                CreateChatCompletionRequestVariant2 = new CreateChatCompletionRequestVariant2
                 {
                     Messages = [
                         "Please describe the following image.",
