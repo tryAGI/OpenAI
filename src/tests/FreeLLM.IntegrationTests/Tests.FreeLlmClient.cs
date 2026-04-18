@@ -305,7 +305,10 @@ public partial class Tests
             BaseAddress = new Uri("https://example.test/v1/"),
         };
 
-        return new tryAGI.OpenAI.OpenAiClient(httpClient: httpClient, options: null, disposeHttpClient: true);
+        return new tryAGI.OpenAI.OpenAiClient(
+            apiKey: "test-key",
+            httpClient: httpClient,
+            disposeHttpClient: true);
     }
 
     private static GeminiClient CreateFakeGeminiClient(HttpMessageHandler handler)

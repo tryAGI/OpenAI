@@ -144,7 +144,10 @@ public partial class Tests
             BaseAddress = new Uri("https://example.test/v1/"),
         };
 
-        return new OpenAiClient(httpClient: httpClient, options: null, disposeHttpClient: true);
+        return new OpenAiClient(
+            apiKey: "test-key",
+            httpClient: httpClient,
+            disposeHttpClient: true);
     }
 
     private sealed class FakeChatHandler : HttpMessageHandler
