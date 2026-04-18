@@ -29,10 +29,10 @@
   </ItemGroup>
 
   <ItemGroup Label="Claude Skill Bundle">
-    <Content Include="..\..\..\.claude\skills\tryagi-openai\SKILL.md"
-             Link="SKILL.md"
+    <Content Include="..\..\..\.claude\skills\tryagi-openai\*.md"
+             Link="skill\%(FileName)%(Extension)"
              Pack="true"
-             PackagePath="claude-skill\SKILL.md"
+             PackagePath="claude-skill\%(FileName)%(Extension)"
              CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 

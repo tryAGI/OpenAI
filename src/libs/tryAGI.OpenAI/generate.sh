@@ -3,7 +3,7 @@ set -euo pipefail
 
 # OpenAPI spec: https://app.stainless.com/api/spec/documented/openai/openapi.documented.yml (+ AsyncAPI)
 
-dotnet tool install --global autosdk.cli --prerelease
+dotnet tool update --global autosdk.cli --prerelease 2>/dev/null || dotnet tool install --global autosdk.cli --prerelease
 curl --fail --silent --show-error -L -o openapi.yaml https://app.stainless.com/api/spec/documented/openai/openapi.documented.yml
 
 # build-asyncapi.py requires PyYAML; install it on first run (CI or fresh clones).
@@ -26,3 +26,10 @@ autosdk generate asyncapi.json \
   --targetFramework net10.0 \
   --output Generated \
   --base-url wss://api.openai.com
+
+# Regenerate the Claude skill bundle (SKILL.md + commands.md + auth.md) from the spec.
+autosdk skill openapi.yaml \
+  --package-id tryAGI.OpenAI.CLI \
+  --output ../../../.claude/skills/tryagi-openai \
+  --homepage https://github.com/tryAGI/OpenAI \
+  --api-key-env-var OPENAI_API_KEY
