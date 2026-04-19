@@ -187,17 +187,13 @@ def main() -> int:
                     "description": (
                         "Browser-compatible auth via WebSocket subprotocols. "
                         "When ConnectAsync is called with useSubprotocolAuth: true, "
-                        "the client advertises `openai-insecure-api-key.<apiKey>`, "
-                        "avoiding the need to set an Authorization header (which "
-                        "browsers disallow on the JS WebSocket constructor).\n\n"
-                        "OpenAI also expects the `realtime` subprotocol on the "
-                        "connection; include it via the `additionalSubProtocols` "
-                        "parameter on ConnectAsync.\n\n"
-                        "NOTE: single template until tryAGI/AutoSDK codegen bug "
-                        "(duplicate __subProtocol locals with >1 template) is "
-                        "fixed."
+                        "the client advertises the `realtime` subprotocol plus "
+                        "`openai-insecure-api-key.<apiKey>`, avoiding the need "
+                        "to set an Authorization header (which browsers disallow "
+                        "on the JS WebSocket constructor)."
                     ),
                     "x-subprotocol-auth": [
+                        "realtime",
                         "openai-insecure-api-key.{apiKey}",
                     ],
                 },

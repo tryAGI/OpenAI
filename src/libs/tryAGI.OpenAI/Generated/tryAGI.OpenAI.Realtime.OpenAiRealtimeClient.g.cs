@@ -105,7 +105,10 @@ namespace tryAGI.OpenAI.Realtime
                 if (_subprotocolAuthorizationValues.ContainsKey("apiKey"))
                 {
                     var __apiKey = _subprotocolAuthorizationValues["apiKey"];
-                    var __subProtocol = "openai-insecure-api-key.{apiKey}";
+                    var __subProtocol = "realtime";
+                    __subProtocol = __subProtocol.Replace("{apiKey}", __apiKey);
+                    _clientWebSocket.Options.AddSubProtocol(__subProtocol);
+                    __subProtocol = "openai-insecure-api-key.{apiKey}";
                     __subProtocol = __subProtocol.Replace("{apiKey}", __apiKey);
                     _clientWebSocket.Options.AddSubProtocol(__subProtocol);
                     return;
