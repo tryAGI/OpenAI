@@ -9467,7 +9467,9 @@ paths:
 
         can be up to 512 MB, and each project can store up to 2.5 TB of files in
 
-        total. There is no organization-wide storage limit.
+        total. There is no organization-wide storage limit. Uploads to this
+
+        endpoint are rate-limited to 2,000 files per minute per organization.
 
 
         - The Assistants API supports files up to 2 million tokens and of
@@ -9482,6 +9484,10 @@ paths:
         input
           also has a specific required
           [format](/docs/api-reference/batch/request-input).
+        - For Retrieval or `file_search` ingestion, upload files here first. If
+          you need to attach multiple uploaded files to the same vector store, use
+          [`/vector_stores/{vector_store_id}/file_batches`](/docs/api-reference/vector-stores-file-batches/createBatch)
+          instead of attaching them one by one.
 
         Please [contact us](https://help.openai.com/) if you need to increase
         these
@@ -9503,6 +9509,12 @@ paths:
       x-oaiMeta:
         name: Upload file
         group: files
+        description: >
+          Uploads a file for later use across OpenAI APIs. Uploads to this
+          endpoint are rate-limited to 2,000 files per minute per organization.
+          For Retrieval or `file_search` ingestion, upload files here first. If
+          you need to attach multiple uploaded files to the same vector store,
+          use vector store file batches instead of attaching them one by one.
         examples:
           request:
             curl: |
