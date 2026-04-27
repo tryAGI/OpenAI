@@ -44,7 +44,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Upload a file that can be used across various endpoints. Individual files<br/>
         /// can be up to 512 MB, and each project can store up to 2.5 TB of files in<br/>
-        /// total. There is no organization-wide storage limit.<br/>
+        /// total. There is no organization-wide storage limit. Uploads to this<br/>
+        /// endpoint are rate-limited to 2,000 files per minute per organization.<br/>
         /// - The Assistants API supports files up to 2 million tokens and of specific<br/>
         ///   file types. See the [Assistants Tools guide](/docs/assistants/tools) for<br/>
         ///   details.<br/>
@@ -55,6 +56,10 @@ namespace tryAGI.OpenAI
         /// - The Batch API only supports `.jsonl` files up to 200 MB in size. The input<br/>
         ///   also has a specific required<br/>
         ///   [format](/docs/api-reference/batch/request-input).<br/>
+        /// - For Retrieval or `file_search` ingestion, upload files here first. If<br/>
+        ///   you need to attach multiple uploaded files to the same vector store, use<br/>
+        ///   [`/vector_stores/{vector_store_id}/file_batches`](/docs/api-reference/vector-stores-file-batches/createBatch)<br/>
+        ///   instead of attaching them one by one.<br/>
         /// Please [contact us](https://help.openai.com/) if you need to increase these<br/>
         /// storage limits.
         /// </summary>
@@ -418,7 +423,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Upload a file that can be used across various endpoints. Individual files<br/>
         /// can be up to 512 MB, and each project can store up to 2.5 TB of files in<br/>
-        /// total. There is no organization-wide storage limit.<br/>
+        /// total. There is no organization-wide storage limit. Uploads to this<br/>
+        /// endpoint are rate-limited to 2,000 files per minute per organization.<br/>
         /// - The Assistants API supports files up to 2 million tokens and of specific<br/>
         ///   file types. See the [Assistants Tools guide](/docs/assistants/tools) for<br/>
         ///   details.<br/>
@@ -429,6 +435,10 @@ namespace tryAGI.OpenAI
         /// - The Batch API only supports `.jsonl` files up to 200 MB in size. The input<br/>
         ///   also has a specific required<br/>
         ///   [format](/docs/api-reference/batch/request-input).<br/>
+        /// - For Retrieval or `file_search` ingestion, upload files here first. If<br/>
+        ///   you need to attach multiple uploaded files to the same vector store, use<br/>
+        ///   [`/vector_stores/{vector_store_id}/file_batches`](/docs/api-reference/vector-stores-file-batches/createBatch)<br/>
+        ///   instead of attaching them one by one.<br/>
         /// Please [contact us](https://help.openai.com/) if you need to increase these<br/>
         /// storage limits.
         /// </summary>
