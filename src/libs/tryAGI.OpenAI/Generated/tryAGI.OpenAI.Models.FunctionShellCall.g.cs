@@ -42,9 +42,9 @@ namespace tryAGI.OpenAI
         /// The status of the shell call. One of `in_progress`, `completed`, or `incomplete`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.LocalShellCallStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.FunctionShellCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.LocalShellCallStatus Status { get; set; }
+        public required global::tryAGI.OpenAI.FunctionShellCallStatus Status { get; set; }
 
         /// <summary>
         /// 
@@ -94,7 +94,7 @@ namespace tryAGI.OpenAI
             string id,
             string callId,
             global::tryAGI.OpenAI.FunctionShellAction action,
-            global::tryAGI.OpenAI.LocalShellCallStatus status,
+            global::tryAGI.OpenAI.FunctionShellCallStatus status,
             global::tryAGI.OpenAI.EnvironmentVariant12? environment,
             string? createdBy,
             global::tryAGI.OpenAI.FunctionShellCallType type = global::tryAGI.OpenAI.FunctionShellCallType.ShellCall)

@@ -3,10 +3,10 @@
 namespace tryAGI.OpenAI.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class LocalShellCallStatusJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::tryAGI.OpenAI.LocalShellCallStatus>
+    public sealed class FunctionShellCallOutputStatusEnumNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::tryAGI.OpenAI.FunctionShellCallOutputStatusEnum?>
     {
         /// <inheritdoc />
-        public override global::tryAGI.OpenAI.LocalShellCallStatus Read(
+        public override global::tryAGI.OpenAI.FunctionShellCallOutputStatusEnum? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::tryAGI.OpenAI.LocalShellCallStatusExtensions.ToEnum(stringValue) ?? default;
+                        return global::tryAGI.OpenAI.FunctionShellCallOutputStatusEnumExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace tryAGI.OpenAI.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::tryAGI.OpenAI.LocalShellCallStatus)numValue;
+                    return (global::tryAGI.OpenAI.FunctionShellCallOutputStatusEnum)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::tryAGI.OpenAI.LocalShellCallStatus);
+                    return default(global::tryAGI.OpenAI.FunctionShellCallOutputStatusEnum?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,19 @@ namespace tryAGI.OpenAI.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::tryAGI.OpenAI.LocalShellCallStatus value,
+            global::tryAGI.OpenAI.FunctionShellCallOutputStatusEnum? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::tryAGI.OpenAI.LocalShellCallStatusExtensions.ToValueString(value));
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::tryAGI.OpenAI.FunctionShellCallOutputStatusEnumExtensions.ToValueString(value.Value));
+            }
         }
     }
 }

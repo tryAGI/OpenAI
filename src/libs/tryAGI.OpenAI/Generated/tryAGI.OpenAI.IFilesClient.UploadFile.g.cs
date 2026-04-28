@@ -8,7 +8,8 @@ namespace tryAGI.OpenAI
         /// Upload a file that can be used across various endpoints. Individual files<br/>
         /// can be up to 512 MB, and each project can store up to 2.5 TB of files in<br/>
         /// total. There is no organization-wide storage limit. Uploads to this<br/>
-        /// endpoint are rate-limited to 2,000 files per minute per organization.<br/>
+        /// endpoint are rate-limited to 1,000 requests per minute per authenticated<br/>
+        /// user.<br/>
         /// - The Assistants API supports files up to 2 million tokens and of specific<br/>
         ///   file types. See the [Assistants Tools guide](/docs/assistants/tools) for<br/>
         ///   details.<br/>
@@ -22,7 +23,9 @@ namespace tryAGI.OpenAI
         /// - For Retrieval or `file_search` ingestion, upload files here first. If<br/>
         ///   you need to attach multiple uploaded files to the same vector store, use<br/>
         ///   [`/vector_stores/{vector_store_id}/file_batches`](/docs/api-reference/vector-stores-file-batches/createBatch)<br/>
-        ///   instead of attaching them one by one.<br/>
+        ///   instead of attaching them one by one. Vector store attachment has separate<br/>
+        ///   limits from file upload, including 2,000 attached files per minute per<br/>
+        ///   organization.<br/>
         /// Please [contact us](https://help.openai.com/) if you need to increase these<br/>
         /// storage limits.
         /// </summary>
@@ -39,7 +42,8 @@ namespace tryAGI.OpenAI
         /// Upload a file that can be used across various endpoints. Individual files<br/>
         /// can be up to 512 MB, and each project can store up to 2.5 TB of files in<br/>
         /// total. There is no organization-wide storage limit. Uploads to this<br/>
-        /// endpoint are rate-limited to 2,000 files per minute per organization.<br/>
+        /// endpoint are rate-limited to 1,000 requests per minute per authenticated<br/>
+        /// user.<br/>
         /// - The Assistants API supports files up to 2 million tokens and of specific<br/>
         ///   file types. See the [Assistants Tools guide](/docs/assistants/tools) for<br/>
         ///   details.<br/>
@@ -53,7 +57,9 @@ namespace tryAGI.OpenAI
         /// - For Retrieval or `file_search` ingestion, upload files here first. If<br/>
         ///   you need to attach multiple uploaded files to the same vector store, use<br/>
         ///   [`/vector_stores/{vector_store_id}/file_batches`](/docs/api-reference/vector-stores-file-batches/createBatch)<br/>
-        ///   instead of attaching them one by one.<br/>
+        ///   instead of attaching them one by one. Vector store attachment has separate<br/>
+        ///   limits from file upload, including 2,000 attached files per minute per<br/>
+        ///   organization.<br/>
         /// Please [contact us](https://help.openai.com/) if you need to increase these<br/>
         /// storage limits.
         /// </summary>

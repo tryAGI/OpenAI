@@ -3561,9 +3561,9 @@ namespace tryAGI.OpenAI
 
             typeof(global::tryAGI.OpenAI.JsonConverters.LocalShellExecActionTypeNullableJsonConverter),
 
-            typeof(global::tryAGI.OpenAI.JsonConverters.LocalShellCallStatusJsonConverter),
+            typeof(global::tryAGI.OpenAI.JsonConverters.FunctionShellCallStatusJsonConverter),
 
-            typeof(global::tryAGI.OpenAI.JsonConverters.LocalShellCallStatusNullableJsonConverter),
+            typeof(global::tryAGI.OpenAI.JsonConverters.FunctionShellCallStatusNullableJsonConverter),
 
             typeof(global::tryAGI.OpenAI.JsonConverters.LocalEnvironmentResourceTypeJsonConverter),
 
@@ -3577,9 +3577,9 @@ namespace tryAGI.OpenAI
 
             typeof(global::tryAGI.OpenAI.JsonConverters.FunctionShellCallTypeNullableJsonConverter),
 
-            typeof(global::tryAGI.OpenAI.JsonConverters.LocalShellCallOutputStatusEnumJsonConverter),
+            typeof(global::tryAGI.OpenAI.JsonConverters.FunctionShellCallOutputStatusEnumJsonConverter),
 
-            typeof(global::tryAGI.OpenAI.JsonConverters.LocalShellCallOutputStatusEnumNullableJsonConverter),
+            typeof(global::tryAGI.OpenAI.JsonConverters.FunctionShellCallOutputStatusEnumNullableJsonConverter),
 
             typeof(global::tryAGI.OpenAI.JsonConverters.FunctionShellCallOutputTimeoutOutcomeTypeJsonConverter),
 
@@ -7133,7 +7133,7 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CodeInterpreterOutputImageType), TypeInfoPropertyName = "CodeInterpreterOutputImageType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LocalShellExecActionType), TypeInfoPropertyName = "LocalShellExecActionType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.FunctionShellAction))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LocalShellCallStatus), TypeInfoPropertyName = "LocalShellCallStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.FunctionShellCallStatus), TypeInfoPropertyName = "FunctionShellCallStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LocalEnvironmentResource))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LocalEnvironmentResourceType), TypeInfoPropertyName = "LocalEnvironmentResourceType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ContainerReferenceResource))]
@@ -7141,7 +7141,7 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.FunctionShellCallType), TypeInfoPropertyName = "FunctionShellCallType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.EnvironmentVariant12))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.FunctionShellCallEnvironmentVariant1Discriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LocalShellCallOutputStatusEnum), TypeInfoPropertyName = "LocalShellCallOutputStatusEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.FunctionShellCallOutputStatusEnum), TypeInfoPropertyName = "FunctionShellCallOutputStatusEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.FunctionShellCallOutputTimeoutOutcome))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.FunctionShellCallOutputTimeoutOutcomeType), TypeInfoPropertyName = "FunctionShellCallOutputTimeoutOutcomeType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.FunctionShellCallOutputExitOutcome))]
