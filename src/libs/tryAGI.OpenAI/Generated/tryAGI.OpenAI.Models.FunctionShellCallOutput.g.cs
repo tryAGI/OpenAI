@@ -35,9 +35,9 @@ namespace tryAGI.OpenAI
         /// The status of the shell call output. One of `in_progress`, `completed`, or `incomplete`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.LocalShellCallOutputStatusEnumJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.FunctionShellCallOutputStatusEnumJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.LocalShellCallOutputStatusEnum Status { get; set; }
+        public required global::tryAGI.OpenAI.FunctionShellCallOutputStatusEnum Status { get; set; }
 
         /// <summary>
         /// An array of shell call output contents
@@ -93,7 +93,7 @@ namespace tryAGI.OpenAI
         public FunctionShellCallOutput(
             string id,
             string callId,
-            global::tryAGI.OpenAI.LocalShellCallOutputStatusEnum status,
+            global::tryAGI.OpenAI.FunctionShellCallOutputStatusEnum status,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FunctionShellCallOutputContent> output,
             int? maxOutputLength,
             string? createdBy,

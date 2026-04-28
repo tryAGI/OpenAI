@@ -9600,7 +9600,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.LocalShellCallStatus? Type2393 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallStatus? Type2393 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -9632,7 +9632,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.LocalShellCallOutputStatusEnum? Type2401 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallOutputStatusEnum? Type2401 { get; set; }
         /// <summary>
         /// 
         /// </summary>
