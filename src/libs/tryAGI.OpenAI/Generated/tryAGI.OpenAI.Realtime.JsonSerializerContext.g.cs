@@ -827,7 +827,6 @@ namespace tryAGI.OpenAI.Realtime
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionFailedType), TypeInfoPropertyName = "RealtimeServerEventConversationItemInputAudioTranscriptionFailedType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionFailedError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionSegmentType), TypeInfoPropertyName = "RealtimeServerEventConversationItemInputAudioTranscriptionSegmentType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(float))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemRetrievedType), TypeInfoPropertyName = "RealtimeServerEventConversationItemRetrievedType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemTruncatedType), TypeInfoPropertyName = "RealtimeServerEventConversationItemTruncatedType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeServerEventErrorType), TypeInfoPropertyName = "RealtimeServerEventErrorType2")]

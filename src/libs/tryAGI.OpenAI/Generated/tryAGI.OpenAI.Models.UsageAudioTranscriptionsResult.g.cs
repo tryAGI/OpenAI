@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("seconds")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Seconds { get; set; }
+        public required long Seconds { get; set; }
 
         /// <summary>
         /// The count of requests made to the model.
@@ -77,7 +77,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UsageAudioTranscriptionsResult(
-            int seconds,
+            long seconds,
             int numModelRequests,
             global::tryAGI.OpenAI.UsageAudioTranscriptionsResultObject @object,
             string? projectId,

@@ -26,9 +26,8 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) for when the vector store files batch was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
+        public required int CreatedAt { get; set; }
 
         /// <summary>
         /// The ID of the [vector store](/docs/api-reference/vector-stores/object) that the [File](/docs/api-reference/files) is attached to.
@@ -82,7 +81,7 @@ namespace tryAGI.OpenAI
 #endif
         public VectorStoreFileBatchObject(
             string id,
-            global::System.DateTimeOffset createdAt,
+            int createdAt,
             string vectorStoreId,
             global::tryAGI.OpenAI.VectorStoreFileBatchObjectStatus status,
             global::tryAGI.OpenAI.VectorStoreFileBatchObjectFileCounts fileCounts,

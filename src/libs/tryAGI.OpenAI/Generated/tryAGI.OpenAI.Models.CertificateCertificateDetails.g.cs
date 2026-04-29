@@ -12,15 +12,13 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) of when the certificate becomes valid.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("valid_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        public global::System.DateTimeOffset? ValidAt { get; set; }
+        public int? ValidAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the certificate expires.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        public global::System.DateTimeOffset? ExpiresAt { get; set; }
+        public int? ExpiresAt { get; set; }
 
         /// <summary>
         /// The content of the certificate in PEM format.
@@ -50,8 +48,8 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CertificateCertificateDetails(
-            global::System.DateTimeOffset? validAt,
-            global::System.DateTimeOffset? expiresAt,
+            int? validAt,
+            int? expiresAt,
             string? content)
         {
             this.ValidAt = validAt;

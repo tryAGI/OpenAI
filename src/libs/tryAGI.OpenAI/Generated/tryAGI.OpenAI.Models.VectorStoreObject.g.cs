@@ -26,9 +26,8 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) for when the vector store was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
+        public required int CreatedAt { get; set; }
 
         /// <summary>
         /// The name of the vector store.
@@ -69,13 +68,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
-        public global::System.DateTimeOffset? ExpiresAt { get; set; }
+        public int? ExpiresAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_active_at")]
-        public global::System.DateTimeOffset? LastActiveAt { get; set; }
+        public int? LastActiveAt { get; set; }
 
         /// <summary>
         /// 
@@ -122,15 +121,15 @@ namespace tryAGI.OpenAI
 #endif
         public VectorStoreObject(
             string id,
-            global::System.DateTimeOffset createdAt,
+            int createdAt,
             string name,
             long usageBytes,
             global::tryAGI.OpenAI.VectorStoreObjectFileCounts fileCounts,
             global::tryAGI.OpenAI.VectorStoreObjectStatus status,
             global::tryAGI.OpenAI.VectorStoreObjectObject @object,
             global::tryAGI.OpenAI.VectorStoreExpirationAfter? expiresAfter,
-            global::System.DateTimeOffset? expiresAt,
-            global::System.DateTimeOffset? lastActiveAt,
+            int? expiresAt,
+            int? lastActiveAt,
             global::System.Collections.Generic.Dictionary<string, string>? metadata)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

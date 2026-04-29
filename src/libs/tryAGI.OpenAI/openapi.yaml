@@ -32973,13 +32973,13 @@ components:
           description: The value of the API key. Only shown on create.
         created_at:
           type: integer
-          format: int64
+          format: unixtime
           example: 1711471533
           description: The Unix timestamp (in seconds) of when the API key was created
         last_used_at:
           anyOf:
             - type: integer
-              format: int64
+              format: unixtime
               example: 1711471534
               description: >-
                 The Unix timestamp (in seconds) of when the API key was last
@@ -33006,7 +33006,7 @@ components:
               description: The name of the user
             created_at:
               type: integer
-              format: int64
+              format: unixtime
               example: 1711471533
               description: The Unix timestamp (in seconds) of when the user was created
             role:
@@ -33091,7 +33091,7 @@ components:
           description: When the role was created.
           anyOf:
             - type: integer
-              format: int64
+              format: unixtime
             - type: 'null'
         updated_at:
           description: When the role was last updated.
@@ -33145,6 +33145,7 @@ components:
         created_at:
           description: The Unix timestamp (in seconds) for when the assistant was created.
           type: integer
+          format: unixtime
         name:
           anyOf:
             - description: |
@@ -33620,6 +33621,7 @@ components:
           $ref: '#/components/schemas/AuditLogEventType'
         effective_at:
           type: integer
+          format: unixtime
           description: The Unix timestamp (in seconds) of the event.
         project:
           type: object
@@ -34527,36 +34529,45 @@ components:
           description: The ID of the file containing the outputs of requests with errors.
         created_at:
           type: integer
+          format: unixtime
           description: The Unix timestamp (in seconds) for when the batch was created.
         in_progress_at:
           type: integer
+          format: unixtime
           description: >-
             The Unix timestamp (in seconds) for when the batch started
             processing.
         expires_at:
           type: integer
+          format: unixtime
           description: The Unix timestamp (in seconds) for when the batch will expire.
         finalizing_at:
           type: integer
+          format: unixtime
           description: >-
             The Unix timestamp (in seconds) for when the batch started
             finalizing.
         completed_at:
           type: integer
+          format: unixtime
           description: The Unix timestamp (in seconds) for when the batch was completed.
         failed_at:
           type: integer
+          format: unixtime
           description: The Unix timestamp (in seconds) for when the batch failed.
         expired_at:
           type: integer
+          format: unixtime
           description: The Unix timestamp (in seconds) for when the batch expired.
         cancelling_at:
           type: integer
+          format: unixtime
           description: >-
             The Unix timestamp (in seconds) for when the batch started
             cancelling.
         cancelled_at:
           type: integer
+          format: unixtime
           description: The Unix timestamp (in seconds) for when the batch was cancelled.
         request_counts:
           type: object
@@ -34698,6 +34709,7 @@ components:
             The number of seconds after the anchor time that the file will
             expire. Must be between 3600 (1 hour) and 2592000 (30 days).
           type: integer
+          format: int64
           minimum: 3600
           maximum: 2592000
       required:
@@ -34734,6 +34746,7 @@ components:
           description: The name of the certificate.
         created_at:
           type: integer
+          format: unixtime
           description: >-
             The Unix timestamp (in seconds) of when the certificate was
             uploaded.
@@ -34742,11 +34755,13 @@ components:
           properties:
             valid_at:
               type: integer
+              format: unixtime
               description: >-
                 The Unix timestamp (in seconds) of when the certificate becomes
                 valid.
             expires_at:
               type: integer
+              format: unixtime
               description: The Unix timestamp (in seconds) of when the certificate expires.
             content:
               type: string
@@ -35715,6 +35730,7 @@ components:
                       the message.
                   url:
                     type: string
+                    format: uri
                     description: The URL of the web resource.
                   title:
                     type: string
@@ -35766,6 +35782,7 @@ components:
                   description: Unique identifier for this audio response.
                 expires_at:
                   type: integer
+                  format: unixtime
                   description: >
                     The Unix timestamp (in seconds) for when this audio response
                     will
@@ -36377,6 +36394,7 @@ components:
           x-stainless-const: true
         image_url:
           type: string
+          format: uri
           description: The URL of the screenshot image.
         file_id:
           type: string
@@ -36545,6 +36563,7 @@ components:
           description: The container this file belongs to.
         created_at:
           type: integer
+          format: unixtime
           description: Unix timestamp (in seconds) when the file was created.
         bytes:
           type: integer
@@ -36618,12 +36637,14 @@ components:
           description: Name of the container.
         created_at:
           type: integer
+          format: unixtime
           description: Unix timestamp (in seconds) when the container was created.
         status:
           type: string
           description: Status of the container (e.g., active, deleted).
         last_active_at:
           type: integer
+          format: unixtime
           description: Unix timestamp (in seconds) when the container was last active.
         expires_after:
           type: object
@@ -37526,6 +37547,7 @@ components:
                   - type: 'null'
         created:
           type: integer
+          format: unixtime
           description: >-
             The Unix timestamp (in seconds) of when the chat completion was
             created.
@@ -37678,6 +37700,7 @@ components:
                 description: The index of the choice in the list of choices.
         created:
           type: integer
+          format: unixtime
           description: >-
             The Unix timestamp (in seconds) of when the chat completion was
             created. Each chunk has the same timestamp.
@@ -38065,6 +38088,7 @@ components:
                 type: string
         created:
           type: integer
+          format: unixtime
           description: The Unix timestamp (in seconds) of when the completion was created.
         model:
           type: string
@@ -41081,6 +41105,7 @@ components:
           x-stainless-const: true
         duration:
           type: number
+          format: double
           description: Duration of the input audio in seconds.
         text:
           type: string
@@ -41214,6 +41239,7 @@ components:
           description: The language of the input audio.
         duration:
           type: number
+          format: double
           description: The duration of the input audio.
         text:
           type: string
@@ -41334,6 +41360,7 @@ components:
           description: The language of the output translation (always `english`).
         duration:
           type: number
+          format: double
           description: The duration of the input audio.
         text:
           type: string
@@ -42272,6 +42299,7 @@ components:
               - $ref: '#/components/schemas/EvalGraderScoreModel'
         created_at:
           type: integer
+          format: unixtime
           description: The Unix timestamp (in seconds) for when the eval was created.
         metadata:
           $ref: '#/components/schemas/Metadata'
@@ -42585,6 +42613,7 @@ components:
           x-stainless-const: true
         image_url:
           type: string
+          format: uri
           description: |
             The URL of the image input.
         detail:
@@ -42919,9 +42948,11 @@ components:
           description: The name of the evaluation run.
         created_at:
           type: integer
+          format: unixtime
           description: Unix timestamp (in seconds) when the evaluation run was created.
         report_url:
           type: string
+          format: uri
           description: The URL to the rendered evaluation run report on the UI dashboard.
         result_counts:
           type: object
@@ -43296,6 +43327,7 @@ components:
           description: The identifier of the evaluation group.
         created_at:
           type: integer
+          format: unixtime
           description: Unix timestamp (in seconds) when the evaluation run was created.
         status:
           type: string
@@ -43721,6 +43753,7 @@ components:
             The number of seconds after the anchor time that the file will
             expire. Must be between 3600 (1 hour) and 2592000 (30 days).
           type: integer
+          format: int64
           minimum: 3600
           maximum: 2592000
       required:
@@ -44125,6 +44158,7 @@ components:
             endpoints.
         created_at:
           type: integer
+          format: unixtime
           description: The Unix timestamp (in seconds) for when the permission was created.
         project_id:
           type: string
@@ -44221,6 +44255,7 @@ components:
           description: The object identifier, which can be referenced in the API endpoints.
         created_at:
           type: integer
+          format: unixtime
           description: >-
             The Unix timestamp (in seconds) for when the fine-tuning job was
             created.
@@ -44260,6 +44295,7 @@ components:
         finished_at:
           anyOf:
             - type: integer
+              format: unixtime
               description: >-
                 The Unix timestamp (in seconds) for when the fine-tuning job was
                 finished. The value will be null if the fine-tuning job is still
@@ -44388,6 +44424,7 @@ components:
         estimated_finish:
           anyOf:
             - type: integer
+              format: unixtime
               description: >-
                 The Unix timestamp (in seconds) for when the fine-tuning job is
                 estimated to finish. The value will be null if the fine-tuning
@@ -44467,6 +44504,7 @@ components:
             endpoints.
         created_at:
           type: integer
+          format: unixtime
           description: The Unix timestamp (in seconds) for when the checkpoint was created.
         fine_tuned_model_checkpoint:
           type: string
@@ -44546,6 +44584,7 @@ components:
           description: The object identifier.
         created_at:
           type: integer
+          format: unixtime
           description: >-
             The Unix timestamp (in seconds) for when the fine-tuning job was
             created.
@@ -45201,7 +45240,7 @@ components:
           description: Display name of the group.
         created_at:
           type: integer
-          format: int64
+          format: unixtime
           description: Unix timestamp (in seconds) when the group was created.
         scim_managed:
           type: boolean
@@ -45313,7 +45352,7 @@ components:
           description: Updated display name for the group.
         created_at:
           type: integer
-          format: int64
+          format: unixtime
           description: Unix timestamp (in seconds) when the group was created.
         is_scim_managed:
           type: boolean
@@ -45345,7 +45384,7 @@ components:
           description: Display name of the group.
         created_at:
           type: integer
-          format: int64
+          format: unixtime
           description: Unix timestamp (in seconds) when the group was created.
         is_scim_managed:
           type: boolean
@@ -45474,6 +45513,7 @@ components:
             set to `b64_json` for `dall-e-2` and `dall-e-3`.
         url:
           type: string
+          format: uri
           description: >-
             When using `dall-e-2` or `dall-e-3`, the URL of the generated image
             if `response_format` is set to `url` (default value). Unsupported
@@ -45503,6 +45543,7 @@ components:
             image.
         created_at:
           type: integer
+          format: unixtime
           description: |
             The Unix timestamp when the event was created.
         size:
@@ -45592,6 +45633,7 @@ components:
             image.
         created_at:
           type: integer
+          format: unixtime
           description: |
             The Unix timestamp when the event was created.
         size:
@@ -45680,6 +45722,7 @@ components:
             Base64-encoded image data, suitable for rendering as an image.
         created_at:
           type: integer
+          format: unixtime
           description: |
             The Unix timestamp when the event was created.
         size:
@@ -45769,6 +45812,7 @@ components:
             image.
         created_at:
           type: integer
+          format: unixtime
           description: |
             The Unix timestamp when the event was created.
         size:
@@ -46000,6 +46044,7 @@ components:
       properties:
         image_url:
           type: string
+          format: uri
           maxLength: 20971520
           description: A fully qualified URL or base64-encoded data URL.
           example: https://example.com/source-image.png
@@ -46024,6 +46069,7 @@ components:
       properties:
         created:
           type: integer
+          format: unixtime
           description: The Unix timestamp (in seconds) of when the image was created.
         data:
           type: array
@@ -46302,12 +46348,15 @@ components:
           description: '`accepted`,`expired`, or `pending`'
         invited_at:
           type: integer
+          format: unixtime
           description: The Unix timestamp (in seconds) of when the invite was sent.
         expires_at:
           type: integer
+          format: unixtime
           description: The Unix timestamp (in seconds) of when the invite expires.
         accepted_at:
           type: integer
+          format: unixtime
           description: The Unix timestamp (in seconds) of when the invite was accepted.
         projects:
           type: array
@@ -47218,6 +47267,7 @@ components:
             A label for this MCP server, used to identify it in tool calls.
         server_url:
           type: string
+          format: uri
           description: >
             The URL for the MCP server. One of `server_url` or `connector_id`
             must be
@@ -47680,6 +47730,7 @@ components:
                 The URL of the image, must be a supported image types: jpeg,
                 jpg, png, gif, webp.
               type: string
+              format: uri
             detail:
               type: string
               description: >-
@@ -47892,6 +47943,7 @@ components:
         created_at:
           description: The Unix timestamp (in seconds) for when the message was created.
           type: integer
+          format: unixtime
         thread_id:
           description: >-
             The [thread](/docs/api-reference/threads) ID that this message
@@ -47931,6 +47983,7 @@ components:
                 The Unix timestamp (in seconds) for when the message was
                 completed.
               type: integer
+              format: unixtime
             - type: 'null'
         incomplete_at:
           anyOf:
@@ -47938,6 +47991,7 @@ components:
                 The Unix timestamp (in seconds) for when the message was marked
                 as incomplete.
               type: integer
+              format: unixtime
             - type: 'null'
         role:
           description: The entity that produced the message. One of `user` or `assistant`.
@@ -48183,6 +48237,7 @@ components:
           description: The model identifier, which can be referenced in the API endpoints.
         created:
           type: integer
+          format: unixtime
           description: The Unix timestamp (in seconds) when the model was created.
         object:
           type: string
@@ -48636,9 +48691,11 @@ components:
           description: The size of the file, in bytes.
         created_at:
           type: integer
+          format: unixtime
           description: The Unix timestamp (in seconds) for when the file was created.
         expires_at:
           type: integer
+          format: unixtime
           description: The Unix timestamp (in seconds) for when the file will expire.
         filename:
           type: string
@@ -48926,10 +48983,12 @@ components:
           description: The name of the project. This appears in reporting.
         created_at:
           type: integer
+          format: unixtime
           description: The Unix timestamp (in seconds) of when the project was created.
         archived_at:
           anyOf:
             - type: integer
+              format: unixtime
               description: >-
                 The Unix timestamp (in seconds) of when the project was archived
                 or `null`.
@@ -48975,9 +49034,11 @@ components:
           description: The name of the API key
         created_at:
           type: integer
+          format: unixtime
           description: The Unix timestamp (in seconds) of when the API key was created
         last_used_at:
           type: integer
+          format: unixtime
           description: The Unix timestamp (in seconds) of when the API key was last used.
         id:
           type: string
@@ -49111,7 +49172,7 @@ components:
           description: Display name of the group.
         created_at:
           type: integer
-          format: int64
+          format: unixtime
           description: >-
             Unix timestamp (in seconds) when the group was granted project
             access.
@@ -49355,6 +49416,7 @@ components:
           description: '`owner` or `member`'
         created_at:
           type: integer
+          format: unixtime
           description: >-
             The Unix timestamp (in seconds) of when the service account was
             created
@@ -49391,6 +49453,7 @@ components:
           type: string
         created_at:
           type: integer
+          format: unixtime
         id:
           type: string
       required:
@@ -49427,6 +49490,7 @@ components:
           x-stainless-const: true
         created_at:
           type: integer
+          format: unixtime
         api_key:
           $ref: '#/components/schemas/ProjectServiceAccountApiKey'
       required:
@@ -49511,6 +49575,7 @@ components:
           description: '`owner` or `member`'
         added_at:
           type: integer
+          format: unixtime
           description: The Unix timestamp (in seconds) of when the project was added.
       required:
         - object
@@ -51159,11 +51224,11 @@ components:
           description: The detected speaker label for this segment.
         start:
           type: number
-          format: float
+          format: double
           description: Start time of the segment in seconds.
         end:
           type: number
-          format: float
+          format: double
           description: End time of the segment in seconds.
       required:
         - event_id
@@ -53969,6 +54034,7 @@ components:
                   specified.
               image_url:
                 type: string
+                format: uri
                 description: >-
                   Base64-encoded image bytes (for `input_image`) as a data URI.
                   For example
@@ -54168,6 +54234,7 @@ components:
               x-stainless-const: true
             seconds:
               type: integer
+              format: int64
               description: >
                 The number of seconds from the anchor point to the expiration.
                 Select a value between `10` and `7200` (2 hours). This default
@@ -54196,6 +54263,7 @@ components:
           description: The generated client secret value.
         expires_at:
           type: integer
+          format: unixtime
           description: Expiration timestamp for the client secret, in seconds since epoch.
         session:
           title: Session configuration
@@ -55409,11 +55477,11 @@ components:
           description: The detected speaker label for this segment.
         start:
           type: number
-          format: float
+          format: double
           description: Start time of the segment in seconds.
         end:
           type: number
-          format: float
+          format: double
           description: End time of the segment in seconds.
       required:
         - event_id
@@ -57697,6 +57765,7 @@ components:
             given model. Defaults to `inf`.
         expires_at:
           type: integer
+          format: unixtime
           description: Expiration timestamp for the session, in seconds since epoch.
         prompt:
           anyOf:
@@ -57737,6 +57806,7 @@ components:
                 a standard API token, which should only be used server-side.
             expires_at:
               type: integer
+              format: unixtime
               description: >
                 Timestamp for when the token expires. Currently, all tokens
                 expire
@@ -58270,6 +58340,7 @@ components:
           description: The object type. Always `realtime.session`.
         expires_at:
           type: integer
+          format: unixtime
           description: Expiration timestamp for the session, in seconds since epoch.
         include:
           type: array
@@ -58538,6 +58609,7 @@ components:
                 be used server-side.
             expires_at:
               type: integer
+              format: unixtime
               description: >
                 Timestamp for when the token expires. Currently, all tokens
                 expire
@@ -58986,6 +59058,7 @@ components:
                 a standard API token, which should only be used server-side.
             expires_at:
               type: integer
+              format: unixtime
               description: >
                 Timestamp for when the token expires. Currently, all tokens
                 expire
@@ -59102,6 +59175,7 @@ components:
           description: The object type. Always `realtime.transcription_session`.
         expires_at:
           type: integer
+          format: unixtime
           description: Expiration timestamp for the session, in seconds since epoch.
         include:
           type: array
@@ -59639,12 +59713,14 @@ components:
                 - queued
                 - incomplete
             created_at:
-              type: number
+              type: integer
+              format: unixtime
               description: |
                 Unix timestamp (in seconds) of when this Response was created.
             completed_at:
               anyOf:
-                - type: number
+                - type: integer
+                  format: unixtime
                   description: >
                     Unix timestamp (in seconds) of when this Response was
                     completed.
@@ -63114,6 +63190,7 @@ components:
         created_at:
           description: The Unix timestamp (in seconds) for when the run was created.
           type: integer
+          format: unixtime
         thread_id:
           description: >-
             The ID of the [thread](/docs/api-reference/threads) that was
@@ -63192,22 +63269,27 @@ components:
         expires_at:
           description: The Unix timestamp (in seconds) for when the run will expire.
           type: integer
+          format: unixtime
           nullable: true
         started_at:
           description: The Unix timestamp (in seconds) for when the run was started.
           type: integer
+          format: unixtime
           nullable: true
         cancelled_at:
           description: The Unix timestamp (in seconds) for when the run was cancelled.
           type: integer
+          format: unixtime
           nullable: true
         failed_at:
           description: The Unix timestamp (in seconds) for when the run failed.
           type: integer
+          format: unixtime
           nullable: true
         completed_at:
           description: The Unix timestamp (in seconds) for when the run was completed.
           type: integer
+          format: unixtime
           nullable: true
         incomplete_details:
           description: >-
@@ -63907,6 +63989,7 @@ components:
         created_at:
           description: The Unix timestamp (in seconds) for when the run step was created.
           type: integer
+          format: unixtime
         assistant_id:
           description: >-
             The ID of the [assistant](/docs/api-reference/assistants) associated
@@ -63971,6 +64054,7 @@ components:
                 The Unix timestamp (in seconds) for when the run step expired. A
                 step is considered expired if the parent run is expired.
               type: integer
+              format: unixtime
             - type: 'null'
         cancelled_at:
           anyOf:
@@ -63978,16 +64062,19 @@ components:
                 The Unix timestamp (in seconds) for when the run step was
                 cancelled.
               type: integer
+              format: unixtime
             - type: 'null'
         failed_at:
           anyOf:
             - description: The Unix timestamp (in seconds) for when the run step failed.
               type: integer
+              format: unixtime
             - type: 'null'
         completed_at:
           anyOf:
             - description: The Unix timestamp (in seconds) for when the run step completed.
               type: integer
+              format: unixtime
             - type: 'null'
         metadata:
           $ref: '#/components/schemas/Metadata'
@@ -64659,6 +64746,7 @@ components:
         created_at:
           description: The Unix timestamp (in seconds) for when the thread was created.
           type: integer
+          format: unixtime
         tool_resources:
           anyOf:
             - type: object
@@ -65121,11 +65209,11 @@ components:
           description: Unique identifier for the segment.
         start:
           type: number
-          format: float
+          format: double
           description: Start timestamp of the segment in seconds.
         end:
           type: number
-          format: float
+          format: double
           description: End timestamp of the segment in seconds.
         text:
           type: string
@@ -65165,6 +65253,7 @@ components:
           x-stainless-const: true
         seconds:
           type: number
+          format: double
           description: Duration of the input audio in seconds.
       required:
         - type
@@ -65244,11 +65333,11 @@ components:
           description: Unique identifier for the segment.
         start:
           type: number
-          format: float
+          format: double
           description: Start timestamp of the segment in seconds.
         end:
           type: number
-          format: float
+          format: double
           description: End timestamp of the segment in seconds.
         text:
           type: string
@@ -65282,11 +65371,11 @@ components:
           description: Seek offset of the segment.
         start:
           type: number
-          format: float
+          format: double
           description: Start time of the segment in seconds.
         end:
           type: number
-          format: float
+          format: double
           description: End time of the segment in seconds.
         text:
           type: string
@@ -65337,11 +65426,11 @@ components:
           description: The text content of the word.
         start:
           type: number
-          format: float
+          format: double
           description: Start time of the word in seconds.
         end:
           type: number
-          format: float
+          format: double
           description: End time of the word in seconds.
       required:
         - word
@@ -65437,6 +65526,7 @@ components:
             endpoints.
         created_at:
           type: integer
+          format: unixtime
           description: The Unix timestamp (in seconds) for when the Upload was created.
         filename:
           type: string
@@ -65460,6 +65550,7 @@ components:
             - expired
         expires_at:
           type: integer
+          format: unixtime
           description: The Unix timestamp (in seconds) for when the Upload will expire.
         object:
           type: string
@@ -65526,6 +65617,7 @@ components:
             endpoints.
         created_at:
           type: integer
+          format: unixtime
           description: The Unix timestamp (in seconds) for when the Part was created.
         upload_id:
           type: string
@@ -65622,6 +65714,7 @@ components:
           x-stainless-const: true
         seconds:
           type: integer
+          format: int64
           description: The number of seconds processed.
         num_model_requests:
           type: integer
@@ -66106,6 +66199,7 @@ components:
           description: '`owner` or `reader`'
         added_at:
           type: integer
+          format: unixtime
           description: The Unix timestamp (in seconds) of when the user was added.
       required:
         - object
@@ -66405,6 +66499,7 @@ components:
             The Unix timestamp (in seconds) for when the vector store files
             batch was created.
           type: integer
+          format: unixtime
         vector_store_id:
           description: >-
             The ID of the [vector
@@ -66529,6 +66624,7 @@ components:
             The Unix timestamp (in seconds) for when the vector store file was
             created.
           type: integer
+          format: unixtime
         vector_store_id:
           description: >-
             The ID of the [vector
@@ -66626,6 +66722,7 @@ components:
             The Unix timestamp (in seconds) for when the vector store was
             created.
           type: integer
+          format: unixtime
         name:
           description: The name of the vector store.
           type: string
@@ -66674,6 +66771,7 @@ components:
                 The Unix timestamp (in seconds) for when the vector store will
                 expire.
               type: integer
+              format: unixtime
             - type: 'null'
         last_active_at:
           anyOf:
@@ -66681,6 +66779,7 @@ components:
                 The Unix timestamp (in seconds) for when the vector store was
                 last active.
               type: integer
+              format: unixtime
             - type: 'null'
         metadata:
           $ref: '#/components/schemas/Metadata'
@@ -66967,6 +67066,7 @@ components:
             `en-US`).
         created_at:
           type: integer
+          format: unixtime
           description: >-
             The Unix timestamp (in seconds) for when the consent recording was
             created.
@@ -67038,6 +67138,7 @@ components:
           description: The name of the voice.
         created_at:
           type: integer
+          format: unixtime
           description: The Unix timestamp (in seconds) for when the voice was created.
       required:
         - object
@@ -67147,6 +67248,7 @@ components:
                 x-stainless-const: true
               url:
                 type: string
+                format: uri
                 description: |
                   The URL of the source.
             required:
@@ -67357,6 +67459,7 @@ components:
       properties:
         created_at:
           type: integer
+          format: unixtime
           description: >
             The Unix timestamp (in seconds) of when the batch API request was
             cancelled.
@@ -67414,6 +67517,7 @@ components:
       properties:
         created_at:
           type: integer
+          format: unixtime
           description: >
             The Unix timestamp (in seconds) of when the batch API request was
             completed.
@@ -67471,6 +67575,7 @@ components:
       properties:
         created_at:
           type: integer
+          format: unixtime
           description: >
             The Unix timestamp (in seconds) of when the batch API request
             expired.
@@ -67528,6 +67633,7 @@ components:
       properties:
         created_at:
           type: integer
+          format: unixtime
           description: >
             The Unix timestamp (in seconds) of when the batch API request
             failed.
@@ -67585,6 +67691,7 @@ components:
       properties:
         created_at:
           type: integer
+          format: unixtime
           description: |
             The Unix timestamp (in seconds) of when the eval run was canceled.
         id:
@@ -67641,6 +67748,7 @@ components:
       properties:
         created_at:
           type: integer
+          format: unixtime
           description: |
             The Unix timestamp (in seconds) of when the eval run failed.
         id:
@@ -67697,6 +67805,7 @@ components:
       properties:
         created_at:
           type: integer
+          format: unixtime
           description: |
             The Unix timestamp (in seconds) of when the eval run succeeded.
         id:
@@ -67753,6 +67862,7 @@ components:
       properties:
         created_at:
           type: integer
+          format: unixtime
           description: >
             The Unix timestamp (in seconds) of when the fine-tuning job was
             cancelled.
@@ -67810,6 +67920,7 @@ components:
       properties:
         created_at:
           type: integer
+          format: unixtime
           description: |
             The Unix timestamp (in seconds) of when the fine-tuning job failed.
         id:
@@ -67866,6 +67977,7 @@ components:
       properties:
         created_at:
           type: integer
+          format: unixtime
           description: >
             The Unix timestamp (in seconds) of when the fine-tuning job
             succeeded.
@@ -67923,6 +68035,7 @@ components:
       properties:
         created_at:
           type: integer
+          format: unixtime
           description: >
             The Unix timestamp (in seconds) of when the model response was
             completed.
@@ -68006,6 +68119,7 @@ components:
       properties:
         created_at:
           type: integer
+          format: unixtime
           description: >
             The Unix timestamp (in seconds) of when the model response was
             cancelled.
@@ -68063,6 +68177,7 @@ components:
       properties:
         created_at:
           type: integer
+          format: unixtime
           description: >
             The Unix timestamp (in seconds) of when the model response was
             completed.
@@ -68120,6 +68235,7 @@ components:
       properties:
         created_at:
           type: integer
+          format: unixtime
           description: |
             The Unix timestamp (in seconds) of when the model response failed.
         id:
@@ -68176,6 +68292,7 @@ components:
       properties:
         created_at:
           type: integer
+          format: unixtime
           description: >
             The Unix timestamp (in seconds) of when the model response was
             interrupted.

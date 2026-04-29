@@ -27,9 +27,8 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) of the event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("effective_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset EffectiveAt { get; set; }
+        public required int EffectiveAt { get; set; }
 
         /// <summary>
         /// The project that the action was scoped to. Absent for actions not scoped to projects. Note that any admin actions taken via Admin API keys are associated with the default project.
@@ -497,7 +496,7 @@ namespace tryAGI.OpenAI
         public AuditLog(
             string id,
             global::tryAGI.OpenAI.AuditLogEventType type,
-            global::System.DateTimeOffset effectiveAt,
+            int effectiveAt,
             global::tryAGI.OpenAI.AuditLogActor actor,
             global::tryAGI.OpenAI.AuditLogProject? project,
             global::tryAGI.OpenAI.AuditLogApiKeyCreated? apiKeyCreated,

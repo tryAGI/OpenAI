@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
         /// Default Value: 600
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("seconds")]
-        public int? Seconds { get; set; }
+        public long? Seconds { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,7 +48,7 @@ namespace tryAGI.OpenAI
 #endif
         public RealtimeCreateClientSecretRequestExpiresAfter(
             global::tryAGI.OpenAI.RealtimeCreateClientSecretRequestExpiresAfterAnchor? anchor,
-            int? seconds)
+            long? seconds)
         {
             this.Anchor = anchor;
             this.Seconds = seconds;

@@ -26,9 +26,8 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp when the event was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
+        public required int CreatedAt { get; set; }
 
         /// <summary>
         /// The size of the requested image.
@@ -107,7 +106,7 @@ namespace tryAGI.OpenAI
 #endif
         public ImageGenPartialImageEvent(
             string b64Json,
-            global::System.DateTimeOffset createdAt,
+            int createdAt,
             global::tryAGI.OpenAI.ImageGenPartialImageEventSize size,
             global::tryAGI.OpenAI.ImageGenPartialImageEventQuality quality,
             global::tryAGI.OpenAI.ImageGenPartialImageEventBackground background,

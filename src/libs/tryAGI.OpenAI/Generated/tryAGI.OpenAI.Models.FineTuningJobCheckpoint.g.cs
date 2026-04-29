@@ -19,9 +19,8 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) for when the checkpoint was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
+        public required int CreatedAt { get; set; }
 
         /// <summary>
         /// The name of the fine-tuned checkpoint model that is created.
@@ -93,7 +92,7 @@ namespace tryAGI.OpenAI
 #endif
         public FineTuningJobCheckpoint(
             string id,
-            global::System.DateTimeOffset createdAt,
+            int createdAt,
             string fineTunedModelCheckpoint,
             int stepNumber,
             global::tryAGI.OpenAI.FineTuningJobCheckpointMetrics metrics,

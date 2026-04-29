@@ -33,15 +33,14 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) of when the project was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
+        public required int CreatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("archived_at")]
-        public global::System.DateTimeOffset? ArchivedAt { get; set; }
+        public int? ArchivedAt { get; set; }
 
         /// <summary>
         /// `active` or `archived`
@@ -82,10 +81,10 @@ namespace tryAGI.OpenAI
         public Project(
             string id,
             string name,
-            global::System.DateTimeOffset createdAt,
+            int createdAt,
             global::tryAGI.OpenAI.ProjectStatus status,
             global::tryAGI.OpenAI.ProjectObject @object,
-            global::System.DateTimeOffset? archivedAt)
+            int? archivedAt)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;

@@ -35,13 +35,13 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double CreatedAt { get; set; }
+        public required int CreatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
-        public double? CompletedAt { get; set; }
+        public int? CompletedAt { get; set; }
 
         /// <summary>
         /// 
@@ -158,12 +158,12 @@ namespace tryAGI.OpenAI
 #endif
         public ResponseVariant3(
             string id,
-            double createdAt,
+            int createdAt,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputItem> output,
             bool parallelToolCalls,
             global::tryAGI.OpenAI.ResponseVariant3Object @object,
             global::tryAGI.OpenAI.ResponseVariant3Status? status,
-            double? completedAt,
+            int? completedAt,
             global::tryAGI.OpenAI.ResponseErrorVariant1? error,
             global::tryAGI.OpenAI.ResponseVariant3IncompleteDetails2? incompleteDetails,
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>? instructions,

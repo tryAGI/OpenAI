@@ -19,9 +19,8 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) for when the Upload was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
+        public required int CreatedAt { get; set; }
 
         /// <summary>
         /// The name of the file to be uploaded.
@@ -56,9 +55,8 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) for when the Upload will expire.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset ExpiresAt { get; set; }
+        public required int ExpiresAt { get; set; }
 
         /// <summary>
         /// The object type, which is always "upload".
@@ -113,12 +111,12 @@ namespace tryAGI.OpenAI
 #endif
         public Upload(
             string id,
-            global::System.DateTimeOffset createdAt,
+            int createdAt,
             string filename,
             long bytes,
             string purpose,
             global::tryAGI.OpenAI.UploadStatus status,
-            global::System.DateTimeOffset expiresAt,
+            int expiresAt,
             global::tryAGI.OpenAI.UploadObject? @object,
             global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.OpenAIFile, object>? file)
         {

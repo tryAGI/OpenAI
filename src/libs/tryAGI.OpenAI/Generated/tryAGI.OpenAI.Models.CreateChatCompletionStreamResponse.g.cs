@@ -31,9 +31,8 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) of when the chat completion was created. Each chunk has the same timestamp.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset Created { get; set; }
+        public required int Created { get; set; }
 
         /// <summary>
         /// The model to generate the completion.
@@ -116,7 +115,7 @@ namespace tryAGI.OpenAI
         public CreateChatCompletionStreamResponse(
             string id,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateChatCompletionStreamResponseChoice> choices,
-            global::System.DateTimeOffset created,
+            int created,
             string model,
             global::tryAGI.OpenAI.ServiceTierEnum? serviceTier,
             global::tryAGI.OpenAI.CreateChatCompletionStreamResponseObject @object,

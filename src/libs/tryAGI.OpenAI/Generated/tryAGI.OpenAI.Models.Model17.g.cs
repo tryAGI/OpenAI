@@ -19,9 +19,8 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) when the model was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset Created { get; set; }
+        public required int Created { get; set; }
 
         /// <summary>
         /// The object type, which is always "model".
@@ -63,7 +62,7 @@ namespace tryAGI.OpenAI
 #endif
         public Model17(
             string id,
-            global::System.DateTimeOffset created,
+            int created,
             string ownedBy,
             global::tryAGI.OpenAI.ModelObject @object)
         {

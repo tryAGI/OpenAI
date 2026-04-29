@@ -46,8 +46,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <example>1711471533</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        public global::System.DateTimeOffset? CreatedAt { get; set; }
+        public int? CreatedAt { get; set; }
 
         /// <summary>
         /// Always `owner`<br/>
@@ -98,7 +97,7 @@ namespace tryAGI.OpenAI
             string? @object,
             string? id,
             string? name,
-            global::System.DateTimeOffset? createdAt,
+            int? createdAt,
             string? role)
         {
             this.Type = type;

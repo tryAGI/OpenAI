@@ -12,9 +12,8 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) of when the image was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset Created { get; set; }
+        public required int Created { get; set; }
 
         /// <summary>
         /// The list of generated images.
@@ -90,7 +89,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ImagesResponse(
-            global::System.DateTimeOffset created,
+            int created,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Image2>? data,
             global::tryAGI.OpenAI.ImagesResponseBackground? background,
             global::tryAGI.OpenAI.ImagesResponseOutputFormat? outputFormat,

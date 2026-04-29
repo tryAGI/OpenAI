@@ -19,9 +19,8 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) for when the Part was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
+        public required int CreatedAt { get; set; }
 
         /// <summary>
         /// The ID of the Upload object that this Part was added to.
@@ -63,7 +62,7 @@ namespace tryAGI.OpenAI
 #endif
         public UploadPart(
             string id,
-            global::System.DateTimeOffset createdAt,
+            int createdAt,
             string uploadId,
             global::tryAGI.OpenAI.UploadPartObject @object)
         {
