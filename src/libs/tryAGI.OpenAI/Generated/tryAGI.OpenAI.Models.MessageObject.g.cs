@@ -26,9 +26,8 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) for when the message was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
+        public required int CreatedAt { get; set; }
 
         /// <summary>
         /// The [thread](/docs/api-reference/threads) ID that this message belongs to.
@@ -55,13 +54,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
-        public global::System.DateTimeOffset? CompletedAt { get; set; }
+        public int? CompletedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("incomplete_at")]
-        public global::System.DateTimeOffset? IncompleteAt { get; set; }
+        public int? IncompleteAt { get; set; }
 
         /// <summary>
         /// The entity that produced the message. One of `user` or `assistant`.
@@ -144,15 +143,15 @@ namespace tryAGI.OpenAI
 #endif
         public MessageObject(
             string id,
-            global::System.DateTimeOffset createdAt,
+            int createdAt,
             string threadId,
             global::tryAGI.OpenAI.MessageObjectStatus status,
             global::tryAGI.OpenAI.MessageObjectRole role,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageContentImageFileObject, global::tryAGI.OpenAI.MessageContentImageUrlObject, global::tryAGI.OpenAI.MessageContentTextObject, global::tryAGI.OpenAI.MessageContentRefusalObject>> content,
             global::tryAGI.OpenAI.MessageObjectObject @object,
             global::tryAGI.OpenAI.MessageObjectIncompleteDetails2? incompleteDetails,
-            global::System.DateTimeOffset? completedAt,
-            global::System.DateTimeOffset? incompleteAt,
+            int? completedAt,
+            int? incompleteAt,
             string? assistantId,
             string? runId,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.MessageObjectAttachmentsVariant1Item>? attachments,

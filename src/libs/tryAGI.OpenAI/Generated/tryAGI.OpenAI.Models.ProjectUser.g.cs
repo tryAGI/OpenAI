@@ -48,9 +48,8 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) of when the project was added.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("added_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset AddedAt { get; set; }
+        public required int AddedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -87,7 +86,7 @@ namespace tryAGI.OpenAI
             string name,
             string email,
             global::tryAGI.OpenAI.ProjectUserRole role,
-            global::System.DateTimeOffset addedAt,
+            int addedAt,
             global::tryAGI.OpenAI.ProjectUserObject @object)
         {
             this.Object = @object;

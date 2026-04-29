@@ -82,65 +82,56 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) for when the batch was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
+        public required int CreatedAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the batch started processing.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("in_progress_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        public global::System.DateTimeOffset? InProgressAt { get; set; }
+        public int? InProgressAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the batch will expire.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        public global::System.DateTimeOffset? ExpiresAt { get; set; }
+        public int? ExpiresAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the batch started finalizing.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finalizing_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        public global::System.DateTimeOffset? FinalizingAt { get; set; }
+        public int? FinalizingAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the batch was completed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        public global::System.DateTimeOffset? CompletedAt { get; set; }
+        public int? CompletedAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the batch failed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("failed_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        public global::System.DateTimeOffset? FailedAt { get; set; }
+        public int? FailedAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the batch expired.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expired_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        public global::System.DateTimeOffset? ExpiredAt { get; set; }
+        public int? ExpiredAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the batch started cancelling.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cancelling_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        public global::System.DateTimeOffset? CancellingAt { get; set; }
+        public int? CancellingAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the batch was cancelled.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cancelled_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        public global::System.DateTimeOffset? CancelledAt { get; set; }
+        public int? CancelledAt { get; set; }
 
         /// <summary>
         /// The request counts for different statuses within the batch.
@@ -245,20 +236,20 @@ namespace tryAGI.OpenAI
             string inputFileId,
             string completionWindow,
             global::tryAGI.OpenAI.BatchStatus status,
-            global::System.DateTimeOffset createdAt,
+            int createdAt,
             global::tryAGI.OpenAI.BatchObject @object,
             string? model,
             global::tryAGI.OpenAI.BatchErrors? errors,
             string? outputFileId,
             string? errorFileId,
-            global::System.DateTimeOffset? inProgressAt,
-            global::System.DateTimeOffset? expiresAt,
-            global::System.DateTimeOffset? finalizingAt,
-            global::System.DateTimeOffset? completedAt,
-            global::System.DateTimeOffset? failedAt,
-            global::System.DateTimeOffset? expiredAt,
-            global::System.DateTimeOffset? cancellingAt,
-            global::System.DateTimeOffset? cancelledAt,
+            int? inProgressAt,
+            int? expiresAt,
+            int? finalizingAt,
+            int? completedAt,
+            int? failedAt,
+            int? expiredAt,
+            int? cancellingAt,
+            int? cancelledAt,
             global::tryAGI.OpenAI.BatchRequestCounts? requestCounts,
             global::tryAGI.OpenAI.BatchUsage? usage,
             global::System.Collections.Generic.Dictionary<string, string>? metadata)

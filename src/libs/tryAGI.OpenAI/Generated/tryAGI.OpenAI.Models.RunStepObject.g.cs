@@ -26,9 +26,8 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) for when the run step was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
+        public required int CreatedAt { get; set; }
 
         /// <summary>
         /// The ID of the [assistant](/docs/api-reference/assistants) associated with the run step.
@@ -85,25 +84,25 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expired_at")]
-        public global::System.DateTimeOffset? ExpiredAt { get; set; }
+        public int? ExpiredAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cancelled_at")]
-        public global::System.DateTimeOffset? CancelledAt { get; set; }
+        public int? CancelledAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("failed_at")]
-        public global::System.DateTimeOffset? FailedAt { get; set; }
+        public int? FailedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
-        public global::System.DateTimeOffset? CompletedAt { get; set; }
+        public int? CompletedAt { get; set; }
 
         /// <summary>
         /// 
@@ -165,7 +164,7 @@ namespace tryAGI.OpenAI
 #endif
         public RunStepObject(
             string id,
-            global::System.DateTimeOffset createdAt,
+            int createdAt,
             string assistantId,
             string threadId,
             string runId,
@@ -174,10 +173,10 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDetailsMessageCreationObject, global::tryAGI.OpenAI.RunStepDetailsToolCallsObject> stepDetails,
             global::tryAGI.OpenAI.RunStepObjectObject @object,
             global::tryAGI.OpenAI.RunStepObjectLastError2? lastError,
-            global::System.DateTimeOffset? expiredAt,
-            global::System.DateTimeOffset? cancelledAt,
-            global::System.DateTimeOffset? failedAt,
-            global::System.DateTimeOffset? completedAt,
+            int? expiredAt,
+            int? cancelledAt,
+            int? failedAt,
+            int? completedAt,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::tryAGI.OpenAI.RunStepCompletionUsageVariant1? usage)
         {

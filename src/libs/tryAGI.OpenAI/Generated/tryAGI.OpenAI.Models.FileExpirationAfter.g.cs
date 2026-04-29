@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("seconds")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Seconds { get; set; }
+        public required long Seconds { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,7 +41,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FileExpirationAfter(
-            int seconds,
+            long seconds,
             global::tryAGI.OpenAI.FileExpirationAfterAnchor anchor)
         {
             this.Anchor = anchor;

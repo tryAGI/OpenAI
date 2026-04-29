@@ -27,14 +27,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required float Start { get; set; }
+        public required double Start { get; set; }
 
         /// <summary>
         /// End timestamp of the segment in seconds.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required float End { get; set; }
+        public required double End { get; set; }
 
         /// <summary>
         /// Transcript text for this segment.
@@ -82,8 +82,8 @@ namespace tryAGI.OpenAI
 #endif
         public TranscriptTextSegmentEvent(
             string id,
-            float start,
-            float end,
+            double start,
+            double end,
             string text,
             string speaker,
             global::tryAGI.OpenAI.TranscriptTextSegmentEventType type)

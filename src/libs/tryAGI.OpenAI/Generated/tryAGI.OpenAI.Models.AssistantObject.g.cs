@@ -29,10 +29,9 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) for when the assistant was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
+        public required int CreatedAt { get; set; }
 
         /// <summary>
         /// 
@@ -145,7 +144,7 @@ namespace tryAGI.OpenAI
 #endif
         public AssistantObject(
             string id,
-            global::System.DateTimeOffset createdAt,
+            int createdAt,
             string model,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.AssistantToolsCode, global::tryAGI.OpenAI.AssistantToolsFileSearch, global::tryAGI.OpenAI.AssistantToolsFunction>> tools,
             global::tryAGI.OpenAI.AssistantObjectObject @object,

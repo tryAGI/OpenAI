@@ -49,24 +49,21 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) of when the invite was sent.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("invited_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset InvitedAt { get; set; }
+        public required int InvitedAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the invite expires.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset ExpiresAt { get; set; }
+        public required int ExpiresAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the invite was accepted.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("accepted_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        public global::System.DateTimeOffset? AcceptedAt { get; set; }
+        public int? AcceptedAt { get; set; }
 
         /// <summary>
         /// The projects that were granted membership upon acceptance of the invite.
@@ -118,10 +115,10 @@ namespace tryAGI.OpenAI
             string email,
             global::tryAGI.OpenAI.InviteRole role,
             global::tryAGI.OpenAI.InviteStatus status,
-            global::System.DateTimeOffset invitedAt,
-            global::System.DateTimeOffset expiresAt,
+            int invitedAt,
+            int expiresAt,
             global::tryAGI.OpenAI.InviteObject @object,
-            global::System.DateTimeOffset? acceptedAt,
+            int? acceptedAt,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InviteProject>? projects)
         {
             this.Object = @object;

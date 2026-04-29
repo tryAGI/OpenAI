@@ -26,9 +26,8 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) for when the run was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
+        public required int CreatedAt { get; set; }
 
         /// <summary>
         /// The ID of the [thread](/docs/api-reference/threads) that was executed on as a part of this run.
@@ -68,36 +67,31 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) for when the run will expire.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        public global::System.DateTimeOffset? ExpiresAt { get; set; }
+        public int? ExpiresAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run was started.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("started_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        public global::System.DateTimeOffset? StartedAt { get; set; }
+        public int? StartedAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run was cancelled.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cancelled_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        public global::System.DateTimeOffset? CancelledAt { get; set; }
+        public int? CancelledAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run failed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("failed_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        public global::System.DateTimeOffset? FailedAt { get; set; }
+        public int? FailedAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run was completed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        public global::System.DateTimeOffset? CompletedAt { get; set; }
+        public int? CompletedAt { get; set; }
 
         /// <summary>
         /// Details on why the run is incomplete. Will be `null` if the run is not incomplete.
@@ -290,7 +284,7 @@ namespace tryAGI.OpenAI
 #endif
         public RunObject(
             string id,
-            global::System.DateTimeOffset createdAt,
+            int createdAt,
             string threadId,
             string assistantId,
             global::tryAGI.OpenAI.RunObjectStatus status,
@@ -304,11 +298,11 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RunObjectObject @object,
             global::tryAGI.OpenAI.RunObjectRequiredAction? requiredAction,
             global::tryAGI.OpenAI.RunObjectLastError? lastError,
-            global::System.DateTimeOffset? expiresAt,
-            global::System.DateTimeOffset? startedAt,
-            global::System.DateTimeOffset? cancelledAt,
-            global::System.DateTimeOffset? failedAt,
-            global::System.DateTimeOffset? completedAt,
+            int? expiresAt,
+            int? startedAt,
+            int? cancelledAt,
+            int? failedAt,
+            int? completedAt,
             global::tryAGI.OpenAI.RunObjectIncompleteDetails? incompleteDetails,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::tryAGI.OpenAI.RunCompletionUsageVariant1? usage,

@@ -1050,6 +1050,7 @@
           },
           "server_url": {
             "type": "string",
+            "format": "uri",
             "description": "The URL for the MCP server. One of `server_url` or `connector_id` must be\nprovided.\n"
           },
           "connector_id": {
@@ -2065,6 +2066,7 @@
                 },
                 "image_url": {
                   "type": "string",
+                  "format": "uri",
                   "description": "Base64-encoded image bytes (for `input_image`) as a data URI. For example `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA...`. Supported formats are PNG and JPEG."
                 },
                 "detail": {
@@ -3267,12 +3269,12 @@
           },
           "start": {
             "type": "number",
-            "format": "float",
+            "format": "double",
             "description": "Start time of the segment in seconds."
           },
           "end": {
             "type": "number",
-            "format": "float",
+            "format": "double",
             "description": "End time of the segment in seconds."
           }
         },
@@ -5299,6 +5301,7 @@
               },
               "expires_at": {
                 "type": "integer",
+                "format": "unixtime",
                 "description": "Timestamp for when the token expires. Currently, all tokens expire\nafter one minute.\n"
               }
             },
@@ -5624,6 +5627,7 @@
           },
           "seconds": {
             "type": "number",
+            "format": "double",
             "description": "Duration of the input audio in seconds."
           }
         },

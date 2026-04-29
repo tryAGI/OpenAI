@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         /// When the role was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        public long? CreatedAt { get; set; }
+        public int? CreatedAt { get; set; }
 
         /// <summary>
         /// When the role was last updated.
@@ -131,7 +131,7 @@ namespace tryAGI.OpenAI
             string resourceType,
             bool predefinedRole,
             string? description,
-            long? createdAt,
+            int? createdAt,
             long? updatedAt,
             string? createdBy,
             object? createdByUserObj,

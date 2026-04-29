@@ -28,16 +28,14 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) for when the file was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
+        public required int CreatedAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the file will expire.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
-        public global::System.DateTimeOffset? ExpiresAt { get; set; }
+        public int? ExpiresAt { get; set; }
 
         /// <summary>
         /// The name of the file.
@@ -115,11 +113,11 @@ namespace tryAGI.OpenAI
         public OpenAIFile(
             string id,
             long bytes,
-            global::System.DateTimeOffset createdAt,
+            int createdAt,
             string filename,
             global::tryAGI.OpenAI.OpenAIFilePurpose purpose,
             global::tryAGI.OpenAI.OpenAIFileStatus status,
-            global::System.DateTimeOffset? expiresAt,
+            int? expiresAt,
             global::tryAGI.OpenAI.OpenAIFileObject @object)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

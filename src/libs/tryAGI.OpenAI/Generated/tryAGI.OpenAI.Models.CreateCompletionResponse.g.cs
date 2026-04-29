@@ -26,9 +26,8 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) of when the completion was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset Created { get; set; }
+        public required int Created { get; set; }
 
         /// <summary>
         /// The model used for completion.
@@ -94,7 +93,7 @@ namespace tryAGI.OpenAI
         public CreateCompletionResponse(
             string id,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateCompletionResponseChoice> choices,
-            global::System.DateTimeOffset created,
+            int created,
             string model,
             string? systemFingerprint,
             global::tryAGI.OpenAI.CreateCompletionResponseObject @object,

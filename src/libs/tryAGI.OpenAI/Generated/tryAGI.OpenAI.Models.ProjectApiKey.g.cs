@@ -33,17 +33,15 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) of when the API key was created
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
+        public required int CreatedAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the API key was last used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_used_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset LastUsedAt { get; set; }
+        public required int LastUsedAt { get; set; }
 
         /// <summary>
         /// The identifier, which can be referenced in API endpoints
@@ -93,8 +91,8 @@ namespace tryAGI.OpenAI
         public ProjectApiKey(
             string redactedValue,
             string name,
-            global::System.DateTimeOffset createdAt,
-            global::System.DateTimeOffset lastUsedAt,
+            int createdAt,
+            int lastUsedAt,
             string id,
             global::tryAGI.OpenAI.ProjectApiKeyOwner owner,
             global::tryAGI.OpenAI.ProjectApiKeyObject @object)
