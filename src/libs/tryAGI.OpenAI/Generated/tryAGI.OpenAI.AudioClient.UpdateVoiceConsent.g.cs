@@ -140,7 +140,7 @@ namespace tryAGI.OpenAI
                 PrepareUpdateVoiceConsentRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    consentId: consentId,
+                    consentId: consentId!,
                     request: request);
 
                 return __httpRequest;

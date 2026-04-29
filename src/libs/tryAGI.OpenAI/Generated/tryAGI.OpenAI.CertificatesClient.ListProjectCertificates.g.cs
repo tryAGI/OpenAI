@@ -148,7 +148,7 @@ namespace tryAGI.OpenAI
                 PrepareListProjectCertificatesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
+                    projectId: projectId!,
                     limit: limit,
                     after: after,
                     order: order);

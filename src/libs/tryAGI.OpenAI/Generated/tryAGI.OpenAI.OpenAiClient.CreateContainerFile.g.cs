@@ -140,7 +140,7 @@ namespace tryAGI.OpenAI
                 PrepareCreateContainerFileRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    containerId: containerId,
+                    containerId: containerId!,
                     request: request);
 
                 return __httpRequest;

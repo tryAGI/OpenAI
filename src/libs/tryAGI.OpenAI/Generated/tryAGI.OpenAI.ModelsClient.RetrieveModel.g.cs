@@ -126,7 +126,7 @@ namespace tryAGI.OpenAI
                 PrepareRetrieveModelRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    model: model);
+                    model: model!);
 
                 return __httpRequest;
             }

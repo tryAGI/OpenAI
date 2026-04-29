@@ -16,6 +16,7 @@ dnx tryAGI.OpenAI.CLI auth show
 ## Detected auth schemes
 
 - HTTP `bearer`
+- HTTP `bearer`
 
 ## For agents
 

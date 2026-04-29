@@ -126,7 +126,7 @@ namespace tryAGI.OpenAI
                 PrepareRetrieveAConversationRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    conversationId: conversationId);
+                    conversationId: conversationId!);
 
                 return __httpRequest;
             }

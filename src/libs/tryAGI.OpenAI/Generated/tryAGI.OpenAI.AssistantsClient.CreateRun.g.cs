@@ -146,7 +146,7 @@ namespace tryAGI.OpenAI
                 PrepareCreateRunRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    threadId: threadId,
+                    threadId: threadId!,
                     include: include,
                     request: request);
 

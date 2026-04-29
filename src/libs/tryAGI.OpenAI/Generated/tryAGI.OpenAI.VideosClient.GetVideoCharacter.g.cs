@@ -126,7 +126,7 @@ namespace tryAGI.OpenAI
                 PrepareGetVideoCharacterRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    characterId: characterId);
+                    characterId: characterId!);
 
                 return __httpRequest;
             }

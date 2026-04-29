@@ -148,7 +148,7 @@ namespace tryAGI.OpenAI
                 PrepareListSkillVersionsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    skillId: skillId,
+                    skillId: skillId!,
                     limit: limit,
                     order: order,
                     after: after);

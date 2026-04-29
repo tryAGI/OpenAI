@@ -129,8 +129,8 @@ namespace tryAGI.OpenAI
                 PrepareCancelEvalRunRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    evalId: evalId,
-                    runId: runId);
+                    evalId: evalId!,
+                    runId: runId!);
 
                 return __httpRequest;
             }

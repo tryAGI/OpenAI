@@ -148,7 +148,7 @@ namespace tryAGI.OpenAI
                 PrepareCreateItemsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    conversationId: conversationId,
+                    conversationId: conversationId!,
                     include: include,
                     request: request);
 

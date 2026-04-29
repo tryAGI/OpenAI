@@ -154,7 +154,7 @@ namespace tryAGI.OpenAI
                 PrepareGetEvalRunsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    evalId: evalId,
+                    evalId: evalId!,
                     after: after,
                     limit: limit,
                     order: order,

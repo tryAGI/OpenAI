@@ -140,7 +140,7 @@ namespace tryAGI.OpenAI
                 PrepareUpdateSkillDefaultVersionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    skillId: skillId,
+                    skillId: skillId!,
                     request: request);
 
                 return __httpRequest;

@@ -154,7 +154,7 @@ namespace tryAGI.OpenAI
                 PrepareListRunsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    threadId: threadId,
+                    threadId: threadId!,
                     limit: limit,
                     order: order,
                     after: after,

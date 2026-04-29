@@ -149,8 +149,8 @@ namespace tryAGI.OpenAI
                 PrepareListProjectGroupRoleAssignmentsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
-                    groupId: groupId,
+                    projectId: projectId!,
+                    groupId: groupId!,
                     limit: limit,
                     after: after,
                     order: order);

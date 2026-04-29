@@ -149,7 +149,7 @@ namespace tryAGI.OpenAI
                 PrepareListContainerFilesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    containerId: containerId,
+                    containerId: containerId!,
                     limit: limit,
                     order: order,
                     after: after);

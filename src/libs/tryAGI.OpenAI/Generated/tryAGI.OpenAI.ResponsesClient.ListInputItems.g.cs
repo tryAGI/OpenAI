@@ -152,7 +152,7 @@ namespace tryAGI.OpenAI
                 PrepareListInputItemsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    responseId: responseId,
+                    responseId: responseId!,
                     limit: limit,
                     order: order,
                     after: after,

@@ -120,7 +120,7 @@ namespace tryAGI.OpenAI
                 PrepareDeleteAContainerRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    containerId: containerId);
+                    containerId: containerId!);
 
                 return __httpRequest;
             }

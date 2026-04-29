@@ -133,8 +133,8 @@ namespace tryAGI.OpenAI
                 PrepareGetSkillVersionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    skillId: skillId,
-                    version: version);
+                    skillId: skillId!,
+                    version: version!);
 
                 return __httpRequest;
             }

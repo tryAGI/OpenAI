@@ -142,9 +142,9 @@ namespace tryAGI.OpenAI
                 PrepareRetrieveRunStepRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    threadId: threadId,
-                    runId: runId,
-                    stepId: stepId,
+                    threadId: threadId!,
+                    runId: runId!,
+                    stepId: stepId!,
                     include: include);
 
                 return __httpRequest;

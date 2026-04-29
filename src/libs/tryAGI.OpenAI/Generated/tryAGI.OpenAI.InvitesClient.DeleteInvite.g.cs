@@ -124,7 +124,7 @@ namespace tryAGI.OpenAI
                 PrepareDeleteInviteRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    inviteId: inviteId);
+                    inviteId: inviteId!);
 
                 return __httpRequest;
             }

@@ -125,7 +125,7 @@ namespace tryAGI.OpenAI
                 PrepareGetChatCompletionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    completionId: completionId);
+                    completionId: completionId!);
 
                 return __httpRequest;
             }

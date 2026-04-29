@@ -134,8 +134,8 @@ namespace tryAGI.OpenAI
                 PrepareDeleteCheckpointPermissionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    fineTunedModelCheckpoint: fineTunedModelCheckpoint,
-                    permissionId: permissionId);
+                    fineTunedModelCheckpoint: fineTunedModelCheckpoint!,
+                    permissionId: permissionId!);
 
                 return __httpRequest;
             }

@@ -13912,6 +13912,8 @@ paths:
               }
   /organization/admin_api_keys:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: List organization API keys
       operationId: admin-api-keys-list
       description: Retrieve a paginated list of organization admin API keys.
@@ -13986,6 +13988,8 @@ paths:
               "has_more": false
             }
     post:
+      security:
+        - AdminApiKeyAuth: []
       summary: Create an organization admin API key
       operationId: admin-api-keys-create
       description: Create a new admin-level API key for the organization.
@@ -14041,6 +14045,8 @@ paths:
             }
   /organization/admin_api_keys/{key_id}:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: Retrieve a single organization API key
       operationId: admin-api-keys-get
       description: Get details for a specific organization API key by its ID.
@@ -14086,6 +14092,8 @@ paths:
               }
             }
     delete:
+      security:
+        - AdminApiKeyAuth: []
       summary: Delete an organization admin API key
       operationId: admin-api-keys-delete
       description: Delete the specified admin API key.
@@ -14131,6 +14139,8 @@ paths:
             }
   /organization/audit_logs:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: List user actions and configuration changes within this organization.
       operationId: list-audit-logs
       tags:
@@ -14318,6 +14328,8 @@ paths:
             }
   /organization/certificates:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: List uploaded certificates for this organization.
       operationId: listOrganizationCertificates
       tags:
@@ -14389,6 +14401,8 @@ paths:
               "has_more": false
             }
     post:
+      security:
+        - AdminApiKeyAuth: []
       summary: >
         Upload a certificate to the organization. This does **not**
         automatically activate the certificate.
@@ -14438,6 +14452,8 @@ paths:
             }
   /organization/certificates/activate:
     post:
+      security:
+        - AdminApiKeyAuth: []
       summary: >
         Activate certificates at the organization level.
 
@@ -14507,6 +14523,8 @@ paths:
             }
   /organization/certificates/deactivate:
     post:
+      security:
+        - AdminApiKeyAuth: []
       summary: >
         Deactivate certificates at the organization level.
 
@@ -14576,6 +14594,8 @@ paths:
             }
   /organization/certificates/{certificate_id}:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: |
         Get a certificate that has been uploaded to the organization.
 
@@ -14634,6 +14654,8 @@ paths:
               }
             }
     post:
+      security:
+        - AdminApiKeyAuth: []
       summary: |
         Modify a certificate. Note that only the name can be modified.
       operationId: modifyCertificate
@@ -14688,6 +14710,8 @@ paths:
               }
             }
     delete:
+      security:
+        - AdminApiKeyAuth: []
       summary: |
         Delete a certificate from the organization.
 
@@ -14726,6 +14750,8 @@ paths:
             }
   /organization/costs:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: Get costs details for the organization.
       operationId: usage-costs
       tags:
@@ -14837,6 +14863,8 @@ paths:
             }
   /organization/groups:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: Lists all groups in the organization.
       operationId: list-groups
       tags:
@@ -14907,6 +14935,8 @@ paths:
                 "next": null
             }
     post:
+      security:
+        - AdminApiKeyAuth: []
       summary: Creates a new group in the organization.
       operationId: create-group
       tags:
@@ -14947,6 +14977,8 @@ paths:
             }
   /organization/groups/{group_id}:
     post:
+      security:
+        - AdminApiKeyAuth: []
       summary: Updates a group's information.
       operationId: update-group
       tags:
@@ -14994,6 +15026,8 @@ paths:
                 "is_scim_managed": false
             }
     delete:
+      security:
+        - AdminApiKeyAuth: []
       summary: Deletes a group from the organization.
       operationId: delete-group
       tags:
@@ -15031,6 +15065,8 @@ paths:
             }
   /organization/groups/{group_id}/roles:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: >-
         Lists the organization roles assigned to a group within the
         organization.
@@ -15118,6 +15154,8 @@ paths:
                 "next": null
             }
     post:
+      security:
+        - AdminApiKeyAuth: []
       summary: Assigns an organization role to a group within the organization.
       operationId: assign-group-role
       tags:
@@ -15182,6 +15220,8 @@ paths:
             }
   /organization/groups/{group_id}/roles/{role_id}:
     delete:
+      security:
+        - AdminApiKeyAuth: []
       summary: Unassigns an organization role from a group within the organization.
       operationId: unassign-group-role
       tags:
@@ -15224,6 +15264,8 @@ paths:
             }
   /organization/groups/{group_id}/users:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: Lists the users assigned to a group.
       operationId: list-group-users
       tags:
@@ -15299,6 +15341,8 @@ paths:
                 "next": null
             }
     post:
+      security:
+        - AdminApiKeyAuth: []
       summary: Adds a user to a group.
       operationId: add-group-user
       tags:
@@ -15346,6 +15390,8 @@ paths:
             }
   /organization/groups/{group_id}/users/{user_id}:
     delete:
+      security:
+        - AdminApiKeyAuth: []
       summary: Removes a user from a group.
       operationId: remove-group-user
       tags:
@@ -15388,6 +15434,8 @@ paths:
             }
   /organization/invites:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: Returns a list of invites in the organization.
       operationId: list-invites
       tags:
@@ -15450,6 +15498,8 @@ paths:
               "has_more": false
             }
     post:
+      security:
+        - AdminApiKeyAuth: []
       summary: >-
         Create an invite for a user to the organization. The invite must be
         accepted by the user before they have access to the organization.
@@ -15516,6 +15566,8 @@ paths:
             }
   /organization/invites/{invite_id}:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: Retrieves an invite.
       operationId: retrieve-invite
       tags:
@@ -15555,6 +15607,8 @@ paths:
                 "accepted_at": 1711471533
             }
     delete:
+      security:
+        - AdminApiKeyAuth: []
       summary: >-
         Delete an invite. If the invite has already been accepted, it cannot be
         deleted.
@@ -15595,6 +15649,8 @@ paths:
     get:
       summary: Returns a list of projects.
       operationId: list-projects
+      security:
+        - AdminApiKeyAuth: []
       tags:
         - Projects
       parameters:
@@ -15665,6 +15721,8 @@ paths:
         Create a new project in the organization. Projects can be created and
         archived, but cannot be deleted.
       operationId: create-project
+      security:
+        - AdminApiKeyAuth: []
       tags:
         - Projects
       requestBody:
@@ -15706,6 +15764,8 @@ paths:
     get:
       summary: Retrieves a project.
       operationId: retrieve-project
+      security:
+        - AdminApiKeyAuth: []
       tags:
         - Projects
       parameters:
@@ -15744,6 +15804,8 @@ paths:
     post:
       summary: Modifies a project in the organization.
       operationId: modify-project
+      security:
+        - AdminApiKeyAuth: []
       tags:
         - Projects
       parameters:
@@ -15789,6 +15851,8 @@ paths:
           response: ''
   /organization/projects/{project_id}/api_keys:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: Returns a list of API keys in the project.
       operationId: list-project-api-keys
       tags:
@@ -15867,6 +15931,8 @@ paths:
             }
   /organization/projects/{project_id}/api_keys/{key_id}:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: Retrieves an API key in the project.
       operationId: retrieve-project-api-key
       tags:
@@ -15923,6 +15989,8 @@ paths:
                 }
             }
     delete:
+      security:
+        - AdminApiKeyAuth: []
       summary: >
         Deletes an API key from the project.
 
@@ -15983,6 +16051,8 @@ paths:
         Archives a project in the organization. Archived projects cannot be used
         or updated.
       operationId: archive-project
+      security:
+        - AdminApiKeyAuth: []
       tags:
         - Projects
       parameters:
@@ -16020,6 +16090,8 @@ paths:
             }
   /organization/projects/{project_id}/certificates:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: List certificates for this project.
       operationId: listProjectCertificates
       tags:
@@ -16101,6 +16173,8 @@ paths:
             }
   /organization/projects/{project_id}/certificates/activate:
     post:
+      security:
+        - AdminApiKeyAuth: []
       summary: >
         Activate certificates at the project level.
 
@@ -16178,6 +16252,8 @@ paths:
             }
   /organization/projects/{project_id}/certificates/deactivate:
     post:
+      security:
+        - AdminApiKeyAuth: []
       summary: |
         Deactivate certificates at the project level. You can atomically and 
         idempotently deactivate up to 10 certificates at a time.
@@ -16252,6 +16328,8 @@ paths:
             }
   /organization/projects/{project_id}/groups:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: Lists the groups that have access to a project.
       operationId: list-project-groups
       tags:
@@ -16324,6 +16402,8 @@ paths:
                 "next": null
             }
     post:
+      security:
+        - AdminApiKeyAuth: []
       summary: Grants a group access to a project.
       operationId: add-project-group
       tags:
@@ -16374,6 +16454,8 @@ paths:
             }
   /organization/projects/{project_id}/groups/{group_id}:
     delete:
+      security:
+        - AdminApiKeyAuth: []
       summary: Revokes a group's access to a project.
       operationId: remove-project-group
       tags:
@@ -16416,6 +16498,8 @@ paths:
             }
   /organization/projects/{project_id}/rate_limits:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: Returns the rate limits per model for a project.
       operationId: list-project-rate-limits
       tags:
@@ -16498,6 +16582,8 @@ paths:
             }
   /organization/projects/{project_id}/rate_limits/{rate_limit_id}:
     post:
+      security:
+        - AdminApiKeyAuth: []
       summary: Updates a project rate limit.
       operationId: update-project-rate-limits
       tags:
@@ -16565,6 +16651,8 @@ paths:
             }
   /organization/projects/{project_id}/service_accounts:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: Returns a list of service accounts in the project.
       operationId: list-project-service-accounts
       tags:
@@ -16636,6 +16724,8 @@ paths:
                 "has_more": false
             }
     post:
+      security:
+        - AdminApiKeyAuth: []
       summary: >-
         Creates a new service account in the project. This also returns an
         unredacted API key for the service account.
@@ -16700,6 +16790,8 @@ paths:
             }
   /organization/projects/{project_id}/service_accounts/{service_account_id}:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: Retrieves a service account in the project.
       operationId: retrieve-project-service-account
       tags:
@@ -16744,6 +16836,8 @@ paths:
                 "created_at": 1711471533
             }
     delete:
+      security:
+        - AdminApiKeyAuth: []
       summary: >
         Deletes a service account from the project.
 
@@ -16794,6 +16888,8 @@ paths:
             }
   /organization/projects/{project_id}/users:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: Returns a list of users in the project.
       operationId: list-project-users
       tags:
@@ -16866,6 +16962,8 @@ paths:
                 "has_more": false
             }
     post:
+      security:
+        - AdminApiKeyAuth: []
       summary: >-
         Adds a user to the project. Users must already be members of the
         organization to be added to a project.
@@ -16923,6 +17021,8 @@ paths:
             }
   /organization/projects/{project_id}/users/{user_id}:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: Retrieves a user in the project.
       operationId: retrieve-project-user
       tags:
@@ -16968,6 +17068,8 @@ paths:
                 "added_at": 1711471533
             }
     post:
+      security:
+        - AdminApiKeyAuth: []
       summary: Modifies a user's role in the project.
       operationId: modify-project-user
       tags:
@@ -17029,6 +17131,8 @@ paths:
                 "added_at": 1711471533
             }
     delete:
+      security:
+        - AdminApiKeyAuth: []
       summary: >
         Deletes a user from the project.
 
@@ -17085,6 +17189,8 @@ paths:
             }
   /organization/roles:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: Lists the roles configured for the organization.
       operationId: list-roles
       tags:
@@ -17154,6 +17260,8 @@ paths:
                 "next": null
             }
     post:
+      security:
+        - AdminApiKeyAuth: []
       summary: Creates a custom role for the organization.
       operationId: create-role
       tags:
@@ -17204,6 +17312,8 @@ paths:
             }
   /organization/roles/{role_id}:
     post:
+      security:
+        - AdminApiKeyAuth: []
       summary: Updates an existing organization role.
       operationId: update-role
       tags:
@@ -17261,6 +17371,8 @@ paths:
                 "predefined_role": false
             }
     delete:
+      security:
+        - AdminApiKeyAuth: []
       summary: Deletes a custom role from the organization.
       operationId: delete-role
       tags:
@@ -17297,6 +17409,8 @@ paths:
             }
   /organization/usage/audio_speeches:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: Get audio speeches usage details for the organization.
       operationId: usage-audio-speeches
       tags:
@@ -17438,6 +17552,8 @@ paths:
             }
   /organization/usage/audio_transcriptions:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: Get audio transcriptions usage details for the organization.
       operationId: usage-audio-transcriptions
       tags:
@@ -17579,6 +17695,8 @@ paths:
             }
   /organization/usage/code_interpreter_sessions:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: Get code interpreter sessions usage details for the organization.
       operationId: usage-code-interpreter-sessions
       tags:
@@ -17688,6 +17806,8 @@ paths:
             }
   /organization/usage/completions:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: Get completions usage details for the organization.
       operationId: usage-completions
       tags:
@@ -17845,6 +17965,8 @@ paths:
             }
   /organization/usage/embeddings:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: Get embeddings usage details for the organization.
       operationId: usage-embeddings
       tags:
@@ -17986,6 +18108,8 @@ paths:
             }
   /organization/usage/images:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: Get images usage details for the organization.
       operationId: usage-images
       tags:
@@ -18163,6 +18287,8 @@ paths:
             }
   /organization/usage/moderations:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: Get moderations usage details for the organization.
       operationId: usage-moderations
       tags:
@@ -18304,6 +18430,8 @@ paths:
             }
   /organization/usage/vector_stores:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: Get vector stores usage details for the organization.
       operationId: usage-vector-stores
       tags:
@@ -18413,6 +18541,8 @@ paths:
             }
   /organization/users:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: Lists all of the users in the organization.
       operationId: list-users
       tags:
@@ -18482,6 +18612,8 @@ paths:
             }
   /organization/users/{user_id}:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: Retrieves a user by their identifier.
       operationId: retrieve-user
       tags:
@@ -18519,6 +18651,8 @@ paths:
                 "added_at": 1711471533
             }
     post:
+      security:
+        - AdminApiKeyAuth: []
       summary: Modifies a user's role in the organization.
       operationId: modify-user
       tags:
@@ -18567,6 +18701,8 @@ paths:
                 "added_at": 1711471533
             }
     delete:
+      security:
+        - AdminApiKeyAuth: []
       summary: Deletes a user from the organization.
       operationId: delete-user
       tags:
@@ -18603,6 +18739,8 @@ paths:
             }
   /organization/users/{user_id}/roles:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: Lists the organization roles assigned to a user within the organization.
       operationId: list-user-role-assignments
       tags:
@@ -18685,6 +18823,8 @@ paths:
                 "next": null
             }
     post:
+      security:
+        - AdminApiKeyAuth: []
       summary: Assigns an organization role to a user within the organization.
       operationId: assign-user-role
       tags:
@@ -18749,6 +18889,8 @@ paths:
             }
   /organization/users/{user_id}/roles/{role_id}:
     delete:
+      security:
+        - AdminApiKeyAuth: []
       summary: Unassigns an organization role from a user within the organization.
       operationId: unassign-user-role
       tags:
@@ -18791,6 +18933,8 @@ paths:
             }
   /projects/{project_id}/groups/{group_id}/roles:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: Lists the project roles assigned to a group within a project.
       operationId: list-project-group-role-assignments
       tags:
@@ -18880,6 +19024,8 @@ paths:
                 "next": null
             }
     post:
+      security:
+        - AdminApiKeyAuth: []
       summary: Assigns a project role to a group within a project.
       operationId: assign-project-group-role
       tags:
@@ -18950,6 +19096,8 @@ paths:
             }
   /projects/{project_id}/groups/{group_id}/roles/{role_id}:
     delete:
+      security:
+        - AdminApiKeyAuth: []
       summary: Unassigns a project role from a group within a project.
       operationId: unassign-project-group-role
       tags:
@@ -18998,6 +19146,8 @@ paths:
             }
   /projects/{project_id}/roles:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: Lists the roles configured for a project.
       operationId: list-project-roles
       tags:
@@ -19074,6 +19224,8 @@ paths:
                 "next": null
             }
     post:
+      security:
+        - AdminApiKeyAuth: []
       summary: Creates a custom role for a project.
       operationId: create-project-role
       tags:
@@ -19132,6 +19284,8 @@ paths:
             }
   /projects/{project_id}/roles/{role_id}:
     post:
+      security:
+        - AdminApiKeyAuth: []
       summary: Updates an existing project role.
       operationId: update-project-role
       tags:
@@ -19196,6 +19350,8 @@ paths:
                 "predefined_role": false
             }
     delete:
+      security:
+        - AdminApiKeyAuth: []
       summary: Deletes a custom role from a project.
       operationId: delete-project-role
       tags:
@@ -19239,6 +19395,8 @@ paths:
             }
   /projects/{project_id}/users/{user_id}/roles:
     get:
+      security:
+        - AdminApiKeyAuth: []
       summary: Lists the project roles assigned to a user within a project.
       operationId: list-project-user-role-assignments
       tags:
@@ -19328,6 +19486,8 @@ paths:
                 "next": null
             }
     post:
+      security:
+        - AdminApiKeyAuth: []
       summary: Assigns a project role to a user within a project.
       operationId: assign-project-user-role
       tags:
@@ -19399,6 +19559,8 @@ paths:
             }
   /projects/{project_id}/users/{user_id}/roles/{role_id}:
     delete:
+      security:
+        - AdminApiKeyAuth: []
       summary: Unassigns a project role from a user within a project.
       operationId: unassign-project-user-role
       tags:
@@ -73198,6 +73360,9 @@ components:
       description: 'An x/y coordinate pair, e.g. `{ x: 100, y: 200 }`.'
   securitySchemes:
     ApiKeyAuth:
+      type: http
+      scheme: bearer
+    AdminApiKeyAuth:
       type: http
       scheme: bearer
 x-oaiMeta:

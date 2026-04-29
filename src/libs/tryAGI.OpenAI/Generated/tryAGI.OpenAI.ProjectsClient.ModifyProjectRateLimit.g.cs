@@ -143,8 +143,8 @@ namespace tryAGI.OpenAI
                 PrepareModifyProjectRateLimitRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
-                    rateLimitId: rateLimitId,
+                    projectId: projectId!,
+                    rateLimitId: rateLimitId!,
                     request: request);
 
                 return __httpRequest;

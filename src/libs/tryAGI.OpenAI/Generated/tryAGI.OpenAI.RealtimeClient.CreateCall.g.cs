@@ -142,13 +142,13 @@ namespace tryAGI.OpenAI
             }
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.Sdp}"),
+                                content: new global::System.Net.Http.StringContent(request.Sdp ?? string.Empty),
                                 name: "\"sdp\"");
                             if (request.Session != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Session}"),
+                                    content: new global::System.Net.Http.StringContent(request.Session.ToJson(JsonSerializerContext)),
                                     name: "\"session\"");
                             }
                             __httpRequest.Content = __httpRequestContent;

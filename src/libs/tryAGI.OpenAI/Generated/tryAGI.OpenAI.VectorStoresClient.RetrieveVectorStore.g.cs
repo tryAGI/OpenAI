@@ -124,7 +124,7 @@ namespace tryAGI.OpenAI
                 PrepareRetrieveVectorStoreRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    vectorStoreId: vectorStoreId);
+                    vectorStoreId: vectorStoreId!);
 
                 return __httpRequest;
             }

@@ -127,7 +127,7 @@ namespace tryAGI.OpenAI
                 PrepareRetrieveAdminApiKeyRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    keyId: keyId);
+                    keyId: keyId!);
 
                 return __httpRequest;
             }

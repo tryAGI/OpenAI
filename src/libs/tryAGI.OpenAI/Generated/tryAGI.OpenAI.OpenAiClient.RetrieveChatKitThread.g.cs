@@ -126,7 +126,7 @@ namespace tryAGI.OpenAI
                 PrepareRetrieveChatKitThreadRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    threadId: threadId);
+                    threadId: threadId!);
 
                 return __httpRequest;
             }

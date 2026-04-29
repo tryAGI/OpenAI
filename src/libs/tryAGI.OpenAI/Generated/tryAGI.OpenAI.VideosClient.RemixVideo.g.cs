@@ -125,10 +125,10 @@ namespace tryAGI.OpenAI
             }
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{videoId}"),
+                                content: new global::System.Net.Http.StringContent(videoId ?? string.Empty),
                                 name: "\"video_id\"");
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
+                                content: new global::System.Net.Http.StringContent(request.Prompt ?? string.Empty),
                                 name: "\"prompt\"");
                             __httpRequest.Content = __httpRequestContent;
                 global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.ApplyHeaders(
@@ -142,7 +142,7 @@ namespace tryAGI.OpenAI
                 PrepareRemixVideoRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    videoId: videoId,
+                    videoId: videoId!,
                     request: request);
 
                 return __httpRequest;

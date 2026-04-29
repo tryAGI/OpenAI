@@ -138,7 +138,7 @@ namespace tryAGI.OpenAI
                 PrepareAssignOrganizationRoleToGroupRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    groupId: groupId,
+                    groupId: groupId!,
                     request: request);
 
                 return __httpRequest;

@@ -139,7 +139,7 @@ namespace tryAGI.OpenAI
                 PrepareActivateCertificatesForProjectRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
+                    projectId: projectId!,
                     request: request);
 
                 return __httpRequest;

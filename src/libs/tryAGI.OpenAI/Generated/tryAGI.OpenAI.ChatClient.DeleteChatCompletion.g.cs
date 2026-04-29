@@ -125,7 +125,7 @@ namespace tryAGI.OpenAI
                 PrepareDeleteChatCompletionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    completionId: completionId);
+                    completionId: completionId!);
 
                 return __httpRequest;
             }

@@ -129,8 +129,8 @@ namespace tryAGI.OpenAI
                 PrepareRetrieveProjectServiceAccountRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
-                    serviceAccountId: serviceAccountId);
+                    projectId: projectId!,
+                    serviceAccountId: serviceAccountId!);
 
                 return __httpRequest;
             }

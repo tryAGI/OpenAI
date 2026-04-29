@@ -124,7 +124,7 @@ namespace tryAGI.OpenAI
                 PrepareDeleteUserRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    userId: userId);
+                    userId: userId!);
 
                 return __httpRequest;
             }

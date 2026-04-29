@@ -126,7 +126,7 @@ namespace tryAGI.OpenAI
                 PrepareRetrieveVoiceConsentRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    consentId: consentId);
+                    consentId: consentId!);
 
                 return __httpRequest;
             }

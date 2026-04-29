@@ -144,7 +144,7 @@ namespace tryAGI.OpenAI
                 PrepareListUserOrganizationRoleAssignmentsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    userId: userId,
+                    userId: userId!,
                     limit: limit,
                     after: after,
                     order: order);

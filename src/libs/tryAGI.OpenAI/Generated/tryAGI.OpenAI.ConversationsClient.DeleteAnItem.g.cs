@@ -133,8 +133,8 @@ namespace tryAGI.OpenAI
                 PrepareDeleteAnItemRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    conversationId: conversationId,
-                    itemId: itemId);
+                    conversationId: conversationId!,
+                    itemId: itemId!);
 
                 return __httpRequest;
             }

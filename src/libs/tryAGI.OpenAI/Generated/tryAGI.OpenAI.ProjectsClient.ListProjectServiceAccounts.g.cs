@@ -140,7 +140,7 @@ namespace tryAGI.OpenAI
                 PrepareListProjectServiceAccountsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
+                    projectId: projectId!,
                     limit: limit,
                     after: after);
 

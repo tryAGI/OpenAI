@@ -126,7 +126,7 @@ namespace tryAGI.OpenAI
                 PrepareDeleteAConversationRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    conversationId: conversationId);
+                    conversationId: conversationId!);
 
                 return __httpRequest;
             }

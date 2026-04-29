@@ -138,7 +138,7 @@ namespace tryAGI.OpenAI
                 PrepareModifyCertificateRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    certificateId: certificateId,
+                    certificateId: certificateId!,
                     request: request);
 
                 return __httpRequest;

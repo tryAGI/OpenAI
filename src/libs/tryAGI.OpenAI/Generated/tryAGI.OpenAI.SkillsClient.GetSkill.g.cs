@@ -126,7 +126,7 @@ namespace tryAGI.OpenAI
                 PrepareGetSkillRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    skillId: skillId);
+                    skillId: skillId!);
 
                 return __httpRequest;
             }

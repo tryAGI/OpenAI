@@ -125,7 +125,7 @@ namespace tryAGI.OpenAI
                 PrepareRetrieveContainerRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    containerId: containerId);
+                    containerId: containerId!);
 
                 return __httpRequest;
             }

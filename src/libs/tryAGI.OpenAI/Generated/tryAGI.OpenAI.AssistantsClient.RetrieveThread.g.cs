@@ -124,7 +124,7 @@ namespace tryAGI.OpenAI
                 PrepareRetrieveThreadRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    threadId: threadId);
+                    threadId: threadId!);
 
                 return __httpRequest;
             }
