@@ -121,7 +121,7 @@ namespace tryAGI.OpenAI
                                 content: new global::System.Net.Http.StringContent(request.Video.ToString() ?? string.Empty),
                                 name: "\"video\"");
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
+                                content: new global::System.Net.Http.StringContent(request.Prompt ?? string.Empty),
                                 name: "\"prompt\"");
                             __httpRequest.Content = __httpRequestContent;
                 global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.ApplyHeaders(

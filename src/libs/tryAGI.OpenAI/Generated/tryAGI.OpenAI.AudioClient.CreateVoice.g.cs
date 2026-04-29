@@ -120,9 +120,37 @@ namespace tryAGI.OpenAI
             }
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.Name}"),
+                                content: new global::System.Net.Http.StringContent(request.Name ?? string.Empty),
                                 name: "\"name\"");
                             var __contentAudioSample = new global::System.Net.Http.ByteArrayContent(request.AudioSample ?? global::System.Array.Empty<byte>());
+                            __contentAudioSample.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                request.AudioSamplename is null
+                                    ? "application/octet-stream"
+                                    : (global::System.IO.Path.GetExtension(request.AudioSamplename) ?? string.Empty).ToLowerInvariant() switch
+                                    {
+                                        ".aac" => "audio/aac",
+                                        ".flac" => "audio/flac",
+                                        ".gif" => "image/gif",
+                                        ".jpeg" => "image/jpeg",
+                                        ".jpg" => "image/jpeg",
+                                        ".json" => "application/json",
+                                        ".m4a" => "audio/mp4",
+                                        ".mp3" => "audio/mpeg",
+                                        ".mp4" => "video/mp4",
+                                        ".mpeg" => "audio/mpeg",
+                                        ".mpga" => "audio/mpeg",
+                                        ".oga" => "audio/ogg",
+                                        ".ogg" => "audio/ogg",
+                                        ".opus" => "audio/ogg",
+                                        ".pdf" => "application/pdf",
+                                        ".png" => "image/png",
+                                        ".txt" => "text/plain",
+                                        ".wav" => "audio/wav",
+                                        ".weba" => "audio/webm",
+                                        ".webm" => "video/webm",
+                                        ".webp" => "image/webp",
+                                        _ => "application/octet-stream",
+                                    });
                             __httpRequestContent.Add(
                                 content: __contentAudioSample,
                                 name: "\"audio_sample\"",
@@ -132,7 +160,7 @@ namespace tryAGI.OpenAI
                                 __contentAudioSample.Headers.ContentDisposition.FileNameStar = null;
                             }
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.Consent}"),
+                                content: new global::System.Net.Http.StringContent(request.Consent ?? string.Empty),
                                 name: "\"consent\"");
                             __httpRequest.Content = __httpRequestContent;
                 global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.ApplyHeaders(

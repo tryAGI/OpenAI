@@ -133,7 +133,7 @@ namespace tryAGI.OpenAI
                 PrepareReferCallRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    callId: callId,
+                    callId: callId!,
                     request: request);
 
                 return __httpRequest;

@@ -156,7 +156,7 @@ namespace tryAGI.OpenAI
                 PrepareListChatKitThreadItemsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    threadId: threadId,
+                    threadId: threadId!,
                     limit: limit,
                     order: order,
                     after: after,

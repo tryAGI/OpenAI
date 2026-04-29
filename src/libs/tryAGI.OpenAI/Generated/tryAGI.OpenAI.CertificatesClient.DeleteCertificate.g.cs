@@ -125,7 +125,7 @@ namespace tryAGI.OpenAI
                 PrepareDeleteCertificateRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    certificateId: certificateId);
+                    certificateId: certificateId!);
 
                 return __httpRequest;
             }

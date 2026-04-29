@@ -183,7 +183,7 @@ namespace tryAGI.OpenAI
                 PrepareAudioSpeechesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    startTime: startTime,
+                    startTime: startTime!,
                     endTime: endTime,
                     bucketWidth: bucketWidth,
                     projectIds: projectIds,

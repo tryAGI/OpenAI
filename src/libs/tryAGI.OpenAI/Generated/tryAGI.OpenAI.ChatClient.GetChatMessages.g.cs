@@ -150,7 +150,7 @@ namespace tryAGI.OpenAI
                 PrepareGetChatMessagesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    completionId: completionId,
+                    completionId: completionId!,
                     after: after,
                     limit: limit,
                     order: order);

@@ -144,7 +144,7 @@ namespace tryAGI.OpenAI
                 PrepareCompleteUploadRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    uploadId: uploadId,
+                    uploadId: uploadId!,
                     request: request);
 
                 return __httpRequest;

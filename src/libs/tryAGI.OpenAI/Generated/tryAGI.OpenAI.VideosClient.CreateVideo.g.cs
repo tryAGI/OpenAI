@@ -121,31 +121,31 @@ namespace tryAGI.OpenAI
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(request.Model?.ToString() ?? string.Empty),
+                                    content: new global::System.Net.Http.StringContent(request.Model.ToString() ?? string.Empty),
                                     name: "\"model\"");
                             }
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
+                                content: new global::System.Net.Http.StringContent(request.Prompt ?? string.Empty),
                                 name: "\"prompt\"");
                             if (request.InputReference != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(request.InputReference?.ToString() ?? string.Empty),
+                                    content: new global::System.Net.Http.StringContent(request.InputReference.ToString() ?? string.Empty),
                                     name: "\"input_reference\"");
                             } 
                             if (request.Seconds != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Seconds?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.Seconds).HasValue ? (request.Seconds).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"seconds\"");
                             } 
                             if (request.Size != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Size?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.Size).HasValue ? (request.Size).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"size\"");
                             }
                             __httpRequest.Content = __httpRequestContent;

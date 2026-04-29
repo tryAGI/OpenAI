@@ -118,6 +118,34 @@ namespace tryAGI.OpenAI
             }
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             var __contentImage = new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>());
+                            __contentImage.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                request.Imagename is null
+                                    ? "application/octet-stream"
+                                    : (global::System.IO.Path.GetExtension(request.Imagename) ?? string.Empty).ToLowerInvariant() switch
+                                    {
+                                        ".aac" => "audio/aac",
+                                        ".flac" => "audio/flac",
+                                        ".gif" => "image/gif",
+                                        ".jpeg" => "image/jpeg",
+                                        ".jpg" => "image/jpeg",
+                                        ".json" => "application/json",
+                                        ".m4a" => "audio/mp4",
+                                        ".mp3" => "audio/mpeg",
+                                        ".mp4" => "video/mp4",
+                                        ".mpeg" => "audio/mpeg",
+                                        ".mpga" => "audio/mpeg",
+                                        ".oga" => "audio/ogg",
+                                        ".ogg" => "audio/ogg",
+                                        ".opus" => "audio/ogg",
+                                        ".pdf" => "application/pdf",
+                                        ".png" => "image/png",
+                                        ".txt" => "text/plain",
+                                        ".wav" => "audio/wav",
+                                        ".weba" => "audio/webm",
+                                        ".webm" => "video/webm",
+                                        ".webp" => "image/webp",
+                                        _ => "application/octet-stream",
+                                    });
                             __httpRequestContent.Add(
                                 content: __contentImage,
                                 name: "\"image\"",
@@ -130,35 +158,35 @@ namespace tryAGI.OpenAI
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(request.Model?.ToString() ?? string.Empty),
+                                    content: new global::System.Net.Http.StringContent(request.Model.ToString() ?? string.Empty),
                                     name: "\"model\"");
                             } 
                             if (request.N != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.N}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.N, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"n\"");
                             } 
                             if (request.ResponseFormat != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.ResponseFormat).HasValue ? (request.ResponseFormat).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"response_format\"");
                             } 
                             if (request.Size != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Size?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.Size).HasValue ? (request.Size).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"size\"");
                             } 
                             if (request.User != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.User}"),
+                                    content: new global::System.Net.Http.StringContent(request.User ?? string.Empty),
                                     name: "\"user\"");
                             }
                             __httpRequest.Content = __httpRequestContent;

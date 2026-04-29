@@ -138,7 +138,7 @@ namespace tryAGI.OpenAI
                 PrepareCreateMessageRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    threadId: threadId,
+                    threadId: threadId!,
                     request: request);
 
                 return __httpRequest;

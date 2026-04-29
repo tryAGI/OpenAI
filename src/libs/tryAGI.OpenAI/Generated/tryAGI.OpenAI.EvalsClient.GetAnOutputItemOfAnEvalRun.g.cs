@@ -134,9 +134,9 @@ namespace tryAGI.OpenAI
                 PrepareGetAnOutputItemOfAnEvalRunRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    evalId: evalId,
-                    runId: runId,
-                    outputItemId: outputItemId);
+                    evalId: evalId!,
+                    runId: runId!,
+                    outputItemId: outputItemId!);
 
                 return __httpRequest;
             }

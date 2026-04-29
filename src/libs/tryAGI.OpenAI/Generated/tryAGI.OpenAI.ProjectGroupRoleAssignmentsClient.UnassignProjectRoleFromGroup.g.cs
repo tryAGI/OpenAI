@@ -134,9 +134,9 @@ namespace tryAGI.OpenAI
                 PrepareUnassignProjectRoleFromGroupRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
-                    groupId: groupId,
-                    roleId: roleId);
+                    projectId: projectId!,
+                    groupId: groupId!,
+                    roleId: roleId!);
 
                 return __httpRequest;
             }

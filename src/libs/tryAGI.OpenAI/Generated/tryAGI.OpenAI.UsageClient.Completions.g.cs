@@ -189,7 +189,7 @@ namespace tryAGI.OpenAI
                 PrepareCompletionsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    startTime: startTime,
+                    startTime: startTime!,
                     endTime: endTime,
                     bucketWidth: bucketWidth,
                     projectIds: projectIds,

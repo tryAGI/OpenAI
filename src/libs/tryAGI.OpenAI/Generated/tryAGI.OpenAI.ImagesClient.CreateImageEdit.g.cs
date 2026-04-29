@@ -144,12 +144,40 @@ namespace tryAGI.OpenAI
                                 content: new global::System.Net.Http.StringContent(request.Image.ToString() ?? string.Empty),
                                 name: "\"image\"");
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
+                                content: new global::System.Net.Http.StringContent(request.Prompt ?? string.Empty),
                                 name: "\"prompt\"");
                             if (request.Mask != default)
                             {
 
                                 var __contentMask = new global::System.Net.Http.ByteArrayContent(request.Mask ?? global::System.Array.Empty<byte>());
+                                __contentMask.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    request.Maskname is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(request.Maskname) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
                                 __httpRequestContent.Add(
                                     content: __contentMask,
                                     name: "\"mask\"",
@@ -163,84 +191,84 @@ namespace tryAGI.OpenAI
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Background?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.Background).HasValue ? (request.Background).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"background\"");
                             } 
                             if (request.Model != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(request.Model?.ToString() ?? string.Empty),
+                                    content: new global::System.Net.Http.StringContent(request.Model.ToString() ?? string.Empty),
                                     name: "\"model\"");
                             } 
                             if (request.N != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.N}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.N, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"n\"");
                             } 
                             if (request.Size != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Size?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.Size).HasValue ? (request.Size).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"size\"");
                             } 
                             if (request.ResponseFormat != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.ResponseFormat).HasValue ? (request.ResponseFormat).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"response_format\"");
                             } 
                             if (request.OutputFormat != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.OutputFormat?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.OutputFormat).HasValue ? (request.OutputFormat).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"output_format\"");
                             } 
                             if (request.OutputCompression != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.OutputCompression}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.OutputCompression, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"output_compression\"");
                             } 
                             if (request.User != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.User}"),
+                                    content: new global::System.Net.Http.StringContent(request.User ?? string.Empty),
                                     name: "\"user\"");
                             } 
                             if (request.InputFidelity != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.InputFidelity}"),
+                                    content: new global::System.Net.Http.StringContent(request.InputFidelity.ToString() ?? string.Empty),
                                     name: "\"input_fidelity\"");
                             } 
                             if (request.Stream != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Stream}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.Stream, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"stream\"");
                             } 
                             if (request.PartialImages != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.PartialImages}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.PartialImages, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"partial_images\"");
                             } 
                             if (request.Quality != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Quality?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.Quality).HasValue ? (request.Quality).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"quality\"");
                             }
                             __httpRequest.Content = __httpRequestContent;

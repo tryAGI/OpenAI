@@ -129,8 +129,8 @@ namespace tryAGI.OpenAI
                 PrepareRemoveGroupUserRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    groupId: groupId,
-                    userId: userId);
+                    groupId: groupId!,
+                    userId: userId!);
 
                 return __httpRequest;
             }

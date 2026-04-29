@@ -127,7 +127,7 @@ namespace tryAGI.OpenAI
                 PrepareCancelUploadRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    uploadId: uploadId);
+                    uploadId: uploadId!);
 
                 return __httpRequest;
             }

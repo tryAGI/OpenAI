@@ -160,7 +160,7 @@ namespace tryAGI.OpenAI
                 PrepareListVectorStoreFilesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    vectorStoreId: vectorStoreId,
+                    vectorStoreId: vectorStoreId!,
                     limit: limit,
                     order: order,
                     after: after,

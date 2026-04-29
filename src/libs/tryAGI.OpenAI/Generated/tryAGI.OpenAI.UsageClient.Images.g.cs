@@ -195,7 +195,7 @@ namespace tryAGI.OpenAI
                 PrepareImagesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    startTime: startTime,
+                    startTime: startTime!,
                     endTime: endTime,
                     bucketWidth: bucketWidth,
                     sources: sources,

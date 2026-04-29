@@ -141,7 +141,7 @@ namespace tryAGI.OpenAI
                 PrepareCreateCheckpointPermissionsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    fineTunedModelCheckpoint: fineTunedModelCheckpoint,
+                    fineTunedModelCheckpoint: fineTunedModelCheckpoint!,
                     request: request);
 
                 return __httpRequest;

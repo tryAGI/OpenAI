@@ -120,7 +120,7 @@ namespace tryAGI.OpenAI
                 PrepareHangUpCallRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    callId: callId);
+                    callId: callId!);
 
                 return __httpRequest;
             }

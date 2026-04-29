@@ -129,8 +129,8 @@ namespace tryAGI.OpenAI
                 PrepareDeleteProjectRoleRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
-                    roleId: roleId);
+                    projectId: projectId!,
+                    roleId: roleId!);
 
                 return __httpRequest;
             }

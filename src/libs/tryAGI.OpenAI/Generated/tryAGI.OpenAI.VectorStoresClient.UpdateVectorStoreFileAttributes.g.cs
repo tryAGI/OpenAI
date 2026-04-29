@@ -147,8 +147,8 @@ namespace tryAGI.OpenAI
                 PrepareUpdateVectorStoreFileAttributesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    vectorStoreId: vectorStoreId,
-                    fileId: fileId,
+                    vectorStoreId: vectorStoreId!,
+                    fileId: fileId!,
                     request: request);
 
                 return __httpRequest;

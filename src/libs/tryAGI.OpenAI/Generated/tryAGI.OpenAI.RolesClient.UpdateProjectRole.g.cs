@@ -143,8 +143,8 @@ namespace tryAGI.OpenAI
                 PrepareUpdateProjectRoleRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
-                    roleId: roleId,
+                    projectId: projectId!,
+                    roleId: roleId!,
                     request: request);
 
                 return __httpRequest;

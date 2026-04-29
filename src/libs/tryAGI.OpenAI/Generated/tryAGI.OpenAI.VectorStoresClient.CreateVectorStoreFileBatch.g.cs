@@ -143,7 +143,7 @@ namespace tryAGI.OpenAI
                 PrepareCreateVectorStoreFileBatchRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    vectorStoreId: vectorStoreId,
+                    vectorStoreId: vectorStoreId!,
                     request: request);
 
                 return __httpRequest;

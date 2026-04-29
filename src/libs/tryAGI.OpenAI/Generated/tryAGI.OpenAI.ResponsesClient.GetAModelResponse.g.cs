@@ -152,7 +152,7 @@ namespace tryAGI.OpenAI
                 PrepareGetAModelResponseRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    responseId: responseId,
+                    responseId: responseId!,
                     include: include,
                     stream: stream,
                     startingAfter: startingAfter,

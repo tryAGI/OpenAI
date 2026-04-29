@@ -142,7 +142,7 @@ namespace tryAGI.OpenAI
                 PrepareListFineTuningCheckpointsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    fineTuningJobId: fineTuningJobId,
+                    fineTuningJobId: fineTuningJobId!,
                     after: after,
                     limit: limit);
 

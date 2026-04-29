@@ -125,7 +125,7 @@ namespace tryAGI.OpenAI
             }
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{skillId}"),
+                                content: new global::System.Net.Http.StringContent(skillId ?? string.Empty),
                                 name: "\"skill_id\"");
                             __httpRequestContent.Add(
                                 content: new global::System.Net.Http.StringContent(request.Files.ToString() ?? string.Empty),
@@ -134,7 +134,7 @@ namespace tryAGI.OpenAI
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Default}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.Default, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"default\"");
                             }
                             __httpRequest.Content = __httpRequestContent;
@@ -149,7 +149,7 @@ namespace tryAGI.OpenAI
                 PrepareCreateSkillVersionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    skillId: skillId,
+                    skillId: skillId!,
                     request: request);
 
                 return __httpRequest;

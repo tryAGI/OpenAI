@@ -165,7 +165,7 @@ namespace tryAGI.OpenAI
                 PrepareVectorStoresRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    startTime: startTime,
+                    startTime: startTime!,
                     endTime: endTime,
                     bucketWidth: bucketWidth,
                     projectIds: projectIds,

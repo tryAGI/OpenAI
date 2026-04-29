@@ -129,8 +129,8 @@ namespace tryAGI.OpenAI
                 PrepareUnassignOrganizationRoleFromUserRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    userId: userId,
-                    roleId: roleId);
+                    userId: userId!,
+                    roleId: roleId!);
 
                 return __httpRequest;
             }
