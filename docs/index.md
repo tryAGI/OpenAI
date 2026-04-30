@@ -193,13 +193,49 @@ using var api = CustomProviders.Mistral("API_KEY");
 using var api = CustomProviders.Codestral("API_KEY");
 using var api = CustomProviders.Cerebras("API_KEY");
 using var api = CustomProviders.Cohere("API_KEY");
+using var api = CustomProviders.Hyperbolic("API_KEY");
+using var api = CustomProviders.Nebius("API_KEY");
+using var api = CustomProviders.Nvidia("API_KEY");
+using var api = CustomProviders.OllamaCloud("API_KEY");
+using var api = CustomProviders.Minimax("API_KEY");
+using var api = CustomProviders.NovitaAI("API_KEY");
+using var api = CustomProviders.Qwen("API_KEY");
+using var api = CustomProviders.LeptonAI("API_KEY");
+using var api = CustomProviders.Cleanlab("API_KEY");
+using var api = CustomProviders.SiliconFlow("API_KEY");
+using var api = CustomProviders.Inworld("API_KEY_OR_JWT");
+using var api = CustomProviders.NousPortal("API_KEY");
+using var api = CustomProviders.VercelAIGateway("API_KEY");
+using var api = CustomProviders.HuggingFaceRouter("API_KEY");
+using var api = CustomProviders.GoogleAIStudio("API_KEY");
+using var api = CustomProviders.Gemini("API_KEY");
+using var api = CustomProviders.XiaomiMiMo("API_KEY");
+using var api = CustomProviders.TencentTokenHub("API_KEY");
+using var api = CustomProviders.TencentTokenHubIntl("API_KEY");
+using var api = CustomProviders.ZAi("API_KEY");
+using var api = CustomProviders.Moonshot("API_KEY");
+using var api = CustomProviders.KimiForCoding("API_KEY");
+using var api = CustomProviders.MoonshotChina("API_KEY");
+using var api = CustomProviders.StepFun("API_KEY");
+using var api = CustomProviders.StepFunStepPlan("API_KEY");
+using var api = CustomProviders.MiniMaxChina("API_KEY");
+using var api = CustomProviders.DashScope("API_KEY");
+using var api = CustomProviders.DashScopeChina("API_KEY");
+using var api = CustomProviders.DashScopeUnitedStates("API_KEY");
+using var api = CustomProviders.DashScopeCodingPlan("API_KEY");
+using var api = CustomProviders.ArceeAI("API_KEY");
+using var api = CustomProviders.ArceeConductor("API_KEY");
+using var api = CustomProviders.GmiCloud("API_KEY");
+using var api = CustomProviders.KiloGateway("API_KEY");
+using var api = CustomProviders.OpenCodeZen("API_KEY");
+using var api = CustomProviders.OpenCodeGo("API_KEY");
 using var api = CustomProviders.Ollama();
 using var api = CustomProviders.LmStudio();
 ```
 
 ### Microsoft.Extensions.AI
 
-The client natively implements [`IChatClient`](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.ai.ichatclient) and [`IEmbeddingGenerator<string, Embedding<float>>`](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.ai.iembeddinggenerator-2) from [Microsoft.Extensions.AI](https://www.nuget.org/packages/Microsoft.Extensions.AI.Abstractions), providing a unified interface across 15+ providers:
+The client natively implements [`IChatClient`](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.ai.ichatclient) and [`IEmbeddingGenerator<string, Embedding<float>>`](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.ai.iembeddinggenerator-2) from [Microsoft.Extensions.AI](https://www.nuget.org/packages/Microsoft.Extensions.AI.Abstractions), providing a unified interface across 40+ providers:
 ```csharp
 using OpenAI;
 using Microsoft.Extensions.AI;

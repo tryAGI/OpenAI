@@ -285,6 +285,126 @@ public partial class Tests
                     ? minimaxModel
                     : "MiniMax-M1"));
         }
+        if (customProvider == CustomProvider.NousPortal)
+        {
+            return (CustomProviders.NousPortal(GetRequiredEnvironmentVariable("NOUS_API_KEY")),
+                model ?? GetOptionalEnvironmentVariable("NOUS_CHAT_MODEL", "Hermes-4-70B"));
+        }
+        if (customProvider == CustomProvider.VercelAIGateway)
+        {
+            return (CustomProviders.VercelAIGateway(GetRequiredEnvironmentVariable("AI_GATEWAY_API_KEY", "VERCEL_AI_GATEWAY_API_KEY")),
+                model ?? GetOptionalEnvironmentVariable("AI_GATEWAY_CHAT_MODEL", "xai/grok-4.1-fast-reasoning"));
+        }
+        if (customProvider == CustomProvider.HuggingFaceRouter)
+        {
+            return (CustomProviders.HuggingFaceRouter(GetRequiredEnvironmentVariable("HF_TOKEN", "HUGGINGFACE_HUB_TOKEN")),
+                model ?? GetOptionalEnvironmentVariable("HF_CHAT_MODEL", "deepseek-ai/DeepSeek-V3-0324"));
+        }
+        if (customProvider == CustomProvider.GoogleAIStudio)
+        {
+            return (CustomProviders.GoogleAIStudio(GetRequiredEnvironmentVariable("GEMINI_API_KEY", "GOOGLE_API_KEY")),
+                model ?? GetOptionalEnvironmentVariable("GEMINI_CHAT_MODEL", "gemini-2.5-flash"));
+        }
+        if (customProvider == CustomProvider.XiaomiMiMo)
+        {
+            return (CustomProviders.XiaomiMiMo(GetRequiredEnvironmentVariable("XIAOMI_API_KEY", "XIAOMI_MIMO_API_KEY")),
+                model ?? GetOptionalEnvironmentVariable("XIAOMI_MIMO_CHAT_MODEL", "mimo-v2.5-pro"));
+        }
+        if (customProvider == CustomProvider.TencentTokenHub)
+        {
+            return (CustomProviders.TencentTokenHub(GetRequiredEnvironmentVariable("TENCENT_TOKENHUB_API_KEY", "TOKENHUB_API_KEY")),
+                model ?? GetOptionalEnvironmentVariable("TENCENT_TOKENHUB_CHAT_MODEL", "hy3-preview"));
+        }
+        if (customProvider == CustomProvider.TencentTokenHubIntl)
+        {
+            return (CustomProviders.TencentTokenHubIntl(GetRequiredEnvironmentVariable("TENCENT_TOKENHUB_INTL_API_KEY", "TOKENHUB_INTL_API_KEY")),
+                model ?? GetOptionalEnvironmentVariable("TENCENT_TOKENHUB_INTL_CHAT_MODEL", "glm-5"));
+        }
+        if (customProvider == CustomProvider.ZAi)
+        {
+            return (CustomProviders.ZAi(GetRequiredEnvironmentVariable("ZAI_API_KEY")),
+                model ?? GetOptionalEnvironmentVariable("ZAI_CHAT_MODEL", "glm-4.6"));
+        }
+        if (customProvider == CustomProvider.Moonshot)
+        {
+            return (CustomProviders.Moonshot(GetRequiredEnvironmentVariable("MOONSHOT_API_KEY")),
+                model ?? GetOptionalEnvironmentVariable("MOONSHOT_CHAT_MODEL", "kimi-k2.5"));
+        }
+        if (customProvider == CustomProvider.KimiForCoding)
+        {
+            return (CustomProviders.KimiForCoding(GetRequiredEnvironmentVariable("KIMI_API_KEY")),
+                model ?? GetOptionalEnvironmentVariable("KIMI_FOR_CODING_CHAT_MODEL", "kimi-for-coding"));
+        }
+        if (customProvider == CustomProvider.MoonshotChina)
+        {
+            return (CustomProviders.MoonshotChina(GetRequiredEnvironmentVariable("MOONSHOT_CN_API_KEY", "MOONSHOT_API_KEY")),
+                model ?? GetOptionalEnvironmentVariable("MOONSHOT_CN_CHAT_MODEL", "kimi-k2.6"));
+        }
+        if (customProvider == CustomProvider.StepFun)
+        {
+            return (CustomProviders.StepFun(GetRequiredEnvironmentVariable("STEPFUN_API_KEY")),
+                model ?? GetOptionalEnvironmentVariable("STEPFUN_CHAT_MODEL", "step-2-mini"));
+        }
+        if (customProvider == CustomProvider.StepFunStepPlan)
+        {
+            return (CustomProviders.StepFunStepPlan(GetRequiredEnvironmentVariable("STEPFUN_STEP_PLAN_API_KEY")),
+                model ?? GetOptionalEnvironmentVariable("STEPFUN_STEP_PLAN_CHAT_MODEL", "step-3"));
+        }
+        if (customProvider == CustomProvider.MiniMaxChina)
+        {
+            return (CustomProviders.MiniMaxChina(GetRequiredEnvironmentVariable("MINIMAX_CN_API_KEY", "MINIMAX_API_KEY")),
+                model ?? GetOptionalEnvironmentVariable("MINIMAX_CN_CHAT_MODEL", "MiniMax-M2.7"));
+        }
+        if (customProvider == CustomProvider.DashScope)
+        {
+            return (CustomProviders.DashScope(GetRequiredEnvironmentVariable("DASHSCOPE_API_KEY")),
+                model ?? GetOptionalEnvironmentVariable("DASHSCOPE_CHAT_MODEL", "qwen-plus"));
+        }
+        if (customProvider == CustomProvider.DashScopeChina)
+        {
+            return (CustomProviders.DashScopeChina(GetRequiredEnvironmentVariable("DASHSCOPE_CN_API_KEY")),
+                model ?? GetOptionalEnvironmentVariable("DASHSCOPE_CN_CHAT_MODEL", "qwen-plus"));
+        }
+        if (customProvider == CustomProvider.DashScopeUnitedStates)
+        {
+            return (CustomProviders.DashScopeUnitedStates(GetRequiredEnvironmentVariable("DASHSCOPE_US_API_KEY")),
+                model ?? GetOptionalEnvironmentVariable("DASHSCOPE_US_CHAT_MODEL", "qwen-plus-us"));
+        }
+        if (customProvider == CustomProvider.DashScopeCodingPlan)
+        {
+            return (CustomProviders.DashScopeCodingPlan(GetRequiredEnvironmentVariable("DASHSCOPE_CODING_PLAN_API_KEY")),
+                model ?? GetOptionalEnvironmentVariable("DASHSCOPE_CODING_PLAN_CHAT_MODEL", "qwen3-coder-plus"));
+        }
+        if (customProvider == CustomProvider.ArceeAI)
+        {
+            return (CustomProviders.ArceeAI(GetRequiredEnvironmentVariable("ARCEE_API_KEY")),
+                model ?? GetOptionalEnvironmentVariable("ARCEE_CHAT_MODEL", "trinity-mini"));
+        }
+        if (customProvider == CustomProvider.ArceeConductor)
+        {
+            return (CustomProviders.ArceeConductor(GetRequiredEnvironmentVariable("ARCEE_CONDUCTOR_API_KEY")),
+                model ?? GetOptionalEnvironmentVariable("ARCEE_CONDUCTOR_CHAT_MODEL", "auto"));
+        }
+        if (customProvider == CustomProvider.GmiCloud)
+        {
+            return (CustomProviders.GmiCloud(GetRequiredEnvironmentVariable("GMI_API_KEY")),
+                model ?? GetOptionalEnvironmentVariable("GMI_CHAT_MODEL", "deepseek-ai/DeepSeek-R1"));
+        }
+        if (customProvider == CustomProvider.KiloGateway)
+        {
+            return (CustomProviders.KiloGateway(GetRequiredEnvironmentVariable("KILO_API_KEY", "KILOCODE_API_KEY")),
+                model ?? GetOptionalEnvironmentVariable("KILO_CHAT_MODEL", "kilocode/kilo/auto"));
+        }
+        if (customProvider == CustomProvider.OpenCodeZen)
+        {
+            return (CustomProviders.OpenCodeZen(GetRequiredEnvironmentVariable("OPENCODE_API_KEY")),
+                model ?? GetOptionalEnvironmentVariable("OPENCODE_ZEN_CHAT_MODEL", "qwen3.5-plus"));
+        }
+        if (customProvider == CustomProvider.OpenCodeGo)
+        {
+            return (CustomProviders.OpenCodeGo(GetRequiredEnvironmentVariable("OPENCODE_API_KEY")),
+                model ?? GetOptionalEnvironmentVariable("OPENCODE_GO_CHAT_MODEL", "kimi-k2.6"));
+        }
 
         var apiKey =
             Environment.GetEnvironmentVariable("OPENAI_API_KEY") is { Length: > 0 } openAiKeyValue
@@ -294,5 +414,25 @@ public partial class Tests
         var api = new OpenAiClient(apiKey);
 
         return (api, model ?? ModelIdsSharedEnum.Gpt4oMini.ToValueString());
+    }
+
+    private static string GetRequiredEnvironmentVariable(params string[] names)
+    {
+        foreach (var name in names)
+        {
+            if (Environment.GetEnvironmentVariable(name) is { Length: > 0 } value)
+            {
+                return value;
+            }
+        }
+
+        throw new AssertInconclusiveException($"{string.Join(" or ", names)} environment variable is not found.");
+    }
+
+    private static string GetOptionalEnvironmentVariable(string name, string defaultValue)
+    {
+        return Environment.GetEnvironmentVariable(name) is { Length: > 0 } value
+            ? value
+            : defaultValue;
     }
 }
