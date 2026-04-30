@@ -3,6 +3,49 @@ namespace tryAGI.OpenAI.IntegrationTests;
 [TestClass]
 public partial class Tests
 {
+    private static async Task ExecuteProviderAwareAsync(CustomProvider provider, Func<Task> action)
+    {
+        try
+        {
+            await action().ConfigureAwait(false);
+        }
+        catch (ApiException exception)
+        {
+            RethrowIfKnownProviderAvailabilityIssue(provider, exception);
+            throw;
+        }
+    }
+
+    private static async Task<T> ExecuteProviderAwareAsync<T>(CustomProvider provider, Func<Task<T>> action)
+    {
+        try
+        {
+            return await action().ConfigureAwait(false);
+        }
+        catch (ApiException exception)
+        {
+            RethrowIfKnownProviderAvailabilityIssue(provider, exception);
+            throw;
+        }
+    }
+
+    private static void RethrowIfKnownProviderAvailabilityIssue(CustomProvider provider, ApiException exception)
+    {
+        if (provider != CustomProvider.DeepInfra)
+        {
+            return;
+        }
+
+        var responseText = exception.ResponseBody ?? exception.Message;
+        if (exception.StatusCode == System.Net.HttpStatusCode.PaymentRequired &&
+            responseText.Contains("inference suspended", StringComparison.OrdinalIgnoreCase))
+        {
+            throw new AssertInconclusiveException(
+                "DeepInfra inference is suspended for the configured account. Skipping provider compatibility checks until billing access is restored.",
+                exception);
+        }
+    }
+
     private static OpenAiClient GetAuthenticatedClient() => GetAuthorizedApi();
 
     private static OpenAiClient GetAuthorizedApi()

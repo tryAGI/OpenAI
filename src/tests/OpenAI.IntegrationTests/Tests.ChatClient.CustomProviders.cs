@@ -15,74 +15,83 @@ public partial class Tests
 
     private async Task ChatClient_CustomProvider_GetResponseAsync(CustomProvider provider)
     {
-        var (api, model) = GetAuthorizedChatApi(provider);
-        using var _ = api;
-        Meai.IChatClient chatClient = api;
+        await ExecuteProviderAwareAsync(provider, async () =>
+        {
+            var (api, model) = GetAuthorizedChatApi(provider);
+            using var _ = api;
+            Meai.IChatClient chatClient = api;
 
-        var response = await chatClient.GetResponseAsync(
-            [new Meai.ChatMessage(Meai.ChatRole.User, "Say hello in exactly 3 words.")],
-            new Meai.ChatOptions { ModelId = model });
+            var response = await chatClient.GetResponseAsync(
+                [new Meai.ChatMessage(Meai.ChatRole.User, "Say hello in exactly 3 words.")],
+                new Meai.ChatOptions { ModelId = model });
 
-        response.Should().NotBeNull();
-        response.Messages.Should().NotBeEmpty();
-        var text = response.Messages[0].Text;
-        text.Should().NotBeNullOrWhiteSpace();
-        Console.WriteLine($"[{provider}] {text}");
+            response.Should().NotBeNull();
+            response.Messages.Should().NotBeEmpty();
+            var text = response.Messages[0].Text;
+            text.Should().NotBeNullOrWhiteSpace();
+            Console.WriteLine($"[{provider}] {text}");
+        }).ConfigureAwait(false);
     }
 
     private async Task ChatClient_CustomProvider_StreamingAsync(CustomProvider provider)
     {
-        var (api, model) = GetAuthorizedChatApi(provider);
-        using var _ = api;
-        Meai.IChatClient chatClient = api;
-
-        var updates = new List<Meai.ChatResponseUpdate>();
-        await foreach (var update in chatClient.GetStreamingResponseAsync(
-            [new Meai.ChatMessage(Meai.ChatRole.User, "Count from 1 to 5.")],
-            new Meai.ChatOptions { ModelId = model }))
+        await ExecuteProviderAwareAsync(provider, async () =>
         {
-            updates.Add(update);
-        }
+            var (api, model) = GetAuthorizedChatApi(provider);
+            using var _ = api;
+            Meai.IChatClient chatClient = api;
 
-        updates.Should().NotBeEmpty();
-        Console.WriteLine($"[{provider}] Got {updates.Count} streaming updates");
+            var updates = new List<Meai.ChatResponseUpdate>();
+            await foreach (var update in chatClient.GetStreamingResponseAsync(
+                [new Meai.ChatMessage(Meai.ChatRole.User, "Count from 1 to 5.")],
+                new Meai.ChatOptions { ModelId = model }))
+            {
+                updates.Add(update);
+            }
+
+            updates.Should().NotBeEmpty();
+            Console.WriteLine($"[{provider}] Got {updates.Count} streaming updates");
+        }).ConfigureAwait(false);
     }
 
     private async Task ChatClient_CustomProvider_ToolCallingAsync(CustomProvider provider)
     {
-        var (api, model) = GetAuthorizedChatApi(provider);
-        using var _ = api;
-        Meai.IChatClient chatClient = api;
+        await ExecuteProviderAwareAsync(provider, async () =>
+        {
+            var (api, model) = GetAuthorizedChatApi(provider);
+            using var _ = api;
+            Meai.IChatClient chatClient = api;
 
-        var tool = Meai.AIFunctionFactory.Create(
-            (string city) => city switch
-            {
-                "Paris" => "22°C, sunny",
-                "London" => "15°C, cloudy",
-                _ => "Unknown",
-            },
-            name: "GetWeather",
-            description: "Gets the current weather for a city");
+            var tool = Meai.AIFunctionFactory.Create(
+                (string city) => city switch
+                {
+                    "Paris" => "22°C, sunny",
+                    "London" => "15°C, cloudy",
+                    _ => "Unknown",
+                },
+                name: "GetWeather",
+                description: "Gets the current weather for a city");
 
-        var response = await chatClient.GetResponseAsync(
-            [new Meai.ChatMessage(Meai.ChatRole.User, "What's the weather in Paris?")],
-            new Meai.ChatOptions
-            {
-                ModelId = model,
-                Tools = [tool],
-            });
+            var response = await chatClient.GetResponseAsync(
+                [new Meai.ChatMessage(Meai.ChatRole.User, "What's the weather in Paris?")],
+                new Meai.ChatOptions
+                {
+                    ModelId = model,
+                    Tools = [tool],
+                });
 
-        response.Should().NotBeNull();
-        response.FinishReason.Should().Be(Meai.ChatFinishReason.ToolCalls);
+            response.Should().NotBeNull();
+            response.FinishReason.Should().Be(Meai.ChatFinishReason.ToolCalls);
 
-        var functionCall = response.Messages
-            .SelectMany(m => m.Contents)
-            .OfType<Meai.FunctionCallContent>()
-            .FirstOrDefault();
+            var functionCall = response.Messages
+                .SelectMany(m => m.Contents)
+                .OfType<Meai.FunctionCallContent>()
+                .FirstOrDefault();
 
-        functionCall.Should().NotBeNull();
-        functionCall!.Name.Should().Be("GetWeather");
-        Console.WriteLine($"[{provider}] Tool call: {functionCall.Name}({string.Join(", ", functionCall.Arguments?.Select(kv => $"{kv.Key}={kv.Value}") ?? [])})");
+            functionCall.Should().NotBeNull();
+            functionCall!.Name.Should().Be("GetWeather");
+            Console.WriteLine($"[{provider}] Tool call: {functionCall.Name}({string.Join(", ", functionCall.Arguments?.Select(kv => $"{kv.Key}={kv.Value}") ?? [])})");
+        }).ConfigureAwait(false);
     }
 
     // ═══════════════════════════════════════════════════════════════

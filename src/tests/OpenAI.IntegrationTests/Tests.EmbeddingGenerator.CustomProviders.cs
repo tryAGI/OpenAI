@@ -12,37 +12,43 @@ public partial class Tests
     private async Task EmbeddingGenerator_CustomProvider_GenerateAsync(
         CustomProvider provider, string embeddingModel)
     {
-        var (api, _) = GetAuthorizedChatApi(provider);
-        using var _ = api;
-        Meai.IEmbeddingGenerator<string, Meai.Embedding<float>> generator = api;
+        await ExecuteProviderAwareAsync(provider, async () =>
+        {
+            var (api, _) = GetAuthorizedChatApi(provider);
+            using var _ = api;
+            Meai.IEmbeddingGenerator<string, Meai.Embedding<float>> generator = api;
 
-        var result = await generator.GenerateAsync(
-            ["Hello, world!"],
-            new Meai.EmbeddingGenerationOptions { ModelId = embeddingModel });
+            var result = await generator.GenerateAsync(
+                ["Hello, world!"],
+                new Meai.EmbeddingGenerationOptions { ModelId = embeddingModel });
 
-        result.Should().NotBeNull();
-        result.Should().HaveCount(1);
-        result[0].Vector.Length.Should().BeGreaterThan(0);
-        Console.WriteLine($"[{provider}] Embedding dimensions: {result[0].Vector.Length}");
+            result.Should().NotBeNull();
+            result.Should().HaveCount(1);
+            result[0].Vector.Length.Should().BeGreaterThan(0);
+            Console.WriteLine($"[{provider}] Embedding dimensions: {result[0].Vector.Length}");
+        }).ConfigureAwait(false);
     }
 
     private async Task EmbeddingGenerator_CustomProvider_BatchAsync(
         CustomProvider provider, string embeddingModel)
     {
-        var (api, _) = GetAuthorizedChatApi(provider);
-        using var _ = api;
-        Meai.IEmbeddingGenerator<string, Meai.Embedding<float>> generator = api;
-
-        var result = await generator.GenerateAsync(
-            ["First sentence.", "Second sentence.", "Third sentence."],
-            new Meai.EmbeddingGenerationOptions { ModelId = embeddingModel });
-
-        result.Should().HaveCount(3);
-        foreach (var embedding in result)
+        await ExecuteProviderAwareAsync(provider, async () =>
         {
-            embedding.Vector.Length.Should().BeGreaterThan(0);
-        }
-        Console.WriteLine($"[{provider}] Batch: {result.Count} embeddings, {result[0].Vector.Length} dimensions");
+            var (api, _) = GetAuthorizedChatApi(provider);
+            using var _ = api;
+            Meai.IEmbeddingGenerator<string, Meai.Embedding<float>> generator = api;
+
+            var result = await generator.GenerateAsync(
+                ["First sentence.", "Second sentence.", "Third sentence."],
+                new Meai.EmbeddingGenerationOptions { ModelId = embeddingModel });
+
+            result.Should().HaveCount(3);
+            foreach (var embedding in result)
+            {
+                embedding.Vector.Length.Should().BeGreaterThan(0);
+            }
+            Console.WriteLine($"[{provider}] Batch: {result.Count} embeddings, {result[0].Vector.Length} dimensions");
+        }).ConfigureAwait(false);
     }
 
     // --- DeepInfra ---

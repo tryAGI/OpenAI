@@ -23,20 +23,23 @@ public partial class Tests
     [DataRow(CustomProvider.OllamaCloud)]
     public async Task GenerateFiveRandomWords(CustomProvider customProvider)
     {
-        var pair = GetAuthorizedChatApi(customProvider);
-        using var api = pair.Api;
-        
-        string response = await api.Chat.CreateChatCompletionAsync(
-            new CreateChatCompletionRequest
-            {
-                CreateChatCompletionRequestVariant2 = new CreateChatCompletionRequestVariant2
-                {
-                    Messages = ["Generate five random words."],
-                    Model = pair.Model,
-                }
-            });
-        response.Should().NotBeEmpty();
+        string response = await ExecuteProviderAwareAsync(customProvider, async () =>
+        {
+            var pair = GetAuthorizedChatApi(customProvider);
+            using var api = pair.Api;
 
+            return await api.Chat.CreateChatCompletionAsync(
+                new CreateChatCompletionRequest
+                {
+                    CreateChatCompletionRequestVariant2 = new CreateChatCompletionRequestVariant2
+                    {
+                        Messages = ["Generate five random words."],
+                        Model = pair.Model,
+                    }
+                });
+        }).ConfigureAwait(false);
+
+        response.Should().NotBeEmpty();
         Console.WriteLine(response);
     }
     
@@ -60,23 +63,26 @@ public partial class Tests
     [DataRow(CustomProvider.OllamaCloud)]
     public async Task GenerateFiveRandomWordsAsStream(CustomProvider customProvider)
     {
-        var pair = GetAuthorizedChatApi(customProvider);
-        using var api = pair.Api;
-        
-        var enumerable = api.Chat.CreateChatCompletionAsStreamAsync(
-            new CreateChatCompletionRequest
-            {
-                CreateChatCompletionRequestVariant2 = new CreateChatCompletionRequestVariant2
-                {
-                    Messages = ["Generate five random words."],
-                    Model = pair.Model,
-                }
-            });
-        
-        await foreach (string response in enumerable)
+        await ExecuteProviderAwareAsync(customProvider, async () =>
         {
-            Console.WriteLine(response);
-        }
+            var pair = GetAuthorizedChatApi(customProvider);
+            using var api = pair.Api;
+
+            var enumerable = api.Chat.CreateChatCompletionAsStreamAsync(
+                new CreateChatCompletionRequest
+                {
+                    CreateChatCompletionRequestVariant2 = new CreateChatCompletionRequestVariant2
+                    {
+                        Messages = ["Generate five random words."],
+                        Model = pair.Model,
+                    }
+                });
+
+            await foreach (string response in enumerable)
+            {
+                Console.WriteLine(response);
+            }
+        }).ConfigureAwait(false);
     }
     
     [TestMethod]
@@ -96,29 +102,26 @@ public partial class Tests
     [DataRow(CustomProvider.OllamaCloud)]
     public async Task GenerateFiveRandomWordsAsJsonObject(CustomProvider customProvider)
     {
-        var pair = GetAuthorizedChatApi(customProvider);
-        using var api = pair.Api;
-        
-        string response = await api.Chat.CreateChatCompletionAsync(
-            new CreateChatCompletionRequest
-            {
-                CreateChatCompletionRequestVariant2 = new CreateChatCompletionRequestVariant2
+        string response = await ExecuteProviderAwareAsync(customProvider, async () =>
+        {
+            var pair = GetAuthorizedChatApi(customProvider);
+            using var api = pair.Api;
+
+            return await api.Chat.CreateChatCompletionAsync(
+                new CreateChatCompletionRequest
                 {
-                    Messages = ["Generate five random words as json."],
-                    Model = pair.Model,
-                    ResponseFormat = new ResponseFormatJsonObject
+                    CreateChatCompletionRequestVariant2 = new CreateChatCompletionRequestVariant2
                     {
-                        Type = ResponseFormatJsonObjectType.JsonObject,
-                    },
-                }
-            });
-            // messages: ["Generate five random words as json."],
-            // model: pair.Model,
-            // responseFormat: new ResponseFormatJsonObject
-            // {
-            //     Type = ResponseFormatJsonObjectType.JsonObject,
-            // },
-            // user: "tryAGI.OpenAI.IntegrationTests.Tests.GenerateSomeJson");
+                        Messages = ["Generate five random words as json."],
+                        Model = pair.Model,
+                        ResponseFormat = new ResponseFormatJsonObject
+                        {
+                            Type = ResponseFormatJsonObjectType.JsonObject,
+                        },
+                    }
+                });
+        }).ConfigureAwait(false);
+
         response.Should().NotBeEmpty();
 
         Console.WriteLine(response);
