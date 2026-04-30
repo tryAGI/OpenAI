@@ -31,6 +31,7 @@ namespace tryAGI.OpenAI
             ref int? endTime,
             ref global::tryAGI.OpenAI.UsageCostsBucketWidth? bucketWidth,
             global::System.Collections.Generic.IList<string>? projectIds,
+            global::System.Collections.Generic.IList<string>? apiKeyIds,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageCostsGroupByItem>? groupBy,
             ref int? limit,
             ref string? page);
@@ -41,6 +42,7 @@ namespace tryAGI.OpenAI
             int? endTime,
             global::tryAGI.OpenAI.UsageCostsBucketWidth? bucketWidth,
             global::System.Collections.Generic.IList<string>? projectIds,
+            global::System.Collections.Generic.IList<string>? apiKeyIds,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageCostsGroupByItem>? groupBy,
             int? limit,
             string? page);
@@ -62,6 +64,7 @@ namespace tryAGI.OpenAI
         /// Default Value: 1d
         /// </param>
         /// <param name="projectIds"></param>
+        /// <param name="apiKeyIds"></param>
         /// <param name="groupBy"></param>
         /// <param name="limit">
         /// Default Value: 7
@@ -75,6 +78,7 @@ namespace tryAGI.OpenAI
             int? endTime = default,
             global::tryAGI.OpenAI.UsageCostsBucketWidth? bucketWidth = default,
             global::System.Collections.Generic.IList<string>? projectIds = default,
+            global::System.Collections.Generic.IList<string>? apiKeyIds = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageCostsGroupByItem>? groupBy = default,
             int? limit = default,
             string? page = default,
@@ -89,6 +93,7 @@ namespace tryAGI.OpenAI
                 endTime: ref endTime,
                 bucketWidth: ref bucketWidth,
                 projectIds: projectIds,
+                apiKeyIds: apiKeyIds,
                 groupBy: groupBy,
                 limit: ref limit,
                 page: ref page);
@@ -123,6 +128,7 @@ namespace tryAGI.OpenAI
                                 .AddOptionalParameter("end_time", endTime?.ToString())
                                 .AddOptionalParameter("bucket_width", bucketWidth?.ToValueString())
                                 .AddOptionalParameter("project_ids", projectIds, delimiter: ",", explode: true)
+                                .AddOptionalParameter("api_key_ids", apiKeyIds, delimiter: ",", explode: true)
                                 .AddOptionalParameter("group_by", groupBy, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("page", page) 
@@ -171,6 +177,7 @@ namespace tryAGI.OpenAI
                     endTime: endTime,
                     bucketWidth: bucketWidth,
                     projectIds: projectIds,
+                    apiKeyIds: apiKeyIds,
                     groupBy: groupBy,
                     limit: limit,
                     page: page);

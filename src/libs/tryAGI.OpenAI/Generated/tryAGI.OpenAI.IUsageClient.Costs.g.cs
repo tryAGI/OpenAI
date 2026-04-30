@@ -13,6 +13,7 @@ namespace tryAGI.OpenAI
         /// Default Value: 1d
         /// </param>
         /// <param name="projectIds"></param>
+        /// <param name="apiKeyIds"></param>
         /// <param name="groupBy"></param>
         /// <param name="limit">
         /// Default Value: 7
@@ -26,6 +27,7 @@ namespace tryAGI.OpenAI
             int? endTime = default,
             global::tryAGI.OpenAI.UsageCostsBucketWidth? bucketWidth = default,
             global::System.Collections.Generic.IList<string>? projectIds = default,
+            global::System.Collections.Generic.IList<string>? apiKeyIds = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageCostsGroupByItem>? groupBy = default,
             int? limit = default,
             string? page = default,
