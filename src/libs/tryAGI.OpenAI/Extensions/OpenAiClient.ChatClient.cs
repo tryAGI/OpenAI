@@ -58,7 +58,7 @@ public sealed partial class OpenAiClient : Meai.IChatClient
                     yield return new Meai.ChatResponseUpdate
                     {
                         ModelId = chunk.Model,
-                        CreatedAt = chunk.Created,
+                        CreatedAt = DateTimeOffset.FromUnixTimeSeconds(chunk.Created),
                         Contents = [new Meai.UsageContent(CreateUsageDetails(usage))],
                     };
                 }
@@ -76,7 +76,7 @@ public sealed partial class OpenAiClient : Meai.IChatClient
                     _ => null,
                 },
                 ModelId = chunk.Model,
-                CreatedAt = chunk.Created,
+                CreatedAt = DateTimeOffset.FromUnixTimeSeconds(chunk.Created),
                 ResponseId = chunk.Id,
             };
 
@@ -462,7 +462,7 @@ public sealed partial class OpenAiClient : Meai.IChatClient
         var chatResponse = new Meai.ChatResponse(messages)
         {
             ModelId = response.Model,
-            CreatedAt = response.Created,
+            CreatedAt = DateTimeOffset.FromUnixTimeSeconds(response.Created),
             ResponseId = response.Id,
             FinishReason = finishReason,
         };

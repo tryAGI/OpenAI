@@ -1104,7 +1104,7 @@ internal static class FreeLlmOpenAiCompat
         {
             Id = string.IsNullOrWhiteSpace(response.ResponseId) ? $"free-{Guid.NewGuid():N}" : response.ResponseId!,
             Choices = choices,
-            Created = response.CreatedAt ?? DateTimeOffset.UtcNow,
+            Created = (int)(response.CreatedAt ?? DateTimeOffset.UtcNow).ToUnixTimeSeconds(),
             Model = string.IsNullOrWhiteSpace(response.ModelId) ? fallbackModelId : response.ModelId!,
             Object = tryAGI.OpenAI.CreateChatCompletionResponseObject.ChatCompletion,
             Usage = CreateUsage(response.Usage),
@@ -1139,7 +1139,7 @@ internal static class FreeLlmOpenAiCompat
         {
             Id = string.IsNullOrWhiteSpace(update.ResponseId) ? $"free-{Guid.NewGuid():N}" : update.ResponseId!,
             Choices = choices,
-            Created = update.CreatedAt ?? DateTimeOffset.UtcNow,
+            Created = (int)(update.CreatedAt ?? DateTimeOffset.UtcNow).ToUnixTimeSeconds(),
             Model = string.IsNullOrWhiteSpace(update.ModelId) ? fallbackModelId : update.ModelId!,
             Object = tryAGI.OpenAI.CreateChatCompletionStreamResponseObject.ChatCompletionChunk,
             Usage = usage is null ? null : CreateUsage(usage.Details),
