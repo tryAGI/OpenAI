@@ -26,15 +26,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string FirstId { get; set; }
+        public string? FirstId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string LastId { get; set; }
+        public string? LastId { get; set; }
 
         /// <summary>
         /// 
@@ -54,23 +52,23 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="object"></param>
         /// <param name="data"></param>
+        /// <param name="hasMore"></param>
         /// <param name="firstId"></param>
         /// <param name="lastId"></param>
-        /// <param name="hasMore"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ProjectUserListResponse(
             string @object,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ProjectUser> data,
-            string firstId,
-            string lastId,
-            bool hasMore)
+            bool hasMore,
+            string? firstId,
+            string? lastId)
         {
             this.Object = @object ?? throw new global::System.ArgumentNullException(nameof(@object));
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.FirstId = firstId ?? throw new global::System.ArgumentNullException(nameof(firstId));
-            this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
+            this.FirstId = firstId;
+            this.LastId = lastId;
             this.HasMore = hasMore;
         }
 

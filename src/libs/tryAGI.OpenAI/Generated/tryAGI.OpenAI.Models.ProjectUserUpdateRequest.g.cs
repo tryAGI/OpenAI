@@ -12,9 +12,7 @@ namespace tryAGI.OpenAI
         /// `owner` or `member`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectUserUpdateRequestRoleJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ProjectUserUpdateRequestRole Role { get; set; }
+        public string? Role { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,7 +30,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ProjectUserUpdateRequest(
-            global::tryAGI.OpenAI.ProjectUserUpdateRequestRole role)
+            string? role)
         {
             this.Role = role;
         }

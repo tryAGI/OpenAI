@@ -68,7 +68,8 @@ namespace tryAGI.OpenAI
         /// The projects that were granted membership upon acceptance of the invite.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projects")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InviteProject>? Projects { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InviteProject> Projects { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -94,6 +95,9 @@ namespace tryAGI.OpenAI
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) of when the invite was sent.
         /// </param>
+        /// <param name="projects">
+        /// The projects that were granted membership upon acceptance of the invite.
+        /// </param>
         /// <param name="object">
         /// The object type, which is always `organization.invite`
         /// </param>
@@ -102,9 +106,6 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="acceptedAt">
         /// The Unix timestamp (in seconds) of when the invite was accepted.
-        /// </param>
-        /// <param name="projects">
-        /// The projects that were granted membership upon acceptance of the invite.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -115,10 +116,10 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.InviteRole role,
             global::tryAGI.OpenAI.InviteStatus status,
             int createdAt,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InviteProject> projects,
             global::tryAGI.OpenAI.InviteObject @object,
             int? expiresAt,
-            int? acceptedAt,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InviteProject>? projects)
+            int? acceptedAt)
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -128,7 +129,7 @@ namespace tryAGI.OpenAI
             this.CreatedAt = createdAt;
             this.ExpiresAt = expiresAt;
             this.AcceptedAt = acceptedAt;
-            this.Projects = projects;
+            this.Projects = projects ?? throw new global::System.ArgumentNullException(nameof(projects));
         }
 
         /// <summary>

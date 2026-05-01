@@ -48,7 +48,6 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("owner.role")) __score0++;
             if (__jsonProps.Contains("owner.type")) __score0++;
             if (__jsonProps.Contains("redacted_value")) __score0++;
-            if (__jsonProps.Contains("value")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("value")) __score1++;
             var __bestScore = 0;

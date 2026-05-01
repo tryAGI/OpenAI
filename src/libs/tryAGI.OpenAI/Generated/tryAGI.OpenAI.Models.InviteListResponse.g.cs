@@ -38,7 +38,8 @@ namespace tryAGI.OpenAI
         /// The `has_more` property is used for pagination to indicate there are additional results.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
-        public bool? HasMore { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool HasMore { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -50,6 +51,9 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="InviteListResponse" /> class.
         /// </summary>
         /// <param name="data"></param>
+        /// <param name="hasMore">
+        /// The `has_more` property is used for pagination to indicate there are additional results.
+        /// </param>
         /// <param name="object">
         /// The object type, which is always `list`
         /// </param>
@@ -59,18 +63,15 @@ namespace tryAGI.OpenAI
         /// <param name="lastId">
         /// The last `invite_id` in the retrieved `list`
         /// </param>
-        /// <param name="hasMore">
-        /// The `has_more` property is used for pagination to indicate there are additional results.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public InviteListResponse(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Invite> data,
+            bool hasMore,
             global::tryAGI.OpenAI.InviteListResponseObject @object,
             string? firstId,
-            string? lastId,
-            bool? hasMore)
+            string? lastId)
         {
             this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));

@@ -12,8 +12,19 @@ namespace tryAGI.OpenAI
         /// The updated name of the project, this name appears in reports.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public string? Name { get; set; }
+
+        /// <summary>
+        /// External key ID to associate with the project.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("external_key_id")]
+        public string? ExternalKeyId { get; set; }
+
+        /// <summary>
+        /// Geography for the project.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("geography")]
+        public string? Geography { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -27,13 +38,23 @@ namespace tryAGI.OpenAI
         /// <param name="name">
         /// The updated name of the project, this name appears in reports.
         /// </param>
+        /// <param name="externalKeyId">
+        /// External key ID to associate with the project.
+        /// </param>
+        /// <param name="geography">
+        /// Geography for the project.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ProjectUpdateRequest(
-            string name)
+            string? name,
+            string? externalKeyId,
+            string? geography)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Name = name;
+            this.ExternalKeyId = externalKeyId;
+            this.Geography = geography;
         }
 
         /// <summary>

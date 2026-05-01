@@ -37,6 +37,13 @@ namespace tryAGI.OpenAI
         public required bool IsScimManaged { get; set; }
 
         /// <summary>
+        /// The type of the group.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("group_type")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string GroupType { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -57,6 +64,9 @@ namespace tryAGI.OpenAI
         /// <param name="isScimManaged">
         /// Whether the group is managed through SCIM and controlled by your identity provider.
         /// </param>
+        /// <param name="groupType">
+        /// The type of the group.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -64,12 +74,14 @@ namespace tryAGI.OpenAI
             string id,
             string name,
             int createdAt,
-            bool isScimManaged)
+            bool isScimManaged,
+            string groupType)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.CreatedAt = createdAt;
             this.IsScimManaged = isScimManaged;
+            this.GroupType = groupType ?? throw new global::System.ArgumentNullException(nameof(groupType));
         }
 
         /// <summary>

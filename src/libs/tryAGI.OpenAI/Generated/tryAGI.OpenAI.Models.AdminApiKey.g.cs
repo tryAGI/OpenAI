@@ -30,8 +30,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <example>Administration Key</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// The redacted value of the API key<br/>
@@ -41,14 +40,6 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("redacted_value")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string RedactedValue { get; set; }
-
-        /// <summary>
-        /// The value of the API key. Only shown on create.<br/>
-        /// Example: sk-admin-1234abcd
-        /// </summary>
-        /// <example>sk-admin-1234abcd</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        public string? Value { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the API key was created<br/>
@@ -85,10 +76,6 @@ namespace tryAGI.OpenAI
         /// The identifier, which can be referenced in API endpoints<br/>
         /// Example: key_abc
         /// </param>
-        /// <param name="name">
-        /// The name of the API key<br/>
-        /// Example: Administration Key
-        /// </param>
         /// <param name="redactedValue">
         /// The redacted value of the API key<br/>
         /// Example: sk-admin...def
@@ -101,9 +88,9 @@ namespace tryAGI.OpenAI
         /// <param name="object">
         /// The object type, which is always `organization.admin_api_key`
         /// </param>
-        /// <param name="value">
-        /// The value of the API key. Only shown on create.<br/>
-        /// Example: sk-admin-1234abcd
+        /// <param name="name">
+        /// The name of the API key<br/>
+        /// Example: Administration Key
         /// </param>
         /// <param name="lastUsedAt"></param>
 #if NET7_0_OR_GREATER
@@ -111,19 +98,17 @@ namespace tryAGI.OpenAI
 #endif
         public AdminApiKey(
             string id,
-            string name,
             string redactedValue,
             int createdAt,
             global::tryAGI.OpenAI.AdminApiKeyOwner owner,
             global::tryAGI.OpenAI.AdminApiKeyObject @object,
-            string? value,
+            string? name,
             int? lastUsedAt)
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Name = name;
             this.RedactedValue = redactedValue ?? throw new global::System.ArgumentNullException(nameof(redactedValue));
-            this.Value = value;
             this.CreatedAt = createdAt;
             this.LastUsedAt = lastUsedAt;
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
