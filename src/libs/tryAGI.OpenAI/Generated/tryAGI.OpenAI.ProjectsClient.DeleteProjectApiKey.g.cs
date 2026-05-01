@@ -28,12 +28,12 @@ namespace tryAGI.OpenAI
         partial void PrepareDeleteProjectApiKeyArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string projectId,
-            ref string keyId);
+            ref string apiKeyId);
         partial void PrepareDeleteProjectApiKeyRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string projectId,
-            string keyId);
+            string apiKeyId);
         partial void ProcessDeleteProjectApiKeyResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -49,13 +49,13 @@ namespace tryAGI.OpenAI
         /// a service account.
         /// </summary>
         /// <param name="projectId"></param>
-        /// <param name="keyId"></param>
+        /// <param name="apiKeyId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ProjectApiKeyDeleteResponse> DeleteProjectApiKeyAsync(
             string projectId,
-            string keyId,
+            string apiKeyId,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
             PrepareDeleteProjectApiKeyArguments(
                 httpClient: HttpClient,
                 projectId: ref projectId,
-                keyId: ref keyId);
+                apiKeyId: ref apiKeyId);
 
 
             var __authorizations = global::tryAGI.OpenAI.EndPointSecurityResolver.ResolveAuthorizations(
@@ -89,7 +89,7 @@ namespace tryAGI.OpenAI
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
-                                path: $"/organization/projects/{projectId}/api_keys/{keyId}",
+                                path: $"/organization/projects/{projectId}/api_keys/{apiKeyId}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -132,7 +132,7 @@ namespace tryAGI.OpenAI
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     projectId: projectId!,
-                    keyId: keyId!);
+                    apiKeyId: apiKeyId!);
 
                 return __httpRequest;
             }
@@ -151,7 +151,7 @@ namespace tryAGI.OpenAI
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteProjectApiKey",
                                 methodName: "DeleteProjectApiKeyAsync",
-                                pathTemplate: "$\"/organization/projects/{projectId}/api_keys/{keyId}\"",
+                                pathTemplate: "$\"/organization/projects/{projectId}/api_keys/{apiKeyId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -178,7 +178,7 @@ namespace tryAGI.OpenAI
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteProjectApiKey",
                                 methodName: "DeleteProjectApiKeyAsync",
-                                pathTemplate: "$\"/organization/projects/{projectId}/api_keys/{keyId}\"",
+                                pathTemplate: "$\"/organization/projects/{projectId}/api_keys/{apiKeyId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -213,7 +213,7 @@ namespace tryAGI.OpenAI
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteProjectApiKey",
                                 methodName: "DeleteProjectApiKeyAsync",
-                                pathTemplate: "$\"/organization/projects/{projectId}/api_keys/{keyId}\"",
+                                pathTemplate: "$\"/organization/projects/{projectId}/api_keys/{apiKeyId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -260,7 +260,7 @@ namespace tryAGI.OpenAI
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteProjectApiKey",
                                 methodName: "DeleteProjectApiKeyAsync",
-                                pathTemplate: "$\"/organization/projects/{projectId}/api_keys/{keyId}\"",
+                                pathTemplate: "$\"/organization/projects/{projectId}/api_keys/{apiKeyId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -280,7 +280,7 @@ namespace tryAGI.OpenAI
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "DeleteProjectApiKey",
                                 methodName: "DeleteProjectApiKeyAsync",
-                                pathTemplate: "$\"/organization/projects/{projectId}/api_keys/{keyId}\"",
+                                pathTemplate: "$\"/organization/projects/{projectId}/api_keys/{apiKeyId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

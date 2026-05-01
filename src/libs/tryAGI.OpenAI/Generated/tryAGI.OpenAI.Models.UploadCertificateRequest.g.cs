@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The certificate content in PEM format
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("certificate")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Content { get; set; }
+        public required string Certificate { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="UploadCertificateRequest" /> class.
         /// </summary>
-        /// <param name="content">
+        /// <param name="certificate">
         /// The certificate content in PEM format
         /// </param>
         /// <param name="name">
@@ -40,11 +40,11 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UploadCertificateRequest(
-            string content,
+            string certificate,
             string? name)
         {
             this.Name = name;
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
+            this.Certificate = certificate ?? throw new global::System.ArgumentNullException(nameof(certificate));
         }
 
         /// <summary>

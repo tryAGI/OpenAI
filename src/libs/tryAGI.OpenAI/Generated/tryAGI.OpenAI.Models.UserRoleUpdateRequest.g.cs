@@ -13,8 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UserRoleUpdateRequestRoleJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.UserRoleUpdateRequestRole Role { get; set; }
+        public global::tryAGI.OpenAI.UserRoleUpdateRequestRole? Role { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,7 +31,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UserRoleUpdateRequest(
-            global::tryAGI.OpenAI.UserRoleUpdateRequestRole role)
+            global::tryAGI.OpenAI.UserRoleUpdateRequestRole? role)
         {
             this.Role = role;
         }

@@ -40,8 +40,7 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) of when the API key was last used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_used_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int LastUsedAt { get; set; }
+        public int? LastUsedAt { get; set; }
 
         /// <summary>
         /// The identifier, which can be referenced in API endpoints
@@ -75,15 +74,15 @@ namespace tryAGI.OpenAI
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) of when the API key was created
         /// </param>
-        /// <param name="lastUsedAt">
-        /// The Unix timestamp (in seconds) of when the API key was last used.
-        /// </param>
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints
         /// </param>
         /// <param name="owner"></param>
         /// <param name="object">
         /// The object type, which is always `organization.project.api_key`
+        /// </param>
+        /// <param name="lastUsedAt">
+        /// The Unix timestamp (in seconds) of when the API key was last used.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -92,10 +91,10 @@ namespace tryAGI.OpenAI
             string redactedValue,
             string name,
             int createdAt,
-            int lastUsedAt,
             string id,
             global::tryAGI.OpenAI.ProjectApiKeyOwner owner,
-            global::tryAGI.OpenAI.ProjectApiKeyObject @object)
+            global::tryAGI.OpenAI.ProjectApiKeyObject @object,
+            int? lastUsedAt)
         {
             this.Object = @object;
             this.RedactedValue = redactedValue ?? throw new global::System.ArgumentNullException(nameof(redactedValue));

@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.User> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.GroupUser> Data { get; set; }
 
         /// <summary>
         /// Whether more users are available when paginating.
@@ -60,7 +60,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UserListResource(
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.User> data,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.GroupUser> data,
             bool hasMore,
             global::tryAGI.OpenAI.UserListResourceObject @object,
             string? next)

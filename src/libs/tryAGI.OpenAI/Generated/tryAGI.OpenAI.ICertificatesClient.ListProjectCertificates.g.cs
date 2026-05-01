@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ListCertificatesResponse> ListProjectCertificatesAsync(
+        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ListProjectCertificatesResponse> ListProjectCertificatesAsync(
             string projectId,
             int? limit = default,
             string? after = default,

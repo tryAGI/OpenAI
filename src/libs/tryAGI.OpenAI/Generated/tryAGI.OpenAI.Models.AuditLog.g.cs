@@ -37,11 +37,10 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.AuditLogProject? Project { get; set; }
 
         /// <summary>
-        /// The actor who performed the audit logged action.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.AuditLogActor Actor { get; set; }
+        public global::tryAGI.OpenAI.AuditLogActor2? Actor { get; set; }
 
         /// <summary>
         /// The details for events with this `type`.
@@ -343,12 +342,10 @@ namespace tryAGI.OpenAI
         /// <param name="effectiveAt">
         /// The Unix timestamp (in seconds) of the event.
         /// </param>
-        /// <param name="actor">
-        /// The actor who performed the audit logged action.
-        /// </param>
         /// <param name="project">
         /// The project that the action was scoped to. Absent for actions not scoped to projects. Note that any admin actions taken via Admin API keys are associated with the default project.
         /// </param>
+        /// <param name="actor"></param>
         /// <param name="apiKeyCreated">
         /// The details for events with this `type`.
         /// </param>
@@ -497,8 +494,8 @@ namespace tryAGI.OpenAI
             string id,
             global::tryAGI.OpenAI.AuditLogEventType type,
             int effectiveAt,
-            global::tryAGI.OpenAI.AuditLogActor actor,
             global::tryAGI.OpenAI.AuditLogProject? project,
+            global::tryAGI.OpenAI.AuditLogActor2? actor,
             global::tryAGI.OpenAI.AuditLogApiKeyCreated? apiKeyCreated,
             global::tryAGI.OpenAI.AuditLogApiKeyUpdated? apiKeyUpdated,
             global::tryAGI.OpenAI.AuditLogApiKeyDeleted? apiKeyDeleted,
@@ -551,7 +548,7 @@ namespace tryAGI.OpenAI
             this.Type = type;
             this.EffectiveAt = effectiveAt;
             this.Project = project;
-            this.Actor = actor ?? throw new global::System.ArgumentNullException(nameof(actor));
+            this.Actor = actor;
             this.ApiKeyCreated = apiKeyCreated;
             this.ApiKeyUpdated = apiKeyUpdated;
             this.ApiKeyDeleted = apiKeyDeleted;

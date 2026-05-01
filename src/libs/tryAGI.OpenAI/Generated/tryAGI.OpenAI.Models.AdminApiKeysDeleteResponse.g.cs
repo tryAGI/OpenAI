@@ -13,21 +13,24 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <example>key_abc</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string? Id { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Id { get; set; }
 
         /// <summary>
         /// Example: organization.admin_api_key.deleted
         /// </summary>
         /// <example>organization.admin_api_key.deleted</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        public string? Object { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AdminApiKeysDeleteResponseObjectJsonConverter))]
+        public global::tryAGI.OpenAI.AdminApiKeysDeleteResponseObject Object { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
         /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
-        public bool? Deleted { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool Deleted { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,21 +44,21 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// Example: key_abc
         /// </param>
-        /// <param name="object">
-        /// Example: organization.admin_api_key.deleted
-        /// </param>
         /// <param name="deleted">
         /// Example: true
+        /// </param>
+        /// <param name="object">
+        /// Example: organization.admin_api_key.deleted
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AdminApiKeysDeleteResponse(
-            string? id,
-            string? @object,
-            bool? deleted)
+            string id,
+            bool deleted,
+            global::tryAGI.OpenAI.AdminApiKeysDeleteResponseObject @object)
         {
-            this.Id = id;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;
             this.Deleted = deleted;
         }

@@ -13,20 +13,23 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <example>list</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        public string? Object { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ApiKeyListObjectJsonConverter))]
+        public global::tryAGI.OpenAI.ApiKeyListObject Object { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AdminApiKey>? Data { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AdminApiKey> Data { get; set; }
 
         /// <summary>
         /// Example: false
         /// </summary>
         /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
-        public bool? HasMore { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool HasMore { get; set; }
 
         /// <summary>
         /// Example: key_abc
@@ -51,12 +54,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiKeyList" /> class.
         /// </summary>
-        /// <param name="object">
-        /// Example: list
-        /// </param>
         /// <param name="data"></param>
         /// <param name="hasMore">
         /// Example: false
+        /// </param>
+        /// <param name="object">
+        /// Example: list
         /// </param>
         /// <param name="firstId">
         /// Example: key_abc
@@ -68,14 +71,14 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ApiKeyList(
-            string? @object,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AdminApiKey>? data,
-            bool? hasMore,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AdminApiKey> data,
+            bool hasMore,
+            global::tryAGI.OpenAI.ApiKeyListObject @object,
             string? firstId,
             string? lastId)
         {
             this.Object = @object;
-            this.Data = data;
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.HasMore = hasMore;
             this.FirstId = firstId;
             this.LastId = lastId;

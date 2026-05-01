@@ -394,14 +394,14 @@ namespace tryAGI.OpenAI
         /// <param name="name">
         /// An optional name for the certificate
         /// </param>
-        /// <param name="content">
+        /// <param name="certificate">
         /// The certificate content in PEM format
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Certificate> UploadCertificateAsync(
-            string content,
+            string certificate,
             string? name = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -409,7 +409,7 @@ namespace tryAGI.OpenAI
             var __request = new global::tryAGI.OpenAI.UploadCertificateRequest
             {
                 Name = name,
-                Content = content,
+                Certificate = certificate,
             };
 
             return await UploadCertificateAsync(

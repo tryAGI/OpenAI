@@ -33,8 +33,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("next_page")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string NextPage { get; set; }
+        public string? NextPage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -47,21 +46,21 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="data"></param>
         /// <param name="hasMore"></param>
-        /// <param name="nextPage"></param>
         /// <param name="object"></param>
+        /// <param name="nextPage"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UsageResponse(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageTimeBucket> data,
             bool hasMore,
-            string nextPage,
-            global::tryAGI.OpenAI.UsageResponseObject @object)
+            global::tryAGI.OpenAI.UsageResponseObject @object,
+            string? nextPage)
         {
             this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.HasMore = hasMore;
-            this.NextPage = nextPage ?? throw new global::System.ArgumentNullException(nameof(nextPage));
+            this.NextPage = nextPage;
         }
 
         /// <summary>

@@ -47,8 +47,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("api_key")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ProjectServiceAccountApiKey ApiKey { get; set; }
+        public global::tryAGI.OpenAI.ProjectServiceAccountApiKey? ApiKey { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -62,11 +61,11 @@ namespace tryAGI.OpenAI
         /// <param name="id"></param>
         /// <param name="name"></param>
         /// <param name="createdAt"></param>
-        /// <param name="apiKey"></param>
         /// <param name="object"></param>
         /// <param name="role">
         /// Service accounts can only have one role of type `member`
         /// </param>
+        /// <param name="apiKey"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -74,16 +73,16 @@ namespace tryAGI.OpenAI
             string id,
             string name,
             int createdAt,
-            global::tryAGI.OpenAI.ProjectServiceAccountApiKey apiKey,
             global::tryAGI.OpenAI.ProjectServiceAccountCreateResponseObject @object,
-            global::tryAGI.OpenAI.ProjectServiceAccountCreateResponseRole role)
+            global::tryAGI.OpenAI.ProjectServiceAccountCreateResponseRole role,
+            global::tryAGI.OpenAI.ProjectServiceAccountApiKey? apiKey)
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Role = role;
             this.CreatedAt = createdAt;
-            this.ApiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
+            this.ApiKey = apiKey;
         }
 
         /// <summary>

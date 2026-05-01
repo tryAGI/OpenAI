@@ -242,7 +242,7 @@ Given text and/or image inputs, classifies if those inputs are potentially harmf
 | `create-project` | `POST /organization/projects` | Create a new project in the organization. Projects can be created and archived, but cannot be deleted. |
 | `create-project-service-account` | `POST /organization/projects/{project_id}/service_accounts` | Creates a new service account in the project. This also returns an unredacted API key for the service account. |
 | `create-project-user` | `POST /organization/projects/{project_id}/users` | Adds a user to the project. Users must already be members of the organization to be added to a project. |
-| `delete-project-api-key` | `DELETE /organization/projects/{project_id}/api_keys/{key_id}` | Deletes an API key from the project.  Returns confirmation of the key deletion, or an error if the key belonged to a service account. |
+| `delete-project-api-key` | `DELETE /organization/projects/{project_id}/api_keys/{api_key_id}` | Deletes an API key from the project.  Returns confirmation of the key deletion, or an error if the key belonged to a service account. |
 | `delete-project-service-account` | `DELETE /organization/projects/{project_id}/service_accounts/{service_account_id}` | Deletes a service account from the project.  Returns confirmation of service account deletion, or an error if the project is archived (archived projects have no service accounts). |
 | `delete-project-user` | `DELETE /organization/projects/{project_id}/users/{user_id}` | Deletes a user from the project.  Returns confirmation of project user deletion, or an error if the project is archived (archived projects have no users). |
 | `list-project-api-keys` | `GET /organization/projects/{project_id}/api_keys` | Returns a list of API keys in the project. |
@@ -254,7 +254,7 @@ Given text and/or image inputs, classifies if those inputs are potentially harmf
 | `modify-project-rate-limit` | `POST /organization/projects/{project_id}/rate_limits/{rate_limit_id}` | Updates a project rate limit. |
 | `modify-project-user` | `POST /organization/projects/{project_id}/users/{user_id}` | Modifies a user's role in the project. |
 | `retrieve-project` | `GET /organization/projects/{project_id}` | Retrieves a project. |
-| `retrieve-project-api-key` | `GET /organization/projects/{project_id}/api_keys/{key_id}` | Retrieves an API key in the project. |
+| `retrieve-project-api-key` | `GET /organization/projects/{project_id}/api_keys/{api_key_id}` | Retrieves an API key in the project. |
 | `retrieve-project-service-account` | `GET /organization/projects/{project_id}/service_accounts/{service_account_id}` | Retrieves a service account in the project. |
 | `retrieve-project-user` | `GET /organization/projects/{project_id}/users/{user_id}` | Retrieves a user in the project. |
 

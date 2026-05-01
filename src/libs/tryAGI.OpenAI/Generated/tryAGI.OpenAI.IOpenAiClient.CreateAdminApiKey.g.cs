@@ -12,7 +12,7 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AdminApiKey> CreateAdminApiKeyAsync(
+        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AdminApiKeyCreateResponse> CreateAdminApiKeyAsync(
 
             global::tryAGI.OpenAI.AdminApiKeysCreateRequest request,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AdminApiKey> CreateAdminApiKeyAsync(
+        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AdminApiKeyCreateResponse> CreateAdminApiKeyAsync(
             string name,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

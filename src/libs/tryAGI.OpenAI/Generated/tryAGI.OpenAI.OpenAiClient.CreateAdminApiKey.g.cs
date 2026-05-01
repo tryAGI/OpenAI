@@ -49,7 +49,7 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AdminApiKey> CreateAdminApiKeyAsync(
+        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AdminApiKeyCreateResponse> CreateAdminApiKeyAsync(
 
             global::tryAGI.OpenAI.AdminApiKeysCreateRequest request,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
@@ -318,7 +318,7 @@ namespace tryAGI.OpenAI
                                     __response.EnsureSuccessStatusCode();
 
                                     return
-                                        global::tryAGI.OpenAI.AdminApiKey.FromJson(__content, JsonSerializerContext) ??
+                                        global::tryAGI.OpenAI.AdminApiKeyCreateResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                                 }
                                 catch (global::System.Exception __ex)
@@ -348,7 +348,7 @@ namespace tryAGI.OpenAI
                                     ).ConfigureAwait(false);
 
                                     return
-                                        await global::tryAGI.OpenAI.AdminApiKey.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                        await global::tryAGI.OpenAI.AdminApiKeyCreateResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                                 }
                                 catch (global::System.Exception __ex)
@@ -397,7 +397,7 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AdminApiKey> CreateAdminApiKeyAsync(
+        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AdminApiKeyCreateResponse> CreateAdminApiKeyAsync(
             string name,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

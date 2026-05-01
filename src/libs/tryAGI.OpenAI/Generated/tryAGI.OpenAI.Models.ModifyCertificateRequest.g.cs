@@ -12,8 +12,7 @@ namespace tryAGI.OpenAI
         /// The updated name for the certificate
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,9 +30,9 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ModifyCertificateRequest(
-            string name)
+            string? name)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Name = name;
         }
 
         /// <summary>
