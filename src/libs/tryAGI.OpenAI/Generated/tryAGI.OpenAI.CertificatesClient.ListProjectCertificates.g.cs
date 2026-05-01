@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ListCertificatesResponse> ListProjectCertificatesAsync(
+        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ListProjectCertificatesResponse> ListProjectCertificatesAsync(
             string projectId,
             int? limit = default,
             string? after = default,
@@ -335,7 +335,7 @@ namespace tryAGI.OpenAI
                                     __response.EnsureSuccessStatusCode();
 
                                     return
-                                        global::tryAGI.OpenAI.ListCertificatesResponse.FromJson(__content, JsonSerializerContext) ??
+                                        global::tryAGI.OpenAI.ListProjectCertificatesResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                                 }
                                 catch (global::System.Exception __ex)
@@ -365,7 +365,7 @@ namespace tryAGI.OpenAI
                                     ).ConfigureAwait(false);
 
                                     return
-                                        await global::tryAGI.OpenAI.ListCertificatesResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                        await global::tryAGI.OpenAI.ListProjectCertificatesResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                                 }
                                 catch (global::System.Exception __ex)

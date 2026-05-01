@@ -9,13 +9,11 @@ namespace tryAGI.OpenAI
     public sealed partial class AdminApiKey
     {
         /// <summary>
-        /// The object type, which is always `organization.admin_api_key`<br/>
-        /// Example: organization.admin_api_key
+        /// The object type, which is always `organization.admin_api_key`
         /// </summary>
-        /// <example>organization.admin_api_key</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Object { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AdminApiKeyObjectJsonConverter))]
+        public global::tryAGI.OpenAI.AdminApiKeyObject Object { get; set; }
 
         /// <summary>
         /// The identifier, which can be referenced in API endpoints<br/>
@@ -83,10 +81,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="AdminApiKey" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The object type, which is always `organization.admin_api_key`<br/>
-        /// Example: organization.admin_api_key
-        /// </param>
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints<br/>
         /// Example: key_abc
@@ -104,6 +98,9 @@ namespace tryAGI.OpenAI
         /// Example: 1711471533
         /// </param>
         /// <param name="owner"></param>
+        /// <param name="object">
+        /// The object type, which is always `organization.admin_api_key`
+        /// </param>
         /// <param name="value">
         /// The value of the API key. Only shown on create.<br/>
         /// Example: sk-admin-1234abcd
@@ -113,16 +110,16 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AdminApiKey(
-            string @object,
             string id,
             string name,
             string redactedValue,
             int createdAt,
             global::tryAGI.OpenAI.AdminApiKeyOwner owner,
+            global::tryAGI.OpenAI.AdminApiKeyObject @object,
             string? value,
             int? lastUsedAt)
         {
-            this.Object = @object ?? throw new global::System.ArgumentNullException(nameof(@object));
+            this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.RedactedValue = redactedValue ?? throw new global::System.ArgumentNullException(nameof(redactedValue));

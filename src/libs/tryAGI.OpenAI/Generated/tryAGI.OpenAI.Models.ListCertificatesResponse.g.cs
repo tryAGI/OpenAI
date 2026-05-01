@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Certificate> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OrganizationCertificate> Data { get; set; }
 
         /// <summary>
         /// Example: cert_abc
@@ -65,7 +65,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ListCertificatesResponse(
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Certificate> data,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OrganizationCertificate> data,
             bool hasMore,
             string? firstId,
             string? lastId,

@@ -30,8 +30,7 @@ namespace tryAGI.OpenAI
         /// The name of the certificate.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the certificate was uploaded.
@@ -71,13 +70,13 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints
         /// </param>
-        /// <param name="name">
-        /// The name of the certificate.
-        /// </param>
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) of when the certificate was uploaded.
         /// </param>
         /// <param name="certificateDetails"></param>
+        /// <param name="name">
+        /// The name of the certificate.
+        /// </param>
         /// <param name="active">
         /// Whether the certificate is currently active at the specified scope. Not returned when getting details for a specific certificate.
         /// </param>
@@ -87,14 +86,14 @@ namespace tryAGI.OpenAI
         public Certificate(
             global::tryAGI.OpenAI.CertificateObject @object,
             string id,
-            string name,
             int createdAt,
             global::tryAGI.OpenAI.CertificateCertificateDetails certificateDetails,
+            string? name,
             bool? active)
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Name = name;
             this.CreatedAt = createdAt;
             this.CertificateDetails = certificateDetails ?? throw new global::System.ArgumentNullException(nameof(certificateDetails));
             this.Active = active;

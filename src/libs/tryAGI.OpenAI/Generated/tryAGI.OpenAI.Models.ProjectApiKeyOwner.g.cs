@@ -16,16 +16,16 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ProjectApiKeyOwnerType? Type { get; set; }
 
         /// <summary>
-        /// Represents an individual user in a project.
+        /// The user that owns a project API key.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
-        public global::tryAGI.OpenAI.ProjectUser? User { get; set; }
+        public global::tryAGI.OpenAI.ProjectApiKeyOwnerUser? User { get; set; }
 
         /// <summary>
-        /// Represents an individual service account in a project.
+        /// The service account that owns a project API key.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_account")]
-        public global::tryAGI.OpenAI.ProjectServiceAccount? ServiceAccount { get; set; }
+        public global::tryAGI.OpenAI.ProjectApiKeyOwnerServiceAccount? ServiceAccount { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,18 +40,18 @@ namespace tryAGI.OpenAI
         /// `user` or `service_account`
         /// </param>
         /// <param name="user">
-        /// Represents an individual user in a project.
+        /// The user that owns a project API key.
         /// </param>
         /// <param name="serviceAccount">
-        /// Represents an individual service account in a project.
+        /// The service account that owns a project API key.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ProjectApiKeyOwner(
             global::tryAGI.OpenAI.ProjectApiKeyOwnerType? type,
-            global::tryAGI.OpenAI.ProjectUser? user,
-            global::tryAGI.OpenAI.ProjectServiceAccount? serviceAccount)
+            global::tryAGI.OpenAI.ProjectApiKeyOwnerUser? user,
+            global::tryAGI.OpenAI.ProjectApiKeyOwnerServiceAccount? serviceAccount)
         {
             this.Type = type;
             this.User = user;

@@ -19,7 +19,8 @@ namespace tryAGI.OpenAI
         /// The number of code interpreter sessions.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_sessions")]
-        public int? NumSessions { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int NumSessions { get; set; }
 
         /// <summary>
         /// 
@@ -36,17 +37,17 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="UsageCodeInterpreterSessionsResult" /> class.
         /// </summary>
-        /// <param name="object"></param>
         /// <param name="numSessions">
         /// The number of code interpreter sessions.
         /// </param>
+        /// <param name="object"></param>
         /// <param name="projectId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UsageCodeInterpreterSessionsResult(
+            int numSessions,
             global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResultObject @object,
-            int? numSessions,
             string? projectId)
         {
             this.Object = @object;

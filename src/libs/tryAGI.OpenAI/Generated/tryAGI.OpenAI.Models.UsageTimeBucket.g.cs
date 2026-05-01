@@ -32,9 +32,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("result")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("results")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.UsageCompletionsResult, global::tryAGI.OpenAI.UsageEmbeddingsResult, global::tryAGI.OpenAI.UsageModerationsResult, global::tryAGI.OpenAI.UsageImagesResult, global::tryAGI.OpenAI.UsageAudioSpeechesResult, global::tryAGI.OpenAI.UsageAudioTranscriptionsResult, global::tryAGI.OpenAI.UsageVectorStoresResult, global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult, global::tryAGI.OpenAI.CostsResult>> Result { get; set; }
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResultsItem> Results { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
-        /// <param name="result"></param>
+        /// <param name="results"></param>
         /// <param name="object"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -55,13 +55,13 @@ namespace tryAGI.OpenAI
         public UsageTimeBucket(
             int startTime,
             int endTime,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.UsageCompletionsResult, global::tryAGI.OpenAI.UsageEmbeddingsResult, global::tryAGI.OpenAI.UsageModerationsResult, global::tryAGI.OpenAI.UsageImagesResult, global::tryAGI.OpenAI.UsageAudioSpeechesResult, global::tryAGI.OpenAI.UsageAudioTranscriptionsResult, global::tryAGI.OpenAI.UsageVectorStoresResult, global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult, global::tryAGI.OpenAI.CostsResult>> result,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResultsItem> results,
             global::tryAGI.OpenAI.UsageTimeBucketObject @object)
         {
             this.Object = @object;
             this.StartTime = startTime;
             this.EndTime = endTime;
-            this.Result = result ?? throw new global::System.ArgumentNullException(nameof(result));
+            this.Results = results ?? throw new global::System.ArgumentNullException(nameof(results));
         }
 
         /// <summary>

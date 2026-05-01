@@ -14069,7 +14069,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AdminApiKey'
+                $ref: '#/components/schemas/AdminApiKeyCreateResponse'
       x-oaiMeta:
         name: Create admin API key
         group: administration
@@ -14097,7 +14097,7 @@ paths:
               Key' });
 
 
-              console.log(adminAPIKey.id);
+              console.log(adminAPIKey);
             python: |-
               import os
               from openai import OpenAI
@@ -14108,8 +14108,8 @@ paths:
               admin_api_key = client.admin.organization.admin_api_keys.create(
                   name="New Admin Key",
               )
-              print(admin_api_key.id)
-            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tadminAPIKey, err := client.Admin.Organization.AdminAPIKeys.New(context.TODO(), openai.AdminOrganizationAdminAPIKeyNewParams{\n\t\tName: \"New Admin Key\",\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", adminAPIKey.ID)\n}\n"
+              print(admin_api_key)
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tadminAPIKey, err := client.Admin.Organization.AdminAPIKeys.New(context.TODO(), openai.AdminOrganizationAdminAPIKeyNewParams{\n\t\tName: \"New Admin Key\",\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", adminAPIKey)\n}\n"
             java: >-
               package com.openai.example;
 
@@ -14119,10 +14119,10 @@ paths:
               import com.openai.client.okhttp.OpenAIOkHttpClient;
 
               import
-              com.openai.models.admin.organization.adminapikeys.AdminApiKey;
+              com.openai.models.admin.organization.adminapikeys.AdminApiKeyCreateParams;
 
               import
-              com.openai.models.admin.organization.adminapikeys.AdminApiKeyCreateParams;
+              com.openai.models.admin.organization.adminapikeys.AdminApiKeyCreateResponse;
 
 
               public final class Main {
@@ -14134,7 +14134,7 @@ paths:
                       AdminApiKeyCreateParams params = AdminApiKeyCreateParams.builder()
                           .name("New Admin Key")
                           .build();
-                      AdminApiKey adminApiKey = client.admin().organization().adminApiKeys().create(params);
+                      AdminApiKeyCreateResponse adminApiKey = client.admin().organization().adminApiKeys().create(params);
                   }
               }
             ruby: >-
@@ -14304,10 +14304,17 @@ paths:
                     example: key_abc
                   object:
                     type: string
+                    enum:
+                      - organization.admin_api_key.deleted
                     example: organization.admin_api_key.deleted
+                    x-stainless-const: true
                   deleted:
                     type: boolean
                     example: true
+                required:
+                  - id
+                  - object
+                  - deleted
       x-oaiMeta:
         name: Delete admin API key
         group: administration
@@ -14698,9 +14705,9 @@ paths:
 
               // Automatically fetches more pages as needed.
 
-              for await (const certificate of
+              for await (const certificateListResponse of
               client.admin.organization.certificates.list()) {
-                console.log(certificate.id);
+                console.log(certificateListResponse.id);
               }
             python: |-
               import os
@@ -14814,7 +14821,8 @@ paths:
 
 
               const certificate = await
-              client.admin.organization.certificates.create({ content: 'content'
+              client.admin.organization.certificates.create({
+                certificate: 'certificate',
               });
 
 
@@ -14827,10 +14835,10 @@ paths:
                   admin_api_key=os.environ.get("OPENAI_ADMIN_KEY"),  # This is the default and can be omitted
               )
               certificate = client.admin.organization.certificates.create(
-                  content="content",
+                  certificate="certificate",
               )
               print(certificate.id)
-            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tcertificate, err := client.Admin.Organization.Certificates.New(context.TODO(), openai.AdminOrganizationCertificateNewParams{\n\t\tContent: \"content\",\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", certificate.ID)\n}\n"
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tcertificate, err := client.Admin.Organization.Certificates.New(context.TODO(), openai.AdminOrganizationCertificateNewParams{\n\t\tCertificate: \"certificate\",\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", certificate.ID)\n}\n"
             java: >-
               package com.openai.example;
 
@@ -14853,7 +14861,7 @@ paths:
                       OpenAIClient client = OpenAIOkHttpClient.fromEnv();
 
                       CertificateCreateParams params = CertificateCreateParams.builder()
-                          .content("content")
+                          .certificate("certificate")
                           .build();
                       Certificate certificate = client.admin().organization().certificates().create(params);
                   }
@@ -14866,7 +14874,8 @@ paths:
 
 
               certificate =
-              openai.admin.organization.certificates.create(content: "content")
+              openai.admin.organization.certificates.create(certificate:
+              "certificate")
 
 
               puts(certificate)
@@ -14907,7 +14916,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListCertificatesResponse'
+                $ref: '#/components/schemas/OrganizationCertificateActivationResponse'
       x-oaiMeta:
         name: Activate certificates for organization
         group: administration
@@ -14922,7 +14931,7 @@ paths:
               -H "Content-Type: application/json" \
 
               -d '{
-                "data": ["cert_abc", "cert_def"]
+                "certificate_ids": ["cert_abc", "cert_def"]
               }'
             node.js: >-
               import OpenAI from 'openai';
@@ -14935,11 +14944,11 @@ paths:
 
               // Automatically fetches more pages as needed.
 
-              for await (const certificate of
+              for await (const certificateActivateResponse of
               client.admin.organization.certificates.activate({
                 certificate_ids: ['cert_abc'],
               })) {
-                console.log(certificate.id);
+                console.log(certificateActivateResponse.id);
               }
             python: |-
               import os
@@ -15048,7 +15057,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListCertificatesResponse'
+                $ref: >-
+                  #/components/schemas/OrganizationCertificateDeactivationResponse
       x-oaiMeta:
         name: Deactivate certificates for organization
         group: administration
@@ -15063,7 +15073,7 @@ paths:
               -H "Content-Type: application/json" \
 
               -d '{
-                "data": ["cert_abc", "cert_def"]
+                "certificate_ids": ["cert_abc", "cert_def"]
               }'
             node.js: >-
               import OpenAI from 'openai';
@@ -15076,11 +15086,11 @@ paths:
 
               // Automatically fetches more pages as needed.
 
-              for await (const certificate of
-              client.admin.organization.certificates.deactivate({
-                certificate_ids: ['cert_abc'],
-              })) {
-                console.log(certificate.id);
+              for await (const certificateDeactivateResponse of
+              client.admin.organization.certificates.deactivate(
+                { certificate_ids: ['cert_abc'] },
+              )) {
+                console.log(certificateDeactivateResponse.id);
               }
             python: |-
               import os
@@ -15341,9 +15351,7 @@ paths:
 
 
               const certificate = await
-              client.admin.organization.certificates.update('certificate_id', {
-                name: 'name',
-              });
+              client.admin.organization.certificates.update('certificate_id');
 
 
               console.log(certificate.id);
@@ -15356,10 +15364,9 @@ paths:
               )
               certificate = client.admin.organization.certificates.update(
                   certificate_id="certificate_id",
-                  name="name",
               )
               print(certificate.id)
-            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tcertificate, err := client.Admin.Organization.Certificates.Update(\n\t\tcontext.TODO(),\n\t\t\"certificate_id\",\n\t\topenai.AdminOrganizationCertificateUpdateParams{\n\t\t\tName: \"name\",\n\t\t},\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", certificate.ID)\n}\n"
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tcertificate, err := client.Admin.Organization.Certificates.Update(\n\t\tcontext.TODO(),\n\t\t\"certificate_id\",\n\t\topenai.AdminOrganizationCertificateUpdateParams{},\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", certificate.ID)\n}\n"
             java: >-
               package com.openai.example;
 
@@ -15381,11 +15388,7 @@ paths:
                   public static void main(String[] args) {
                       OpenAIClient client = OpenAIOkHttpClient.fromEnv();
 
-                      CertificateUpdateParams params = CertificateUpdateParams.builder()
-                          .certificateId("certificate_id")
-                          .name("name")
-                          .build();
-                      Certificate certificate = client.admin().organization().certificates().update(params);
+                      Certificate certificate = client.admin().organization().certificates().update("certificate_id");
                   }
               }
             ruby: >-
@@ -15396,8 +15399,7 @@ paths:
 
 
               certificate =
-              openai.admin.organization.certificates.update("certificate_id",
-              name: "name")
+              openai.admin.organization.certificates.update("certificate_id")
 
 
               puts(certificate)
@@ -16612,9 +16614,9 @@ paths:
 
               // Automatically fetches more pages as needed.
 
-              for await (const organizationUser of
+              for await (const organizationGroupUser of
               client.admin.organization.groups.users.list('group_id')) {
-                console.log(organizationUser.id);
+                console.log(organizationGroupUser.id);
               }
             python: |-
               import os
@@ -16666,12 +16668,9 @@ paths:
                 "object": "list",
                 "data": [
                     {
-                        "object": "organization.user",
                         "id": "user_abc123",
                         "name": "Ada Lovelace",
-                        "email": "ada@example.com",
-                        "role": "owner",
-                        "added_at": 1711471533
+                        "email": "ada@example.com"
                     }
                 ],
                 "has_more": false,
@@ -17021,7 +17020,7 @@ paths:
                   "email": "user@example.com",
                   "role": "owner",
                   "status": "accepted",
-                  "invited_at": 1711471533,
+                  "created_at": 1711471533,
                   "expires_at": 1711471533,
                   "accepted_at": 1711471533
                 }
@@ -17149,7 +17148,7 @@ paths:
               "email": "anotheruser@example.com",
               "role": "reader",
               "status": "pending",
-              "invited_at": 1711471533,
+              "created_at": 1711471533,
               "expires_at": 1711471533,
               "accepted_at": null,
               "projects": [
@@ -17258,7 +17257,7 @@ paths:
                 "email": "user@example.com",
                 "role": "owner",
                 "status": "accepted",
-                "invited_at": 1711471533,
+                "created_at": 1711471533,
                 "expires_at": 1711471533,
                 "accepted_at": 1711471533
             }
@@ -17939,12 +17938,11 @@ paths:
                         "owner": {
                             "type": "user",
                             "user": {
-                                "object": "organization.project.user",
                                 "id": "user_abc",
                                 "name": "First Last",
                                 "email": "user@example.com",
                                 "role": "owner",
-                                "added_at": 1711471533
+                                "created_at": 1711471533
                             }
                         }
                     }
@@ -17953,7 +17951,7 @@ paths:
                 "last_id": "key_xyz",
                 "has_more": false
             }
-  /organization/projects/{project_id}/api_keys/{key_id}:
+  /organization/projects/{project_id}/api_keys/{api_key_id}:
     get:
       security:
         - AdminApiKeyAuth: []
@@ -17968,7 +17966,7 @@ paths:
           required: true
           schema:
             type: string
-        - name: key_id
+        - name: api_key_id
           in: path
           description: The ID of the API key.
           required: true
@@ -18002,7 +18000,8 @@ paths:
 
 
               const projectAPIKey = await
-              client.admin.organization.projects.apiKeys.retrieve('key_id', {
+              client.admin.organization.projects.apiKeys.retrieve('api_key_id',
+              {
                 project_id: 'project_id',
               });
 
@@ -18020,12 +18019,12 @@ paths:
 
               project_api_key =
               client.admin.organization.projects.api_keys.retrieve(
-                  key_id="key_id",
+                  api_key_id="api_key_id",
                   project_id="project_id",
               )
 
               print(project_api_key.id)
-            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tprojectAPIKey, err := client.Admin.Organization.Projects.APIKeys.Get(\n\t\tcontext.TODO(),\n\t\t\"project_id\",\n\t\t\"key_id\",\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", projectAPIKey.ID)\n}\n"
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tprojectAPIKey, err := client.Admin.Organization.Projects.APIKeys.Get(\n\t\tcontext.TODO(),\n\t\t\"project_id\",\n\t\t\"api_key_id\",\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", projectAPIKey.ID)\n}\n"
             java: >-
               package com.openai.example;
 
@@ -18049,7 +18048,7 @@ paths:
 
                       ApiKeyRetrieveParams params = ApiKeyRetrieveParams.builder()
                           .projectId("project_id")
-                          .keyId("key_id")
+                          .apiKeyId("api_key_id")
                           .build();
                       ProjectApiKey projectApiKey = client.admin().organization().projects().apiKeys().retrieve(params);
                   }
@@ -18062,7 +18061,7 @@ paths:
 
 
               project_api_key =
-              openai.admin.organization.projects.api_keys.retrieve("key_id",
+              openai.admin.organization.projects.api_keys.retrieve("api_key_id",
               project_id: "project_id")
 
 
@@ -18078,12 +18077,11 @@ paths:
                 "owner": {
                     "type": "user",
                     "user": {
-                        "object": "organization.project.user",
                         "id": "user_abc",
                         "name": "First Last",
                         "email": "user@example.com",
                         "role": "owner",
-                        "added_at": 1711471533
+                        "created_at": 1711471533
                     }
                 }
             }
@@ -18108,7 +18106,7 @@ paths:
           required: true
           schema:
             type: string
-        - name: key_id
+        - name: api_key_id
           in: path
           description: The ID of the API key.
           required: true
@@ -18148,7 +18146,7 @@ paths:
 
 
               const apiKey = await
-              client.admin.organization.projects.apiKeys.delete('key_id', {
+              client.admin.organization.projects.apiKeys.delete('api_key_id', {
                 project_id: 'project_id',
               });
 
@@ -18162,11 +18160,11 @@ paths:
                   admin_api_key=os.environ.get("OPENAI_ADMIN_KEY"),  # This is the default and can be omitted
               )
               api_key = client.admin.organization.projects.api_keys.delete(
-                  key_id="key_id",
+                  api_key_id="api_key_id",
                   project_id="project_id",
               )
               print(api_key.id)
-            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tapiKey, err := client.Admin.Organization.Projects.APIKeys.Delete(\n\t\tcontext.TODO(),\n\t\t\"project_id\",\n\t\t\"key_id\",\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", apiKey.ID)\n}\n"
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tapiKey, err := client.Admin.Organization.Projects.APIKeys.Delete(\n\t\tcontext.TODO(),\n\t\t\"project_id\",\n\t\t\"api_key_id\",\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", apiKey.ID)\n}\n"
             java: >-
               package com.openai.example;
 
@@ -18190,7 +18188,7 @@ paths:
 
                       ApiKeyDeleteParams params = ApiKeyDeleteParams.builder()
                           .projectId("project_id")
-                          .keyId("key_id")
+                          .apiKeyId("api_key_id")
                           .build();
                       ApiKeyDeleteResponse apiKey = client.admin().organization().projects().apiKeys().delete(params);
                   }
@@ -18203,7 +18201,7 @@ paths:
 
 
               api_key =
-              openai.admin.organization.projects.api_keys.delete("key_id",
+              openai.admin.organization.projects.api_keys.delete("api_key_id",
               project_id: "project_id")
 
 
@@ -18365,7 +18363,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListCertificatesResponse'
+                $ref: '#/components/schemas/ListProjectCertificatesResponse'
       x-oaiMeta:
         name: List project certificates
         group: administration
@@ -18388,11 +18386,11 @@ paths:
 
               // Automatically fetches more pages as needed.
 
-              for await (const certificate of
+              for await (const certificateListResponse of
               client.admin.organization.projects.certificates.list(
                 'project_id',
               )) {
-                console.log(certificate.id);
+                console.log(certificateListResponse.id);
               }
             python: |-
               import os
@@ -18496,7 +18494,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListCertificatesResponse'
+                $ref: >-
+                  #/components/schemas/OrganizationProjectCertificateActivationResponse
       x-oaiMeta:
         name: Activate certificates for project
         group: administration
@@ -18512,7 +18511,7 @@ paths:
               -H "Content-Type: application/json" \
 
               -d '{
-                "data": ["cert_abc", "cert_def"]
+                "certificate_ids": ["cert_abc", "cert_def"]
               }'
             node.js: >-
               import OpenAI from 'openai';
@@ -18525,12 +18524,12 @@ paths:
 
               // Automatically fetches more pages as needed.
 
-              for await (const certificate of
+              for await (const certificateActivateResponse of
               client.admin.organization.projects.certificates.activate(
                 'project_id',
                 { certificate_ids: ['cert_abc'] },
               )) {
-                console.log(certificate.id);
+                console.log(certificateActivateResponse.id);
               }
             python: |-
               import os
@@ -18645,7 +18644,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListCertificatesResponse'
+                $ref: >-
+                  #/components/schemas/OrganizationProjectCertificateDeactivationResponse
       x-oaiMeta:
         name: Deactivate certificates for project
         group: administration
@@ -18661,7 +18661,7 @@ paths:
               -H "Content-Type: application/json" \
 
               -d '{
-                "data": ["cert_abc", "cert_def"]
+                "certificate_ids": ["cert_abc", "cert_def"]
               }'
             node.js: >-
               import OpenAI from 'openai';
@@ -18674,12 +18674,12 @@ paths:
 
               // Automatically fetches more pages as needed.
 
-              for await (const certificate of
+              for await (const certificateDeactivateResponse of
               client.admin.organization.projects.certificates.deactivate(
                 'project_id',
                 { certificate_ids: ['cert_abc'] },
               )) {
-                console.log(certificate.id);
+                console.log(certificateDeactivateResponse.id);
               }
             python: |-
               import os
@@ -23002,8 +23002,7 @@ paths:
 
 
               const organizationUser = await
-              client.admin.organization.users.update('user_id', { role: 'owner'
-              });
+              client.admin.organization.users.update('user_id');
 
 
               console.log(organizationUser.id);
@@ -23016,10 +23015,9 @@ paths:
               )
               organization_user = client.admin.organization.users.update(
                   user_id="user_id",
-                  role="owner",
               )
               print(organization_user.id)
-            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\torganizationUser, err := client.Admin.Organization.Users.Update(\n\t\tcontext.TODO(),\n\t\t\"user_id\",\n\t\topenai.AdminOrganizationUserUpdateParams{\n\t\t\tRole: openai.AdminOrganizationUserUpdateParamsRoleOwner,\n\t\t},\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", organizationUser.ID)\n}\n"
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\torganizationUser, err := client.Admin.Organization.Users.Update(\n\t\tcontext.TODO(),\n\t\t\"user_id\",\n\t\topenai.AdminOrganizationUserUpdateParams{},\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", organizationUser.ID)\n}\n"
             java: >-
               package com.openai.example;
 
@@ -23041,11 +23039,7 @@ paths:
                   public static void main(String[] args) {
                       OpenAIClient client = OpenAIOkHttpClient.fromEnv();
 
-                      UserUpdateParams params = UserUpdateParams.builder()
-                          .userId("user_id")
-                          .role(UserUpdateParams.Role.OWNER)
-                          .build();
-                      OrganizationUser organizationUser = client.admin().organization().users().update(params);
+                      OrganizationUser organizationUser = client.admin().organization().users().update("user_id");
                   }
               }
             ruby: >-
@@ -23056,7 +23050,7 @@ paths:
 
 
               organization_user =
-              openai.admin.organization.users.update("user_id", role: :owner)
+              openai.admin.organization.users.update("user_id")
 
 
               puts(organization_user)
@@ -38279,7 +38273,8 @@ components:
       properties:
         object:
           type: string
-          example: organization.admin_api_key
+          enum:
+            - organization.admin_api_key
           description: The object type, which is always `organization.admin_api_key`
           x-stainless-const: true
         id:
@@ -38367,12 +38362,29 @@ components:
               "role": "owner"
             }
           }
+    AdminApiKeyCreateResponse:
+      allOf:
+        - $ref: '#/components/schemas/AdminApiKey'
+        - type: object
+          description: >-
+            The newly created admin API key. The `value` field is only returned
+            once, when the key is created.
+          properties:
+            value:
+              type: string
+              example: sk-admin-1234abcd
+              description: The value of the API key. Only shown on create.
+          required:
+            - value
     ApiKeyList:
       type: object
       properties:
         object:
           type: string
+          enum:
+            - list
           example: list
+          x-stainless-const: true
         data:
           type: array
           items:
@@ -38381,11 +38393,21 @@ components:
           type: boolean
           example: false
         first_id:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
           example: key_abc
         last_id:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
           example: key_xyz
+      required:
+        - object
+        - data
+        - has_more
+        - first_id
+        - last_id
     AssignedRoleDetails:
       type: object
       description: >-
@@ -38964,7 +38986,9 @@ components:
               type: string
               description: The project title.
         actor:
-          $ref: '#/components/schemas/AuditLogActor'
+          anyOf:
+            - $ref: '#/components/schemas/AuditLogActor'
+            - type: 'null'
         api_key.created:
           type: object
           description: The details for events with this `type`.
@@ -39616,7 +39640,6 @@ components:
         - id
         - type
         - effective_at
-        - actor
       x-oaiMeta:
         name: The audit log object
         example: |
@@ -40069,7 +40092,9 @@ components:
           type: string
           description: The identifier, which can be referenced in API endpoints
         name:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
           description: The name of the certificate.
         created_at:
           type: integer
@@ -50782,6 +50807,25 @@ components:
                   "predefined_role": false
               }
           }
+    GroupUser:
+      type: object
+      description: Represents an individual user returned when inspecting group membership.
+      properties:
+        id:
+          type: string
+          description: The identifier, which can be referenced in API endpoints
+        name:
+          type: string
+          description: The name of the user.
+        email:
+          anyOf:
+            - type: string
+            - type: 'null'
+          description: The email address of the user.
+      required:
+        - id
+        - name
+        - email
     GroupUserAssignment:
       type: object
       description: Confirmation payload returned after adding a user to a group.
@@ -51680,17 +51724,21 @@ components:
             - expired
             - pending
           description: '`accepted`,`expired`, or `pending`'
-        invited_at:
+        created_at:
           type: integer
           format: unixtime
           description: The Unix timestamp (in seconds) of when the invite was sent.
         expires_at:
-          type: integer
-          format: unixtime
+          anyOf:
+            - type: integer
+              format: unixtime
+            - type: 'null'
           description: The Unix timestamp (in seconds) of when the invite expires.
         accepted_at:
-          type: integer
-          format: unixtime
+          anyOf:
+            - type: integer
+              format: unixtime
+            - type: 'null'
           description: The Unix timestamp (in seconds) of when the invite was accepted.
         projects:
           type: array
@@ -51715,7 +51763,7 @@ components:
         - email
         - role
         - status
-        - invited_at
+        - created_at
         - expires_at
       x-oaiMeta:
         name: The invite object
@@ -51726,7 +51774,7 @@ components:
             "email": "user@example.com",
             "role": "owner",
             "status": "accepted",
-            "invited_at": 1711471533,
+            "created_at": 1711471533,
             "expires_at": 1711471533,
             "accepted_at": 1711471533,
             "projects": [
@@ -52038,12 +52086,16 @@ components:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/Certificate'
+            $ref: '#/components/schemas/OrganizationCertificate'
         first_id:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
           example: cert_abc
         last_id:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
           example: cert_abc
         has_more:
           type: boolean
@@ -52056,6 +52108,8 @@ components:
         - object
         - data
         - has_more
+        - first_id
+        - last_id
     ListFilesResponse:
       type: object
       properties:
@@ -52208,6 +52262,36 @@ components:
         - object
         - data
         - has_more
+    ListProjectCertificatesResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrganizationProjectCertificate'
+        first_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          example: cert_abc
+        last_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          example: cert_abc
+        has_more:
+          type: boolean
+        object:
+          type: string
+          enum:
+            - list
+          x-stainless-const: true
+      required:
+        - object
+        - data
+        - has_more
+        - first_id
+        - last_id
     ListRunStepsResponse:
       properties:
         object:
@@ -53945,8 +54029,6 @@ components:
         name:
           type: string
           description: The updated name for the certificate
-      required:
-        - name
     ModifyMessageRequest:
       type: object
       additionalProperties: false
@@ -54091,6 +54173,168 @@ components:
             "filename": "salesOverview.pdf",
             "purpose": "assistants",
           }
+    OrganizationCertificate:
+      type: object
+      description: >-
+        Represents an individual certificate configured at the organization
+        level.
+      properties:
+        object:
+          type: string
+          enum:
+            - organization.certificate
+          description: The object type, which is always `organization.certificate`.
+          x-stainless-const: true
+        id:
+          type: string
+          description: The identifier, which can be referenced in API endpoints
+        name:
+          anyOf:
+            - type: string
+            - type: 'null'
+          description: The name of the certificate.
+        created_at:
+          type: integer
+          format: unixtime
+          description: >-
+            The Unix timestamp (in seconds) of when the certificate was
+            uploaded.
+        certificate_details:
+          type: object
+          properties:
+            valid_at:
+              type: integer
+              format: unixtime
+              description: >-
+                The Unix timestamp (in seconds) of when the certificate becomes
+                valid.
+            expires_at:
+              type: integer
+              format: unixtime
+              description: The Unix timestamp (in seconds) of when the certificate expires.
+        active:
+          type: boolean
+          description: >-
+            Whether the certificate is currently active at the organization
+            level.
+      required:
+        - object
+        - id
+        - name
+        - created_at
+        - certificate_details
+        - active
+    OrganizationCertificateActivationResponse:
+      type: object
+      properties:
+        object:
+          type: string
+          enum:
+            - organization.certificate.activation
+          description: The organization certificate activation result type.
+          x-stainless-const: true
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrganizationCertificate'
+      required:
+        - object
+        - data
+    OrganizationCertificateDeactivationResponse:
+      type: object
+      properties:
+        object:
+          type: string
+          enum:
+            - organization.certificate.deactivation
+          description: The organization certificate deactivation result type.
+          x-stainless-const: true
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrganizationCertificate'
+      required:
+        - object
+        - data
+    OrganizationProjectCertificate:
+      type: object
+      description: Represents an individual certificate configured at the project level.
+      properties:
+        object:
+          type: string
+          enum:
+            - organization.project.certificate
+          description: The object type, which is always `organization.project.certificate`.
+          x-stainless-const: true
+        id:
+          type: string
+          description: The identifier, which can be referenced in API endpoints
+        name:
+          anyOf:
+            - type: string
+            - type: 'null'
+          description: The name of the certificate.
+        created_at:
+          type: integer
+          format: unixtime
+          description: >-
+            The Unix timestamp (in seconds) of when the certificate was
+            uploaded.
+        certificate_details:
+          type: object
+          properties:
+            valid_at:
+              type: integer
+              format: unixtime
+              description: >-
+                The Unix timestamp (in seconds) of when the certificate becomes
+                valid.
+            expires_at:
+              type: integer
+              format: unixtime
+              description: The Unix timestamp (in seconds) of when the certificate expires.
+        active:
+          type: boolean
+          description: Whether the certificate is currently active at the project level.
+      required:
+        - object
+        - id
+        - name
+        - created_at
+        - certificate_details
+        - active
+    OrganizationProjectCertificateActivationResponse:
+      type: object
+      properties:
+        object:
+          type: string
+          enum:
+            - organization.project.certificate.activation
+          description: The project certificate activation result type.
+          x-stainless-const: true
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrganizationProjectCertificate'
+      required:
+        - object
+        - data
+    OrganizationProjectCertificateDeactivationResponse:
+      type: object
+      properties:
+        object:
+          type: string
+          enum:
+            - organization.project.certificate.deactivation
+          description: The project certificate deactivation result type.
+          x-stainless-const: true
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrganizationProjectCertificate'
+      required:
+        - object
+        - data
     OtherChunkingStrategyResponseParam:
       type: object
       title: Other Chunking Strategy
@@ -54371,8 +54615,10 @@ components:
           format: unixtime
           description: The Unix timestamp (in seconds) of when the API key was created
         last_used_at:
-          type: integer
-          format: unixtime
+          anyOf:
+            - type: integer
+              format: unixtime
+            - type: 'null'
           description: The Unix timestamp (in seconds) of when the API key was last used.
         id:
           type: string
@@ -54387,9 +54633,9 @@ components:
                 - service_account
               description: '`user` or `service_account`'
             user:
-              $ref: '#/components/schemas/ProjectUser'
+              $ref: '#/components/schemas/ProjectApiKeyOwnerUser'
             service_account:
-              $ref: '#/components/schemas/ProjectServiceAccount'
+              $ref: '#/components/schemas/ProjectApiKeyOwnerServiceAccount'
       required:
         - object
         - redacted_value
@@ -54411,7 +54657,6 @@ components:
               "owner": {
                   "type": "user",
                   "user": {
-                      "object": "organization.project.user",
                       "id": "user_abc",
                       "name": "First Last",
                       "email": "user@example.com",
@@ -54460,6 +54705,56 @@ components:
         - first_id
         - last_id
         - has_more
+    ProjectApiKeyOwnerServiceAccount:
+      type: object
+      description: The service account that owns a project API key.
+      properties:
+        id:
+          type: string
+          description: The identifier, which can be referenced in API endpoints
+        name:
+          type: string
+          description: The name of the service account.
+        created_at:
+          type: integer
+          format: unixtime
+          description: >-
+            The Unix timestamp (in seconds) of when the service account was
+            created.
+        role:
+          type: string
+          description: The service account's project role.
+      required:
+        - id
+        - name
+        - created_at
+        - role
+    ProjectApiKeyOwnerUser:
+      type: object
+      description: The user that owns a project API key.
+      properties:
+        id:
+          type: string
+          description: The identifier, which can be referenced in API endpoints
+        email:
+          type: string
+          description: The email address of the user.
+        name:
+          type: string
+          description: The name of the user.
+        created_at:
+          type: integer
+          format: unixtime
+          description: The Unix timestamp (in seconds) of when the user was created.
+        role:
+          type: string
+          description: The user's project role.
+      required:
+        - id
+        - email
+        - name
+        - created_at
+        - role
     ProjectCreateRequest:
       type: object
       properties:
@@ -54826,7 +55121,9 @@ components:
           type: integer
           format: unixtime
         api_key:
-          $ref: '#/components/schemas/ProjectServiceAccountApiKey'
+          anyOf:
+            - $ref: '#/components/schemas/ProjectServiceAccountApiKey'
+            - type: 'null'
       required:
         - object
         - id
@@ -70932,11 +71229,11 @@ components:
         name:
           type: string
           description: An optional name for the certificate
-        content:
+        certificate:
           type: string
           description: The certificate content in PEM format
       required:
-        - content
+        - certificate
     UploadPart:
       type: object
       title: UploadPart
@@ -71120,7 +71417,7 @@ components:
             - type: 'null'
       required:
         - object
-        - sessions
+        - num_sessions
       x-oaiMeta:
         name: Code interpreter sessions usage object
         example: |
@@ -71440,7 +71737,9 @@ components:
         has_more:
           type: boolean
         next_page:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
       required:
         - object
         - data
@@ -71458,7 +71757,7 @@ components:
           type: integer
         end_time:
           type: integer
-        result:
+        results:
           type: array
           items:
             oneOf:
@@ -71471,11 +71770,13 @@ components:
               - $ref: '#/components/schemas/UsageVectorStoresResult'
               - $ref: '#/components/schemas/UsageCodeInterpreterSessionsResult'
               - $ref: '#/components/schemas/CostsResult'
+            discriminator:
+              propertyName: object
       required:
         - object
         - start_time
         - end_time
-        - result
+        - results
     UsageVectorStoresResult:
       type: object
       description: The aggregated vector stores usage details of the specific time bucket.
@@ -71585,7 +71886,7 @@ components:
           type: array
           description: Users in the current page.
           items:
-            $ref: '#/components/schemas/User'
+            $ref: '#/components/schemas/GroupUser'
         has_more:
           type: boolean
           description: Whether more users are available when paginating.
@@ -71608,12 +71909,9 @@ components:
               "object": "list",
               "data": [
                   {
-                      "object": "organization.user",
                       "id": "user_abc123",
                       "name": "Ada Lovelace",
-                      "email": "ada@example.com",
-                      "role": "owner",
-                      "added_at": 1711471533
+                      "email": "ada@example.com"
                   }
               ],
               "has_more": false,
@@ -71632,9 +71930,13 @@ components:
           items:
             $ref: '#/components/schemas/User'
         first_id:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
         last_id:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
         has_more:
           type: boolean
       required:
@@ -71696,8 +71998,6 @@ components:
             - owner
             - reader
           description: '`owner` or `reader`'
-      required:
-        - role
     VadConfig:
       type: object
       additionalProperties: false
