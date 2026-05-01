@@ -26,15 +26,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string FirstId { get; set; }
+        public string? FirstId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string LastId { get; set; }
+        public string? LastId { get; set; }
 
         /// <summary>
         /// 
@@ -53,24 +51,24 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="ProjectServiceAccountListResponse" /> class.
         /// </summary>
         /// <param name="data"></param>
-        /// <param name="firstId"></param>
-        /// <param name="lastId"></param>
         /// <param name="hasMore"></param>
         /// <param name="object"></param>
+        /// <param name="firstId"></param>
+        /// <param name="lastId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ProjectServiceAccountListResponse(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ProjectServiceAccount> data,
-            string firstId,
-            string lastId,
             bool hasMore,
-            global::tryAGI.OpenAI.ProjectServiceAccountListResponseObject @object)
+            global::tryAGI.OpenAI.ProjectServiceAccountListResponseObject @object,
+            string? firstId,
+            string? lastId)
         {
             this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.FirstId = firstId ?? throw new global::System.ArgumentNullException(nameof(firstId));
-            this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
+            this.FirstId = firstId;
+            this.LastId = lastId;
             this.HasMore = hasMore;
         }
 

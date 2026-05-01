@@ -26,8 +26,7 @@ namespace tryAGI.OpenAI
         /// The name of the project. This appears in reporting.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the project was created.
@@ -46,9 +45,13 @@ namespace tryAGI.OpenAI
         /// `active` or `archived`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectStatusJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ProjectStatus Status { get; set; }
+        public string? Status { get; set; }
+
+        /// <summary>
+        /// The external key associated with the project.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("external_key_id")]
+        public string? ExternalKeyId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -62,36 +65,41 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints
         /// </param>
-        /// <param name="name">
-        /// The name of the project. This appears in reporting.
-        /// </param>
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) of when the project was created.
-        /// </param>
-        /// <param name="status">
-        /// `active` or `archived`
         /// </param>
         /// <param name="object">
         /// The object type, which is always `organization.project`
         /// </param>
+        /// <param name="name">
+        /// The name of the project. This appears in reporting.
+        /// </param>
         /// <param name="archivedAt"></param>
+        /// <param name="status">
+        /// `active` or `archived`
+        /// </param>
+        /// <param name="externalKeyId">
+        /// The external key associated with the project.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Project(
             string id,
-            string name,
             int createdAt,
-            global::tryAGI.OpenAI.ProjectStatus status,
             global::tryAGI.OpenAI.ProjectObject @object,
-            int? archivedAt)
+            string? name,
+            int? archivedAt,
+            string? status,
+            string? externalKeyId)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Name = name;
             this.CreatedAt = createdAt;
             this.ArchivedAt = archivedAt;
             this.Status = status;
+            this.ExternalKeyId = externalKeyId;
         }
 
         /// <summary>

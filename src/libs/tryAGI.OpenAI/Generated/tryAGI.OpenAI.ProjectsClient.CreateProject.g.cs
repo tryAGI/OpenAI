@@ -395,12 +395,16 @@ namespace tryAGI.OpenAI
         /// <param name="geography">
         /// Create the project with the specified data residency region. Your organization must have access to Data residency functionality in order to use. See [data residency controls](/docs/guides/your-data#data-residency-controls) to review the functionality and limitations of setting this field.
         /// </param>
+        /// <param name="externalKeyId">
+        /// External key ID to associate with the project.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Project> CreateProjectAsync(
             string name,
-            global::tryAGI.OpenAI.ProjectCreateRequestGeography? geography = default,
+            string? geography = default,
+            string? externalKeyId = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -408,6 +412,7 @@ namespace tryAGI.OpenAI
             {
                 Name = name,
                 Geography = geography,
+                ExternalKeyId = externalKeyId,
             };
 
             return await CreateProjectAsync(

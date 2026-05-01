@@ -450,7 +450,7 @@ namespace tryAGI.OpenAI
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ProjectUser> ModifyProjectUserAsync(
             string projectId,
             string userId,
-            global::tryAGI.OpenAI.ProjectUserUpdateRequestRole role,
+            string? role = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -26,23 +26,20 @@ namespace tryAGI.OpenAI
         /// The name of the user
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// The email address of the user
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Email { get; set; }
+        public string? Email { get; set; }
 
         /// <summary>
         /// `owner` or `member`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectUserRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ProjectUserRole Role { get; set; }
+        public required string Role { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the project was added.
@@ -63,12 +60,6 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints
         /// </param>
-        /// <param name="name">
-        /// The name of the user
-        /// </param>
-        /// <param name="email">
-        /// The email address of the user
-        /// </param>
         /// <param name="role">
         /// `owner` or `member`
         /// </param>
@@ -78,22 +69,28 @@ namespace tryAGI.OpenAI
         /// <param name="object">
         /// The object type, which is always `organization.project.user`
         /// </param>
+        /// <param name="name">
+        /// The name of the user
+        /// </param>
+        /// <param name="email">
+        /// The email address of the user
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ProjectUser(
             string id,
-            string name,
-            string email,
-            global::tryAGI.OpenAI.ProjectUserRole role,
+            string role,
             int addedAt,
-            global::tryAGI.OpenAI.ProjectUserObject @object)
+            global::tryAGI.OpenAI.ProjectUserObject @object,
+            string? name,
+            string? email)
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
-            this.Role = role;
+            this.Name = name;
+            this.Email = email;
+            this.Role = role ?? throw new global::System.ArgumentNullException(nameof(role));
             this.AddedAt = addedAt;
         }
 

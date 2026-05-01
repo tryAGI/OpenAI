@@ -12,8 +12,25 @@ namespace tryAGI.OpenAI
         /// `owner` or `reader`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UserRoleUpdateRequestRoleJsonConverter))]
-        public global::tryAGI.OpenAI.UserRoleUpdateRequestRole? Role { get; set; }
+        public string? Role { get; set; }
+
+        /// <summary>
+        /// Role ID to assign to the user.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("role_id")]
+        public string? RoleId { get; set; }
+
+        /// <summary>
+        /// Technical level metadata.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("technical_level")]
+        public string? TechnicalLevel { get; set; }
+
+        /// <summary>
+        /// Developer persona metadata.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("developer_persona")]
+        public string? DeveloperPersona { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -27,13 +44,28 @@ namespace tryAGI.OpenAI
         /// <param name="role">
         /// `owner` or `reader`
         /// </param>
+        /// <param name="roleId">
+        /// Role ID to assign to the user.
+        /// </param>
+        /// <param name="technicalLevel">
+        /// Technical level metadata.
+        /// </param>
+        /// <param name="developerPersona">
+        /// Developer persona metadata.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UserRoleUpdateRequest(
-            global::tryAGI.OpenAI.UserRoleUpdateRequestRole? role)
+            string? role,
+            string? roleId,
+            string? technicalLevel,
+            string? developerPersona)
         {
             this.Role = role;
+            this.RoleId = roleId;
+            this.TechnicalLevel = technicalLevel;
+            this.DeveloperPersona = developerPersona;
         }
 
         /// <summary>

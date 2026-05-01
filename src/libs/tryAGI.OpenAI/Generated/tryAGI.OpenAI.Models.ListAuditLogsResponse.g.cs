@@ -27,16 +27,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <example>audit_log-defb456h8dks</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string FirstId { get; set; }
+        public string? FirstId { get; set; }
 
         /// <summary>
         /// Example: audit_log-hnbkd8s93s
         /// </summary>
         /// <example>audit_log-hnbkd8s93s</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string LastId { get; set; }
+        public string? LastId { get; set; }
 
         /// <summary>
         /// 
@@ -55,28 +53,28 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="ListAuditLogsResponse" /> class.
         /// </summary>
         /// <param name="data"></param>
+        /// <param name="hasMore"></param>
+        /// <param name="object"></param>
         /// <param name="firstId">
         /// Example: audit_log-defb456h8dks
         /// </param>
         /// <param name="lastId">
         /// Example: audit_log-hnbkd8s93s
         /// </param>
-        /// <param name="hasMore"></param>
-        /// <param name="object"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ListAuditLogsResponse(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AuditLog> data,
-            string firstId,
-            string lastId,
             bool hasMore,
-            global::tryAGI.OpenAI.ListAuditLogsResponseObject @object)
+            global::tryAGI.OpenAI.ListAuditLogsResponseObject @object,
+            string? firstId,
+            string? lastId)
         {
             this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.FirstId = firstId ?? throw new global::System.ArgumentNullException(nameof(firstId));
-            this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
+            this.FirstId = firstId;
+            this.LastId = lastId;
             this.HasMore = hasMore;
         }
 

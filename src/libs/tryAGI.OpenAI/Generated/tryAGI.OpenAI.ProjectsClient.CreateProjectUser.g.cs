@@ -437,6 +437,9 @@ namespace tryAGI.OpenAI
         /// <param name="userId">
         /// The ID of the user.
         /// </param>
+        /// <param name="email">
+        /// Email of the user to add.
+        /// </param>
         /// <param name="role">
         /// `owner` or `member`
         /// </param>
@@ -445,14 +448,16 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ProjectUser> CreateProjectUserAsync(
             string projectId,
-            string userId,
-            global::tryAGI.OpenAI.ProjectUserCreateRequestRole role,
+            string role,
+            string? userId = default,
+            string? email = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::tryAGI.OpenAI.ProjectUserCreateRequest
             {
                 UserId = userId,
+                Email = email,
                 Role = role,
             };
 

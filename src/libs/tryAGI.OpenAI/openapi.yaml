@@ -17750,8 +17750,7 @@ paths:
 
 
               const project = await
-              client.admin.organization.projects.update('project_id', { name:
-              'name' });
+              client.admin.organization.projects.update('project_id');
 
 
               console.log(project.id);
@@ -17764,10 +17763,9 @@ paths:
               )
               project = client.admin.organization.projects.update(
                   project_id="project_id",
-                  name="name",
               )
               print(project.id)
-            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tproject, err := client.Admin.Organization.Projects.Update(\n\t\tcontext.TODO(),\n\t\t\"project_id\",\n\t\topenai.AdminOrganizationProjectUpdateParams{\n\t\t\tName: \"name\",\n\t\t},\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", project.ID)\n}\n"
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tproject, err := client.Admin.Organization.Projects.Update(\n\t\tcontext.TODO(),\n\t\t\"project_id\",\n\t\topenai.AdminOrganizationProjectUpdateParams{},\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", project.ID)\n}\n"
             java: >-
               package com.openai.example;
 
@@ -17788,23 +17786,15 @@ paths:
                   public static void main(String[] args) {
                       OpenAIClient client = OpenAIOkHttpClient.fromEnv();
 
-                      ProjectUpdateParams params = ProjectUpdateParams.builder()
-                          .projectId("project_id")
-                          .name("name")
-                          .build();
-                      Project project = client.admin().organization().projects().update(params);
+                      Project project = client.admin().organization().projects().update("project_id");
                   }
               }
-            ruby: >-
+            ruby: |-
               require "openai"
-
 
               openai = OpenAI::Client.new(admin_api_key: "My Admin API Key")
 
-
-              project = openai.admin.organization.projects.update("project_id",
-              name: "name")
-
+              project = openai.admin.organization.projects.update("project_id")
 
               puts(project)
           response: ''
@@ -20173,8 +20163,7 @@ paths:
 
               const projectUser = await
               client.admin.organization.projects.users.create('project_id', {
-                role: 'owner',
-                user_id: 'user_id',
+                role: 'role',
               });
 
 
@@ -20188,11 +20177,10 @@ paths:
               )
               project_user = client.admin.organization.projects.users.create(
                   project_id="project_id",
-                  role="owner",
-                  user_id="user_id",
+                  role="role",
               )
               print(project_user.id)
-            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tprojectUser, err := client.Admin.Organization.Projects.Users.New(\n\t\tcontext.TODO(),\n\t\t\"project_id\",\n\t\topenai.AdminOrganizationProjectUserNewParams{\n\t\t\tRole:   openai.AdminOrganizationProjectUserNewParamsRoleOwner,\n\t\t\tUserID: \"user_id\",\n\t\t},\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", projectUser.ID)\n}\n"
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tprojectUser, err := client.Admin.Organization.Projects.Users.New(\n\t\tcontext.TODO(),\n\t\t\"project_id\",\n\t\topenai.AdminOrganizationProjectUserNewParams{\n\t\t\tRole: \"role\",\n\t\t},\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", projectUser.ID)\n}\n"
             java: >-
               package com.openai.example;
 
@@ -20216,8 +20204,7 @@ paths:
 
                       UserCreateParams params = UserCreateParams.builder()
                           .projectId("project_id")
-                          .role(UserCreateParams.Role.OWNER)
-                          .userId("user_id")
+                          .role("role")
                           .build();
                       ProjectUser projectUser = client.admin().organization().projects().users().create(params);
                   }
@@ -20231,7 +20218,7 @@ paths:
 
               project_user =
               openai.admin.organization.projects.users.create("project_id",
-              role: :owner, user_id: "user_id")
+              role: "role")
 
 
               puts(project_user)
@@ -20427,7 +20414,6 @@ paths:
               const projectUser = await
               client.admin.organization.projects.users.update('user_id', {
                 project_id: 'project_id',
-                role: 'owner',
               });
 
 
@@ -20442,10 +20428,9 @@ paths:
               project_user = client.admin.organization.projects.users.update(
                   user_id="user_id",
                   project_id="project_id",
-                  role="owner",
               )
               print(project_user.id)
-            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tprojectUser, err := client.Admin.Organization.Projects.Users.Update(\n\t\tcontext.TODO(),\n\t\t\"project_id\",\n\t\t\"user_id\",\n\t\topenai.AdminOrganizationProjectUserUpdateParams{\n\t\t\tRole: openai.AdminOrganizationProjectUserUpdateParamsRoleOwner,\n\t\t},\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", projectUser.ID)\n}\n"
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tprojectUser, err := client.Admin.Organization.Projects.Users.Update(\n\t\tcontext.TODO(),\n\t\t\"project_id\",\n\t\t\"user_id\",\n\t\topenai.AdminOrganizationProjectUserUpdateParams{},\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", projectUser.ID)\n}\n"
             java: >-
               package com.openai.example;
 
@@ -20470,7 +20455,6 @@ paths:
                       UserUpdateParams params = UserUpdateParams.builder()
                           .projectId("project_id")
                           .userId("user_id")
-                          .role(UserUpdateParams.Role.OWNER)
                           .build();
                       ProjectUser projectUser = client.admin().organization().projects().users().update(params);
                   }
@@ -20484,7 +20468,7 @@ paths:
 
               project_user =
               openai.admin.organization.projects.users.update("user_id",
-              project_id: "project_id", role: :owner)
+              project_id: "project_id")
 
 
               puts(project_user)
@@ -38282,17 +38266,15 @@ components:
           example: key_abc
           description: The identifier, which can be referenced in API endpoints
         name:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
           example: Administration Key
           description: The name of the API key
         redacted_value:
           type: string
           example: sk-admin...def
           description: The redacted value of the API key
-        value:
-          type: string
-          example: sk-admin-1234abcd
-          description: The value of the API key. Only shown on create.
         created_at:
           type: integer
           format: unixtime
@@ -38338,9 +38320,7 @@ components:
       required:
         - object
         - redacted_value
-        - name
         - created_at
-        - last_used_at
         - id
         - owner
       x-oaiMeta:
@@ -38406,8 +38386,6 @@ components:
         - object
         - data
         - has_more
-        - first_id
-        - last_id
     AssignedRoleDetails:
       type: object
       description: >-
@@ -50750,11 +50728,15 @@ components:
           description: >-
             Whether the group is managed through SCIM and controlled by your
             identity provider.
+        group_type:
+          type: string
+          description: The type of the group.
       required:
         - id
         - name
         - created_at
         - is_scim_managed
+        - group_type
       x-oaiMeta:
         name: Group
         example: |
@@ -50762,7 +50744,8 @@ components:
               "id": "group_01J1F8ABCDXYZ",
               "name": "Support Team",
               "created_at": 1711471533,
-              "is_scim_managed": false
+              "is_scim_managed": false,
+              "group_type": "group"
           }
     GroupRoleAssignment:
       type: object
@@ -51757,6 +51740,9 @@ components:
                   - member
                   - owner
                 description: Project membership role
+            required:
+              - id
+              - role
       required:
         - object
         - id
@@ -51764,7 +51750,7 @@ components:
         - role
         - status
         - created_at
-        - expires_at
+        - projects
       x-oaiMeta:
         name: The invite object
         example: |
@@ -51815,10 +51801,14 @@ components:
           items:
             $ref: '#/components/schemas/Invite'
         first_id:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
           description: The first `invite_id` in the retrieved `list`
         last_id:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
           description: The last `invite_id` in the retrieved `list`
         has_more:
           type: boolean
@@ -51828,6 +51818,7 @@ components:
       required:
         - object
         - data
+        - has_more
     InviteProjectGroupBody:
       type: object
       description: Request payload for granting a group access to a project.
@@ -52043,18 +52034,20 @@ components:
           items:
             $ref: '#/components/schemas/AuditLog'
         first_id:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
           example: audit_log-defb456h8dks
         last_id:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
           example: audit_log-hnbkd8s93s
         has_more:
           type: boolean
       required:
         - object
         - data
-        - first_id
-        - last_id
         - has_more
     ListBatchesResponse:
       type: object
@@ -54557,7 +54550,9 @@ components:
           description: The object type, which is always `organization.project`
           x-stainless-const: true
         name:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
           description: The name of the project. This appears in reporting.
         created_at:
           type: integer
@@ -54572,17 +54567,19 @@ components:
                 or `null`.
             - type: 'null'
         status:
-          type: string
-          enum:
-            - active
-            - archived
+          anyOf:
+            - type: string
+            - type: 'null'
           description: '`active` or `archived`'
+        external_key_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          description: The external key associated with the project.
       required:
         - id
         - object
-        - name
         - created_at
-        - status
       x-oaiMeta:
         name: The project object
         example: |
@@ -54592,7 +54589,8 @@ components:
               "name": "Project example",
               "created_at": 1711471533,
               "archived_at": null,
-              "status": "active"
+              "status": "active",
+              "external_key_id": null
           }
     ProjectApiKey:
       type: object
@@ -54694,16 +54692,18 @@ components:
           items:
             $ref: '#/components/schemas/ProjectApiKey'
         first_id:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
         last_id:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
         has_more:
           type: boolean
       required:
         - object
         - data
-        - first_id
-        - last_id
         - has_more
     ProjectApiKeyOwnerServiceAccount:
       type: object
@@ -54762,22 +54762,20 @@ components:
           type: string
           description: The friendly name of the project, this name appears in reports.
         geography:
-          type: string
-          enum:
-            - US
-            - EU
-            - JP
-            - IN
-            - KR
-            - CA
-            - AU
-            - SG
+          anyOf:
+            - type: string
+            - type: 'null'
           description: >-
             Create the project with the specified data residency region. Your
             organization must have access to Data residency functionality in
             order to use. See [data residency
             controls](/docs/guides/your-data#data-residency-controls) to review
             the functionality and limitations of setting this field.
+        external_key_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          description: External key ID to associate with the project.
       required:
         - name
     ProjectGroup:
@@ -54799,6 +54797,9 @@ components:
         group_name:
           type: string
           description: Display name of the group.
+        group_type:
+          type: string
+          description: The type of the group.
         created_at:
           type: integer
           format: unixtime
@@ -54810,6 +54811,7 @@ components:
         - project_id
         - group_id
         - group_name
+        - group_type
         - created_at
       x-oaiMeta:
         name: The project group object
@@ -54819,6 +54821,7 @@ components:
               "project_id": "proj_abc123",
               "group_id": "group_01J1F8ABCDXYZ",
               "group_name": "Support Team",
+              "group_type": "group",
               "created_at": 1711471533
           }
     ProjectGroupDeletedResource:
@@ -54904,16 +54907,18 @@ components:
           items:
             $ref: '#/components/schemas/Project'
         first_id:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
         last_id:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
         has_more:
           type: boolean
       required:
         - object
         - data
-        - first_id
-        - last_id
         - has_more
     ProjectRateLimit:
       type: object
@@ -54983,16 +54988,18 @@ components:
           items:
             $ref: '#/components/schemas/ProjectRateLimit'
         first_id:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
         last_id:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
         has_more:
           type: boolean
       required:
         - object
         - data
-        - first_id
-        - last_id
         - has_more
     ProjectRateLimitUpdateRequest:
       type: object
@@ -55160,25 +55167,37 @@ components:
           items:
             $ref: '#/components/schemas/ProjectServiceAccount'
         first_id:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
         last_id:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
         has_more:
           type: boolean
       required:
         - object
         - data
-        - first_id
-        - last_id
         - has_more
     ProjectUpdateRequest:
       type: object
       properties:
         name:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
           description: The updated name of the project, this name appears in reports.
-      required:
-        - name
+        external_key_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          description: External key ID to associate with the project.
+        geography:
+          anyOf:
+            - type: string
+            - type: 'null'
+          description: Geography for the project.
     ProjectUser:
       type: object
       description: Represents an individual user in a project.
@@ -55193,16 +55212,17 @@ components:
           type: string
           description: The identifier, which can be referenced in API endpoints
         name:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
           description: The name of the user
         email:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
           description: The email address of the user
         role:
           type: string
-          enum:
-            - owner
-            - member
           description: '`owner` or `member`'
         added_at:
           type: integer
@@ -55211,8 +55231,6 @@ components:
       required:
         - object
         - id
-        - name
-        - email
         - role
         - added_at
       x-oaiMeta:
@@ -55230,16 +55248,19 @@ components:
       type: object
       properties:
         user_id:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
           description: The ID of the user.
+        email:
+          anyOf:
+            - type: string
+            - type: 'null'
+          description: Email of the user to add.
         role:
           type: string
-          enum:
-            - owner
-            - member
           description: '`owner` or `member`'
       required:
-        - user_id
         - role
     ProjectUserDeleteResponse:
       type: object
@@ -55267,28 +55288,27 @@ components:
           items:
             $ref: '#/components/schemas/ProjectUser'
         first_id:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
         last_id:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
         has_more:
           type: boolean
       required:
         - object
         - data
-        - first_id
-        - last_id
         - has_more
     ProjectUserUpdateRequest:
       type: object
       properties:
         role:
-          type: string
-          enum:
-            - owner
-            - member
+          anyOf:
+            - type: string
+            - type: 'null'
           description: '`owner` or `member`'
-      required:
-        - role
     Prompt:
       anyOf:
         - type: object
@@ -71821,27 +71841,131 @@ components:
           type: string
           description: The identifier, which can be referenced in API endpoints
         name:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
           description: The name of the user
         email:
-          type: string
+          anyOf:
+            - type: string
+            - type: 'null'
           description: The email address of the user
         role:
-          type: string
-          enum:
-            - owner
-            - reader
+          anyOf:
+            - type: string
+            - type: 'null'
           description: '`owner` or `reader`'
         added_at:
           type: integer
           format: unixtime
           description: The Unix timestamp (in seconds) of when the user was added.
+        is_default:
+          type: boolean
+          description: Whether this is the organization's default user.
+        created:
+          type: integer
+          format: unixtime
+          description: The Unix timestamp (in seconds) of when the user was created.
+        user:
+          type: object
+          description: Nested user details.
+          properties:
+            object:
+              type: string
+              enum:
+                - user
+              x-stainless-const: true
+            id:
+              type: string
+            email:
+              anyOf:
+                - type: string
+                - type: 'null'
+            name:
+              anyOf:
+                - type: string
+                - type: 'null'
+            picture:
+              anyOf:
+                - type: string
+                - type: 'null'
+            enabled:
+              anyOf:
+                - type: boolean
+                - type: 'null'
+            banned:
+              anyOf:
+                - type: boolean
+                - type: 'null'
+            banned_at:
+              anyOf:
+                - type: integer
+                  format: unixtime
+                - type: 'null'
+          required:
+            - object
+            - id
+        is_service_account:
+          type: boolean
+          description: Whether the user is a service account.
+        is_scale_tier_authorized_purchaser:
+          anyOf:
+            - type: boolean
+            - type: 'null'
+          description: Whether the user is an authorized purchaser for Scale Tier.
+        is_scim_managed:
+          type: boolean
+          description: Whether the user is managed through SCIM.
+        api_key_last_used_at:
+          anyOf:
+            - type: integer
+              format: unixtime
+            - type: 'null'
+          description: The Unix timestamp (in seconds) of the user's last API key usage.
+        technical_level:
+          anyOf:
+            - type: string
+            - type: 'null'
+          description: The technical level metadata for the user.
+        developer_persona:
+          anyOf:
+            - type: string
+            - type: 'null'
+          description: The developer persona metadata for the user.
+        projects:
+          anyOf:
+            - type: object
+              properties:
+                object:
+                  type: string
+                  enum:
+                    - list
+                  x-stainless-const: true
+                data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        anyOf:
+                          - type: string
+                          - type: 'null'
+                      name:
+                        anyOf:
+                          - type: string
+                          - type: 'null'
+                      role:
+                        anyOf:
+                          - type: string
+                          - type: 'null'
+              required:
+                - object
+                - data
+            - type: 'null'
+          description: Projects associated with the user, if included.
       required:
         - object
         - id
-        - name
-        - email
-        - role
         - added_at
       x-oaiMeta:
         name: The user object
@@ -71942,8 +72066,6 @@ components:
       required:
         - object
         - data
-        - first_id
-        - last_id
         - has_more
     UserRoleAssignment:
       type: object
@@ -71993,11 +72115,25 @@ components:
       type: object
       properties:
         role:
-          type: string
-          enum:
-            - owner
-            - reader
+          anyOf:
+            - type: string
+            - type: 'null'
           description: '`owner` or `reader`'
+        role_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          description: Role ID to assign to the user.
+        technical_level:
+          anyOf:
+            - type: string
+            - type: 'null'
+          description: Technical level metadata.
+        developer_persona:
+          anyOf:
+            - type: string
+            - type: 'null'
+          description: Developer persona metadata.
     VadConfig:
       type: object
       additionalProperties: false

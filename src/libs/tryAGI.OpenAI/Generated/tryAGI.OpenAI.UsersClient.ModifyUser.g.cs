@@ -399,18 +399,33 @@ namespace tryAGI.OpenAI
         /// <param name="role">
         /// `owner` or `reader`
         /// </param>
+        /// <param name="roleId">
+        /// Role ID to assign to the user.
+        /// </param>
+        /// <param name="technicalLevel">
+        /// Technical level metadata.
+        /// </param>
+        /// <param name="developerPersona">
+        /// Developer persona metadata.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.User> ModifyUserAsync(
             string userId,
-            global::tryAGI.OpenAI.UserRoleUpdateRequestRole? role = default,
+            string? role = default,
+            string? roleId = default,
+            string? technicalLevel = default,
+            string? developerPersona = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::tryAGI.OpenAI.UserRoleUpdateRequest
             {
                 Role = role,
+                RoleId = roleId,
+                TechnicalLevel = technicalLevel,
+                DeveloperPersona = developerPersona,
             };
 
             return await ModifyUserAsync(
