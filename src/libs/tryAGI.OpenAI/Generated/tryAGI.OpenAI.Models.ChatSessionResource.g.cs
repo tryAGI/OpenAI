@@ -29,9 +29,8 @@ namespace tryAGI.OpenAI
         /// Unix timestamp (in seconds) for when the session expires.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset ExpiresAt { get; set; }
+        public required int ExpiresAt { get; set; }
 
         /// <summary>
         /// Ephemeral client secret that authenticates session requests.
@@ -128,7 +127,7 @@ namespace tryAGI.OpenAI
 #endif
         public ChatSessionResource(
             string id,
-            global::System.DateTimeOffset expiresAt,
+            int expiresAt,
             string clientSecret,
             global::tryAGI.OpenAI.ChatkitWorkflow workflow,
             string user,

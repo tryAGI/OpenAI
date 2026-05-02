@@ -78250,6 +78250,7 @@ components:
           x-stainless-const: true
         expires_at:
           type: integer
+          format: unixtime
           description: Unix timestamp (in seconds) for when the session expires.
         client_secret:
           type: string
@@ -78368,6 +78369,7 @@ components:
           type: integer
           maximum: 600
           minimum: 1
+          format: int64
           description: Number of seconds after the anchor when the session expires.
       type: object
       required:
@@ -78545,6 +78547,7 @@ components:
         preview_url:
           anyOf:
             - type: string
+              format: uri
               description: Preview URL for rendering the attachment inline.
             - type: 'null'
       type: object
@@ -78602,6 +78605,7 @@ components:
           x-stainless-const: true
         created_at:
           type: integer
+          format: unixtime
           description: Unix timestamp (in seconds) for when the item was created.
         thread_id:
           type: string
@@ -78695,6 +78699,7 @@ components:
           x-stainless-const: true
         url:
           type: string
+          format: uri
           description: URL referenced by the annotation.
       type: object
       required:
@@ -78763,6 +78768,7 @@ components:
           x-stainless-const: true
         created_at:
           type: integer
+          format: unixtime
           description: Unix timestamp (in seconds) for when the item was created.
         thread_id:
           type: string
@@ -78803,6 +78809,7 @@ components:
           x-stainless-const: true
         created_at:
           type: integer
+          format: unixtime
           description: Unix timestamp (in seconds) for when the item was created.
         thread_id:
           type: string
@@ -78846,6 +78853,7 @@ components:
           x-stainless-const: true
         created_at:
           type: integer
+          format: unixtime
           description: Unix timestamp (in seconds) for when the item was created.
         thread_id:
           type: string
@@ -78909,6 +78917,7 @@ components:
           x-stainless-const: true
         created_at:
           type: integer
+          format: unixtime
           description: Unix timestamp (in seconds) for when the item was created.
         thread_id:
           type: string
@@ -78989,6 +78998,7 @@ components:
           x-stainless-const: true
         created_at:
           type: integer
+          format: unixtime
           description: Unix timestamp (in seconds) for when the item was created.
         thread_id:
           type: string
@@ -79134,6 +79144,7 @@ components:
           x-stainless-const: true
         created_at:
           type: integer
+          format: unixtime
           description: Unix timestamp (in seconds) for when the thread was created.
         title:
           anyOf:
