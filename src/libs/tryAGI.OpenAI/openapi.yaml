@@ -74352,6 +74352,7 @@ components:
           x-stainless-const: true
         url:
           type: string
+          format: uri
           description: The URL of the web resource.
         start_index:
           type: integer
@@ -74577,6 +74578,7 @@ components:
         image_url:
           anyOf:
             - type: string
+              format: uri
               description: >-
                 The URL of the image to be sent to the model. A fully qualified
                 URL or base64 encoded image in a data URL.
@@ -74613,6 +74615,7 @@ components:
         image_url:
           anyOf:
             - type: string
+              format: uri
               description: The URL of the screenshot image.
             - type: 'null'
         file_id:
@@ -74661,6 +74664,7 @@ components:
             The content of the file to be sent to the model.
         file_url:
           type: string
+          format: uri
           description: The URL of the file to be sent to the model.
         detail:
           $ref: '#/components/schemas/FileInputDetail'
@@ -75827,6 +75831,7 @@ components:
           x-stainless-const: true
         url:
           type: string
+          format: uri
           description: The URL of the image output from the code interpreter.
       type: object
       required:
@@ -76361,6 +76366,7 @@ components:
           anyOf:
             - type: string
               maxLength: 20971520
+              format: uri
               description: >-
                 The URL of the image to be sent to the model. A fully qualified
                 URL or base64 encoded image in a data URL.
@@ -76419,6 +76425,7 @@ components:
         file_url:
           anyOf:
             - type: string
+              format: uri
               description: The URL of the file to be sent to the model.
             - type: 'null'
         detail:
@@ -76999,6 +77006,7 @@ components:
                     Keys are strings with a maximum length of 64 characters. Values are strings         with a maximum length of 512 characters.
         created_at:
           type: integer
+          format: unixtime
           description: >-
             The time at which the conversation was created, measured in seconds
             since the Unix epoch.
@@ -77256,10 +77264,12 @@ components:
           description: Approximate completion percentage for the generation task.
         created_at:
           type: integer
+          format: unixtime
           description: Unix timestamp (seconds) for when the job was created.
         completed_at:
           anyOf:
             - type: integer
+              format: unixtime
               description: >-
                 Unix timestamp (seconds) for when the job completed, if
                 finished.
@@ -77267,6 +77277,7 @@ components:
         expires_at:
           anyOf:
             - type: integer
+              format: unixtime
               description: >-
                 Unix timestamp (seconds) for when the downloadable assets
                 expire, if set.
@@ -77352,6 +77363,7 @@ components:
         image_url:
           type: string
           maxLength: 20971520
+          format: uri
           description: A fully qualified URL or base64-encoded data URL.
         file_id:
           type: string
@@ -77462,6 +77474,7 @@ components:
             - type: 'null'
         created_at:
           type: integer
+          format: unixtime
           description: Unix timestamp (in seconds) when the character was created.
       type: object
       required:
@@ -77838,6 +77851,7 @@ components:
           description: The compacted list of output items.
         created_at:
           type: integer
+          format: unixtime
           description: >-
             Unix timestamp (in seconds) when the compacted conversation was
             created.
@@ -77896,6 +77910,7 @@ components:
           description: Description of the skill.
         created_at:
           type: integer
+          format: unixtime
           description: Unix timestamp (seconds) for when the skill was created.
         default_version:
           type: string
@@ -78013,6 +78028,7 @@ components:
           description: Version number for this skill.
         created_at:
           type: integer
+          format: unixtime
           description: Unix timestamp (seconds) for when the version was created.
         name:
           type: string

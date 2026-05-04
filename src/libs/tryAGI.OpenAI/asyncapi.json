@@ -880,6 +880,7 @@
           },
           "file_url": {
             "type": "string",
+            "format": "uri",
             "description": "The URL of the file to be sent to the model."
           },
           "detail": {
@@ -909,6 +910,7 @@
             "anyOf": [
               {
                 "type": "string",
+                "format": "uri",
                 "description": "The URL of the image to be sent to the model. A fully qualified URL or base64 encoded image in a data URL."
               },
               {
