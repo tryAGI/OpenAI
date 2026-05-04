@@ -35,9 +35,8 @@ namespace tryAGI.OpenAI
         /// Unix timestamp (in seconds) when the compacted conversation was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTimeOffset CreatedAt { get; set; }
+        public required int CreatedAt { get; set; }
 
         /// <summary>
         /// Token accounting for the compaction pass, including cached, reasoning, and total tokens.
@@ -77,7 +76,7 @@ namespace tryAGI.OpenAI
         public CompactResource(
             string id,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ItemField> output,
-            global::System.DateTimeOffset createdAt,
+            int createdAt,
             global::tryAGI.OpenAI.ResponseUsage usage,
             global::tryAGI.OpenAI.CompactResourceObject @object = global::tryAGI.OpenAI.CompactResourceObject.ResponseCompaction)
         {
