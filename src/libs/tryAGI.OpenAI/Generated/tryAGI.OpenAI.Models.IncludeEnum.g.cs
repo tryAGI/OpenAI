@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// Specify additional output data to include in the model response. Currently supported values are:<br/>
+    /// - `web_search_call.results`: Include the search results of the web search tool call.<br/>
     /// - `web_search_call.action.sources`: Include the sources of the web search tool call.<br/>
     /// - `code_interpreter_call.outputs`: Includes the outputs of python code execution in code interpreter tool call items.<br/>
     /// - `computer_call_output.output.image_url`: Include image urls from the computer call output.<br/>
@@ -44,7 +45,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         WebSearchCallActionSources,
         /// <summary>
-        /// 
+        /// Include the search results of the web search tool call.
         /// </summary>
         WebSearchCallResults,
     }
