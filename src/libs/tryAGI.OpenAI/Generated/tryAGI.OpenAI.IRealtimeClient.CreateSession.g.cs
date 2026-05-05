@@ -31,6 +31,24 @@ namespace tryAGI.OpenAI
         /// for the Realtime API.<br/>
         /// Returns the created Realtime session object, plus an ephemeral key.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.RealtimeSessionCreateResponse>> CreateSessionAsResponseAsync(
+
+            global::tryAGI.OpenAI.RealtimeSessionCreateRequest request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create an ephemeral API token for use in client-side applications with the<br/>
+        /// Realtime API. Can be configured with the same session parameters as the<br/>
+        /// `session.update` client event.<br/>
+        /// It responds with a session object, plus a `client_secret` key which contains<br/>
+        /// a usable ephemeral API token that can be used to authenticate browser clients<br/>
+        /// for the Realtime API.<br/>
+        /// Returns the created Realtime session object, plus an ephemeral key.
+        /// </summary>
         /// <param name="clientSecret">
         /// Ephemeral key returned by the API.
         /// </param>

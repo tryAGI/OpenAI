@@ -24,6 +24,21 @@ namespace tryAGI.OpenAI
         /// handle it.
         /// </summary>
         /// <param name="callId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse> AcceptCallAsResponseAsync(
+            string callId,
+
+            global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Accept an incoming SIP call and configure the realtime session that will<br/>
+        /// handle it.
+        /// </summary>
+        /// <param name="callId"></param>
         /// <param name="type">
         /// The type of session to create. Always `realtime` for the Realtime API.
         /// </param>

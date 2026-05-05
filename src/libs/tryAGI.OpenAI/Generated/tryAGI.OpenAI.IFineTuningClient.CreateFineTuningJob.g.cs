@@ -25,6 +25,20 @@ namespace tryAGI.OpenAI
         /// Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.<br/>
         /// [Learn more about fine-tuning](/docs/guides/model-optimization)
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.FineTuningJob>> CreateFineTuningJobAsResponseAsync(
+
+            global::tryAGI.OpenAI.CreateFineTuningJobRequest request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Creates a fine-tuning job which begins the process of creating a new model from a given dataset.<br/>
+        /// Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.<br/>
+        /// [Learn more about fine-tuning](/docs/guides/model-optimization)
+        /// </summary>
         /// <param name="model">
         /// The name of the model to fine-tune. You can select one of the<br/>
         /// [supported models](/docs/guides/fine-tuning#which-models-can-be-fine-tuned).<br/>

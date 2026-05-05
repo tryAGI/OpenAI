@@ -25,5 +25,26 @@ namespace tryAGI.OpenAI
             string? after = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Returns a list of files.
+        /// </summary>
+        /// <param name="purpose"></param>
+        /// <param name="limit">
+        /// Default Value: 10000
+        /// </param>
+        /// <param name="order">
+        /// Default Value: desc
+        /// </param>
+        /// <param name="after"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.ListFilesResponse>> ListFilesAsResponseAsync(
+            string? purpose = default,
+            int? limit = default,
+            global::tryAGI.OpenAI.ListFilesOrder? order = default,
+            string? after = default,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

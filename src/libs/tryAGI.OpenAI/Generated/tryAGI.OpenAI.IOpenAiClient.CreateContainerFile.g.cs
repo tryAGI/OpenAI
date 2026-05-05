@@ -26,6 +26,22 @@ namespace tryAGI.OpenAI
         /// Creates a container file.
         /// </summary>
         /// <param name="containerId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.ContainerFileResource>> CreateContainerFileAsResponseAsync(
+            string containerId,
+
+            global::tryAGI.OpenAI.CreateContainerFileBody request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a Container File<br/>
+        /// You can send either a multipart/form-data request with the raw file content, or a JSON request with a file ID.<br/>
+        /// Creates a container file.
+        /// </summary>
+        /// <param name="containerId"></param>
         /// <param name="fileId">
         /// Name of the file to create.
         /// </param>

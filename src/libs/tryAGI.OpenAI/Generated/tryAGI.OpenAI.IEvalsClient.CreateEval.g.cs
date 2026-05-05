@@ -25,6 +25,20 @@ namespace tryAGI.OpenAI
         /// An evaluation is a set of testing criteria and the config for a data source, which dictates the schema of the data used in the evaluation. After creating an evaluation, you can run it on different models and model parameters. We support several types of graders and datasources.<br/>
         /// For more information, see the [Evals guide](/docs/guides/evals).
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.Eval>> CreateEvalAsResponseAsync(
+
+            global::tryAGI.OpenAI.CreateEvalRequest request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create the structure of an evaluation that can be used to test a model's performance.<br/>
+        /// An evaluation is a set of testing criteria and the config for a data source, which dictates the schema of the data used in the evaluation. After creating an evaluation, you can run it on different models and model parameters. We support several types of graders and datasources.<br/>
+        /// For more information, see the [Evals guide](/docs/guides/evals).
+        /// </summary>
         /// <param name="name">
         /// The name of the evaluation.
         /// </param>

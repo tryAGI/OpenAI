@@ -21,6 +21,19 @@ namespace tryAGI.OpenAI
         /// Creates a completion for the provided prompt and parameters.<br/>
         /// Returns a completion object, or a sequence of completion objects if the request is streamed.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.CreateCompletionResponse>> CreateCompletionAsResponseAsync(
+
+            global::tryAGI.OpenAI.CreateCompletionRequest request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Creates a completion for the provided prompt and parameters.<br/>
+        /// Returns a completion object, or a sequence of completion objects if the request is streamed.
+        /// </summary>
         /// <param name="model">
         /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
         /// </param>
