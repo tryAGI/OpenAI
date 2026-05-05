@@ -22,6 +22,20 @@ namespace tryAGI.OpenAI
         /// Transfer an active SIP call to a new destination using the SIP REFER verb.
         /// </summary>
         /// <param name="callId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse> ReferCallAsResponseAsync(
+            string callId,
+
+            global::tryAGI.OpenAI.RealtimeCallReferRequest request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Transfer an active SIP call to a new destination using the SIP REFER verb.
+        /// </summary>
+        /// <param name="callId"></param>
         /// <param name="targetUri">
         /// URI that should appear in the SIP Refer-To header. Supports values like<br/>
         /// `tel:+14155550123` or `sip:agent@example.com`.<br/>

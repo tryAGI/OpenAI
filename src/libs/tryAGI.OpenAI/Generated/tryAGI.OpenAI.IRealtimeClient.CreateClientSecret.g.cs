@@ -35,6 +35,26 @@ namespace tryAGI.OpenAI
         /// [Learn more about authentication with client secrets over WebRTC](/docs/guides/realtime-webrtc).<br/>
         /// Returns the created client secret and the effective session object. The client secret is a string that looks like `ek_1234`.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.RealtimeCreateClientSecretResponse>> CreateClientSecretAsResponseAsync(
+
+            global::tryAGI.OpenAI.RealtimeCreateClientSecretRequest request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a Realtime client secret with an associated session configuration.<br/>
+        /// Client secrets are short-lived tokens that can be passed to a client app,<br/>
+        /// such as a web frontend or mobile client, which grants access to the Realtime API without<br/>
+        /// leaking your main API key. You can configure a custom TTL for each client secret.<br/>
+        /// You can also attach session configuration options to the client secret, which will be<br/>
+        /// applied to any sessions created using that client secret, but these can also be overridden<br/>
+        /// by the client connection.<br/>
+        /// [Learn more about authentication with client secrets over WebRTC](/docs/guides/realtime-webrtc).<br/>
+        /// Returns the created client secret and the effective session object. The client secret is a string that looks like `ek_1234`.
+        /// </summary>
         /// <param name="expiresAfter">
         /// Configuration for the client secret expiration. Expiration refers to the time after which<br/>
         /// a client secret will no longer be valid for creating sessions. The session itself may<br/>

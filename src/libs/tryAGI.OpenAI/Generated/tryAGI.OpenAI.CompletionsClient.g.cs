@@ -73,10 +73,10 @@ namespace tryAGI.OpenAI
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public CompletionsClient(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::tryAGI.OpenAI.EndPointAuthorization>? authorizations = null,
-            global::tryAGI.OpenAI.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::tryAGI.OpenAI.EndPointAuthorization>? authorizations,
+            global::tryAGI.OpenAI.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

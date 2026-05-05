@@ -21,6 +21,19 @@ namespace tryAGI.OpenAI
         /// Create Container<br/>
         /// Creates a container.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.ContainerResource>> CreateContainerAsResponseAsync(
+
+            global::tryAGI.OpenAI.CreateContainerBody request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Container<br/>
+        /// Creates a container.
+        /// </summary>
         /// <param name="name">
         /// Name of the container to create.
         /// </param>
