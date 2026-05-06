@@ -32,13 +32,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ImageGenToolQuality? Quality { get; set; }
 
         /// <summary>
-        /// The size of the generated image. One of `1024x1024`, `1024x1536`,<br/>
-        /// `1536x1024`, or `auto`. Default: `auto`.<br/>
+        /// The size of the generated images. For `gpt-image-2` and `gpt-image-2-2026-04-21`, arbitrary resolutions are supported as `WIDTHxHEIGHT` strings, for example `1536x864`. Width and height must both be divisible by 16 and the requested aspect ratio must be between 1:3 and 3:1. Resolutions above `2560x1440` are experimental, and the maximum supported resolution is `3840x2160`. The requested size must also satisfy the model's current pixel and edge limits. The standard sizes `1024x1024`, `1536x1024`, and `1024x1536` are supported by the GPT image models; `auto` is supported for models that allow automatic sizing. For `dall-e-2`, use one of `256x256`, `512x512`, or `1024x1024`. For `dall-e-3`, use one of `1024x1024`, `1792x1024`, or `1024x1792`.<br/>
         /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImageGenToolSizeJsonConverter))]
-        public global::tryAGI.OpenAI.ImageGenToolSize? Size { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.ImageGenToolSize?>))]
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.ImageGenToolSize?>? Size { get; set; }
 
         /// <summary>
         /// The output format of the generated image. One of `png`, `webp`, or<br/>
@@ -119,8 +118,7 @@ namespace tryAGI.OpenAI
         /// Default Value: auto
         /// </param>
         /// <param name="size">
-        /// The size of the generated image. One of `1024x1024`, `1024x1536`,<br/>
-        /// `1536x1024`, or `auto`. Default: `auto`.<br/>
+        /// The size of the generated images. For `gpt-image-2` and `gpt-image-2-2026-04-21`, arbitrary resolutions are supported as `WIDTHxHEIGHT` strings, for example `1536x864`. Width and height must both be divisible by 16 and the requested aspect ratio must be between 1:3 and 3:1. Resolutions above `2560x1440` are experimental, and the maximum supported resolution is `3840x2160`. The requested size must also satisfy the model's current pixel and edge limits. The standard sizes `1024x1024`, `1536x1024`, and `1024x1536` are supported by the GPT image models; `auto` is supported for models that allow automatic sizing. For `dall-e-2`, use one of `256x256`, `512x512`, or `1024x1024`. For `dall-e-3`, use one of `1024x1024`, `1792x1024`, or `1024x1792`.<br/>
         /// Default Value: auto
         /// </param>
         /// <param name="outputFormat">
@@ -160,7 +158,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ImageGenToolType type,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.ImageGenToolModel?>? model,
             global::tryAGI.OpenAI.ImageGenToolQuality? quality,
-            global::tryAGI.OpenAI.ImageGenToolSize? size,
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.ImageGenToolSize?>? size,
             global::tryAGI.OpenAI.ImageGenToolOutputFormat? outputFormat,
             int? outputCompression,
             global::tryAGI.OpenAI.ImageGenToolModeration? moderation,

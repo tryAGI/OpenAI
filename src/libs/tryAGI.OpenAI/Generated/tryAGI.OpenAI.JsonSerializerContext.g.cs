@@ -4491,7 +4491,11 @@ namespace tryAGI.OpenAI
 
             typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.CreateImageEditRequestModel?>),
 
+            typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.CreateImageEditRequestSize?>),
+
             typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.CreateImageRequestModel?>),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.CreateImageRequestSize?>),
 
             typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.CreateImageVariationRequestModel?>),
 
@@ -4590,6 +4594,8 @@ namespace tryAGI.OpenAI
             typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.GraderStringCheck, global::tryAGI.OpenAI.GraderTextSimilarity, global::tryAGI.OpenAI.GraderPython, global::tryAGI.OpenAI.GraderScoreModel, global::tryAGI.OpenAI.GraderLabelModel>),
 
             typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.ImageGenToolModel?>),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.ImageGenToolSize?>),
 
             typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<string>, global::tryAGI.OpenAI.MCPToolFilter>),
 
@@ -5292,6 +5298,7 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateImageEditRequestBackground), TypeInfoPropertyName = "CreateImageEditRequestBackground2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageEditRequestModel?>), TypeInfoPropertyName = "AnyOfStringCreateImageEditRequestModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateImageEditRequestModel), TypeInfoPropertyName = "CreateImageEditRequestModel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageEditRequestSize?>), TypeInfoPropertyName = "AnyOfStringCreateImageEditRequestSize2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateImageEditRequestSize), TypeInfoPropertyName = "CreateImageEditRequestSize2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateImageEditRequestResponseFormat), TypeInfoPropertyName = "CreateImageEditRequestResponseFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateImageEditRequestOutputFormat), TypeInfoPropertyName = "CreateImageEditRequestOutputFormat2")]
@@ -5303,6 +5310,7 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateImageRequestQuality), TypeInfoPropertyName = "CreateImageRequestQuality2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateImageRequestResponseFormat), TypeInfoPropertyName = "CreateImageRequestResponseFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateImageRequestOutputFormat), TypeInfoPropertyName = "CreateImageRequestOutputFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageRequestSize?>), TypeInfoPropertyName = "AnyOfStringCreateImageRequestSize2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateImageRequestSize), TypeInfoPropertyName = "CreateImageRequestSize2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateImageRequestModeration), TypeInfoPropertyName = "CreateImageRequestModeration2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateImageRequestBackground), TypeInfoPropertyName = "CreateImageRequestBackground2")]
@@ -5731,6 +5739,7 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.ImageGenToolModel?>), TypeInfoPropertyName = "AnyOfStringImageGenToolModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ImageGenToolModel), TypeInfoPropertyName = "ImageGenToolModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ImageGenToolQuality), TypeInfoPropertyName = "ImageGenToolQuality2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.ImageGenToolSize?>), TypeInfoPropertyName = "AnyOfStringImageGenToolSize2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ImageGenToolSize), TypeInfoPropertyName = "ImageGenToolSize2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ImageGenToolOutputFormat), TypeInfoPropertyName = "ImageGenToolOutputFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ImageGenToolModeration), TypeInfoPropertyName = "ImageGenToolModeration2")]
