@@ -25,7 +25,7 @@ namespace tryAGI.OpenAI
         public required double Logprob { get; set; }
 
         /// <summary>
-        /// The log probability of the top 20 most likely tokens.
+        /// The log probabilities of up to 20 of the most likely tokens.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_logprobs")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResponseLogProbTopLogprob>? TopLogprobs { get; set; }
@@ -46,7 +46,7 @@ namespace tryAGI.OpenAI
         /// The log probability of this token.
         /// </param>
         /// <param name="topLogprobs">
-        /// The log probability of the top 20 most likely tokens.
+        /// The log probabilities of up to 20 of the most likely tokens.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

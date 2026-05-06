@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IList<long>? Bytes { get; set; }
 
         /// <summary>
-        /// List of the most likely tokens and their log probability, at this token position. In rare cases, there may be fewer than the number of requested `top_logprobs` returned.
+        /// List of the most likely tokens and their log probability, at this token position. The number of entries may be fewer than the requested `top_logprobs`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_logprobs")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -51,7 +51,7 @@ namespace tryAGI.OpenAI
         /// The log probability of this token, if it is within the top 20 most likely tokens. Otherwise, the value `-9999.0` is used to signify that the token is very unlikely.
         /// </param>
         /// <param name="topLogprobs">
-        /// List of the most likely tokens and their log probability, at this token position. In rare cases, there may be fewer than the number of requested `top_logprobs` returned.
+        /// List of the most likely tokens and their log probability, at this token position. The number of entries may be fewer than the requested `top_logprobs`.
         /// </param>
         /// <param name="bytes"></param>
 #if NET7_0_OR_GREATER

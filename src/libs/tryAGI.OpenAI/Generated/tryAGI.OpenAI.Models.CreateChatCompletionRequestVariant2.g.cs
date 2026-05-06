@@ -83,8 +83,10 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2WebSearchOptions? WebSearchOptions { get; set; }
 
         /// <summary>
-        /// An integer between 0 and 20 specifying the number of most likely tokens to<br/>
-        /// return at each token position, each with an associated log probability.<br/>
+        /// An integer between 0 and 20 specifying the maximum number of most likely<br/>
+        /// tokens to return at each token position, each with an associated log<br/>
+        /// probability. In some cases, the number of returned tokens may be fewer than<br/>
+        /// requested.<br/>
         /// `logprobs` must be set to `true` if this parameter is used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_logprobs")]
@@ -304,8 +306,10 @@ namespace tryAGI.OpenAI
         /// Learn more about the [web search tool](/docs/guides/tools-web-search?api-mode=chat).
         /// </param>
         /// <param name="topLogprobs">
-        /// An integer between 0 and 20 specifying the number of most likely tokens to<br/>
-        /// return at each token position, each with an associated log probability.<br/>
+        /// An integer between 0 and 20 specifying the maximum number of most likely<br/>
+        /// tokens to return at each token position, each with an associated log<br/>
+        /// probability. In some cases, the number of returned tokens may be fewer than<br/>
+        /// requested.<br/>
         /// `logprobs` must be set to `true` if this parameter is used.
         /// </param>
         /// <param name="responseFormat">
