@@ -9,8 +9,10 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateModelResponsePropertiesVariant2
     {
         /// <summary>
-        /// An integer between 0 and 20 specifying the number of most likely tokens to<br/>
-        /// return at each token position, each with an associated log probability.
+        /// An integer between 0 and 20 specifying the maximum number of most likely<br/>
+        /// tokens to return at each token position, each with an associated log<br/>
+        /// probability. In some cases, the number of returned tokens may be fewer than<br/>
+        /// requested.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_logprobs")]
         public int? TopLogprobs { get; set; }
@@ -25,8 +27,10 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="CreateModelResponsePropertiesVariant2" /> class.
         /// </summary>
         /// <param name="topLogprobs">
-        /// An integer between 0 and 20 specifying the number of most likely tokens to<br/>
-        /// return at each token position, each with an associated log probability.
+        /// An integer between 0 and 20 specifying the maximum number of most likely<br/>
+        /// tokens to return at each token position, each with an associated log<br/>
+        /// probability. In some cases, the number of returned tokens may be fewer than<br/>
+        /// requested.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

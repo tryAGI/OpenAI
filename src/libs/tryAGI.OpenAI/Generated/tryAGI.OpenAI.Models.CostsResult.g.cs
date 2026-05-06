@@ -40,6 +40,12 @@ namespace tryAGI.OpenAI
         public string? ApiKeyId { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("quantity")]
+        public double? Quantity { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -55,6 +61,7 @@ namespace tryAGI.OpenAI
         /// <param name="lineItem"></param>
         /// <param name="projectId"></param>
         /// <param name="apiKeyId"></param>
+        /// <param name="quantity"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -63,13 +70,15 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.CostsResultAmount? amount,
             string? lineItem,
             string? projectId,
-            string? apiKeyId)
+            string? apiKeyId,
+            double? quantity)
         {
             this.Object = @object;
             this.Amount = amount;
             this.LineItem = lineItem;
             this.ProjectId = projectId;
             this.ApiKeyId = apiKeyId;
+            this.Quantity = quantity;
         }
 
         /// <summary>

@@ -106,6 +106,7 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("line_item")) __score8++;
             if (__jsonProps.Contains("object")) __score8++;
             if (__jsonProps.Contains("project_id")) __score8++;
+            if (__jsonProps.Contains("quantity")) __score8++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
