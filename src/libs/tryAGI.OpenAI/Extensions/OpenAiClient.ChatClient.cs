@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using System.Text;
 using System.Text.Json;
 using Meai = Microsoft.Extensions.AI;
 
@@ -367,7 +368,7 @@ public sealed partial class OpenAiClient : Meai.IChatClient
                         {
                             Name = tc.Name,
                             Arguments = tc.Arguments is not null
-                                ? JsonSerializer.Serialize(tc.Arguments)
+                                ? SerializeArguments(tc.Arguments)
                                 : "{}",
                         },
                     }).ToList();
@@ -518,11 +519,97 @@ public sealed partial class OpenAiClient : Meai.IChatClient
 
         try
         {
-            return JsonSerializer.Deserialize<Dictionary<string, object?>>(json);
+            using var document = JsonDocument.Parse(json);
+            var element = document.RootElement;
+            if (element.ValueKind != JsonValueKind.Object)
+            {
+                return null;
+            }
+
+            var result = new Dictionary<string, object?>(StringComparer.Ordinal);
+            foreach (var property in element.EnumerateObject())
+            {
+                result[property.Name] = property.Value.Clone();
+            }
+
+            return result;
         }
         catch (JsonException)
         {
             return null;
+        }
+    }
+
+    private static string SerializeArguments(IEnumerable<KeyValuePair<string, object?>> arguments)
+    {
+        using var stream = new MemoryStream();
+        using (var writer = new Utf8JsonWriter(stream))
+        {
+            WriteObject(writer, arguments);
+        }
+
+        return Encoding.UTF8.GetString(stream.ToArray());
+    }
+
+    private static void WriteObject(Utf8JsonWriter writer, IEnumerable<KeyValuePair<string, object?>> values)
+    {
+        writer.WriteStartObject();
+        foreach (var (key, value) in values)
+        {
+            writer.WritePropertyName(key);
+            WriteValue(writer, value);
+        }
+        writer.WriteEndObject();
+    }
+
+    private static void WriteValue(Utf8JsonWriter writer, object? value)
+    {
+        switch (value)
+        {
+            case null:
+                writer.WriteNullValue();
+                break;
+            case JsonElement element:
+                element.WriteTo(writer);
+                break;
+            case string text:
+                writer.WriteStringValue(text);
+                break;
+            case bool boolean:
+                writer.WriteBooleanValue(boolean);
+                break;
+            case int number:
+                writer.WriteNumberValue(number);
+                break;
+            case long number:
+                writer.WriteNumberValue(number);
+                break;
+            case float number:
+                writer.WriteNumberValue(number);
+                break;
+            case double number:
+                writer.WriteNumberValue(number);
+                break;
+            case decimal number:
+                writer.WriteNumberValue(number);
+                break;
+            case IReadOnlyDictionary<string, object?> dictionary:
+                WriteObject(writer, dictionary);
+                break;
+            case IDictionary<string, object?> dictionary:
+                WriteObject(writer, dictionary);
+                break;
+            case IEnumerable<object?> items:
+                writer.WriteStartArray();
+                foreach (var item in items)
+                {
+                    WriteValue(writer, item);
+                }
+                writer.WriteEndArray();
+                break;
+            default:
+                writer.WriteStringValue(value.ToString());
+                break;
         }
     }
 }
