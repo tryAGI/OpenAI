@@ -38,8 +38,8 @@ public partial class Tests
 
         var responseText = exception.ResponseBody ?? exception.Message;
         if (exception.StatusCode == System.Net.HttpStatusCode.PaymentRequired &&
-            responseText.Contains("inference suspended", StringComparison.OrdinalIgnoreCase) ||
-             responseText.Contains("inference prohibited", StringComparison.OrdinalIgnoreCase))
+            (responseText.Contains("inference suspended", StringComparison.OrdinalIgnoreCase) ||
+             responseText.Contains("inference prohibited", StringComparison.OrdinalIgnoreCase)))
         {
             throw new AssertInconclusiveException(
                 "DeepInfra inference is suspended for the configured account. Skipping provider compatibility checks until billing access is restored.",
