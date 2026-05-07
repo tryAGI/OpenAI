@@ -45,6 +45,19 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP>? ToolChoice { get; set; }
 
         /// <summary>
+        /// Whether the model may call multiple tools in parallel. Only supported by<br/>
+        /// reasoning Realtime models such as `gpt-realtime-2`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("parallel_tool_calls")]
+        public bool? ParallelToolCalls { get; set; }
+
+        /// <summary>
+        /// Configuration for reasoning-capable Realtime models such as `gpt-realtime-2`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reasoning")]
+        public global::tryAGI.OpenAI.RealtimeReasoning? Reasoning { get; set; }
+
+        /// <summary>
         /// Maximum number of output tokens for a single assistant response,<br/>
         /// inclusive of tool calls. Provide an integer between 1 and 4096 to<br/>
         /// limit output tokens, or `inf` for the maximum available tokens for a<br/>
@@ -116,6 +129,13 @@ namespace tryAGI.OpenAI
         /// function/MCP tool.<br/>
         /// Default Value: auto
         /// </param>
+        /// <param name="parallelToolCalls">
+        /// Whether the model may call multiple tools in parallel. Only supported by<br/>
+        /// reasoning Realtime models such as `gpt-realtime-2`.
+        /// </param>
+        /// <param name="reasoning">
+        /// Configuration for reasoning-capable Realtime models such as `gpt-realtime-2`.
+        /// </param>
         /// <param name="maxOutputTokens">
         /// Maximum number of output tokens for a single assistant response,<br/>
         /// inclusive of tool calls. Provide an integer between 1 and 4096 to<br/>
@@ -147,6 +167,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RealtimeResponseCreateParamsAudio? audio,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeFunctionTool, global::tryAGI.OpenAI.MCPTool>>? tools,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP>? toolChoice,
+            bool? parallelToolCalls,
+            global::tryAGI.OpenAI.RealtimeReasoning? reasoning,
             global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeResponseCreateParamsMaxOutputTokens?>? maxOutputTokens,
             global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.RealtimeResponseCreateParamsConversation?>? conversation,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
@@ -158,6 +180,8 @@ namespace tryAGI.OpenAI
             this.Audio = audio;
             this.Tools = tools;
             this.ToolChoice = toolChoice;
+            this.ParallelToolCalls = parallelToolCalls;
+            this.Reasoning = reasoning;
             this.MaxOutputTokens = maxOutputTokens;
             this.Conversation = conversation;
             this.Metadata = metadata;

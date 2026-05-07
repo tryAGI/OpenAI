@@ -2,7 +2,7 @@
 
 namespace tryAGI.OpenAI
 {
-    public sealed partial class Model17
+    public sealed partial class AudioTranscriptionResponse
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -34,14 +34,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::tryAGI.OpenAI.Model17? FromJson(
+        public static global::tryAGI.OpenAI.AudioTranscriptionResponse? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::tryAGI.OpenAI.Model17),
-                jsonSerializerContext) as global::tryAGI.OpenAI.Model17;
+                typeof(global::tryAGI.OpenAI.AudioTranscriptionResponse),
+                jsonSerializerContext) as global::tryAGI.OpenAI.AudioTranscriptionResponse;
         }
 
         /// <summary>
@@ -51,11 +51,11 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::tryAGI.OpenAI.Model17? FromJson(
+        public static global::tryAGI.OpenAI.AudioTranscriptionResponse? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.Model17>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.AudioTranscriptionResponse>(
                 json,
                 jsonSerializerOptions);
         }
@@ -63,14 +63,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::tryAGI.OpenAI.Model17?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::tryAGI.OpenAI.AudioTranscriptionResponse?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::tryAGI.OpenAI.Model17),
-                jsonSerializerContext).ConfigureAwait(false)) as global::tryAGI.OpenAI.Model17;
+                typeof(global::tryAGI.OpenAI.AudioTranscriptionResponse),
+                jsonSerializerContext).ConfigureAwait(false)) as global::tryAGI.OpenAI.AudioTranscriptionResponse;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::tryAGI.OpenAI.Model17?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::tryAGI.OpenAI.AudioTranscriptionResponse?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::tryAGI.OpenAI.Model17?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::tryAGI.OpenAI.AudioTranscriptionResponse?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

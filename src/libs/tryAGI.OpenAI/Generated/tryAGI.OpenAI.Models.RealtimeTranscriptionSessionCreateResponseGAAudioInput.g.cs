@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
         /// Configuration of the transcription model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transcription")]
-        public global::tryAGI.OpenAI.AudioTranscription? Transcription { get; set; }
+        public global::tryAGI.OpenAI.AudioTranscriptionResponse? Transcription { get; set; }
 
         /// <summary>
         /// Configuration for input audio noise reduction.
@@ -28,12 +28,10 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAAudioInputNoiseReduction? NoiseReduction { get; set; }
 
         /// <summary>
-        /// Configuration for turn detection. Can be set to `null` to turn off. Server<br/>
-        /// VAD means that the model will detect the start and end of speech based on<br/>
-        /// audio volume and respond at the end of user speech.
+        /// Configuration for turn detection. For `gpt-realtime-whisper`, this must be `null`; VAD is not supported.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("turn_detection")]
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAAudioInputTurnDetection? TurnDetection { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAAudioInputTurnDetection2? TurnDetection { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,18 +50,16 @@ namespace tryAGI.OpenAI
         /// Configuration for input audio noise reduction.
         /// </param>
         /// <param name="turnDetection">
-        /// Configuration for turn detection. Can be set to `null` to turn off. Server<br/>
-        /// VAD means that the model will detect the start and end of speech based on<br/>
-        /// audio volume and respond at the end of user speech.
+        /// Configuration for turn detection. For `gpt-realtime-whisper`, this must be `null`; VAD is not supported.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeTranscriptionSessionCreateResponseGAAudioInput(
             global::tryAGI.OpenAI.RealtimeAudioFormats? format,
-            global::tryAGI.OpenAI.AudioTranscription? transcription,
+            global::tryAGI.OpenAI.AudioTranscriptionResponse? transcription,
             global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAAudioInputNoiseReduction? noiseReduction,
-            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAAudioInputTurnDetection? turnDetection)
+            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAAudioInputTurnDetection2? turnDetection)
         {
             this.Format = format;
             this.Transcription = transcription;
