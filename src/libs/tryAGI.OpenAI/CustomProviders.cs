@@ -404,7 +404,7 @@ public static class CustomProviders
     /// <returns></returns>
     public static OpenAiClient Ollama(Uri? baseUri = null)
     {
-        return new OpenAiClient(baseUri: baseUri ?? new Uri(OllamaBaseUrl), options: null);
+        return new OpenAiClient(httpClient: null, baseUri: baseUri ?? new Uri(OllamaBaseUrl), authorizations: null, options: null);
     }
     
     /// <summary>
@@ -413,7 +413,7 @@ public static class CustomProviders
     /// <returns></returns>
     public static OpenAiClient LmStudio(Uri? baseUri = null)
     {
-        return new OpenAiClient(baseUri: baseUri ?? new Uri(LmStudioBaseUrl), options: null);
+        return new OpenAiClient(httpClient: null, baseUri: baseUri ?? new Uri(LmStudioBaseUrl), authorizations: null, options: null);
     }
 
     /// <summary>
