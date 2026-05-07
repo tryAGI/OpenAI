@@ -2389,6 +2389,54 @@ namespace tryAGI.OpenAI
 
             typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranscriptionSessionCreateResponseGAIncludeItemNullableJsonConverter),
 
+            typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationClientEventInputAudioBufferAppendTypeJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationClientEventInputAudioBufferAppendTypeNullableJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationClientEventSessionCloseTypeJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationClientEventSessionCloseTypeNullableJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationClientEventSessionUpdateTypeJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationClientEventSessionUpdateTypeNullableJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationClientSecretCreateRequestExpiresAfterAnchorJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationClientSecretCreateRequestExpiresAfterAnchorNullableJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationServerEventSessionClosedTypeJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationServerEventSessionClosedTypeNullableJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationServerEventSessionCreatedTypeJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationServerEventSessionCreatedTypeNullableJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationServerEventSessionInputTranscriptDeltaTypeJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationServerEventSessionInputTranscriptDeltaTypeNullableJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationServerEventSessionOutputAudioDeltaTypeJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationServerEventSessionOutputAudioDeltaTypeNullableJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationServerEventSessionOutputAudioDeltaFormatJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationServerEventSessionOutputAudioDeltaFormatNullableJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationServerEventSessionOutputTranscriptDeltaTypeJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationServerEventSessionOutputTranscriptDeltaTypeNullableJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationServerEventSessionUpdatedTypeJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationServerEventSessionUpdatedTypeNullableJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationSessionTypeJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationSessionTypeNullableJsonConverter),
+
             typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTruncationEnumJsonConverter),
 
             typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTruncationEnumNullableJsonConverter),
@@ -4332,6 +4380,10 @@ namespace tryAGI.OpenAI
             typeof(global::tryAGI.OpenAI.JsonConverters.Session2JsonConverter),
 
             typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationClientEventJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationServerEventJsonConverter),
 
             typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTruncationJsonConverter),
 
@@ -6547,6 +6599,52 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAAudioInput))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAAudioInputNoiseReduction))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAAudioInputTurnDetection))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationClientEvent), TypeInfoPropertyName = "RealtimeTranslationClientEvent2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionUpdate))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationClientEventInputAudioBufferAppend))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionClose))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationClientEventDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationClientEventInputAudioBufferAppendType), TypeInfoPropertyName = "RealtimeTranslationClientEventInputAudioBufferAppendType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionCloseType), TypeInfoPropertyName = "RealtimeTranslationClientEventSessionCloseType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionUpdateType), TypeInfoPropertyName = "RealtimeTranslationClientEventSessionUpdateType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationClientSecretCreateRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationClientSecretCreateRequestExpiresAfter))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationClientSecretCreateRequestExpiresAfterAnchor), TypeInfoPropertyName = "RealtimeTranslationClientSecretCreateRequestExpiresAfterAnchor2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationSessionCreateRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationClientSecretCreateResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationSession))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEvent), TypeInfoPropertyName = "RealtimeTranslationServerEvent2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreated))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionUpdated))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosed))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionInputTranscriptDelta))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputTranscriptDelta))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDelta))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEventDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosedType), TypeInfoPropertyName = "RealtimeTranslationServerEventSessionClosedType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreatedType), TypeInfoPropertyName = "RealtimeTranslationServerEventSessionCreatedType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionInputTranscriptDeltaType), TypeInfoPropertyName = "RealtimeTranslationServerEventSessionInputTranscriptDeltaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDeltaType), TypeInfoPropertyName = "RealtimeTranslationServerEventSessionOutputAudioDeltaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDeltaFormat), TypeInfoPropertyName = "RealtimeTranslationServerEventSessionOutputAudioDeltaFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputTranscriptDeltaType), TypeInfoPropertyName = "RealtimeTranslationServerEventSessionOutputTranscriptDeltaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionUpdatedType), TypeInfoPropertyName = "RealtimeTranslationServerEventSessionUpdatedType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationSessionType), TypeInfoPropertyName = "RealtimeTranslationSessionType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationSessionAudio))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationSessionAudioInput))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationSessionAudioInputTranscription2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationSessionAudioInputNoiseReduction2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationSessionAudioOutput))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationSessionCreateRequestAudio))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationSessionCreateRequestAudioInput))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationSessionCreateRequestAudioInputTranscription2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationSessionCreateRequestAudioInputNoiseReduction2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationSessionCreateRequestAudioOutput))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequestAudio))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequestAudioInput))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequestAudioInputTranscription2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequestAudioInputNoiseReduction2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequestAudioOutput))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTruncationEnum), TypeInfoPropertyName = "RealtimeTruncationEnum2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTruncationEnum2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RealtimeTruncationEnumType), TypeInfoPropertyName = "RealtimeTruncationEnumType2")]

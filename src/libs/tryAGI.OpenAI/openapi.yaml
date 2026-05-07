@@ -25724,6 +25724,102 @@ paths:
               },
               "client_secret": null
             }
+  /realtime/translations/client_secrets:
+    post:
+      summary: >
+        Create a Realtime translation client secret with an associated
+        translation session configuration.
+
+
+        Client secrets are short-lived tokens that can be passed to a client
+        app,
+
+        such as a web frontend or mobile client, which grants access to the
+        Realtime
+
+        Translation API without leaking your main API key. You can configure a
+        custom
+
+        TTL for each client secret.
+
+
+        Returns the created client secret and the effective translation session
+        object.
+
+        The client secret is a string that looks like `ek_1234`.
+      operationId: create-realtime-translation-client-secret
+      tags:
+        - Realtime
+      requestBody:
+        description: >-
+          Create a client secret with the given translation session
+          configuration.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: >-
+                #/components/schemas/RealtimeTranslationClientSecretCreateRequest
+      responses:
+        '200':
+          description: Translation client secret created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: >-
+                  #/components/schemas/RealtimeTranslationClientSecretCreateResponse
+      x-oaiMeta:
+        name: Create translation client secret
+        group: realtime
+        examples:
+          request:
+            curl: >
+              curl -X POST
+              https://api.openai.com/v1/realtime/translations/client_secrets \
+                -H "Authorization: Bearer $OPENAI_API_KEY" \
+                -H "Content-Type: application/json" \
+                -d '{
+                  "expires_after": {
+                    "anchor": "created_at",
+                    "seconds": 600
+                  },
+                  "session": {
+                    "model": "gpt-realtime-translate",
+                    "audio": {
+                      "input": {
+                        "transcription": {
+                          "model": "gpt-realtime-whisper"
+                        },
+                        "noise_reduction": null
+                      },
+                      "output": {
+                        "language": "es"
+                      }
+                    }
+                  }
+                }'
+          response: |
+            {
+              "value": "ek_68af296e8e408191a1120ab6383263c2",
+              "expires_at": 1756310470,
+              "session": {
+                "id": "sess_C9CiUVUzUzYIssh3ELY1d",
+                "type": "translation",
+                "expires_at": 1756310470,
+                "model": "gpt-realtime-translate",
+                "audio": {
+                  "input": {
+                    "transcription": {
+                      "model": "gpt-realtime-whisper"
+                    },
+                    "noise_reduction": null
+                  },
+                  "output": {
+                    "language": "es"
+                  }
+                }
+              }
+            }
   /responses:
     post:
       operationId: createResponse
@@ -64990,6 +65086,789 @@ components:
               }
             }
           }
+    RealtimeTranslationClientEvent:
+      discriminator:
+        propertyName: type
+      description: |
+        A Realtime translation client event.
+      anyOf:
+        - $ref: '#/components/schemas/RealtimeTranslationClientEventSessionUpdate'
+        - $ref: >-
+            #/components/schemas/RealtimeTranslationClientEventInputAudioBufferAppend
+        - $ref: '#/components/schemas/RealtimeTranslationClientEventSessionClose'
+    RealtimeTranslationClientEventInputAudioBufferAppend:
+      type: object
+      description: >
+        Send this event to append audio bytes to the translation session input
+        audio buffer.
+
+
+        WebSocket translation sessions accept base64-encoded 24 kHz PCM16 mono
+
+        little-endian raw audio bytes. Unsupported websocket audio formats
+        return a
+
+        validation error because lower-quality audio materially degrades
+        translation
+
+        quality.
+
+
+        Translation consumes 200 ms engine frames. For best realtime behavior,
+        append
+
+        audio in 200 ms chunks. If a chunk is shorter, the server buffers it
+        until it
+
+        has enough audio for one frame. If a chunk is longer, the server splits
+        it into
+
+        200 ms frames and enqueues them back-to-back.
+
+
+        Keep appending silence while the session is active. If a client stops
+        sending
+
+        audio and later resumes, model time treats the resumed audio as
+        contiguous with
+
+        the previous audio rather than as a real-world pause.
+      properties:
+        event_id:
+          type: string
+          maxLength: 512
+          description: Optional client-generated ID used to identify this event.
+        type:
+          type: string
+          enum:
+            - session.input_audio_buffer.append
+          description: The event type, must be `session.input_audio_buffer.append`.
+          x-stainless-const: true
+        audio:
+          type: string
+          description: Base64-encoded 24 kHz PCM16 mono audio bytes.
+      required:
+        - type
+        - audio
+      x-oaiMeta:
+        name: session.input_audio_buffer.append
+        group: realtime
+        example: |
+          {
+            "event_id": "event_456",
+            "type": "session.input_audio_buffer.append",
+            "audio": "Base64EncodedAudioData"
+          }
+    RealtimeTranslationClientEventSessionClose:
+      type: object
+      description: >
+        Gracefully close the realtime translation session. The server flushes
+        pending
+
+        input audio and emits any remaining translated output before closing the
+
+        session.
+      properties:
+        event_id:
+          type: string
+          maxLength: 512
+          description: Optional client-generated ID used to identify this event.
+        type:
+          type: string
+          enum:
+            - session.close
+          description: The event type, must be `session.close`.
+          x-stainless-const: true
+      required:
+        - type
+      x-oaiMeta:
+        name: session.close
+        group: realtime
+        example: |
+          {
+            "event_id": "event_789",
+            "type": "session.close"
+          }
+    RealtimeTranslationClientEventSessionUpdate:
+      type: object
+      description: >
+        Send this event to update the translation session configuration.
+        Translation
+
+        sessions support updates to `audio.output.language`,
+        `audio.input.transcription`,
+
+        and `audio.input.noise_reduction`.
+      properties:
+        event_id:
+          type: string
+          maxLength: 512
+          description: Optional client-generated ID used to identify this event.
+        type:
+          type: string
+          enum:
+            - session.update
+          description: The event type, must be `session.update`.
+          x-stainless-const: true
+        session:
+          $ref: '#/components/schemas/RealtimeTranslationSessionUpdateRequest'
+          description: >
+            Translation session fields to update. The session `type` and `model`
+            are set
+
+            at creation and cannot be changed with `session.update`.
+      required:
+        - type
+        - session
+      x-oaiMeta:
+        name: session.update
+        group: realtime
+        example: |
+          {
+            "type": "session.update",
+            "session": {
+              "audio": {
+                "input": {
+                  "transcription": {
+                    "model": "gpt-realtime-whisper"
+                  },
+                  "noise_reduction": null
+                },
+                "output": {
+                  "language": "es"
+                }
+              }
+            }
+          }
+    RealtimeTranslationClientSecretCreateRequest:
+      type: object
+      title: Realtime translation client secret creation request
+      description: |
+        Create a translation session and client secret for the Realtime API.
+      properties:
+        expires_after:
+          type: object
+          title: Client secret expiration
+          description: >
+            Configuration for the client secret expiration. Expiration refers to
+            the time after which
+
+            a client secret will no longer be valid for creating sessions. The
+            session itself may
+
+            continue after that time once started. A secret can be used to
+            create multiple sessions
+
+            until it expires.
+          properties:
+            anchor:
+              type: string
+              enum:
+                - created_at
+              description: >
+                The anchor point for the client secret expiration, meaning that
+                `seconds` will be added to the `created_at` time of the client
+                secret to produce an expiration timestamp. Only `created_at` is
+                currently supported.
+              default: created_at
+              x-stainless-const: true
+            seconds:
+              type: integer
+              format: int64
+              description: >
+                The number of seconds from the anchor point to the expiration.
+                Select a value between `10` and `7200` (2 hours). This default
+                to 600 seconds (10 minutes) if not specified.
+              minimum: 10
+              maximum: 7200
+              default: 600
+        session:
+          $ref: '#/components/schemas/RealtimeTranslationSessionCreateRequest'
+      required:
+        - session
+    RealtimeTranslationClientSecretCreateResponse:
+      type: object
+      title: Realtime translation session and client secret
+      description: >
+        Response from creating a translation session and client secret for the
+        Realtime API.
+      properties:
+        value:
+          type: string
+          description: The generated client secret value.
+        expires_at:
+          type: integer
+          format: unixtime
+          description: Expiration timestamp for the client secret, in seconds since epoch.
+        session:
+          $ref: '#/components/schemas/RealtimeTranslationSession'
+      required:
+        - value
+        - expires_at
+        - session
+      x-oaiMeta:
+        name: Translation session response object
+        group: realtime
+        example: |
+          {
+            "value": "ek_68af296e8e408191a1120ab6383263c2",
+            "expires_at": 1756310470,
+            "session": {
+              "id": "sess_C9CiUVUzUzYIssh3ELY1d",
+              "type": "translation",
+              "expires_at": 1756310470,
+              "model": "gpt-realtime-translate",
+              "audio": {
+                "input": {
+                  "transcription": null,
+                  "noise_reduction": null
+                },
+                "output": {
+                  "language": "es"
+                }
+              }
+            }
+          }
+    RealtimeTranslationServerEvent:
+      discriminator:
+        propertyName: type
+      description: |
+        A Realtime translation server event.
+      anyOf:
+        - $ref: '#/components/schemas/RealtimeServerEventError'
+        - $ref: '#/components/schemas/RealtimeTranslationServerEventSessionCreated'
+        - $ref: '#/components/schemas/RealtimeTranslationServerEventSessionUpdated'
+        - $ref: '#/components/schemas/RealtimeTranslationServerEventSessionClosed'
+        - $ref: >-
+            #/components/schemas/RealtimeTranslationServerEventSessionInputTranscriptDelta
+        - $ref: >-
+            #/components/schemas/RealtimeTranslationServerEventSessionOutputTranscriptDelta
+        - $ref: >-
+            #/components/schemas/RealtimeTranslationServerEventSessionOutputAudioDelta
+    RealtimeTranslationServerEventSessionClosed:
+      type: object
+      description: |
+        Returned when a realtime translation session is closed.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+        type:
+          type: string
+          enum:
+            - session.closed
+          description: The event type, must be `session.closed`.
+          x-stainless-const: true
+      required:
+        - event_id
+        - type
+      x-oaiMeta:
+        name: session.closed
+        group: realtime
+        example: |
+          {
+            "event_id": "event_987",
+            "type": "session.closed"
+          }
+    RealtimeTranslationServerEventSessionCreated:
+      type: object
+      description: >
+        Returned when a translation session is created. Emitted automatically
+        when a
+
+        new connection is established as the first server event. This event
+        contains
+
+        the default translation session configuration.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+        type:
+          type: string
+          enum:
+            - session.created
+          description: The event type, must be `session.created`.
+          x-stainless-const: true
+        session:
+          $ref: '#/components/schemas/RealtimeTranslationSession'
+          description: The translation session configuration.
+      required:
+        - event_id
+        - type
+        - session
+      x-oaiMeta:
+        name: session.created
+        group: realtime
+        example: |
+          {
+            "type": "session.created",
+            "event_id": "event_123",
+            "session": {
+              "id": "sess_123",
+              "type": "translation",
+              "model": "gpt-realtime-translate",
+              "expires_at": 1714857600,
+              "audio": {
+                "input": {
+                  "transcription": {
+                    "model": "gpt-realtime-whisper",
+                    "language": "en"
+                  },
+                  "noise_reduction": {
+                    "type": "near_field"
+                  }
+                },
+                "output": {
+                  "language": "fr"
+                }
+              }
+            }
+          }
+    RealtimeTranslationServerEventSessionInputTranscriptDelta:
+      type: object
+      description: >
+        Returned when optional source-language transcript text is available.
+        This event
+
+        is emitted only when `audio.input.transcription` is configured.
+
+
+        Transcript deltas are append-only text fragments. Clients should not
+        insert
+
+        unconditional spaces between deltas.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+        type:
+          type: string
+          enum:
+            - session.input_transcript.delta
+          description: The event type, must be `session.input_transcript.delta`.
+          x-stainless-const: true
+        delta:
+          type: string
+          description: Append-only source-language transcript text.
+        elapsed_ms:
+          type: integer
+          nullable: true
+          description: >
+            Timing metadata for stream alignment, derived from the translation
+            frame
+
+            when available. It advances in 200 ms increments, but multiple
+            transcript
+
+            deltas may share the same `elapsed_ms`. Treat it as alignment
+            metadata,
+
+            not a unique transcript-delta identifier.
+      required:
+        - event_id
+        - type
+        - delta
+      x-oaiMeta:
+        name: session.input_transcript.delta
+        group: realtime
+        example: |
+          {
+            "event_id": "event_125",
+            "type": "session.input_transcript.delta",
+            "delta": " hear",
+            "elapsed_ms": 1200
+          }
+    RealtimeTranslationServerEventSessionOutputAudioDelta:
+      type: object
+      description: >
+        Returned when translated output audio is available. Output audio deltas
+        are
+
+        200 ms frames of PCM16 audio.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+        type:
+          type: string
+          enum:
+            - session.output_audio.delta
+          description: The event type, must be `session.output_audio.delta`.
+          x-stainless-const: true
+        delta:
+          type: string
+          description: Base64-encoded translated audio data.
+        sample_rate:
+          type: integer
+          description: Sample rate of the audio delta.
+          default: 24000
+        channels:
+          type: integer
+          description: Number of audio channels.
+          default: 1
+        format:
+          type: string
+          enum:
+            - pcm16
+          description: Audio encoding for `delta`.
+          x-stainless-const: true
+        elapsed_ms:
+          type: integer
+          nullable: true
+          description: >
+            Timing metadata for stream alignment, derived from the translation
+            frame
+
+            when available. Treat `elapsed_ms` as alignment metadata, not a
+            unique
+
+            event identifier.
+      required:
+        - event_id
+        - type
+        - delta
+      x-oaiMeta:
+        name: session.output_audio.delta
+        group: realtime
+        example: |
+          {
+            "event_id": "event_123",
+            "type": "session.output_audio.delta",
+            "delta": "Base64EncodedAudioDelta",
+            "sample_rate": 24000,
+            "channels": 1,
+            "format": "pcm16",
+            "elapsed_ms": 1200
+          }
+    RealtimeTranslationServerEventSessionOutputTranscriptDelta:
+      type: object
+      description: >
+        Returned when translated transcript text is available.
+
+
+        Transcript deltas are append-only text fragments. Clients should not
+        insert
+
+        unconditional spaces between deltas.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+        type:
+          type: string
+          enum:
+            - session.output_transcript.delta
+          description: The event type, must be `session.output_transcript.delta`.
+          x-stainless-const: true
+        delta:
+          type: string
+          description: Append-only transcript text for the translated output audio.
+        elapsed_ms:
+          type: integer
+          nullable: true
+          description: >
+            Timing metadata for stream alignment, derived from the translation
+            frame
+
+            when available. It advances in 200 ms increments, but multiple
+            transcript
+
+            deltas may share the same `elapsed_ms`. Treat it as alignment
+            metadata,
+
+            not a unique transcript-delta identifier.
+      required:
+        - event_id
+        - type
+        - delta
+      x-oaiMeta:
+        name: session.output_transcript.delta
+        group: realtime
+        example: |
+          {
+            "event_id": "event_124",
+            "type": "session.output_transcript.delta",
+            "delta": " escuch",
+            "elapsed_ms": 1200
+          }
+    RealtimeTranslationServerEventSessionUpdated:
+      type: object
+      description: >
+        Returned when a translation session is updated with a `session.update`
+        event,
+
+        unless there is an error.
+      properties:
+        event_id:
+          type: string
+          description: The unique ID of the server event.
+        type:
+          type: string
+          enum:
+            - session.updated
+          description: The event type, must be `session.updated`.
+          x-stainless-const: true
+        session:
+          $ref: '#/components/schemas/RealtimeTranslationSession'
+          description: The translation session configuration.
+      required:
+        - event_id
+        - type
+        - session
+      x-oaiMeta:
+        name: session.updated
+        group: realtime
+        example: |
+          {
+            "type": "session.updated",
+            "event_id": "event_124",
+            "session": {
+              "id": "sess_123",
+              "type": "translation",
+              "model": "gpt-realtime-translate",
+              "expires_at": 1714857600,
+              "audio": {
+                "input": {
+                  "transcription": {
+                    "model": "gpt-realtime-whisper",
+                    "language": "en"
+                  },
+                  "noise_reduction": {
+                    "type": "near_field"
+                  }
+                },
+                "output": {
+                  "language": "es"
+                }
+              }
+            }
+          }
+    RealtimeTranslationSession:
+      type: object
+      title: Realtime translation session
+      description: >
+        A Realtime translation session. Translation sessions continuously
+        translate input
+
+        audio into the configured output language.
+      properties:
+        id:
+          type: string
+          description: >
+            Unique identifier for the session that looks like
+            `sess_1234567890abcdef`.
+        type:
+          type: string
+          enum:
+            - translation
+          description: >
+            The session type. Always `translation` for Realtime translation
+            sessions.
+          x-stainless-const: true
+        expires_at:
+          type: integer
+          format: unixtime
+          description: Expiration timestamp for the session, in seconds since epoch.
+        model:
+          type: string
+          description: >
+            The Realtime translation model used for this session. This field is
+            set at
+
+            session creation and cannot be changed with `session.update`.
+        audio:
+          type: object
+          description: |
+            Configuration for translation input and output audio.
+          properties:
+            input:
+              type: object
+              properties:
+                transcription:
+                  anyOf:
+                    - type: object
+                      description: >
+                        Optional source-language transcription. When configured,
+                        the server emits
+
+                        `session.input_transcript.delta` events. Translation
+                        itself still runs from
+
+                        the input audio stream.
+                      properties:
+                        model:
+                          type: string
+                          description: >-
+                            The transcription model used for source transcript
+                            deltas.
+                      required:
+                        - model
+                    - type: 'null'
+                noise_reduction:
+                  anyOf:
+                    - type: object
+                      description: |
+                        Optional input noise reduction.
+                      properties:
+                        type:
+                          $ref: '#/components/schemas/NoiseReductionType'
+                      required:
+                        - type
+                    - type: 'null'
+            output:
+              type: object
+              properties:
+                language:
+                  type: string
+                  description: >
+                    Target language for translated output audio and transcript
+                    deltas.
+      required:
+        - id
+        - type
+        - expires_at
+        - model
+        - audio
+      x-oaiMeta:
+        name: The translation session object
+        group: realtime
+        example: |
+          {
+            "id": "sess_C9G5QPteg4UIbotdKLoYQ",
+            "type": "translation",
+            "expires_at": 1756324625,
+            "model": "gpt-realtime-translate",
+            "audio": {
+              "input": {
+                "transcription": {
+                  "model": "gpt-realtime-whisper"
+                },
+                "noise_reduction": null
+              },
+              "output": {
+                "language": "es"
+              }
+            }
+          }
+    RealtimeTranslationSessionCreateRequest:
+      type: object
+      title: Realtime translation session configuration
+      description: >
+        Realtime translation session configuration. Translation sessions stream
+        source
+
+        audio in and translated audio plus transcript deltas out continuously.
+      properties:
+        model:
+          type: string
+          description: |
+            The Realtime translation model used for this session.
+        audio:
+          type: object
+          description: |
+            Configuration for translation input and output audio.
+          properties:
+            input:
+              type: object
+              properties:
+                transcription:
+                  anyOf:
+                    - type: object
+                      description: >
+                        Optional source-language transcription. When configured,
+                        the server emits
+
+                        `session.input_transcript.delta` events. Translation
+                        itself still runs from
+
+                        the input audio stream.
+                      properties:
+                        model:
+                          type: string
+                          description: >-
+                            The transcription model to use for source transcript
+                            deltas.
+                      required:
+                        - model
+                    - type: 'null'
+                noise_reduction:
+                  anyOf:
+                    - type: object
+                      description: >
+                        Optional input noise reduction. Set to `null` to disable
+                        it.
+                      properties:
+                        type:
+                          $ref: '#/components/schemas/NoiseReductionType'
+                      required:
+                        - type
+                    - type: 'null'
+            output:
+              type: object
+              properties:
+                language:
+                  type: string
+                  description: >
+                    Target language for translated output audio and transcript
+                    deltas.
+      required:
+        - model
+    RealtimeTranslationSessionUpdateRequest:
+      type: object
+      title: Realtime translation session update
+      description: >
+        Realtime translation session fields that can be updated with
+        `session.update`.
+      properties:
+        audio:
+          type: object
+          description: |
+            Configuration for translation input and output audio.
+          properties:
+            input:
+              type: object
+              properties:
+                transcription:
+                  anyOf:
+                    - type: object
+                      description: >
+                        Optional source-language transcription. When configured,
+                        the server emits
+
+                        `session.input_transcript.delta` events. Translation
+                        itself still runs from
+
+                        the input audio stream.
+                      properties:
+                        model:
+                          type: string
+                          description: >-
+                            The transcription model to use for source transcript
+                            deltas.
+                      required:
+                        - model
+                    - type: 'null'
+                noise_reduction:
+                  anyOf:
+                    - type: object
+                      description: >
+                        Optional input noise reduction. Set to `null` to disable
+                        it.
+                      properties:
+                        type:
+                          $ref: '#/components/schemas/NoiseReductionType'
+                      required:
+                        - type
+                    - type: 'null'
+            output:
+              type: object
+              properties:
+                language:
+                  type: string
+                  description: >
+                    Target language for translated output audio and transcript
+                    deltas.
     RealtimeTruncation:
       title: Realtime Truncation Controls
       description: >
@@ -79784,6 +80663,50 @@ x-oaiMeta:
           path: <auto>
         - type: object
           key: RealtimeServerEventRateLimitsUpdated
+          path: <auto>
+    - id: realtime-translation-client-events
+      title: Translation client events
+      description: >
+        These are events that the OpenAI Realtime Translation WebSocket server
+        will accept from the client.
+      navigationGroup: realtime
+      sections:
+        - type: object
+          key: RealtimeTranslationClientEventSessionUpdate
+          path: <auto>
+        - type: object
+          key: RealtimeTranslationClientEventInputAudioBufferAppend
+          path: <auto>
+        - type: object
+          key: RealtimeTranslationClientEventSessionClose
+          path: <auto>
+    - id: realtime-translation-server-events
+      title: Translation server events
+      description: >
+        These are events emitted from the OpenAI Realtime Translation WebSocket
+        server to the client.
+      navigationGroup: realtime
+      sections:
+        - type: object
+          key: RealtimeServerEventError
+          path: <auto>
+        - type: object
+          key: RealtimeTranslationServerEventSessionCreated
+          path: <auto>
+        - type: object
+          key: RealtimeTranslationServerEventSessionUpdated
+          path: <auto>
+        - type: object
+          key: RealtimeTranslationServerEventSessionClosed
+          path: <auto>
+        - type: object
+          key: RealtimeTranslationServerEventSessionInputTranscriptDelta
+          path: <auto>
+        - type: object
+          key: RealtimeTranslationServerEventSessionOutputTranscriptDelta
+          path: <auto>
+        - type: object
+          key: RealtimeTranslationServerEventSessionOutputAudioDelta
           path: <auto>
     - id: chat-streaming
       title: Streaming
