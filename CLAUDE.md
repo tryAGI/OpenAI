@@ -113,6 +113,7 @@ Each custom provider requires specific environment variables to run its integrat
 | **OpenRouter** | `OPENROUTER_API_KEY` | `meta-llama/llama-3.2-3b-instruct:free` | Chat, streaming (no tools on free tier) |
 | **Fireworks** | `FIREWORKS_API_KEY` | `accounts/fireworks/models/llama-v3p3-70b-instruct` | Chat, streaming, tools, embeddings (`nomic-ai/nomic-embed-text-v1.5`) |
 | **Together** | `TOGETHER_API_KEY`, `TOGETHER_CHAT_MODEL` (optional) | `meta-llama/Llama-3.3-70B-Instruct-Turbo` | Chat, streaming, tools, embeddings (`BAAI/bge-large-en-v1.5`) |
+| **GonkaGate** | `GONKAGATE_API_KEY`, `GONKAGATE_CHAT_MODEL` (optional) | `qwen/qwen3-32b-fp8` | Chat, streaming |
 | **DeepSeek** | `DEEPSEEK_API_KEY` | `deepseek-chat` | Chat, streaming, tools |
 | **XAi** | `XAI_API_KEY`, `XAI_CHAT_MODEL` (optional) | `grok-3-mini` | Chat, streaming, tools |
 | **Perplexity** | `PERPLEXITY_API_KEY` | `sonar` | Chat, streaming (no tools) |

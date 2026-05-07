@@ -187,6 +187,7 @@ using var api = CustomProviders.DeepSeek("API_KEY");
 using var api = CustomProviders.Fireworks("API_KEY");
 using var api = CustomProviders.OpenRouter("API_KEY");
 using var api = CustomProviders.Together("API_KEY");
+using var api = CustomProviders.GonkaGate("API_KEY");
 using var api = CustomProviders.Perplexity("API_KEY");
 using var api = CustomProviders.SambaNova("API_KEY");
 using var api = CustomProviders.Mistral("API_KEY");

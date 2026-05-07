@@ -5,6 +5,7 @@ public enum CustomProvider
     OpenAi,
     Azure,
     Together,
+    GonkaGate,
     Fireworks,
     DeepInfra,
     DeepSeek,

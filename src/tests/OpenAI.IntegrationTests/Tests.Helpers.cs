@@ -150,6 +150,11 @@ public partial class Tests
                     ? togetherModel
                     : "meta-llama/Llama-3.3-70B-Instruct-Turbo"));
         }
+        if (customProvider == CustomProvider.GonkaGate)
+        {
+            return (CustomProviders.GonkaGate(GetRequiredEnvironmentVariable("GONKAGATE_API_KEY")),
+                model ?? GetOptionalEnvironmentVariable("GONKAGATE_CHAT_MODEL", "qwen/qwen3-32b-fp8"));
+        }
         if (customProvider == CustomProvider.GitHub)
         {
             return (CustomProviders.GitHubModels(githubToken:

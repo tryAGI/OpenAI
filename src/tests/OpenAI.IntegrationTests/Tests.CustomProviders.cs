@@ -11,6 +11,14 @@ public partial class Tests
     }
 
     [TestMethod]
+    public void GonkaGateProvider_UsesOpenAiCompatibleV1BaseUrl()
+    {
+        using var api = CustomProviders.GonkaGate("test-api-key");
+
+        api.BaseUri.Should().Be(new Uri(CustomProviders.GonkaGateBaseUrl));
+    }
+
+    [TestMethod]
     public void TogetherProvider_AllowsModelOverrideFromEnvironment()
     {
         const string apiKeyVariable = "TOGETHER_API_KEY";
@@ -29,6 +37,33 @@ public partial class Tests
 
             pair.Model.Should().Be("test-chat-model");
             api.BaseUri.Should().Be(new Uri(CustomProviders.TogetherBaseUrl));
+        }
+        finally
+        {
+            Environment.SetEnvironmentVariable(apiKeyVariable, originalApiKey);
+            Environment.SetEnvironmentVariable(modelVariable, originalModel);
+        }
+    }
+
+    [TestMethod]
+    public void GonkaGateProvider_AllowsModelOverrideFromEnvironment()
+    {
+        const string apiKeyVariable = "GONKAGATE_API_KEY";
+        const string modelVariable = "GONKAGATE_CHAT_MODEL";
+
+        var originalApiKey = Environment.GetEnvironmentVariable(apiKeyVariable);
+        var originalModel = Environment.GetEnvironmentVariable(modelVariable);
+
+        try
+        {
+            Environment.SetEnvironmentVariable(apiKeyVariable, "test-api-key");
+            Environment.SetEnvironmentVariable(modelVariable, "test-chat-model");
+
+            var pair = GetAuthorizedChatApi(CustomProvider.GonkaGate);
+            using var api = pair.Api;
+
+            pair.Model.Should().Be("test-chat-model");
+            api.BaseUri.Should().Be(new Uri(CustomProviders.GonkaGateBaseUrl));
         }
         finally
         {
@@ -65,6 +100,7 @@ public partial class Tests
         AssertBaseUri(CustomProviders.KiloGateway("test-api-key"), CustomProviders.KiloGatewayBaseUrl);
         AssertBaseUri(CustomProviders.OpenCodeZen("test-api-key"), CustomProviders.OpenCodeZenBaseUrl);
         AssertBaseUri(CustomProviders.OpenCodeGo("test-api-key"), CustomProviders.OpenCodeGoBaseUrl);
+        AssertBaseUri(CustomProviders.GonkaGate("test-api-key"), CustomProviders.GonkaGateBaseUrl);
     }
 
     private static void AssertBaseUri(OpenAiClient api, string baseUrl)

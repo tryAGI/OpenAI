@@ -45,6 +45,11 @@ public static class CustomProviders
     /// 
     /// </summary>
     public const string TogetherBaseUrl = "https://api.together.xyz/v1";
+
+    /// <summary>
+    /// https://gonkagate.com/en/docs/api/reference/overview
+    /// </summary>
+    public const string GonkaGateBaseUrl = "https://api.gonkagate.com/v1";
     
     /// <summary>
     /// 
@@ -342,6 +347,15 @@ public static class CustomProviders
     public static OpenAiClient Together(string apiKey)
     {
         return new OpenAiClient(apiKey, baseUri: new Uri(TogetherBaseUrl));
+    }
+
+    /// <summary>
+    /// Create an API to use for GonkaGate.
+    /// </summary>
+    /// <returns></returns>
+    public static OpenAiClient GonkaGate(string apiKey)
+    {
+        return new OpenAiClient(apiKey, baseUri: new Uri(GonkaGateBaseUrl));
     }
     
     /// <summary>
