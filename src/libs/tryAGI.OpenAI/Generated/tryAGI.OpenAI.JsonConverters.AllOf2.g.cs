@@ -3,7 +3,7 @@
 namespace tryAGI.OpenAI.JsonConverters
 {
     /// <inheritdoc />
-    public class AllOfJsonConverter<[global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] T1, [global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] T2> : global::System.Text.Json.Serialization.JsonConverter<global::tryAGI.OpenAI.AllOf<T1, T2>>
+    public class AllOfJsonConverter<T1, T2> : global::System.Text.Json.Serialization.JsonConverter<global::tryAGI.OpenAI.AllOf<T1, T2>>
     {
         /// <inheritdoc />
         public override global::tryAGI.OpenAI.AllOf<T1, T2> Read(
