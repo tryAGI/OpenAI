@@ -1,0 +1,46 @@
+
+#nullable enable
+
+namespace tryAGI.OpenAI
+{
+    /// <summary>
+    /// The anchor point for the client secret expiration, meaning that `seconds` will be added to the `created_at` time of the client secret to produce an expiration timestamp. Only `created_at` is currently supported.<br/>
+    /// Default Value: created_at
+    /// </summary>
+    public enum RealtimeTranslationClientSecretCreateRequestExpiresAfterAnchor
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        CreatedAt,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class RealtimeTranslationClientSecretCreateRequestExpiresAfterAnchorExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this RealtimeTranslationClientSecretCreateRequestExpiresAfterAnchor value)
+        {
+            return value switch
+            {
+                RealtimeTranslationClientSecretCreateRequestExpiresAfterAnchor.CreatedAt => "created_at",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static RealtimeTranslationClientSecretCreateRequestExpiresAfterAnchor? ToEnum(string value)
+        {
+            return value switch
+            {
+                "created_at" => RealtimeTranslationClientSecretCreateRequestExpiresAfterAnchor.CreatedAt,
+                _ => null,
+            };
+        }
+    }
+}

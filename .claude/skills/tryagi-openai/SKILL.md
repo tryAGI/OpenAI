@@ -48,7 +48,7 @@ dnx tryAGI.OpenAI.CLI <group> --help
 | `project-group` | 3 |  |
 | `project-group-role-assignment` | 3 |  |
 | `project-user-role-assignment` | 3 |  |
-| `realtime` | 8 |  |
+| `realtime` | 9 |  |
 | `response` | 5 |  |
 | `role` | 8 |  |
 | `skill` | 11 |  |
