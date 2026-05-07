@@ -38999,9 +38999,9 @@ components:
           description: >
             The model to use for transcription. Current options are `whisper-1`,
             `gpt-4o-mini-transcribe`, `gpt-4o-mini-transcribe-2025-12-15`,
-            `gpt-4o-transcribe`, and `gpt-4o-transcribe-diarize`. Use
-            `gpt-4o-transcribe-diarize` when you need diarization with speaker
-            labels.
+            `gpt-4o-transcribe`, `gpt-4o-transcribe-diarize`, and
+            `gpt-realtime-whisper`. Use `gpt-4o-transcribe-diarize` when you
+            need diarization with speaker labels.
           anyOf:
             - type: string
             - type: string
@@ -39011,6 +39011,7 @@ components:
                 - gpt-4o-mini-transcribe-2025-12-15
                 - gpt-4o-transcribe
                 - gpt-4o-transcribe-diarize
+                - gpt-realtime-whisper
         language:
           type: string
           description: >
@@ -39034,6 +39035,52 @@ components:
             For `gpt-4o-transcribe` models (excluding
             `gpt-4o-transcribe-diarize`), the prompt is a free text string, for
             example "expect words related to technology".
+
+            Prompt is not supported with `gpt-realtime-whisper` in GA Realtime
+            sessions.
+        delay:
+          type: string
+          description: >
+            Controls how long the model waits before emitting transcription
+            text.
+
+            Higher values can improve transcription accuracy at the cost of
+            latency.
+
+            Only supported with `gpt-realtime-whisper` in GA Realtime sessions.
+          enum:
+            - minimal
+            - low
+            - medium
+            - high
+            - xhigh
+    AudioTranscriptionResponse:
+      type: object
+      properties:
+        model:
+          description: >
+            The model used for transcription. Current options are `whisper-1`,
+            `gpt-4o-mini-transcribe`, `gpt-4o-mini-transcribe-2025-12-15`,
+            `gpt-4o-transcribe`, `gpt-4o-transcribe-diarize`, and
+            `gpt-realtime-whisper`.
+          anyOf:
+            - type: string
+            - type: string
+              enum:
+                - whisper-1
+                - gpt-4o-mini-transcribe
+                - gpt-4o-mini-transcribe-2025-12-15
+                - gpt-4o-transcribe
+                - gpt-4o-transcribe-diarize
+                - gpt-realtime-whisper
+        language:
+          type: string
+          description: |
+            The language of the input audio.
+        prompt:
+          type: string
+          description: |
+            The prompt configured for input audio transcription, when present.
     AuditLog:
       type: object
       description: A log of a user action or configuration change within this organization.
@@ -60341,6 +60388,29 @@ components:
       required:
         - type
         - message
+    RealtimeReasoning:
+      type: object
+      title: Realtime reasoning configuration
+      description: >
+        Configuration for reasoning-capable Realtime models such as
+        `gpt-realtime-2`.
+      properties:
+        effort:
+          $ref: '#/components/schemas/RealtimeReasoningEffort'
+    RealtimeReasoningEffort:
+      type: string
+      description: >
+        Constrains effort on reasoning for reasoning-capable Realtime models
+        such as
+
+        `gpt-realtime-2`.
+      enum:
+        - minimal
+        - low
+        - medium
+        - high
+        - xhigh
+      default: low
     RealtimeResponse:
       type: object
       description: The response resource.
@@ -60660,6 +60730,15 @@ components:
             - $ref: '#/components/schemas/ToolChoiceFunction'
             - $ref: '#/components/schemas/ToolChoiceMCP'
           default: auto
+        parallel_tool_calls:
+          type: boolean
+          description: >
+            Whether the model may call multiple tools in parallel. Only
+            supported by
+
+            reasoning Realtime models such as `gpt-realtime-2`.
+        reasoning:
+          $ref: '#/components/schemas/RealtimeReasoning'
         max_output_tokens:
           oneOf:
             - type: integer
@@ -63101,8 +63180,9 @@ components:
         session:
           description: The session configuration.
           oneOf:
-            - $ref: '#/components/schemas/RealtimeSessionCreateRequestGA'
-            - $ref: '#/components/schemas/RealtimeTranscriptionSessionCreateRequestGA'
+            - $ref: '#/components/schemas/RealtimeSessionCreateResponseGA'
+            - $ref: >-
+                #/components/schemas/RealtimeTranscriptionSessionCreateResponseGA
       required:
         - event_id
         - type
@@ -63177,8 +63257,9 @@ components:
         session:
           description: The session configuration.
           oneOf:
-            - $ref: '#/components/schemas/RealtimeSessionCreateRequestGA'
-            - $ref: '#/components/schemas/RealtimeTranscriptionSessionCreateRequestGA'
+            - $ref: '#/components/schemas/RealtimeSessionCreateResponseGA'
+            - $ref: >-
+                #/components/schemas/RealtimeTranscriptionSessionCreateResponseGA
       required:
         - event_id
         - type
@@ -63441,7 +63522,7 @@ components:
         input_audio_transcription:
           anyOf:
             - allOf:
-                - $ref: '#/components/schemas/AudioTranscription'
+                - $ref: '#/components/schemas/AudioTranscriptionResponse'
               description: >
                 Configuration for input audio transcription, defaults to off and
                 can be set to `null` to turn off once on. Input audio
@@ -63910,6 +63991,7 @@ components:
               enum:
                 - gpt-realtime
                 - gpt-realtime-1.5
+                - gpt-realtime-2
                 - gpt-realtime-2025-08-28
                 - gpt-4o-realtime-preview
                 - gpt-4o-realtime-preview-2024-10-01
@@ -64108,6 +64190,15 @@ components:
             - $ref: '#/components/schemas/ToolChoiceFunction'
             - $ref: '#/components/schemas/ToolChoiceMCP'
           default: auto
+        parallel_tool_calls:
+          type: boolean
+          description: >
+            Whether the model may call multiple tools in parallel. Only
+            supported by
+
+            reasoning Realtime models such as `gpt-realtime-2`.
+        reasoning:
+          $ref: '#/components/schemas/RealtimeReasoning'
         max_output_tokens:
           oneOf:
             - type: integer
@@ -64213,7 +64304,7 @@ components:
                 transcription:
                   description: |
                     Configuration for input audio transcription.
-                  $ref: '#/components/schemas/AudioTranscription'
+                  $ref: '#/components/schemas/AudioTranscriptionResponse'
                 noise_reduction:
                   type: object
                   description: |
@@ -64394,32 +64485,10 @@ components:
           }
     RealtimeSessionCreateResponseGA:
       type: object
+      title: Realtime session configuration object
       description: |
-        A new Realtime session configuration, with an ephemeral key. Default TTL
-        for keys is one minute.
+        A Realtime session configuration object.
       properties:
-        client_secret:
-          type: object
-          description: Ephemeral key returned by the API.
-          properties:
-            value:
-              type: string
-              description: >
-                Ephemeral key usable in client environments to authenticate
-                connections to the Realtime API. Use this in client-side
-                environments rather than a standard API token, which should only
-                be used server-side.
-            expires_at:
-              type: integer
-              format: unixtime
-              description: >
-                Timestamp for when the token expires. Currently, all tokens
-                expire
-
-                after one minute.
-          required:
-            - value
-            - expires_at
         type:
           type: string
           description: >
@@ -64428,6 +64497,21 @@ components:
           enum:
             - realtime
           x-stainless-const: true
+        id:
+          type: string
+          description: >
+            Unique identifier for the session that looks like
+            `sess_1234567890abcdef`.
+        object:
+          type: string
+          description: The object type. Always `realtime.session`.
+          enum:
+            - realtime.session
+          x-stainless-const: true
+        expires_at:
+          type: integer
+          format: unixtime
+          description: Expiration timestamp for the session, in seconds since epoch.
         output_modalities:
           type: array
           description: >
@@ -64453,6 +64537,7 @@ components:
               enum:
                 - gpt-realtime
                 - gpt-realtime-1.5
+                - gpt-realtime-2
                 - gpt-realtime-2025-08-28
                 - gpt-4o-realtime-preview
                 - gpt-4o-realtime-preview-2024-10-01
@@ -64509,7 +64594,7 @@ components:
                     optionally set the language and prompt for transcription,
                     these offer additional guidance to the transcription
                     service.
-                  $ref: '#/components/schemas/AudioTranscription'
+                  $ref: '#/components/schemas/AudioTranscriptionResponse'
                 noise_reduction:
                   type: object
                   default: null
@@ -64651,6 +64736,8 @@ components:
             - $ref: '#/components/schemas/ToolChoiceFunction'
             - $ref: '#/components/schemas/ToolChoiceMCP'
           default: auto
+        reasoning:
+          $ref: '#/components/schemas/RealtimeReasoning'
         max_output_tokens:
           oneOf:
             - type: integer
@@ -64668,8 +64755,9 @@ components:
         prompt:
           $ref: '#/components/schemas/Prompt'
       required:
-        - client_secret
         - type
+        - id
+        - object
       x-oaiMeta:
         name: The session object
         group: realtime
@@ -64886,7 +64974,7 @@ components:
         input_audio_transcription:
           description: |
             Configuration of the transcription model.
-          $ref: '#/components/schemas/AudioTranscription'
+          $ref: '#/components/schemas/AudioTranscriptionResponse'
         turn_detection:
           type: object
           description: >
@@ -65003,7 +65091,7 @@ components:
                 transcription:
                   description: |
                     Configuration of the transcription model.
-                  $ref: '#/components/schemas/AudioTranscription'
+                  $ref: '#/components/schemas/AudioTranscriptionResponse'
                 noise_reduction:
                   type: object
                   description: |
@@ -65012,48 +65100,56 @@ components:
                     type:
                       $ref: '#/components/schemas/NoiseReductionType'
                 turn_detection:
-                  type: object
                   description: >
-                    Configuration for turn detection. Can be set to `null` to
-                    turn off. Server
-
-                    VAD means that the model will detect the start and end of
-                    speech based on
-
-                    audio volume and respond at the end of user speech.
-                  properties:
-                    type:
-                      type: string
+                    Configuration for turn detection. For
+                    `gpt-realtime-whisper`, this must be `null`; VAD is not
+                    supported.
+                  anyOf:
+                    - type: object
                       description: >
-                        Type of turn detection, only `server_vad` is currently
+                        Configuration for turn detection. Can be set to `null`
+                        to turn off. Server
+
+                        VAD means that the model will detect the start and end
+                        of speech based on
+
+                        audio volume and respond at the end of user speech. For
+                        `gpt-realtime-whisper`, this must be `null`; VAD is not
                         supported.
-                    threshold:
-                      type: number
-                      description: >
-                        Activation threshold for VAD (0.0 to 1.0), this defaults
-                        to 0.5. A
+                      properties:
+                        type:
+                          type: string
+                          description: >
+                            Type of turn detection, only `server_vad` is
+                            currently supported.
+                        threshold:
+                          type: number
+                          description: >
+                            Activation threshold for VAD (0.0 to 1.0), this
+                            defaults to 0.5. A
 
-                        higher threshold will require louder audio to activate
-                        the model, and
+                            higher threshold will require louder audio to
+                            activate the model, and
 
-                        thus might perform better in noisy environments.
-                    prefix_padding_ms:
-                      type: integer
-                      description: >
-                        Amount of audio to include before the VAD detected
-                        speech (in
+                            thus might perform better in noisy environments.
+                        prefix_padding_ms:
+                          type: integer
+                          description: >
+                            Amount of audio to include before the VAD detected
+                            speech (in
 
-                        milliseconds). Defaults to 300ms.
-                    silence_duration_ms:
-                      type: integer
-                      description: >
-                        Duration of silence to detect speech stop (in
-                        milliseconds). Defaults
+                            milliseconds). Defaults to 300ms.
+                        silence_duration_ms:
+                          type: integer
+                          description: >
+                            Duration of silence to detect speech stop (in
+                            milliseconds). Defaults
 
-                        to 500ms. With shorter values the model will respond
-                        more quickly,
+                            to 500ms. With shorter values the model will respond
+                            more quickly,
 
-                        but may jump in on short pauses from the user.
+                            but may jump in on short pauses from the user.
+                    - type: 'null'
       required:
         - type
         - id
@@ -65965,6 +66061,12 @@ components:
             model will score a low probability of turn end and wait longer for
             the user to continue speaking. This can be useful for more natural
             conversations, but may have a higher latency.
+
+
+            For `gpt-realtime-whisper` transcription sessions, turn detection
+            must be
+
+            set to `null`; VAD is not supported.
           oneOf:
             - type: object
               title: Server VAD

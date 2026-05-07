@@ -59,6 +59,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        GptRealtime2,
+        /// <summary>
+        /// 
+        /// </summary>
         GptRealtime20250828,
         /// <summary>
         /// 
@@ -98,6 +102,7 @@ namespace tryAGI.OpenAI
                 RealtimeSessionCreateResponseGAModel.GptAudioMini20251215 => "gpt-audio-mini-2025-12-15",
                 RealtimeSessionCreateResponseGAModel.GptRealtime => "gpt-realtime",
                 RealtimeSessionCreateResponseGAModel.GptRealtime15 => "gpt-realtime-1.5",
+                RealtimeSessionCreateResponseGAModel.GptRealtime2 => "gpt-realtime-2",
                 RealtimeSessionCreateResponseGAModel.GptRealtime20250828 => "gpt-realtime-2025-08-28",
                 RealtimeSessionCreateResponseGAModel.GptRealtimeMini => "gpt-realtime-mini",
                 RealtimeSessionCreateResponseGAModel.GptRealtimeMini20251006 => "gpt-realtime-mini-2025-10-06",
@@ -124,6 +129,7 @@ namespace tryAGI.OpenAI
                 "gpt-audio-mini-2025-12-15" => RealtimeSessionCreateResponseGAModel.GptAudioMini20251215,
                 "gpt-realtime" => RealtimeSessionCreateResponseGAModel.GptRealtime,
                 "gpt-realtime-1.5" => RealtimeSessionCreateResponseGAModel.GptRealtime15,
+                "gpt-realtime-2" => RealtimeSessionCreateResponseGAModel.GptRealtime2,
                 "gpt-realtime-2025-08-28" => RealtimeSessionCreateResponseGAModel.GptRealtime20250828,
                 "gpt-realtime-mini" => RealtimeSessionCreateResponseGAModel.GptRealtimeMini,
                 "gpt-realtime-mini-2025-10-06" => RealtimeSessionCreateResponseGAModel.GptRealtimeMini20251006,

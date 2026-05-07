@@ -80,7 +80,9 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("response.max_output_tokens")) __score9++;
             if (__jsonProps.Contains("response.metadata")) __score9++;
             if (__jsonProps.Contains("response.output_modalities")) __score9++;
+            if (__jsonProps.Contains("response.parallel_tool_calls")) __score9++;
             if (__jsonProps.Contains("response.prompt")) __score9++;
+            if (__jsonProps.Contains("response.reasoning")) __score9++;
             if (__jsonProps.Contains("response.tool_choice")) __score9++;
             if (__jsonProps.Contains("response.tools")) __score9++;
             if (__jsonProps.Contains("type")) __score9++;

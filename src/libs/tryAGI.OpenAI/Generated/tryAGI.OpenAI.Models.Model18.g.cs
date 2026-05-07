@@ -6,7 +6,7 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// Describes an OpenAI model offering that can be used with the API.
     /// </summary>
-    public sealed partial class Model17
+    public sealed partial class Model18
     {
         /// <summary>
         /// The model identifier, which can be referenced in the API endpoints.
@@ -43,7 +43,7 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Model17" /> class.
+        /// Initializes a new instance of the <see cref="Model18" /> class.
         /// </summary>
         /// <param name="id">
         /// The model identifier, which can be referenced in the API endpoints.
@@ -60,7 +60,7 @@ namespace tryAGI.OpenAI
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public Model17(
+        public Model18(
             string id,
             int created,
             string ownedBy,
@@ -73,9 +73,9 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Model17" /> class.
+        /// Initializes a new instance of the <see cref="Model18" /> class.
         /// </summary>
-        public Model17()
+        public Model18()
         {
         }
     }

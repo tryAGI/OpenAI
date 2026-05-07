@@ -10,8 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct Session2 : global::System.IEquatable<Session2>
     {
         /// <summary>
-        /// A new Realtime session configuration, with an ephemeral key. Default TTL<br/>
-        /// for keys is one minute.
+        /// A Realtime session configuration object.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA? Realtime { get; init; }

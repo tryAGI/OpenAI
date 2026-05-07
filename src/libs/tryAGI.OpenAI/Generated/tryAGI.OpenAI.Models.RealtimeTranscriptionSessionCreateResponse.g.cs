@@ -36,7 +36,7 @@ namespace tryAGI.OpenAI
         /// Configuration of the transcription model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_audio_transcription")]
-        public global::tryAGI.OpenAI.AudioTranscription? InputAudioTranscription { get; set; }
+        public global::tryAGI.OpenAI.AudioTranscriptionResponse? InputAudioTranscription { get; set; }
 
         /// <summary>
         /// Configuration for turn detection. Can be set to `null` to turn off. Server<br/>
@@ -81,7 +81,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseClientSecret clientSecret,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseModalitie>? modalities,
             string? inputAudioFormat,
-            global::tryAGI.OpenAI.AudioTranscription? inputAudioTranscription,
+            global::tryAGI.OpenAI.AudioTranscriptionResponse? inputAudioTranscription,
             global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseTurnDetection? turnDetection)
         {
             this.ClientSecret = clientSecret ?? throw new global::System.ArgumentNullException(nameof(clientSecret));

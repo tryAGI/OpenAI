@@ -28,9 +28,9 @@ namespace tryAGI.OpenAI.Realtime
         /// The session configuration.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateRequestGA, global::tryAGI.OpenAI.Realtime.RealtimeTranscriptionSessionCreateRequestGA>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateResponseGA, global::tryAGI.OpenAI.Realtime.RealtimeTranscriptionSessionCreateResponseGA>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.Realtime.OneOf<global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateRequestGA, global::tryAGI.OpenAI.Realtime.RealtimeTranscriptionSessionCreateRequestGA> Session { get; set; }
+        public required global::tryAGI.OpenAI.Realtime.OneOf<global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateResponseGA, global::tryAGI.OpenAI.Realtime.RealtimeTranscriptionSessionCreateResponseGA> Session { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -55,7 +55,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
         public RealtimeServerEventSessionCreated(
             string eventId,
-            global::tryAGI.OpenAI.Realtime.OneOf<global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateRequestGA, global::tryAGI.OpenAI.Realtime.RealtimeTranscriptionSessionCreateRequestGA> session,
+            global::tryAGI.OpenAI.Realtime.OneOf<global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateResponseGA, global::tryAGI.OpenAI.Realtime.RealtimeTranscriptionSessionCreateResponseGA> session,
             global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionCreatedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
