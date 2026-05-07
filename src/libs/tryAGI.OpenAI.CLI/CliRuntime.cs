@@ -90,7 +90,23 @@ internal static class CliRuntime
 
     public static string SerializeJson(object value)
     {
-        return JsonSerializer.Serialize(value, JsonOptions);
+        var json = value is JsonElement element
+            ? JsonSerializer.Serialize(element, CliJsonContext.Default.JsonElement)
+            : JsonSerializer.Serialize(value, value.GetType(), SourceGenerationContext.Default);
+
+        return PrettyJson(json);
+    }
+
+    private static string PrettyJson(string json)
+    {
+        using var document = JsonDocument.Parse(json);
+        using var stream = new MemoryStream();
+        using (var writer = new Utf8JsonWriter(stream, new JsonWriterOptions { Indented = true }))
+        {
+            document.WriteTo(writer);
+        }
+
+        return Encoding.UTF8.GetString(stream.ToArray());
     }
 
     public static string MaskSecret(string secret)
@@ -279,3 +295,6 @@ internal static class CliRuntime
         builder.AppendLine(value.ToString(CultureInfo.InvariantCulture));
     }
 }
+
+[System.Text.Json.Serialization.JsonSerializable(typeof(JsonElement))]
+internal sealed partial class CliJsonContext : System.Text.Json.Serialization.JsonSerializerContext;

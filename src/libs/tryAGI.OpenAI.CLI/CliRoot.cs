@@ -22,6 +22,7 @@ internal static class CliRoot
         root.Subcommands.Add(AudioCommand.Create());
         root.Subcommands.Add(ModelsCommand.Create());
         root.Subcommands.Add(SkillCommand.Create());
+        root.Subcommands.Add(GeneratedApi.Commands.ApiCommand.Create());
 
         return root;
     }

@@ -1,0 +1,58 @@
+#nullable enable
+
+using System.CommandLine;
+
+namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
+
+internal static class GroupsListGroupsCommandApiCommand
+{
+     private static Option<int?> Limit { get; } = new(
+        name: @"--limit")
+    {
+        Description = @"A limit on the number of groups to be returned. Limit can range between 0 and 1000, and the default is 100.
+",
+    };
+
+    private static Option<string?> After { get; } = new(
+        name: @"--after")
+    {
+        Description = @"A cursor for use in pagination. `after` is a group ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with group_abc, your subsequent call can include `after=group_abc` in order to fetch the next page of the list.
+",
+    };
+
+    private static Option<global::tryAGI.OpenAI.ListGroupsOrder?> Order { get; } = new(
+        name: @"--order")
+    {
+        Description = @"Specifies the sort order of the returned groups.",
+    };
+
+    public static Command Create()
+    {
+        var command = new Command(@"list-groups", @"Lists all groups in the organization.");
+                        command.Options.Add(Limit);
+                        command.Options.Add(After);
+                        command.Options.Add(Order);
+
+        command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
+            await CliRuntime.RunAsync(async () =>
+            {
+                        var limit = parseResult.GetValue(Limit);
+                        var after = parseResult.GetValue(After);
+                        var order = parseResult.GetValue(Order);
+                using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
+
+                                var response = await client.Groups.ListGroupsAsync(
+                                    limit: limit,
+                                    after: after,
+                                    order: order,
+                                    cancellationToken: cancellationToken).ConfigureAwait(false);
+
+                                await CliRuntime.WriteJsonAsync(
+                                    parseResult,
+                                    response,
+                                    global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                    cancellationToken).ConfigureAwait(false);
+            }, cancellationToken).ConfigureAwait(false));
+        return command;
+    }
+}
