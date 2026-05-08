@@ -27,6 +27,19 @@ namespace tryAGI.OpenAI
         public bool IsTextInput => TextInput != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextInput(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = TextInput;
+            return IsTextInput;
+        }
+
+        /// <summary>
         /// A text input to the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputText))]
 #endif
         public bool IsInputText => InputText != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.InputTextContent? value)
+        {
+            value = InputText;
+            return IsInputText;
+        }
 
         /// <summary>
         /// A text output from the model.
@@ -61,6 +87,19 @@ namespace tryAGI.OpenAI
         public bool IsOutputText => OutputText != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.EvalItemContentOutputText? value)
+        {
+            value = OutputText;
+            return IsOutputText;
+        }
+
+        /// <summary>
         /// An image input block used within EvalItem content arrays.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -78,6 +117,19 @@ namespace tryAGI.OpenAI
         public bool IsInputImage => InputImage != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.EvalItemInputImage? value)
+        {
+            value = InputImage;
+            return IsInputImage;
+        }
+
+        /// <summary>
         /// An audio input to the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -93,6 +145,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudio))]
 #endif
         public bool IsInputAudio => InputAudio != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputAudio(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.InputAudio? value)
+        {
+            value = InputAudio;
+            return IsInputAudio;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -235,11 +300,11 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? textInput = null,
-            global::System.Func<global::tryAGI.OpenAI.InputTextContent?, TResult>? inputText = null,
-            global::System.Func<global::tryAGI.OpenAI.EvalItemContentOutputText?, TResult>? outputText = null,
-            global::System.Func<global::tryAGI.OpenAI.EvalItemInputImage?, TResult>? inputImage = null,
-            global::System.Func<global::tryAGI.OpenAI.InputAudio?, TResult>? inputAudio = null,
+            global::System.Func<string, TResult>? textInput = null,
+            global::System.Func<global::tryAGI.OpenAI.InputTextContent, TResult>? inputText = null,
+            global::System.Func<global::tryAGI.OpenAI.EvalItemContentOutputText, TResult>? outputText = null,
+            global::System.Func<global::tryAGI.OpenAI.EvalItemInputImage, TResult>? inputImage = null,
+            global::System.Func<global::tryAGI.OpenAI.InputAudio, TResult>? inputAudio = null,
             bool validate = true)
         {
             if (validate)
@@ -275,11 +340,53 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? textInput = null,
-            global::System.Action<global::tryAGI.OpenAI.InputTextContent?>? inputText = null,
-            global::System.Action<global::tryAGI.OpenAI.EvalItemContentOutputText?>? outputText = null,
-            global::System.Action<global::tryAGI.OpenAI.EvalItemInputImage?>? inputImage = null,
-            global::System.Action<global::tryAGI.OpenAI.InputAudio?>? inputAudio = null,
+            global::System.Action<string>? textInput = null,
+
+            global::System.Action<global::tryAGI.OpenAI.InputTextContent>? inputText = null,
+
+            global::System.Action<global::tryAGI.OpenAI.EvalItemContentOutputText>? outputText = null,
+
+            global::System.Action<global::tryAGI.OpenAI.EvalItemInputImage>? inputImage = null,
+
+            global::System.Action<global::tryAGI.OpenAI.InputAudio>? inputAudio = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTextInput)
+            {
+                textInput?.Invoke(TextInput!);
+            }
+            else if (IsInputText)
+            {
+                inputText?.Invoke(InputText!);
+            }
+            else if (IsOutputText)
+            {
+                outputText?.Invoke(OutputText!);
+            }
+            else if (IsInputImage)
+            {
+                inputImage?.Invoke(InputImage!);
+            }
+            else if (IsInputAudio)
+            {
+                inputAudio?.Invoke(InputAudio!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? textInput = null,
+            global::System.Action<global::tryAGI.OpenAI.InputTextContent>? inputText = null,
+            global::System.Action<global::tryAGI.OpenAI.EvalItemContentOutputText>? outputText = null,
+            global::System.Action<global::tryAGI.OpenAI.EvalItemInputImage>? inputImage = null,
+            global::System.Action<global::tryAGI.OpenAI.InputAudio>? inputAudio = null,
             bool validate = true)
         {
             if (validate)

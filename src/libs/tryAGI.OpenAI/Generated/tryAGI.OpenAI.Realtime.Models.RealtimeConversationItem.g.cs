@@ -27,6 +27,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsMessage1 => Message1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessage1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageSystem? value)
+        {
+            value = Message1;
+            return IsMessage1;
+        }
+
+        /// <summary>
         /// A user message item in a Realtime conversation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace tryAGI.OpenAI.Realtime
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Message2))]
 #endif
         public bool IsMessage2 => Message2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessage2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageUser? value)
+        {
+            value = Message2;
+            return IsMessage2;
+        }
 
         /// <summary>
         /// An assistant message item in a Realtime conversation.
@@ -61,6 +87,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsMessage3 => Message3 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessage3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageAssistant? value)
+        {
+            value = Message3;
+            return IsMessage3;
+        }
+
+        /// <summary>
         /// A function call item in a Realtime conversation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -76,6 +115,19 @@ namespace tryAGI.OpenAI.Realtime
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCall))]
 #endif
         public bool IsFunctionCall => FunctionCall != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunctionCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeConversationItemFunctionCall? value)
+        {
+            value = FunctionCall;
+            return IsFunctionCall;
+        }
 
         /// <summary>
         /// A function call output item in a Realtime conversation.
@@ -95,6 +147,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsFunctionCallOutput => FunctionCallOutput != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunctionCallOutput(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeConversationItemFunctionCallOutput? value)
+        {
+            value = FunctionCallOutput;
+            return IsFunctionCallOutput;
+        }
+
+        /// <summary>
         /// A Realtime item responding to an MCP approval request.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -110,6 +175,19 @@ namespace tryAGI.OpenAI.Realtime
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpApprovalResponse))]
 #endif
         public bool IsMcpApprovalResponse => McpApprovalResponse != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcpApprovalResponse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeMCPApprovalResponse? value)
+        {
+            value = McpApprovalResponse;
+            return IsMcpApprovalResponse;
+        }
 
         /// <summary>
         /// A Realtime item listing tools available on an MCP server.
@@ -129,6 +207,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsMcpListTools => McpListTools != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcpListTools(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeMCPListTools? value)
+        {
+            value = McpListTools;
+            return IsMcpListTools;
+        }
+
+        /// <summary>
         /// A Realtime item representing an invocation of a tool on an MCP server.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -146,6 +237,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsMcpCall => McpCall != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcpCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeMCPToolCall? value)
+        {
+            value = McpCall;
+            return IsMcpCall;
+        }
+
+        /// <summary>
         /// A Realtime item requesting human approval of a tool invocation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -161,6 +265,19 @@ namespace tryAGI.OpenAI.Realtime
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpApprovalRequest))]
 #endif
         public bool IsMcpApprovalRequest => McpApprovalRequest != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcpApprovalRequest(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeMCPApprovalRequest? value)
+        {
+            value = McpApprovalRequest;
+            return IsMcpApprovalRequest;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -391,15 +508,15 @@ namespace tryAGI.OpenAI.Realtime
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageSystem?, TResult>? message1 = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageUser?, TResult>? message2 = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageAssistant?, TResult>? message3 = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeConversationItemFunctionCall?, TResult>? functionCall = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeConversationItemFunctionCallOutput?, TResult>? functionCallOutput = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeMCPApprovalResponse?, TResult>? mcpApprovalResponse = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeMCPListTools?, TResult>? mcpListTools = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeMCPToolCall?, TResult>? mcpCall = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeMCPApprovalRequest?, TResult>? mcpApprovalRequest = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageSystem, TResult>? message1 = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageUser, TResult>? message2 = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageAssistant, TResult>? message3 = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeConversationItemFunctionCall, TResult>? functionCall = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeConversationItemFunctionCallOutput, TResult>? functionCallOutput = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeMCPApprovalResponse, TResult>? mcpApprovalResponse = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeMCPListTools, TResult>? mcpListTools = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeMCPToolCall, TResult>? mcpCall = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeMCPApprovalRequest, TResult>? mcpApprovalRequest = null,
             bool validate = true)
         {
             if (validate)
@@ -451,15 +568,81 @@ namespace tryAGI.OpenAI.Realtime
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageSystem?>? message1 = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageUser?>? message2 = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageAssistant?>? message3 = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeConversationItemFunctionCall?>? functionCall = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeConversationItemFunctionCallOutput?>? functionCallOutput = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeMCPApprovalResponse?>? mcpApprovalResponse = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeMCPListTools?>? mcpListTools = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeMCPToolCall?>? mcpCall = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeMCPApprovalRequest?>? mcpApprovalRequest = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageSystem>? message1 = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageUser>? message2 = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageAssistant>? message3 = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeConversationItemFunctionCall>? functionCall = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeConversationItemFunctionCallOutput>? functionCallOutput = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeMCPApprovalResponse>? mcpApprovalResponse = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeMCPListTools>? mcpListTools = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeMCPToolCall>? mcpCall = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeMCPApprovalRequest>? mcpApprovalRequest = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessage1)
+            {
+                message1?.Invoke(Message1!);
+            }
+            else if (IsMessage2)
+            {
+                message2?.Invoke(Message2!);
+            }
+            else if (IsMessage3)
+            {
+                message3?.Invoke(Message3!);
+            }
+            else if (IsFunctionCall)
+            {
+                functionCall?.Invoke(FunctionCall!);
+            }
+            else if (IsFunctionCallOutput)
+            {
+                functionCallOutput?.Invoke(FunctionCallOutput!);
+            }
+            else if (IsMcpApprovalResponse)
+            {
+                mcpApprovalResponse?.Invoke(McpApprovalResponse!);
+            }
+            else if (IsMcpListTools)
+            {
+                mcpListTools?.Invoke(McpListTools!);
+            }
+            else if (IsMcpCall)
+            {
+                mcpCall?.Invoke(McpCall!);
+            }
+            else if (IsMcpApprovalRequest)
+            {
+                mcpApprovalRequest?.Invoke(McpApprovalRequest!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageSystem>? message1 = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageUser>? message2 = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageAssistant>? message3 = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeConversationItemFunctionCall>? functionCall = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeConversationItemFunctionCallOutput>? functionCallOutput = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeMCPApprovalResponse>? mcpApprovalResponse = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeMCPListTools>? mcpListTools = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeMCPToolCall>? mcpCall = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeMCPApprovalRequest>? mcpApprovalRequest = null,
             bool validate = true)
         {
             if (validate)

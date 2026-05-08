@@ -29,6 +29,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickModelProperties(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.CreateModelResponseProperties? value)
+        {
+            value = ModelProperties;
+            return IsModelProperties;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ResponseProperties? Properties { get; init; }
 #else
@@ -46,6 +59,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickProperties(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseProperties? value)
+        {
+            value = Properties;
+            return IsProperties;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.CreateResponseVariant3? CreateResponseVariant3 { get; init; }
 #else
@@ -59,6 +85,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateResponseVariant3))]
 #endif
         public bool IsCreateResponseVariant3 => CreateResponseVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCreateResponseVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.CreateResponseVariant3? value)
+        {
+            value = CreateResponseVariant3;
+            return IsCreateResponseVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -158,8 +197,8 @@ namespace tryAGI.OpenAI
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.CreateModelResponseProperties?, TResult>? modelProperties = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseProperties?, TResult>? properties = null,
-            global::System.Func<global::tryAGI.OpenAI.CreateResponseVariant3?, TResult>? createResponseVariant3 = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseProperties, TResult>? properties = null,
+            global::System.Func<global::tryAGI.OpenAI.CreateResponseVariant3, TResult>? createResponseVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -188,8 +227,38 @@ namespace tryAGI.OpenAI
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.CreateModelResponseProperties?>? modelProperties = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseProperties?>? properties = null,
-            global::System.Action<global::tryAGI.OpenAI.CreateResponseVariant3?>? createResponseVariant3 = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseProperties>? properties = null,
+
+            global::System.Action<global::tryAGI.OpenAI.CreateResponseVariant3>? createResponseVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsModelProperties)
+            {
+                modelProperties?.Invoke(ModelProperties!);
+            }
+            else if (IsProperties)
+            {
+                properties?.Invoke(Properties!);
+            }
+            else if (IsCreateResponseVariant3)
+            {
+                createResponseVariant3?.Invoke(CreateResponseVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.CreateModelResponseProperties?>? modelProperties = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseProperties>? properties = null,
+            global::System.Action<global::tryAGI.OpenAI.CreateResponseVariant3>? createResponseVariant3 = null,
             bool validate = true)
         {
             if (validate)

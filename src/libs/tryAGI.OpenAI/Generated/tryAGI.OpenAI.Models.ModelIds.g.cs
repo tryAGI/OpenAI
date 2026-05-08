@@ -27,6 +27,19 @@ namespace tryAGI.OpenAI
         public bool IsShared => Shared != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickShared(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ModelIdsShared? value)
+        {
+            value = Shared;
+            return IsShared;
+        }
+
+        /// <summary>
         /// Example: gpt-5.1
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Responses))]
 #endif
         public bool IsResponses => Responses != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponses(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ModelIdsResponses? value)
+        {
+            value = Responses;
+            return IsResponses;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -143,6 +169,30 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::tryAGI.OpenAI.ModelIdsShared?>? shared = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ModelIdsResponses?>? responses = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsShared)
+            {
+                shared?.Invoke(Shared!);
+            }
+            else if (IsResponses)
+            {
+                responses?.Invoke(Responses!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::tryAGI.OpenAI.ModelIdsShared?>? shared = null,
             global::System.Action<global::tryAGI.OpenAI.ModelIdsResponses?>? responses = null,
             bool validate = true)

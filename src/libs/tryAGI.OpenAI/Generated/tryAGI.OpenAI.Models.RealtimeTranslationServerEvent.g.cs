@@ -29,6 +29,19 @@ namespace tryAGI.OpenAI
         public bool IsError => Error != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RealtimeServerEventError? value)
+        {
+            value = Error;
+            return IsError;
+        }
+
+        /// <summary>
         /// Returned when a translation session is created. Emitted automatically when a<br/>
         /// new connection is established as the first server event. This event contains<br/>
         /// the default translation session configuration.
@@ -46,6 +59,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionCreated))]
 #endif
         public bool IsSessionCreated => SessionCreated != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSessionCreated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreated? value)
+        {
+            value = SessionCreated;
+            return IsSessionCreated;
+        }
 
         /// <summary>
         /// Returned when a translation session is updated with a `session.update` event,<br/>
@@ -66,6 +92,19 @@ namespace tryAGI.OpenAI
         public bool IsSessionUpdated => SessionUpdated != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSessionUpdated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionUpdated? value)
+        {
+            value = SessionUpdated;
+            return IsSessionUpdated;
+        }
+
+        /// <summary>
         /// Returned when a realtime translation session is closed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -81,6 +120,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionClosed))]
 #endif
         public bool IsSessionClosed => SessionClosed != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSessionClosed(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosed? value)
+        {
+            value = SessionClosed;
+            return IsSessionClosed;
+        }
 
         /// <summary>
         /// Returned when optional source-language transcript text is available. This event<br/>
@@ -103,6 +155,19 @@ namespace tryAGI.OpenAI
         public bool IsSessionInputTranscriptDelta => SessionInputTranscriptDelta != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSessionInputTranscriptDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionInputTranscriptDelta? value)
+        {
+            value = SessionInputTranscriptDelta;
+            return IsSessionInputTranscriptDelta;
+        }
+
+        /// <summary>
         /// Returned when translated transcript text is available.<br/>
         /// Transcript deltas are append-only text fragments. Clients should not insert<br/>
         /// unconditional spaces between deltas.
@@ -122,6 +187,19 @@ namespace tryAGI.OpenAI
         public bool IsSessionOutputTranscriptDelta => SessionOutputTranscriptDelta != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSessionOutputTranscriptDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputTranscriptDelta? value)
+        {
+            value = SessionOutputTranscriptDelta;
+            return IsSessionOutputTranscriptDelta;
+        }
+
+        /// <summary>
         /// Returned when translated output audio is available. Output audio deltas are<br/>
         /// 200 ms frames of PCM16 audio.
         /// </summary>
@@ -138,6 +216,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionOutputAudioDelta))]
 #endif
         public bool IsSessionOutputAudioDelta => SessionOutputAudioDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSessionOutputAudioDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDelta? value)
+        {
+            value = SessionOutputAudioDelta;
+            return IsSessionOutputAudioDelta;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -324,13 +415,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.RealtimeServerEventError?, TResult>? error = null,
-            global::System.Func<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreated?, TResult>? sessionCreated = null,
-            global::System.Func<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionUpdated?, TResult>? sessionUpdated = null,
-            global::System.Func<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosed?, TResult>? sessionClosed = null,
-            global::System.Func<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionInputTranscriptDelta?, TResult>? sessionInputTranscriptDelta = null,
-            global::System.Func<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputTranscriptDelta?, TResult>? sessionOutputTranscriptDelta = null,
-            global::System.Func<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDelta?, TResult>? sessionOutputAudioDelta = null,
+            global::System.Func<global::tryAGI.OpenAI.RealtimeServerEventError, TResult>? error = null,
+            global::System.Func<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreated, TResult>? sessionCreated = null,
+            global::System.Func<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionUpdated, TResult>? sessionUpdated = null,
+            global::System.Func<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosed, TResult>? sessionClosed = null,
+            global::System.Func<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionInputTranscriptDelta, TResult>? sessionInputTranscriptDelta = null,
+            global::System.Func<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputTranscriptDelta, TResult>? sessionOutputTranscriptDelta = null,
+            global::System.Func<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDelta, TResult>? sessionOutputAudioDelta = null,
             bool validate = true)
         {
             if (validate)
@@ -374,13 +465,67 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.RealtimeServerEventError?>? error = null,
-            global::System.Action<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreated?>? sessionCreated = null,
-            global::System.Action<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionUpdated?>? sessionUpdated = null,
-            global::System.Action<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosed?>? sessionClosed = null,
-            global::System.Action<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionInputTranscriptDelta?>? sessionInputTranscriptDelta = null,
-            global::System.Action<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputTranscriptDelta?>? sessionOutputTranscriptDelta = null,
-            global::System.Action<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDelta?>? sessionOutputAudioDelta = null,
+            global::System.Action<global::tryAGI.OpenAI.RealtimeServerEventError>? error = null,
+
+            global::System.Action<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreated>? sessionCreated = null,
+
+            global::System.Action<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionUpdated>? sessionUpdated = null,
+
+            global::System.Action<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosed>? sessionClosed = null,
+
+            global::System.Action<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionInputTranscriptDelta>? sessionInputTranscriptDelta = null,
+
+            global::System.Action<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputTranscriptDelta>? sessionOutputTranscriptDelta = null,
+
+            global::System.Action<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDelta>? sessionOutputAudioDelta = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsError)
+            {
+                error?.Invoke(Error!);
+            }
+            else if (IsSessionCreated)
+            {
+                sessionCreated?.Invoke(SessionCreated!);
+            }
+            else if (IsSessionUpdated)
+            {
+                sessionUpdated?.Invoke(SessionUpdated!);
+            }
+            else if (IsSessionClosed)
+            {
+                sessionClosed?.Invoke(SessionClosed!);
+            }
+            else if (IsSessionInputTranscriptDelta)
+            {
+                sessionInputTranscriptDelta?.Invoke(SessionInputTranscriptDelta!);
+            }
+            else if (IsSessionOutputTranscriptDelta)
+            {
+                sessionOutputTranscriptDelta?.Invoke(SessionOutputTranscriptDelta!);
+            }
+            else if (IsSessionOutputAudioDelta)
+            {
+                sessionOutputAudioDelta?.Invoke(SessionOutputAudioDelta!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.RealtimeServerEventError>? error = null,
+            global::System.Action<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreated>? sessionCreated = null,
+            global::System.Action<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionUpdated>? sessionUpdated = null,
+            global::System.Action<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosed>? sessionClosed = null,
+            global::System.Action<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionInputTranscriptDelta>? sessionInputTranscriptDelta = null,
+            global::System.Action<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputTranscriptDelta>? sessionOutputTranscriptDelta = null,
+            global::System.Action<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDelta>? sessionOutputAudioDelta = null,
             bool validate = true)
         {
             if (validate)

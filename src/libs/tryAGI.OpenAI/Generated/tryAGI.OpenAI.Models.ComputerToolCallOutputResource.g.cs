@@ -29,6 +29,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickComputerToolCallOutput(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ComputerToolCallOutput? value)
+        {
+            value = ComputerToolCallOutput;
+            return IsComputerToolCallOutput;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ComputerToolCallOutputResourceVariant2? ComputerToolCallOutputResourceVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerToolCallOutputResourceVariant2))]
 #endif
         public bool IsComputerToolCallOutputResourceVariant2 => ComputerToolCallOutputResourceVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickComputerToolCallOutputResourceVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ComputerToolCallOutputResourceVariant2? value)
+        {
+            value = ComputerToolCallOutputResourceVariant2;
+            return IsComputerToolCallOutputResourceVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.ComputerToolCallOutput?, TResult>? computerToolCallOutput = null,
-            global::System.Func<global::tryAGI.OpenAI.ComputerToolCallOutputResourceVariant2?, TResult>? computerToolCallOutputResourceVariant2 = null,
+            global::System.Func<global::tryAGI.OpenAI.ComputerToolCallOutput, TResult>? computerToolCallOutput = null,
+            global::System.Func<global::tryAGI.OpenAI.ComputerToolCallOutputResourceVariant2, TResult>? computerToolCallOutputResourceVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.ComputerToolCallOutput?>? computerToolCallOutput = null,
-            global::System.Action<global::tryAGI.OpenAI.ComputerToolCallOutputResourceVariant2?>? computerToolCallOutputResourceVariant2 = null,
+            global::System.Action<global::tryAGI.OpenAI.ComputerToolCallOutput>? computerToolCallOutput = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ComputerToolCallOutputResourceVariant2>? computerToolCallOutputResourceVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsComputerToolCallOutput)
+            {
+                computerToolCallOutput?.Invoke(ComputerToolCallOutput!);
+            }
+            else if (IsComputerToolCallOutputResourceVariant2)
+            {
+                computerToolCallOutputResourceVariant2?.Invoke(ComputerToolCallOutputResourceVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.ComputerToolCallOutput>? computerToolCallOutput = null,
+            global::System.Action<global::tryAGI.OpenAI.ComputerToolCallOutputResourceVariant2>? computerToolCallOutputResourceVariant2 = null,
             bool validate = true)
         {
             if (validate)

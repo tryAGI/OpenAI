@@ -29,6 +29,19 @@ namespace tryAGI.OpenAI
         public bool IsSessionUpdate => SessionUpdate != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSessionUpdate(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionUpdate? value)
+        {
+            value = SessionUpdate;
+            return IsSessionUpdate;
+        }
+
+        /// <summary>
         /// Send this event to append audio bytes to the translation session input audio buffer.<br/>
         /// WebSocket translation sessions accept base64-encoded 24 kHz PCM16 mono<br/>
         /// little-endian raw audio bytes. Unsupported websocket audio formats return a<br/>
@@ -57,6 +70,19 @@ namespace tryAGI.OpenAI
         public bool IsSessionInputAudioBufferAppend => SessionInputAudioBufferAppend != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSessionInputAudioBufferAppend(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RealtimeTranslationClientEventInputAudioBufferAppend? value)
+        {
+            value = SessionInputAudioBufferAppend;
+            return IsSessionInputAudioBufferAppend;
+        }
+
+        /// <summary>
         /// Gracefully close the realtime translation session. The server flushes pending<br/>
         /// input audio and emits any remaining translated output before closing the<br/>
         /// session.
@@ -74,6 +100,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionClose))]
 #endif
         public bool IsSessionClose => SessionClose != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSessionClose(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionClose? value)
+        {
+            value = SessionClose;
+            return IsSessionClose;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -172,9 +211,9 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionUpdate?, TResult>? sessionUpdate = null,
-            global::System.Func<global::tryAGI.OpenAI.RealtimeTranslationClientEventInputAudioBufferAppend?, TResult>? sessionInputAudioBufferAppend = null,
-            global::System.Func<global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionClose?, TResult>? sessionClose = null,
+            global::System.Func<global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionUpdate, TResult>? sessionUpdate = null,
+            global::System.Func<global::tryAGI.OpenAI.RealtimeTranslationClientEventInputAudioBufferAppend, TResult>? sessionInputAudioBufferAppend = null,
+            global::System.Func<global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionClose, TResult>? sessionClose = null,
             bool validate = true)
         {
             if (validate)
@@ -202,9 +241,39 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionUpdate?>? sessionUpdate = null,
-            global::System.Action<global::tryAGI.OpenAI.RealtimeTranslationClientEventInputAudioBufferAppend?>? sessionInputAudioBufferAppend = null,
-            global::System.Action<global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionClose?>? sessionClose = null,
+            global::System.Action<global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionUpdate>? sessionUpdate = null,
+
+            global::System.Action<global::tryAGI.OpenAI.RealtimeTranslationClientEventInputAudioBufferAppend>? sessionInputAudioBufferAppend = null,
+
+            global::System.Action<global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionClose>? sessionClose = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSessionUpdate)
+            {
+                sessionUpdate?.Invoke(SessionUpdate!);
+            }
+            else if (IsSessionInputAudioBufferAppend)
+            {
+                sessionInputAudioBufferAppend?.Invoke(SessionInputAudioBufferAppend!);
+            }
+            else if (IsSessionClose)
+            {
+                sessionClose?.Invoke(SessionClose!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionUpdate>? sessionUpdate = null,
+            global::System.Action<global::tryAGI.OpenAI.RealtimeTranslationClientEventInputAudioBufferAppend>? sessionInputAudioBufferAppend = null,
+            global::System.Action<global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionClose>? sessionClose = null,
             bool validate = true)
         {
             if (validate)

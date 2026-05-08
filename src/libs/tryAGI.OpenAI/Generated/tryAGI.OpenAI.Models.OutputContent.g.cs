@@ -27,6 +27,19 @@ namespace tryAGI.OpenAI
         public bool IsOutputText => OutputText != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.OutputTextContent? value)
+        {
+            value = OutputText;
+            return IsOutputText;
+        }
+
+        /// <summary>
         /// A refusal from the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -44,6 +57,19 @@ namespace tryAGI.OpenAI
         public bool IsRefusal => Refusal != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRefusal(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RefusalContent? value)
+        {
+            value = Refusal;
+            return IsRefusal;
+        }
+
+        /// <summary>
         /// Reasoning text from the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -59,6 +85,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningText))]
 #endif
         public bool IsReasoningText => ReasoningText != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickReasoningText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ReasoningTextContent? value)
+        {
+            value = ReasoningText;
+            return IsReasoningText;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -157,9 +196,9 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.OutputTextContent?, TResult>? outputText = null,
-            global::System.Func<global::tryAGI.OpenAI.RefusalContent?, TResult>? refusal = null,
-            global::System.Func<global::tryAGI.OpenAI.ReasoningTextContent?, TResult>? reasoningText = null,
+            global::System.Func<global::tryAGI.OpenAI.OutputTextContent, TResult>? outputText = null,
+            global::System.Func<global::tryAGI.OpenAI.RefusalContent, TResult>? refusal = null,
+            global::System.Func<global::tryAGI.OpenAI.ReasoningTextContent, TResult>? reasoningText = null,
             bool validate = true)
         {
             if (validate)
@@ -187,9 +226,39 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.OutputTextContent?>? outputText = null,
-            global::System.Action<global::tryAGI.OpenAI.RefusalContent?>? refusal = null,
-            global::System.Action<global::tryAGI.OpenAI.ReasoningTextContent?>? reasoningText = null,
+            global::System.Action<global::tryAGI.OpenAI.OutputTextContent>? outputText = null,
+
+            global::System.Action<global::tryAGI.OpenAI.RefusalContent>? refusal = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ReasoningTextContent>? reasoningText = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOutputText)
+            {
+                outputText?.Invoke(OutputText!);
+            }
+            else if (IsRefusal)
+            {
+                refusal?.Invoke(Refusal!);
+            }
+            else if (IsReasoningText)
+            {
+                reasoningText?.Invoke(ReasoningText!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.OutputTextContent>? outputText = null,
+            global::System.Action<global::tryAGI.OpenAI.RefusalContent>? refusal = null,
+            global::System.Action<global::tryAGI.OpenAI.ReasoningTextContent>? reasoningText = null,
             bool validate = true)
         {
             if (validate)

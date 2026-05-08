@@ -27,6 +27,19 @@ namespace tryAGI.OpenAI
         public bool IsText => Text != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.CustomTextFormatParam? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
         /// A grammar defined by the user.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Grammar))]
 #endif
         public bool IsGrammar => Grammar != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGrammar(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.CustomGrammarFormatParam? value)
+        {
+            value = Grammar;
+            return IsGrammar;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.CustomTextFormatParam?, TResult>? text = null,
-            global::System.Func<global::tryAGI.OpenAI.CustomGrammarFormatParam?, TResult>? grammar = null,
+            global::System.Func<global::tryAGI.OpenAI.CustomTextFormatParam, TResult>? text = null,
+            global::System.Func<global::tryAGI.OpenAI.CustomGrammarFormatParam, TResult>? grammar = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.CustomTextFormatParam?>? text = null,
-            global::System.Action<global::tryAGI.OpenAI.CustomGrammarFormatParam?>? grammar = null,
+            global::System.Action<global::tryAGI.OpenAI.CustomTextFormatParam>? text = null,
+
+            global::System.Action<global::tryAGI.OpenAI.CustomGrammarFormatParam>? grammar = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsGrammar)
+            {
+                grammar?.Invoke(Grammar!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.CustomTextFormatParam>? text = null,
+            global::System.Action<global::tryAGI.OpenAI.CustomGrammarFormatParam>? grammar = null,
             bool validate = true)
         {
             if (validate)

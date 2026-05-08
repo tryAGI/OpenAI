@@ -27,6 +27,19 @@ namespace tryAGI.OpenAI
         public bool IsRunStreamEventVariant1 => RunStreamEventVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRunStreamEventVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RunStreamEventVariant1? value)
+        {
+            value = RunStreamEventVariant1;
+            return IsRunStreamEventVariant1;
+        }
+
+        /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `queued` status.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStreamEventVariant2))]
 #endif
         public bool IsRunStreamEventVariant2 => RunStreamEventVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRunStreamEventVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RunStreamEventVariant2? value)
+        {
+            value = RunStreamEventVariant2;
+            return IsRunStreamEventVariant2;
+        }
 
         /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) moves to an `in_progress` status.
@@ -61,6 +87,19 @@ namespace tryAGI.OpenAI
         public bool IsRunStreamEventVariant3 => RunStreamEventVariant3 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRunStreamEventVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RunStreamEventVariant3? value)
+        {
+            value = RunStreamEventVariant3;
+            return IsRunStreamEventVariant3;
+        }
+
+        /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `requires_action` status.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -76,6 +115,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStreamEventVariant4))]
 #endif
         public bool IsRunStreamEventVariant4 => RunStreamEventVariant4 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRunStreamEventVariant4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RunStreamEventVariant4? value)
+        {
+            value = RunStreamEventVariant4;
+            return IsRunStreamEventVariant4;
+        }
 
         /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) is completed.
@@ -95,6 +147,19 @@ namespace tryAGI.OpenAI
         public bool IsRunStreamEventVariant5 => RunStreamEventVariant5 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRunStreamEventVariant5(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RunStreamEventVariant5? value)
+        {
+            value = RunStreamEventVariant5;
+            return IsRunStreamEventVariant5;
+        }
+
+        /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) ends with status `incomplete`.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -110,6 +175,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStreamEventVariant6))]
 #endif
         public bool IsRunStreamEventVariant6 => RunStreamEventVariant6 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRunStreamEventVariant6(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RunStreamEventVariant6? value)
+        {
+            value = RunStreamEventVariant6;
+            return IsRunStreamEventVariant6;
+        }
 
         /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) fails.
@@ -129,6 +207,19 @@ namespace tryAGI.OpenAI
         public bool IsRunStreamEventVariant7 => RunStreamEventVariant7 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRunStreamEventVariant7(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RunStreamEventVariant7? value)
+        {
+            value = RunStreamEventVariant7;
+            return IsRunStreamEventVariant7;
+        }
+
+        /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `cancelling` status.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -144,6 +235,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStreamEventVariant8))]
 #endif
         public bool IsRunStreamEventVariant8 => RunStreamEventVariant8 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRunStreamEventVariant8(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RunStreamEventVariant8? value)
+        {
+            value = RunStreamEventVariant8;
+            return IsRunStreamEventVariant8;
+        }
 
         /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) is cancelled.
@@ -163,6 +267,19 @@ namespace tryAGI.OpenAI
         public bool IsRunStreamEventVariant9 => RunStreamEventVariant9 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRunStreamEventVariant9(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RunStreamEventVariant9? value)
+        {
+            value = RunStreamEventVariant9;
+            return IsRunStreamEventVariant9;
+        }
+
+        /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) expires.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -178,6 +295,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStreamEventVariant10))]
 #endif
         public bool IsRunStreamEventVariant10 => RunStreamEventVariant10 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRunStreamEventVariant10(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RunStreamEventVariant10? value)
+        {
+            value = RunStreamEventVariant10;
+            return IsRunStreamEventVariant10;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -430,16 +560,16 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.RunStreamEventVariant1?, TResult>? runStreamEventVariant1 = null,
-            global::System.Func<global::tryAGI.OpenAI.RunStreamEventVariant2?, TResult>? runStreamEventVariant2 = null,
-            global::System.Func<global::tryAGI.OpenAI.RunStreamEventVariant3?, TResult>? runStreamEventVariant3 = null,
-            global::System.Func<global::tryAGI.OpenAI.RunStreamEventVariant4?, TResult>? runStreamEventVariant4 = null,
-            global::System.Func<global::tryAGI.OpenAI.RunStreamEventVariant5?, TResult>? runStreamEventVariant5 = null,
-            global::System.Func<global::tryAGI.OpenAI.RunStreamEventVariant6?, TResult>? runStreamEventVariant6 = null,
-            global::System.Func<global::tryAGI.OpenAI.RunStreamEventVariant7?, TResult>? runStreamEventVariant7 = null,
-            global::System.Func<global::tryAGI.OpenAI.RunStreamEventVariant8?, TResult>? runStreamEventVariant8 = null,
-            global::System.Func<global::tryAGI.OpenAI.RunStreamEventVariant9?, TResult>? runStreamEventVariant9 = null,
-            global::System.Func<global::tryAGI.OpenAI.RunStreamEventVariant10?, TResult>? runStreamEventVariant10 = null,
+            global::System.Func<global::tryAGI.OpenAI.RunStreamEventVariant1, TResult>? runStreamEventVariant1 = null,
+            global::System.Func<global::tryAGI.OpenAI.RunStreamEventVariant2, TResult>? runStreamEventVariant2 = null,
+            global::System.Func<global::tryAGI.OpenAI.RunStreamEventVariant3, TResult>? runStreamEventVariant3 = null,
+            global::System.Func<global::tryAGI.OpenAI.RunStreamEventVariant4, TResult>? runStreamEventVariant4 = null,
+            global::System.Func<global::tryAGI.OpenAI.RunStreamEventVariant5, TResult>? runStreamEventVariant5 = null,
+            global::System.Func<global::tryAGI.OpenAI.RunStreamEventVariant6, TResult>? runStreamEventVariant6 = null,
+            global::System.Func<global::tryAGI.OpenAI.RunStreamEventVariant7, TResult>? runStreamEventVariant7 = null,
+            global::System.Func<global::tryAGI.OpenAI.RunStreamEventVariant8, TResult>? runStreamEventVariant8 = null,
+            global::System.Func<global::tryAGI.OpenAI.RunStreamEventVariant9, TResult>? runStreamEventVariant9 = null,
+            global::System.Func<global::tryAGI.OpenAI.RunStreamEventVariant10, TResult>? runStreamEventVariant10 = null,
             bool validate = true)
         {
             if (validate)
@@ -495,16 +625,88 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant1?>? runStreamEventVariant1 = null,
-            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant2?>? runStreamEventVariant2 = null,
-            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant3?>? runStreamEventVariant3 = null,
-            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant4?>? runStreamEventVariant4 = null,
-            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant5?>? runStreamEventVariant5 = null,
-            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant6?>? runStreamEventVariant6 = null,
-            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant7?>? runStreamEventVariant7 = null,
-            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant8?>? runStreamEventVariant8 = null,
-            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant9?>? runStreamEventVariant9 = null,
-            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant10?>? runStreamEventVariant10 = null,
+            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant1>? runStreamEventVariant1 = null,
+
+            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant2>? runStreamEventVariant2 = null,
+
+            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant3>? runStreamEventVariant3 = null,
+
+            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant4>? runStreamEventVariant4 = null,
+
+            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant5>? runStreamEventVariant5 = null,
+
+            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant6>? runStreamEventVariant6 = null,
+
+            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant7>? runStreamEventVariant7 = null,
+
+            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant8>? runStreamEventVariant8 = null,
+
+            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant9>? runStreamEventVariant9 = null,
+
+            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant10>? runStreamEventVariant10 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRunStreamEventVariant1)
+            {
+                runStreamEventVariant1?.Invoke(RunStreamEventVariant1!);
+            }
+            else if (IsRunStreamEventVariant2)
+            {
+                runStreamEventVariant2?.Invoke(RunStreamEventVariant2!);
+            }
+            else if (IsRunStreamEventVariant3)
+            {
+                runStreamEventVariant3?.Invoke(RunStreamEventVariant3!);
+            }
+            else if (IsRunStreamEventVariant4)
+            {
+                runStreamEventVariant4?.Invoke(RunStreamEventVariant4!);
+            }
+            else if (IsRunStreamEventVariant5)
+            {
+                runStreamEventVariant5?.Invoke(RunStreamEventVariant5!);
+            }
+            else if (IsRunStreamEventVariant6)
+            {
+                runStreamEventVariant6?.Invoke(RunStreamEventVariant6!);
+            }
+            else if (IsRunStreamEventVariant7)
+            {
+                runStreamEventVariant7?.Invoke(RunStreamEventVariant7!);
+            }
+            else if (IsRunStreamEventVariant8)
+            {
+                runStreamEventVariant8?.Invoke(RunStreamEventVariant8!);
+            }
+            else if (IsRunStreamEventVariant9)
+            {
+                runStreamEventVariant9?.Invoke(RunStreamEventVariant9!);
+            }
+            else if (IsRunStreamEventVariant10)
+            {
+                runStreamEventVariant10?.Invoke(RunStreamEventVariant10!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant1>? runStreamEventVariant1 = null,
+            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant2>? runStreamEventVariant2 = null,
+            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant3>? runStreamEventVariant3 = null,
+            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant4>? runStreamEventVariant4 = null,
+            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant5>? runStreamEventVariant5 = null,
+            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant6>? runStreamEventVariant6 = null,
+            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant7>? runStreamEventVariant7 = null,
+            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant8>? runStreamEventVariant8 = null,
+            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant9>? runStreamEventVariant9 = null,
+            global::System.Action<global::tryAGI.OpenAI.RunStreamEventVariant10>? runStreamEventVariant10 = null,
             bool validate = true)
         {
             if (validate)

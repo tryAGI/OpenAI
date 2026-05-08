@@ -27,6 +27,19 @@ namespace tryAGI.OpenAI
         public bool IsLocal => Local != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLocal(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.LocalEnvironmentResource? value)
+        {
+            value = Local;
+            return IsLocal;
+        }
+
+        /// <summary>
         /// Represents a container created with /v1/containers.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContainerReference))]
 #endif
         public bool IsContainerReference => ContainerReference != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickContainerReference(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ContainerReferenceResource? value)
+        {
+            value = ContainerReference;
+            return IsContainerReference;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.LocalEnvironmentResource?, TResult>? local = null,
-            global::System.Func<global::tryAGI.OpenAI.ContainerReferenceResource?, TResult>? containerReference = null,
+            global::System.Func<global::tryAGI.OpenAI.LocalEnvironmentResource, TResult>? local = null,
+            global::System.Func<global::tryAGI.OpenAI.ContainerReferenceResource, TResult>? containerReference = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.LocalEnvironmentResource?>? local = null,
-            global::System.Action<global::tryAGI.OpenAI.ContainerReferenceResource?>? containerReference = null,
+            global::System.Action<global::tryAGI.OpenAI.LocalEnvironmentResource>? local = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ContainerReferenceResource>? containerReference = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsLocal)
+            {
+                local?.Invoke(Local!);
+            }
+            else if (IsContainerReference)
+            {
+                containerReference?.Invoke(ContainerReference!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.LocalEnvironmentResource>? local = null,
+            global::System.Action<global::tryAGI.OpenAI.ContainerReferenceResource>? containerReference = null,
             bool validate = true)
         {
             if (validate)

@@ -29,6 +29,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickInputContentTypes(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.InputContent? value)
+        {
+            value = InputContentTypes;
+            return IsInputContentTypes;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.OutputContent? OutputContentTypes { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputContentTypes))]
 #endif
         public bool IsOutputContentTypes => OutputContentTypes != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputContentTypes(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.OutputContent? value)
+        {
+            value = OutputContentTypes;
+            return IsOutputContentTypes;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -143,6 +169,30 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::tryAGI.OpenAI.InputContent?>? inputContentTypes = null,
+
+            global::System.Action<global::tryAGI.OpenAI.OutputContent?>? outputContentTypes = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInputContentTypes)
+            {
+                inputContentTypes?.Invoke(InputContentTypes!);
+            }
+            else if (IsOutputContentTypes)
+            {
+                outputContentTypes?.Invoke(OutputContentTypes!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::tryAGI.OpenAI.InputContent?>? inputContentTypes = null,
             global::System.Action<global::tryAGI.OpenAI.OutputContent?>? outputContentTypes = null,
             bool validate = true)

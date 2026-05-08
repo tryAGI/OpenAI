@@ -43,6 +43,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickThread(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ThreadStreamEvent? value)
+        {
+            value = Thread;
+            return IsThread;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RunStreamEvent? Run { get; init; }
 #else
@@ -56,6 +69,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Run))]
 #endif
         public bool IsRun => Run != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRun(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RunStreamEvent? value)
+        {
+            value = Run;
+            return IsRun;
+        }
 
         /// <summary>
         /// 
@@ -77,6 +103,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRunStep(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RunStepStreamEvent? value)
+        {
+            value = RunStep;
+            return IsRunStep;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.MessageStreamEvent? Message { get; init; }
 #else
@@ -90,6 +129,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Message))]
 #endif
         public bool IsMessage => Message != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.MessageStreamEvent? value)
+        {
+            value = Message;
+            return IsMessage;
+        }
 
         /// <summary>
         /// Occurs when an [error](/docs/guides/error-codes#api-errors) occurs. This can happen due to an internal server error or a timeout.
@@ -109,6 +161,19 @@ namespace tryAGI.OpenAI
         public bool IsError => Error != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ErrorEvent? value)
+        {
+            value = Error;
+            return IsError;
+        }
+
+        /// <summary>
         /// Occurs when a stream ends.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -124,6 +189,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Done))]
 #endif
         public bool IsDone => Done != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.DoneEvent? value)
+        {
+            value = Done;
+            return IsDone;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -292,8 +370,8 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.RunStreamEvent?, TResult>? run = null,
             global::System.Func<global::tryAGI.OpenAI.RunStepStreamEvent?, TResult>? runStep = null,
             global::System.Func<global::tryAGI.OpenAI.MessageStreamEvent?, TResult>? message = null,
-            global::System.Func<global::tryAGI.OpenAI.ErrorEvent?, TResult>? error = null,
-            global::System.Func<global::tryAGI.OpenAI.DoneEvent?, TResult>? done = null,
+            global::System.Func<global::tryAGI.OpenAI.ErrorEvent, TResult>? error = null,
+            global::System.Func<global::tryAGI.OpenAI.DoneEvent, TResult>? done = null,
             bool validate = true)
         {
             if (validate)
@@ -334,11 +412,59 @@ namespace tryAGI.OpenAI
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.ThreadStreamEvent?>? thread = null,
+
+            global::System.Action<global::tryAGI.OpenAI.RunStreamEvent?>? run = null,
+
+            global::System.Action<global::tryAGI.OpenAI.RunStepStreamEvent?>? runStep = null,
+
+            global::System.Action<global::tryAGI.OpenAI.MessageStreamEvent?>? message = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ErrorEvent>? error = null,
+
+            global::System.Action<global::tryAGI.OpenAI.DoneEvent>? done = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsThread)
+            {
+                thread?.Invoke(Thread!);
+            }
+            else if (IsRun)
+            {
+                run?.Invoke(Run!);
+            }
+            else if (IsRunStep)
+            {
+                runStep?.Invoke(RunStep!);
+            }
+            else if (IsMessage)
+            {
+                message?.Invoke(Message!);
+            }
+            else if (IsError)
+            {
+                error?.Invoke(Error!);
+            }
+            else if (IsDone)
+            {
+                done?.Invoke(Done!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.ThreadStreamEvent?>? thread = null,
             global::System.Action<global::tryAGI.OpenAI.RunStreamEvent?>? run = null,
             global::System.Action<global::tryAGI.OpenAI.RunStepStreamEvent?>? runStep = null,
             global::System.Action<global::tryAGI.OpenAI.MessageStreamEvent?>? message = null,
-            global::System.Action<global::tryAGI.OpenAI.ErrorEvent?>? error = null,
-            global::System.Action<global::tryAGI.OpenAI.DoneEvent?>? done = null,
+            global::System.Action<global::tryAGI.OpenAI.ErrorEvent>? error = null,
+            global::System.Action<global::tryAGI.OpenAI.DoneEvent>? done = null,
             bool validate = true)
         {
             if (validate)

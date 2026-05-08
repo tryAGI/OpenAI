@@ -28,6 +28,19 @@ namespace tryAGI.OpenAI
         public bool IsSearch => Search != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSearch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.WebSearchActionSearch? value)
+        {
+            value = Search;
+            return IsSearch;
+        }
+
+        /// <summary>
         /// Action type "open_page" - Opens a specific URL from search results.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -45,6 +58,19 @@ namespace tryAGI.OpenAI
         public bool IsOpenPage => OpenPage != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenPage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.WebSearchActionOpenPage? value)
+        {
+            value = OpenPage;
+            return IsOpenPage;
+        }
+
+        /// <summary>
         /// Action type "find_in_page": Searches for a pattern within a loaded page.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -60,6 +86,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FindInPage))]
 #endif
         public bool IsFindInPage => FindInPage != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFindInPage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.WebSearchActionFind? value)
+        {
+            value = FindInPage;
+            return IsFindInPage;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -158,9 +197,9 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.WebSearchActionSearch?, TResult>? search = null,
-            global::System.Func<global::tryAGI.OpenAI.WebSearchActionOpenPage?, TResult>? openPage = null,
-            global::System.Func<global::tryAGI.OpenAI.WebSearchActionFind?, TResult>? findInPage = null,
+            global::System.Func<global::tryAGI.OpenAI.WebSearchActionSearch, TResult>? search = null,
+            global::System.Func<global::tryAGI.OpenAI.WebSearchActionOpenPage, TResult>? openPage = null,
+            global::System.Func<global::tryAGI.OpenAI.WebSearchActionFind, TResult>? findInPage = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +227,39 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.WebSearchActionSearch?>? search = null,
-            global::System.Action<global::tryAGI.OpenAI.WebSearchActionOpenPage?>? openPage = null,
-            global::System.Action<global::tryAGI.OpenAI.WebSearchActionFind?>? findInPage = null,
+            global::System.Action<global::tryAGI.OpenAI.WebSearchActionSearch>? search = null,
+
+            global::System.Action<global::tryAGI.OpenAI.WebSearchActionOpenPage>? openPage = null,
+
+            global::System.Action<global::tryAGI.OpenAI.WebSearchActionFind>? findInPage = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSearch)
+            {
+                search?.Invoke(Search!);
+            }
+            else if (IsOpenPage)
+            {
+                openPage?.Invoke(OpenPage!);
+            }
+            else if (IsFindInPage)
+            {
+                findInPage?.Invoke(FindInPage!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.WebSearchActionSearch>? search = null,
+            global::System.Action<global::tryAGI.OpenAI.WebSearchActionOpenPage>? openPage = null,
+            global::System.Action<global::tryAGI.OpenAI.WebSearchActionFind>? findInPage = null,
             bool validate = true)
         {
             if (validate)

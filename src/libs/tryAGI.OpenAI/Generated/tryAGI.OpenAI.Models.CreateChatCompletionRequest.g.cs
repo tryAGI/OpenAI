@@ -29,6 +29,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickModelResponseProperties(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.CreateModelResponseProperties? value)
+        {
+            value = ModelResponseProperties;
+            return IsModelResponseProperties;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2? CreateChatCompletionRequestVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateChatCompletionRequestVariant2))]
 #endif
         public bool IsCreateChatCompletionRequestVariant2 => CreateChatCompletionRequestVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCreateChatCompletionRequestVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2? value)
+        {
+            value = CreateChatCompletionRequestVariant2;
+            return IsCreateChatCompletionRequestVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,7 +145,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.CreateModelResponseProperties?, TResult>? modelResponseProperties = null,
-            global::System.Func<global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2?, TResult>? createChatCompletionRequestVariant2 = null,
+            global::System.Func<global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2, TResult>? createChatCompletionRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,7 +170,31 @@ namespace tryAGI.OpenAI
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.CreateModelResponseProperties?>? modelResponseProperties = null,
-            global::System.Action<global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2?>? createChatCompletionRequestVariant2 = null,
+
+            global::System.Action<global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2>? createChatCompletionRequestVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsModelResponseProperties)
+            {
+                modelResponseProperties?.Invoke(ModelResponseProperties!);
+            }
+            else if (IsCreateChatCompletionRequestVariant2)
+            {
+                createChatCompletionRequestVariant2?.Invoke(CreateChatCompletionRequestVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.CreateModelResponseProperties?>? modelResponseProperties = null,
+            global::System.Action<global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2>? createChatCompletionRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)

@@ -27,6 +27,19 @@ namespace tryAGI.OpenAI
         public bool IsOutputText => OutputText != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.OutputTextContent? value)
+        {
+            value = OutputText;
+            return IsOutputText;
+        }
+
+        /// <summary>
         /// A refusal from the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Refusal))]
 #endif
         public bool IsRefusal => Refusal != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRefusal(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RefusalContent? value)
+        {
+            value = Refusal;
+            return IsRefusal;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.OutputTextContent?, TResult>? outputText = null,
-            global::System.Func<global::tryAGI.OpenAI.RefusalContent?, TResult>? refusal = null,
+            global::System.Func<global::tryAGI.OpenAI.OutputTextContent, TResult>? outputText = null,
+            global::System.Func<global::tryAGI.OpenAI.RefusalContent, TResult>? refusal = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.OutputTextContent?>? outputText = null,
-            global::System.Action<global::tryAGI.OpenAI.RefusalContent?>? refusal = null,
+            global::System.Action<global::tryAGI.OpenAI.OutputTextContent>? outputText = null,
+
+            global::System.Action<global::tryAGI.OpenAI.RefusalContent>? refusal = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOutputText)
+            {
+                outputText?.Invoke(OutputText!);
+            }
+            else if (IsRefusal)
+            {
+                refusal?.Invoke(Refusal!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.OutputTextContent>? outputText = null,
+            global::System.Action<global::tryAGI.OpenAI.RefusalContent>? refusal = null,
             bool validate = true)
         {
             if (validate)

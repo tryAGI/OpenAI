@@ -27,6 +27,19 @@ namespace tryAGI.OpenAI
         public bool IsClick => Click != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickClick(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ClickParam? value)
+        {
+            value = Click;
+            return IsClick;
+        }
+
+        /// <summary>
         /// A double click action.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DoubleClick))]
 #endif
         public bool IsDoubleClick => DoubleClick != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDoubleClick(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.DoubleClickAction? value)
+        {
+            value = DoubleClick;
+            return IsDoubleClick;
+        }
 
         /// <summary>
         /// A drag action.
@@ -61,6 +87,19 @@ namespace tryAGI.OpenAI
         public bool IsDrag => Drag != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDrag(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.DragParam? value)
+        {
+            value = Drag;
+            return IsDrag;
+        }
+
+        /// <summary>
         /// A collection of keypresses the model would like to perform.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -76,6 +115,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Keypress))]
 #endif
         public bool IsKeypress => Keypress != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickKeypress(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.KeyPressAction? value)
+        {
+            value = Keypress;
+            return IsKeypress;
+        }
 
         /// <summary>
         /// A mouse move action.
@@ -95,6 +147,19 @@ namespace tryAGI.OpenAI
         public bool IsMove => Move != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMove(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.MoveParam? value)
+        {
+            value = Move;
+            return IsMove;
+        }
+
+        /// <summary>
         /// A screenshot action.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -110,6 +175,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Screenshot))]
 #endif
         public bool IsScreenshot => Screenshot != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickScreenshot(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ScreenshotParam? value)
+        {
+            value = Screenshot;
+            return IsScreenshot;
+        }
 
         /// <summary>
         /// A scroll action.
@@ -129,6 +207,19 @@ namespace tryAGI.OpenAI
         public bool IsScroll => Scroll != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickScroll(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ScrollParam? value)
+        {
+            value = Scroll;
+            return IsScroll;
+        }
+
+        /// <summary>
         /// An action to type in text.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -146,6 +237,19 @@ namespace tryAGI.OpenAI
         public bool IsType => Type != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickType(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.TypeParam? value)
+        {
+            value = Type;
+            return IsType;
+        }
+
+        /// <summary>
         /// A wait action.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -161,6 +265,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Wait))]
 #endif
         public bool IsWait => Wait != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWait(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.WaitParam? value)
+        {
+            value = Wait;
+            return IsWait;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -391,15 +508,15 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.ClickParam?, TResult>? click = null,
-            global::System.Func<global::tryAGI.OpenAI.DoubleClickAction?, TResult>? doubleClick = null,
-            global::System.Func<global::tryAGI.OpenAI.DragParam?, TResult>? drag = null,
-            global::System.Func<global::tryAGI.OpenAI.KeyPressAction?, TResult>? keypress = null,
-            global::System.Func<global::tryAGI.OpenAI.MoveParam?, TResult>? move = null,
-            global::System.Func<global::tryAGI.OpenAI.ScreenshotParam?, TResult>? screenshot = null,
-            global::System.Func<global::tryAGI.OpenAI.ScrollParam?, TResult>? scroll = null,
-            global::System.Func<global::tryAGI.OpenAI.TypeParam?, TResult>? type = null,
-            global::System.Func<global::tryAGI.OpenAI.WaitParam?, TResult>? wait = null,
+            global::System.Func<global::tryAGI.OpenAI.ClickParam, TResult>? click = null,
+            global::System.Func<global::tryAGI.OpenAI.DoubleClickAction, TResult>? doubleClick = null,
+            global::System.Func<global::tryAGI.OpenAI.DragParam, TResult>? drag = null,
+            global::System.Func<global::tryAGI.OpenAI.KeyPressAction, TResult>? keypress = null,
+            global::System.Func<global::tryAGI.OpenAI.MoveParam, TResult>? move = null,
+            global::System.Func<global::tryAGI.OpenAI.ScreenshotParam, TResult>? screenshot = null,
+            global::System.Func<global::tryAGI.OpenAI.ScrollParam, TResult>? scroll = null,
+            global::System.Func<global::tryAGI.OpenAI.TypeParam, TResult>? type = null,
+            global::System.Func<global::tryAGI.OpenAI.WaitParam, TResult>? wait = null,
             bool validate = true)
         {
             if (validate)
@@ -451,15 +568,81 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.ClickParam?>? click = null,
-            global::System.Action<global::tryAGI.OpenAI.DoubleClickAction?>? doubleClick = null,
-            global::System.Action<global::tryAGI.OpenAI.DragParam?>? drag = null,
-            global::System.Action<global::tryAGI.OpenAI.KeyPressAction?>? keypress = null,
-            global::System.Action<global::tryAGI.OpenAI.MoveParam?>? move = null,
-            global::System.Action<global::tryAGI.OpenAI.ScreenshotParam?>? screenshot = null,
-            global::System.Action<global::tryAGI.OpenAI.ScrollParam?>? scroll = null,
-            global::System.Action<global::tryAGI.OpenAI.TypeParam?>? type = null,
-            global::System.Action<global::tryAGI.OpenAI.WaitParam?>? wait = null,
+            global::System.Action<global::tryAGI.OpenAI.ClickParam>? click = null,
+
+            global::System.Action<global::tryAGI.OpenAI.DoubleClickAction>? doubleClick = null,
+
+            global::System.Action<global::tryAGI.OpenAI.DragParam>? drag = null,
+
+            global::System.Action<global::tryAGI.OpenAI.KeyPressAction>? keypress = null,
+
+            global::System.Action<global::tryAGI.OpenAI.MoveParam>? move = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ScreenshotParam>? screenshot = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ScrollParam>? scroll = null,
+
+            global::System.Action<global::tryAGI.OpenAI.TypeParam>? type = null,
+
+            global::System.Action<global::tryAGI.OpenAI.WaitParam>? wait = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsClick)
+            {
+                click?.Invoke(Click!);
+            }
+            else if (IsDoubleClick)
+            {
+                doubleClick?.Invoke(DoubleClick!);
+            }
+            else if (IsDrag)
+            {
+                drag?.Invoke(Drag!);
+            }
+            else if (IsKeypress)
+            {
+                keypress?.Invoke(Keypress!);
+            }
+            else if (IsMove)
+            {
+                move?.Invoke(Move!);
+            }
+            else if (IsScreenshot)
+            {
+                screenshot?.Invoke(Screenshot!);
+            }
+            else if (IsScroll)
+            {
+                scroll?.Invoke(Scroll!);
+            }
+            else if (IsType)
+            {
+                type?.Invoke(Type!);
+            }
+            else if (IsWait)
+            {
+                wait?.Invoke(Wait!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.ClickParam>? click = null,
+            global::System.Action<global::tryAGI.OpenAI.DoubleClickAction>? doubleClick = null,
+            global::System.Action<global::tryAGI.OpenAI.DragParam>? drag = null,
+            global::System.Action<global::tryAGI.OpenAI.KeyPressAction>? keypress = null,
+            global::System.Action<global::tryAGI.OpenAI.MoveParam>? move = null,
+            global::System.Action<global::tryAGI.OpenAI.ScreenshotParam>? screenshot = null,
+            global::System.Action<global::tryAGI.OpenAI.ScrollParam>? scroll = null,
+            global::System.Action<global::tryAGI.OpenAI.TypeParam>? type = null,
+            global::System.Action<global::tryAGI.OpenAI.WaitParam>? wait = null,
             bool validate = true)
         {
             if (validate)
