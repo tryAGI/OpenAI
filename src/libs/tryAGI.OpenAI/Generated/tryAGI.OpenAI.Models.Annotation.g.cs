@@ -27,6 +27,19 @@ namespace tryAGI.OpenAI
         public bool IsFileCitation => FileCitation != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFileCitation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.FileCitationBody? value)
+        {
+            value = FileCitation;
+            return IsFileCitation;
+        }
+
+        /// <summary>
         /// A citation for a web resource used to generate a model response.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UrlCitation))]
 #endif
         public bool IsUrlCitation => UrlCitation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUrlCitation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.UrlCitationBody? value)
+        {
+            value = UrlCitation;
+            return IsUrlCitation;
+        }
 
         /// <summary>
         /// A citation for a container file used to generate a model response.
@@ -61,6 +87,19 @@ namespace tryAGI.OpenAI
         public bool IsContainerFileCitation => ContainerFileCitation != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickContainerFileCitation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ContainerFileCitationBody? value)
+        {
+            value = ContainerFileCitation;
+            return IsContainerFileCitation;
+        }
+
+        /// <summary>
         /// A path to a file.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -76,6 +115,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilePath))]
 #endif
         public bool IsFilePath => FilePath != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilePath(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.FilePath? value)
+        {
+            value = FilePath;
+            return IsFilePath;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -196,10 +248,10 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.FileCitationBody?, TResult>? fileCitation = null,
-            global::System.Func<global::tryAGI.OpenAI.UrlCitationBody?, TResult>? urlCitation = null,
-            global::System.Func<global::tryAGI.OpenAI.ContainerFileCitationBody?, TResult>? containerFileCitation = null,
-            global::System.Func<global::tryAGI.OpenAI.FilePath?, TResult>? filePath = null,
+            global::System.Func<global::tryAGI.OpenAI.FileCitationBody, TResult>? fileCitation = null,
+            global::System.Func<global::tryAGI.OpenAI.UrlCitationBody, TResult>? urlCitation = null,
+            global::System.Func<global::tryAGI.OpenAI.ContainerFileCitationBody, TResult>? containerFileCitation = null,
+            global::System.Func<global::tryAGI.OpenAI.FilePath, TResult>? filePath = null,
             bool validate = true)
         {
             if (validate)
@@ -231,10 +283,46 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.FileCitationBody?>? fileCitation = null,
-            global::System.Action<global::tryAGI.OpenAI.UrlCitationBody?>? urlCitation = null,
-            global::System.Action<global::tryAGI.OpenAI.ContainerFileCitationBody?>? containerFileCitation = null,
-            global::System.Action<global::tryAGI.OpenAI.FilePath?>? filePath = null,
+            global::System.Action<global::tryAGI.OpenAI.FileCitationBody>? fileCitation = null,
+
+            global::System.Action<global::tryAGI.OpenAI.UrlCitationBody>? urlCitation = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ContainerFileCitationBody>? containerFileCitation = null,
+
+            global::System.Action<global::tryAGI.OpenAI.FilePath>? filePath = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFileCitation)
+            {
+                fileCitation?.Invoke(FileCitation!);
+            }
+            else if (IsUrlCitation)
+            {
+                urlCitation?.Invoke(UrlCitation!);
+            }
+            else if (IsContainerFileCitation)
+            {
+                containerFileCitation?.Invoke(ContainerFileCitation!);
+            }
+            else if (IsFilePath)
+            {
+                filePath?.Invoke(FilePath!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.FileCitationBody>? fileCitation = null,
+            global::System.Action<global::tryAGI.OpenAI.UrlCitationBody>? urlCitation = null,
+            global::System.Action<global::tryAGI.OpenAI.ContainerFileCitationBody>? containerFileCitation = null,
+            global::System.Action<global::tryAGI.OpenAI.FilePath>? filePath = null,
             bool validate = true)
         {
             if (validate)

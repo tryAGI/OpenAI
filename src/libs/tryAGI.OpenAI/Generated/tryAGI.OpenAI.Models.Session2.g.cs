@@ -27,6 +27,19 @@ namespace tryAGI.OpenAI
         public bool IsRealtime => Realtime != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRealtime(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA? value)
+        {
+            value = Realtime;
+            return IsRealtime;
+        }
+
+        /// <summary>
         /// A Realtime transcription session configuration object.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Transcription))]
 #endif
         public bool IsTranscription => Transcription != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTranscription(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA? value)
+        {
+            value = Transcription;
+            return IsTranscription;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA?, TResult>? realtime = null,
-            global::System.Func<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA?, TResult>? transcription = null,
+            global::System.Func<global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA, TResult>? realtime = null,
+            global::System.Func<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA, TResult>? transcription = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA?>? realtime = null,
-            global::System.Action<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA?>? transcription = null,
+            global::System.Action<global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA>? realtime = null,
+
+            global::System.Action<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA>? transcription = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRealtime)
+            {
+                realtime?.Invoke(Realtime!);
+            }
+            else if (IsTranscription)
+            {
+                transcription?.Invoke(Transcription!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA>? realtime = null,
+            global::System.Action<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA>? transcription = null,
             bool validate = true)
         {
             if (validate)

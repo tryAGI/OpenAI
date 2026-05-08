@@ -27,6 +27,19 @@ namespace tryAGI.OpenAI
         public bool IsFunction => Function != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.FunctionToolParam? value)
+        {
+            value = Function;
+            return IsFunction;
+        }
+
+        /// <summary>
         /// A custom tool that processes input using a specified format. Learn more about   [custom tools](/docs/guides/function-calling#custom-tools)
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Custom))]
 #endif
         public bool IsCustom => Custom != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCustom(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.CustomToolParam? value)
+        {
+            value = Custom;
+            return IsCustom;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.FunctionToolParam?, TResult>? function = null,
-            global::System.Func<global::tryAGI.OpenAI.CustomToolParam?, TResult>? custom = null,
+            global::System.Func<global::tryAGI.OpenAI.FunctionToolParam, TResult>? function = null,
+            global::System.Func<global::tryAGI.OpenAI.CustomToolParam, TResult>? custom = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.FunctionToolParam?>? function = null,
-            global::System.Action<global::tryAGI.OpenAI.CustomToolParam?>? custom = null,
+            global::System.Action<global::tryAGI.OpenAI.FunctionToolParam>? function = null,
+
+            global::System.Action<global::tryAGI.OpenAI.CustomToolParam>? custom = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFunction)
+            {
+                function?.Invoke(Function!);
+            }
+            else if (IsCustom)
+            {
+                custom?.Invoke(Custom!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.FunctionToolParam>? function = null,
+            global::System.Action<global::tryAGI.OpenAI.CustomToolParam>? custom = null,
             bool validate = true)
         {
             if (validate)

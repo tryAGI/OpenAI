@@ -27,6 +27,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsConversationCreated => ConversationCreated != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationCreated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationCreated? value)
+        {
+            value = ConversationCreated;
+            return IsConversationCreated;
+        }
+
+        /// <summary>
         /// Returned when a conversation item is created. There are several scenarios that produce this event:<br/>
         ///   - The server is generating a Response, which if successful will produce<br/>
         ///     either one or two Items, which will be of type `message`<br/>
@@ -52,6 +65,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsConversationItemCreated => ConversationItemCreated != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationItemCreated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemCreated? value)
+        {
+            value = ConversationItemCreated;
+            return IsConversationItemCreated;
+        }
+
+        /// <summary>
         /// Returned when an item in the conversation is deleted by the client with a <br/>
         /// `conversation.item.delete` event. This event is used to synchronize the <br/>
         /// server's understanding of the conversation history with the client's view.
@@ -69,6 +95,19 @@ namespace tryAGI.OpenAI.Realtime
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemDeleted))]
 #endif
         public bool IsConversationItemDeleted => ConversationItemDeleted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationItemDeleted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDeleted? value)
+        {
+            value = ConversationItemDeleted;
+            return IsConversationItemDeleted;
+        }
 
         /// <summary>
         /// This event is the output of audio transcription for user audio written to the<br/>
@@ -96,6 +135,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsConversationItemInputAudioTranscriptionCompleted => ConversationItemInputAudioTranscriptionCompleted != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationItemInputAudioTranscriptionCompleted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted? value)
+        {
+            value = ConversationItemInputAudioTranscriptionCompleted;
+            return IsConversationItemInputAudioTranscriptionCompleted;
+        }
+
+        /// <summary>
         /// Returned when the text value of an input audio transcription content part is updated with incremental transcription results.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -111,6 +163,19 @@ namespace tryAGI.OpenAI.Realtime
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemInputAudioTranscriptionDelta))]
 #endif
         public bool IsConversationItemInputAudioTranscriptionDelta => ConversationItemInputAudioTranscriptionDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationItemInputAudioTranscriptionDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionDelta? value)
+        {
+            value = ConversationItemInputAudioTranscriptionDelta;
+            return IsConversationItemInputAudioTranscriptionDelta;
+        }
 
         /// <summary>
         /// Returned when input audio transcription is configured, and a transcription <br/>
@@ -132,6 +197,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsConversationItemInputAudioTranscriptionFailed => ConversationItemInputAudioTranscriptionFailed != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationItemInputAudioTranscriptionFailed(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionFailed? value)
+        {
+            value = ConversationItemInputAudioTranscriptionFailed;
+            return IsConversationItemInputAudioTranscriptionFailed;
+        }
+
+        /// <summary>
         /// Returned when a conversation item is retrieved with `conversation.item.retrieve`. This is provided as a way to fetch the server's representation of an item, for example to get access to the post-processed audio data after noise cancellation and VAD. It includes the full content of the Item, including audio data.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -147,6 +225,19 @@ namespace tryAGI.OpenAI.Realtime
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemRetrieved))]
 #endif
         public bool IsConversationItemRetrieved => ConversationItemRetrieved != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationItemRetrieved(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemRetrieved? value)
+        {
+            value = ConversationItemRetrieved;
+            return IsConversationItemRetrieved;
+        }
 
         /// <summary>
         /// Returned when an earlier assistant audio message item is truncated by the <br/>
@@ -170,6 +261,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsConversationItemTruncated => ConversationItemTruncated != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationItemTruncated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemTruncated? value)
+        {
+            value = ConversationItemTruncated;
+            return IsConversationItemTruncated;
+        }
+
+        /// <summary>
         /// Returned when an error occurs, which could be a client problem or a server<br/>
         /// problem. Most errors are recoverable and the session will stay open, we<br/>
         /// recommend to implementors to monitor and log error messages by default.
@@ -189,6 +293,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsError => Error != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventError? value)
+        {
+            value = Error;
+            return IsError;
+        }
+
+        /// <summary>
         /// Returned when the input audio buffer is cleared by the client with a <br/>
         /// `input_audio_buffer.clear` event.
         /// </summary>
@@ -205,6 +322,19 @@ namespace tryAGI.OpenAI.Realtime
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioBufferCleared))]
 #endif
         public bool IsInputAudioBufferCleared => InputAudioBufferCleared != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputAudioBufferCleared(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCleared? value)
+        {
+            value = InputAudioBufferCleared;
+            return IsInputAudioBufferCleared;
+        }
 
         /// <summary>
         /// Returned when an input audio buffer is committed, either by the client or<br/>
@@ -227,6 +357,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsInputAudioBufferCommitted => InputAudioBufferCommitted != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputAudioBufferCommitted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCommitted? value)
+        {
+            value = InputAudioBufferCommitted;
+            return IsInputAudioBufferCommitted;
+        }
+
+        /// <summary>
         /// **SIP Only:** Returned when an DTMF event is received. A DTMF event is a message that<br/>
         /// represents a telephone keypad press (0–9, *, #, A–D). The `event` property<br/>
         /// is the keypad that the user press. The `received_at` is the UTC Unix Timestamp<br/>
@@ -245,6 +388,19 @@ namespace tryAGI.OpenAI.Realtime
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioBufferDtmfEventReceived))]
 #endif
         public bool IsInputAudioBufferDtmfEventReceived => InputAudioBufferDtmfEventReceived != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputAudioBufferDtmfEventReceived(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferDtmfEventReceived? value)
+        {
+            value = InputAudioBufferDtmfEventReceived;
+            return IsInputAudioBufferDtmfEventReceived;
+        }
 
         /// <summary>
         /// Sent by the server when in `server_vad` mode to indicate that speech has been <br/>
@@ -272,6 +428,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsInputAudioBufferSpeechStarted => InputAudioBufferSpeechStarted != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputAudioBufferSpeechStarted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStarted? value)
+        {
+            value = InputAudioBufferSpeechStarted;
+            return IsInputAudioBufferSpeechStarted;
+        }
+
+        /// <summary>
         /// Returned in `server_vad` mode when the server detects the end of speech in <br/>
         /// the audio buffer. The server will also send an `conversation.item.created` <br/>
         /// event with the user message item that is created from the audio buffer.
@@ -289,6 +458,19 @@ namespace tryAGI.OpenAI.Realtime
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioBufferSpeechStopped))]
 #endif
         public bool IsInputAudioBufferSpeechStopped => InputAudioBufferSpeechStopped != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputAudioBufferSpeechStopped(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStopped? value)
+        {
+            value = InputAudioBufferSpeechStopped;
+            return IsInputAudioBufferSpeechStopped;
+        }
 
         /// <summary>
         /// Emitted at the beginning of a Response to indicate the updated rate limits. <br/>
@@ -311,6 +493,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsRateLimitsUpdated => RateLimitsUpdated != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRateLimitsUpdated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventRateLimitsUpdated? value)
+        {
+            value = RateLimitsUpdated;
+            return IsRateLimitsUpdated;
+        }
+
+        /// <summary>
         /// Returned when the model-generated audio is updated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -326,6 +521,19 @@ namespace tryAGI.OpenAI.Realtime
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputAudioDelta))]
 #endif
         public bool IsResponseOutputAudioDelta => ResponseOutputAudioDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseOutputAudioDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDelta? value)
+        {
+            value = ResponseOutputAudioDelta;
+            return IsResponseOutputAudioDelta;
+        }
 
         /// <summary>
         /// Returned when the model-generated audio is done. Also emitted when a Response<br/>
@@ -346,6 +554,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsResponseOutputAudioDone => ResponseOutputAudioDone != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseOutputAudioDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDone? value)
+        {
+            value = ResponseOutputAudioDone;
+            return IsResponseOutputAudioDone;
+        }
+
+        /// <summary>
         /// Returned when the model-generated transcription of audio output is updated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -361,6 +582,19 @@ namespace tryAGI.OpenAI.Realtime
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputAudioTranscriptDelta))]
 #endif
         public bool IsResponseOutputAudioTranscriptDelta => ResponseOutputAudioTranscriptDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseOutputAudioTranscriptDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDelta? value)
+        {
+            value = ResponseOutputAudioTranscriptDelta;
+            return IsResponseOutputAudioTranscriptDelta;
+        }
 
         /// <summary>
         /// Returned when the model-generated transcription of audio output is done<br/>
@@ -382,6 +616,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsResponseOutputAudioTranscriptDone => ResponseOutputAudioTranscriptDone != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseOutputAudioTranscriptDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDone? value)
+        {
+            value = ResponseOutputAudioTranscriptDone;
+            return IsResponseOutputAudioTranscriptDone;
+        }
+
+        /// <summary>
         /// Returned when a new content part is added to an assistant message item during<br/>
         /// response generation.
         /// </summary>
@@ -398,6 +645,19 @@ namespace tryAGI.OpenAI.Realtime
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseContentPartAdded))]
 #endif
         public bool IsResponseContentPartAdded => ResponseContentPartAdded != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseContentPartAdded(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartAdded? value)
+        {
+            value = ResponseContentPartAdded;
+            return IsResponseContentPartAdded;
+        }
 
         /// <summary>
         /// Returned when a content part is done streaming in an assistant message item.<br/>
@@ -418,6 +678,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsResponseContentPartDone => ResponseContentPartDone != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseContentPartDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartDone? value)
+        {
+            value = ResponseContentPartDone;
+            return IsResponseContentPartDone;
+        }
+
+        /// <summary>
         /// Returned when a new Response is created. The first event of response creation,<br/>
         /// where the response is in an initial state of `in_progress`.
         /// </summary>
@@ -434,6 +707,19 @@ namespace tryAGI.OpenAI.Realtime
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseCreated))]
 #endif
         public bool IsResponseCreated => ResponseCreated != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseCreated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseCreated? value)
+        {
+            value = ResponseCreated;
+            return IsResponseCreated;
+        }
 
         /// <summary>
         /// Returned when a Response is done streaming. Always emitted, no matter the <br/>
@@ -459,6 +745,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsResponseDone => ResponseDone != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseDone? value)
+        {
+            value = ResponseDone;
+            return IsResponseDone;
+        }
+
+        /// <summary>
         /// Returned when the model-generated function call arguments are updated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -474,6 +773,19 @@ namespace tryAGI.OpenAI.Realtime
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseFunctionCallArgumentsDelta))]
 #endif
         public bool IsResponseFunctionCallArgumentsDelta => ResponseFunctionCallArgumentsDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseFunctionCallArgumentsDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDelta? value)
+        {
+            value = ResponseFunctionCallArgumentsDelta;
+            return IsResponseFunctionCallArgumentsDelta;
+        }
 
         /// <summary>
         /// Returned when the model-generated function call arguments are done streaming.<br/>
@@ -494,6 +806,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsResponseFunctionCallArgumentsDone => ResponseFunctionCallArgumentsDone != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseFunctionCallArgumentsDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDone? value)
+        {
+            value = ResponseFunctionCallArgumentsDone;
+            return IsResponseFunctionCallArgumentsDone;
+        }
+
+        /// <summary>
         /// Returned when a new Item is created during Response generation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -509,6 +834,19 @@ namespace tryAGI.OpenAI.Realtime
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputItemAdded))]
 #endif
         public bool IsResponseOutputItemAdded => ResponseOutputItemAdded != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseOutputItemAdded(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemAdded? value)
+        {
+            value = ResponseOutputItemAdded;
+            return IsResponseOutputItemAdded;
+        }
 
         /// <summary>
         /// Returned when an Item is done streaming. Also emitted when a Response is <br/>
@@ -529,6 +867,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsResponseOutputItemDone => ResponseOutputItemDone != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseOutputItemDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemDone? value)
+        {
+            value = ResponseOutputItemDone;
+            return IsResponseOutputItemDone;
+        }
+
+        /// <summary>
         /// Returned when the text value of an "output_text" content part is updated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -544,6 +895,19 @@ namespace tryAGI.OpenAI.Realtime
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputTextDelta))]
 #endif
         public bool IsResponseOutputTextDelta => ResponseOutputTextDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseOutputTextDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDelta? value)
+        {
+            value = ResponseOutputTextDelta;
+            return IsResponseOutputTextDelta;
+        }
 
         /// <summary>
         /// Returned when the text value of an "output_text" content part is done streaming. Also<br/>
@@ -562,6 +926,19 @@ namespace tryAGI.OpenAI.Realtime
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputTextDone))]
 #endif
         public bool IsResponseOutputTextDone => ResponseOutputTextDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseOutputTextDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDone? value)
+        {
+            value = ResponseOutputTextDone;
+            return IsResponseOutputTextDone;
+        }
 
         /// <summary>
         /// Returned when a Session is created. Emitted automatically when a new<br/>
@@ -583,6 +960,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsSessionCreated => SessionCreated != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSessionCreated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionCreated? value)
+        {
+            value = SessionCreated;
+            return IsSessionCreated;
+        }
+
+        /// <summary>
         /// Returned when a session is updated with a `session.update` event, unless<br/>
         /// there is an error.
         /// </summary>
@@ -599,6 +989,19 @@ namespace tryAGI.OpenAI.Realtime
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionUpdated))]
 #endif
         public bool IsSessionUpdated => SessionUpdated != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSessionUpdated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionUpdated? value)
+        {
+            value = SessionUpdated;
+            return IsSessionUpdated;
+        }
 
         /// <summary>
         /// **WebRTC/SIP Only:** Emitted when the server begins streaming audio to the client. This event is<br/>
@@ -621,6 +1024,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsOutputAudioBufferStarted => OutputAudioBufferStarted != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputAudioBufferStarted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStarted? value)
+        {
+            value = OutputAudioBufferStarted;
+            return IsOutputAudioBufferStarted;
+        }
+
+        /// <summary>
         /// **WebRTC/SIP Only:** Emitted when the output audio buffer has been completely drained on the server,<br/>
         /// and no more audio is forthcoming. This event is emitted after the full response<br/>
         /// data has been sent to the client (`response.done`).<br/>
@@ -639,6 +1055,19 @@ namespace tryAGI.OpenAI.Realtime
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputAudioBufferStopped))]
 #endif
         public bool IsOutputAudioBufferStopped => OutputAudioBufferStopped != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputAudioBufferStopped(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStopped? value)
+        {
+            value = OutputAudioBufferStopped;
+            return IsOutputAudioBufferStopped;
+        }
 
         /// <summary>
         /// **WebRTC/SIP Only:** Emitted when the output audio buffer is cleared. This happens either in VAD<br/>
@@ -662,6 +1091,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsOutputAudioBufferCleared => OutputAudioBufferCleared != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputAudioBufferCleared(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferCleared? value)
+        {
+            value = OutputAudioBufferCleared;
+            return IsOutputAudioBufferCleared;
+        }
+
+        /// <summary>
         /// Sent by the server when an Item is added to the default Conversation. This can happen in several cases:<br/>
         /// - When the client sends a `conversation.item.create` event.<br/>
         /// - When the input audio buffer is committed. In this case the item will be a user message containing the audio from the buffer.<br/>
@@ -683,6 +1125,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsConversationItemAdded => ConversationItemAdded != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationItemAdded(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemAdded? value)
+        {
+            value = ConversationItemAdded;
+            return IsConversationItemAdded;
+        }
+
+        /// <summary>
         /// Returned when a conversation item is finalized.<br/>
         /// The event will include the full content of the Item except for audio data, which can be retrieved separately with a `conversation.item.retrieve` event if needed.
         /// </summary>
@@ -699,6 +1154,19 @@ namespace tryAGI.OpenAI.Realtime
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemDone))]
 #endif
         public bool IsConversationItemDone => ConversationItemDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationItemDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDone? value)
+        {
+            value = ConversationItemDone;
+            return IsConversationItemDone;
+        }
 
         /// <summary>
         /// Returned when the Server VAD timeout is triggered for the input audio buffer. This is configured<br/>
@@ -728,6 +1196,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsInputAudioBufferTimeoutTriggered => InputAudioBufferTimeoutTriggered != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputAudioBufferTimeoutTriggered(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferTimeoutTriggered? value)
+        {
+            value = InputAudioBufferTimeoutTriggered;
+            return IsInputAudioBufferTimeoutTriggered;
+        }
+
+        /// <summary>
         /// Returned when an input audio transcription segment is identified for an item.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -743,6 +1224,19 @@ namespace tryAGI.OpenAI.Realtime
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemInputAudioTranscriptionSegment))]
 #endif
         public bool IsConversationItemInputAudioTranscriptionSegment => ConversationItemInputAudioTranscriptionSegment != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationItemInputAudioTranscriptionSegment(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionSegment? value)
+        {
+            value = ConversationItemInputAudioTranscriptionSegment;
+            return IsConversationItemInputAudioTranscriptionSegment;
+        }
 
         /// <summary>
         /// Returned when listing MCP tools is in progress for an item.
@@ -762,6 +1256,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsMcpListToolsInProgress => McpListToolsInProgress != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcpListToolsInProgress(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsInProgress? value)
+        {
+            value = McpListToolsInProgress;
+            return IsMcpListToolsInProgress;
+        }
+
+        /// <summary>
         /// Returned when listing MCP tools has completed for an item.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -777,6 +1284,19 @@ namespace tryAGI.OpenAI.Realtime
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpListToolsCompleted))]
 #endif
         public bool IsMcpListToolsCompleted => McpListToolsCompleted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcpListToolsCompleted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsCompleted? value)
+        {
+            value = McpListToolsCompleted;
+            return IsMcpListToolsCompleted;
+        }
 
         /// <summary>
         /// Returned when listing MCP tools has failed for an item.
@@ -796,6 +1316,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsMcpListToolsFailed => McpListToolsFailed != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcpListToolsFailed(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsFailed? value)
+        {
+            value = McpListToolsFailed;
+            return IsMcpListToolsFailed;
+        }
+
+        /// <summary>
         /// Returned when MCP tool call arguments are updated during response generation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -811,6 +1344,19 @@ namespace tryAGI.OpenAI.Realtime
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseMcpCallArgumentsDelta))]
 #endif
         public bool IsResponseMcpCallArgumentsDelta => ResponseMcpCallArgumentsDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseMcpCallArgumentsDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDelta? value)
+        {
+            value = ResponseMcpCallArgumentsDelta;
+            return IsResponseMcpCallArgumentsDelta;
+        }
 
         /// <summary>
         /// Returned when MCP tool call arguments are finalized during response generation.
@@ -830,6 +1376,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsResponseMcpCallArgumentsDone => ResponseMcpCallArgumentsDone != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseMcpCallArgumentsDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDone? value)
+        {
+            value = ResponseMcpCallArgumentsDone;
+            return IsResponseMcpCallArgumentsDone;
+        }
+
+        /// <summary>
         /// Returned when an MCP tool call has started and is in progress.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -845,6 +1404,19 @@ namespace tryAGI.OpenAI.Realtime
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseMcpCallInProgress))]
 #endif
         public bool IsResponseMcpCallInProgress => ResponseMcpCallInProgress != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseMcpCallInProgress(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallInProgress? value)
+        {
+            value = ResponseMcpCallInProgress;
+            return IsResponseMcpCallInProgress;
+        }
 
         /// <summary>
         /// Returned when an MCP tool call has completed successfully.
@@ -864,6 +1436,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsResponseMcpCallCompleted => ResponseMcpCallCompleted != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseMcpCallCompleted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallCompleted? value)
+        {
+            value = ResponseMcpCallCompleted;
+            return IsResponseMcpCallCompleted;
+        }
+
+        /// <summary>
         /// Returned when an MCP tool call has failed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -879,6 +1464,19 @@ namespace tryAGI.OpenAI.Realtime
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseMcpCallFailed))]
 #endif
         public bool IsResponseMcpCallFailed => ResponseMcpCallFailed != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseMcpCallFailed(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallFailed? value)
+        {
+            value = ResponseMcpCallFailed;
+            return IsResponseMcpCallFailed;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -1923,52 +2521,52 @@ namespace tryAGI.OpenAI.Realtime
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationCreated?, TResult>? conversationCreated = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemCreated?, TResult>? conversationItemCreated = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDeleted?, TResult>? conversationItemDeleted = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted?, TResult>? conversationItemInputAudioTranscriptionCompleted = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionDelta?, TResult>? conversationItemInputAudioTranscriptionDelta = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionFailed?, TResult>? conversationItemInputAudioTranscriptionFailed = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemRetrieved?, TResult>? conversationItemRetrieved = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemTruncated?, TResult>? conversationItemTruncated = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventError?, TResult>? error = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCleared?, TResult>? inputAudioBufferCleared = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCommitted?, TResult>? inputAudioBufferCommitted = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferDtmfEventReceived?, TResult>? inputAudioBufferDtmfEventReceived = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStarted?, TResult>? inputAudioBufferSpeechStarted = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStopped?, TResult>? inputAudioBufferSpeechStopped = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventRateLimitsUpdated?, TResult>? rateLimitsUpdated = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDelta?, TResult>? responseOutputAudioDelta = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDone?, TResult>? responseOutputAudioDone = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDelta?, TResult>? responseOutputAudioTranscriptDelta = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDone?, TResult>? responseOutputAudioTranscriptDone = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartAdded?, TResult>? responseContentPartAdded = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartDone?, TResult>? responseContentPartDone = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseCreated?, TResult>? responseCreated = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseDone?, TResult>? responseDone = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDelta?, TResult>? responseFunctionCallArgumentsDelta = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDone?, TResult>? responseFunctionCallArgumentsDone = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemAdded?, TResult>? responseOutputItemAdded = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemDone?, TResult>? responseOutputItemDone = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDelta?, TResult>? responseOutputTextDelta = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDone?, TResult>? responseOutputTextDone = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionCreated?, TResult>? sessionCreated = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionUpdated?, TResult>? sessionUpdated = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStarted?, TResult>? outputAudioBufferStarted = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStopped?, TResult>? outputAudioBufferStopped = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferCleared?, TResult>? outputAudioBufferCleared = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemAdded?, TResult>? conversationItemAdded = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDone?, TResult>? conversationItemDone = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferTimeoutTriggered?, TResult>? inputAudioBufferTimeoutTriggered = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionSegment?, TResult>? conversationItemInputAudioTranscriptionSegment = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsInProgress?, TResult>? mcpListToolsInProgress = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsCompleted?, TResult>? mcpListToolsCompleted = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsFailed?, TResult>? mcpListToolsFailed = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDelta?, TResult>? responseMcpCallArgumentsDelta = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDone?, TResult>? responseMcpCallArgumentsDone = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallInProgress?, TResult>? responseMcpCallInProgress = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallCompleted?, TResult>? responseMcpCallCompleted = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallFailed?, TResult>? responseMcpCallFailed = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationCreated, TResult>? conversationCreated = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemCreated, TResult>? conversationItemCreated = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDeleted, TResult>? conversationItemDeleted = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted, TResult>? conversationItemInputAudioTranscriptionCompleted = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionDelta, TResult>? conversationItemInputAudioTranscriptionDelta = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionFailed, TResult>? conversationItemInputAudioTranscriptionFailed = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemRetrieved, TResult>? conversationItemRetrieved = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemTruncated, TResult>? conversationItemTruncated = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventError, TResult>? error = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCleared, TResult>? inputAudioBufferCleared = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCommitted, TResult>? inputAudioBufferCommitted = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferDtmfEventReceived, TResult>? inputAudioBufferDtmfEventReceived = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStarted, TResult>? inputAudioBufferSpeechStarted = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStopped, TResult>? inputAudioBufferSpeechStopped = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventRateLimitsUpdated, TResult>? rateLimitsUpdated = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDelta, TResult>? responseOutputAudioDelta = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDone, TResult>? responseOutputAudioDone = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDelta, TResult>? responseOutputAudioTranscriptDelta = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDone, TResult>? responseOutputAudioTranscriptDone = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartAdded, TResult>? responseContentPartAdded = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartDone, TResult>? responseContentPartDone = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseCreated, TResult>? responseCreated = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseDone, TResult>? responseDone = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDelta, TResult>? responseFunctionCallArgumentsDelta = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDone, TResult>? responseFunctionCallArgumentsDone = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemAdded, TResult>? responseOutputItemAdded = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemDone, TResult>? responseOutputItemDone = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDelta, TResult>? responseOutputTextDelta = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDone, TResult>? responseOutputTextDone = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionCreated, TResult>? sessionCreated = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionUpdated, TResult>? sessionUpdated = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStarted, TResult>? outputAudioBufferStarted = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStopped, TResult>? outputAudioBufferStopped = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferCleared, TResult>? outputAudioBufferCleared = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemAdded, TResult>? conversationItemAdded = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDone, TResult>? conversationItemDone = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferTimeoutTriggered, TResult>? inputAudioBufferTimeoutTriggered = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionSegment, TResult>? conversationItemInputAudioTranscriptionSegment = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsInProgress, TResult>? mcpListToolsInProgress = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsCompleted, TResult>? mcpListToolsCompleted = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsFailed, TResult>? mcpListToolsFailed = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDelta, TResult>? responseMcpCallArgumentsDelta = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDone, TResult>? responseMcpCallArgumentsDone = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallInProgress, TResult>? responseMcpCallInProgress = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallCompleted, TResult>? responseMcpCallCompleted = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallFailed, TResult>? responseMcpCallFailed = null,
             bool validate = true)
         {
             if (validate)
@@ -2168,52 +2766,340 @@ namespace tryAGI.OpenAI.Realtime
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationCreated?>? conversationCreated = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemCreated?>? conversationItemCreated = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDeleted?>? conversationItemDeleted = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted?>? conversationItemInputAudioTranscriptionCompleted = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionDelta?>? conversationItemInputAudioTranscriptionDelta = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionFailed?>? conversationItemInputAudioTranscriptionFailed = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemRetrieved?>? conversationItemRetrieved = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemTruncated?>? conversationItemTruncated = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventError?>? error = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCleared?>? inputAudioBufferCleared = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCommitted?>? inputAudioBufferCommitted = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferDtmfEventReceived?>? inputAudioBufferDtmfEventReceived = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStarted?>? inputAudioBufferSpeechStarted = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStopped?>? inputAudioBufferSpeechStopped = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventRateLimitsUpdated?>? rateLimitsUpdated = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDelta?>? responseOutputAudioDelta = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDone?>? responseOutputAudioDone = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDelta?>? responseOutputAudioTranscriptDelta = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDone?>? responseOutputAudioTranscriptDone = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartAdded?>? responseContentPartAdded = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartDone?>? responseContentPartDone = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseCreated?>? responseCreated = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseDone?>? responseDone = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDelta?>? responseFunctionCallArgumentsDelta = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDone?>? responseFunctionCallArgumentsDone = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemAdded?>? responseOutputItemAdded = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemDone?>? responseOutputItemDone = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDelta?>? responseOutputTextDelta = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDone?>? responseOutputTextDone = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionCreated?>? sessionCreated = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionUpdated?>? sessionUpdated = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStarted?>? outputAudioBufferStarted = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStopped?>? outputAudioBufferStopped = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferCleared?>? outputAudioBufferCleared = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemAdded?>? conversationItemAdded = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDone?>? conversationItemDone = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferTimeoutTriggered?>? inputAudioBufferTimeoutTriggered = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionSegment?>? conversationItemInputAudioTranscriptionSegment = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsInProgress?>? mcpListToolsInProgress = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsCompleted?>? mcpListToolsCompleted = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsFailed?>? mcpListToolsFailed = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDelta?>? responseMcpCallArgumentsDelta = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDone?>? responseMcpCallArgumentsDone = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallInProgress?>? responseMcpCallInProgress = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallCompleted?>? responseMcpCallCompleted = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallFailed?>? responseMcpCallFailed = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationCreated>? conversationCreated = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemCreated>? conversationItemCreated = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDeleted>? conversationItemDeleted = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted>? conversationItemInputAudioTranscriptionCompleted = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionDelta>? conversationItemInputAudioTranscriptionDelta = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionFailed>? conversationItemInputAudioTranscriptionFailed = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemRetrieved>? conversationItemRetrieved = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemTruncated>? conversationItemTruncated = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventError>? error = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCleared>? inputAudioBufferCleared = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCommitted>? inputAudioBufferCommitted = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferDtmfEventReceived>? inputAudioBufferDtmfEventReceived = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStarted>? inputAudioBufferSpeechStarted = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStopped>? inputAudioBufferSpeechStopped = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventRateLimitsUpdated>? rateLimitsUpdated = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDelta>? responseOutputAudioDelta = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDone>? responseOutputAudioDone = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDelta>? responseOutputAudioTranscriptDelta = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDone>? responseOutputAudioTranscriptDone = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartAdded>? responseContentPartAdded = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartDone>? responseContentPartDone = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseCreated>? responseCreated = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseDone>? responseDone = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDelta>? responseFunctionCallArgumentsDelta = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDone>? responseFunctionCallArgumentsDone = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemAdded>? responseOutputItemAdded = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemDone>? responseOutputItemDone = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDelta>? responseOutputTextDelta = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDone>? responseOutputTextDone = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionCreated>? sessionCreated = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionUpdated>? sessionUpdated = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStarted>? outputAudioBufferStarted = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStopped>? outputAudioBufferStopped = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferCleared>? outputAudioBufferCleared = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemAdded>? conversationItemAdded = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDone>? conversationItemDone = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferTimeoutTriggered>? inputAudioBufferTimeoutTriggered = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionSegment>? conversationItemInputAudioTranscriptionSegment = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsInProgress>? mcpListToolsInProgress = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsCompleted>? mcpListToolsCompleted = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsFailed>? mcpListToolsFailed = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDelta>? responseMcpCallArgumentsDelta = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDone>? responseMcpCallArgumentsDone = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallInProgress>? responseMcpCallInProgress = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallCompleted>? responseMcpCallCompleted = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallFailed>? responseMcpCallFailed = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsConversationCreated)
+            {
+                conversationCreated?.Invoke(ConversationCreated!);
+            }
+            else if (IsConversationItemCreated)
+            {
+                conversationItemCreated?.Invoke(ConversationItemCreated!);
+            }
+            else if (IsConversationItemDeleted)
+            {
+                conversationItemDeleted?.Invoke(ConversationItemDeleted!);
+            }
+            else if (IsConversationItemInputAudioTranscriptionCompleted)
+            {
+                conversationItemInputAudioTranscriptionCompleted?.Invoke(ConversationItemInputAudioTranscriptionCompleted!);
+            }
+            else if (IsConversationItemInputAudioTranscriptionDelta)
+            {
+                conversationItemInputAudioTranscriptionDelta?.Invoke(ConversationItemInputAudioTranscriptionDelta!);
+            }
+            else if (IsConversationItemInputAudioTranscriptionFailed)
+            {
+                conversationItemInputAudioTranscriptionFailed?.Invoke(ConversationItemInputAudioTranscriptionFailed!);
+            }
+            else if (IsConversationItemRetrieved)
+            {
+                conversationItemRetrieved?.Invoke(ConversationItemRetrieved!);
+            }
+            else if (IsConversationItemTruncated)
+            {
+                conversationItemTruncated?.Invoke(ConversationItemTruncated!);
+            }
+            else if (IsError)
+            {
+                error?.Invoke(Error!);
+            }
+            else if (IsInputAudioBufferCleared)
+            {
+                inputAudioBufferCleared?.Invoke(InputAudioBufferCleared!);
+            }
+            else if (IsInputAudioBufferCommitted)
+            {
+                inputAudioBufferCommitted?.Invoke(InputAudioBufferCommitted!);
+            }
+            else if (IsInputAudioBufferDtmfEventReceived)
+            {
+                inputAudioBufferDtmfEventReceived?.Invoke(InputAudioBufferDtmfEventReceived!);
+            }
+            else if (IsInputAudioBufferSpeechStarted)
+            {
+                inputAudioBufferSpeechStarted?.Invoke(InputAudioBufferSpeechStarted!);
+            }
+            else if (IsInputAudioBufferSpeechStopped)
+            {
+                inputAudioBufferSpeechStopped?.Invoke(InputAudioBufferSpeechStopped!);
+            }
+            else if (IsRateLimitsUpdated)
+            {
+                rateLimitsUpdated?.Invoke(RateLimitsUpdated!);
+            }
+            else if (IsResponseOutputAudioDelta)
+            {
+                responseOutputAudioDelta?.Invoke(ResponseOutputAudioDelta!);
+            }
+            else if (IsResponseOutputAudioDone)
+            {
+                responseOutputAudioDone?.Invoke(ResponseOutputAudioDone!);
+            }
+            else if (IsResponseOutputAudioTranscriptDelta)
+            {
+                responseOutputAudioTranscriptDelta?.Invoke(ResponseOutputAudioTranscriptDelta!);
+            }
+            else if (IsResponseOutputAudioTranscriptDone)
+            {
+                responseOutputAudioTranscriptDone?.Invoke(ResponseOutputAudioTranscriptDone!);
+            }
+            else if (IsResponseContentPartAdded)
+            {
+                responseContentPartAdded?.Invoke(ResponseContentPartAdded!);
+            }
+            else if (IsResponseContentPartDone)
+            {
+                responseContentPartDone?.Invoke(ResponseContentPartDone!);
+            }
+            else if (IsResponseCreated)
+            {
+                responseCreated?.Invoke(ResponseCreated!);
+            }
+            else if (IsResponseDone)
+            {
+                responseDone?.Invoke(ResponseDone!);
+            }
+            else if (IsResponseFunctionCallArgumentsDelta)
+            {
+                responseFunctionCallArgumentsDelta?.Invoke(ResponseFunctionCallArgumentsDelta!);
+            }
+            else if (IsResponseFunctionCallArgumentsDone)
+            {
+                responseFunctionCallArgumentsDone?.Invoke(ResponseFunctionCallArgumentsDone!);
+            }
+            else if (IsResponseOutputItemAdded)
+            {
+                responseOutputItemAdded?.Invoke(ResponseOutputItemAdded!);
+            }
+            else if (IsResponseOutputItemDone)
+            {
+                responseOutputItemDone?.Invoke(ResponseOutputItemDone!);
+            }
+            else if (IsResponseOutputTextDelta)
+            {
+                responseOutputTextDelta?.Invoke(ResponseOutputTextDelta!);
+            }
+            else if (IsResponseOutputTextDone)
+            {
+                responseOutputTextDone?.Invoke(ResponseOutputTextDone!);
+            }
+            else if (IsSessionCreated)
+            {
+                sessionCreated?.Invoke(SessionCreated!);
+            }
+            else if (IsSessionUpdated)
+            {
+                sessionUpdated?.Invoke(SessionUpdated!);
+            }
+            else if (IsOutputAudioBufferStarted)
+            {
+                outputAudioBufferStarted?.Invoke(OutputAudioBufferStarted!);
+            }
+            else if (IsOutputAudioBufferStopped)
+            {
+                outputAudioBufferStopped?.Invoke(OutputAudioBufferStopped!);
+            }
+            else if (IsOutputAudioBufferCleared)
+            {
+                outputAudioBufferCleared?.Invoke(OutputAudioBufferCleared!);
+            }
+            else if (IsConversationItemAdded)
+            {
+                conversationItemAdded?.Invoke(ConversationItemAdded!);
+            }
+            else if (IsConversationItemDone)
+            {
+                conversationItemDone?.Invoke(ConversationItemDone!);
+            }
+            else if (IsInputAudioBufferTimeoutTriggered)
+            {
+                inputAudioBufferTimeoutTriggered?.Invoke(InputAudioBufferTimeoutTriggered!);
+            }
+            else if (IsConversationItemInputAudioTranscriptionSegment)
+            {
+                conversationItemInputAudioTranscriptionSegment?.Invoke(ConversationItemInputAudioTranscriptionSegment!);
+            }
+            else if (IsMcpListToolsInProgress)
+            {
+                mcpListToolsInProgress?.Invoke(McpListToolsInProgress!);
+            }
+            else if (IsMcpListToolsCompleted)
+            {
+                mcpListToolsCompleted?.Invoke(McpListToolsCompleted!);
+            }
+            else if (IsMcpListToolsFailed)
+            {
+                mcpListToolsFailed?.Invoke(McpListToolsFailed!);
+            }
+            else if (IsResponseMcpCallArgumentsDelta)
+            {
+                responseMcpCallArgumentsDelta?.Invoke(ResponseMcpCallArgumentsDelta!);
+            }
+            else if (IsResponseMcpCallArgumentsDone)
+            {
+                responseMcpCallArgumentsDone?.Invoke(ResponseMcpCallArgumentsDone!);
+            }
+            else if (IsResponseMcpCallInProgress)
+            {
+                responseMcpCallInProgress?.Invoke(ResponseMcpCallInProgress!);
+            }
+            else if (IsResponseMcpCallCompleted)
+            {
+                responseMcpCallCompleted?.Invoke(ResponseMcpCallCompleted!);
+            }
+            else if (IsResponseMcpCallFailed)
+            {
+                responseMcpCallFailed?.Invoke(ResponseMcpCallFailed!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationCreated>? conversationCreated = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemCreated>? conversationItemCreated = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDeleted>? conversationItemDeleted = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted>? conversationItemInputAudioTranscriptionCompleted = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionDelta>? conversationItemInputAudioTranscriptionDelta = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionFailed>? conversationItemInputAudioTranscriptionFailed = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemRetrieved>? conversationItemRetrieved = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemTruncated>? conversationItemTruncated = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventError>? error = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCleared>? inputAudioBufferCleared = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCommitted>? inputAudioBufferCommitted = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferDtmfEventReceived>? inputAudioBufferDtmfEventReceived = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStarted>? inputAudioBufferSpeechStarted = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStopped>? inputAudioBufferSpeechStopped = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventRateLimitsUpdated>? rateLimitsUpdated = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDelta>? responseOutputAudioDelta = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDone>? responseOutputAudioDone = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDelta>? responseOutputAudioTranscriptDelta = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDone>? responseOutputAudioTranscriptDone = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartAdded>? responseContentPartAdded = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartDone>? responseContentPartDone = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseCreated>? responseCreated = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseDone>? responseDone = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDelta>? responseFunctionCallArgumentsDelta = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDone>? responseFunctionCallArgumentsDone = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemAdded>? responseOutputItemAdded = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemDone>? responseOutputItemDone = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDelta>? responseOutputTextDelta = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDone>? responseOutputTextDone = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionCreated>? sessionCreated = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionUpdated>? sessionUpdated = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStarted>? outputAudioBufferStarted = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStopped>? outputAudioBufferStopped = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferCleared>? outputAudioBufferCleared = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemAdded>? conversationItemAdded = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDone>? conversationItemDone = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferTimeoutTriggered>? inputAudioBufferTimeoutTriggered = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionSegment>? conversationItemInputAudioTranscriptionSegment = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsInProgress>? mcpListToolsInProgress = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsCompleted>? mcpListToolsCompleted = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsFailed>? mcpListToolsFailed = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDelta>? responseMcpCallArgumentsDelta = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDone>? responseMcpCallArgumentsDone = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallInProgress>? responseMcpCallInProgress = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallCompleted>? responseMcpCallCompleted = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallFailed>? responseMcpCallFailed = null,
             bool validate = true)
         {
             if (validate)

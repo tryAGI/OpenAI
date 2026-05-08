@@ -27,6 +27,19 @@ namespace tryAGI.OpenAI
         public bool IsResponseAudioDelta => ResponseAudioDelta != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseAudioDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseAudioDeltaEvent? value)
+        {
+            value = ResponseAudioDelta;
+            return IsResponseAudioDelta;
+        }
+
+        /// <summary>
         /// Emitted when the audio response is complete.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseAudioDone))]
 #endif
         public bool IsResponseAudioDone => ResponseAudioDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseAudioDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseAudioDoneEvent? value)
+        {
+            value = ResponseAudioDone;
+            return IsResponseAudioDone;
+        }
 
         /// <summary>
         /// Emitted when there is a partial transcript of audio.
@@ -61,6 +87,19 @@ namespace tryAGI.OpenAI
         public bool IsResponseAudioTranscriptDelta => ResponseAudioTranscriptDelta != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseAudioTranscriptDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseAudioTranscriptDeltaEvent? value)
+        {
+            value = ResponseAudioTranscriptDelta;
+            return IsResponseAudioTranscriptDelta;
+        }
+
+        /// <summary>
         /// Emitted when the full audio transcript is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -76,6 +115,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseAudioTranscriptDone))]
 #endif
         public bool IsResponseAudioTranscriptDone => ResponseAudioTranscriptDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseAudioTranscriptDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseAudioTranscriptDoneEvent? value)
+        {
+            value = ResponseAudioTranscriptDone;
+            return IsResponseAudioTranscriptDone;
+        }
 
         /// <summary>
         /// Emitted when a partial code snippet is streamed by the code interpreter.
@@ -95,6 +147,19 @@ namespace tryAGI.OpenAI
         public bool IsResponseCodeInterpreterCallCodeDelta => ResponseCodeInterpreterCallCodeDelta != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseCodeInterpreterCallCodeDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDeltaEvent? value)
+        {
+            value = ResponseCodeInterpreterCallCodeDelta;
+            return IsResponseCodeInterpreterCallCodeDelta;
+        }
+
+        /// <summary>
         /// Emitted when the code snippet is finalized by the code interpreter.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -110,6 +175,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseCodeInterpreterCallCodeDone))]
 #endif
         public bool IsResponseCodeInterpreterCallCodeDone => ResponseCodeInterpreterCallCodeDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseCodeInterpreterCallCodeDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDoneEvent? value)
+        {
+            value = ResponseCodeInterpreterCallCodeDone;
+            return IsResponseCodeInterpreterCallCodeDone;
+        }
 
         /// <summary>
         /// Emitted when the code interpreter call is completed.
@@ -129,6 +207,19 @@ namespace tryAGI.OpenAI
         public bool IsResponseCodeInterpreterCallCompleted => ResponseCodeInterpreterCallCompleted != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseCodeInterpreterCallCompleted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseCodeInterpreterCallCompletedEvent? value)
+        {
+            value = ResponseCodeInterpreterCallCompleted;
+            return IsResponseCodeInterpreterCallCompleted;
+        }
+
+        /// <summary>
         /// Emitted when a code interpreter call is in progress.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -144,6 +235,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseCodeInterpreterCallInProgress))]
 #endif
         public bool IsResponseCodeInterpreterCallInProgress => ResponseCodeInterpreterCallInProgress != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseCodeInterpreterCallInProgress(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseCodeInterpreterCallInProgressEvent? value)
+        {
+            value = ResponseCodeInterpreterCallInProgress;
+            return IsResponseCodeInterpreterCallInProgress;
+        }
 
         /// <summary>
         /// Emitted when the code interpreter is actively interpreting the code snippet.
@@ -163,6 +267,19 @@ namespace tryAGI.OpenAI
         public bool IsResponseCodeInterpreterCallInterpreting => ResponseCodeInterpreterCallInterpreting != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseCodeInterpreterCallInterpreting(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseCodeInterpreterCallInterpretingEvent? value)
+        {
+            value = ResponseCodeInterpreterCallInterpreting;
+            return IsResponseCodeInterpreterCallInterpreting;
+        }
+
+        /// <summary>
         /// Emitted when the model response is complete.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -178,6 +295,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseCompleted))]
 #endif
         public bool IsResponseCompleted => ResponseCompleted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseCompleted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseCompletedEvent? value)
+        {
+            value = ResponseCompleted;
+            return IsResponseCompleted;
+        }
 
         /// <summary>
         /// Emitted when a new content part is added.
@@ -197,6 +327,19 @@ namespace tryAGI.OpenAI
         public bool IsResponseContentPartAdded => ResponseContentPartAdded != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseContentPartAdded(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseContentPartAddedEvent? value)
+        {
+            value = ResponseContentPartAdded;
+            return IsResponseContentPartAdded;
+        }
+
+        /// <summary>
         /// Emitted when a content part is done.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -212,6 +355,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseContentPartDone))]
 #endif
         public bool IsResponseContentPartDone => ResponseContentPartDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseContentPartDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseContentPartDoneEvent? value)
+        {
+            value = ResponseContentPartDone;
+            return IsResponseContentPartDone;
+        }
 
         /// <summary>
         /// An event that is emitted when a response is created.
@@ -231,6 +387,19 @@ namespace tryAGI.OpenAI
         public bool IsResponseCreated => ResponseCreated != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseCreated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseCreatedEvent? value)
+        {
+            value = ResponseCreated;
+            return IsResponseCreated;
+        }
+
+        /// <summary>
         /// Emitted when an error occurs.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -246,6 +415,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
 #endif
         public bool IsError => Error != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseErrorEvent? value)
+        {
+            value = Error;
+            return IsError;
+        }
 
         /// <summary>
         /// Emitted when a file search call is completed (results found).
@@ -265,6 +447,19 @@ namespace tryAGI.OpenAI
         public bool IsResponseFileSearchCallCompleted => ResponseFileSearchCallCompleted != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseFileSearchCallCompleted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseFileSearchCallCompletedEvent? value)
+        {
+            value = ResponseFileSearchCallCompleted;
+            return IsResponseFileSearchCallCompleted;
+        }
+
+        /// <summary>
         /// Emitted when a file search call is initiated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -280,6 +475,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseFileSearchCallInProgress))]
 #endif
         public bool IsResponseFileSearchCallInProgress => ResponseFileSearchCallInProgress != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseFileSearchCallInProgress(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseFileSearchCallInProgressEvent? value)
+        {
+            value = ResponseFileSearchCallInProgress;
+            return IsResponseFileSearchCallInProgress;
+        }
 
         /// <summary>
         /// Emitted when a file search is currently searching.
@@ -299,6 +507,19 @@ namespace tryAGI.OpenAI
         public bool IsResponseFileSearchCallSearching => ResponseFileSearchCallSearching != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseFileSearchCallSearching(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseFileSearchCallSearchingEvent? value)
+        {
+            value = ResponseFileSearchCallSearching;
+            return IsResponseFileSearchCallSearching;
+        }
+
+        /// <summary>
         /// Emitted when there is a partial function-call arguments delta.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -314,6 +535,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseFunctionCallArgumentsDelta))]
 #endif
         public bool IsResponseFunctionCallArgumentsDelta => ResponseFunctionCallArgumentsDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseFunctionCallArgumentsDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDeltaEvent? value)
+        {
+            value = ResponseFunctionCallArgumentsDelta;
+            return IsResponseFunctionCallArgumentsDelta;
+        }
 
         /// <summary>
         /// Emitted when function-call arguments are finalized.
@@ -333,6 +567,19 @@ namespace tryAGI.OpenAI
         public bool IsResponseFunctionCallArgumentsDone => ResponseFunctionCallArgumentsDone != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseFunctionCallArgumentsDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEvent? value)
+        {
+            value = ResponseFunctionCallArgumentsDone;
+            return IsResponseFunctionCallArgumentsDone;
+        }
+
+        /// <summary>
         /// Emitted when the response is in progress.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -348,6 +595,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseInProgress))]
 #endif
         public bool IsResponseInProgress => ResponseInProgress != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseInProgress(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseInProgressEvent? value)
+        {
+            value = ResponseInProgress;
+            return IsResponseInProgress;
+        }
 
         /// <summary>
         /// An event that is emitted when a response fails.
@@ -367,6 +627,19 @@ namespace tryAGI.OpenAI
         public bool IsResponseFailed => ResponseFailed != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseFailed(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseFailedEvent? value)
+        {
+            value = ResponseFailed;
+            return IsResponseFailed;
+        }
+
+        /// <summary>
         /// An event that is emitted when a response finishes as incomplete.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -382,6 +655,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseIncomplete))]
 #endif
         public bool IsResponseIncomplete => ResponseIncomplete != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseIncomplete(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseIncompleteEvent? value)
+        {
+            value = ResponseIncomplete;
+            return IsResponseIncomplete;
+        }
 
         /// <summary>
         /// Emitted when a new output item is added.
@@ -401,6 +687,19 @@ namespace tryAGI.OpenAI
         public bool IsResponseOutputItemAdded => ResponseOutputItemAdded != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseOutputItemAdded(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseOutputItemAddedEvent? value)
+        {
+            value = ResponseOutputItemAdded;
+            return IsResponseOutputItemAdded;
+        }
+
+        /// <summary>
         /// Emitted when an output item is marked done.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -416,6 +715,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputItemDone))]
 #endif
         public bool IsResponseOutputItemDone => ResponseOutputItemDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseOutputItemDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseOutputItemDoneEvent? value)
+        {
+            value = ResponseOutputItemDone;
+            return IsResponseOutputItemDone;
+        }
 
         /// <summary>
         /// Emitted when a new reasoning summary part is added.
@@ -435,6 +747,19 @@ namespace tryAGI.OpenAI
         public bool IsResponseReasoningSummaryPartAdded => ResponseReasoningSummaryPartAdded != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseReasoningSummaryPartAdded(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEvent? value)
+        {
+            value = ResponseReasoningSummaryPartAdded;
+            return IsResponseReasoningSummaryPartAdded;
+        }
+
+        /// <summary>
         /// Emitted when a reasoning summary part is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -450,6 +775,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseReasoningSummaryPartDone))]
 #endif
         public bool IsResponseReasoningSummaryPartDone => ResponseReasoningSummaryPartDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseReasoningSummaryPartDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEvent? value)
+        {
+            value = ResponseReasoningSummaryPartDone;
+            return IsResponseReasoningSummaryPartDone;
+        }
 
         /// <summary>
         /// Emitted when a delta is added to a reasoning summary text.
@@ -469,6 +807,19 @@ namespace tryAGI.OpenAI
         public bool IsResponseReasoningSummaryTextDelta => ResponseReasoningSummaryTextDelta != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseReasoningSummaryTextDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseReasoningSummaryTextDeltaEvent? value)
+        {
+            value = ResponseReasoningSummaryTextDelta;
+            return IsResponseReasoningSummaryTextDelta;
+        }
+
+        /// <summary>
         /// Emitted when a reasoning summary text is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -484,6 +835,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseReasoningSummaryTextDone))]
 #endif
         public bool IsResponseReasoningSummaryTextDone => ResponseReasoningSummaryTextDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseReasoningSummaryTextDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEvent? value)
+        {
+            value = ResponseReasoningSummaryTextDone;
+            return IsResponseReasoningSummaryTextDone;
+        }
 
         /// <summary>
         /// Emitted when a delta is added to a reasoning text.
@@ -503,6 +867,19 @@ namespace tryAGI.OpenAI
         public bool IsResponseReasoningTextDelta => ResponseReasoningTextDelta != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseReasoningTextDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseReasoningTextDeltaEvent? value)
+        {
+            value = ResponseReasoningTextDelta;
+            return IsResponseReasoningTextDelta;
+        }
+
+        /// <summary>
         /// Emitted when a reasoning text is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -518,6 +895,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseReasoningTextDone))]
 #endif
         public bool IsResponseReasoningTextDone => ResponseReasoningTextDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseReasoningTextDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseReasoningTextDoneEvent? value)
+        {
+            value = ResponseReasoningTextDone;
+            return IsResponseReasoningTextDone;
+        }
 
         /// <summary>
         /// Emitted when there is a partial refusal text.
@@ -537,6 +927,19 @@ namespace tryAGI.OpenAI
         public bool IsResponseRefusalDelta => ResponseRefusalDelta != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseRefusalDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseRefusalDeltaEvent? value)
+        {
+            value = ResponseRefusalDelta;
+            return IsResponseRefusalDelta;
+        }
+
+        /// <summary>
         /// Emitted when refusal text is finalized.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -552,6 +955,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseRefusalDone))]
 #endif
         public bool IsResponseRefusalDone => ResponseRefusalDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseRefusalDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseRefusalDoneEvent? value)
+        {
+            value = ResponseRefusalDone;
+            return IsResponseRefusalDone;
+        }
 
         /// <summary>
         /// Emitted when there is an additional text delta.
@@ -571,6 +987,19 @@ namespace tryAGI.OpenAI
         public bool IsResponseOutputTextDelta => ResponseOutputTextDelta != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseOutputTextDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseTextDeltaEvent? value)
+        {
+            value = ResponseOutputTextDelta;
+            return IsResponseOutputTextDelta;
+        }
+
+        /// <summary>
         /// Emitted when text content is finalized.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -586,6 +1015,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputTextDone))]
 #endif
         public bool IsResponseOutputTextDone => ResponseOutputTextDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseOutputTextDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseTextDoneEvent? value)
+        {
+            value = ResponseOutputTextDone;
+            return IsResponseOutputTextDone;
+        }
 
         /// <summary>
         /// Emitted when a web search call is completed.
@@ -605,6 +1047,19 @@ namespace tryAGI.OpenAI
         public bool IsResponseWebSearchCallCompleted => ResponseWebSearchCallCompleted != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseWebSearchCallCompleted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseWebSearchCallCompletedEvent? value)
+        {
+            value = ResponseWebSearchCallCompleted;
+            return IsResponseWebSearchCallCompleted;
+        }
+
+        /// <summary>
         /// Emitted when a web search call is initiated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -620,6 +1075,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseWebSearchCallInProgress))]
 #endif
         public bool IsResponseWebSearchCallInProgress => ResponseWebSearchCallInProgress != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseWebSearchCallInProgress(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseWebSearchCallInProgressEvent? value)
+        {
+            value = ResponseWebSearchCallInProgress;
+            return IsResponseWebSearchCallInProgress;
+        }
 
         /// <summary>
         /// Emitted when a web search call is executing.
@@ -639,6 +1107,19 @@ namespace tryAGI.OpenAI
         public bool IsResponseWebSearchCallSearching => ResponseWebSearchCallSearching != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseWebSearchCallSearching(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseWebSearchCallSearchingEvent? value)
+        {
+            value = ResponseWebSearchCallSearching;
+            return IsResponseWebSearchCallSearching;
+        }
+
+        /// <summary>
         /// Emitted when an image generation tool call has completed and the final image is available.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -654,6 +1135,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseImageGenerationCallCompleted))]
 #endif
         public bool IsResponseImageGenerationCallCompleted => ResponseImageGenerationCallCompleted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseImageGenerationCallCompleted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseImageGenCallCompletedEvent? value)
+        {
+            value = ResponseImageGenerationCallCompleted;
+            return IsResponseImageGenerationCallCompleted;
+        }
 
         /// <summary>
         /// Emitted when an image generation tool call is actively generating an image (intermediate state).
@@ -673,6 +1167,19 @@ namespace tryAGI.OpenAI
         public bool IsResponseImageGenerationCallGenerating => ResponseImageGenerationCallGenerating != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseImageGenerationCallGenerating(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseImageGenCallGeneratingEvent? value)
+        {
+            value = ResponseImageGenerationCallGenerating;
+            return IsResponseImageGenerationCallGenerating;
+        }
+
+        /// <summary>
         /// Emitted when an image generation tool call is in progress.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -688,6 +1195,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseImageGenerationCallInProgress))]
 #endif
         public bool IsResponseImageGenerationCallInProgress => ResponseImageGenerationCallInProgress != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseImageGenerationCallInProgress(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseImageGenCallInProgressEvent? value)
+        {
+            value = ResponseImageGenerationCallInProgress;
+            return IsResponseImageGenerationCallInProgress;
+        }
 
         /// <summary>
         /// Emitted when a partial image is available during image generation streaming.
@@ -707,6 +1227,19 @@ namespace tryAGI.OpenAI
         public bool IsResponseImageGenerationCallPartialImage => ResponseImageGenerationCallPartialImage != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseImageGenerationCallPartialImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseImageGenCallPartialImageEvent? value)
+        {
+            value = ResponseImageGenerationCallPartialImage;
+            return IsResponseImageGenerationCallPartialImage;
+        }
+
+        /// <summary>
         /// Emitted when there is a delta (partial update) to the arguments of an MCP tool call.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -722,6 +1255,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseMcpCallArgumentsDelta))]
 #endif
         public bool IsResponseMcpCallArgumentsDelta => ResponseMcpCallArgumentsDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseMcpCallArgumentsDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseMCPCallArgumentsDeltaEvent? value)
+        {
+            value = ResponseMcpCallArgumentsDelta;
+            return IsResponseMcpCallArgumentsDelta;
+        }
 
         /// <summary>
         /// Emitted when the arguments for an MCP tool call are finalized.
@@ -741,6 +1287,19 @@ namespace tryAGI.OpenAI
         public bool IsResponseMcpCallArgumentsDone => ResponseMcpCallArgumentsDone != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseMcpCallArgumentsDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseMCPCallArgumentsDoneEvent? value)
+        {
+            value = ResponseMcpCallArgumentsDone;
+            return IsResponseMcpCallArgumentsDone;
+        }
+
+        /// <summary>
         /// Emitted when an MCP  tool call has completed successfully.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -756,6 +1315,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseMcpCallCompleted))]
 #endif
         public bool IsResponseMcpCallCompleted => ResponseMcpCallCompleted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseMcpCallCompleted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseMCPCallCompletedEvent? value)
+        {
+            value = ResponseMcpCallCompleted;
+            return IsResponseMcpCallCompleted;
+        }
 
         /// <summary>
         /// Emitted when an MCP  tool call has failed.
@@ -775,6 +1347,19 @@ namespace tryAGI.OpenAI
         public bool IsResponseMcpCallFailed => ResponseMcpCallFailed != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseMcpCallFailed(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseMCPCallFailedEvent? value)
+        {
+            value = ResponseMcpCallFailed;
+            return IsResponseMcpCallFailed;
+        }
+
+        /// <summary>
         /// Emitted when an MCP  tool call is in progress.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -790,6 +1375,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseMcpCallInProgress))]
 #endif
         public bool IsResponseMcpCallInProgress => ResponseMcpCallInProgress != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseMcpCallInProgress(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseMCPCallInProgressEvent? value)
+        {
+            value = ResponseMcpCallInProgress;
+            return IsResponseMcpCallInProgress;
+        }
 
         /// <summary>
         /// Emitted when the list of available MCP tools has been successfully retrieved.
@@ -809,6 +1407,19 @@ namespace tryAGI.OpenAI
         public bool IsResponseMcpListToolsCompleted => ResponseMcpListToolsCompleted != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseMcpListToolsCompleted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseMCPListToolsCompletedEvent? value)
+        {
+            value = ResponseMcpListToolsCompleted;
+            return IsResponseMcpListToolsCompleted;
+        }
+
+        /// <summary>
         /// Emitted when the attempt to list available MCP tools has failed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -824,6 +1435,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseMcpListToolsFailed))]
 #endif
         public bool IsResponseMcpListToolsFailed => ResponseMcpListToolsFailed != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseMcpListToolsFailed(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseMCPListToolsFailedEvent? value)
+        {
+            value = ResponseMcpListToolsFailed;
+            return IsResponseMcpListToolsFailed;
+        }
 
         /// <summary>
         /// Emitted when the system is in the process of retrieving the list of available MCP tools.
@@ -843,6 +1467,19 @@ namespace tryAGI.OpenAI
         public bool IsResponseMcpListToolsInProgress => ResponseMcpListToolsInProgress != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseMcpListToolsInProgress(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseMCPListToolsInProgressEvent? value)
+        {
+            value = ResponseMcpListToolsInProgress;
+            return IsResponseMcpListToolsInProgress;
+        }
+
+        /// <summary>
         /// Emitted when an annotation is added to output text content.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -858,6 +1495,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputTextAnnotationAdded))]
 #endif
         public bool IsResponseOutputTextAnnotationAdded => ResponseOutputTextAnnotationAdded != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseOutputTextAnnotationAdded(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEvent? value)
+        {
+            value = ResponseOutputTextAnnotationAdded;
+            return IsResponseOutputTextAnnotationAdded;
+        }
 
         /// <summary>
         /// Emitted when a response is queued and waiting to be processed.
@@ -877,6 +1527,19 @@ namespace tryAGI.OpenAI
         public bool IsResponseQueued => ResponseQueued != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseQueued(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseQueuedEvent? value)
+        {
+            value = ResponseQueued;
+            return IsResponseQueued;
+        }
+
+        /// <summary>
         /// Event representing a delta (partial update) to the input of a custom tool call.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -894,6 +1557,19 @@ namespace tryAGI.OpenAI
         public bool IsResponseCustomToolCallInputDelta => ResponseCustomToolCallInputDelta != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseCustomToolCallInputDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent? value)
+        {
+            value = ResponseCustomToolCallInputDelta;
+            return IsResponseCustomToolCallInputDelta;
+        }
+
+        /// <summary>
         /// Event indicating that input for a custom tool call is complete.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -909,6 +1585,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseCustomToolCallInputDone))]
 #endif
         public bool IsResponseCustomToolCallInputDone => ResponseCustomToolCallInputDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseCustomToolCallInputDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent? value)
+        {
+            value = ResponseCustomToolCallInputDone;
+            return IsResponseCustomToolCallInputDone;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -2107,59 +2796,59 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.ResponseAudioDeltaEvent?, TResult>? responseAudioDelta = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseAudioDoneEvent?, TResult>? responseAudioDone = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseAudioTranscriptDeltaEvent?, TResult>? responseAudioTranscriptDelta = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseAudioTranscriptDoneEvent?, TResult>? responseAudioTranscriptDone = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDeltaEvent?, TResult>? responseCodeInterpreterCallCodeDelta = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDoneEvent?, TResult>? responseCodeInterpreterCallCodeDone = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseCodeInterpreterCallCompletedEvent?, TResult>? responseCodeInterpreterCallCompleted = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseCodeInterpreterCallInProgressEvent?, TResult>? responseCodeInterpreterCallInProgress = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseCodeInterpreterCallInterpretingEvent?, TResult>? responseCodeInterpreterCallInterpreting = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseCompletedEvent?, TResult>? responseCompleted = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseContentPartAddedEvent?, TResult>? responseContentPartAdded = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseContentPartDoneEvent?, TResult>? responseContentPartDone = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseCreatedEvent?, TResult>? responseCreated = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseErrorEvent?, TResult>? error = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseFileSearchCallCompletedEvent?, TResult>? responseFileSearchCallCompleted = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseFileSearchCallInProgressEvent?, TResult>? responseFileSearchCallInProgress = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseFileSearchCallSearchingEvent?, TResult>? responseFileSearchCallSearching = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDeltaEvent?, TResult>? responseFunctionCallArgumentsDelta = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEvent?, TResult>? responseFunctionCallArgumentsDone = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseInProgressEvent?, TResult>? responseInProgress = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseFailedEvent?, TResult>? responseFailed = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseIncompleteEvent?, TResult>? responseIncomplete = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseOutputItemAddedEvent?, TResult>? responseOutputItemAdded = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseOutputItemDoneEvent?, TResult>? responseOutputItemDone = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEvent?, TResult>? responseReasoningSummaryPartAdded = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEvent?, TResult>? responseReasoningSummaryPartDone = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseReasoningSummaryTextDeltaEvent?, TResult>? responseReasoningSummaryTextDelta = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEvent?, TResult>? responseReasoningSummaryTextDone = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseReasoningTextDeltaEvent?, TResult>? responseReasoningTextDelta = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseReasoningTextDoneEvent?, TResult>? responseReasoningTextDone = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseRefusalDeltaEvent?, TResult>? responseRefusalDelta = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseRefusalDoneEvent?, TResult>? responseRefusalDone = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseTextDeltaEvent?, TResult>? responseOutputTextDelta = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseTextDoneEvent?, TResult>? responseOutputTextDone = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseWebSearchCallCompletedEvent?, TResult>? responseWebSearchCallCompleted = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseWebSearchCallInProgressEvent?, TResult>? responseWebSearchCallInProgress = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseWebSearchCallSearchingEvent?, TResult>? responseWebSearchCallSearching = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseImageGenCallCompletedEvent?, TResult>? responseImageGenerationCallCompleted = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseImageGenCallGeneratingEvent?, TResult>? responseImageGenerationCallGenerating = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseImageGenCallInProgressEvent?, TResult>? responseImageGenerationCallInProgress = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseImageGenCallPartialImageEvent?, TResult>? responseImageGenerationCallPartialImage = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseMCPCallArgumentsDeltaEvent?, TResult>? responseMcpCallArgumentsDelta = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseMCPCallArgumentsDoneEvent?, TResult>? responseMcpCallArgumentsDone = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseMCPCallCompletedEvent?, TResult>? responseMcpCallCompleted = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseMCPCallFailedEvent?, TResult>? responseMcpCallFailed = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseMCPCallInProgressEvent?, TResult>? responseMcpCallInProgress = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseMCPListToolsCompletedEvent?, TResult>? responseMcpListToolsCompleted = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseMCPListToolsFailedEvent?, TResult>? responseMcpListToolsFailed = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseMCPListToolsInProgressEvent?, TResult>? responseMcpListToolsInProgress = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEvent?, TResult>? responseOutputTextAnnotationAdded = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseQueuedEvent?, TResult>? responseQueued = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent?, TResult>? responseCustomToolCallInputDelta = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent?, TResult>? responseCustomToolCallInputDone = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseAudioDeltaEvent, TResult>? responseAudioDelta = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseAudioDoneEvent, TResult>? responseAudioDone = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseAudioTranscriptDeltaEvent, TResult>? responseAudioTranscriptDelta = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseAudioTranscriptDoneEvent, TResult>? responseAudioTranscriptDone = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDeltaEvent, TResult>? responseCodeInterpreterCallCodeDelta = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDoneEvent, TResult>? responseCodeInterpreterCallCodeDone = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseCodeInterpreterCallCompletedEvent, TResult>? responseCodeInterpreterCallCompleted = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseCodeInterpreterCallInProgressEvent, TResult>? responseCodeInterpreterCallInProgress = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseCodeInterpreterCallInterpretingEvent, TResult>? responseCodeInterpreterCallInterpreting = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseCompletedEvent, TResult>? responseCompleted = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseContentPartAddedEvent, TResult>? responseContentPartAdded = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseContentPartDoneEvent, TResult>? responseContentPartDone = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseCreatedEvent, TResult>? responseCreated = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseErrorEvent, TResult>? error = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseFileSearchCallCompletedEvent, TResult>? responseFileSearchCallCompleted = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseFileSearchCallInProgressEvent, TResult>? responseFileSearchCallInProgress = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseFileSearchCallSearchingEvent, TResult>? responseFileSearchCallSearching = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDeltaEvent, TResult>? responseFunctionCallArgumentsDelta = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEvent, TResult>? responseFunctionCallArgumentsDone = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseInProgressEvent, TResult>? responseInProgress = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseFailedEvent, TResult>? responseFailed = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseIncompleteEvent, TResult>? responseIncomplete = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseOutputItemAddedEvent, TResult>? responseOutputItemAdded = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseOutputItemDoneEvent, TResult>? responseOutputItemDone = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEvent, TResult>? responseReasoningSummaryPartAdded = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEvent, TResult>? responseReasoningSummaryPartDone = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseReasoningSummaryTextDeltaEvent, TResult>? responseReasoningSummaryTextDelta = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEvent, TResult>? responseReasoningSummaryTextDone = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseReasoningTextDeltaEvent, TResult>? responseReasoningTextDelta = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseReasoningTextDoneEvent, TResult>? responseReasoningTextDone = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseRefusalDeltaEvent, TResult>? responseRefusalDelta = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseRefusalDoneEvent, TResult>? responseRefusalDone = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseTextDeltaEvent, TResult>? responseOutputTextDelta = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseTextDoneEvent, TResult>? responseOutputTextDone = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseWebSearchCallCompletedEvent, TResult>? responseWebSearchCallCompleted = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseWebSearchCallInProgressEvent, TResult>? responseWebSearchCallInProgress = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseWebSearchCallSearchingEvent, TResult>? responseWebSearchCallSearching = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseImageGenCallCompletedEvent, TResult>? responseImageGenerationCallCompleted = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseImageGenCallGeneratingEvent, TResult>? responseImageGenerationCallGenerating = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseImageGenCallInProgressEvent, TResult>? responseImageGenerationCallInProgress = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseImageGenCallPartialImageEvent, TResult>? responseImageGenerationCallPartialImage = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseMCPCallArgumentsDeltaEvent, TResult>? responseMcpCallArgumentsDelta = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseMCPCallArgumentsDoneEvent, TResult>? responseMcpCallArgumentsDone = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseMCPCallCompletedEvent, TResult>? responseMcpCallCompleted = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseMCPCallFailedEvent, TResult>? responseMcpCallFailed = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseMCPCallInProgressEvent, TResult>? responseMcpCallInProgress = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseMCPListToolsCompletedEvent, TResult>? responseMcpListToolsCompleted = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseMCPListToolsFailedEvent, TResult>? responseMcpListToolsFailed = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseMCPListToolsInProgressEvent, TResult>? responseMcpListToolsInProgress = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEvent, TResult>? responseOutputTextAnnotationAdded = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseQueuedEvent, TResult>? responseQueued = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent, TResult>? responseCustomToolCallInputDelta = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent, TResult>? responseCustomToolCallInputDone = null,
             bool validate = true)
         {
             if (validate)
@@ -2387,59 +3076,389 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.ResponseAudioDeltaEvent?>? responseAudioDelta = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseAudioDoneEvent?>? responseAudioDone = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseAudioTranscriptDeltaEvent?>? responseAudioTranscriptDelta = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseAudioTranscriptDoneEvent?>? responseAudioTranscriptDone = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDeltaEvent?>? responseCodeInterpreterCallCodeDelta = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDoneEvent?>? responseCodeInterpreterCallCodeDone = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseCodeInterpreterCallCompletedEvent?>? responseCodeInterpreterCallCompleted = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseCodeInterpreterCallInProgressEvent?>? responseCodeInterpreterCallInProgress = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseCodeInterpreterCallInterpretingEvent?>? responseCodeInterpreterCallInterpreting = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseCompletedEvent?>? responseCompleted = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseContentPartAddedEvent?>? responseContentPartAdded = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseContentPartDoneEvent?>? responseContentPartDone = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseCreatedEvent?>? responseCreated = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseErrorEvent?>? error = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseFileSearchCallCompletedEvent?>? responseFileSearchCallCompleted = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseFileSearchCallInProgressEvent?>? responseFileSearchCallInProgress = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseFileSearchCallSearchingEvent?>? responseFileSearchCallSearching = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDeltaEvent?>? responseFunctionCallArgumentsDelta = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEvent?>? responseFunctionCallArgumentsDone = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseInProgressEvent?>? responseInProgress = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseFailedEvent?>? responseFailed = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseIncompleteEvent?>? responseIncomplete = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseOutputItemAddedEvent?>? responseOutputItemAdded = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseOutputItemDoneEvent?>? responseOutputItemDone = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEvent?>? responseReasoningSummaryPartAdded = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEvent?>? responseReasoningSummaryPartDone = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseReasoningSummaryTextDeltaEvent?>? responseReasoningSummaryTextDelta = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEvent?>? responseReasoningSummaryTextDone = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseReasoningTextDeltaEvent?>? responseReasoningTextDelta = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseReasoningTextDoneEvent?>? responseReasoningTextDone = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseRefusalDeltaEvent?>? responseRefusalDelta = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseRefusalDoneEvent?>? responseRefusalDone = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseTextDeltaEvent?>? responseOutputTextDelta = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseTextDoneEvent?>? responseOutputTextDone = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseWebSearchCallCompletedEvent?>? responseWebSearchCallCompleted = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseWebSearchCallInProgressEvent?>? responseWebSearchCallInProgress = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseWebSearchCallSearchingEvent?>? responseWebSearchCallSearching = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseImageGenCallCompletedEvent?>? responseImageGenerationCallCompleted = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseImageGenCallGeneratingEvent?>? responseImageGenerationCallGenerating = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseImageGenCallInProgressEvent?>? responseImageGenerationCallInProgress = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseImageGenCallPartialImageEvent?>? responseImageGenerationCallPartialImage = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseMCPCallArgumentsDeltaEvent?>? responseMcpCallArgumentsDelta = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseMCPCallArgumentsDoneEvent?>? responseMcpCallArgumentsDone = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseMCPCallCompletedEvent?>? responseMcpCallCompleted = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseMCPCallFailedEvent?>? responseMcpCallFailed = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseMCPCallInProgressEvent?>? responseMcpCallInProgress = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseMCPListToolsCompletedEvent?>? responseMcpListToolsCompleted = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseMCPListToolsFailedEvent?>? responseMcpListToolsFailed = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseMCPListToolsInProgressEvent?>? responseMcpListToolsInProgress = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEvent?>? responseOutputTextAnnotationAdded = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseQueuedEvent?>? responseQueued = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent?>? responseCustomToolCallInputDelta = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent?>? responseCustomToolCallInputDone = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseAudioDeltaEvent>? responseAudioDelta = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseAudioDoneEvent>? responseAudioDone = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseAudioTranscriptDeltaEvent>? responseAudioTranscriptDelta = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseAudioTranscriptDoneEvent>? responseAudioTranscriptDone = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDeltaEvent>? responseCodeInterpreterCallCodeDelta = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDoneEvent>? responseCodeInterpreterCallCodeDone = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseCodeInterpreterCallCompletedEvent>? responseCodeInterpreterCallCompleted = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseCodeInterpreterCallInProgressEvent>? responseCodeInterpreterCallInProgress = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseCodeInterpreterCallInterpretingEvent>? responseCodeInterpreterCallInterpreting = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseCompletedEvent>? responseCompleted = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseContentPartAddedEvent>? responseContentPartAdded = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseContentPartDoneEvent>? responseContentPartDone = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseCreatedEvent>? responseCreated = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseErrorEvent>? error = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseFileSearchCallCompletedEvent>? responseFileSearchCallCompleted = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseFileSearchCallInProgressEvent>? responseFileSearchCallInProgress = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseFileSearchCallSearchingEvent>? responseFileSearchCallSearching = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDeltaEvent>? responseFunctionCallArgumentsDelta = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEvent>? responseFunctionCallArgumentsDone = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseInProgressEvent>? responseInProgress = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseFailedEvent>? responseFailed = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseIncompleteEvent>? responseIncomplete = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseOutputItemAddedEvent>? responseOutputItemAdded = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseOutputItemDoneEvent>? responseOutputItemDone = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEvent>? responseReasoningSummaryPartAdded = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEvent>? responseReasoningSummaryPartDone = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseReasoningSummaryTextDeltaEvent>? responseReasoningSummaryTextDelta = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEvent>? responseReasoningSummaryTextDone = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseReasoningTextDeltaEvent>? responseReasoningTextDelta = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseReasoningTextDoneEvent>? responseReasoningTextDone = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseRefusalDeltaEvent>? responseRefusalDelta = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseRefusalDoneEvent>? responseRefusalDone = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseTextDeltaEvent>? responseOutputTextDelta = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseTextDoneEvent>? responseOutputTextDone = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseWebSearchCallCompletedEvent>? responseWebSearchCallCompleted = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseWebSearchCallInProgressEvent>? responseWebSearchCallInProgress = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseWebSearchCallSearchingEvent>? responseWebSearchCallSearching = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseImageGenCallCompletedEvent>? responseImageGenerationCallCompleted = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseImageGenCallGeneratingEvent>? responseImageGenerationCallGenerating = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseImageGenCallInProgressEvent>? responseImageGenerationCallInProgress = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseImageGenCallPartialImageEvent>? responseImageGenerationCallPartialImage = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseMCPCallArgumentsDeltaEvent>? responseMcpCallArgumentsDelta = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseMCPCallArgumentsDoneEvent>? responseMcpCallArgumentsDone = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseMCPCallCompletedEvent>? responseMcpCallCompleted = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseMCPCallFailedEvent>? responseMcpCallFailed = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseMCPCallInProgressEvent>? responseMcpCallInProgress = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseMCPListToolsCompletedEvent>? responseMcpListToolsCompleted = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseMCPListToolsFailedEvent>? responseMcpListToolsFailed = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseMCPListToolsInProgressEvent>? responseMcpListToolsInProgress = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEvent>? responseOutputTextAnnotationAdded = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseQueuedEvent>? responseQueued = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent>? responseCustomToolCallInputDelta = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent>? responseCustomToolCallInputDone = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsResponseAudioDelta)
+            {
+                responseAudioDelta?.Invoke(ResponseAudioDelta!);
+            }
+            else if (IsResponseAudioDone)
+            {
+                responseAudioDone?.Invoke(ResponseAudioDone!);
+            }
+            else if (IsResponseAudioTranscriptDelta)
+            {
+                responseAudioTranscriptDelta?.Invoke(ResponseAudioTranscriptDelta!);
+            }
+            else if (IsResponseAudioTranscriptDone)
+            {
+                responseAudioTranscriptDone?.Invoke(ResponseAudioTranscriptDone!);
+            }
+            else if (IsResponseCodeInterpreterCallCodeDelta)
+            {
+                responseCodeInterpreterCallCodeDelta?.Invoke(ResponseCodeInterpreterCallCodeDelta!);
+            }
+            else if (IsResponseCodeInterpreterCallCodeDone)
+            {
+                responseCodeInterpreterCallCodeDone?.Invoke(ResponseCodeInterpreterCallCodeDone!);
+            }
+            else if (IsResponseCodeInterpreterCallCompleted)
+            {
+                responseCodeInterpreterCallCompleted?.Invoke(ResponseCodeInterpreterCallCompleted!);
+            }
+            else if (IsResponseCodeInterpreterCallInProgress)
+            {
+                responseCodeInterpreterCallInProgress?.Invoke(ResponseCodeInterpreterCallInProgress!);
+            }
+            else if (IsResponseCodeInterpreterCallInterpreting)
+            {
+                responseCodeInterpreterCallInterpreting?.Invoke(ResponseCodeInterpreterCallInterpreting!);
+            }
+            else if (IsResponseCompleted)
+            {
+                responseCompleted?.Invoke(ResponseCompleted!);
+            }
+            else if (IsResponseContentPartAdded)
+            {
+                responseContentPartAdded?.Invoke(ResponseContentPartAdded!);
+            }
+            else if (IsResponseContentPartDone)
+            {
+                responseContentPartDone?.Invoke(ResponseContentPartDone!);
+            }
+            else if (IsResponseCreated)
+            {
+                responseCreated?.Invoke(ResponseCreated!);
+            }
+            else if (IsError)
+            {
+                error?.Invoke(Error!);
+            }
+            else if (IsResponseFileSearchCallCompleted)
+            {
+                responseFileSearchCallCompleted?.Invoke(ResponseFileSearchCallCompleted!);
+            }
+            else if (IsResponseFileSearchCallInProgress)
+            {
+                responseFileSearchCallInProgress?.Invoke(ResponseFileSearchCallInProgress!);
+            }
+            else if (IsResponseFileSearchCallSearching)
+            {
+                responseFileSearchCallSearching?.Invoke(ResponseFileSearchCallSearching!);
+            }
+            else if (IsResponseFunctionCallArgumentsDelta)
+            {
+                responseFunctionCallArgumentsDelta?.Invoke(ResponseFunctionCallArgumentsDelta!);
+            }
+            else if (IsResponseFunctionCallArgumentsDone)
+            {
+                responseFunctionCallArgumentsDone?.Invoke(ResponseFunctionCallArgumentsDone!);
+            }
+            else if (IsResponseInProgress)
+            {
+                responseInProgress?.Invoke(ResponseInProgress!);
+            }
+            else if (IsResponseFailed)
+            {
+                responseFailed?.Invoke(ResponseFailed!);
+            }
+            else if (IsResponseIncomplete)
+            {
+                responseIncomplete?.Invoke(ResponseIncomplete!);
+            }
+            else if (IsResponseOutputItemAdded)
+            {
+                responseOutputItemAdded?.Invoke(ResponseOutputItemAdded!);
+            }
+            else if (IsResponseOutputItemDone)
+            {
+                responseOutputItemDone?.Invoke(ResponseOutputItemDone!);
+            }
+            else if (IsResponseReasoningSummaryPartAdded)
+            {
+                responseReasoningSummaryPartAdded?.Invoke(ResponseReasoningSummaryPartAdded!);
+            }
+            else if (IsResponseReasoningSummaryPartDone)
+            {
+                responseReasoningSummaryPartDone?.Invoke(ResponseReasoningSummaryPartDone!);
+            }
+            else if (IsResponseReasoningSummaryTextDelta)
+            {
+                responseReasoningSummaryTextDelta?.Invoke(ResponseReasoningSummaryTextDelta!);
+            }
+            else if (IsResponseReasoningSummaryTextDone)
+            {
+                responseReasoningSummaryTextDone?.Invoke(ResponseReasoningSummaryTextDone!);
+            }
+            else if (IsResponseReasoningTextDelta)
+            {
+                responseReasoningTextDelta?.Invoke(ResponseReasoningTextDelta!);
+            }
+            else if (IsResponseReasoningTextDone)
+            {
+                responseReasoningTextDone?.Invoke(ResponseReasoningTextDone!);
+            }
+            else if (IsResponseRefusalDelta)
+            {
+                responseRefusalDelta?.Invoke(ResponseRefusalDelta!);
+            }
+            else if (IsResponseRefusalDone)
+            {
+                responseRefusalDone?.Invoke(ResponseRefusalDone!);
+            }
+            else if (IsResponseOutputTextDelta)
+            {
+                responseOutputTextDelta?.Invoke(ResponseOutputTextDelta!);
+            }
+            else if (IsResponseOutputTextDone)
+            {
+                responseOutputTextDone?.Invoke(ResponseOutputTextDone!);
+            }
+            else if (IsResponseWebSearchCallCompleted)
+            {
+                responseWebSearchCallCompleted?.Invoke(ResponseWebSearchCallCompleted!);
+            }
+            else if (IsResponseWebSearchCallInProgress)
+            {
+                responseWebSearchCallInProgress?.Invoke(ResponseWebSearchCallInProgress!);
+            }
+            else if (IsResponseWebSearchCallSearching)
+            {
+                responseWebSearchCallSearching?.Invoke(ResponseWebSearchCallSearching!);
+            }
+            else if (IsResponseImageGenerationCallCompleted)
+            {
+                responseImageGenerationCallCompleted?.Invoke(ResponseImageGenerationCallCompleted!);
+            }
+            else if (IsResponseImageGenerationCallGenerating)
+            {
+                responseImageGenerationCallGenerating?.Invoke(ResponseImageGenerationCallGenerating!);
+            }
+            else if (IsResponseImageGenerationCallInProgress)
+            {
+                responseImageGenerationCallInProgress?.Invoke(ResponseImageGenerationCallInProgress!);
+            }
+            else if (IsResponseImageGenerationCallPartialImage)
+            {
+                responseImageGenerationCallPartialImage?.Invoke(ResponseImageGenerationCallPartialImage!);
+            }
+            else if (IsResponseMcpCallArgumentsDelta)
+            {
+                responseMcpCallArgumentsDelta?.Invoke(ResponseMcpCallArgumentsDelta!);
+            }
+            else if (IsResponseMcpCallArgumentsDone)
+            {
+                responseMcpCallArgumentsDone?.Invoke(ResponseMcpCallArgumentsDone!);
+            }
+            else if (IsResponseMcpCallCompleted)
+            {
+                responseMcpCallCompleted?.Invoke(ResponseMcpCallCompleted!);
+            }
+            else if (IsResponseMcpCallFailed)
+            {
+                responseMcpCallFailed?.Invoke(ResponseMcpCallFailed!);
+            }
+            else if (IsResponseMcpCallInProgress)
+            {
+                responseMcpCallInProgress?.Invoke(ResponseMcpCallInProgress!);
+            }
+            else if (IsResponseMcpListToolsCompleted)
+            {
+                responseMcpListToolsCompleted?.Invoke(ResponseMcpListToolsCompleted!);
+            }
+            else if (IsResponseMcpListToolsFailed)
+            {
+                responseMcpListToolsFailed?.Invoke(ResponseMcpListToolsFailed!);
+            }
+            else if (IsResponseMcpListToolsInProgress)
+            {
+                responseMcpListToolsInProgress?.Invoke(ResponseMcpListToolsInProgress!);
+            }
+            else if (IsResponseOutputTextAnnotationAdded)
+            {
+                responseOutputTextAnnotationAdded?.Invoke(ResponseOutputTextAnnotationAdded!);
+            }
+            else if (IsResponseQueued)
+            {
+                responseQueued?.Invoke(ResponseQueued!);
+            }
+            else if (IsResponseCustomToolCallInputDelta)
+            {
+                responseCustomToolCallInputDelta?.Invoke(ResponseCustomToolCallInputDelta!);
+            }
+            else if (IsResponseCustomToolCallInputDone)
+            {
+                responseCustomToolCallInputDone?.Invoke(ResponseCustomToolCallInputDone!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.ResponseAudioDeltaEvent>? responseAudioDelta = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseAudioDoneEvent>? responseAudioDone = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseAudioTranscriptDeltaEvent>? responseAudioTranscriptDelta = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseAudioTranscriptDoneEvent>? responseAudioTranscriptDone = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDeltaEvent>? responseCodeInterpreterCallCodeDelta = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDoneEvent>? responseCodeInterpreterCallCodeDone = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseCodeInterpreterCallCompletedEvent>? responseCodeInterpreterCallCompleted = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseCodeInterpreterCallInProgressEvent>? responseCodeInterpreterCallInProgress = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseCodeInterpreterCallInterpretingEvent>? responseCodeInterpreterCallInterpreting = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseCompletedEvent>? responseCompleted = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseContentPartAddedEvent>? responseContentPartAdded = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseContentPartDoneEvent>? responseContentPartDone = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseCreatedEvent>? responseCreated = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseErrorEvent>? error = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseFileSearchCallCompletedEvent>? responseFileSearchCallCompleted = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseFileSearchCallInProgressEvent>? responseFileSearchCallInProgress = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseFileSearchCallSearchingEvent>? responseFileSearchCallSearching = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDeltaEvent>? responseFunctionCallArgumentsDelta = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEvent>? responseFunctionCallArgumentsDone = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseInProgressEvent>? responseInProgress = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseFailedEvent>? responseFailed = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseIncompleteEvent>? responseIncomplete = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseOutputItemAddedEvent>? responseOutputItemAdded = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseOutputItemDoneEvent>? responseOutputItemDone = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEvent>? responseReasoningSummaryPartAdded = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEvent>? responseReasoningSummaryPartDone = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseReasoningSummaryTextDeltaEvent>? responseReasoningSummaryTextDelta = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEvent>? responseReasoningSummaryTextDone = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseReasoningTextDeltaEvent>? responseReasoningTextDelta = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseReasoningTextDoneEvent>? responseReasoningTextDone = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseRefusalDeltaEvent>? responseRefusalDelta = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseRefusalDoneEvent>? responseRefusalDone = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseTextDeltaEvent>? responseOutputTextDelta = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseTextDoneEvent>? responseOutputTextDone = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseWebSearchCallCompletedEvent>? responseWebSearchCallCompleted = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseWebSearchCallInProgressEvent>? responseWebSearchCallInProgress = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseWebSearchCallSearchingEvent>? responseWebSearchCallSearching = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseImageGenCallCompletedEvent>? responseImageGenerationCallCompleted = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseImageGenCallGeneratingEvent>? responseImageGenerationCallGenerating = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseImageGenCallInProgressEvent>? responseImageGenerationCallInProgress = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseImageGenCallPartialImageEvent>? responseImageGenerationCallPartialImage = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseMCPCallArgumentsDeltaEvent>? responseMcpCallArgumentsDelta = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseMCPCallArgumentsDoneEvent>? responseMcpCallArgumentsDone = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseMCPCallCompletedEvent>? responseMcpCallCompleted = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseMCPCallFailedEvent>? responseMcpCallFailed = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseMCPCallInProgressEvent>? responseMcpCallInProgress = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseMCPListToolsCompletedEvent>? responseMcpListToolsCompleted = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseMCPListToolsFailedEvent>? responseMcpListToolsFailed = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseMCPListToolsInProgressEvent>? responseMcpListToolsInProgress = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEvent>? responseOutputTextAnnotationAdded = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseQueuedEvent>? responseQueued = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent>? responseCustomToolCallInputDelta = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent>? responseCustomToolCallInputDone = null,
             bool validate = true)
         {
             if (validate)

@@ -27,6 +27,19 @@ namespace tryAGI.OpenAI
         public bool IsAdminApiKey => AdminApiKey != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAdminApiKey(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.AdminApiKey? value)
+        {
+            value = AdminApiKey;
+            return IsAdminApiKey;
+        }
+
+        /// <summary>
         /// The newly created admin API key. The `value` field is only returned once, when the key is created.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AdminApiKeyCreateResponseVariant2))]
 #endif
         public bool IsAdminApiKeyCreateResponseVariant2 => AdminApiKeyCreateResponseVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAdminApiKeyCreateResponseVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.AdminApiKeyCreateResponseVariant2? value)
+        {
+            value = AdminApiKeyCreateResponseVariant2;
+            return IsAdminApiKeyCreateResponseVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.AdminApiKey?, TResult>? adminApiKey = null,
-            global::System.Func<global::tryAGI.OpenAI.AdminApiKeyCreateResponseVariant2?, TResult>? adminApiKeyCreateResponseVariant2 = null,
+            global::System.Func<global::tryAGI.OpenAI.AdminApiKey, TResult>? adminApiKey = null,
+            global::System.Func<global::tryAGI.OpenAI.AdminApiKeyCreateResponseVariant2, TResult>? adminApiKeyCreateResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.AdminApiKey?>? adminApiKey = null,
-            global::System.Action<global::tryAGI.OpenAI.AdminApiKeyCreateResponseVariant2?>? adminApiKeyCreateResponseVariant2 = null,
+            global::System.Action<global::tryAGI.OpenAI.AdminApiKey>? adminApiKey = null,
+
+            global::System.Action<global::tryAGI.OpenAI.AdminApiKeyCreateResponseVariant2>? adminApiKeyCreateResponseVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAdminApiKey)
+            {
+                adminApiKey?.Invoke(AdminApiKey!);
+            }
+            else if (IsAdminApiKeyCreateResponseVariant2)
+            {
+                adminApiKeyCreateResponseVariant2?.Invoke(AdminApiKeyCreateResponseVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.AdminApiKey>? adminApiKey = null,
+            global::System.Action<global::tryAGI.OpenAI.AdminApiKeyCreateResponseVariant2>? adminApiKeyCreateResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)

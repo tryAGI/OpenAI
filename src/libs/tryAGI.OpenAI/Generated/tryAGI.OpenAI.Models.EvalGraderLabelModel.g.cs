@@ -26,6 +26,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LabelModelGrader))]
 #endif
         public bool IsLabelModelGrader => LabelModelGrader != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLabelModelGrader(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.GraderLabelModel? value)
+        {
+            value = LabelModelGrader;
+            return IsLabelModelGrader;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -70,7 +83,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.GraderLabelModel?, TResult>? labelModelGrader = null,
+            global::System.Func<global::tryAGI.OpenAI.GraderLabelModel, TResult>? labelModelGrader = null,
             bool validate = true)
         {
             if (validate)
@@ -90,7 +103,25 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.GraderLabelModel?>? labelModelGrader = null,
+            global::System.Action<global::tryAGI.OpenAI.GraderLabelModel>? labelModelGrader = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsLabelModelGrader)
+            {
+                labelModelGrader?.Invoke(LabelModelGrader!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.GraderLabelModel>? labelModelGrader = null,
             bool validate = true)
         {
             if (validate)

@@ -27,6 +27,19 @@ namespace tryAGI.OpenAI
         public bool IsInputText => InputText != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.InputTextContentParam? value)
+        {
+            value = InputText;
+            return IsInputText;
+        }
+
+        /// <summary>
         /// An image input to the model. Learn about [image inputs](/docs/guides/vision)
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -44,6 +57,19 @@ namespace tryAGI.OpenAI
         public bool IsInputImage => InputImage != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.InputImageContentParamAutoParam? value)
+        {
+            value = InputImage;
+            return IsInputImage;
+        }
+
+        /// <summary>
         /// A file input to the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -59,6 +85,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputFile))]
 #endif
         public bool IsInputFile => InputFile != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.InputFileContentParam? value)
+        {
+            value = InputFile;
+            return IsInputFile;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -157,9 +196,9 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.InputTextContentParam?, TResult>? inputText = null,
-            global::System.Func<global::tryAGI.OpenAI.InputImageContentParamAutoParam?, TResult>? inputImage = null,
-            global::System.Func<global::tryAGI.OpenAI.InputFileContentParam?, TResult>? inputFile = null,
+            global::System.Func<global::tryAGI.OpenAI.InputTextContentParam, TResult>? inputText = null,
+            global::System.Func<global::tryAGI.OpenAI.InputImageContentParamAutoParam, TResult>? inputImage = null,
+            global::System.Func<global::tryAGI.OpenAI.InputFileContentParam, TResult>? inputFile = null,
             bool validate = true)
         {
             if (validate)
@@ -187,9 +226,39 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.InputTextContentParam?>? inputText = null,
-            global::System.Action<global::tryAGI.OpenAI.InputImageContentParamAutoParam?>? inputImage = null,
-            global::System.Action<global::tryAGI.OpenAI.InputFileContentParam?>? inputFile = null,
+            global::System.Action<global::tryAGI.OpenAI.InputTextContentParam>? inputText = null,
+
+            global::System.Action<global::tryAGI.OpenAI.InputImageContentParamAutoParam>? inputImage = null,
+
+            global::System.Action<global::tryAGI.OpenAI.InputFileContentParam>? inputFile = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInputText)
+            {
+                inputText?.Invoke(InputText!);
+            }
+            else if (IsInputImage)
+            {
+                inputImage?.Invoke(InputImage!);
+            }
+            else if (IsInputFile)
+            {
+                inputFile?.Invoke(InputFile!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.InputTextContentParam>? inputText = null,
+            global::System.Action<global::tryAGI.OpenAI.InputImageContentParamAutoParam>? inputImage = null,
+            global::System.Action<global::tryAGI.OpenAI.InputFileContentParam>? inputFile = null,
             bool validate = true)
         {
             if (validate)

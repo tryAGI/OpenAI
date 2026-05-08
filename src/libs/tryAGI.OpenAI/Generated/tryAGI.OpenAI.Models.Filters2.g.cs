@@ -27,6 +27,19 @@ namespace tryAGI.OpenAI
         public bool IsComparisonFilter => ComparisonFilter != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickComparisonFilter(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ComparisonFilter? value)
+        {
+            value = ComparisonFilter;
+            return IsComparisonFilter;
+        }
+
+        /// <summary>
         /// Combine multiple filters using `and` or `or`.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CompoundFilter))]
 #endif
         public bool IsCompoundFilter => CompoundFilter != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCompoundFilter(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.CompoundFilter? value)
+        {
+            value = CompoundFilter;
+            return IsCompoundFilter;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.ComparisonFilter?, TResult>? comparisonFilter = null,
-            global::System.Func<global::tryAGI.OpenAI.CompoundFilter?, TResult>? compoundFilter = null,
+            global::System.Func<global::tryAGI.OpenAI.ComparisonFilter, TResult>? comparisonFilter = null,
+            global::System.Func<global::tryAGI.OpenAI.CompoundFilter, TResult>? compoundFilter = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.ComparisonFilter?>? comparisonFilter = null,
-            global::System.Action<global::tryAGI.OpenAI.CompoundFilter?>? compoundFilter = null,
+            global::System.Action<global::tryAGI.OpenAI.ComparisonFilter>? comparisonFilter = null,
+
+            global::System.Action<global::tryAGI.OpenAI.CompoundFilter>? compoundFilter = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsComparisonFilter)
+            {
+                comparisonFilter?.Invoke(ComparisonFilter!);
+            }
+            else if (IsCompoundFilter)
+            {
+                compoundFilter?.Invoke(CompoundFilter!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.ComparisonFilter>? comparisonFilter = null,
+            global::System.Action<global::tryAGI.OpenAI.CompoundFilter>? compoundFilter = null,
             bool validate = true)
         {
             if (validate)

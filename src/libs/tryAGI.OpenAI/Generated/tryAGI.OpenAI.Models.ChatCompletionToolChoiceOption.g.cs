@@ -32,6 +32,19 @@ namespace tryAGI.OpenAI
         public bool IsToolChoiceMode => ToolChoiceMode != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolChoiceMode(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum? value)
+        {
+            value = ToolChoiceMode;
+            return IsToolChoiceMode;
+        }
+
+        /// <summary>
         /// Constrains the tools available to the model to a pre-defined set.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -47,6 +60,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AllowedTools))]
 #endif
         public bool IsAllowedTools => AllowedTools != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAllowedTools(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice? value)
+        {
+            value = AllowedTools;
+            return IsAllowedTools;
+        }
 
         /// <summary>
         /// Specifies a tool the model should use. Use to force the model to call a specific function.
@@ -66,6 +92,19 @@ namespace tryAGI.OpenAI
         public bool IsFunctionToolChoice => FunctionToolChoice != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunctionToolChoice(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ChatCompletionNamedToolChoice? value)
+        {
+            value = FunctionToolChoice;
+            return IsFunctionToolChoice;
+        }
+
+        /// <summary>
         /// Specifies a tool the model should use. Use to force the model to call a specific custom tool.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -81,6 +120,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomToolChoice))]
 #endif
         public bool IsCustomToolChoice => CustomToolChoice != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCustomToolChoice(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom? value)
+        {
+            value = CustomToolChoice;
+            return IsCustomToolChoice;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -202,9 +254,9 @@ namespace tryAGI.OpenAI
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum?, TResult>? toolChoiceMode = null,
-            global::System.Func<global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice?, TResult>? allowedTools = null,
-            global::System.Func<global::tryAGI.OpenAI.ChatCompletionNamedToolChoice?, TResult>? functionToolChoice = null,
-            global::System.Func<global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom?, TResult>? customToolChoice = null,
+            global::System.Func<global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice, TResult>? allowedTools = null,
+            global::System.Func<global::tryAGI.OpenAI.ChatCompletionNamedToolChoice, TResult>? functionToolChoice = null,
+            global::System.Func<global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom, TResult>? customToolChoice = null,
             bool validate = true)
         {
             if (validate)
@@ -237,9 +289,45 @@ namespace tryAGI.OpenAI
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum?>? toolChoiceMode = null,
-            global::System.Action<global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice?>? allowedTools = null,
-            global::System.Action<global::tryAGI.OpenAI.ChatCompletionNamedToolChoice?>? functionToolChoice = null,
-            global::System.Action<global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom?>? customToolChoice = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice>? allowedTools = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionNamedToolChoice>? functionToolChoice = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom>? customToolChoice = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsToolChoiceMode)
+            {
+                toolChoiceMode?.Invoke(ToolChoiceMode!);
+            }
+            else if (IsAllowedTools)
+            {
+                allowedTools?.Invoke(AllowedTools!);
+            }
+            else if (IsFunctionToolChoice)
+            {
+                functionToolChoice?.Invoke(FunctionToolChoice!);
+            }
+            else if (IsCustomToolChoice)
+            {
+                customToolChoice?.Invoke(CustomToolChoice!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum?>? toolChoiceMode = null,
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice>? allowedTools = null,
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionNamedToolChoice>? functionToolChoice = null,
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom>? customToolChoice = null,
             bool validate = true)
         {
             if (validate)

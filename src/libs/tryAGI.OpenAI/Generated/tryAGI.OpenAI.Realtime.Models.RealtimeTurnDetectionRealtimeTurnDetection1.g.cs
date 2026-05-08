@@ -31,6 +31,19 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsServerVad => ServerVad != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickServerVad(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad? value)
+        {
+            value = ServerVad;
+            return IsServerVad;
+        }
+
+        /// <summary>
         /// Server-side semantic turn detection which uses a model to determine when the user has finished speaking.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -46,6 +59,19 @@ namespace tryAGI.OpenAI.Realtime
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SemanticVad))]
 #endif
         public bool IsSemanticVad => SemanticVad != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSemanticVad(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad? value)
+        {
+            value = SemanticVad;
+            return IsSemanticVad;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -122,8 +148,8 @@ namespace tryAGI.OpenAI.Realtime
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad?, TResult>? serverVad = null,
-            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad?, TResult>? semanticVad = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad, TResult>? serverVad = null,
+            global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad, TResult>? semanticVad = null,
             bool validate = true)
         {
             if (validate)
@@ -147,8 +173,32 @@ namespace tryAGI.OpenAI.Realtime
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad?>? serverVad = null,
-            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad?>? semanticVad = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad>? serverVad = null,
+
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad>? semanticVad = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsServerVad)
+            {
+                serverVad?.Invoke(ServerVad!);
+            }
+            else if (IsSemanticVad)
+            {
+                semanticVad?.Invoke(SemanticVad!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad>? serverVad = null,
+            global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad>? semanticVad = null,
             bool validate = true)
         {
             if (validate)

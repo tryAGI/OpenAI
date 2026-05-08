@@ -27,6 +27,19 @@ namespace tryAGI.OpenAI
         public bool IsSpeechAudioDelta => SpeechAudioDelta != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSpeechAudioDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.SpeechAudioDeltaEvent? value)
+        {
+            value = SpeechAudioDelta;
+            return IsSpeechAudioDelta;
+        }
+
+        /// <summary>
         /// Emitted when the speech synthesis is complete and all audio has been streamed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SpeechAudioDone))]
 #endif
         public bool IsSpeechAudioDone => SpeechAudioDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSpeechAudioDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.SpeechAudioDoneEvent? value)
+        {
+            value = SpeechAudioDone;
+            return IsSpeechAudioDone;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.SpeechAudioDeltaEvent?, TResult>? speechAudioDelta = null,
-            global::System.Func<global::tryAGI.OpenAI.SpeechAudioDoneEvent?, TResult>? speechAudioDone = null,
+            global::System.Func<global::tryAGI.OpenAI.SpeechAudioDeltaEvent, TResult>? speechAudioDelta = null,
+            global::System.Func<global::tryAGI.OpenAI.SpeechAudioDoneEvent, TResult>? speechAudioDone = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.SpeechAudioDeltaEvent?>? speechAudioDelta = null,
-            global::System.Action<global::tryAGI.OpenAI.SpeechAudioDoneEvent?>? speechAudioDone = null,
+            global::System.Action<global::tryAGI.OpenAI.SpeechAudioDeltaEvent>? speechAudioDelta = null,
+
+            global::System.Action<global::tryAGI.OpenAI.SpeechAudioDoneEvent>? speechAudioDone = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSpeechAudioDelta)
+            {
+                speechAudioDelta?.Invoke(SpeechAudioDelta!);
+            }
+            else if (IsSpeechAudioDone)
+            {
+                speechAudioDone?.Invoke(SpeechAudioDone!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.SpeechAudioDeltaEvent>? speechAudioDelta = null,
+            global::System.Action<global::tryAGI.OpenAI.SpeechAudioDoneEvent>? speechAudioDone = null,
             bool validate = true)
         {
             if (validate)

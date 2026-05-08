@@ -27,6 +27,19 @@ namespace tryAGI.OpenAI
         public bool IsImageGenerationPartialImage => ImageGenerationPartialImage != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageGenerationPartialImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ImageGenPartialImageEvent? value)
+        {
+            value = ImageGenerationPartialImage;
+            return IsImageGenerationPartialImage;
+        }
+
+        /// <summary>
         /// Emitted when image generation has completed and the final image is available.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenerationCompleted))]
 #endif
         public bool IsImageGenerationCompleted => ImageGenerationCompleted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageGenerationCompleted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ImageGenCompletedEvent? value)
+        {
+            value = ImageGenerationCompleted;
+            return IsImageGenerationCompleted;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.ImageGenPartialImageEvent?, TResult>? imageGenerationPartialImage = null,
-            global::System.Func<global::tryAGI.OpenAI.ImageGenCompletedEvent?, TResult>? imageGenerationCompleted = null,
+            global::System.Func<global::tryAGI.OpenAI.ImageGenPartialImageEvent, TResult>? imageGenerationPartialImage = null,
+            global::System.Func<global::tryAGI.OpenAI.ImageGenCompletedEvent, TResult>? imageGenerationCompleted = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.ImageGenPartialImageEvent?>? imageGenerationPartialImage = null,
-            global::System.Action<global::tryAGI.OpenAI.ImageGenCompletedEvent?>? imageGenerationCompleted = null,
+            global::System.Action<global::tryAGI.OpenAI.ImageGenPartialImageEvent>? imageGenerationPartialImage = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ImageGenCompletedEvent>? imageGenerationCompleted = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsImageGenerationPartialImage)
+            {
+                imageGenerationPartialImage?.Invoke(ImageGenerationPartialImage!);
+            }
+            else if (IsImageGenerationCompleted)
+            {
+                imageGenerationCompleted?.Invoke(ImageGenerationCompleted!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.ImageGenPartialImageEvent>? imageGenerationPartialImage = null,
+            global::System.Action<global::tryAGI.OpenAI.ImageGenCompletedEvent>? imageGenerationCompleted = null,
             bool validate = true)
         {
             if (validate)

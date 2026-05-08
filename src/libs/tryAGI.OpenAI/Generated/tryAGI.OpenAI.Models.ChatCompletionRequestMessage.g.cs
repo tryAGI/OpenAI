@@ -29,6 +29,19 @@ namespace tryAGI.OpenAI
         public bool IsDeveloper => Developer != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDeveloper(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ChatCompletionRequestDeveloperMessage? value)
+        {
+            value = Developer;
+            return IsDeveloper;
+        }
+
+        /// <summary>
         /// Developer-provided instructions that the model should follow, regardless of<br/>
         /// messages sent by the user. With o1 models and newer, use `developer` messages<br/>
         /// for this purpose instead.
@@ -48,6 +61,19 @@ namespace tryAGI.OpenAI
         public bool IsSystem => System != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSystem(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ChatCompletionRequestSystemMessage? value)
+        {
+            value = System;
+            return IsSystem;
+        }
+
+        /// <summary>
         /// Messages sent by an end user, containing prompts or additional context<br/>
         /// information.
         /// </summary>
@@ -64,6 +90,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(User))]
 #endif
         public bool IsUser => User != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUser(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ChatCompletionRequestUserMessage? value)
+        {
+            value = User;
+            return IsUser;
+        }
 
         /// <summary>
         /// Messages sent by the model in response to user messages.
@@ -85,6 +124,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAssistant(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage? value)
+        {
+            value = Assistant;
+            return IsAssistant;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ChatCompletionRequestToolMessage? Tool { get; init; }
 #else
@@ -102,6 +154,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ChatCompletionRequestToolMessage? value)
+        {
+            value = Tool;
+            return IsTool;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessage? Function { get; init; }
 #else
@@ -115,6 +180,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Function))]
 #endif
         public bool IsFunction => Function != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessage? value)
+        {
+            value = Function;
+            return IsFunction;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -279,12 +357,12 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestDeveloperMessage?, TResult>? developer = null,
-            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestSystemMessage?, TResult>? system = null,
-            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestUserMessage?, TResult>? user = null,
-            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage?, TResult>? assistant = null,
-            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestToolMessage?, TResult>? tool = null,
-            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessage?, TResult>? function = null,
+            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestDeveloperMessage, TResult>? developer = null,
+            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestSystemMessage, TResult>? system = null,
+            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestUserMessage, TResult>? user = null,
+            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage, TResult>? assistant = null,
+            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestToolMessage, TResult>? tool = null,
+            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessage, TResult>? function = null,
             bool validate = true)
         {
             if (validate)
@@ -324,12 +402,60 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestDeveloperMessage?>? developer = null,
-            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestSystemMessage?>? system = null,
-            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestUserMessage?>? user = null,
-            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage?>? assistant = null,
-            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestToolMessage?>? tool = null,
-            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessage?>? function = null,
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestDeveloperMessage>? developer = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestSystemMessage>? system = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestUserMessage>? user = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage>? assistant = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestToolMessage>? tool = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessage>? function = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsDeveloper)
+            {
+                developer?.Invoke(Developer!);
+            }
+            else if (IsSystem)
+            {
+                system?.Invoke(System!);
+            }
+            else if (IsUser)
+            {
+                user?.Invoke(User!);
+            }
+            else if (IsAssistant)
+            {
+                assistant?.Invoke(Assistant!);
+            }
+            else if (IsTool)
+            {
+                tool?.Invoke(Tool!);
+            }
+            else if (IsFunction)
+            {
+                function?.Invoke(Function!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestDeveloperMessage>? developer = null,
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestSystemMessage>? system = null,
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestUserMessage>? user = null,
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage>? assistant = null,
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestToolMessage>? tool = null,
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessage>? function = null,
             bool validate = true)
         {
             if (validate)

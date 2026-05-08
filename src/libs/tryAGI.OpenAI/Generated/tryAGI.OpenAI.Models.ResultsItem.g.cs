@@ -27,6 +27,19 @@ namespace tryAGI.OpenAI
         public bool IsOrganizationUsageCompletionsResult => OrganizationUsageCompletionsResult != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOrganizationUsageCompletionsResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.UsageCompletionsResult? value)
+        {
+            value = OrganizationUsageCompletionsResult;
+            return IsOrganizationUsageCompletionsResult;
+        }
+
+        /// <summary>
         /// The aggregated embeddings usage details of the specific time bucket.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrganizationUsageEmbeddingsResult))]
 #endif
         public bool IsOrganizationUsageEmbeddingsResult => OrganizationUsageEmbeddingsResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOrganizationUsageEmbeddingsResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.UsageEmbeddingsResult? value)
+        {
+            value = OrganizationUsageEmbeddingsResult;
+            return IsOrganizationUsageEmbeddingsResult;
+        }
 
         /// <summary>
         /// The aggregated moderations usage details of the specific time bucket.
@@ -61,6 +87,19 @@ namespace tryAGI.OpenAI
         public bool IsOrganizationUsageModerationsResult => OrganizationUsageModerationsResult != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOrganizationUsageModerationsResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.UsageModerationsResult? value)
+        {
+            value = OrganizationUsageModerationsResult;
+            return IsOrganizationUsageModerationsResult;
+        }
+
+        /// <summary>
         /// The aggregated images usage details of the specific time bucket.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -76,6 +115,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrganizationUsageImagesResult))]
 #endif
         public bool IsOrganizationUsageImagesResult => OrganizationUsageImagesResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOrganizationUsageImagesResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.UsageImagesResult? value)
+        {
+            value = OrganizationUsageImagesResult;
+            return IsOrganizationUsageImagesResult;
+        }
 
         /// <summary>
         /// The aggregated audio speeches usage details of the specific time bucket.
@@ -95,6 +147,19 @@ namespace tryAGI.OpenAI
         public bool IsOrganizationUsageAudioSpeechesResult => OrganizationUsageAudioSpeechesResult != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOrganizationUsageAudioSpeechesResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.UsageAudioSpeechesResult? value)
+        {
+            value = OrganizationUsageAudioSpeechesResult;
+            return IsOrganizationUsageAudioSpeechesResult;
+        }
+
+        /// <summary>
         /// The aggregated audio transcriptions usage details of the specific time bucket.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -110,6 +175,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrganizationUsageAudioTranscriptionsResult))]
 #endif
         public bool IsOrganizationUsageAudioTranscriptionsResult => OrganizationUsageAudioTranscriptionsResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOrganizationUsageAudioTranscriptionsResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.UsageAudioTranscriptionsResult? value)
+        {
+            value = OrganizationUsageAudioTranscriptionsResult;
+            return IsOrganizationUsageAudioTranscriptionsResult;
+        }
 
         /// <summary>
         /// The aggregated vector stores usage details of the specific time bucket.
@@ -129,6 +207,19 @@ namespace tryAGI.OpenAI
         public bool IsOrganizationUsageVectorStoresResult => OrganizationUsageVectorStoresResult != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOrganizationUsageVectorStoresResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.UsageVectorStoresResult? value)
+        {
+            value = OrganizationUsageVectorStoresResult;
+            return IsOrganizationUsageVectorStoresResult;
+        }
+
+        /// <summary>
         /// The aggregated code interpreter sessions usage details of the specific time bucket.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -146,6 +237,19 @@ namespace tryAGI.OpenAI
         public bool IsOrganizationUsageCodeInterpreterSessionsResult => OrganizationUsageCodeInterpreterSessionsResult != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOrganizationUsageCodeInterpreterSessionsResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult? value)
+        {
+            value = OrganizationUsageCodeInterpreterSessionsResult;
+            return IsOrganizationUsageCodeInterpreterSessionsResult;
+        }
+
+        /// <summary>
         /// The aggregated costs details of the specific time bucket.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -161,6 +265,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrganizationCostsResult))]
 #endif
         public bool IsOrganizationCostsResult => OrganizationCostsResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOrganizationCostsResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.CostsResult? value)
+        {
+            value = OrganizationCostsResult;
+            return IsOrganizationCostsResult;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -391,15 +508,15 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.UsageCompletionsResult?, TResult>? organizationUsageCompletionsResult = null,
-            global::System.Func<global::tryAGI.OpenAI.UsageEmbeddingsResult?, TResult>? organizationUsageEmbeddingsResult = null,
-            global::System.Func<global::tryAGI.OpenAI.UsageModerationsResult?, TResult>? organizationUsageModerationsResult = null,
-            global::System.Func<global::tryAGI.OpenAI.UsageImagesResult?, TResult>? organizationUsageImagesResult = null,
-            global::System.Func<global::tryAGI.OpenAI.UsageAudioSpeechesResult?, TResult>? organizationUsageAudioSpeechesResult = null,
-            global::System.Func<global::tryAGI.OpenAI.UsageAudioTranscriptionsResult?, TResult>? organizationUsageAudioTranscriptionsResult = null,
-            global::System.Func<global::tryAGI.OpenAI.UsageVectorStoresResult?, TResult>? organizationUsageVectorStoresResult = null,
-            global::System.Func<global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult?, TResult>? organizationUsageCodeInterpreterSessionsResult = null,
-            global::System.Func<global::tryAGI.OpenAI.CostsResult?, TResult>? organizationCostsResult = null,
+            global::System.Func<global::tryAGI.OpenAI.UsageCompletionsResult, TResult>? organizationUsageCompletionsResult = null,
+            global::System.Func<global::tryAGI.OpenAI.UsageEmbeddingsResult, TResult>? organizationUsageEmbeddingsResult = null,
+            global::System.Func<global::tryAGI.OpenAI.UsageModerationsResult, TResult>? organizationUsageModerationsResult = null,
+            global::System.Func<global::tryAGI.OpenAI.UsageImagesResult, TResult>? organizationUsageImagesResult = null,
+            global::System.Func<global::tryAGI.OpenAI.UsageAudioSpeechesResult, TResult>? organizationUsageAudioSpeechesResult = null,
+            global::System.Func<global::tryAGI.OpenAI.UsageAudioTranscriptionsResult, TResult>? organizationUsageAudioTranscriptionsResult = null,
+            global::System.Func<global::tryAGI.OpenAI.UsageVectorStoresResult, TResult>? organizationUsageVectorStoresResult = null,
+            global::System.Func<global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult, TResult>? organizationUsageCodeInterpreterSessionsResult = null,
+            global::System.Func<global::tryAGI.OpenAI.CostsResult, TResult>? organizationCostsResult = null,
             bool validate = true)
         {
             if (validate)
@@ -451,15 +568,81 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.UsageCompletionsResult?>? organizationUsageCompletionsResult = null,
-            global::System.Action<global::tryAGI.OpenAI.UsageEmbeddingsResult?>? organizationUsageEmbeddingsResult = null,
-            global::System.Action<global::tryAGI.OpenAI.UsageModerationsResult?>? organizationUsageModerationsResult = null,
-            global::System.Action<global::tryAGI.OpenAI.UsageImagesResult?>? organizationUsageImagesResult = null,
-            global::System.Action<global::tryAGI.OpenAI.UsageAudioSpeechesResult?>? organizationUsageAudioSpeechesResult = null,
-            global::System.Action<global::tryAGI.OpenAI.UsageAudioTranscriptionsResult?>? organizationUsageAudioTranscriptionsResult = null,
-            global::System.Action<global::tryAGI.OpenAI.UsageVectorStoresResult?>? organizationUsageVectorStoresResult = null,
-            global::System.Action<global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult?>? organizationUsageCodeInterpreterSessionsResult = null,
-            global::System.Action<global::tryAGI.OpenAI.CostsResult?>? organizationCostsResult = null,
+            global::System.Action<global::tryAGI.OpenAI.UsageCompletionsResult>? organizationUsageCompletionsResult = null,
+
+            global::System.Action<global::tryAGI.OpenAI.UsageEmbeddingsResult>? organizationUsageEmbeddingsResult = null,
+
+            global::System.Action<global::tryAGI.OpenAI.UsageModerationsResult>? organizationUsageModerationsResult = null,
+
+            global::System.Action<global::tryAGI.OpenAI.UsageImagesResult>? organizationUsageImagesResult = null,
+
+            global::System.Action<global::tryAGI.OpenAI.UsageAudioSpeechesResult>? organizationUsageAudioSpeechesResult = null,
+
+            global::System.Action<global::tryAGI.OpenAI.UsageAudioTranscriptionsResult>? organizationUsageAudioTranscriptionsResult = null,
+
+            global::System.Action<global::tryAGI.OpenAI.UsageVectorStoresResult>? organizationUsageVectorStoresResult = null,
+
+            global::System.Action<global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult>? organizationUsageCodeInterpreterSessionsResult = null,
+
+            global::System.Action<global::tryAGI.OpenAI.CostsResult>? organizationCostsResult = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOrganizationUsageCompletionsResult)
+            {
+                organizationUsageCompletionsResult?.Invoke(OrganizationUsageCompletionsResult!);
+            }
+            else if (IsOrganizationUsageEmbeddingsResult)
+            {
+                organizationUsageEmbeddingsResult?.Invoke(OrganizationUsageEmbeddingsResult!);
+            }
+            else if (IsOrganizationUsageModerationsResult)
+            {
+                organizationUsageModerationsResult?.Invoke(OrganizationUsageModerationsResult!);
+            }
+            else if (IsOrganizationUsageImagesResult)
+            {
+                organizationUsageImagesResult?.Invoke(OrganizationUsageImagesResult!);
+            }
+            else if (IsOrganizationUsageAudioSpeechesResult)
+            {
+                organizationUsageAudioSpeechesResult?.Invoke(OrganizationUsageAudioSpeechesResult!);
+            }
+            else if (IsOrganizationUsageAudioTranscriptionsResult)
+            {
+                organizationUsageAudioTranscriptionsResult?.Invoke(OrganizationUsageAudioTranscriptionsResult!);
+            }
+            else if (IsOrganizationUsageVectorStoresResult)
+            {
+                organizationUsageVectorStoresResult?.Invoke(OrganizationUsageVectorStoresResult!);
+            }
+            else if (IsOrganizationUsageCodeInterpreterSessionsResult)
+            {
+                organizationUsageCodeInterpreterSessionsResult?.Invoke(OrganizationUsageCodeInterpreterSessionsResult!);
+            }
+            else if (IsOrganizationCostsResult)
+            {
+                organizationCostsResult?.Invoke(OrganizationCostsResult!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.UsageCompletionsResult>? organizationUsageCompletionsResult = null,
+            global::System.Action<global::tryAGI.OpenAI.UsageEmbeddingsResult>? organizationUsageEmbeddingsResult = null,
+            global::System.Action<global::tryAGI.OpenAI.UsageModerationsResult>? organizationUsageModerationsResult = null,
+            global::System.Action<global::tryAGI.OpenAI.UsageImagesResult>? organizationUsageImagesResult = null,
+            global::System.Action<global::tryAGI.OpenAI.UsageAudioSpeechesResult>? organizationUsageAudioSpeechesResult = null,
+            global::System.Action<global::tryAGI.OpenAI.UsageAudioTranscriptionsResult>? organizationUsageAudioTranscriptionsResult = null,
+            global::System.Action<global::tryAGI.OpenAI.UsageVectorStoresResult>? organizationUsageVectorStoresResult = null,
+            global::System.Action<global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult>? organizationUsageCodeInterpreterSessionsResult = null,
+            global::System.Action<global::tryAGI.OpenAI.CostsResult>? organizationCostsResult = null,
             bool validate = true)
         {
             if (validate)

@@ -25,6 +25,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseStream))]
 #endif
         public bool IsResponseStream => ResponseStream != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseStream(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseStreamEvent? value)
+        {
+            value = ResponseStream;
+            return IsResponseStream;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +102,24 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::tryAGI.OpenAI.ResponseStreamEvent?>? responseStream = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsResponseStream)
+            {
+                responseStream?.Invoke(ResponseStream!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::tryAGI.OpenAI.ResponseStreamEvent?>? responseStream = null,
             bool validate = true)
         {

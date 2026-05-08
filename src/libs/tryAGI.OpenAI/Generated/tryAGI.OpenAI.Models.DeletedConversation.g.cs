@@ -25,6 +25,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Resource))]
 #endif
         public bool IsResource => Resource != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResource(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.DeletedConversationResource? value)
+        {
+            value = Resource;
+            return IsResource;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -69,7 +82,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.DeletedConversationResource?, TResult>? resource = null,
+            global::System.Func<global::tryAGI.OpenAI.DeletedConversationResource, TResult>? resource = null,
             bool validate = true)
         {
             if (validate)
@@ -89,7 +102,25 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.DeletedConversationResource?>? resource = null,
+            global::System.Action<global::tryAGI.OpenAI.DeletedConversationResource>? resource = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsResource)
+            {
+                resource?.Invoke(Resource!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.DeletedConversationResource>? resource = null,
             bool validate = true)
         {
             if (validate)

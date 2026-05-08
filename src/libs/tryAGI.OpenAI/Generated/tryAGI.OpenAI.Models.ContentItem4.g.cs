@@ -27,6 +27,19 @@ namespace tryAGI.OpenAI
         public bool IsInputText => InputText != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.UserMessageInputText? value)
+        {
+            value = InputText;
+            return IsInputText;
+        }
+
+        /// <summary>
         /// Quoted snippet that the user referenced in their message.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(QuotedText))]
 #endif
         public bool IsQuotedText => QuotedText != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickQuotedText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.UserMessageQuotedText? value)
+        {
+            value = QuotedText;
+            return IsQuotedText;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.UserMessageInputText?, TResult>? inputText = null,
-            global::System.Func<global::tryAGI.OpenAI.UserMessageQuotedText?, TResult>? quotedText = null,
+            global::System.Func<global::tryAGI.OpenAI.UserMessageInputText, TResult>? inputText = null,
+            global::System.Func<global::tryAGI.OpenAI.UserMessageQuotedText, TResult>? quotedText = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.UserMessageInputText?>? inputText = null,
-            global::System.Action<global::tryAGI.OpenAI.UserMessageQuotedText?>? quotedText = null,
+            global::System.Action<global::tryAGI.OpenAI.UserMessageInputText>? inputText = null,
+
+            global::System.Action<global::tryAGI.OpenAI.UserMessageQuotedText>? quotedText = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInputText)
+            {
+                inputText?.Invoke(InputText!);
+            }
+            else if (IsQuotedText)
+            {
+                quotedText?.Invoke(QuotedText!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.UserMessageInputText>? inputText = null,
+            global::System.Action<global::tryAGI.OpenAI.UserMessageQuotedText>? quotedText = null,
             bool validate = true)
         {
             if (validate)

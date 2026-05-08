@@ -33,6 +33,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickResponsesClientEventResponseCreateVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1? value)
+        {
+            value = ResponsesClientEventResponseCreateVariant1;
+            return IsResponsesClientEventResponseCreateVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.CreateResponse? CreateResponse { get; init; }
 #else
@@ -46,6 +59,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateResponse))]
 #endif
         public bool IsCreateResponse => CreateResponse != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCreateResponse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.CreateResponse? value)
+        {
+            value = CreateResponse;
+            return IsCreateResponse;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -122,7 +148,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1?, TResult>? responsesClientEventResponseCreateVariant1 = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1, TResult>? responsesClientEventResponseCreateVariant1 = null,
             global::System.Func<global::tryAGI.OpenAI.CreateResponse?, TResult>? createResponse = null,
             bool validate = true)
         {
@@ -147,7 +173,31 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1?>? responsesClientEventResponseCreateVariant1 = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1>? responsesClientEventResponseCreateVariant1 = null,
+
+            global::System.Action<global::tryAGI.OpenAI.CreateResponse?>? createResponse = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsResponsesClientEventResponseCreateVariant1)
+            {
+                responsesClientEventResponseCreateVariant1?.Invoke(ResponsesClientEventResponseCreateVariant1!);
+            }
+            else if (IsCreateResponse)
+            {
+                createResponse?.Invoke(CreateResponse!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1>? responsesClientEventResponseCreateVariant1 = null,
             global::System.Action<global::tryAGI.OpenAI.CreateResponse?>? createResponse = null,
             bool validate = true)
         {

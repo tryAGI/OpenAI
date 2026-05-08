@@ -29,6 +29,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVoiceIdsSharedVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = VoiceIdsSharedVariant1;
+            return IsVoiceIdsSharedVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.VoiceIdsSharedEnum? Enum { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
 #endif
         public bool IsEnum => Enum != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnum(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.VoiceIdsSharedEnum? value)
+        {
+            value = Enum;
+            return IsEnum;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,7 +144,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? voiceIdsSharedVariant1 = null,
+            global::System.Func<string, TResult>? voiceIdsSharedVariant1 = null,
             global::System.Func<global::tryAGI.OpenAI.VoiceIdsSharedEnum?, TResult>? @enum = null,
             bool validate = true)
         {
@@ -143,7 +169,31 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? voiceIdsSharedVariant1 = null,
+            global::System.Action<string>? voiceIdsSharedVariant1 = null,
+
+            global::System.Action<global::tryAGI.OpenAI.VoiceIdsSharedEnum?>? @enum = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsVoiceIdsSharedVariant1)
+            {
+                voiceIdsSharedVariant1?.Invoke(VoiceIdsSharedVariant1!);
+            }
+            else if (IsEnum)
+            {
+                @enum?.Invoke(Enum!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? voiceIdsSharedVariant1 = null,
             global::System.Action<global::tryAGI.OpenAI.VoiceIdsSharedEnum?>? @enum = null,
             bool validate = true)
         {

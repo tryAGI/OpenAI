@@ -29,6 +29,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSkillReference(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.SkillReferenceParam? value)
+        {
+            value = SkillReference;
+            return IsSkillReference;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.InlineSkillParam? Inline { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Inline))]
 #endif
         public bool IsInline => Inline != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInline(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.InlineSkillParam? value)
+        {
+            value = Inline;
+            return IsInline;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.SkillReferenceParam?, TResult>? skillReference = null,
-            global::System.Func<global::tryAGI.OpenAI.InlineSkillParam?, TResult>? inline = null,
+            global::System.Func<global::tryAGI.OpenAI.SkillReferenceParam, TResult>? skillReference = null,
+            global::System.Func<global::tryAGI.OpenAI.InlineSkillParam, TResult>? inline = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.SkillReferenceParam?>? skillReference = null,
-            global::System.Action<global::tryAGI.OpenAI.InlineSkillParam?>? inline = null,
+            global::System.Action<global::tryAGI.OpenAI.SkillReferenceParam>? skillReference = null,
+
+            global::System.Action<global::tryAGI.OpenAI.InlineSkillParam>? inline = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSkillReference)
+            {
+                skillReference?.Invoke(SkillReference!);
+            }
+            else if (IsInline)
+            {
+                inline?.Invoke(Inline!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.SkillReferenceParam>? skillReference = null,
+            global::System.Action<global::tryAGI.OpenAI.InlineSkillParam>? inline = null,
             bool validate = true)
         {
             if (validate)

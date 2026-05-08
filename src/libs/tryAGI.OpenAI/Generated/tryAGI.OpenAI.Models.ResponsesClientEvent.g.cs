@@ -29,6 +29,19 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseCreate))]
 #endif
         public bool IsResponseCreate => ResponseCreate != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseCreate(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponsesClientEventResponseCreate? value)
+        {
+            value = ResponseCreate;
+            return IsResponseCreate;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -93,6 +106,24 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::tryAGI.OpenAI.ResponsesClientEventResponseCreate?>? responseCreate = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsResponseCreate)
+            {
+                responseCreate?.Invoke(ResponseCreate!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::tryAGI.OpenAI.ResponsesClientEventResponseCreate?>? responseCreate = null,
             bool validate = true)
         {
