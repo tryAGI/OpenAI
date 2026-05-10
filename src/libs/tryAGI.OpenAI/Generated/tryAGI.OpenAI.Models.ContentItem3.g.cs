@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct ContentItem3 : global::System.IEquatable<ContentItem3>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.MessageContentItemDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// A text input to the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -444,6 +449,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public ContentItem3(
+            global::tryAGI.OpenAI.MessageContentItemDiscriminatorType? type,
             global::tryAGI.OpenAI.InputTextContent? inputText,
             global::tryAGI.OpenAI.OutputTextContent? outputText,
             global::tryAGI.OpenAI.TextContent? text,
@@ -455,6 +461,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.InputFileContent? inputFile
             )
         {
+            Type = type;
+
             InputText = inputText;
             OutputText = outputText;
             Text = text;

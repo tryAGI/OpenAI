@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct ThreadItem : global::System.IEquatable<ThreadItem>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ThreadItemDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// User-authored messages within a thread.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -300,6 +305,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public ThreadItem(
+            global::tryAGI.OpenAI.ThreadItemDiscriminatorType? type,
             global::tryAGI.OpenAI.UserMessageItem? chatkitUserMessage,
             global::tryAGI.OpenAI.AssistantMessageItem? chatkitAssistantMessage,
             global::tryAGI.OpenAI.WidgetMessageItem? chatkitWidget,
@@ -308,6 +314,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.TaskGroupItem? chatkitTaskGroup
             )
         {
+            Type = type;
+
             ChatkitUserMessage = chatkitUserMessage;
             ChatkitAssistantMessage = chatkitAssistantMessage;
             ChatkitWidget = chatkitWidget;

@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI.Realtime
     public readonly partial struct RealtimeClientEvent : global::System.IEquatable<RealtimeClientEvent>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.Realtime.RealtimeClientEventDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Add a new Item to the Conversation's context, including messages, function <br/>
         /// calls, and function call responses. This event can be used both to populate a <br/>
         /// "history" of the conversation and to add new items mid-stream, but has the <br/>
@@ -605,6 +610,7 @@ namespace tryAGI.OpenAI.Realtime
         /// 
         /// </summary>
         public RealtimeClientEvent(
+            global::tryAGI.OpenAI.Realtime.RealtimeClientEventDiscriminatorType? type,
             global::tryAGI.OpenAI.Realtime.RealtimeClientEventConversationItemCreate? conversationItemCreate,
             global::tryAGI.OpenAI.Realtime.RealtimeClientEventConversationItemDelete? conversationItemDelete,
             global::tryAGI.OpenAI.Realtime.RealtimeClientEventConversationItemRetrieve? conversationItemRetrieve,
@@ -618,6 +624,8 @@ namespace tryAGI.OpenAI.Realtime
             global::tryAGI.OpenAI.Realtime.RealtimeClientEventSessionUpdate? sessionUpdate
             )
         {
+            Type = type;
+
             ConversationItemCreate = conversationItemCreate;
             ConversationItemDelete = conversationItemDelete;
             ConversationItemRetrieve = conversationItemRetrieve;

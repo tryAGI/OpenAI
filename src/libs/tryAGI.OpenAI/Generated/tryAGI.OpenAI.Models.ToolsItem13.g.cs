@@ -12,6 +12,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public global::tryAGI.OpenAI.NamespaceToolParamToolDiscriminatorType? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.FunctionToolParam? Function { get; init; }
 #else
@@ -108,10 +113,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public ToolsItem13(
+            global::tryAGI.OpenAI.NamespaceToolParamToolDiscriminatorType? type,
             global::tryAGI.OpenAI.FunctionToolParam? function,
             global::tryAGI.OpenAI.CustomToolParam? custom
             )
         {
+            Type = type;
+
             Function = function;
             Custom = custom;
         }

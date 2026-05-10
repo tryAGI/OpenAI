@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct Operation : global::System.IEquatable<Operation>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ApplyPatchToolCallOperationDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Instruction describing how to create a file via the apply_patch tool.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -156,11 +161,14 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public Operation(
+            global::tryAGI.OpenAI.ApplyPatchToolCallOperationDiscriminatorType? type,
             global::tryAGI.OpenAI.ApplyPatchCreateFileOperation? createFile,
             global::tryAGI.OpenAI.ApplyPatchDeleteFileOperation? deleteFile,
             global::tryAGI.OpenAI.ApplyPatchUpdateFileOperation? updateFile
             )
         {
+            Type = type;
+
             CreateFile = createFile;
             DeleteFile = deleteFile;
             UpdateFile = updateFile;

@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct ImageGenStreamEvent : global::System.IEquatable<ImageGenStreamEvent>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ImageGenStreamEventDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Emitted when a partial image is available during image generation streaming.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -108,10 +113,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public ImageGenStreamEvent(
+            global::tryAGI.OpenAI.ImageGenStreamEventDiscriminatorType? type,
             global::tryAGI.OpenAI.ImageGenPartialImageEvent? imageGenerationPartialImage,
             global::tryAGI.OpenAI.ImageGenCompletedEvent? imageGenerationCompleted
             )
         {
+            Type = type;
+
             ImageGenerationPartialImage = imageGenerationPartialImage;
             ImageGenerationCompleted = imageGenerationCompleted;
         }

@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct EnvironmentVariant12 : global::System.IEquatable<EnvironmentVariant12>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.FunctionShellCallEnvironmentVariant1DiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Represents the use of a local environment to perform shell actions.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -108,10 +113,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public EnvironmentVariant12(
+            global::tryAGI.OpenAI.FunctionShellCallEnvironmentVariant1DiscriminatorType? type,
             global::tryAGI.OpenAI.LocalEnvironmentResource? local,
             global::tryAGI.OpenAI.ContainerReferenceResource? containerReference
             )
         {
+            Type = type;
+
             Local = local;
             ContainerReference = containerReference;
         }

@@ -195,6 +195,7 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ToolChoiceOptions), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ToolChoiceOptions> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ToolChoiceOptions).Name}");
                     toolChoiceMode = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -205,9 +206,13 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (toolChoiceMode == null && allowedTools == null && hostedTool == null && functionTool == null && mcpTool == null && customTool == null && specificApplyPatchToolChoice == null && specificShellToolChoice == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ToolChoiceAllowed), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ToolChoiceAllowed> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ToolChoiceAllowed).Name}");
                     allowedTools = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -218,9 +223,13 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (toolChoiceMode == null && allowedTools == null && hostedTool == null && functionTool == null && mcpTool == null && customTool == null && specificApplyPatchToolChoice == null && specificShellToolChoice == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ToolChoiceTypes), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ToolChoiceTypes> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ToolChoiceTypes).Name}");
                     hostedTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -231,9 +240,13 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (toolChoiceMode == null && allowedTools == null && hostedTool == null && functionTool == null && mcpTool == null && customTool == null && specificApplyPatchToolChoice == null && specificShellToolChoice == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ToolChoiceFunction), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ToolChoiceFunction> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ToolChoiceFunction).Name}");
                     functionTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -244,9 +257,13 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (toolChoiceMode == null && allowedTools == null && hostedTool == null && functionTool == null && mcpTool == null && customTool == null && specificApplyPatchToolChoice == null && specificShellToolChoice == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ToolChoiceMCP), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ToolChoiceMCP> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ToolChoiceMCP).Name}");
                     mcpTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -257,9 +274,13 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (toolChoiceMode == null && allowedTools == null && hostedTool == null && functionTool == null && mcpTool == null && customTool == null && specificApplyPatchToolChoice == null && specificShellToolChoice == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ToolChoiceCustom), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ToolChoiceCustom> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ToolChoiceCustom).Name}");
                     customTool = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -270,9 +291,13 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (toolChoiceMode == null && allowedTools == null && hostedTool == null && functionTool == null && mcpTool == null && customTool == null && specificApplyPatchToolChoice == null && specificShellToolChoice == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SpecificApplyPatchParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SpecificApplyPatchParam> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.SpecificApplyPatchParam).Name}");
                     specificApplyPatchToolChoice = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -283,9 +308,13 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (toolChoiceMode == null && allowedTools == null && hostedTool == null && functionTool == null && mcpTool == null && customTool == null && specificApplyPatchToolChoice == null && specificShellToolChoice == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SpecificFunctionShellParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SpecificFunctionShellParam> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.SpecificFunctionShellParam).Name}");
                     specificShellToolChoice = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

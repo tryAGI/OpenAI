@@ -12,6 +12,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public global::tryAGI.OpenAI.ContainerAutoParamNetworkPolicyDiscriminatorType? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParam? Disabled { get; init; }
 #else
@@ -108,10 +113,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public NetworkPolicy3(
+            global::tryAGI.OpenAI.ContainerAutoParamNetworkPolicyDiscriminatorType? type,
             global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParam? disabled,
             global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam? allowlist
             )
         {
+            Type = type;
+
             Disabled = disabled;
             Allowlist = allowlist;
         }

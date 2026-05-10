@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct FunctionShellCallOutputOutcomeParam : global::System.IEquatable<FunctionShellCallOutputOutcomeParam>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.FunctionShellCallOutputOutcomeParamDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Indicates that the shell call exceeded its configured time limit.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -108,10 +113,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public FunctionShellCallOutputOutcomeParam(
+            global::tryAGI.OpenAI.FunctionShellCallOutputOutcomeParamDiscriminatorType? type,
             global::tryAGI.OpenAI.FunctionShellCallOutputTimeoutOutcomeParam? timeout,
             global::tryAGI.OpenAI.FunctionShellCallOutputExitOutcomeParam? exit
             )
         {
+            Type = type;
+
             Timeout = timeout;
             Exit = exit;
         }

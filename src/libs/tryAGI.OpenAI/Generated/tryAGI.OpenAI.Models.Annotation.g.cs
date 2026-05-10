@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct Annotation : global::System.IEquatable<Annotation>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.AnnotationDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// A citation to a file.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -204,12 +209,15 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public Annotation(
+            global::tryAGI.OpenAI.AnnotationDiscriminatorType? type,
             global::tryAGI.OpenAI.FileCitationBody? fileCitation,
             global::tryAGI.OpenAI.UrlCitationBody? urlCitation,
             global::tryAGI.OpenAI.ContainerFileCitationBody? containerFileCitation,
             global::tryAGI.OpenAI.FilePath? filePath
             )
         {
+            Type = type;
+
             FileCitation = fileCitation;
             UrlCitation = urlCitation;
             ContainerFileCitation = containerFileCitation;

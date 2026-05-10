@@ -12,6 +12,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public global::tryAGI.OpenAI.FunctionShellCallItemParamEnvironmentVariant1DiscriminatorType? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.LocalEnvironmentParam? Local { get; init; }
 #else
@@ -108,10 +113,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public EnvironmentVariant13(
+            global::tryAGI.OpenAI.FunctionShellCallItemParamEnvironmentVariant1DiscriminatorType? type,
             global::tryAGI.OpenAI.LocalEnvironmentParam? local,
             global::tryAGI.OpenAI.ContainerReferenceParam? containerReference
             )
         {
+            Type = type;
+
             Local = local;
             ContainerReference = containerReference;
         }

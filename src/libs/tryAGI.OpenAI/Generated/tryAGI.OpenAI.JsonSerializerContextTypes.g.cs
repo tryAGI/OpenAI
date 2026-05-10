@@ -804,10411 +804,10627 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionModalitiesVariant1Item>? Type194 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionMessageToolCallDiscriminatorType? Type194 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionModalitiesVariant1Item? Type195 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionModalitiesVariant1Item>? Type195 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionNamedToolChoice? Type196 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionModalitiesVariant1Item? Type196 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceType? Type197 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionNamedToolChoice? Type197 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceFunction? Type198 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceType? Type198 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom? Type199 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceFunction? Type199 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustomType? Type200 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom? Type200 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustomCustom? Type201 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustomType? Type201 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage? Type202 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustomCustom? Type202 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessageContentPart>>? Type203 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage? Type203 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessageContentPart>? Type204 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessageContentPart>>? Type204 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessageContentPart? Type205 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessageContentPart>? Type205 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessageRole? Type206 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessageContentPart? Type206 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessageAudio2? Type207 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessageRole? Type207 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessageFunctionCall2? Type208 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessageAudio2? Type208 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartRefusal? Type209 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessageFunctionCall2? Type209 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessageContentPartDiscriminator? Type210 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartRefusal? Type210 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestDeveloperMessage? Type211 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessageContentPartDiscriminator? Type211 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText>>? Type212 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessageContentPartDiscriminatorType? Type212 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText>? Type213 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestDeveloperMessage? Type213 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestDeveloperMessageRole? Type214 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText>>? Type214 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessage? Type215 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText>? Type215 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessageRole? Type216 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestDeveloperMessageRole? Type216 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessage? Type217 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessage? Type217 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestSystemMessage? Type218 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessageRole? Type218 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestUserMessage? Type219 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessage? Type219 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestToolMessage? Type220 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestSystemMessage? Type220 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageDiscriminator? Type221 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestUserMessage? Type221 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudio? Type222 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestToolMessage? Type222 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudioType? Type223 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageDiscriminator? Type223 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudioInputAudio? Type224 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageDiscriminatorRole? Type224 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudioInputAudioFormat? Type225 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudio? Type225 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFile? Type226 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudioType? Type226 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFileType? Type227 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudioInputAudio? Type227 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFileFile? Type228 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudioInputAudioFormat? Type228 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImageType? Type229 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFile? Type229 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImageImageUrl? Type230 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFileType? Type230 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImageImageUrlDetail? Type231 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFileFile? Type231 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartRefusalType? Type232 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImageType? Type232 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartTextType? Type233 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImageImageUrl? Type233 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestSystemMessageContentPart>>? Type234 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImageImageUrlDetail? Type234 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestSystemMessageContentPart>? Type235 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartRefusalType? Type235 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestSystemMessageContentPart? Type236 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartTextType? Type236 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestSystemMessageRole? Type237 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestSystemMessageContentPart>>? Type237 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestToolMessageRole? Type238 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestSystemMessageContentPart>? Type238 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestToolMessageContentPart>>? Type239 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestSystemMessageContentPart? Type239 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestToolMessageContentPart>? Type240 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestSystemMessageRole? Type240 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestToolMessageContentPart? Type241 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestToolMessageRole? Type241 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestUserMessageContentPart>>? Type242 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestToolMessageContentPart>>? Type242 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestUserMessageContentPart>? Type243 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestToolMessageContentPart>? Type243 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestUserMessageContentPart? Type244 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestToolMessageContentPart? Type244 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestUserMessageRole? Type245 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestUserMessageContentPart>>? Type245 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionResponseMessageAnnotation>? Type246 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestUserMessageContentPart>? Type246 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionResponseMessageAnnotation? Type247 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestUserMessageContentPart? Type247 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionResponseMessageAnnotationType? Type248 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestUserMessageRole? Type248 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionResponseMessageAnnotationUrlCitation? Type249 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionResponseMessageAnnotation>? Type249 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionResponseMessageRole? Type250 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionResponseMessageAnnotation? Type250 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionResponseMessageFunctionCall? Type251 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionResponseMessageAnnotationType? Type251 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionResponseMessageAudio2? Type252 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionResponseMessageAnnotationUrlCitation? Type252 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRole? Type253 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionResponseMessageRole? Type253 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionStreamOptionsVariant1? Type254 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionResponseMessageFunctionCall? Type254 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionStreamResponseDelta? Type255 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionResponseMessageAudio2? Type255 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionStreamResponseDeltaFunctionCall? Type256 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRole? Type256 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionMessageToolCallChunk>? Type257 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionStreamOptionsVariant1? Type257 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionStreamResponseDeltaRole? Type258 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionStreamResponseDelta? Type258 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionTokenLogprob? Type259 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionStreamResponseDeltaFunctionCall? Type259 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<long>? Type260 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionMessageToolCallChunk>? Type260 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionTokenLogprobTopLogprob>? Type261 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionStreamResponseDeltaRole? Type261 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionTokenLogprobTopLogprob? Type262 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionTokenLogprob? Type262 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionTool? Type263 { get; set; }
+        public global::System.Collections.Generic.IList<long>? Type263 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionToolType? Type264 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionTokenLogprobTopLogprob>? Type264 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionToolChoiceOption? Type265 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionTokenLogprobTopLogprob? Type265 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum? Type266 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionTool? Type266 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChunkingStrategyRequestParam? Type267 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionToolType? Type267 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam? Type268 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionToolChoiceOption? Type268 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChunkingStrategyRequestParamDiscriminator? Type269 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum? Type269 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CodeInterpreterFileOutput? Type270 { get; set; }
+        public global::tryAGI.OpenAI.ChunkingStrategyRequestParam? Type270 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CodeInterpreterFileOutputType? Type271 { get; set; }
+        public global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam? Type271 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CodeInterpreterFileOutputFile>? Type272 { get; set; }
+        public global::tryAGI.OpenAI.ChunkingStrategyRequestParamDiscriminator? Type272 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CodeInterpreterFileOutputFile? Type273 { get; set; }
+        public global::tryAGI.OpenAI.ChunkingStrategyRequestParamDiscriminatorType? Type273 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CodeInterpreterTextOutput? Type274 { get; set; }
+        public global::tryAGI.OpenAI.CodeInterpreterFileOutput? Type274 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CodeInterpreterTextOutputType? Type275 { get; set; }
+        public global::tryAGI.OpenAI.CodeInterpreterFileOutputType? Type275 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CodeInterpreterTool? Type276 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CodeInterpreterFileOutputFile>? Type276 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CodeInterpreterToolType? Type277 { get; set; }
+        public global::tryAGI.OpenAI.CodeInterpreterFileOutputFile? Type277 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.AutoCodeInterpreterToolParam>? Type278 { get; set; }
+        public global::tryAGI.OpenAI.CodeInterpreterTextOutput? Type278 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AutoCodeInterpreterToolParam? Type279 { get; set; }
+        public global::tryAGI.OpenAI.CodeInterpreterTextOutputType? Type279 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CodeInterpreterToolCall? Type280 { get; set; }
+        public global::tryAGI.OpenAI.CodeInterpreterTool? Type280 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CodeInterpreterToolCallType? Type281 { get; set; }
+        public global::tryAGI.OpenAI.CodeInterpreterToolType? Type281 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CodeInterpreterToolCallStatus? Type282 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.AutoCodeInterpreterToolParam>? Type282 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputsVariant1Item>? Type283 { get; set; }
+        public global::tryAGI.OpenAI.AutoCodeInterpreterToolParam? Type283 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OutputsVariant1Item? Type284 { get; set; }
+        public global::tryAGI.OpenAI.CodeInterpreterToolCall? Type284 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CodeInterpreterOutputLogs? Type285 { get; set; }
+        public global::tryAGI.OpenAI.CodeInterpreterToolCallType? Type285 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CodeInterpreterOutputImage? Type286 { get; set; }
+        public global::tryAGI.OpenAI.CodeInterpreterToolCallStatus? Type286 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CodeInterpreterToolCallOutputsVariant1ItemDiscriminator? Type287 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputsVariant1Item>? Type287 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ComparisonFilter? Type288 { get; set; }
+        public global::tryAGI.OpenAI.OutputsVariant1Item? Type288 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ComparisonFilterType? Type289 { get; set; }
+        public global::tryAGI.OpenAI.CodeInterpreterOutputLogs? Type289 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<string, double?, bool?, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<string, double?>>>? Type290 { get; set; }
+        public global::tryAGI.OpenAI.CodeInterpreterOutputImage? Type290 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<string, double?>>? Type291 { get; set; }
+        public global::tryAGI.OpenAI.CodeInterpreterToolCallOutputsVariant1ItemDiscriminator? Type291 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<string, double?>? Type292 { get; set; }
+        public global::tryAGI.OpenAI.CodeInterpreterToolCallOutputsVariant1ItemDiscriminatorType? Type292 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CompleteUploadRequest? Type293 { get; set; }
+        public global::tryAGI.OpenAI.ComparisonFilter? Type293 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CompletionUsage? Type294 { get; set; }
+        public global::tryAGI.OpenAI.ComparisonFilterType? Type294 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CompletionUsageCompletionTokensDetails? Type295 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<string, double?, bool?, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<string, double?>>>? Type295 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CompletionUsagePromptTokensDetails? Type296 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<string, double?>>? Type296 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CompoundFilter? Type297 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<string, double?>? Type297 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CompoundFilterType? Type298 { get; set; }
+        public global::tryAGI.OpenAI.CompleteUploadRequest? Type298 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FiltersItem>? Type299 { get; set; }
+        public global::tryAGI.OpenAI.CompletionUsage? Type299 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FiltersItem? Type300 { get; set; }
+        public global::tryAGI.OpenAI.CompletionUsageCompletionTokensDetails? Type300 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CompoundFilterFilterDiscriminator? Type301 { get; set; }
+        public global::tryAGI.OpenAI.CompletionUsagePromptTokensDetails? Type301 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ComputerAction? Type302 { get; set; }
+        public global::tryAGI.OpenAI.CompoundFilter? Type302 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ClickParam? Type303 { get; set; }
+        public global::tryAGI.OpenAI.CompoundFilterType? Type303 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DoubleClickAction? Type304 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FiltersItem>? Type304 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DragParam? Type305 { get; set; }
+        public global::tryAGI.OpenAI.FiltersItem? Type305 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.KeyPressAction? Type306 { get; set; }
+        public global::tryAGI.OpenAI.CompoundFilterFilterDiscriminator? Type306 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MoveParam? Type307 { get; set; }
+        public global::tryAGI.OpenAI.ComputerAction? Type307 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ScreenshotParam? Type308 { get; set; }
+        public global::tryAGI.OpenAI.ClickParam? Type308 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ScrollParam? Type309 { get; set; }
+        public global::tryAGI.OpenAI.DoubleClickAction? Type309 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TypeParam? Type310 { get; set; }
+        public global::tryAGI.OpenAI.DragParam? Type310 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WaitParam? Type311 { get; set; }
+        public global::tryAGI.OpenAI.KeyPressAction? Type311 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ComputerActionDiscriminator? Type312 { get; set; }
+        public global::tryAGI.OpenAI.MoveParam? Type312 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ComputerAction>? Type313 { get; set; }
+        public global::tryAGI.OpenAI.ScreenshotParam? Type313 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ComputerScreenshotImage? Type314 { get; set; }
+        public global::tryAGI.OpenAI.ScrollParam? Type314 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ComputerScreenshotImageType? Type315 { get; set; }
+        public global::tryAGI.OpenAI.TypeParam? Type315 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ComputerToolCall? Type316 { get; set; }
+        public global::tryAGI.OpenAI.WaitParam? Type316 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ComputerToolCallType? Type317 { get; set; }
+        public global::tryAGI.OpenAI.ComputerActionDiscriminator? Type317 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ComputerCallSafetyCheckParam>? Type318 { get; set; }
+        public global::tryAGI.OpenAI.ComputerActionDiscriminatorType? Type318 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ComputerCallSafetyCheckParam? Type319 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ComputerAction>? Type319 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ComputerToolCallStatus? Type320 { get; set; }
+        public global::tryAGI.OpenAI.ComputerScreenshotImage? Type320 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ComputerToolCallOutput? Type321 { get; set; }
+        public global::tryAGI.OpenAI.ComputerScreenshotImageType? Type321 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ComputerToolCallOutputType? Type322 { get; set; }
+        public global::tryAGI.OpenAI.ComputerToolCall? Type322 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ComputerToolCallOutputStatus? Type323 { get; set; }
+        public global::tryAGI.OpenAI.ComputerToolCallType? Type323 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ComputerToolCallOutputResource? Type324 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ComputerCallSafetyCheckParam>? Type324 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ComputerToolCallOutputResourceVariant2? Type325 { get; set; }
+        public global::tryAGI.OpenAI.ComputerCallSafetyCheckParam? Type325 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ComputerCallOutputStatus? Type326 { get; set; }
+        public global::tryAGI.OpenAI.ComputerToolCallStatus? Type326 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContainerFileListResource? Type327 { get; set; }
+        public global::tryAGI.OpenAI.ComputerToolCallOutput? Type327 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContainerFileListResourceObject? Type328 { get; set; }
+        public global::tryAGI.OpenAI.ComputerToolCallOutputType? Type328 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContainerFileResource>? Type329 { get; set; }
+        public global::tryAGI.OpenAI.ComputerToolCallOutputStatus? Type329 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContainerFileResource? Type330 { get; set; }
+        public global::tryAGI.OpenAI.ComputerToolCallOutputResource? Type330 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContainerListResource? Type331 { get; set; }
+        public global::tryAGI.OpenAI.ComputerToolCallOutputResourceVariant2? Type331 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContainerListResourceObject? Type332 { get; set; }
+        public global::tryAGI.OpenAI.ComputerCallOutputStatus? Type332 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContainerResource>? Type333 { get; set; }
+        public global::tryAGI.OpenAI.ContainerFileListResource? Type333 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContainerResource? Type334 { get; set; }
+        public global::tryAGI.OpenAI.ContainerFileListResourceObject? Type334 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContainerResourceExpiresAfter? Type335 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContainerFileResource>? Type335 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContainerResourceExpiresAfterAnchor? Type336 { get; set; }
+        public global::tryAGI.OpenAI.ContainerFileResource? Type336 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContainerResourceMemoryLimit? Type337 { get; set; }
+        public global::tryAGI.OpenAI.ContainerListResource? Type337 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContainerResourceNetworkPolicy? Type338 { get; set; }
+        public global::tryAGI.OpenAI.ContainerListResourceObject? Type338 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContainerResourceNetworkPolicyType? Type339 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContainerResource>? Type339 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.Content5? Type340 { get; set; }
+        public global::tryAGI.OpenAI.ContainerResource? Type340 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InputContent? Type341 { get; set; }
+        public global::tryAGI.OpenAI.ContainerResourceExpiresAfter? Type341 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OutputContent? Type342 { get; set; }
+        public global::tryAGI.OpenAI.ContainerResourceExpiresAfterAnchor? Type342 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ConversationItem? Type343 { get; set; }
+        public global::tryAGI.OpenAI.ContainerResourceMemoryLimit? Type343 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.Message? Type344 { get; set; }
+        public global::tryAGI.OpenAI.ContainerResourceNetworkPolicy? Type344 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionToolCallResource? Type345 { get; set; }
+        public global::tryAGI.OpenAI.ContainerResourceNetworkPolicyType? Type345 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionToolCallOutputResource? Type346 { get; set; }
+        public global::tryAGI.OpenAI.Content5? Type346 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FileSearchToolCall? Type347 { get; set; }
+        public global::tryAGI.OpenAI.InputContent? Type347 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebSearchToolCall? Type348 { get; set; }
+        public global::tryAGI.OpenAI.OutputContent? Type348 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenToolCall? Type349 { get; set; }
+        public global::tryAGI.OpenAI.ConversationItem? Type349 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ToolSearchCall? Type350 { get; set; }
+        public global::tryAGI.OpenAI.Message? Type350 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ToolSearchOutput? Type351 { get; set; }
+        public global::tryAGI.OpenAI.FunctionToolCallResource? Type351 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ReasoningItem? Type352 { get; set; }
+        public global::tryAGI.OpenAI.FunctionToolCallOutputResource? Type352 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CompactionBody? Type353 { get; set; }
+        public global::tryAGI.OpenAI.FileSearchToolCall? Type353 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.LocalShellToolCall? Type354 { get; set; }
+        public global::tryAGI.OpenAI.WebSearchToolCall? Type354 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.LocalShellToolCallOutput? Type355 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenToolCall? Type355 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellCall? Type356 { get; set; }
+        public global::tryAGI.OpenAI.ToolSearchCall? Type356 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellCallOutput? Type357 { get; set; }
+        public global::tryAGI.OpenAI.ToolSearchOutput? Type357 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApplyPatchToolCall? Type358 { get; set; }
+        public global::tryAGI.OpenAI.ReasoningItem? Type358 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApplyPatchToolCallOutput? Type359 { get; set; }
+        public global::tryAGI.OpenAI.CompactionBody? Type359 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MCPListTools? Type360 { get; set; }
+        public global::tryAGI.OpenAI.LocalShellToolCall? Type360 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MCPApprovalRequest? Type361 { get; set; }
+        public global::tryAGI.OpenAI.LocalShellToolCallOutput? Type361 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MCPApprovalResponseResource? Type362 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCall? Type362 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MCPToolCall? Type363 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallOutput? Type363 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CustomToolCall? Type364 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchToolCall? Type364 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CustomToolCallOutput? Type365 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchToolCallOutput? Type365 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ConversationItemDiscriminator? Type366 { get; set; }
+        public global::tryAGI.OpenAI.MCPListTools? Type366 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ConversationItemList? Type367 { get; set; }
+        public global::tryAGI.OpenAI.MCPApprovalRequest? Type367 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ConversationItemListObject? Type368 { get; set; }
+        public global::tryAGI.OpenAI.MCPApprovalResponseResource? Type368 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ConversationItem>? Type369 { get; set; }
+        public global::tryAGI.OpenAI.MCPToolCall? Type369 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ConversationParam? Type370 { get; set; }
+        public global::tryAGI.OpenAI.CustomToolCall? Type370 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ConversationParam2? Type371 { get; set; }
+        public global::tryAGI.OpenAI.CustomToolCallOutput? Type371 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CostsResult? Type372 { get; set; }
+        public global::tryAGI.OpenAI.ConversationItemDiscriminator? Type372 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CostsResultObject? Type373 { get; set; }
+        public global::tryAGI.OpenAI.ConversationItemDiscriminatorType? Type373 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CostsResultAmount? Type374 { get; set; }
+        public global::tryAGI.OpenAI.ConversationItemList? Type374 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateAssistantRequest? Type375 { get; set; }
+        public global::tryAGI.OpenAI.ConversationItemListObject? Type375 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.AssistantSupportedModels?>? Type376 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ConversationItem>? Type376 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ReasoningEffortEnum? Type377 { get; set; }
+        public global::tryAGI.OpenAI.ConversationParam? Type377 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateAssistantRequestToolResources2? Type378 { get; set; }
+        public global::tryAGI.OpenAI.ConversationParam2? Type378 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateAssistantRequestToolResourcesCodeInterpreter? Type379 { get; set; }
+        public global::tryAGI.OpenAI.CostsResult? Type379 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateAssistantRequestToolResourcesFileSearch? Type380 { get; set; }
+        public global::tryAGI.OpenAI.CostsResultObject? Type380 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateAssistantRequestToolResourcesFileSearchVectorStore>? Type381 { get; set; }
+        public global::tryAGI.OpenAI.CostsResultAmount? Type381 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateAssistantRequestToolResourcesFileSearchVectorStore? Type382 { get; set; }
+        public global::tryAGI.OpenAI.CreateAssistantRequest? Type382 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyAutoChunkingStrategy? Type383 { get; set; }
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.AssistantSupportedModels?>? Type383 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyAutoChunkingStrategyType? Type384 { get; set; }
+        public global::tryAGI.OpenAI.ReasoningEffortEnum? Type384 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyStaticChunkingStrategy? Type385 { get; set; }
+        public global::tryAGI.OpenAI.CreateAssistantRequestToolResources2? Type385 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyStaticChunkingStrategyType? Type386 { get; set; }
+        public global::tryAGI.OpenAI.CreateAssistantRequestToolResourcesCodeInterpreter? Type386 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyStaticChunkingStrategyStatic? Type387 { get; set; }
+        public global::tryAGI.OpenAI.CreateAssistantRequestToolResourcesFileSearch? Type387 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateChatCompletionRequest? Type388 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateAssistantRequestToolResourcesFileSearchVectorStore>? Type388 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateModelResponseProperties? Type389 { get; set; }
+        public global::tryAGI.OpenAI.CreateAssistantRequestToolResourcesFileSearchVectorStore? Type389 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2? Type390 { get; set; }
+        public global::tryAGI.OpenAI.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyAutoChunkingStrategy? Type390 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestMessage>? Type391 { get; set; }
+        public global::tryAGI.OpenAI.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyAutoChunkingStrategyType? Type391 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ModelIdsShared? Type392 { get; set; }
+        public global::tryAGI.OpenAI.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyStaticChunkingStrategy? Type392 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResponseModalitiesVariant1Item>? Type393 { get; set; }
+        public global::tryAGI.OpenAI.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyStaticChunkingStrategyType? Type393 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VerbosityEnum? Type394 { get; set; }
+        public global::tryAGI.OpenAI.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyStaticChunkingStrategyStatic? Type394 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2WebSearchOptions? Type395 { get; set; }
+        public global::tryAGI.OpenAI.CreateChatCompletionRequest? Type395 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2WebSearchOptionsUserLocation? Type396 { get; set; }
+        public global::tryAGI.OpenAI.CreateModelResponseProperties? Type396 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2WebSearchOptionsUserLocationType? Type397 { get; set; }
+        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2? Type397 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebSearchLocation? Type398 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestMessage>? Type398 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebSearchContextSize? Type399 { get; set; }
+        public global::tryAGI.OpenAI.ModelIdsShared? Type399 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFormat? Type400 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResponseModalitiesVariant1Item>? Type400 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2ResponseFormatDiscriminator? Type401 { get; set; }
+        public global::tryAGI.OpenAI.VerbosityEnum? Type401 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2Audio? Type402 { get; set; }
+        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2WebSearchOptions? Type402 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VoiceIdsOrCustomVoice? Type403 { get; set; }
+        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2WebSearchOptionsUserLocation? Type403 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2AudioFormat? Type404 { get; set; }
+        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2WebSearchOptionsUserLocationType? Type404 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.StopConfiguration? Type405 { get; set; }
+        public global::tryAGI.OpenAI.WebSearchLocation? Type405 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, int>? Type406 { get; set; }
+        public global::tryAGI.OpenAI.WebSearchContextSize? Type406 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.PredictionContent? Type407 { get; set; }
+        public global::tryAGI.OpenAI.ResponseFormat? Type407 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ChatCompletionTool, global::tryAGI.OpenAI.CustomToolChatCompletions>>? Type408 { get; set; }
+        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2ResponseFormatDiscriminator? Type408 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ChatCompletionTool, global::tryAGI.OpenAI.CustomToolChatCompletions>? Type409 { get; set; }
+        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2ResponseFormatDiscriminatorType? Type409 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CustomToolChatCompletions? Type410 { get; set; }
+        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2Audio? Type410 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2FunctionCall?, global::tryAGI.OpenAI.ChatCompletionFunctionCallOption>? Type411 { get; set; }
+        public global::tryAGI.OpenAI.VoiceIdsOrCustomVoice? Type411 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2FunctionCall? Type412 { get; set; }
+        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2AudioFormat? Type412 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionFunctions>? Type413 { get; set; }
+        public global::tryAGI.OpenAI.StopConfiguration? Type413 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateChatCompletionResponseChoice>? Type414 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, int>? Type414 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateChatCompletionResponseChoice? Type415 { get; set; }
+        public global::tryAGI.OpenAI.PredictionContent? Type415 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateChatCompletionResponseChoiceFinishReason? Type416 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ChatCompletionTool, global::tryAGI.OpenAI.CustomToolChatCompletions>>? Type416 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateChatCompletionResponseChoiceLogprobs2? Type417 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ChatCompletionTool, global::tryAGI.OpenAI.CustomToolChatCompletions>? Type417 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionTokenLogprob>? Type418 { get; set; }
+        public global::tryAGI.OpenAI.CustomToolChatCompletions? Type418 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ServiceTierEnum? Type419 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2FunctionCall?, global::tryAGI.OpenAI.ChatCompletionFunctionCallOption>? Type419 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateChatCompletionResponseObject? Type420 { get; set; }
+        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2FunctionCall? Type420 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateChatCompletionStreamResponse? Type421 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionFunctions>? Type421 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateChatCompletionStreamResponseChoice>? Type422 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateChatCompletionResponseChoice>? Type422 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateChatCompletionStreamResponseChoice? Type423 { get; set; }
+        public global::tryAGI.OpenAI.CreateChatCompletionResponseChoice? Type423 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateChatCompletionStreamResponseChoiceLogprobs? Type424 { get; set; }
+        public global::tryAGI.OpenAI.CreateChatCompletionResponseChoiceFinishReason? Type424 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateChatCompletionStreamResponseChoiceFinishReason? Type425 { get; set; }
+        public global::tryAGI.OpenAI.CreateChatCompletionResponseChoiceLogprobs2? Type425 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateChatCompletionStreamResponseObject? Type426 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionTokenLogprob>? Type426 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateCompletionRequest? Type427 { get; set; }
+        public global::tryAGI.OpenAI.ServiceTierEnum? Type427 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateCompletionRequestModel?>? Type428 { get; set; }
+        public global::tryAGI.OpenAI.CreateChatCompletionResponseObject? Type428 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateCompletionRequestModel? Type429 { get; set; }
+        public global::tryAGI.OpenAI.CreateChatCompletionStreamResponse? Type429 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>? Type430 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateChatCompletionStreamResponseChoice>? Type430 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<int>? Type431 { get; set; }
+        public global::tryAGI.OpenAI.CreateChatCompletionStreamResponseChoice? Type431 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? Type432 { get; set; }
+        public global::tryAGI.OpenAI.CreateChatCompletionStreamResponseChoiceLogprobs? Type432 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateCompletionResponse? Type433 { get; set; }
+        public global::tryAGI.OpenAI.CreateChatCompletionStreamResponseChoiceFinishReason? Type433 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateCompletionResponseChoice>? Type434 { get; set; }
+        public global::tryAGI.OpenAI.CreateChatCompletionStreamResponseObject? Type434 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateCompletionResponseChoice? Type435 { get; set; }
+        public global::tryAGI.OpenAI.CreateCompletionRequest? Type435 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateCompletionResponseChoiceFinishReason? Type436 { get; set; }
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateCompletionRequestModel?>? Type436 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateCompletionResponseChoiceLogprobs2? Type437 { get; set; }
+        public global::tryAGI.OpenAI.CreateCompletionRequestModel? Type437 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<double>? Type438 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>? Type438 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.Dictionary<string, double>>? Type439 { get; set; }
+        public global::System.Collections.Generic.IList<int>? Type439 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, double>? Type440 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? Type440 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateCompletionResponseObject? Type441 { get; set; }
+        public global::tryAGI.OpenAI.CreateCompletionResponse? Type441 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateContainerBody? Type442 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateCompletionResponseChoice>? Type442 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateContainerBodyExpiresAfter? Type443 { get; set; }
+        public global::tryAGI.OpenAI.CreateCompletionResponseChoice? Type443 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateContainerBodyExpiresAfterAnchor? Type444 { get; set; }
+        public global::tryAGI.OpenAI.CreateCompletionResponseChoiceFinishReason? Type444 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SkillsItem>? Type445 { get; set; }
+        public global::tryAGI.OpenAI.CreateCompletionResponseChoiceLogprobs2? Type445 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.SkillsItem? Type446 { get; set; }
+        public global::System.Collections.Generic.IList<double>? Type446 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.SkillReferenceParam? Type447 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.Dictionary<string, double>>? Type447 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InlineSkillParam? Type448 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, double>? Type448 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateContainerBodySkillDiscriminator? Type449 { get; set; }
+        public global::tryAGI.OpenAI.CreateCompletionResponseObject? Type449 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateContainerBodyMemoryLimit? Type450 { get; set; }
+        public global::tryAGI.OpenAI.CreateContainerBody? Type450 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.NetworkPolicy? Type451 { get; set; }
+        public global::tryAGI.OpenAI.CreateContainerBodyExpiresAfter? Type451 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParam? Type452 { get; set; }
+        public global::tryAGI.OpenAI.CreateContainerBodyExpiresAfterAnchor? Type452 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam? Type453 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SkillsItem>? Type453 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateContainerBodyNetworkPolicyDiscriminator? Type454 { get; set; }
+        public global::tryAGI.OpenAI.SkillsItem? Type454 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateContainerFileBody? Type455 { get; set; }
+        public global::tryAGI.OpenAI.SkillReferenceParam? Type455 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEmbeddingRequest? Type456 { get; set; }
+        public global::tryAGI.OpenAI.InlineSkillParam? Type456 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateEmbeddingRequestModel?>? Type457 { get; set; }
+        public global::tryAGI.OpenAI.CreateContainerBodySkillDiscriminator? Type457 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEmbeddingRequestModel? Type458 { get; set; }
+        public global::tryAGI.OpenAI.CreateContainerBodySkillDiscriminatorType? Type458 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEmbeddingRequestEncodingFormat? Type459 { get; set; }
+        public global::tryAGI.OpenAI.CreateContainerBodyMemoryLimit? Type459 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEmbeddingResponse? Type460 { get; set; }
+        public global::tryAGI.OpenAI.NetworkPolicy? Type460 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Embedding>? Type461 { get; set; }
+        public global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParam? Type461 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.Embedding? Type462 { get; set; }
+        public global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam? Type462 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEmbeddingResponseObject? Type463 { get; set; }
+        public global::tryAGI.OpenAI.CreateContainerBodyNetworkPolicyDiscriminator? Type463 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEmbeddingResponseUsage? Type464 { get; set; }
+        public global::tryAGI.OpenAI.CreateContainerBodyNetworkPolicyDiscriminatorType? Type464 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSource? Type465 { get; set; }
+        public global::tryAGI.OpenAI.CreateContainerFileBody? Type465 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSourceType? Type466 { get; set; }
+        public global::tryAGI.OpenAI.CreateEmbeddingRequest? Type466 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSourceInputMessagesTemplateInputMessages? Type467 { get; set; }
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateEmbeddingRequestModel?>? Type467 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSourceInputMessagesTemplateInputMessagesType? Type468 { get; set; }
+        public global::tryAGI.OpenAI.CreateEmbeddingRequestModel? Type468 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EasyInputMessage, global::tryAGI.OpenAI.EvalItem>>? Type469 { get; set; }
+        public global::tryAGI.OpenAI.CreateEmbeddingRequestEncodingFormat? Type469 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EasyInputMessage, global::tryAGI.OpenAI.EvalItem>? Type470 { get; set; }
+        public global::tryAGI.OpenAI.CreateEmbeddingResponse? Type470 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EasyInputMessage? Type471 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Embedding>? Type471 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalItem? Type472 { get; set; }
+        public global::tryAGI.OpenAI.Embedding? Type472 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSourceInputMessagesItemReferenceInputMessages? Type473 { get; set; }
+        public global::tryAGI.OpenAI.CreateEmbeddingResponseObject? Type473 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSourceInputMessagesItemReferenceInputMessagesType? Type474 { get; set; }
+        public global::tryAGI.OpenAI.CreateEmbeddingResponseUsage? Type474 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSourceSamplingParams? Type475 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSource? Type475 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ResponseFormatText, global::tryAGI.OpenAI.ResponseFormatJsonSchema, global::tryAGI.OpenAI.ResponseFormatJsonObject>? Type476 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSourceType? Type476 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionTool>? Type477 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSourceInputMessagesTemplateInputMessages? Type477 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalJsonlFileContentSource, global::tryAGI.OpenAI.EvalJsonlFileIdSource, global::tryAGI.OpenAI.EvalStoredCompletionsSource>? Type478 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSourceInputMessagesTemplateInputMessagesType? Type478 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalJsonlFileContentSource? Type479 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EasyInputMessage, global::tryAGI.OpenAI.EvalItem>>? Type479 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalJsonlFileIdSource? Type480 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EasyInputMessage, global::tryAGI.OpenAI.EvalItem>? Type480 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalStoredCompletionsSource? Type481 { get; set; }
+        public global::tryAGI.OpenAI.EasyInputMessage? Type481 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalCustomDataSourceConfig? Type482 { get; set; }
+        public global::tryAGI.OpenAI.EvalItem? Type482 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalCustomDataSourceConfigType? Type483 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSourceInputMessagesItemReferenceInputMessages? Type483 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalItem? Type484 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSourceInputMessagesItemReferenceInputMessagesType? Type484 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalItemSimpleInputMessage? Type485 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSourceSamplingParams? Type485 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalJsonlRunDataSource? Type486 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ResponseFormatText, global::tryAGI.OpenAI.ResponseFormatJsonSchema, global::tryAGI.OpenAI.ResponseFormatJsonObject>? Type486 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalJsonlRunDataSourceType? Type487 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionTool>? Type487 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalJsonlFileContentSource, global::tryAGI.OpenAI.EvalJsonlFileIdSource>? Type488 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalJsonlFileContentSource, global::tryAGI.OpenAI.EvalJsonlFileIdSource, global::tryAGI.OpenAI.EvalStoredCompletionsSource>? Type488 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalLabelModelGrader? Type489 { get; set; }
+        public global::tryAGI.OpenAI.EvalJsonlFileContentSource? Type489 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalLabelModelGraderType? Type490 { get; set; }
+        public global::tryAGI.OpenAI.EvalJsonlFileIdSource? Type490 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateEvalItem>? Type491 { get; set; }
+        public global::tryAGI.OpenAI.EvalStoredCompletionsSource? Type491 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalLogsDataSourceConfig? Type492 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalCustomDataSourceConfig? Type492 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalLogsDataSourceConfigType? Type493 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalCustomDataSourceConfigType? Type493 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalRequest? Type494 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalItem? Type494 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalCustomDataSourceConfig, global::tryAGI.OpenAI.CreateEvalLogsDataSourceConfig, global::tryAGI.OpenAI.CreateEvalStoredCompletionsDataSourceConfig>? Type495 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalItemSimpleInputMessage? Type495 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalStoredCompletionsDataSourceConfig? Type496 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalJsonlRunDataSource? Type496 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalLabelModelGrader, global::tryAGI.OpenAI.EvalGraderStringCheck?, global::tryAGI.OpenAI.EvalGraderTextSimilarity?, global::tryAGI.OpenAI.EvalGraderPython?, global::tryAGI.OpenAI.EvalGraderScoreModel?>? Type497 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalJsonlRunDataSourceType? Type497 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalGraderStringCheck? Type498 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalJsonlFileContentSource, global::tryAGI.OpenAI.EvalJsonlFileIdSource>? Type498 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalGraderTextSimilarity? Type499 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalLabelModelGrader? Type499 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalGraderPython? Type500 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalLabelModelGraderType? Type500 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalGraderScoreModel? Type501 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateEvalItem>? Type501 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalResponsesRunDataSource? Type502 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalLogsDataSourceConfig? Type502 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceType? Type503 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalLogsDataSourceConfigType? Type503 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesInputMessagesTemplate? Type504 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalRequest? Type504 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesInputMessagesTemplateType? Type505 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalCustomDataSourceConfig, global::tryAGI.OpenAI.CreateEvalLogsDataSourceConfig, global::tryAGI.OpenAI.CreateEvalStoredCompletionsDataSourceConfig>? Type505 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesInputMessagesTemplateTemplateItem, global::tryAGI.OpenAI.EvalItem>>? Type506 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalStoredCompletionsDataSourceConfig? Type506 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesInputMessagesTemplateTemplateItem, global::tryAGI.OpenAI.EvalItem>? Type507 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalLabelModelGrader, global::tryAGI.OpenAI.EvalGraderStringCheck?, global::tryAGI.OpenAI.EvalGraderTextSimilarity?, global::tryAGI.OpenAI.EvalGraderPython?, global::tryAGI.OpenAI.EvalGraderScoreModel?>? Type507 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesInputMessagesTemplateTemplateItem? Type508 { get; set; }
+        public global::tryAGI.OpenAI.EvalGraderStringCheck? Type508 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesInputMessagesItemReference? Type509 { get; set; }
+        public global::tryAGI.OpenAI.EvalGraderTextSimilarity? Type509 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesInputMessagesItemReferenceType? Type510 { get; set; }
+        public global::tryAGI.OpenAI.EvalGraderPython? Type510 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceSamplingParams? Type511 { get; set; }
+        public global::tryAGI.OpenAI.EvalGraderScoreModel? Type511 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Tool>? Type512 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalResponsesRunDataSource? Type512 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.Tool? Type513 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceType? Type513 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceSamplingParamsText? Type514 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesInputMessagesTemplate? Type514 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TextResponseFormatConfiguration? Type515 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesInputMessagesTemplateType? Type515 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalJsonlFileContentSource, global::tryAGI.OpenAI.EvalJsonlFileIdSource, global::tryAGI.OpenAI.EvalResponsesSource>? Type516 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesInputMessagesTemplateTemplateItem, global::tryAGI.OpenAI.EvalItem>>? Type516 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalResponsesSource? Type517 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesInputMessagesTemplateTemplateItem, global::tryAGI.OpenAI.EvalItem>? Type517 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalRunRequest? Type518 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesInputMessagesTemplateTemplateItem? Type518 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalJsonlRunDataSource, global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSource, global::tryAGI.OpenAI.CreateEvalResponsesRunDataSource>? Type519 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesInputMessagesItemReference? Type519 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalStoredCompletionsDataSourceConfigType? Type520 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceInputMessagesInputMessagesItemReferenceType? Type520 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateFileRequest? Type521 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceSamplingParams? Type521 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateFileRequestPurpose? Type522 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Tool>? Type522 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FileExpirationAfter? Type523 { get; set; }
+        public global::tryAGI.OpenAI.Tool? Type523 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateFineTuningCheckpointPermissionRequest? Type524 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalResponsesRunDataSourceSamplingParamsText? Type524 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateFineTuningJobRequest? Type525 { get; set; }
+        public global::tryAGI.OpenAI.TextResponseFormatConfiguration? Type525 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateFineTuningJobRequestModel?>? Type526 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalJsonlFileContentSource, global::tryAGI.OpenAI.EvalJsonlFileIdSource, global::tryAGI.OpenAI.EvalResponsesSource>? Type526 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateFineTuningJobRequestModel? Type527 { get; set; }
+        public global::tryAGI.OpenAI.EvalResponsesSource? Type527 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateFineTuningJobRequestHyperparameters? Type528 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalRunRequest? Type528 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateFineTuningJobRequestHyperparametersBatchSize?, int?>? Type529 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalJsonlRunDataSource, global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSource, global::tryAGI.OpenAI.CreateEvalResponsesRunDataSource>? Type529 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateFineTuningJobRequestHyperparametersBatchSize? Type530 { get; set; }
+        public global::tryAGI.OpenAI.CreateEvalStoredCompletionsDataSourceConfigType? Type530 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateFineTuningJobRequestHyperparametersLearningRateMultiplier?, double?>? Type531 { get; set; }
+        public global::tryAGI.OpenAI.CreateFileRequest? Type531 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateFineTuningJobRequestHyperparametersLearningRateMultiplier? Type532 { get; set; }
+        public global::tryAGI.OpenAI.CreateFileRequestPurpose? Type532 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateFineTuningJobRequestHyperparametersNEpochs?, int?>? Type533 { get; set; }
+        public global::tryAGI.OpenAI.FileExpirationAfter? Type533 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateFineTuningJobRequestHyperparametersNEpochs? Type534 { get; set; }
+        public global::tryAGI.OpenAI.CreateFineTuningCheckpointPermissionRequest? Type534 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateFineTuningJobRequestIntegration>? Type535 { get; set; }
+        public global::tryAGI.OpenAI.CreateFineTuningJobRequest? Type535 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateFineTuningJobRequestIntegration? Type536 { get; set; }
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateFineTuningJobRequestModel?>? Type536 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateFineTuningJobRequestIntegrationType? Type537 { get; set; }
+        public global::tryAGI.OpenAI.CreateFineTuningJobRequestModel? Type537 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateFineTuningJobRequestIntegrationWandb? Type538 { get; set; }
+        public global::tryAGI.OpenAI.CreateFineTuningJobRequestHyperparameters? Type538 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuneMethod? Type539 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateFineTuningJobRequestHyperparametersBatchSize?, int?>? Type539 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateGroupBody? Type540 { get; set; }
+        public global::tryAGI.OpenAI.CreateFineTuningJobRequestHyperparametersBatchSize? Type540 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateGroupUserBody? Type541 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateFineTuningJobRequestHyperparametersLearningRateMultiplier?, double?>? Type541 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateImageEditRequest? Type542 { get; set; }
+        public global::tryAGI.OpenAI.CreateFineTuningJobRequestHyperparametersLearningRateMultiplier? Type542 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AnyOf<byte[], global::System.Collections.Generic.IList<byte[]>>? Type543 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateFineTuningJobRequestHyperparametersNEpochs?, int?>? Type543 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<byte[]>? Type544 { get; set; }
+        public global::tryAGI.OpenAI.CreateFineTuningJobRequestHyperparametersNEpochs? Type544 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateImageEditRequestBackground? Type545 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateFineTuningJobRequestIntegration>? Type545 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageEditRequestModel?>? Type546 { get; set; }
+        public global::tryAGI.OpenAI.CreateFineTuningJobRequestIntegration? Type546 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateImageEditRequestModel? Type547 { get; set; }
+        public global::tryAGI.OpenAI.CreateFineTuningJobRequestIntegrationType? Type547 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageEditRequestSize?>? Type548 { get; set; }
+        public global::tryAGI.OpenAI.CreateFineTuningJobRequestIntegrationWandb? Type548 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateImageEditRequestSize? Type549 { get; set; }
+        public global::tryAGI.OpenAI.FineTuneMethod? Type549 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateImageEditRequestResponseFormat? Type550 { get; set; }
+        public global::tryAGI.OpenAI.CreateGroupBody? Type550 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateImageEditRequestOutputFormat? Type551 { get; set; }
+        public global::tryAGI.OpenAI.CreateGroupUserBody? Type551 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InputFidelity? Type552 { get; set; }
+        public global::tryAGI.OpenAI.CreateImageEditRequest? Type552 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateImageEditRequestQuality? Type553 { get; set; }
+        public global::tryAGI.OpenAI.AnyOf<byte[], global::System.Collections.Generic.IList<byte[]>>? Type553 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateImageRequest? Type554 { get; set; }
+        public global::System.Collections.Generic.IList<byte[]>? Type554 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageRequestModel?>? Type555 { get; set; }
+        public global::tryAGI.OpenAI.CreateImageEditRequestBackground? Type555 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateImageRequestModel? Type556 { get; set; }
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageEditRequestModel?>? Type556 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateImageRequestQuality? Type557 { get; set; }
+        public global::tryAGI.OpenAI.CreateImageEditRequestModel? Type557 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateImageRequestResponseFormat? Type558 { get; set; }
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageEditRequestSize?>? Type558 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateImageRequestOutputFormat? Type559 { get; set; }
+        public global::tryAGI.OpenAI.CreateImageEditRequestSize? Type559 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageRequestSize?>? Type560 { get; set; }
+        public global::tryAGI.OpenAI.CreateImageEditRequestResponseFormat? Type560 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateImageRequestSize? Type561 { get; set; }
+        public global::tryAGI.OpenAI.CreateImageEditRequestOutputFormat? Type561 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateImageRequestModeration? Type562 { get; set; }
+        public global::tryAGI.OpenAI.InputFidelity? Type562 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateImageRequestBackground? Type563 { get; set; }
+        public global::tryAGI.OpenAI.CreateImageEditRequestQuality? Type563 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateImageRequestStyle? Type564 { get; set; }
+        public global::tryAGI.OpenAI.CreateImageRequest? Type564 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateImageVariationRequest? Type565 { get; set; }
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageRequestModel?>? Type565 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageVariationRequestModel?>? Type566 { get; set; }
+        public global::tryAGI.OpenAI.CreateImageRequestModel? Type566 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateImageVariationRequestModel? Type567 { get; set; }
+        public global::tryAGI.OpenAI.CreateImageRequestQuality? Type567 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateImageVariationRequestResponseFormat? Type568 { get; set; }
+        public global::tryAGI.OpenAI.CreateImageRequestResponseFormat? Type568 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateImageVariationRequestSize? Type569 { get; set; }
+        public global::tryAGI.OpenAI.CreateImageRequestOutputFormat? Type569 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateMessageRequest? Type570 { get; set; }
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageRequestSize?>? Type570 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateMessageRequestRole? Type571 { get; set; }
+        public global::tryAGI.OpenAI.CreateImageRequestSize? Type571 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageContentImageFileObject, global::tryAGI.OpenAI.MessageContentImageUrlObject, global::tryAGI.OpenAI.MessageRequestContentTextObject>>>? Type572 { get; set; }
+        public global::tryAGI.OpenAI.CreateImageRequestModeration? Type572 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageContentImageFileObject, global::tryAGI.OpenAI.MessageContentImageUrlObject, global::tryAGI.OpenAI.MessageRequestContentTextObject>>? Type573 { get; set; }
+        public global::tryAGI.OpenAI.CreateImageRequestBackground? Type573 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageContentImageFileObject, global::tryAGI.OpenAI.MessageContentImageUrlObject, global::tryAGI.OpenAI.MessageRequestContentTextObject>? Type574 { get; set; }
+        public global::tryAGI.OpenAI.CreateImageRequestStyle? Type574 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageContentImageFileObject? Type575 { get; set; }
+        public global::tryAGI.OpenAI.CreateImageVariationRequest? Type575 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageContentImageUrlObject? Type576 { get; set; }
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageVariationRequestModel?>? Type576 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageRequestContentTextObject? Type577 { get; set; }
+        public global::tryAGI.OpenAI.CreateImageVariationRequestModel? Type577 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateMessageRequestAttachmentsVariant1Item>? Type578 { get; set; }
+        public global::tryAGI.OpenAI.CreateImageVariationRequestResponseFormat? Type578 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateMessageRequestAttachmentsVariant1Item? Type579 { get; set; }
+        public global::tryAGI.OpenAI.CreateImageVariationRequestSize? Type579 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.AssistantToolsCode, global::tryAGI.OpenAI.AssistantToolsFileSearchTypeOnly>>? Type580 { get; set; }
+        public global::tryAGI.OpenAI.CreateMessageRequest? Type580 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.AssistantToolsCode, global::tryAGI.OpenAI.AssistantToolsFileSearchTypeOnly>? Type581 { get; set; }
+        public global::tryAGI.OpenAI.CreateMessageRequestRole? Type581 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ModelResponseProperties? Type582 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageContentImageFileObject, global::tryAGI.OpenAI.MessageContentImageUrlObject, global::tryAGI.OpenAI.MessageRequestContentTextObject>>>? Type582 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateModelResponsePropertiesVariant2? Type583 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageContentImageFileObject, global::tryAGI.OpenAI.MessageContentImageUrlObject, global::tryAGI.OpenAI.MessageRequestContentTextObject>>? Type583 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateModerationRequest? Type584 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageContentImageFileObject, global::tryAGI.OpenAI.MessageContentImageUrlObject, global::tryAGI.OpenAI.MessageRequestContentTextObject>? Type584 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1, global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2>>? Type585 { get; set; }
+        public global::tryAGI.OpenAI.MessageContentImageFileObject? Type585 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1, global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2>? Type586 { get; set; }
+        public global::tryAGI.OpenAI.MessageContentImageUrlObject? Type586 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1? Type587 { get; set; }
+        public global::tryAGI.OpenAI.MessageRequestContentTextObject? Type587 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1Type? Type588 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateMessageRequestAttachmentsVariant1Item>? Type588 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1ImageUrl? Type589 { get; set; }
+        public global::tryAGI.OpenAI.CreateMessageRequestAttachmentsVariant1Item? Type589 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2? Type590 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.AssistantToolsCode, global::tryAGI.OpenAI.AssistantToolsFileSearchTypeOnly>>? Type590 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2Type? Type591 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.AssistantToolsCode, global::tryAGI.OpenAI.AssistantToolsFileSearchTypeOnly>? Type591 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateModerationRequestModel?>? Type592 { get; set; }
+        public global::tryAGI.OpenAI.ModelResponseProperties? Type592 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateModerationRequestModel? Type593 { get; set; }
+        public global::tryAGI.OpenAI.CreateModelResponsePropertiesVariant2? Type593 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateModerationResponse? Type594 { get; set; }
+        public global::tryAGI.OpenAI.CreateModerationRequest? Type594 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResult>? Type595 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1, global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2>>? Type595 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateModerationResponseResult? Type596 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1, global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2>? Type596 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateModerationResponseResultCategories? Type597 { get; set; }
+        public global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1? Type597 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryScores? Type598 { get; set; }
+        public global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1Type? Type598 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypes? Type599 { get; set; }
+        public global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1ImageUrl? Type599 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesHateItem>? Type600 { get; set; }
+        public global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2? Type600 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesHateItem? Type601 { get; set; }
+        public global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2Type? Type601 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesHateThreateningItem>? Type602 { get; set; }
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateModerationRequestModel?>? Type602 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesHateThreateningItem? Type603 { get; set; }
+        public global::tryAGI.OpenAI.CreateModerationRequestModel? Type603 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesHarassmentItem>? Type604 { get; set; }
+        public global::tryAGI.OpenAI.CreateModerationResponse? Type604 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesHarassmentItem? Type605 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResult>? Type605 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesHarassmentThreateningItem>? Type606 { get; set; }
+        public global::tryAGI.OpenAI.CreateModerationResponseResult? Type606 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesHarassmentThreateningItem? Type607 { get; set; }
+        public global::tryAGI.OpenAI.CreateModerationResponseResultCategories? Type607 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesIllicitItem>? Type608 { get; set; }
+        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryScores? Type608 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesIllicitItem? Type609 { get; set; }
+        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypes? Type609 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesIllicitViolentItem>? Type610 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesHateItem>? Type610 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesIllicitViolentItem? Type611 { get; set; }
+        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesHateItem? Type611 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSelfHarmItem>? Type612 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesHateThreateningItem>? Type612 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSelfHarmItem? Type613 { get; set; }
+        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesHateThreateningItem? Type613 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSelfHarmIntentItem>? Type614 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesHarassmentItem>? Type614 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSelfHarmIntentItem? Type615 { get; set; }
+        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesHarassmentItem? Type615 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSelfHarmInstruction>? Type616 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesHarassmentThreateningItem>? Type616 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSelfHarmInstruction? Type617 { get; set; }
+        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesHarassmentThreateningItem? Type617 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSexualItem>? Type618 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesIllicitItem>? Type618 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSexualItem? Type619 { get; set; }
+        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesIllicitItem? Type619 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSexualMinor>? Type620 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesIllicitViolentItem>? Type620 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSexualMinor? Type621 { get; set; }
+        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesIllicitViolentItem? Type621 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesViolenceItem>? Type622 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSelfHarmItem>? Type622 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesViolenceItem? Type623 { get; set; }
+        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSelfHarmItem? Type623 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesViolenceGraphicItem>? Type624 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSelfHarmIntentItem>? Type624 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesViolenceGraphicItem? Type625 { get; set; }
+        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSelfHarmIntentItem? Type625 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateResponse? Type626 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSelfHarmInstruction>? Type626 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseProperties? Type627 { get; set; }
+        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSelfHarmInstruction? Type627 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateResponseVariant3? Type628 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSexualItem>? Type628 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InputParam? Type629 { get; set; }
+        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSexualItem? Type629 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.IncludeEnum>? Type630 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSexualMinor>? Type630 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.IncludeEnum? Type631 { get; set; }
+        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSexualMinor? Type631 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseStreamOptionsVariant1? Type632 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesViolenceItem>? Type632 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContextManagementParam>? Type633 { get; set; }
+        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesViolenceItem? Type633 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContextManagementParam? Type634 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesViolenceGraphicItem>? Type634 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateRunRequest? Type635 { get; set; }
+        public global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesViolenceGraphicItem? Type635 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateMessageRequest>? Type636 { get; set; }
+        public global::tryAGI.OpenAI.CreateResponse? Type636 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.TruncationObject, object>? Type637 { get; set; }
+        public global::tryAGI.OpenAI.ResponseProperties? Type637 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TruncationObject? Type638 { get; set; }
+        public global::tryAGI.OpenAI.CreateResponseVariant3? Type638 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.AssistantsApiToolChoiceOption?, object>? Type639 { get; set; }
+        public global::tryAGI.OpenAI.InputParam? Type639 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateSpeechRequest? Type640 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.IncludeEnum>? Type640 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateSpeechRequestModel?>? Type641 { get; set; }
+        public global::tryAGI.OpenAI.IncludeEnum? Type641 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateSpeechRequestModel? Type642 { get; set; }
+        public global::tryAGI.OpenAI.ResponseStreamOptionsVariant1? Type642 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateSpeechRequestResponseFormat? Type643 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContextManagementParam>? Type643 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateSpeechRequestStreamFormat? Type644 { get; set; }
+        public global::tryAGI.OpenAI.ContextManagementParam? Type644 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateSpeechResponseStreamEvent? Type645 { get; set; }
+        public global::tryAGI.OpenAI.CreateRunRequest? Type645 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.SpeechAudioDeltaEvent? Type646 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateMessageRequest>? Type646 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.SpeechAudioDoneEvent? Type647 { get; set; }
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.TruncationObject, object>? Type647 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateSpeechResponseStreamEventDiscriminator? Type648 { get; set; }
+        public global::tryAGI.OpenAI.TruncationObject? Type648 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateThreadAndRunRequest? Type649 { get; set; }
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.AssistantsApiToolChoiceOption?, object>? Type649 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateThreadRequest? Type650 { get; set; }
+        public global::tryAGI.OpenAI.CreateSpeechRequest? Type650 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateThreadAndRunRequestModel?>? Type651 { get; set; }
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateSpeechRequestModel?>? Type651 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateThreadAndRunRequestModel? Type652 { get; set; }
+        public global::tryAGI.OpenAI.CreateSpeechRequestModel? Type652 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateThreadAndRunRequestToolResources? Type653 { get; set; }
+        public global::tryAGI.OpenAI.CreateSpeechRequestResponseFormat? Type653 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateThreadAndRunRequestToolResourcesCodeInterpreter? Type654 { get; set; }
+        public global::tryAGI.OpenAI.CreateSpeechRequestStreamFormat? Type654 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateThreadAndRunRequestToolResourcesFileSearch? Type655 { get; set; }
+        public global::tryAGI.OpenAI.CreateSpeechResponseStreamEvent? Type655 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateThreadRequestToolResources2? Type656 { get; set; }
+        public global::tryAGI.OpenAI.SpeechAudioDeltaEvent? Type656 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateThreadRequestToolResourcesCodeInterpreter? Type657 { get; set; }
+        public global::tryAGI.OpenAI.SpeechAudioDoneEvent? Type657 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateThreadRequestToolResourcesFileSearch? Type658 { get; set; }
+        public global::tryAGI.OpenAI.CreateSpeechResponseStreamEventDiscriminator? Type658 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateThreadRequestToolResourcesFileSearchVectorStore>? Type659 { get; set; }
+        public global::tryAGI.OpenAI.CreateSpeechResponseStreamEventDiscriminatorType? Type659 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateThreadRequestToolResourcesFileSearchVectorStore? Type660 { get; set; }
+        public global::tryAGI.OpenAI.CreateThreadAndRunRequest? Type660 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyAutoChunkingStrategy? Type661 { get; set; }
+        public global::tryAGI.OpenAI.CreateThreadRequest? Type661 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyAutoChunkingStrategyType? Type662 { get; set; }
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateThreadAndRunRequestModel?>? Type662 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyStaticChunkingStrategy? Type663 { get; set; }
+        public global::tryAGI.OpenAI.CreateThreadAndRunRequestModel? Type663 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyStaticChunkingStrategyType? Type664 { get; set; }
+        public global::tryAGI.OpenAI.CreateThreadAndRunRequestToolResources? Type664 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyStaticChunkingStrategyStatic? Type665 { get; set; }
+        public global::tryAGI.OpenAI.CreateThreadAndRunRequestToolResourcesCodeInterpreter? Type665 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateTranscriptionRequest? Type666 { get; set; }
+        public global::tryAGI.OpenAI.CreateThreadAndRunRequestToolResourcesFileSearch? Type666 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateTranscriptionRequestModel?>? Type667 { get; set; }
+        public global::tryAGI.OpenAI.CreateThreadRequestToolResources2? Type667 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateTranscriptionRequestModel? Type668 { get; set; }
+        public global::tryAGI.OpenAI.CreateThreadRequestToolResourcesCodeInterpreter? Type668 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionInclude>? Type669 { get; set; }
+        public global::tryAGI.OpenAI.CreateThreadRequestToolResourcesFileSearch? Type669 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TranscriptionInclude? Type670 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateThreadRequestToolResourcesFileSearchVectorStore>? Type670 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateTranscriptionRequestTimestampGranularitie>? Type671 { get; set; }
+        public global::tryAGI.OpenAI.CreateThreadRequestToolResourcesFileSearchVectorStore? Type671 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateTranscriptionRequestTimestampGranularitie? Type672 { get; set; }
+        public global::tryAGI.OpenAI.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyAutoChunkingStrategy? Type672 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.CreateTranscriptionRequestChunkingStrategyVariant1?, global::tryAGI.OpenAI.VadConfig>? Type673 { get; set; }
+        public global::tryAGI.OpenAI.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyAutoChunkingStrategyType? Type673 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateTranscriptionRequestChunkingStrategyVariant1? Type674 { get; set; }
+        public global::tryAGI.OpenAI.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyStaticChunkingStrategy? Type674 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VadConfig? Type675 { get; set; }
+        public global::tryAGI.OpenAI.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyStaticChunkingStrategyType? Type675 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJson? Type676 { get; set; }
+        public global::tryAGI.OpenAI.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyStaticChunkingStrategyStatic? Type676 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJsonTask? Type677 { get; set; }
+        public global::tryAGI.OpenAI.CreateTranscriptionRequest? Type677 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionDiarizedSegment>? Type678 { get; set; }
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateTranscriptionRequestModel?>? Type678 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TranscriptionDiarizedSegment? Type679 { get; set; }
+        public global::tryAGI.OpenAI.CreateTranscriptionRequestModel? Type679 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJsonUsage? Type680 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionInclude>? Type680 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TranscriptTextUsageTokens? Type681 { get; set; }
+        public global::tryAGI.OpenAI.TranscriptionInclude? Type681 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TranscriptTextUsageDuration? Type682 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateTranscriptionRequestTimestampGranularitie>? Type682 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJsonUsageDiscriminator? Type683 { get; set; }
+        public global::tryAGI.OpenAI.CreateTranscriptionRequestTimestampGranularitie? Type683 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateTranscriptionResponseJson? Type684 { get; set; }
+        public global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.CreateTranscriptionRequestChunkingStrategyVariant1?, global::tryAGI.OpenAI.VadConfig>? Type684 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateTranscriptionResponseJsonLogprob>? Type685 { get; set; }
+        public global::tryAGI.OpenAI.CreateTranscriptionRequestChunkingStrategyVariant1? Type685 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateTranscriptionResponseJsonLogprob? Type686 { get; set; }
+        public global::tryAGI.OpenAI.VadConfig? Type686 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.TranscriptTextUsageTokens, global::tryAGI.OpenAI.TranscriptTextUsageDuration>? Type687 { get; set; }
+        public global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJson? Type687 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateTranscriptionResponseStreamEvent? Type688 { get; set; }
+        public global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJsonTask? Type688 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TranscriptTextSegmentEvent? Type689 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionDiarizedSegment>? Type689 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TranscriptTextDeltaEvent? Type690 { get; set; }
+        public global::tryAGI.OpenAI.TranscriptionDiarizedSegment? Type690 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TranscriptTextDoneEvent? Type691 { get; set; }
+        public global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJsonUsage? Type691 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateTranscriptionResponseStreamEventDiscriminator? Type692 { get; set; }
+        public global::tryAGI.OpenAI.TranscriptTextUsageTokens? Type692 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson? Type693 { get; set; }
+        public global::tryAGI.OpenAI.TranscriptTextUsageDuration? Type693 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionWord>? Type694 { get; set; }
+        public global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJsonUsageDiscriminator? Type694 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TranscriptionWord? Type695 { get; set; }
+        public global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJsonUsageDiscriminatorType? Type695 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionSegment>? Type696 { get; set; }
+        public global::tryAGI.OpenAI.CreateTranscriptionResponseJson? Type696 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TranscriptionSegment? Type697 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateTranscriptionResponseJsonLogprob>? Type697 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateTranslationRequest? Type698 { get; set; }
+        public global::tryAGI.OpenAI.CreateTranscriptionResponseJsonLogprob? Type698 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateTranslationRequestModel?>? Type699 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.TranscriptTextUsageTokens, global::tryAGI.OpenAI.TranscriptTextUsageDuration>? Type699 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateTranslationRequestModel? Type700 { get; set; }
+        public global::tryAGI.OpenAI.CreateTranscriptionResponseStreamEvent? Type700 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateTranslationRequestResponseFormat? Type701 { get; set; }
+        public global::tryAGI.OpenAI.TranscriptTextSegmentEvent? Type701 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateTranslationResponseJson? Type702 { get; set; }
+        public global::tryAGI.OpenAI.TranscriptTextDeltaEvent? Type702 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateTranslationResponseVerboseJson? Type703 { get; set; }
+        public global::tryAGI.OpenAI.TranscriptTextDoneEvent? Type703 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateUploadRequest? Type704 { get; set; }
+        public global::tryAGI.OpenAI.CreateTranscriptionResponseStreamEventDiscriminator? Type704 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateUploadRequestPurpose? Type705 { get; set; }
+        public global::tryAGI.OpenAI.CreateTranscriptionResponseStreamEventDiscriminatorType? Type705 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateVectorStoreFileBatchRequest? Type706 { get; set; }
+        public global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson? Type706 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateVectorStoreFileRequest>? Type707 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionWord>? Type707 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateVectorStoreFileRequest? Type708 { get; set; }
+        public global::tryAGI.OpenAI.TranscriptionWord? Type708 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateVectorStoreRequest? Type709 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionSegment>? Type709 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VectorStoreExpirationAfter? Type710 { get; set; }
+        public global::tryAGI.OpenAI.TranscriptionSegment? Type710 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam, global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam>? Type711 { get; set; }
+        public global::tryAGI.OpenAI.CreateTranslationRequest? Type711 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateVoiceConsentRequest? Type712 { get; set; }
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateTranslationRequestModel?>? Type712 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateVoiceRequest? Type713 { get; set; }
+        public global::tryAGI.OpenAI.CreateTranslationRequestModel? Type713 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CustomToolCallType? Type714 { get; set; }
+        public global::tryAGI.OpenAI.CreateTranslationRequestResponseFormat? Type714 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CustomToolCallOutputType? Type715 { get; set; }
+        public global::tryAGI.OpenAI.CreateTranslationResponseJson? Type715 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FunctionAndCustomToolCallOutput>>? Type716 { get; set; }
+        public global::tryAGI.OpenAI.CreateTranslationResponseVerboseJson? Type716 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FunctionAndCustomToolCallOutput>? Type717 { get; set; }
+        public global::tryAGI.OpenAI.CreateUploadRequest? Type717 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionAndCustomToolCallOutput? Type718 { get; set; }
+        public global::tryAGI.OpenAI.CreateUploadRequestPurpose? Type718 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CustomToolCallOutputResource? Type719 { get; set; }
+        public global::tryAGI.OpenAI.CreateVectorStoreFileBatchRequest? Type719 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CustomToolCallOutputResourceVariant2? Type720 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateVectorStoreFileRequest>? Type720 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionCallOutputStatusEnum? Type721 { get; set; }
+        public global::tryAGI.OpenAI.CreateVectorStoreFileRequest? Type721 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CustomToolCallResource? Type722 { get; set; }
+        public global::tryAGI.OpenAI.CreateVectorStoreRequest? Type722 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CustomToolCallResourceVariant2? Type723 { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreExpirationAfter? Type723 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionCallStatus? Type724 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam, global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam>? Type724 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CustomToolChatCompletionsType? Type725 { get; set; }
+        public global::tryAGI.OpenAI.CreateVoiceConsentRequest? Type725 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CustomToolChatCompletionsCustom? Type726 { get; set; }
+        public global::tryAGI.OpenAI.CreateVoiceRequest? Type726 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatTextFormat, global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatGrammarFormat>? Type727 { get; set; }
+        public global::tryAGI.OpenAI.CustomToolCallType? Type727 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatTextFormat? Type728 { get; set; }
+        public global::tryAGI.OpenAI.CustomToolCallOutputType? Type728 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatTextFormatType? Type729 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FunctionAndCustomToolCallOutput>>? Type729 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatGrammarFormat? Type730 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FunctionAndCustomToolCallOutput>? Type730 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatGrammarFormatType? Type731 { get; set; }
+        public global::tryAGI.OpenAI.FunctionAndCustomToolCallOutput? Type731 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatGrammarFormatGrammar? Type732 { get; set; }
+        public global::tryAGI.OpenAI.CustomToolCallOutputResource? Type732 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatGrammarFormatGrammarSyntax? Type733 { get; set; }
+        public global::tryAGI.OpenAI.CustomToolCallOutputResourceVariant2? Type733 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeleteAssistantResponse? Type734 { get; set; }
+        public global::tryAGI.OpenAI.FunctionCallOutputStatusEnum? Type734 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeleteAssistantResponseObject? Type735 { get; set; }
+        public global::tryAGI.OpenAI.CustomToolCallResource? Type735 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeleteCertificateResponse? Type736 { get; set; }
+        public global::tryAGI.OpenAI.CustomToolCallResourceVariant2? Type736 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeleteCertificateResponseObject? Type737 { get; set; }
+        public global::tryAGI.OpenAI.FunctionCallStatus? Type737 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeleteFileResponse? Type738 { get; set; }
+        public global::tryAGI.OpenAI.CustomToolChatCompletionsType? Type738 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeleteFileResponseObject? Type739 { get; set; }
+        public global::tryAGI.OpenAI.CustomToolChatCompletionsCustom? Type739 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeleteFineTuningCheckpointPermissionResponse? Type740 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatTextFormat, global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatGrammarFormat>? Type740 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeleteFineTuningCheckpointPermissionResponseObject? Type741 { get; set; }
+        public global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatTextFormat? Type741 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeleteMessageResponse? Type742 { get; set; }
+        public global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatTextFormatType? Type742 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeleteMessageResponseObject? Type743 { get; set; }
+        public global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatGrammarFormat? Type743 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeleteModelResponse? Type744 { get; set; }
+        public global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatGrammarFormatType? Type744 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeleteThreadResponse? Type745 { get; set; }
+        public global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatGrammarFormatGrammar? Type745 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeleteThreadResponseObject? Type746 { get; set; }
+        public global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatGrammarFormatGrammarSyntax? Type746 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeleteVectorStoreFileResponse? Type747 { get; set; }
+        public global::tryAGI.OpenAI.DeleteAssistantResponse? Type747 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeleteVectorStoreFileResponseObject? Type748 { get; set; }
+        public global::tryAGI.OpenAI.DeleteAssistantResponseObject? Type748 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeleteVectorStoreResponse? Type749 { get; set; }
+        public global::tryAGI.OpenAI.DeleteCertificateResponse? Type749 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeleteVectorStoreResponseObject? Type750 { get; set; }
+        public global::tryAGI.OpenAI.DeleteCertificateResponseObject? Type750 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeletedConversation? Type751 { get; set; }
+        public global::tryAGI.OpenAI.DeleteFileResponse? Type751 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeletedConversationResource? Type752 { get; set; }
+        public global::tryAGI.OpenAI.DeleteFileResponseObject? Type752 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeletedRoleAssignmentResource? Type753 { get; set; }
+        public global::tryAGI.OpenAI.DeleteFineTuningCheckpointPermissionResponse? Type753 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DoneEventEvent? Type754 { get; set; }
+        public global::tryAGI.OpenAI.DeleteFineTuningCheckpointPermissionResponseObject? Type754 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DoneEventData? Type755 { get; set; }
+        public global::tryAGI.OpenAI.DeleteMessageResponse? Type755 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EasyInputMessageRole? Type756 { get; set; }
+        public global::tryAGI.OpenAI.DeleteMessageResponseObject? Type756 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputContent>>? Type757 { get; set; }
+        public global::tryAGI.OpenAI.DeleteModelResponse? Type757 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputContent>? Type758 { get; set; }
+        public global::tryAGI.OpenAI.DeleteThreadResponse? Type758 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessagePhase? Type759 { get; set; }
+        public global::tryAGI.OpenAI.DeleteThreadResponseObject? Type759 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EasyInputMessageType? Type760 { get; set; }
+        public global::tryAGI.OpenAI.DeleteVectorStoreFileResponse? Type760 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EditImageBodyJsonParam? Type761 { get; set; }
+        public global::tryAGI.OpenAI.DeleteVectorStoreFileResponseObject? Type761 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.EditImageBodyJsonParamModel?, object>? Type762 { get; set; }
+        public global::tryAGI.OpenAI.DeleteVectorStoreResponse? Type762 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EditImageBodyJsonParamModel? Type763 { get; set; }
+        public global::tryAGI.OpenAI.DeleteVectorStoreResponseObject? Type763 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ImageRefParam>? Type764 { get; set; }
+        public global::tryAGI.OpenAI.DeletedConversation? Type764 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageRefParam? Type765 { get; set; }
+        public global::tryAGI.OpenAI.DeletedConversationResource? Type765 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EditImageBodyJsonParamQuality2? Type766 { get; set; }
+        public global::tryAGI.OpenAI.DeletedRoleAssignmentResource? Type766 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EditImageBodyJsonParamInputFidelity2? Type767 { get; set; }
+        public global::tryAGI.OpenAI.DoneEventEvent? Type767 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EditImageBodyJsonParamSize2? Type768 { get; set; }
+        public global::tryAGI.OpenAI.DoneEventData? Type768 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EditImageBodyJsonParamOutputFormat2? Type769 { get; set; }
+        public global::tryAGI.OpenAI.EasyInputMessageRole? Type769 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EditImageBodyJsonParamModeration2? Type770 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputContent>>? Type770 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EditImageBodyJsonParamBackground2? Type771 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputContent>? Type771 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<float>? Type772 { get; set; }
+        public global::tryAGI.OpenAI.MessagePhase? Type772 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public float? Type773 { get; set; }
+        public global::tryAGI.OpenAI.EasyInputMessageType? Type773 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EmbeddingObject? Type774 { get; set; }
+        public global::tryAGI.OpenAI.EditImageBodyJsonParam? Type774 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.Error? Type775 { get; set; }
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.EditImageBodyJsonParamModel?, object>? Type775 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ErrorEventEvent? Type776 { get; set; }
+        public global::tryAGI.OpenAI.EditImageBodyJsonParamModel? Type776 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ErrorResponse? Type777 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ImageRefParam>? Type777 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.Eval? Type778 { get; set; }
+        public global::tryAGI.OpenAI.ImageRefParam? Type778 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalObject? Type779 { get; set; }
+        public global::tryAGI.OpenAI.EditImageBodyJsonParamQuality2? Type779 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalCustomDataSourceConfig, global::tryAGI.OpenAI.EvalLogsDataSourceConfig, global::tryAGI.OpenAI.EvalStoredCompletionsDataSourceConfig>? Type780 { get; set; }
+        public global::tryAGI.OpenAI.EditImageBodyJsonParamInputFidelity2? Type780 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalCustomDataSourceConfig? Type781 { get; set; }
+        public global::tryAGI.OpenAI.EditImageBodyJsonParamSize2? Type781 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalLogsDataSourceConfig? Type782 { get; set; }
+        public global::tryAGI.OpenAI.EditImageBodyJsonParamOutputFormat2? Type782 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalStoredCompletionsDataSourceConfig? Type783 { get; set; }
+        public global::tryAGI.OpenAI.EditImageBodyJsonParamModeration2? Type783 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalGraderLabelModel?, global::tryAGI.OpenAI.EvalGraderStringCheck?, global::tryAGI.OpenAI.EvalGraderTextSimilarity?, global::tryAGI.OpenAI.EvalGraderPython?, global::tryAGI.OpenAI.EvalGraderScoreModel?>>? Type784 { get; set; }
+        public global::tryAGI.OpenAI.EditImageBodyJsonParamBackground2? Type784 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalGraderLabelModel?, global::tryAGI.OpenAI.EvalGraderStringCheck?, global::tryAGI.OpenAI.EvalGraderTextSimilarity?, global::tryAGI.OpenAI.EvalGraderPython?, global::tryAGI.OpenAI.EvalGraderScoreModel?>? Type785 { get; set; }
+        public global::System.Collections.Generic.IList<float>? Type785 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalGraderLabelModel? Type786 { get; set; }
+        public float? Type786 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalApiError? Type787 { get; set; }
+        public global::tryAGI.OpenAI.EmbeddingObject? Type787 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalCustomDataSourceConfigType? Type788 { get; set; }
+        public global::tryAGI.OpenAI.Error? Type788 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GraderLabelModel? Type789 { get; set; }
+        public global::tryAGI.OpenAI.ErrorEventEvent? Type789 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GraderPython? Type790 { get; set; }
+        public global::tryAGI.OpenAI.ErrorResponse? Type790 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalGraderPythonVariant2? Type791 { get; set; }
+        public global::tryAGI.OpenAI.Eval? Type791 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GraderScoreModel? Type792 { get; set; }
+        public global::tryAGI.OpenAI.EvalObject? Type792 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalGraderScoreModelVariant2? Type793 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalCustomDataSourceConfig, global::tryAGI.OpenAI.EvalLogsDataSourceConfig, global::tryAGI.OpenAI.EvalStoredCompletionsDataSourceConfig>? Type793 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GraderStringCheck? Type794 { get; set; }
+        public global::tryAGI.OpenAI.EvalCustomDataSourceConfig? Type794 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GraderTextSimilarity? Type795 { get; set; }
+        public global::tryAGI.OpenAI.EvalLogsDataSourceConfig? Type795 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalGraderTextSimilarityVariant2? Type796 { get; set; }
+        public global::tryAGI.OpenAI.EvalStoredCompletionsDataSourceConfig? Type796 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalItemRole? Type797 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalGraderLabelModel?, global::tryAGI.OpenAI.EvalGraderStringCheck?, global::tryAGI.OpenAI.EvalGraderTextSimilarity?, global::tryAGI.OpenAI.EvalGraderPython?, global::tryAGI.OpenAI.EvalGraderScoreModel?>>? Type797 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalItemContent? Type798 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalGraderLabelModel?, global::tryAGI.OpenAI.EvalGraderStringCheck?, global::tryAGI.OpenAI.EvalGraderTextSimilarity?, global::tryAGI.OpenAI.EvalGraderPython?, global::tryAGI.OpenAI.EvalGraderScoreModel?>? Type798 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalItemType? Type799 { get; set; }
+        public global::tryAGI.OpenAI.EvalGraderLabelModel? Type799 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalItemContentItem? Type800 { get; set; }
+        public global::tryAGI.OpenAI.EvalApiError? Type800 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>? Type801 { get; set; }
+        public global::tryAGI.OpenAI.EvalCustomDataSourceConfigType? Type801 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InputTextContent? Type802 { get; set; }
+        public global::tryAGI.OpenAI.GraderLabelModel? Type802 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalItemContentOutputText? Type803 { get; set; }
+        public global::tryAGI.OpenAI.GraderPython? Type803 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalItemInputImage? Type804 { get; set; }
+        public global::tryAGI.OpenAI.EvalGraderPythonVariant2? Type804 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InputAudio? Type805 { get; set; }
+        public global::tryAGI.OpenAI.GraderScoreModel? Type805 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalItemContentOutputTextType? Type806 { get; set; }
+        public global::tryAGI.OpenAI.EvalGraderScoreModelVariant2? Type806 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalItemInputImageType? Type807 { get; set; }
+        public global::tryAGI.OpenAI.GraderStringCheck? Type807 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalJsonlFileContentSourceType? Type808 { get; set; }
+        public global::tryAGI.OpenAI.GraderTextSimilarity? Type808 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalJsonlFileContentSourceContentItem>? Type809 { get; set; }
+        public global::tryAGI.OpenAI.EvalGraderTextSimilarityVariant2? Type809 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalJsonlFileContentSourceContentItem? Type810 { get; set; }
+        public global::tryAGI.OpenAI.EvalItemRole? Type810 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalJsonlFileIdSourceType? Type811 { get; set; }
+        public global::tryAGI.OpenAI.EvalItemContent? Type811 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalList? Type812 { get; set; }
+        public global::tryAGI.OpenAI.EvalItemType? Type812 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalListObject? Type813 { get; set; }
+        public global::tryAGI.OpenAI.EvalItemContentItem? Type813 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Eval>? Type814 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>? Type814 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalLogsDataSourceConfigType? Type815 { get; set; }
+        public global::tryAGI.OpenAI.InputTextContent? Type815 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalResponsesSourceType? Type816 { get; set; }
+        public global::tryAGI.OpenAI.EvalItemContentOutputText? Type816 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalRun? Type817 { get; set; }
+        public global::tryAGI.OpenAI.EvalItemInputImage? Type817 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalRunObject? Type818 { get; set; }
+        public global::tryAGI.OpenAI.InputAudio? Type818 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalRunResultCounts? Type819 { get; set; }
+        public global::tryAGI.OpenAI.EvalItemContentOutputTextType? Type819 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunPerModelUsageItem>? Type820 { get; set; }
+        public global::tryAGI.OpenAI.EvalItemInputImageType? Type820 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalRunPerModelUsageItem? Type821 { get; set; }
+        public global::tryAGI.OpenAI.EvalJsonlFileContentSourceType? Type821 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunPerTestingCriteriaResult>? Type822 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalJsonlFileContentSourceContentItem>? Type822 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalRunPerTestingCriteriaResult? Type823 { get; set; }
+        public global::tryAGI.OpenAI.EvalJsonlFileContentSourceContentItem? Type823 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalRunList? Type824 { get; set; }
+        public global::tryAGI.OpenAI.EvalJsonlFileIdSourceType? Type824 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalRunListObject? Type825 { get; set; }
+        public global::tryAGI.OpenAI.EvalList? Type825 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRun>? Type826 { get; set; }
+        public global::tryAGI.OpenAI.EvalListObject? Type826 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalRunOutputItem? Type827 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Eval>? Type827 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalRunOutputItemObject? Type828 { get; set; }
+        public global::tryAGI.OpenAI.EvalLogsDataSourceConfigType? Type828 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunOutputItemResult>? Type829 { get; set; }
+        public global::tryAGI.OpenAI.EvalResponsesSourceType? Type829 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalRunOutputItemResult? Type830 { get; set; }
+        public global::tryAGI.OpenAI.EvalRun? Type830 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalRunOutputItemSample? Type831 { get; set; }
+        public global::tryAGI.OpenAI.EvalRunObject? Type831 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunOutputItemSampleInputItem>? Type832 { get; set; }
+        public global::tryAGI.OpenAI.EvalRunResultCounts? Type832 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalRunOutputItemSampleInputItem? Type833 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunPerModelUsageItem>? Type833 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunOutputItemSampleOutputItem>? Type834 { get; set; }
+        public global::tryAGI.OpenAI.EvalRunPerModelUsageItem? Type834 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalRunOutputItemSampleOutputItem? Type835 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunPerTestingCriteriaResult>? Type835 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalRunOutputItemSampleUsage? Type836 { get; set; }
+        public global::tryAGI.OpenAI.EvalRunPerTestingCriteriaResult? Type836 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalRunOutputItemList? Type837 { get; set; }
+        public global::tryAGI.OpenAI.EvalRunList? Type837 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalRunOutputItemListObject? Type838 { get; set; }
+        public global::tryAGI.OpenAI.EvalRunListObject? Type838 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunOutputItem>? Type839 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRun>? Type839 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalStoredCompletionsDataSourceConfigType? Type840 { get; set; }
+        public global::tryAGI.OpenAI.EvalRunOutputItem? Type840 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EvalStoredCompletionsSourceType? Type841 { get; set; }
+        public global::tryAGI.OpenAI.EvalRunOutputItemObject? Type841 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.DateTimeOffset? Type842 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunOutputItemResult>? Type842 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FileExpirationAfterAnchor? Type843 { get; set; }
+        public global::tryAGI.OpenAI.EvalRunOutputItemResult? Type843 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FilePath? Type844 { get; set; }
+        public global::tryAGI.OpenAI.EvalRunOutputItemSample? Type844 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FilePathType? Type845 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunOutputItemSampleInputItem>? Type845 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FileSearchRanker? Type846 { get; set; }
+        public global::tryAGI.OpenAI.EvalRunOutputItemSampleInputItem? Type846 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FileSearchToolCallType? Type847 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunOutputItemSampleOutputItem>? Type847 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FileSearchToolCallStatus? Type848 { get; set; }
+        public global::tryAGI.OpenAI.EvalRunOutputItemSampleOutputItem? Type848 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FileSearchToolCallResultsVariant1Item>? Type849 { get; set; }
+        public global::tryAGI.OpenAI.EvalRunOutputItemSampleUsage? Type849 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FileSearchToolCallResultsVariant1Item? Type850 { get; set; }
+        public global::tryAGI.OpenAI.EvalRunOutputItemList? Type850 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessage? Type851 { get; set; }
+        public global::tryAGI.OpenAI.EvalRunOutputItemListObject? Type851 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessageAssistantMessage? Type852 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunOutputItem>? Type852 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuneDPOHyperparameters? Type853 { get; set; }
+        public global::tryAGI.OpenAI.EvalStoredCompletionsDataSourceConfigType? Type853 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneDPOHyperparametersBeta?, double?>? Type854 { get; set; }
+        public global::tryAGI.OpenAI.EvalStoredCompletionsSourceType? Type854 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuneDPOHyperparametersBeta? Type855 { get; set; }
+        public global::System.DateTimeOffset? Type855 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneDPOHyperparametersBatchSize?, int?>? Type856 { get; set; }
+        public global::tryAGI.OpenAI.FileExpirationAfterAnchor? Type856 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuneDPOHyperparametersBatchSize? Type857 { get; set; }
+        public global::tryAGI.OpenAI.FilePath? Type857 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneDPOHyperparametersLearningRateMultiplier?, double?>? Type858 { get; set; }
+        public global::tryAGI.OpenAI.FilePathType? Type858 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuneDPOHyperparametersLearningRateMultiplier? Type859 { get; set; }
+        public global::tryAGI.OpenAI.FileSearchRanker? Type859 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneDPOHyperparametersNEpochs?, int?>? Type860 { get; set; }
+        public global::tryAGI.OpenAI.FileSearchToolCallType? Type860 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuneDPOHyperparametersNEpochs? Type861 { get; set; }
+        public global::tryAGI.OpenAI.FileSearchToolCallStatus? Type861 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuneDPOMethod? Type862 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FileSearchToolCallResultsVariant1Item>? Type862 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuneMethodType? Type863 { get; set; }
+        public global::tryAGI.OpenAI.FileSearchToolCallResultsVariant1Item? Type863 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuneSupervisedMethod? Type864 { get; set; }
+        public global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessage? Type864 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuneReinforcementMethod? Type865 { get; set; }
+        public global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessageAssistantMessage? Type865 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuneReinforcementHyperparameters? Type866 { get; set; }
+        public global::tryAGI.OpenAI.FineTuneDPOHyperparameters? Type866 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersBatchSize?, int?>? Type867 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneDPOHyperparametersBeta?, double?>? Type867 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersBatchSize? Type868 { get; set; }
+        public global::tryAGI.OpenAI.FineTuneDPOHyperparametersBeta? Type868 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersLearningRateMultiplier?, double?>? Type869 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneDPOHyperparametersBatchSize?, int?>? Type869 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersLearningRateMultiplier? Type870 { get; set; }
+        public global::tryAGI.OpenAI.FineTuneDPOHyperparametersBatchSize? Type870 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersNEpochs?, int?>? Type871 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneDPOHyperparametersLearningRateMultiplier?, double?>? Type871 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersNEpochs? Type872 { get; set; }
+        public global::tryAGI.OpenAI.FineTuneDPOHyperparametersLearningRateMultiplier? Type872 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersReasoningEffort? Type873 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneDPOHyperparametersNEpochs?, int?>? Type873 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersComputeMultiplier?, double?>? Type874 { get; set; }
+        public global::tryAGI.OpenAI.FineTuneDPOHyperparametersNEpochs? Type874 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersComputeMultiplier? Type875 { get; set; }
+        public global::tryAGI.OpenAI.FineTuneDPOMethod? Type875 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersEvalInterval?, int?>? Type876 { get; set; }
+        public global::tryAGI.OpenAI.FineTuneMethodType? Type876 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersEvalInterval? Type877 { get; set; }
+        public global::tryAGI.OpenAI.FineTuneSupervisedMethod? Type877 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersEvalSamples?, int?>? Type878 { get; set; }
+        public global::tryAGI.OpenAI.FineTuneReinforcementMethod? Type878 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersEvalSamples? Type879 { get; set; }
+        public global::tryAGI.OpenAI.FineTuneReinforcementHyperparameters? Type879 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.GraderStringCheck, global::tryAGI.OpenAI.GraderTextSimilarity, global::tryAGI.OpenAI.GraderPython, global::tryAGI.OpenAI.GraderScoreModel, global::tryAGI.OpenAI.GraderMulti>? Type880 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersBatchSize?, int?>? Type880 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GraderMulti? Type881 { get; set; }
+        public global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersBatchSize? Type881 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuneSupervisedHyperparameters? Type882 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersLearningRateMultiplier?, double?>? Type882 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneSupervisedHyperparametersBatchSize?, int?>? Type883 { get; set; }
+        public global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersLearningRateMultiplier? Type883 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuneSupervisedHyperparametersBatchSize? Type884 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersNEpochs?, int?>? Type884 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneSupervisedHyperparametersLearningRateMultiplier?, double?>? Type885 { get; set; }
+        public global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersNEpochs? Type885 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuneSupervisedHyperparametersLearningRateMultiplier? Type886 { get; set; }
+        public global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersReasoningEffort? Type886 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneSupervisedHyperparametersNEpochs?, int?>? Type887 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersComputeMultiplier?, double?>? Type887 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuneSupervisedHyperparametersNEpochs? Type888 { get; set; }
+        public global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersComputeMultiplier? Type888 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuningCheckpointPermission? Type889 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersEvalInterval?, int?>? Type889 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuningCheckpointPermissionObject? Type890 { get; set; }
+        public global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersEvalInterval? Type890 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuningIntegration? Type891 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersEvalSamples?, int?>? Type891 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuningIntegrationType? Type892 { get; set; }
+        public global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersEvalSamples? Type892 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuningIntegrationWandb? Type893 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.GraderStringCheck, global::tryAGI.OpenAI.GraderTextSimilarity, global::tryAGI.OpenAI.GraderPython, global::tryAGI.OpenAI.GraderScoreModel, global::tryAGI.OpenAI.GraderMulti>? Type893 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuningJob? Type894 { get; set; }
+        public global::tryAGI.OpenAI.GraderMulti? Type894 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuningJobError2? Type895 { get; set; }
+        public global::tryAGI.OpenAI.FineTuneSupervisedHyperparameters? Type895 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuningJobHyperparameters? Type896 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneSupervisedHyperparametersBatchSize?, int?>? Type896 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuningJobHyperparametersBatchSizeVariant1?, int?>? Type897 { get; set; }
+        public global::tryAGI.OpenAI.FineTuneSupervisedHyperparametersBatchSize? Type897 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuningJobHyperparametersBatchSizeVariant1? Type898 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneSupervisedHyperparametersLearningRateMultiplier?, double?>? Type898 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuningJobHyperparametersLearningRateMultiplier?, double?>? Type899 { get; set; }
+        public global::tryAGI.OpenAI.FineTuneSupervisedHyperparametersLearningRateMultiplier? Type899 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuningJobHyperparametersLearningRateMultiplier? Type900 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneSupervisedHyperparametersNEpochs?, int?>? Type900 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuningJobHyperparametersNEpochs?, int?>? Type901 { get; set; }
+        public global::tryAGI.OpenAI.FineTuneSupervisedHyperparametersNEpochs? Type901 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuningJobHyperparametersNEpochs? Type902 { get; set; }
+        public global::tryAGI.OpenAI.FineTuningCheckpointPermission? Type902 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuningJobObject? Type903 { get; set; }
+        public global::tryAGI.OpenAI.FineTuningCheckpointPermissionObject? Type903 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuningJobStatus? Type904 { get; set; }
+        public global::tryAGI.OpenAI.FineTuningIntegration? Type904 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FineTuningIntegration>? Type905 { get; set; }
+        public global::tryAGI.OpenAI.FineTuningIntegrationType? Type905 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuningJobCheckpoint? Type906 { get; set; }
+        public global::tryAGI.OpenAI.FineTuningIntegrationWandb? Type906 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuningJobCheckpointMetrics? Type907 { get; set; }
+        public global::tryAGI.OpenAI.FineTuningJob? Type907 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuningJobCheckpointObject? Type908 { get; set; }
+        public global::tryAGI.OpenAI.FineTuningJobError2? Type908 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuningJobEvent? Type909 { get; set; }
+        public global::tryAGI.OpenAI.FineTuningJobHyperparameters? Type909 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuningJobEventObject? Type910 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuningJobHyperparametersBatchSizeVariant1?, int?>? Type910 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuningJobEventLevel? Type911 { get; set; }
+        public global::tryAGI.OpenAI.FineTuningJobHyperparametersBatchSizeVariant1? Type911 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuningJobEventType? Type912 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuningJobHyperparametersLearningRateMultiplier?, double?>? Type912 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InputImageContent? Type913 { get; set; }
+        public global::tryAGI.OpenAI.FineTuningJobHyperparametersLearningRateMultiplier? Type913 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InputFileContent? Type914 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuningJobHyperparametersNEpochs?, int?>? Type914 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionAndCustomToolCallOutputDiscriminator? Type915 { get; set; }
+        public global::tryAGI.OpenAI.FineTuningJobHyperparametersNEpochs? Type915 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionToolCall? Type916 { get; set; }
+        public global::tryAGI.OpenAI.FineTuningJobObject? Type916 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionToolCallType? Type917 { get; set; }
+        public global::tryAGI.OpenAI.FineTuningJobStatus? Type917 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionToolCallStatus? Type918 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FineTuningIntegration>? Type918 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionToolCallOutput? Type919 { get; set; }
+        public global::tryAGI.OpenAI.FineTuningJobCheckpoint? Type919 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionToolCallOutputType? Type920 { get; set; }
+        public global::tryAGI.OpenAI.FineTuningJobCheckpointMetrics? Type920 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionToolCallOutputStatus? Type921 { get; set; }
+        public global::tryAGI.OpenAI.FineTuningJobCheckpointObject? Type921 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionToolCallOutputResourceVariant2? Type922 { get; set; }
+        public global::tryAGI.OpenAI.FineTuningJobEvent? Type922 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionToolCallResourceVariant2? Type923 { get; set; }
+        public global::tryAGI.OpenAI.FineTuningJobEventObject? Type923 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GraderLabelModelType? Type924 { get; set; }
+        public global::tryAGI.OpenAI.FineTuningJobEventLevel? Type924 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItem>? Type925 { get; set; }
+        public global::tryAGI.OpenAI.FineTuningJobEventType? Type925 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GraderMultiType? Type926 { get; set; }
+        public global::tryAGI.OpenAI.InputImageContent? Type926 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.GraderStringCheck, global::tryAGI.OpenAI.GraderTextSimilarity, global::tryAGI.OpenAI.GraderPython, global::tryAGI.OpenAI.GraderScoreModel, global::tryAGI.OpenAI.GraderLabelModel>? Type927 { get; set; }
+        public global::tryAGI.OpenAI.InputFileContent? Type927 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GraderPythonType? Type928 { get; set; }
+        public global::tryAGI.OpenAI.FunctionAndCustomToolCallOutputDiscriminator? Type928 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GraderScoreModelType? Type929 { get; set; }
+        public global::tryAGI.OpenAI.FunctionAndCustomToolCallOutputDiscriminatorType? Type929 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GraderScoreModelSamplingParams? Type930 { get; set; }
+        public global::tryAGI.OpenAI.FunctionToolCall? Type930 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GraderStringCheckType? Type931 { get; set; }
+        public global::tryAGI.OpenAI.FunctionToolCallType? Type931 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GraderStringCheckOperation? Type932 { get; set; }
+        public global::tryAGI.OpenAI.FunctionToolCallStatus? Type932 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GraderTextSimilarityType? Type933 { get; set; }
+        public global::tryAGI.OpenAI.FunctionToolCallOutput? Type933 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GraderTextSimilarityEvaluationMetric? Type934 { get; set; }
+        public global::tryAGI.OpenAI.FunctionToolCallOutputType? Type934 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.Group? Type935 { get; set; }
+        public global::tryAGI.OpenAI.FunctionToolCallOutputStatus? Type935 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GroupObject? Type936 { get; set; }
+        public global::tryAGI.OpenAI.FunctionToolCallOutputResourceVariant2? Type936 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GroupDeletedResource? Type937 { get; set; }
+        public global::tryAGI.OpenAI.FunctionToolCallResourceVariant2? Type937 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GroupDeletedResourceObject? Type938 { get; set; }
+        public global::tryAGI.OpenAI.GraderLabelModelType? Type938 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GroupListResource? Type939 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItem>? Type939 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GroupListResourceObject? Type940 { get; set; }
+        public global::tryAGI.OpenAI.GraderMultiType? Type940 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.GroupResponse>? Type941 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.GraderStringCheck, global::tryAGI.OpenAI.GraderTextSimilarity, global::tryAGI.OpenAI.GraderPython, global::tryAGI.OpenAI.GraderScoreModel, global::tryAGI.OpenAI.GraderLabelModel>? Type941 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GroupResponse? Type942 { get; set; }
+        public global::tryAGI.OpenAI.GraderPythonType? Type942 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GroupResourceWithSuccess? Type943 { get; set; }
+        public global::tryAGI.OpenAI.GraderScoreModelType? Type943 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GroupRoleAssignment? Type944 { get; set; }
+        public global::tryAGI.OpenAI.GraderScoreModelSamplingParams? Type944 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GroupRoleAssignmentObject? Type945 { get; set; }
+        public global::tryAGI.OpenAI.GraderStringCheckType? Type945 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.Role? Type946 { get; set; }
+        public global::tryAGI.OpenAI.GraderStringCheckOperation? Type946 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GroupUser? Type947 { get; set; }
+        public global::tryAGI.OpenAI.GraderTextSimilarityType? Type947 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GroupUserAssignment? Type948 { get; set; }
+        public global::tryAGI.OpenAI.GraderTextSimilarityEvaluationMetric? Type948 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GroupUserAssignmentObject? Type949 { get; set; }
+        public global::tryAGI.OpenAI.Group? Type949 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GroupUserDeletedResource? Type950 { get; set; }
+        public global::tryAGI.OpenAI.GroupObject? Type950 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GroupUserDeletedResourceObject? Type951 { get; set; }
+        public global::tryAGI.OpenAI.GroupDeletedResource? Type951 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.Image2? Type952 { get; set; }
+        public global::tryAGI.OpenAI.GroupDeletedResourceObject? Type952 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageEditCompletedEvent? Type953 { get; set; }
+        public global::tryAGI.OpenAI.GroupListResource? Type953 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageEditCompletedEventType? Type954 { get; set; }
+        public global::tryAGI.OpenAI.GroupListResourceObject? Type954 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageEditCompletedEventSize? Type955 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.GroupResponse>? Type955 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageEditCompletedEventQuality? Type956 { get; set; }
+        public global::tryAGI.OpenAI.GroupResponse? Type956 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageEditCompletedEventBackground? Type957 { get; set; }
+        public global::tryAGI.OpenAI.GroupResourceWithSuccess? Type957 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageEditCompletedEventOutputFormat? Type958 { get; set; }
+        public global::tryAGI.OpenAI.GroupRoleAssignment? Type958 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImagesUsage? Type959 { get; set; }
+        public global::tryAGI.OpenAI.GroupRoleAssignmentObject? Type959 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageEditPartialImageEvent? Type960 { get; set; }
+        public global::tryAGI.OpenAI.Role? Type960 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageEditPartialImageEventType? Type961 { get; set; }
+        public global::tryAGI.OpenAI.GroupUser? Type961 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageEditPartialImageEventSize? Type962 { get; set; }
+        public global::tryAGI.OpenAI.GroupUserAssignment? Type962 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageEditPartialImageEventQuality? Type963 { get; set; }
+        public global::tryAGI.OpenAI.GroupUserAssignmentObject? Type963 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageEditPartialImageEventBackground? Type964 { get; set; }
+        public global::tryAGI.OpenAI.GroupUserDeletedResource? Type964 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageEditPartialImageEventOutputFormat? Type965 { get; set; }
+        public global::tryAGI.OpenAI.GroupUserDeletedResourceObject? Type965 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageEditStreamEvent? Type966 { get; set; }
+        public global::tryAGI.OpenAI.Image2? Type966 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageEditStreamEventDiscriminator? Type967 { get; set; }
+        public global::tryAGI.OpenAI.ImageEditCompletedEvent? Type967 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenCompletedEvent? Type968 { get; set; }
+        public global::tryAGI.OpenAI.ImageEditCompletedEventType? Type968 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenCompletedEventType? Type969 { get; set; }
+        public global::tryAGI.OpenAI.ImageEditCompletedEventSize? Type969 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenCompletedEventSize? Type970 { get; set; }
+        public global::tryAGI.OpenAI.ImageEditCompletedEventQuality? Type970 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenCompletedEventQuality? Type971 { get; set; }
+        public global::tryAGI.OpenAI.ImageEditCompletedEventBackground? Type971 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenCompletedEventBackground? Type972 { get; set; }
+        public global::tryAGI.OpenAI.ImageEditCompletedEventOutputFormat? Type972 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenCompletedEventOutputFormat? Type973 { get; set; }
+        public global::tryAGI.OpenAI.ImagesUsage? Type973 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenPartialImageEvent? Type974 { get; set; }
+        public global::tryAGI.OpenAI.ImageEditPartialImageEvent? Type974 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenPartialImageEventType? Type975 { get; set; }
+        public global::tryAGI.OpenAI.ImageEditPartialImageEventType? Type975 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenPartialImageEventSize? Type976 { get; set; }
+        public global::tryAGI.OpenAI.ImageEditPartialImageEventSize? Type976 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenPartialImageEventQuality? Type977 { get; set; }
+        public global::tryAGI.OpenAI.ImageEditPartialImageEventQuality? Type977 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenPartialImageEventBackground? Type978 { get; set; }
+        public global::tryAGI.OpenAI.ImageEditPartialImageEventBackground? Type978 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenPartialImageEventOutputFormat? Type979 { get; set; }
+        public global::tryAGI.OpenAI.ImageEditPartialImageEventOutputFormat? Type979 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenStreamEvent? Type980 { get; set; }
+        public global::tryAGI.OpenAI.ImageEditStreamEvent? Type980 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenStreamEventDiscriminator? Type981 { get; set; }
+        public global::tryAGI.OpenAI.ImageEditStreamEventDiscriminator? Type981 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenTool? Type982 { get; set; }
+        public global::tryAGI.OpenAI.ImageEditStreamEventDiscriminatorType? Type982 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenToolType? Type983 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenCompletedEvent? Type983 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.ImageGenToolModel?>? Type984 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenCompletedEventType? Type984 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenToolModel? Type985 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenCompletedEventSize? Type985 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenToolQuality? Type986 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenCompletedEventQuality? Type986 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.ImageGenToolSize?>? Type987 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenCompletedEventBackground? Type987 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenToolSize? Type988 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenCompletedEventOutputFormat? Type988 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenToolOutputFormat? Type989 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenPartialImageEvent? Type989 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenToolModeration? Type990 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenPartialImageEventType? Type990 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenToolBackground? Type991 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenPartialImageEventSize? Type991 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenToolInputImageMask? Type992 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenPartialImageEventQuality? Type992 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenActionEnum? Type993 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenPartialImageEventBackground? Type993 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenToolCallType? Type994 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenPartialImageEventOutputFormat? Type994 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenToolCallStatus? Type995 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenStreamEvent? Type995 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImagesResponse? Type996 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenStreamEventDiscriminator? Type996 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Image2>? Type997 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenStreamEventDiscriminatorType? Type997 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImagesResponseBackground? Type998 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenTool? Type998 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImagesResponseOutputFormat? Type999 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenToolType? Type999 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImagesResponseSize? Type1000 { get; set; }
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.ImageGenToolModel?>? Type1000 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImagesResponseQuality? Type1001 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenToolModel? Type1001 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenUsage? Type1002 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenToolQuality? Type1002 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImagesUsageInputTokensDetails? Type1003 { get; set; }
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.ImageGenToolSize?>? Type1003 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InputAudioType? Type1004 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenToolSize? Type1004 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InputAudioInputAudio1? Type1005 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenToolOutputFormat? Type1005 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InputAudioInputAudio1Format? Type1006 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenToolModeration? Type1006 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InputContentDiscriminator? Type1007 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenToolBackground? Type1007 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InputItem? Type1008 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenToolInputImageMask? Type1008 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.Item? Type1009 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenActionEnum? Type1009 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ItemReferenceParam? Type1010 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenToolCallType? Type1010 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InputItemDiscriminator? Type1011 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenToolCallStatus? Type1011 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InputMessage? Type1012 { get; set; }
+        public global::tryAGI.OpenAI.ImagesResponse? Type1012 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InputMessageType? Type1013 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Image2>? Type1013 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InputMessageRole? Type1014 { get; set; }
+        public global::tryAGI.OpenAI.ImagesResponseBackground? Type1014 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InputMessageStatus? Type1015 { get; set; }
+        public global::tryAGI.OpenAI.ImagesResponseOutputFormat? Type1015 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InputMessageResource? Type1016 { get; set; }
+        public global::tryAGI.OpenAI.ImagesResponseSize? Type1016 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InputMessageResourceVariant2? Type1017 { get; set; }
+        public global::tryAGI.OpenAI.ImagesResponseQuality? Type1017 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>? Type1018 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenUsage? Type1018 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.Invite? Type1019 { get; set; }
+        public global::tryAGI.OpenAI.ImagesUsageInputTokensDetails? Type1019 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InviteObject? Type1020 { get; set; }
+        public global::tryAGI.OpenAI.InputAudioType? Type1020 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InviteRole? Type1021 { get; set; }
+        public global::tryAGI.OpenAI.InputAudioInputAudio1? Type1021 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InviteStatus? Type1022 { get; set; }
+        public global::tryAGI.OpenAI.InputAudioInputAudio1Format? Type1022 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InviteProject>? Type1023 { get; set; }
+        public global::tryAGI.OpenAI.InputContentDiscriminator? Type1023 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InviteProject? Type1024 { get; set; }
+        public global::tryAGI.OpenAI.InputContentDiscriminatorType? Type1024 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InviteProjectRole? Type1025 { get; set; }
+        public global::tryAGI.OpenAI.InputItem? Type1025 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InviteDeleteResponse? Type1026 { get; set; }
+        public global::tryAGI.OpenAI.Item? Type1026 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InviteDeleteResponseObject? Type1027 { get; set; }
+        public global::tryAGI.OpenAI.ItemReferenceParam? Type1027 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InviteListResponse? Type1028 { get; set; }
+        public global::tryAGI.OpenAI.InputItemDiscriminator? Type1028 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InviteListResponseObject? Type1029 { get; set; }
+        public global::tryAGI.OpenAI.InputItemDiscriminatorType? Type1029 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Invite>? Type1030 { get; set; }
+        public global::tryAGI.OpenAI.InputMessage? Type1030 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InviteProjectGroupBody? Type1031 { get; set; }
+        public global::tryAGI.OpenAI.InputMessageType? Type1031 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InviteRequest? Type1032 { get; set; }
+        public global::tryAGI.OpenAI.InputMessageRole? Type1032 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InviteRequestRole? Type1033 { get; set; }
+        public global::tryAGI.OpenAI.InputMessageStatus? Type1033 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InviteRequestProject>? Type1034 { get; set; }
+        public global::tryAGI.OpenAI.InputMessageResource? Type1034 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InviteRequestProject? Type1035 { get; set; }
+        public global::tryAGI.OpenAI.InputMessageResourceVariant2? Type1035 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InviteRequestProjectRole? Type1036 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>? Type1036 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OutputMessage? Type1037 { get; set; }
+        public global::tryAGI.OpenAI.Invite? Type1037 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ComputerCallOutputItemParam? Type1038 { get; set; }
+        public global::tryAGI.OpenAI.InviteObject? Type1038 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionCallOutputItemParam? Type1039 { get; set; }
+        public global::tryAGI.OpenAI.InviteRole? Type1039 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ToolSearchCallItemParam? Type1040 { get; set; }
+        public global::tryAGI.OpenAI.InviteStatus? Type1040 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ToolSearchOutputItemParam? Type1041 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InviteProject>? Type1041 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CompactionSummaryItemParam? Type1042 { get; set; }
+        public global::tryAGI.OpenAI.InviteProject? Type1042 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellCallItemParam? Type1043 { get; set; }
+        public global::tryAGI.OpenAI.InviteProjectRole? Type1043 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellCallOutputItemParam? Type1044 { get; set; }
+        public global::tryAGI.OpenAI.InviteDeleteResponse? Type1044 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApplyPatchToolCallItemParam? Type1045 { get; set; }
+        public global::tryAGI.OpenAI.InviteDeleteResponseObject? Type1045 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApplyPatchToolCallOutputItemParam? Type1046 { get; set; }
+        public global::tryAGI.OpenAI.InviteListResponse? Type1046 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MCPApprovalResponse? Type1047 { get; set; }
+        public global::tryAGI.OpenAI.InviteListResponseObject? Type1047 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ItemDiscriminator? Type1048 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Invite>? Type1048 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ItemResource? Type1049 { get; set; }
+        public global::tryAGI.OpenAI.InviteProjectGroupBody? Type1049 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ItemResourceDiscriminator? Type1050 { get; set; }
+        public global::tryAGI.OpenAI.InviteRequest? Type1050 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListAssistantsResponse? Type1051 { get; set; }
+        public global::tryAGI.OpenAI.InviteRequestRole? Type1051 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AssistantObject>? Type1052 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InviteRequestProject>? Type1052 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListAuditLogsResponse? Type1053 { get; set; }
+        public global::tryAGI.OpenAI.InviteRequestProject? Type1053 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListAuditLogsResponseObject? Type1054 { get; set; }
+        public global::tryAGI.OpenAI.InviteRequestProjectRole? Type1054 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AuditLog>? Type1055 { get; set; }
+        public global::tryAGI.OpenAI.OutputMessage? Type1055 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListBatchesResponse? Type1056 { get; set; }
+        public global::tryAGI.OpenAI.ComputerCallOutputItemParam? Type1056 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Batch>? Type1057 { get; set; }
+        public global::tryAGI.OpenAI.FunctionCallOutputItemParam? Type1057 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListBatchesResponseObject? Type1058 { get; set; }
+        public global::tryAGI.OpenAI.ToolSearchCallItemParam? Type1058 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListCertificatesResponse? Type1059 { get; set; }
+        public global::tryAGI.OpenAI.ToolSearchOutputItemParam? Type1059 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OrganizationCertificate>? Type1060 { get; set; }
+        public global::tryAGI.OpenAI.CompactionSummaryItemParam? Type1060 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OrganizationCertificate? Type1061 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallItemParam? Type1061 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListCertificatesResponseObject? Type1062 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallOutputItemParam? Type1062 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListFilesResponse? Type1063 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchToolCallItemParam? Type1063 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OpenAIFile>? Type1064 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchToolCallOutputItemParam? Type1064 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OpenAIFile? Type1065 { get; set; }
+        public global::tryAGI.OpenAI.MCPApprovalResponse? Type1065 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListFineTuningCheckpointPermissionResponse? Type1066 { get; set; }
+        public global::tryAGI.OpenAI.ItemDiscriminator? Type1066 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FineTuningCheckpointPermission>? Type1067 { get; set; }
+        public global::tryAGI.OpenAI.ItemDiscriminatorType? Type1067 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListFineTuningCheckpointPermissionResponseObject? Type1068 { get; set; }
+        public global::tryAGI.OpenAI.ItemResource? Type1068 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListFineTuningJobCheckpointsResponse? Type1069 { get; set; }
+        public global::tryAGI.OpenAI.ItemResourceDiscriminator? Type1069 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FineTuningJobCheckpoint>? Type1070 { get; set; }
+        public global::tryAGI.OpenAI.ItemResourceDiscriminatorType? Type1070 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListFineTuningJobCheckpointsResponseObject? Type1071 { get; set; }
+        public global::tryAGI.OpenAI.ListAssistantsResponse? Type1071 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListFineTuningJobEventsResponse? Type1072 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AssistantObject>? Type1072 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FineTuningJobEvent>? Type1073 { get; set; }
+        public global::tryAGI.OpenAI.ListAuditLogsResponse? Type1073 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListFineTuningJobEventsResponseObject? Type1074 { get; set; }
+        public global::tryAGI.OpenAI.ListAuditLogsResponseObject? Type1074 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListMessagesResponse? Type1075 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AuditLog>? Type1075 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.MessageObject>? Type1076 { get; set; }
+        public global::tryAGI.OpenAI.ListBatchesResponse? Type1076 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageObject? Type1077 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Batch>? Type1077 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListModelsResponse? Type1078 { get; set; }
+        public global::tryAGI.OpenAI.ListBatchesResponseObject? Type1078 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListModelsResponseObject? Type1079 { get; set; }
+        public global::tryAGI.OpenAI.ListCertificatesResponse? Type1079 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Model18>? Type1080 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OrganizationCertificate>? Type1080 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.Model18? Type1081 { get; set; }
+        public global::tryAGI.OpenAI.OrganizationCertificate? Type1081 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListPaginatedFineTuningJobsResponse? Type1082 { get; set; }
+        public global::tryAGI.OpenAI.ListCertificatesResponseObject? Type1082 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FineTuningJob>? Type1083 { get; set; }
+        public global::tryAGI.OpenAI.ListFilesResponse? Type1083 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListPaginatedFineTuningJobsResponseObject? Type1084 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OpenAIFile>? Type1084 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListProjectCertificatesResponse? Type1085 { get; set; }
+        public global::tryAGI.OpenAI.OpenAIFile? Type1085 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OrganizationProjectCertificate>? Type1086 { get; set; }
+        public global::tryAGI.OpenAI.ListFineTuningCheckpointPermissionResponse? Type1086 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OrganizationProjectCertificate? Type1087 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FineTuningCheckpointPermission>? Type1087 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListProjectCertificatesResponseObject? Type1088 { get; set; }
+        public global::tryAGI.OpenAI.ListFineTuningCheckpointPermissionResponseObject? Type1088 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListRunStepsResponse? Type1089 { get; set; }
+        public global::tryAGI.OpenAI.ListFineTuningJobCheckpointsResponse? Type1089 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RunStepObject>? Type1090 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FineTuningJobCheckpoint>? Type1090 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepObject? Type1091 { get; set; }
+        public global::tryAGI.OpenAI.ListFineTuningJobCheckpointsResponseObject? Type1091 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListRunsResponse? Type1092 { get; set; }
+        public global::tryAGI.OpenAI.ListFineTuningJobEventsResponse? Type1092 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RunObject>? Type1093 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FineTuningJobEvent>? Type1093 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunObject? Type1094 { get; set; }
+        public global::tryAGI.OpenAI.ListFineTuningJobEventsResponseObject? Type1094 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListVectorStoreFilesResponse? Type1095 { get; set; }
+        public global::tryAGI.OpenAI.ListMessagesResponse? Type1095 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VectorStoreFileObject>? Type1096 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.MessageObject>? Type1096 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VectorStoreFileObject? Type1097 { get; set; }
+        public global::tryAGI.OpenAI.MessageObject? Type1097 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListVectorStoresResponse? Type1098 { get; set; }
+        public global::tryAGI.OpenAI.ListModelsResponse? Type1098 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VectorStoreObject>? Type1099 { get; set; }
+        public global::tryAGI.OpenAI.ListModelsResponseObject? Type1099 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VectorStoreObject? Type1100 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Model18>? Type1100 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.LocalShellToolCallType? Type1101 { get; set; }
+        public global::tryAGI.OpenAI.Model18? Type1101 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.LocalShellExecAction? Type1102 { get; set; }
+        public global::tryAGI.OpenAI.ListPaginatedFineTuningJobsResponse? Type1102 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.LocalShellToolCallStatus? Type1103 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FineTuningJob>? Type1103 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.LocalShellToolCallOutputType? Type1104 { get; set; }
+        public global::tryAGI.OpenAI.ListPaginatedFineTuningJobsResponseObject? Type1104 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.LocalShellToolCallOutputStatus2? Type1105 { get; set; }
+        public global::tryAGI.OpenAI.ListProjectCertificatesResponse? Type1105 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.LogProbProperties? Type1106 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OrganizationProjectCertificate>? Type1106 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MCPApprovalRequestType? Type1107 { get; set; }
+        public global::tryAGI.OpenAI.OrganizationProjectCertificate? Type1107 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MCPApprovalResponseType? Type1108 { get; set; }
+        public global::tryAGI.OpenAI.ListProjectCertificatesResponseObject? Type1108 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MCPApprovalResponseResourceType? Type1109 { get; set; }
+        public global::tryAGI.OpenAI.ListRunStepsResponse? Type1109 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MCPListToolsType? Type1110 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RunStepObject>? Type1110 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.MCPListToolsTool>? Type1111 { get; set; }
+        public global::tryAGI.OpenAI.RunStepObject? Type1111 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MCPListToolsTool? Type1112 { get; set; }
+        public global::tryAGI.OpenAI.ListRunsResponse? Type1112 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MCPTool? Type1113 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RunObject>? Type1113 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MCPToolType? Type1114 { get; set; }
+        public global::tryAGI.OpenAI.RunObject? Type1114 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MCPToolConnectorId? Type1115 { get; set; }
+        public global::tryAGI.OpenAI.ListVectorStoreFilesResponse? Type1115 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::System.Collections.Generic.IList<string>, global::tryAGI.OpenAI.MCPToolFilter>? Type1116 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VectorStoreFileObject>? Type1116 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MCPToolFilter? Type1117 { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreFileObject? Type1117 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MCPToolRequireApprovalVariant1Enum, global::tryAGI.OpenAI.MCPToolRequireApprovalVariant1Enum2?>? Type1118 { get; set; }
+        public global::tryAGI.OpenAI.ListVectorStoresResponse? Type1118 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MCPToolRequireApprovalVariant1Enum? Type1119 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VectorStoreObject>? Type1119 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MCPToolRequireApprovalVariant1Enum2? Type1120 { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreObject? Type1120 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MCPToolCallType? Type1121 { get; set; }
+        public global::tryAGI.OpenAI.LocalShellToolCallType? Type1121 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MCPToolCallStatus? Type1122 { get; set; }
+        public global::tryAGI.OpenAI.LocalShellExecAction? Type1122 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageContentImageFileObjectType? Type1123 { get; set; }
+        public global::tryAGI.OpenAI.LocalShellToolCallStatus? Type1123 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageContentImageFileObjectImageFile? Type1124 { get; set; }
+        public global::tryAGI.OpenAI.LocalShellToolCallOutputType? Type1124 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageContentImageFileObjectImageFileDetail? Type1125 { get; set; }
+        public global::tryAGI.OpenAI.LocalShellToolCallOutputStatus2? Type1125 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageContentImageUrlObjectType? Type1126 { get; set; }
+        public global::tryAGI.OpenAI.LogProbProperties? Type1126 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageContentImageUrlObjectImageUrl? Type1127 { get; set; }
+        public global::tryAGI.OpenAI.MCPApprovalRequestType? Type1127 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageContentImageUrlObjectImageUrlDetail? Type1128 { get; set; }
+        public global::tryAGI.OpenAI.MCPApprovalResponseType? Type1128 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageContentRefusalObject? Type1129 { get; set; }
+        public global::tryAGI.OpenAI.MCPApprovalResponseResourceType? Type1129 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageContentRefusalObjectType? Type1130 { get; set; }
+        public global::tryAGI.OpenAI.MCPListToolsType? Type1130 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageContentTextAnnotationsFileCitationObject? Type1131 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.MCPListToolsTool>? Type1131 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageContentTextAnnotationsFileCitationObjectType? Type1132 { get; set; }
+        public global::tryAGI.OpenAI.MCPListToolsTool? Type1132 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageContentTextAnnotationsFileCitationObjectFileCitation? Type1133 { get; set; }
+        public global::tryAGI.OpenAI.MCPTool? Type1133 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageContentTextAnnotationsFilePathObject? Type1134 { get; set; }
+        public global::tryAGI.OpenAI.MCPToolType? Type1134 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageContentTextAnnotationsFilePathObjectType? Type1135 { get; set; }
+        public global::tryAGI.OpenAI.MCPToolConnectorId? Type1135 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageContentTextAnnotationsFilePathObjectFilePath? Type1136 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::System.Collections.Generic.IList<string>, global::tryAGI.OpenAI.MCPToolFilter>? Type1136 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageContentTextObject? Type1137 { get; set; }
+        public global::tryAGI.OpenAI.MCPToolFilter? Type1137 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageContentTextObjectType? Type1138 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MCPToolRequireApprovalVariant1Enum, global::tryAGI.OpenAI.MCPToolRequireApprovalVariant1Enum2?>? Type1138 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageContentTextObjectText? Type1139 { get; set; }
+        public global::tryAGI.OpenAI.MCPToolRequireApprovalVariant1Enum? Type1139 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageContentTextAnnotationsFileCitationObject, global::tryAGI.OpenAI.MessageContentTextAnnotationsFilePathObject>>? Type1140 { get; set; }
+        public global::tryAGI.OpenAI.MCPToolRequireApprovalVariant1Enum2? Type1140 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageContentTextAnnotationsFileCitationObject, global::tryAGI.OpenAI.MessageContentTextAnnotationsFilePathObject>? Type1141 { get; set; }
+        public global::tryAGI.OpenAI.MCPToolCallType? Type1141 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageDeltaContentImageFileObject? Type1142 { get; set; }
+        public global::tryAGI.OpenAI.MCPToolCallStatus? Type1142 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageDeltaContentImageFileObjectType? Type1143 { get; set; }
+        public global::tryAGI.OpenAI.MessageContentImageFileObjectType? Type1143 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageDeltaContentImageFileObjectImageFile? Type1144 { get; set; }
+        public global::tryAGI.OpenAI.MessageContentImageFileObjectImageFile? Type1144 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageDeltaContentImageFileObjectImageFileDetail? Type1145 { get; set; }
+        public global::tryAGI.OpenAI.MessageContentImageFileObjectImageFileDetail? Type1145 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageDeltaContentImageUrlObject? Type1146 { get; set; }
+        public global::tryAGI.OpenAI.MessageContentImageUrlObjectType? Type1146 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageDeltaContentImageUrlObjectType? Type1147 { get; set; }
+        public global::tryAGI.OpenAI.MessageContentImageUrlObjectImageUrl? Type1147 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageDeltaContentImageUrlObjectImageUrl? Type1148 { get; set; }
+        public global::tryAGI.OpenAI.MessageContentImageUrlObjectImageUrlDetail? Type1148 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageDeltaContentImageUrlObjectImageUrlDetail? Type1149 { get; set; }
+        public global::tryAGI.OpenAI.MessageContentRefusalObject? Type1149 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageDeltaContentRefusalObject? Type1150 { get; set; }
+        public global::tryAGI.OpenAI.MessageContentRefusalObjectType? Type1150 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageDeltaContentRefusalObjectType? Type1151 { get; set; }
+        public global::tryAGI.OpenAI.MessageContentTextAnnotationsFileCitationObject? Type1151 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject? Type1152 { get; set; }
+        public global::tryAGI.OpenAI.MessageContentTextAnnotationsFileCitationObjectType? Type1152 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFileCitationObjectType? Type1153 { get; set; }
+        public global::tryAGI.OpenAI.MessageContentTextAnnotationsFileCitationObjectFileCitation? Type1153 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation? Type1154 { get; set; }
+        public global::tryAGI.OpenAI.MessageContentTextAnnotationsFilePathObject? Type1154 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFilePathObject? Type1155 { get; set; }
+        public global::tryAGI.OpenAI.MessageContentTextAnnotationsFilePathObjectType? Type1155 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFilePathObjectType? Type1156 { get; set; }
+        public global::tryAGI.OpenAI.MessageContentTextAnnotationsFilePathObjectFilePath? Type1156 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFilePathObjectFilePath? Type1157 { get; set; }
+        public global::tryAGI.OpenAI.MessageContentTextObject? Type1157 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageDeltaContentTextObject? Type1158 { get; set; }
+        public global::tryAGI.OpenAI.MessageContentTextObjectType? Type1158 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageDeltaContentTextObjectType? Type1159 { get; set; }
+        public global::tryAGI.OpenAI.MessageContentTextObjectText? Type1159 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageDeltaContentTextObjectText? Type1160 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageContentTextAnnotationsFileCitationObject, global::tryAGI.OpenAI.MessageContentTextAnnotationsFilePathObject>>? Type1160 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject, global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFilePathObject>>? Type1161 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageContentTextAnnotationsFileCitationObject, global::tryAGI.OpenAI.MessageContentTextAnnotationsFilePathObject>? Type1161 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject, global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFilePathObject>? Type1162 { get; set; }
+        public global::tryAGI.OpenAI.MessageDeltaContentImageFileObject? Type1162 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageDeltaObject? Type1163 { get; set; }
+        public global::tryAGI.OpenAI.MessageDeltaContentImageFileObjectType? Type1163 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageDeltaObjectObject? Type1164 { get; set; }
+        public global::tryAGI.OpenAI.MessageDeltaContentImageFileObjectImageFile? Type1164 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageDeltaObjectDelta? Type1165 { get; set; }
+        public global::tryAGI.OpenAI.MessageDeltaContentImageFileObjectImageFileDetail? Type1165 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageDeltaObjectDeltaRole? Type1166 { get; set; }
+        public global::tryAGI.OpenAI.MessageDeltaContentImageUrlObject? Type1166 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageObjectObject? Type1167 { get; set; }
+        public global::tryAGI.OpenAI.MessageDeltaContentImageUrlObjectType? Type1167 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageObjectStatus? Type1168 { get; set; }
+        public global::tryAGI.OpenAI.MessageDeltaContentImageUrlObjectImageUrl? Type1168 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageObjectIncompleteDetails2? Type1169 { get; set; }
+        public global::tryAGI.OpenAI.MessageDeltaContentImageUrlObjectImageUrlDetail? Type1169 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageObjectIncompleteDetailsReason? Type1170 { get; set; }
+        public global::tryAGI.OpenAI.MessageDeltaContentRefusalObject? Type1170 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageObjectRole? Type1171 { get; set; }
+        public global::tryAGI.OpenAI.MessageDeltaContentRefusalObjectType? Type1171 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.MessageObjectAttachmentsVariant1Item>? Type1172 { get; set; }
+        public global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject? Type1172 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageObjectAttachmentsVariant1Item? Type1173 { get; set; }
+        public global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFileCitationObjectType? Type1173 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageRequestContentTextObjectType? Type1174 { get; set; }
+        public global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation? Type1174 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageStreamEventVariant1? Type1175 { get; set; }
+        public global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFilePathObject? Type1175 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageStreamEventVariant1Event? Type1176 { get; set; }
+        public global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFilePathObjectType? Type1176 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageStreamEventVariant2? Type1177 { get; set; }
+        public global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFilePathObjectFilePath? Type1177 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageStreamEventVariant2Event? Type1178 { get; set; }
+        public global::tryAGI.OpenAI.MessageDeltaContentTextObject? Type1178 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageStreamEventVariant3? Type1179 { get; set; }
+        public global::tryAGI.OpenAI.MessageDeltaContentTextObjectType? Type1179 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageStreamEventVariant3Event? Type1180 { get; set; }
+        public global::tryAGI.OpenAI.MessageDeltaContentTextObjectText? Type1180 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageStreamEventVariant4? Type1181 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject, global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFilePathObject>>? Type1181 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageStreamEventVariant4Event? Type1182 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFileCitationObject, global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFilePathObject>? Type1182 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageStreamEventVariant5? Type1183 { get; set; }
+        public global::tryAGI.OpenAI.MessageDeltaObject? Type1183 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageStreamEventVariant5Event? Type1184 { get; set; }
+        public global::tryAGI.OpenAI.MessageDeltaObjectObject? Type1184 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ModelObject? Type1185 { get; set; }
+        public global::tryAGI.OpenAI.MessageDeltaObjectDelta? Type1185 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ModelIds? Type1186 { get; set; }
+        public global::tryAGI.OpenAI.MessageDeltaObjectDeltaRole? Type1186 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ModelIdsResponses? Type1187 { get; set; }
+        public global::tryAGI.OpenAI.MessageObjectObject? Type1187 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ModelIdsCompaction? Type1188 { get; set; }
+        public global::tryAGI.OpenAI.MessageObjectStatus? Type1188 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ModelIdsResponsesEnum? Type1189 { get; set; }
+        public global::tryAGI.OpenAI.MessageObjectIncompleteDetails2? Type1189 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ModelIdsSharedEnum? Type1190 { get; set; }
+        public global::tryAGI.OpenAI.MessageObjectIncompleteDetailsReason? Type1190 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ModelResponsePropertiesPromptCacheRetention2? Type1191 { get; set; }
+        public global::tryAGI.OpenAI.MessageObjectRole? Type1191 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ModifyAssistantRequest? Type1192 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.MessageObjectAttachmentsVariant1Item>? Type1192 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ModifyAssistantRequestToolResources2? Type1193 { get; set; }
+        public global::tryAGI.OpenAI.MessageObjectAttachmentsVariant1Item? Type1193 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ModifyAssistantRequestToolResourcesCodeInterpreter? Type1194 { get; set; }
+        public global::tryAGI.OpenAI.MessageRequestContentTextObjectType? Type1194 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ModifyAssistantRequestToolResourcesFileSearch? Type1195 { get; set; }
+        public global::tryAGI.OpenAI.MessageStreamEventVariant1? Type1195 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ModifyCertificateRequest? Type1196 { get; set; }
+        public global::tryAGI.OpenAI.MessageStreamEventVariant1Event? Type1196 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ModifyMessageRequest? Type1197 { get; set; }
+        public global::tryAGI.OpenAI.MessageStreamEventVariant2? Type1197 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ModifyRunRequest? Type1198 { get; set; }
+        public global::tryAGI.OpenAI.MessageStreamEventVariant2Event? Type1198 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ModifyThreadRequest? Type1199 { get; set; }
+        public global::tryAGI.OpenAI.MessageStreamEventVariant3? Type1199 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ModifyThreadRequestToolResources2? Type1200 { get; set; }
+        public global::tryAGI.OpenAI.MessageStreamEventVariant3Event? Type1200 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ModifyThreadRequestToolResourcesCodeInterpreter? Type1201 { get; set; }
+        public global::tryAGI.OpenAI.MessageStreamEventVariant4? Type1201 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ModifyThreadRequestToolResourcesFileSearch? Type1202 { get; set; }
+        public global::tryAGI.OpenAI.MessageStreamEventVariant4Event? Type1202 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.NoiseReductionType? Type1203 { get; set; }
+        public global::tryAGI.OpenAI.MessageStreamEventVariant5? Type1203 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OpenAIFileObject? Type1204 { get; set; }
+        public global::tryAGI.OpenAI.MessageStreamEventVariant5Event? Type1204 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OpenAIFilePurpose? Type1205 { get; set; }
+        public global::tryAGI.OpenAI.ModelObject? Type1205 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OpenAIFileStatus? Type1206 { get; set; }
+        public global::tryAGI.OpenAI.ModelIds? Type1206 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OrganizationCertificateObject? Type1207 { get; set; }
+        public global::tryAGI.OpenAI.ModelIdsResponses? Type1207 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OrganizationCertificateCertificateDetails? Type1208 { get; set; }
+        public global::tryAGI.OpenAI.ModelIdsCompaction? Type1208 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OrganizationCertificateActivationResponse? Type1209 { get; set; }
+        public global::tryAGI.OpenAI.ModelIdsResponsesEnum? Type1209 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OrganizationCertificateActivationResponseObject? Type1210 { get; set; }
+        public global::tryAGI.OpenAI.ModelIdsSharedEnum? Type1210 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OrganizationCertificateDeactivationResponse? Type1211 { get; set; }
+        public global::tryAGI.OpenAI.ModelResponsePropertiesPromptCacheRetention2? Type1211 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OrganizationCertificateDeactivationResponseObject? Type1212 { get; set; }
+        public global::tryAGI.OpenAI.ModifyAssistantRequest? Type1212 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OrganizationProjectCertificateObject? Type1213 { get; set; }
+        public global::tryAGI.OpenAI.ModifyAssistantRequestToolResources2? Type1213 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OrganizationProjectCertificateCertificateDetails? Type1214 { get; set; }
+        public global::tryAGI.OpenAI.ModifyAssistantRequestToolResourcesCodeInterpreter? Type1214 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OrganizationProjectCertificateActivationResponse? Type1215 { get; set; }
+        public global::tryAGI.OpenAI.ModifyAssistantRequestToolResourcesFileSearch? Type1215 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OrganizationProjectCertificateActivationResponseObject? Type1216 { get; set; }
+        public global::tryAGI.OpenAI.ModifyCertificateRequest? Type1216 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OrganizationProjectCertificateDeactivationResponse? Type1217 { get; set; }
+        public global::tryAGI.OpenAI.ModifyMessageRequest? Type1217 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OrganizationProjectCertificateDeactivationResponseObject? Type1218 { get; set; }
+        public global::tryAGI.OpenAI.ModifyRunRequest? Type1218 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OtherChunkingStrategyResponseParam? Type1219 { get; set; }
+        public global::tryAGI.OpenAI.ModifyThreadRequest? Type1219 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OtherChunkingStrategyResponseParamType? Type1220 { get; set; }
+        public global::tryAGI.OpenAI.ModifyThreadRequestToolResources2? Type1220 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OutputAudio? Type1221 { get; set; }
+        public global::tryAGI.OpenAI.ModifyThreadRequestToolResourcesCodeInterpreter? Type1221 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OutputAudioType? Type1222 { get; set; }
+        public global::tryAGI.OpenAI.ModifyThreadRequestToolResourcesFileSearch? Type1222 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OutputTextContent? Type1223 { get; set; }
+        public global::tryAGI.OpenAI.NoiseReductionType? Type1223 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RefusalContent? Type1224 { get; set; }
+        public global::tryAGI.OpenAI.OpenAIFileObject? Type1224 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ReasoningTextContent? Type1225 { get; set; }
+        public global::tryAGI.OpenAI.OpenAIFilePurpose? Type1225 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OutputContentDiscriminator? Type1226 { get; set; }
+        public global::tryAGI.OpenAI.OpenAIFileStatus? Type1226 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OutputItem? Type1227 { get; set; }
+        public global::tryAGI.OpenAI.OrganizationCertificateObject? Type1227 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OutputItemDiscriminator? Type1228 { get; set; }
+        public global::tryAGI.OpenAI.OrganizationCertificateCertificateDetails? Type1228 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OutputMessageType? Type1229 { get; set; }
+        public global::tryAGI.OpenAI.OrganizationCertificateActivationResponse? Type1229 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OutputMessageRole? Type1230 { get; set; }
+        public global::tryAGI.OpenAI.OrganizationCertificateActivationResponseObject? Type1230 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputMessageContent>? Type1231 { get; set; }
+        public global::tryAGI.OpenAI.OrganizationCertificateDeactivationResponse? Type1231 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OutputMessageContent? Type1232 { get; set; }
+        public global::tryAGI.OpenAI.OrganizationCertificateDeactivationResponseObject? Type1232 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OutputMessageStatus? Type1233 { get; set; }
+        public global::tryAGI.OpenAI.OrganizationProjectCertificateObject? Type1233 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OutputMessageContentDiscriminator? Type1234 { get; set; }
+        public global::tryAGI.OpenAI.OrganizationProjectCertificateCertificateDetails? Type1234 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.PredictionContentType? Type1235 { get; set; }
+        public global::tryAGI.OpenAI.OrganizationProjectCertificateActivationResponse? Type1235 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.Project? Type1236 { get; set; }
+        public global::tryAGI.OpenAI.OrganizationProjectCertificateActivationResponseObject? Type1236 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectObject? Type1237 { get; set; }
+        public global::tryAGI.OpenAI.OrganizationProjectCertificateDeactivationResponse? Type1237 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectApiKey? Type1238 { get; set; }
+        public global::tryAGI.OpenAI.OrganizationProjectCertificateDeactivationResponseObject? Type1238 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectApiKeyObject? Type1239 { get; set; }
+        public global::tryAGI.OpenAI.OtherChunkingStrategyResponseParam? Type1239 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectApiKeyOwner? Type1240 { get; set; }
+        public global::tryAGI.OpenAI.OtherChunkingStrategyResponseParamType? Type1240 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectApiKeyOwnerType? Type1241 { get; set; }
+        public global::tryAGI.OpenAI.OutputAudio? Type1241 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectApiKeyOwnerUser? Type1242 { get; set; }
+        public global::tryAGI.OpenAI.OutputAudioType? Type1242 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectApiKeyOwnerServiceAccount? Type1243 { get; set; }
+        public global::tryAGI.OpenAI.OutputTextContent? Type1243 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectApiKeyDeleteResponse? Type1244 { get; set; }
+        public global::tryAGI.OpenAI.RefusalContent? Type1244 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectApiKeyDeleteResponseObject? Type1245 { get; set; }
+        public global::tryAGI.OpenAI.ReasoningTextContent? Type1245 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectApiKeyListResponse? Type1246 { get; set; }
+        public global::tryAGI.OpenAI.OutputContentDiscriminator? Type1246 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectApiKeyListResponseObject? Type1247 { get; set; }
+        public global::tryAGI.OpenAI.OutputContentDiscriminatorType? Type1247 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ProjectApiKey>? Type1248 { get; set; }
+        public global::tryAGI.OpenAI.OutputItem? Type1248 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectCreateRequest? Type1249 { get; set; }
+        public global::tryAGI.OpenAI.OutputItemDiscriminator? Type1249 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectGroup? Type1250 { get; set; }
+        public global::tryAGI.OpenAI.OutputItemDiscriminatorType? Type1250 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectGroupObject? Type1251 { get; set; }
+        public global::tryAGI.OpenAI.OutputMessageType? Type1251 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectGroupDeletedResource? Type1252 { get; set; }
+        public global::tryAGI.OpenAI.OutputMessageRole? Type1252 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectGroupDeletedResourceObject? Type1253 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputMessageContent>? Type1253 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectGroupListResource? Type1254 { get; set; }
+        public global::tryAGI.OpenAI.OutputMessageContent? Type1254 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectGroupListResourceObject? Type1255 { get; set; }
+        public global::tryAGI.OpenAI.OutputMessageStatus? Type1255 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ProjectGroup>? Type1256 { get; set; }
+        public global::tryAGI.OpenAI.OutputMessageContentDiscriminator? Type1256 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectListResponse? Type1257 { get; set; }
+        public global::tryAGI.OpenAI.OutputMessageContentDiscriminatorType? Type1257 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectListResponseObject? Type1258 { get; set; }
+        public global::tryAGI.OpenAI.PredictionContentType? Type1258 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Project>? Type1259 { get; set; }
+        public global::tryAGI.OpenAI.Project? Type1259 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectRateLimit? Type1260 { get; set; }
+        public global::tryAGI.OpenAI.ProjectObject? Type1260 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectRateLimitObject? Type1261 { get; set; }
+        public global::tryAGI.OpenAI.ProjectApiKey? Type1261 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectRateLimitListResponse? Type1262 { get; set; }
+        public global::tryAGI.OpenAI.ProjectApiKeyObject? Type1262 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectRateLimitListResponseObject? Type1263 { get; set; }
+        public global::tryAGI.OpenAI.ProjectApiKeyOwner? Type1263 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ProjectRateLimit>? Type1264 { get; set; }
+        public global::tryAGI.OpenAI.ProjectApiKeyOwnerType? Type1264 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectRateLimitUpdateRequest? Type1265 { get; set; }
+        public global::tryAGI.OpenAI.ProjectApiKeyOwnerUser? Type1265 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectServiceAccount? Type1266 { get; set; }
+        public global::tryAGI.OpenAI.ProjectApiKeyOwnerServiceAccount? Type1266 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectServiceAccountObject? Type1267 { get; set; }
+        public global::tryAGI.OpenAI.ProjectApiKeyDeleteResponse? Type1267 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectServiceAccountRole? Type1268 { get; set; }
+        public global::tryAGI.OpenAI.ProjectApiKeyDeleteResponseObject? Type1268 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectServiceAccountApiKey? Type1269 { get; set; }
+        public global::tryAGI.OpenAI.ProjectApiKeyListResponse? Type1269 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectServiceAccountApiKeyObject? Type1270 { get; set; }
+        public global::tryAGI.OpenAI.ProjectApiKeyListResponseObject? Type1270 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectServiceAccountCreateRequest? Type1271 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ProjectApiKey>? Type1271 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectServiceAccountCreateResponse? Type1272 { get; set; }
+        public global::tryAGI.OpenAI.ProjectCreateRequest? Type1272 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectServiceAccountCreateResponseObject? Type1273 { get; set; }
+        public global::tryAGI.OpenAI.ProjectGroup? Type1273 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectServiceAccountCreateResponseRole? Type1274 { get; set; }
+        public global::tryAGI.OpenAI.ProjectGroupObject? Type1274 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectServiceAccountDeleteResponse? Type1275 { get; set; }
+        public global::tryAGI.OpenAI.ProjectGroupDeletedResource? Type1275 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectServiceAccountDeleteResponseObject? Type1276 { get; set; }
+        public global::tryAGI.OpenAI.ProjectGroupDeletedResourceObject? Type1276 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectServiceAccountListResponse? Type1277 { get; set; }
+        public global::tryAGI.OpenAI.ProjectGroupListResource? Type1277 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectServiceAccountListResponseObject? Type1278 { get; set; }
+        public global::tryAGI.OpenAI.ProjectGroupListResourceObject? Type1278 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ProjectServiceAccount>? Type1279 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ProjectGroup>? Type1279 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectUpdateRequest? Type1280 { get; set; }
+        public global::tryAGI.OpenAI.ProjectListResponse? Type1280 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectUser? Type1281 { get; set; }
+        public global::tryAGI.OpenAI.ProjectListResponseObject? Type1281 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectUserObject? Type1282 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Project>? Type1282 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectUserCreateRequest? Type1283 { get; set; }
+        public global::tryAGI.OpenAI.ProjectRateLimit? Type1283 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectUserDeleteResponse? Type1284 { get; set; }
+        public global::tryAGI.OpenAI.ProjectRateLimitObject? Type1284 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectUserDeleteResponseObject? Type1285 { get; set; }
+        public global::tryAGI.OpenAI.ProjectRateLimitListResponse? Type1285 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectUserListResponse? Type1286 { get; set; }
+        public global::tryAGI.OpenAI.ProjectRateLimitListResponseObject? Type1286 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ProjectUser>? Type1287 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ProjectRateLimit>? Type1287 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ProjectUserUpdateRequest? Type1288 { get; set; }
+        public global::tryAGI.OpenAI.ProjectRateLimitUpdateRequest? Type1288 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.PromptVariant1? Type1289 { get; set; }
+        public global::tryAGI.OpenAI.ProjectServiceAccount? Type1289 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.PublicAssignOrganizationGroupRoleBody? Type1290 { get; set; }
+        public global::tryAGI.OpenAI.ProjectServiceAccountObject? Type1290 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.PublicCreateOrganizationRoleBody? Type1291 { get; set; }
+        public global::tryAGI.OpenAI.ProjectServiceAccountRole? Type1291 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.PublicRoleListResource? Type1292 { get; set; }
+        public global::tryAGI.OpenAI.ProjectServiceAccountApiKey? Type1292 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.PublicRoleListResourceObject? Type1293 { get; set; }
+        public global::tryAGI.OpenAI.ProjectServiceAccountApiKeyObject? Type1293 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Role>? Type1294 { get; set; }
+        public global::tryAGI.OpenAI.ProjectServiceAccountCreateRequest? Type1294 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.PublicUpdateOrganizationRoleBody? Type1295 { get; set; }
+        public global::tryAGI.OpenAI.ProjectServiceAccountCreateResponse? Type1295 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeAudioFormats? Type1296 { get; set; }
+        public global::tryAGI.OpenAI.ProjectServiceAccountCreateResponseObject? Type1296 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeAudioFormatsPcmAudioFormat? Type1297 { get; set; }
+        public global::tryAGI.OpenAI.ProjectServiceAccountCreateResponseRole? Type1297 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeAudioFormatsPcmAudioFormatType? Type1298 { get; set; }
+        public global::tryAGI.OpenAI.ProjectServiceAccountDeleteResponse? Type1298 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeAudioFormatsPcmuAudioFormat? Type1299 { get; set; }
+        public global::tryAGI.OpenAI.ProjectServiceAccountDeleteResponseObject? Type1299 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeAudioFormatsPcmuAudioFormatType? Type1300 { get; set; }
+        public global::tryAGI.OpenAI.ProjectServiceAccountListResponse? Type1300 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormat? Type1301 { get; set; }
+        public global::tryAGI.OpenAI.ProjectServiceAccountListResponseObject? Type1301 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormatType? Type1302 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ProjectServiceAccount>? Type1302 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventConversationItemCreate? Type1303 { get; set; }
+        public global::tryAGI.OpenAI.ProjectUpdateRequest? Type1303 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventConversationItemCreateType? Type1304 { get; set; }
+        public global::tryAGI.OpenAI.ProjectUser? Type1304 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItem? Type1305 { get; set; }
+        public global::tryAGI.OpenAI.ProjectUserObject? Type1305 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventConversationItemDelete? Type1306 { get; set; }
+        public global::tryAGI.OpenAI.ProjectUserCreateRequest? Type1306 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventConversationItemDeleteType? Type1307 { get; set; }
+        public global::tryAGI.OpenAI.ProjectUserDeleteResponse? Type1307 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventConversationItemRetrieve? Type1308 { get; set; }
+        public global::tryAGI.OpenAI.ProjectUserDeleteResponseObject? Type1308 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventConversationItemRetrieveType? Type1309 { get; set; }
+        public global::tryAGI.OpenAI.ProjectUserListResponse? Type1309 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventConversationItemTruncate? Type1310 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ProjectUser>? Type1310 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventConversationItemTruncateType? Type1311 { get; set; }
+        public global::tryAGI.OpenAI.ProjectUserUpdateRequest? Type1311 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventInputAudioBufferAppend? Type1312 { get; set; }
+        public global::tryAGI.OpenAI.PromptVariant1? Type1312 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventInputAudioBufferAppendType? Type1313 { get; set; }
+        public global::tryAGI.OpenAI.PublicAssignOrganizationGroupRoleBody? Type1313 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventInputAudioBufferClear? Type1314 { get; set; }
+        public global::tryAGI.OpenAI.PublicCreateOrganizationRoleBody? Type1314 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventInputAudioBufferClearType? Type1315 { get; set; }
+        public global::tryAGI.OpenAI.PublicRoleListResource? Type1315 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventInputAudioBufferCommit? Type1316 { get; set; }
+        public global::tryAGI.OpenAI.PublicRoleListResourceObject? Type1316 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventInputAudioBufferCommitType? Type1317 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Role>? Type1317 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventOutputAudioBufferClear? Type1318 { get; set; }
+        public global::tryAGI.OpenAI.PublicUpdateOrganizationRoleBody? Type1318 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventOutputAudioBufferClearType? Type1319 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeAudioFormats? Type1319 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventResponseCancel? Type1320 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeAudioFormatsPcmAudioFormat? Type1320 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventResponseCancelType? Type1321 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeAudioFormatsPcmAudioFormatType? Type1321 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventResponseCreate? Type1322 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeAudioFormatsPcmuAudioFormat? Type1322 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventResponseCreateType? Type1323 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeAudioFormatsPcmuAudioFormatType? Type1323 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaResponseCreateParams? Type1324 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormat? Type1324 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventSessionUpdate? Type1325 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormatType? Type1325 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventSessionUpdateType? Type1326 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaClientEventConversationItemCreate? Type1326 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateRequest? Type1327 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaClientEventConversationItemCreateType? Type1327 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventTranscriptionSessionUpdate? Type1328 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItem? Type1328 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventTranscriptionSessionUpdateType? Type1329 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaClientEventConversationItemDelete? Type1329 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequest? Type1330 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaClientEventConversationItemDeleteType? Type1330 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaResponse? Type1331 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaClientEventConversationItemRetrieve? Type1331 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaResponseObject? Type1332 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaClientEventConversationItemRetrieveType? Type1332 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaResponseStatus? Type1333 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaClientEventConversationItemTruncate? Type1333 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaResponseStatusDetails? Type1334 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaClientEventConversationItemTruncateType? Type1334 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaResponseStatusDetailsType? Type1335 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaClientEventInputAudioBufferAppend? Type1335 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaResponseStatusDetailsReason? Type1336 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaClientEventInputAudioBufferAppendType? Type1336 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaResponseStatusDetailsError? Type1337 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaClientEventInputAudioBufferClear? Type1337 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeConversationItem>? Type1338 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaClientEventInputAudioBufferClearType? Type1338 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaResponseUsage? Type1339 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaClientEventInputAudioBufferCommit? Type1339 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaResponseUsageInputTokenDetails? Type1340 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaClientEventInputAudioBufferCommitType? Type1340 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaResponseUsageInputTokenDetailsCachedTokensDetails? Type1341 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaClientEventOutputAudioBufferClear? Type1341 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaResponseUsageOutputTokenDetails? Type1342 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaClientEventOutputAudioBufferClearType? Type1342 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VoiceIdsShared? Type1343 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaClientEventResponseCancel? Type1343 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeBetaResponseModalitie>? Type1344 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaClientEventResponseCancelType? Type1344 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaResponseModalitie? Type1345 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaClientEventResponseCreate? Type1345 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaResponseOutputAudioFormat? Type1346 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaClientEventResponseCreateType? Type1346 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeBetaResponseMaxOutputTokens?>? Type1347 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaResponseCreateParams? Type1347 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaResponseMaxOutputTokens? Type1348 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaClientEventSessionUpdate? Type1348 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeBetaResponseCreateParamsModalitie>? Type1349 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaClientEventSessionUpdateType? Type1349 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaResponseCreateParamsModalitie? Type1350 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateRequest? Type1350 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaResponseCreateParamsOutputAudioFormat? Type1351 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaClientEventTranscriptionSessionUpdate? Type1351 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeBetaResponseCreateParamsTool>? Type1352 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaClientEventTranscriptionSessionUpdateType? Type1352 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaResponseCreateParamsTool? Type1353 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequest? Type1353 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaResponseCreateParamsToolType? Type1354 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaResponse? Type1354 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP>? Type1355 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaResponseObject? Type1355 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ToolChoiceOptions? Type1356 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaResponseStatus? Type1356 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ToolChoiceFunction? Type1357 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaResponseStatusDetails? Type1357 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ToolChoiceMCP? Type1358 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaResponseStatusDetailsType? Type1358 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeBetaResponseCreateParamsMaxOutputTokens?>? Type1359 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaResponseStatusDetailsReason? Type1359 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaResponseCreateParamsMaxOutputTokens? Type1360 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaResponseStatusDetailsError? Type1360 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.RealtimeBetaResponseCreateParamsConversation?>? Type1361 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeConversationItem>? Type1361 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaResponseCreateParamsConversation? Type1362 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaResponseUsage? Type1362 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemCreated? Type1363 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaResponseUsageInputTokenDetails? Type1363 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemCreatedType? Type1364 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaResponseUsageInputTokenDetailsCachedTokensDetails? Type1364 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemDeleted? Type1365 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaResponseUsageOutputTokenDetails? Type1365 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemDeletedType? Type1366 { get; set; }
+        public global::tryAGI.OpenAI.VoiceIdsShared? Type1366 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted? Type1367 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeBetaResponseModalitie>? Type1367 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType? Type1368 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaResponseModalitie? Type1368 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProbProperties>? Type1369 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaResponseOutputAudioFormat? Type1369 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta? Type1370 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeBetaResponseMaxOutputTokens?>? Type1370 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType? Type1371 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaResponseMaxOutputTokens? Type1371 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed? Type1372 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeBetaResponseCreateParamsModalitie>? Type1372 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType? Type1373 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaResponseCreateParamsModalitie? Type1373 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError? Type1374 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaResponseCreateParamsOutputAudioFormat? Type1374 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment? Type1375 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeBetaResponseCreateParamsTool>? Type1375 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType? Type1376 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaResponseCreateParamsTool? Type1376 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemRetrieved? Type1377 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaResponseCreateParamsToolType? Type1377 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemRetrievedType? Type1378 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP>? Type1378 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemTruncated? Type1379 { get; set; }
+        public global::tryAGI.OpenAI.ToolChoiceOptions? Type1379 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemTruncatedType? Type1380 { get; set; }
+        public global::tryAGI.OpenAI.ToolChoiceFunction? Type1380 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventError? Type1381 { get; set; }
+        public global::tryAGI.OpenAI.ToolChoiceMCP? Type1381 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventErrorType? Type1382 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeBetaResponseCreateParamsMaxOutputTokens?>? Type1382 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventErrorError? Type1383 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaResponseCreateParamsMaxOutputTokens? Type1383 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventInputAudioBufferCleared? Type1384 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.RealtimeBetaResponseCreateParamsConversation?>? Type1384 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventInputAudioBufferClearedType? Type1385 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaResponseCreateParamsConversation? Type1385 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventInputAudioBufferCommitted? Type1386 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemCreated? Type1386 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventInputAudioBufferCommittedType? Type1387 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemCreatedType? Type1387 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventInputAudioBufferSpeechStarted? Type1388 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemDeleted? Type1388 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventInputAudioBufferSpeechStartedType? Type1389 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemDeletedType? Type1389 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventInputAudioBufferSpeechStopped? Type1390 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted? Type1390 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventInputAudioBufferSpeechStoppedType? Type1391 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType? Type1391 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventMCPListToolsCompleted? Type1392 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProbProperties>? Type1392 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventMCPListToolsCompletedType? Type1393 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta? Type1393 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventMCPListToolsFailed? Type1394 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType? Type1394 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventMCPListToolsFailedType? Type1395 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed? Type1395 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventMCPListToolsInProgress? Type1396 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType? Type1396 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventMCPListToolsInProgressType? Type1397 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError? Type1397 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventRateLimitsUpdated? Type1398 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment? Type1398 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventRateLimitsUpdatedType? Type1399 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType? Type1399 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeBetaServerEventRateLimitsUpdatedRateLimit>? Type1400 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemRetrieved? Type1400 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventRateLimitsUpdatedRateLimit? Type1401 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemRetrievedType? Type1401 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventRateLimitsUpdatedRateLimitName? Type1402 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemTruncated? Type1402 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseAudioDelta? Type1403 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemTruncatedType? Type1403 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseAudioDeltaType? Type1404 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventError? Type1404 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseAudioDone? Type1405 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventErrorType? Type1405 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseAudioDoneType? Type1406 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventErrorError? Type1406 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseAudioTranscriptDelta? Type1407 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventInputAudioBufferCleared? Type1407 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseAudioTranscriptDeltaType? Type1408 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventInputAudioBufferClearedType? Type1408 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseAudioTranscriptDone? Type1409 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventInputAudioBufferCommitted? Type1409 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseAudioTranscriptDoneType? Type1410 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventInputAudioBufferCommittedType? Type1410 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseContentPartAdded? Type1411 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventInputAudioBufferSpeechStarted? Type1411 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseContentPartAddedType? Type1412 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventInputAudioBufferSpeechStartedType? Type1412 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseContentPartAddedPart? Type1413 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventInputAudioBufferSpeechStopped? Type1413 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseContentPartAddedPartType? Type1414 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventInputAudioBufferSpeechStoppedType? Type1414 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseContentPartDone? Type1415 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventMCPListToolsCompleted? Type1415 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseContentPartDoneType? Type1416 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventMCPListToolsCompletedType? Type1416 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseContentPartDonePart? Type1417 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventMCPListToolsFailed? Type1417 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseContentPartDonePartType? Type1418 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventMCPListToolsFailedType? Type1418 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseCreated? Type1419 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventMCPListToolsInProgress? Type1419 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseCreatedType? Type1420 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventMCPListToolsInProgressType? Type1420 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseDone? Type1421 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventRateLimitsUpdated? Type1421 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseDoneType? Type1422 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventRateLimitsUpdatedType? Type1422 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseFunctionCallArgumentsDelta? Type1423 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeBetaServerEventRateLimitsUpdatedRateLimit>? Type1423 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType? Type1424 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventRateLimitsUpdatedRateLimit? Type1424 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseFunctionCallArgumentsDone? Type1425 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventRateLimitsUpdatedRateLimitName? Type1425 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType? Type1426 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseAudioDelta? Type1426 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseMCPCallArgumentsDelta? Type1427 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseAudioDeltaType? Type1427 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseMCPCallArgumentsDeltaType? Type1428 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseAudioDone? Type1428 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseMCPCallArgumentsDone? Type1429 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseAudioDoneType? Type1429 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseMCPCallArgumentsDoneType? Type1430 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseAudioTranscriptDelta? Type1430 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseMCPCallCompleted? Type1431 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseAudioTranscriptDeltaType? Type1431 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseMCPCallCompletedType? Type1432 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseAudioTranscriptDone? Type1432 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseMCPCallFailed? Type1433 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseAudioTranscriptDoneType? Type1433 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseMCPCallFailedType? Type1434 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseContentPartAdded? Type1434 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseMCPCallInProgress? Type1435 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseContentPartAddedType? Type1435 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseMCPCallInProgressType? Type1436 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseContentPartAddedPart? Type1436 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseOutputItemAdded? Type1437 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseContentPartAddedPartType? Type1437 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseOutputItemAddedType? Type1438 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseContentPartDone? Type1438 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseOutputItemDone? Type1439 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseContentPartDoneType? Type1439 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseOutputItemDoneType? Type1440 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseContentPartDonePart? Type1440 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseTextDelta? Type1441 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseContentPartDonePartType? Type1441 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseTextDeltaType? Type1442 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseCreated? Type1442 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseTextDone? Type1443 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseCreatedType? Type1443 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseTextDoneType? Type1444 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseDone? Type1444 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventSessionCreated? Type1445 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseDoneType? Type1445 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventSessionCreatedType? Type1446 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseFunctionCallArgumentsDelta? Type1446 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSession? Type1447 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType? Type1447 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventSessionUpdated? Type1448 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseFunctionCallArgumentsDone? Type1448 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventSessionUpdatedType? Type1449 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType? Type1449 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventTranscriptionSessionCreated? Type1450 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseMCPCallArgumentsDelta? Type1450 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventTranscriptionSessionCreatedType? Type1451 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseMCPCallArgumentsDeltaType? Type1451 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponse? Type1452 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseMCPCallArgumentsDone? Type1452 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventTranscriptionSessionUpdated? Type1453 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseMCPCallArgumentsDoneType? Type1453 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventTranscriptionSessionUpdatedType? Type1454 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseMCPCallCompleted? Type1454 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeCallCreateRequest? Type1455 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseMCPCallCompletedType? Type1455 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA? Type1456 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseMCPCallFailed? Type1456 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeCallReferRequest? Type1457 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseMCPCallFailedType? Type1457 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeCallRejectRequest? Type1458 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseMCPCallInProgress? Type1458 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEvent? Type1459 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseMCPCallInProgressType? Type1459 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemCreate? Type1460 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseOutputItemAdded? Type1460 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemDelete? Type1461 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseOutputItemAddedType? Type1461 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemRetrieve? Type1462 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseOutputItemDone? Type1462 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemTruncate? Type1463 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseOutputItemDoneType? Type1463 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferAppend? Type1464 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseTextDelta? Type1464 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferClear? Type1465 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseTextDeltaType? Type1465 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventOutputAudioBufferClear? Type1466 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseTextDone? Type1466 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferCommit? Type1467 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseTextDoneType? Type1467 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventResponseCancel? Type1468 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventSessionCreated? Type1468 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventResponseCreate? Type1469 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventSessionCreatedType? Type1469 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventSessionUpdate? Type1470 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSession? Type1470 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventDiscriminator? Type1471 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventSessionUpdated? Type1471 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemCreateType? Type1472 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventSessionUpdatedType? Type1472 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemDeleteType? Type1473 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventTranscriptionSessionCreated? Type1473 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemRetrieveType? Type1474 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventTranscriptionSessionCreatedType? Type1474 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemTruncateType? Type1475 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponse? Type1475 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferAppendType? Type1476 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventTranscriptionSessionUpdated? Type1476 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferClearType? Type1477 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeBetaServerEventTranscriptionSessionUpdatedType? Type1477 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferCommitType? Type1478 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeCallCreateRequest? Type1478 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventOutputAudioBufferClearType? Type1479 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA? Type1479 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventResponseCancelType? Type1480 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeCallReferRequest? Type1480 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventResponseCreateType? Type1481 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeCallRejectRequest? Type1481 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeResponseCreateParams? Type1482 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeClientEvent? Type1482 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventSessionUpdateType? Type1483 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemCreate? Type1483 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA, global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGA>? Type1484 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemDelete? Type1484 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGA? Type1485 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemRetrieve? Type1485 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventTranscriptionSessionUpdate? Type1486 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemTruncate? Type1486 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventTranscriptionSessionUpdateType? Type1487 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferAppend? Type1487 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemMessageSystem? Type1488 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferClear? Type1488 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemMessageUser? Type1489 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeClientEventOutputAudioBufferClear? Type1489 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemMessageAssistant? Type1490 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferCommit? Type1490 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemFunctionCall? Type1491 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeClientEventResponseCancel? Type1491 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemFunctionCallOutput? Type1492 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeClientEventResponseCreate? Type1492 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeMCPApprovalResponse? Type1493 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeClientEventSessionUpdate? Type1493 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeMCPListTools? Type1494 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeClientEventDiscriminator? Type1494 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeMCPToolCall? Type1495 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeClientEventDiscriminatorType? Type1495 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeMCPApprovalRequest? Type1496 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemCreateType? Type1496 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemDiscriminator? Type1497 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemDeleteType? Type1497 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemFunctionCallObject? Type1498 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemRetrieveType? Type1498 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemFunctionCallType? Type1499 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemTruncateType? Type1499 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemFunctionCallStatus? Type1500 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferAppendType? Type1500 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemFunctionCallOutputObject? Type1501 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferClearType? Type1501 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemFunctionCallOutputType? Type1502 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferCommitType? Type1502 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemFunctionCallOutputStatus? Type1503 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeClientEventOutputAudioBufferClearType? Type1503 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemMessageAssistantObject? Type1504 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeClientEventResponseCancelType? Type1504 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemMessageAssistantType? Type1505 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeClientEventResponseCreateType? Type1505 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemMessageAssistantStatus? Type1506 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeResponseCreateParams? Type1506 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemMessageAssistantRole? Type1507 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeClientEventSessionUpdateType? Type1507 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeConversationItemMessageAssistantContentItem>? Type1508 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA, global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGA>? Type1508 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemMessageAssistantContentItem? Type1509 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGA? Type1509 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemMessageAssistantContentItemType? Type1510 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeClientEventTranscriptionSessionUpdate? Type1510 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemMessageSystemObject? Type1511 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeClientEventTranscriptionSessionUpdateType? Type1511 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemMessageSystemType? Type1512 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemMessageSystem? Type1512 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemMessageSystemStatus? Type1513 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemMessageUser? Type1513 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemMessageSystemRole? Type1514 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemMessageAssistant? Type1514 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeConversationItemMessageSystemContentItem>? Type1515 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemFunctionCall? Type1515 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemMessageSystemContentItem? Type1516 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemFunctionCallOutput? Type1516 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemMessageSystemContentItemType? Type1517 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeMCPApprovalResponse? Type1517 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemMessageUserObject? Type1518 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeMCPListTools? Type1518 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemMessageUserType? Type1519 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeMCPToolCall? Type1519 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemMessageUserStatus? Type1520 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeMCPApprovalRequest? Type1520 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemMessageUserRole? Type1521 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemDiscriminator? Type1521 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeConversationItemMessageUserContentItem>? Type1522 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemDiscriminatorType? Type1522 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemMessageUserContentItem? Type1523 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemFunctionCallObject? Type1523 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemMessageUserContentItemType? Type1524 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemFunctionCallType? Type1524 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemMessageUserContentItemDetail? Type1525 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemFunctionCallStatus? Type1525 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemWithReference? Type1526 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemFunctionCallOutputObject? Type1526 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemWithReferenceType? Type1527 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemFunctionCallOutputType? Type1527 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemWithReferenceObject? Type1528 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemFunctionCallOutputStatus? Type1528 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemWithReferenceStatus? Type1529 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemMessageAssistantObject? Type1529 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemWithReferenceRole? Type1530 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemMessageAssistantType? Type1530 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeConversationItemWithReferenceContentItem>? Type1531 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemMessageAssistantStatus? Type1531 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemWithReferenceContentItem? Type1532 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemMessageAssistantRole? Type1532 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeConversationItemWithReferenceContentItemType? Type1533 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeConversationItemMessageAssistantContentItem>? Type1533 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeCreateClientSecretRequest? Type1534 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemMessageAssistantContentItem? Type1534 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeCreateClientSecretRequestExpiresAfter? Type1535 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemMessageAssistantContentItemType? Type1535 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeCreateClientSecretRequestExpiresAfterAnchor? Type1536 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemMessageSystemObject? Type1536 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeCreateClientSecretResponse? Type1537 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemMessageSystemType? Type1537 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.Session2? Type1538 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemMessageSystemStatus? Type1538 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA? Type1539 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemMessageSystemRole? Type1539 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA? Type1540 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeConversationItemMessageSystemContentItem>? Type1540 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeCreateClientSecretResponseSessionDiscriminator? Type1541 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemMessageSystemContentItem? Type1541 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeFunctionTool? Type1542 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemMessageSystemContentItemType? Type1542 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeFunctionToolType? Type1543 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemMessageUserObject? Type1543 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeMCPApprovalRequestType? Type1544 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemMessageUserType? Type1544 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeMCPApprovalResponseType? Type1545 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemMessageUserStatus? Type1545 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeMCPHTTPError? Type1546 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemMessageUserRole? Type1546 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeMCPHTTPErrorType? Type1547 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeConversationItemMessageUserContentItem>? Type1547 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeMCPListToolsType? Type1548 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemMessageUserContentItem? Type1548 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeMCPProtocolError? Type1549 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemMessageUserContentItemType? Type1549 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeMCPProtocolErrorType? Type1550 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemMessageUserContentItemDetail? Type1550 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeMCPToolCallType? Type1551 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemWithReference? Type1551 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeMCPProtocolError, global::tryAGI.OpenAI.RealtimeMCPToolExecutionError, global::tryAGI.OpenAI.RealtimeMCPHTTPError>? Type1552 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemWithReferenceType? Type1552 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeMCPToolExecutionError? Type1553 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemWithReferenceObject? Type1553 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeMCPToolExecutionErrorType? Type1554 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemWithReferenceStatus? Type1554 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeReasoning? Type1555 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemWithReferenceRole? Type1555 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeReasoningEffort? Type1556 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeConversationItemWithReferenceContentItem>? Type1556 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeResponse? Type1557 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemWithReferenceContentItem? Type1557 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeResponseObject? Type1558 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeConversationItemWithReferenceContentItemType? Type1558 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeResponseStatus? Type1559 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeCreateClientSecretRequest? Type1559 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeResponseStatusDetails? Type1560 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeCreateClientSecretRequestExpiresAfter? Type1560 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeResponseStatusDetailsType? Type1561 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeCreateClientSecretRequestExpiresAfterAnchor? Type1561 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeResponseStatusDetailsReason? Type1562 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeCreateClientSecretResponse? Type1562 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeResponseStatusDetailsError? Type1563 { get; set; }
+        public global::tryAGI.OpenAI.Session2? Type1563 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeResponseAudio? Type1564 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA? Type1564 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeResponseAudioOutput? Type1565 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA? Type1565 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeResponseUsage? Type1566 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeCreateClientSecretResponseSessionDiscriminator? Type1566 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeResponseUsageInputTokenDetails? Type1567 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeCreateClientSecretResponseSessionDiscriminatorType? Type1567 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeResponseUsageInputTokenDetailsCachedTokensDetails? Type1568 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeFunctionTool? Type1568 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeResponseUsageOutputTokenDetails? Type1569 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeFunctionToolType? Type1569 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeResponseOutputModalitie>? Type1570 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeMCPApprovalRequestType? Type1570 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeResponseOutputModalitie? Type1571 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeMCPApprovalResponseType? Type1571 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeResponseMaxOutputTokens?>? Type1572 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeMCPHTTPError? Type1572 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeResponseMaxOutputTokens? Type1573 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeMCPHTTPErrorType? Type1573 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeResponseCreateParamsOutputModalitie>? Type1574 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeMCPListToolsType? Type1574 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeResponseCreateParamsOutputModalitie? Type1575 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeMCPProtocolError? Type1575 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeResponseCreateParamsAudio? Type1576 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeMCPProtocolErrorType? Type1576 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeResponseCreateParamsAudioOutput? Type1577 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeMCPToolCallType? Type1577 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeFunctionTool, global::tryAGI.OpenAI.MCPTool>>? Type1578 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeMCPProtocolError, global::tryAGI.OpenAI.RealtimeMCPToolExecutionError, global::tryAGI.OpenAI.RealtimeMCPHTTPError>? Type1578 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeFunctionTool, global::tryAGI.OpenAI.MCPTool>? Type1579 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeMCPToolExecutionError? Type1579 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeResponseCreateParamsMaxOutputTokens?>? Type1580 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeMCPToolExecutionErrorType? Type1580 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeResponseCreateParamsMaxOutputTokens? Type1581 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeReasoning? Type1581 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.RealtimeResponseCreateParamsConversation?>? Type1582 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeReasoningEffort? Type1582 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeResponseCreateParamsConversation? Type1583 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeResponse? Type1583 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEvent? Type1584 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeResponseObject? Type1584 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationCreated? Type1585 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeResponseStatus? Type1585 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemCreated? Type1586 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeResponseStatusDetails? Type1586 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemDeleted? Type1587 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeResponseStatusDetailsType? Type1587 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted? Type1588 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeResponseStatusDetailsReason? Type1588 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionDelta? Type1589 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeResponseStatusDetailsError? Type1589 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionFailed? Type1590 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeResponseAudio? Type1590 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemRetrieved? Type1591 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeResponseAudioOutput? Type1591 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemTruncated? Type1592 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeResponseUsage? Type1592 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventError? Type1593 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeResponseUsageInputTokenDetails? Type1593 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCleared? Type1594 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeResponseUsageInputTokenDetailsCachedTokensDetails? Type1594 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCommitted? Type1595 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeResponseUsageOutputTokenDetails? Type1595 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferDtmfEventReceived? Type1596 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeResponseOutputModalitie>? Type1596 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStarted? Type1597 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeResponseOutputModalitie? Type1597 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStopped? Type1598 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeResponseMaxOutputTokens?>? Type1598 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdated? Type1599 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeResponseMaxOutputTokens? Type1599 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDelta? Type1600 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeResponseCreateParamsOutputModalitie>? Type1600 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDone? Type1601 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeResponseCreateParamsOutputModalitie? Type1601 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDelta? Type1602 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeResponseCreateParamsAudio? Type1602 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDone? Type1603 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeResponseCreateParamsAudioOutput? Type1603 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartAdded? Type1604 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeFunctionTool, global::tryAGI.OpenAI.MCPTool>>? Type1604 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartDone? Type1605 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeFunctionTool, global::tryAGI.OpenAI.MCPTool>? Type1605 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseCreated? Type1606 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeResponseCreateParamsMaxOutputTokens?>? Type1606 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseDone? Type1607 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeResponseCreateParamsMaxOutputTokens? Type1607 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDelta? Type1608 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.RealtimeResponseCreateParamsConversation?>? Type1608 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDone? Type1609 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeResponseCreateParamsConversation? Type1609 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemAdded? Type1610 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEvent? Type1610 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemDone? Type1611 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationCreated? Type1611 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseTextDelta? Type1612 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemCreated? Type1612 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseTextDone? Type1613 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemDeleted? Type1613 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventSessionCreated? Type1614 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted? Type1614 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventSessionUpdated? Type1615 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionDelta? Type1615 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStarted? Type1616 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionFailed? Type1616 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStopped? Type1617 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemRetrieved? Type1617 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferCleared? Type1618 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemTruncated? Type1618 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemAdded? Type1619 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventError? Type1619 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemDone? Type1620 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCleared? Type1620 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferTimeoutTriggered? Type1621 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCommitted? Type1621 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionSegment? Type1622 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferDtmfEventReceived? Type1622 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsInProgress? Type1623 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStarted? Type1623 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsCompleted? Type1624 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStopped? Type1624 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsFailed? Type1625 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdated? Type1625 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDelta? Type1626 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDelta? Type1626 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDone? Type1627 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDone? Type1627 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallInProgress? Type1628 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDelta? Type1628 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallCompleted? Type1629 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDone? Type1629 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallFailed? Type1630 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartAdded? Type1630 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventDiscriminator? Type1631 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartDone? Type1631 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationCreatedType? Type1632 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseCreated? Type1632 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationCreatedConversation? Type1633 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseDone? Type1633 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemAddedType? Type1634 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDelta? Type1634 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemCreatedType? Type1635 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDone? Type1635 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemDeletedType? Type1636 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemAdded? Type1636 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemDoneType? Type1637 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemDone? Type1637 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType? Type1638 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseTextDelta? Type1638 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType? Type1639 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseTextDone? Type1639 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionFailedType? Type1640 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventSessionCreated? Type1640 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionFailedError? Type1641 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventSessionUpdated? Type1641 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionSegmentType? Type1642 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStarted? Type1642 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemRetrievedType? Type1643 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStopped? Type1643 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemTruncatedType? Type1644 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferCleared? Type1644 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventErrorType? Type1645 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemAdded? Type1645 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventErrorError? Type1646 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemDone? Type1646 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferClearedType? Type1647 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferTimeoutTriggered? Type1647 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCommittedType? Type1648 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionSegment? Type1648 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferDtmfEventReceivedType? Type1649 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsInProgress? Type1649 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStartedType? Type1650 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsCompleted? Type1650 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStoppedType? Type1651 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsFailed? Type1651 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferTimeoutTriggeredType? Type1652 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDelta? Type1652 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsCompletedType? Type1653 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDone? Type1653 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsFailedType? Type1654 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallInProgress? Type1654 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsInProgressType? Type1655 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallCompleted? Type1655 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferClearedType? Type1656 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallFailed? Type1656 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStartedType? Type1657 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventDiscriminator? Type1657 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStoppedType? Type1658 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventDiscriminatorType? Type1658 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdatedType? Type1659 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationCreatedType? Type1659 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdatedRateLimit>? Type1660 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationCreatedConversation? Type1660 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdatedRateLimit? Type1661 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemAddedType? Type1661 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdatedRateLimitName? Type1662 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemCreatedType? Type1662 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDeltaType? Type1663 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemDeletedType? Type1663 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDoneType? Type1664 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemDoneType? Type1664 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDeltaType? Type1665 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType? Type1665 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDoneType? Type1666 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType? Type1666 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartAddedType? Type1667 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionFailedType? Type1667 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartAddedPart? Type1668 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionFailedError? Type1668 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartAddedPartType? Type1669 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionSegmentType? Type1669 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartDoneType? Type1670 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemRetrievedType? Type1670 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartDonePart? Type1671 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemTruncatedType? Type1671 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartDonePartType? Type1672 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventErrorType? Type1672 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseCreatedType? Type1673 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventErrorError? Type1673 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseDoneType? Type1674 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferClearedType? Type1674 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDeltaType? Type1675 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCommittedType? Type1675 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDoneType? Type1676 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferDtmfEventReceivedType? Type1676 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDeltaType? Type1677 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStartedType? Type1677 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDoneType? Type1678 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStoppedType? Type1678 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallCompletedType? Type1679 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferTimeoutTriggeredType? Type1679 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallFailedType? Type1680 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsCompletedType? Type1680 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallInProgressType? Type1681 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsFailedType? Type1681 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemAddedType? Type1682 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsInProgressType? Type1682 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemDoneType? Type1683 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferClearedType? Type1683 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseTextDeltaType? Type1684 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStartedType? Type1684 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseTextDoneType? Type1685 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStoppedType? Type1685 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventSessionCreatedType? Type1686 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdatedType? Type1686 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA, global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA>? Type1687 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdatedRateLimit>? Type1687 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventSessionUpdatedType? Type1688 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdatedRateLimit? Type1688 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventTranscriptionSessionUpdated? Type1689 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdatedRateLimitName? Type1689 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventTranscriptionSessionUpdatedType? Type1690 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDeltaType? Type1690 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionObject? Type1691 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDoneType? Type1691 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionModalitie>? Type1692 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDeltaType? Type1692 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionModalitie? Type1693 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDoneType? Type1693 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.RealtimeSessionModel?>? Type1694 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartAddedType? Type1694 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionModel? Type1695 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartAddedPart? Type1695 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionInputAudioFormat? Type1696 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartAddedPartType? Type1696 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionOutputAudioFormat? Type1697 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartDoneType? Type1697 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1? Type1698 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartDonePart? Type1698 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionInputAudioNoiseReduction? Type1699 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartDonePartType? Type1699 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionTracingTracingConfigurationEnum?, global::tryAGI.OpenAI.RealtimeSessionTracingTracingConfigurationEnum2>? Type1700 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseCreatedType? Type1700 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionTracingTracingConfigurationEnum? Type1701 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseDoneType? Type1701 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionTracingTracingConfigurationEnum2? Type1702 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDeltaType? Type1702 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeFunctionTool>? Type1703 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDoneType? Type1703 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeSessionMaxResponseOutputTokens?>? Type1704 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDeltaType? Type1704 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionMaxResponseOutputTokens? Type1705 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDoneType? Type1705 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionIncludeVariant1Item>? Type1706 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallCompletedType? Type1706 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionIncludeVariant1Item? Type1707 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallFailedType? Type1707 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestClientSecret? Type1708 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallInProgressType? Type1708 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateRequestModalitie>? Type1709 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemAddedType? Type1709 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestModalitie? Type1710 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemDoneType? Type1710 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestInputAudioTranscription? Type1711 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseTextDeltaType? Type1711 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateRequestTracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestTracingEnum2>? Type1712 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseTextDoneType? Type1712 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestTracingEnum? Type1713 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventSessionCreatedType? Type1713 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestTracingEnum2? Type1714 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA, global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA>? Type1714 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestTurnDetection? Type1715 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventSessionUpdatedType? Type1715 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateRequestTool>? Type1716 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventTranscriptionSessionUpdated? Type1716 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestTool? Type1717 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeServerEventTranscriptionSessionUpdatedType? Type1717 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestToolType? Type1718 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionObject? Type1718 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestMaxResponseOutputTokens?>? Type1719 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionModalitie>? Type1719 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestMaxResponseOutputTokens? Type1720 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionModalitie? Type1720 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTruncation? Type1721 { get; set; }
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.RealtimeSessionModel?>? Type1721 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAType? Type1722 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionModel? Type1722 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAOutputModalitie>? Type1723 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionInputAudioFormat? Type1723 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAOutputModalitie? Type1724 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionOutputAudioFormat? Type1724 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAModel?>? Type1725 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1? Type1725 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAModel? Type1726 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionInputAudioNoiseReduction? Type1726 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAAudio? Type1727 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionTracingTracingConfigurationEnum?, global::tryAGI.OpenAI.RealtimeSessionTracingTracingConfigurationEnum2>? Type1727 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAAudioInput? Type1728 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionTracingTracingConfigurationEnum? Type1728 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAAudioInputNoiseReduction? Type1729 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionTracingTracingConfigurationEnum2? Type1729 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAAudioOutput? Type1730 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeFunctionTool>? Type1730 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAIncludeItem>? Type1731 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeSessionMaxResponseOutputTokens?>? Type1731 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAIncludeItem? Type1732 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionMaxResponseOutputTokens? Type1732 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGATracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestGATracingEnum2>? Type1733 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionIncludeVariant1Item>? Type1733 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestGATracingEnum? Type1734 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionIncludeVariant1Item? Type1734 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestGATracingEnum2? Type1735 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestClientSecret? Type1735 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAMaxOutputTokens?>? Type1736 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateRequestModalitie>? Type1736 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAMaxOutputTokens? Type1737 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestModalitie? Type1737 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponse? Type1738 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestInputAudioTranscription? Type1738 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateResponseIncludeItem>? Type1739 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateRequestTracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestTracingEnum2>? Type1739 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseIncludeItem? Type1740 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestTracingEnum? Type1740 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateResponseOutputModalitie>? Type1741 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestTracingEnum2? Type1741 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseOutputModalitie? Type1742 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestTurnDetection? Type1742 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseAudio? Type1743 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateRequestTool>? Type1743 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseAudioInput? Type1744 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestTool? Type1744 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseAudioInputNoiseReduction? Type1745 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestToolType? Type1745 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseAudioInputTurnDetection? Type1746 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestMaxResponseOutputTokens?>? Type1746 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseAudioOutput? Type1747 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestMaxResponseOutputTokens? Type1747 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateResponseTracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseTracingEnum2>? Type1748 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTruncation? Type1748 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseTracingEnum? Type1749 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAType? Type1749 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseTracingEnum2? Type1750 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAOutputModalitie>? Type1750 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseTurnDetection? Type1751 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAOutputModalitie? Type1751 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseMaxOutputTokens?>? Type1752 { get; set; }
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAModel?>? Type1752 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseMaxOutputTokens? Type1753 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAModel? Type1753 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAType? Type1754 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAAudio? Type1754 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAObject? Type1755 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAAudioInput? Type1755 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAOutputModalitie>? Type1756 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAAudioInputNoiseReduction? Type1756 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAOutputModalitie? Type1757 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAAudioOutput? Type1757 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAModel?>? Type1758 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAIncludeItem>? Type1758 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAModel? Type1759 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAIncludeItem? Type1759 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAAudio? Type1760 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGATracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestGATracingEnum2>? Type1760 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAAudioInput? Type1761 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestGATracingEnum? Type1761 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAAudioInputNoiseReduction? Type1762 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestGATracingEnum2? Type1762 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAAudioOutput? Type1763 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAMaxOutputTokens?>? Type1763 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAIncludeItem>? Type1764 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAMaxOutputTokens? Type1764 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAIncludeItem? Type1765 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponse? Type1765 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGATracingTracingConfigurationEnum? Type1766 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateResponseIncludeItem>? Type1766 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGATracingTracingConfigurationEnum2? Type1767 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseIncludeItem? Type1767 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAMaxOutputTokens?>? Type1768 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateResponseOutputModalitie>? Type1768 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAMaxOutputTokens? Type1769 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseOutputModalitie? Type1769 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestTurnDetection? Type1770 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseAudio? Type1770 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestTurnDetectionType? Type1771 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseAudioInput? Type1771 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction? Type1772 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseAudioInputNoiseReduction? Type1772 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestInputAudioFormat? Type1773 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseAudioInputTurnDetection? Type1773 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestIncludeItem>? Type1774 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseAudioOutput? Type1774 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestIncludeItem? Type1775 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateResponseTracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseTracingEnum2>? Type1775 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAType? Type1776 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseTracingEnum? Type1776 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAAudio? Type1777 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseTracingEnum2? Type1777 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAAudioInput? Type1778 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseTurnDetection? Type1778 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAAudioInputNoiseReduction? Type1779 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseMaxOutputTokens?>? Type1779 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAIncludeItem>? Type1780 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseMaxOutputTokens? Type1780 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAIncludeItem? Type1781 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAType? Type1781 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseClientSecret? Type1782 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAObject? Type1782 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseModalitie>? Type1783 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAOutputModalitie>? Type1783 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseModalitie? Type1784 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAOutputModalitie? Type1784 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseTurnDetection? Type1785 { get; set; }
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAModel?>? Type1785 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAType? Type1786 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAModel? Type1786 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAIncludeItem>? Type1787 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAAudio? Type1787 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAIncludeItem? Type1788 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAAudioInput? Type1788 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAAudio? Type1789 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAAudioInputNoiseReduction? Type1789 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAAudioInput? Type1790 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAAudioOutput? Type1790 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAAudioInputNoiseReduction? Type1791 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAIncludeItem>? Type1791 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAAudioInputTurnDetection2? Type1792 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAIncludeItem? Type1792 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationClientEvent? Type1793 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGATracingTracingConfigurationEnum? Type1793 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionUpdate? Type1794 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGATracingTracingConfigurationEnum2? Type1794 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationClientEventInputAudioBufferAppend? Type1795 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAMaxOutputTokens?>? Type1795 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionClose? Type1796 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAMaxOutputTokens? Type1796 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationClientEventDiscriminator? Type1797 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestTurnDetection? Type1797 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationClientEventInputAudioBufferAppendType? Type1798 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestTurnDetectionType? Type1798 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionCloseType? Type1799 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction? Type1799 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionUpdateType? Type1800 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestInputAudioFormat? Type1800 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequest? Type1801 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestIncludeItem>? Type1801 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationClientSecretCreateRequest? Type1802 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestIncludeItem? Type1802 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationClientSecretCreateRequestExpiresAfter? Type1803 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAType? Type1803 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationClientSecretCreateRequestExpiresAfterAnchor? Type1804 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAAudio? Type1804 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationSessionCreateRequest? Type1805 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAAudioInput? Type1805 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationClientSecretCreateResponse? Type1806 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAAudioInputNoiseReduction? Type1806 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationSession? Type1807 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAIncludeItem>? Type1807 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationServerEvent? Type1808 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGAIncludeItem? Type1808 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreated? Type1809 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseClientSecret? Type1809 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionUpdated? Type1810 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseModalitie>? Type1810 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosed? Type1811 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseModalitie? Type1811 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionInputTranscriptDelta? Type1812 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseTurnDetection? Type1812 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputTranscriptDelta? Type1813 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAType? Type1813 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDelta? Type1814 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAIncludeItem>? Type1814 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationServerEventDiscriminator? Type1815 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAIncludeItem? Type1815 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosedType? Type1816 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAAudio? Type1816 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreatedType? Type1817 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAAudioInput? Type1817 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionInputTranscriptDeltaType? Type1818 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAAudioInputNoiseReduction? Type1818 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDeltaType? Type1819 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAAudioInputTurnDetection2? Type1819 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDeltaFormat? Type1820 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationClientEvent? Type1820 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputTranscriptDeltaType? Type1821 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionUpdate? Type1821 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionUpdatedType? Type1822 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationClientEventInputAudioBufferAppend? Type1822 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationSessionType? Type1823 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionClose? Type1823 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationSessionAudio? Type1824 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationClientEventDiscriminator? Type1824 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationSessionAudioInput? Type1825 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationClientEventDiscriminatorType? Type1825 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationSessionAudioInputTranscription2? Type1826 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationClientEventInputAudioBufferAppendType? Type1826 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationSessionAudioInputNoiseReduction2? Type1827 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionCloseType? Type1827 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationSessionAudioOutput? Type1828 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionUpdateType? Type1828 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationSessionCreateRequestAudio? Type1829 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequest? Type1829 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationSessionCreateRequestAudioInput? Type1830 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationClientSecretCreateRequest? Type1830 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationSessionCreateRequestAudioInputTranscription2? Type1831 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationClientSecretCreateRequestExpiresAfter? Type1831 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationSessionCreateRequestAudioInputNoiseReduction2? Type1832 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationClientSecretCreateRequestExpiresAfterAnchor? Type1832 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationSessionCreateRequestAudioOutput? Type1833 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationSessionCreateRequest? Type1833 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequestAudio? Type1834 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationClientSecretCreateResponse? Type1834 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequestAudioInput? Type1835 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationSession? Type1835 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequestAudioInputTranscription2? Type1836 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationServerEvent? Type1836 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequestAudioInputNoiseReduction2? Type1837 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreated? Type1837 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequestAudioOutput? Type1838 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionUpdated? Type1838 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTruncationEnum? Type1839 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosed? Type1839 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTruncationEnum2? Type1840 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionInputTranscriptDelta? Type1840 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTruncationEnumType? Type1841 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputTranscriptDelta? Type1841 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTruncationEnumTokenLimits? Type1842 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDelta? Type1842 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad? Type1843 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationServerEventDiscriminator? Type1843 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad? Type1844 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationServerEventDiscriminatorType? Type1844 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVadEagerness? Type1845 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosedType? Type1845 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1Discriminator? Type1846 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreatedType? Type1846 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.Reasoning? Type1847 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionInputTranscriptDeltaType? Type1847 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ReasoningSummary2? Type1848 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDeltaType? Type1848 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ReasoningGenerateSummary2? Type1849 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDeltaFormat? Type1849 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ReasoningItemType? Type1850 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputTranscriptDeltaType? Type1850 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SummaryTextContent>? Type1851 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionUpdatedType? Type1851 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.SummaryTextContent? Type1852 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationSessionType? Type1852 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ReasoningTextContent>? Type1853 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationSessionAudio? Type1853 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ReasoningItemStatus? Type1854 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationSessionAudioInput? Type1854 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.Response? Type1855 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationSessionAudioInputTranscription2? Type1855 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseVariant3? Type1856 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationSessionAudioInputNoiseReduction2? Type1856 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseVariant3Object? Type1857 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationSessionAudioOutput? Type1857 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseVariant3Status? Type1858 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationSessionCreateRequestAudio? Type1858 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseErrorVariant1? Type1859 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationSessionCreateRequestAudioInput? Type1859 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseVariant3IncompleteDetails2? Type1860 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationSessionCreateRequestAudioInputTranscription2? Type1860 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseVariant3IncompleteDetailsReason? Type1861 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationSessionCreateRequestAudioInputNoiseReduction2? Type1861 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputItem>? Type1862 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationSessionCreateRequestAudioOutput? Type1862 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>? Type1863 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequestAudio? Type1863 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseUsage? Type1864 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequestAudioInput? Type1864 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.Conversation22? Type1865 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequestAudioInputTranscription2? Type1865 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseAudioDeltaEvent? Type1866 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequestAudioInputNoiseReduction2? Type1866 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseAudioDeltaEventType? Type1867 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequestAudioOutput? Type1867 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseAudioDoneEvent? Type1868 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTruncationEnum? Type1868 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseAudioDoneEventType? Type1869 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTruncationEnum2? Type1869 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseAudioTranscriptDeltaEvent? Type1870 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTruncationEnumType? Type1870 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseAudioTranscriptDeltaEventType? Type1871 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTruncationEnumTokenLimits? Type1871 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseAudioTranscriptDoneEvent? Type1872 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad? Type1872 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseAudioTranscriptDoneEventType? Type1873 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad? Type1873 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDeltaEvent? Type1874 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVadEagerness? Type1874 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDeltaEventType? Type1875 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1Discriminator? Type1875 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDoneEvent? Type1876 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1DiscriminatorType? Type1876 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDoneEventType? Type1877 { get; set; }
+        public global::tryAGI.OpenAI.Reasoning? Type1877 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallCompletedEvent? Type1878 { get; set; }
+        public global::tryAGI.OpenAI.ReasoningSummary2? Type1878 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallCompletedEventType? Type1879 { get; set; }
+        public global::tryAGI.OpenAI.ReasoningGenerateSummary2? Type1879 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallInProgressEvent? Type1880 { get; set; }
+        public global::tryAGI.OpenAI.ReasoningItemType? Type1880 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallInProgressEventType? Type1881 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SummaryTextContent>? Type1881 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallInterpretingEvent? Type1882 { get; set; }
+        public global::tryAGI.OpenAI.SummaryTextContent? Type1882 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallInterpretingEventType? Type1883 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ReasoningTextContent>? Type1883 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseCompletedEvent? Type1884 { get; set; }
+        public global::tryAGI.OpenAI.ReasoningItemStatus? Type1884 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseCompletedEventType? Type1885 { get; set; }
+        public global::tryAGI.OpenAI.Response? Type1885 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseContentPartAddedEvent? Type1886 { get; set; }
+        public global::tryAGI.OpenAI.ResponseVariant3? Type1886 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseContentPartAddedEventType? Type1887 { get; set; }
+        public global::tryAGI.OpenAI.ResponseVariant3Object? Type1887 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseContentPartDoneEvent? Type1888 { get; set; }
+        public global::tryAGI.OpenAI.ResponseVariant3Status? Type1888 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseContentPartDoneEventType? Type1889 { get; set; }
+        public global::tryAGI.OpenAI.ResponseErrorVariant1? Type1889 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseCreatedEvent? Type1890 { get; set; }
+        public global::tryAGI.OpenAI.ResponseVariant3IncompleteDetails2? Type1890 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseCreatedEventType? Type1891 { get; set; }
+        public global::tryAGI.OpenAI.ResponseVariant3IncompleteDetailsReason? Type1891 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent? Type1892 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputItem>? Type1892 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEventType? Type1893 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>? Type1893 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent? Type1894 { get; set; }
+        public global::tryAGI.OpenAI.ResponseUsage? Type1894 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEventType? Type1895 { get; set; }
+        public global::tryAGI.OpenAI.Conversation22? Type1895 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseErrorCode? Type1896 { get; set; }
+        public global::tryAGI.OpenAI.ResponseAudioDeltaEvent? Type1896 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseErrorEvent? Type1897 { get; set; }
+        public global::tryAGI.OpenAI.ResponseAudioDeltaEventType? Type1897 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseErrorEventType? Type1898 { get; set; }
+        public global::tryAGI.OpenAI.ResponseAudioDoneEvent? Type1898 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFailedEvent? Type1899 { get; set; }
+        public global::tryAGI.OpenAI.ResponseAudioDoneEventType? Type1899 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFailedEventType? Type1900 { get; set; }
+        public global::tryAGI.OpenAI.ResponseAudioTranscriptDeltaEvent? Type1900 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFileSearchCallCompletedEvent? Type1901 { get; set; }
+        public global::tryAGI.OpenAI.ResponseAudioTranscriptDeltaEventType? Type1901 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFileSearchCallCompletedEventType? Type1902 { get; set; }
+        public global::tryAGI.OpenAI.ResponseAudioTranscriptDoneEvent? Type1902 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFileSearchCallInProgressEvent? Type1903 { get; set; }
+        public global::tryAGI.OpenAI.ResponseAudioTranscriptDoneEventType? Type1903 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFileSearchCallInProgressEventType? Type1904 { get; set; }
+        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDeltaEvent? Type1904 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFileSearchCallSearchingEvent? Type1905 { get; set; }
+        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDeltaEventType? Type1905 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFileSearchCallSearchingEventType? Type1906 { get; set; }
+        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDoneEvent? Type1906 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFormatJsonObjectType? Type1907 { get; set; }
+        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDoneEventType? Type1907 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFormatJsonSchemaType? Type1908 { get; set; }
+        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallCompletedEvent? Type1908 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFormatJsonSchemaJsonSchema? Type1909 { get; set; }
+        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallCompletedEventType? Type1909 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFormatJsonSchemaSchema? Type1910 { get; set; }
+        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallInProgressEvent? Type1910 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFormatTextType? Type1911 { get; set; }
+        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallInProgressEventType? Type1911 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFormatTextGrammar? Type1912 { get; set; }
+        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallInterpretingEvent? Type1912 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFormatTextGrammarType? Type1913 { get; set; }
+        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallInterpretingEventType? Type1913 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFormatTextPython? Type1914 { get; set; }
+        public global::tryAGI.OpenAI.ResponseCompletedEvent? Type1914 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFormatTextPythonType? Type1915 { get; set; }
+        public global::tryAGI.OpenAI.ResponseCompletedEventType? Type1915 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDeltaEvent? Type1916 { get; set; }
+        public global::tryAGI.OpenAI.ResponseContentPartAddedEvent? Type1916 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDeltaEventType? Type1917 { get; set; }
+        public global::tryAGI.OpenAI.ResponseContentPartAddedEventType? Type1917 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEvent? Type1918 { get; set; }
+        public global::tryAGI.OpenAI.ResponseContentPartDoneEvent? Type1918 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEventType? Type1919 { get; set; }
+        public global::tryAGI.OpenAI.ResponseContentPartDoneEventType? Type1919 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseImageGenCallCompletedEvent? Type1920 { get; set; }
+        public global::tryAGI.OpenAI.ResponseCreatedEvent? Type1920 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseImageGenCallCompletedEventType? Type1921 { get; set; }
+        public global::tryAGI.OpenAI.ResponseCreatedEventType? Type1921 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseImageGenCallGeneratingEvent? Type1922 { get; set; }
+        public global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent? Type1922 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseImageGenCallGeneratingEventType? Type1923 { get; set; }
+        public global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEventType? Type1923 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseImageGenCallInProgressEvent? Type1924 { get; set; }
+        public global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent? Type1924 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseImageGenCallInProgressEventType? Type1925 { get; set; }
+        public global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEventType? Type1925 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseImageGenCallPartialImageEvent? Type1926 { get; set; }
+        public global::tryAGI.OpenAI.ResponseErrorCode? Type1926 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseImageGenCallPartialImageEventType? Type1927 { get; set; }
+        public global::tryAGI.OpenAI.ResponseErrorEvent? Type1927 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseInProgressEvent? Type1928 { get; set; }
+        public global::tryAGI.OpenAI.ResponseErrorEventType? Type1928 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseInProgressEventType? Type1929 { get; set; }
+        public global::tryAGI.OpenAI.ResponseFailedEvent? Type1929 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseIncompleteEvent? Type1930 { get; set; }
+        public global::tryAGI.OpenAI.ResponseFailedEventType? Type1930 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseIncompleteEventType? Type1931 { get; set; }
+        public global::tryAGI.OpenAI.ResponseFileSearchCallCompletedEvent? Type1931 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseItemList? Type1932 { get; set; }
+        public global::tryAGI.OpenAI.ResponseFileSearchCallCompletedEventType? Type1932 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseItemListObject? Type1933 { get; set; }
+        public global::tryAGI.OpenAI.ResponseFileSearchCallInProgressEvent? Type1933 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ItemResource>? Type1934 { get; set; }
+        public global::tryAGI.OpenAI.ResponseFileSearchCallInProgressEventType? Type1934 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseLogProb? Type1935 { get; set; }
+        public global::tryAGI.OpenAI.ResponseFileSearchCallSearchingEvent? Type1935 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResponseLogProbTopLogprob>? Type1936 { get; set; }
+        public global::tryAGI.OpenAI.ResponseFileSearchCallSearchingEventType? Type1936 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseLogProbTopLogprob? Type1937 { get; set; }
+        public global::tryAGI.OpenAI.ResponseFormatJsonObjectType? Type1937 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseMCPCallArgumentsDeltaEvent? Type1938 { get; set; }
+        public global::tryAGI.OpenAI.ResponseFormatJsonSchemaType? Type1938 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseMCPCallArgumentsDeltaEventType? Type1939 { get; set; }
+        public global::tryAGI.OpenAI.ResponseFormatJsonSchemaJsonSchema? Type1939 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseMCPCallArgumentsDoneEvent? Type1940 { get; set; }
+        public global::tryAGI.OpenAI.ResponseFormatJsonSchemaSchema? Type1940 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseMCPCallArgumentsDoneEventType? Type1941 { get; set; }
+        public global::tryAGI.OpenAI.ResponseFormatTextType? Type1941 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseMCPCallCompletedEvent? Type1942 { get; set; }
+        public global::tryAGI.OpenAI.ResponseFormatTextGrammar? Type1942 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseMCPCallCompletedEventType? Type1943 { get; set; }
+        public global::tryAGI.OpenAI.ResponseFormatTextGrammarType? Type1943 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseMCPCallFailedEvent? Type1944 { get; set; }
+        public global::tryAGI.OpenAI.ResponseFormatTextPython? Type1944 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseMCPCallFailedEventType? Type1945 { get; set; }
+        public global::tryAGI.OpenAI.ResponseFormatTextPythonType? Type1945 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseMCPCallInProgressEvent? Type1946 { get; set; }
+        public global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDeltaEvent? Type1946 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseMCPCallInProgressEventType? Type1947 { get; set; }
+        public global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDeltaEventType? Type1947 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseMCPListToolsCompletedEvent? Type1948 { get; set; }
+        public global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEvent? Type1948 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseMCPListToolsCompletedEventType? Type1949 { get; set; }
+        public global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEventType? Type1949 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseMCPListToolsFailedEvent? Type1950 { get; set; }
+        public global::tryAGI.OpenAI.ResponseImageGenCallCompletedEvent? Type1950 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseMCPListToolsFailedEventType? Type1951 { get; set; }
+        public global::tryAGI.OpenAI.ResponseImageGenCallCompletedEventType? Type1951 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseMCPListToolsInProgressEvent? Type1952 { get; set; }
+        public global::tryAGI.OpenAI.ResponseImageGenCallGeneratingEvent? Type1952 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseMCPListToolsInProgressEventType? Type1953 { get; set; }
+        public global::tryAGI.OpenAI.ResponseImageGenCallGeneratingEventType? Type1953 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseModalitiesVariant1Item? Type1954 { get; set; }
+        public global::tryAGI.OpenAI.ResponseImageGenCallInProgressEvent? Type1954 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseOutputItemAddedEvent? Type1955 { get; set; }
+        public global::tryAGI.OpenAI.ResponseImageGenCallInProgressEventType? Type1955 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseOutputItemAddedEventType? Type1956 { get; set; }
+        public global::tryAGI.OpenAI.ResponseImageGenCallPartialImageEvent? Type1956 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseOutputItemDoneEvent? Type1957 { get; set; }
+        public global::tryAGI.OpenAI.ResponseImageGenCallPartialImageEventType? Type1957 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseOutputItemDoneEventType? Type1958 { get; set; }
+        public global::tryAGI.OpenAI.ResponseInProgressEvent? Type1958 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEvent? Type1959 { get; set; }
+        public global::tryAGI.OpenAI.ResponseInProgressEventType? Type1959 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEventType? Type1960 { get; set; }
+        public global::tryAGI.OpenAI.ResponseIncompleteEvent? Type1960 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.InputTextContent, global::tryAGI.OpenAI.InputImageContent, global::tryAGI.OpenAI.InputFileContent>? Type1961 { get; set; }
+        public global::tryAGI.OpenAI.ResponseIncompleteEventType? Type1961 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseTextParam? Type1962 { get; set; }
+        public global::tryAGI.OpenAI.ResponseItemList? Type1962 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ToolChoiceParam? Type1963 { get; set; }
+        public global::tryAGI.OpenAI.ResponseItemListObject? Type1963 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponsePropertiesTruncation2? Type1964 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ItemResource>? Type1964 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseQueuedEvent? Type1965 { get; set; }
+        public global::tryAGI.OpenAI.ResponseLogProb? Type1965 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseQueuedEventType? Type1966 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResponseLogProbTopLogprob>? Type1966 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEvent? Type1967 { get; set; }
+        public global::tryAGI.OpenAI.ResponseLogProbTopLogprob? Type1967 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEventType? Type1968 { get; set; }
+        public global::tryAGI.OpenAI.ResponseMCPCallArgumentsDeltaEvent? Type1968 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEventPart? Type1969 { get; set; }
+        public global::tryAGI.OpenAI.ResponseMCPCallArgumentsDeltaEventType? Type1969 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEventPartType? Type1970 { get; set; }
+        public global::tryAGI.OpenAI.ResponseMCPCallArgumentsDoneEvent? Type1970 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEvent? Type1971 { get; set; }
+        public global::tryAGI.OpenAI.ResponseMCPCallArgumentsDoneEventType? Type1971 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEventType? Type1972 { get; set; }
+        public global::tryAGI.OpenAI.ResponseMCPCallCompletedEvent? Type1972 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEventPart? Type1973 { get; set; }
+        public global::tryAGI.OpenAI.ResponseMCPCallCompletedEventType? Type1973 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEventPartType? Type1974 { get; set; }
+        public global::tryAGI.OpenAI.ResponseMCPCallFailedEvent? Type1974 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseReasoningSummaryTextDeltaEvent? Type1975 { get; set; }
+        public global::tryAGI.OpenAI.ResponseMCPCallFailedEventType? Type1975 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseReasoningSummaryTextDeltaEventType? Type1976 { get; set; }
+        public global::tryAGI.OpenAI.ResponseMCPCallInProgressEvent? Type1976 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEvent? Type1977 { get; set; }
+        public global::tryAGI.OpenAI.ResponseMCPCallInProgressEventType? Type1977 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEventType? Type1978 { get; set; }
+        public global::tryAGI.OpenAI.ResponseMCPListToolsCompletedEvent? Type1978 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseReasoningTextDeltaEvent? Type1979 { get; set; }
+        public global::tryAGI.OpenAI.ResponseMCPListToolsCompletedEventType? Type1979 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseReasoningTextDeltaEventType? Type1980 { get; set; }
+        public global::tryAGI.OpenAI.ResponseMCPListToolsFailedEvent? Type1980 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseReasoningTextDoneEvent? Type1981 { get; set; }
+        public global::tryAGI.OpenAI.ResponseMCPListToolsFailedEventType? Type1981 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseReasoningTextDoneEventType? Type1982 { get; set; }
+        public global::tryAGI.OpenAI.ResponseMCPListToolsInProgressEvent? Type1982 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseRefusalDeltaEvent? Type1983 { get; set; }
+        public global::tryAGI.OpenAI.ResponseMCPListToolsInProgressEventType? Type1983 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseRefusalDeltaEventType? Type1984 { get; set; }
+        public global::tryAGI.OpenAI.ResponseModalitiesVariant1Item? Type1984 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseRefusalDoneEvent? Type1985 { get; set; }
+        public global::tryAGI.OpenAI.ResponseOutputItemAddedEvent? Type1985 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseRefusalDoneEventType? Type1986 { get; set; }
+        public global::tryAGI.OpenAI.ResponseOutputItemAddedEventType? Type1986 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseStreamEvent? Type1987 { get; set; }
+        public global::tryAGI.OpenAI.ResponseOutputItemDoneEvent? Type1987 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseTextDeltaEvent? Type1988 { get; set; }
+        public global::tryAGI.OpenAI.ResponseOutputItemDoneEventType? Type1988 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseTextDoneEvent? Type1989 { get; set; }
+        public global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEvent? Type1989 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseWebSearchCallCompletedEvent? Type1990 { get; set; }
+        public global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEventType? Type1990 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseWebSearchCallInProgressEvent? Type1991 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.InputTextContent, global::tryAGI.OpenAI.InputImageContent, global::tryAGI.OpenAI.InputFileContent>? Type1991 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseWebSearchCallSearchingEvent? Type1992 { get; set; }
+        public global::tryAGI.OpenAI.ResponseTextParam? Type1992 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseStreamEventDiscriminator? Type1993 { get; set; }
+        public global::tryAGI.OpenAI.ToolChoiceParam? Type1993 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseTextDeltaEventType? Type1994 { get; set; }
+        public global::tryAGI.OpenAI.ResponsePropertiesTruncation2? Type1994 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResponseLogProb>? Type1995 { get; set; }
+        public global::tryAGI.OpenAI.ResponseQueuedEvent? Type1995 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseTextDoneEventType? Type1996 { get; set; }
+        public global::tryAGI.OpenAI.ResponseQueuedEventType? Type1996 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseUsageInputTokensDetails? Type1997 { get; set; }
+        public global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEvent? Type1997 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseUsageOutputTokensDetails? Type1998 { get; set; }
+        public global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEventType? Type1998 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseWebSearchCallCompletedEventType? Type1999 { get; set; }
+        public global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEventPart? Type1999 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseWebSearchCallInProgressEventType? Type2000 { get; set; }
+        public global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEventPartType? Type2000 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseWebSearchCallSearchingEventType? Type2001 { get; set; }
+        public global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEvent? Type2001 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponsesClientEvent? Type2002 { get; set; }
+        public global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEventType? Type2002 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponsesClientEventResponseCreate? Type2003 { get; set; }
+        public global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEventPart? Type2003 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponsesClientEventDiscriminator? Type2004 { get; set; }
+        public global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEventPartType? Type2004 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1? Type2005 { get; set; }
+        public global::tryAGI.OpenAI.ResponseReasoningSummaryTextDeltaEvent? Type2005 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1Type? Type2006 { get; set; }
+        public global::tryAGI.OpenAI.ResponseReasoningSummaryTextDeltaEventType? Type2006 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponsesServerEvent? Type2007 { get; set; }
+        public global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEvent? Type2007 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponsesServerEventDiscriminator? Type2008 { get; set; }
+        public global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEventType? Type2008 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RoleObject? Type2009 { get; set; }
+        public global::tryAGI.OpenAI.ResponseReasoningTextDeltaEvent? Type2009 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RoleDeletedResource? Type2010 { get; set; }
+        public global::tryAGI.OpenAI.ResponseReasoningTextDeltaEventType? Type2010 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RoleDeletedResourceObject? Type2011 { get; set; }
+        public global::tryAGI.OpenAI.ResponseReasoningTextDoneEvent? Type2011 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RoleListResource? Type2012 { get; set; }
+        public global::tryAGI.OpenAI.ResponseReasoningTextDoneEventType? Type2012 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RoleListResourceObject? Type2013 { get; set; }
+        public global::tryAGI.OpenAI.ResponseRefusalDeltaEvent? Type2013 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AssignedRoleDetails>? Type2014 { get; set; }
+        public global::tryAGI.OpenAI.ResponseRefusalDeltaEventType? Type2014 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunCompletionUsageVariant1? Type2015 { get; set; }
+        public global::tryAGI.OpenAI.ResponseRefusalDoneEvent? Type2015 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunGraderRequest? Type2016 { get; set; }
+        public global::tryAGI.OpenAI.ResponseRefusalDoneEventType? Type2016 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunGraderResponse? Type2017 { get; set; }
+        public global::tryAGI.OpenAI.ResponseStreamEvent? Type2017 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunGraderResponseMetadata? Type2018 { get; set; }
+        public global::tryAGI.OpenAI.ResponseTextDeltaEvent? Type2018 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunGraderResponseMetadataErrors? Type2019 { get; set; }
+        public global::tryAGI.OpenAI.ResponseTextDoneEvent? Type2019 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunObjectObject? Type2020 { get; set; }
+        public global::tryAGI.OpenAI.ResponseWebSearchCallCompletedEvent? Type2020 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunObjectStatus? Type2021 { get; set; }
+        public global::tryAGI.OpenAI.ResponseWebSearchCallInProgressEvent? Type2021 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunObjectRequiredAction? Type2022 { get; set; }
+        public global::tryAGI.OpenAI.ResponseWebSearchCallSearchingEvent? Type2022 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunObjectRequiredActionType? Type2023 { get; set; }
+        public global::tryAGI.OpenAI.ResponseStreamEventDiscriminator? Type2023 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunObjectRequiredActionSubmitToolOutputs? Type2024 { get; set; }
+        public global::tryAGI.OpenAI.ResponseStreamEventDiscriminatorType? Type2024 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RunToolCallObject>? Type2025 { get; set; }
+        public global::tryAGI.OpenAI.ResponseTextDeltaEventType? Type2025 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunToolCallObject? Type2026 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResponseLogProb>? Type2026 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunObjectLastError? Type2027 { get; set; }
+        public global::tryAGI.OpenAI.ResponseTextDoneEventType? Type2027 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunObjectLastErrorCode? Type2028 { get; set; }
+        public global::tryAGI.OpenAI.ResponseUsageInputTokensDetails? Type2028 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunObjectIncompleteDetails? Type2029 { get; set; }
+        public global::tryAGI.OpenAI.ResponseUsageOutputTokensDetails? Type2029 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunObjectIncompleteDetailsReason? Type2030 { get; set; }
+        public global::tryAGI.OpenAI.ResponseWebSearchCallCompletedEventType? Type2030 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepCompletionUsageVariant1? Type2031 { get; set; }
+        public global::tryAGI.OpenAI.ResponseWebSearchCallInProgressEventType? Type2031 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDeltaObject? Type2032 { get; set; }
+        public global::tryAGI.OpenAI.ResponseWebSearchCallSearchingEventType? Type2032 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDeltaObjectObject? Type2033 { get; set; }
+        public global::tryAGI.OpenAI.ResponsesClientEvent? Type2033 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDeltaObjectDelta? Type2034 { get; set; }
+        public global::tryAGI.OpenAI.ResponsesClientEventResponseCreate? Type2034 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDeltaStepDetailsMessageCreationObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsObject>? Type2035 { get; set; }
+        public global::tryAGI.OpenAI.ResponsesClientEventDiscriminator? Type2035 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsMessageCreationObject? Type2036 { get; set; }
+        public global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1? Type2036 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsObject? Type2037 { get; set; }
+        public global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1Type? Type2037 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsMessageCreationObjectType? Type2038 { get; set; }
+        public global::tryAGI.OpenAI.ResponsesServerEvent? Type2038 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsMessageCreationObjectMessageCreation? Type2039 { get; set; }
+        public global::tryAGI.OpenAI.ResponsesServerEventDiscriminator? Type2039 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject? Type2040 { get; set; }
+        public global::tryAGI.OpenAI.RoleObject? Type2040 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeObjectType? Type2041 { get; set; }
+        public global::tryAGI.OpenAI.RoleDeletedResource? Type2041 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter? Type2042 { get; set; }
+        public global::tryAGI.OpenAI.RoleDeletedResourceObject? Type2042 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputImageObject>? Type2043 { get; set; }
+        public global::tryAGI.OpenAI.RoleListResource? Type2043 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject? Type2044 { get; set; }
+        public global::tryAGI.OpenAI.RoleListResourceObject? Type2044 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputImageObject? Type2045 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AssignedRoleDetails>? Type2045 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType? Type2046 { get; set; }
+        public global::tryAGI.OpenAI.RunCompletionUsageVariant1? Type2046 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage? Type2047 { get; set; }
+        public global::tryAGI.OpenAI.RunGraderRequest? Type2047 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType? Type2048 { get; set; }
+        public global::tryAGI.OpenAI.RunGraderResponse? Type2048 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject? Type2049 { get; set; }
+        public global::tryAGI.OpenAI.RunGraderResponseMetadata? Type2049 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObjectType? Type2050 { get; set; }
+        public global::tryAGI.OpenAI.RunGraderResponseMetadataErrors? Type2050 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject? Type2051 { get; set; }
+        public global::tryAGI.OpenAI.RunObjectObject? Type2051 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObjectType? Type2052 { get; set; }
+        public global::tryAGI.OpenAI.RunObjectStatus? Type2052 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObjectFunction? Type2053 { get; set; }
+        public global::tryAGI.OpenAI.RunObjectRequiredAction? Type2053 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsObjectType? Type2054 { get; set; }
+        public global::tryAGI.OpenAI.RunObjectRequiredActionType? Type2054 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDetailsMessageCreationObject? Type2055 { get; set; }
+        public global::tryAGI.OpenAI.RunObjectRequiredActionSubmitToolOutputs? Type2055 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDetailsMessageCreationObjectType? Type2056 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RunToolCallObject>? Type2056 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDetailsMessageCreationObjectMessageCreation? Type2057 { get; set; }
+        public global::tryAGI.OpenAI.RunToolCallObject? Type2057 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeObject? Type2058 { get; set; }
+        public global::tryAGI.OpenAI.RunObjectLastError? Type2058 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeObjectType? Type2059 { get; set; }
+        public global::tryAGI.OpenAI.RunObjectLastErrorCode? Type2059 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeObjectCodeInterpreter? Type2060 { get; set; }
+        public global::tryAGI.OpenAI.RunObjectIncompleteDetails? Type2060 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputLogsObject, global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputImageObject>>? Type2061 { get; set; }
+        public global::tryAGI.OpenAI.RunObjectIncompleteDetailsReason? Type2061 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputLogsObject, global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputImageObject>? Type2062 { get; set; }
+        public global::tryAGI.OpenAI.RunStepCompletionUsageVariant1? Type2062 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputLogsObject? Type2063 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDeltaObject? Type2063 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputImageObject? Type2064 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDeltaObjectObject? Type2064 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputImageObjectType? Type2065 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDeltaObjectDelta? Type2065 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputImageObjectImage? Type2066 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDeltaStepDetailsMessageCreationObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsObject>? Type2066 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputLogsObjectType? Type2067 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsMessageCreationObject? Type2067 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchObject? Type2068 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsObject? Type2068 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchObjectType? Type2069 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsMessageCreationObjectType? Type2069 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchObjectFileSearch? Type2070 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsMessageCreationObjectMessageCreation? Type2070 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchRankingOptionsObject? Type2071 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject? Type2071 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchResultObject>? Type2072 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeObjectType? Type2072 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchResultObject? Type2073 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter? Type2073 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchResultObjectContentItem>? Type2074 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputImageObject>? Type2074 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchResultObjectContentItem? Type2075 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject? Type2075 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchResultObjectContentItemType? Type2076 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputImageObject? Type2076 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDetailsToolCallsFunctionObject? Type2077 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType? Type2077 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDetailsToolCallsFunctionObjectType? Type2078 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage? Type2078 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDetailsToolCallsFunctionObjectFunction? Type2079 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType? Type2079 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDetailsToolCallsObject? Type2080 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject? Type2080 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepDetailsToolCallsObjectType? Type2081 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObjectType? Type2081 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepObjectObject? Type2082 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject? Type2082 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepObjectType? Type2083 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObjectType? Type2083 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepObjectStatus? Type2084 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObjectFunction? Type2084 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDetailsMessageCreationObject, global::tryAGI.OpenAI.RunStepDetailsToolCallsObject>? Type2085 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsObjectType? Type2085 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepObjectLastError2? Type2086 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDetailsMessageCreationObject? Type2086 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepObjectLastErrorCode? Type2087 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDetailsMessageCreationObjectType? Type2087 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant1? Type2088 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDetailsMessageCreationObjectMessageCreation? Type2088 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant1Event? Type2089 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeObject? Type2089 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant2? Type2090 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeObjectType? Type2090 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant2Event? Type2091 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeObjectCodeInterpreter? Type2091 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant3? Type2092 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputLogsObject, global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputImageObject>>? Type2092 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant3Event? Type2093 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputLogsObject, global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputImageObject>? Type2093 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant4? Type2094 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputLogsObject? Type2094 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant4Event? Type2095 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputImageObject? Type2095 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant5? Type2096 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputImageObjectType? Type2096 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant5Event? Type2097 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputImageObjectImage? Type2097 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant6? Type2098 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputLogsObjectType? Type2098 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant6Event? Type2099 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchObject? Type2099 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant7? Type2100 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchObjectType? Type2100 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant7Event? Type2101 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchObjectFileSearch? Type2101 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant1? Type2102 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchRankingOptionsObject? Type2102 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant1Event? Type2103 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchResultObject>? Type2103 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant2? Type2104 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchResultObject? Type2104 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant2Event? Type2105 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchResultObjectContentItem>? Type2105 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant3? Type2106 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchResultObjectContentItem? Type2106 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant3Event? Type2107 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchResultObjectContentItemType? Type2107 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant4? Type2108 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDetailsToolCallsFunctionObject? Type2108 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant4Event? Type2109 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDetailsToolCallsFunctionObjectType? Type2109 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant5? Type2110 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDetailsToolCallsFunctionObjectFunction? Type2110 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant5Event? Type2111 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDetailsToolCallsObject? Type2111 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant6? Type2112 { get; set; }
+        public global::tryAGI.OpenAI.RunStepDetailsToolCallsObjectType? Type2112 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant6Event? Type2113 { get; set; }
+        public global::tryAGI.OpenAI.RunStepObjectObject? Type2113 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant7? Type2114 { get; set; }
+        public global::tryAGI.OpenAI.RunStepObjectType? Type2114 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant7Event? Type2115 { get; set; }
+        public global::tryAGI.OpenAI.RunStepObjectStatus? Type2115 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant8? Type2116 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDetailsMessageCreationObject, global::tryAGI.OpenAI.RunStepDetailsToolCallsObject>? Type2116 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant8Event? Type2117 { get; set; }
+        public global::tryAGI.OpenAI.RunStepObjectLastError2? Type2117 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant9? Type2118 { get; set; }
+        public global::tryAGI.OpenAI.RunStepObjectLastErrorCode? Type2118 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant9Event? Type2119 { get; set; }
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant1? Type2119 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant10? Type2120 { get; set; }
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant1Event? Type2120 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant10Event? Type2121 { get; set; }
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant2? Type2121 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunToolCallObjectType? Type2122 { get; set; }
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant2Event? Type2122 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RunToolCallObjectFunction? Type2123 { get; set; }
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant3? Type2123 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.SpeechAudioDeltaEventType? Type2124 { get; set; }
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant3Event? Type2124 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.SpeechAudioDoneEventType? Type2125 { get; set; }
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant4? Type2125 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.SpeechAudioDoneEventUsage? Type2126 { get; set; }
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant4Event? Type2126 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.StaticChunkingStrategy? Type2127 { get; set; }
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant5? Type2127 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.StaticChunkingStrategyRequestParamType? Type2128 { get; set; }
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant5Event? Type2128 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.StaticChunkingStrategyResponseParam? Type2129 { get; set; }
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant6? Type2129 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.StaticChunkingStrategyResponseParamType? Type2130 { get; set; }
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant6Event? Type2130 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.SubmitToolOutputsRunRequest? Type2131 { get; set; }
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant7? Type2131 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SubmitToolOutputsRunRequestToolOutput>? Type2132 { get; set; }
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant7Event? Type2132 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.SubmitToolOutputsRunRequestToolOutput? Type2133 { get; set; }
+        public global::tryAGI.OpenAI.RunStreamEventVariant1? Type2133 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TextResponseFormatJsonSchema? Type2134 { get; set; }
+        public global::tryAGI.OpenAI.RunStreamEventVariant1Event? Type2134 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TextResponseFormatJsonSchemaType? Type2135 { get; set; }
+        public global::tryAGI.OpenAI.RunStreamEventVariant2? Type2135 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ThreadObject? Type2136 { get; set; }
+        public global::tryAGI.OpenAI.RunStreamEventVariant2Event? Type2136 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ThreadObjectObject? Type2137 { get; set; }
+        public global::tryAGI.OpenAI.RunStreamEventVariant3? Type2137 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ThreadObjectToolResources2? Type2138 { get; set; }
+        public global::tryAGI.OpenAI.RunStreamEventVariant3Event? Type2138 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ThreadObjectToolResourcesCodeInterpreter? Type2139 { get; set; }
+        public global::tryAGI.OpenAI.RunStreamEventVariant4? Type2139 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ThreadObjectToolResourcesFileSearch? Type2140 { get; set; }
+        public global::tryAGI.OpenAI.RunStreamEventVariant4Event? Type2140 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ThreadStreamEventVariant1? Type2141 { get; set; }
+        public global::tryAGI.OpenAI.RunStreamEventVariant5? Type2141 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ThreadStreamEventVariant1Event? Type2142 { get; set; }
+        public global::tryAGI.OpenAI.RunStreamEventVariant5Event? Type2142 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ToggleCertificatesRequest? Type2143 { get; set; }
+        public global::tryAGI.OpenAI.RunStreamEventVariant6? Type2143 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionTool? Type2144 { get; set; }
+        public global::tryAGI.OpenAI.RunStreamEventVariant6Event? Type2144 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FileSearchTool? Type2145 { get; set; }
+        public global::tryAGI.OpenAI.RunStreamEventVariant7? Type2145 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ComputerTool? Type2146 { get; set; }
+        public global::tryAGI.OpenAI.RunStreamEventVariant7Event? Type2146 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ComputerUsePreviewTool? Type2147 { get; set; }
+        public global::tryAGI.OpenAI.RunStreamEventVariant8? Type2147 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebSearchTool? Type2148 { get; set; }
+        public global::tryAGI.OpenAI.RunStreamEventVariant8Event? Type2148 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.LocalShellToolParam? Type2149 { get; set; }
+        public global::tryAGI.OpenAI.RunStreamEventVariant9? Type2149 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellToolParam? Type2150 { get; set; }
+        public global::tryAGI.OpenAI.RunStreamEventVariant9Event? Type2150 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CustomToolParam? Type2151 { get; set; }
+        public global::tryAGI.OpenAI.RunStreamEventVariant10? Type2151 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.NamespaceToolParam? Type2152 { get; set; }
+        public global::tryAGI.OpenAI.RunStreamEventVariant10Event? Type2152 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ToolSearchToolParam? Type2153 { get; set; }
+        public global::tryAGI.OpenAI.RunToolCallObjectType? Type2153 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebSearchPreviewTool? Type2154 { get; set; }
+        public global::tryAGI.OpenAI.RunToolCallObjectFunction? Type2154 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApplyPatchToolParam? Type2155 { get; set; }
+        public global::tryAGI.OpenAI.SpeechAudioDeltaEventType? Type2155 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ToolDiscriminator? Type2156 { get; set; }
+        public global::tryAGI.OpenAI.SpeechAudioDoneEventType? Type2156 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ToolChoiceAllowed? Type2157 { get; set; }
+        public global::tryAGI.OpenAI.SpeechAudioDoneEventUsage? Type2157 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ToolChoiceAllowedType? Type2158 { get; set; }
+        public global::tryAGI.OpenAI.StaticChunkingStrategy? Type2158 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ToolChoiceAllowedMode? Type2159 { get; set; }
+        public global::tryAGI.OpenAI.StaticChunkingStrategyRequestParamType? Type2159 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ToolChoiceCustom? Type2160 { get; set; }
+        public global::tryAGI.OpenAI.StaticChunkingStrategyResponseParam? Type2160 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ToolChoiceCustomType? Type2161 { get; set; }
+        public global::tryAGI.OpenAI.StaticChunkingStrategyResponseParamType? Type2161 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ToolChoiceFunctionType? Type2162 { get; set; }
+        public global::tryAGI.OpenAI.SubmitToolOutputsRunRequest? Type2162 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ToolChoiceMCPType? Type2163 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SubmitToolOutputsRunRequestToolOutput>? Type2163 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ToolChoiceTypes? Type2164 { get; set; }
+        public global::tryAGI.OpenAI.SubmitToolOutputsRunRequestToolOutput? Type2164 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.SpecificApplyPatchParam? Type2165 { get; set; }
+        public global::tryAGI.OpenAI.TextResponseFormatJsonSchema? Type2165 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.SpecificFunctionShellParam? Type2166 { get; set; }
+        public global::tryAGI.OpenAI.TextResponseFormatJsonSchemaType? Type2166 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ToolChoiceTypesType? Type2167 { get; set; }
+        public global::tryAGI.OpenAI.ThreadObject? Type2167 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TranscriptTextDeltaEventType? Type2168 { get; set; }
+        public global::tryAGI.OpenAI.ThreadObjectObject? Type2168 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptTextDeltaEventLogprob>? Type2169 { get; set; }
+        public global::tryAGI.OpenAI.ThreadObjectToolResources2? Type2169 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TranscriptTextDeltaEventLogprob? Type2170 { get; set; }
+        public global::tryAGI.OpenAI.ThreadObjectToolResourcesCodeInterpreter? Type2170 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TranscriptTextDoneEventType? Type2171 { get; set; }
+        public global::tryAGI.OpenAI.ThreadObjectToolResourcesFileSearch? Type2171 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptTextDoneEventLogprob>? Type2172 { get; set; }
+        public global::tryAGI.OpenAI.ThreadStreamEventVariant1? Type2172 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TranscriptTextDoneEventLogprob? Type2173 { get; set; }
+        public global::tryAGI.OpenAI.ThreadStreamEventVariant1Event? Type2173 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TranscriptTextSegmentEventType? Type2174 { get; set; }
+        public global::tryAGI.OpenAI.ToggleCertificatesRequest? Type2174 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TranscriptTextUsageDurationType? Type2175 { get; set; }
+        public global::tryAGI.OpenAI.FunctionTool? Type2175 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TranscriptTextUsageTokensType? Type2176 { get; set; }
+        public global::tryAGI.OpenAI.FileSearchTool? Type2176 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TranscriptTextUsageTokensInputTokenDetails? Type2177 { get; set; }
+        public global::tryAGI.OpenAI.ComputerTool? Type2177 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TranscriptionChunkingStrategy? Type2178 { get; set; }
+        public global::tryAGI.OpenAI.ComputerUsePreviewTool? Type2178 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum? Type2179 { get; set; }
+        public global::tryAGI.OpenAI.WebSearchTool? Type2179 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TranscriptionDiarizedSegmentType? Type2180 { get; set; }
+        public global::tryAGI.OpenAI.LocalShellToolParam? Type2180 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TruncationObjectType? Type2181 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellToolParam? Type2181 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UpdateGroupBody? Type2182 { get; set; }
+        public global::tryAGI.OpenAI.CustomToolParam? Type2182 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UpdateVectorStoreFileAttributesRequest? Type2183 { get; set; }
+        public global::tryAGI.OpenAI.NamespaceToolParam? Type2183 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UpdateVectorStoreRequest? Type2184 { get; set; }
+        public global::tryAGI.OpenAI.ToolSearchToolParam? Type2184 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.VectorStoreExpirationAfter, object>? Type2185 { get; set; }
+        public global::tryAGI.OpenAI.WebSearchPreviewTool? Type2185 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UpdateVoiceConsentRequest? Type2186 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchToolParam? Type2186 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.Upload? Type2187 { get; set; }
+        public global::tryAGI.OpenAI.ToolDiscriminator? Type2187 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UploadStatus? Type2188 { get; set; }
+        public global::tryAGI.OpenAI.ToolDiscriminatorType? Type2188 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UploadObject? Type2189 { get; set; }
+        public global::tryAGI.OpenAI.ToolChoiceAllowed? Type2189 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.OpenAIFile, object>? Type2190 { get; set; }
+        public global::tryAGI.OpenAI.ToolChoiceAllowedType? Type2190 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UploadCertificateRequest? Type2191 { get; set; }
+        public global::tryAGI.OpenAI.ToolChoiceAllowedMode? Type2191 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UploadPart? Type2192 { get; set; }
+        public global::tryAGI.OpenAI.ToolChoiceCustom? Type2192 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UploadPartObject? Type2193 { get; set; }
+        public global::tryAGI.OpenAI.ToolChoiceCustomType? Type2193 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageAudioSpeechesResult? Type2194 { get; set; }
+        public global::tryAGI.OpenAI.ToolChoiceFunctionType? Type2194 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageAudioSpeechesResultObject? Type2195 { get; set; }
+        public global::tryAGI.OpenAI.ToolChoiceMCPType? Type2195 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageAudioTranscriptionsResult? Type2196 { get; set; }
+        public global::tryAGI.OpenAI.ToolChoiceTypes? Type2196 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageAudioTranscriptionsResultObject? Type2197 { get; set; }
+        public global::tryAGI.OpenAI.SpecificApplyPatchParam? Type2197 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult? Type2198 { get; set; }
+        public global::tryAGI.OpenAI.SpecificFunctionShellParam? Type2198 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResultObject? Type2199 { get; set; }
+        public global::tryAGI.OpenAI.ToolChoiceTypesType? Type2199 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageCompletionsResult? Type2200 { get; set; }
+        public global::tryAGI.OpenAI.TranscriptTextDeltaEventType? Type2200 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageCompletionsResultObject? Type2201 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptTextDeltaEventLogprob>? Type2201 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageEmbeddingsResult? Type2202 { get; set; }
+        public global::tryAGI.OpenAI.TranscriptTextDeltaEventLogprob? Type2202 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageEmbeddingsResultObject? Type2203 { get; set; }
+        public global::tryAGI.OpenAI.TranscriptTextDoneEventType? Type2203 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageImagesResult? Type2204 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptTextDoneEventLogprob>? Type2204 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageImagesResultObject? Type2205 { get; set; }
+        public global::tryAGI.OpenAI.TranscriptTextDoneEventLogprob? Type2205 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageModerationsResult? Type2206 { get; set; }
+        public global::tryAGI.OpenAI.TranscriptTextSegmentEventType? Type2206 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageModerationsResultObject? Type2207 { get; set; }
+        public global::tryAGI.OpenAI.TranscriptTextUsageDurationType? Type2207 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageResponse? Type2208 { get; set; }
+        public global::tryAGI.OpenAI.TranscriptTextUsageTokensType? Type2208 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageResponseObject? Type2209 { get; set; }
+        public global::tryAGI.OpenAI.TranscriptTextUsageTokensInputTokenDetails? Type2209 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageTimeBucket>? Type2210 { get; set; }
+        public global::tryAGI.OpenAI.TranscriptionChunkingStrategy? Type2210 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageTimeBucket? Type2211 { get; set; }
+        public global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum? Type2211 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageTimeBucketObject? Type2212 { get; set; }
+        public global::tryAGI.OpenAI.TranscriptionDiarizedSegmentType? Type2212 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResultsItem>? Type2213 { get; set; }
+        public global::tryAGI.OpenAI.TruncationObjectType? Type2213 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResultsItem? Type2214 { get; set; }
+        public global::tryAGI.OpenAI.UpdateGroupBody? Type2214 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageVectorStoresResult? Type2215 { get; set; }
+        public global::tryAGI.OpenAI.UpdateVectorStoreFileAttributesRequest? Type2215 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageTimeBucketResultDiscriminator? Type2216 { get; set; }
+        public global::tryAGI.OpenAI.UpdateVectorStoreRequest? Type2216 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageVectorStoresResultObject? Type2217 { get; set; }
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.VectorStoreExpirationAfter, object>? Type2217 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.User? Type2218 { get; set; }
+        public global::tryAGI.OpenAI.UpdateVoiceConsentRequest? Type2218 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UserObject? Type2219 { get; set; }
+        public global::tryAGI.OpenAI.Upload? Type2219 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UserUser1? Type2220 { get; set; }
+        public global::tryAGI.OpenAI.UploadStatus? Type2220 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UserUser1Object? Type2221 { get; set; }
+        public global::tryAGI.OpenAI.UploadObject? Type2221 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UserProjects2? Type2222 { get; set; }
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.OpenAIFile, object>? Type2222 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UserProjectsObject? Type2223 { get; set; }
+        public global::tryAGI.OpenAI.UploadCertificateRequest? Type2223 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UserProjectsDataItem>? Type2224 { get; set; }
+        public global::tryAGI.OpenAI.UploadPart? Type2224 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UserProjectsDataItem? Type2225 { get; set; }
+        public global::tryAGI.OpenAI.UploadPartObject? Type2225 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UserDeleteResponse? Type2226 { get; set; }
+        public global::tryAGI.OpenAI.UsageAudioSpeechesResult? Type2226 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UserDeleteResponseObject? Type2227 { get; set; }
+        public global::tryAGI.OpenAI.UsageAudioSpeechesResultObject? Type2227 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UserListResource? Type2228 { get; set; }
+        public global::tryAGI.OpenAI.UsageAudioTranscriptionsResult? Type2228 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UserListResourceObject? Type2229 { get; set; }
+        public global::tryAGI.OpenAI.UsageAudioTranscriptionsResultObject? Type2229 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.GroupUser>? Type2230 { get; set; }
+        public global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult? Type2230 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UserListResponse? Type2231 { get; set; }
+        public global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResultObject? Type2231 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UserListResponseObject? Type2232 { get; set; }
+        public global::tryAGI.OpenAI.UsageCompletionsResult? Type2232 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.User>? Type2233 { get; set; }
+        public global::tryAGI.OpenAI.UsageCompletionsResultObject? Type2233 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UserRoleAssignment? Type2234 { get; set; }
+        public global::tryAGI.OpenAI.UsageEmbeddingsResult? Type2234 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UserRoleAssignmentObject? Type2235 { get; set; }
+        public global::tryAGI.OpenAI.UsageEmbeddingsResultObject? Type2235 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UserRoleUpdateRequest? Type2236 { get; set; }
+        public global::tryAGI.OpenAI.UsageImagesResult? Type2236 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VadConfigType? Type2237 { get; set; }
+        public global::tryAGI.OpenAI.UsageImagesResultObject? Type2237 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ValidateGraderRequest? Type2238 { get; set; }
+        public global::tryAGI.OpenAI.UsageModerationsResult? Type2238 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ValidateGraderResponse? Type2239 { get; set; }
+        public global::tryAGI.OpenAI.UsageModerationsResultObject? Type2239 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VectorStoreExpirationAfterAnchor? Type2240 { get; set; }
+        public global::tryAGI.OpenAI.UsageResponse? Type2240 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<string, double?, bool?>? Type2241 { get; set; }
+        public global::tryAGI.OpenAI.UsageResponseObject? Type2241 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VectorStoreFileBatchObject? Type2242 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageTimeBucket>? Type2242 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VectorStoreFileBatchObjectObject? Type2243 { get; set; }
+        public global::tryAGI.OpenAI.UsageTimeBucket? Type2243 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VectorStoreFileBatchObjectStatus? Type2244 { get; set; }
+        public global::tryAGI.OpenAI.UsageTimeBucketObject? Type2244 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VectorStoreFileBatchObjectFileCounts? Type2245 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResultsItem>? Type2245 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VectorStoreFileContentResponse? Type2246 { get; set; }
+        public global::tryAGI.OpenAI.ResultsItem? Type2246 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VectorStoreFileContentResponseObject? Type2247 { get; set; }
+        public global::tryAGI.OpenAI.UsageVectorStoresResult? Type2247 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VectorStoreFileContentResponseDataItem>? Type2248 { get; set; }
+        public global::tryAGI.OpenAI.UsageTimeBucketResultDiscriminator? Type2248 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VectorStoreFileContentResponseDataItem? Type2249 { get; set; }
+        public global::tryAGI.OpenAI.UsageTimeBucketResultDiscriminatorObject? Type2249 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VectorStoreFileObjectObject? Type2250 { get; set; }
+        public global::tryAGI.OpenAI.UsageVectorStoresResultObject? Type2250 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VectorStoreFileObjectStatus? Type2251 { get; set; }
+        public global::tryAGI.OpenAI.User? Type2251 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VectorStoreFileObjectLastError2? Type2252 { get; set; }
+        public global::tryAGI.OpenAI.UserObject? Type2252 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VectorStoreFileObjectLastErrorCode? Type2253 { get; set; }
+        public global::tryAGI.OpenAI.UserUser1? Type2253 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.StaticChunkingStrategyResponseParam, global::tryAGI.OpenAI.OtherChunkingStrategyResponseParam>? Type2254 { get; set; }
+        public global::tryAGI.OpenAI.UserUser1Object? Type2254 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VectorStoreObjectObject? Type2255 { get; set; }
+        public global::tryAGI.OpenAI.UserProjects2? Type2255 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VectorStoreObjectFileCounts? Type2256 { get; set; }
+        public global::tryAGI.OpenAI.UserProjectsObject? Type2256 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VectorStoreObjectStatus? Type2257 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UserProjectsDataItem>? Type2257 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VectorStoreSearchRequest? Type2258 { get; set; }
+        public global::tryAGI.OpenAI.UserProjectsDataItem? Type2258 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>>? Type2259 { get; set; }
+        public global::tryAGI.OpenAI.UserDeleteResponse? Type2259 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ComparisonFilter, global::tryAGI.OpenAI.CompoundFilter>? Type2260 { get; set; }
+        public global::tryAGI.OpenAI.UserDeleteResponseObject? Type2260 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VectorStoreSearchRequestRankingOptions? Type2261 { get; set; }
+        public global::tryAGI.OpenAI.UserListResource? Type2261 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VectorStoreSearchRequestRankingOptionsRanker? Type2262 { get; set; }
+        public global::tryAGI.OpenAI.UserListResourceObject? Type2262 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VectorStoreSearchResultContentObject? Type2263 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.GroupUser>? Type2263 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VectorStoreSearchResultContentObjectType? Type2264 { get; set; }
+        public global::tryAGI.OpenAI.UserListResponse? Type2264 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VectorStoreSearchResultItem? Type2265 { get; set; }
+        public global::tryAGI.OpenAI.UserListResponseObject? Type2265 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VectorStoreSearchResultContentObject>? Type2266 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.User>? Type2266 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VectorStoreSearchResultsPage? Type2267 { get; set; }
+        public global::tryAGI.OpenAI.UserRoleAssignment? Type2267 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VectorStoreSearchResultsPageObject? Type2268 { get; set; }
+        public global::tryAGI.OpenAI.UserRoleAssignmentObject? Type2268 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VectorStoreSearchResultItem>? Type2269 { get; set; }
+        public global::tryAGI.OpenAI.UserRoleUpdateRequest? Type2269 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VoiceConsentDeletedResource? Type2270 { get; set; }
+        public global::tryAGI.OpenAI.VadConfigType? Type2270 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VoiceConsentDeletedResourceObject? Type2271 { get; set; }
+        public global::tryAGI.OpenAI.ValidateGraderRequest? Type2271 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VoiceConsentListResource? Type2272 { get; set; }
+        public global::tryAGI.OpenAI.ValidateGraderResponse? Type2272 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VoiceConsentListResourceObject? Type2273 { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreExpirationAfterAnchor? Type2273 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VoiceConsentResource>? Type2274 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<string, double?, bool?>? Type2274 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VoiceConsentResource? Type2275 { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreFileBatchObject? Type2275 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VoiceConsentResourceObject? Type2276 { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreFileBatchObjectObject? Type2276 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2? Type2277 { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreFileBatchObjectStatus? Type2277 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VoiceIdsSharedEnum? Type2278 { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreFileBatchObjectFileCounts? Type2278 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VoiceResource? Type2279 { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreFileContentResponse? Type2279 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VoiceResourceObject? Type2280 { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreFileContentResponseObject? Type2280 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebSearchActionFind? Type2281 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VectorStoreFileContentResponseDataItem>? Type2281 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebSearchActionFindType? Type2282 { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreFileContentResponseDataItem? Type2282 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebSearchActionOpenPage? Type2283 { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreFileObjectObject? Type2283 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebSearchActionOpenPageType? Type2284 { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreFileObjectStatus? Type2284 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebSearchActionSearch? Type2285 { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreFileObjectLastError2? Type2285 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebSearchActionSearchType? Type2286 { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreFileObjectLastErrorCode? Type2286 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.WebSearchActionSearchSource>? Type2287 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.StaticChunkingStrategyResponseParam, global::tryAGI.OpenAI.OtherChunkingStrategyResponseParam>? Type2287 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebSearchActionSearchSource? Type2288 { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreObjectObject? Type2288 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebSearchActionSearchSourceType? Type2289 { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreObjectFileCounts? Type2289 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebSearchApproximateLocationWebSearchApproximateLocation1? Type2290 { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreObjectStatus? Type2290 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebSearchApproximateLocationWebSearchApproximateLocation1Type? Type2291 { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreSearchRequest? Type2291 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebSearchToolType? Type2292 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>>? Type2292 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebSearchToolFilters2? Type2293 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ComparisonFilter, global::tryAGI.OpenAI.CompoundFilter>? Type2293 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebSearchToolSearchContextSize? Type2294 { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreSearchRequestRankingOptions? Type2294 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebSearchToolCallType? Type2295 { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreSearchRequestRankingOptionsRanker? Type2295 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebSearchToolCallStatus? Type2296 { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreSearchResultContentObject? Type2296 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebSearchToolCallAction? Type2297 { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreSearchResultContentObjectType? Type2297 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebSearchToolCallActionDiscriminator? Type2298 { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreSearchResultItem? Type2298 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookBatchCancelled? Type2299 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VectorStoreSearchResultContentObject>? Type2299 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookBatchCancelledData? Type2300 { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreSearchResultsPage? Type2300 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookBatchCancelledObject? Type2301 { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreSearchResultsPageObject? Type2301 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookBatchCancelledType? Type2302 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VectorStoreSearchResultItem>? Type2302 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookBatchCompleted? Type2303 { get; set; }
+        public global::tryAGI.OpenAI.VoiceConsentDeletedResource? Type2303 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookBatchCompletedData? Type2304 { get; set; }
+        public global::tryAGI.OpenAI.VoiceConsentDeletedResourceObject? Type2304 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookBatchCompletedObject? Type2305 { get; set; }
+        public global::tryAGI.OpenAI.VoiceConsentListResource? Type2305 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookBatchCompletedType? Type2306 { get; set; }
+        public global::tryAGI.OpenAI.VoiceConsentListResourceObject? Type2306 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookBatchExpired? Type2307 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VoiceConsentResource>? Type2307 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookBatchExpiredData? Type2308 { get; set; }
+        public global::tryAGI.OpenAI.VoiceConsentResource? Type2308 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookBatchExpiredObject? Type2309 { get; set; }
+        public global::tryAGI.OpenAI.VoiceConsentResourceObject? Type2309 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookBatchExpiredType? Type2310 { get; set; }
+        public global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2? Type2310 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookBatchFailed? Type2311 { get; set; }
+        public global::tryAGI.OpenAI.VoiceIdsSharedEnum? Type2311 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookBatchFailedData? Type2312 { get; set; }
+        public global::tryAGI.OpenAI.VoiceResource? Type2312 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookBatchFailedObject? Type2313 { get; set; }
+        public global::tryAGI.OpenAI.VoiceResourceObject? Type2313 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookBatchFailedType? Type2314 { get; set; }
+        public global::tryAGI.OpenAI.WebSearchActionFind? Type2314 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookEvalRunCanceled? Type2315 { get; set; }
+        public global::tryAGI.OpenAI.WebSearchActionFindType? Type2315 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookEvalRunCanceledData? Type2316 { get; set; }
+        public global::tryAGI.OpenAI.WebSearchActionOpenPage? Type2316 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookEvalRunCanceledObject? Type2317 { get; set; }
+        public global::tryAGI.OpenAI.WebSearchActionOpenPageType? Type2317 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookEvalRunCanceledType? Type2318 { get; set; }
+        public global::tryAGI.OpenAI.WebSearchActionSearch? Type2318 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookEvalRunFailed? Type2319 { get; set; }
+        public global::tryAGI.OpenAI.WebSearchActionSearchType? Type2319 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookEvalRunFailedData? Type2320 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.WebSearchActionSearchSource>? Type2320 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookEvalRunFailedObject? Type2321 { get; set; }
+        public global::tryAGI.OpenAI.WebSearchActionSearchSource? Type2321 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookEvalRunFailedType? Type2322 { get; set; }
+        public global::tryAGI.OpenAI.WebSearchActionSearchSourceType? Type2322 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookEvalRunSucceeded? Type2323 { get; set; }
+        public global::tryAGI.OpenAI.WebSearchApproximateLocationWebSearchApproximateLocation1? Type2323 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookEvalRunSucceededData? Type2324 { get; set; }
+        public global::tryAGI.OpenAI.WebSearchApproximateLocationWebSearchApproximateLocation1Type? Type2324 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookEvalRunSucceededObject? Type2325 { get; set; }
+        public global::tryAGI.OpenAI.WebSearchToolType? Type2325 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookEvalRunSucceededType? Type2326 { get; set; }
+        public global::tryAGI.OpenAI.WebSearchToolFilters2? Type2326 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookFineTuningJobCancelled? Type2327 { get; set; }
+        public global::tryAGI.OpenAI.WebSearchToolSearchContextSize? Type2327 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookFineTuningJobCancelledData? Type2328 { get; set; }
+        public global::tryAGI.OpenAI.WebSearchToolCallType? Type2328 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookFineTuningJobCancelledObject? Type2329 { get; set; }
+        public global::tryAGI.OpenAI.WebSearchToolCallStatus? Type2329 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookFineTuningJobCancelledType? Type2330 { get; set; }
+        public global::tryAGI.OpenAI.WebSearchToolCallAction? Type2330 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookFineTuningJobFailed? Type2331 { get; set; }
+        public global::tryAGI.OpenAI.WebSearchToolCallActionDiscriminator? Type2331 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookFineTuningJobFailedData? Type2332 { get; set; }
+        public global::tryAGI.OpenAI.WebSearchToolCallActionDiscriminatorType? Type2332 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookFineTuningJobFailedObject? Type2333 { get; set; }
+        public global::tryAGI.OpenAI.WebhookBatchCancelled? Type2333 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookFineTuningJobFailedType? Type2334 { get; set; }
+        public global::tryAGI.OpenAI.WebhookBatchCancelledData? Type2334 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookFineTuningJobSucceeded? Type2335 { get; set; }
+        public global::tryAGI.OpenAI.WebhookBatchCancelledObject? Type2335 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookFineTuningJobSucceededData? Type2336 { get; set; }
+        public global::tryAGI.OpenAI.WebhookBatchCancelledType? Type2336 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookFineTuningJobSucceededObject? Type2337 { get; set; }
+        public global::tryAGI.OpenAI.WebhookBatchCompleted? Type2337 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookFineTuningJobSucceededType? Type2338 { get; set; }
+        public global::tryAGI.OpenAI.WebhookBatchCompletedData? Type2338 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookRealtimeCallIncoming? Type2339 { get; set; }
+        public global::tryAGI.OpenAI.WebhookBatchCompletedObject? Type2339 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookRealtimeCallIncomingData? Type2340 { get; set; }
+        public global::tryAGI.OpenAI.WebhookBatchCompletedType? Type2340 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.WebhookRealtimeCallIncomingDataSipHeader>? Type2341 { get; set; }
+        public global::tryAGI.OpenAI.WebhookBatchExpired? Type2341 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookRealtimeCallIncomingDataSipHeader? Type2342 { get; set; }
+        public global::tryAGI.OpenAI.WebhookBatchExpiredData? Type2342 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookRealtimeCallIncomingObject? Type2343 { get; set; }
+        public global::tryAGI.OpenAI.WebhookBatchExpiredObject? Type2343 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookRealtimeCallIncomingType? Type2344 { get; set; }
+        public global::tryAGI.OpenAI.WebhookBatchExpiredType? Type2344 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookResponseCancelled? Type2345 { get; set; }
+        public global::tryAGI.OpenAI.WebhookBatchFailed? Type2345 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookResponseCancelledData? Type2346 { get; set; }
+        public global::tryAGI.OpenAI.WebhookBatchFailedData? Type2346 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookResponseCancelledObject? Type2347 { get; set; }
+        public global::tryAGI.OpenAI.WebhookBatchFailedObject? Type2347 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookResponseCancelledType? Type2348 { get; set; }
+        public global::tryAGI.OpenAI.WebhookBatchFailedType? Type2348 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookResponseCompleted? Type2349 { get; set; }
+        public global::tryAGI.OpenAI.WebhookEvalRunCanceled? Type2349 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookResponseCompletedData? Type2350 { get; set; }
+        public global::tryAGI.OpenAI.WebhookEvalRunCanceledData? Type2350 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookResponseCompletedObject? Type2351 { get; set; }
+        public global::tryAGI.OpenAI.WebhookEvalRunCanceledObject? Type2351 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookResponseCompletedType? Type2352 { get; set; }
+        public global::tryAGI.OpenAI.WebhookEvalRunCanceledType? Type2352 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookResponseFailed? Type2353 { get; set; }
+        public global::tryAGI.OpenAI.WebhookEvalRunFailed? Type2353 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookResponseFailedData? Type2354 { get; set; }
+        public global::tryAGI.OpenAI.WebhookEvalRunFailedData? Type2354 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookResponseFailedObject? Type2355 { get; set; }
+        public global::tryAGI.OpenAI.WebhookEvalRunFailedObject? Type2355 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookResponseFailedType? Type2356 { get; set; }
+        public global::tryAGI.OpenAI.WebhookEvalRunFailedType? Type2356 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookResponseIncomplete? Type2357 { get; set; }
+        public global::tryAGI.OpenAI.WebhookEvalRunSucceeded? Type2357 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookResponseIncompleteData? Type2358 { get; set; }
+        public global::tryAGI.OpenAI.WebhookEvalRunSucceededData? Type2358 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookResponseIncompleteObject? Type2359 { get; set; }
+        public global::tryAGI.OpenAI.WebhookEvalRunSucceededObject? Type2359 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebhookResponseIncompleteType? Type2360 { get; set; }
+        public global::tryAGI.OpenAI.WebhookEvalRunSucceededType? Type2360 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.SkillReferenceParamType? Type2361 { get; set; }
+        public global::tryAGI.OpenAI.WebhookFineTuningJobCancelled? Type2361 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InlineSkillSourceParam? Type2362 { get; set; }
+        public global::tryAGI.OpenAI.WebhookFineTuningJobCancelledData? Type2362 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InlineSkillSourceParamType? Type2363 { get; set; }
+        public global::tryAGI.OpenAI.WebhookFineTuningJobCancelledObject? Type2363 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InlineSkillSourceParamMediaType? Type2364 { get; set; }
+        public global::tryAGI.OpenAI.WebhookFineTuningJobCancelledType? Type2364 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InlineSkillParamType? Type2365 { get; set; }
+        public global::tryAGI.OpenAI.WebhookFineTuningJobFailed? Type2365 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParamType? Type2366 { get; set; }
+        public global::tryAGI.OpenAI.WebhookFineTuningJobFailedData? Type2366 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContainerNetworkPolicyDomainSecretParam? Type2367 { get; set; }
+        public global::tryAGI.OpenAI.WebhookFineTuningJobFailedObject? Type2367 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParamType? Type2368 { get; set; }
+        public global::tryAGI.OpenAI.WebhookFineTuningJobFailedType? Type2368 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContainerNetworkPolicyDomainSecretParam>? Type2369 { get; set; }
+        public global::tryAGI.OpenAI.WebhookFineTuningJobSucceeded? Type2369 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageStatus? Type2370 { get; set; }
+        public global::tryAGI.OpenAI.WebhookFineTuningJobSucceededData? Type2370 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageRole? Type2371 { get; set; }
+        public global::tryAGI.OpenAI.WebhookFineTuningJobSucceededObject? Type2371 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InputTextContentType? Type2372 { get; set; }
+        public global::tryAGI.OpenAI.WebhookFineTuningJobSucceededType? Type2372 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FileCitationBody? Type2373 { get; set; }
+        public global::tryAGI.OpenAI.WebhookRealtimeCallIncoming? Type2373 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FileCitationBodyType? Type2374 { get; set; }
+        public global::tryAGI.OpenAI.WebhookRealtimeCallIncomingData? Type2374 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UrlCitationBody? Type2375 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.WebhookRealtimeCallIncomingDataSipHeader>? Type2375 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UrlCitationBodyType? Type2376 { get; set; }
+        public global::tryAGI.OpenAI.WebhookRealtimeCallIncomingDataSipHeader? Type2376 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContainerFileCitationBody? Type2377 { get; set; }
+        public global::tryAGI.OpenAI.WebhookRealtimeCallIncomingObject? Type2377 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContainerFileCitationBodyType? Type2378 { get; set; }
+        public global::tryAGI.OpenAI.WebhookRealtimeCallIncomingType? Type2378 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.Annotation? Type2379 { get; set; }
+        public global::tryAGI.OpenAI.WebhookResponseCancelled? Type2379 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AnnotationDiscriminator? Type2380 { get; set; }
+        public global::tryAGI.OpenAI.WebhookResponseCancelledData? Type2380 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TopLogProb? Type2381 { get; set; }
+        public global::tryAGI.OpenAI.WebhookResponseCancelledObject? Type2381 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.LogProb? Type2382 { get; set; }
+        public global::tryAGI.OpenAI.WebhookResponseCancelledType? Type2382 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TopLogProb>? Type2383 { get; set; }
+        public global::tryAGI.OpenAI.WebhookResponseCompleted? Type2383 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OutputTextContentType? Type2384 { get; set; }
+        public global::tryAGI.OpenAI.WebhookResponseCompletedData? Type2384 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Annotation>? Type2385 { get; set; }
+        public global::tryAGI.OpenAI.WebhookResponseCompletedObject? Type2385 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProb>? Type2386 { get; set; }
+        public global::tryAGI.OpenAI.WebhookResponseCompletedType? Type2386 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TextContent? Type2387 { get; set; }
+        public global::tryAGI.OpenAI.WebhookResponseFailed? Type2387 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TextContentType? Type2388 { get; set; }
+        public global::tryAGI.OpenAI.WebhookResponseFailedData? Type2388 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.SummaryTextContentType? Type2389 { get; set; }
+        public global::tryAGI.OpenAI.WebhookResponseFailedObject? Type2389 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ReasoningTextContentType? Type2390 { get; set; }
+        public global::tryAGI.OpenAI.WebhookResponseFailedType? Type2390 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RefusalContentType? Type2391 { get; set; }
+        public global::tryAGI.OpenAI.WebhookResponseIncomplete? Type2391 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageDetail? Type2392 { get; set; }
+        public global::tryAGI.OpenAI.WebhookResponseIncompleteData? Type2392 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InputImageContentType? Type2393 { get; set; }
+        public global::tryAGI.OpenAI.WebhookResponseIncompleteObject? Type2393 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ComputerScreenshotContent? Type2394 { get; set; }
+        public global::tryAGI.OpenAI.WebhookResponseIncompleteType? Type2394 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ComputerScreenshotContentType? Type2395 { get; set; }
+        public global::tryAGI.OpenAI.SkillReferenceParamType? Type2395 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FileInputDetail? Type2396 { get; set; }
+        public global::tryAGI.OpenAI.InlineSkillSourceParam? Type2396 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InputFileContentType? Type2397 { get; set; }
+        public global::tryAGI.OpenAI.InlineSkillSourceParamType? Type2397 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessagePhase2? Type2398 { get; set; }
+        public global::tryAGI.OpenAI.InlineSkillSourceParamMediaType? Type2398 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageType? Type2399 { get; set; }
+        public global::tryAGI.OpenAI.InlineSkillParamType? Type2399 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentItem3>? Type2400 { get; set; }
+        public global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParamType? Type2400 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContentItem3? Type2401 { get; set; }
+        public global::tryAGI.OpenAI.ContainerNetworkPolicyDomainSecretParam? Type2401 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MessageContentItemDiscriminator? Type2402 { get; set; }
+        public global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParamType? Type2402 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ClickButtonType? Type2403 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContainerNetworkPolicyDomainSecretParam>? Type2403 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ClickParamType? Type2404 { get; set; }
+        public global::tryAGI.OpenAI.MessageStatus? Type2404 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DoubleClickActionType? Type2405 { get; set; }
+        public global::tryAGI.OpenAI.MessageRole? Type2405 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CoordParam? Type2406 { get; set; }
+        public global::tryAGI.OpenAI.InputTextContentType? Type2406 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DragParamType? Type2407 { get; set; }
+        public global::tryAGI.OpenAI.FileCitationBody? Type2407 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CoordParam>? Type2408 { get; set; }
+        public global::tryAGI.OpenAI.FileCitationBodyType? Type2408 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.KeyPressActionType? Type2409 { get; set; }
+        public global::tryAGI.OpenAI.UrlCitationBody? Type2409 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.MoveParamType? Type2410 { get; set; }
+        public global::tryAGI.OpenAI.UrlCitationBodyType? Type2410 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ScreenshotParamType? Type2411 { get; set; }
+        public global::tryAGI.OpenAI.ContainerFileCitationBody? Type2411 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ScrollParamType? Type2412 { get; set; }
+        public global::tryAGI.OpenAI.ContainerFileCitationBodyType? Type2412 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TypeParamType? Type2413 { get; set; }
+        public global::tryAGI.OpenAI.Annotation? Type2413 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WaitParamType? Type2414 { get; set; }
+        public global::tryAGI.OpenAI.AnnotationDiscriminator? Type2414 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ToolSearchExecutionType? Type2415 { get; set; }
+        public global::tryAGI.OpenAI.AnnotationDiscriminatorType? Type2415 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ToolSearchCallType? Type2416 { get; set; }
+        public global::tryAGI.OpenAI.TopLogProb? Type2416 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionToolType? Type2417 { get; set; }
+        public global::tryAGI.OpenAI.LogProb? Type2417 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RankerVersionType? Type2418 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TopLogProb>? Type2418 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.HybridSearchOptions? Type2419 { get; set; }
+        public global::tryAGI.OpenAI.OutputTextContentType? Type2419 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RankingOptions? Type2420 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Annotation>? Type2420 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.Filters2? Type2421 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProb>? Type2421 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FileSearchToolType? Type2422 { get; set; }
+        public global::tryAGI.OpenAI.TextContent? Type2422 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ComputerToolType? Type2423 { get; set; }
+        public global::tryAGI.OpenAI.TextContentType? Type2423 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ComputerEnvironment? Type2424 { get; set; }
+        public global::tryAGI.OpenAI.SummaryTextContentType? Type2424 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ComputerUsePreviewToolType? Type2425 { get; set; }
+        public global::tryAGI.OpenAI.ReasoningTextContentType? Type2425 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContainerMemoryLimit? Type2426 { get; set; }
+        public global::tryAGI.OpenAI.RefusalContentType? Type2426 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AutoCodeInterpreterToolParamType? Type2427 { get; set; }
+        public global::tryAGI.OpenAI.ImageDetail? Type2427 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.NetworkPolicy2? Type2428 { get; set; }
+        public global::tryAGI.OpenAI.InputImageContentType? Type2428 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AutoCodeInterpreterToolParamNetworkPolicyDiscriminator? Type2429 { get; set; }
+        public global::tryAGI.OpenAI.ComputerScreenshotContent? Type2429 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.LocalShellToolParamType? Type2430 { get; set; }
+        public global::tryAGI.OpenAI.ComputerScreenshotContentType? Type2430 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContainerAutoParam? Type2431 { get; set; }
+        public global::tryAGI.OpenAI.FileInputDetail? Type2431 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContainerAutoParamType? Type2432 { get; set; }
+        public global::tryAGI.OpenAI.InputFileContentType? Type2432 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.NetworkPolicy3? Type2433 { get; set; }
+        public global::tryAGI.OpenAI.MessagePhase2? Type2433 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContainerAutoParamNetworkPolicyDiscriminator? Type2434 { get; set; }
+        public global::tryAGI.OpenAI.MessageType? Type2434 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SkillsItem2>? Type2435 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentItem3>? Type2435 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.SkillsItem2? Type2436 { get; set; }
+        public global::tryAGI.OpenAI.ContentItem3? Type2436 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContainerAutoParamSkillDiscriminator? Type2437 { get; set; }
+        public global::tryAGI.OpenAI.MessageContentItemDiscriminator? Type2437 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.LocalSkillParam? Type2438 { get; set; }
+        public global::tryAGI.OpenAI.MessageContentItemDiscriminatorType? Type2438 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.LocalEnvironmentParam? Type2439 { get; set; }
+        public global::tryAGI.OpenAI.ClickButtonType? Type2439 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.LocalEnvironmentParamType? Type2440 { get; set; }
+        public global::tryAGI.OpenAI.ClickParamType? Type2440 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LocalSkillParam>? Type2441 { get; set; }
+        public global::tryAGI.OpenAI.DoubleClickActionType? Type2441 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContainerReferenceParam? Type2442 { get; set; }
+        public global::tryAGI.OpenAI.CoordParam? Type2442 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContainerReferenceParamType? Type2443 { get; set; }
+        public global::tryAGI.OpenAI.DragParamType? Type2443 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellToolParamType? Type2444 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CoordParam>? Type2444 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EnvironmentVariant1? Type2445 { get; set; }
+        public global::tryAGI.OpenAI.KeyPressActionType? Type2445 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellToolParamEnvironmentVariant1Discriminator? Type2446 { get; set; }
+        public global::tryAGI.OpenAI.MoveParamType? Type2446 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CustomTextFormatParam? Type2447 { get; set; }
+        public global::tryAGI.OpenAI.ScreenshotParamType? Type2447 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CustomTextFormatParamType? Type2448 { get; set; }
+        public global::tryAGI.OpenAI.ScrollParamType? Type2448 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GrammarSyntax1? Type2449 { get; set; }
+        public global::tryAGI.OpenAI.TypeParamType? Type2449 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CustomGrammarFormatParam? Type2450 { get; set; }
+        public global::tryAGI.OpenAI.WaitParamType? Type2450 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CustomGrammarFormatParamType? Type2451 { get; set; }
+        public global::tryAGI.OpenAI.ToolSearchExecutionType? Type2451 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CustomToolParamType? Type2452 { get; set; }
+        public global::tryAGI.OpenAI.ToolSearchCallType? Type2452 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.Format2? Type2453 { get; set; }
+        public global::tryAGI.OpenAI.FunctionToolType? Type2453 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CustomToolParamFormatDiscriminator? Type2454 { get; set; }
+        public global::tryAGI.OpenAI.RankerVersionType? Type2454 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EmptyModelParam? Type2455 { get; set; }
+        public global::tryAGI.OpenAI.HybridSearchOptions? Type2455 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionToolParam? Type2456 { get; set; }
+        public global::tryAGI.OpenAI.RankingOptions? Type2456 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionToolParamType? Type2457 { get; set; }
+        public global::tryAGI.OpenAI.Filters2? Type2457 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.NamespaceToolParamType? Type2458 { get; set; }
+        public global::tryAGI.OpenAI.FileSearchToolType? Type2458 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem13>? Type2459 { get; set; }
+        public global::tryAGI.OpenAI.ComputerToolType? Type2459 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ToolsItem13? Type2460 { get; set; }
+        public global::tryAGI.OpenAI.ComputerEnvironment? Type2460 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.NamespaceToolParamToolDiscriminator? Type2461 { get; set; }
+        public global::tryAGI.OpenAI.ComputerUsePreviewToolType? Type2461 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ToolSearchToolParamType? Type2462 { get; set; }
+        public global::tryAGI.OpenAI.ContainerMemoryLimit? Type2462 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApproximateLocation? Type2463 { get; set; }
+        public global::tryAGI.OpenAI.AutoCodeInterpreterToolParamType? Type2463 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApproximateLocationType? Type2464 { get; set; }
+        public global::tryAGI.OpenAI.NetworkPolicy2? Type2464 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.SearchContextSize? Type2465 { get; set; }
+        public global::tryAGI.OpenAI.AutoCodeInterpreterToolParamNetworkPolicyDiscriminator? Type2465 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.SearchContentType? Type2466 { get; set; }
+        public global::tryAGI.OpenAI.AutoCodeInterpreterToolParamNetworkPolicyDiscriminatorType? Type2466 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WebSearchPreviewToolType? Type2467 { get; set; }
+        public global::tryAGI.OpenAI.LocalShellToolParamType? Type2467 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SearchContentType>? Type2468 { get; set; }
+        public global::tryAGI.OpenAI.ContainerAutoParam? Type2468 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApplyPatchToolParamType? Type2469 { get; set; }
+        public global::tryAGI.OpenAI.ContainerAutoParamType? Type2469 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ToolSearchOutputType? Type2470 { get; set; }
+        public global::tryAGI.OpenAI.NetworkPolicy3? Type2470 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CompactionBodyType? Type2471 { get; set; }
+        public global::tryAGI.OpenAI.ContainerAutoParamNetworkPolicyDiscriminator? Type2471 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CodeInterpreterOutputLogsType? Type2472 { get; set; }
+        public global::tryAGI.OpenAI.ContainerAutoParamNetworkPolicyDiscriminatorType? Type2472 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CodeInterpreterOutputImageType? Type2473 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SkillsItem2>? Type2473 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.LocalShellExecActionType? Type2474 { get; set; }
+        public global::tryAGI.OpenAI.SkillsItem2? Type2474 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellAction? Type2475 { get; set; }
+        public global::tryAGI.OpenAI.ContainerAutoParamSkillDiscriminator? Type2475 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellCallStatus? Type2476 { get; set; }
+        public global::tryAGI.OpenAI.ContainerAutoParamSkillDiscriminatorType? Type2476 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.LocalEnvironmentResource? Type2477 { get; set; }
+        public global::tryAGI.OpenAI.LocalSkillParam? Type2477 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.LocalEnvironmentResourceType? Type2478 { get; set; }
+        public global::tryAGI.OpenAI.LocalEnvironmentParam? Type2478 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContainerReferenceResource? Type2479 { get; set; }
+        public global::tryAGI.OpenAI.LocalEnvironmentParamType? Type2479 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContainerReferenceResourceType? Type2480 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LocalSkillParam>? Type2480 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellCallType? Type2481 { get; set; }
+        public global::tryAGI.OpenAI.ContainerReferenceParam? Type2481 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EnvironmentVariant12? Type2482 { get; set; }
+        public global::tryAGI.OpenAI.ContainerReferenceParamType? Type2482 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellCallEnvironmentVariant1Discriminator? Type2483 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellToolParamType? Type2483 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellCallOutputStatusEnum? Type2484 { get; set; }
+        public global::tryAGI.OpenAI.EnvironmentVariant1? Type2484 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellCallOutputTimeoutOutcome? Type2485 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellToolParamEnvironmentVariant1Discriminator? Type2485 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellCallOutputTimeoutOutcomeType? Type2486 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellToolParamEnvironmentVariant1DiscriminatorType? Type2486 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellCallOutputExitOutcome? Type2487 { get; set; }
+        public global::tryAGI.OpenAI.CustomTextFormatParam? Type2487 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellCallOutputExitOutcomeType? Type2488 { get; set; }
+        public global::tryAGI.OpenAI.CustomTextFormatParamType? Type2488 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellCallOutputContent? Type2489 { get; set; }
+        public global::tryAGI.OpenAI.GrammarSyntax1? Type2489 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.Outcome? Type2490 { get; set; }
+        public global::tryAGI.OpenAI.CustomGrammarFormatParam? Type2490 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellCallOutputContentOutcomeDiscriminator? Type2491 { get; set; }
+        public global::tryAGI.OpenAI.CustomGrammarFormatParamType? Type2491 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellCallOutputType? Type2492 { get; set; }
+        public global::tryAGI.OpenAI.CustomToolParamType? Type2492 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FunctionShellCallOutputContent>? Type2493 { get; set; }
+        public global::tryAGI.OpenAI.Format2? Type2493 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApplyPatchCallStatus? Type2494 { get; set; }
+        public global::tryAGI.OpenAI.CustomToolParamFormatDiscriminator? Type2494 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApplyPatchCreateFileOperation? Type2495 { get; set; }
+        public global::tryAGI.OpenAI.CustomToolParamFormatDiscriminatorType? Type2495 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApplyPatchCreateFileOperationType? Type2496 { get; set; }
+        public global::tryAGI.OpenAI.EmptyModelParam? Type2496 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApplyPatchDeleteFileOperation? Type2497 { get; set; }
+        public global::tryAGI.OpenAI.FunctionToolParam? Type2497 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApplyPatchDeleteFileOperationType? Type2498 { get; set; }
+        public global::tryAGI.OpenAI.FunctionToolParamType? Type2498 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApplyPatchUpdateFileOperation? Type2499 { get; set; }
+        public global::tryAGI.OpenAI.NamespaceToolParamType? Type2499 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApplyPatchUpdateFileOperationType? Type2500 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem13>? Type2500 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApplyPatchToolCallType? Type2501 { get; set; }
+        public global::tryAGI.OpenAI.ToolsItem13? Type2501 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.Operation? Type2502 { get; set; }
+        public global::tryAGI.OpenAI.NamespaceToolParamToolDiscriminator? Type2502 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApplyPatchToolCallOperationDiscriminator? Type2503 { get; set; }
+        public global::tryAGI.OpenAI.NamespaceToolParamToolDiscriminatorType? Type2503 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApplyPatchCallOutputStatus? Type2504 { get; set; }
+        public global::tryAGI.OpenAI.ToolSearchToolParamType? Type2504 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApplyPatchToolCallOutputType? Type2505 { get; set; }
+        public global::tryAGI.OpenAI.ApproximateLocation? Type2505 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DetailEnum? Type2506 { get; set; }
+        public global::tryAGI.OpenAI.ApproximateLocationType? Type2506 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionCallItemStatus? Type2507 { get; set; }
+        public global::tryAGI.OpenAI.SearchContextSize? Type2507 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ComputerCallOutputItemParamType? Type2508 { get; set; }
+        public global::tryAGI.OpenAI.SearchContentType? Type2508 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InputTextContentParam? Type2509 { get; set; }
+        public global::tryAGI.OpenAI.WebSearchPreviewToolType? Type2509 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InputTextContentParamType? Type2510 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SearchContentType>? Type2510 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InputImageContentParamAutoParam? Type2511 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchToolParamType? Type2511 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InputImageContentParamAutoParamType? Type2512 { get; set; }
+        public global::tryAGI.OpenAI.ToolSearchOutputType? Type2512 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FileDetailEnum? Type2513 { get; set; }
+        public global::tryAGI.OpenAI.CompactionBodyType? Type2513 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InputFileContentParam? Type2514 { get; set; }
+        public global::tryAGI.OpenAI.CodeInterpreterOutputLogsType? Type2514 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InputFileContentParamType? Type2515 { get; set; }
+        public global::tryAGI.OpenAI.CodeInterpreterOutputImageType? Type2515 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionCallOutputItemParamType? Type2516 { get; set; }
+        public global::tryAGI.OpenAI.LocalShellExecActionType? Type2516 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputVariant2Item>>? Type2517 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellAction? Type2517 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputVariant2Item>? Type2518 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallStatus? Type2518 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OutputVariant2Item? Type2519 { get; set; }
+        public global::tryAGI.OpenAI.LocalEnvironmentResource? Type2519 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionCallOutputItemParamOutputVariant2ItemDiscriminator? Type2520 { get; set; }
+        public global::tryAGI.OpenAI.LocalEnvironmentResourceType? Type2520 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ToolSearchCallItemParamType? Type2521 { get; set; }
+        public global::tryAGI.OpenAI.ContainerReferenceResource? Type2521 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ToolSearchOutputItemParamType? Type2522 { get; set; }
+        public global::tryAGI.OpenAI.ContainerReferenceResourceType? Type2522 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CompactionSummaryItemParamType? Type2523 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallType? Type2523 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellActionParam? Type2524 { get; set; }
+        public global::tryAGI.OpenAI.EnvironmentVariant12? Type2524 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellCallItemStatus? Type2525 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallEnvironmentVariant1Discriminator? Type2525 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellCallItemParamType? Type2526 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallEnvironmentVariant1DiscriminatorType? Type2526 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.EnvironmentVariant13? Type2527 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallOutputStatusEnum? Type2527 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellCallItemParamEnvironmentVariant1Discriminator? Type2528 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallOutputTimeoutOutcome? Type2528 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellCallOutputTimeoutOutcomeParam? Type2529 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallOutputTimeoutOutcomeType? Type2529 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellCallOutputTimeoutOutcomeParamType? Type2530 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallOutputExitOutcome? Type2530 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellCallOutputExitOutcomeParam? Type2531 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallOutputExitOutcomeType? Type2531 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellCallOutputExitOutcomeParamType? Type2532 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallOutputContent? Type2532 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellCallOutputOutcomeParam? Type2533 { get; set; }
+        public global::tryAGI.OpenAI.Outcome? Type2533 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellCallOutputOutcomeParamDiscriminator? Type2534 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallOutputContentOutcomeDiscriminator? Type2534 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellCallOutputContentParam? Type2535 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallOutputContentOutcomeDiscriminatorType? Type2535 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellCallOutputItemParamType? Type2536 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallOutputType? Type2536 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FunctionShellCallOutputContentParam>? Type2537 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FunctionShellCallOutputContent>? Type2537 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApplyPatchCallStatusParam? Type2538 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchCallStatus? Type2538 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApplyPatchCreateFileOperationParam? Type2539 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchCreateFileOperation? Type2539 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApplyPatchCreateFileOperationParamType? Type2540 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchCreateFileOperationType? Type2540 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApplyPatchDeleteFileOperationParam? Type2541 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchDeleteFileOperation? Type2541 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApplyPatchDeleteFileOperationParamType? Type2542 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchDeleteFileOperationType? Type2542 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApplyPatchUpdateFileOperationParam? Type2543 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchUpdateFileOperation? Type2543 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApplyPatchUpdateFileOperationParamType? Type2544 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchUpdateFileOperationType? Type2544 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApplyPatchOperationParam? Type2545 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchToolCallType? Type2545 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApplyPatchOperationParamDiscriminator? Type2546 { get; set; }
+        public global::tryAGI.OpenAI.Operation? Type2546 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApplyPatchToolCallItemParamType? Type2547 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchToolCallOperationDiscriminator? Type2547 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApplyPatchCallOutputStatusParam? Type2548 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchToolCallOperationDiscriminatorType? Type2548 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ApplyPatchToolCallOutputItemParamType? Type2549 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchCallOutputStatus? Type2549 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ItemReferenceParamType2? Type2550 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchToolCallOutputType? Type2550 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ConversationResource? Type2551 { get; set; }
+        public global::tryAGI.OpenAI.DetailEnum? Type2551 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ConversationResourceObject? Type2552 { get; set; }
+        public global::tryAGI.OpenAI.FunctionCallItemStatus? Type2552 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenOutputTokensDetails? Type2553 { get; set; }
+        public global::tryAGI.OpenAI.ComputerCallOutputItemParamType? Type2553 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenInputUsageDetails? Type2554 { get; set; }
+        public global::tryAGI.OpenAI.InputTextContentParam? Type2554 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.SpecificApplyPatchParamType? Type2555 { get; set; }
+        public global::tryAGI.OpenAI.InputTextContentParamType? Type2555 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.SpecificFunctionShellParamType? Type2556 { get; set; }
+        public global::tryAGI.OpenAI.InputImageContentParamAutoParam? Type2556 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateConversationBody? Type2557 { get; set; }
+        public global::tryAGI.OpenAI.InputImageContentParamAutoParamType? Type2557 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UpdateConversationBody? Type2558 { get; set; }
+        public global::tryAGI.OpenAI.FileDetailEnum? Type2558 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeletedConversationResourceObject? Type2559 { get; set; }
+        public global::tryAGI.OpenAI.InputFileContentParam? Type2559 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OrderEnum? Type2560 { get; set; }
+        public global::tryAGI.OpenAI.InputFileContentParamType? Type2560 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VideoModel? Type2561 { get; set; }
+        public global::tryAGI.OpenAI.FunctionCallOutputItemParamType? Type2561 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VideoModelEnum? Type2562 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputVariant2Item>>? Type2562 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VideoStatus? Type2563 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputVariant2Item>? Type2563 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VideoSize? Type2564 { get; set; }
+        public global::tryAGI.OpenAI.OutputVariant2Item? Type2564 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.Error2? Type2565 { get; set; }
+        public global::tryAGI.OpenAI.FunctionCallOutputItemParamOutputVariant2ItemDiscriminator? Type2565 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VideoResource? Type2566 { get; set; }
+        public global::tryAGI.OpenAI.FunctionCallOutputItemParamOutputVariant2ItemDiscriminatorType? Type2566 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VideoResourceObject? Type2567 { get; set; }
+        public global::tryAGI.OpenAI.ToolSearchCallItemParamType? Type2567 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VideoListResource? Type2568 { get; set; }
+        public global::tryAGI.OpenAI.ToolSearchOutputItemParamType? Type2568 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VideoListResourceObject? Type2569 { get; set; }
+        public global::tryAGI.OpenAI.CompactionSummaryItemParamType? Type2569 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VideoResource>? Type2570 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellActionParam? Type2570 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ImageRefParam2? Type2571 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallItemStatus? Type2571 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VideoSeconds? Type2572 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallItemParamType? Type2572 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateVideoMultipartBody? Type2573 { get; set; }
+        public global::tryAGI.OpenAI.EnvironmentVariant13? Type2573 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<byte[], global::tryAGI.OpenAI.ImageRefParam2>? Type2574 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallItemParamEnvironmentVariant1Discriminator? Type2574 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateVideoJsonBody? Type2575 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallItemParamEnvironmentVariant1DiscriminatorType? Type2575 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateVideoCharacterBody? Type2576 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallOutputTimeoutOutcomeParam? Type2576 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VideoCharacterResource? Type2577 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallOutputTimeoutOutcomeParamType? Type2577 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VideoReferenceInputParam? Type2578 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallOutputExitOutcomeParam? Type2578 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateVideoEditMultipartBody? Type2579 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallOutputExitOutcomeParamType? Type2579 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<byte[], global::tryAGI.OpenAI.VideoReferenceInputParam>? Type2580 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallOutputOutcomeParam? Type2580 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateVideoEditJsonBody? Type2581 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallOutputOutcomeParamDiscriminator? Type2581 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateVideoExtendMultipartBody? Type2582 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallOutputOutcomeParamDiscriminatorType? Type2582 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.VideoReferenceInputParam, byte[]>? Type2583 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallOutputContentParam? Type2583 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateVideoExtendJsonBody? Type2584 { get; set; }
+        public global::tryAGI.OpenAI.FunctionShellCallOutputItemParamType? Type2584 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeletedVideoResource? Type2585 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FunctionShellCallOutputContentParam>? Type2585 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeletedVideoResourceObject? Type2586 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchCallStatusParam? Type2586 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.VideoContentVariant? Type2587 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchCreateFileOperationParam? Type2587 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateVideoRemixBody? Type2588 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchCreateFileOperationParamType? Type2588 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TruncationEnum? Type2589 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchDeleteFileOperationParam? Type2589 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TokenCountsBody? Type2590 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchDeleteFileOperationParamType? Type2590 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TokenCountsResource? Type2591 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchUpdateFileOperationParam? Type2591 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TokenCountsResourceObject? Type2592 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchUpdateFileOperationParamType? Type2592 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.PromptCacheRetentionEnum? Type2593 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchOperationParam? Type2593 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CompactResponseMethodPublicBody? Type2594 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchOperationParamDiscriminator? Type2594 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ItemField? Type2595 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchOperationParamDiscriminatorType? Type2595 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ItemFieldDiscriminator? Type2596 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchToolCallItemParamType? Type2596 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CompactResource? Type2597 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchCallOutputStatusParam? Type2597 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CompactResourceObject? Type2598 { get; set; }
+        public global::tryAGI.OpenAI.ApplyPatchToolCallOutputItemParamType? Type2598 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ItemField>? Type2599 { get; set; }
+        public global::tryAGI.OpenAI.ItemReferenceParamType2? Type2599 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.SkillResource? Type2600 { get; set; }
+        public global::tryAGI.OpenAI.ConversationResource? Type2600 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.SkillResourceObject? Type2601 { get; set; }
+        public global::tryAGI.OpenAI.ConversationResourceObject? Type2601 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.SkillListResource? Type2602 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenOutputTokensDetails? Type2602 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.SkillListResourceObject? Type2603 { get; set; }
+        public global::tryAGI.OpenAI.ImageGenInputUsageDetails? Type2603 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SkillResource>? Type2604 { get; set; }
+        public global::tryAGI.OpenAI.SpecificApplyPatchParamType? Type2604 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateSkillBody? Type2605 { get; set; }
+        public global::tryAGI.OpenAI.SpecificFunctionShellParamType? Type2605 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::System.Collections.Generic.IList<byte[]>, byte[]>? Type2606 { get; set; }
+        public global::tryAGI.OpenAI.CreateConversationBody? Type2606 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.SetDefaultSkillVersionBody? Type2607 { get; set; }
+        public global::tryAGI.OpenAI.UpdateConversationBody? Type2607 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeletedSkillResource? Type2608 { get; set; }
+        public global::tryAGI.OpenAI.DeletedConversationResourceObject? Type2608 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeletedSkillResourceObject? Type2609 { get; set; }
+        public global::tryAGI.OpenAI.OrderEnum? Type2609 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.SkillVersionResource? Type2610 { get; set; }
+        public global::tryAGI.OpenAI.VideoModel? Type2610 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.SkillVersionResourceObject? Type2611 { get; set; }
+        public global::tryAGI.OpenAI.VideoModelEnum? Type2611 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.SkillVersionListResource? Type2612 { get; set; }
+        public global::tryAGI.OpenAI.VideoStatus? Type2612 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.SkillVersionListResourceObject? Type2613 { get; set; }
+        public global::tryAGI.OpenAI.VideoSize? Type2613 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SkillVersionResource>? Type2614 { get; set; }
+        public global::tryAGI.OpenAI.Error2? Type2614 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateSkillVersionBody? Type2615 { get; set; }
+        public global::tryAGI.OpenAI.VideoResource? Type2615 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeletedSkillVersionResource? Type2616 { get; set; }
+        public global::tryAGI.OpenAI.VideoResourceObject? Type2616 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeletedSkillVersionResourceObject? Type2617 { get; set; }
+        public global::tryAGI.OpenAI.VideoListResource? Type2617 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatkitWorkflowTracing? Type2618 { get; set; }
+        public global::tryAGI.OpenAI.VideoListResourceObject? Type2618 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatkitWorkflow? Type2619 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VideoResource>? Type2619 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<string, int?, bool?, double?>? Type2620 { get; set; }
+        public global::tryAGI.OpenAI.ImageRefParam2? Type2620 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatSessionRateLimits? Type2621 { get; set; }
+        public global::tryAGI.OpenAI.VideoSeconds? Type2621 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatSessionStatus? Type2622 { get; set; }
+        public global::tryAGI.OpenAI.CreateVideoMultipartBody? Type2622 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatSessionAutomaticThreadTitling? Type2623 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<byte[], global::tryAGI.OpenAI.ImageRefParam2>? Type2623 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatSessionFileUpload? Type2624 { get; set; }
+        public global::tryAGI.OpenAI.CreateVideoJsonBody? Type2624 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatSessionHistory? Type2625 { get; set; }
+        public global::tryAGI.OpenAI.CreateVideoCharacterBody? Type2625 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatSessionChatkitConfiguration? Type2626 { get; set; }
+        public global::tryAGI.OpenAI.VideoCharacterResource? Type2626 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatSessionResource? Type2627 { get; set; }
+        public global::tryAGI.OpenAI.VideoReferenceInputParam? Type2627 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatSessionResourceObject? Type2628 { get; set; }
+        public global::tryAGI.OpenAI.CreateVideoEditMultipartBody? Type2628 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WorkflowTracingParam? Type2629 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<byte[], global::tryAGI.OpenAI.VideoReferenceInputParam>? Type2629 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WorkflowParam? Type2630 { get; set; }
+        public global::tryAGI.OpenAI.CreateVideoEditJsonBody? Type2630 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ExpiresAfterParam? Type2631 { get; set; }
+        public global::tryAGI.OpenAI.CreateVideoExtendMultipartBody? Type2631 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ExpiresAfterParamAnchor? Type2632 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.VideoReferenceInputParam, byte[]>? Type2632 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.RateLimitsParam? Type2633 { get; set; }
+        public global::tryAGI.OpenAI.CreateVideoExtendJsonBody? Type2633 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AutomaticThreadTitlingParam? Type2634 { get; set; }
+        public global::tryAGI.OpenAI.DeletedVideoResource? Type2634 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FileUploadParam? Type2635 { get; set; }
+        public global::tryAGI.OpenAI.DeletedVideoResourceObject? Type2635 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.HistoryParam? Type2636 { get; set; }
+        public global::tryAGI.OpenAI.VideoContentVariant? Type2636 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ChatkitConfigurationParam? Type2637 { get; set; }
+        public global::tryAGI.OpenAI.CreateVideoRemixBody? Type2637 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateChatSessionBody? Type2638 { get; set; }
+        public global::tryAGI.OpenAI.TruncationEnum? Type2638 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UserMessageInputText? Type2639 { get; set; }
+        public global::tryAGI.OpenAI.TokenCountsBody? Type2639 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UserMessageInputTextType? Type2640 { get; set; }
+        public global::tryAGI.OpenAI.TokenCountsResource? Type2640 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UserMessageQuotedText? Type2641 { get; set; }
+        public global::tryAGI.OpenAI.TokenCountsResourceObject? Type2641 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UserMessageQuotedTextType? Type2642 { get; set; }
+        public global::tryAGI.OpenAI.PromptCacheRetentionEnum? Type2642 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AttachmentType? Type2643 { get; set; }
+        public global::tryAGI.OpenAI.CompactResponseMethodPublicBody? Type2643 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.Attachment? Type2644 { get; set; }
+        public global::tryAGI.OpenAI.ItemField? Type2644 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ToolChoice8? Type2645 { get; set; }
+        public global::tryAGI.OpenAI.ItemFieldDiscriminator? Type2645 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.InferenceOptions? Type2646 { get; set; }
+        public global::tryAGI.OpenAI.ItemFieldDiscriminatorType? Type2646 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UserMessageItem? Type2647 { get; set; }
+        public global::tryAGI.OpenAI.CompactResource? Type2647 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UserMessageItemObject? Type2648 { get; set; }
+        public global::tryAGI.OpenAI.CompactResourceObject? Type2648 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UserMessageItemType? Type2649 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ItemField>? Type2649 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentItem4>? Type2650 { get; set; }
+        public global::tryAGI.OpenAI.SkillResource? Type2650 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ContentItem4? Type2651 { get; set; }
+        public global::tryAGI.OpenAI.SkillResourceObject? Type2651 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UserMessageItemContentItemDiscriminator? Type2652 { get; set; }
+        public global::tryAGI.OpenAI.SkillListResource? Type2652 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Attachment>? Type2653 { get; set; }
+        public global::tryAGI.OpenAI.SkillListResourceObject? Type2653 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FileAnnotationSource? Type2654 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SkillResource>? Type2654 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FileAnnotationSourceType? Type2655 { get; set; }
+        public global::tryAGI.OpenAI.CreateSkillBody? Type2655 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FileAnnotation? Type2656 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<global::System.Collections.Generic.IList<byte[]>, byte[]>? Type2656 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.FileAnnotationType? Type2657 { get; set; }
+        public global::tryAGI.OpenAI.SetDefaultSkillVersionBody? Type2657 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UrlAnnotationSource? Type2658 { get; set; }
+        public global::tryAGI.OpenAI.DeletedSkillResource? Type2658 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UrlAnnotationSourceType? Type2659 { get; set; }
+        public global::tryAGI.OpenAI.DeletedSkillResourceObject? Type2659 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UrlAnnotation? Type2660 { get; set; }
+        public global::tryAGI.OpenAI.SkillVersionResource? Type2660 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UrlAnnotationType? Type2661 { get; set; }
+        public global::tryAGI.OpenAI.SkillVersionResourceObject? Type2661 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseOutputText? Type2662 { get; set; }
+        public global::tryAGI.OpenAI.SkillVersionListResource? Type2662 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseOutputTextType? Type2663 { get; set; }
+        public global::tryAGI.OpenAI.SkillVersionListResourceObject? Type2663 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnnotationsItem3>? Type2664 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SkillVersionResource>? Type2664 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AnnotationsItem3? Type2665 { get; set; }
+        public global::tryAGI.OpenAI.CreateSkillVersionBody? Type2665 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseOutputTextAnnotationDiscriminator? Type2666 { get; set; }
+        public global::tryAGI.OpenAI.DeletedSkillVersionResource? Type2666 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AssistantMessageItem? Type2667 { get; set; }
+        public global::tryAGI.OpenAI.DeletedSkillVersionResourceObject? Type2667 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AssistantMessageItemObject? Type2668 { get; set; }
+        public global::tryAGI.OpenAI.ChatkitWorkflowTracing? Type2668 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AssistantMessageItemType? Type2669 { get; set; }
+        public global::tryAGI.OpenAI.ChatkitWorkflow? Type2669 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResponseOutputText>? Type2670 { get; set; }
+        public global::tryAGI.OpenAI.OneOf<string, int?, bool?, double?>? Type2670 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WidgetMessageItem? Type2671 { get; set; }
+        public global::tryAGI.OpenAI.ChatSessionRateLimits? Type2671 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WidgetMessageItemObject? Type2672 { get; set; }
+        public global::tryAGI.OpenAI.ChatSessionStatus? Type2672 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.WidgetMessageItemType? Type2673 { get; set; }
+        public global::tryAGI.OpenAI.ChatSessionAutomaticThreadTitling? Type2673 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ClientToolCallStatus? Type2674 { get; set; }
+        public global::tryAGI.OpenAI.ChatSessionFileUpload? Type2674 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ClientToolCallItem? Type2675 { get; set; }
+        public global::tryAGI.OpenAI.ChatSessionHistory? Type2675 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ClientToolCallItemObject? Type2676 { get; set; }
+        public global::tryAGI.OpenAI.ChatSessionChatkitConfiguration? Type2676 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ClientToolCallItemType? Type2677 { get; set; }
+        public global::tryAGI.OpenAI.ChatSessionResource? Type2677 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TaskType? Type2678 { get; set; }
+        public global::tryAGI.OpenAI.ChatSessionResourceObject? Type2678 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TaskItem? Type2679 { get; set; }
+        public global::tryAGI.OpenAI.WorkflowTracingParam? Type2679 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TaskItemObject? Type2680 { get; set; }
+        public global::tryAGI.OpenAI.WorkflowParam? Type2680 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TaskItemType? Type2681 { get; set; }
+        public global::tryAGI.OpenAI.ExpiresAfterParam? Type2681 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TaskGroupTask? Type2682 { get; set; }
+        public global::tryAGI.OpenAI.ExpiresAfterParamAnchor? Type2682 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TaskGroupItem? Type2683 { get; set; }
+        public global::tryAGI.OpenAI.RateLimitsParam? Type2683 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TaskGroupItemObject? Type2684 { get; set; }
+        public global::tryAGI.OpenAI.AutomaticThreadTitlingParam? Type2684 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TaskGroupItemType? Type2685 { get; set; }
+        public global::tryAGI.OpenAI.FileUploadParam? Type2685 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TaskGroupTask>? Type2686 { get; set; }
+        public global::tryAGI.OpenAI.HistoryParam? Type2686 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ThreadItem? Type2687 { get; set; }
+        public global::tryAGI.OpenAI.ChatkitConfigurationParam? Type2687 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ThreadItemDiscriminator? Type2688 { get; set; }
+        public global::tryAGI.OpenAI.CreateChatSessionBody? Type2688 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ThreadItemListResource? Type2689 { get; set; }
+        public global::tryAGI.OpenAI.UserMessageInputText? Type2689 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ThreadItemListResourceObject? Type2690 { get; set; }
+        public global::tryAGI.OpenAI.UserMessageInputTextType? Type2690 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ThreadItem>? Type2691 { get; set; }
+        public global::tryAGI.OpenAI.UserMessageQuotedText? Type2691 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ActiveStatus? Type2692 { get; set; }
+        public global::tryAGI.OpenAI.UserMessageQuotedTextType? Type2692 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ActiveStatusType? Type2693 { get; set; }
+        public global::tryAGI.OpenAI.AttachmentType? Type2693 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.LockedStatus? Type2694 { get; set; }
+        public global::tryAGI.OpenAI.Attachment? Type2694 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.LockedStatusType? Type2695 { get; set; }
+        public global::tryAGI.OpenAI.ToolChoice8? Type2695 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ClosedStatus? Type2696 { get; set; }
+        public global::tryAGI.OpenAI.InferenceOptions? Type2696 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ClosedStatusType? Type2697 { get; set; }
+        public global::tryAGI.OpenAI.UserMessageItem? Type2697 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ThreadResource? Type2698 { get; set; }
+        public global::tryAGI.OpenAI.UserMessageItemObject? Type2698 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ThreadResourceObject? Type2699 { get; set; }
+        public global::tryAGI.OpenAI.UserMessageItemType? Type2699 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.Status? Type2700 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentItem4>? Type2700 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ThreadResourceStatusDiscriminator? Type2701 { get; set; }
+        public global::tryAGI.OpenAI.ContentItem4? Type2701 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeletedThreadResource? Type2702 { get; set; }
+        public global::tryAGI.OpenAI.UserMessageItemContentItemDiscriminator? Type2702 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeletedThreadResourceObject? Type2703 { get; set; }
+        public global::tryAGI.OpenAI.UserMessageItemContentItemDiscriminatorType? Type2703 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ThreadListResource? Type2704 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Attachment>? Type2704 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ThreadListResourceObject? Type2705 { get; set; }
+        public global::tryAGI.OpenAI.FileAnnotationSource? Type2705 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ThreadResource>? Type2706 { get; set; }
+        public global::tryAGI.OpenAI.FileAnnotationSourceType? Type2706 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DragPoint? Type2707 { get; set; }
+        public global::tryAGI.OpenAI.FileAnnotation? Type2707 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateBatchRequest? Type2708 { get; set; }
+        public global::tryAGI.OpenAI.FileAnnotationType? Type2708 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateBatchRequestEndpoint? Type2709 { get; set; }
+        public global::tryAGI.OpenAI.UrlAnnotationSource? Type2709 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateBatchRequestCompletionWindow? Type2710 { get; set; }
+        public global::tryAGI.OpenAI.UrlAnnotationSourceType? Type2710 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UpdateChatCompletionRequest? Type2711 { get; set; }
+        public global::tryAGI.OpenAI.UrlAnnotation? Type2711 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateConversationItemsRequest? Type2712 { get; set; }
+        public global::tryAGI.OpenAI.UrlAnnotationType? Type2712 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UpdateEvalRequest? Type2713 { get; set; }
+        public global::tryAGI.OpenAI.ResponseOutputText? Type2713 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AdminApiKeysCreateRequest? Type2714 { get; set; }
+        public global::tryAGI.OpenAI.ResponseOutputTextType? Type2714 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListAssistantsOrder? Type2715 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnnotationsItem3>? Type2715 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListChatCompletionsOrder? Type2716 { get; set; }
+        public global::tryAGI.OpenAI.AnnotationsItem3? Type2716 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GetChatCompletionMessagesOrder? Type2717 { get; set; }
+        public global::tryAGI.OpenAI.ResponseOutputTextAnnotationDiscriminator? Type2717 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListContainersOrder? Type2718 { get; set; }
+        public global::tryAGI.OpenAI.ResponseOutputTextAnnotationDiscriminatorType? Type2718 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListContainerFilesOrder? Type2719 { get; set; }
+        public global::tryAGI.OpenAI.AssistantMessageItem? Type2719 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListConversationItemsOrder? Type2720 { get; set; }
+        public global::tryAGI.OpenAI.AssistantMessageItemObject? Type2720 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListEvalsOrder? Type2721 { get; set; }
+        public global::tryAGI.OpenAI.AssistantMessageItemType? Type2721 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListEvalsOrderBy? Type2722 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResponseOutputText>? Type2722 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GetEvalRunsOrder? Type2723 { get; set; }
+        public global::tryAGI.OpenAI.WidgetMessageItem? Type2723 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GetEvalRunsStatus? Type2724 { get; set; }
+        public global::tryAGI.OpenAI.WidgetMessageItemObject? Type2724 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GetEvalRunOutputItemsStatus? Type2725 { get; set; }
+        public global::tryAGI.OpenAI.WidgetMessageItemType? Type2725 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GetEvalRunOutputItemsOrder? Type2726 { get; set; }
+        public global::tryAGI.OpenAI.ClientToolCallStatus? Type2726 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListFilesOrder? Type2727 { get; set; }
+        public global::tryAGI.OpenAI.ClientToolCallItem? Type2727 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListFineTuningCheckpointPermissionsOrder? Type2728 { get; set; }
+        public global::tryAGI.OpenAI.ClientToolCallItemObject? Type2728 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AdminApiKeysListOrder? Type2729 { get; set; }
+        public global::tryAGI.OpenAI.ClientToolCallItemType? Type2729 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListAuditLogsEffectiveAt? Type2730 { get; set; }
+        public global::tryAGI.OpenAI.TaskType? Type2730 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AuditLogEventType>? Type2731 { get; set; }
+        public global::tryAGI.OpenAI.TaskItem? Type2731 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListOrganizationCertificatesOrder? Type2732 { get; set; }
+        public global::tryAGI.OpenAI.TaskItemObject? Type2732 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.GetCertificateIncludeItem>? Type2733 { get; set; }
+        public global::tryAGI.OpenAI.TaskItemType? Type2733 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GetCertificateIncludeItem? Type2734 { get; set; }
+        public global::tryAGI.OpenAI.TaskGroupTask? Type2734 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageCostsBucketWidth? Type2735 { get; set; }
+        public global::tryAGI.OpenAI.TaskGroupItem? Type2735 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageCostsGroupByItem>? Type2736 { get; set; }
+        public global::tryAGI.OpenAI.TaskGroupItemObject? Type2736 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageCostsGroupByItem? Type2737 { get; set; }
+        public global::tryAGI.OpenAI.TaskGroupItemType? Type2737 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListGroupsOrder? Type2738 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TaskGroupTask>? Type2738 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListGroupRoleAssignmentsOrder? Type2739 { get; set; }
+        public global::tryAGI.OpenAI.ThreadItem? Type2739 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListGroupUsersOrder? Type2740 { get; set; }
+        public global::tryAGI.OpenAI.ThreadItemDiscriminator? Type2740 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListProjectCertificatesOrder? Type2741 { get; set; }
+        public global::tryAGI.OpenAI.ThreadItemDiscriminatorType? Type2741 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListProjectGroupsOrder? Type2742 { get; set; }
+        public global::tryAGI.OpenAI.ThreadItemListResource? Type2742 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListRolesOrder? Type2743 { get; set; }
+        public global::tryAGI.OpenAI.ThreadItemListResourceObject? Type2743 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageAudioSpeechesBucketWidth? Type2744 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ThreadItem>? Type2744 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageAudioSpeechesGroupByItem>? Type2745 { get; set; }
+        public global::tryAGI.OpenAI.ActiveStatus? Type2745 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageAudioSpeechesGroupByItem? Type2746 { get; set; }
+        public global::tryAGI.OpenAI.ActiveStatusType? Type2746 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageAudioTranscriptionsBucketWidth? Type2747 { get; set; }
+        public global::tryAGI.OpenAI.LockedStatus? Type2747 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageAudioTranscriptionsGroupByItem>? Type2748 { get; set; }
+        public global::tryAGI.OpenAI.LockedStatusType? Type2748 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageAudioTranscriptionsGroupByItem? Type2749 { get; set; }
+        public global::tryAGI.OpenAI.ClosedStatus? Type2749 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageCodeInterpreterSessionsBucketWidth? Type2750 { get; set; }
+        public global::tryAGI.OpenAI.ClosedStatusType? Type2750 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageCodeInterpreterSessionsGroupByItem>? Type2751 { get; set; }
+        public global::tryAGI.OpenAI.ThreadResource? Type2751 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageCodeInterpreterSessionsGroupByItem? Type2752 { get; set; }
+        public global::tryAGI.OpenAI.ThreadResourceObject? Type2752 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageCompletionsBucketWidth? Type2753 { get; set; }
+        public global::tryAGI.OpenAI.Status? Type2753 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageCompletionsGroupByItem>? Type2754 { get; set; }
+        public global::tryAGI.OpenAI.ThreadResourceStatusDiscriminator? Type2754 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageCompletionsGroupByItem? Type2755 { get; set; }
+        public global::tryAGI.OpenAI.ThreadResourceStatusDiscriminatorType? Type2755 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageEmbeddingsBucketWidth? Type2756 { get; set; }
+        public global::tryAGI.OpenAI.DeletedThreadResource? Type2756 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageEmbeddingsGroupByItem>? Type2757 { get; set; }
+        public global::tryAGI.OpenAI.DeletedThreadResourceObject? Type2757 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageEmbeddingsGroupByItem? Type2758 { get; set; }
+        public global::tryAGI.OpenAI.ThreadListResource? Type2758 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageImagesBucketWidth? Type2759 { get; set; }
+        public global::tryAGI.OpenAI.ThreadListResourceObject? Type2759 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageImagesSource>? Type2760 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ThreadResource>? Type2760 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageImagesSource? Type2761 { get; set; }
+        public global::tryAGI.OpenAI.DragPoint? Type2761 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageImagesSize>? Type2762 { get; set; }
+        public global::tryAGI.OpenAI.CreateBatchRequest? Type2762 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageImagesSize? Type2763 { get; set; }
+        public global::tryAGI.OpenAI.CreateBatchRequestEndpoint? Type2763 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageImagesGroupByItem>? Type2764 { get; set; }
+        public global::tryAGI.OpenAI.CreateBatchRequestCompletionWindow? Type2764 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageImagesGroupByItem? Type2765 { get; set; }
+        public global::tryAGI.OpenAI.UpdateChatCompletionRequest? Type2765 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageModerationsBucketWidth? Type2766 { get; set; }
+        public global::tryAGI.OpenAI.CreateConversationItemsRequest? Type2766 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageModerationsGroupByItem>? Type2767 { get; set; }
+        public global::tryAGI.OpenAI.UpdateEvalRequest? Type2767 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageModerationsGroupByItem? Type2768 { get; set; }
+        public global::tryAGI.OpenAI.AdminApiKeysCreateRequest? Type2768 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageVectorStoresBucketWidth? Type2769 { get; set; }
+        public global::tryAGI.OpenAI.ListAssistantsOrder? Type2769 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageVectorStoresGroupByItem>? Type2770 { get; set; }
+        public global::tryAGI.OpenAI.ListChatCompletionsOrder? Type2770 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.UsageVectorStoresGroupByItem? Type2771 { get; set; }
+        public global::tryAGI.OpenAI.GetChatCompletionMessagesOrder? Type2771 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListUserRoleAssignmentsOrder? Type2772 { get; set; }
+        public global::tryAGI.OpenAI.ListContainersOrder? Type2772 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListProjectGroupRoleAssignmentsOrder? Type2773 { get; set; }
+        public global::tryAGI.OpenAI.ListContainerFilesOrder? Type2773 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListProjectRolesOrder? Type2774 { get; set; }
+        public global::tryAGI.OpenAI.ListConversationItemsOrder? Type2774 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListProjectUserRoleAssignmentsOrder? Type2775 { get; set; }
+        public global::tryAGI.OpenAI.ListEvalsOrder? Type2775 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListInputItemsOrder? Type2776 { get; set; }
+        public global::tryAGI.OpenAI.ListEvalsOrderBy? Type2776 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListMessagesOrder? Type2777 { get; set; }
+        public global::tryAGI.OpenAI.GetEvalRunsOrder? Type2777 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListRunsOrder? Type2778 { get; set; }
+        public global::tryAGI.OpenAI.GetEvalRunsStatus? Type2778 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateRunIncludeItem>? Type2779 { get; set; }
+        public global::tryAGI.OpenAI.GetEvalRunOutputItemsStatus? Type2779 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.CreateRunIncludeItem? Type2780 { get; set; }
+        public global::tryAGI.OpenAI.GetEvalRunOutputItemsOrder? Type2780 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListRunStepsOrder? Type2781 { get; set; }
+        public global::tryAGI.OpenAI.ListFilesOrder? Type2781 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ListRunStepsIncludeItem>? Type2782 { get; set; }
+        public global::tryAGI.OpenAI.ListFineTuningCheckpointPermissionsOrder? Type2782 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListRunStepsIncludeItem? Type2783 { get; set; }
+        public global::tryAGI.OpenAI.AdminApiKeysListOrder? Type2783 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.GetRunStepIncludeItem>? Type2784 { get; set; }
+        public global::tryAGI.OpenAI.ListAuditLogsEffectiveAt? Type2784 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.GetRunStepIncludeItem? Type2785 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AuditLogEventType>? Type2785 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListVectorStoresOrder? Type2786 { get; set; }
+        public global::tryAGI.OpenAI.ListOrganizationCertificatesOrder? Type2786 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListFilesInVectorStoreBatchOrder? Type2787 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.GetCertificateIncludeItem>? Type2787 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListFilesInVectorStoreBatchFilter? Type2788 { get; set; }
+        public global::tryAGI.OpenAI.GetCertificateIncludeItem? Type2788 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListVectorStoreFilesOrder? Type2789 { get; set; }
+        public global::tryAGI.OpenAI.UsageCostsBucketWidth? Type2789 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.ListVectorStoreFilesFilter? Type2790 { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageCostsGroupByItem>? Type2790 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranslationResponseJson, global::tryAGI.OpenAI.CreateTranslationResponseVerboseJson>? Type2791 { get; set; }
+        public global::tryAGI.OpenAI.UsageCostsGroupByItem? Type2791 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeleteEvalResponse? Type2792 { get; set; }
+        public global::tryAGI.OpenAI.ListGroupsOrder? Type2792 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.DeleteEvalRunResponse? Type2793 { get; set; }
+        public global::tryAGI.OpenAI.ListGroupRoleAssignmentsOrder? Type2793 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AdminApiKeysDeleteResponse? Type2794 { get; set; }
+        public global::tryAGI.OpenAI.ListGroupUsersOrder? Type2794 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.AdminApiKeysDeleteResponseObject? Type2795 { get; set; }
+        public global::tryAGI.OpenAI.ListProjectCertificatesOrder? Type2795 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ListProjectGroupsOrder? Type2796 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ListRolesOrder? Type2797 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UsageAudioSpeechesBucketWidth? Type2798 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageAudioSpeechesGroupByItem>? Type2799 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UsageAudioSpeechesGroupByItem? Type2800 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UsageAudioTranscriptionsBucketWidth? Type2801 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageAudioTranscriptionsGroupByItem>? Type2802 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UsageAudioTranscriptionsGroupByItem? Type2803 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UsageCodeInterpreterSessionsBucketWidth? Type2804 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageCodeInterpreterSessionsGroupByItem>? Type2805 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UsageCodeInterpreterSessionsGroupByItem? Type2806 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UsageCompletionsBucketWidth? Type2807 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageCompletionsGroupByItem>? Type2808 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UsageCompletionsGroupByItem? Type2809 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UsageEmbeddingsBucketWidth? Type2810 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageEmbeddingsGroupByItem>? Type2811 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UsageEmbeddingsGroupByItem? Type2812 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UsageImagesBucketWidth? Type2813 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageImagesSource>? Type2814 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UsageImagesSource? Type2815 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageImagesSize>? Type2816 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UsageImagesSize? Type2817 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageImagesGroupByItem>? Type2818 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UsageImagesGroupByItem? Type2819 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UsageModerationsBucketWidth? Type2820 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageModerationsGroupByItem>? Type2821 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UsageModerationsGroupByItem? Type2822 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UsageVectorStoresBucketWidth? Type2823 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageVectorStoresGroupByItem>? Type2824 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UsageVectorStoresGroupByItem? Type2825 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ListUserRoleAssignmentsOrder? Type2826 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ListProjectGroupRoleAssignmentsOrder? Type2827 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ListProjectRolesOrder? Type2828 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ListProjectUserRoleAssignmentsOrder? Type2829 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ListInputItemsOrder? Type2830 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ListMessagesOrder? Type2831 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ListRunsOrder? Type2832 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateRunIncludeItem>? Type2833 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.CreateRunIncludeItem? Type2834 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ListRunStepsOrder? Type2835 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ListRunStepsIncludeItem>? Type2836 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ListRunStepsIncludeItem? Type2837 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.GetRunStepIncludeItem>? Type2838 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.GetRunStepIncludeItem? Type2839 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ListVectorStoresOrder? Type2840 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ListFilesInVectorStoreBatchOrder? Type2841 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ListFilesInVectorStoreBatchFilter? Type2842 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ListVectorStoreFilesOrder? Type2843 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ListVectorStoreFilesFilter? Type2844 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranslationResponseJson, global::tryAGI.OpenAI.CreateTranslationResponseVerboseJson>? Type2845 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.DeleteEvalResponse? Type2846 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.DeleteEvalRunResponse? Type2847 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.AdminApiKeysDeleteResponse? Type2848 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.AdminApiKeysDeleteResponseObject? Type2849 { get; set; }
 
         /// <summary>
         /// 

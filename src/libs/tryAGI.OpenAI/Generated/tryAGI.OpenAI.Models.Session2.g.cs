@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct Session2 : global::System.IEquatable<Session2>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeCreateClientSecretResponseSessionDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// A Realtime session configuration object.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -108,10 +113,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public Session2(
+            global::tryAGI.OpenAI.RealtimeCreateClientSecretResponseSessionDiscriminatorType? type,
             global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA? realtime,
             global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA? transcription
             )
         {
+            Type = type;
+
             Realtime = realtime;
             Transcription = transcription;
         }

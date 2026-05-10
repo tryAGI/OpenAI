@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct AnnotationsItem3 : global::System.IEquatable<AnnotationsItem3>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ResponseOutputTextAnnotationDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Annotation that references an uploaded file.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -108,10 +113,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public AnnotationsItem3(
+            global::tryAGI.OpenAI.ResponseOutputTextAnnotationDiscriminatorType? type,
             global::tryAGI.OpenAI.FileAnnotation? file,
             global::tryAGI.OpenAI.UrlAnnotation? url
             )
         {
+            Type = type;
+
             File = file;
             Url = url;
         }

@@ -385,6 +385,7 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.FunctionTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.FunctionTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.FunctionTool).Name}");
                     function = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -395,9 +396,13 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.FileSearchTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.FileSearchTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.FileSearchTool).Name}");
                     fileSearch = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -408,9 +413,13 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ComputerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ComputerTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ComputerTool).Name}");
                     computer = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -421,9 +430,13 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ComputerUsePreviewTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ComputerUsePreviewTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ComputerUsePreviewTool).Name}");
                     computerUsePreview = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -434,9 +447,13 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.WebSearchTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.WebSearchTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.WebSearchTool).Name}");
                     webSearch = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -447,9 +464,13 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.MCPTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.MCPTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.MCPTool).Name}");
                     mcp = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -460,9 +481,13 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.CodeInterpreterTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.CodeInterpreterTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.CodeInterpreterTool).Name}");
                     codeInterpreter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -473,9 +498,13 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ImageGenTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ImageGenTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ImageGenTool).Name}");
                     imageGeneration = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -486,9 +515,13 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LocalShellToolParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LocalShellToolParam> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LocalShellToolParam).Name}");
                     localShell = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -499,9 +532,13 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.FunctionShellToolParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.FunctionShellToolParam> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.FunctionShellToolParam).Name}");
                     shell = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -512,9 +549,13 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.CustomToolParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.CustomToolParam> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.CustomToolParam).Name}");
                     custom = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -525,9 +566,13 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.NamespaceToolParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.NamespaceToolParam> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.NamespaceToolParam).Name}");
                     @namespace = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -538,9 +583,13 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ToolSearchToolParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ToolSearchToolParam> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ToolSearchToolParam).Name}");
                     toolSearch = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -551,9 +600,13 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.WebSearchPreviewTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.WebSearchPreviewTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.WebSearchPreviewTool).Name}");
                     webSearchPreview = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -564,9 +617,13 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ApplyPatchToolParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ApplyPatchToolParam> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ApplyPatchToolParam).Name}");
                     applyPatch = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

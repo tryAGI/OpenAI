@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct OutputsVariant1Item : global::System.IEquatable<OutputsVariant1Item>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.CodeInterpreterToolCallOutputsVariant1ItemDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// The logs output from the code interpreter.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -108,10 +113,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public OutputsVariant1Item(
+            global::tryAGI.OpenAI.CodeInterpreterToolCallOutputsVariant1ItemDiscriminatorType? type,
             global::tryAGI.OpenAI.CodeInterpreterOutputLogs? logs,
             global::tryAGI.OpenAI.CodeInterpreterOutputImage? image
             )
         {
+            Type = type;
+
             Logs = logs;
             Image = image;
         }

@@ -108,7 +108,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (stopConfigurationVariant1 == null && stopConfigurationVariant2 == null)
+            {
                 try
                 {
 

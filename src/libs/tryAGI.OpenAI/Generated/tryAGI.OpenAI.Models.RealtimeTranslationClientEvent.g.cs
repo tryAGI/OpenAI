@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct RealtimeTranslationClientEvent : global::System.IEquatable<RealtimeTranslationClientEvent>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeTranslationClientEventDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Send this event to update the translation session configuration. Translation<br/>
         /// sessions support updates to `audio.output.language`, `audio.input.transcription`,<br/>
         /// and `audio.input.noise_reduction`.
@@ -171,11 +176,14 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public RealtimeTranslationClientEvent(
+            global::tryAGI.OpenAI.RealtimeTranslationClientEventDiscriminatorType? type,
             global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionUpdate? sessionUpdate,
             global::tryAGI.OpenAI.RealtimeTranslationClientEventInputAudioBufferAppend? sessionInputAudioBufferAppend,
             global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionClose? sessionClose
             )
         {
+            Type = type;
+
             SessionUpdate = sessionUpdate;
             SessionInputAudioBufferAppend = sessionInputAudioBufferAppend;
             SessionClose = sessionClose;

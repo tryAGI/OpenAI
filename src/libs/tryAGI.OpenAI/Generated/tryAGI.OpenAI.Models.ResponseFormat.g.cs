@@ -17,6 +17,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct ResponseFormat : global::System.IEquatable<ResponseFormat>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2ResponseFormatDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Default response format. Used to generate text responses.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -167,11 +172,14 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public ResponseFormat(
+            global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2ResponseFormatDiscriminatorType? type,
             global::tryAGI.OpenAI.ResponseFormatText? text,
             global::tryAGI.OpenAI.ResponseFormatJsonSchema? jsonSchema,
             global::tryAGI.OpenAI.ResponseFormatJsonObject? jsonObject
             )
         {
+            Type = type;
+
             Text = text;
             JsonSchema = jsonSchema;
             JsonObject = jsonObject;

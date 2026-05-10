@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct CreateSpeechResponseStreamEvent : global::System.IEquatable<CreateSpeechResponseStreamEvent>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.CreateSpeechResponseStreamEventDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Emitted for each chunk of audio data generated during speech synthesis.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -108,10 +113,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public CreateSpeechResponseStreamEvent(
+            global::tryAGI.OpenAI.CreateSpeechResponseStreamEventDiscriminatorType? type,
             global::tryAGI.OpenAI.SpeechAudioDeltaEvent? speechAudioDelta,
             global::tryAGI.OpenAI.SpeechAudioDoneEvent? speechAudioDone
             )
         {
+            Type = type;
+
             SpeechAudioDelta = speechAudioDelta;
             SpeechAudioDone = speechAudioDone;
         }

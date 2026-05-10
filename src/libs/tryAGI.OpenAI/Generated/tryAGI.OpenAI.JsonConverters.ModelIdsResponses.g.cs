@@ -108,7 +108,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (shared == null && responsesOnlyModel == null)
+            {
                 try
                 {
 

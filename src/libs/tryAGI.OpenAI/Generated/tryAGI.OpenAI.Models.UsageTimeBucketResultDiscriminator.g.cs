@@ -12,7 +12,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        public string? Object { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UsageTimeBucketResultDiscriminatorObjectJsonConverter))]
+        public global::tryAGI.OpenAI.UsageTimeBucketResultDiscriminatorObject? Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +29,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UsageTimeBucketResultDiscriminator(
-            string? @object)
+            global::tryAGI.OpenAI.UsageTimeBucketResultDiscriminatorObject? @object)
         {
             this.Object = @object;
         }

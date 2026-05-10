@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct CreateTranscriptionResponseStreamEvent : global::System.IEquatable<CreateTranscriptionResponseStreamEvent>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.CreateTranscriptionResponseStreamEventDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Emitted when a diarized transcription returns a completed segment with speaker information. Only emitted when you [create a transcription](/docs/api-reference/audio/create-transcription) with `stream` set to `true` and `response_format` set to `diarized_json`.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -156,11 +161,14 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public CreateTranscriptionResponseStreamEvent(
+            global::tryAGI.OpenAI.CreateTranscriptionResponseStreamEventDiscriminatorType? type,
             global::tryAGI.OpenAI.TranscriptTextSegmentEvent? transcriptTextSegment,
             global::tryAGI.OpenAI.TranscriptTextDeltaEvent? transcriptTextDelta,
             global::tryAGI.OpenAI.TranscriptTextDoneEvent? transcriptTextDone
             )
         {
+            Type = type;
+
             TranscriptTextSegment = transcriptTextSegment;
             TranscriptTextDelta = transcriptTextDelta;
             TranscriptTextDone = transcriptTextDone;
