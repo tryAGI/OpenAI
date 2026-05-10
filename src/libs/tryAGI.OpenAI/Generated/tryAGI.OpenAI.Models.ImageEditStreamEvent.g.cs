@@ -94,6 +94,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ImageEditStreamEvent FromImageEditPartialImage(global::tryAGI.OpenAI.ImageEditPartialImageEvent? value) => new ImageEditStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ImageEditStreamEvent(global::tryAGI.OpenAI.ImageEditCompletedEvent value) => new ImageEditStreamEvent((global::tryAGI.OpenAI.ImageEditCompletedEvent?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace tryAGI.OpenAI
         {
             ImageEditCompleted = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ImageEditStreamEvent FromImageEditCompleted(global::tryAGI.OpenAI.ImageEditCompletedEvent? value) => new ImageEditStreamEvent(value);
 
         /// <summary>
         /// 

@@ -154,6 +154,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionToolChoiceOption FromToolChoiceMode(global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum? value) => new ChatCompletionToolChoiceOption(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionToolChoiceOption(global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice value) => new ChatCompletionToolChoiceOption((global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice?)value);
 
         /// <summary>
@@ -168,6 +173,11 @@ namespace tryAGI.OpenAI
         {
             AllowedTools = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionToolChoiceOption FromAllowedTools(global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice? value) => new ChatCompletionToolChoiceOption(value);
 
         /// <summary>
         /// 
@@ -190,6 +200,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionToolChoiceOption FromFunctionToolChoice(global::tryAGI.OpenAI.ChatCompletionNamedToolChoice? value) => new ChatCompletionToolChoiceOption(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionToolChoiceOption(global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom value) => new ChatCompletionToolChoiceOption((global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom?)value);
 
         /// <summary>
@@ -204,6 +219,11 @@ namespace tryAGI.OpenAI
         {
             CustomToolChoice = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionToolChoiceOption FromCustomToolChoice(global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom? value) => new ChatCompletionToolChoiceOption(value);
 
         /// <summary>
         /// 

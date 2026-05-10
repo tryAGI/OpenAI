@@ -214,6 +214,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ThreadItem FromChatkitUserMessage(global::tryAGI.OpenAI.UserMessageItem? value) => new ThreadItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ThreadItem(global::tryAGI.OpenAI.AssistantMessageItem value) => new ThreadItem((global::tryAGI.OpenAI.AssistantMessageItem?)value);
 
         /// <summary>
@@ -228,6 +233,11 @@ namespace tryAGI.OpenAI
         {
             ChatkitAssistantMessage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ThreadItem FromChatkitAssistantMessage(global::tryAGI.OpenAI.AssistantMessageItem? value) => new ThreadItem(value);
 
         /// <summary>
         /// 
@@ -250,6 +260,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ThreadItem FromChatkitWidget(global::tryAGI.OpenAI.WidgetMessageItem? value) => new ThreadItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ThreadItem(global::tryAGI.OpenAI.ClientToolCallItem value) => new ThreadItem((global::tryAGI.OpenAI.ClientToolCallItem?)value);
 
         /// <summary>
@@ -264,6 +279,11 @@ namespace tryAGI.OpenAI
         {
             ChatkitClientToolCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ThreadItem FromChatkitClientToolCall(global::tryAGI.OpenAI.ClientToolCallItem? value) => new ThreadItem(value);
 
         /// <summary>
         /// 
@@ -286,6 +306,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ThreadItem FromChatkitTask(global::tryAGI.OpenAI.TaskItem? value) => new ThreadItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ThreadItem(global::tryAGI.OpenAI.TaskGroupItem value) => new ThreadItem((global::tryAGI.OpenAI.TaskGroupItem?)value);
 
         /// <summary>
@@ -300,6 +325,11 @@ namespace tryAGI.OpenAI
         {
             ChatkitTaskGroup = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ThreadItem FromChatkitTaskGroup(global::tryAGI.OpenAI.TaskGroupItem? value) => new ThreadItem(value);
 
         /// <summary>
         /// 

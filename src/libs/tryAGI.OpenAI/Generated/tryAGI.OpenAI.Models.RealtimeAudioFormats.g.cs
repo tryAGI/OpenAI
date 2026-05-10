@@ -119,6 +119,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeAudioFormats FromPcmAudioFormat(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmAudioFormat? value) => new RealtimeAudioFormats(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeAudioFormats(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmuAudioFormat value) => new RealtimeAudioFormats((global::tryAGI.OpenAI.RealtimeAudioFormatsPcmuAudioFormat?)value);
 
         /// <summary>
@@ -137,6 +142,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeAudioFormats FromPcmuAudioFormat(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmuAudioFormat? value) => new RealtimeAudioFormats(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeAudioFormats(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormat value) => new RealtimeAudioFormats((global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormat?)value);
 
         /// <summary>
@@ -151,6 +161,11 @@ namespace tryAGI.OpenAI
         {
             PcmaAudioFormat = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeAudioFormats FromPcmaAudioFormat(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormat? value) => new RealtimeAudioFormats(value);
 
         /// <summary>
         /// 

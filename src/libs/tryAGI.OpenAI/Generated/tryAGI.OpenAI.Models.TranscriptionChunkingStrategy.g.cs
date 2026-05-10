@@ -93,6 +93,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static TranscriptionChunkingStrategy FromEnum(global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum? value) => new TranscriptionChunkingStrategy(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TranscriptionChunkingStrategy(global::tryAGI.OpenAI.VadConfig value) => new TranscriptionChunkingStrategy((global::tryAGI.OpenAI.VadConfig?)value);
 
         /// <summary>
@@ -107,6 +112,11 @@ namespace tryAGI.OpenAI
         {
             VadConfig = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TranscriptionChunkingStrategy FromVadConfig(global::tryAGI.OpenAI.VadConfig? value) => new TranscriptionChunkingStrategy(value);
 
         /// <summary>
         /// 

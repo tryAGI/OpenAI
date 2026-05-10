@@ -124,6 +124,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static FunctionAndCustomToolCallOutput FromInputText(global::tryAGI.OpenAI.InputTextContent? value) => new FunctionAndCustomToolCallOutput(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FunctionAndCustomToolCallOutput(global::tryAGI.OpenAI.InputImageContent value) => new FunctionAndCustomToolCallOutput((global::tryAGI.OpenAI.InputImageContent?)value);
 
         /// <summary>
@@ -142,6 +147,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static FunctionAndCustomToolCallOutput FromInputImage(global::tryAGI.OpenAI.InputImageContent? value) => new FunctionAndCustomToolCallOutput(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FunctionAndCustomToolCallOutput(global::tryAGI.OpenAI.InputFileContent value) => new FunctionAndCustomToolCallOutput((global::tryAGI.OpenAI.InputFileContent?)value);
 
         /// <summary>
@@ -156,6 +166,11 @@ namespace tryAGI.OpenAI
         {
             InputFile = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FunctionAndCustomToolCallOutput FromInputFile(global::tryAGI.OpenAI.InputFileContent? value) => new FunctionAndCustomToolCallOutput(value);
 
         /// <summary>
         /// 

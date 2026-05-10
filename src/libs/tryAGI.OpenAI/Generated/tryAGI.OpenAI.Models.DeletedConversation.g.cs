@@ -59,6 +59,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static DeletedConversation FromResource(global::tryAGI.OpenAI.DeletedConversationResource? value) => new DeletedConversation(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             Resource as object 
             ;

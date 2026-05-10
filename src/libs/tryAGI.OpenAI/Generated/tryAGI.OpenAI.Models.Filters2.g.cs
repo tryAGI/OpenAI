@@ -89,6 +89,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static Filters2 FromComparisonFilter(global::tryAGI.OpenAI.ComparisonFilter? value) => new Filters2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Filters2(global::tryAGI.OpenAI.CompoundFilter value) => new Filters2((global::tryAGI.OpenAI.CompoundFilter?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace tryAGI.OpenAI
         {
             CompoundFilter = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Filters2 FromCompoundFilter(global::tryAGI.OpenAI.CompoundFilter? value) => new Filters2(value);
 
         /// <summary>
         /// 

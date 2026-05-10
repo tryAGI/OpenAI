@@ -154,6 +154,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static Annotation FromFileCitation(global::tryAGI.OpenAI.FileCitationBody? value) => new Annotation(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Annotation(global::tryAGI.OpenAI.UrlCitationBody value) => new Annotation((global::tryAGI.OpenAI.UrlCitationBody?)value);
 
         /// <summary>
@@ -168,6 +173,11 @@ namespace tryAGI.OpenAI
         {
             UrlCitation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Annotation FromUrlCitation(global::tryAGI.OpenAI.UrlCitationBody? value) => new Annotation(value);
 
         /// <summary>
         /// 
@@ -190,6 +200,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static Annotation FromContainerFileCitation(global::tryAGI.OpenAI.ContainerFileCitationBody? value) => new Annotation(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Annotation(global::tryAGI.OpenAI.FilePath value) => new Annotation((global::tryAGI.OpenAI.FilePath?)value);
 
         /// <summary>
@@ -204,6 +219,11 @@ namespace tryAGI.OpenAI
         {
             FilePath = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Annotation FromFilePath(global::tryAGI.OpenAI.FilePath? value) => new Annotation(value);
 
         /// <summary>
         /// 

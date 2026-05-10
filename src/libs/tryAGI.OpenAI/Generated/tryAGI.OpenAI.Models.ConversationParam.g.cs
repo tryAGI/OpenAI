@@ -91,6 +91,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationParam FromConversationId(string? value) => new ConversationParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationParam(global::tryAGI.OpenAI.ConversationParam2 value) => new ConversationParam((global::tryAGI.OpenAI.ConversationParam2?)value);
 
         /// <summary>
@@ -105,6 +110,11 @@ namespace tryAGI.OpenAI
         {
             ConversationObject = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationParam FromConversationObject(global::tryAGI.OpenAI.ConversationParam2? value) => new ConversationParam(value);
 
         /// <summary>
         /// 

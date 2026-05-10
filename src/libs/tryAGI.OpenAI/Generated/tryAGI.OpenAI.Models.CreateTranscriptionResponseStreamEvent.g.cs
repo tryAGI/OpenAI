@@ -124,6 +124,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static CreateTranscriptionResponseStreamEvent FromTranscriptTextSegment(global::tryAGI.OpenAI.TranscriptTextSegmentEvent? value) => new CreateTranscriptionResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateTranscriptionResponseStreamEvent(global::tryAGI.OpenAI.TranscriptTextDeltaEvent value) => new CreateTranscriptionResponseStreamEvent((global::tryAGI.OpenAI.TranscriptTextDeltaEvent?)value);
 
         /// <summary>
@@ -142,6 +147,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static CreateTranscriptionResponseStreamEvent FromTranscriptTextDelta(global::tryAGI.OpenAI.TranscriptTextDeltaEvent? value) => new CreateTranscriptionResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateTranscriptionResponseStreamEvent(global::tryAGI.OpenAI.TranscriptTextDoneEvent value) => new CreateTranscriptionResponseStreamEvent((global::tryAGI.OpenAI.TranscriptTextDoneEvent?)value);
 
         /// <summary>
@@ -156,6 +166,11 @@ namespace tryAGI.OpenAI
         {
             TranscriptTextDone = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateTranscriptionResponseStreamEvent FromTranscriptTextDone(global::tryAGI.OpenAI.TranscriptTextDoneEvent? value) => new CreateTranscriptionResponseStreamEvent(value);
 
         /// <summary>
         /// 

@@ -93,6 +93,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static AssistantsApiToolChoiceOption FromEnum(global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum? value) => new AssistantsApiToolChoiceOption(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AssistantsApiToolChoiceOption(global::tryAGI.OpenAI.AssistantsNamedToolChoice value) => new AssistantsApiToolChoiceOption((global::tryAGI.OpenAI.AssistantsNamedToolChoice?)value);
 
         /// <summary>
@@ -107,6 +112,11 @@ namespace tryAGI.OpenAI
         {
             Named = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AssistantsApiToolChoiceOption FromNamed(global::tryAGI.OpenAI.AssistantsNamedToolChoice? value) => new AssistantsApiToolChoiceOption(value);
 
         /// <summary>
         /// 

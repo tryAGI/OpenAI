@@ -92,6 +92,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static StopConfiguration FromStopConfigurationVariant1(string? value) => new StopConfiguration(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public StopConfiguration(
             string? stopConfigurationVariant1,
             global::System.Collections.Generic.IList<string>? stopConfigurationVariant2

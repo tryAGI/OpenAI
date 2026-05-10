@@ -60,6 +60,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static EvalGraderLabelModel FromLabelModelGrader(global::tryAGI.OpenAI.GraderLabelModel? value) => new EvalGraderLabelModel(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             LabelModelGrader as object 
             ;

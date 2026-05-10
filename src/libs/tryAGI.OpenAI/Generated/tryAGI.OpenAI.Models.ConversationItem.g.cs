@@ -785,6 +785,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationItem FromMessage(global::tryAGI.OpenAI.Message? value) => new ConversationItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationItem(global::tryAGI.OpenAI.FunctionToolCallResource value) => new ConversationItem((global::tryAGI.OpenAI.FunctionToolCallResource?)value);
 
         /// <summary>
@@ -799,6 +804,11 @@ namespace tryAGI.OpenAI
         {
             FunctionToolCallResource = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationItem FromFunctionToolCallResource(global::tryAGI.OpenAI.FunctionToolCallResource? value) => new ConversationItem(value);
 
         /// <summary>
         /// 
@@ -821,6 +831,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationItem FromFunctionToolCallOutputResource(global::tryAGI.OpenAI.FunctionToolCallOutputResource? value) => new ConversationItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationItem(global::tryAGI.OpenAI.FileSearchToolCall value) => new ConversationItem((global::tryAGI.OpenAI.FileSearchToolCall?)value);
 
         /// <summary>
@@ -835,6 +850,11 @@ namespace tryAGI.OpenAI
         {
             FileSearchCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationItem FromFileSearchCall(global::tryAGI.OpenAI.FileSearchToolCall? value) => new ConversationItem(value);
 
         /// <summary>
         /// 
@@ -857,6 +877,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationItem FromWebSearchCall(global::tryAGI.OpenAI.WebSearchToolCall? value) => new ConversationItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationItem(global::tryAGI.OpenAI.ImageGenToolCall value) => new ConversationItem((global::tryAGI.OpenAI.ImageGenToolCall?)value);
 
         /// <summary>
@@ -871,6 +896,11 @@ namespace tryAGI.OpenAI
         {
             ImageGenerationCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationItem FromImageGenerationCall(global::tryAGI.OpenAI.ImageGenToolCall? value) => new ConversationItem(value);
 
         /// <summary>
         /// 
@@ -893,6 +923,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationItem FromComputerCall(global::tryAGI.OpenAI.ComputerToolCall? value) => new ConversationItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationItem(global::tryAGI.OpenAI.ComputerToolCallOutputResource value) => new ConversationItem((global::tryAGI.OpenAI.ComputerToolCallOutputResource?)value);
 
         /// <summary>
@@ -907,6 +942,11 @@ namespace tryAGI.OpenAI
         {
             ComputerToolCallOutputResource = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationItem FromComputerToolCallOutputResource(global::tryAGI.OpenAI.ComputerToolCallOutputResource? value) => new ConversationItem(value);
 
         /// <summary>
         /// 
@@ -929,6 +969,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationItem FromToolSearchCall(global::tryAGI.OpenAI.ToolSearchCall? value) => new ConversationItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationItem(global::tryAGI.OpenAI.ToolSearchOutput value) => new ConversationItem((global::tryAGI.OpenAI.ToolSearchOutput?)value);
 
         /// <summary>
@@ -943,6 +988,11 @@ namespace tryAGI.OpenAI
         {
             ToolSearchOutput = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationItem FromToolSearchOutput(global::tryAGI.OpenAI.ToolSearchOutput? value) => new ConversationItem(value);
 
         /// <summary>
         /// 
@@ -965,6 +1015,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationItem FromReasoning(global::tryAGI.OpenAI.ReasoningItem? value) => new ConversationItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationItem(global::tryAGI.OpenAI.CompactionBody value) => new ConversationItem((global::tryAGI.OpenAI.CompactionBody?)value);
 
         /// <summary>
@@ -979,6 +1034,11 @@ namespace tryAGI.OpenAI
         {
             Compaction = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationItem FromCompaction(global::tryAGI.OpenAI.CompactionBody? value) => new ConversationItem(value);
 
         /// <summary>
         /// 
@@ -1001,6 +1061,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationItem FromCodeInterpreterCall(global::tryAGI.OpenAI.CodeInterpreterToolCall? value) => new ConversationItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationItem(global::tryAGI.OpenAI.LocalShellToolCall value) => new ConversationItem((global::tryAGI.OpenAI.LocalShellToolCall?)value);
 
         /// <summary>
@@ -1015,6 +1080,11 @@ namespace tryAGI.OpenAI
         {
             LocalShellCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationItem FromLocalShellCall(global::tryAGI.OpenAI.LocalShellToolCall? value) => new ConversationItem(value);
 
         /// <summary>
         /// 
@@ -1037,6 +1107,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationItem FromLocalShellCallOutput(global::tryAGI.OpenAI.LocalShellToolCallOutput? value) => new ConversationItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationItem(global::tryAGI.OpenAI.FunctionShellCall value) => new ConversationItem((global::tryAGI.OpenAI.FunctionShellCall?)value);
 
         /// <summary>
@@ -1051,6 +1126,11 @@ namespace tryAGI.OpenAI
         {
             ShellCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationItem FromShellCall(global::tryAGI.OpenAI.FunctionShellCall? value) => new ConversationItem(value);
 
         /// <summary>
         /// 
@@ -1073,6 +1153,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationItem FromShellCallOutput(global::tryAGI.OpenAI.FunctionShellCallOutput? value) => new ConversationItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationItem(global::tryAGI.OpenAI.ApplyPatchToolCall value) => new ConversationItem((global::tryAGI.OpenAI.ApplyPatchToolCall?)value);
 
         /// <summary>
@@ -1087,6 +1172,11 @@ namespace tryAGI.OpenAI
         {
             ApplyPatchCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationItem FromApplyPatchCall(global::tryAGI.OpenAI.ApplyPatchToolCall? value) => new ConversationItem(value);
 
         /// <summary>
         /// 
@@ -1109,6 +1199,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationItem FromApplyPatchCallOutput(global::tryAGI.OpenAI.ApplyPatchToolCallOutput? value) => new ConversationItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationItem(global::tryAGI.OpenAI.MCPListTools value) => new ConversationItem((global::tryAGI.OpenAI.MCPListTools?)value);
 
         /// <summary>
@@ -1123,6 +1218,11 @@ namespace tryAGI.OpenAI
         {
             McpListTools = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationItem FromMcpListTools(global::tryAGI.OpenAI.MCPListTools? value) => new ConversationItem(value);
 
         /// <summary>
         /// 
@@ -1145,6 +1245,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationItem FromMcpApprovalRequest(global::tryAGI.OpenAI.MCPApprovalRequest? value) => new ConversationItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationItem(global::tryAGI.OpenAI.MCPApprovalResponseResource value) => new ConversationItem((global::tryAGI.OpenAI.MCPApprovalResponseResource?)value);
 
         /// <summary>
@@ -1159,6 +1264,11 @@ namespace tryAGI.OpenAI
         {
             McpApprovalResponse = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationItem FromMcpApprovalResponse(global::tryAGI.OpenAI.MCPApprovalResponseResource? value) => new ConversationItem(value);
 
         /// <summary>
         /// 
@@ -1181,6 +1291,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationItem FromMcpCall(global::tryAGI.OpenAI.MCPToolCall? value) => new ConversationItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationItem(global::tryAGI.OpenAI.CustomToolCall value) => new ConversationItem((global::tryAGI.OpenAI.CustomToolCall?)value);
 
         /// <summary>
@@ -1199,6 +1314,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationItem FromCustomToolCall(global::tryAGI.OpenAI.CustomToolCall? value) => new ConversationItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationItem(global::tryAGI.OpenAI.CustomToolCallOutput value) => new ConversationItem((global::tryAGI.OpenAI.CustomToolCallOutput?)value);
 
         /// <summary>
@@ -1213,6 +1333,11 @@ namespace tryAGI.OpenAI
         {
             CustomToolCallOutput = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationItem FromCustomToolCallOutput(global::tryAGI.OpenAI.CustomToolCallOutput? value) => new ConversationItem(value);
 
         /// <summary>
         /// 

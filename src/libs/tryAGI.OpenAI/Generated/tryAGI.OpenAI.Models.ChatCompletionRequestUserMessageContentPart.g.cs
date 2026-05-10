@@ -149,6 +149,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionRequestUserMessageContentPart FromTextContentPart(global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText? value) => new ChatCompletionRequestUserMessageContentPart(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionRequestUserMessageContentPart(global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImage value) => new ChatCompletionRequestUserMessageContentPart((global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImage?)value);
 
         /// <summary>
@@ -163,6 +168,11 @@ namespace tryAGI.OpenAI
         {
             ImageContentPart = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionRequestUserMessageContentPart FromImageContentPart(global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImage? value) => new ChatCompletionRequestUserMessageContentPart(value);
 
         /// <summary>
         /// 
@@ -185,6 +195,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionRequestUserMessageContentPart FromAudioContentPart(global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudio? value) => new ChatCompletionRequestUserMessageContentPart(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionRequestUserMessageContentPart(global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFile value) => new ChatCompletionRequestUserMessageContentPart((global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFile?)value);
 
         /// <summary>
@@ -199,6 +214,11 @@ namespace tryAGI.OpenAI
         {
             FileContentPart = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionRequestUserMessageContentPart FromFileContentPart(global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFile? value) => new ChatCompletionRequestUserMessageContentPart(value);
 
         /// <summary>
         /// 

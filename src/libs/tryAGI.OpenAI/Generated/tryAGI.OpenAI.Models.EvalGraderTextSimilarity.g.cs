@@ -89,6 +89,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static EvalGraderTextSimilarity FromTextSimilarityGrader(global::tryAGI.OpenAI.GraderTextSimilarity? value) => new EvalGraderTextSimilarity(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EvalGraderTextSimilarity(global::tryAGI.OpenAI.EvalGraderTextSimilarityVariant2 value) => new EvalGraderTextSimilarity((global::tryAGI.OpenAI.EvalGraderTextSimilarityVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace tryAGI.OpenAI
         {
             EvalGraderTextSimilarityVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EvalGraderTextSimilarity FromEvalGraderTextSimilarityVariant2(global::tryAGI.OpenAI.EvalGraderTextSimilarityVariant2? value) => new EvalGraderTextSimilarity(value);
 
         /// <summary>
         /// 

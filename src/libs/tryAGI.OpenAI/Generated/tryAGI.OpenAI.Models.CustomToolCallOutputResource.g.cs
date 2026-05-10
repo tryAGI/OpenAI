@@ -89,6 +89,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static CustomToolCallOutputResource FromCustomToolCallOutput(global::tryAGI.OpenAI.CustomToolCallOutput? value) => new CustomToolCallOutputResource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CustomToolCallOutputResource(global::tryAGI.OpenAI.CustomToolCallOutputResourceVariant2 value) => new CustomToolCallOutputResource((global::tryAGI.OpenAI.CustomToolCallOutputResourceVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace tryAGI.OpenAI
         {
             CustomToolCallOutputResourceVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CustomToolCallOutputResource FromCustomToolCallOutputResourceVariant2(global::tryAGI.OpenAI.CustomToolCallOutputResourceVariant2? value) => new CustomToolCallOutputResource(value);
 
         /// <summary>
         /// 

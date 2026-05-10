@@ -94,6 +94,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ChunkingStrategyRequestParam FromAuto(global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam? value) => new ChunkingStrategyRequestParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChunkingStrategyRequestParam(global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam value) => new ChunkingStrategyRequestParam((global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace tryAGI.OpenAI
         {
             Static = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChunkingStrategyRequestParam FromStatic(global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam? value) => new ChunkingStrategyRequestParam(value);
 
         /// <summary>
         /// 

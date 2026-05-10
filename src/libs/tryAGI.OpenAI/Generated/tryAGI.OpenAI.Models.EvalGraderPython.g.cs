@@ -89,6 +89,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static EvalGraderPython FromPythonGrader(global::tryAGI.OpenAI.GraderPython? value) => new EvalGraderPython(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EvalGraderPython(global::tryAGI.OpenAI.EvalGraderPythonVariant2 value) => new EvalGraderPython((global::tryAGI.OpenAI.EvalGraderPythonVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace tryAGI.OpenAI
         {
             EvalGraderPythonVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EvalGraderPython FromEvalGraderPythonVariant2(global::tryAGI.OpenAI.EvalGraderPythonVariant2? value) => new EvalGraderPython(value);
 
         /// <summary>
         /// 

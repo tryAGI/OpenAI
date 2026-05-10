@@ -89,6 +89,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static EvalGraderScoreModel FromScoreModelGrader(global::tryAGI.OpenAI.GraderScoreModel? value) => new EvalGraderScoreModel(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EvalGraderScoreModel(global::tryAGI.OpenAI.EvalGraderScoreModelVariant2 value) => new EvalGraderScoreModel((global::tryAGI.OpenAI.EvalGraderScoreModelVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace tryAGI.OpenAI
         {
             EvalGraderScoreModelVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EvalGraderScoreModel FromEvalGraderScoreModelVariant2(global::tryAGI.OpenAI.EvalGraderScoreModelVariant2? value) => new EvalGraderScoreModel(value);
 
         /// <summary>
         /// 

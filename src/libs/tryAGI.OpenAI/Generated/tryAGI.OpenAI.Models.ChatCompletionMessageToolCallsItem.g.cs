@@ -94,6 +94,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionMessageToolCallsItem FromFunction(global::tryAGI.OpenAI.ChatCompletionMessageToolCall? value) => new ChatCompletionMessageToolCallsItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionMessageToolCallsItem(global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall value) => new ChatCompletionMessageToolCallsItem((global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace tryAGI.OpenAI
         {
             Custom = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionMessageToolCallsItem FromCustom(global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall? value) => new ChatCompletionMessageToolCallsItem(value);
 
         /// <summary>
         /// 

@@ -94,6 +94,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static CreateTranscriptionResponseDiarizedJsonUsage FromTokens(global::tryAGI.OpenAI.TranscriptTextUsageTokens? value) => new CreateTranscriptionResponseDiarizedJsonUsage(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateTranscriptionResponseDiarizedJsonUsage(global::tryAGI.OpenAI.TranscriptTextUsageDuration value) => new CreateTranscriptionResponseDiarizedJsonUsage((global::tryAGI.OpenAI.TranscriptTextUsageDuration?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace tryAGI.OpenAI
         {
             Duration = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateTranscriptionResponseDiarizedJsonUsage FromDuration(global::tryAGI.OpenAI.TranscriptTextUsageDuration? value) => new CreateTranscriptionResponseDiarizedJsonUsage(value);
 
         /// <summary>
         /// 

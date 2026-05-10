@@ -94,6 +94,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static Session2 FromRealtime(global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA? value) => new Session2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Session2(global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA value) => new Session2((global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace tryAGI.OpenAI
         {
             Transcription = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Session2 FromTranscription(global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA? value) => new Session2(value);
 
         /// <summary>
         /// 

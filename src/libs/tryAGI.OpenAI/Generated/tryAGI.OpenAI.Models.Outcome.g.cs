@@ -94,6 +94,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static Outcome FromTimeout(global::tryAGI.OpenAI.FunctionShellCallOutputTimeoutOutcome? value) => new Outcome(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Outcome(global::tryAGI.OpenAI.FunctionShellCallOutputExitOutcome value) => new Outcome((global::tryAGI.OpenAI.FunctionShellCallOutputExitOutcome?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace tryAGI.OpenAI
         {
             Exit = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Outcome FromExit(global::tryAGI.OpenAI.FunctionShellCallOutputExitOutcome? value) => new Outcome(value);
 
         /// <summary>
         /// 

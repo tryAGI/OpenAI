@@ -89,6 +89,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static FiltersItem FromComparisonFilter(global::tryAGI.OpenAI.ComparisonFilter? value) => new FiltersItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public FiltersItem(
             global::tryAGI.OpenAI.ComparisonFilter? comparisonFilter,
             object? compoundFilterVariant2

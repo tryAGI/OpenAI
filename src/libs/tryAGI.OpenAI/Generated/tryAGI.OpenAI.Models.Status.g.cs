@@ -124,6 +124,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static Status FromActive(global::tryAGI.OpenAI.ActiveStatus? value) => new Status(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Status(global::tryAGI.OpenAI.LockedStatus value) => new Status((global::tryAGI.OpenAI.LockedStatus?)value);
 
         /// <summary>
@@ -142,6 +147,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static Status FromLocked(global::tryAGI.OpenAI.LockedStatus? value) => new Status(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Status(global::tryAGI.OpenAI.ClosedStatus value) => new Status((global::tryAGI.OpenAI.ClosedStatus?)value);
 
         /// <summary>
@@ -156,6 +166,11 @@ namespace tryAGI.OpenAI
         {
             Closed = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Status FromClosed(global::tryAGI.OpenAI.ClosedStatus? value) => new Status(value);
 
         /// <summary>
         /// 
