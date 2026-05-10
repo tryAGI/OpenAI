@@ -89,6 +89,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static AdminApiKeyCreateResponse FromAdminApiKey(global::tryAGI.OpenAI.AdminApiKey? value) => new AdminApiKeyCreateResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AdminApiKeyCreateResponse(global::tryAGI.OpenAI.AdminApiKeyCreateResponseVariant2 value) => new AdminApiKeyCreateResponse((global::tryAGI.OpenAI.AdminApiKeyCreateResponseVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace tryAGI.OpenAI
         {
             AdminApiKeyCreateResponseVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AdminApiKeyCreateResponse FromAdminApiKeyCreateResponseVariant2(global::tryAGI.OpenAI.AdminApiKeyCreateResponseVariant2? value) => new AdminApiKeyCreateResponse(value);
 
         /// <summary>
         /// 

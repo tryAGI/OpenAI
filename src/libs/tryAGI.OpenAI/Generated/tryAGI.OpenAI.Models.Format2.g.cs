@@ -94,6 +94,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static Format2 FromText(global::tryAGI.OpenAI.CustomTextFormatParam? value) => new Format2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Format2(global::tryAGI.OpenAI.CustomGrammarFormatParam value) => new Format2((global::tryAGI.OpenAI.CustomGrammarFormatParam?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace tryAGI.OpenAI
         {
             Grammar = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Format2 FromGrammar(global::tryAGI.OpenAI.CustomGrammarFormatParam? value) => new Format2(value);
 
         /// <summary>
         /// 

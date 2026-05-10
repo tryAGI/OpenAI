@@ -94,6 +94,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem4 FromInputText(global::tryAGI.OpenAI.UserMessageInputText? value) => new ContentItem4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem4(global::tryAGI.OpenAI.UserMessageQuotedText value) => new ContentItem4((global::tryAGI.OpenAI.UserMessageQuotedText?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace tryAGI.OpenAI
         {
             QuotedText = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem4 FromQuotedText(global::tryAGI.OpenAI.UserMessageQuotedText? value) => new ContentItem4(value);
 
         /// <summary>
         /// 

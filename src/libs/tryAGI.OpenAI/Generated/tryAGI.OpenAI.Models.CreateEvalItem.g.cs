@@ -93,6 +93,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static CreateEvalItem FromSimpleInputMessage(global::tryAGI.OpenAI.CreateEvalItemSimpleInputMessage? value) => new CreateEvalItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateEvalItem(global::tryAGI.OpenAI.EvalItem value) => new CreateEvalItem((global::tryAGI.OpenAI.EvalItem?)value);
 
         /// <summary>
@@ -107,6 +112,11 @@ namespace tryAGI.OpenAI
         {
             EvalMessageObject = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateEvalItem FromEvalMessageObject(global::tryAGI.OpenAI.EvalItem? value) => new CreateEvalItem(value);
 
         /// <summary>
         /// 

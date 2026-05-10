@@ -89,6 +89,11 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         /// 
         /// </summary>
+        public static VoiceIdsShared FromVoiceIdsSharedVariant1(string? value) => new VoiceIdsShared(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VoiceIdsShared(global::tryAGI.OpenAI.Realtime.VoiceIdsSharedEnum value) => new VoiceIdsShared((global::tryAGI.OpenAI.Realtime.VoiceIdsSharedEnum?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace tryAGI.OpenAI.Realtime
         {
             Enum = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static VoiceIdsShared FromEnum(global::tryAGI.OpenAI.Realtime.VoiceIdsSharedEnum? value) => new VoiceIdsShared(value);
 
         /// <summary>
         /// 

@@ -94,6 +94,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static OutputMessageContent FromOutputText(global::tryAGI.OpenAI.OutputTextContent? value) => new OutputMessageContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputMessageContent(global::tryAGI.OpenAI.RefusalContent value) => new OutputMessageContent((global::tryAGI.OpenAI.RefusalContent?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace tryAGI.OpenAI
         {
             Refusal = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputMessageContent FromRefusal(global::tryAGI.OpenAI.RefusalContent? value) => new OutputMessageContent(value);
 
         /// <summary>
         /// 

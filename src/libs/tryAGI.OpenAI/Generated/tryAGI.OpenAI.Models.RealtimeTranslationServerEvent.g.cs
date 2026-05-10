@@ -255,6 +255,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeTranslationServerEvent FromError(global::tryAGI.OpenAI.RealtimeServerEventError? value) => new RealtimeTranslationServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeTranslationServerEvent(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreated value) => new RealtimeTranslationServerEvent((global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreated?)value);
 
         /// <summary>
@@ -269,6 +274,11 @@ namespace tryAGI.OpenAI
         {
             SessionCreated = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeTranslationServerEvent FromSessionCreated(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreated? value) => new RealtimeTranslationServerEvent(value);
 
         /// <summary>
         /// 
@@ -291,6 +301,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeTranslationServerEvent FromSessionUpdated(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionUpdated? value) => new RealtimeTranslationServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeTranslationServerEvent(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosed value) => new RealtimeTranslationServerEvent((global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosed?)value);
 
         /// <summary>
@@ -305,6 +320,11 @@ namespace tryAGI.OpenAI
         {
             SessionClosed = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeTranslationServerEvent FromSessionClosed(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosed? value) => new RealtimeTranslationServerEvent(value);
 
         /// <summary>
         /// 
@@ -327,6 +347,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeTranslationServerEvent FromSessionInputTranscriptDelta(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionInputTranscriptDelta? value) => new RealtimeTranslationServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeTranslationServerEvent(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputTranscriptDelta value) => new RealtimeTranslationServerEvent((global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputTranscriptDelta?)value);
 
         /// <summary>
@@ -345,6 +370,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeTranslationServerEvent FromSessionOutputTranscriptDelta(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputTranscriptDelta? value) => new RealtimeTranslationServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeTranslationServerEvent(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDelta value) => new RealtimeTranslationServerEvent((global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDelta?)value);
 
         /// <summary>
@@ -359,6 +389,11 @@ namespace tryAGI.OpenAI
         {
             SessionOutputAudioDelta = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeTranslationServerEvent FromSessionOutputAudioDelta(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDelta? value) => new RealtimeTranslationServerEvent(value);
 
         /// <summary>
         /// 

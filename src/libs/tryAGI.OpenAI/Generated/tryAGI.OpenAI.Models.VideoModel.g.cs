@@ -89,6 +89,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static VideoModel FromVideoModelVariant1(string? value) => new VideoModel(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VideoModel(global::tryAGI.OpenAI.VideoModelEnum value) => new VideoModel((global::tryAGI.OpenAI.VideoModelEnum?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace tryAGI.OpenAI
         {
             Enum = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static VideoModel FromEnum(global::tryAGI.OpenAI.VideoModelEnum? value) => new VideoModel(value);
 
         /// <summary>
         /// 

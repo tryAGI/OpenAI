@@ -124,6 +124,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static OutputContent FromOutputText(global::tryAGI.OpenAI.OutputTextContent? value) => new OutputContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputContent(global::tryAGI.OpenAI.RefusalContent value) => new OutputContent((global::tryAGI.OpenAI.RefusalContent?)value);
 
         /// <summary>
@@ -142,6 +147,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static OutputContent FromRefusal(global::tryAGI.OpenAI.RefusalContent? value) => new OutputContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputContent(global::tryAGI.OpenAI.ReasoningTextContent value) => new OutputContent((global::tryAGI.OpenAI.ReasoningTextContent?)value);
 
         /// <summary>
@@ -156,6 +166,11 @@ namespace tryAGI.OpenAI
         {
             ReasoningText = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputContent FromReasoningText(global::tryAGI.OpenAI.ReasoningTextContent? value) => new OutputContent(value);
 
         /// <summary>
         /// 

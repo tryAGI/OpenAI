@@ -329,6 +329,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static RunStreamEvent FromRunStreamEventVariant1(global::tryAGI.OpenAI.RunStreamEventVariant1? value) => new RunStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RunStreamEvent(global::tryAGI.OpenAI.RunStreamEventVariant2 value) => new RunStreamEvent((global::tryAGI.OpenAI.RunStreamEventVariant2?)value);
 
         /// <summary>
@@ -343,6 +348,11 @@ namespace tryAGI.OpenAI
         {
             RunStreamEventVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RunStreamEvent FromRunStreamEventVariant2(global::tryAGI.OpenAI.RunStreamEventVariant2? value) => new RunStreamEvent(value);
 
         /// <summary>
         /// 
@@ -365,6 +375,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static RunStreamEvent FromRunStreamEventVariant3(global::tryAGI.OpenAI.RunStreamEventVariant3? value) => new RunStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RunStreamEvent(global::tryAGI.OpenAI.RunStreamEventVariant4 value) => new RunStreamEvent((global::tryAGI.OpenAI.RunStreamEventVariant4?)value);
 
         /// <summary>
@@ -379,6 +394,11 @@ namespace tryAGI.OpenAI
         {
             RunStreamEventVariant4 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RunStreamEvent FromRunStreamEventVariant4(global::tryAGI.OpenAI.RunStreamEventVariant4? value) => new RunStreamEvent(value);
 
         /// <summary>
         /// 
@@ -401,6 +421,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static RunStreamEvent FromRunStreamEventVariant5(global::tryAGI.OpenAI.RunStreamEventVariant5? value) => new RunStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RunStreamEvent(global::tryAGI.OpenAI.RunStreamEventVariant6 value) => new RunStreamEvent((global::tryAGI.OpenAI.RunStreamEventVariant6?)value);
 
         /// <summary>
@@ -415,6 +440,11 @@ namespace tryAGI.OpenAI
         {
             RunStreamEventVariant6 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RunStreamEvent FromRunStreamEventVariant6(global::tryAGI.OpenAI.RunStreamEventVariant6? value) => new RunStreamEvent(value);
 
         /// <summary>
         /// 
@@ -437,6 +467,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static RunStreamEvent FromRunStreamEventVariant7(global::tryAGI.OpenAI.RunStreamEventVariant7? value) => new RunStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RunStreamEvent(global::tryAGI.OpenAI.RunStreamEventVariant8 value) => new RunStreamEvent((global::tryAGI.OpenAI.RunStreamEventVariant8?)value);
 
         /// <summary>
@@ -451,6 +486,11 @@ namespace tryAGI.OpenAI
         {
             RunStreamEventVariant8 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RunStreamEvent FromRunStreamEventVariant8(global::tryAGI.OpenAI.RunStreamEventVariant8? value) => new RunStreamEvent(value);
 
         /// <summary>
         /// 
@@ -473,6 +513,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static RunStreamEvent FromRunStreamEventVariant9(global::tryAGI.OpenAI.RunStreamEventVariant9? value) => new RunStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RunStreamEvent(global::tryAGI.OpenAI.RunStreamEventVariant10 value) => new RunStreamEvent((global::tryAGI.OpenAI.RunStreamEventVariant10?)value);
 
         /// <summary>
@@ -487,6 +532,11 @@ namespace tryAGI.OpenAI
         {
             RunStreamEventVariant10 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RunStreamEvent FromRunStreamEventVariant10(global::tryAGI.OpenAI.RunStreamEventVariant10? value) => new RunStreamEvent(value);
 
         /// <summary>
         /// 

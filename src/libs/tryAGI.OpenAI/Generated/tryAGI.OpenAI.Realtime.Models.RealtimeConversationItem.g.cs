@@ -304,6 +304,11 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeConversationItem FromMessage1(global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageSystem? value) => new RealtimeConversationItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeConversationItem(global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageUser value) => new RealtimeConversationItem((global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageUser?)value);
 
         /// <summary>
@@ -318,6 +323,11 @@ namespace tryAGI.OpenAI.Realtime
         {
             Message2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeConversationItem FromMessage2(global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageUser? value) => new RealtimeConversationItem(value);
 
         /// <summary>
         /// 
@@ -340,6 +350,11 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeConversationItem FromMessage3(global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageAssistant? value) => new RealtimeConversationItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeConversationItem(global::tryAGI.OpenAI.Realtime.RealtimeConversationItemFunctionCall value) => new RealtimeConversationItem((global::tryAGI.OpenAI.Realtime.RealtimeConversationItemFunctionCall?)value);
 
         /// <summary>
@@ -354,6 +369,11 @@ namespace tryAGI.OpenAI.Realtime
         {
             FunctionCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeConversationItem FromFunctionCall(global::tryAGI.OpenAI.Realtime.RealtimeConversationItemFunctionCall? value) => new RealtimeConversationItem(value);
 
         /// <summary>
         /// 
@@ -376,6 +396,11 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeConversationItem FromFunctionCallOutput(global::tryAGI.OpenAI.Realtime.RealtimeConversationItemFunctionCallOutput? value) => new RealtimeConversationItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeConversationItem(global::tryAGI.OpenAI.Realtime.RealtimeMCPApprovalResponse value) => new RealtimeConversationItem((global::tryAGI.OpenAI.Realtime.RealtimeMCPApprovalResponse?)value);
 
         /// <summary>
@@ -390,6 +415,11 @@ namespace tryAGI.OpenAI.Realtime
         {
             McpApprovalResponse = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeConversationItem FromMcpApprovalResponse(global::tryAGI.OpenAI.Realtime.RealtimeMCPApprovalResponse? value) => new RealtimeConversationItem(value);
 
         /// <summary>
         /// 
@@ -412,6 +442,11 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeConversationItem FromMcpListTools(global::tryAGI.OpenAI.Realtime.RealtimeMCPListTools? value) => new RealtimeConversationItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeConversationItem(global::tryAGI.OpenAI.Realtime.RealtimeMCPToolCall value) => new RealtimeConversationItem((global::tryAGI.OpenAI.Realtime.RealtimeMCPToolCall?)value);
 
         /// <summary>
@@ -430,6 +465,11 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeConversationItem FromMcpCall(global::tryAGI.OpenAI.Realtime.RealtimeMCPToolCall? value) => new RealtimeConversationItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeConversationItem(global::tryAGI.OpenAI.Realtime.RealtimeMCPApprovalRequest value) => new RealtimeConversationItem((global::tryAGI.OpenAI.Realtime.RealtimeMCPApprovalRequest?)value);
 
         /// <summary>
@@ -444,6 +484,11 @@ namespace tryAGI.OpenAI.Realtime
         {
             McpApprovalRequest = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeConversationItem FromMcpApprovalRequest(global::tryAGI.OpenAI.Realtime.RealtimeMCPApprovalRequest? value) => new RealtimeConversationItem(value);
 
         /// <summary>
         /// 

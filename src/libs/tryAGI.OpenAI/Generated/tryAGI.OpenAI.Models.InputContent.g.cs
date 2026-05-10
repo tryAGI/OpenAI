@@ -124,6 +124,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static InputContent FromInputText(global::tryAGI.OpenAI.InputTextContent? value) => new InputContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputContent(global::tryAGI.OpenAI.InputImageContent value) => new InputContent((global::tryAGI.OpenAI.InputImageContent?)value);
 
         /// <summary>
@@ -142,6 +147,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static InputContent FromInputImage(global::tryAGI.OpenAI.InputImageContent? value) => new InputContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputContent(global::tryAGI.OpenAI.InputFileContent value) => new InputContent((global::tryAGI.OpenAI.InputFileContent?)value);
 
         /// <summary>
@@ -156,6 +166,11 @@ namespace tryAGI.OpenAI
         {
             InputFile = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputContent FromInputFile(global::tryAGI.OpenAI.InputFileContent? value) => new InputContent(value);
 
         /// <summary>
         /// 

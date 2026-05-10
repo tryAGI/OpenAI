@@ -59,6 +59,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ThreadStreamEvent FromThreadStreamEventVariant1(global::tryAGI.OpenAI.ThreadStreamEventVariant1? value) => new ThreadStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             ThreadStreamEventVariant1 as object 
             ;

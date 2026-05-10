@@ -94,6 +94,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static NetworkPolicy2 FromDisabled(global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParam? value) => new NetworkPolicy2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator NetworkPolicy2(global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam value) => new NetworkPolicy2((global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace tryAGI.OpenAI
         {
             Allowlist = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static NetworkPolicy2 FromAllowlist(global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam? value) => new NetworkPolicy2(value);
 
         /// <summary>
         /// 

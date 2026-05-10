@@ -94,6 +94,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static CreateSpeechResponseStreamEvent FromSpeechAudioDelta(global::tryAGI.OpenAI.SpeechAudioDeltaEvent? value) => new CreateSpeechResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateSpeechResponseStreamEvent(global::tryAGI.OpenAI.SpeechAudioDoneEvent value) => new CreateSpeechResponseStreamEvent((global::tryAGI.OpenAI.SpeechAudioDoneEvent?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace tryAGI.OpenAI
         {
             SpeechAudioDone = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateSpeechResponseStreamEvent FromSpeechAudioDone(global::tryAGI.OpenAI.SpeechAudioDoneEvent? value) => new CreateSpeechResponseStreamEvent(value);
 
         /// <summary>
         /// 

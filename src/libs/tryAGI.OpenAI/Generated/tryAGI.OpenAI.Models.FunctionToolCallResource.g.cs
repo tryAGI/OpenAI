@@ -90,6 +90,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static FunctionToolCallResource FromFunctionToolCall(global::tryAGI.OpenAI.FunctionToolCall? value) => new FunctionToolCallResource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FunctionToolCallResource(global::tryAGI.OpenAI.FunctionToolCallResourceVariant2 value) => new FunctionToolCallResource((global::tryAGI.OpenAI.FunctionToolCallResourceVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace tryAGI.OpenAI
         {
             FunctionToolCallResourceVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FunctionToolCallResource FromFunctionToolCallResourceVariant2(global::tryAGI.OpenAI.FunctionToolCallResourceVariant2? value) => new FunctionToolCallResource(value);
 
         /// <summary>
         /// 

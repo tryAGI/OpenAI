@@ -124,6 +124,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static OutputVariant2Item FromInputText(global::tryAGI.OpenAI.InputTextContentParam? value) => new OutputVariant2Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputVariant2Item(global::tryAGI.OpenAI.InputImageContentParamAutoParam value) => new OutputVariant2Item((global::tryAGI.OpenAI.InputImageContentParamAutoParam?)value);
 
         /// <summary>
@@ -142,6 +147,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static OutputVariant2Item FromInputImage(global::tryAGI.OpenAI.InputImageContentParamAutoParam? value) => new OutputVariant2Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputVariant2Item(global::tryAGI.OpenAI.InputFileContentParam value) => new OutputVariant2Item((global::tryAGI.OpenAI.InputFileContentParam?)value);
 
         /// <summary>
@@ -156,6 +166,11 @@ namespace tryAGI.OpenAI
         {
             InputFile = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputVariant2Item FromInputFile(global::tryAGI.OpenAI.InputFileContentParam? value) => new OutputVariant2Item(value);
 
         /// <summary>
         /// 

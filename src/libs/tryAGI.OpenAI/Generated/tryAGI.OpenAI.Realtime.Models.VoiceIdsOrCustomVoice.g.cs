@@ -89,6 +89,11 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         /// 
         /// </summary>
+        public static VoiceIdsOrCustomVoice FromShared(global::tryAGI.OpenAI.Realtime.VoiceIdsShared? value) => new VoiceIdsOrCustomVoice(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VoiceIdsOrCustomVoice(global::tryAGI.OpenAI.Realtime.VoiceIdsOrCustomVoiceVariant2 value) => new VoiceIdsOrCustomVoice((global::tryAGI.OpenAI.Realtime.VoiceIdsOrCustomVoiceVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace tryAGI.OpenAI.Realtime
         {
             VoiceIdsOrCustomVoiceVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static VoiceIdsOrCustomVoice FromVoiceIdsOrCustomVoiceVariant2(global::tryAGI.OpenAI.Realtime.VoiceIdsOrCustomVoiceVariant2? value) => new VoiceIdsOrCustomVoice(value);
 
         /// <summary>
         /// 

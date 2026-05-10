@@ -119,6 +119,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ModelIdsCompaction FromResponses(global::tryAGI.OpenAI.ModelIdsResponses? value) => new ModelIdsCompaction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ModelIdsCompaction(string value) => new ModelIdsCompaction((string?)value);
 
         /// <summary>
@@ -133,6 +138,11 @@ namespace tryAGI.OpenAI
         {
             ModelIdsCompactionVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ModelIdsCompaction FromModelIdsCompactionVariant2(string? value) => new ModelIdsCompaction(value);
 
         /// <summary>
         /// 

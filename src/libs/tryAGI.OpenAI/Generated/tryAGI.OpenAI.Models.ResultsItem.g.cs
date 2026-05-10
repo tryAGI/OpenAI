@@ -304,6 +304,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ResultsItem FromOrganizationUsageCompletionsResult(global::tryAGI.OpenAI.UsageCompletionsResult? value) => new ResultsItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultsItem(global::tryAGI.OpenAI.UsageEmbeddingsResult value) => new ResultsItem((global::tryAGI.OpenAI.UsageEmbeddingsResult?)value);
 
         /// <summary>
@@ -318,6 +323,11 @@ namespace tryAGI.OpenAI
         {
             OrganizationUsageEmbeddingsResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultsItem FromOrganizationUsageEmbeddingsResult(global::tryAGI.OpenAI.UsageEmbeddingsResult? value) => new ResultsItem(value);
 
         /// <summary>
         /// 
@@ -340,6 +350,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ResultsItem FromOrganizationUsageModerationsResult(global::tryAGI.OpenAI.UsageModerationsResult? value) => new ResultsItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultsItem(global::tryAGI.OpenAI.UsageImagesResult value) => new ResultsItem((global::tryAGI.OpenAI.UsageImagesResult?)value);
 
         /// <summary>
@@ -354,6 +369,11 @@ namespace tryAGI.OpenAI
         {
             OrganizationUsageImagesResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultsItem FromOrganizationUsageImagesResult(global::tryAGI.OpenAI.UsageImagesResult? value) => new ResultsItem(value);
 
         /// <summary>
         /// 
@@ -376,6 +396,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ResultsItem FromOrganizationUsageAudioSpeechesResult(global::tryAGI.OpenAI.UsageAudioSpeechesResult? value) => new ResultsItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultsItem(global::tryAGI.OpenAI.UsageAudioTranscriptionsResult value) => new ResultsItem((global::tryAGI.OpenAI.UsageAudioTranscriptionsResult?)value);
 
         /// <summary>
@@ -390,6 +415,11 @@ namespace tryAGI.OpenAI
         {
             OrganizationUsageAudioTranscriptionsResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultsItem FromOrganizationUsageAudioTranscriptionsResult(global::tryAGI.OpenAI.UsageAudioTranscriptionsResult? value) => new ResultsItem(value);
 
         /// <summary>
         /// 
@@ -412,6 +442,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ResultsItem FromOrganizationUsageVectorStoresResult(global::tryAGI.OpenAI.UsageVectorStoresResult? value) => new ResultsItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultsItem(global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult value) => new ResultsItem((global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult?)value);
 
         /// <summary>
@@ -430,6 +465,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ResultsItem FromOrganizationUsageCodeInterpreterSessionsResult(global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult? value) => new ResultsItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultsItem(global::tryAGI.OpenAI.CostsResult value) => new ResultsItem((global::tryAGI.OpenAI.CostsResult?)value);
 
         /// <summary>
@@ -444,6 +484,11 @@ namespace tryAGI.OpenAI
         {
             OrganizationCostsResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultsItem FromOrganizationCostsResult(global::tryAGI.OpenAI.CostsResult? value) => new ResultsItem(value);
 
         /// <summary>
         /// 

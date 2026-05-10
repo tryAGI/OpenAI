@@ -148,6 +148,11 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         /// 
         /// </summary>
+        public static OneOf<T1, T2, T3, T4> FromValue1(T1? value) => new OneOf<T1, T2, T3, T4>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OneOf<T1, T2, T3, T4>(T2 value) => new OneOf<T1, T2, T3, T4>((T2?)value);
 
         /// <summary>
@@ -162,6 +167,11 @@ namespace tryAGI.OpenAI.Realtime
         {
             Value2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4> FromValue2(T2? value) => new OneOf<T1, T2, T3, T4>(value);
 
         /// <summary>
         /// 
@@ -184,6 +194,11 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         /// 
         /// </summary>
+        public static OneOf<T1, T2, T3, T4> FromValue3(T3? value) => new OneOf<T1, T2, T3, T4>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OneOf<T1, T2, T3, T4>(T4 value) => new OneOf<T1, T2, T3, T4>((T4?)value);
 
         /// <summary>
@@ -198,6 +213,11 @@ namespace tryAGI.OpenAI.Realtime
         {
             Value4 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4> FromValue4(T4? value) => new OneOf<T1, T2, T3, T4>(value);
 
         /// <summary>
         /// 

@@ -59,6 +59,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionRequestToolMessageContentPart FromTextContentPart(global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText? value) => new ChatCompletionRequestToolMessageContentPart(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             TextContentPart as object 
             ;

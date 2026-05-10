@@ -94,6 +94,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ImageGenStreamEvent FromImageGenerationPartialImage(global::tryAGI.OpenAI.ImageGenPartialImageEvent? value) => new ImageGenStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ImageGenStreamEvent(global::tryAGI.OpenAI.ImageGenCompletedEvent value) => new ImageGenStreamEvent((global::tryAGI.OpenAI.ImageGenCompletedEvent?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace tryAGI.OpenAI
         {
             ImageGenerationCompleted = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ImageGenStreamEvent FromImageGenerationCompleted(global::tryAGI.OpenAI.ImageGenCompletedEvent? value) => new ImageGenStreamEvent(value);
 
         /// <summary>
         /// 

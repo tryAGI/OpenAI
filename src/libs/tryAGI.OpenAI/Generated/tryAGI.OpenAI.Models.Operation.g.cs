@@ -124,6 +124,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static Operation FromCreateFile(global::tryAGI.OpenAI.ApplyPatchCreateFileOperation? value) => new Operation(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Operation(global::tryAGI.OpenAI.ApplyPatchDeleteFileOperation value) => new Operation((global::tryAGI.OpenAI.ApplyPatchDeleteFileOperation?)value);
 
         /// <summary>
@@ -142,6 +147,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static Operation FromDeleteFile(global::tryAGI.OpenAI.ApplyPatchDeleteFileOperation? value) => new Operation(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Operation(global::tryAGI.OpenAI.ApplyPatchUpdateFileOperation value) => new Operation((global::tryAGI.OpenAI.ApplyPatchUpdateFileOperation?)value);
 
         /// <summary>
@@ -156,6 +166,11 @@ namespace tryAGI.OpenAI
         {
             UpdateFile = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Operation FromUpdateFile(global::tryAGI.OpenAI.ApplyPatchUpdateFileOperation? value) => new Operation(value);
 
         /// <summary>
         /// 

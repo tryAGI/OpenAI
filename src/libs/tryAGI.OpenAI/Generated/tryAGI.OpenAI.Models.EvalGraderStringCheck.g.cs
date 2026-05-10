@@ -59,6 +59,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static EvalGraderStringCheck FromStringCheckGrader(global::tryAGI.OpenAI.GraderStringCheck? value) => new EvalGraderStringCheck(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             StringCheckGrader as object 
             ;

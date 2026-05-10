@@ -481,6 +481,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromFunction(global::tryAGI.OpenAI.FunctionTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::tryAGI.OpenAI.FileSearchTool value) => new Tool((global::tryAGI.OpenAI.FileSearchTool?)value);
 
         /// <summary>
@@ -495,6 +500,11 @@ namespace tryAGI.OpenAI
         {
             FileSearch = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromFileSearch(global::tryAGI.OpenAI.FileSearchTool? value) => new Tool(value);
 
         /// <summary>
         /// 
@@ -517,6 +527,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromComputer(global::tryAGI.OpenAI.ComputerTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::tryAGI.OpenAI.ComputerUsePreviewTool value) => new Tool((global::tryAGI.OpenAI.ComputerUsePreviewTool?)value);
 
         /// <summary>
@@ -531,6 +546,11 @@ namespace tryAGI.OpenAI
         {
             ComputerUsePreview = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromComputerUsePreview(global::tryAGI.OpenAI.ComputerUsePreviewTool? value) => new Tool(value);
 
         /// <summary>
         /// 
@@ -553,6 +573,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromWebSearch(global::tryAGI.OpenAI.WebSearchTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::tryAGI.OpenAI.MCPTool value) => new Tool((global::tryAGI.OpenAI.MCPTool?)value);
 
         /// <summary>
@@ -567,6 +592,11 @@ namespace tryAGI.OpenAI
         {
             Mcp = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromMcp(global::tryAGI.OpenAI.MCPTool? value) => new Tool(value);
 
         /// <summary>
         /// 
@@ -589,6 +619,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromCodeInterpreter(global::tryAGI.OpenAI.CodeInterpreterTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::tryAGI.OpenAI.ImageGenTool value) => new Tool((global::tryAGI.OpenAI.ImageGenTool?)value);
 
         /// <summary>
@@ -603,6 +638,11 @@ namespace tryAGI.OpenAI
         {
             ImageGeneration = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromImageGeneration(global::tryAGI.OpenAI.ImageGenTool? value) => new Tool(value);
 
         /// <summary>
         /// 
@@ -625,6 +665,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromLocalShell(global::tryAGI.OpenAI.LocalShellToolParam? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::tryAGI.OpenAI.FunctionShellToolParam value) => new Tool((global::tryAGI.OpenAI.FunctionShellToolParam?)value);
 
         /// <summary>
@@ -639,6 +684,11 @@ namespace tryAGI.OpenAI
         {
             Shell = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromShell(global::tryAGI.OpenAI.FunctionShellToolParam? value) => new Tool(value);
 
         /// <summary>
         /// 
@@ -661,6 +711,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromCustom(global::tryAGI.OpenAI.CustomToolParam? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::tryAGI.OpenAI.NamespaceToolParam value) => new Tool((global::tryAGI.OpenAI.NamespaceToolParam?)value);
 
         /// <summary>
@@ -675,6 +730,11 @@ namespace tryAGI.OpenAI
         {
             Namespace = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromNamespace(global::tryAGI.OpenAI.NamespaceToolParam? value) => new Tool(value);
 
         /// <summary>
         /// 
@@ -697,6 +757,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromToolSearch(global::tryAGI.OpenAI.ToolSearchToolParam? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::tryAGI.OpenAI.WebSearchPreviewTool value) => new Tool((global::tryAGI.OpenAI.WebSearchPreviewTool?)value);
 
         /// <summary>
@@ -715,6 +780,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromWebSearchPreview(global::tryAGI.OpenAI.WebSearchPreviewTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::tryAGI.OpenAI.ApplyPatchToolParam value) => new Tool((global::tryAGI.OpenAI.ApplyPatchToolParam?)value);
 
         /// <summary>
@@ -729,6 +799,11 @@ namespace tryAGI.OpenAI
         {
             ApplyPatch = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromApplyPatch(global::tryAGI.OpenAI.ApplyPatchToolParam? value) => new Tool(value);
 
         /// <summary>
         /// 

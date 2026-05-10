@@ -98,6 +98,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeTurnDetectionRealtimeTurnDetection1 FromServerVad(global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad? value) => new RealtimeTurnDetectionRealtimeTurnDetection1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeTurnDetectionRealtimeTurnDetection1(global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad value) => new RealtimeTurnDetectionRealtimeTurnDetection1((global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad?)value);
 
         /// <summary>
@@ -112,6 +117,11 @@ namespace tryAGI.OpenAI
         {
             SemanticVad = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeTurnDetectionRealtimeTurnDetection1 FromSemanticVad(global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad? value) => new RealtimeTurnDetectionRealtimeTurnDetection1(value);
 
         /// <summary>
         /// 

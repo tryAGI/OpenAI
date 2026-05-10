@@ -59,6 +59,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ResponsesServerEvent FromResponseStream(global::tryAGI.OpenAI.ResponseStreamEvent? value) => new ResponsesServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             ResponseStream as object 
             ;

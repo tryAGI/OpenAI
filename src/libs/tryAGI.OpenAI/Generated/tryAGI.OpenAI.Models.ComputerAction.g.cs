@@ -304,6 +304,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ComputerAction FromClick(global::tryAGI.OpenAI.ClickParam? value) => new ComputerAction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ComputerAction(global::tryAGI.OpenAI.DoubleClickAction value) => new ComputerAction((global::tryAGI.OpenAI.DoubleClickAction?)value);
 
         /// <summary>
@@ -318,6 +323,11 @@ namespace tryAGI.OpenAI
         {
             DoubleClick = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ComputerAction FromDoubleClick(global::tryAGI.OpenAI.DoubleClickAction? value) => new ComputerAction(value);
 
         /// <summary>
         /// 
@@ -340,6 +350,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ComputerAction FromDrag(global::tryAGI.OpenAI.DragParam? value) => new ComputerAction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ComputerAction(global::tryAGI.OpenAI.KeyPressAction value) => new ComputerAction((global::tryAGI.OpenAI.KeyPressAction?)value);
 
         /// <summary>
@@ -354,6 +369,11 @@ namespace tryAGI.OpenAI
         {
             Keypress = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ComputerAction FromKeypress(global::tryAGI.OpenAI.KeyPressAction? value) => new ComputerAction(value);
 
         /// <summary>
         /// 
@@ -376,6 +396,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ComputerAction FromMove(global::tryAGI.OpenAI.MoveParam? value) => new ComputerAction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ComputerAction(global::tryAGI.OpenAI.ScreenshotParam value) => new ComputerAction((global::tryAGI.OpenAI.ScreenshotParam?)value);
 
         /// <summary>
@@ -390,6 +415,11 @@ namespace tryAGI.OpenAI
         {
             Screenshot = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ComputerAction FromScreenshot(global::tryAGI.OpenAI.ScreenshotParam? value) => new ComputerAction(value);
 
         /// <summary>
         /// 
@@ -412,6 +442,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ComputerAction FromScroll(global::tryAGI.OpenAI.ScrollParam? value) => new ComputerAction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ComputerAction(global::tryAGI.OpenAI.TypeParam value) => new ComputerAction((global::tryAGI.OpenAI.TypeParam?)value);
 
         /// <summary>
@@ -430,6 +465,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ComputerAction FromType(global::tryAGI.OpenAI.TypeParam? value) => new ComputerAction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ComputerAction(global::tryAGI.OpenAI.WaitParam value) => new ComputerAction((global::tryAGI.OpenAI.WaitParam?)value);
 
         /// <summary>
@@ -444,6 +484,11 @@ namespace tryAGI.OpenAI
         {
             Wait = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ComputerAction FromWait(global::tryAGI.OpenAI.WaitParam? value) => new ComputerAction(value);
 
         /// <summary>
         /// 

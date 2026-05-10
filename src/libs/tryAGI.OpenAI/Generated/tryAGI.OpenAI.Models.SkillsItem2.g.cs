@@ -94,6 +94,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static SkillsItem2 FromSkillReference(global::tryAGI.OpenAI.SkillReferenceParam? value) => new SkillsItem2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SkillsItem2(global::tryAGI.OpenAI.InlineSkillParam value) => new SkillsItem2((global::tryAGI.OpenAI.InlineSkillParam?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace tryAGI.OpenAI
         {
             Inline = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SkillsItem2 FromInline(global::tryAGI.OpenAI.InlineSkillParam? value) => new SkillsItem2(value);
 
         /// <summary>
         /// 

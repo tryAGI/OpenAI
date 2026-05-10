@@ -97,6 +97,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static InputParam FromTextInput(string? value) => new InputParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public InputParam(
             string? textInput,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>? inputItemList

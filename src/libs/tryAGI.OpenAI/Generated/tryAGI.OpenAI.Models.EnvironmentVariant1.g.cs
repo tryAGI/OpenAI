@@ -124,6 +124,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static EnvironmentVariant1 FromContainerAuto(global::tryAGI.OpenAI.ContainerAutoParam? value) => new EnvironmentVariant1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EnvironmentVariant1(global::tryAGI.OpenAI.LocalEnvironmentParam value) => new EnvironmentVariant1((global::tryAGI.OpenAI.LocalEnvironmentParam?)value);
 
         /// <summary>
@@ -142,6 +147,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static EnvironmentVariant1 FromLocal(global::tryAGI.OpenAI.LocalEnvironmentParam? value) => new EnvironmentVariant1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EnvironmentVariant1(global::tryAGI.OpenAI.ContainerReferenceParam value) => new EnvironmentVariant1((global::tryAGI.OpenAI.ContainerReferenceParam?)value);
 
         /// <summary>
@@ -156,6 +166,11 @@ namespace tryAGI.OpenAI
         {
             ContainerReference = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EnvironmentVariant1 FromContainerReference(global::tryAGI.OpenAI.ContainerReferenceParam? value) => new EnvironmentVariant1(value);
 
         /// <summary>
         /// 

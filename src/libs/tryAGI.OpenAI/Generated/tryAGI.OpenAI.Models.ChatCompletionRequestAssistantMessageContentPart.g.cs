@@ -94,6 +94,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionRequestAssistantMessageContentPart FromText(global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText? value) => new ChatCompletionRequestAssistantMessageContentPart(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionRequestAssistantMessageContentPart(global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartRefusal value) => new ChatCompletionRequestAssistantMessageContentPart((global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartRefusal?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace tryAGI.OpenAI
         {
             Refusal = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionRequestAssistantMessageContentPart FromRefusal(global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartRefusal? value) => new ChatCompletionRequestAssistantMessageContentPart(value);
 
         /// <summary>
         /// 

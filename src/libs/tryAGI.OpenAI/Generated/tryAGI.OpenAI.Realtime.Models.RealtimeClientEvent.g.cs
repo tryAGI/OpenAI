@@ -429,6 +429,11 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeClientEvent FromConversationItemCreate(global::tryAGI.OpenAI.Realtime.RealtimeClientEventConversationItemCreate? value) => new RealtimeClientEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeClientEvent(global::tryAGI.OpenAI.Realtime.RealtimeClientEventConversationItemDelete value) => new RealtimeClientEvent((global::tryAGI.OpenAI.Realtime.RealtimeClientEventConversationItemDelete?)value);
 
         /// <summary>
@@ -443,6 +448,11 @@ namespace tryAGI.OpenAI.Realtime
         {
             ConversationItemDelete = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeClientEvent FromConversationItemDelete(global::tryAGI.OpenAI.Realtime.RealtimeClientEventConversationItemDelete? value) => new RealtimeClientEvent(value);
 
         /// <summary>
         /// 
@@ -465,6 +475,11 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeClientEvent FromConversationItemRetrieve(global::tryAGI.OpenAI.Realtime.RealtimeClientEventConversationItemRetrieve? value) => new RealtimeClientEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeClientEvent(global::tryAGI.OpenAI.Realtime.RealtimeClientEventConversationItemTruncate value) => new RealtimeClientEvent((global::tryAGI.OpenAI.Realtime.RealtimeClientEventConversationItemTruncate?)value);
 
         /// <summary>
@@ -479,6 +494,11 @@ namespace tryAGI.OpenAI.Realtime
         {
             ConversationItemTruncate = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeClientEvent FromConversationItemTruncate(global::tryAGI.OpenAI.Realtime.RealtimeClientEventConversationItemTruncate? value) => new RealtimeClientEvent(value);
 
         /// <summary>
         /// 
@@ -501,6 +521,11 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeClientEvent FromInputAudioBufferAppend(global::tryAGI.OpenAI.Realtime.RealtimeClientEventInputAudioBufferAppend? value) => new RealtimeClientEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeClientEvent(global::tryAGI.OpenAI.Realtime.RealtimeClientEventInputAudioBufferClear value) => new RealtimeClientEvent((global::tryAGI.OpenAI.Realtime.RealtimeClientEventInputAudioBufferClear?)value);
 
         /// <summary>
@@ -515,6 +540,11 @@ namespace tryAGI.OpenAI.Realtime
         {
             InputAudioBufferClear = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeClientEvent FromInputAudioBufferClear(global::tryAGI.OpenAI.Realtime.RealtimeClientEventInputAudioBufferClear? value) => new RealtimeClientEvent(value);
 
         /// <summary>
         /// 
@@ -537,6 +567,11 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeClientEvent FromOutputAudioBufferClear(global::tryAGI.OpenAI.Realtime.RealtimeClientEventOutputAudioBufferClear? value) => new RealtimeClientEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeClientEvent(global::tryAGI.OpenAI.Realtime.RealtimeClientEventInputAudioBufferCommit value) => new RealtimeClientEvent((global::tryAGI.OpenAI.Realtime.RealtimeClientEventInputAudioBufferCommit?)value);
 
         /// <summary>
@@ -551,6 +586,11 @@ namespace tryAGI.OpenAI.Realtime
         {
             InputAudioBufferCommit = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeClientEvent FromInputAudioBufferCommit(global::tryAGI.OpenAI.Realtime.RealtimeClientEventInputAudioBufferCommit? value) => new RealtimeClientEvent(value);
 
         /// <summary>
         /// 
@@ -573,6 +613,11 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeClientEvent FromResponseCancel(global::tryAGI.OpenAI.Realtime.RealtimeClientEventResponseCancel? value) => new RealtimeClientEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeClientEvent(global::tryAGI.OpenAI.Realtime.RealtimeClientEventResponseCreate value) => new RealtimeClientEvent((global::tryAGI.OpenAI.Realtime.RealtimeClientEventResponseCreate?)value);
 
         /// <summary>
@@ -591,6 +636,11 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeClientEvent FromResponseCreate(global::tryAGI.OpenAI.Realtime.RealtimeClientEventResponseCreate? value) => new RealtimeClientEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeClientEvent(global::tryAGI.OpenAI.Realtime.RealtimeClientEventSessionUpdate value) => new RealtimeClientEvent((global::tryAGI.OpenAI.Realtime.RealtimeClientEventSessionUpdate?)value);
 
         /// <summary>
@@ -605,6 +655,11 @@ namespace tryAGI.OpenAI.Realtime
         {
             SessionUpdate = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeClientEvent FromSessionUpdate(global::tryAGI.OpenAI.Realtime.RealtimeClientEventSessionUpdate? value) => new RealtimeClientEvent(value);
 
         /// <summary>
         /// 

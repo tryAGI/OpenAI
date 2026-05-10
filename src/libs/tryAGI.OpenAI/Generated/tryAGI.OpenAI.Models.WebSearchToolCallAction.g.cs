@@ -125,6 +125,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static WebSearchToolCallAction FromSearch(global::tryAGI.OpenAI.WebSearchActionSearch? value) => new WebSearchToolCallAction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator WebSearchToolCallAction(global::tryAGI.OpenAI.WebSearchActionOpenPage value) => new WebSearchToolCallAction((global::tryAGI.OpenAI.WebSearchActionOpenPage?)value);
 
         /// <summary>
@@ -143,6 +148,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static WebSearchToolCallAction FromOpenPage(global::tryAGI.OpenAI.WebSearchActionOpenPage? value) => new WebSearchToolCallAction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator WebSearchToolCallAction(global::tryAGI.OpenAI.WebSearchActionFind value) => new WebSearchToolCallAction((global::tryAGI.OpenAI.WebSearchActionFind?)value);
 
         /// <summary>
@@ -157,6 +167,11 @@ namespace tryAGI.OpenAI
         {
             FindInPage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static WebSearchToolCallAction FromFindInPage(global::tryAGI.OpenAI.WebSearchActionFind? value) => new WebSearchToolCallAction(value);
 
         /// <summary>
         /// 

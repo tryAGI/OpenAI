@@ -304,6 +304,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem3 FromInputText(global::tryAGI.OpenAI.InputTextContent? value) => new ContentItem3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem3(global::tryAGI.OpenAI.OutputTextContent value) => new ContentItem3((global::tryAGI.OpenAI.OutputTextContent?)value);
 
         /// <summary>
@@ -318,6 +323,11 @@ namespace tryAGI.OpenAI
         {
             OutputText = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem3 FromOutputText(global::tryAGI.OpenAI.OutputTextContent? value) => new ContentItem3(value);
 
         /// <summary>
         /// 
@@ -340,6 +350,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem3 FromText(global::tryAGI.OpenAI.TextContent? value) => new ContentItem3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem3(global::tryAGI.OpenAI.SummaryTextContent value) => new ContentItem3((global::tryAGI.OpenAI.SummaryTextContent?)value);
 
         /// <summary>
@@ -354,6 +369,11 @@ namespace tryAGI.OpenAI
         {
             SummaryText = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem3 FromSummaryText(global::tryAGI.OpenAI.SummaryTextContent? value) => new ContentItem3(value);
 
         /// <summary>
         /// 
@@ -376,6 +396,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem3 FromReasoningText(global::tryAGI.OpenAI.ReasoningTextContent? value) => new ContentItem3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem3(global::tryAGI.OpenAI.RefusalContent value) => new ContentItem3((global::tryAGI.OpenAI.RefusalContent?)value);
 
         /// <summary>
@@ -390,6 +415,11 @@ namespace tryAGI.OpenAI
         {
             Refusal = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem3 FromRefusal(global::tryAGI.OpenAI.RefusalContent? value) => new ContentItem3(value);
 
         /// <summary>
         /// 
@@ -412,6 +442,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem3 FromInputImage(global::tryAGI.OpenAI.InputImageContent? value) => new ContentItem3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem3(global::tryAGI.OpenAI.ComputerScreenshotContent value) => new ContentItem3((global::tryAGI.OpenAI.ComputerScreenshotContent?)value);
 
         /// <summary>
@@ -430,6 +465,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem3 FromComputerScreenshot(global::tryAGI.OpenAI.ComputerScreenshotContent? value) => new ContentItem3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem3(global::tryAGI.OpenAI.InputFileContent value) => new ContentItem3((global::tryAGI.OpenAI.InputFileContent?)value);
 
         /// <summary>
@@ -444,6 +484,11 @@ namespace tryAGI.OpenAI
         {
             InputFile = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem3 FromInputFile(global::tryAGI.OpenAI.InputFileContent? value) => new ContentItem3(value);
 
         /// <summary>
         /// 

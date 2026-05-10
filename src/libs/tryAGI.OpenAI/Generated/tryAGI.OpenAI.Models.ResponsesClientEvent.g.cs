@@ -63,6 +63,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ResponsesClientEvent FromResponseCreate(global::tryAGI.OpenAI.ResponsesClientEventResponseCreate? value) => new ResponsesClientEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             ResponseCreate as object 
             ;

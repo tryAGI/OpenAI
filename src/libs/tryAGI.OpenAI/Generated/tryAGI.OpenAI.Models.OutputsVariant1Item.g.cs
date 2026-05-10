@@ -94,6 +94,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static OutputsVariant1Item FromLogs(global::tryAGI.OpenAI.CodeInterpreterOutputLogs? value) => new OutputsVariant1Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputsVariant1Item(global::tryAGI.OpenAI.CodeInterpreterOutputImage value) => new OutputsVariant1Item((global::tryAGI.OpenAI.CodeInterpreterOutputImage?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace tryAGI.OpenAI
         {
             Image = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputsVariant1Item FromImage(global::tryAGI.OpenAI.CodeInterpreterOutputImage? value) => new OutputsVariant1Item(value);
 
         /// <summary>
         /// 

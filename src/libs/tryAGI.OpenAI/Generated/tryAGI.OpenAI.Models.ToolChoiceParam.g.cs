@@ -276,6 +276,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ToolChoiceParam FromToolChoiceMode(global::tryAGI.OpenAI.ToolChoiceOptions? value) => new ToolChoiceParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolChoiceParam(global::tryAGI.OpenAI.ToolChoiceAllowed value) => new ToolChoiceParam((global::tryAGI.OpenAI.ToolChoiceAllowed?)value);
 
         /// <summary>
@@ -290,6 +295,11 @@ namespace tryAGI.OpenAI
         {
             AllowedTools = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolChoiceParam FromAllowedTools(global::tryAGI.OpenAI.ToolChoiceAllowed? value) => new ToolChoiceParam(value);
 
         /// <summary>
         /// 
@@ -312,6 +322,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ToolChoiceParam FromHostedTool(global::tryAGI.OpenAI.ToolChoiceTypes? value) => new ToolChoiceParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolChoiceParam(global::tryAGI.OpenAI.ToolChoiceFunction value) => new ToolChoiceParam((global::tryAGI.OpenAI.ToolChoiceFunction?)value);
 
         /// <summary>
@@ -326,6 +341,11 @@ namespace tryAGI.OpenAI
         {
             FunctionTool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolChoiceParam FromFunctionTool(global::tryAGI.OpenAI.ToolChoiceFunction? value) => new ToolChoiceParam(value);
 
         /// <summary>
         /// 
@@ -348,6 +368,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ToolChoiceParam FromMcpTool(global::tryAGI.OpenAI.ToolChoiceMCP? value) => new ToolChoiceParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolChoiceParam(global::tryAGI.OpenAI.ToolChoiceCustom value) => new ToolChoiceParam((global::tryAGI.OpenAI.ToolChoiceCustom?)value);
 
         /// <summary>
@@ -362,6 +387,11 @@ namespace tryAGI.OpenAI
         {
             CustomTool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolChoiceParam FromCustomTool(global::tryAGI.OpenAI.ToolChoiceCustom? value) => new ToolChoiceParam(value);
 
         /// <summary>
         /// 
@@ -384,6 +414,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ToolChoiceParam FromSpecificApplyPatchToolChoice(global::tryAGI.OpenAI.SpecificApplyPatchParam? value) => new ToolChoiceParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolChoiceParam(global::tryAGI.OpenAI.SpecificFunctionShellParam value) => new ToolChoiceParam((global::tryAGI.OpenAI.SpecificFunctionShellParam?)value);
 
         /// <summary>
@@ -398,6 +433,11 @@ namespace tryAGI.OpenAI
         {
             SpecificShellToolChoice = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolChoiceParam FromSpecificShellToolChoice(global::tryAGI.OpenAI.SpecificFunctionShellParam? value) => new ToolChoiceParam(value);
 
         /// <summary>
         /// 

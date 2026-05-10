@@ -89,6 +89,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ModelIdsResponses FromShared(global::tryAGI.OpenAI.ModelIdsShared? value) => new ModelIdsResponses(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ModelIdsResponses(global::tryAGI.OpenAI.ModelIdsResponsesEnum value) => new ModelIdsResponses((global::tryAGI.OpenAI.ModelIdsResponsesEnum?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace tryAGI.OpenAI
         {
             ResponsesOnlyModel = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ModelIdsResponses FromResponsesOnlyModel(global::tryAGI.OpenAI.ModelIdsResponsesEnum? value) => new ModelIdsResponses(value);
 
         /// <summary>
         /// 

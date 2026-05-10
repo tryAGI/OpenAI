@@ -94,6 +94,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ToolsItem13 FromFunction(global::tryAGI.OpenAI.FunctionToolParam? value) => new ToolsItem13(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolsItem13(global::tryAGI.OpenAI.CustomToolParam value) => new ToolsItem13((global::tryAGI.OpenAI.CustomToolParam?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace tryAGI.OpenAI
         {
             Custom = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolsItem13 FromCustom(global::tryAGI.OpenAI.CustomToolParam? value) => new ToolsItem13(value);
 
         /// <summary>
         /// 

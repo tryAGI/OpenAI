@@ -89,6 +89,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static Content5 FromInputContentTypes(global::tryAGI.OpenAI.InputContent? value) => new Content5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Content5(global::tryAGI.OpenAI.OutputContent value) => new Content5((global::tryAGI.OpenAI.OutputContent?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace tryAGI.OpenAI
         {
             OutputContentTypes = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Content5 FromOutputContentTypes(global::tryAGI.OpenAI.OutputContent? value) => new Content5(value);
 
         /// <summary>
         /// 

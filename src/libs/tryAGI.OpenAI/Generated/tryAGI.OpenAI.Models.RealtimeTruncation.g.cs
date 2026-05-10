@@ -92,6 +92,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeTruncation FromEnum(global::tryAGI.OpenAI.RealtimeTruncationEnum? value) => new RealtimeTruncation(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeTruncation(global::tryAGI.OpenAI.RealtimeTruncationEnum2 value) => new RealtimeTruncation((global::tryAGI.OpenAI.RealtimeTruncationEnum2?)value);
 
         /// <summary>
@@ -106,6 +111,11 @@ namespace tryAGI.OpenAI
         {
             RetentionRatioTruncation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeTruncation FromRetentionRatioTruncation(global::tryAGI.OpenAI.RealtimeTruncationEnum2? value) => new RealtimeTruncation(value);
 
         /// <summary>
         /// 

@@ -90,6 +90,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static EvalItemContent FromEvalContentItem(global::tryAGI.OpenAI.EvalItemContentItem? value) => new EvalItemContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public EvalItemContent(
             global::tryAGI.OpenAI.EvalItemContentItem? evalContentItem,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>? anArrayOfInputTextOutputTextInputImageAndInputAudio

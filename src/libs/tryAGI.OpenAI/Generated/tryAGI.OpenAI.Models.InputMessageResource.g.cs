@@ -91,6 +91,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static InputMessageResource FromInputMessage(global::tryAGI.OpenAI.InputMessage? value) => new InputMessageResource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputMessageResource(global::tryAGI.OpenAI.InputMessageResourceVariant2 value) => new InputMessageResource((global::tryAGI.OpenAI.InputMessageResourceVariant2?)value);
 
         /// <summary>
@@ -105,6 +110,11 @@ namespace tryAGI.OpenAI
         {
             InputMessageResourceVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputMessageResource FromInputMessageResourceVariant2(global::tryAGI.OpenAI.InputMessageResourceVariant2? value) => new InputMessageResource(value);
 
         /// <summary>
         /// 

@@ -179,6 +179,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static EvalItemContentItem FromTextInput(string? value) => new EvalItemContentItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EvalItemContentItem(global::tryAGI.OpenAI.InputTextContent value) => new EvalItemContentItem((global::tryAGI.OpenAI.InputTextContent?)value);
 
         /// <summary>
@@ -193,6 +198,11 @@ namespace tryAGI.OpenAI
         {
             InputText = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EvalItemContentItem FromInputText(global::tryAGI.OpenAI.InputTextContent? value) => new EvalItemContentItem(value);
 
         /// <summary>
         /// 
@@ -215,6 +225,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static EvalItemContentItem FromOutputText(global::tryAGI.OpenAI.EvalItemContentOutputText? value) => new EvalItemContentItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EvalItemContentItem(global::tryAGI.OpenAI.EvalItemInputImage value) => new EvalItemContentItem((global::tryAGI.OpenAI.EvalItemInputImage?)value);
 
         /// <summary>
@@ -233,6 +248,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static EvalItemContentItem FromInputImage(global::tryAGI.OpenAI.EvalItemInputImage? value) => new EvalItemContentItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EvalItemContentItem(global::tryAGI.OpenAI.InputAudio value) => new EvalItemContentItem((global::tryAGI.OpenAI.InputAudio?)value);
 
         /// <summary>
@@ -247,6 +267,11 @@ namespace tryAGI.OpenAI
         {
             InputAudio = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EvalItemContentItem FromInputAudio(global::tryAGI.OpenAI.InputAudio? value) => new EvalItemContentItem(value);
 
         /// <summary>
         /// 

@@ -89,6 +89,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ModelIdsShared FromModelIdsSharedVariant1(string? value) => new ModelIdsShared(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ModelIdsShared(global::tryAGI.OpenAI.ModelIdsSharedEnum value) => new ModelIdsShared((global::tryAGI.OpenAI.ModelIdsSharedEnum?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace tryAGI.OpenAI
         {
             Enum = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ModelIdsShared FromEnum(global::tryAGI.OpenAI.ModelIdsSharedEnum? value) => new ModelIdsShared(value);
 
         /// <summary>
         /// 

@@ -89,6 +89,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ModelIds FromShared(global::tryAGI.OpenAI.ModelIdsShared? value) => new ModelIds(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ModelIds(global::tryAGI.OpenAI.ModelIdsResponses value) => new ModelIds((global::tryAGI.OpenAI.ModelIdsResponses?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace tryAGI.OpenAI
         {
             Responses = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ModelIds FromResponses(global::tryAGI.OpenAI.ModelIdsResponses? value) => new ModelIds(value);
 
         /// <summary>
         /// 

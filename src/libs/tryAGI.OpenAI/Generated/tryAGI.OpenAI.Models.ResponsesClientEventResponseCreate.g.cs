@@ -93,6 +93,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ResponsesClientEventResponseCreate FromResponsesClientEventResponseCreateVariant1(global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1? value) => new ResponsesClientEventResponseCreate(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponsesClientEventResponseCreate(global::tryAGI.OpenAI.CreateResponse value) => new ResponsesClientEventResponseCreate((global::tryAGI.OpenAI.CreateResponse?)value);
 
         /// <summary>
@@ -107,6 +112,11 @@ namespace tryAGI.OpenAI
         {
             CreateResponse = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponsesClientEventResponseCreate FromCreateResponse(global::tryAGI.OpenAI.CreateResponse? value) => new ResponsesClientEventResponseCreate(value);
 
         /// <summary>
         /// 

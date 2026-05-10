@@ -94,6 +94,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static AnnotationsItem3 FromFile(global::tryAGI.OpenAI.FileAnnotation? value) => new AnnotationsItem3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnnotationsItem3(global::tryAGI.OpenAI.UrlAnnotation value) => new AnnotationsItem3((global::tryAGI.OpenAI.UrlAnnotation?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace tryAGI.OpenAI
         {
             Url = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnnotationsItem3 FromUrl(global::tryAGI.OpenAI.UrlAnnotation? value) => new AnnotationsItem3(value);
 
         /// <summary>
         /// 

@@ -125,6 +125,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static InputItem FromMessage(global::tryAGI.OpenAI.EasyInputMessage? value) => new InputItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputItem(global::tryAGI.OpenAI.Item value) => new InputItem((global::tryAGI.OpenAI.Item?)value);
 
         /// <summary>
@@ -143,6 +148,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static InputItem FromItem(global::tryAGI.OpenAI.Item? value) => new InputItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputItem(global::tryAGI.OpenAI.ItemReferenceParam value) => new InputItem((global::tryAGI.OpenAI.ItemReferenceParam?)value);
 
         /// <summary>
@@ -157,6 +167,11 @@ namespace tryAGI.OpenAI
         {
             ItemReference = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputItem FromItemReference(global::tryAGI.OpenAI.ItemReferenceParam? value) => new InputItem(value);
 
         /// <summary>
         /// 
