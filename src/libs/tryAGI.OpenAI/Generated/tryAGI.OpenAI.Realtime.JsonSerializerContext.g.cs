@@ -73,6 +73,10 @@ namespace tryAGI.OpenAI.Realtime
 
             typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.RealtimeAudioFormatsPcmaAudioFormatTypeNullableJsonConverter),
 
+            typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.RealtimeClientEventDiscriminatorTypeJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.RealtimeClientEventDiscriminatorTypeNullableJsonConverter),
+
             typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.RealtimeClientEventConversationItemCreateTypeJsonConverter),
 
             typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.RealtimeClientEventConversationItemCreateTypeNullableJsonConverter),
@@ -120,6 +124,10 @@ namespace tryAGI.OpenAI.Realtime
             typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.RealtimeClientEventTranscriptionSessionUpdateTypeJsonConverter),
 
             typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.RealtimeClientEventTranscriptionSessionUpdateTypeNullableJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.RealtimeConversationItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.RealtimeConversationItemDiscriminatorTypeNullableJsonConverter),
 
             typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.RealtimeConversationItemFunctionCallObjectJsonConverter),
 
@@ -280,6 +288,10 @@ namespace tryAGI.OpenAI.Realtime
             typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.RealtimeResponseCreateParamsConversationJsonConverter),
 
             typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.RealtimeResponseCreateParamsConversationNullableJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.RealtimeServerEventDiscriminatorTypeJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.RealtimeServerEventDiscriminatorTypeNullableJsonConverter),
 
             typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.RealtimeServerEventConversationCreatedTypeJsonConverter),
 
@@ -577,6 +589,10 @@ namespace tryAGI.OpenAI.Realtime
 
             typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVadEagernessNullableJsonConverter),
 
+            typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.RealtimeTurnDetectionRealtimeTurnDetection1DiscriminatorTypeJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.RealtimeTurnDetectionRealtimeTurnDetection1DiscriminatorTypeNullableJsonConverter),
+
             typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.ToolChoiceFunctionTypeJsonConverter),
 
             typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.ToolChoiceFunctionTypeNullableJsonConverter),
@@ -723,6 +739,7 @@ namespace tryAGI.OpenAI.Realtime
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeClientEventResponseCreate))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeClientEventSessionUpdate))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeClientEventDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeClientEventDiscriminatorType), TypeInfoPropertyName = "RealtimeClientEventDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeClientEventConversationItemCreateType), TypeInfoPropertyName = "RealtimeClientEventConversationItemCreateType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeConversationItem), TypeInfoPropertyName = "RealtimeConversationItem2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeClientEventConversationItemDeleteType), TypeInfoPropertyName = "RealtimeClientEventConversationItemDeleteType2")]
@@ -752,6 +769,7 @@ namespace tryAGI.OpenAI.Realtime
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeMCPToolCall))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeMCPApprovalRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeConversationItemDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeConversationItemDiscriminatorType), TypeInfoPropertyName = "RealtimeConversationItemDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeConversationItemFunctionCallObject), TypeInfoPropertyName = "RealtimeConversationItemFunctionCallObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeConversationItemFunctionCallType), TypeInfoPropertyName = "RealtimeConversationItemFunctionCallType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeConversationItemFunctionCallStatus), TypeInfoPropertyName = "RealtimeConversationItemFunctionCallStatus2")]
@@ -878,6 +896,7 @@ namespace tryAGI.OpenAI.Realtime
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallCompleted))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallFailed))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeServerEventDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeServerEventDiscriminatorType), TypeInfoPropertyName = "RealtimeServerEventDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationCreatedType), TypeInfoPropertyName = "RealtimeServerEventConversationCreatedType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationCreatedConversation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemAddedType), TypeInfoPropertyName = "RealtimeServerEventConversationItemAddedType2")]
@@ -1011,6 +1030,7 @@ namespace tryAGI.OpenAI.Realtime
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVadEagerness), TypeInfoPropertyName = "RealtimeTurnDetectionRealtimeTurnDetection1SemanticVadEagerness2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1Discriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1DiscriminatorType), TypeInfoPropertyName = "RealtimeTurnDetectionRealtimeTurnDetection1DiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.OneOf<string, global::tryAGI.OpenAI.Realtime.InputTextContent, global::tryAGI.OpenAI.Realtime.InputImageContent, global::tryAGI.OpenAI.Realtime.InputFileContent>), TypeInfoPropertyName = "OneOfStringInputTextContentInputImageContentInputFileContent2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.ToolChoiceFunctionType), TypeInfoPropertyName = "ToolChoiceFunctionType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.ToolChoiceMCPType), TypeInfoPropertyName = "ToolChoiceMCPType2")]

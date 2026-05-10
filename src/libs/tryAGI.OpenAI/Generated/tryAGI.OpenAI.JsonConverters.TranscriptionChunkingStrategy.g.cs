@@ -78,6 +78,7 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum).Name}");
                     @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -88,9 +89,13 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (@enum == null && vadConfig == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.VadConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.VadConfig> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.VadConfig).Name}");
                     vadConfig = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

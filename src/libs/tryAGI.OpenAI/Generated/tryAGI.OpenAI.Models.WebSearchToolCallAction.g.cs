@@ -11,6 +11,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct WebSearchToolCallAction : global::System.IEquatable<WebSearchToolCallAction>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.WebSearchToolCallActionDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Action type "search" - Performs a web search query.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -157,11 +162,14 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public WebSearchToolCallAction(
+            global::tryAGI.OpenAI.WebSearchToolCallActionDiscriminatorType? type,
             global::tryAGI.OpenAI.WebSearchActionSearch? search,
             global::tryAGI.OpenAI.WebSearchActionOpenPage? openPage,
             global::tryAGI.OpenAI.WebSearchActionFind? findInPage
             )
         {
+            Type = type;
+
             Search = search;
             OpenPage = openPage;
             FindInPage = findInPage;

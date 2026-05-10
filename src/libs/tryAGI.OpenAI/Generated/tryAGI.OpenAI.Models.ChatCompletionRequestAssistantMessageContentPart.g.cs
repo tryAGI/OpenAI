@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct ChatCompletionRequestAssistantMessageContentPart : global::System.IEquatable<ChatCompletionRequestAssistantMessageContentPart>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessageContentPartDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Learn about [text inputs](/docs/guides/text-generation).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -108,10 +113,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public ChatCompletionRequestAssistantMessageContentPart(
+            global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessageContentPartDiscriminatorType? type,
             global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText? text,
             global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartRefusal? refusal
             )
         {
+            Type = type;
+
             Text = text;
             Refusal = refusal;
         }

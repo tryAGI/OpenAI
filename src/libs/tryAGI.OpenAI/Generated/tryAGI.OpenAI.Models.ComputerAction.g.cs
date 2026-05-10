@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct ComputerAction : global::System.IEquatable<ComputerAction>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ComputerActionDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// A click action.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -444,6 +449,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public ComputerAction(
+            global::tryAGI.OpenAI.ComputerActionDiscriminatorType? type,
             global::tryAGI.OpenAI.ClickParam? click,
             global::tryAGI.OpenAI.DoubleClickAction? doubleClick,
             global::tryAGI.OpenAI.DragParam? drag,
@@ -455,6 +461,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.WaitParam? wait
             )
         {
+            Type = type;
+
             Click = click;
             DoubleClick = doubleClick;
             Drag = drag;

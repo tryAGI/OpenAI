@@ -79,6 +79,7 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ComparisonFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ComparisonFilter> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ComparisonFilter).Name}");
                     comparisonFilter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -89,9 +90,13 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (comparisonFilter == null && compoundFilter == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.CompoundFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.CompoundFilter> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.CompoundFilter).Name}");
                     compoundFilter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

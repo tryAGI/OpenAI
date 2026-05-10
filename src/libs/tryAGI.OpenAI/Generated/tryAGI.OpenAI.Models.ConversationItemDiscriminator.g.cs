@@ -12,7 +12,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ConversationItemDiscriminatorTypeJsonConverter))]
+        public global::tryAGI.OpenAI.ConversationItemDiscriminatorType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +29,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ConversationItemDiscriminator(
-            string? type)
+            global::tryAGI.OpenAI.ConversationItemDiscriminatorType? type)
         {
             this.Type = type;
         }

@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct OutputVariant2Item : global::System.IEquatable<OutputVariant2Item>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.FunctionCallOutputItemParamOutputVariant2ItemDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// A text input to the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -156,11 +161,14 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public OutputVariant2Item(
+            global::tryAGI.OpenAI.FunctionCallOutputItemParamOutputVariant2ItemDiscriminatorType? type,
             global::tryAGI.OpenAI.InputTextContentParam? inputText,
             global::tryAGI.OpenAI.InputImageContentParamAutoParam? inputImage,
             global::tryAGI.OpenAI.InputFileContentParam? inputFile
             )
         {
+            Type = type;
+
             InputText = inputText;
             InputImage = inputImage;
             InputFile = inputFile;

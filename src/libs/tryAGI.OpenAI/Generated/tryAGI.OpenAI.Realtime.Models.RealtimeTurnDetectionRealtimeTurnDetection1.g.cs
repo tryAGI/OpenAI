@@ -14,6 +14,11 @@ namespace tryAGI.OpenAI.Realtime
     public readonly partial struct RealtimeTurnDetectionRealtimeTurnDetection1 : global::System.IEquatable<RealtimeTurnDetectionRealtimeTurnDetection1>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1DiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Server-side voice activity detection (VAD) which flips on when user speech is detected and off after a period of silence.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -112,10 +117,13 @@ namespace tryAGI.OpenAI.Realtime
         /// 
         /// </summary>
         public RealtimeTurnDetectionRealtimeTurnDetection1(
+            global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1DiscriminatorType? type,
             global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad? serverVad,
             global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad? semanticVad
             )
         {
+            Type = type;
+
             ServerVad = serverVad;
             SemanticVad = semanticVad;
         }

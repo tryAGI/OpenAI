@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct CreateTranscriptionResponseDiarizedJsonUsage : global::System.IEquatable<CreateTranscriptionResponseDiarizedJsonUsage>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJsonUsageDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Usage statistics for models billed by token usage.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -108,10 +113,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public CreateTranscriptionResponseDiarizedJsonUsage(
+            global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJsonUsageDiscriminatorType? type,
             global::tryAGI.OpenAI.TranscriptTextUsageTokens? tokens,
             global::tryAGI.OpenAI.TranscriptTextUsageDuration? duration
             )
         {
+            Type = type;
+
             Tokens = tokens;
             Duration = duration;
         }

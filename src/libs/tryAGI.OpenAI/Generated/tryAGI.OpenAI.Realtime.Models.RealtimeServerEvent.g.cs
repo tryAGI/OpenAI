@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI.Realtime
     public readonly partial struct RealtimeServerEvent : global::System.IEquatable<RealtimeServerEvent>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Returned when a conversation is created. Emitted right after session creation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -2309,6 +2314,7 @@ namespace tryAGI.OpenAI.Realtime
         /// 
         /// </summary>
         public RealtimeServerEvent(
+            global::tryAGI.OpenAI.Realtime.RealtimeServerEventDiscriminatorType? type,
             global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationCreated? conversationCreated,
             global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemCreated? conversationItemCreated,
             global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDeleted? conversationItemDeleted,
@@ -2357,6 +2363,8 @@ namespace tryAGI.OpenAI.Realtime
             global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallFailed? responseMcpCallFailed
             )
         {
+            Type = type;
+
             ConversationCreated = conversationCreated;
             ConversationItemCreated = conversationItemCreated;
             ConversationItemDeleted = conversationItemDeleted;

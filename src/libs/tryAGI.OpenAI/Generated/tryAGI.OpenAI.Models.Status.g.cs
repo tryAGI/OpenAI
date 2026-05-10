@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct Status : global::System.IEquatable<Status>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ThreadResourceStatusDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Indicates that a thread is active.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -156,11 +161,14 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public Status(
+            global::tryAGI.OpenAI.ThreadResourceStatusDiscriminatorType? type,
             global::tryAGI.OpenAI.ActiveStatus? active,
             global::tryAGI.OpenAI.LockedStatus? locked,
             global::tryAGI.OpenAI.ClosedStatus? closed
             )
         {
+            Type = type;
+
             Active = active;
             Locked = locked;
             Closed = closed;

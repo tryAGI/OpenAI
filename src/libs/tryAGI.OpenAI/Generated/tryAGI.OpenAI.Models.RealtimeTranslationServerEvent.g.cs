@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct RealtimeTranslationServerEvent : global::System.IEquatable<RealtimeTranslationServerEvent>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeTranslationServerEventDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Returned when an error occurs, which could be a client problem or a server<br/>
         /// problem. Most errors are recoverable and the session will stay open, we<br/>
         /// recommend to implementors to monitor and log error messages by default.
@@ -359,6 +364,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public RealtimeTranslationServerEvent(
+            global::tryAGI.OpenAI.RealtimeTranslationServerEventDiscriminatorType? type,
             global::tryAGI.OpenAI.RealtimeServerEventError? error,
             global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreated? sessionCreated,
             global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionUpdated? sessionUpdated,
@@ -368,6 +374,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDelta? sessionOutputAudioDelta
             )
         {
+            Type = type;
+
             Error = error;
             SessionCreated = sessionCreated;
             SessionUpdated = sessionUpdated;

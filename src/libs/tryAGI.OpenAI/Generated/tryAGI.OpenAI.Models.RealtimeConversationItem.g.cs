@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct RealtimeConversationItem : global::System.IEquatable<RealtimeConversationItem>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeConversationItemDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// A system message in a Realtime conversation can be used to provide additional context or instructions to the model. This is similar but distinct from the instruction prompt provided at the start of a conversation, as system messages can be added at any point in the conversation. For major changes to the conversation's behavior, use instructions, but for smaller updates (e.g. "the user is now asking about a different topic"), use system messages.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -444,6 +449,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public RealtimeConversationItem(
+            global::tryAGI.OpenAI.RealtimeConversationItemDiscriminatorType? type,
             global::tryAGI.OpenAI.RealtimeConversationItemMessageSystem? message1,
             global::tryAGI.OpenAI.RealtimeConversationItemMessageUser? message2,
             global::tryAGI.OpenAI.RealtimeConversationItemMessageAssistant? message3,
@@ -455,6 +461,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RealtimeMCPApprovalRequest? mcpApprovalRequest
             )
         {
+            Type = type;
+
             Message1 = message1;
             Message2 = message2;
             Message3 = message3;

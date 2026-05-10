@@ -12,7 +12,8 @@ namespace tryAGI.OpenAI.Realtime
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.RealtimeServerEventDiscriminatorTypeJsonConverter))]
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventDiscriminatorType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +29,7 @@ namespace tryAGI.OpenAI.Realtime
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeServerEventDiscriminator(
-            string? type)
+            global::tryAGI.OpenAI.Realtime.RealtimeServerEventDiscriminatorType? type)
         {
             this.Type = type;
         }

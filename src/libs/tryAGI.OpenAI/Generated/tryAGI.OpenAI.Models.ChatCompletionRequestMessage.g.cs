@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct ChatCompletionRequestMessage : global::System.IEquatable<ChatCompletionRequestMessage>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageDiscriminatorRole? Role { get; }
+
+        /// <summary>
         /// Developer-provided instructions that the model should follow, regardless of<br/>
         /// messages sent by the user. With o1 models and newer, `developer` messages<br/>
         /// replace the previous `system` messages.
@@ -305,6 +310,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public ChatCompletionRequestMessage(
+            global::tryAGI.OpenAI.ChatCompletionRequestMessageDiscriminatorRole? role,
             global::tryAGI.OpenAI.ChatCompletionRequestDeveloperMessage? developer,
             global::tryAGI.OpenAI.ChatCompletionRequestSystemMessage? system,
             global::tryAGI.OpenAI.ChatCompletionRequestUserMessage? user,
@@ -313,6 +319,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessage? function
             )
         {
+            Role = role;
+
             Developer = developer;
             System = system;
             User = user;

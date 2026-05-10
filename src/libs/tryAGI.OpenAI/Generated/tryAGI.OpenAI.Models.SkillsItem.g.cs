@@ -12,6 +12,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public global::tryAGI.OpenAI.CreateContainerBodySkillDiscriminatorType? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.SkillReferenceParam? SkillReference { get; init; }
 #else
@@ -108,10 +113,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public SkillsItem(
+            global::tryAGI.OpenAI.CreateContainerBodySkillDiscriminatorType? type,
             global::tryAGI.OpenAI.SkillReferenceParam? skillReference,
             global::tryAGI.OpenAI.InlineSkillParam? inline
             )
         {
+            Type = type;
+
             SkillReference = skillReference;
             Inline = inline;
         }

@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct OutputMessageContent : global::System.IEquatable<OutputMessageContent>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.OutputMessageContentDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// A text output from the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -108,10 +113,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public OutputMessageContent(
+            global::tryAGI.OpenAI.OutputMessageContentDiscriminatorType? type,
             global::tryAGI.OpenAI.OutputTextContent? outputText,
             global::tryAGI.OpenAI.RefusalContent? refusal
             )
         {
+            Type = type;
+
             OutputText = outputText;
             Refusal = refusal;
         }

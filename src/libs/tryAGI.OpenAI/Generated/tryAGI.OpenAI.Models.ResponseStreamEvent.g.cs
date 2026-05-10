@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct ResponseStreamEvent : global::System.IEquatable<ResponseStreamEvent>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ResponseStreamEventDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Emitted when there is a partial audio response.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -2556,6 +2561,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public ResponseStreamEvent(
+            global::tryAGI.OpenAI.ResponseStreamEventDiscriminatorType? type,
             global::tryAGI.OpenAI.ResponseAudioDeltaEvent? responseAudioDelta,
             global::tryAGI.OpenAI.ResponseAudioDoneEvent? responseAudioDone,
             global::tryAGI.OpenAI.ResponseAudioTranscriptDeltaEvent? responseAudioTranscriptDelta,
@@ -2611,6 +2617,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent? responseCustomToolCallInputDone
             )
         {
+            Type = type;
+
             ResponseAudioDelta = responseAudioDelta;
             ResponseAudioDone = responseAudioDone;
             ResponseAudioTranscriptDelta = responseAudioTranscriptDelta;

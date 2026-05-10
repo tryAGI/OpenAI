@@ -138,7 +138,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (responses == null && modelIdsCompactionVariant2 == null && modelIdsCompactionVariant3 == null)
+            {
                 try
                 {
 
@@ -152,7 +155,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (responses == null && modelIdsCompactionVariant2 == null && modelIdsCompactionVariant3 == null)
+            {
                 try
                 {
 

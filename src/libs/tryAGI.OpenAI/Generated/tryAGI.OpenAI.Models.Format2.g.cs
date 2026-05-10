@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct Format2 : global::System.IEquatable<Format2>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.CustomToolParamFormatDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Unconstrained free-form text.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -108,10 +113,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public Format2(
+            global::tryAGI.OpenAI.CustomToolParamFormatDiscriminatorType? type,
             global::tryAGI.OpenAI.CustomTextFormatParam? text,
             global::tryAGI.OpenAI.CustomGrammarFormatParam? grammar
             )
         {
+            Type = type;
+
             Text = text;
             Grammar = grammar;
         }

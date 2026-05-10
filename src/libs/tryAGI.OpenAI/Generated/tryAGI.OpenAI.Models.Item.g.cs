@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct Item : global::System.IEquatable<Item>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ItemDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// A message input to the model with a role indicating instruction following<br/>
         /// hierarchy. Instructions given with the `developer` or `system` role take<br/>
         /// precedence over instructions given with the `user` role.
@@ -1269,6 +1274,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public Item(
+            global::tryAGI.OpenAI.ItemDiscriminatorType? type,
             global::tryAGI.OpenAI.InputMessage? message1,
             global::tryAGI.OpenAI.OutputMessage? message2,
             global::tryAGI.OpenAI.FileSearchToolCall? fileSearchCall,
@@ -1297,6 +1303,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.CustomToolCall? customToolCall
             )
         {
+            Type = type;
+
             Message1 = message1;
             Message2 = message2;
             FileSearchCall = fileSearchCall;

@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct ChatCompletionMessageToolCallsItem : global::System.IEquatable<ChatCompletionMessageToolCallsItem>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ChatCompletionMessageToolCallDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// A call to a function tool created by the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -108,10 +113,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public ChatCompletionMessageToolCallsItem(
+            global::tryAGI.OpenAI.ChatCompletionMessageToolCallDiscriminatorType? type,
             global::tryAGI.OpenAI.ChatCompletionMessageToolCall? function,
             global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall? custom
             )
         {
+            Type = type;
+
             Function = function;
             Custom = custom;
         }

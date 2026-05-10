@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct ResultsItem : global::System.IEquatable<ResultsItem>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UsageTimeBucketResultDiscriminatorObject? Object { get; }
+
+        /// <summary>
         /// The aggregated completions usage details of the specific time bucket.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -444,6 +449,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public ResultsItem(
+            global::tryAGI.OpenAI.UsageTimeBucketResultDiscriminatorObject? @object,
             global::tryAGI.OpenAI.UsageCompletionsResult? organizationUsageCompletionsResult,
             global::tryAGI.OpenAI.UsageEmbeddingsResult? organizationUsageEmbeddingsResult,
             global::tryAGI.OpenAI.UsageModerationsResult? organizationUsageModerationsResult,
@@ -455,6 +461,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.CostsResult? organizationCostsResult
             )
         {
+            Object = @object;
+
             OrganizationUsageCompletionsResult = organizationUsageCompletionsResult;
             OrganizationUsageEmbeddingsResult = organizationUsageEmbeddingsResult;
             OrganizationUsageModerationsResult = organizationUsageModerationsResult;
@@ -469,7 +477,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public object? Object =>
+        public object? Object1 =>
             OrganizationCostsResult as object ??
             OrganizationUsageCodeInterpreterSessionsResult as object ??
             OrganizationUsageVectorStoresResult as object ??

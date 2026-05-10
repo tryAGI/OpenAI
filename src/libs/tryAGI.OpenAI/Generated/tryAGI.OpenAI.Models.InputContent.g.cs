@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct InputContent : global::System.IEquatable<InputContent>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.InputContentDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// A text input to the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -156,11 +161,14 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public InputContent(
+            global::tryAGI.OpenAI.InputContentDiscriminatorType? type,
             global::tryAGI.OpenAI.InputTextContent? inputText,
             global::tryAGI.OpenAI.InputImageContent? inputImage,
             global::tryAGI.OpenAI.InputFileContent? inputFile
             )
         {
+            Type = type;
+
             InputText = inputText;
             InputImage = inputImage;
             InputFile = inputFile;

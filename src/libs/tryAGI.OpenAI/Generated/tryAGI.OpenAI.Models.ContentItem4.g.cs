@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct ContentItem4 : global::System.IEquatable<ContentItem4>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UserMessageItemContentItemDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Text block that a user contributed to the thread.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -108,10 +113,13 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public ContentItem4(
+            global::tryAGI.OpenAI.UserMessageItemContentItemDiscriminatorType? type,
             global::tryAGI.OpenAI.UserMessageInputText? inputText,
             global::tryAGI.OpenAI.UserMessageQuotedText? quotedText
             )
         {
+            Type = type;
+
             InputText = inputText;
             QuotedText = quotedText;
         }
