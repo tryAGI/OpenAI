@@ -57,5 +57,18 @@ namespace tryAGI.OpenAI
         public InputTextContentParam()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="InputTextContentParam"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static InputTextContentParam FromText(string text)
+        {
+            return new InputTextContentParam
+            {
+                Text = text,
+            };
+        }
+
     }
 }

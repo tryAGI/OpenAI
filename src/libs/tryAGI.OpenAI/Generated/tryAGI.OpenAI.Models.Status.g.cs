@@ -45,6 +45,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ActiveStatus PickActive() => IsActive
+            ? Active!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Active' but the value was {ToString()}.");
+
+        /// <summary>
         /// Indicates that a thread is locked and cannot accept new input.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -75,6 +82,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.LockedStatus PickLocked() => IsLocked
+            ? Locked!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Locked' but the value was {ToString()}.");
+
+        /// <summary>
         /// Indicates that a thread has been closed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -103,6 +117,13 @@ namespace tryAGI.OpenAI
             value = Closed;
             return IsClosed;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ClosedStatus PickClosed() => IsClosed
+            ? Closed!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Closed' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

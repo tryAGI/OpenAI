@@ -154,5 +154,6 @@ namespace tryAGI.OpenAI
         public ClientToolCallItem()
         {
         }
+
     }
 }

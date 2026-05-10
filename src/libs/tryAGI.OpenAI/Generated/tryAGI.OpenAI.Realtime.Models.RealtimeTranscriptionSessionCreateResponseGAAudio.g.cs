@@ -39,5 +39,6 @@ namespace tryAGI.OpenAI.Realtime
         public RealtimeTranscriptionSessionCreateResponseGAAudio()
         {
         }
+
     }
 }

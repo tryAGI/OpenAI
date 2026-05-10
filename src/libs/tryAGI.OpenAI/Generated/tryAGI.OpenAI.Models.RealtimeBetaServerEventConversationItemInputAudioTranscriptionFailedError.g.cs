@@ -74,5 +74,6 @@ namespace tryAGI.OpenAI
         public RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError()
         {
         }
+
     }
 }

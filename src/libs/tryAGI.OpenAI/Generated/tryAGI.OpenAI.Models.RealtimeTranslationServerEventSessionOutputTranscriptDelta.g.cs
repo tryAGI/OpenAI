@@ -85,5 +85,6 @@ namespace tryAGI.OpenAI
         public RealtimeTranslationServerEventSessionOutputTranscriptDelta()
         {
         }
+
     }
 }

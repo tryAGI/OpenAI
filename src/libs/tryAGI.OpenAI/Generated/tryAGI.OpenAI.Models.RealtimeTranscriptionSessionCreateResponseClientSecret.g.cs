@@ -61,5 +61,6 @@ namespace tryAGI.OpenAI
         public RealtimeTranscriptionSessionCreateResponseClientSecret()
         {
         }
+
     }
 }

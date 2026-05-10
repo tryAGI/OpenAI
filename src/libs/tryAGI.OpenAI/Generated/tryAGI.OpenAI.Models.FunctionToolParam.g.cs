@@ -91,5 +91,18 @@ namespace tryAGI.OpenAI
         public FunctionToolParam()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="FunctionToolParam"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static FunctionToolParam FromName(string name)
+        {
+            return new FunctionToolParam
+            {
+                Name = name,
+            };
+        }
+
     }
 }

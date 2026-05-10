@@ -57,5 +57,18 @@ namespace tryAGI.OpenAI
         public SummaryTextContent()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="SummaryTextContent"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static SummaryTextContent FromText(string text)
+        {
+            return new SummaryTextContent
+            {
+                Text = text,
+            };
+        }
+
     }
 }

@@ -105,5 +105,6 @@ namespace tryAGI.OpenAI
         public Certificate()
         {
         }
+
     }
 }

@@ -114,5 +114,6 @@ namespace tryAGI.OpenAI
         public RealtimeServerEventResponseTextDelta()
         {
         }
+
     }
 }

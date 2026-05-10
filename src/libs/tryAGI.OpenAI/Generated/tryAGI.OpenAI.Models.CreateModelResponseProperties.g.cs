@@ -42,6 +42,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public global::tryAGI.OpenAI.ModelResponseProperties PickModelResponseProperties() => IsModelResponseProperties
+            ? ModelResponseProperties!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelResponseProperties' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.CreateModelResponsePropertiesVariant2? CreateModelResponsePropertiesVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace tryAGI.OpenAI
             value = CreateModelResponsePropertiesVariant2;
             return IsCreateModelResponsePropertiesVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.CreateModelResponsePropertiesVariant2 PickCreateModelResponsePropertiesVariant2() => IsCreateModelResponsePropertiesVariant2
+            ? CreateModelResponsePropertiesVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CreateModelResponsePropertiesVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

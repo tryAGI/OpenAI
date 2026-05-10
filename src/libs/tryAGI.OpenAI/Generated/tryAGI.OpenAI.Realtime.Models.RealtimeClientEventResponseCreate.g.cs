@@ -83,5 +83,6 @@ namespace tryAGI.OpenAI.Realtime
         public RealtimeClientEventResponseCreate()
         {
         }
+
     }
 }

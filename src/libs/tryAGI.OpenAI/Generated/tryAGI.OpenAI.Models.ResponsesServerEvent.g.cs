@@ -38,6 +38,13 @@ namespace tryAGI.OpenAI
             value = ResponseStream;
             return IsResponseStream;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ResponseStreamEvent PickResponseStream() => IsResponseStream
+            ? ResponseStream!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseStream' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

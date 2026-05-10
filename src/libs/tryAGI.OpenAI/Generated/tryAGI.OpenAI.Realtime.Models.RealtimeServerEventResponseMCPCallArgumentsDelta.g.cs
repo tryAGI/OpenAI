@@ -111,5 +111,6 @@ namespace tryAGI.OpenAI.Realtime
         public RealtimeServerEventResponseMCPCallArgumentsDelta()
         {
         }
+
     }
 }

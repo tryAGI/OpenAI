@@ -155,5 +155,6 @@ namespace tryAGI.OpenAI
         public ChatSessionResource()
         {
         }
+
     }
 }

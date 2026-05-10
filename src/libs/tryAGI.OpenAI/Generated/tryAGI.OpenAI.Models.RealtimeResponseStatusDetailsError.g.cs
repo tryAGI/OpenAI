@@ -53,5 +53,6 @@ namespace tryAGI.OpenAI
         public RealtimeResponseStatusDetailsError()
         {
         }
+
     }
 }

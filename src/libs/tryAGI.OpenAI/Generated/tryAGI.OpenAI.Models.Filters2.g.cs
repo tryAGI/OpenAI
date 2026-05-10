@@ -40,6 +40,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ComparisonFilter PickComparisonFilter() => IsComparisonFilter
+            ? ComparisonFilter!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ComparisonFilter' but the value was {ToString()}.");
+
+        /// <summary>
         /// Combine multiple filters using `and` or `or`.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace tryAGI.OpenAI
             value = CompoundFilter;
             return IsCompoundFilter;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.CompoundFilter PickCompoundFilter() => IsCompoundFilter
+            ? CompoundFilter!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CompoundFilter' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

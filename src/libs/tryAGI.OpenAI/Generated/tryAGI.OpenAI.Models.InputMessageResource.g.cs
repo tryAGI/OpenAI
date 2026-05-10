@@ -44,6 +44,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public global::tryAGI.OpenAI.InputMessage PickInputMessage() => IsInputMessage
+            ? InputMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputMessage' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.InputMessageResourceVariant2? InputMessageResourceVariant2 { get; init; }
 #else
@@ -70,6 +77,13 @@ namespace tryAGI.OpenAI
             value = InputMessageResourceVariant2;
             return IsInputMessageResourceVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.InputMessageResourceVariant2 PickInputMessageResourceVariant2() => IsInputMessageResourceVariant2
+            ? InputMessageResourceVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputMessageResourceVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -42,6 +42,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public global::tryAGI.OpenAI.GraderScoreModel PickScoreModelGrader() => IsScoreModelGrader
+            ? ScoreModelGrader!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ScoreModelGrader' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.EvalGraderScoreModelVariant2? EvalGraderScoreModelVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace tryAGI.OpenAI
             value = EvalGraderScoreModelVariant2;
             return IsEvalGraderScoreModelVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.EvalGraderScoreModelVariant2 PickEvalGraderScoreModelVariant2() => IsEvalGraderScoreModelVariant2
+            ? EvalGraderScoreModelVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EvalGraderScoreModelVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

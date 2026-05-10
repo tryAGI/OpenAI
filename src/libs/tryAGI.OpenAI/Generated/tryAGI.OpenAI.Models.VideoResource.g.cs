@@ -177,5 +177,6 @@ namespace tryAGI.OpenAI
         public VideoResource()
         {
         }
+
     }
 }

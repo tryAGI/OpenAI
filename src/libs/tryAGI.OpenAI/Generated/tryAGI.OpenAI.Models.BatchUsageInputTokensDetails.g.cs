@@ -44,5 +44,6 @@ namespace tryAGI.OpenAI
         public BatchUsageInputTokensDetails()
         {
         }
+
     }
 }

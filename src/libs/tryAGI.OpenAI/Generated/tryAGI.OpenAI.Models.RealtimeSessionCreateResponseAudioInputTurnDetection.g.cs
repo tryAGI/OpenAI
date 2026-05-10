@@ -68,5 +68,6 @@ namespace tryAGI.OpenAI
         public RealtimeSessionCreateResponseAudioInputTurnDetection()
         {
         }
+
     }
 }

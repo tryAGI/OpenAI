@@ -40,6 +40,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.AdminApiKey PickAdminApiKey() => IsAdminApiKey
+            ? AdminApiKey!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AdminApiKey' but the value was {ToString()}.");
+
+        /// <summary>
         /// The newly created admin API key. The `value` field is only returned once, when the key is created.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace tryAGI.OpenAI
             value = AdminApiKeyCreateResponseVariant2;
             return IsAdminApiKeyCreateResponseVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.AdminApiKeyCreateResponseVariant2 PickAdminApiKeyCreateResponseVariant2() => IsAdminApiKeyCreateResponseVariant2
+            ? AdminApiKeyCreateResponseVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AdminApiKeyCreateResponseVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

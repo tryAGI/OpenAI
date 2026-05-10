@@ -93,5 +93,6 @@ namespace tryAGI.OpenAI
         public VoiceConsentResource()
         {
         }
+
     }
 }

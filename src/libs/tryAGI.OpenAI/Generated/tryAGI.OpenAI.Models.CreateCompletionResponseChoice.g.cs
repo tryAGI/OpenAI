@@ -76,5 +76,6 @@ namespace tryAGI.OpenAI
         public CreateCompletionResponseChoice()
         {
         }
+
     }
 }

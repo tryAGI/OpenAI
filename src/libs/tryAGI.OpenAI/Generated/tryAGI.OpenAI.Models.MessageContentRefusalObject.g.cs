@@ -52,5 +52,6 @@ namespace tryAGI.OpenAI
         public MessageContentRefusalObject()
         {
         }
+
     }
 }

@@ -224,5 +224,6 @@ namespace tryAGI.OpenAI.Realtime
         public RealtimeSessionCreateRequestGA()
         {
         }
+
     }
 }

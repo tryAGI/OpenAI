@@ -107,5 +107,6 @@ namespace tryAGI.OpenAI
         public AuditLogRoleUpdatedChangesRequested()
         {
         }
+
     }
 }

@@ -42,6 +42,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public global::tryAGI.OpenAI.GraderPython PickPythonGrader() => IsPythonGrader
+            ? PythonGrader!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PythonGrader' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.EvalGraderPythonVariant2? EvalGraderPythonVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace tryAGI.OpenAI
             value = EvalGraderPythonVariant2;
             return IsEvalGraderPythonVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.EvalGraderPythonVariant2 PickEvalGraderPythonVariant2() => IsEvalGraderPythonVariant2
+            ? EvalGraderPythonVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EvalGraderPythonVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

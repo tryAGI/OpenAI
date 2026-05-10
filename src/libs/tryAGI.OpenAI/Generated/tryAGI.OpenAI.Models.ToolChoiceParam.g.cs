@@ -46,6 +46,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ToolChoiceOptions PickToolChoiceMode() => IsToolChoiceMode
+            ? ToolChoiceMode!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolChoiceMode' but the value was {ToString()}.");
+
+        /// <summary>
         /// Constrains the tools available to the model to a pre-defined set.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace tryAGI.OpenAI
             value = AllowedTools;
             return IsAllowedTools;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ToolChoiceAllowed PickAllowedTools() => IsAllowedTools
+            ? AllowedTools!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AllowedTools' but the value was {ToString()}.");
 
         /// <summary>
         /// Indicates that the model should use a built-in tool to generate a response.<br/>
@@ -107,6 +121,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ToolChoiceTypes PickHostedTool() => IsHostedTool
+            ? HostedTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'HostedTool' but the value was {ToString()}.");
+
+        /// <summary>
         /// Use this option to force the model to call a specific function.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -135,6 +156,13 @@ namespace tryAGI.OpenAI
             value = FunctionTool;
             return IsFunctionTool;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ToolChoiceFunction PickFunctionTool() => IsFunctionTool
+            ? FunctionTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionTool' but the value was {ToString()}.");
 
         /// <summary>
         /// Use this option to force the model to call a specific tool on a remote MCP server.
@@ -167,6 +195,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ToolChoiceMCP PickMcpTool() => IsMcpTool
+            ? McpTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpTool' but the value was {ToString()}.");
+
+        /// <summary>
         /// Use this option to force the model to call a specific custom tool.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -195,6 +230,13 @@ namespace tryAGI.OpenAI
             value = CustomTool;
             return IsCustomTool;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ToolChoiceCustom PickCustomTool() => IsCustomTool
+            ? CustomTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CustomTool' but the value was {ToString()}.");
 
         /// <summary>
         /// Forces the model to call the apply_patch tool when executing a tool call.
@@ -227,6 +269,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.SpecificApplyPatchParam PickSpecificApplyPatchToolChoice() => IsSpecificApplyPatchToolChoice
+            ? SpecificApplyPatchToolChoice!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SpecificApplyPatchToolChoice' but the value was {ToString()}.");
+
+        /// <summary>
         /// Forces the model to call the shell tool when a tool call is required.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -255,6 +304,13 @@ namespace tryAGI.OpenAI
             value = SpecificShellToolChoice;
             return IsSpecificShellToolChoice;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.SpecificFunctionShellParam PickSpecificShellToolChoice() => IsSpecificShellToolChoice
+            ? SpecificShellToolChoice!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SpecificShellToolChoice' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

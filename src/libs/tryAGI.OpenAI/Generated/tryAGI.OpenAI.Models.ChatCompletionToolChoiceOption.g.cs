@@ -45,6 +45,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum PickToolChoiceMode() => IsToolChoiceMode
+            ? ToolChoiceMode!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolChoiceMode' but the value was {ToString()}.");
+
+        /// <summary>
         /// Constrains the tools available to the model to a pre-defined set.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace tryAGI.OpenAI
             value = AllowedTools;
             return IsAllowedTools;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice PickAllowedTools() => IsAllowedTools
+            ? AllowedTools!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AllowedTools' but the value was {ToString()}.");
 
         /// <summary>
         /// Specifies a tool the model should use. Use to force the model to call a specific function.
@@ -105,6 +119,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ChatCompletionNamedToolChoice PickFunctionToolChoice() => IsFunctionToolChoice
+            ? FunctionToolChoice!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionToolChoice' but the value was {ToString()}.");
+
+        /// <summary>
         /// Specifies a tool the model should use. Use to force the model to call a specific custom tool.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -133,6 +154,13 @@ namespace tryAGI.OpenAI
             value = CustomToolChoice;
             return IsCustomToolChoice;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom PickCustomToolChoice() => IsCustomToolChoice
+            ? CustomToolChoice!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CustomToolChoice' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

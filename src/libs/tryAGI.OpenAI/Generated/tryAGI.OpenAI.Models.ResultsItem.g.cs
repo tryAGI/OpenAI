@@ -45,6 +45,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UsageCompletionsResult PickOrganizationUsageCompletionsResult() => IsOrganizationUsageCompletionsResult
+            ? OrganizationUsageCompletionsResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationUsageCompletionsResult' but the value was {ToString()}.");
+
+        /// <summary>
         /// The aggregated embeddings usage details of the specific time bucket.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace tryAGI.OpenAI
             value = OrganizationUsageEmbeddingsResult;
             return IsOrganizationUsageEmbeddingsResult;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UsageEmbeddingsResult PickOrganizationUsageEmbeddingsResult() => IsOrganizationUsageEmbeddingsResult
+            ? OrganizationUsageEmbeddingsResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationUsageEmbeddingsResult' but the value was {ToString()}.");
 
         /// <summary>
         /// The aggregated moderations usage details of the specific time bucket.
@@ -105,6 +119,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UsageModerationsResult PickOrganizationUsageModerationsResult() => IsOrganizationUsageModerationsResult
+            ? OrganizationUsageModerationsResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationUsageModerationsResult' but the value was {ToString()}.");
+
+        /// <summary>
         /// The aggregated images usage details of the specific time bucket.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -133,6 +154,13 @@ namespace tryAGI.OpenAI
             value = OrganizationUsageImagesResult;
             return IsOrganizationUsageImagesResult;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UsageImagesResult PickOrganizationUsageImagesResult() => IsOrganizationUsageImagesResult
+            ? OrganizationUsageImagesResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationUsageImagesResult' but the value was {ToString()}.");
 
         /// <summary>
         /// The aggregated audio speeches usage details of the specific time bucket.
@@ -165,6 +193,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UsageAudioSpeechesResult PickOrganizationUsageAudioSpeechesResult() => IsOrganizationUsageAudioSpeechesResult
+            ? OrganizationUsageAudioSpeechesResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationUsageAudioSpeechesResult' but the value was {ToString()}.");
+
+        /// <summary>
         /// The aggregated audio transcriptions usage details of the specific time bucket.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -193,6 +228,13 @@ namespace tryAGI.OpenAI
             value = OrganizationUsageAudioTranscriptionsResult;
             return IsOrganizationUsageAudioTranscriptionsResult;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UsageAudioTranscriptionsResult PickOrganizationUsageAudioTranscriptionsResult() => IsOrganizationUsageAudioTranscriptionsResult
+            ? OrganizationUsageAudioTranscriptionsResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationUsageAudioTranscriptionsResult' but the value was {ToString()}.");
 
         /// <summary>
         /// The aggregated vector stores usage details of the specific time bucket.
@@ -225,6 +267,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UsageVectorStoresResult PickOrganizationUsageVectorStoresResult() => IsOrganizationUsageVectorStoresResult
+            ? OrganizationUsageVectorStoresResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationUsageVectorStoresResult' but the value was {ToString()}.");
+
+        /// <summary>
         /// The aggregated code interpreter sessions usage details of the specific time bucket.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -255,6 +304,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult PickOrganizationUsageCodeInterpreterSessionsResult() => IsOrganizationUsageCodeInterpreterSessionsResult
+            ? OrganizationUsageCodeInterpreterSessionsResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationUsageCodeInterpreterSessionsResult' but the value was {ToString()}.");
+
+        /// <summary>
         /// The aggregated costs details of the specific time bucket.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -283,6 +339,13 @@ namespace tryAGI.OpenAI
             value = OrganizationCostsResult;
             return IsOrganizationCostsResult;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.CostsResult PickOrganizationCostsResult() => IsOrganizationCostsResult
+            ? OrganizationCostsResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationCostsResult' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

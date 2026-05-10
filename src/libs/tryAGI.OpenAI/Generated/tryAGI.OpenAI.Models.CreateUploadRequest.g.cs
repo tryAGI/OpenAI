@@ -98,5 +98,6 @@ namespace tryAGI.OpenAI
         public CreateUploadRequest()
         {
         }
+
     }
 }

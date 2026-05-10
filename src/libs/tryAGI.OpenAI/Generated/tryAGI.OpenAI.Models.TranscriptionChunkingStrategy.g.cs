@@ -46,6 +46,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum PickEnum() => IsEnum
+            ? Enum!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.VadConfig? VadConfig { get; init; }
 #else
@@ -72,6 +79,13 @@ namespace tryAGI.OpenAI
             value = VadConfig;
             return IsVadConfig;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.VadConfig PickVadConfig() => IsVadConfig
+            ? VadConfig!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VadConfig' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

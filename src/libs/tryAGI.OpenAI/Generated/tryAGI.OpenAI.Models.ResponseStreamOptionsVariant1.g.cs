@@ -54,5 +54,6 @@ namespace tryAGI.OpenAI
         public ResponseStreamOptionsVariant1()
         {
         }
+
     }
 }

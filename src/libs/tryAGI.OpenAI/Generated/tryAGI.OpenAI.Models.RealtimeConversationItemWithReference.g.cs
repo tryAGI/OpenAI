@@ -172,5 +172,6 @@ namespace tryAGI.OpenAI
         public RealtimeConversationItemWithReference()
         {
         }
+
     }
 }

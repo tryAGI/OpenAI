@@ -254,5 +254,6 @@ namespace tryAGI.OpenAI
         public EditImageBodyJsonParam()
         {
         }
+
     }
 }

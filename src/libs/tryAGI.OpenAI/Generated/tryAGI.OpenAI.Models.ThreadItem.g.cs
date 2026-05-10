@@ -45,6 +45,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UserMessageItem PickChatkitUserMessage() => IsChatkitUserMessage
+            ? ChatkitUserMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatkitUserMessage' but the value was {ToString()}.");
+
+        /// <summary>
         /// Assistant-authored message within a thread.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace tryAGI.OpenAI
             value = ChatkitAssistantMessage;
             return IsChatkitAssistantMessage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.AssistantMessageItem PickChatkitAssistantMessage() => IsChatkitAssistantMessage
+            ? ChatkitAssistantMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatkitAssistantMessage' but the value was {ToString()}.");
 
         /// <summary>
         /// Thread item that renders a widget payload.
@@ -105,6 +119,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.WidgetMessageItem PickChatkitWidget() => IsChatkitWidget
+            ? ChatkitWidget!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatkitWidget' but the value was {ToString()}.");
+
+        /// <summary>
         /// Record of a client side tool invocation initiated by the assistant.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -133,6 +154,13 @@ namespace tryAGI.OpenAI
             value = ChatkitClientToolCall;
             return IsChatkitClientToolCall;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ClientToolCallItem PickChatkitClientToolCall() => IsChatkitClientToolCall
+            ? ChatkitClientToolCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatkitClientToolCall' but the value was {ToString()}.");
 
         /// <summary>
         /// Task emitted by the workflow to show progress and status updates.
@@ -165,6 +193,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.TaskItem PickChatkitTask() => IsChatkitTask
+            ? ChatkitTask!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatkitTask' but the value was {ToString()}.");
+
+        /// <summary>
         /// Collection of workflow tasks grouped together in the thread.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -193,6 +228,13 @@ namespace tryAGI.OpenAI
             value = ChatkitTaskGroup;
             return IsChatkitTaskGroup;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.TaskGroupItem PickChatkitTaskGroup() => IsChatkitTaskGroup
+            ? ChatkitTaskGroup!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatkitTaskGroup' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

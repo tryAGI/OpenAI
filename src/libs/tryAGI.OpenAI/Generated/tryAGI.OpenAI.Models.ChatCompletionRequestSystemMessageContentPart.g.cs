@@ -38,6 +38,13 @@ namespace tryAGI.OpenAI
             value = TextContentPart;
             return IsTextContentPart;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText PickTextContentPart() => IsTextContentPart
+            ? TextContentPart!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextContentPart' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

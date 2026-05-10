@@ -116,5 +116,6 @@ namespace tryAGI.OpenAI
         public RealtimeServerEventResponseAudioTranscriptDone()
         {
         }
+
     }
 }

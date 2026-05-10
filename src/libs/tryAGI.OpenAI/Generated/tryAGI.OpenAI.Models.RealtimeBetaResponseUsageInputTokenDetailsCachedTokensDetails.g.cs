@@ -63,5 +63,6 @@ namespace tryAGI.OpenAI
         public RealtimeBetaResponseUsageInputTokenDetailsCachedTokensDetails()
         {
         }
+
     }
 }

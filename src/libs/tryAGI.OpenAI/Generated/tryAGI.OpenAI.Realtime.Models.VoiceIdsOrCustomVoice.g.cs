@@ -40,6 +40,13 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.Realtime.VoiceIdsShared PickShared() => IsShared
+            ? Shared!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Shared' but the value was {ToString()}.");
+
+        /// <summary>
         /// Custom voice reference.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace tryAGI.OpenAI.Realtime
             value = VoiceIdsOrCustomVoiceVariant2;
             return IsVoiceIdsOrCustomVoiceVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.Realtime.VoiceIdsOrCustomVoiceVariant2 PickVoiceIdsOrCustomVoiceVariant2() => IsVoiceIdsOrCustomVoiceVariant2
+            ? VoiceIdsOrCustomVoiceVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VoiceIdsOrCustomVoiceVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

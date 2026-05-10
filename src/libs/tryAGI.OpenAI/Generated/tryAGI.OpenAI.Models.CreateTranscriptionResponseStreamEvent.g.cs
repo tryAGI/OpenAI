@@ -45,6 +45,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.TranscriptTextSegmentEvent PickTranscriptTextSegment() => IsTranscriptTextSegment
+            ? TranscriptTextSegment!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptTextSegment' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when there is an additional text delta. This is also the first event emitted when the transcription starts. Only emitted when you [create a transcription](/docs/api-reference/audio/create-transcription) with the `Stream` parameter set to `true`.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -75,6 +82,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.TranscriptTextDeltaEvent PickTranscriptTextDelta() => IsTranscriptTextDelta
+            ? TranscriptTextDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptTextDelta' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when the transcription is complete. Contains the complete transcription text. Only emitted when you [create a transcription](/docs/api-reference/audio/create-transcription) with the `Stream` parameter set to `true`.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -103,6 +117,13 @@ namespace tryAGI.OpenAI
             value = TranscriptTextDone;
             return IsTranscriptTextDone;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.TranscriptTextDoneEvent PickTranscriptTextDone() => IsTranscriptTextDone
+            ? TranscriptTextDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptTextDone' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -77,5 +77,6 @@ namespace tryAGI.OpenAI.Realtime
         public RealtimeTranscriptionSessionCreateRequestGAAudioInput()
         {
         }
+
     }
 }

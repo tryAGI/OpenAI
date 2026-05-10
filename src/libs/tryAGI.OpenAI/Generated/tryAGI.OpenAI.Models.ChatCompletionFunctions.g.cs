@@ -70,5 +70,6 @@ namespace tryAGI.OpenAI
         public ChatCompletionFunctions()
         {
         }
+
     }
 }

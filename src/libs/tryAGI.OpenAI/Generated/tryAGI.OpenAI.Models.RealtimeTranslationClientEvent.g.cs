@@ -47,6 +47,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionUpdate PickSessionUpdate() => IsSessionUpdate
+            ? SessionUpdate!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionUpdate' but the value was {ToString()}.");
+
+        /// <summary>
         /// Send this event to append audio bytes to the translation session input audio buffer.<br/>
         /// WebSocket translation sessions accept base64-encoded 24 kHz PCM16 mono<br/>
         /// little-endian raw audio bytes. Unsupported websocket audio formats return a<br/>
@@ -88,6 +95,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeTranslationClientEventInputAudioBufferAppend PickSessionInputAudioBufferAppend() => IsSessionInputAudioBufferAppend
+            ? SessionInputAudioBufferAppend!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionInputAudioBufferAppend' but the value was {ToString()}.");
+
+        /// <summary>
         /// Gracefully close the realtime translation session. The server flushes pending<br/>
         /// input audio and emits any remaining translated output before closing the<br/>
         /// session.
@@ -118,6 +132,13 @@ namespace tryAGI.OpenAI
             value = SessionClose;
             return IsSessionClose;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionClose PickSessionClose() => IsSessionClose
+            ? SessionClose!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionClose' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -45,6 +45,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationCreated PickConversationCreated() => IsConversationCreated
+            ? ConversationCreated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationCreated' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when a conversation item is created. There are several scenarios that produce this event:<br/>
         ///   - The server is generating a Response, which if successful will produce<br/>
         ///     either one or two Items, which will be of type `message`<br/>
@@ -83,6 +90,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemCreated PickConversationItemCreated() => IsConversationItemCreated
+            ? ConversationItemCreated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemCreated' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when an item in the conversation is deleted by the client with a <br/>
         /// `conversation.item.delete` event. This event is used to synchronize the <br/>
         /// server's understanding of the conversation history with the client's view.
@@ -113,6 +127,13 @@ namespace tryAGI.OpenAI
             value = ConversationItemDeleted;
             return IsConversationItemDeleted;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemDeleted PickConversationItemDeleted() => IsConversationItemDeleted
+            ? ConversationItemDeleted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemDeleted' but the value was {ToString()}.");
 
         /// <summary>
         /// This event is the output of audio transcription for user audio written to the<br/>
@@ -153,6 +174,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted PickConversationItemInputAudioTranscriptionCompleted() => IsConversationItemInputAudioTranscriptionCompleted
+            ? ConversationItemInputAudioTranscriptionCompleted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemInputAudioTranscriptionCompleted' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when the text value of an input audio transcription content part is updated with incremental transcription results.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -181,6 +209,13 @@ namespace tryAGI.OpenAI
             value = ConversationItemInputAudioTranscriptionDelta;
             return IsConversationItemInputAudioTranscriptionDelta;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionDelta PickConversationItemInputAudioTranscriptionDelta() => IsConversationItemInputAudioTranscriptionDelta
+            ? ConversationItemInputAudioTranscriptionDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemInputAudioTranscriptionDelta' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when input audio transcription is configured, and a transcription <br/>
@@ -215,6 +250,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionFailed PickConversationItemInputAudioTranscriptionFailed() => IsConversationItemInputAudioTranscriptionFailed
+            ? ConversationItemInputAudioTranscriptionFailed!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemInputAudioTranscriptionFailed' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when a conversation item is retrieved with `conversation.item.retrieve`. This is provided as a way to fetch the server's representation of an item, for example to get access to the post-processed audio data after noise cancellation and VAD. It includes the full content of the Item, including audio data.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -243,6 +285,13 @@ namespace tryAGI.OpenAI
             value = ConversationItemRetrieved;
             return IsConversationItemRetrieved;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemRetrieved PickConversationItemRetrieved() => IsConversationItemRetrieved
+            ? ConversationItemRetrieved!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemRetrieved' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when an earlier assistant audio message item is truncated by the <br/>
@@ -279,6 +328,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemTruncated PickConversationItemTruncated() => IsConversationItemTruncated
+            ? ConversationItemTruncated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemTruncated' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when an error occurs, which could be a client problem or a server<br/>
         /// problem. Most errors are recoverable and the session will stay open, we<br/>
         /// recommend to implementors to monitor and log error messages by default.
@@ -311,6 +367,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventError PickError() => IsError
+            ? Error!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when the input audio buffer is cleared by the client with a <br/>
         /// `input_audio_buffer.clear` event.
         /// </summary>
@@ -340,6 +403,13 @@ namespace tryAGI.OpenAI
             value = InputAudioBufferCleared;
             return IsInputAudioBufferCleared;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCleared PickInputAudioBufferCleared() => IsInputAudioBufferCleared
+            ? InputAudioBufferCleared!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioBufferCleared' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when an input audio buffer is committed, either by the client or<br/>
@@ -375,6 +445,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCommitted PickInputAudioBufferCommitted() => IsInputAudioBufferCommitted
+            ? InputAudioBufferCommitted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioBufferCommitted' but the value was {ToString()}.");
+
+        /// <summary>
         /// **SIP Only:** Returned when an DTMF event is received. A DTMF event is a message that<br/>
         /// represents a telephone keypad press (0–9, *, #, A–D). The `event` property<br/>
         /// is the keypad that the user press. The `received_at` is the UTC Unix Timestamp<br/>
@@ -406,6 +483,13 @@ namespace tryAGI.OpenAI
             value = InputAudioBufferDtmfEventReceived;
             return IsInputAudioBufferDtmfEventReceived;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferDtmfEventReceived PickInputAudioBufferDtmfEventReceived() => IsInputAudioBufferDtmfEventReceived
+            ? InputAudioBufferDtmfEventReceived!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioBufferDtmfEventReceived' but the value was {ToString()}.");
 
         /// <summary>
         /// Sent by the server when in `server_vad` mode to indicate that speech has been <br/>
@@ -446,6 +530,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStarted PickInputAudioBufferSpeechStarted() => IsInputAudioBufferSpeechStarted
+            ? InputAudioBufferSpeechStarted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioBufferSpeechStarted' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned in `server_vad` mode when the server detects the end of speech in <br/>
         /// the audio buffer. The server will also send an `conversation.item.created` <br/>
         /// event with the user message item that is created from the audio buffer.
@@ -476,6 +567,13 @@ namespace tryAGI.OpenAI
             value = InputAudioBufferSpeechStopped;
             return IsInputAudioBufferSpeechStopped;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferSpeechStopped PickInputAudioBufferSpeechStopped() => IsInputAudioBufferSpeechStopped
+            ? InputAudioBufferSpeechStopped!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioBufferSpeechStopped' but the value was {ToString()}.");
 
         /// <summary>
         /// Emitted at the beginning of a Response to indicate the updated rate limits. <br/>
@@ -511,6 +609,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdated PickRateLimitsUpdated() => IsRateLimitsUpdated
+            ? RateLimitsUpdated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RateLimitsUpdated' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when the model-generated audio is updated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -539,6 +644,13 @@ namespace tryAGI.OpenAI
             value = ResponseOutputAudioDelta;
             return IsResponseOutputAudioDelta;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDelta PickResponseOutputAudioDelta() => IsResponseOutputAudioDelta
+            ? ResponseOutputAudioDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputAudioDelta' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when the model-generated audio is done. Also emitted when a Response<br/>
@@ -572,6 +684,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseAudioDone PickResponseOutputAudioDone() => IsResponseOutputAudioDone
+            ? ResponseOutputAudioDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputAudioDone' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when the model-generated transcription of audio output is updated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -600,6 +719,13 @@ namespace tryAGI.OpenAI
             value = ResponseOutputAudioTranscriptDelta;
             return IsResponseOutputAudioTranscriptDelta;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDelta PickResponseOutputAudioTranscriptDelta() => IsResponseOutputAudioTranscriptDelta
+            ? ResponseOutputAudioTranscriptDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputAudioTranscriptDelta' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when the model-generated transcription of audio output is done<br/>
@@ -634,6 +760,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDone PickResponseOutputAudioTranscriptDone() => IsResponseOutputAudioTranscriptDone
+            ? ResponseOutputAudioTranscriptDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputAudioTranscriptDone' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when a new content part is added to an assistant message item during<br/>
         /// response generation.
         /// </summary>
@@ -663,6 +796,13 @@ namespace tryAGI.OpenAI
             value = ResponseContentPartAdded;
             return IsResponseContentPartAdded;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartAdded PickResponseContentPartAdded() => IsResponseContentPartAdded
+            ? ResponseContentPartAdded!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseContentPartAdded' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when a content part is done streaming in an assistant message item.<br/>
@@ -696,6 +836,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseContentPartDone PickResponseContentPartDone() => IsResponseContentPartDone
+            ? ResponseContentPartDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseContentPartDone' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when a new Response is created. The first event of response creation,<br/>
         /// where the response is in an initial state of `in_progress`.
         /// </summary>
@@ -725,6 +872,13 @@ namespace tryAGI.OpenAI
             value = ResponseCreated;
             return IsResponseCreated;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseCreated PickResponseCreated() => IsResponseCreated
+            ? ResponseCreated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCreated' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when a Response is done streaming. Always emitted, no matter the <br/>
@@ -763,6 +917,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseDone PickResponseDone() => IsResponseDone
+            ? ResponseDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseDone' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when the model-generated function call arguments are updated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -791,6 +952,13 @@ namespace tryAGI.OpenAI
             value = ResponseFunctionCallArgumentsDelta;
             return IsResponseFunctionCallArgumentsDelta;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDelta PickResponseFunctionCallArgumentsDelta() => IsResponseFunctionCallArgumentsDelta
+            ? ResponseFunctionCallArgumentsDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFunctionCallArgumentsDelta' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when the model-generated function call arguments are done streaming.<br/>
@@ -824,6 +992,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseFunctionCallArgumentsDone PickResponseFunctionCallArgumentsDone() => IsResponseFunctionCallArgumentsDone
+            ? ResponseFunctionCallArgumentsDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFunctionCallArgumentsDone' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when a new Item is created during Response generation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -852,6 +1027,13 @@ namespace tryAGI.OpenAI
             value = ResponseOutputItemAdded;
             return IsResponseOutputItemAdded;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemAdded PickResponseOutputItemAdded() => IsResponseOutputItemAdded
+            ? ResponseOutputItemAdded!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputItemAdded' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when an Item is done streaming. Also emitted when a Response is <br/>
@@ -885,6 +1067,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemDone PickResponseOutputItemDone() => IsResponseOutputItemDone
+            ? ResponseOutputItemDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputItemDone' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when the text value of an "output_text" content part is updated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -913,6 +1102,13 @@ namespace tryAGI.OpenAI
             value = ResponseOutputTextDelta;
             return IsResponseOutputTextDelta;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseTextDelta PickResponseOutputTextDelta() => IsResponseOutputTextDelta
+            ? ResponseOutputTextDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputTextDelta' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when the text value of an "output_text" content part is done streaming. Also<br/>
@@ -944,6 +1140,13 @@ namespace tryAGI.OpenAI
             value = ResponseOutputTextDone;
             return IsResponseOutputTextDone;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseTextDone PickResponseOutputTextDone() => IsResponseOutputTextDone
+            ? ResponseOutputTextDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputTextDone' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when a Session is created. Emitted automatically when a new<br/>
@@ -978,6 +1181,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventSessionCreated PickSessionCreated() => IsSessionCreated
+            ? SessionCreated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionCreated' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when a session is updated with a `session.update` event, unless<br/>
         /// there is an error.
         /// </summary>
@@ -1007,6 +1217,13 @@ namespace tryAGI.OpenAI
             value = SessionUpdated;
             return IsSessionUpdated;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventSessionUpdated PickSessionUpdated() => IsSessionUpdated
+            ? SessionUpdated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionUpdated' but the value was {ToString()}.");
 
         /// <summary>
         /// **WebRTC/SIP Only:** Emitted when the server begins streaming audio to the client. This event is<br/>
@@ -1042,6 +1259,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStarted PickOutputAudioBufferStarted() => IsOutputAudioBufferStarted
+            ? OutputAudioBufferStarted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputAudioBufferStarted' but the value was {ToString()}.");
+
+        /// <summary>
         /// **WebRTC/SIP Only:** Emitted when the output audio buffer has been completely drained on the server,<br/>
         /// and no more audio is forthcoming. This event is emitted after the full response<br/>
         /// data has been sent to the client (`response.done`).<br/>
@@ -1073,6 +1297,13 @@ namespace tryAGI.OpenAI
             value = OutputAudioBufferStopped;
             return IsOutputAudioBufferStopped;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStopped PickOutputAudioBufferStopped() => IsOutputAudioBufferStopped
+            ? OutputAudioBufferStopped!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputAudioBufferStopped' but the value was {ToString()}.");
 
         /// <summary>
         /// **WebRTC/SIP Only:** Emitted when the output audio buffer is cleared. This happens either in VAD<br/>
@@ -1109,6 +1340,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferCleared PickOutputAudioBufferCleared() => IsOutputAudioBufferCleared
+            ? OutputAudioBufferCleared!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputAudioBufferCleared' but the value was {ToString()}.");
+
+        /// <summary>
         /// Sent by the server when an Item is added to the default Conversation. This can happen in several cases:<br/>
         /// - When the client sends a `conversation.item.create` event.<br/>
         /// - When the input audio buffer is committed. In this case the item will be a user message containing the audio from the buffer.<br/>
@@ -1143,6 +1381,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemAdded PickConversationItemAdded() => IsConversationItemAdded
+            ? ConversationItemAdded!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemAdded' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when a conversation item is finalized.<br/>
         /// The event will include the full content of the Item except for audio data, which can be retrieved separately with a `conversation.item.retrieve` event if needed.
         /// </summary>
@@ -1172,6 +1417,13 @@ namespace tryAGI.OpenAI
             value = ConversationItemDone;
             return IsConversationItemDone;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemDone PickConversationItemDone() => IsConversationItemDone
+            ? ConversationItemDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemDone' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when the Server VAD timeout is triggered for the input audio buffer. This is configured<br/>
@@ -1214,6 +1466,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferTimeoutTriggered PickInputAudioBufferTimeoutTriggered() => IsInputAudioBufferTimeoutTriggered
+            ? InputAudioBufferTimeoutTriggered!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioBufferTimeoutTriggered' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when an input audio transcription segment is identified for an item.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -1242,6 +1501,13 @@ namespace tryAGI.OpenAI
             value = ConversationItemInputAudioTranscriptionSegment;
             return IsConversationItemInputAudioTranscriptionSegment;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionSegment PickConversationItemInputAudioTranscriptionSegment() => IsConversationItemInputAudioTranscriptionSegment
+            ? ConversationItemInputAudioTranscriptionSegment!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemInputAudioTranscriptionSegment' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when listing MCP tools is in progress for an item.
@@ -1274,6 +1540,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsInProgress PickMcpListToolsInProgress() => IsMcpListToolsInProgress
+            ? McpListToolsInProgress!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpListToolsInProgress' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when listing MCP tools has completed for an item.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -1302,6 +1575,13 @@ namespace tryAGI.OpenAI
             value = McpListToolsCompleted;
             return IsMcpListToolsCompleted;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsCompleted PickMcpListToolsCompleted() => IsMcpListToolsCompleted
+            ? McpListToolsCompleted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpListToolsCompleted' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when listing MCP tools has failed for an item.
@@ -1334,6 +1614,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsFailed PickMcpListToolsFailed() => IsMcpListToolsFailed
+            ? McpListToolsFailed!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpListToolsFailed' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when MCP tool call arguments are updated during response generation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -1362,6 +1649,13 @@ namespace tryAGI.OpenAI
             value = ResponseMcpCallArgumentsDelta;
             return IsResponseMcpCallArgumentsDelta;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDelta PickResponseMcpCallArgumentsDelta() => IsResponseMcpCallArgumentsDelta
+            ? ResponseMcpCallArgumentsDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpCallArgumentsDelta' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when MCP tool call arguments are finalized during response generation.
@@ -1394,6 +1688,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDone PickResponseMcpCallArgumentsDone() => IsResponseMcpCallArgumentsDone
+            ? ResponseMcpCallArgumentsDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpCallArgumentsDone' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when an MCP tool call has started and is in progress.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -1422,6 +1723,13 @@ namespace tryAGI.OpenAI
             value = ResponseMcpCallInProgress;
             return IsResponseMcpCallInProgress;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallInProgress PickResponseMcpCallInProgress() => IsResponseMcpCallInProgress
+            ? ResponseMcpCallInProgress!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpCallInProgress' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when an MCP tool call has completed successfully.
@@ -1454,6 +1762,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallCompleted PickResponseMcpCallCompleted() => IsResponseMcpCallCompleted
+            ? ResponseMcpCallCompleted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpCallCompleted' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when an MCP tool call has failed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -1482,6 +1797,13 @@ namespace tryAGI.OpenAI
             value = ResponseMcpCallFailed;
             return IsResponseMcpCallFailed;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallFailed PickResponseMcpCallFailed() => IsResponseMcpCallFailed
+            ? ResponseMcpCallFailed!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpCallFailed' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

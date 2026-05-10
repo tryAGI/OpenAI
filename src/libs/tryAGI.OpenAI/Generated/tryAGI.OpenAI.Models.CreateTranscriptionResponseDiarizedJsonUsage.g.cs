@@ -45,6 +45,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.TranscriptTextUsageTokens PickTokens() => IsTokens
+            ? Tokens!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Tokens' but the value was {ToString()}.");
+
+        /// <summary>
         /// Usage statistics for models billed by audio input duration.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace tryAGI.OpenAI
             value = Duration;
             return IsDuration;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.TranscriptTextUsageDuration PickDuration() => IsDuration
+            ? Duration!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Duration' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

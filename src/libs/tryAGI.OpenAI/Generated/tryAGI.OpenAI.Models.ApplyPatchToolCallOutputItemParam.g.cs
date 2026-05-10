@@ -88,5 +88,6 @@ namespace tryAGI.OpenAI
         public ApplyPatchToolCallOutputItemParam()
         {
         }
+
     }
 }

@@ -42,6 +42,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public global::tryAGI.OpenAI.ModelIdsResponses PickResponses() => IsResponses
+            ? Responses!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Responses' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelIdsCompactionVariant2 { get; init; }
 #else
@@ -72,6 +79,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public string PickModelIdsCompactionVariant2() => IsModelIdsCompactionVariant2
+            ? ModelIdsCompactionVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelIdsCompactionVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? ModelIdsCompactionVariant3 { get; init; }
 #else
@@ -98,6 +112,13 @@ namespace tryAGI.OpenAI
             value = ModelIdsCompactionVariant3;
             return IsModelIdsCompactionVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickModelIdsCompactionVariant3() => IsModelIdsCompactionVariant3
+            ? ModelIdsCompactionVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelIdsCompactionVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

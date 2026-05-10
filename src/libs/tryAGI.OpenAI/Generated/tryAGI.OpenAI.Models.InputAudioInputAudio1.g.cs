@@ -57,5 +57,6 @@ namespace tryAGI.OpenAI
         public InputAudioInputAudio1()
         {
         }
+
     }
 }

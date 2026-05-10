@@ -40,5 +40,6 @@ namespace tryAGI.OpenAI
         public FunctionShellToolParamEnvironmentVariant1Discriminator()
         {
         }
+
     }
 }

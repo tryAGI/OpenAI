@@ -40,5 +40,6 @@ namespace tryAGI.OpenAI.Realtime
         public RealtimeConversationItemDiscriminator()
         {
         }
+
     }
 }

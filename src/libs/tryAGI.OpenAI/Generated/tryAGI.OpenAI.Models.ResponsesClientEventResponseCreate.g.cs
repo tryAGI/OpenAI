@@ -46,6 +46,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1 PickResponsesClientEventResponseCreateVariant1() => IsResponsesClientEventResponseCreateVariant1
+            ? ResponsesClientEventResponseCreateVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesClientEventResponseCreateVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.CreateResponse? CreateResponse { get; init; }
 #else
@@ -72,6 +79,13 @@ namespace tryAGI.OpenAI
             value = CreateResponse;
             return IsCreateResponse;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.CreateResponse PickCreateResponse() => IsCreateResponse
+            ? CreateResponse!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CreateResponse' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -38,6 +38,13 @@ namespace tryAGI.OpenAI
             value = StringCheckGrader;
             return IsStringCheckGrader;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.GraderStringCheck PickStringCheckGrader() => IsStringCheckGrader
+            ? StringCheckGrader!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StringCheckGrader' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

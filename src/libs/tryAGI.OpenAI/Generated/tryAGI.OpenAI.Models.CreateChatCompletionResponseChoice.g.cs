@@ -82,5 +82,6 @@ namespace tryAGI.OpenAI
         public CreateChatCompletionResponseChoice()
         {
         }
+
     }
 }

@@ -56,6 +56,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public global::tryAGI.OpenAI.ThreadStreamEvent PickThread() => IsThread
+            ? Thread!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Thread' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RunStreamEvent? Run { get; init; }
 #else
@@ -82,6 +89,13 @@ namespace tryAGI.OpenAI
             value = Run;
             return IsRun;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RunStreamEvent PickRun() => IsRun
+            ? Run!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Run' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -116,6 +130,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public global::tryAGI.OpenAI.RunStepStreamEvent PickRunStep() => IsRunStep
+            ? RunStep!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RunStep' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.MessageStreamEvent? Message { get; init; }
 #else
@@ -142,6 +163,13 @@ namespace tryAGI.OpenAI
             value = Message;
             return IsMessage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.MessageStreamEvent PickMessage() => IsMessage
+            ? Message!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Message' but the value was {ToString()}.");
 
         /// <summary>
         /// Occurs when an [error](/docs/guides/error-codes#api-errors) occurs. This can happen due to an internal server error or a timeout.
@@ -174,6 +202,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ErrorEvent PickError() => IsError
+            ? Error!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
+
+        /// <summary>
         /// Occurs when a stream ends.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -202,6 +237,13 @@ namespace tryAGI.OpenAI
             value = Done;
             return IsDone;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.DoneEvent PickDone() => IsDone
+            ? Done!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Done' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

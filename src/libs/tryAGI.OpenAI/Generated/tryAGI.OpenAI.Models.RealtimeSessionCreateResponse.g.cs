@@ -217,5 +217,6 @@ namespace tryAGI.OpenAI
         public RealtimeSessionCreateResponse()
         {
         }
+
     }
 }

@@ -42,6 +42,13 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         /// 
         /// </summary>
+        public string PickVoiceIdsSharedVariant1() => IsVoiceIdsSharedVariant1
+            ? VoiceIdsSharedVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VoiceIdsSharedVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.Realtime.VoiceIdsSharedEnum? Enum { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace tryAGI.OpenAI.Realtime
             value = Enum;
             return IsEnum;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.Realtime.VoiceIdsSharedEnum PickEnum() => IsEnum
+            ? Enum!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

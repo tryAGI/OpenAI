@@ -40,6 +40,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ModelIdsShared PickShared() => IsShared
+            ? Shared!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Shared' but the value was {ToString()}.");
+
+        /// <summary>
         /// Example: gpt-5.1
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace tryAGI.OpenAI
             value = Responses;
             return IsResponses;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ModelIdsResponses PickResponses() => IsResponses
+            ? Responses!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Responses' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

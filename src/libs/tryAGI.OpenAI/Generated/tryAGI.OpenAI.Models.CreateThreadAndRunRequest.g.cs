@@ -230,5 +230,6 @@ namespace tryAGI.OpenAI
         public CreateThreadAndRunRequest()
         {
         }
+
     }
 }

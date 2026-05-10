@@ -55,5 +55,6 @@ namespace tryAGI.OpenAI
         public ChatCompletionRequestMessageContentPartAudioInputAudio()
         {
         }
+
     }
 }

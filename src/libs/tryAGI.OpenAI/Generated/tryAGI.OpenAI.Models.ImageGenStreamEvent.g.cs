@@ -45,6 +45,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ImageGenPartialImageEvent PickImageGenerationPartialImage() => IsImageGenerationPartialImage
+            ? ImageGenerationPartialImage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageGenerationPartialImage' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when image generation has completed and the final image is available.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace tryAGI.OpenAI
             value = ImageGenerationCompleted;
             return IsImageGenerationCompleted;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ImageGenCompletedEvent PickImageGenerationCompleted() => IsImageGenerationCompleted
+            ? ImageGenerationCompleted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageGenerationCompleted' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

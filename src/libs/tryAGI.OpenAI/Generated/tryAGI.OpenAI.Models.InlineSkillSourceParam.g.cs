@@ -72,5 +72,18 @@ namespace tryAGI.OpenAI
         public InlineSkillSourceParam()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="InlineSkillSourceParam"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static InlineSkillSourceParam FromData(string data)
+        {
+            return new InlineSkillSourceParam
+            {
+                Data = data,
+            };
+        }
+
     }
 }

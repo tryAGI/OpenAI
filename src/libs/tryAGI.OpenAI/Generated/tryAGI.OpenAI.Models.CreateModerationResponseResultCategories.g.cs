@@ -180,5 +180,6 @@ namespace tryAGI.OpenAI
         public CreateModerationResponseResultCategories()
         {
         }
+
     }
 }

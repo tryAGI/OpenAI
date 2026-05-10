@@ -115,5 +115,6 @@ namespace tryAGI.OpenAI
         public RealtimeServerEventResponseContentPartDone()
         {
         }
+
     }
 }
