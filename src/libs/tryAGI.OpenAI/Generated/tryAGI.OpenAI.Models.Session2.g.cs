@@ -45,6 +45,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA PickRealtime() => IsRealtime
+            ? Realtime!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Realtime' but the value was {ToString()}.");
+
+        /// <summary>
         /// A Realtime transcription session configuration object.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace tryAGI.OpenAI
             value = Transcription;
             return IsTranscription;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA PickTranscription() => IsTranscription
+            ? Transcription!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Transcription' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

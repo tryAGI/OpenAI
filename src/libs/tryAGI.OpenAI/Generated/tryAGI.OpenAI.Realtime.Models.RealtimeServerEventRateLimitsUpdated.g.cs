@@ -69,5 +69,6 @@ namespace tryAGI.OpenAI.Realtime
         public RealtimeServerEventRateLimitsUpdated()
         {
         }
+
     }
 }

@@ -67,5 +67,6 @@ namespace tryAGI.OpenAI
         public RealtimeTranslationServerEventSessionUpdated()
         {
         }
+
     }
 }

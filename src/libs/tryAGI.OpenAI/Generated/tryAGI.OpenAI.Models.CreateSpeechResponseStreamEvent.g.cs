@@ -45,6 +45,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.SpeechAudioDeltaEvent PickSpeechAudioDelta() => IsSpeechAudioDelta
+            ? SpeechAudioDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SpeechAudioDelta' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when the speech synthesis is complete and all audio has been streamed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace tryAGI.OpenAI
             value = SpeechAudioDone;
             return IsSpeechAudioDone;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.SpeechAudioDoneEvent PickSpeechAudioDone() => IsSpeechAudioDone
+            ? SpeechAudioDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SpeechAudioDone' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

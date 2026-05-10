@@ -47,6 +47,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public global::tryAGI.OpenAI.ContainerAutoParam PickContainerAuto() => IsContainerAuto
+            ? ContainerAuto!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContainerAuto' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.LocalEnvironmentParam? Local { get; init; }
 #else
@@ -77,6 +84,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public global::tryAGI.OpenAI.LocalEnvironmentParam PickLocal() => IsLocal
+            ? Local!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Local' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ContainerReferenceParam? ContainerReference { get; init; }
 #else
@@ -103,6 +117,13 @@ namespace tryAGI.OpenAI
             value = ContainerReference;
             return IsContainerReference;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ContainerReferenceParam PickContainerReference() => IsContainerReference
+            ? ContainerReference!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContainerReference' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

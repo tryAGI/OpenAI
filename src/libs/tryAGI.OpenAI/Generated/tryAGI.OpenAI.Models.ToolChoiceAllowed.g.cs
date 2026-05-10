@@ -89,5 +89,6 @@ namespace tryAGI.OpenAI
         public ToolChoiceAllowed()
         {
         }
+
     }
 }

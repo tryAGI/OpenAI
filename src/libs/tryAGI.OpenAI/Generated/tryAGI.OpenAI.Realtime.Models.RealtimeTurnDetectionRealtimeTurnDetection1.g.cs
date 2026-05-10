@@ -49,6 +49,13 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad PickServerVad() => IsServerVad
+            ? ServerVad!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ServerVad' but the value was {ToString()}.");
+
+        /// <summary>
         /// Server-side semantic turn detection which uses a model to determine when the user has finished speaking.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -77,6 +84,13 @@ namespace tryAGI.OpenAI.Realtime
             value = SemanticVad;
             return IsSemanticVad;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad PickSemanticVad() => IsSemanticVad
+            ? SemanticVad!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SemanticVad' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -60,5 +60,6 @@ namespace tryAGI.OpenAI
         public TopLogProb()
         {
         }
+
     }
 }

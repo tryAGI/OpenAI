@@ -45,6 +45,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.FunctionShellCallOutputTimeoutOutcomeParam PickTimeout() => IsTimeout
+            ? Timeout!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Timeout' but the value was {ToString()}.");
+
+        /// <summary>
         /// Indicates that the shell commands finished and returned an exit code.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace tryAGI.OpenAI
             value = Exit;
             return IsExit;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.FunctionShellCallOutputExitOutcomeParam PickExit() => IsExit
+            ? Exit!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Exit' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

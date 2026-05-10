@@ -45,6 +45,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeConversationItemMessageSystem PickMessage1() => IsMessage1
+            ? Message1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Message1' but the value was {ToString()}.");
+
+        /// <summary>
         /// A user message item in a Realtime conversation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace tryAGI.OpenAI
             value = Message2;
             return IsMessage2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeConversationItemMessageUser PickMessage2() => IsMessage2
+            ? Message2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Message2' but the value was {ToString()}.");
 
         /// <summary>
         /// An assistant message item in a Realtime conversation.
@@ -105,6 +119,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeConversationItemMessageAssistant PickMessage3() => IsMessage3
+            ? Message3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Message3' but the value was {ToString()}.");
+
+        /// <summary>
         /// A function call item in a Realtime conversation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -133,6 +154,13 @@ namespace tryAGI.OpenAI
             value = FunctionCall;
             return IsFunctionCall;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeConversationItemFunctionCall PickFunctionCall() => IsFunctionCall
+            ? FunctionCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCall' but the value was {ToString()}.");
 
         /// <summary>
         /// A function call output item in a Realtime conversation.
@@ -165,6 +193,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeConversationItemFunctionCallOutput PickFunctionCallOutput() => IsFunctionCallOutput
+            ? FunctionCallOutput!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCallOutput' but the value was {ToString()}.");
+
+        /// <summary>
         /// A Realtime item responding to an MCP approval request.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -193,6 +228,13 @@ namespace tryAGI.OpenAI
             value = McpApprovalResponse;
             return IsMcpApprovalResponse;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeMCPApprovalResponse PickMcpApprovalResponse() => IsMcpApprovalResponse
+            ? McpApprovalResponse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpApprovalResponse' but the value was {ToString()}.");
 
         /// <summary>
         /// A Realtime item listing tools available on an MCP server.
@@ -225,6 +267,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeMCPListTools PickMcpListTools() => IsMcpListTools
+            ? McpListTools!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpListTools' but the value was {ToString()}.");
+
+        /// <summary>
         /// A Realtime item representing an invocation of a tool on an MCP server.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -255,6 +304,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeMCPToolCall PickMcpCall() => IsMcpCall
+            ? McpCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpCall' but the value was {ToString()}.");
+
+        /// <summary>
         /// A Realtime item requesting human approval of a tool invocation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -283,6 +339,13 @@ namespace tryAGI.OpenAI
             value = McpApprovalRequest;
             return IsMcpApprovalRequest;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeMCPApprovalRequest PickMcpApprovalRequest() => IsMcpApprovalRequest
+            ? McpApprovalRequest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpApprovalRequest' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

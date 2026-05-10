@@ -42,6 +42,13 @@ namespace tryAGI.OpenAI
             value = ResponseCreate;
             return IsResponseCreate;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ResponsesClientEventResponseCreate PickResponseCreate() => IsResponseCreate
+            ? ResponseCreate!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCreate' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

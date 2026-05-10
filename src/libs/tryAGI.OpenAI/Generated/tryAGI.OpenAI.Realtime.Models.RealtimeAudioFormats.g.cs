@@ -40,6 +40,13 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.Realtime.RealtimeAudioFormatsPcmAudioFormat PickPcmAudioFormat() => IsPcmAudioFormat
+            ? PcmAudioFormat!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PcmAudioFormat' but the value was {ToString()}.");
+
+        /// <summary>
         /// The G.711 μ-law format.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -70,6 +77,13 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.Realtime.RealtimeAudioFormatsPcmuAudioFormat PickPcmuAudioFormat() => IsPcmuAudioFormat
+            ? PcmuAudioFormat!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PcmuAudioFormat' but the value was {ToString()}.");
+
+        /// <summary>
         /// The G.711 A-law format.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -98,6 +112,13 @@ namespace tryAGI.OpenAI.Realtime
             value = PcmaAudioFormat;
             return IsPcmaAudioFormat;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.Realtime.RealtimeAudioFormatsPcmaAudioFormat PickPcmaAudioFormat() => IsPcmaAudioFormat
+            ? PcmaAudioFormat!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PcmaAudioFormat' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

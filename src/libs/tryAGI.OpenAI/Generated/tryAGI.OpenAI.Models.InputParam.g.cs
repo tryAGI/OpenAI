@@ -47,6 +47,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickTextInput() => IsTextInput
+            ? TextInput!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextInput' but the value was {ToString()}.");
+
+        /// <summary>
         /// A list of one or many input items to the model, containing<br/>
         /// different content types.
         /// </summary>
@@ -76,6 +83,13 @@ namespace tryAGI.OpenAI
             value = InputItemList;
             return IsInputItemList;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem> PickInputItemList() => IsInputItemList
+            ? InputItemList!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputItemList' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

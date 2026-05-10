@@ -40,6 +40,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.CreateEvalItemSimpleInputMessage PickSimpleInputMessage() => IsSimpleInputMessage
+            ? SimpleInputMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SimpleInputMessage' but the value was {ToString()}.");
+
+        /// <summary>
         /// A message input to the model with a role indicating instruction following<br/>
         /// hierarchy. Instructions given with the `developer` or `system` role take<br/>
         /// precedence over instructions given with the `user` role. Messages with the<br/>
@@ -72,6 +79,13 @@ namespace tryAGI.OpenAI
             value = EvalMessageObject;
             return IsEvalMessageObject;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.EvalItem PickEvalMessageObject() => IsEvalMessageObject
+            ? EvalMessageObject!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EvalMessageObject' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

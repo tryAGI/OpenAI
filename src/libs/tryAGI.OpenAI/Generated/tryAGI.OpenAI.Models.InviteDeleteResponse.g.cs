@@ -62,5 +62,6 @@ namespace tryAGI.OpenAI
         public InviteDeleteResponse()
         {
         }
+
     }
 }

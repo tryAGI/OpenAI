@@ -42,6 +42,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickConversationId() => IsConversationId
+            ? ConversationId!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationId' but the value was {ToString()}.");
+
+        /// <summary>
         /// The conversation that this response belongs to.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -70,6 +77,13 @@ namespace tryAGI.OpenAI
             value = ConversationObject;
             return IsConversationObject;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ConversationParam2 PickConversationObject() => IsConversationObject
+            ? ConversationObject!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationObject' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

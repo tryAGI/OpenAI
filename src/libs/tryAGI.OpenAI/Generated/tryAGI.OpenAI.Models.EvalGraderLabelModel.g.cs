@@ -39,6 +39,13 @@ namespace tryAGI.OpenAI
             value = LabelModelGrader;
             return IsLabelModelGrader;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.GraderLabelModel PickLabelModelGrader() => IsLabelModelGrader
+            ? LabelModelGrader!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LabelModelGrader' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

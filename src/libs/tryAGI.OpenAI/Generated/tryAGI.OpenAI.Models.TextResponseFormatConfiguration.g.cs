@@ -48,6 +48,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ResponseFormatText PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
         /// JSON Schema response format. Used to generate structured JSON responses.<br/>
         /// Learn more about [Structured Outputs](/docs/guides/structured-outputs).
         /// </summary>
@@ -77,6 +84,13 @@ namespace tryAGI.OpenAI
             value = JsonSchema;
             return IsJsonSchema;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.TextResponseFormatJsonSchema PickJsonSchema() => IsJsonSchema
+            ? JsonSchema!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JsonSchema' but the value was {ToString()}.");
 
         /// <summary>
         /// JSON object response format. An older method of generating JSON responses.<br/>
@@ -110,6 +124,13 @@ namespace tryAGI.OpenAI
             value = JsonObject;
             return IsJsonObject;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ResponseFormatJsonObject PickJsonObject() => IsJsonObject
+            ? JsonObject!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JsonObject' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

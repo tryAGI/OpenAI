@@ -57,5 +57,18 @@ namespace tryAGI.OpenAI
         public ExpiresAfterParam()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ExpiresAfterParam"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ExpiresAfterParam FromSeconds(long seconds)
+        {
+            return new ExpiresAfterParam
+            {
+                Seconds = seconds,
+            };
+        }
+
     }
 }

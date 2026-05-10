@@ -47,6 +47,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartRefusal? Refusal { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace tryAGI.OpenAI
             value = Refusal;
             return IsRefusal;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartRefusal PickRefusal() => IsRefusal
+            ? Refusal!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Refusal' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

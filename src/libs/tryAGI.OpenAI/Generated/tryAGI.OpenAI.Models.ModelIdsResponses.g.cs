@@ -42,6 +42,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public global::tryAGI.OpenAI.ModelIdsShared PickShared() => IsShared
+            ? Shared!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Shared' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ModelIdsResponsesEnum? ResponsesOnlyModel { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace tryAGI.OpenAI
             value = ResponsesOnlyModel;
             return IsResponsesOnlyModel;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ModelIdsResponsesEnum PickResponsesOnlyModel() => IsResponsesOnlyModel
+            ? ResponsesOnlyModel!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesOnlyModel' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

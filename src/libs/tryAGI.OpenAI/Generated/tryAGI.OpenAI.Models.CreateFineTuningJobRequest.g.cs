@@ -169,5 +169,6 @@ namespace tryAGI.OpenAI
         public CreateFineTuningJobRequest()
         {
         }
+
     }
 }

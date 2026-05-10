@@ -42,6 +42,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public string PickModelIdsSharedVariant1() => IsModelIdsSharedVariant1
+            ? ModelIdsSharedVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelIdsSharedVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ModelIdsSharedEnum? Enum { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace tryAGI.OpenAI
             value = Enum;
             return IsEnum;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ModelIdsSharedEnum PickEnum() => IsEnum
+            ? Enum!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

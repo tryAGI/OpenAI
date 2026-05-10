@@ -47,6 +47,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeServerEventError PickError() => IsError
+            ? Error!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when a translation session is created. Emitted automatically when a<br/>
         /// new connection is established as the first server event. This event contains<br/>
         /// the default translation session configuration.
@@ -77,6 +84,13 @@ namespace tryAGI.OpenAI
             value = SessionCreated;
             return IsSessionCreated;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreated PickSessionCreated() => IsSessionCreated
+            ? SessionCreated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionCreated' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when a translation session is updated with a `session.update` event,<br/>
@@ -110,6 +124,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionUpdated PickSessionUpdated() => IsSessionUpdated
+            ? SessionUpdated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionUpdated' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when a realtime translation session is closed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -138,6 +159,13 @@ namespace tryAGI.OpenAI
             value = SessionClosed;
             return IsSessionClosed;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosed PickSessionClosed() => IsSessionClosed
+            ? SessionClosed!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionClosed' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when optional source-language transcript text is available. This event<br/>
@@ -173,6 +201,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionInputTranscriptDelta PickSessionInputTranscriptDelta() => IsSessionInputTranscriptDelta
+            ? SessionInputTranscriptDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionInputTranscriptDelta' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when translated transcript text is available.<br/>
         /// Transcript deltas are append-only text fragments. Clients should not insert<br/>
         /// unconditional spaces between deltas.
@@ -205,6 +240,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputTranscriptDelta PickSessionOutputTranscriptDelta() => IsSessionOutputTranscriptDelta
+            ? SessionOutputTranscriptDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionOutputTranscriptDelta' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when translated output audio is available. Output audio deltas are<br/>
         /// 200 ms frames of PCM16 audio.
         /// </summary>
@@ -234,6 +276,13 @@ namespace tryAGI.OpenAI
             value = SessionOutputAudioDelta;
             return IsSessionOutputAudioDelta;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDelta PickSessionOutputAudioDelta() => IsSessionOutputAudioDelta
+            ? SessionOutputAudioDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionOutputAudioDelta' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

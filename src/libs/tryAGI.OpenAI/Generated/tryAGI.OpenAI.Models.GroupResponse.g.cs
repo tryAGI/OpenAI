@@ -90,5 +90,6 @@ namespace tryAGI.OpenAI
         public GroupResponse()
         {
         }
+
     }
 }

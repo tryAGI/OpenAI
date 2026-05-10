@@ -40,6 +40,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.EvalItemContentItem PickEvalContentItem() => IsEvalContentItem
+            ? EvalContentItem!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EvalContentItem' but the value was {ToString()}.");
+
+        /// <summary>
         /// A list of inputs, each of which may be either an input text, output text, input<br/>
         /// image, or input audio object.
         /// </summary>
@@ -69,6 +76,13 @@ namespace tryAGI.OpenAI
             value = AnArrayOfInputTextOutputTextInputImageAndInputAudio;
             return IsAnArrayOfInputTextOutputTextInputImageAndInputAudio;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem> PickAnArrayOfInputTextOutputTextInputImageAndInputAudio() => IsAnArrayOfInputTextOutputTextInputImageAndInputAudio
+            ? AnArrayOfInputTextOutputTextInputImageAndInputAudio!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AnArrayOfInputTextOutputTextInputImageAndInputAudio' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

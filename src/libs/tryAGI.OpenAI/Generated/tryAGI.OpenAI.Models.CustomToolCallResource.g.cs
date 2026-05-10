@@ -42,6 +42,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public global::tryAGI.OpenAI.CustomToolCall PickCustomToolCall() => IsCustomToolCall
+            ? CustomToolCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CustomToolCall' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.CustomToolCallResourceVariant2? CustomToolCallResourceVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace tryAGI.OpenAI
             value = CustomToolCallResourceVariant2;
             return IsCustomToolCallResourceVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.CustomToolCallResourceVariant2 PickCustomToolCallResourceVariant2() => IsCustomToolCallResourceVariant2
+            ? CustomToolCallResourceVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CustomToolCallResourceVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

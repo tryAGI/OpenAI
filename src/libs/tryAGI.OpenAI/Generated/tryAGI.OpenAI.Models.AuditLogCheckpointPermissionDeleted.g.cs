@@ -41,5 +41,6 @@ namespace tryAGI.OpenAI
         public AuditLogCheckpointPermissionDeleted()
         {
         }
+
     }
 }

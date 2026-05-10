@@ -91,5 +91,6 @@ namespace tryAGI.OpenAI
         public RealtimeBetaServerEventResponseOutputItemAdded()
         {
         }
+
     }
 }

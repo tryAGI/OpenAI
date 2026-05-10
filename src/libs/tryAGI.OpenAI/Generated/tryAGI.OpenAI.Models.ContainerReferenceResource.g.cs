@@ -55,5 +55,18 @@ namespace tryAGI.OpenAI
         public ContainerReferenceResource()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ContainerReferenceResource"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ContainerReferenceResource FromContainerId(string containerId)
+        {
+            return new ContainerReferenceResource
+            {
+                ContainerId = containerId,
+            };
+        }
+
     }
 }

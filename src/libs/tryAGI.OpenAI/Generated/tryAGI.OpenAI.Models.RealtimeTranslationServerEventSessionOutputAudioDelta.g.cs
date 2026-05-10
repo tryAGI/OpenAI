@@ -120,5 +120,6 @@ namespace tryAGI.OpenAI
         public RealtimeTranslationServerEventSessionOutputAudioDelta()
         {
         }
+
     }
 }

@@ -274,5 +274,6 @@ namespace tryAGI.OpenAI
         public CreateImageRequest()
         {
         }
+
     }
 }

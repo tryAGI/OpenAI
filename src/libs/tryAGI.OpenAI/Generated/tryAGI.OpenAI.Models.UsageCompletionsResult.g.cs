@@ -163,5 +163,6 @@ namespace tryAGI.OpenAI
         public UsageCompletionsResult()
         {
         }
+
     }
 }

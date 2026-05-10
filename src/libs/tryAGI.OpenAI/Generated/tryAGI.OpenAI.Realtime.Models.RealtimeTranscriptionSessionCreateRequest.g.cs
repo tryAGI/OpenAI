@@ -100,5 +100,6 @@ namespace tryAGI.OpenAI.Realtime
         public RealtimeTranscriptionSessionCreateRequest()
         {
         }
+
     }
 }

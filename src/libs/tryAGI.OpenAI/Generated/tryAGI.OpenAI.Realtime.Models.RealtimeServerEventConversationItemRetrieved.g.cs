@@ -67,5 +67,6 @@ namespace tryAGI.OpenAI.Realtime
         public RealtimeServerEventConversationItemRetrieved()
         {
         }
+
     }
 }

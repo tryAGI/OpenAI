@@ -45,6 +45,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ApplyPatchCreateFileOperationParam PickCreateFile() => IsCreateFile
+            ? CreateFile!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CreateFile' but the value was {ToString()}.");
+
+        /// <summary>
         /// Instruction for deleting an existing file via the apply_patch tool.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -75,6 +82,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ApplyPatchDeleteFileOperationParam PickDeleteFile() => IsDeleteFile
+            ? DeleteFile!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DeleteFile' but the value was {ToString()}.");
+
+        /// <summary>
         /// Instruction for updating an existing file via the apply_patch tool.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -103,6 +117,13 @@ namespace tryAGI.OpenAI
             value = UpdateFile;
             return IsUpdateFile;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ApplyPatchUpdateFileOperationParam PickUpdateFile() => IsUpdateFile
+            ? UpdateFile!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UpdateFile' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

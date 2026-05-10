@@ -195,5 +195,6 @@ namespace tryAGI.OpenAI.Realtime
         public RealtimeResponseCreateParams()
         {
         }
+
     }
 }

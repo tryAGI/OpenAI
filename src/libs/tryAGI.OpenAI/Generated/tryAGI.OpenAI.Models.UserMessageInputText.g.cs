@@ -57,5 +57,18 @@ namespace tryAGI.OpenAI
         public UserMessageInputText()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="UserMessageInputText"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static UserMessageInputText FromText(string text)
+        {
+            return new UserMessageInputText
+            {
+                Text = text,
+            };
+        }
+
     }
 }

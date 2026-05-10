@@ -57,5 +57,18 @@ namespace tryAGI.OpenAI
         public TypeParam()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="TypeParam"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static TypeParam FromText(string text)
+        {
+            return new TypeParam
+            {
+                Text = text,
+            };
+        }
+
     }
 }

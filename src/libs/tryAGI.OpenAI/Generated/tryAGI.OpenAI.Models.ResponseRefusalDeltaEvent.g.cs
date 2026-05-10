@@ -102,5 +102,6 @@ namespace tryAGI.OpenAI
         public ResponseRefusalDeltaEvent()
         {
         }
+
     }
 }

@@ -86,5 +86,6 @@ namespace tryAGI.OpenAI
         public CreateVoiceConsentRequest()
         {
         }
+
     }
 }

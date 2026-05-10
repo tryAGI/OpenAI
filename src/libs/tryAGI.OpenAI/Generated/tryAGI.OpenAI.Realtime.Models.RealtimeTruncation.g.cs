@@ -43,6 +43,13 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum PickEnum() => IsEnum
+            ? Enum!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
+
+        /// <summary>
         /// Retain a fraction of the conversation tokens when the conversation exceeds the input token limit. This allows you to amortize truncations across multiple turns, which can help improve cached token usage.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -71,6 +78,13 @@ namespace tryAGI.OpenAI.Realtime
             value = RetentionRatioTruncation;
             return IsRetentionRatioTruncation;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum2 PickRetentionRatioTruncation() => IsRetentionRatioTruncation
+            ? RetentionRatioTruncation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RetentionRatioTruncation' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

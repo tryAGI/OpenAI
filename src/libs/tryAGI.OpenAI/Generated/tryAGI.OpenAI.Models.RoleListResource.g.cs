@@ -77,5 +77,6 @@ namespace tryAGI.OpenAI
         public RoleListResource()
         {
         }
+
     }
 }

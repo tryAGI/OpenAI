@@ -57,5 +57,18 @@ namespace tryAGI.OpenAI
         public ReasoningTextContent()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ReasoningTextContent"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ReasoningTextContent FromText(string text)
+        {
+            return new ReasoningTextContent
+            {
+                Text = text,
+            };
+        }
+
     }
 }

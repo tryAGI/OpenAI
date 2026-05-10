@@ -59,5 +59,6 @@ namespace tryAGI.OpenAI
         public ImageRefParam()
         {
         }
+
     }
 }

@@ -92,5 +92,6 @@ namespace tryAGI.OpenAI.Realtime
         public AudioTranscription()
         {
         }
+
     }
 }

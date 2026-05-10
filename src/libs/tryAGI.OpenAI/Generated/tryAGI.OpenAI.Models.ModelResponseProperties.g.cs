@@ -127,5 +127,6 @@ namespace tryAGI.OpenAI
         public ModelResponseProperties()
         {
         }
+
     }
 }

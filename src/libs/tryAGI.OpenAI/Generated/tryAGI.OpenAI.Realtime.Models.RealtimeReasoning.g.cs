@@ -46,5 +46,6 @@ namespace tryAGI.OpenAI.Realtime
         public RealtimeReasoning()
         {
         }
+
     }
 }

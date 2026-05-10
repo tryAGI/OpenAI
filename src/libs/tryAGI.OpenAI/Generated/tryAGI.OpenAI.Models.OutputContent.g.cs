@@ -45,6 +45,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.OutputTextContent PickOutputText() => IsOutputText
+            ? OutputText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputText' but the value was {ToString()}.");
+
+        /// <summary>
         /// A refusal from the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -75,6 +82,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RefusalContent PickRefusal() => IsRefusal
+            ? Refusal!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Refusal' but the value was {ToString()}.");
+
+        /// <summary>
         /// Reasoning text from the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -103,6 +117,13 @@ namespace tryAGI.OpenAI
             value = ReasoningText;
             return IsReasoningText;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ReasoningTextContent PickReasoningText() => IsReasoningText
+            ? ReasoningText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningText' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -42,6 +42,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public global::tryAGI.OpenAI.InputContent PickInputContentTypes() => IsInputContentTypes
+            ? InputContentTypes!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputContentTypes' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.OutputContent? OutputContentTypes { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace tryAGI.OpenAI
             value = OutputContentTypes;
             return IsOutputContentTypes;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.OutputContent PickOutputContentTypes() => IsOutputContentTypes
+            ? OutputContentTypes!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputContentTypes' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

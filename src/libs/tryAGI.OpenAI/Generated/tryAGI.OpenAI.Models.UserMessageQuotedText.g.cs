@@ -57,5 +57,18 @@ namespace tryAGI.OpenAI
         public UserMessageQuotedText()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="UserMessageQuotedText"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static UserMessageQuotedText FromText(string text)
+        {
+            return new UserMessageQuotedText
+            {
+                Text = text,
+            };
+        }
+
     }
 }

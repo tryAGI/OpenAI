@@ -193,5 +193,6 @@ namespace tryAGI.OpenAI
         public CreateTranscriptionRequest()
         {
         }
+
     }
 }

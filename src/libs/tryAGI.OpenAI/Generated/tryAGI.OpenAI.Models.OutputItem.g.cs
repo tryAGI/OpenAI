@@ -40,6 +40,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.OutputMessage PickMessage() => IsMessage
+            ? Message!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Message' but the value was {ToString()}.");
+
+        /// <summary>
         /// The results of a file search tool call. See the<br/>
         /// [file search guide](/docs/guides/tools-file-search) for more information.
         /// </summary>
@@ -69,6 +76,13 @@ namespace tryAGI.OpenAI
             value = FileSearchCall;
             return IsFileSearchCall;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.FileSearchToolCall PickFileSearchCall() => IsFileSearchCall
+            ? FileSearchCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchCall' but the value was {ToString()}.");
 
         /// <summary>
         /// A tool call to run a function. See the <br/>
@@ -104,6 +118,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public global::tryAGI.OpenAI.FunctionToolCall PickFunctionCall() => IsFunctionCall
+            ? FunctionCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCall' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.FunctionToolCallOutputResource? FunctionToolCallResource { get; init; }
 #else
@@ -130,6 +151,13 @@ namespace tryAGI.OpenAI
             value = FunctionToolCallResource;
             return IsFunctionToolCallResource;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.FunctionToolCallOutputResource PickFunctionToolCallResource() => IsFunctionToolCallResource
+            ? FunctionToolCallResource!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionToolCallResource' but the value was {ToString()}.");
 
         /// <summary>
         /// The results of a web search tool call. See the<br/>
@@ -161,6 +189,13 @@ namespace tryAGI.OpenAI
             value = WebSearchCall;
             return IsWebSearchCall;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.WebSearchToolCall PickWebSearchCall() => IsWebSearchCall
+            ? WebSearchCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchCall' but the value was {ToString()}.");
 
         /// <summary>
         /// A tool call to a computer use tool. See the<br/>
@@ -196,6 +231,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public global::tryAGI.OpenAI.ComputerToolCall PickComputerCall() => IsComputerCall
+            ? ComputerCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ComputerCall' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ComputerToolCallOutputResource? ComputerToolCallResource { get; init; }
 #else
@@ -222,6 +264,13 @@ namespace tryAGI.OpenAI
             value = ComputerToolCallResource;
             return IsComputerToolCallResource;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ComputerToolCallOutputResource PickComputerToolCallResource() => IsComputerToolCallResource
+            ? ComputerToolCallResource!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ComputerToolCallResource' but the value was {ToString()}.");
 
         /// <summary>
         /// A description of the chain of thought used by a reasoning model while generating<br/>
@@ -259,6 +308,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public global::tryAGI.OpenAI.ReasoningItem PickReasoning() => IsReasoning
+            ? Reasoning!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Reasoning' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ToolSearchCall? ToolSearchCall { get; init; }
 #else
@@ -285,6 +341,13 @@ namespace tryAGI.OpenAI
             value = ToolSearchCall;
             return IsToolSearchCall;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ToolSearchCall PickToolSearchCall() => IsToolSearchCall
+            ? ToolSearchCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolSearchCall' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -317,6 +380,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ToolSearchOutput PickToolSearchOutput() => IsToolSearchOutput
+            ? ToolSearchOutput!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolSearchOutput' but the value was {ToString()}.");
+
+        /// <summary>
         /// A compaction item generated by the [`v1/responses/compact` API](/docs/api-reference/responses/compact).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -345,6 +415,13 @@ namespace tryAGI.OpenAI
             value = Compaction;
             return IsCompaction;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.CompactionBody PickCompaction() => IsCompaction
+            ? Compaction!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Compaction' but the value was {ToString()}.");
 
         /// <summary>
         /// An image generation request made by the model.
@@ -377,6 +454,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ImageGenToolCall PickImageGenerationCall() => IsImageGenerationCall
+            ? ImageGenerationCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageGenerationCall' but the value was {ToString()}.");
+
+        /// <summary>
         /// A tool call to run code.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -405,6 +489,13 @@ namespace tryAGI.OpenAI
             value = CodeInterpreterCall;
             return IsCodeInterpreterCall;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.CodeInterpreterToolCall PickCodeInterpreterCall() => IsCodeInterpreterCall
+            ? CodeInterpreterCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreterCall' but the value was {ToString()}.");
 
         /// <summary>
         /// A tool call to run a command on the local shell.
@@ -437,6 +528,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.LocalShellToolCall PickLocalShellCall() => IsLocalShellCall
+            ? LocalShellCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LocalShellCall' but the value was {ToString()}.");
+
+        /// <summary>
         /// The output of a local shell tool call.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -465,6 +563,13 @@ namespace tryAGI.OpenAI
             value = LocalShellCallOutput;
             return IsLocalShellCallOutput;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.LocalShellToolCallOutput PickLocalShellCallOutput() => IsLocalShellCallOutput
+            ? LocalShellCallOutput!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LocalShellCallOutput' but the value was {ToString()}.");
 
         /// <summary>
         /// A tool call that executes one or more shell commands in a managed environment.
@@ -497,6 +602,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.FunctionShellCall PickShellCall() => IsShellCall
+            ? ShellCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ShellCall' but the value was {ToString()}.");
+
+        /// <summary>
         /// The output of a shell tool call that was emitted.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -525,6 +637,13 @@ namespace tryAGI.OpenAI
             value = ShellCallOutput;
             return IsShellCallOutput;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.FunctionShellCallOutput PickShellCallOutput() => IsShellCallOutput
+            ? ShellCallOutput!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ShellCallOutput' but the value was {ToString()}.");
 
         /// <summary>
         /// A tool call that applies file diffs by creating, deleting, or updating files.
@@ -557,6 +676,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ApplyPatchToolCall PickApplyPatchCall() => IsApplyPatchCall
+            ? ApplyPatchCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ApplyPatchCall' but the value was {ToString()}.");
+
+        /// <summary>
         /// The output emitted by an apply patch tool call.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -585,6 +711,13 @@ namespace tryAGI.OpenAI
             value = ApplyPatchCallOutput;
             return IsApplyPatchCallOutput;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ApplyPatchToolCallOutput PickApplyPatchCallOutput() => IsApplyPatchCallOutput
+            ? ApplyPatchCallOutput!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ApplyPatchCallOutput' but the value was {ToString()}.");
 
         /// <summary>
         /// An invocation of a tool on an MCP server.
@@ -617,6 +750,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.MCPToolCall PickMcpCall() => IsMcpCall
+            ? McpCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpCall' but the value was {ToString()}.");
+
+        /// <summary>
         /// A list of tools available on an MCP server.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -645,6 +785,13 @@ namespace tryAGI.OpenAI
             value = McpListTools;
             return IsMcpListTools;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.MCPListTools PickMcpListTools() => IsMcpListTools
+            ? McpListTools!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpListTools' but the value was {ToString()}.");
 
         /// <summary>
         /// A request for human approval of a tool invocation.
@@ -677,6 +824,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.MCPApprovalRequest PickMcpApprovalRequest() => IsMcpApprovalRequest
+            ? McpApprovalRequest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpApprovalRequest' but the value was {ToString()}.");
+
+        /// <summary>
         /// A response to an MCP approval request.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -705,6 +859,13 @@ namespace tryAGI.OpenAI
             value = McpApprovalResponse;
             return IsMcpApprovalResponse;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.MCPApprovalResponseResource PickMcpApprovalResponse() => IsMcpApprovalResponse
+            ? McpApprovalResponse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpApprovalResponse' but the value was {ToString()}.");
 
         /// <summary>
         /// A call to a custom tool created by the model.
@@ -739,6 +900,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public global::tryAGI.OpenAI.CustomToolCall PickCustomToolCall() => IsCustomToolCall
+            ? CustomToolCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CustomToolCall' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.CustomToolCallOutputResource? ResponseCustomToolCallOutputItem { get; init; }
 #else
@@ -765,6 +933,13 @@ namespace tryAGI.OpenAI
             value = ResponseCustomToolCallOutputItem;
             return IsResponseCustomToolCallOutputItem;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.CustomToolCallOutputResource PickResponseCustomToolCallOutputItem() => IsResponseCustomToolCallOutputItem
+            ? ResponseCustomToolCallOutputItem!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCustomToolCallOutputItem' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

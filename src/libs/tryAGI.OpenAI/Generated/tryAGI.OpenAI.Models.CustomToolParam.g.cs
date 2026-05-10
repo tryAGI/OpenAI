@@ -91,5 +91,18 @@ namespace tryAGI.OpenAI
         public CustomToolParam()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="CustomToolParam"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static CustomToolParam FromName(string name)
+        {
+            return new CustomToolParam
+            {
+                Name = name,
+            };
+        }
+
     }
 }

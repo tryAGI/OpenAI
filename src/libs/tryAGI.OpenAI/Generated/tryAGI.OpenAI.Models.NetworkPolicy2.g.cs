@@ -47,6 +47,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParam PickDisabled() => IsDisabled
+            ? Disabled!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Disabled' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam? Allowlist { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace tryAGI.OpenAI
             value = Allowlist;
             return IsAllowlist;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam PickAllowlist() => IsAllowlist
+            ? Allowlist!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Allowlist' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

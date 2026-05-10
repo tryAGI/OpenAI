@@ -284,5 +284,6 @@ namespace tryAGI.OpenAI
         public Batch()
         {
         }
+
     }
 }

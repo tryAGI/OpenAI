@@ -60,5 +60,18 @@ namespace tryAGI.OpenAI
         public ContainerReferenceParam()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ContainerReferenceParam"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ContainerReferenceParam FromContainerId(string containerId)
+        {
+            return new ContainerReferenceParam
+            {
+                ContainerId = containerId,
+            };
+        }
+
     }
 }

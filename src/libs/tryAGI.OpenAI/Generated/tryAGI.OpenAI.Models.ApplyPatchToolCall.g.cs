@@ -106,5 +106,6 @@ namespace tryAGI.OpenAI
         public ApplyPatchToolCall()
         {
         }
+
     }
 }

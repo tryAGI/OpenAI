@@ -83,5 +83,6 @@ namespace tryAGI.OpenAI
         public CreateFineTuningJobRequestHyperparameters()
         {
         }
+
     }
 }

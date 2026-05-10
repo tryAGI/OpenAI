@@ -56,5 +56,6 @@ namespace tryAGI.OpenAI
         public CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyStaticChunkingStrategyStatic()
         {
         }
+
     }
 }

@@ -84,5 +84,6 @@ namespace tryAGI.OpenAI
         public RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad()
         {
         }
+
     }
 }

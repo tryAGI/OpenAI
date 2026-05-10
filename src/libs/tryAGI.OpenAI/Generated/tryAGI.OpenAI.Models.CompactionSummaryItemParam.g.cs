@@ -66,5 +66,18 @@ namespace tryAGI.OpenAI
         public CompactionSummaryItemParam()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="CompactionSummaryItemParam"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static CompactionSummaryItemParam FromEncryptedContent(string encryptedContent)
+        {
+            return new CompactionSummaryItemParam
+            {
+                EncryptedContent = encryptedContent,
+            };
+        }
+
     }
 }

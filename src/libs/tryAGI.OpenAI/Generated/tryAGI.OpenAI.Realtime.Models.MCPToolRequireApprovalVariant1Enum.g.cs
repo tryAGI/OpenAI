@@ -54,5 +54,6 @@ namespace tryAGI.OpenAI.Realtime
         public MCPToolRequireApprovalVariant1Enum()
         {
         }
+
     }
 }

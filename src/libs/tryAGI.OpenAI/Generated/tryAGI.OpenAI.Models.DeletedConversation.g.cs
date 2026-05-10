@@ -38,6 +38,13 @@ namespace tryAGI.OpenAI
             value = Resource;
             return IsResource;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.DeletedConversationResource PickResource() => IsResource
+            ? Resource!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Resource' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

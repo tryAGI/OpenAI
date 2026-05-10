@@ -47,6 +47,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public global::tryAGI.OpenAI.SkillReferenceParam PickSkillReference() => IsSkillReference
+            ? SkillReference!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SkillReference' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.InlineSkillParam? Inline { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace tryAGI.OpenAI
             value = Inline;
             return IsInline;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.InlineSkillParam PickInline() => IsInline
+            ? Inline!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Inline' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -47,5 +47,6 @@ namespace tryAGI.OpenAI
         public CreateModelResponsePropertiesVariant2()
         {
         }
+
     }
 }

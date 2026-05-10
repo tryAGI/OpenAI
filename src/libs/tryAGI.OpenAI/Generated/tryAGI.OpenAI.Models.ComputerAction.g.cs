@@ -45,6 +45,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ClickParam PickClick() => IsClick
+            ? Click!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Click' but the value was {ToString()}.");
+
+        /// <summary>
         /// A double click action.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace tryAGI.OpenAI
             value = DoubleClick;
             return IsDoubleClick;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.DoubleClickAction PickDoubleClick() => IsDoubleClick
+            ? DoubleClick!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DoubleClick' but the value was {ToString()}.");
 
         /// <summary>
         /// A drag action.
@@ -105,6 +119,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.DragParam PickDrag() => IsDrag
+            ? Drag!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Drag' but the value was {ToString()}.");
+
+        /// <summary>
         /// A collection of keypresses the model would like to perform.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -133,6 +154,13 @@ namespace tryAGI.OpenAI
             value = Keypress;
             return IsKeypress;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.KeyPressAction PickKeypress() => IsKeypress
+            ? Keypress!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Keypress' but the value was {ToString()}.");
 
         /// <summary>
         /// A mouse move action.
@@ -165,6 +193,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.MoveParam PickMove() => IsMove
+            ? Move!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Move' but the value was {ToString()}.");
+
+        /// <summary>
         /// A screenshot action.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -193,6 +228,13 @@ namespace tryAGI.OpenAI
             value = Screenshot;
             return IsScreenshot;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ScreenshotParam PickScreenshot() => IsScreenshot
+            ? Screenshot!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Screenshot' but the value was {ToString()}.");
 
         /// <summary>
         /// A scroll action.
@@ -225,6 +267,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ScrollParam PickScroll() => IsScroll
+            ? Scroll!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Scroll' but the value was {ToString()}.");
+
+        /// <summary>
         /// An action to type in text.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -255,6 +304,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.TypeParam PickType() => IsType
+            ? Type!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Type' but the value was {ToString()}.");
+
+        /// <summary>
         /// A wait action.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -283,6 +339,13 @@ namespace tryAGI.OpenAI
             value = Wait;
             return IsWait;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.WaitParam PickWait() => IsWait
+            ? Wait!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Wait' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

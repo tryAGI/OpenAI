@@ -128,5 +128,6 @@ namespace tryAGI.OpenAI.Realtime
         public RealtimeTurnDetectionRealtimeTurnDetection1ServerVad()
         {
         }
+
     }
 }

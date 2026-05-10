@@ -76,5 +76,18 @@ namespace tryAGI.OpenAI
         public ComputerScreenshotContent()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ComputerScreenshotContent"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ComputerScreenshotContent FromDetail(global::tryAGI.OpenAI.ImageDetail detail)
+        {
+            return new ComputerScreenshotContent
+            {
+                Detail = detail,
+            };
+        }
+
     }
 }

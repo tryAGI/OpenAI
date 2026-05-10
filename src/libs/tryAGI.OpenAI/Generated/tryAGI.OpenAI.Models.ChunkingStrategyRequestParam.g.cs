@@ -45,6 +45,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam PickAuto() => IsAuto
+            ? Auto!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Auto' but the value was {ToString()}.");
+
+        /// <summary>
         /// Customize your own chunking strategy by setting chunk size and chunk overlap.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace tryAGI.OpenAI
             value = Static;
             return IsStatic;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam PickStatic() => IsStatic
+            ? Static!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Static' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

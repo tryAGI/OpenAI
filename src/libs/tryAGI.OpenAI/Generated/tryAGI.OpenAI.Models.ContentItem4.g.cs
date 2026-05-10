@@ -45,6 +45,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UserMessageInputText PickInputText() => IsInputText
+            ? InputText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputText' but the value was {ToString()}.");
+
+        /// <summary>
         /// Quoted snippet that the user referenced in their message.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace tryAGI.OpenAI
             value = QuotedText;
             return IsQuotedText;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UserMessageQuotedText PickQuotedText() => IsQuotedText
+            ? QuotedText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'QuotedText' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

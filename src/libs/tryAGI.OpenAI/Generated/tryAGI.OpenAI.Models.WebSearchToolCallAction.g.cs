@@ -46,6 +46,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.WebSearchActionSearch PickSearch() => IsSearch
+            ? Search!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Search' but the value was {ToString()}.");
+
+        /// <summary>
         /// Action type "open_page" - Opens a specific URL from search results.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -76,6 +83,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.WebSearchActionOpenPage PickOpenPage() => IsOpenPage
+            ? OpenPage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenPage' but the value was {ToString()}.");
+
+        /// <summary>
         /// Action type "find_in_page": Searches for a pattern within a loaded page.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -104,6 +118,13 @@ namespace tryAGI.OpenAI
             value = FindInPage;
             return IsFindInPage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.WebSearchActionFind PickFindInPage() => IsFindInPage
+            ? FindInPage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FindInPage' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

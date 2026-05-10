@@ -150,5 +150,6 @@ namespace tryAGI.OpenAI
         public TranscriptionSegment()
         {
         }
+
     }
 }

@@ -130,5 +130,6 @@ namespace tryAGI.OpenAI
         public ImageGenCompletedEvent()
         {
         }
+
     }
 }

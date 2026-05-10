@@ -43,6 +43,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum PickEnum() => IsEnum
+            ? Enum!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
+
+        /// <summary>
         /// Default response format. Used to generate text responses.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -71,6 +78,13 @@ namespace tryAGI.OpenAI
             value = Text;
             return IsText;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ResponseFormatText PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
         /// JSON object response format. An older method of generating JSON responses.<br/>
@@ -106,6 +120,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ResponseFormatJsonObject PickJsonObject() => IsJsonObject
+            ? JsonObject!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JsonObject' but the value was {ToString()}.");
+
+        /// <summary>
         /// JSON Schema response format. Used to generate structured JSON responses.<br/>
         /// Learn more about [Structured Outputs](/docs/guides/structured-outputs).
         /// </summary>
@@ -135,6 +156,13 @@ namespace tryAGI.OpenAI
             value = JsonSchema;
             return IsJsonSchema;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ResponseFormatJsonSchema PickJsonSchema() => IsJsonSchema
+            ? JsonSchema!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JsonSchema' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

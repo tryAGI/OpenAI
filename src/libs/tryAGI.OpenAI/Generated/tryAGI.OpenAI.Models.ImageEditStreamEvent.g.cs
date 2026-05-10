@@ -45,6 +45,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ImageEditPartialImageEvent PickImageEditPartialImage() => IsImageEditPartialImage
+            ? ImageEditPartialImage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageEditPartialImage' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when image editing has completed and the final image is available.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace tryAGI.OpenAI
             value = ImageEditCompleted;
             return IsImageEditCompleted;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ImageEditCompletedEvent PickImageEditCompleted() => IsImageEditCompleted
+            ? ImageEditCompleted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageEditCompleted' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

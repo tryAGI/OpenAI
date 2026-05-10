@@ -40,5 +40,6 @@ namespace tryAGI.OpenAI
         public CodeInterpreterToolCallOutputsVariant1ItemDiscriminator()
         {
         }
+
     }
 }

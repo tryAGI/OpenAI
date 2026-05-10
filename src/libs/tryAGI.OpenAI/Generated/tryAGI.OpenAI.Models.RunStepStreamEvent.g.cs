@@ -40,6 +40,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant1 PickRunStepStreamEventVariant1() => IsRunStepStreamEventVariant1
+            ? RunStepStreamEventVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RunStepStreamEventVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) moves to an `in_progress` state.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace tryAGI.OpenAI
             value = RunStepStreamEventVariant2;
             return IsRunStepStreamEventVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant2 PickRunStepStreamEventVariant2() => IsRunStepStreamEventVariant2
+            ? RunStepStreamEventVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RunStepStreamEventVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// Occurs when parts of a [run step](/docs/api-reference/run-steps/step-object) are being streamed.
@@ -100,6 +114,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant3 PickRunStepStreamEventVariant3() => IsRunStepStreamEventVariant3
+            ? RunStepStreamEventVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RunStepStreamEventVariant3' but the value was {ToString()}.");
+
+        /// <summary>
         /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -128,6 +149,13 @@ namespace tryAGI.OpenAI
             value = RunStepStreamEventVariant4;
             return IsRunStepStreamEventVariant4;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant4 PickRunStepStreamEventVariant4() => IsRunStepStreamEventVariant4
+            ? RunStepStreamEventVariant4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RunStepStreamEventVariant4' but the value was {ToString()}.");
 
         /// <summary>
         /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) fails.
@@ -160,6 +188,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant5 PickRunStepStreamEventVariant5() => IsRunStepStreamEventVariant5
+            ? RunStepStreamEventVariant5!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RunStepStreamEventVariant5' but the value was {ToString()}.");
+
+        /// <summary>
         /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is cancelled.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -190,6 +225,13 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant6 PickRunStepStreamEventVariant6() => IsRunStepStreamEventVariant6
+            ? RunStepStreamEventVariant6!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RunStepStreamEventVariant6' but the value was {ToString()}.");
+
+        /// <summary>
         /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) expires.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -218,6 +260,13 @@ namespace tryAGI.OpenAI
             value = RunStepStreamEventVariant7;
             return IsRunStepStreamEventVariant7;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RunStepStreamEventVariant7 PickRunStepStreamEventVariant7() => IsRunStepStreamEventVariant7
+            ? RunStepStreamEventVariant7!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RunStepStreamEventVariant7' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

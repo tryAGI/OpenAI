@@ -42,6 +42,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public global::tryAGI.OpenAI.CreateModelResponseProperties PickModelResponseProperties() => IsModelResponseProperties
+            ? ModelResponseProperties!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelResponseProperties' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2? CreateChatCompletionRequestVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace tryAGI.OpenAI
             value = CreateChatCompletionRequestVariant2;
             return IsCreateChatCompletionRequestVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2 PickCreateChatCompletionRequestVariant2() => IsCreateChatCompletionRequestVariant2
+            ? CreateChatCompletionRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CreateChatCompletionRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
