@@ -161,6 +161,8 @@ namespace tryAGI.OpenAI
                     certificateId: certificateId!,
                     include: include);
 
+                global::tryAGI.OpenAI.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 
