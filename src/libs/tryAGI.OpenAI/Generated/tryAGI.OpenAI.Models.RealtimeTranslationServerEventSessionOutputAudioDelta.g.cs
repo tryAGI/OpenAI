@@ -52,9 +52,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDeltaFormat? Format { get; set; }
 
         /// <summary>
-        /// Timing metadata for stream alignment, derived from the translation frame<br/>
-        /// when available. Treat `elapsed_ms` as alignment metadata, not a unique<br/>
-        /// event identifier.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("elapsed_ms")]
         public int? ElapsedMs { get; set; }
@@ -88,11 +86,7 @@ namespace tryAGI.OpenAI
         /// <param name="format">
         /// Audio encoding for `delta`.
         /// </param>
-        /// <param name="elapsedMs">
-        /// Timing metadata for stream alignment, derived from the translation frame<br/>
-        /// when available. Treat `elapsed_ms` as alignment metadata, not a unique<br/>
-        /// event identifier.
-        /// </param>
+        /// <param name="elapsedMs"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
