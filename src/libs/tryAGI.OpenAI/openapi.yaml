@@ -65548,19 +65548,20 @@ components:
           type: string
           description: Append-only source-language transcript text.
         elapsed_ms:
-          type: integer
-          nullable: true
-          description: >
-            Timing metadata for stream alignment, derived from the translation
-            frame
+          anyOf:
+            - type: integer
+              description: >
+                Timing metadata for stream alignment, derived from the
+                translation frame
 
-            when available. It advances in 200 ms increments, but multiple
-            transcript
+                when available. It advances in 200 ms increments, but multiple
+                transcript
 
-            deltas may share the same `elapsed_ms`. Treat it as alignment
-            metadata,
+                deltas may share the same `elapsed_ms`. Treat it as alignment
+                metadata,
 
-            not a unique transcript-delta identifier.
+                not a unique transcript-delta identifier.
+            - type: 'null'
       required:
         - event_id
         - type
@@ -65610,16 +65611,17 @@ components:
           description: Audio encoding for `delta`.
           x-stainless-const: true
         elapsed_ms:
-          type: integer
-          nullable: true
-          description: >
-            Timing metadata for stream alignment, derived from the translation
-            frame
+          anyOf:
+            - type: integer
+              description: >
+                Timing metadata for stream alignment, derived from the
+                translation frame
 
-            when available. Treat `elapsed_ms` as alignment metadata, not a
-            unique
+                when available. Treat `elapsed_ms` as alignment metadata, not a
+                unique
 
-            event identifier.
+                event identifier.
+            - type: 'null'
       required:
         - event_id
         - type
@@ -65661,19 +65663,20 @@ components:
           type: string
           description: Append-only transcript text for the translated output audio.
         elapsed_ms:
-          type: integer
-          nullable: true
-          description: >
-            Timing metadata for stream alignment, derived from the translation
-            frame
+          anyOf:
+            - type: integer
+              description: >
+                Timing metadata for stream alignment, derived from the
+                translation frame
 
-            when available. It advances in 200 ms increments, but multiple
-            transcript
+                when available. It advances in 200 ms increments, but multiple
+                transcript
 
-            deltas may share the same `elapsed_ms`. Treat it as alignment
-            metadata,
+                deltas may share the same `elapsed_ms`. Treat it as alignment
+                metadata,
 
-            not a unique transcript-delta identifier.
+                not a unique transcript-delta identifier.
+            - type: 'null'
       required:
         - event_id
         - type
@@ -78779,6 +78782,13 @@ components:
       enum:
         - in_memory
         - 24h
+    ServiceTierEnum:
+      type: string
+      enum:
+        - auto
+        - default
+        - flex
+        - priority
     CompactResponseMethodPublicBody:
       properties:
         model:
@@ -78833,6 +78843,11 @@ components:
           anyOf:
             - $ref: '#/components/schemas/PromptCacheRetentionEnum'
               description: How long to retain a prompt cache entry created by this request.
+            - type: 'null'
+        service_tier:
+          anyOf:
+            - $ref: '#/components/schemas/ServiceTierEnum'
+              description: The service tier to use for this request.
             - type: 'null'
       type: object
       required:

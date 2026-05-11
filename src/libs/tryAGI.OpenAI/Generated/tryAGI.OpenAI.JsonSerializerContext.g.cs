@@ -4061,6 +4061,10 @@ namespace tryAGI.OpenAI
 
             typeof(global::tryAGI.OpenAI.JsonConverters.PromptCacheRetentionEnumNullableJsonConverter),
 
+            typeof(global::tryAGI.OpenAI.JsonConverters.ServiceTierEnum2JsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.ServiceTierEnum2NullableJsonConverter),
+
             typeof(global::tryAGI.OpenAI.JsonConverters.ItemFieldDiscriminatorTypeJsonConverter),
 
             typeof(global::tryAGI.OpenAI.JsonConverters.ItemFieldDiscriminatorTypeNullableJsonConverter),
@@ -9593,6 +9597,10 @@ namespace tryAGI.OpenAI
             typeof(global::tryAGI.OpenAI.JsonConverters.PromptCacheRetentionEnumJsonConverter),
 
             typeof(global::tryAGI.OpenAI.JsonConverters.PromptCacheRetentionEnumNullableJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.ServiceTierEnum2JsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.ServiceTierEnum2NullableJsonConverter),
 
             typeof(global::tryAGI.OpenAI.JsonConverters.ItemFieldDiscriminatorTypeJsonConverter),
 
@@ -15127,6 +15135,10 @@ namespace tryAGI.OpenAI
 
             typeof(global::tryAGI.OpenAI.JsonConverters.PromptCacheRetentionEnumNullableJsonConverter),
 
+            typeof(global::tryAGI.OpenAI.JsonConverters.ServiceTierEnum2JsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.ServiceTierEnum2NullableJsonConverter),
+
             typeof(global::tryAGI.OpenAI.JsonConverters.ItemFieldDiscriminatorTypeJsonConverter),
 
             typeof(global::tryAGI.OpenAI.JsonConverters.ItemFieldDiscriminatorTypeNullableJsonConverter),
@@ -20659,6 +20671,10 @@ namespace tryAGI.OpenAI
             typeof(global::tryAGI.OpenAI.JsonConverters.PromptCacheRetentionEnumJsonConverter),
 
             typeof(global::tryAGI.OpenAI.JsonConverters.PromptCacheRetentionEnumNullableJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.ServiceTierEnum2JsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.ServiceTierEnum2NullableJsonConverter),
 
             typeof(global::tryAGI.OpenAI.JsonConverters.ItemFieldDiscriminatorTypeJsonConverter),
 
@@ -26193,6 +26209,10 @@ namespace tryAGI.OpenAI
 
             typeof(global::tryAGI.OpenAI.JsonConverters.PromptCacheRetentionEnumNullableJsonConverter),
 
+            typeof(global::tryAGI.OpenAI.JsonConverters.ServiceTierEnum2JsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.ServiceTierEnum2NullableJsonConverter),
+
             typeof(global::tryAGI.OpenAI.JsonConverters.ItemFieldDiscriminatorTypeJsonConverter),
 
             typeof(global::tryAGI.OpenAI.JsonConverters.ItemFieldDiscriminatorTypeNullableJsonConverter),
@@ -31726,6 +31746,10 @@ namespace tryAGI.OpenAI
 
             typeof(global::tryAGI.OpenAI.JsonConverters.PromptCacheRetentionEnumNullableJsonConverter),
 
+            typeof(global::tryAGI.OpenAI.JsonConverters.ServiceTierEnum2JsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.ServiceTierEnum2NullableJsonConverter),
+
             typeof(global::tryAGI.OpenAI.JsonConverters.ItemFieldDiscriminatorTypeJsonConverter),
 
             typeof(global::tryAGI.OpenAI.JsonConverters.ItemFieldDiscriminatorTypeNullableJsonConverter),
@@ -32988,6 +33012,7 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.TokenCountsResource))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.TokenCountsResourceObject), TypeInfoPropertyName = "TokenCountsResourceObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PromptCacheRetentionEnum), TypeInfoPropertyName = "PromptCacheRetentionEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ServiceTierEnum2), TypeInfoPropertyName = "ServiceTierEnum22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CompactResponseMethodPublicBody))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ItemField), TypeInfoPropertyName = "ItemField2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ItemFieldDiscriminator))]
@@ -33199,7 +33224,6 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.AdminApiKey>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.AssistantToolsCode, global::tryAGI.OpenAI.AssistantToolsFileSearch, global::tryAGI.OpenAI.AssistantToolsFunction>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.AuditLogIpAllowlistConfigActivatedConfig>))]
     internal sealed partial class SourceGenerationContextChunk5 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -37259,6 +37283,10 @@ namespace tryAGI.OpenAI
 
             typeof(global::tryAGI.OpenAI.JsonConverters.PromptCacheRetentionEnumNullableJsonConverter),
 
+            typeof(global::tryAGI.OpenAI.JsonConverters.ServiceTierEnum2JsonConverter),
+
+            typeof(global::tryAGI.OpenAI.JsonConverters.ServiceTierEnum2NullableJsonConverter),
+
             typeof(global::tryAGI.OpenAI.JsonConverters.ItemFieldDiscriminatorTypeJsonConverter),
 
             typeof(global::tryAGI.OpenAI.JsonConverters.ItemFieldDiscriminatorTypeNullableJsonConverter),
@@ -38256,6 +38284,7 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.List<string>, global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1, global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2>>>), TypeInfoPropertyName = "CreateModerationRequestInputVariant3ItemVariant2_82fca1e83967e178")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageDeltaContentImageFileObject, global::tryAGI.OpenAI.MessageDeltaContentTextObject, global::tryAGI.OpenAI.MessageDeltaContentRefusalObject, global::tryAGI.OpenAI.MessageDeltaContentImageUrlObject>>), TypeInfoPropertyName = "MessageDeltaContentImageUrlObject_9c7d436e0b6fe539")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject>>), TypeInfoPropertyName = "RunStepDeltaStepDetailsToolCallsFunctionObject_5640d9ed7ecfcd45")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.AuditLogIpAllowlistConfigActivatedConfig>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.AuditLogIpAllowlistConfigDeactivatedConfig>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.AuditLogCertificatesActivatedCertificate>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.AuditLogCertificatesDeactivatedCertificate>))]
@@ -40577,6 +40606,8 @@ namespace tryAGI.OpenAI
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.TokenCountsResourceObjectNullableJsonConverter());
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.PromptCacheRetentionEnumJsonConverter());
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.PromptCacheRetentionEnumNullableJsonConverter());
+            options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.ServiceTierEnum2JsonConverter());
+            options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.ServiceTierEnum2NullableJsonConverter());
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.ItemFieldDiscriminatorTypeJsonConverter());
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.ItemFieldDiscriminatorTypeNullableJsonConverter());
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.CompactResourceObjectJsonConverter());

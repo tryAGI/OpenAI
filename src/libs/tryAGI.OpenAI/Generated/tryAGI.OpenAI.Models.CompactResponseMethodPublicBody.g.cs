@@ -47,6 +47,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.PromptCacheRetentionEnum? PromptCacheRetention { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
+        public global::tryAGI.OpenAI.ServiceTierEnum2? ServiceTier { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -63,6 +69,7 @@ namespace tryAGI.OpenAI
         /// <param name="instructions"></param>
         /// <param name="promptCacheKey"></param>
         /// <param name="promptCacheRetention"></param>
+        /// <param name="serviceTier"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -72,7 +79,8 @@ namespace tryAGI.OpenAI
             string? previousResponseId,
             string? instructions,
             string? promptCacheKey,
-            global::tryAGI.OpenAI.PromptCacheRetentionEnum? promptCacheRetention)
+            global::tryAGI.OpenAI.PromptCacheRetentionEnum? promptCacheRetention,
+            global::tryAGI.OpenAI.ServiceTierEnum2? serviceTier)
         {
             this.Model = model;
             this.Input = input;
@@ -80,6 +88,7 @@ namespace tryAGI.OpenAI
             this.Instructions = instructions;
             this.PromptCacheKey = promptCacheKey;
             this.PromptCacheRetention = promptCacheRetention;
+            this.ServiceTier = serviceTier;
         }
 
         /// <summary>
