@@ -160,6 +160,8 @@ namespace tryAGI.OpenAI
                     httpRequestMessage: __httpRequest,
                     request: request);
 
+                global::tryAGI.OpenAI.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

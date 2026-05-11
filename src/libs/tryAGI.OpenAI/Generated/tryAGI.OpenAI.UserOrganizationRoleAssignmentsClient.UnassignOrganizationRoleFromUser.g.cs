@@ -156,6 +156,8 @@ namespace tryAGI.OpenAI
                     userId: userId!,
                     roleId: roleId!);
 
+                global::tryAGI.OpenAI.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 
