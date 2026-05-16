@@ -35,6 +35,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        OrganizationUsageFileSearchesResult,
+        /// <summary>
+        /// 
+        /// </summary>
         OrganizationUsageImagesResult,
         /// <summary>
         /// 
@@ -44,6 +48,10 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         OrganizationUsageVectorStoresResult,
+        /// <summary>
+        /// 
+        /// </summary>
+        OrganizationUsageWebSearchesResult,
     }
 
     /// <summary>
@@ -64,9 +72,11 @@ namespace tryAGI.OpenAI
                 UsageTimeBucketResultDiscriminatorObject.OrganizationUsageCodeInterpreterSessionsResult => "organization.usage.code_interpreter_sessions.result",
                 UsageTimeBucketResultDiscriminatorObject.OrganizationUsageCompletionsResult => "organization.usage.completions.result",
                 UsageTimeBucketResultDiscriminatorObject.OrganizationUsageEmbeddingsResult => "organization.usage.embeddings.result",
+                UsageTimeBucketResultDiscriminatorObject.OrganizationUsageFileSearchesResult => "organization.usage.file_searches.result",
                 UsageTimeBucketResultDiscriminatorObject.OrganizationUsageImagesResult => "organization.usage.images.result",
                 UsageTimeBucketResultDiscriminatorObject.OrganizationUsageModerationsResult => "organization.usage.moderations.result",
                 UsageTimeBucketResultDiscriminatorObject.OrganizationUsageVectorStoresResult => "organization.usage.vector_stores.result",
+                UsageTimeBucketResultDiscriminatorObject.OrganizationUsageWebSearchesResult => "organization.usage.web_searches.result",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -83,9 +93,11 @@ namespace tryAGI.OpenAI
                 "organization.usage.code_interpreter_sessions.result" => UsageTimeBucketResultDiscriminatorObject.OrganizationUsageCodeInterpreterSessionsResult,
                 "organization.usage.completions.result" => UsageTimeBucketResultDiscriminatorObject.OrganizationUsageCompletionsResult,
                 "organization.usage.embeddings.result" => UsageTimeBucketResultDiscriminatorObject.OrganizationUsageEmbeddingsResult,
+                "organization.usage.file_searches.result" => UsageTimeBucketResultDiscriminatorObject.OrganizationUsageFileSearchesResult,
                 "organization.usage.images.result" => UsageTimeBucketResultDiscriminatorObject.OrganizationUsageImagesResult,
                 "organization.usage.moderations.result" => UsageTimeBucketResultDiscriminatorObject.OrganizationUsageModerationsResult,
                 "organization.usage.vector_stores.result" => UsageTimeBucketResultDiscriminatorObject.OrganizationUsageVectorStoresResult,
+                "organization.usage.web_searches.result" => UsageTimeBucketResultDiscriminatorObject.OrganizationUsageWebSearchesResult,
                 _ => null,
             };
         }

@@ -11,6 +11,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        CompactionTrigger,
+        /// <summary>
+        /// 
+        /// </summary>
         Message,
     }
 
@@ -26,6 +30,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                InputItemDiscriminatorType.CompactionTrigger => "compaction_trigger",
                 InputItemDiscriminatorType.Message => "message",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -37,6 +42,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "compaction_trigger" => InputItemDiscriminatorType.CompactionTrigger,
                 "message" => InputItemDiscriminatorType.Message,
                 _ => null,
             };

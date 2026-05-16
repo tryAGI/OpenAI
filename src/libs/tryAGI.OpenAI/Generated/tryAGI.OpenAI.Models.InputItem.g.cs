@@ -90,6 +90,43 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'Item' but the value was {ToString()}.");
 
         /// <summary>
+        /// Compacts the current context. Must be the final input item.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.CompactionTriggerItemParam? CompactionTrigger { get; init; }
+#else
+        public global::tryAGI.OpenAI.CompactionTriggerItemParam? CompactionTrigger { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CompactionTrigger))]
+#endif
+        public bool IsCompactionTrigger => CompactionTrigger != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCompactionTrigger(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.CompactionTriggerItemParam? value)
+        {
+            value = CompactionTrigger;
+            return IsCompactionTrigger;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.CompactionTriggerItemParam PickCompactionTrigger() => IsCompactionTrigger
+            ? CompactionTrigger!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CompactionTrigger' but the value was {ToString()}.");
+
+        /// <summary>
         /// An internal identifier for an item to reference.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -174,6 +211,29 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator InputItem(global::tryAGI.OpenAI.CompactionTriggerItemParam value) => new InputItem((global::tryAGI.OpenAI.CompactionTriggerItemParam?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.CompactionTriggerItemParam?(InputItem @this) => @this.CompactionTrigger;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InputItem(global::tryAGI.OpenAI.CompactionTriggerItemParam? value)
+        {
+            CompactionTrigger = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputItem FromCompactionTrigger(global::tryAGI.OpenAI.CompactionTriggerItemParam? value) => new InputItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputItem(global::tryAGI.OpenAI.ItemReferenceParam value) => new InputItem((global::tryAGI.OpenAI.ItemReferenceParam?)value);
 
         /// <summary>
@@ -200,11 +260,13 @@ namespace tryAGI.OpenAI
         public InputItem(
             global::tryAGI.OpenAI.EasyInputMessage? message,
             global::tryAGI.OpenAI.Item? item,
+            global::tryAGI.OpenAI.CompactionTriggerItemParam? compactionTrigger,
             global::tryAGI.OpenAI.ItemReferenceParam? itemReference
             )
         {
             Message = message;
             Item = item;
+            CompactionTrigger = compactionTrigger;
             ItemReference = itemReference;
         }
 
@@ -213,6 +275,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public object? Object =>
             ItemReference as object ??
+            CompactionTrigger as object ??
             Item as object ??
             Message as object 
             ;
@@ -223,6 +286,7 @@ namespace tryAGI.OpenAI
         public override string? ToString() =>
             Message?.ToString() ??
             Item?.ToString() ??
+            CompactionTrigger?.ToString() ??
             ItemReference?.ToString() 
             ;
 
@@ -231,7 +295,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsMessage && !IsItem && !IsItemReference || !IsMessage && IsItem && !IsItemReference || !IsMessage && !IsItem && IsItemReference;
+            return IsMessage && !IsItem && !IsCompactionTrigger && !IsItemReference || !IsMessage && IsItem && !IsCompactionTrigger && !IsItemReference || !IsMessage && !IsItem && IsCompactionTrigger && !IsItemReference || !IsMessage && !IsItem && !IsCompactionTrigger && IsItemReference;
         }
 
         /// <summary>
@@ -240,6 +304,7 @@ namespace tryAGI.OpenAI
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.EasyInputMessage, TResult>? message = null,
             global::System.Func<global::tryAGI.OpenAI.Item?, TResult>? item = null,
+            global::System.Func<global::tryAGI.OpenAI.CompactionTriggerItemParam, TResult>? compactionTrigger = null,
             global::System.Func<global::tryAGI.OpenAI.ItemReferenceParam, TResult>? itemReference = null,
             bool validate = true)
         {
@@ -255,6 +320,10 @@ namespace tryAGI.OpenAI
             else if (IsItem && item != null)
             {
                 return item(Item!);
+            }
+            else if (IsCompactionTrigger && compactionTrigger != null)
+            {
+                return compactionTrigger(CompactionTrigger!);
             }
             else if (IsItemReference && itemReference != null)
             {
@@ -272,6 +341,8 @@ namespace tryAGI.OpenAI
 
             global::System.Action<global::tryAGI.OpenAI.Item?>? item = null,
 
+            global::System.Action<global::tryAGI.OpenAI.CompactionTriggerItemParam>? compactionTrigger = null,
+
             global::System.Action<global::tryAGI.OpenAI.ItemReferenceParam>? itemReference = null,
             bool validate = true)
         {
@@ -287,6 +358,10 @@ namespace tryAGI.OpenAI
             else if (IsItem)
             {
                 item?.Invoke(Item!);
+            }
+            else if (IsCompactionTrigger)
+            {
+                compactionTrigger?.Invoke(CompactionTrigger!);
             }
             else if (IsItemReference)
             {
@@ -300,6 +375,7 @@ namespace tryAGI.OpenAI
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.EasyInputMessage>? message = null,
             global::System.Action<global::tryAGI.OpenAI.Item?>? item = null,
+            global::System.Action<global::tryAGI.OpenAI.CompactionTriggerItemParam>? compactionTrigger = null,
             global::System.Action<global::tryAGI.OpenAI.ItemReferenceParam>? itemReference = null,
             bool validate = true)
         {
@@ -315,6 +391,10 @@ namespace tryAGI.OpenAI
             else if (IsItem)
             {
                 item?.Invoke(Item!);
+            }
+            else if (IsCompactionTrigger)
+            {
+                compactionTrigger?.Invoke(CompactionTrigger!);
             }
             else if (IsItemReference)
             {
@@ -333,6 +413,8 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.EasyInputMessage),
                 Item,
                 typeof(global::tryAGI.OpenAI.Item),
+                CompactionTrigger,
+                typeof(global::tryAGI.OpenAI.CompactionTriggerItemParam),
                 ItemReference,
                 typeof(global::tryAGI.OpenAI.ItemReferenceParam),
             };
@@ -353,6 +435,7 @@ namespace tryAGI.OpenAI
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.EasyInputMessage?>.Default.Equals(Message, other.Message) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.Item?>.Default.Equals(Item, other.Item) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CompactionTriggerItemParam?>.Default.Equals(CompactionTrigger, other.CompactionTrigger) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ItemReferenceParam?>.Default.Equals(ItemReference, other.ItemReference) 
                 ;
         }

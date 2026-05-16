@@ -176,6 +176,15 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
+        /// 
+        /// </summary>
+        public HostedToolsClient HostedTools => new HostedToolsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
         /// Given a prompt and/or an input image, the model will generate a new image.
         /// </summary>
         public ImagesClient Images => new ImagesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)

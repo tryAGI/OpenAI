@@ -19132,6 +19132,254 @@ paths:
                 "object": "project.group.deleted",
                 "deleted": true
             }
+  /organization/projects/{project_id}/hosted_tool_permissions:
+    get:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Returns hosted tool permissions for a project.
+      operationId: retrieve-project-hosted-tool-permissions
+      tags:
+        - Hosted tools
+      parameters:
+        - name: project_id
+          in: path
+          description: The ID of the project.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Project hosted tool permissions retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectHostedToolPermissions'
+      x-oaiMeta:
+        name: Retrieve project hosted tool permissions
+        group: administration
+        examples:
+          request:
+            curl: >
+              curl
+              https://api.openai.com/v1/organization/projects/proj_abc/hosted_tool_permissions
+              \
+                -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+                -H "Content-Type: application/json"
+          response: |
+            {
+                "file_search": {
+                    "enabled": true
+                },
+                "web_search": {
+                    "enabled": true
+                },
+                "image_generation": {
+                    "enabled": true
+                },
+                "mcp": {
+                    "enabled": true
+                },
+                "code_interpreter": {
+                    "enabled": true
+                }
+            }
+    post:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Updates hosted tool permissions for a project.
+      operationId: update-project-hosted-tool-permissions
+      tags:
+        - Hosted tools
+      parameters:
+        - name: project_id
+          in: path
+          description: The ID of the project.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: The project hosted tool permissions update request payload.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProjectHostedToolPermissionsUpdateRequest'
+      responses:
+        '200':
+          description: Project hosted tool permissions updated successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectHostedToolPermissions'
+      x-oaiMeta:
+        name: Modify project hosted tool permissions
+        group: administration
+        examples:
+          request:
+            curl: >
+              curl -X POST
+              https://api.openai.com/v1/organization/projects/proj_abc/hosted_tool_permissions
+              \
+                -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+                -H "Content-Type: application/json" \
+                -d '{
+                    "file_search": {
+                        "enabled": true
+                    },
+                    "image_generation": {
+                        "enabled": false
+                    }
+                }'
+          response: |
+            {
+                "file_search": {
+                    "enabled": true
+                },
+                "web_search": {
+                    "enabled": true
+                },
+                "image_generation": {
+                    "enabled": false
+                },
+                "mcp": {
+                    "enabled": true
+                },
+                "code_interpreter": {
+                    "enabled": true
+                }
+            }
+  /organization/projects/{project_id}/model_permissions:
+    get:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Returns model permissions for a project.
+      operationId: retrieve-project-model-permissions
+      tags:
+        - Projects
+      parameters:
+        - name: project_id
+          in: path
+          description: The ID of the project.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Project model permissions retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectModelPermissions'
+      x-oaiMeta:
+        name: Retrieve project model permissions
+        group: administration
+        examples:
+          request:
+            curl: >
+              curl
+              https://api.openai.com/v1/organization/projects/proj_abc/model_permissions
+              \
+                -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+                -H "Content-Type: application/json"
+          response: |
+            {
+                "object": "project.model_permissions",
+                "mode": "allow_list",
+                "model_ids": [
+                    "gpt-4.1",
+                    "o3"
+                ]
+            }
+    post:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Updates model permissions for a project.
+      operationId: update-project-model-permissions
+      tags:
+        - Projects
+      parameters:
+        - name: project_id
+          in: path
+          description: The ID of the project.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: The project model permissions update request payload.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProjectModelPermissionsUpdateRequest'
+      responses:
+        '200':
+          description: Project model permissions updated successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectModelPermissions'
+      x-oaiMeta:
+        name: Modify project model permissions
+        group: administration
+        examples:
+          request:
+            curl: >
+              curl -X POST
+              https://api.openai.com/v1/organization/projects/proj_abc/model_permissions
+              \
+                -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+                -H "Content-Type: application/json" \
+                -d '{
+                    "mode": "deny_list",
+                    "model_ids": [
+                        "o3"
+                    ]
+                }'
+          response: |
+            {
+                "object": "project.model_permissions",
+                "mode": "deny_list",
+                "model_ids": [
+                    "o3"
+                ]
+            }
+    delete:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Deletes model permissions for a project.
+      operationId: delete-project-model-permissions
+      tags:
+        - Projects
+      parameters:
+        - name: project_id
+          in: path
+          description: The ID of the project.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Project model permissions deleted successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectModelPermissionsDeleteResponse'
+      x-oaiMeta:
+        name: Delete project model permissions
+        group: administration
+        examples:
+          request:
+            curl: >
+              curl -X DELETE
+              https://api.openai.com/v1/organization/projects/proj_abc/model_permissions
+              \
+                -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+                -H "Content-Type: application/json"
+          response: |
+            {
+                "object": "project.model_permissions.deleted",
+                "deleted": true
+            }
   /organization/projects/{project_id}/rate_limits:
     get:
       security:
@@ -22088,6 +22336,148 @@ paths:
                 "has_more": false,
                 "next_page": null
             }
+  /organization/usage/file_search_calls:
+    get:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Get file search calls usage details for the organization.
+      operationId: usage-file-search-calls
+      tags:
+        - Usage
+      parameters:
+        - name: start_time
+          in: query
+          description: Start time (Unix seconds) of the query time range, inclusive.
+          required: true
+          schema:
+            type: integer
+        - name: end_time
+          in: query
+          description: End time (Unix seconds) of the query time range, exclusive.
+          required: false
+          schema:
+            type: integer
+        - name: bucket_width
+          in: query
+          description: >-
+            Width of each time bucket in response. Currently `1m`, `1h` and `1d`
+            are supported, default to `1d`.
+          required: false
+          schema:
+            type: string
+            enum:
+              - 1m
+              - 1h
+              - 1d
+            default: 1d
+        - name: project_ids
+          in: query
+          description: Return only usage for these projects.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: user_ids
+          in: query
+          description: Return only usage for these users.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: api_key_ids
+          in: query
+          description: Return only usage for these API keys.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: vector_store_ids
+          in: query
+          description: Return only usage for these vector stores.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: group_by
+          in: query
+          description: >-
+            Group the usage data by the specified fields. Support fields include
+            `project_id`, `user_id`, `api_key_id`, `vector_store_id` or any
+            combination of them.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              enum:
+                - project_id
+                - user_id
+                - api_key_id
+                - vector_store_id
+        - name: limit
+          in: query
+          description: |
+            Specifies the number of buckets to return.
+            - `bucket_width=1d`: default: 7, max: 31
+            - `bucket_width=1h`: default: 24, max: 168
+            - `bucket_width=1m`: default: 60, max: 1440
+          required: false
+          schema:
+            type: integer
+        - name: page
+          in: query
+          description: >-
+            A cursor for use in pagination. Corresponding to the `next_page`
+            field from the previous response.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Usage data retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsageResponse'
+      x-oaiMeta:
+        name: File search calls
+        group: usage-file-search-calls
+        examples:
+          request:
+            curl: >
+              curl
+              "https://api.openai.com/v1/organization/usage/file_search_calls?start_time=1730419200&limit=1"
+              \
+
+              -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+
+              -H "Content-Type: application/json"
+          response: |
+            {
+                "object": "page",
+                "data": [
+                    {
+                        "object": "bucket",
+                        "start_time": 1730419200,
+                        "end_time": 1730505600,
+                        "results": [
+                            {
+                                "object": "organization.usage.file_searches.result",
+                                "num_requests": 2,
+                                "project_id": null,
+                                "user_id": null,
+                                "api_key_id": null,
+                                "vector_store_id": null
+                            }
+                        ]
+                    }
+                ],
+                "has_more": false,
+                "next_page": null
+            }
   /organization/usage/images:
     get:
       security:
@@ -22705,6 +23095,163 @@ paths:
                                 "object": "organization.usage.vector_stores.result",
                                 "usage_bytes": 1024,
                                 "project_id": null
+                            }
+                        ]
+                    }
+                ],
+                "has_more": false,
+                "next_page": null
+            }
+  /organization/usage/web_search_calls:
+    get:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Get web search calls usage details for the organization.
+      operationId: usage-web-search-calls
+      tags:
+        - Usage
+      parameters:
+        - name: start_time
+          in: query
+          description: Start time (Unix seconds) of the query time range, inclusive.
+          required: true
+          schema:
+            type: integer
+        - name: end_time
+          in: query
+          description: End time (Unix seconds) of the query time range, exclusive.
+          required: false
+          schema:
+            type: integer
+        - name: bucket_width
+          in: query
+          description: >-
+            Width of each time bucket in response. Currently `1m`, `1h` and `1d`
+            are supported, default to `1d`.
+          required: false
+          schema:
+            type: string
+            enum:
+              - 1m
+              - 1h
+              - 1d
+            default: 1d
+        - name: project_ids
+          in: query
+          description: Return only usage for these projects.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: user_ids
+          in: query
+          description: Return only usage for these users.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: api_key_ids
+          in: query
+          description: Return only usage for these API keys.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: models
+          in: query
+          description: Return only usage for these models.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: context_levels
+          in: query
+          description: Return only web search usage for these context levels.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              enum:
+                - low
+                - medium
+                - high
+        - name: group_by
+          in: query
+          description: >-
+            Group the usage data by the specified fields. Support fields include
+            `project_id`, `user_id`, `api_key_id`, `model`, `context_level` or
+            any combination of them.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              enum:
+                - project_id
+                - user_id
+                - api_key_id
+                - model
+                - context_level
+        - name: limit
+          in: query
+          description: |
+            Specifies the number of buckets to return.
+            - `bucket_width=1d`: default: 7, max: 31
+            - `bucket_width=1h`: default: 24, max: 168
+            - `bucket_width=1m`: default: 60, max: 1440
+          required: false
+          schema:
+            type: integer
+        - name: page
+          in: query
+          description: >-
+            A cursor for use in pagination. Corresponding to the `next_page`
+            field from the previous response.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Usage data retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsageResponse'
+      x-oaiMeta:
+        name: Web search calls
+        group: usage-web-search-calls
+        examples:
+          request:
+            curl: >
+              curl
+              "https://api.openai.com/v1/organization/usage/web_search_calls?start_time=1730419200&limit=1"
+              \
+
+              -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+
+              -H "Content-Type: application/json"
+          response: |
+            {
+                "object": "page",
+                "data": [
+                    {
+                        "object": "bucket",
+                        "start_time": 1730419200,
+                        "end_time": 1730505600,
+                        "results": [
+                            {
+                                "object": "organization.usage.web_searches.result",
+                                "num_model_requests": 2,
+                                "num_requests": 2,
+                                "project_id": null,
+                                "user_id": null,
+                                "api_key_id": null,
+                                "model": null,
+                                "context_level": null
                             }
                         ]
                     }
@@ -51041,6 +51588,23 @@ components:
               "object": "group.user.deleted",
               "deleted": true
           }
+    HostedToolPermission:
+      type: object
+      description: Permission state for a single hosted tool on a project.
+      properties:
+        enabled:
+          type: boolean
+          description: Whether the hosted tool is enabled for the project.
+      required:
+        - enabled
+    HostedToolPermissionUpdate:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+          description: Whether to enable the hosted tool for the project.
+      required:
+        - enabled
     Image:
       type: object
       description: >-
@@ -51782,6 +52346,7 @@ components:
             generated by the model. Can contain text, images, and audio inputs,
             as well as previous assistant responses and tool call outputs.
           $ref: '#/components/schemas/Item'
+        - $ref: '#/components/schemas/CompactionTriggerItemParam'
         - $ref: '#/components/schemas/ItemReferenceParam'
       discriminator:
         propertyName: type
@@ -52048,7 +52613,9 @@ components:
           description: >-
             An array of projects to which membership is granted at the same time
             the org invite is accepted. If omitted, the user will be invited to
-            the default project for compatibility with legacy behavior.
+            the default project for compatibility with legacy behavior. If empty
+            list is passed, the user will not be invited to any projects,
+            including the default one.
           items:
             type: object
             properties:
@@ -55092,6 +55659,74 @@ components:
               "has_more": false,
               "next": null
           }
+    ProjectHostedToolPermissions:
+      type: object
+      description: Represents hosted tool permissions for a project.
+      properties:
+        file_search:
+          $ref: '#/components/schemas/HostedToolPermission'
+        web_search:
+          $ref: '#/components/schemas/HostedToolPermission'
+        image_generation:
+          $ref: '#/components/schemas/HostedToolPermission'
+        mcp:
+          $ref: '#/components/schemas/HostedToolPermission'
+        code_interpreter:
+          $ref: '#/components/schemas/HostedToolPermission'
+      required:
+        - file_search
+        - web_search
+        - image_generation
+        - mcp
+        - code_interpreter
+      x-oaiMeta:
+        name: The project hosted tool permissions object
+        example: |
+          {
+              "file_search": {
+                  "enabled": true
+              },
+              "web_search": {
+                  "enabled": true
+              },
+              "image_generation": {
+                  "enabled": true
+              },
+              "mcp": {
+                  "enabled": true
+              },
+              "code_interpreter": {
+                  "enabled": true
+              }
+          }
+    ProjectHostedToolPermissionsUpdateRequest:
+      type: object
+      properties:
+        file_search:
+          anyOf:
+            - $ref: '#/components/schemas/HostedToolPermissionUpdate'
+            - type: 'null'
+          description: The file search permission update.
+        web_search:
+          anyOf:
+            - $ref: '#/components/schemas/HostedToolPermissionUpdate'
+            - type: 'null'
+          description: The web search permission update.
+        image_generation:
+          anyOf:
+            - $ref: '#/components/schemas/HostedToolPermissionUpdate'
+            - type: 'null'
+          description: The image generation permission update.
+        mcp:
+          anyOf:
+            - $ref: '#/components/schemas/HostedToolPermissionUpdate'
+            - type: 'null'
+          description: The MCP permission update.
+        code_interpreter:
+          anyOf:
+            - $ref: '#/components/schemas/HostedToolPermissionUpdate'
+            - type: 'null'
+          description: The code interpreter permission update.
     ProjectListResponse:
       type: object
       properties:
@@ -55118,6 +55753,84 @@ components:
         - object
         - data
         - has_more
+    ProjectModelPermissions:
+      type: object
+      description: Represents the model allowlist or denylist policy for a project.
+      properties:
+        object:
+          type: string
+          enum:
+            - project.model_permissions
+          description: The object type, which is always `project.model_permissions`.
+          x-stainless-const: true
+        mode:
+          type: string
+          enum:
+            - allow_list
+            - deny_list
+          description: Whether the project uses an allowlist or a denylist.
+        model_ids:
+          type: array
+          items:
+            type: string
+          description: The model IDs included in the model permissions policy.
+      required:
+        - object
+        - mode
+        - model_ids
+      x-oaiMeta:
+        name: The project model permissions object
+        example: |
+          {
+              "object": "project.model_permissions",
+              "mode": "allow_list",
+              "model_ids": [
+                  "gpt-4.1",
+                  "o3"
+              ]
+          }
+    ProjectModelPermissionsDeleteResponse:
+      type: object
+      description: Confirmation payload returned after deleting project model permissions.
+      properties:
+        object:
+          type: string
+          enum:
+            - project.model_permissions.deleted
+          description: >-
+            The object type, which is always
+            `project.model_permissions.deleted`.
+          x-stainless-const: true
+        deleted:
+          type: boolean
+          description: Whether the project model permissions were deleted.
+      required:
+        - object
+        - deleted
+      x-oaiMeta:
+        name: Project model permissions deletion confirmation
+        example: |
+          {
+              "object": "project.model_permissions.deleted",
+              "deleted": true
+          }
+    ProjectModelPermissionsUpdateRequest:
+      type: object
+      properties:
+        mode:
+          type: string
+          enum:
+            - allow_list
+            - deny_list
+          description: The model permissions mode to apply.
+        model_ids:
+          type: array
+          items:
+            type: string
+          description: The model IDs included in this permissions policy.
+      required:
+        - mode
+        - model_ids
     ProjectRateLimit:
       type: object
       description: Represents a project rate limit config.
@@ -72646,6 +73359,62 @@ components:
               "api_key_id": "key_abc",
               "model": "text-embedding-ada-002-v2"
           }
+    UsageFileSearchCallsResult:
+      type: object
+      description: >-
+        The aggregated file search calls usage details of the specific time
+        bucket.
+      properties:
+        object:
+          type: string
+          enum:
+            - organization.usage.file_searches.result
+          x-stainless-const: true
+        num_requests:
+          type: integer
+          description: The count of file search calls.
+        project_id:
+          anyOf:
+            - type: string
+              description: >-
+                When `group_by=project_id`, this field provides the project ID
+                of the grouped usage result.
+            - type: 'null'
+        user_id:
+          anyOf:
+            - type: string
+              description: >-
+                When `group_by=user_id`, this field provides the user ID of the
+                grouped usage result.
+            - type: 'null'
+        api_key_id:
+          anyOf:
+            - type: string
+              description: >-
+                When `group_by=api_key_id`, this field provides the API key ID
+                of the grouped usage result.
+            - type: 'null'
+        vector_store_id:
+          anyOf:
+            - type: string
+              description: >-
+                When `group_by=vector_store_id`, this field provides the vector
+                store ID of the grouped usage result.
+            - type: 'null'
+      required:
+        - object
+        - num_requests
+      x-oaiMeta:
+        name: File search calls usage object
+        example: |
+          {
+              "object": "organization.usage.file_searches.result",
+              "num_requests": 2,
+              "project_id": "proj_abc",
+              "user_id": "user-abc",
+              "api_key_id": "key_abc",
+              "vector_store_id": "vs_abc"
+          }
     UsageImagesResult:
       type: object
       description: The aggregated images usage details of the specific time bucket.
@@ -72828,6 +73597,8 @@ components:
               - $ref: '#/components/schemas/UsageAudioTranscriptionsResult'
               - $ref: '#/components/schemas/UsageVectorStoresResult'
               - $ref: '#/components/schemas/UsageCodeInterpreterSessionsResult'
+              - $ref: '#/components/schemas/UsageFileSearchCallsResult'
+              - $ref: '#/components/schemas/UsageWebSearchCallsResult'
               - $ref: '#/components/schemas/CostsResult'
             discriminator:
               propertyName: object
@@ -72865,6 +73636,75 @@ components:
               "object": "organization.usage.vector_stores.result",
               "usage_bytes": 1024,
               "project_id": "proj_abc"
+          }
+    UsageWebSearchCallsResult:
+      type: object
+      description: >-
+        The aggregated web search calls usage details of the specific time
+        bucket.
+      properties:
+        object:
+          type: string
+          enum:
+            - organization.usage.web_searches.result
+          x-stainless-const: true
+        num_model_requests:
+          type: integer
+          description: The count of model requests.
+        num_requests:
+          type: integer
+          description: The count of web search calls.
+        project_id:
+          anyOf:
+            - type: string
+              description: >-
+                When `group_by=project_id`, this field provides the project ID
+                of the grouped usage result.
+            - type: 'null'
+        user_id:
+          anyOf:
+            - type: string
+              description: >-
+                When `group_by=user_id`, this field provides the user ID of the
+                grouped usage result.
+            - type: 'null'
+        api_key_id:
+          anyOf:
+            - type: string
+              description: >-
+                When `group_by=api_key_id`, this field provides the API key ID
+                of the grouped usage result.
+            - type: 'null'
+        model:
+          anyOf:
+            - type: string
+              description: >-
+                When `group_by=model`, this field provides the model name of the
+                grouped usage result.
+            - type: 'null'
+        context_level:
+          anyOf:
+            - type: string
+              description: >-
+                When `group_by=context_level`, this field provides the search
+                context size of the grouped usage result.
+            - type: 'null'
+      required:
+        - object
+        - num_model_requests
+        - num_requests
+      x-oaiMeta:
+        name: Web search calls usage object
+        example: |
+          {
+              "object": "organization.usage.web_searches.result",
+              "num_model_requests": 2,
+              "num_requests": 2,
+              "project_id": "proj_abc",
+              "user_id": "user-abc",
+              "api_key_id": "key_abc",
+              "model": "gpt-4o-mini-2024-07-18",
+              "context_level": "medium"
           }
     User:
       type: object
@@ -78008,6 +78848,20 @@ components:
         - status
       title: Apply patch tool call output
       description: The streamed output emitted by an apply patch tool call.
+    CompactionTriggerItemParam:
+      properties:
+        type:
+          type: string
+          enum:
+            - compaction_trigger
+          description: The type of the item. Always `compaction_trigger`.
+          default: compaction_trigger
+          x-stainless-const: true
+      type: object
+      required:
+        - type
+      title: Compaction trigger
+      description: Compacts the current context. Must be the final input item.
     ItemReferenceParam:
       properties:
         type:
