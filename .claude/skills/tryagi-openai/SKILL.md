@@ -40,11 +40,12 @@ dnx tryAGI.OpenAI.CLI <group> --help
 | `group` | 4 |  |
 | `group-organization-role-assignment` | 3 |  |
 | `group-user` | 3 |  |
+| `hosted-tool` | 2 |  |
 | `image` | 3 | Given a prompt and/or an input image, the model will generate a new image. |
 | `invite` | 4 |  |
 | `model` | 3 | List and describe the various models available in the API. |
 | `moderation` | 1 | Given text and/or image inputs, classifies if those inputs are potentially harmful. |
-| `project` | 19 |  |
+| `project` | 22 |  |
 | `project-group` | 3 |  |
 | `project-group-role-assignment` | 3 |  |
 | `project-user-role-assignment` | 3 |  |
@@ -53,7 +54,7 @@ dnx tryAGI.OpenAI.CLI <group> --help
 | `role` | 8 |  |
 | `skill` | 11 |  |
 | `upload` | 4 | Use Uploads to upload large files in multiple parts. |
-| `usage` | 9 |  |
+| `usage` | 11 |  |
 | `user` | 4 |  |
 | `user-organization-role-assignment` | 3 |  |
 | `vector-store` | 16 |  |

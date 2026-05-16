@@ -197,6 +197,13 @@ Manage fine-tuning jobs to tailor a model to your specific training data.
 | `list-group-users` | `GET /organization/groups/{group_id}/users` | Lists the users assigned to a group. |
 | `remove-group-user` | `DELETE /organization/groups/{group_id}/users/{user_id}` | Removes a user from a group. |
 
+## `hosted-tool`
+
+| Command | Route | Description |
+|---------|-------|-------------|
+| `modify-project-hosted-tool-permissions` | `POST /organization/projects/{project_id}/hosted_tool_permissions` | Updates hosted tool permissions for a project. |
+| `retrieve-project-hosted-tool-permissions` | `GET /organization/projects/{project_id}/hosted_tool_permissions` | Returns hosted tool permissions for a project. |
+
 ## `image`
 
 Given a prompt and/or an input image, the model will generate a new image.
@@ -243,6 +250,7 @@ Given text and/or image inputs, classifies if those inputs are potentially harmf
 | `create-project-service-account` | `POST /organization/projects/{project_id}/service_accounts` | Creates a new service account in the project. This also returns an unredacted API key for the service account. |
 | `create-project-user` | `POST /organization/projects/{project_id}/users` | Adds a user to the project. Users must already be members of the organization to be added to a project. |
 | `delete-project-api-key` | `DELETE /organization/projects/{project_id}/api_keys/{api_key_id}` | Deletes an API key from the project.  Returns confirmation of the key deletion, or an error if the key belonged to a service account. |
+| `delete-project-model-permissions` | `DELETE /organization/projects/{project_id}/model_permissions` | Deletes model permissions for a project. |
 | `delete-project-service-account` | `DELETE /organization/projects/{project_id}/service_accounts/{service_account_id}` | Deletes a service account from the project.  Returns confirmation of service account deletion, or an error if the project is archived (archived projects have no service accounts). |
 | `delete-project-user` | `DELETE /organization/projects/{project_id}/users/{user_id}` | Deletes a user from the project.  Returns confirmation of project user deletion, or an error if the project is archived (archived projects have no users). |
 | `list-project-api-keys` | `GET /organization/projects/{project_id}/api_keys` | Returns a list of API keys in the project. |
@@ -251,10 +259,12 @@ Given text and/or image inputs, classifies if those inputs are potentially harmf
 | `list-project-users` | `GET /organization/projects/{project_id}/users` | Returns a list of users in the project. |
 | `list-projects` | `GET /organization/projects` | Returns a list of projects. |
 | `modify-project` | `POST /organization/projects/{project_id}` | Modifies a project in the organization. |
+| `modify-project-model-permissions` | `POST /organization/projects/{project_id}/model_permissions` | Updates model permissions for a project. |
 | `modify-project-rate-limit` | `POST /organization/projects/{project_id}/rate_limits/{rate_limit_id}` | Updates a project rate limit. |
 | `modify-project-user` | `POST /organization/projects/{project_id}/users/{user_id}` | Modifies a user's role in the project. |
 | `retrieve-project` | `GET /organization/projects/{project_id}` | Retrieves a project. |
 | `retrieve-project-api-key` | `GET /organization/projects/{project_id}/api_keys/{api_key_id}` | Retrieves an API key in the project. |
+| `retrieve-project-model-permissions` | `GET /organization/projects/{project_id}/model_permissions` | Returns model permissions for a project. |
 | `retrieve-project-service-account` | `GET /organization/projects/{project_id}/service_accounts/{service_account_id}` | Retrieves a service account in the project. |
 | `retrieve-project-user` | `GET /organization/projects/{project_id}/users/{user_id}` | Retrieves a user in the project. |
 
@@ -356,9 +366,11 @@ Use Uploads to upload large files in multiple parts.
 | `completions` | `GET /organization/usage/completions` | Get completions usage details for the organization. |
 | `costs` | `GET /organization/costs` | Get costs details for the organization. |
 | `embeddings` | `GET /organization/usage/embeddings` | Get embeddings usage details for the organization. |
+| `file-search-calls` | `GET /organization/usage/file_search_calls` | Get file search calls usage details for the organization. |
 | `images` | `GET /organization/usage/images` | Get images usage details for the organization. |
 | `moderations` | `GET /organization/usage/moderations` | Get moderations usage details for the organization. |
 | `vector-stores` | `GET /organization/usage/vector_stores` | Get vector stores usage details for the organization. |
+| `web-search-calls` | `GET /organization/usage/web_search_calls` | Get web search calls usage details for the organization. |
 
 ## `user`
 

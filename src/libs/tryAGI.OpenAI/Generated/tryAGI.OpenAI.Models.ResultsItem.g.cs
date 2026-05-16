@@ -311,6 +311,80 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationUsageCodeInterpreterSessionsResult' but the value was {ToString()}.");
 
         /// <summary>
+        /// The aggregated file search calls usage details of the specific time bucket.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.UsageFileSearchCallsResult? OrganizationUsageFileSearchesResult { get; init; }
+#else
+        public global::tryAGI.OpenAI.UsageFileSearchCallsResult? OrganizationUsageFileSearchesResult { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrganizationUsageFileSearchesResult))]
+#endif
+        public bool IsOrganizationUsageFileSearchesResult => OrganizationUsageFileSearchesResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOrganizationUsageFileSearchesResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.UsageFileSearchCallsResult? value)
+        {
+            value = OrganizationUsageFileSearchesResult;
+            return IsOrganizationUsageFileSearchesResult;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UsageFileSearchCallsResult PickOrganizationUsageFileSearchesResult() => IsOrganizationUsageFileSearchesResult
+            ? OrganizationUsageFileSearchesResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationUsageFileSearchesResult' but the value was {ToString()}.");
+
+        /// <summary>
+        /// The aggregated web search calls usage details of the specific time bucket.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.UsageWebSearchCallsResult? OrganizationUsageWebSearchesResult { get; init; }
+#else
+        public global::tryAGI.OpenAI.UsageWebSearchCallsResult? OrganizationUsageWebSearchesResult { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrganizationUsageWebSearchesResult))]
+#endif
+        public bool IsOrganizationUsageWebSearchesResult => OrganizationUsageWebSearchesResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOrganizationUsageWebSearchesResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.UsageWebSearchCallsResult? value)
+        {
+            value = OrganizationUsageWebSearchesResult;
+            return IsOrganizationUsageWebSearchesResult;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UsageWebSearchCallsResult PickOrganizationUsageWebSearchesResult() => IsOrganizationUsageWebSearchesResult
+            ? OrganizationUsageWebSearchesResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationUsageWebSearchesResult' but the value was {ToString()}.");
+
+        /// <summary>
         /// The aggregated costs details of the specific time bucket.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -533,6 +607,52 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator ResultsItem(global::tryAGI.OpenAI.UsageFileSearchCallsResult value) => new ResultsItem((global::tryAGI.OpenAI.UsageFileSearchCallsResult?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.UsageFileSearchCallsResult?(ResultsItem @this) => @this.OrganizationUsageFileSearchesResult;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResultsItem(global::tryAGI.OpenAI.UsageFileSearchCallsResult? value)
+        {
+            OrganizationUsageFileSearchesResult = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultsItem FromOrganizationUsageFileSearchesResult(global::tryAGI.OpenAI.UsageFileSearchCallsResult? value) => new ResultsItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResultsItem(global::tryAGI.OpenAI.UsageWebSearchCallsResult value) => new ResultsItem((global::tryAGI.OpenAI.UsageWebSearchCallsResult?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.UsageWebSearchCallsResult?(ResultsItem @this) => @this.OrganizationUsageWebSearchesResult;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResultsItem(global::tryAGI.OpenAI.UsageWebSearchCallsResult? value)
+        {
+            OrganizationUsageWebSearchesResult = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultsItem FromOrganizationUsageWebSearchesResult(global::tryAGI.OpenAI.UsageWebSearchCallsResult? value) => new ResultsItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultsItem(global::tryAGI.OpenAI.CostsResult value) => new ResultsItem((global::tryAGI.OpenAI.CostsResult?)value);
 
         /// <summary>
@@ -566,6 +686,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.UsageAudioTranscriptionsResult? organizationUsageAudioTranscriptionsResult,
             global::tryAGI.OpenAI.UsageVectorStoresResult? organizationUsageVectorStoresResult,
             global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult? organizationUsageCodeInterpreterSessionsResult,
+            global::tryAGI.OpenAI.UsageFileSearchCallsResult? organizationUsageFileSearchesResult,
+            global::tryAGI.OpenAI.UsageWebSearchCallsResult? organizationUsageWebSearchesResult,
             global::tryAGI.OpenAI.CostsResult? organizationCostsResult
             )
         {
@@ -579,6 +701,8 @@ namespace tryAGI.OpenAI
             OrganizationUsageAudioTranscriptionsResult = organizationUsageAudioTranscriptionsResult;
             OrganizationUsageVectorStoresResult = organizationUsageVectorStoresResult;
             OrganizationUsageCodeInterpreterSessionsResult = organizationUsageCodeInterpreterSessionsResult;
+            OrganizationUsageFileSearchesResult = organizationUsageFileSearchesResult;
+            OrganizationUsageWebSearchesResult = organizationUsageWebSearchesResult;
             OrganizationCostsResult = organizationCostsResult;
         }
 
@@ -587,6 +711,8 @@ namespace tryAGI.OpenAI
         /// </summary>
         public object? Object1 =>
             OrganizationCostsResult as object ??
+            OrganizationUsageWebSearchesResult as object ??
+            OrganizationUsageFileSearchesResult as object ??
             OrganizationUsageCodeInterpreterSessionsResult as object ??
             OrganizationUsageVectorStoresResult as object ??
             OrganizationUsageAudioTranscriptionsResult as object ??
@@ -609,6 +735,8 @@ namespace tryAGI.OpenAI
             OrganizationUsageAudioTranscriptionsResult?.ToString() ??
             OrganizationUsageVectorStoresResult?.ToString() ??
             OrganizationUsageCodeInterpreterSessionsResult?.ToString() ??
+            OrganizationUsageFileSearchesResult?.ToString() ??
+            OrganizationUsageWebSearchesResult?.ToString() ??
             OrganizationCostsResult?.ToString() 
             ;
 
@@ -617,7 +745,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsOrganizationUsageCompletionsResult && !IsOrganizationUsageEmbeddingsResult && !IsOrganizationUsageModerationsResult && !IsOrganizationUsageImagesResult && !IsOrganizationUsageAudioSpeechesResult && !IsOrganizationUsageAudioTranscriptionsResult && !IsOrganizationUsageVectorStoresResult && !IsOrganizationUsageCodeInterpreterSessionsResult && !IsOrganizationCostsResult || !IsOrganizationUsageCompletionsResult && IsOrganizationUsageEmbeddingsResult && !IsOrganizationUsageModerationsResult && !IsOrganizationUsageImagesResult && !IsOrganizationUsageAudioSpeechesResult && !IsOrganizationUsageAudioTranscriptionsResult && !IsOrganizationUsageVectorStoresResult && !IsOrganizationUsageCodeInterpreterSessionsResult && !IsOrganizationCostsResult || !IsOrganizationUsageCompletionsResult && !IsOrganizationUsageEmbeddingsResult && IsOrganizationUsageModerationsResult && !IsOrganizationUsageImagesResult && !IsOrganizationUsageAudioSpeechesResult && !IsOrganizationUsageAudioTranscriptionsResult && !IsOrganizationUsageVectorStoresResult && !IsOrganizationUsageCodeInterpreterSessionsResult && !IsOrganizationCostsResult || !IsOrganizationUsageCompletionsResult && !IsOrganizationUsageEmbeddingsResult && !IsOrganizationUsageModerationsResult && IsOrganizationUsageImagesResult && !IsOrganizationUsageAudioSpeechesResult && !IsOrganizationUsageAudioTranscriptionsResult && !IsOrganizationUsageVectorStoresResult && !IsOrganizationUsageCodeInterpreterSessionsResult && !IsOrganizationCostsResult || !IsOrganizationUsageCompletionsResult && !IsOrganizationUsageEmbeddingsResult && !IsOrganizationUsageModerationsResult && !IsOrganizationUsageImagesResult && IsOrganizationUsageAudioSpeechesResult && !IsOrganizationUsageAudioTranscriptionsResult && !IsOrganizationUsageVectorStoresResult && !IsOrganizationUsageCodeInterpreterSessionsResult && !IsOrganizationCostsResult || !IsOrganizationUsageCompletionsResult && !IsOrganizationUsageEmbeddingsResult && !IsOrganizationUsageModerationsResult && !IsOrganizationUsageImagesResult && !IsOrganizationUsageAudioSpeechesResult && IsOrganizationUsageAudioTranscriptionsResult && !IsOrganizationUsageVectorStoresResult && !IsOrganizationUsageCodeInterpreterSessionsResult && !IsOrganizationCostsResult || !IsOrganizationUsageCompletionsResult && !IsOrganizationUsageEmbeddingsResult && !IsOrganizationUsageModerationsResult && !IsOrganizationUsageImagesResult && !IsOrganizationUsageAudioSpeechesResult && !IsOrganizationUsageAudioTranscriptionsResult && IsOrganizationUsageVectorStoresResult && !IsOrganizationUsageCodeInterpreterSessionsResult && !IsOrganizationCostsResult || !IsOrganizationUsageCompletionsResult && !IsOrganizationUsageEmbeddingsResult && !IsOrganizationUsageModerationsResult && !IsOrganizationUsageImagesResult && !IsOrganizationUsageAudioSpeechesResult && !IsOrganizationUsageAudioTranscriptionsResult && !IsOrganizationUsageVectorStoresResult && IsOrganizationUsageCodeInterpreterSessionsResult && !IsOrganizationCostsResult || !IsOrganizationUsageCompletionsResult && !IsOrganizationUsageEmbeddingsResult && !IsOrganizationUsageModerationsResult && !IsOrganizationUsageImagesResult && !IsOrganizationUsageAudioSpeechesResult && !IsOrganizationUsageAudioTranscriptionsResult && !IsOrganizationUsageVectorStoresResult && !IsOrganizationUsageCodeInterpreterSessionsResult && IsOrganizationCostsResult;
+            return IsOrganizationUsageCompletionsResult && !IsOrganizationUsageEmbeddingsResult && !IsOrganizationUsageModerationsResult && !IsOrganizationUsageImagesResult && !IsOrganizationUsageAudioSpeechesResult && !IsOrganizationUsageAudioTranscriptionsResult && !IsOrganizationUsageVectorStoresResult && !IsOrganizationUsageCodeInterpreterSessionsResult && !IsOrganizationUsageFileSearchesResult && !IsOrganizationUsageWebSearchesResult && !IsOrganizationCostsResult || !IsOrganizationUsageCompletionsResult && IsOrganizationUsageEmbeddingsResult && !IsOrganizationUsageModerationsResult && !IsOrganizationUsageImagesResult && !IsOrganizationUsageAudioSpeechesResult && !IsOrganizationUsageAudioTranscriptionsResult && !IsOrganizationUsageVectorStoresResult && !IsOrganizationUsageCodeInterpreterSessionsResult && !IsOrganizationUsageFileSearchesResult && !IsOrganizationUsageWebSearchesResult && !IsOrganizationCostsResult || !IsOrganizationUsageCompletionsResult && !IsOrganizationUsageEmbeddingsResult && IsOrganizationUsageModerationsResult && !IsOrganizationUsageImagesResult && !IsOrganizationUsageAudioSpeechesResult && !IsOrganizationUsageAudioTranscriptionsResult && !IsOrganizationUsageVectorStoresResult && !IsOrganizationUsageCodeInterpreterSessionsResult && !IsOrganizationUsageFileSearchesResult && !IsOrganizationUsageWebSearchesResult && !IsOrganizationCostsResult || !IsOrganizationUsageCompletionsResult && !IsOrganizationUsageEmbeddingsResult && !IsOrganizationUsageModerationsResult && IsOrganizationUsageImagesResult && !IsOrganizationUsageAudioSpeechesResult && !IsOrganizationUsageAudioTranscriptionsResult && !IsOrganizationUsageVectorStoresResult && !IsOrganizationUsageCodeInterpreterSessionsResult && !IsOrganizationUsageFileSearchesResult && !IsOrganizationUsageWebSearchesResult && !IsOrganizationCostsResult || !IsOrganizationUsageCompletionsResult && !IsOrganizationUsageEmbeddingsResult && !IsOrganizationUsageModerationsResult && !IsOrganizationUsageImagesResult && IsOrganizationUsageAudioSpeechesResult && !IsOrganizationUsageAudioTranscriptionsResult && !IsOrganizationUsageVectorStoresResult && !IsOrganizationUsageCodeInterpreterSessionsResult && !IsOrganizationUsageFileSearchesResult && !IsOrganizationUsageWebSearchesResult && !IsOrganizationCostsResult || !IsOrganizationUsageCompletionsResult && !IsOrganizationUsageEmbeddingsResult && !IsOrganizationUsageModerationsResult && !IsOrganizationUsageImagesResult && !IsOrganizationUsageAudioSpeechesResult && IsOrganizationUsageAudioTranscriptionsResult && !IsOrganizationUsageVectorStoresResult && !IsOrganizationUsageCodeInterpreterSessionsResult && !IsOrganizationUsageFileSearchesResult && !IsOrganizationUsageWebSearchesResult && !IsOrganizationCostsResult || !IsOrganizationUsageCompletionsResult && !IsOrganizationUsageEmbeddingsResult && !IsOrganizationUsageModerationsResult && !IsOrganizationUsageImagesResult && !IsOrganizationUsageAudioSpeechesResult && !IsOrganizationUsageAudioTranscriptionsResult && IsOrganizationUsageVectorStoresResult && !IsOrganizationUsageCodeInterpreterSessionsResult && !IsOrganizationUsageFileSearchesResult && !IsOrganizationUsageWebSearchesResult && !IsOrganizationCostsResult || !IsOrganizationUsageCompletionsResult && !IsOrganizationUsageEmbeddingsResult && !IsOrganizationUsageModerationsResult && !IsOrganizationUsageImagesResult && !IsOrganizationUsageAudioSpeechesResult && !IsOrganizationUsageAudioTranscriptionsResult && !IsOrganizationUsageVectorStoresResult && IsOrganizationUsageCodeInterpreterSessionsResult && !IsOrganizationUsageFileSearchesResult && !IsOrganizationUsageWebSearchesResult && !IsOrganizationCostsResult || !IsOrganizationUsageCompletionsResult && !IsOrganizationUsageEmbeddingsResult && !IsOrganizationUsageModerationsResult && !IsOrganizationUsageImagesResult && !IsOrganizationUsageAudioSpeechesResult && !IsOrganizationUsageAudioTranscriptionsResult && !IsOrganizationUsageVectorStoresResult && !IsOrganizationUsageCodeInterpreterSessionsResult && IsOrganizationUsageFileSearchesResult && !IsOrganizationUsageWebSearchesResult && !IsOrganizationCostsResult || !IsOrganizationUsageCompletionsResult && !IsOrganizationUsageEmbeddingsResult && !IsOrganizationUsageModerationsResult && !IsOrganizationUsageImagesResult && !IsOrganizationUsageAudioSpeechesResult && !IsOrganizationUsageAudioTranscriptionsResult && !IsOrganizationUsageVectorStoresResult && !IsOrganizationUsageCodeInterpreterSessionsResult && !IsOrganizationUsageFileSearchesResult && IsOrganizationUsageWebSearchesResult && !IsOrganizationCostsResult || !IsOrganizationUsageCompletionsResult && !IsOrganizationUsageEmbeddingsResult && !IsOrganizationUsageModerationsResult && !IsOrganizationUsageImagesResult && !IsOrganizationUsageAudioSpeechesResult && !IsOrganizationUsageAudioTranscriptionsResult && !IsOrganizationUsageVectorStoresResult && !IsOrganizationUsageCodeInterpreterSessionsResult && !IsOrganizationUsageFileSearchesResult && !IsOrganizationUsageWebSearchesResult && IsOrganizationCostsResult;
         }
 
         /// <summary>
@@ -632,6 +760,8 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.UsageAudioTranscriptionsResult, TResult>? organizationUsageAudioTranscriptionsResult = null,
             global::System.Func<global::tryAGI.OpenAI.UsageVectorStoresResult, TResult>? organizationUsageVectorStoresResult = null,
             global::System.Func<global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult, TResult>? organizationUsageCodeInterpreterSessionsResult = null,
+            global::System.Func<global::tryAGI.OpenAI.UsageFileSearchCallsResult, TResult>? organizationUsageFileSearchesResult = null,
+            global::System.Func<global::tryAGI.OpenAI.UsageWebSearchCallsResult, TResult>? organizationUsageWebSearchesResult = null,
             global::System.Func<global::tryAGI.OpenAI.CostsResult, TResult>? organizationCostsResult = null,
             bool validate = true)
         {
@@ -672,6 +802,14 @@ namespace tryAGI.OpenAI
             {
                 return organizationUsageCodeInterpreterSessionsResult(OrganizationUsageCodeInterpreterSessionsResult!);
             }
+            else if (IsOrganizationUsageFileSearchesResult && organizationUsageFileSearchesResult != null)
+            {
+                return organizationUsageFileSearchesResult(OrganizationUsageFileSearchesResult!);
+            }
+            else if (IsOrganizationUsageWebSearchesResult && organizationUsageWebSearchesResult != null)
+            {
+                return organizationUsageWebSearchesResult(OrganizationUsageWebSearchesResult!);
+            }
             else if (IsOrganizationCostsResult && organizationCostsResult != null)
             {
                 return organizationCostsResult(OrganizationCostsResult!);
@@ -700,6 +838,10 @@ namespace tryAGI.OpenAI
 
             global::System.Action<global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult>? organizationUsageCodeInterpreterSessionsResult = null,
 
+            global::System.Action<global::tryAGI.OpenAI.UsageFileSearchCallsResult>? organizationUsageFileSearchesResult = null,
+
+            global::System.Action<global::tryAGI.OpenAI.UsageWebSearchCallsResult>? organizationUsageWebSearchesResult = null,
+
             global::System.Action<global::tryAGI.OpenAI.CostsResult>? organizationCostsResult = null,
             bool validate = true)
         {
@@ -739,6 +881,14 @@ namespace tryAGI.OpenAI
             else if (IsOrganizationUsageCodeInterpreterSessionsResult)
             {
                 organizationUsageCodeInterpreterSessionsResult?.Invoke(OrganizationUsageCodeInterpreterSessionsResult!);
+            }
+            else if (IsOrganizationUsageFileSearchesResult)
+            {
+                organizationUsageFileSearchesResult?.Invoke(OrganizationUsageFileSearchesResult!);
+            }
+            else if (IsOrganizationUsageWebSearchesResult)
+            {
+                organizationUsageWebSearchesResult?.Invoke(OrganizationUsageWebSearchesResult!);
             }
             else if (IsOrganizationCostsResult)
             {
@@ -758,6 +908,8 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.UsageAudioTranscriptionsResult>? organizationUsageAudioTranscriptionsResult = null,
             global::System.Action<global::tryAGI.OpenAI.UsageVectorStoresResult>? organizationUsageVectorStoresResult = null,
             global::System.Action<global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult>? organizationUsageCodeInterpreterSessionsResult = null,
+            global::System.Action<global::tryAGI.OpenAI.UsageFileSearchCallsResult>? organizationUsageFileSearchesResult = null,
+            global::System.Action<global::tryAGI.OpenAI.UsageWebSearchCallsResult>? organizationUsageWebSearchesResult = null,
             global::System.Action<global::tryAGI.OpenAI.CostsResult>? organizationCostsResult = null,
             bool validate = true)
         {
@@ -797,6 +949,14 @@ namespace tryAGI.OpenAI
             else if (IsOrganizationUsageCodeInterpreterSessionsResult)
             {
                 organizationUsageCodeInterpreterSessionsResult?.Invoke(OrganizationUsageCodeInterpreterSessionsResult!);
+            }
+            else if (IsOrganizationUsageFileSearchesResult)
+            {
+                organizationUsageFileSearchesResult?.Invoke(OrganizationUsageFileSearchesResult!);
+            }
+            else if (IsOrganizationUsageWebSearchesResult)
+            {
+                organizationUsageWebSearchesResult?.Invoke(OrganizationUsageWebSearchesResult!);
             }
             else if (IsOrganizationCostsResult)
             {
@@ -827,6 +987,10 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.UsageVectorStoresResult),
                 OrganizationUsageCodeInterpreterSessionsResult,
                 typeof(global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult),
+                OrganizationUsageFileSearchesResult,
+                typeof(global::tryAGI.OpenAI.UsageFileSearchCallsResult),
+                OrganizationUsageWebSearchesResult,
+                typeof(global::tryAGI.OpenAI.UsageWebSearchCallsResult),
                 OrganizationCostsResult,
                 typeof(global::tryAGI.OpenAI.CostsResult),
             };
@@ -853,6 +1017,8 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.UsageAudioTranscriptionsResult?>.Default.Equals(OrganizationUsageAudioTranscriptionsResult, other.OrganizationUsageAudioTranscriptionsResult) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.UsageVectorStoresResult?>.Default.Equals(OrganizationUsageVectorStoresResult, other.OrganizationUsageVectorStoresResult) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult?>.Default.Equals(OrganizationUsageCodeInterpreterSessionsResult, other.OrganizationUsageCodeInterpreterSessionsResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.UsageFileSearchCallsResult?>.Default.Equals(OrganizationUsageFileSearchesResult, other.OrganizationUsageFileSearchesResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.UsageWebSearchCallsResult?>.Default.Equals(OrganizationUsageWebSearchesResult, other.OrganizationUsageWebSearchesResult) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CostsResult?>.Default.Equals(OrganizationCostsResult, other.OrganizationCostsResult) 
                 ;
         }

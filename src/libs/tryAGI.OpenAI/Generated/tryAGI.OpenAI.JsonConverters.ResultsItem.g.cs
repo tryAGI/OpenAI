@@ -77,6 +77,20 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult)}");
                 organizationUsageCodeInterpreterSessionsResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::tryAGI.OpenAI.UsageFileSearchCallsResult? organizationUsageFileSearchesResult = default;
+            if (discriminator?.Object == global::tryAGI.OpenAI.UsageTimeBucketResultDiscriminatorObject.OrganizationUsageFileSearchesResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.UsageFileSearchCallsResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.UsageFileSearchCallsResult> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.UsageFileSearchCallsResult)}");
+                organizationUsageFileSearchesResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::tryAGI.OpenAI.UsageWebSearchCallsResult? organizationUsageWebSearchesResult = default;
+            if (discriminator?.Object == global::tryAGI.OpenAI.UsageTimeBucketResultDiscriminatorObject.OrganizationUsageWebSearchesResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.UsageWebSearchCallsResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.UsageWebSearchCallsResult> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.UsageWebSearchCallsResult)}");
+                organizationUsageWebSearchesResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::tryAGI.OpenAI.CostsResult? organizationCostsResult = default;
             if (discriminator?.Object == global::tryAGI.OpenAI.UsageTimeBucketResultDiscriminatorObject.OrganizationCostsResult)
             {
@@ -102,6 +116,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 organizationUsageVectorStoresResult,
 
                 organizationUsageCodeInterpreterSessionsResult,
+
+                organizationUsageFileSearchesResult,
+
+                organizationUsageWebSearchesResult,
 
                 organizationCostsResult
                 );
@@ -165,6 +183,18 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.OrganizationUsageCodeInterpreterSessionsResult!, typeInfo);
+            }
+            else if (value.IsOrganizationUsageFileSearchesResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.UsageFileSearchCallsResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.UsageFileSearchCallsResult?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.UsageFileSearchCallsResult).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OrganizationUsageFileSearchesResult!, typeInfo);
+            }
+            else if (value.IsOrganizationUsageWebSearchesResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.UsageWebSearchCallsResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.UsageWebSearchCallsResult?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.UsageWebSearchCallsResult).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OrganizationUsageWebSearchesResult!, typeInfo);
             }
             else if (value.IsOrganizationCostsResult)
             {
