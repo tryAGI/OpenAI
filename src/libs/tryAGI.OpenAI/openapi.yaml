@@ -75313,7 +75313,7 @@ components:
           enum:
             - open_page
           description: |
-            The action type.
+            The action type. Always `open_page`.
           x-stainless-const: true
         url:
           description: |
