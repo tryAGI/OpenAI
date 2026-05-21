@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct ChunkingStrategyRequestParam : global::System.IEquatable<ChunkingStrategyRequestParam>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ChunkingStrategyRequestParamDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// The default strategy. This strategy currently uses a `max_chunk_size_tokens` of `800` and `chunk_overlap_tokens` of `400`.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -27,6 +32,26 @@ namespace tryAGI.OpenAI
         public bool IsAuto => Auto != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAuto(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam? value)
+        {
+            value = Auto;
+            return IsAuto;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam PickAuto() => IsAuto
+            ? Auto!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Auto' but the value was {ToString()}.");
+
+        /// <summary>
         /// Customize your own chunking strategy by setting chunk size and chunk overlap.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +67,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Static))]
 #endif
         public bool IsStatic => Static != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStatic(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam? value)
+        {
+            value = Static;
+            return IsStatic;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam PickStatic() => IsStatic
+            ? Static!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Static' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -59,6 +104,11 @@ namespace tryAGI.OpenAI
         {
             Auto = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChunkingStrategyRequestParam FromAuto(global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam? value) => new ChunkingStrategyRequestParam(value);
 
         /// <summary>
         /// 
@@ -81,11 +131,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ChunkingStrategyRequestParam FromStatic(global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam? value) => new ChunkingStrategyRequestParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ChunkingStrategyRequestParam(
+            global::tryAGI.OpenAI.ChunkingStrategyRequestParamDiscriminatorType? type,
             global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam? auto,
             global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam? @static
             )
         {
+            Type = type;
+
             Auto = auto;
             Static = @static;
         }
@@ -118,8 +176,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam?, TResult>? auto = null,
-            global::System.Func<global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam?, TResult>? @static = null,
+            global::System.Func<global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam, TResult>? auto = null,
+            global::System.Func<global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam, TResult>? @static = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +201,32 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam?>? auto = null,
-            global::System.Action<global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam?>? @static = null,
+            global::System.Action<global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam>? auto = null,
+
+            global::System.Action<global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam>? @static = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAuto)
+            {
+                auto?.Invoke(Auto!);
+            }
+            else if (IsStatic)
+            {
+                @static?.Invoke(Static!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam>? auto = null,
+            global::System.Action<global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam>? @static = null,
             bool validate = true)
         {
             if (validate)

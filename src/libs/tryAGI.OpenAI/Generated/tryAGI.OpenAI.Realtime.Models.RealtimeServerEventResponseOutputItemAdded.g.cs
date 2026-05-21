@@ -91,5 +91,6 @@ namespace tryAGI.OpenAI.Realtime
         public RealtimeServerEventResponseOutputItemAdded()
         {
         }
+
     }
 }

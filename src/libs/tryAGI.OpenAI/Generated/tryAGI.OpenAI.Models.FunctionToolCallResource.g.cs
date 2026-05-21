@@ -30,6 +30,26 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFunctionToolCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.FunctionToolCall? value)
+        {
+            value = FunctionToolCall;
+            return IsFunctionToolCall;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.FunctionToolCall PickFunctionToolCall() => IsFunctionToolCall
+            ? FunctionToolCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionToolCall' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.FunctionToolCallResourceVariant2? FunctionToolCallResourceVariant2 { get; init; }
 #else
@@ -43,6 +63,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionToolCallResourceVariant2))]
 #endif
         public bool IsFunctionToolCallResourceVariant2 => FunctionToolCallResourceVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunctionToolCallResourceVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.FunctionToolCallResourceVariant2? value)
+        {
+            value = FunctionToolCallResourceVariant2;
+            return IsFunctionToolCallResourceVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.FunctionToolCallResourceVariant2 PickFunctionToolCallResourceVariant2() => IsFunctionToolCallResourceVariant2
+            ? FunctionToolCallResourceVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionToolCallResourceVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -64,6 +104,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static FunctionToolCallResource FromFunctionToolCall(global::tryAGI.OpenAI.FunctionToolCall? value) => new FunctionToolCallResource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FunctionToolCallResource(global::tryAGI.OpenAI.FunctionToolCallResourceVariant2 value) => new FunctionToolCallResource((global::tryAGI.OpenAI.FunctionToolCallResourceVariant2?)value);
 
         /// <summary>
@@ -78,6 +123,11 @@ namespace tryAGI.OpenAI
         {
             FunctionToolCallResourceVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FunctionToolCallResource FromFunctionToolCallResourceVariant2(global::tryAGI.OpenAI.FunctionToolCallResourceVariant2? value) => new FunctionToolCallResource(value);
 
         /// <summary>
         /// 
@@ -119,8 +169,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.FunctionToolCall?, TResult>? functionToolCall = null,
-            global::System.Func<global::tryAGI.OpenAI.FunctionToolCallResourceVariant2?, TResult>? functionToolCallResourceVariant2 = null,
+            global::System.Func<global::tryAGI.OpenAI.FunctionToolCall, TResult>? functionToolCall = null,
+            global::System.Func<global::tryAGI.OpenAI.FunctionToolCallResourceVariant2, TResult>? functionToolCallResourceVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +194,32 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.FunctionToolCall?>? functionToolCall = null,
-            global::System.Action<global::tryAGI.OpenAI.FunctionToolCallResourceVariant2?>? functionToolCallResourceVariant2 = null,
+            global::System.Action<global::tryAGI.OpenAI.FunctionToolCall>? functionToolCall = null,
+
+            global::System.Action<global::tryAGI.OpenAI.FunctionToolCallResourceVariant2>? functionToolCallResourceVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFunctionToolCall)
+            {
+                functionToolCall?.Invoke(FunctionToolCall!);
+            }
+            else if (IsFunctionToolCallResourceVariant2)
+            {
+                functionToolCallResourceVariant2?.Invoke(FunctionToolCallResourceVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.FunctionToolCall>? functionToolCall = null,
+            global::System.Action<global::tryAGI.OpenAI.FunctionToolCallResourceVariant2>? functionToolCallResourceVariant2 = null,
             bool validate = true)
         {
             if (validate)

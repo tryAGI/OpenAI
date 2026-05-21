@@ -121,6 +121,11 @@ namespace tryAGI.OpenAI
         public GroupsClient Groups { get; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public HostedToolsClient HostedTools { get; }
+
+        /// <summary>
         /// Given a prompt and/or an input image, the model will generate a new image.
         /// </summary>
         public ImagesClient Images { get; }

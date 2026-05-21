@@ -68,5 +68,18 @@ namespace tryAGI.OpenAI
         public SkillReferenceParam()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="SkillReferenceParam"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static SkillReferenceParam FromSkillId(string skillId)
+        {
+            return new SkillReferenceParam
+            {
+                SkillId = skillId,
+            };
+        }
+
     }
 }

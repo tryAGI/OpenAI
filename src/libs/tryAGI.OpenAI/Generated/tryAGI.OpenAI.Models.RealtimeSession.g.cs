@@ -86,7 +86,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_audio_transcription")]
-        public global::tryAGI.OpenAI.AudioTranscription? InputAudioTranscription { get; set; }
+        public global::tryAGI.OpenAI.AudioTranscriptionResponse? InputAudioTranscription { get; set; }
 
         /// <summary>
         /// 
@@ -270,7 +270,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.VoiceIdsShared? voice,
             global::tryAGI.OpenAI.RealtimeSessionInputAudioFormat? inputAudioFormat,
             global::tryAGI.OpenAI.RealtimeSessionOutputAudioFormat? outputAudioFormat,
-            global::tryAGI.OpenAI.AudioTranscription? inputAudioTranscription,
+            global::tryAGI.OpenAI.AudioTranscriptionResponse? inputAudioTranscription,
             global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1? turnDetection,
             global::tryAGI.OpenAI.RealtimeSessionInputAudioNoiseReduction? inputAudioNoiseReduction,
             double? speed,
@@ -311,5 +311,6 @@ namespace tryAGI.OpenAI
         public RealtimeSession()
         {
         }
+
     }
 }

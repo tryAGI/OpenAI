@@ -27,6 +27,26 @@ namespace tryAGI.OpenAI
         public bool IsSimpleInputMessage => SimpleInputMessage != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSimpleInputMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.CreateEvalItemSimpleInputMessage? value)
+        {
+            value = SimpleInputMessage;
+            return IsSimpleInputMessage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.CreateEvalItemSimpleInputMessage PickSimpleInputMessage() => IsSimpleInputMessage
+            ? SimpleInputMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SimpleInputMessage' but the value was {ToString()}.");
+
+        /// <summary>
         /// A message input to the model with a role indicating instruction following<br/>
         /// hierarchy. Instructions given with the `developer` or `system` role take<br/>
         /// precedence over instructions given with the `user` role. Messages with the<br/>
@@ -46,6 +66,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EvalMessageObject))]
 #endif
         public bool IsEvalMessageObject => EvalMessageObject != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEvalMessageObject(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.EvalItem? value)
+        {
+            value = EvalMessageObject;
+            return IsEvalMessageObject;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.EvalItem PickEvalMessageObject() => IsEvalMessageObject
+            ? EvalMessageObject!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EvalMessageObject' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -67,6 +107,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static CreateEvalItem FromSimpleInputMessage(global::tryAGI.OpenAI.CreateEvalItemSimpleInputMessage? value) => new CreateEvalItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateEvalItem(global::tryAGI.OpenAI.EvalItem value) => new CreateEvalItem((global::tryAGI.OpenAI.EvalItem?)value);
 
         /// <summary>
@@ -81,6 +126,11 @@ namespace tryAGI.OpenAI
         {
             EvalMessageObject = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateEvalItem FromEvalMessageObject(global::tryAGI.OpenAI.EvalItem? value) => new CreateEvalItem(value);
 
         /// <summary>
         /// 
@@ -122,8 +172,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.CreateEvalItemSimpleInputMessage?, TResult>? simpleInputMessage = null,
-            global::System.Func<global::tryAGI.OpenAI.EvalItem?, TResult>? evalMessageObject = null,
+            global::System.Func<global::tryAGI.OpenAI.CreateEvalItemSimpleInputMessage, TResult>? simpleInputMessage = null,
+            global::System.Func<global::tryAGI.OpenAI.EvalItem, TResult>? evalMessageObject = null,
             bool validate = true)
         {
             if (validate)
@@ -147,8 +197,32 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.CreateEvalItemSimpleInputMessage?>? simpleInputMessage = null,
-            global::System.Action<global::tryAGI.OpenAI.EvalItem?>? evalMessageObject = null,
+            global::System.Action<global::tryAGI.OpenAI.CreateEvalItemSimpleInputMessage>? simpleInputMessage = null,
+
+            global::System.Action<global::tryAGI.OpenAI.EvalItem>? evalMessageObject = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSimpleInputMessage)
+            {
+                simpleInputMessage?.Invoke(SimpleInputMessage!);
+            }
+            else if (IsEvalMessageObject)
+            {
+                evalMessageObject?.Invoke(EvalMessageObject!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.CreateEvalItemSimpleInputMessage>? simpleInputMessage = null,
+            global::System.Action<global::tryAGI.OpenAI.EvalItem>? evalMessageObject = null,
             bool validate = true)
         {
             if (validate)

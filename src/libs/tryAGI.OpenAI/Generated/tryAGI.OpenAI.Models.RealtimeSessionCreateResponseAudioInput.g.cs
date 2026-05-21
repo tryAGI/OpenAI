@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
         /// Configuration for input audio transcription.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transcription")]
-        public global::tryAGI.OpenAI.AudioTranscription? Transcription { get; set; }
+        public global::tryAGI.OpenAI.AudioTranscriptionResponse? Transcription { get; set; }
 
         /// <summary>
         /// Configuration for input audio noise reduction.
@@ -57,7 +57,7 @@ namespace tryAGI.OpenAI
 #endif
         public RealtimeSessionCreateResponseAudioInput(
             global::tryAGI.OpenAI.RealtimeAudioFormats? format,
-            global::tryAGI.OpenAI.AudioTranscription? transcription,
+            global::tryAGI.OpenAI.AudioTranscriptionResponse? transcription,
             global::tryAGI.OpenAI.RealtimeSessionCreateResponseAudioInputNoiseReduction? noiseReduction,
             global::tryAGI.OpenAI.RealtimeSessionCreateResponseAudioInputTurnDetection? turnDetection)
         {
@@ -73,5 +73,6 @@ namespace tryAGI.OpenAI
         public RealtimeSessionCreateResponseAudioInput()
         {
         }
+
     }
 }

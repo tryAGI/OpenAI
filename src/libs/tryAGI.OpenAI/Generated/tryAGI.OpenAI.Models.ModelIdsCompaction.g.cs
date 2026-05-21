@@ -29,6 +29,26 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickResponses(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ModelIdsResponses? value)
+        {
+            value = Responses;
+            return IsResponses;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ModelIdsResponses PickResponses() => IsResponses
+            ? Responses!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Responses' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelIdsCompactionVariant2 { get; init; }
 #else
@@ -46,6 +66,26 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickModelIdsCompactionVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ModelIdsCompactionVariant2;
+            return IsModelIdsCompactionVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelIdsCompactionVariant2() => IsModelIdsCompactionVariant2
+            ? ModelIdsCompactionVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelIdsCompactionVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? ModelIdsCompactionVariant3 { get; init; }
 #else
@@ -59,6 +99,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelIdsCompactionVariant3))]
 #endif
         public bool IsModelIdsCompactionVariant3 => ModelIdsCompactionVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickModelIdsCompactionVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = ModelIdsCompactionVariant3;
+            return IsModelIdsCompactionVariant3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickModelIdsCompactionVariant3() => IsModelIdsCompactionVariant3
+            ? ModelIdsCompactionVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelIdsCompactionVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -80,6 +140,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ModelIdsCompaction FromResponses(global::tryAGI.OpenAI.ModelIdsResponses? value) => new ModelIdsCompaction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ModelIdsCompaction(string value) => new ModelIdsCompaction((string?)value);
 
         /// <summary>
@@ -94,6 +159,11 @@ namespace tryAGI.OpenAI
         {
             ModelIdsCompactionVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ModelIdsCompaction FromModelIdsCompactionVariant2(string? value) => new ModelIdsCompaction(value);
 
         /// <summary>
         /// 
@@ -140,8 +210,8 @@ namespace tryAGI.OpenAI
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.ModelIdsResponses?, TResult>? responses = null,
-            global::System.Func<string?, TResult>? modelIdsCompactionVariant2 = null,
-            global::System.Func<object?, TResult>? modelIdsCompactionVariant3 = null,
+            global::System.Func<string, TResult>? modelIdsCompactionVariant2 = null,
+            global::System.Func<object, TResult>? modelIdsCompactionVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -170,8 +240,38 @@ namespace tryAGI.OpenAI
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.ModelIdsResponses?>? responses = null,
-            global::System.Action<string?>? modelIdsCompactionVariant2 = null,
-            global::System.Action<object?>? modelIdsCompactionVariant3 = null,
+
+            global::System.Action<string>? modelIdsCompactionVariant2 = null,
+
+            global::System.Action<object>? modelIdsCompactionVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsResponses)
+            {
+                responses?.Invoke(Responses!);
+            }
+            else if (IsModelIdsCompactionVariant2)
+            {
+                modelIdsCompactionVariant2?.Invoke(ModelIdsCompactionVariant2!);
+            }
+            else if (IsModelIdsCompactionVariant3)
+            {
+                modelIdsCompactionVariant3?.Invoke(ModelIdsCompactionVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.ModelIdsResponses?>? responses = null,
+            global::System.Action<string>? modelIdsCompactionVariant2 = null,
+            global::System.Action<object>? modelIdsCompactionVariant3 = null,
             bool validate = true)
         {
             if (validate)

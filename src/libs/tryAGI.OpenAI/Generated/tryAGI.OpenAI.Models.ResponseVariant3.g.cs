@@ -194,5 +194,6 @@ namespace tryAGI.OpenAI
         public ResponseVariant3()
         {
         }
+
     }
 }

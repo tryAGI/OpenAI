@@ -138,5 +138,6 @@ namespace tryAGI.OpenAI
         public RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment()
         {
         }
+
     }
 }

@@ -156,6 +156,8 @@ namespace tryAGI.OpenAI
                     projectId: projectId!,
                     userId: userId!);
 
+                global::tryAGI.OpenAI.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

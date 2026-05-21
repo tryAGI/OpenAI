@@ -78,5 +78,6 @@ namespace tryAGI.OpenAI.Realtime
         public RealtimeServerEventResponseMCPCallFailed()
         {
         }
+
     }
 }

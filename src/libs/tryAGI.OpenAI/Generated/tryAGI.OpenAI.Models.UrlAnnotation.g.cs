@@ -57,5 +57,18 @@ namespace tryAGI.OpenAI
         public UrlAnnotation()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="UrlAnnotation"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static UrlAnnotation FromSource(global::tryAGI.OpenAI.UrlAnnotationSource source)
+        {
+            return new UrlAnnotation
+            {
+                Source = source,
+            };
+        }
+
     }
 }

@@ -60,5 +60,6 @@ namespace tryAGI.OpenAI.Realtime
         public RealtimeMCPHTTPError()
         {
         }
+
     }
 }

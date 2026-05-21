@@ -113,5 +113,6 @@ namespace tryAGI.OpenAI
         public Role()
         {
         }
+
     }
 }

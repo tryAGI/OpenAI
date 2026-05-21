@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI.Realtime
     public sealed partial class AudioTranscription
     {
         /// <summary>
-        /// The model to use for transcription. Current options are `whisper-1`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-transcribe-2025-12-15`, `gpt-4o-transcribe`, and `gpt-4o-transcribe-diarize`. Use `gpt-4o-transcribe-diarize` when you need diarization with speaker labels.
+        /// The model to use for transcription. Current options are `whisper-1`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-transcribe-2025-12-15`, `gpt-4o-transcribe`, `gpt-4o-transcribe-diarize`, and `gpt-realtime-whisper`. Use `gpt-4o-transcribe-diarize` when you need diarization with speaker labels.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.Realtime.AudioTranscriptionModel?>))]
@@ -27,10 +27,20 @@ namespace tryAGI.OpenAI.Realtime
         /// An optional text to guide the model's style or continue a previous audio<br/>
         /// segment.<br/>
         /// For `whisper-1`, the [prompt is a list of keywords](/docs/guides/speech-to-text#prompting).<br/>
-        /// For `gpt-4o-transcribe` models (excluding `gpt-4o-transcribe-diarize`), the prompt is a free text string, for example "expect words related to technology".
+        /// For `gpt-4o-transcribe` models (excluding `gpt-4o-transcribe-diarize`), the prompt is a free text string, for example "expect words related to technology".<br/>
+        /// Prompt is not supported with `gpt-realtime-whisper` in GA Realtime sessions.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         public string? Prompt { get; set; }
+
+        /// <summary>
+        /// Controls how long the model waits before emitting transcription text.<br/>
+        /// Higher values can improve transcription accuracy at the cost of latency.<br/>
+        /// Only supported with `gpt-realtime-whisper` in GA Realtime sessions.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("delay")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.AudioTranscriptionDelayJsonConverter))]
+        public global::tryAGI.OpenAI.Realtime.AudioTranscriptionDelay? Delay { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,7 +52,7 @@ namespace tryAGI.OpenAI.Realtime
         /// Initializes a new instance of the <see cref="AudioTranscription" /> class.
         /// </summary>
         /// <param name="model">
-        /// The model to use for transcription. Current options are `whisper-1`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-transcribe-2025-12-15`, `gpt-4o-transcribe`, and `gpt-4o-transcribe-diarize`. Use `gpt-4o-transcribe-diarize` when you need diarization with speaker labels.
+        /// The model to use for transcription. Current options are `whisper-1`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-transcribe-2025-12-15`, `gpt-4o-transcribe`, `gpt-4o-transcribe-diarize`, and `gpt-realtime-whisper`. Use `gpt-4o-transcribe-diarize` when you need diarization with speaker labels.
         /// </param>
         /// <param name="language">
         /// The language of the input audio. Supplying the input language in<br/>
@@ -53,7 +63,13 @@ namespace tryAGI.OpenAI.Realtime
         /// An optional text to guide the model's style or continue a previous audio<br/>
         /// segment.<br/>
         /// For `whisper-1`, the [prompt is a list of keywords](/docs/guides/speech-to-text#prompting).<br/>
-        /// For `gpt-4o-transcribe` models (excluding `gpt-4o-transcribe-diarize`), the prompt is a free text string, for example "expect words related to technology".
+        /// For `gpt-4o-transcribe` models (excluding `gpt-4o-transcribe-diarize`), the prompt is a free text string, for example "expect words related to technology".<br/>
+        /// Prompt is not supported with `gpt-realtime-whisper` in GA Realtime sessions.
+        /// </param>
+        /// <param name="delay">
+        /// Controls how long the model waits before emitting transcription text.<br/>
+        /// Higher values can improve transcription accuracy at the cost of latency.<br/>
+        /// Only supported with `gpt-realtime-whisper` in GA Realtime sessions.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -61,11 +77,13 @@ namespace tryAGI.OpenAI.Realtime
         public AudioTranscription(
             global::tryAGI.OpenAI.Realtime.AnyOf<string, global::tryAGI.OpenAI.Realtime.AudioTranscriptionModel?>? model,
             string? language,
-            string? prompt)
+            string? prompt,
+            global::tryAGI.OpenAI.Realtime.AudioTranscriptionDelay? delay)
         {
             this.Model = model;
             this.Language = language;
             this.Prompt = prompt;
+            this.Delay = delay;
         }
 
         /// <summary>
@@ -74,5 +92,6 @@ namespace tryAGI.OpenAI.Realtime
         public AudioTranscription()
         {
         }
+
     }
 }

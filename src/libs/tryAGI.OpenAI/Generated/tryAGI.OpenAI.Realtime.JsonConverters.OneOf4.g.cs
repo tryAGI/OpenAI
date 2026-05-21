@@ -3,7 +3,7 @@
 namespace tryAGI.OpenAI.Realtime.JsonConverters
 {
     /// <inheritdoc />
-    public class OneOfJsonConverter<[global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] T1, [global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] T2, [global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] T3, [global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] T4> : global::System.Text.Json.Serialization.JsonConverter<global::tryAGI.OpenAI.Realtime.OneOf<T1, T2, T3, T4>>
+    public class OneOfJsonConverter<T1, T2, T3, T4> : global::System.Text.Json.Serialization.JsonConverter<global::tryAGI.OpenAI.Realtime.OneOf<T1, T2, T3, T4>>
     {
         /// <inheritdoc />
         public override global::tryAGI.OpenAI.Realtime.OneOf<T1, T2, T3, T4> Read(
@@ -167,7 +167,10 @@ namespace tryAGI.OpenAI.Realtime.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (value1 == null && value2 == null && value3 == null && value4 == null)
+            {
                 try
                 {
 
@@ -181,7 +184,10 @@ namespace tryAGI.OpenAI.Realtime.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (value1 == null && value2 == null && value3 == null && value4 == null)
+            {
                 try
                 {
 
@@ -195,7 +201,10 @@ namespace tryAGI.OpenAI.Realtime.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (value1 == null && value2 == null && value3 == null && value4 == null)
+            {
                 try
                 {
 

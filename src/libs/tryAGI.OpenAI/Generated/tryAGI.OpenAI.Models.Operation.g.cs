@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct Operation : global::System.IEquatable<Operation>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ApplyPatchToolCallOperationDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Instruction describing how to create a file via the apply_patch tool.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -25,6 +30,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateFile))]
 #endif
         public bool IsCreateFile => CreateFile != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCreateFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ApplyPatchCreateFileOperation? value)
+        {
+            value = CreateFile;
+            return IsCreateFile;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ApplyPatchCreateFileOperation PickCreateFile() => IsCreateFile
+            ? CreateFile!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CreateFile' but the value was {ToString()}.");
 
         /// <summary>
         /// Instruction describing how to delete a file via the apply_patch tool.
@@ -44,6 +69,26 @@ namespace tryAGI.OpenAI
         public bool IsDeleteFile => DeleteFile != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDeleteFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ApplyPatchDeleteFileOperation? value)
+        {
+            value = DeleteFile;
+            return IsDeleteFile;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ApplyPatchDeleteFileOperation PickDeleteFile() => IsDeleteFile
+            ? DeleteFile!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DeleteFile' but the value was {ToString()}.");
+
+        /// <summary>
         /// Instruction describing how to update a file via the apply_patch tool.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -59,6 +104,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UpdateFile))]
 #endif
         public bool IsUpdateFile => UpdateFile != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUpdateFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ApplyPatchUpdateFileOperation? value)
+        {
+            value = UpdateFile;
+            return IsUpdateFile;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ApplyPatchUpdateFileOperation PickUpdateFile() => IsUpdateFile
+            ? UpdateFile!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UpdateFile' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -76,6 +141,11 @@ namespace tryAGI.OpenAI
         {
             CreateFile = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Operation FromCreateFile(global::tryAGI.OpenAI.ApplyPatchCreateFileOperation? value) => new Operation(value);
 
         /// <summary>
         /// 
@@ -98,6 +168,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static Operation FromDeleteFile(global::tryAGI.OpenAI.ApplyPatchDeleteFileOperation? value) => new Operation(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Operation(global::tryAGI.OpenAI.ApplyPatchUpdateFileOperation value) => new Operation((global::tryAGI.OpenAI.ApplyPatchUpdateFileOperation?)value);
 
         /// <summary>
@@ -116,12 +191,20 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static Operation FromUpdateFile(global::tryAGI.OpenAI.ApplyPatchUpdateFileOperation? value) => new Operation(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public Operation(
+            global::tryAGI.OpenAI.ApplyPatchToolCallOperationDiscriminatorType? type,
             global::tryAGI.OpenAI.ApplyPatchCreateFileOperation? createFile,
             global::tryAGI.OpenAI.ApplyPatchDeleteFileOperation? deleteFile,
             global::tryAGI.OpenAI.ApplyPatchUpdateFileOperation? updateFile
             )
         {
+            Type = type;
+
             CreateFile = createFile;
             DeleteFile = deleteFile;
             UpdateFile = updateFile;
@@ -157,9 +240,9 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.ApplyPatchCreateFileOperation?, TResult>? createFile = null,
-            global::System.Func<global::tryAGI.OpenAI.ApplyPatchDeleteFileOperation?, TResult>? deleteFile = null,
-            global::System.Func<global::tryAGI.OpenAI.ApplyPatchUpdateFileOperation?, TResult>? updateFile = null,
+            global::System.Func<global::tryAGI.OpenAI.ApplyPatchCreateFileOperation, TResult>? createFile = null,
+            global::System.Func<global::tryAGI.OpenAI.ApplyPatchDeleteFileOperation, TResult>? deleteFile = null,
+            global::System.Func<global::tryAGI.OpenAI.ApplyPatchUpdateFileOperation, TResult>? updateFile = null,
             bool validate = true)
         {
             if (validate)
@@ -187,9 +270,39 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.ApplyPatchCreateFileOperation?>? createFile = null,
-            global::System.Action<global::tryAGI.OpenAI.ApplyPatchDeleteFileOperation?>? deleteFile = null,
-            global::System.Action<global::tryAGI.OpenAI.ApplyPatchUpdateFileOperation?>? updateFile = null,
+            global::System.Action<global::tryAGI.OpenAI.ApplyPatchCreateFileOperation>? createFile = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ApplyPatchDeleteFileOperation>? deleteFile = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ApplyPatchUpdateFileOperation>? updateFile = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCreateFile)
+            {
+                createFile?.Invoke(CreateFile!);
+            }
+            else if (IsDeleteFile)
+            {
+                deleteFile?.Invoke(DeleteFile!);
+            }
+            else if (IsUpdateFile)
+            {
+                updateFile?.Invoke(UpdateFile!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.ApplyPatchCreateFileOperation>? createFile = null,
+            global::System.Action<global::tryAGI.OpenAI.ApplyPatchDeleteFileOperation>? deleteFile = null,
+            global::System.Action<global::tryAGI.OpenAI.ApplyPatchUpdateFileOperation>? updateFile = null,
             bool validate = true)
         {
             if (validate)

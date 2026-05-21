@@ -451,5 +451,6 @@ namespace tryAGI.OpenAI
         public CreateChatCompletionRequestVariant2()
         {
         }
+
     }
 }

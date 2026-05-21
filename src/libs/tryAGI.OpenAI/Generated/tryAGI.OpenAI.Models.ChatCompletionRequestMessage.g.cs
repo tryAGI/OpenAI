@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct ChatCompletionRequestMessage : global::System.IEquatable<ChatCompletionRequestMessage>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageDiscriminatorRole? Role { get; }
+
+        /// <summary>
         /// Developer-provided instructions that the model should follow, regardless of<br/>
         /// messages sent by the user. With o1 models and newer, `developer` messages<br/>
         /// replace the previous `system` messages.
@@ -27,6 +32,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Developer))]
 #endif
         public bool IsDeveloper => Developer != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDeveloper(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ChatCompletionRequestDeveloperMessage? value)
+        {
+            value = Developer;
+            return IsDeveloper;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ChatCompletionRequestDeveloperMessage PickDeveloper() => IsDeveloper
+            ? Developer!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Developer' but the value was {ToString()}.");
 
         /// <summary>
         /// Developer-provided instructions that the model should follow, regardless of<br/>
@@ -48,6 +73,26 @@ namespace tryAGI.OpenAI
         public bool IsSystem => System != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSystem(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ChatCompletionRequestSystemMessage? value)
+        {
+            value = System;
+            return IsSystem;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ChatCompletionRequestSystemMessage PickSystem() => IsSystem
+            ? System!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'System' but the value was {ToString()}.");
+
+        /// <summary>
         /// Messages sent by an end user, containing prompts or additional context<br/>
         /// information.
         /// </summary>
@@ -64,6 +109,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(User))]
 #endif
         public bool IsUser => User != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUser(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ChatCompletionRequestUserMessage? value)
+        {
+            value = User;
+            return IsUser;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ChatCompletionRequestUserMessage PickUser() => IsUser
+            ? User!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'User' but the value was {ToString()}.");
 
         /// <summary>
         /// Messages sent by the model in response to user messages.
@@ -85,6 +150,26 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAssistant(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage? value)
+        {
+            value = Assistant;
+            return IsAssistant;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage PickAssistant() => IsAssistant
+            ? Assistant!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Assistant' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ChatCompletionRequestToolMessage? Tool { get; init; }
 #else
@@ -102,6 +187,26 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ChatCompletionRequestToolMessage? value)
+        {
+            value = Tool;
+            return IsTool;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ChatCompletionRequestToolMessage PickTool() => IsTool
+            ? Tool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessage? Function { get; init; }
 #else
@@ -115,6 +220,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Function))]
 #endif
         public bool IsFunction => Function != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessage? value)
+        {
+            value = Function;
+            return IsFunction;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessage PickFunction() => IsFunction
+            ? Function!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -132,6 +257,11 @@ namespace tryAGI.OpenAI
         {
             Developer = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionRequestMessage FromDeveloper(global::tryAGI.OpenAI.ChatCompletionRequestDeveloperMessage? value) => new ChatCompletionRequestMessage(value);
 
         /// <summary>
         /// 
@@ -154,6 +284,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionRequestMessage FromSystem(global::tryAGI.OpenAI.ChatCompletionRequestSystemMessage? value) => new ChatCompletionRequestMessage(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionRequestMessage(global::tryAGI.OpenAI.ChatCompletionRequestUserMessage value) => new ChatCompletionRequestMessage((global::tryAGI.OpenAI.ChatCompletionRequestUserMessage?)value);
 
         /// <summary>
@@ -168,6 +303,11 @@ namespace tryAGI.OpenAI
         {
             User = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionRequestMessage FromUser(global::tryAGI.OpenAI.ChatCompletionRequestUserMessage? value) => new ChatCompletionRequestMessage(value);
 
         /// <summary>
         /// 
@@ -190,6 +330,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionRequestMessage FromAssistant(global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage? value) => new ChatCompletionRequestMessage(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionRequestMessage(global::tryAGI.OpenAI.ChatCompletionRequestToolMessage value) => new ChatCompletionRequestMessage((global::tryAGI.OpenAI.ChatCompletionRequestToolMessage?)value);
 
         /// <summary>
@@ -204,6 +349,11 @@ namespace tryAGI.OpenAI
         {
             Tool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionRequestMessage FromTool(global::tryAGI.OpenAI.ChatCompletionRequestToolMessage? value) => new ChatCompletionRequestMessage(value);
 
         /// <summary>
         /// 
@@ -226,7 +376,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionRequestMessage FromFunction(global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessage? value) => new ChatCompletionRequestMessage(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ChatCompletionRequestMessage(
+            global::tryAGI.OpenAI.ChatCompletionRequestMessageDiscriminatorRole? role,
             global::tryAGI.OpenAI.ChatCompletionRequestDeveloperMessage? developer,
             global::tryAGI.OpenAI.ChatCompletionRequestSystemMessage? system,
             global::tryAGI.OpenAI.ChatCompletionRequestUserMessage? user,
@@ -235,6 +391,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessage? function
             )
         {
+            Role = role;
+
             Developer = developer;
             System = system;
             User = user;
@@ -279,12 +437,12 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestDeveloperMessage?, TResult>? developer = null,
-            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestSystemMessage?, TResult>? system = null,
-            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestUserMessage?, TResult>? user = null,
-            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage?, TResult>? assistant = null,
-            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestToolMessage?, TResult>? tool = null,
-            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessage?, TResult>? function = null,
+            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestDeveloperMessage, TResult>? developer = null,
+            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestSystemMessage, TResult>? system = null,
+            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestUserMessage, TResult>? user = null,
+            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage, TResult>? assistant = null,
+            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestToolMessage, TResult>? tool = null,
+            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessage, TResult>? function = null,
             bool validate = true)
         {
             if (validate)
@@ -324,12 +482,60 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestDeveloperMessage?>? developer = null,
-            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestSystemMessage?>? system = null,
-            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestUserMessage?>? user = null,
-            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage?>? assistant = null,
-            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestToolMessage?>? tool = null,
-            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessage?>? function = null,
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestDeveloperMessage>? developer = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestSystemMessage>? system = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestUserMessage>? user = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage>? assistant = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestToolMessage>? tool = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessage>? function = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsDeveloper)
+            {
+                developer?.Invoke(Developer!);
+            }
+            else if (IsSystem)
+            {
+                system?.Invoke(System!);
+            }
+            else if (IsUser)
+            {
+                user?.Invoke(User!);
+            }
+            else if (IsAssistant)
+            {
+                assistant?.Invoke(Assistant!);
+            }
+            else if (IsTool)
+            {
+                tool?.Invoke(Tool!);
+            }
+            else if (IsFunction)
+            {
+                function?.Invoke(Function!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestDeveloperMessage>? developer = null,
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestSystemMessage>? system = null,
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestUserMessage>? user = null,
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage>? assistant = null,
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestToolMessage>? tool = null,
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessage>? function = null,
             bool validate = true)
         {
             if (validate)

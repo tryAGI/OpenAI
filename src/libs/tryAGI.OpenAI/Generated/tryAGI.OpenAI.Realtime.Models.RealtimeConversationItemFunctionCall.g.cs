@@ -112,5 +112,6 @@ namespace tryAGI.OpenAI.Realtime
         public RealtimeConversationItemFunctionCall()
         {
         }
+
     }
 }

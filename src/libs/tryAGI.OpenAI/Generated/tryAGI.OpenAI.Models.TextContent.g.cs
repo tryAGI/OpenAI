@@ -53,5 +53,18 @@ namespace tryAGI.OpenAI
         public TextContent()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="TextContent"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static TextContent FromText(string text)
+        {
+            return new TextContent
+            {
+                Text = text,
+            };
+        }
+
     }
 }

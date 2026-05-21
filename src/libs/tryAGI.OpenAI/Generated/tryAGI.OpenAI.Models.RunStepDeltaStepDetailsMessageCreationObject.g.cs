@@ -51,5 +51,6 @@ namespace tryAGI.OpenAI
         public RunStepDeltaStepDetailsMessageCreationObject()
         {
         }
+
     }
 }

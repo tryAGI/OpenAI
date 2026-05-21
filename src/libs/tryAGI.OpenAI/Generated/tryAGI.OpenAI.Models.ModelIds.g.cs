@@ -27,6 +27,26 @@ namespace tryAGI.OpenAI
         public bool IsShared => Shared != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickShared(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ModelIdsShared? value)
+        {
+            value = Shared;
+            return IsShared;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ModelIdsShared PickShared() => IsShared
+            ? Shared!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Shared' but the value was {ToString()}.");
+
+        /// <summary>
         /// Example: gpt-5.1
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +62,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Responses))]
 #endif
         public bool IsResponses => Responses != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponses(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ModelIdsResponses? value)
+        {
+            value = Responses;
+            return IsResponses;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ModelIdsResponses PickResponses() => IsResponses
+            ? Responses!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Responses' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ModelIds FromShared(global::tryAGI.OpenAI.ModelIdsShared? value) => new ModelIds(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ModelIds(global::tryAGI.OpenAI.ModelIdsResponses value) => new ModelIds((global::tryAGI.OpenAI.ModelIdsResponses?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace tryAGI.OpenAI
         {
             Responses = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ModelIds FromResponses(global::tryAGI.OpenAI.ModelIdsResponses? value) => new ModelIds(value);
 
         /// <summary>
         /// 
@@ -143,6 +193,30 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::tryAGI.OpenAI.ModelIdsShared?>? shared = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ModelIdsResponses?>? responses = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsShared)
+            {
+                shared?.Invoke(Shared!);
+            }
+            else if (IsResponses)
+            {
+                responses?.Invoke(Responses!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::tryAGI.OpenAI.ModelIdsShared?>? shared = null,
             global::System.Action<global::tryAGI.OpenAI.ModelIdsResponses?>? responses = null,
             bool validate = true)

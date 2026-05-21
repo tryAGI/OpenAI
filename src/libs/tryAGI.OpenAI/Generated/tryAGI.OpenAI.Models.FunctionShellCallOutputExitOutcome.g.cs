@@ -57,5 +57,18 @@ namespace tryAGI.OpenAI
         public FunctionShellCallOutputExitOutcome()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="FunctionShellCallOutputExitOutcome"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static FunctionShellCallOutputExitOutcome FromExitCode(int exitCode)
+        {
+            return new FunctionShellCallOutputExitOutcome
+            {
+                ExitCode = exitCode,
+            };
+        }
+
     }
 }

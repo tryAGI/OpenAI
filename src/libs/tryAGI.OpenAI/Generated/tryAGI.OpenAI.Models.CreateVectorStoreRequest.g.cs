@@ -95,5 +95,6 @@ namespace tryAGI.OpenAI
         public CreateVectorStoreRequest()
         {
         }
+
     }
 }

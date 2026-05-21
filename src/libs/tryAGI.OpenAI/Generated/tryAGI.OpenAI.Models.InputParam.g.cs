@@ -34,6 +34,26 @@ namespace tryAGI.OpenAI
         public bool IsTextInput => TextInput != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextInput(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = TextInput;
+            return IsTextInput;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickTextInput() => IsTextInput
+            ? TextInput!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextInput' but the value was {ToString()}.");
+
+        /// <summary>
         /// A list of one or many input items to the model, containing<br/>
         /// different content types.
         /// </summary>
@@ -50,6 +70,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputItemList))]
 #endif
         public bool IsInputItemList => InputItemList != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputItemList(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>? value)
+        {
+            value = InputItemList;
+            return IsInputItemList;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem> PickInputItemList() => IsInputItemList
+            ? InputItemList!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputItemList' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -67,6 +107,11 @@ namespace tryAGI.OpenAI
         {
             TextInput = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputParam FromTextInput(string? value) => new InputParam(value);
 
         /// <summary>
         /// 
@@ -108,8 +153,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? textInput = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>?, TResult>? inputItemList = null,
+            global::System.Func<string, TResult>? textInput = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>, TResult>? inputItemList = null,
             bool validate = true)
         {
             if (validate)
@@ -133,8 +178,32 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? textInput = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>?>? inputItemList = null,
+            global::System.Action<string>? textInput = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>? inputItemList = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTextInput)
+            {
+                textInput?.Invoke(TextInput!);
+            }
+            else if (IsInputItemList)
+            {
+                inputItemList?.Invoke(InputItemList!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? textInput = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>? inputItemList = null,
             bool validate = true)
         {
             if (validate)

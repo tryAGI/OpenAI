@@ -12,7 +12,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateContainerBodyNetworkPolicyDiscriminatorTypeJsonConverter))]
+        public global::tryAGI.OpenAI.CreateContainerBodyNetworkPolicyDiscriminatorType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +29,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateContainerBodyNetworkPolicyDiscriminator(
-            string? type)
+            global::tryAGI.OpenAI.CreateContainerBodyNetworkPolicyDiscriminatorType? type)
         {
             this.Type = type;
         }
@@ -39,5 +40,6 @@ namespace tryAGI.OpenAI
         public CreateContainerBodyNetworkPolicyDiscriminator()
         {
         }
+
     }
 }

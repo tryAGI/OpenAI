@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct Status : global::System.IEquatable<Status>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ThreadResourceStatusDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Indicates that a thread is active.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -25,6 +30,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Active))]
 #endif
         public bool IsActive => Active != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickActive(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ActiveStatus? value)
+        {
+            value = Active;
+            return IsActive;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ActiveStatus PickActive() => IsActive
+            ? Active!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Active' but the value was {ToString()}.");
 
         /// <summary>
         /// Indicates that a thread is locked and cannot accept new input.
@@ -44,6 +69,26 @@ namespace tryAGI.OpenAI
         public bool IsLocked => Locked != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLocked(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.LockedStatus? value)
+        {
+            value = Locked;
+            return IsLocked;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.LockedStatus PickLocked() => IsLocked
+            ? Locked!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Locked' but the value was {ToString()}.");
+
+        /// <summary>
         /// Indicates that a thread has been closed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -59,6 +104,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Closed))]
 #endif
         public bool IsClosed => Closed != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickClosed(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ClosedStatus? value)
+        {
+            value = Closed;
+            return IsClosed;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ClosedStatus PickClosed() => IsClosed
+            ? Closed!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Closed' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -76,6 +141,11 @@ namespace tryAGI.OpenAI
         {
             Active = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Status FromActive(global::tryAGI.OpenAI.ActiveStatus? value) => new Status(value);
 
         /// <summary>
         /// 
@@ -98,6 +168,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static Status FromLocked(global::tryAGI.OpenAI.LockedStatus? value) => new Status(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Status(global::tryAGI.OpenAI.ClosedStatus value) => new Status((global::tryAGI.OpenAI.ClosedStatus?)value);
 
         /// <summary>
@@ -116,12 +191,20 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static Status FromClosed(global::tryAGI.OpenAI.ClosedStatus? value) => new Status(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public Status(
+            global::tryAGI.OpenAI.ThreadResourceStatusDiscriminatorType? type,
             global::tryAGI.OpenAI.ActiveStatus? active,
             global::tryAGI.OpenAI.LockedStatus? locked,
             global::tryAGI.OpenAI.ClosedStatus? closed
             )
         {
+            Type = type;
+
             Active = active;
             Locked = locked;
             Closed = closed;
@@ -157,9 +240,9 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.ActiveStatus?, TResult>? active = null,
-            global::System.Func<global::tryAGI.OpenAI.LockedStatus?, TResult>? locked = null,
-            global::System.Func<global::tryAGI.OpenAI.ClosedStatus?, TResult>? closed = null,
+            global::System.Func<global::tryAGI.OpenAI.ActiveStatus, TResult>? active = null,
+            global::System.Func<global::tryAGI.OpenAI.LockedStatus, TResult>? locked = null,
+            global::System.Func<global::tryAGI.OpenAI.ClosedStatus, TResult>? closed = null,
             bool validate = true)
         {
             if (validate)
@@ -187,9 +270,39 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.ActiveStatus?>? active = null,
-            global::System.Action<global::tryAGI.OpenAI.LockedStatus?>? locked = null,
-            global::System.Action<global::tryAGI.OpenAI.ClosedStatus?>? closed = null,
+            global::System.Action<global::tryAGI.OpenAI.ActiveStatus>? active = null,
+
+            global::System.Action<global::tryAGI.OpenAI.LockedStatus>? locked = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ClosedStatus>? closed = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsActive)
+            {
+                active?.Invoke(Active!);
+            }
+            else if (IsLocked)
+            {
+                locked?.Invoke(Locked!);
+            }
+            else if (IsClosed)
+            {
+                closed?.Invoke(Closed!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.ActiveStatus>? active = null,
+            global::System.Action<global::tryAGI.OpenAI.LockedStatus>? locked = null,
+            global::System.Action<global::tryAGI.OpenAI.ClosedStatus>? closed = null,
             bool validate = true)
         {
             if (validate)

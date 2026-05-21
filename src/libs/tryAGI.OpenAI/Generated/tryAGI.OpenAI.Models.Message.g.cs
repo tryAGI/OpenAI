@@ -104,5 +104,6 @@ namespace tryAGI.OpenAI
         public Message()
         {
         }
+
     }
 }

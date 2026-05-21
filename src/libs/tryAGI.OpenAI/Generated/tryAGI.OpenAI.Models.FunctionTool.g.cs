@@ -95,5 +95,18 @@ namespace tryAGI.OpenAI
         public FunctionTool()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="FunctionTool"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static FunctionTool FromName(string name)
+        {
+            return new FunctionTool
+            {
+                Name = name,
+            };
+        }
+
     }
 }

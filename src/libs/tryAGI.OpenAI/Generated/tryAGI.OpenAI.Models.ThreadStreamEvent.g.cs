@@ -25,6 +25,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThreadStreamEventVariant1))]
 #endif
         public bool IsThreadStreamEventVariant1 => ThreadStreamEventVariant1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickThreadStreamEventVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ThreadStreamEventVariant1? value)
+        {
+            value = ThreadStreamEventVariant1;
+            return IsThreadStreamEventVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ThreadStreamEventVariant1 PickThreadStreamEventVariant1() => IsThreadStreamEventVariant1
+            ? ThreadStreamEventVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ThreadStreamEventVariant1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -42,6 +62,11 @@ namespace tryAGI.OpenAI
         {
             ThreadStreamEventVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ThreadStreamEvent FromThreadStreamEventVariant1(global::tryAGI.OpenAI.ThreadStreamEventVariant1? value) => new ThreadStreamEvent(value);
 
         /// <summary>
         /// 
@@ -69,7 +94,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.ThreadStreamEventVariant1?, TResult>? threadStreamEventVariant1 = null,
+            global::System.Func<global::tryAGI.OpenAI.ThreadStreamEventVariant1, TResult>? threadStreamEventVariant1 = null,
             bool validate = true)
         {
             if (validate)
@@ -89,7 +114,25 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.ThreadStreamEventVariant1?>? threadStreamEventVariant1 = null,
+            global::System.Action<global::tryAGI.OpenAI.ThreadStreamEventVariant1>? threadStreamEventVariant1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsThreadStreamEventVariant1)
+            {
+                threadStreamEventVariant1?.Invoke(ThreadStreamEventVariant1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.ThreadStreamEventVariant1>? threadStreamEventVariant1 = null,
             bool validate = true)
         {
             if (validate)

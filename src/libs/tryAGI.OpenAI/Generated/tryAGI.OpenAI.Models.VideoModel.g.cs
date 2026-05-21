@@ -29,6 +29,26 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVideoModelVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = VideoModelVariant1;
+            return IsVideoModelVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickVideoModelVariant1() => IsVideoModelVariant1
+            ? VideoModelVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VideoModelVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.VideoModelEnum? Enum { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
 #endif
         public bool IsEnum => Enum != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnum(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.VideoModelEnum? value)
+        {
+            value = Enum;
+            return IsEnum;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.VideoModelEnum PickEnum() => IsEnum
+            ? Enum!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static VideoModel FromVideoModelVariant1(string? value) => new VideoModel(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VideoModel(global::tryAGI.OpenAI.VideoModelEnum value) => new VideoModel((global::tryAGI.OpenAI.VideoModelEnum?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace tryAGI.OpenAI
         {
             Enum = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static VideoModel FromEnum(global::tryAGI.OpenAI.VideoModelEnum? value) => new VideoModel(value);
 
         /// <summary>
         /// 
@@ -118,7 +168,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? videoModelVariant1 = null,
+            global::System.Func<string, TResult>? videoModelVariant1 = null,
             global::System.Func<global::tryAGI.OpenAI.VideoModelEnum?, TResult>? @enum = null,
             bool validate = true)
         {
@@ -143,7 +193,31 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? videoModelVariant1 = null,
+            global::System.Action<string>? videoModelVariant1 = null,
+
+            global::System.Action<global::tryAGI.OpenAI.VideoModelEnum?>? @enum = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsVideoModelVariant1)
+            {
+                videoModelVariant1?.Invoke(VideoModelVariant1!);
+            }
+            else if (IsEnum)
+            {
+                @enum?.Invoke(Enum!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? videoModelVariant1 = null,
             global::System.Action<global::tryAGI.OpenAI.VideoModelEnum?>? @enum = null,
             bool validate = true)
         {

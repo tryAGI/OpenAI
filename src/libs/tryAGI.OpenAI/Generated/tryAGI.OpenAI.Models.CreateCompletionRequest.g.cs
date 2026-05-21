@@ -308,5 +308,6 @@ namespace tryAGI.OpenAI
         public CreateCompletionRequest()
         {
         }
+
     }
 }

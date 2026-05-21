@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
         /// Configuration for input audio transcription, defaults to off and can be set to `null` to turn off once on. Input audio transcription is not native to the model, since the model consumes audio directly. Transcription runs asynchronously through [the /audio/transcriptions endpoint](/docs/api-reference/audio/createTranscription) and should be treated as guidance of input audio content rather than precisely what the model heard. The client can optionally set the language and prompt for transcription, these offer additional guidance to the transcription service.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transcription")]
-        public global::tryAGI.OpenAI.AudioTranscription? Transcription { get; set; }
+        public global::tryAGI.OpenAI.AudioTranscriptionResponse? Transcription { get; set; }
 
         /// <summary>
         /// Configuration for input audio noise reduction. This can be set to `null` to turn off.<br/>
@@ -63,7 +63,7 @@ namespace tryAGI.OpenAI
 #endif
         public RealtimeSessionCreateResponseGAAudioInput(
             global::tryAGI.OpenAI.RealtimeAudioFormats? format,
-            global::tryAGI.OpenAI.AudioTranscription? transcription,
+            global::tryAGI.OpenAI.AudioTranscriptionResponse? transcription,
             global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAAudioInputNoiseReduction? noiseReduction,
             global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1? turnDetection)
         {
@@ -79,5 +79,6 @@ namespace tryAGI.OpenAI
         public RealtimeSessionCreateResponseGAAudioInput()
         {
         }
+
     }
 }

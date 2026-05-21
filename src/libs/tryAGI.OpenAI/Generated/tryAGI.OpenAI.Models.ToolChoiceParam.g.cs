@@ -33,6 +33,26 @@ namespace tryAGI.OpenAI
         public bool IsToolChoiceMode => ToolChoiceMode != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolChoiceMode(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ToolChoiceOptions? value)
+        {
+            value = ToolChoiceMode;
+            return IsToolChoiceMode;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ToolChoiceOptions PickToolChoiceMode() => IsToolChoiceMode
+            ? ToolChoiceMode!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolChoiceMode' but the value was {ToString()}.");
+
+        /// <summary>
         /// Constrains the tools available to the model to a pre-defined set.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +68,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AllowedTools))]
 #endif
         public bool IsAllowedTools => AllowedTools != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAllowedTools(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ToolChoiceAllowed? value)
+        {
+            value = AllowedTools;
+            return IsAllowedTools;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ToolChoiceAllowed PickAllowedTools() => IsAllowedTools
+            ? AllowedTools!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AllowedTools' but the value was {ToString()}.");
 
         /// <summary>
         /// Indicates that the model should use a built-in tool to generate a response.<br/>
@@ -68,6 +108,26 @@ namespace tryAGI.OpenAI
         public bool IsHostedTool => HostedTool != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickHostedTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ToolChoiceTypes? value)
+        {
+            value = HostedTool;
+            return IsHostedTool;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ToolChoiceTypes PickHostedTool() => IsHostedTool
+            ? HostedTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'HostedTool' but the value was {ToString()}.");
+
+        /// <summary>
         /// Use this option to force the model to call a specific function.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -83,6 +143,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionTool))]
 #endif
         public bool IsFunctionTool => FunctionTool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunctionTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ToolChoiceFunction? value)
+        {
+            value = FunctionTool;
+            return IsFunctionTool;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ToolChoiceFunction PickFunctionTool() => IsFunctionTool
+            ? FunctionTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionTool' but the value was {ToString()}.");
 
         /// <summary>
         /// Use this option to force the model to call a specific tool on a remote MCP server.
@@ -102,6 +182,26 @@ namespace tryAGI.OpenAI
         public bool IsMcpTool => McpTool != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcpTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ToolChoiceMCP? value)
+        {
+            value = McpTool;
+            return IsMcpTool;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ToolChoiceMCP PickMcpTool() => IsMcpTool
+            ? McpTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpTool' but the value was {ToString()}.");
+
+        /// <summary>
         /// Use this option to force the model to call a specific custom tool.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -117,6 +217,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomTool))]
 #endif
         public bool IsCustomTool => CustomTool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCustomTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ToolChoiceCustom? value)
+        {
+            value = CustomTool;
+            return IsCustomTool;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ToolChoiceCustom PickCustomTool() => IsCustomTool
+            ? CustomTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CustomTool' but the value was {ToString()}.");
 
         /// <summary>
         /// Forces the model to call the apply_patch tool when executing a tool call.
@@ -136,6 +256,26 @@ namespace tryAGI.OpenAI
         public bool IsSpecificApplyPatchToolChoice => SpecificApplyPatchToolChoice != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSpecificApplyPatchToolChoice(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.SpecificApplyPatchParam? value)
+        {
+            value = SpecificApplyPatchToolChoice;
+            return IsSpecificApplyPatchToolChoice;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.SpecificApplyPatchParam PickSpecificApplyPatchToolChoice() => IsSpecificApplyPatchToolChoice
+            ? SpecificApplyPatchToolChoice!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SpecificApplyPatchToolChoice' but the value was {ToString()}.");
+
+        /// <summary>
         /// Forces the model to call the shell tool when a tool call is required.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -151,6 +291,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SpecificShellToolChoice))]
 #endif
         public bool IsSpecificShellToolChoice => SpecificShellToolChoice != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSpecificShellToolChoice(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.SpecificFunctionShellParam? value)
+        {
+            value = SpecificShellToolChoice;
+            return IsSpecificShellToolChoice;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.SpecificFunctionShellParam PickSpecificShellToolChoice() => IsSpecificShellToolChoice
+            ? SpecificShellToolChoice!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SpecificShellToolChoice' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -168,6 +328,11 @@ namespace tryAGI.OpenAI
         {
             ToolChoiceMode = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolChoiceParam FromToolChoiceMode(global::tryAGI.OpenAI.ToolChoiceOptions? value) => new ToolChoiceParam(value);
 
         /// <summary>
         /// 
@@ -190,6 +355,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ToolChoiceParam FromAllowedTools(global::tryAGI.OpenAI.ToolChoiceAllowed? value) => new ToolChoiceParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolChoiceParam(global::tryAGI.OpenAI.ToolChoiceTypes value) => new ToolChoiceParam((global::tryAGI.OpenAI.ToolChoiceTypes?)value);
 
         /// <summary>
@@ -204,6 +374,11 @@ namespace tryAGI.OpenAI
         {
             HostedTool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolChoiceParam FromHostedTool(global::tryAGI.OpenAI.ToolChoiceTypes? value) => new ToolChoiceParam(value);
 
         /// <summary>
         /// 
@@ -226,6 +401,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ToolChoiceParam FromFunctionTool(global::tryAGI.OpenAI.ToolChoiceFunction? value) => new ToolChoiceParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolChoiceParam(global::tryAGI.OpenAI.ToolChoiceMCP value) => new ToolChoiceParam((global::tryAGI.OpenAI.ToolChoiceMCP?)value);
 
         /// <summary>
@@ -240,6 +420,11 @@ namespace tryAGI.OpenAI
         {
             McpTool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolChoiceParam FromMcpTool(global::tryAGI.OpenAI.ToolChoiceMCP? value) => new ToolChoiceParam(value);
 
         /// <summary>
         /// 
@@ -262,6 +447,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ToolChoiceParam FromCustomTool(global::tryAGI.OpenAI.ToolChoiceCustom? value) => new ToolChoiceParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolChoiceParam(global::tryAGI.OpenAI.SpecificApplyPatchParam value) => new ToolChoiceParam((global::tryAGI.OpenAI.SpecificApplyPatchParam?)value);
 
         /// <summary>
@@ -280,6 +470,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ToolChoiceParam FromSpecificApplyPatchToolChoice(global::tryAGI.OpenAI.SpecificApplyPatchParam? value) => new ToolChoiceParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolChoiceParam(global::tryAGI.OpenAI.SpecificFunctionShellParam value) => new ToolChoiceParam((global::tryAGI.OpenAI.SpecificFunctionShellParam?)value);
 
         /// <summary>
@@ -294,6 +489,11 @@ namespace tryAGI.OpenAI
         {
             SpecificShellToolChoice = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolChoiceParam FromSpecificShellToolChoice(global::tryAGI.OpenAI.SpecificFunctionShellParam? value) => new ToolChoiceParam(value);
 
         /// <summary>
         /// 
@@ -360,13 +560,13 @@ namespace tryAGI.OpenAI
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.ToolChoiceOptions?, TResult>? toolChoiceMode = null,
-            global::System.Func<global::tryAGI.OpenAI.ToolChoiceAllowed?, TResult>? allowedTools = null,
-            global::System.Func<global::tryAGI.OpenAI.ToolChoiceTypes?, TResult>? hostedTool = null,
-            global::System.Func<global::tryAGI.OpenAI.ToolChoiceFunction?, TResult>? functionTool = null,
-            global::System.Func<global::tryAGI.OpenAI.ToolChoiceMCP?, TResult>? mcpTool = null,
-            global::System.Func<global::tryAGI.OpenAI.ToolChoiceCustom?, TResult>? customTool = null,
-            global::System.Func<global::tryAGI.OpenAI.SpecificApplyPatchParam?, TResult>? specificApplyPatchToolChoice = null,
-            global::System.Func<global::tryAGI.OpenAI.SpecificFunctionShellParam?, TResult>? specificShellToolChoice = null,
+            global::System.Func<global::tryAGI.OpenAI.ToolChoiceAllowed, TResult>? allowedTools = null,
+            global::System.Func<global::tryAGI.OpenAI.ToolChoiceTypes, TResult>? hostedTool = null,
+            global::System.Func<global::tryAGI.OpenAI.ToolChoiceFunction, TResult>? functionTool = null,
+            global::System.Func<global::tryAGI.OpenAI.ToolChoiceMCP, TResult>? mcpTool = null,
+            global::System.Func<global::tryAGI.OpenAI.ToolChoiceCustom, TResult>? customTool = null,
+            global::System.Func<global::tryAGI.OpenAI.SpecificApplyPatchParam, TResult>? specificApplyPatchToolChoice = null,
+            global::System.Func<global::tryAGI.OpenAI.SpecificFunctionShellParam, TResult>? specificShellToolChoice = null,
             bool validate = true)
         {
             if (validate)
@@ -415,13 +615,73 @@ namespace tryAGI.OpenAI
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.ToolChoiceOptions?>? toolChoiceMode = null,
-            global::System.Action<global::tryAGI.OpenAI.ToolChoiceAllowed?>? allowedTools = null,
-            global::System.Action<global::tryAGI.OpenAI.ToolChoiceTypes?>? hostedTool = null,
-            global::System.Action<global::tryAGI.OpenAI.ToolChoiceFunction?>? functionTool = null,
-            global::System.Action<global::tryAGI.OpenAI.ToolChoiceMCP?>? mcpTool = null,
-            global::System.Action<global::tryAGI.OpenAI.ToolChoiceCustom?>? customTool = null,
-            global::System.Action<global::tryAGI.OpenAI.SpecificApplyPatchParam?>? specificApplyPatchToolChoice = null,
-            global::System.Action<global::tryAGI.OpenAI.SpecificFunctionShellParam?>? specificShellToolChoice = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ToolChoiceAllowed>? allowedTools = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ToolChoiceTypes>? hostedTool = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ToolChoiceFunction>? functionTool = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ToolChoiceMCP>? mcpTool = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ToolChoiceCustom>? customTool = null,
+
+            global::System.Action<global::tryAGI.OpenAI.SpecificApplyPatchParam>? specificApplyPatchToolChoice = null,
+
+            global::System.Action<global::tryAGI.OpenAI.SpecificFunctionShellParam>? specificShellToolChoice = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsToolChoiceMode)
+            {
+                toolChoiceMode?.Invoke(ToolChoiceMode!);
+            }
+            else if (IsAllowedTools)
+            {
+                allowedTools?.Invoke(AllowedTools!);
+            }
+            else if (IsHostedTool)
+            {
+                hostedTool?.Invoke(HostedTool!);
+            }
+            else if (IsFunctionTool)
+            {
+                functionTool?.Invoke(FunctionTool!);
+            }
+            else if (IsMcpTool)
+            {
+                mcpTool?.Invoke(McpTool!);
+            }
+            else if (IsCustomTool)
+            {
+                customTool?.Invoke(CustomTool!);
+            }
+            else if (IsSpecificApplyPatchToolChoice)
+            {
+                specificApplyPatchToolChoice?.Invoke(SpecificApplyPatchToolChoice!);
+            }
+            else if (IsSpecificShellToolChoice)
+            {
+                specificShellToolChoice?.Invoke(SpecificShellToolChoice!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.ToolChoiceOptions?>? toolChoiceMode = null,
+            global::System.Action<global::tryAGI.OpenAI.ToolChoiceAllowed>? allowedTools = null,
+            global::System.Action<global::tryAGI.OpenAI.ToolChoiceTypes>? hostedTool = null,
+            global::System.Action<global::tryAGI.OpenAI.ToolChoiceFunction>? functionTool = null,
+            global::System.Action<global::tryAGI.OpenAI.ToolChoiceMCP>? mcpTool = null,
+            global::System.Action<global::tryAGI.OpenAI.ToolChoiceCustom>? customTool = null,
+            global::System.Action<global::tryAGI.OpenAI.SpecificApplyPatchParam>? specificApplyPatchToolChoice = null,
+            global::System.Action<global::tryAGI.OpenAI.SpecificFunctionShellParam>? specificShellToolChoice = null,
             bool validate = true)
         {
             if (validate)

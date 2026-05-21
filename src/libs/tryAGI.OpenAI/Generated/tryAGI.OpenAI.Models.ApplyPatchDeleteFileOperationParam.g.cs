@@ -57,5 +57,18 @@ namespace tryAGI.OpenAI
         public ApplyPatchDeleteFileOperationParam()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ApplyPatchDeleteFileOperationParam"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ApplyPatchDeleteFileOperationParam FromPath(string path)
+        {
+            return new ApplyPatchDeleteFileOperationParam
+            {
+                Path = path,
+            };
+        }
+
     }
 }

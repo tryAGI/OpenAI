@@ -12,7 +12,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        public string? Role { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatCompletionRequestMessageDiscriminatorRoleJsonConverter))]
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageDiscriminatorRole? Role { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +29,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatCompletionRequestMessageDiscriminator(
-            string? role)
+            global::tryAGI.OpenAI.ChatCompletionRequestMessageDiscriminatorRole? role)
         {
             this.Role = role;
         }
@@ -39,5 +40,6 @@ namespace tryAGI.OpenAI
         public ChatCompletionRequestMessageDiscriminator()
         {
         }
+
     }
 }

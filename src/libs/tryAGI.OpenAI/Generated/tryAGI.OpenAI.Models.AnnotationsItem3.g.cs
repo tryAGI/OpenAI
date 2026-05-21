@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct AnnotationsItem3 : global::System.IEquatable<AnnotationsItem3>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ResponseOutputTextAnnotationDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Annotation that references an uploaded file.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -27,6 +32,26 @@ namespace tryAGI.OpenAI
         public bool IsFile => File != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.FileAnnotation? value)
+        {
+            value = File;
+            return IsFile;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.FileAnnotation PickFile() => IsFile
+            ? File!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
+
+        /// <summary>
         /// Annotation that references a URL.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +67,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Url))]
 #endif
         public bool IsUrl => Url != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUrl(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.UrlAnnotation? value)
+        {
+            value = Url;
+            return IsUrl;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.UrlAnnotation PickUrl() => IsUrl
+            ? Url!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Url' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -59,6 +104,11 @@ namespace tryAGI.OpenAI
         {
             File = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnnotationsItem3 FromFile(global::tryAGI.OpenAI.FileAnnotation? value) => new AnnotationsItem3(value);
 
         /// <summary>
         /// 
@@ -81,11 +131,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static AnnotationsItem3 FromUrl(global::tryAGI.OpenAI.UrlAnnotation? value) => new AnnotationsItem3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public AnnotationsItem3(
+            global::tryAGI.OpenAI.ResponseOutputTextAnnotationDiscriminatorType? type,
             global::tryAGI.OpenAI.FileAnnotation? file,
             global::tryAGI.OpenAI.UrlAnnotation? url
             )
         {
+            Type = type;
+
             File = file;
             Url = url;
         }
@@ -118,8 +176,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.FileAnnotation?, TResult>? file = null,
-            global::System.Func<global::tryAGI.OpenAI.UrlAnnotation?, TResult>? url = null,
+            global::System.Func<global::tryAGI.OpenAI.FileAnnotation, TResult>? file = null,
+            global::System.Func<global::tryAGI.OpenAI.UrlAnnotation, TResult>? url = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +201,32 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.FileAnnotation?>? file = null,
-            global::System.Action<global::tryAGI.OpenAI.UrlAnnotation?>? url = null,
+            global::System.Action<global::tryAGI.OpenAI.FileAnnotation>? file = null,
+
+            global::System.Action<global::tryAGI.OpenAI.UrlAnnotation>? url = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFile)
+            {
+                file?.Invoke(File!);
+            }
+            else if (IsUrl)
+            {
+                url?.Invoke(Url!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.FileAnnotation>? file = null,
+            global::System.Action<global::tryAGI.OpenAI.UrlAnnotation>? url = null,
             bool validate = true)
         {
             if (validate)

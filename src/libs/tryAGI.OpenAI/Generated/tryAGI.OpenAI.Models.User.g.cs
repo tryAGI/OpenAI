@@ -209,5 +209,6 @@ namespace tryAGI.OpenAI
         public User()
         {
         }
+
     }
 }

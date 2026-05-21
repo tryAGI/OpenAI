@@ -29,6 +29,26 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPythonGrader(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.GraderPython? value)
+        {
+            value = PythonGrader;
+            return IsPythonGrader;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.GraderPython PickPythonGrader() => IsPythonGrader
+            ? PythonGrader!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PythonGrader' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.EvalGraderPythonVariant2? EvalGraderPythonVariant2 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EvalGraderPythonVariant2))]
 #endif
         public bool IsEvalGraderPythonVariant2 => EvalGraderPythonVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEvalGraderPythonVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.EvalGraderPythonVariant2? value)
+        {
+            value = EvalGraderPythonVariant2;
+            return IsEvalGraderPythonVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.EvalGraderPythonVariant2 PickEvalGraderPythonVariant2() => IsEvalGraderPythonVariant2
+            ? EvalGraderPythonVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EvalGraderPythonVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static EvalGraderPython FromPythonGrader(global::tryAGI.OpenAI.GraderPython? value) => new EvalGraderPython(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EvalGraderPython(global::tryAGI.OpenAI.EvalGraderPythonVariant2 value) => new EvalGraderPython((global::tryAGI.OpenAI.EvalGraderPythonVariant2?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace tryAGI.OpenAI
         {
             EvalGraderPythonVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EvalGraderPython FromEvalGraderPythonVariant2(global::tryAGI.OpenAI.EvalGraderPythonVariant2? value) => new EvalGraderPython(value);
 
         /// <summary>
         /// 
@@ -118,8 +168,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.GraderPython?, TResult>? pythonGrader = null,
-            global::System.Func<global::tryAGI.OpenAI.EvalGraderPythonVariant2?, TResult>? evalGraderPythonVariant2 = null,
+            global::System.Func<global::tryAGI.OpenAI.GraderPython, TResult>? pythonGrader = null,
+            global::System.Func<global::tryAGI.OpenAI.EvalGraderPythonVariant2, TResult>? evalGraderPythonVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +193,32 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.GraderPython?>? pythonGrader = null,
-            global::System.Action<global::tryAGI.OpenAI.EvalGraderPythonVariant2?>? evalGraderPythonVariant2 = null,
+            global::System.Action<global::tryAGI.OpenAI.GraderPython>? pythonGrader = null,
+
+            global::System.Action<global::tryAGI.OpenAI.EvalGraderPythonVariant2>? evalGraderPythonVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsPythonGrader)
+            {
+                pythonGrader?.Invoke(PythonGrader!);
+            }
+            else if (IsEvalGraderPythonVariant2)
+            {
+                evalGraderPythonVariant2?.Invoke(EvalGraderPythonVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.GraderPython>? pythonGrader = null,
+            global::System.Action<global::tryAGI.OpenAI.EvalGraderPythonVariant2>? evalGraderPythonVariant2 = null,
             bool validate = true)
         {
             if (validate)

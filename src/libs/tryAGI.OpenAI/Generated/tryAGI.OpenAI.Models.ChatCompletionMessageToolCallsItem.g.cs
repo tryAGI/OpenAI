@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct ChatCompletionMessageToolCallsItem : global::System.IEquatable<ChatCompletionMessageToolCallsItem>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ChatCompletionMessageToolCallDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// A call to a function tool created by the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -27,6 +32,26 @@ namespace tryAGI.OpenAI
         public bool IsFunction => Function != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ChatCompletionMessageToolCall? value)
+        {
+            value = Function;
+            return IsFunction;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ChatCompletionMessageToolCall PickFunction() => IsFunction
+            ? Function!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
+
+        /// <summary>
         /// A call to a custom tool created by the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +67,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Custom))]
 #endif
         public bool IsCustom => Custom != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCustom(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall? value)
+        {
+            value = Custom;
+            return IsCustom;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall PickCustom() => IsCustom
+            ? Custom!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Custom' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -59,6 +104,11 @@ namespace tryAGI.OpenAI
         {
             Function = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionMessageToolCallsItem FromFunction(global::tryAGI.OpenAI.ChatCompletionMessageToolCall? value) => new ChatCompletionMessageToolCallsItem(value);
 
         /// <summary>
         /// 
@@ -81,11 +131,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionMessageToolCallsItem FromCustom(global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall? value) => new ChatCompletionMessageToolCallsItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ChatCompletionMessageToolCallsItem(
+            global::tryAGI.OpenAI.ChatCompletionMessageToolCallDiscriminatorType? type,
             global::tryAGI.OpenAI.ChatCompletionMessageToolCall? function,
             global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall? custom
             )
         {
+            Type = type;
+
             Function = function;
             Custom = custom;
         }
@@ -118,8 +176,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.ChatCompletionMessageToolCall?, TResult>? function = null,
-            global::System.Func<global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall?, TResult>? custom = null,
+            global::System.Func<global::tryAGI.OpenAI.ChatCompletionMessageToolCall, TResult>? function = null,
+            global::System.Func<global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall, TResult>? custom = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +201,32 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.ChatCompletionMessageToolCall?>? function = null,
-            global::System.Action<global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall?>? custom = null,
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionMessageToolCall>? function = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall>? custom = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFunction)
+            {
+                function?.Invoke(Function!);
+            }
+            else if (IsCustom)
+            {
+                custom?.Invoke(Custom!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionMessageToolCall>? function = null,
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCall>? custom = null,
             bool validate = true)
         {
             if (validate)

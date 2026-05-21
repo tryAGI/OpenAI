@@ -96,5 +96,18 @@ namespace tryAGI.OpenAI
         public ToolSearchCallItemParam()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ToolSearchCallItemParam"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ToolSearchCallItemParam FromArguments(global::tryAGI.OpenAI.EmptyModelParam arguments)
+        {
+            return new ToolSearchCallItemParam
+            {
+                Arguments = arguments,
+            };
+        }
+
     }
 }

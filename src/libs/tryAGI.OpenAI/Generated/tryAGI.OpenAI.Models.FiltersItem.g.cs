@@ -29,6 +29,26 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickComparisonFilter(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ComparisonFilter? value)
+        {
+            value = ComparisonFilter;
+            return IsComparisonFilter;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ComparisonFilter PickComparisonFilter() => IsComparisonFilter
+            ? ComparisonFilter!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ComparisonFilter' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? CompoundFilterVariant2 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CompoundFilterVariant2))]
 #endif
         public bool IsCompoundFilterVariant2 => CompoundFilterVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCompoundFilterVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = CompoundFilterVariant2;
+            return IsCompoundFilterVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickCompoundFilterVariant2() => IsCompoundFilterVariant2
+            ? CompoundFilterVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CompoundFilterVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -59,6 +99,11 @@ namespace tryAGI.OpenAI
         {
             ComparisonFilter = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FiltersItem FromComparisonFilter(global::tryAGI.OpenAI.ComparisonFilter? value) => new FiltersItem(value);
 
         /// <summary>
         /// 
@@ -100,8 +145,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.ComparisonFilter?, TResult>? comparisonFilter = null,
-            global::System.Func<object?, TResult>? compoundFilterVariant2 = null,
+            global::System.Func<global::tryAGI.OpenAI.ComparisonFilter, TResult>? comparisonFilter = null,
+            global::System.Func<object, TResult>? compoundFilterVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -125,8 +170,32 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.ComparisonFilter?>? comparisonFilter = null,
-            global::System.Action<object?>? compoundFilterVariant2 = null,
+            global::System.Action<global::tryAGI.OpenAI.ComparisonFilter>? comparisonFilter = null,
+
+            global::System.Action<object>? compoundFilterVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsComparisonFilter)
+            {
+                comparisonFilter?.Invoke(ComparisonFilter!);
+            }
+            else if (IsCompoundFilterVariant2)
+            {
+                compoundFilterVariant2?.Invoke(CompoundFilterVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.ComparisonFilter>? comparisonFilter = null,
+            global::System.Action<object>? compoundFilterVariant2 = null,
             bool validate = true)
         {
             if (validate)

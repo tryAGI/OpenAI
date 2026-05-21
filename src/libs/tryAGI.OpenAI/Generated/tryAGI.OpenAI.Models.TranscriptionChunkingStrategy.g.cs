@@ -33,6 +33,26 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEnum(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum? value)
+        {
+            value = Enum;
+            return IsEnum;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum PickEnum() => IsEnum
+            ? Enum!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.VadConfig? VadConfig { get; init; }
 #else
@@ -46,6 +66,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VadConfig))]
 #endif
         public bool IsVadConfig => VadConfig != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVadConfig(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.VadConfig? value)
+        {
+            value = VadConfig;
+            return IsVadConfig;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.VadConfig PickVadConfig() => IsVadConfig
+            ? VadConfig!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VadConfig' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -67,6 +107,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static TranscriptionChunkingStrategy FromEnum(global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum? value) => new TranscriptionChunkingStrategy(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TranscriptionChunkingStrategy(global::tryAGI.OpenAI.VadConfig value) => new TranscriptionChunkingStrategy((global::tryAGI.OpenAI.VadConfig?)value);
 
         /// <summary>
@@ -81,6 +126,11 @@ namespace tryAGI.OpenAI
         {
             VadConfig = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TranscriptionChunkingStrategy FromVadConfig(global::tryAGI.OpenAI.VadConfig? value) => new TranscriptionChunkingStrategy(value);
 
         /// <summary>
         /// 
@@ -123,7 +173,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum?, TResult>? @enum = null,
-            global::System.Func<global::tryAGI.OpenAI.VadConfig?, TResult>? vadConfig = null,
+            global::System.Func<global::tryAGI.OpenAI.VadConfig, TResult>? vadConfig = null,
             bool validate = true)
         {
             if (validate)
@@ -148,7 +198,31 @@ namespace tryAGI.OpenAI
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum?>? @enum = null,
-            global::System.Action<global::tryAGI.OpenAI.VadConfig?>? vadConfig = null,
+
+            global::System.Action<global::tryAGI.OpenAI.VadConfig>? vadConfig = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEnum)
+            {
+                @enum?.Invoke(Enum!);
+            }
+            else if (IsVadConfig)
+            {
+                vadConfig?.Invoke(VadConfig!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum?>? @enum = null,
+            global::System.Action<global::tryAGI.OpenAI.VadConfig>? vadConfig = null,
             bool validate = true)
         {
             if (validate)

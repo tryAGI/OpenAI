@@ -77,6 +77,13 @@ namespace tryAGI.OpenAI
         /// function/MCP tool.<br/>
         /// Default Value: auto
         /// </param>
+        /// <param name="parallelToolCalls">
+        /// Whether the model may call multiple tools in parallel. Only supported by<br/>
+        /// reasoning Realtime models such as `gpt-realtime-2`.
+        /// </param>
+        /// <param name="reasoning">
+        /// Configuration for reasoning-capable Realtime models such as `gpt-realtime-2`.
+        /// </param>
         /// <param name="maxOutputTokens">
         /// Maximum number of output tokens for a single assistant response,<br/>
         /// inclusive of tool calls. Provide an integer between 1 and 4096 to<br/>
@@ -104,6 +111,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGATracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestGATracingEnum2>? tracing = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeFunctionTool, global::tryAGI.OpenAI.MCPTool>>? tools = default,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP>? toolChoice = default,
+            bool? parallelToolCalls = default,
+            global::tryAGI.OpenAI.RealtimeReasoning? reasoning = default,
             global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAMaxOutputTokens?>? maxOutputTokens = default,
             global::tryAGI.OpenAI.RealtimeTruncation? truncation = default,
             global::tryAGI.OpenAI.PromptVariant1? prompt = default,

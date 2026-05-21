@@ -140,5 +140,6 @@ namespace tryAGI.OpenAI
         public CreateAssistantRequest()
         {
         }
+
     }
 }

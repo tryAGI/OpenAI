@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct ContentItem3 : global::System.IEquatable<ContentItem3>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.MessageContentItemDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// A text input to the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -25,6 +30,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputText))]
 #endif
         public bool IsInputText => InputText != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.InputTextContent? value)
+        {
+            value = InputText;
+            return IsInputText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.InputTextContent PickInputText() => IsInputText
+            ? InputText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputText' but the value was {ToString()}.");
 
         /// <summary>
         /// A text output from the model.
@@ -44,6 +69,26 @@ namespace tryAGI.OpenAI
         public bool IsOutputText => OutputText != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.OutputTextContent? value)
+        {
+            value = OutputText;
+            return IsOutputText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.OutputTextContent PickOutputText() => IsOutputText
+            ? OutputText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputText' but the value was {ToString()}.");
+
+        /// <summary>
         /// A text content.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -59,6 +104,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
         public bool IsText => Text != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.TextContent? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.TextContent PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
         /// A summary text from the model.
@@ -78,6 +143,26 @@ namespace tryAGI.OpenAI
         public bool IsSummaryText => SummaryText != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSummaryText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.SummaryTextContent? value)
+        {
+            value = SummaryText;
+            return IsSummaryText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.SummaryTextContent PickSummaryText() => IsSummaryText
+            ? SummaryText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SummaryText' but the value was {ToString()}.");
+
+        /// <summary>
         /// Reasoning text from the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -93,6 +178,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningText))]
 #endif
         public bool IsReasoningText => ReasoningText != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickReasoningText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ReasoningTextContent? value)
+        {
+            value = ReasoningText;
+            return IsReasoningText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ReasoningTextContent PickReasoningText() => IsReasoningText
+            ? ReasoningText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningText' but the value was {ToString()}.");
 
         /// <summary>
         /// A refusal from the model.
@@ -112,6 +217,26 @@ namespace tryAGI.OpenAI
         public bool IsRefusal => Refusal != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRefusal(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RefusalContent? value)
+        {
+            value = Refusal;
+            return IsRefusal;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RefusalContent PickRefusal() => IsRefusal
+            ? Refusal!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Refusal' but the value was {ToString()}.");
+
+        /// <summary>
         /// An image input to the model. Learn about [image inputs](/docs/guides/vision).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -127,6 +252,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputImage))]
 #endif
         public bool IsInputImage => InputImage != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.InputImageContent? value)
+        {
+            value = InputImage;
+            return IsInputImage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.InputImageContent PickInputImage() => IsInputImage
+            ? InputImage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputImage' but the value was {ToString()}.");
 
         /// <summary>
         /// A screenshot of a computer.
@@ -146,6 +291,26 @@ namespace tryAGI.OpenAI
         public bool IsComputerScreenshot => ComputerScreenshot != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickComputerScreenshot(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ComputerScreenshotContent? value)
+        {
+            value = ComputerScreenshot;
+            return IsComputerScreenshot;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ComputerScreenshotContent PickComputerScreenshot() => IsComputerScreenshot
+            ? ComputerScreenshot!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ComputerScreenshot' but the value was {ToString()}.");
+
+        /// <summary>
         /// A file input to the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -161,6 +326,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputFile))]
 #endif
         public bool IsInputFile => InputFile != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.InputFileContent? value)
+        {
+            value = InputFile;
+            return IsInputFile;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.InputFileContent PickInputFile() => IsInputFile
+            ? InputFile!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputFile' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -178,6 +363,11 @@ namespace tryAGI.OpenAI
         {
             InputText = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem3 FromInputText(global::tryAGI.OpenAI.InputTextContent? value) => new ContentItem3(value);
 
         /// <summary>
         /// 
@@ -200,6 +390,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem3 FromOutputText(global::tryAGI.OpenAI.OutputTextContent? value) => new ContentItem3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem3(global::tryAGI.OpenAI.TextContent value) => new ContentItem3((global::tryAGI.OpenAI.TextContent?)value);
 
         /// <summary>
@@ -214,6 +409,11 @@ namespace tryAGI.OpenAI
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem3 FromText(global::tryAGI.OpenAI.TextContent? value) => new ContentItem3(value);
 
         /// <summary>
         /// 
@@ -236,6 +436,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem3 FromSummaryText(global::tryAGI.OpenAI.SummaryTextContent? value) => new ContentItem3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem3(global::tryAGI.OpenAI.ReasoningTextContent value) => new ContentItem3((global::tryAGI.OpenAI.ReasoningTextContent?)value);
 
         /// <summary>
@@ -250,6 +455,11 @@ namespace tryAGI.OpenAI
         {
             ReasoningText = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem3 FromReasoningText(global::tryAGI.OpenAI.ReasoningTextContent? value) => new ContentItem3(value);
 
         /// <summary>
         /// 
@@ -272,6 +482,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem3 FromRefusal(global::tryAGI.OpenAI.RefusalContent? value) => new ContentItem3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem3(global::tryAGI.OpenAI.InputImageContent value) => new ContentItem3((global::tryAGI.OpenAI.InputImageContent?)value);
 
         /// <summary>
@@ -286,6 +501,11 @@ namespace tryAGI.OpenAI
         {
             InputImage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem3 FromInputImage(global::tryAGI.OpenAI.InputImageContent? value) => new ContentItem3(value);
 
         /// <summary>
         /// 
@@ -308,6 +528,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem3 FromComputerScreenshot(global::tryAGI.OpenAI.ComputerScreenshotContent? value) => new ContentItem3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem3(global::tryAGI.OpenAI.InputFileContent value) => new ContentItem3((global::tryAGI.OpenAI.InputFileContent?)value);
 
         /// <summary>
@@ -326,7 +551,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem3 FromInputFile(global::tryAGI.OpenAI.InputFileContent? value) => new ContentItem3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ContentItem3(
+            global::tryAGI.OpenAI.MessageContentItemDiscriminatorType? type,
             global::tryAGI.OpenAI.InputTextContent? inputText,
             global::tryAGI.OpenAI.OutputTextContent? outputText,
             global::tryAGI.OpenAI.TextContent? text,
@@ -338,6 +569,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.InputFileContent? inputFile
             )
         {
+            Type = type;
+
             InputText = inputText;
             OutputText = outputText;
             Text = text;
@@ -391,15 +624,15 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.InputTextContent?, TResult>? inputText = null,
-            global::System.Func<global::tryAGI.OpenAI.OutputTextContent?, TResult>? outputText = null,
-            global::System.Func<global::tryAGI.OpenAI.TextContent?, TResult>? text = null,
-            global::System.Func<global::tryAGI.OpenAI.SummaryTextContent?, TResult>? summaryText = null,
-            global::System.Func<global::tryAGI.OpenAI.ReasoningTextContent?, TResult>? reasoningText = null,
-            global::System.Func<global::tryAGI.OpenAI.RefusalContent?, TResult>? refusal = null,
-            global::System.Func<global::tryAGI.OpenAI.InputImageContent?, TResult>? inputImage = null,
-            global::System.Func<global::tryAGI.OpenAI.ComputerScreenshotContent?, TResult>? computerScreenshot = null,
-            global::System.Func<global::tryAGI.OpenAI.InputFileContent?, TResult>? inputFile = null,
+            global::System.Func<global::tryAGI.OpenAI.InputTextContent, TResult>? inputText = null,
+            global::System.Func<global::tryAGI.OpenAI.OutputTextContent, TResult>? outputText = null,
+            global::System.Func<global::tryAGI.OpenAI.TextContent, TResult>? text = null,
+            global::System.Func<global::tryAGI.OpenAI.SummaryTextContent, TResult>? summaryText = null,
+            global::System.Func<global::tryAGI.OpenAI.ReasoningTextContent, TResult>? reasoningText = null,
+            global::System.Func<global::tryAGI.OpenAI.RefusalContent, TResult>? refusal = null,
+            global::System.Func<global::tryAGI.OpenAI.InputImageContent, TResult>? inputImage = null,
+            global::System.Func<global::tryAGI.OpenAI.ComputerScreenshotContent, TResult>? computerScreenshot = null,
+            global::System.Func<global::tryAGI.OpenAI.InputFileContent, TResult>? inputFile = null,
             bool validate = true)
         {
             if (validate)
@@ -451,15 +684,81 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.InputTextContent?>? inputText = null,
-            global::System.Action<global::tryAGI.OpenAI.OutputTextContent?>? outputText = null,
-            global::System.Action<global::tryAGI.OpenAI.TextContent?>? text = null,
-            global::System.Action<global::tryAGI.OpenAI.SummaryTextContent?>? summaryText = null,
-            global::System.Action<global::tryAGI.OpenAI.ReasoningTextContent?>? reasoningText = null,
-            global::System.Action<global::tryAGI.OpenAI.RefusalContent?>? refusal = null,
-            global::System.Action<global::tryAGI.OpenAI.InputImageContent?>? inputImage = null,
-            global::System.Action<global::tryAGI.OpenAI.ComputerScreenshotContent?>? computerScreenshot = null,
-            global::System.Action<global::tryAGI.OpenAI.InputFileContent?>? inputFile = null,
+            global::System.Action<global::tryAGI.OpenAI.InputTextContent>? inputText = null,
+
+            global::System.Action<global::tryAGI.OpenAI.OutputTextContent>? outputText = null,
+
+            global::System.Action<global::tryAGI.OpenAI.TextContent>? text = null,
+
+            global::System.Action<global::tryAGI.OpenAI.SummaryTextContent>? summaryText = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ReasoningTextContent>? reasoningText = null,
+
+            global::System.Action<global::tryAGI.OpenAI.RefusalContent>? refusal = null,
+
+            global::System.Action<global::tryAGI.OpenAI.InputImageContent>? inputImage = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ComputerScreenshotContent>? computerScreenshot = null,
+
+            global::System.Action<global::tryAGI.OpenAI.InputFileContent>? inputFile = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInputText)
+            {
+                inputText?.Invoke(InputText!);
+            }
+            else if (IsOutputText)
+            {
+                outputText?.Invoke(OutputText!);
+            }
+            else if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsSummaryText)
+            {
+                summaryText?.Invoke(SummaryText!);
+            }
+            else if (IsReasoningText)
+            {
+                reasoningText?.Invoke(ReasoningText!);
+            }
+            else if (IsRefusal)
+            {
+                refusal?.Invoke(Refusal!);
+            }
+            else if (IsInputImage)
+            {
+                inputImage?.Invoke(InputImage!);
+            }
+            else if (IsComputerScreenshot)
+            {
+                computerScreenshot?.Invoke(ComputerScreenshot!);
+            }
+            else if (IsInputFile)
+            {
+                inputFile?.Invoke(InputFile!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.InputTextContent>? inputText = null,
+            global::System.Action<global::tryAGI.OpenAI.OutputTextContent>? outputText = null,
+            global::System.Action<global::tryAGI.OpenAI.TextContent>? text = null,
+            global::System.Action<global::tryAGI.OpenAI.SummaryTextContent>? summaryText = null,
+            global::System.Action<global::tryAGI.OpenAI.ReasoningTextContent>? reasoningText = null,
+            global::System.Action<global::tryAGI.OpenAI.RefusalContent>? refusal = null,
+            global::System.Action<global::tryAGI.OpenAI.InputImageContent>? inputImage = null,
+            global::System.Action<global::tryAGI.OpenAI.ComputerScreenshotContent>? computerScreenshot = null,
+            global::System.Action<global::tryAGI.OpenAI.InputFileContent>? inputFile = null,
             bool validate = true)
         {
             if (validate)

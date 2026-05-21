@@ -156,5 +156,6 @@ namespace tryAGI.OpenAI
         public AssignedRoleDetails()
         {
         }
+
     }
 }

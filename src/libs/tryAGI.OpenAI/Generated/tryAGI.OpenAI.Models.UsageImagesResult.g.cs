@@ -118,5 +118,6 @@ namespace tryAGI.OpenAI
         public UsageImagesResult()
         {
         }
+
     }
 }

@@ -31,6 +31,26 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickInputMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.InputMessage? value)
+        {
+            value = InputMessage;
+            return IsInputMessage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.InputMessage PickInputMessage() => IsInputMessage
+            ? InputMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputMessage' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.InputMessageResourceVariant2? InputMessageResourceVariant2 { get; init; }
 #else
@@ -44,6 +64,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputMessageResourceVariant2))]
 #endif
         public bool IsInputMessageResourceVariant2 => InputMessageResourceVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputMessageResourceVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.InputMessageResourceVariant2? value)
+        {
+            value = InputMessageResourceVariant2;
+            return IsInputMessageResourceVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.InputMessageResourceVariant2 PickInputMessageResourceVariant2() => IsInputMessageResourceVariant2
+            ? InputMessageResourceVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputMessageResourceVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -65,6 +105,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static InputMessageResource FromInputMessage(global::tryAGI.OpenAI.InputMessage? value) => new InputMessageResource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputMessageResource(global::tryAGI.OpenAI.InputMessageResourceVariant2 value) => new InputMessageResource((global::tryAGI.OpenAI.InputMessageResourceVariant2?)value);
 
         /// <summary>
@@ -79,6 +124,11 @@ namespace tryAGI.OpenAI
         {
             InputMessageResourceVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputMessageResource FromInputMessageResourceVariant2(global::tryAGI.OpenAI.InputMessageResourceVariant2? value) => new InputMessageResource(value);
 
         /// <summary>
         /// 
@@ -120,8 +170,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.InputMessage?, TResult>? inputMessage = null,
-            global::System.Func<global::tryAGI.OpenAI.InputMessageResourceVariant2?, TResult>? inputMessageResourceVariant2 = null,
+            global::System.Func<global::tryAGI.OpenAI.InputMessage, TResult>? inputMessage = null,
+            global::System.Func<global::tryAGI.OpenAI.InputMessageResourceVariant2, TResult>? inputMessageResourceVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -145,8 +195,32 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.InputMessage?>? inputMessage = null,
-            global::System.Action<global::tryAGI.OpenAI.InputMessageResourceVariant2?>? inputMessageResourceVariant2 = null,
+            global::System.Action<global::tryAGI.OpenAI.InputMessage>? inputMessage = null,
+
+            global::System.Action<global::tryAGI.OpenAI.InputMessageResourceVariant2>? inputMessageResourceVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInputMessage)
+            {
+                inputMessage?.Invoke(InputMessage!);
+            }
+            else if (IsInputMessageResourceVariant2)
+            {
+                inputMessageResourceVariant2?.Invoke(InputMessageResourceVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.InputMessage>? inputMessage = null,
+            global::System.Action<global::tryAGI.OpenAI.InputMessageResourceVariant2>? inputMessageResourceVariant2 = null,
             bool validate = true)
         {
             if (validate)

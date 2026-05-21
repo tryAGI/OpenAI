@@ -178,5 +178,6 @@ namespace tryAGI.OpenAI
         public AssistantObject()
         {
         }
+
     }
 }

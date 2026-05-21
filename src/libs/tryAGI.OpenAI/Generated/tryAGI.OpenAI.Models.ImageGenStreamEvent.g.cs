@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct ImageGenStreamEvent : global::System.IEquatable<ImageGenStreamEvent>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ImageGenStreamEventDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Emitted when a partial image is available during image generation streaming.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -27,6 +32,26 @@ namespace tryAGI.OpenAI
         public bool IsImageGenerationPartialImage => ImageGenerationPartialImage != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageGenerationPartialImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ImageGenPartialImageEvent? value)
+        {
+            value = ImageGenerationPartialImage;
+            return IsImageGenerationPartialImage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ImageGenPartialImageEvent PickImageGenerationPartialImage() => IsImageGenerationPartialImage
+            ? ImageGenerationPartialImage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageGenerationPartialImage' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when image generation has completed and the final image is available.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +67,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenerationCompleted))]
 #endif
         public bool IsImageGenerationCompleted => ImageGenerationCompleted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageGenerationCompleted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ImageGenCompletedEvent? value)
+        {
+            value = ImageGenerationCompleted;
+            return IsImageGenerationCompleted;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ImageGenCompletedEvent PickImageGenerationCompleted() => IsImageGenerationCompleted
+            ? ImageGenerationCompleted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageGenerationCompleted' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -59,6 +104,11 @@ namespace tryAGI.OpenAI
         {
             ImageGenerationPartialImage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ImageGenStreamEvent FromImageGenerationPartialImage(global::tryAGI.OpenAI.ImageGenPartialImageEvent? value) => new ImageGenStreamEvent(value);
 
         /// <summary>
         /// 
@@ -81,11 +131,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ImageGenStreamEvent FromImageGenerationCompleted(global::tryAGI.OpenAI.ImageGenCompletedEvent? value) => new ImageGenStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ImageGenStreamEvent(
+            global::tryAGI.OpenAI.ImageGenStreamEventDiscriminatorType? type,
             global::tryAGI.OpenAI.ImageGenPartialImageEvent? imageGenerationPartialImage,
             global::tryAGI.OpenAI.ImageGenCompletedEvent? imageGenerationCompleted
             )
         {
+            Type = type;
+
             ImageGenerationPartialImage = imageGenerationPartialImage;
             ImageGenerationCompleted = imageGenerationCompleted;
         }
@@ -118,8 +176,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.ImageGenPartialImageEvent?, TResult>? imageGenerationPartialImage = null,
-            global::System.Func<global::tryAGI.OpenAI.ImageGenCompletedEvent?, TResult>? imageGenerationCompleted = null,
+            global::System.Func<global::tryAGI.OpenAI.ImageGenPartialImageEvent, TResult>? imageGenerationPartialImage = null,
+            global::System.Func<global::tryAGI.OpenAI.ImageGenCompletedEvent, TResult>? imageGenerationCompleted = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +201,32 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.ImageGenPartialImageEvent?>? imageGenerationPartialImage = null,
-            global::System.Action<global::tryAGI.OpenAI.ImageGenCompletedEvent?>? imageGenerationCompleted = null,
+            global::System.Action<global::tryAGI.OpenAI.ImageGenPartialImageEvent>? imageGenerationPartialImage = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ImageGenCompletedEvent>? imageGenerationCompleted = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsImageGenerationPartialImage)
+            {
+                imageGenerationPartialImage?.Invoke(ImageGenerationPartialImage!);
+            }
+            else if (IsImageGenerationCompleted)
+            {
+                imageGenerationCompleted?.Invoke(ImageGenerationCompleted!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.ImageGenPartialImageEvent>? imageGenerationPartialImage = null,
+            global::System.Action<global::tryAGI.OpenAI.ImageGenCompletedEvent>? imageGenerationCompleted = null,
             bool validate = true)
         {
             if (validate)

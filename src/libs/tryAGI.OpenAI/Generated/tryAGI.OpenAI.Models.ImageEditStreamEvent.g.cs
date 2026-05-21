@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct ImageEditStreamEvent : global::System.IEquatable<ImageEditStreamEvent>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ImageEditStreamEventDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Emitted when a partial image is available during image editing streaming.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -27,6 +32,26 @@ namespace tryAGI.OpenAI
         public bool IsImageEditPartialImage => ImageEditPartialImage != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageEditPartialImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ImageEditPartialImageEvent? value)
+        {
+            value = ImageEditPartialImage;
+            return IsImageEditPartialImage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ImageEditPartialImageEvent PickImageEditPartialImage() => IsImageEditPartialImage
+            ? ImageEditPartialImage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageEditPartialImage' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when image editing has completed and the final image is available.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +67,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageEditCompleted))]
 #endif
         public bool IsImageEditCompleted => ImageEditCompleted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageEditCompleted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ImageEditCompletedEvent? value)
+        {
+            value = ImageEditCompleted;
+            return IsImageEditCompleted;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ImageEditCompletedEvent PickImageEditCompleted() => IsImageEditCompleted
+            ? ImageEditCompleted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageEditCompleted' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -59,6 +104,11 @@ namespace tryAGI.OpenAI
         {
             ImageEditPartialImage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ImageEditStreamEvent FromImageEditPartialImage(global::tryAGI.OpenAI.ImageEditPartialImageEvent? value) => new ImageEditStreamEvent(value);
 
         /// <summary>
         /// 
@@ -81,11 +131,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ImageEditStreamEvent FromImageEditCompleted(global::tryAGI.OpenAI.ImageEditCompletedEvent? value) => new ImageEditStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ImageEditStreamEvent(
+            global::tryAGI.OpenAI.ImageEditStreamEventDiscriminatorType? type,
             global::tryAGI.OpenAI.ImageEditPartialImageEvent? imageEditPartialImage,
             global::tryAGI.OpenAI.ImageEditCompletedEvent? imageEditCompleted
             )
         {
+            Type = type;
+
             ImageEditPartialImage = imageEditPartialImage;
             ImageEditCompleted = imageEditCompleted;
         }
@@ -118,8 +176,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.ImageEditPartialImageEvent?, TResult>? imageEditPartialImage = null,
-            global::System.Func<global::tryAGI.OpenAI.ImageEditCompletedEvent?, TResult>? imageEditCompleted = null,
+            global::System.Func<global::tryAGI.OpenAI.ImageEditPartialImageEvent, TResult>? imageEditPartialImage = null,
+            global::System.Func<global::tryAGI.OpenAI.ImageEditCompletedEvent, TResult>? imageEditCompleted = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +201,32 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.ImageEditPartialImageEvent?>? imageEditPartialImage = null,
-            global::System.Action<global::tryAGI.OpenAI.ImageEditCompletedEvent?>? imageEditCompleted = null,
+            global::System.Action<global::tryAGI.OpenAI.ImageEditPartialImageEvent>? imageEditPartialImage = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ImageEditCompletedEvent>? imageEditCompleted = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsImageEditPartialImage)
+            {
+                imageEditPartialImage?.Invoke(ImageEditPartialImage!);
+            }
+            else if (IsImageEditCompleted)
+            {
+                imageEditCompleted?.Invoke(ImageEditCompleted!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.ImageEditPartialImageEvent>? imageEditPartialImage = null,
+            global::System.Action<global::tryAGI.OpenAI.ImageEditCompletedEvent>? imageEditCompleted = null,
             bool validate = true)
         {
             if (validate)

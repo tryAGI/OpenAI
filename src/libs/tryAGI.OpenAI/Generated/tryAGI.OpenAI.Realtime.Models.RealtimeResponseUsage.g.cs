@@ -94,5 +94,6 @@ namespace tryAGI.OpenAI.Realtime
         public RealtimeResponseUsage()
         {
         }
+
     }
 }

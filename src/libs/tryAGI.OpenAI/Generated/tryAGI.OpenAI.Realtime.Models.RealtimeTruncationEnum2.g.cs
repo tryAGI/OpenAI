@@ -65,5 +65,6 @@ namespace tryAGI.OpenAI.Realtime
         public RealtimeTruncationEnum2()
         {
         }
+
     }
 }

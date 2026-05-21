@@ -35,6 +35,26 @@ namespace tryAGI.OpenAI
         public bool IsText => Text != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseFormatText? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ResponseFormatText PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
         /// JSON Schema response format. Used to generate structured JSON responses.<br/>
         /// Learn more about [Structured Outputs](/docs/guides/structured-outputs).
         /// </summary>
@@ -51,6 +71,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonSchema))]
 #endif
         public bool IsJsonSchema => JsonSchema != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickJsonSchema(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.TextResponseFormatJsonSchema? value)
+        {
+            value = JsonSchema;
+            return IsJsonSchema;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.TextResponseFormatJsonSchema PickJsonSchema() => IsJsonSchema
+            ? JsonSchema!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JsonSchema' but the value was {ToString()}.");
 
         /// <summary>
         /// JSON object response format. An older method of generating JSON responses.<br/>
@@ -71,6 +111,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonObject))]
 #endif
         public bool IsJsonObject => JsonObject != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickJsonObject(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseFormatJsonObject? value)
+        {
+            value = JsonObject;
+            return IsJsonObject;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ResponseFormatJsonObject PickJsonObject() => IsJsonObject
+            ? JsonObject!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JsonObject' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -88,6 +148,11 @@ namespace tryAGI.OpenAI
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TextResponseFormatConfiguration FromText(global::tryAGI.OpenAI.ResponseFormatText? value) => new TextResponseFormatConfiguration(value);
 
         /// <summary>
         /// 
@@ -110,6 +175,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static TextResponseFormatConfiguration FromJsonSchema(global::tryAGI.OpenAI.TextResponseFormatJsonSchema? value) => new TextResponseFormatConfiguration(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TextResponseFormatConfiguration(global::tryAGI.OpenAI.ResponseFormatJsonObject value) => new TextResponseFormatConfiguration((global::tryAGI.OpenAI.ResponseFormatJsonObject?)value);
 
         /// <summary>
@@ -124,6 +194,11 @@ namespace tryAGI.OpenAI
         {
             JsonObject = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TextResponseFormatConfiguration FromJsonObject(global::tryAGI.OpenAI.ResponseFormatJsonObject? value) => new TextResponseFormatConfiguration(value);
 
         /// <summary>
         /// 
@@ -169,9 +244,9 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.ResponseFormatText?, TResult>? text = null,
-            global::System.Func<global::tryAGI.OpenAI.TextResponseFormatJsonSchema?, TResult>? jsonSchema = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseFormatJsonObject?, TResult>? jsonObject = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseFormatText, TResult>? text = null,
+            global::System.Func<global::tryAGI.OpenAI.TextResponseFormatJsonSchema, TResult>? jsonSchema = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseFormatJsonObject, TResult>? jsonObject = null,
             bool validate = true)
         {
             if (validate)
@@ -199,9 +274,39 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.ResponseFormatText?>? text = null,
-            global::System.Action<global::tryAGI.OpenAI.TextResponseFormatJsonSchema?>? jsonSchema = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseFormatJsonObject?>? jsonObject = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseFormatText>? text = null,
+
+            global::System.Action<global::tryAGI.OpenAI.TextResponseFormatJsonSchema>? jsonSchema = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseFormatJsonObject>? jsonObject = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsJsonSchema)
+            {
+                jsonSchema?.Invoke(JsonSchema!);
+            }
+            else if (IsJsonObject)
+            {
+                jsonObject?.Invoke(JsonObject!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.ResponseFormatText>? text = null,
+            global::System.Action<global::tryAGI.OpenAI.TextResponseFormatJsonSchema>? jsonSchema = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseFormatJsonObject>? jsonObject = null,
             bool validate = true)
         {
             if (validate)

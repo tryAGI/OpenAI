@@ -57,5 +57,18 @@ namespace tryAGI.OpenAI
         public FileAnnotation()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="FileAnnotation"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static FileAnnotation FromSource(global::tryAGI.OpenAI.FileAnnotationSource source)
+        {
+            return new FileAnnotation
+            {
+                Source = source,
+            };
+        }
+
     }
 }

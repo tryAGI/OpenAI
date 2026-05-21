@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct ChatCompletionRequestAssistantMessageContentPart : global::System.IEquatable<ChatCompletionRequestAssistantMessageContentPart>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessageContentPartDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Learn about [text inputs](/docs/guides/text-generation).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -29,6 +34,26 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartRefusal? Refusal { get; init; }
 #else
@@ -42,6 +67,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Refusal))]
 #endif
         public bool IsRefusal => Refusal != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRefusal(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartRefusal? value)
+        {
+            value = Refusal;
+            return IsRefusal;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartRefusal PickRefusal() => IsRefusal
+            ? Refusal!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Refusal' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -59,6 +104,11 @@ namespace tryAGI.OpenAI
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionRequestAssistantMessageContentPart FromText(global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText? value) => new ChatCompletionRequestAssistantMessageContentPart(value);
 
         /// <summary>
         /// 
@@ -81,11 +131,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionRequestAssistantMessageContentPart FromRefusal(global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartRefusal? value) => new ChatCompletionRequestAssistantMessageContentPart(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ChatCompletionRequestAssistantMessageContentPart(
+            global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessageContentPartDiscriminatorType? type,
             global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText? text,
             global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartRefusal? refusal
             )
         {
+            Type = type;
+
             Text = text;
             Refusal = refusal;
         }
@@ -118,8 +176,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText?, TResult>? text = null,
-            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartRefusal?, TResult>? refusal = null,
+            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText, TResult>? text = null,
+            global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartRefusal, TResult>? refusal = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +201,32 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText?>? text = null,
-            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartRefusal?>? refusal = null,
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText>? text = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartRefusal>? refusal = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsRefusal)
+            {
+                refusal?.Invoke(Refusal!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText>? text = null,
+            global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartRefusal>? refusal = null,
             bool validate = true)
         {
             if (validate)

@@ -108,7 +108,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (evalContentItem == null && anArrayOfInputTextOutputTextInputImageAndInputAudio == null)
+            {
                 try
                 {
 

@@ -25,6 +25,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StringCheckGrader))]
 #endif
         public bool IsStringCheckGrader => StringCheckGrader != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStringCheckGrader(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.GraderStringCheck? value)
+        {
+            value = StringCheckGrader;
+            return IsStringCheckGrader;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.GraderStringCheck PickStringCheckGrader() => IsStringCheckGrader
+            ? StringCheckGrader!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StringCheckGrader' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -42,6 +62,11 @@ namespace tryAGI.OpenAI
         {
             StringCheckGrader = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EvalGraderStringCheck FromStringCheckGrader(global::tryAGI.OpenAI.GraderStringCheck? value) => new EvalGraderStringCheck(value);
 
         /// <summary>
         /// 
@@ -69,7 +94,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.GraderStringCheck?, TResult>? stringCheckGrader = null,
+            global::System.Func<global::tryAGI.OpenAI.GraderStringCheck, TResult>? stringCheckGrader = null,
             bool validate = true)
         {
             if (validate)
@@ -89,7 +114,25 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.GraderStringCheck?>? stringCheckGrader = null,
+            global::System.Action<global::tryAGI.OpenAI.GraderStringCheck>? stringCheckGrader = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStringCheckGrader)
+            {
+                stringCheckGrader?.Invoke(StringCheckGrader!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.GraderStringCheck>? stringCheckGrader = null,
             bool validate = true)
         {
             if (validate)

@@ -66,5 +66,6 @@ namespace tryAGI.OpenAI
         public UserRoleAssignment()
         {
         }
+
     }
 }

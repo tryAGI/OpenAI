@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct FunctionShellCallOutputOutcomeParam : global::System.IEquatable<FunctionShellCallOutputOutcomeParam>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.FunctionShellCallOutputOutcomeParamDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Indicates that the shell call exceeded its configured time limit.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -27,6 +32,26 @@ namespace tryAGI.OpenAI
         public bool IsTimeout => Timeout != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTimeout(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.FunctionShellCallOutputTimeoutOutcomeParam? value)
+        {
+            value = Timeout;
+            return IsTimeout;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.FunctionShellCallOutputTimeoutOutcomeParam PickTimeout() => IsTimeout
+            ? Timeout!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Timeout' but the value was {ToString()}.");
+
+        /// <summary>
         /// Indicates that the shell commands finished and returned an exit code.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +67,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Exit))]
 #endif
         public bool IsExit => Exit != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickExit(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.FunctionShellCallOutputExitOutcomeParam? value)
+        {
+            value = Exit;
+            return IsExit;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.FunctionShellCallOutputExitOutcomeParam PickExit() => IsExit
+            ? Exit!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Exit' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -59,6 +104,11 @@ namespace tryAGI.OpenAI
         {
             Timeout = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FunctionShellCallOutputOutcomeParam FromTimeout(global::tryAGI.OpenAI.FunctionShellCallOutputTimeoutOutcomeParam? value) => new FunctionShellCallOutputOutcomeParam(value);
 
         /// <summary>
         /// 
@@ -81,11 +131,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static FunctionShellCallOutputOutcomeParam FromExit(global::tryAGI.OpenAI.FunctionShellCallOutputExitOutcomeParam? value) => new FunctionShellCallOutputOutcomeParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public FunctionShellCallOutputOutcomeParam(
+            global::tryAGI.OpenAI.FunctionShellCallOutputOutcomeParamDiscriminatorType? type,
             global::tryAGI.OpenAI.FunctionShellCallOutputTimeoutOutcomeParam? timeout,
             global::tryAGI.OpenAI.FunctionShellCallOutputExitOutcomeParam? exit
             )
         {
+            Type = type;
+
             Timeout = timeout;
             Exit = exit;
         }
@@ -118,8 +176,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.FunctionShellCallOutputTimeoutOutcomeParam?, TResult>? timeout = null,
-            global::System.Func<global::tryAGI.OpenAI.FunctionShellCallOutputExitOutcomeParam?, TResult>? exit = null,
+            global::System.Func<global::tryAGI.OpenAI.FunctionShellCallOutputTimeoutOutcomeParam, TResult>? timeout = null,
+            global::System.Func<global::tryAGI.OpenAI.FunctionShellCallOutputExitOutcomeParam, TResult>? exit = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +201,32 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.FunctionShellCallOutputTimeoutOutcomeParam?>? timeout = null,
-            global::System.Action<global::tryAGI.OpenAI.FunctionShellCallOutputExitOutcomeParam?>? exit = null,
+            global::System.Action<global::tryAGI.OpenAI.FunctionShellCallOutputTimeoutOutcomeParam>? timeout = null,
+
+            global::System.Action<global::tryAGI.OpenAI.FunctionShellCallOutputExitOutcomeParam>? exit = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTimeout)
+            {
+                timeout?.Invoke(Timeout!);
+            }
+            else if (IsExit)
+            {
+                exit?.Invoke(Exit!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.FunctionShellCallOutputTimeoutOutcomeParam>? timeout = null,
+            global::System.Action<global::tryAGI.OpenAI.FunctionShellCallOutputExitOutcomeParam>? exit = null,
             bool validate = true)
         {
             if (validate)

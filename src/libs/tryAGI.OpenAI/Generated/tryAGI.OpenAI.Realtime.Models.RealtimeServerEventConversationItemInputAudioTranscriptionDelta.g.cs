@@ -97,5 +97,6 @@ namespace tryAGI.OpenAI.Realtime
         public RealtimeServerEventConversationItemInputAudioTranscriptionDelta()
         {
         }
+
     }
 }

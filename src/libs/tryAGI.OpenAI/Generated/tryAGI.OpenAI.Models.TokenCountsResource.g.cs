@@ -53,5 +53,18 @@ namespace tryAGI.OpenAI
         public TokenCountsResource()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="TokenCountsResource"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static TokenCountsResource FromInputTokens(int inputTokens)
+        {
+            return new TokenCountsResource
+            {
+                InputTokens = inputTokens,
+            };
+        }
+
     }
 }

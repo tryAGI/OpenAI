@@ -43,6 +43,26 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickThread(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ThreadStreamEvent? value)
+        {
+            value = Thread;
+            return IsThread;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ThreadStreamEvent PickThread() => IsThread
+            ? Thread!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Thread' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RunStreamEvent? Run { get; init; }
 #else
@@ -56,6 +76,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Run))]
 #endif
         public bool IsRun => Run != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRun(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RunStreamEvent? value)
+        {
+            value = Run;
+            return IsRun;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RunStreamEvent PickRun() => IsRun
+            ? Run!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Run' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -77,6 +117,26 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRunStep(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RunStepStreamEvent? value)
+        {
+            value = RunStep;
+            return IsRunStep;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RunStepStreamEvent PickRunStep() => IsRunStep
+            ? RunStep!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RunStep' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.MessageStreamEvent? Message { get; init; }
 #else
@@ -90,6 +150,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Message))]
 #endif
         public bool IsMessage => Message != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.MessageStreamEvent? value)
+        {
+            value = Message;
+            return IsMessage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.MessageStreamEvent PickMessage() => IsMessage
+            ? Message!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Message' but the value was {ToString()}.");
 
         /// <summary>
         /// Occurs when an [error](/docs/guides/error-codes#api-errors) occurs. This can happen due to an internal server error or a timeout.
@@ -109,6 +189,26 @@ namespace tryAGI.OpenAI
         public bool IsError => Error != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ErrorEvent? value)
+        {
+            value = Error;
+            return IsError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ErrorEvent PickError() => IsError
+            ? Error!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
+
+        /// <summary>
         /// Occurs when a stream ends.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -124,6 +224,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Done))]
 #endif
         public bool IsDone => Done != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.DoneEvent? value)
+        {
+            value = Done;
+            return IsDone;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.DoneEvent PickDone() => IsDone
+            ? Done!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Done' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -141,6 +261,11 @@ namespace tryAGI.OpenAI
         {
             Thread = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AssistantStreamEvent FromThread(global::tryAGI.OpenAI.ThreadStreamEvent? value) => new AssistantStreamEvent(value);
 
         /// <summary>
         /// 
@@ -163,6 +288,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static AssistantStreamEvent FromRun(global::tryAGI.OpenAI.RunStreamEvent? value) => new AssistantStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AssistantStreamEvent(global::tryAGI.OpenAI.RunStepStreamEvent value) => new AssistantStreamEvent((global::tryAGI.OpenAI.RunStepStreamEvent?)value);
 
         /// <summary>
@@ -177,6 +307,11 @@ namespace tryAGI.OpenAI
         {
             RunStep = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AssistantStreamEvent FromRunStep(global::tryAGI.OpenAI.RunStepStreamEvent? value) => new AssistantStreamEvent(value);
 
         /// <summary>
         /// 
@@ -199,6 +334,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static AssistantStreamEvent FromMessage(global::tryAGI.OpenAI.MessageStreamEvent? value) => new AssistantStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AssistantStreamEvent(global::tryAGI.OpenAI.ErrorEvent value) => new AssistantStreamEvent((global::tryAGI.OpenAI.ErrorEvent?)value);
 
         /// <summary>
@@ -217,6 +357,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static AssistantStreamEvent FromError(global::tryAGI.OpenAI.ErrorEvent? value) => new AssistantStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AssistantStreamEvent(global::tryAGI.OpenAI.DoneEvent value) => new AssistantStreamEvent((global::tryAGI.OpenAI.DoneEvent?)value);
 
         /// <summary>
@@ -231,6 +376,11 @@ namespace tryAGI.OpenAI
         {
             Done = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AssistantStreamEvent FromDone(global::tryAGI.OpenAI.DoneEvent? value) => new AssistantStreamEvent(value);
 
         /// <summary>
         /// 
@@ -292,8 +442,8 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.RunStreamEvent?, TResult>? run = null,
             global::System.Func<global::tryAGI.OpenAI.RunStepStreamEvent?, TResult>? runStep = null,
             global::System.Func<global::tryAGI.OpenAI.MessageStreamEvent?, TResult>? message = null,
-            global::System.Func<global::tryAGI.OpenAI.ErrorEvent?, TResult>? error = null,
-            global::System.Func<global::tryAGI.OpenAI.DoneEvent?, TResult>? done = null,
+            global::System.Func<global::tryAGI.OpenAI.ErrorEvent, TResult>? error = null,
+            global::System.Func<global::tryAGI.OpenAI.DoneEvent, TResult>? done = null,
             bool validate = true)
         {
             if (validate)
@@ -334,11 +484,59 @@ namespace tryAGI.OpenAI
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.ThreadStreamEvent?>? thread = null,
+
+            global::System.Action<global::tryAGI.OpenAI.RunStreamEvent?>? run = null,
+
+            global::System.Action<global::tryAGI.OpenAI.RunStepStreamEvent?>? runStep = null,
+
+            global::System.Action<global::tryAGI.OpenAI.MessageStreamEvent?>? message = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ErrorEvent>? error = null,
+
+            global::System.Action<global::tryAGI.OpenAI.DoneEvent>? done = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsThread)
+            {
+                thread?.Invoke(Thread!);
+            }
+            else if (IsRun)
+            {
+                run?.Invoke(Run!);
+            }
+            else if (IsRunStep)
+            {
+                runStep?.Invoke(RunStep!);
+            }
+            else if (IsMessage)
+            {
+                message?.Invoke(Message!);
+            }
+            else if (IsError)
+            {
+                error?.Invoke(Error!);
+            }
+            else if (IsDone)
+            {
+                done?.Invoke(Done!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.ThreadStreamEvent?>? thread = null,
             global::System.Action<global::tryAGI.OpenAI.RunStreamEvent?>? run = null,
             global::System.Action<global::tryAGI.OpenAI.RunStepStreamEvent?>? runStep = null,
             global::System.Action<global::tryAGI.OpenAI.MessageStreamEvent?>? message = null,
-            global::System.Action<global::tryAGI.OpenAI.ErrorEvent?>? error = null,
-            global::System.Action<global::tryAGI.OpenAI.DoneEvent?>? done = null,
+            global::System.Action<global::tryAGI.OpenAI.ErrorEvent>? error = null,
+            global::System.Action<global::tryAGI.OpenAI.DoneEvent>? done = null,
             bool validate = true)
         {
             if (validate)

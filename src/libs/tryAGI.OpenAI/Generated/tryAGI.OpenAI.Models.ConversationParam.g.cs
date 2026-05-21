@@ -29,6 +29,26 @@ namespace tryAGI.OpenAI
         public bool IsConversationId => ConversationId != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationId(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ConversationId;
+            return IsConversationId;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickConversationId() => IsConversationId
+            ? ConversationId!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationId' but the value was {ToString()}.");
+
+        /// <summary>
         /// The conversation that this response belongs to.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -44,6 +64,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationObject))]
 #endif
         public bool IsConversationObject => ConversationObject != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationObject(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ConversationParam2? value)
+        {
+            value = ConversationObject;
+            return IsConversationObject;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ConversationParam2 PickConversationObject() => IsConversationObject
+            ? ConversationObject!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationObject' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -65,6 +105,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationParam FromConversationId(string? value) => new ConversationParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationParam(global::tryAGI.OpenAI.ConversationParam2 value) => new ConversationParam((global::tryAGI.OpenAI.ConversationParam2?)value);
 
         /// <summary>
@@ -79,6 +124,11 @@ namespace tryAGI.OpenAI
         {
             ConversationObject = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationParam FromConversationObject(global::tryAGI.OpenAI.ConversationParam2? value) => new ConversationParam(value);
 
         /// <summary>
         /// 
@@ -120,8 +170,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? conversationId = null,
-            global::System.Func<global::tryAGI.OpenAI.ConversationParam2?, TResult>? conversationObject = null,
+            global::System.Func<string, TResult>? conversationId = null,
+            global::System.Func<global::tryAGI.OpenAI.ConversationParam2, TResult>? conversationObject = null,
             bool validate = true)
         {
             if (validate)
@@ -145,8 +195,32 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? conversationId = null,
-            global::System.Action<global::tryAGI.OpenAI.ConversationParam2?>? conversationObject = null,
+            global::System.Action<string>? conversationId = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ConversationParam2>? conversationObject = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsConversationId)
+            {
+                conversationId?.Invoke(ConversationId!);
+            }
+            else if (IsConversationObject)
+            {
+                conversationObject?.Invoke(ConversationObject!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? conversationId = null,
+            global::System.Action<global::tryAGI.OpenAI.ConversationParam2>? conversationObject = null,
             bool validate = true)
         {
             if (validate)

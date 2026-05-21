@@ -32,10 +32,7 @@ namespace tryAGI.OpenAI
         public required string Delta { get; set; }
 
         /// <summary>
-        /// Timing metadata for stream alignment, derived from the translation frame<br/>
-        /// when available. It advances in 200 ms increments, but multiple transcript<br/>
-        /// deltas may share the same `elapsed_ms`. Treat it as alignment metadata,<br/>
-        /// not a unique transcript-delta identifier.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("elapsed_ms")]
         public int? ElapsedMs { get; set; }
@@ -58,12 +55,7 @@ namespace tryAGI.OpenAI
         /// <param name="type">
         /// The event type, must be `session.output_transcript.delta`.
         /// </param>
-        /// <param name="elapsedMs">
-        /// Timing metadata for stream alignment, derived from the translation frame<br/>
-        /// when available. It advances in 200 ms increments, but multiple transcript<br/>
-        /// deltas may share the same `elapsed_ms`. Treat it as alignment metadata,<br/>
-        /// not a unique transcript-delta identifier.
-        /// </param>
+        /// <param name="elapsedMs"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -85,5 +77,6 @@ namespace tryAGI.OpenAI
         public RealtimeTranslationServerEventSessionOutputTranscriptDelta()
         {
         }
+
     }
 }

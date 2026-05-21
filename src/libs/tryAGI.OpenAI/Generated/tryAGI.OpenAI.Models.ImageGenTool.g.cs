@@ -188,5 +188,6 @@ namespace tryAGI.OpenAI
         public ImageGenTool()
         {
         }
+
     }
 }

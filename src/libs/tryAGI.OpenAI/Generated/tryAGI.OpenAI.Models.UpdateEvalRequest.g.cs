@@ -50,5 +50,6 @@ namespace tryAGI.OpenAI
         public UpdateEvalRequest()
         {
         }
+
     }
 }

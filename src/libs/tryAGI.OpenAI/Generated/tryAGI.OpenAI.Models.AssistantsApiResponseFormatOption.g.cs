@@ -30,6 +30,26 @@ namespace tryAGI.OpenAI
         public bool IsEnum => Enum != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnum(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum? value)
+        {
+            value = Enum;
+            return IsEnum;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum PickEnum() => IsEnum
+            ? Enum!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
+
+        /// <summary>
         /// Default response format. Used to generate text responses.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -45,6 +65,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
         public bool IsText => Text != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseFormatText? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ResponseFormatText PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
         /// JSON object response format. An older method of generating JSON responses.<br/>
@@ -67,6 +107,26 @@ namespace tryAGI.OpenAI
         public bool IsJsonObject => JsonObject != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickJsonObject(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseFormatJsonObject? value)
+        {
+            value = JsonObject;
+            return IsJsonObject;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ResponseFormatJsonObject PickJsonObject() => IsJsonObject
+            ? JsonObject!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JsonObject' but the value was {ToString()}.");
+
+        /// <summary>
         /// JSON Schema response format. Used to generate structured JSON responses.<br/>
         /// Learn more about [Structured Outputs](/docs/guides/structured-outputs).
         /// </summary>
@@ -83,6 +143,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonSchema))]
 #endif
         public bool IsJsonSchema => JsonSchema != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickJsonSchema(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ResponseFormatJsonSchema? value)
+        {
+            value = JsonSchema;
+            return IsJsonSchema;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ResponseFormatJsonSchema PickJsonSchema() => IsJsonSchema
+            ? JsonSchema!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JsonSchema' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -100,6 +180,11 @@ namespace tryAGI.OpenAI
         {
             Enum = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AssistantsApiResponseFormatOption FromEnum(global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum? value) => new AssistantsApiResponseFormatOption(value);
 
         /// <summary>
         /// 
@@ -122,6 +207,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static AssistantsApiResponseFormatOption FromText(global::tryAGI.OpenAI.ResponseFormatText? value) => new AssistantsApiResponseFormatOption(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AssistantsApiResponseFormatOption(global::tryAGI.OpenAI.ResponseFormatJsonObject value) => new AssistantsApiResponseFormatOption((global::tryAGI.OpenAI.ResponseFormatJsonObject?)value);
 
         /// <summary>
@@ -140,6 +230,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static AssistantsApiResponseFormatOption FromJsonObject(global::tryAGI.OpenAI.ResponseFormatJsonObject? value) => new AssistantsApiResponseFormatOption(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AssistantsApiResponseFormatOption(global::tryAGI.OpenAI.ResponseFormatJsonSchema value) => new AssistantsApiResponseFormatOption((global::tryAGI.OpenAI.ResponseFormatJsonSchema?)value);
 
         /// <summary>
@@ -154,6 +249,11 @@ namespace tryAGI.OpenAI
         {
             JsonSchema = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AssistantsApiResponseFormatOption FromJsonSchema(global::tryAGI.OpenAI.ResponseFormatJsonSchema? value) => new AssistantsApiResponseFormatOption(value);
 
         /// <summary>
         /// 
@@ -204,9 +304,9 @@ namespace tryAGI.OpenAI
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum?, TResult>? @enum = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseFormatText?, TResult>? text = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseFormatJsonObject?, TResult>? jsonObject = null,
-            global::System.Func<global::tryAGI.OpenAI.ResponseFormatJsonSchema?, TResult>? jsonSchema = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseFormatText, TResult>? text = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseFormatJsonObject, TResult>? jsonObject = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseFormatJsonSchema, TResult>? jsonSchema = null,
             bool validate = true)
         {
             if (validate)
@@ -239,9 +339,45 @@ namespace tryAGI.OpenAI
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum?>? @enum = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseFormatText?>? text = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseFormatJsonObject?>? jsonObject = null,
-            global::System.Action<global::tryAGI.OpenAI.ResponseFormatJsonSchema?>? jsonSchema = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseFormatText>? text = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseFormatJsonObject>? jsonObject = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ResponseFormatJsonSchema>? jsonSchema = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEnum)
+            {
+                @enum?.Invoke(Enum!);
+            }
+            else if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsJsonObject)
+            {
+                jsonObject?.Invoke(JsonObject!);
+            }
+            else if (IsJsonSchema)
+            {
+                jsonSchema?.Invoke(JsonSchema!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum?>? @enum = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseFormatText>? text = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseFormatJsonObject>? jsonObject = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseFormatJsonSchema>? jsonSchema = null,
             bool validate = true)
         {
             if (validate)

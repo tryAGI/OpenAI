@@ -87,5 +87,6 @@ namespace tryAGI.OpenAI
         public CostsResult()
         {
         }
+
     }
 }

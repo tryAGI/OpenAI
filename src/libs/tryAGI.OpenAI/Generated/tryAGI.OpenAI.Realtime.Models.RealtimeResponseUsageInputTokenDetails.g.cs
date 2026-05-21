@@ -85,5 +85,6 @@ namespace tryAGI.OpenAI.Realtime
         public RealtimeResponseUsageInputTokenDetails()
         {
         }
+
     }
 }

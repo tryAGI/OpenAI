@@ -101,5 +101,6 @@ namespace tryAGI.OpenAI
         public RealtimeTranscriptionSessionCreateResponseGA()
         {
         }
+
     }
 }

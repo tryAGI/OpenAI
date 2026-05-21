@@ -96,5 +96,6 @@ namespace tryAGI.OpenAI
         public FunctionToolCallOutput()
         {
         }
+
     }
 }

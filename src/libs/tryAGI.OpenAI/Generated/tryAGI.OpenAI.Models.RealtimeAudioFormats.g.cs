@@ -27,6 +27,26 @@ namespace tryAGI.OpenAI
         public bool IsPcmAudioFormat => PcmAudioFormat != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPcmAudioFormat(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RealtimeAudioFormatsPcmAudioFormat? value)
+        {
+            value = PcmAudioFormat;
+            return IsPcmAudioFormat;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeAudioFormatsPcmAudioFormat PickPcmAudioFormat() => IsPcmAudioFormat
+            ? PcmAudioFormat!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PcmAudioFormat' but the value was {ToString()}.");
+
+        /// <summary>
         /// The G.711 μ-law format.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -44,6 +64,26 @@ namespace tryAGI.OpenAI
         public bool IsPcmuAudioFormat => PcmuAudioFormat != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPcmuAudioFormat(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RealtimeAudioFormatsPcmuAudioFormat? value)
+        {
+            value = PcmuAudioFormat;
+            return IsPcmuAudioFormat;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeAudioFormatsPcmuAudioFormat PickPcmuAudioFormat() => IsPcmuAudioFormat
+            ? PcmuAudioFormat!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PcmuAudioFormat' but the value was {ToString()}.");
+
+        /// <summary>
         /// The G.711 A-law format.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -59,6 +99,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PcmaAudioFormat))]
 #endif
         public bool IsPcmaAudioFormat => PcmaAudioFormat != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPcmaAudioFormat(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormat? value)
+        {
+            value = PcmaAudioFormat;
+            return IsPcmaAudioFormat;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormat PickPcmaAudioFormat() => IsPcmaAudioFormat
+            ? PcmaAudioFormat!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PcmaAudioFormat' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -76,6 +136,11 @@ namespace tryAGI.OpenAI
         {
             PcmAudioFormat = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeAudioFormats FromPcmAudioFormat(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmAudioFormat? value) => new RealtimeAudioFormats(value);
 
         /// <summary>
         /// 
@@ -98,6 +163,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeAudioFormats FromPcmuAudioFormat(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmuAudioFormat? value) => new RealtimeAudioFormats(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeAudioFormats(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormat value) => new RealtimeAudioFormats((global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormat?)value);
 
         /// <summary>
@@ -112,6 +182,11 @@ namespace tryAGI.OpenAI
         {
             PcmaAudioFormat = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeAudioFormats FromPcmaAudioFormat(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormat? value) => new RealtimeAudioFormats(value);
 
         /// <summary>
         /// 
@@ -157,9 +232,9 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmAudioFormat?, TResult>? pcmAudioFormat = null,
-            global::System.Func<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmuAudioFormat?, TResult>? pcmuAudioFormat = null,
-            global::System.Func<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormat?, TResult>? pcmaAudioFormat = null,
+            global::System.Func<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmAudioFormat, TResult>? pcmAudioFormat = null,
+            global::System.Func<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmuAudioFormat, TResult>? pcmuAudioFormat = null,
+            global::System.Func<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormat, TResult>? pcmaAudioFormat = null,
             bool validate = true)
         {
             if (validate)
@@ -187,9 +262,39 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmAudioFormat?>? pcmAudioFormat = null,
-            global::System.Action<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmuAudioFormat?>? pcmuAudioFormat = null,
-            global::System.Action<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormat?>? pcmaAudioFormat = null,
+            global::System.Action<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmAudioFormat>? pcmAudioFormat = null,
+
+            global::System.Action<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmuAudioFormat>? pcmuAudioFormat = null,
+
+            global::System.Action<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormat>? pcmaAudioFormat = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsPcmAudioFormat)
+            {
+                pcmAudioFormat?.Invoke(PcmAudioFormat!);
+            }
+            else if (IsPcmuAudioFormat)
+            {
+                pcmuAudioFormat?.Invoke(PcmuAudioFormat!);
+            }
+            else if (IsPcmaAudioFormat)
+            {
+                pcmaAudioFormat?.Invoke(PcmaAudioFormat!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmAudioFormat>? pcmAudioFormat = null,
+            global::System.Action<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmuAudioFormat>? pcmuAudioFormat = null,
+            global::System.Action<global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormat>? pcmaAudioFormat = null,
             bool validate = true)
         {
             if (validate)

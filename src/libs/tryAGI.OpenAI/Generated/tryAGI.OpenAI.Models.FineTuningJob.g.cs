@@ -234,5 +234,6 @@ namespace tryAGI.OpenAI
         public FineTuningJob()
         {
         }
+
     }
 }

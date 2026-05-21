@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct CreateTranscriptionResponseDiarizedJsonUsage : global::System.IEquatable<CreateTranscriptionResponseDiarizedJsonUsage>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJsonUsageDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Usage statistics for models billed by token usage.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -27,6 +32,26 @@ namespace tryAGI.OpenAI
         public bool IsTokens => Tokens != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTokens(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.TranscriptTextUsageTokens? value)
+        {
+            value = Tokens;
+            return IsTokens;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.TranscriptTextUsageTokens PickTokens() => IsTokens
+            ? Tokens!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Tokens' but the value was {ToString()}.");
+
+        /// <summary>
         /// Usage statistics for models billed by audio input duration.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +67,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Duration))]
 #endif
         public bool IsDuration => Duration != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDuration(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.TranscriptTextUsageDuration? value)
+        {
+            value = Duration;
+            return IsDuration;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.TranscriptTextUsageDuration PickDuration() => IsDuration
+            ? Duration!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Duration' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -59,6 +104,11 @@ namespace tryAGI.OpenAI
         {
             Tokens = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateTranscriptionResponseDiarizedJsonUsage FromTokens(global::tryAGI.OpenAI.TranscriptTextUsageTokens? value) => new CreateTranscriptionResponseDiarizedJsonUsage(value);
 
         /// <summary>
         /// 
@@ -81,11 +131,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static CreateTranscriptionResponseDiarizedJsonUsage FromDuration(global::tryAGI.OpenAI.TranscriptTextUsageDuration? value) => new CreateTranscriptionResponseDiarizedJsonUsage(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public CreateTranscriptionResponseDiarizedJsonUsage(
+            global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJsonUsageDiscriminatorType? type,
             global::tryAGI.OpenAI.TranscriptTextUsageTokens? tokens,
             global::tryAGI.OpenAI.TranscriptTextUsageDuration? duration
             )
         {
+            Type = type;
+
             Tokens = tokens;
             Duration = duration;
         }
@@ -118,8 +176,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.TranscriptTextUsageTokens?, TResult>? tokens = null,
-            global::System.Func<global::tryAGI.OpenAI.TranscriptTextUsageDuration?, TResult>? duration = null,
+            global::System.Func<global::tryAGI.OpenAI.TranscriptTextUsageTokens, TResult>? tokens = null,
+            global::System.Func<global::tryAGI.OpenAI.TranscriptTextUsageDuration, TResult>? duration = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +201,32 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.TranscriptTextUsageTokens?>? tokens = null,
-            global::System.Action<global::tryAGI.OpenAI.TranscriptTextUsageDuration?>? duration = null,
+            global::System.Action<global::tryAGI.OpenAI.TranscriptTextUsageTokens>? tokens = null,
+
+            global::System.Action<global::tryAGI.OpenAI.TranscriptTextUsageDuration>? duration = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTokens)
+            {
+                tokens?.Invoke(Tokens!);
+            }
+            else if (IsDuration)
+            {
+                duration?.Invoke(Duration!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.TranscriptTextUsageTokens>? tokens = null,
+            global::System.Action<global::tryAGI.OpenAI.TranscriptTextUsageDuration>? duration = null,
             bool validate = true)
         {
             if (validate)

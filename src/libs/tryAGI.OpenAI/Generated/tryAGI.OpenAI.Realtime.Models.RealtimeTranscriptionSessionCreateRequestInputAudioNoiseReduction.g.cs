@@ -45,5 +45,6 @@ namespace tryAGI.OpenAI.Realtime
         public RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction()
         {
         }
+
     }
 }

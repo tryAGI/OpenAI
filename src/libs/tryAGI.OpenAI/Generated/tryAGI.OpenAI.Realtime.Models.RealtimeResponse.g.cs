@@ -176,5 +176,6 @@ namespace tryAGI.OpenAI.Realtime
         public RealtimeResponse()
         {
         }
+
     }
 }

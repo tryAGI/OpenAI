@@ -57,5 +57,18 @@ namespace tryAGI.OpenAI
         public CodeInterpreterOutputImage()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="CodeInterpreterOutputImage"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static CodeInterpreterOutputImage FromUrl(string url)
+        {
+            return new CodeInterpreterOutputImage
+            {
+                Url = url,
+            };
+        }
+
     }
 }

@@ -179,5 +179,6 @@ namespace tryAGI.OpenAI
         public MessageObject()
         {
         }
+
     }
 }

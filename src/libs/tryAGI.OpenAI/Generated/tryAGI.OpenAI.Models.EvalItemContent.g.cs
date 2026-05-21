@@ -27,6 +27,26 @@ namespace tryAGI.OpenAI
         public bool IsEvalContentItem => EvalContentItem != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEvalContentItem(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.EvalItemContentItem? value)
+        {
+            value = EvalContentItem;
+            return IsEvalContentItem;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.EvalItemContentItem PickEvalContentItem() => IsEvalContentItem
+            ? EvalContentItem!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EvalContentItem' but the value was {ToString()}.");
+
+        /// <summary>
         /// A list of inputs, each of which may be either an input text, output text, input<br/>
         /// image, or input audio object.
         /// </summary>
@@ -43,6 +63,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnArrayOfInputTextOutputTextInputImageAndInputAudio))]
 #endif
         public bool IsAnArrayOfInputTextOutputTextInputImageAndInputAudio => AnArrayOfInputTextOutputTextInputImageAndInputAudio != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAnArrayOfInputTextOutputTextInputImageAndInputAudio(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>? value)
+        {
+            value = AnArrayOfInputTextOutputTextInputImageAndInputAudio;
+            return IsAnArrayOfInputTextOutputTextInputImageAndInputAudio;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem> PickAnArrayOfInputTextOutputTextInputImageAndInputAudio() => IsAnArrayOfInputTextOutputTextInputImageAndInputAudio
+            ? AnArrayOfInputTextOutputTextInputImageAndInputAudio!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AnArrayOfInputTextOutputTextInputImageAndInputAudio' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -60,6 +100,11 @@ namespace tryAGI.OpenAI
         {
             EvalContentItem = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EvalItemContent FromEvalContentItem(global::tryAGI.OpenAI.EvalItemContentItem? value) => new EvalItemContent(value);
 
         /// <summary>
         /// 
@@ -102,7 +147,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.EvalItemContentItem?, TResult>? evalContentItem = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>?, TResult>? anArrayOfInputTextOutputTextInputImageAndInputAudio = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>, TResult>? anArrayOfInputTextOutputTextInputImageAndInputAudio = null,
             bool validate = true)
         {
             if (validate)
@@ -127,7 +172,31 @@ namespace tryAGI.OpenAI
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.EvalItemContentItem?>? evalContentItem = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>?>? anArrayOfInputTextOutputTextInputImageAndInputAudio = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>>? anArrayOfInputTextOutputTextInputImageAndInputAudio = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEvalContentItem)
+            {
+                evalContentItem?.Invoke(EvalContentItem!);
+            }
+            else if (IsAnArrayOfInputTextOutputTextInputImageAndInputAudio)
+            {
+                anArrayOfInputTextOutputTextInputImageAndInputAudio?.Invoke(AnArrayOfInputTextOutputTextInputImageAndInputAudio!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.EvalItemContentItem?>? evalContentItem = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem>>? anArrayOfInputTextOutputTextInputImageAndInputAudio = null,
             bool validate = true)
         {
             if (validate)

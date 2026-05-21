@@ -10,6 +10,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct ComputerAction : global::System.IEquatable<ComputerAction>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ComputerActionDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// A click action.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -25,6 +30,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Click))]
 #endif
         public bool IsClick => Click != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickClick(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ClickParam? value)
+        {
+            value = Click;
+            return IsClick;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ClickParam PickClick() => IsClick
+            ? Click!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Click' but the value was {ToString()}.");
 
         /// <summary>
         /// A double click action.
@@ -44,6 +69,26 @@ namespace tryAGI.OpenAI
         public bool IsDoubleClick => DoubleClick != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDoubleClick(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.DoubleClickAction? value)
+        {
+            value = DoubleClick;
+            return IsDoubleClick;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.DoubleClickAction PickDoubleClick() => IsDoubleClick
+            ? DoubleClick!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DoubleClick' but the value was {ToString()}.");
+
+        /// <summary>
         /// A drag action.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -59,6 +104,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Drag))]
 #endif
         public bool IsDrag => Drag != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDrag(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.DragParam? value)
+        {
+            value = Drag;
+            return IsDrag;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.DragParam PickDrag() => IsDrag
+            ? Drag!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Drag' but the value was {ToString()}.");
 
         /// <summary>
         /// A collection of keypresses the model would like to perform.
@@ -78,6 +143,26 @@ namespace tryAGI.OpenAI
         public bool IsKeypress => Keypress != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickKeypress(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.KeyPressAction? value)
+        {
+            value = Keypress;
+            return IsKeypress;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.KeyPressAction PickKeypress() => IsKeypress
+            ? Keypress!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Keypress' but the value was {ToString()}.");
+
+        /// <summary>
         /// A mouse move action.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -93,6 +178,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Move))]
 #endif
         public bool IsMove => Move != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMove(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.MoveParam? value)
+        {
+            value = Move;
+            return IsMove;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.MoveParam PickMove() => IsMove
+            ? Move!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Move' but the value was {ToString()}.");
 
         /// <summary>
         /// A screenshot action.
@@ -112,6 +217,26 @@ namespace tryAGI.OpenAI
         public bool IsScreenshot => Screenshot != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickScreenshot(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ScreenshotParam? value)
+        {
+            value = Screenshot;
+            return IsScreenshot;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ScreenshotParam PickScreenshot() => IsScreenshot
+            ? Screenshot!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Screenshot' but the value was {ToString()}.");
+
+        /// <summary>
         /// A scroll action.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -127,6 +252,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Scroll))]
 #endif
         public bool IsScroll => Scroll != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickScroll(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ScrollParam? value)
+        {
+            value = Scroll;
+            return IsScroll;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ScrollParam PickScroll() => IsScroll
+            ? Scroll!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Scroll' but the value was {ToString()}.");
 
         /// <summary>
         /// An action to type in text.
@@ -146,6 +291,26 @@ namespace tryAGI.OpenAI
         public bool IsType => Type != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickType(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.TypeParam? value)
+        {
+            value = Type;
+            return IsType;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.TypeParam PickType() => IsType
+            ? Type!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Type' but the value was {ToString()}.");
+
+        /// <summary>
         /// A wait action.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -161,6 +326,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Wait))]
 #endif
         public bool IsWait => Wait != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWait(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.WaitParam? value)
+        {
+            value = Wait;
+            return IsWait;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.WaitParam PickWait() => IsWait
+            ? Wait!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Wait' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -178,6 +363,11 @@ namespace tryAGI.OpenAI
         {
             Click = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ComputerAction FromClick(global::tryAGI.OpenAI.ClickParam? value) => new ComputerAction(value);
 
         /// <summary>
         /// 
@@ -200,6 +390,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ComputerAction FromDoubleClick(global::tryAGI.OpenAI.DoubleClickAction? value) => new ComputerAction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ComputerAction(global::tryAGI.OpenAI.DragParam value) => new ComputerAction((global::tryAGI.OpenAI.DragParam?)value);
 
         /// <summary>
@@ -214,6 +409,11 @@ namespace tryAGI.OpenAI
         {
             Drag = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ComputerAction FromDrag(global::tryAGI.OpenAI.DragParam? value) => new ComputerAction(value);
 
         /// <summary>
         /// 
@@ -236,6 +436,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ComputerAction FromKeypress(global::tryAGI.OpenAI.KeyPressAction? value) => new ComputerAction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ComputerAction(global::tryAGI.OpenAI.MoveParam value) => new ComputerAction((global::tryAGI.OpenAI.MoveParam?)value);
 
         /// <summary>
@@ -250,6 +455,11 @@ namespace tryAGI.OpenAI
         {
             Move = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ComputerAction FromMove(global::tryAGI.OpenAI.MoveParam? value) => new ComputerAction(value);
 
         /// <summary>
         /// 
@@ -272,6 +482,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ComputerAction FromScreenshot(global::tryAGI.OpenAI.ScreenshotParam? value) => new ComputerAction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ComputerAction(global::tryAGI.OpenAI.ScrollParam value) => new ComputerAction((global::tryAGI.OpenAI.ScrollParam?)value);
 
         /// <summary>
@@ -286,6 +501,11 @@ namespace tryAGI.OpenAI
         {
             Scroll = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ComputerAction FromScroll(global::tryAGI.OpenAI.ScrollParam? value) => new ComputerAction(value);
 
         /// <summary>
         /// 
@@ -308,6 +528,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ComputerAction FromType(global::tryAGI.OpenAI.TypeParam? value) => new ComputerAction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ComputerAction(global::tryAGI.OpenAI.WaitParam value) => new ComputerAction((global::tryAGI.OpenAI.WaitParam?)value);
 
         /// <summary>
@@ -326,7 +551,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ComputerAction FromWait(global::tryAGI.OpenAI.WaitParam? value) => new ComputerAction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ComputerAction(
+            global::tryAGI.OpenAI.ComputerActionDiscriminatorType? type,
             global::tryAGI.OpenAI.ClickParam? click,
             global::tryAGI.OpenAI.DoubleClickAction? doubleClick,
             global::tryAGI.OpenAI.DragParam? drag,
@@ -338,6 +569,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.WaitParam? wait
             )
         {
+            Type = type;
+
             Click = click;
             DoubleClick = doubleClick;
             Drag = drag;
@@ -391,15 +624,15 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.ClickParam?, TResult>? click = null,
-            global::System.Func<global::tryAGI.OpenAI.DoubleClickAction?, TResult>? doubleClick = null,
-            global::System.Func<global::tryAGI.OpenAI.DragParam?, TResult>? drag = null,
-            global::System.Func<global::tryAGI.OpenAI.KeyPressAction?, TResult>? keypress = null,
-            global::System.Func<global::tryAGI.OpenAI.MoveParam?, TResult>? move = null,
-            global::System.Func<global::tryAGI.OpenAI.ScreenshotParam?, TResult>? screenshot = null,
-            global::System.Func<global::tryAGI.OpenAI.ScrollParam?, TResult>? scroll = null,
-            global::System.Func<global::tryAGI.OpenAI.TypeParam?, TResult>? type = null,
-            global::System.Func<global::tryAGI.OpenAI.WaitParam?, TResult>? wait = null,
+            global::System.Func<global::tryAGI.OpenAI.ClickParam, TResult>? click = null,
+            global::System.Func<global::tryAGI.OpenAI.DoubleClickAction, TResult>? doubleClick = null,
+            global::System.Func<global::tryAGI.OpenAI.DragParam, TResult>? drag = null,
+            global::System.Func<global::tryAGI.OpenAI.KeyPressAction, TResult>? keypress = null,
+            global::System.Func<global::tryAGI.OpenAI.MoveParam, TResult>? move = null,
+            global::System.Func<global::tryAGI.OpenAI.ScreenshotParam, TResult>? screenshot = null,
+            global::System.Func<global::tryAGI.OpenAI.ScrollParam, TResult>? scroll = null,
+            global::System.Func<global::tryAGI.OpenAI.TypeParam, TResult>? type = null,
+            global::System.Func<global::tryAGI.OpenAI.WaitParam, TResult>? wait = null,
             bool validate = true)
         {
             if (validate)
@@ -451,15 +684,81 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.ClickParam?>? click = null,
-            global::System.Action<global::tryAGI.OpenAI.DoubleClickAction?>? doubleClick = null,
-            global::System.Action<global::tryAGI.OpenAI.DragParam?>? drag = null,
-            global::System.Action<global::tryAGI.OpenAI.KeyPressAction?>? keypress = null,
-            global::System.Action<global::tryAGI.OpenAI.MoveParam?>? move = null,
-            global::System.Action<global::tryAGI.OpenAI.ScreenshotParam?>? screenshot = null,
-            global::System.Action<global::tryAGI.OpenAI.ScrollParam?>? scroll = null,
-            global::System.Action<global::tryAGI.OpenAI.TypeParam?>? type = null,
-            global::System.Action<global::tryAGI.OpenAI.WaitParam?>? wait = null,
+            global::System.Action<global::tryAGI.OpenAI.ClickParam>? click = null,
+
+            global::System.Action<global::tryAGI.OpenAI.DoubleClickAction>? doubleClick = null,
+
+            global::System.Action<global::tryAGI.OpenAI.DragParam>? drag = null,
+
+            global::System.Action<global::tryAGI.OpenAI.KeyPressAction>? keypress = null,
+
+            global::System.Action<global::tryAGI.OpenAI.MoveParam>? move = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ScreenshotParam>? screenshot = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ScrollParam>? scroll = null,
+
+            global::System.Action<global::tryAGI.OpenAI.TypeParam>? type = null,
+
+            global::System.Action<global::tryAGI.OpenAI.WaitParam>? wait = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsClick)
+            {
+                click?.Invoke(Click!);
+            }
+            else if (IsDoubleClick)
+            {
+                doubleClick?.Invoke(DoubleClick!);
+            }
+            else if (IsDrag)
+            {
+                drag?.Invoke(Drag!);
+            }
+            else if (IsKeypress)
+            {
+                keypress?.Invoke(Keypress!);
+            }
+            else if (IsMove)
+            {
+                move?.Invoke(Move!);
+            }
+            else if (IsScreenshot)
+            {
+                screenshot?.Invoke(Screenshot!);
+            }
+            else if (IsScroll)
+            {
+                scroll?.Invoke(Scroll!);
+            }
+            else if (IsType)
+            {
+                type?.Invoke(Type!);
+            }
+            else if (IsWait)
+            {
+                wait?.Invoke(Wait!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.ClickParam>? click = null,
+            global::System.Action<global::tryAGI.OpenAI.DoubleClickAction>? doubleClick = null,
+            global::System.Action<global::tryAGI.OpenAI.DragParam>? drag = null,
+            global::System.Action<global::tryAGI.OpenAI.KeyPressAction>? keypress = null,
+            global::System.Action<global::tryAGI.OpenAI.MoveParam>? move = null,
+            global::System.Action<global::tryAGI.OpenAI.ScreenshotParam>? screenshot = null,
+            global::System.Action<global::tryAGI.OpenAI.ScrollParam>? scroll = null,
+            global::System.Action<global::tryAGI.OpenAI.TypeParam>? type = null,
+            global::System.Action<global::tryAGI.OpenAI.WaitParam>? wait = null,
             bool validate = true)
         {
             if (validate)

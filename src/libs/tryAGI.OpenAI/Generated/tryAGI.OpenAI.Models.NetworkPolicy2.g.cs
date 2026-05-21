@@ -12,6 +12,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public global::tryAGI.OpenAI.AutoCodeInterpreterToolParamNetworkPolicyDiscriminatorType? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParam? Disabled { get; init; }
 #else
@@ -29,6 +34,26 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDisabled(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParam? value)
+        {
+            value = Disabled;
+            return IsDisabled;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParam PickDisabled() => IsDisabled
+            ? Disabled!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Disabled' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam? Allowlist { get; init; }
 #else
@@ -42,6 +67,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Allowlist))]
 #endif
         public bool IsAllowlist => Allowlist != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAllowlist(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam? value)
+        {
+            value = Allowlist;
+            return IsAllowlist;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam PickAllowlist() => IsAllowlist
+            ? Allowlist!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Allowlist' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -59,6 +104,11 @@ namespace tryAGI.OpenAI
         {
             Disabled = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static NetworkPolicy2 FromDisabled(global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParam? value) => new NetworkPolicy2(value);
 
         /// <summary>
         /// 
@@ -81,11 +131,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static NetworkPolicy2 FromAllowlist(global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam? value) => new NetworkPolicy2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public NetworkPolicy2(
+            global::tryAGI.OpenAI.AutoCodeInterpreterToolParamNetworkPolicyDiscriminatorType? type,
             global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParam? disabled,
             global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam? allowlist
             )
         {
+            Type = type;
+
             Disabled = disabled;
             Allowlist = allowlist;
         }
@@ -118,8 +176,8 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParam?, TResult>? disabled = null,
-            global::System.Func<global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam?, TResult>? allowlist = null,
+            global::System.Func<global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParam, TResult>? disabled = null,
+            global::System.Func<global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam, TResult>? allowlist = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +201,32 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParam?>? disabled = null,
-            global::System.Action<global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam?>? allowlist = null,
+            global::System.Action<global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParam>? disabled = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam>? allowlist = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsDisabled)
+            {
+                disabled?.Invoke(Disabled!);
+            }
+            else if (IsAllowlist)
+            {
+                allowlist?.Invoke(Allowlist!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParam>? disabled = null,
+            global::System.Action<global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam>? allowlist = null,
             bool validate = true)
         {
             if (validate)

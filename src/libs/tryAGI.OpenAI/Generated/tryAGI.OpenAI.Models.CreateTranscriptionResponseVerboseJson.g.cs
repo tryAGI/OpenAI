@@ -99,5 +99,6 @@ namespace tryAGI.OpenAI
         public CreateTranscriptionResponseVerboseJson()
         {
         }
+
     }
 }

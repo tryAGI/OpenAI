@@ -57,5 +57,18 @@ namespace tryAGI.OpenAI
         public FileAnnotationSource()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="FileAnnotationSource"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static FileAnnotationSource FromFilename(string filename)
+        {
+            return new FileAnnotationSource
+            {
+                Filename = filename,
+            };
+        }
+
     }
 }

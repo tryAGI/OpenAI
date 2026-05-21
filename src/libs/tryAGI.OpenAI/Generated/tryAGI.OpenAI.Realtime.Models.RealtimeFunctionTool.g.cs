@@ -79,5 +79,6 @@ namespace tryAGI.OpenAI.Realtime
         public RealtimeFunctionTool()
         {
         }
+
     }
 }

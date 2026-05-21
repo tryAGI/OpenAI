@@ -29,6 +29,26 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickShared(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ModelIdsShared? value)
+        {
+            value = Shared;
+            return IsShared;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ModelIdsShared PickShared() => IsShared
+            ? Shared!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Shared' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ModelIdsResponsesEnum? ResponsesOnlyModel { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponsesOnlyModel))]
 #endif
         public bool IsResponsesOnlyModel => ResponsesOnlyModel != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponsesOnlyModel(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ModelIdsResponsesEnum? value)
+        {
+            value = ResponsesOnlyModel;
+            return IsResponsesOnlyModel;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ModelIdsResponsesEnum PickResponsesOnlyModel() => IsResponsesOnlyModel
+            ? ResponsesOnlyModel!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesOnlyModel' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static ModelIdsResponses FromShared(global::tryAGI.OpenAI.ModelIdsShared? value) => new ModelIdsResponses(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ModelIdsResponses(global::tryAGI.OpenAI.ModelIdsResponsesEnum value) => new ModelIdsResponses((global::tryAGI.OpenAI.ModelIdsResponsesEnum?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace tryAGI.OpenAI
         {
             ResponsesOnlyModel = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ModelIdsResponses FromResponsesOnlyModel(global::tryAGI.OpenAI.ModelIdsResponsesEnum? value) => new ModelIdsResponses(value);
 
         /// <summary>
         /// 
@@ -143,6 +193,30 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::tryAGI.OpenAI.ModelIdsShared?>? shared = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ModelIdsResponsesEnum?>? responsesOnlyModel = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsShared)
+            {
+                shared?.Invoke(Shared!);
+            }
+            else if (IsResponsesOnlyModel)
+            {
+                responsesOnlyModel?.Invoke(ResponsesOnlyModel!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::tryAGI.OpenAI.ModelIdsShared?>? shared = null,
             global::System.Action<global::tryAGI.OpenAI.ModelIdsResponsesEnum?>? responsesOnlyModel = null,
             bool validate = true)
