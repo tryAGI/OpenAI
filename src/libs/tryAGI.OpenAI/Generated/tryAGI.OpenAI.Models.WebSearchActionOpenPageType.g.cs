@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The action type. Always `open_page`.
+    /// The action type.
     /// </summary>
     public enum WebSearchActionOpenPageType
     {

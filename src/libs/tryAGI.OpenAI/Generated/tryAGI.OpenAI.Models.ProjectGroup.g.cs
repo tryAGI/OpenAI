@@ -40,8 +40,9 @@ namespace tryAGI.OpenAI
         /// The type of the group.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectGroupGroupTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string GroupType { get; set; }
+        public required global::tryAGI.OpenAI.ProjectGroupGroupType GroupType { get; set; }
 
         /// <summary>
         /// Unix timestamp (in seconds) when the group was granted project access.
@@ -84,7 +85,7 @@ namespace tryAGI.OpenAI
             string projectId,
             string groupId,
             string groupName,
-            string groupType,
+            global::tryAGI.OpenAI.ProjectGroupGroupType groupType,
             int createdAt,
             global::tryAGI.OpenAI.ProjectGroupObject @object)
         {
@@ -92,7 +93,7 @@ namespace tryAGI.OpenAI
             this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
             this.GroupId = groupId ?? throw new global::System.ArgumentNullException(nameof(groupId));
             this.GroupName = groupName ?? throw new global::System.ArgumentNullException(nameof(groupName));
-            this.GroupType = groupType ?? throw new global::System.ArgumentNullException(nameof(groupType));
+            this.GroupType = groupType;
             this.CreatedAt = createdAt;
         }
 

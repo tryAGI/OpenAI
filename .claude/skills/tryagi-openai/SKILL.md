@@ -33,30 +33,32 @@ dnx tryAGI.OpenAI.CLI <group> --help
 | `chat` | 6 | Given a list of messages comprising a conversation, the model will return a response. |
 | `completion` | 1 | Given a prompt, the model will return one or more predicted completions, and can also return the probabilities of alternative tokens at each position. |
 | `conversation` | 8 | Manage conversations and conversation items. |
+| `data-retention` | 4 |  |
 | `embedding` | 1 | Get a vector representation of a given input that can be easily consumed by machine learning models and algorithms. |
 | `eval` | 12 | Manage and run evals in the OpenAI platform. |
 | `file` | 5 | Files are used to upload documents that can be used with features like Assistants and Fine-tuning. |
 | `fine-tuning` | 13 | Manage fine-tuning jobs to tailor a model to your specific training data. |
-| `group` | 4 |  |
-| `group-organization-role-assignment` | 3 |  |
-| `group-user` | 3 |  |
+| `group` | 5 |  |
+| `group-organization-role-assignment` | 4 |  |
+| `group-user` | 4 |  |
 | `hosted-tool` | 2 |  |
 | `image` | 3 | Given a prompt and/or an input image, the model will generate a new image. |
 | `invite` | 4 |  |
 | `model` | 3 | List and describe the various models available in the API. |
 | `moderation` | 1 | Given text and/or image inputs, classifies if those inputs are potentially harmful. |
-| `project` | 22 |  |
-| `project-group` | 3 |  |
-| `project-group-role-assignment` | 3 |  |
-| `project-user-role-assignment` | 3 |  |
+| `project` | 23 |  |
+| `project-group` | 4 |  |
+| `project-group-role-assignment` | 4 |  |
+| `project-user-role-assignment` | 4 |  |
 | `realtime` | 9 |  |
 | `response` | 5 |  |
-| `role` | 8 |  |
+| `role` | 10 |  |
 | `skill` | 11 |  |
+| `spend-alert` | 8 |  |
 | `upload` | 4 | Use Uploads to upload large files in multiple parts. |
 | `usage` | 11 |  |
 | `user` | 4 |  |
-| `user-organization-role-assignment` | 3 |  |
+| `user-organization-role-assignment` | 4 |  |
 | `vector-store` | 16 |  |
 | `video` | 10 |  |
 | `default` | 21 |  |

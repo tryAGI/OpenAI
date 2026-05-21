@@ -86,6 +86,11 @@ namespace tryAGI.OpenAI
         public ConversationsClient Conversations { get; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public DataRetentionClient DataRetention { get; }
+
+        /// <summary>
         /// Get a vector representation of a given input that can be easily consumed by machine learning models and algorithms.
         /// </summary>
         public EmbeddingsClient Embeddings { get; }
@@ -184,6 +189,11 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         public SkillsClient Skills { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SpendAlertsClient SpendAlerts { get; }
 
         /// <summary>
         /// Use Uploads to upload large files in multiple parts.
